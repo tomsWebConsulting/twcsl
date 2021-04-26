@@ -1,0 +1,62 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin change navigation folder URL Slugs and make clickable
+      
+      SS Version : 7.1
+      
+      */
+      
+      const folderUrlSlugUrlMappings = {
+      
+        /*
+        
+          the format of each line is the folder page URL Slug and the
+          replacement URL for the folder
+          
+          for each folder page copy value from Folder Settings > General >
+          URL SLUG field. you only need exactly what can be selected from the
+          field
+          
+          */
+          
+        // '[enter folder page url slug here]' : '[enter url here]',
+        
+        'music-lovers' : '/community',
+        
+        // last or only item doesn't get a comma at end of line
+        
+        'artists' : '/services'
+        
+        }
+        
+      // do not change anything below, there be the borg here
+      
+      const keys = Object.keys ( folderUrlSlugUrlMappings );
+      
+      $.each ( keys, function ( i, key ) {
+      
+        $( '.header-nav-folder-title[href="/' + key + '"]' ).each ( function ( ) {
+        
+          let $this = $( this );
+          
+          let $c = $this
+          
+            .clone ( )
+            
+            .attr ( 'href', folderUrlSlugUrlMappings [ key ] );
+            
+          $this.replaceWith ( $c );
+          
+          } );
+          
+        } );
+        
+      // end change navigation folder URL Slugs and make clickable
+      
+    } );
+    
+  </script>
