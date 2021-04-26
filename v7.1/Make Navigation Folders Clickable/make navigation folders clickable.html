@@ -1,0 +1,99 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin make navigation folder URL Slugs clickable
+      
+      Version      : 0.4d1
+      
+      SS Version   : 7.1
+      
+      Requirements : jQuery
+      
+      Author       : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const folderToPageUrlSlugMap = {
+      
+        /*
+        
+          adding lines here is optional, when no lines are added the folder will
+          link to the first page in the folder
+          
+          the format of each line is a folder page URL Slug and a destination
+          page URL Slug
+          
+          for each folder page copy value from Folder Settings > General >
+          URL SLUG field. you only need exactly what can be selected from the
+          field
+          
+          for each destination page copy value from page Settings > General >
+          URL SLUG field. you only need exactly what can be selected from the
+          field
+          
+          */
+          
+        // '[enter folder page url slug here]' : '[enter page url slug here]',
+        
+        }
+        
+      // do not change anything below, there be the borg here
+      
+      if ( ! Object.keys ( folderToPageUrlSlugMap ).length ) {
+      
+        $( '.header-nav-folder-title' ).each ( function ( ) {
+        
+          const key = $( this )
+          
+            .attr ( 'href' )
+            
+            .slice ( 1 );
+            
+          folderToPageUrlSlugMap [ key ] = '';
+          
+          } );
+          
+        }
+        
+      const keys = Object.keys ( folderToPageUrlSlugMap );
+      
+      $.each ( keys, function ( i, key ) {
+      
+        let url = folderToPageUrlSlugMap [ key ];
+        
+        if ( url )
+        
+          if ( ! url.includes ( '://' ) ) url = '/' + url;
+          
+        $( '.header-nav-folder-title[href="/' + key + '"]' ).each ( function ( ) {
+        
+          const $this = $( this );
+          
+          let $c = $this
+          
+            .clone ( )
+            
+            .removeAttr ( 'id' );
+            
+          if ( $c.hasClass ( 'preFade' ) )
+          
+            $c.addClass ( 'fadeIn' );
+            
+          if ( url )
+          
+            $c.attr ( 'href', url );
+            
+          $this.replaceWith ( $c );
+          
+          } );
+          
+        } );
+        
+      // end make navigation folder URL Slugs clickable
+      
+    } );
+    
+  </script>
