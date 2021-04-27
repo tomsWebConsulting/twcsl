@@ -6,7 +6,7 @@
     
       begin make navigation folder URL Slugs clickable
       
-      Version      : 0.4d1
+      Version      : 0.5d0
       
       SS Version   : 7.1
       
@@ -34,6 +34,9 @@
           URL SLUG field. you only need exactly what can be selected from the
           field
           
+          duplicate the line below and remove the "// " at the beginning of the
+          line
+          
           */
           
         // '[enter folder page url slug here]' : '[enter page url slug here]',
@@ -46,13 +49,27 @@
       
         $( '.header-nav-folder-title' ).each ( function ( ) {
         
-          const key = $( this )
+          const $this = $( this );
+          
+          const key = $this
           
             .attr ( 'href' )
             
             .slice ( 1 );
             
-          folderToPageUrlSlugMap [ key ] = '';
+          let url = $this
+          
+            .next ( )
+            
+            .find ( '.header-nav-folder-item:first a' )
+            
+            .attr ( 'href' );
+            
+          if ( url === undefined ) return true
+          
+          url = url.slice ( 1 );
+          
+          folderToPageUrlSlugMap [ key ] = url;
           
           } );
           
@@ -64,30 +81,20 @@
       
         let url = folderToPageUrlSlugMap [ key ];
         
-        if ( url )
+        if ( ! url.includes ( '://' ) ) url = '/' + url;
         
-          if ( ! url.includes ( '://' ) ) url = '/' + url;
-          
         $( '.header-nav-folder-title[href="/' + key + '"]' ).each ( function ( ) {
         
-          const $this = $( this );
+          $( this )
           
-          let $c = $this
-          
-            .clone ( )
+            .attr ( 'href', url )
             
-            .removeAttr ( 'id' );
+            .click ( function ( ) {
             
-          if ( $c.hasClass ( 'preFade' ) )
-          
-            $c.addClass ( 'fadeIn' );
-            
-          if ( url )
-          
-            $c.attr ( 'href', url );
-            
-          $this.replaceWith ( $c );
-          
+              location.href = $( this ).attr ( 'href' );
+              
+              } );
+              
           } );
           
         } );
