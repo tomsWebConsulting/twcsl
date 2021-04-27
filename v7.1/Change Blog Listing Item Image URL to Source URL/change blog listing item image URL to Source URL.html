@@ -1,0 +1,63 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change blog listing item image URL to Source URL
+      
+      Version    : 0.1d0
+      
+      SS Version : 7.1
+      
+      By         : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    let targetAtttributeValue = ''; /* use _self | _blank | _parent | _top |
+                                       framename see
+                                       < https://mzl.la/2Q0JROF > */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! $( '.blog-basic-grid' ).length ) return; /* bail if not blog listing
+                                                       page */
+    $( '.blog-title .passthrough-link' )
+    
+      .filter ( function ( ) {
+      
+        return $( this ).attr ( 'target' ) !== undefined;
+        
+        } )
+        
+      .each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const url = $this.attr ( 'href' );
+        
+        let $imageLink = $this
+        
+          .parents ( '.blog-item' )
+          
+          .find ( 'div:first .image-wrapper' )
+          
+            .attr ( 'href', url );
+            
+        if ( ! targetAtttributeValue ) {
+        
+          const v = $this.attr ( 'target' );
+          
+          if ( v !== undefined ) targetAtttributeValue = v;
+          
+          }
+          
+        if ( targetAtttributeValue )
+        
+          $imageLink.attr ( 'target', targetAtttributeValue );
+          
+        } );
+        
+    } );
+    
+  </script>
