@@ -1,0 +1,43 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add mindbody login register link to navigation
+      
+      Version    : 0.1d0
+      
+      SS Version : 7.1
+      
+      Note       : mindbody generated the script and healcode-widget tags
+      
+      By         : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const dataSiteId = '[enter data site id here]';
+    
+    const dataMbSiteId = '[enter data mb site id here]';
+    
+    // do not change anything below, there be the borg here
+    
+    $( '<script src="https://widgets.mindbodyonline.com/javascripts/healcode.js" type="text/javascript"><\/script>' +
+      
+      '<healcode-widget data-version="0.2" data-link-class="loginRegister" data-site-id="' + dataSiteId + '" data-mb-site-id="' + dataMbSiteId + '" data-type="account-link" data-inner-html="Login | Register" />' )
+    
+      .appendTo ( '.header-nav-list, .header-menu-nav-folder-content' );
+      
+    $( 'healcode-widget:first' )
+    
+      .addClass ( 'header-nav-item header-nav-item--collection header-nav-item--active' )
+      
+      .attr ( 'data-animation-role', 'header-element' );
+      
+    $( 'healcode-widget:last' )
+    
+      .addClass ( 'container header-menu-nav-item header-menu-nav-item--collection' );
+      
+    } );
+    
+  </script>
