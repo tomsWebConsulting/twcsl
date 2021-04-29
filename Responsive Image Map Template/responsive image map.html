@@ -1,0 +1,71 @@
+<!--
+
+  responsive image map template
+  
+  Version     : 0.1d0
+  
+  SS Versions : 7.0, 7.1
+  
+  Note        : adapted from code on stackoverflow < https://bit.ly/3eIcJUB > by
+                hungerstar < https://bit.ly/3aMG6DU >
+                
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .image-overlay-wrap {
+    
+      display : inline-block; /* shrinks container to image size */
+      fill : transparent;
+      position : relative;
+      
+      }
+      
+    .image-overlay-wrap img { /* optional, for responsiveness */
+    
+      display : block;
+      height : auto;
+      max-width : 100%;
+      
+      }
+      
+    .image-overlay-wrap svg {
+    
+      left : 0;
+      position : absolute;
+      top : 0;
+      
+      }
+      
+    /*
+    
+      the following can be used for diagnostic purposes, uncomment the code and
+      the target areas for the links will be shown in red
+      
+      */
+      
+    /*
+    
+      .image-overlay-wrap a {
+      
+        fill : red;
+        
+        }
+        
+      */
+      
+    </style>
+    
+  <div class="image-overlay-wrap">
+  
+    <img src="[enter image url here]" />
+    
+    <svg viewBox="0 0 [enter image width here] [enter image height here]">
+    
+      [enter anchor/svg shape tags here]
+      
+      </svg>
+      
+    </div>
