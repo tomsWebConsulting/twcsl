@@ -1,0 +1,138 @@
+<!--
+
+  begin use nth product gallery image as background for page
+  
+  Version      : 0.2d0
+  
+  SS Version   : 7.1
+  
+  Dependancies : jQuery
+  
+  Notes        : the code is comprised of a several tags. all are needed for the
+                 full effect to work
+                 
+                 CSS based on pen by Matthew Wilcoxson
+                 < https://codepen.io/akademy/pen/FlkzB >
+                 
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    const nth = 2; // which image from gallery to use as background
+    
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    :root {
+    
+      --product-background-opacity : 0%;
+      
+      }
+      
+    body.view-item::before {
+    
+      background-repeat : no-repeat;
+      background-size : cover;
+      content : '';
+      display : block;
+      height : 100%;
+      left : 0;
+      position : fixed;
+      right : 0;
+      width : 100%;
+      
+      }
+      
+    .view-item .black-bold:not( .has-background ) .section-background,
+    .view-item .page-section
+    
+      {
+      
+        background-color : rgba( 0, 0, 0, var( --product-background-opacity ) )
+        
+          !important;
+          
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( ! $( '.ProductItem' ).length ) return;
+      
+      const $de = $( document.documentElement );
+      
+      const imageUrl = $( '.ProductItem-gallery-slides-item-image' )
+      
+        .eq ( nth - 1 )
+        
+        .attr ( 'data-src' );
+        
+      const maxScrollTop = $( document ).height ( ) - $( window ).height ( );
+      
+      const calculatePercent = ( n, whole, easingFunction = 'linear',
+      
+        invertScale = false ) => {
+        
+        const ratio = n / whole;
+        
+        let percent = ratio * 100; // 0 - 100
+        
+        switch ( easingFunction ) {
+        
+          case 'inOutQuadratic' :
+          
+            percent = ( ratio < 0.5 ? 2 * ratio * ratio :
+            
+              1 - Math.pow ( -2 * ratio + 2, 2 ) / 2 ) * 100;
+              
+            break;
+            
+          case 'outCircle' :
+          
+            percent = Math.sqrt ( 1 - Math.pow ( ratio - 1, 2 ) ) * 100;
+            
+            break;
+            
+          }
+          
+        if ( invertScale ) percent = 100 - percent; // 100 - 0
+        
+        return percent;
+        
+        }
+        
+      $( '<style>' +
+      
+        'body::before {' +
+        
+          'background-image : url( ' + imageUrl + ' );' +
+          
+          '}' +
+          
+        '</style>' )
+          
+        .appendTo ( 'head' );
+        
+      $( window ).scroll ( function ( ) {
+      
+        const percent = calculatePercent ( $( window ).scrollTop ( ),
+        
+          maxScrollTop, 'outCircle' );
+          
+        $de.css ( '--product-background-opacity', percent + '%' );
+        
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end use nth product gallery image as background for page -->
