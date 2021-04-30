@@ -1,0 +1,70 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin add buttons to header
+      
+      Version      : 0.5d1
+      
+      SS Version   : 7.1
+      
+      Dependancies : jQuery
+      
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const buttonsTextUrl = [
+      
+        /*
+        
+          following is an example of a new button data structure. enter the text
+          and url for the new button.
+        
+          {
+        
+            text : '[enter button text here]',
+            url : '[enter url here]'
+          
+            },
+          
+          */
+          
+        {
+        
+          text : '[enter button text here]',
+          url : '[enter url here]'
+          
+          },
+          
+        ]
+        
+      // do not change anything below, there be the borg here
+      
+      $( '.header-actions-action--cta, .header-menu-cta' ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        $.each ( buttonsTextUrl, function ( index, buttonTextUrl ) {
+        
+          $( '.btn:first', $this )
+          
+            .clone ( )
+            
+            .attr ( 'href', buttonTextUrl.url )
+            
+            .text ( buttonTextUrl.text )
+            
+            .appendTo ( $this );
+            
+          } );
+          
+        } );
+        
+      /* end add buttons to header */
+      
+    } );
+    
+  </script>

@@ -1,0 +1,38 @@
+/*
+
+  begin add buttons to header
+  
+  Version      : 0.5d1
+  
+  SS Version   : 7.1
+  
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .header-actions-action.header-actions-action--cta {
+  
+    display : -webkit-box;
+    display : -ms-flexbox;
+    display : flex;
+    
+    /*
+    
+      default orientation is row, for column swap commented values in lines
+      below
+      
+      */
+      
+    -webkit-box-orient : horizontal; /* vertical */
+    -webkit-box-direction : normal;
+    -ms-flex-direction : row; /* column */
+    flex-direction : row; /* column */
+    
+    grid-gap : 0.5em;
+    gap : 0.5rem;
+    
+    text-align : center;
+    
+    }
+    
+  /* end add buttons to header */
