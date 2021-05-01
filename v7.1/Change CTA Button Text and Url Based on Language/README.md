@@ -1,6 +1,6 @@
 # Change CTA Button Text and Url Based on Language
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
@@ -22,23 +22,20 @@ Make sure to place this code after the language switching software has run.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
       2021-04-30
       </strong>
     <ul>
       <li>
-        use SS focal point data to position background image
+        fixed issue with code not changing language for mobile button
         </li>
       <li>
-        fixed issue with scroll fade effect breaking when window is resized
-        </li>
-      <li>
-        bumped version to v0.3d0
+        bumped version to v0.1d1
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-02-02

@@ -6,7 +6,7 @@
     
       begin change cta button text and url based on language
       
-      Version      : 0.1d0
+      Version      : 0.1d1
       
       SS Version   : 7.1
       
@@ -44,20 +44,18 @@
           url : '[enter url here]'
           
           },
-    
+          
         }
         
       // do not change anything below, there be the borg here
       
-      if ( lang in languageTextUrlMap ) {
+      if ( ! ( lang in languageTextUrlMap ) ) return; // bail if not defined
       
-        $( '.header-actions-action--cta a' )
+      $( '.header-actions-action--cta .btn, .header-menu-cta .btn' )
+      
+        .attr ( 'href', languageTextUrlMap [ lang ].url )
         
-          .attr ( 'href', languageTextUrlMap [ lang ].url )
-          
-          .text ( languageTextUrlMap [ lang ].text );
-          
-        }
+        .text ( languageTextUrlMap [ lang ].text );
         
       // end change cta button text and url based on language
       
