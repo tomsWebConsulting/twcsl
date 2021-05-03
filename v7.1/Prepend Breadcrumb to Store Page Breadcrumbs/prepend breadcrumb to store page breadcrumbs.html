@@ -1,0 +1,59 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin prepend breadcrumb to store page breadcrumbs
+      
+      Version      : 0.1d0
+      
+      SS Version   : 7.1
+      
+      Dependancies : jQuery
+      
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const text = '[enter link text here between single quotes]';
+      
+      /*
+      
+        copy value needed for urlSlug below from Page Settings > General >
+        URL SLUG field. you only need exactly what can be selected from the
+        field
+        
+        */
+        
+      const urlSlug = '[enter page url slug here between single quotes]';
+      
+      // do not change anything below, there be the borg here
+      
+      const selector = '.ProductItem-nav-breadcrumb';
+      
+      if ( ! $( selector ).length ) return;
+      
+      $( '.ProductItem-nav-breadcrumb-link:first, ' +
+      
+        '.ProductItem-nav-breadcrumb-link:first ~ ' +
+        
+        '.ProductItem-nav-breadcrumb-separator' )
+        
+        .clone ( )
+        
+        .first ( )
+        
+          .attr ( 'href', '/' + urlSlug )
+          
+          .text ( text )
+          
+          .end ( )
+          
+        .prependTo ( selector );
+        
+      // end prepend breadcrumb to store page breadcrumbs
+      
+    } );
+    
+  </script>
