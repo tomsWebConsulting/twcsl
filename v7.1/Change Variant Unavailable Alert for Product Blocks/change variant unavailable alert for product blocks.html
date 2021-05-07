@@ -1,0 +1,142 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin change variant unavailable alert for product blocks
+      
+      Version      : 0.1d1
+      
+      SS Version   : 7.1
+      
+      Dependancies : jQuery
+      
+      Notes        : this effect is not active in SS Preview to test it use
+                     private browsing < https://bit.ly/3f6lhq2 >.
+                     
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const replacmentText = {
+      
+        /*
+        
+          if the message or title has single quotes in them then put a backslash
+          before the single quotes. example: it's becomes it\'s.
+          
+          */
+          
+        message : 'Sorry, we don\'t offer the combination you selected.',
+        
+        title : null /* null means don't change the title, to change replace
+                        null with text in single quotes */
+        }
+        
+      /*
+      
+        enter product block ids for each product block for which you want to
+        change the unavailable message
+        
+        */
+        
+      const productBlockIds = [
+      
+        // do not inlcude the # at the beginning
+        
+        'block-yui_3_17_2_1_1604446331389_52011',
+        
+        'block-yui_3_17_2_1_1600716689011_20582',
+        
+        ]
+        
+      // do not change anything below, there be the borg here
+      
+      window.alertDialogText;
+      
+      const selector = $.map ( productBlockIds, function ( v ) {
+      
+        return '#' + v + ' .sqs-add-to-cart-button';
+        
+        } )
+        
+        .join ( ', ' );
+        
+      function setAlertDialogText ( $alertDialog, message, title ) {
+      
+        $( '.message', $alertDialog ).text ( message );
+        
+        if ( replacmentText.title !== null )
+        
+          $( '.title', $alertDialog ).text ( title );
+          
+        }
+        
+      $( selector )
+      
+        .click ( function ( event ) {
+        
+          let s = $( this )
+          
+            .parent ( )
+            
+            .prevAll ( '.product-price' )
+            
+            .text ( );
+            
+          if ( s != 'Unavailable' ) return;
+          
+          let $alertDialog = $( '.sqs-widgets-confirmation' );
+          
+          if ( $alertDialog.length ) {
+          
+            setAlertDialogText ( $alertDialog, replacmentText.message,
+            
+              replacmentText.title );
+              
+            } else {
+            
+              window.alertDialogText = replacmentText;
+              
+              }
+              
+          } );
+          
+      const observer = new MutationObserver ( function ( mutations ) {
+      
+        $.each ( mutations, function ( mutation ) {
+        
+          if ( ! this.addedNodes.length ) return;
+          
+          let $e = $( this.addedNodes [ 0 ] );
+          
+          if ( ! $e.hasClass ( 'sqs-widgets-confirmation' ) ) return;
+          
+          if ( typeof window.alertDialogText == 'undefined' ) return;
+          
+          let replacmentText = window.alertDialogText;
+          
+          setAlertDialogText ( $e, replacmentText.message,
+          
+            replacmentText.title );
+            
+          window.alertDialogText == undefined;
+          
+          } );
+          
+        } );
+        
+      // starts listening for changes in body
+      
+      observer.observe ( document.body, {
+      
+        childList : true
+        
+        } );
+        
+      // end change variant unavailable alert for product blocks
+      
+    } );
+    
+  </script>
