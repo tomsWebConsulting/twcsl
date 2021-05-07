@@ -1,0 +1,93 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change unable to add item to cart alert
+      
+      Version      : 0.1d1
+      
+      SS Version   : 7.0
+      
+      Templates    : Montauk ( Julia, Kent, Om )
+      
+      Dependancies : jQuery
+      
+      Notes        : this effect is not active in SS Preview to test it use
+                     private browsing < https://bit.ly/3f6lhq2 >.
+                     
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const data = {
+    
+      'SQ9043529' : {
+      
+        message : 'x',
+        
+        title : null /* null means don't change the title, to change title
+                       replace null with text in single quotes */
+        
+        }, // notice the comma here
+        
+      'SQ8187993' : { /* test w */
+      
+        message : 'Sorry, no space left in this workshop.',
+        
+        title : null /* null means don't change the title, to change title
+                       replace null with text in single quotes */
+        
+        }, // notice the comma here
+        
+      'SQ7187559' : { /* test a */
+      
+        message : 'Sorry, this piece has been sold.',
+        
+        title : null /* null means don't change the title, to change title
+                       replace null with text in single quotes */
+        
+        },
+        
+      };
+      
+    if ( ! 'MutationObserver' in window ) return;
+    
+    if ( ! $( '#productWrapper' ).length ) return;
+    
+    const sku = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ].sku;
+    
+    if ( ! data.hasOwnProperty ( sku ) ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( mutation ) {
+      
+        if ( ! this.addedNodes.length ) return false;
+        
+        let $e = $( this.addedNodes [ 0 ] );
+        
+        if ( ! $e.hasClass ( 'sqs-widgets-confirmation' ) ) return;
+        
+        $( '.message', $e ).text ( data [ sku ].message );
+        
+        if ( data [ sku ].title !== null )
+        
+          $( '.title', $e ).text ( data [ sku ].title );
+          
+        } );
+        
+      } );
+      
+    // starts listening for changes in body
+    
+    observer.observe ( document.body, {
+    
+      childList : true
+      
+      } );
+      
+    } );
+    
+  </script>
