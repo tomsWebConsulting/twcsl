@@ -1,6 +1,6 @@
 # Site Wide Rounded Image Corners
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
@@ -11,20 +11,16 @@ Add code from file **site wide rounded image corners** to Design > Custom CSS.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-06
+      2021-05-08
       </strong>
     <ul>
       <li>
-        added support for paragraph styles
+        added coverage for store product grid image hover
         </li>
       <li>
-        added support for store url slug for more stores nested deeper than the
-        top level of the site
-        </li>
-      <li>
-        bumped version to v0.2d0
+        bumped version to v0.1d1
         </li>
       </ul>
     <br>
