@@ -1,0 +1,41 @@
+/*
+
+  begin site wide rounded image corners
+  
+  Version      : 0.1d0
+  
+  SS Version   : 7.1
+  
+  Dependancies : LESS
+  
+  Notes        : this effect is not complete. uses LESS syntax
+  
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  @site-wide-image-radius : 12px;
+  
+  // do not change anything below, there be the borg here
+  
+  img { // this will catch some images but not all
+  
+    border-radius : @site-wide-image-radius;
+    
+    }
+    
+  /* image blocks */
+  
+  .sqs-block-image .intrinsic {
+  
+    .image-block-wrapper,
+    .image-inset
+    
+      {
+      
+        border-radius : @site-wide-image-radius;
+        
+        }
+    }
+    
+  // end site wide rounded image corners
