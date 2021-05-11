@@ -1,0 +1,168 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change unable to add item to cart alert for unselected variants
+      
+      Version         : 0.1d1
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+      
+      Notes           : this effect is not active in SS Preview to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >.
+                        
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = {
+    
+      /* use [unselected] and [plural] in message to insert the unselected
+         variant(s) and add the plural form to the language equivalent of the
+         english word option in the text being added */
+      
+      message : 'Please select the [unselected] option[plural].',
+      
+      title : 'Unable to Add Item', // leave empty for no title change
+      
+      plural : 's',
+      
+      conjunction : 'and'
+      
+      }
+      
+    /* set append to true if you want to add the text instead of replacing,
+       useful for multi-language sites */
+    
+    append = true;
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    // bail if no mutation observer available
+    
+    if ( ! 'MutationObserver' in window ) return;
+    
+    // bail if not product detail page
+    
+    if ( ! $( '.ProductItem' ).length ) return;
+    
+    // bail if all options selected
+    
+    const $unselected = $( '.product-variants' );
+    
+    if ( $unselected.attr ( 'data-unselected-options' ) == '[]' ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( mutation ) {
+      
+        if ( ! this.addedNodes.length ) return false;
+        
+        let $e = $( this.addedNodes [ 0 ] );
+        
+        if ( ! $e.hasClass ( 'sqs-widgets-confirmation' ) ) return;
+        
+        const $message = $( '.message', $e );
+        
+        let c;
+        
+        let s = text.message;
+        
+        // begin unselected variants
+        
+          let unselected = $unselected.attr ( 'data-unselected-options' );
+          
+          unselected = JSON.parse ( unselected );
+          
+          const length = unselected.length - 1;
+          
+          if ( length > 0 ) {
+          
+            for ( var i = length; i; i-- ) {
+            
+              if ( i == length ) {
+              
+                c = ' ' + text.conjunction + ' ';
+                
+                } else {
+                
+                  c = ', ';
+                  
+                  }
+                  
+              unselected.splice ( i, 0, c );
+              
+              }
+            }
+            
+          unselected = unselected.join ( '' );
+          
+          s = s.replace ( '[unselected]', unselected );
+          
+          // end
+          
+        // begin plural
+        
+          c = length ? text.plural : '';
+          
+          s = s.replace ( '[plural]', c );
+          
+          // end plural
+          
+        if ( append )
+        
+          s = $message.text ( ) + '<br><br>' + s;
+          
+        $message.html ( s );
+        
+        // begin title
+        
+          if ( ! text.title ) return;
+          
+          const $title = $( '.title', $e );
+          
+          s = text.title;
+          
+          if ( append ) {
+          
+            $title.after ( '<hr>' );
+            
+            s = $title.text ( ) + '<br><br>' + s;
+            
+            }
+            
+          $title.html ( s );
+          
+          // end title
+          
+        } );
+        
+      } );
+      
+    // starts listening for changes in body
+    
+    observer.observe ( document.body, {
+    
+      childList : true
+      
+      } );
+      
+    } );
+    
+  </script>
