@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for unselected variants
       
-      Version         : 0.1d1
+      Version         : 0.1d2
       
       SS Versions     : 7.0, 7.1
       
@@ -62,17 +62,17 @@
     
     if ( ! $( '.ProductItem' ).length ) return;
     
-    // bail if all options selected
-    
     const $unselected = $( '.product-variants' );
-    
-    if ( $unselected.attr ( 'data-unselected-options' ) == '[]' ) return;
     
     const observer = new MutationObserver ( function ( mutations ) {
     
+      // bail if all options selected
+      
+      if ( $unselected.attr ( 'data-unselected-options' ) == '[]' ) return;
+      
       $.each ( mutations, function ( mutation ) {
       
-        if ( ! this.addedNodes.length ) return false;
+        if ( ! this.addedNodes.length ) return;
         
         let $e = $( this.addedNodes [ 0 ] );
         
