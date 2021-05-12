@@ -1,6 +1,6 @@
 # Change Add to Cart Adding Added Button Text
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
@@ -12,20 +12,20 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-11
+      2021-05-12
       </strong>
     <ul>
       <li>
-        moved bail if all variant options selected check
+        fix MutationObserver bail check
         </li>
       <li>
-        bumped version to 0.1d2
+        bumped version to 0.1d1
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-05-12
