@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for unselected variants
       
-      Version         : 0.2d2
+      Version         : 0.2d3
       
       SS Versions     : 7.0, 7.1
       
@@ -67,7 +67,7 @@
     
     // bail if no mutation observer available
     
-    if ( ! 'MutationObserver' in window ) return;
+    if ( ! ( 'MutationObserver' in window ) ) return;
     
     const $unselected = $( '.product-variants' );
     
