@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for unselected variants
       
-      Version         : 0.2d0
+      Version         : 0.2d1
       
       SS Versions     : 7.0, 7.1
       
@@ -81,13 +81,13 @@
       
         if ( ! this.addedNodes.length ) return;
         
-        let $e = $( this.addedNodes [ 0 ] );
+        const $addedNode = $( this.addedNodes [ 0 ] );
         
-        if ( ! $e.hasClass ( 'sqs-widgets-confirmation' ) ) return;
+        if ( ! $addedNode.hasClass ( 'sqs-widgets-confirmation' ) ) return;
         
-        const $message = $( '.message', $e );
+        const $message = $( '.message', $addedNode );
         
-        const $title = $( '.title', $e );
+        const $title = $( '.title', $addedNode );
         
         let message = $message.text ( );
         
