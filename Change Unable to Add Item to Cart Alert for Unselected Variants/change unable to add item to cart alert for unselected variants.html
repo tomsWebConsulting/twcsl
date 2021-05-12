@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for unselected variants
       
-      Version         : 0.1d2
+      Version         : 0.2d0
       
       SS Versions     : 7.0, 7.1
       
@@ -48,7 +48,14 @@
     /* set append to true if you want to add the text instead of replacing,
        useful for multi-language sites */
     
-    append = true;
+    const append = true;
+    
+   /* post processor for further manipulation of the alert text. replace
+      undefined with the name of your custom function. three parameters will be
+      passed to your function : message, title, and unselected. unselected is an
+      array of strings of the titles of the unselected variants */
+      
+    const postProcessor = undefined;
     
     // do not change anything below, there be the borg here
     
@@ -80,77 +87,88 @@
         
         const $message = $( '.message', $e );
         
-        let c;
+        const $title = $( '.title', $e );
         
-        let s = text.message;
+        let message = $message.text ( );
         
-        // begin unselected variants
+        let title = $title.text ( );
         
-          let unselected = $unselected.attr ( 'data-unselected-options' );
+        let unselected = $unselected.attr ( 'data-unselected-options' );
+        
+        unselected = JSON.parse ( unselected );
+        
+        let s = [ ...unselected ];
+        
+        // begin message
+        
+          // begin string unselected variants together
           
-          unselected = JSON.parse ( unselected );
-          
-          const length = unselected.length - 1;
-          
-          if ( length > 0 ) {
-          
-            for ( var i = length; i; i-- ) {
+            const length = s.length - 1;
             
-              if ( i == length ) {
+            if ( length > 0 ) {
+            
+              for ( let i = length; i; i-- ) {
               
-                c = ' ' + text.conjunction + ' ';
+                let conjunction;
                 
-                } else {
+                if ( i == length ) {
                 
-                  c = ', ';
+                  conjunction = ' ' + text.conjunction + ' ';
                   
-                  }
+                  } else {
                   
-              unselected.splice ( i, 0, c );
-              
+                    conjunction = ', ';
+                    
+                    }
+                    
+                s.splice ( i, 0, conjunction );
+                
+                }
               }
-            }
+              
+            s = s.join ( '' );
             
-          unselected = unselected.join ( '' );
+            text.message = text.message.replace ( '[unselected]', s );
+            
+            // end string unselected variants together
+            
+          // begin plural
           
-          s = s.replace ( '[unselected]', unselected );
+            s = length ? text.plural : '';
+            
+            text.message = text.message.replace ( '[plural]', s );
+            
+            // end plural
+            
+          if ( append )
           
-          // end
+            message = message + '<br><br>' + text.message;
+            
+          // end message
           
-        // begin plural
+        if ( text.title ) { // title
         
-          c = length ? text.plural : '';
-          
-          s = s.replace ( '[plural]', c );
-          
-          // end plural
-          
-        if ( append )
-        
-          s = $message.text ( ) + '<br><br>' + s;
-          
-        $message.html ( s );
-        
-        // begin title
-        
-          if ( ! text.title ) return;
-          
-          const $title = $( '.title', $e );
-          
-          s = text.title;
-          
           if ( append ) {
           
             $title.after ( '<hr>' );
             
-            s = $title.text ( ) + '<br><br>' + s;
+            title = title + '<br><br>' + text.title;
             
-            }
+            } else {
             
-          $title.html ( s );
+              title = text.title;
+              
+              }
+          }
           
-          // end title
+        if ( postProcessor !== undefined ) // post processor
+        
+          [ message, title ] = postProcessor ( message, title, unselected );
           
+        $message.html ( message );
+        
+        $title.html ( title );
+        
         } );
         
       } );

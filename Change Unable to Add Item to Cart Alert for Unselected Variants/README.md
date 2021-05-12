@@ -1,6 +1,6 @@
 # Change Unable to Add Item to Cart Alert for Unselected Variants
 
-### Version 0.1d2
+### Version 0.2d0
 
 ---
 
@@ -18,6 +18,20 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
       </strong>
     <ul>
       <li>
+        added support for user defined post processing alert text function
+        </li>
+      <li>
+        bumped version to 0.2d0
+        </li>
+      </ul>
+    <br>
+    </li>
+  <li>
+    <strong>
+      2021-05-11
+      </strong>
+    <ul>
+      <li>
         moved bail if all variant options selected check
         </li>
       <li>
@@ -25,7 +39,7 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-05-08
