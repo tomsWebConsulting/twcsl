@@ -1,6 +1,6 @@
 # Change Unable to Add Item to Cart Alert
 
-### Version 0.1d1
+### Version 0.1d2
 
 ---
 
@@ -12,20 +12,16 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-06
+      2021-05-13
       </strong>
     <ul>
       <li>
-        added support for paragraph styles
+        fix MutationObserver bail check
         </li>
       <li>
-        added support for store url slug for more stores nested deeper than the
-        top level of the site
-        </li>
-      <li>
-        bumped version to v0.2d0
+        bumped version to 0.1d2
         </li>
       </ul>
     <br>

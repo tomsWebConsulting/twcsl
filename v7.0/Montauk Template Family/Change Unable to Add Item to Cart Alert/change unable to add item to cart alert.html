@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert
       
-      Version      : 0.1d1
+      Version      : 0.1d2
       
       SS Version   : 7.0
       
@@ -52,7 +52,9 @@
         
       };
       
-    if ( ! 'MutationObserver' in window ) return;
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
     
     if ( ! $( '#productWrapper' ).length ) return;
     
