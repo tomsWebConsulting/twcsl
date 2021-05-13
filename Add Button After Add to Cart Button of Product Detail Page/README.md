@@ -1,6 +1,6 @@
 # Add Button After Add to Cart Button of Product Detail Page
 
-### Version 0.1d2
+### Version 0.2d0
 
 ---
 
@@ -12,20 +12,20 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
       2021-05-12
       </strong>
     <ul>
       <li>
-        fix MutationObserver bail check
+        add support for guard processor
         </li>
       <li>
-        bumped version to 0.1d1
+        bumped version to 0.2d0
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-04-05

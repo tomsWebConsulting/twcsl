@@ -6,7 +6,7 @@
     
       add button after add to cart button of product detail page
       
-      Version         : 0.1d2
+      Version         : 0.2d0
       
       SS Versions     : 7.0, 7.1
       
@@ -41,12 +41,26 @@
     const targetAtttributeValue = ''; /* use _self (default, if left empty) |
                                          _blank | _parent | _top | framename */
     
+   /* guard processor for other conditions which prevent the code from running.
+      replace undefined with the name of your custom function. your function
+      must return a boolean. false means do not add the button and true means
+      add the button */
+      
+    const guardProcessor = undefined;
+    
     // do not change anything below, there be the borg here
     
     const $addToCartButton = $( '.sqs-add-to-cart-button-wrapper:first' );
     
+    /* bail if no add to cart button. the button not being displayed by means of
+       CSS has no effect */
+     
     if ( ! $addToCartButton.length ) return;
     
+    if ( guardProcessor !== undefined ) // guard processor
+    
+      if ( ! guardProcessor ( ) ) return;
+      
     let $button = $addToCartButton
     
       .clone ( )
