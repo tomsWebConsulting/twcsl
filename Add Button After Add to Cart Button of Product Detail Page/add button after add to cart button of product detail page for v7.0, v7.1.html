@@ -1,0 +1,104 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add button after add to cart button of product detail page
+      
+      Version         : 0.1d2
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = '[enter button text here between the single quotes]';
+    
+    /*
+    
+      the url can be any valid url. it can be a full (external to your site) one
+      like < https://www.tomsWeb.consulting/ > or a partial (internal to your
+      site) one like '/contact'
+      
+      */
+        
+    const url = '[enter url here between the single quotes]';
+    
+    const targetAtttributeValue = ''; /* use _self (default, if left empty) |
+                                         _blank | _parent | _top | framename */
+    
+    // do not change anything below, there be the borg here
+    
+    const $addToCartButton = $( '.sqs-add-to-cart-button-wrapper:first' );
+    
+    if ( ! $addToCartButton.length ) return;
+    
+    let $button = $addToCartButton
+    
+      .clone ( )
+      
+      .attr ( 'style', 'display : block !important;' )
+      
+      .removeAttr ( 'id' );
+      
+    let $e = $( '.sqs-add-to-cart-button', $button )
+    
+      .attr ( 'href', url )
+      
+      .removeAttr ( 'id ' +
+      
+        'data-collection-id ' +
+        
+        'data-item-id ' +
+        
+        'data-original-label ' +
+        
+        'data-product-type ' +
+        
+        'data-use-custom-label' )
+        
+      .find ( '.sqs-add-to-cart-button-inner' )
+      
+        .html ( text )
+        
+        .end ( );
+        
+    if ( targetAtttributeValue )
+    
+      $e.attr ( 'target', targetAtttributeValue );
+      
+    let $anchorTag = $( '<a>' );
+    
+    $.each ( $e.prop ( 'attributes' ), function ( ) {
+    
+      $anchorTag.attr ( this.name, this.value );
+      
+      } );
+      
+    $e
+    
+      .children ( )
+      
+      .appendTo ( $anchorTag );
+      
+    $e.replaceWith ( $anchorTag )
+    
+    $button.insertAfter ( $addToCartButton );
+    
+    } );
+    
+  </script>
