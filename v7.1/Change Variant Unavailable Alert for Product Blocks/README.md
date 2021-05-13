@@ -1,6 +1,6 @@
 # Change Variant Unavailable Alert for Product Blocks
 
-### Version 0.1d1
+### Version 0.1d2
 
 ---
 
@@ -12,24 +12,23 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-06
+      2021-05-13
       </strong>
     <ul>
       <li>
-        added support for paragraph styles
+        made code a litte more generic and minor clean up
         </li>
       <li>
-        added support for store url slug for more stores nested deeper than the
-        top level of the site
+        added no MutationObserver guard
         </li>
       <li>
-        bumped version to v0.2d0
+        bumped version to 0.1d2
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2020-12-21

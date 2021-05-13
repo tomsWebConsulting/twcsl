@@ -6,7 +6,7 @@
     
       begin change variant unavailable alert for product blocks
       
-      Version      : 0.1d1
+      Version      : 0.1d2
       
       SS Version   : 7.1
       
@@ -28,10 +28,10 @@
           
           */
           
-        message : 'Sorry, we don\'t offer the combination you selected.',
+        message : '[enter alert message here between single quotes]',
         
-        title : null /* null means don't change the title, to change replace
-                        null with text in single quotes */
+        title : '' /* empty means don't change the title, to change title enter
+                      text between single quotes */
         }
         
       /*
@@ -43,15 +43,23 @@
         
       const productBlockIds = [
       
-        // do not inlcude the # at the beginning
+        /*
         
-        'block-yui_3_17_2_1_1604446331389_52011',
+          the format of each line follows. do not inlcude # at the beginning
+          of the product block id. you can repeat the line for as many product
+          blocks for which you want to change the alert
+          
+          */
+          
+        '[enter product block id here between single quotes]',
         
-        'block-yui_3_17_2_1_1600716689011_20582',
-        
-        ]
+        ];
         
       // do not change anything below, there be the borg here
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
       
       window.alertDialogText;
       
@@ -67,7 +75,7 @@
       
         $( '.message', $alertDialog ).text ( message );
         
-        if ( replacmentText.title !== null )
+        if ( title )
         
           $( '.title', $alertDialog ).text ( title );
           
