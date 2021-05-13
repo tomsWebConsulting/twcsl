@@ -2,16 +2,28 @@
 
   begin remove word from, from prices on store pages
   
-  Version      : 0.1d1
+  Version         : 0.1d3
   
-  SS Version   : 7.1
+  SS Versions     : 7.0, 7.1
   
-  Dependancies : jQuery
+  v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed, Foster,
+                    Greenwich, Hatch, Heights, Hunter, Hyde, Impact, Jaunt,
+                    Juke, Keene, Kin, Lincoln, Maple, Margot, Marta, Mentor,
+                    Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+                    
+  Dependancies    : jQuery
   
-  Notes        : the code is comprised of a style and script tag both of which
-                 must be present for the effect to work
-                 
-  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Notes           : the code is comprised of a style and script tag both of
+                    which must be present for the effect to work
+                    
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  do not change anything below, there be the borg here
   
   -->
   
@@ -41,7 +53,9 @@
         
       if ( ! $( '.ProductItem' ).length ) return; // bail if not product detail
       
-      if ( ! 'MutationObserver' in window ) return;
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
       
       const observer = new MutationObserver ( function ( mutations ) {
       
@@ -65,8 +79,9 @@
       
       observer.observe ( $productPrices.first ( ) [ 0 ], {
       
-        childList : true,
-        characterData : true 
+        characterData : true,
+        
+        childList : true
         
         } );
         

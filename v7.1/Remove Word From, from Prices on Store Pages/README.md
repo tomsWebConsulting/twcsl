@@ -1,6 +1,6 @@
 # Remove Word From, from Prices on Store Pages
 
-### Version 0.1d1
+### Version 0.1d3
 
 ---
 
@@ -12,24 +12,34 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-06
+      2021-05-13
       </strong>
     <ul>
       <li>
-        added support for paragraph styles
+        fix MutationObserver guard
         </li>
       <li>
-        added support for store url slug for more stores nested deeper than the
-        top level of the site
-        </li>
-      <li>
-        bumped version to v0.2d0
+        bumped version to 0.1d3
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
+  <li>
+    <strong>
+      2021-05-08
+      </strong>
+    <ul>
+      <li>
+        verified code works on v7.0 using Brine template family
+        </li>
+      <li>
+        bumped version to 0.1d2
+        </li>
+      </ul>
+    <br>
+    </li>
   <li>
     <strong>
       2021-04-05
