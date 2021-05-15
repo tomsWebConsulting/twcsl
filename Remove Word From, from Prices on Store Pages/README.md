@@ -1,6 +1,6 @@
 # Remove Word From, from Prices on Store Pages
 
-### Version 0.1d3
+### Version 0.1d4
 
 ---
 
@@ -12,6 +12,20 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
+  <li>
+    <strong>
+      2021-05-14
+      </strong>
+    <ul>
+      <li>
+        add support for Five template and Montauk template family
+        </li>
+      <li>
+        bumped version to 0.1d4
+        </li>
+      </ul>
+    <br>
+    </li>
   <li>
     <strong>
       2021-05-13

@@ -2,7 +2,7 @@
 
   begin remove word from, from prices on store pages
   
-  Version         : 0.1d3
+  Version         : 0.1d4
   
   SS Versions     : 7.0, 7.1
   
@@ -12,6 +12,10 @@
                     Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
                     Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
                     Vow, Wav, West )
+                    
+                    Five
+                    
+                    Montauk ( Julia, Kent, Om )
                     
                     your template is not listed? then it is not currently
                     supported
@@ -51,7 +55,9 @@
         
         } );
         
-      if ( ! $( '.ProductItem' ).length ) return; // bail if not product detail
+      // bail if not product detail
+      
+      if ( ! $( '.ProductItem, #productWrapper' ).length ) return;
       
       // bail if no mutation observer available
       
