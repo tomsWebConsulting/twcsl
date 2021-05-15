@@ -2,7 +2,7 @@
 
   begin site wide rounded image corners
   
-  Version      : 0.1d1
+  Version      : 0.2d0
   
   SS Version   : 7.1
   
@@ -15,6 +15,10 @@
   */
   
   @site-wide-image-radius : 12px;
+  
+   // section background image rounding, use false or true
+   
+  .section-background ( false );
   
   // do not change anything below, there be the borg here
   
@@ -44,6 +48,17 @@
   
     border-radius : @site-wide-image-radius;
     
+    }
+    
+  // section background
+  
+  .section-background ( @section-background ) when ( @section-background = true ) {
+  
+    .has-background .section-background {
+    
+      border-radius : @site-wide-image-radius;
+      
+      }
     }
     
   // end site wide rounded image corners
