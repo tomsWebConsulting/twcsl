@@ -1,0 +1,65 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin change search page input placeholder text
+      
+      Version         : 0.1d1
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed, Foster,
+                        Greenwich, Hatch, Heights, Hunter, Hyde, Impact, Jaunt,
+                        Juke, Keene, Kin, Lincoln, Maple, Margot, Marta, Mentor,
+                        Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                        Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                        Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const placeholderText = '[enter placeholder text here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( location.pathname !== '/search' ) return; // bail if not search page
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        if ( ! this.addedNodes.length ) return;
+        
+        const $e = $( 'input', $( this.addedNodes [ 0 ] ) );
+        
+        if ( ! $e.length ) return;
+        
+        $e.attr ( 'placeholder', placeholderText );
+        
+        observer.disconnect ( );
+        
+        } );
+        
+      } );
+      
+    // start listening for changes in search input
+    
+    observer.observe ( $( '.sqs-search-page-input' ) [ 0 ], {
+    
+      childList : true
+      
+      } );
+      
+    } );
+    
+  </script>
