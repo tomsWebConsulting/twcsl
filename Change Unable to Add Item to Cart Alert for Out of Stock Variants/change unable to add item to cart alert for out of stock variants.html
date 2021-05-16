@@ -1,0 +1,131 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change unable to add item to cart alert for out of stock variants
+      
+      Version         : 0.1d0
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+      
+      Notes           : this effect is not active in SS Preview to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >.
+                        
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = {
+    
+      message : 'Sorry, we do not have enough of that item available.',
+      
+      title : 'Unable to Add Item' // leave empty for no title change
+      
+      }
+      
+    /* set append to true if you want to add the text instead of replacing,
+       useful for multi-language sites */
+    
+    const append = true;
+    
+   /* post processor for further manipulation of the alert text. replace
+      undefined with the name of your custom function. two parameters will be
+      passed to your function : message and title. your function must return
+      message and title in an array */
+      
+    const postProcessor = undefined;
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    // bail if not product detail page
+    
+    if ( ! $( '.ProductItem' ).length ) return;
+    
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const $productVariants = $( '.product-variants' );
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      const isInStock = $productVariants.attr ( 'data-variant-in-stock' );
+      
+      if ( isInStock == 'true' ) return; // bail if variant in stock
+      
+      $.each ( mutations, function ( mutation ) {
+      
+        if ( ! this.addedNodes.length ) return;
+        
+        const $addedNode = $( this.addedNodes [ 0 ] );
+        
+        // bail if this mutation is not the alert dialog
+        
+        if ( ! $addedNode.hasClass ( 'sqs-widgets-confirmation' ) ) return;
+        
+        const $message = $( '.message', $addedNode );
+        
+        const $title = $( '.title', $addedNode );
+        
+        let message = $message.text ( );
+        
+        let title = $title.text ( );
+        
+        if ( append ) // message
+        
+          message = message + '<br><br>' + text.message;
+          
+        if ( text.title ) { // title
+        
+          if ( append ) {
+          
+            $title.after ( '<hr>' );
+            
+            title = title + '<br><br>' + text.title;
+            
+            } else {
+            
+              title = text.title;
+              
+              }
+          }
+          
+        if ( postProcessor !== undefined ) // post processor
+        
+          [ message, title ] = postProcessor ( message, title );
+          
+        $message.html ( message );
+        
+        $title.html ( title );
+        
+        } );
+        
+      } );
+      
+    // starts listening for changes in body
+    
+    observer.observe ( document.body, {
+    
+      childList : true
+      
+      } );
+      
+    } );
+    
+  </script>
