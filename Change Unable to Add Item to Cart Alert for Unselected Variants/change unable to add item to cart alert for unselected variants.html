@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for unselected variants
       
-      Version         : 0.2d3
+      Version         : 0.2d4
       
       SS Versions     : 7.0, 7.1
       
@@ -35,25 +35,26 @@
          variant(s) and add the plural form to the language equivalent of the
          english word option in the text being added */
       
-      message : 'Please select the [unselected] option[plural].',
+      message : '[enter message here between single quotes]',
       
-      title : 'Unable to Add Item', // leave empty for no title change
+      title : '[enter title here between single quotes]', // leave empty for no title change
       
-      plural : 's',
+      plural : '[enter character(s) that make word plural here between single quotes]',
       
-      conjunction : 'and'
+      conjunction : '[enter conjunction here between single quotes]'
       
       }
       
     /* set append to true if you want to add the text instead of replacing,
        useful for multi-language sites */
     
-    const append = true;
+    const append = false;
     
    /* post processor for further manipulation of the alert text. replace
       undefined with the name of your custom function. three parameters will be
       passed to your function : message, title, and unselected. unselected is an
-      array of strings of the titles of the unselected variants */
+      array of strings of the titles of the unselected variants. your function
+      must return message and title in an array */
       
     const postProcessor = undefined;
     
@@ -82,6 +83,8 @@
         if ( ! this.addedNodes.length ) return;
         
         const $addedNode = $( this.addedNodes [ 0 ] );
+        
+        // bail if this mutation is not the alert dialog
         
         if ( ! $addedNode.hasClass ( 'sqs-widgets-confirmation' ) ) return;
         
@@ -140,10 +143,8 @@
             
             // end plural
             
-          if ( append )
+          message = append ? message + '<br><br>' + text.message : text.message;
           
-            message = message + '<br><br>' + text.message;
-            
           // end message
           
         if ( text.title ) { // title

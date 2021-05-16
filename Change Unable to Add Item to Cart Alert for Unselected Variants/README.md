@@ -1,6 +1,6 @@
 # Change Unable to Add Item to Cart Alert for Unselected Variants
 
-### Version 0.2d3
+### Version 0.2d4
 
 ---
 
@@ -12,6 +12,20 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
+  <li>
+    <strong>
+      2021-05-16
+      </strong>
+    <ul>
+      <li>
+        fix for not replacing message when append false
+        </li>
+      <li>
+        bumped version to 0.2d4
+        </li>
+      </ul>
+    <br>
+    </li>
   <li>
     <strong>
       2021-05-12
