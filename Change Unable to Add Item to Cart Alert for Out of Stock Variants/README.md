@@ -1,6 +1,6 @@
 # Change Unable to Add Item to Cart Alert for Out of Stock Variants
 
-### Version 0.1d1
+### Version 0.1d2
 
 ---
 
@@ -54,20 +54,20 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
       </ul>
     <br>
     </li -->
-  <!-- li>
+  <li>
     <strong>
-      2021-05-11
+      2021-05-16
       </strong>
     <ul>
       <li>
-        added support for user defined post processing alert text function
+        fix for not replacing message when append false
         </li>
       <li>
-        bumped version to 0.2d0
+        bumped version to 0.1d2
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-05-16

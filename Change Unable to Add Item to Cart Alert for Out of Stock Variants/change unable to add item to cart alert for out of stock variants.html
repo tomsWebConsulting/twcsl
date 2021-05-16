@@ -6,7 +6,7 @@
     
       change unable to add item to cart alert for out of stock variants
       
-      Version         : 0.1d1
+      Version         : 0.1d2
       
       SS Versions     : 7.0, 7.1
       
@@ -40,7 +40,7 @@
     /* set append to true if you want to add the text instead of replacing,
        useful for multi-language sites */
     
-    const append = true;
+    const append = false;
     
    /* post processor for further manipulation of the alert text. replace
       undefined with the name of your custom function. two parameters will be
@@ -87,10 +87,10 @@
         
         let title = $title.text ( );
         
-        if ( append ) // message
+        // message
         
-          message = message + '<br><br>' + text.message;
-          
+        message = append ? message + '<br><br>' + text.message : text.message;
+        
         if ( text.title ) { // title
         
           if ( append ) {
