@@ -1,0 +1,45 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add one left class to product detail page
+      
+      Version         : 0.1d0
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const $productItem = $( '.ProductItem' );
+    
+    // bail if not product detail page
+    
+    if ( ! $productItem.length ) return;
+    
+    // bail if there is a quantity field
+    
+    if ( $( '.product-quantity-input' ).length ) return;
+    
+    $productItem.addClass ( 'one-left' );
+    
+    } );
+    
+  </script>
