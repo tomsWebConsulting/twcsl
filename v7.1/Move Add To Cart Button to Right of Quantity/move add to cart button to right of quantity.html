@@ -1,0 +1,50 @@
+<style>
+
+  /*
+  
+    begin move add to cart button to right of quantity
+    
+    Version     : 0.1d1
+    
+    SS Version  : 7.1
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout {
+  
+    display : grid;
+    gap : 2rem;
+    grid-template-columns : repeat( 5, 1fr );
+    
+    }
+    
+  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout * {
+  
+    margin : 0 !important;
+    
+    }
+    
+  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > * {
+  
+    grid-column : 1 / 6;
+    
+    }
+    
+  .ProductItem:not( .sold-out ) .ProductItem-details .product-quantity-input {
+  
+    grid-column : 1 / 2;
+    
+    }
+    
+  .ProductItem:not( .sold-out ) .ProductItem-details .sqs-add-to-cart-button-wrapper {
+  
+    align-self : center;
+    grid-column : 2 / 6;
+    
+    }
+    
+  /* end move add to cart button to right of quantity */
+  
+  </style>
