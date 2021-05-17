@@ -1,50 +1,115 @@
-<style>
+<!--
 
-  /*
+  begin move add to cart button to right of quantity
   
-    begin move add to cart button to right of quantity
-    
-    Version     : 0.1d1
-    
-    SS Version  : 7.1
-    
-    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout {
+  Version       : 0.2d0
   
-    display : grid;
-    gap : 2rem;
-    grid-template-columns : repeat( 5, 1fr );
-    
-    }
-    
-  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout * {
+  SS Version    : 7.1
   
-    margin : 0 !important;
-    
-    }
-    
-  .ProductItem:not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > * {
+  Dependancies  : jQuery
+                  
+                  add one left class to product detail page code
+                  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work.
+                  
+                  this effect should be installed after the add one left class
+                  to product detail page code. order is important
+                  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
-    grid-column : 1 / 6;
-    
-    }
-    
-  .ProductItem:not( .sold-out ) .ProductItem-details .product-quantity-input {
+  -->
   
-    grid-column : 1 / 2;
-    
-    }
-    
-  .ProductItem:not( .sold-out ) .ProductItem-details .sqs-add-to-cart-button-wrapper {
+  <style>
   
-    align-self : center;
-    grid-column : 2 / 6;
+    :root {
     
-    }
+      --add-to-cart-button-aligment : end;
+      --grid-gap : 2rem;
+      
+      }
+      
+    </style>
     
-  /* end move add to cart button to right of quantity */
+  <!-- do not change anything below, there be the borg here -->
   
-  </style>
+  <style>
+  
+    .ProductItem .ProductItem-details .ProductItem-details-checkout {
+    
+      opacity : 0;
+      transition : opacity 0.5s;
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout {
+    
+      display : grid;
+      gap : var( --grid-gap );
+      grid-gap : var( --grid-gap );
+      grid-template-columns : repeat( 5, 1fr );
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-variants {
+    
+      display : -webkit-box;
+      display : -ms-flexbox;
+      display : flex;
+      
+      -webkit-box-orient : vertical;
+      -webkit-box-direction : normal;
+      -ms-flex-direction : column;
+      flex-direction : column;
+      
+      gap : var( --grid-gap );
+      grid-gap : var( --grid-gap );
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > *,
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .variant-option,
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-price
+    
+      {
+      
+        margin : 0 !important;
+        
+        }
+        
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > * {
+    
+      grid-column : 1 / 6;
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-quantity-input {
+    
+      grid-column : 1 / 2;
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .sqs-add-to-cart-button-wrapper {
+    
+      -ms-flex-item-align : var( --add-to-cart-button-aligment );
+      align-self : var( --add-to-cart-button-aligment );
+      
+      grid-column : 2 / 6;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+    $( '.ProductItem .ProductItem-details .ProductItem-details-checkout' )
+    
+      .css ( 'opacity', '1' );
+      
+    } );
+    
+    </script>
+    
+  <!-- end move add to cart button to right of quantity -->

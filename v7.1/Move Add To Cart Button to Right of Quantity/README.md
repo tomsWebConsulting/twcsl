@@ -1,6 +1,6 @@
 # Move Add To Cart Button to Right of Quantity
 
-### Version 0.1d1
+### Version 0.2d0
 
 ---
 
@@ -9,65 +9,38 @@
 Add code from file **move add to cart button to right of quantity.html** to
 Store Settings > Advanced > Page Header Code Injection for the store page.
 
+## Notes
+
+.one-left class is not used by SS. To take advantage of it you need to use code
+to add the class.
+
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-12
+      2021-05-17
       </strong>
     <ul>
       <li>
-        fix MutationObserver bail check
+        added code to work with add one left class to product detail page code
         </li>
       <li>
-        bumped version to 0.2d3
-        </li>
-      </ul>
-    <br>
-    </li -->
-  <!-- li>
-    <strong>
-      2021-05-12
-      </strong>
-    <ul>
-      <li>
-        reordered some of the bail conditions
+        added check for not .one-left class
         </li>
       <li>
-        bumped version to 0.2d2
-        </li>
-      </ul>
-    <br>
-    </li -->
-  <!-- li>
-    <strong>
-      2021-05-11
-      </strong>
-    <ul>
-      <li>
-        changed some variable names and a type
+        use a less heavy hand when changing margins, better looking spacing
+        overall
         </li>
       <li>
-        bumped version to 0.2d1
-        </li>
-      </ul>
-    <br>
-    </li -->
-  <!-- li>
-    <strong>
-      2021-05-11
-      </strong>
-    <ul>
-      <li>
-        added support for user defined post processing alert text function
+        align add to cart button to end
         </li>
       <li>
         bumped version to 0.2d0
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-03-23
