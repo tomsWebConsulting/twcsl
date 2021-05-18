@@ -2,7 +2,7 @@
 
   begin move add to cart button to right of quantity
   
-  Version       : 0.2d0
+  Version       : 0.2d1
   
   SS Version    : 7.1
   
@@ -35,6 +35,34 @@
   
   <style>
   
+    /*
+    
+      begin reset order for .ProductItem-details-checkout child elements
+      
+      There is something odd going on with the CSS of
+      .ProductItem-details-checkout child elements as of 05/18/21. The ruleset
+      has a display property value of block but child elements have order
+      properties on them. This ruleset unsets those properties for a clean slate
+      returning the elements to natural order.
+      
+      */
+      
+      .ProductItem-details .product-quantity-input, /* 3 */
+      .ProductItem-details .product-variants, /* 2 */
+      .ProductItem-details .ProductItem-details-excerpt, /* 5 */
+      .ProductItem-details .ProductItem-product-price, /* 1 */
+      .ProductItem-details .sqs-add-to-cart-button-wrapper /* 4 */
+      
+        {
+        
+          -webkit-box-ordinal-group : unset;
+          -ms-flex-order : unset;
+          order : unset;
+          
+          }
+          
+      <!-- end reset order for .ProductItem-details-checkout child elements -->
+      
     .ProductItem .ProductItem-details .ProductItem-details-checkout {
     
       opacity : 0;

@@ -1,6 +1,6 @@
 # Move Add To Cart Button to Right of Quantity
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
@@ -17,6 +17,21 @@ to add the class.
 ## Changes
 
 <ul>
+  <li>
+    <strong>
+      2021-05-18
+      </strong>
+    <ul>
+      <li>
+        added code for reset order for .ProductItem-details-checkout child
+        elements
+        </li>
+      <li>
+        bumped version to 0.2d1
+        </li>
+      </ul>
+    <br>
+    </li>
   <li>
     <strong>
       2021-05-17
