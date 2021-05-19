@@ -1,6 +1,6 @@
 # Replace Blog "Header" Text with Category and or Tag
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
@@ -12,6 +12,20 @@ to Blog Settings > Advanced > Page Header Code Injection for the blog page.
 ## Changes
 
 <ul>
+  <li>
+    <strong>
+      2021-02-24
+      </strong>
+    <ul>
+      <li>
+        fix issue where "header" would show before text replacements occurred
+        </li>
+      <li>
+        bumped version to 0.2d1
+        </li>
+      </ul>
+    <br>
+    </li>
   <li>
     <strong>
       2021-02-23

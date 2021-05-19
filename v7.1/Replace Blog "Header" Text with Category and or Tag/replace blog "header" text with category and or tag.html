@@ -1,33 +1,42 @@
-<script>
+<!--
 
-  $( ( ) => {
+  begin replace blog "header" text with category and or tag
   
-    /*
+  Version       : 0.2d1
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  the blog "header" in this case is a page section added above a
+                  normal blog page with single text block. enter [category/tag]
+                  in the text block, it will be replaced with the category and
+                  or tag
+                  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .page-section:first-child .sqs-row:first-child .sqs-block-html:first-child > .sqs-block-content > *:first-child {
     
-      begin replace blog "header" text with category and or tag
+      visibility : hidden;
       
-      Version       : 0.2d0
+      }
       
-      SS Version    : 7.1
-      
-      Dependancies  : jQuery
-      
-      Notes         : the blog "header" in this case is a page section added
-                      above a normal blog page with single text block. enter
-                      [category/tag] in the text block, it will be replaced with
-                      the category and or tag
-                      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
       const replaceWithCategory = true;
       
       const replaceWithTag = true;
-      
-      // do not inlcude # at the beginning
-      
-      const textBlockId = '[enter block id here between single quotes]';
       
       const categoryPrefixText = '';
       
@@ -39,66 +48,76 @@
       
       // do not change anything below, there be the borg here
       
-      const c = 'category';
-      const pathname = location.pathname;
-      const t = 'tag';
+      let $textElement = $( '.page-section:first .sqs-row:first ' +
       
-      const textBlockSelector = '#' + textBlockId +
-      
-        ' > .sqs-block-content > *:first';
+        '.sqs-block-html:first > .sqs-block-content > *:first' );
         
-      let conditions = [ ];
+      ( ( ) => {
       
-      if ( replaceWithCategory ) conditions.push ( c );
-      
-      if ( replaceWithTag ) conditions.push ( t );
-      
-      if ( ! conditions.some ( e => pathname.includes ( '/' + e + '/' ) ) )
-      
-        return;
+        const pathnameParts = location.pathname.split ( '/' );
         
-      const ct = pathname
-      
-        .split ( '/' ) [ 2 ]
+        const categoryOrTag = pathnameParts [ 2 ];
         
-        .replaceAll ( '/', '' );
+        if ( categoryOrTag == undefined ) return;
         
-      let prefixText, suffixText;
-      
-      switch ( ct ) {
-      
-        case c :
+        const pagesToAddTextTo = [ 'category', 'tag' ];
         
-          prefixText = categoryPrefixText;
+        function remove ( v ) {
+        
+          const i = pagesToAddTextTo.indexOf ( v );
           
-          suffixText = categorySuffixText;
+          if ( i == -1 ) return;
           
-          break;
+          pagesToAddTextTo.splice ( i, 1 );
           
-        case t :
+          }
+          
+        if ( ! replaceWithCategory ) remove ( 'category' );
         
-          prefixText = tagPrefixText;
-          
-          suffixText = tagSuffixText;
-          
-          break;
-          
-        }
+        if ( ! replaceWithTag ) remove ( 'tag' );
         
-      const text = prefixText +
-      
-        pathname
+        if ( ! pagesToAddTextTo.length ) return;
         
-          .split ( '/' ) [ 3 ]
-          
-          .replaceAll ( '+', ' ' ) +
-          
-        suffixText;
+        if ( ! pagesToAddTextTo.includes ( categoryOrTag ) ) return;
         
-      $( textBlockSelector ).text ( text );
+        let prefixText, suffixText;
+        
+        switch ( true ) {
+        
+          case replaceWithCategory :
+          
+            prefixText = categoryPrefixText;
+            
+            suffixText = categorySuffixText;
+            
+            break;
+            
+          case replaceWithTag :
+          
+            prefixText = tagPrefixText;
+            
+            suffixText = tagSuffixText;
+            
+            break;
+            
+          }
+          
+        const text = prefixText +
+        
+          pathnameParts [ 3 ]
+          
+            .replaceAll ( '+', ' ' ) +
+            
+          suffixText;
+          
+        $textElement.text ( text );
+        
+        } ) ( );
+        
+      $textElement.css ( 'visibility', 'visible' );
       
       } );
       
-      // end replace blog "header" text with category and or tag
-      
-  </script>
+    </script>
+    
+  <!-- end replace blog "header" text with category and or tag -->
