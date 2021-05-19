@@ -1,0 +1,70 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin replace blog "header" text with category and or tag
+      
+      Version       : 0.1d1
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Notes         : the blog "header" in this case is a page section added
+                      above a normal blog page with single text block. enter
+                      [category/tag] in the text block, it will be replaced with
+                      the category and or tag
+                      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const replaceWithCategory = true;
+      
+      const replaceWithTag = true;
+      
+      // do not inlcude # at the beginning
+      
+      const textBlockId = '[enter text block id here bwtween single quotes]';
+      
+      // do not change anything below, there be the borg here
+      
+      const c = 'category';
+      const pathname = location.pathname;
+      const t = 'tag';
+      
+      const textBlockSelector = '#' + textBlockId +
+      
+        ' > .sqs-block-content > *:first';
+        
+      let conditions = [ ];
+      
+      if ( replaceWithCategory ) conditions.push ( c );
+      
+      if ( replaceWithTag ) conditions.push ( t );
+      
+      if ( ! conditions.some ( e => pathname.includes ( '/' + e + '/' ) ) )
+      
+        return;
+        
+      const ct = pathname
+      
+        .split ( '/' ) [ 3 ]
+        
+        .replaceAll ( '+', ' ' )
+        
+      const text = $( textBlockSelector )
+      
+        .text ( )
+        
+        .replace ( '[category/tag]', ct );
+        
+      $( textBlockSelector ).text ( text );
+      
+      // end replace blog "header" text with category and or tag
+      
+      } );
+      
+  </script>
