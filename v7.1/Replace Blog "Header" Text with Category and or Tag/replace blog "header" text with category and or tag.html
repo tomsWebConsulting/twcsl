@@ -6,7 +6,7 @@
     
       begin replace blog "header" text with category and or tag
       
-      Version       : 0.1d1
+      Version       : 0.2d0
       
       SS Version    : 7.1
       
@@ -27,7 +27,15 @@
       
       // do not inlcude # at the beginning
       
-      const textBlockId = '[enter text block id here bwtween single quotes]';
+      const textBlockId = '[enter block id here between single quotes]';
+      
+      const categoryPrefixText = '';
+      
+      const categorySuffixText = '';
+      
+      const tagPrefixText = '';
+      
+      const tagSuffixText = '';
       
       // do not change anything below, there be the borg here
       
@@ -51,20 +59,46 @@
         
       const ct = pathname
       
-        .split ( '/' ) [ 3 ]
+        .split ( '/' ) [ 2 ]
         
-        .replaceAll ( '+', ' ' )
+        .replaceAll ( '/', '' );
         
-      const text = $( textBlockSelector )
+      let prefixText, suffixText;
       
-        .text ( )
+      switch ( ct ) {
+      
+        case c :
         
-        .replace ( '[category/tag]', ct );
+          prefixText = categoryPrefixText;
+          
+          suffixText = categorySuffixText;
+          
+          break;
+          
+        case t :
+        
+          prefixText = tagPrefixText;
+          
+          suffixText = tagSuffixText;
+          
+          break;
+          
+        }
+        
+      const text = prefixText +
+      
+        pathname
+        
+          .split ( '/' ) [ 3 ]
+          
+          .replaceAll ( '+', ' ' ) +
+          
+        suffixText;
         
       $( textBlockSelector ).text ( text );
       
-      // end replace blog "header" text with category and or tag
-      
       } );
+      
+      // end replace blog "header" text with category and or tag
       
   </script>

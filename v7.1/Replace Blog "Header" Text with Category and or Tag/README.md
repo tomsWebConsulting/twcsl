@@ -1,6 +1,6 @@
 # Replace Blog "Header" Text with Category and or Tag
 
-### Version 0.1d1
+### Version 0.2d0
 
 ---
 
@@ -12,20 +12,20 @@ to Blog Settings > Advanced > Page Header Code Injection for the blog page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-05-11
+      2021-02-23
       </strong>
     <ul>
       <li>
-        added support for user defined post processing alert text function
+        added user settable prefix and suffix text for category/tag
         </li>
       <li>
         bumped version to 0.2d0
         </li>
       </ul>
     <br>
-    </li -->
+    </li>
   <li>
     <strong>
       2021-02-23
