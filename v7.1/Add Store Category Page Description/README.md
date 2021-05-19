@@ -1,6 +1,6 @@
 # Add Store Category Page Description
 
-### Version 0.1d0
+### Version 0.2d0
 
 ---
 
@@ -12,16 +12,19 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 ## Changes
 
 <ul>
-  <!-- li>
+  <li>
     <strong>
-      2021-04-30
+      2021-05-19
       </strong>
     <ul>
       <li>
-        fixed issue with code not changing language for mobile button
+        added a choice of paragraph styles
         </li>
       <li>
-        bumped version to v0.1d1
+        user can set store url slug
+        </li>
+      <li>
+        bumped version to 0.2d0
         </li>
       </ul>
     <br>
