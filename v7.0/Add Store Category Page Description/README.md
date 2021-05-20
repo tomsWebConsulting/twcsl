@@ -1,4 +1,4 @@
-# Change Default Image Aspect Ratios for Store Page
+# Add Store Category Page Description
 
 ### Version 0.1d0
 
@@ -6,19 +6,22 @@
 
 ## Quick Install
 
-Add code from file **change default image aspect ratios for store page.html**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+Add code from file **add store category page description.html** to
+Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
 <ul>
   <!-- li>
     <strong>
-      2021-05-12
+      2021-05-19
       </strong>
     <ul>
       <li>
-        add support for guard processor
+        added a choice of paragraph styles
+        </li>
+      <li>
+        user can set store url slug
         </li>
       <li>
         bumped version to 0.2d0
@@ -28,7 +31,7 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
     </li -->
   <li>
     <strong>
-      2021-02-18
+      2021-03-23
       </strong>
     <ul>
       <li>
