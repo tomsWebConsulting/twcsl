@@ -1,6 +1,6 @@
 # Add Buttons to Header
 
-### Version 0.5d1
+### Version 0.6d0
 
 ---
 
@@ -15,22 +15,19 @@ Add code from file **add buttons to header.css** to Design > Custom CSS.
 Add code from file **add buttons to header.html** to Settings > Advanced >
 Code Injection > FOOTER.
 
-<!--
-
 ## Changes
 
-&nbsp;&nbsp; **YYYY-MM-DD**
-
-<p style="margin-left : 2em;">
-
-  [enter description here]
-  
-  </p>
-
-<p style="margin-left : 2em;">
-
-  bumped version to vX
-  
-  </p>
-
--->
+<!-- * **2021-05-19**
+<br><br>
+  * added a choice of paragraph styles
+  * user can set store url slug
+  * bumped version to 0.2d0
+  <br><br -->
+* **2021-05-23**
+<br><br>
+  * better support for mobile
+  * fix an issue with desktop buttons continuing to display when in mobile
+  * allow user to more easily change the direction and order of the buttons.
+    using LESS mixins the choices are row or column direction and normal or
+    reverse order
+  * bumped version to 0.6d0

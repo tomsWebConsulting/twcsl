@@ -2,36 +2,105 @@
 
   begin add buttons to header
   
-  Version      : 0.5d1
+  Version       : 0.6d0
   
-  SS Version   : 7.1
+  SS Version    : 7.1
   
-  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Dependancies  : LESS
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
-  .header-actions-action.header-actions-action--cta {
+  @gap : 0.5rem; // space between buttons
+  
+  /* direction-order controls whether buttons will be oriented in a row or
+     column and if they will be in normal or reversed order. the first argument
+     can be row or column, the second argument can be normal or reverse */
+  
+  .direction-order ( row, normal );
+  
+  // do not change anything below, there be the borg here
+  
+  .header .header-actions-action--cta, .header-menu-cta {
   
     display : -webkit-box;
     display : -ms-flexbox;
     display : flex;
     
-    /*
+    -webkit-box-orient : @d3;
+    -webkit-box-direction : @d2;
+    -ms-flex-direction : @d1;
+    flex-direction : @d1;
     
-      default orientation is row, for column swap commented values in lines
-      below
-      
-      */
-      
-    -webkit-box-orient : horizontal; /* vertical */
-    -webkit-box-direction : normal;
-    -ms-flex-direction : row; /* column */
-    flex-direction : row; /* column */
-    
-    grid-gap : 0.5em;
-    gap : 0.5rem;
+    grid-gap : @gap;
+    gap : @gap;
     
     text-align : center;
+    
+    }
+    
+  .header-menu-cta {
+  
+    justify-content : center;
+    margin : auto;
+    margin-bottom : calc( @gap * 1.25 );
+    
+    }
+    
+  .header-menu-cta a {
+  
+    margin : 0;
+    
+    }
+    
+  @media only screen and ( pointer : coarse ) and ( max-width : 1024px ),
+    screen and ( max-width : 799px ) {
+    
+    .header .header-actions-action--cta {
+    
+      display : none;
+      
+      }
+    }
+    
+   // direction row, normal
+   
+  .direction-order ( @d, @o ) when ( @d = row ) and ( @o = normal ) {
+  
+    @d1 : row;
+    @d2 : normal;
+    @d3 : horizontal;
+    
+    }
+    
+   // direction row, reverse
+   
+  .direction-order ( @d, @o ) when ( @d = row ) and ( @o = reverse ) {
+  
+    @d1 : row-reverse;
+    @d2 : reverse;
+    @d3 : horizontal;
+    
+    }
+    
+   // direction column, normal
+   
+  .direction-order ( @d, @o ) when ( @d = column ) and ( @o = normal ) {
+  
+    @d1 : column;
+    @d2 : normal;
+    @d3 : vertical;
+    
+    }
+    
+   // direction column, reverse
+   
+  .direction-order ( @d, @o ) when ( @d = column ) and ( @o = reverse ) {
+  
+    @d1 : column-reverse;
+    @d2 : reverse;
+    @d3 : vertical;
     
     }
     
