@@ -1,0 +1,82 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      replace form submit button submitting text
+      
+      Version         : 0.1d0
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /* SS often does text transforms on button text, enter the replacement text
+       as you would want it to appear, when SS doesn't change it */
+    
+    const replacmentText = '[enter replacement submitting text here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    const $form = twcsl.getFormNth ( );
+    
+    if ( $form === undefined ) return; // bail if no form
+    
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        if ( this.type !== 'attributes' ) return; // bail if not attribute
+        
+        if ( this.attributeName !== 'value' ) return; // bail if value attribute
+        
+        const $e = $( this.target );
+        
+        // bail if submit is hidden, indicates form was submitted
+        
+        if ( $e.hasClass ( 'hidden' ) ) return;
+        
+        const v = $e.val ( );
+        
+        // bail if button text already set
+        
+        if ( v == replacmentText ) return;
+        
+        $e.val ( replacmentText );
+        
+        } );
+        
+      } );
+      
+    // start listening for changes in specified element
+    
+    observer.observe ( $( 'input[type="submit"]', $form ) [ 0 ], {
+    
+      attributes : true
+      
+      } );
+      
+    } );
+    
+  </script>
