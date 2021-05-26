@@ -1,4 +1,4 @@
-const twcsl = ( ( ) => {
+var twcsl = ( ( ) => {
 
   /*
   
@@ -6,7 +6,7 @@ const twcsl = ( ( ) => {
   
   SS Versions   : 7.0, 7.1
   
-  Version       : 0.1d0
+  Version       : 0.1d1
   
   Dependancies  : jQuery
   
@@ -112,15 +112,33 @@ const twcsl = ( ( ) => {
     
   // begin public properties
   
+    const version = '0.1d1';
+    
     // end public properties
     
   // begin public methods
   
+    // begin get form nth
+    
+      const getFormNth = ( nth = 1 ) => {
+      
+        // n is 1 based for the user but we need zero based
+        
+        const $form = $( '.sqs-block-form:eq( ' + --nth + ' )' );
+        
+        if ( ! $form.length ) return undefined;
+        
+        return $( 'form', $form );
+        
+        }
+        
+      // end get form nth
+      
     // begin scroll effect
     
-      const scrollEffect = ( easingFunction = 'linear', invertScale = false,
+      const scrollEffect = ( callback, easingFunction = 'linear', invertScale =
       
-        callback ) => {
+        false ) => {
         
         if ( typeof callback != 'function' ) return; // bail if no callback
         
@@ -193,6 +211,14 @@ const twcsl = ( ( ) => {
     
   return {
   
+    // begin methods
+    
+      getFormNth : getFormNth,
+      
+      scrollEffect : scrollEffect,
+      
+      // end methods
+      
     // begin properties
     
       is70      : _is70,
@@ -203,13 +229,9 @@ const twcsl = ( ( ) => {
       
       storePage : _storePage,
       
+      version : version,
+      
       // end properties
-      
-    // begin methods
-    
-      scrollEffect : scrollEffect,
-      
-      // end methods
       
     };
     

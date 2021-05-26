@@ -20,14 +20,16 @@ various effects to Squarespace v7.0 and v7.1 sites.
 To find an effect browse the repository. Each effect has it's own version
 number, code, read me, and etc.
 
+---
+
 **The rest of this document covers twcsl**.
 
 # twcsl
 
-Is a Javascript library of common properties and methods useful for building
-higher level effects in Squarespace sites.
+twcsl is a Javascript library of common properties and methods useful for
+building higher level effects in Squarespace sites.
 
-### Version 0.1d0
+### Version 0.1d1
 
 ## Quick Install
 
@@ -35,7 +37,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d0/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d1/twcsl.js"></script>
 ```
 
 ## Example
@@ -48,14 +50,60 @@ following.
 if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 ```
 
+## Methods
+
+* getFormNth
+  <br><br>
+  * getFormNth ( [nth form on page] );
+    <br><br>
+    * Returns jQuery object or undefined for no form.
+      <br><br>
+* scrollEffect
+  <br><br>
+  * scrollEffect ( callback [, easingFunction, invertScale ] );
+    <br><br>
+    * Calculates the scroll postion as a ratio that is passed to your callback.
+      <br><br>
+      easingFunction ( string ), default is linear
+      <br><br>
+      invertScale ( boolean ), default is false
+
+## Properties
+
+* is70 ( boolean )
+  <br><br>
+* is71 ( boolean )
+  <br><br>
+* ssVersion ( string )
+  <br><br>
+* storePage ( object )
+  <br><br>
+  * category ( string )
+    <br><br>
+  * hasCategory ( boolean )
+    <br><br>
+  * hasTag ( boolean )
+    <br><br>
+  * isDetail ( boolean )
+    <br><br>
+  * isStorePage ( boolean )
+    <br><br>
+  * tag ( string )
+    <br><br>
+  * urlSlug ( string )
+    <br><br>
+* version ( string, twcsl version )
+
 ## Changes
 
-<!-- * **2021-05-19**
+* **2021-05-26**
 <br><br>
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
-  <br><br -->
+  * added version property for twcsl
+  * filled out the documentation a bit
+  * added getFormNth method
+  * changed order of parameters for scrollEffect method
+  * bumped version to 0.1d1
+  <br><br>
 * **2021-05-22**
 <br><br>
   * initial version
