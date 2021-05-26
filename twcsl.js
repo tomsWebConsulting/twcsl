@@ -1,4 +1,4 @@
-var twcsl = ( ( ) => {
+const twcsl = ( ( ) => {
 
   /*
   
