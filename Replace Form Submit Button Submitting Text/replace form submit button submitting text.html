@@ -6,7 +6,7 @@
     
       replace form submit button submitting text
       
-      Version         : 0.1d0
+      Version         : 0.1d1
       
       SS Versions     : 7.0, 7.1
       
@@ -50,6 +50,10 @@
         if ( this.type !== 'attributes' ) return; // bail if not attribute
         
         if ( this.attributeName !== 'value' ) return; // bail if value attribute
+        
+        // bail if field error
+        
+        if ( $( '.field-error:first', $form ).length ) return;
         
         const $e = $( this.target );
         

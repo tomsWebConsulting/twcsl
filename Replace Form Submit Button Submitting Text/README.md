@@ -1,6 +1,6 @@
 # Replace Form Submit Button Submitting Text
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
@@ -18,12 +18,11 @@ Settings > Advanced > Code Injection > FOOTER.
 
 ## Changes
 
-<!-- * **2021-05-19**
+* **2021-05-28**
 <br><br>
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
-  <br><br -->
+  * fix for replacement text being show when form error occurs
+  * bumped version to 0.1d1
+  <br><br>
 * **2021-05-26**
 <br><br>
   * initial version
