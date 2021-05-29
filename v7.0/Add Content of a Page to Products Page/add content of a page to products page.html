@@ -1,0 +1,51 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add content of a page to products page
+      
+      Version       : 0.1d3
+      
+      SS Version    : 7.0
+      
+      Templates     : Montauk ( Julia, Kent, Om )
+                      
+                      Wells
+                      
+                      Wexley
+                      
+                      your template is not listed? then it is not currently
+                      supported
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /* copy value for url below from Page Settings > General > URL SLUG field.
+       you only need exactly what can be selected from the field */
+    
+    const url = '[enter page url slug here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! $( '#productList' ).length ) return;
+    
+    const options = { format: 'json', _ : new Date ( ).getTime ( ) };
+    
+    $.getJSON ( '/' + url, options, function ( data ) {
+    
+      $( '.col.sqs-col-12.span-12', data.mainContent )
+      
+        .attr ( 'id', 'twc-products-page-header' )
+        
+        .prependTo ( '#page' );
+        
+      } );
+      
+    } );
+    
+  </script>
