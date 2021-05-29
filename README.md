@@ -27,9 +27,9 @@ number, code, read me, and etc.
 # twcsl
 
 twcsl is a Javascript library of common properties and methods useful for
-building higher level effects in Squarespace sites.
+building effects in Squarespace sites.
 
-### Version 0.1d1
+### Version 0.1d2
 
 ## Quick Install
 
@@ -37,7 +37,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d1/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d2/twcsl.js"></script>
 ```
 
 ## Example
@@ -56,6 +56,7 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
   <br><br>
   * getFormNth ( [nth form on page] );
     <br><br>
+    * Default is the first form on the page.
     * Returns jQuery object or undefined for no form.
       <br><br>
 * scrollEffect
@@ -90,12 +91,19 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
     <br><br>
   * tag ( string )
     <br><br>
+  * tags ( array, for detail page only )
+    <br><br>
   * urlSlug ( string )
     <br><br>
 * version ( string, twcsl version )
 
 ## Changes
 
+* **2021-05-29**
+<br><br>
+  * added tags property for storePage
+  * bumped version to 0.1d2
+  <br><br>
 * **2021-05-26**
 <br><br>
   * added version property for twcsl

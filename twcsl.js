@@ -6,7 +6,7 @@ const twcsl = ( ( ) => {
   
   SS Versions   : 7.0, 7.1
   
-  Version       : 0.1d1
+  Version       : 0.1d2
   
   Dependancies  : jQuery
   
@@ -38,6 +38,8 @@ const twcsl = ( ( ) => {
       
       tag : '',
       
+      tags : [ ],
+      
       urlSlug : '',
       
       };
@@ -54,8 +56,6 @@ const twcsl = ( ( ) => {
       
       o.isDetail = $( '[id^="item-"]' ).length != 0;
       
-      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-        
       // begin tag
       
         o.tag = new URLSearchParams ( location.search )
@@ -106,13 +106,37 @@ const twcsl = ( ( ) => {
         
       o.hasCategory = o.category != '';
       
+      o.tags = ( ( ) => {
+      
+        if ( ! o.isDetail ) return [ ]; // bail if not product detail page
+        
+        const tags = $( '.ProductItem' )
+      
+          .attr ( 'class' )
+        
+          .split ( ' ' )
+        
+          .filter ( clss => clss.startsWith ( 'tag-' ) )
+        
+          .map ( ( tag ) => {
+        
+            return tag.slice ( 4 );
+          
+            } )
+          
+        return tags;
+        
+        } ) ( );
+        
+      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
+        
       } ) ( _storePage );
     
     // end private methods
     
   // begin public properties
   
-    const version = '0.1d1';
+    const version = '0.1d2';
     
     // end public properties
     
