@@ -1,4 +1,4 @@
-const twcsl = ( ( ) => {
+const twcsl = ( ( $ ) => {
 
   /*
   
@@ -6,7 +6,7 @@ const twcsl = ( ( ) => {
   
   SS Versions   : 7.0, 7.1
   
-  Version       : 0.1d2
+  Version       : 0.1d3
   
   Dependancies  : jQuery
   
@@ -34,7 +34,7 @@ const twcsl = ( ( ) => {
       
       isDetail : false,
       
-      isStorePage : $( 'body' ).hasClass ( 'collection-type-products' ),
+      isStorePage : false,
       
       tag : '',
       
@@ -48,8 +48,10 @@ const twcsl = ( ( ) => {
     
   // begin private methods
   
-    ( ( o ) => { // initialize storePage
+    const _initializeStorePage = ( ) => {
     
+      const o = _storePage;
+      
       o.isStorePage = $( 'body' ).hasClass ( 'collection-type-products' );
       
       if ( ! o.isStorePage ) return;
@@ -84,7 +86,7 @@ const twcsl = ( ( ) => {
             
               .get ( 'category' );
               
-            if ( category === null ) category = undefined;
+            if ( category === null ) category = '';
             
             break;
             
@@ -111,32 +113,32 @@ const twcsl = ( ( ) => {
         if ( ! o.isDetail ) return [ ]; // bail if not product detail page
         
         const tags = $( '.ProductItem' )
-      
+        
           .attr ( 'class' )
-        
+          
           .split ( ' ' )
-        
+          
           .filter ( clss => clss.startsWith ( 'tag-' ) )
-        
+          
           .map ( ( tag ) => {
-        
+          
             return tag.slice ( 4 );
-          
+            
             } )
-          
+            
         return tags;
         
         } ) ( );
         
       o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-        
-      } ) ( _storePage );
-    
+      
+      };
+      
     // end private methods
     
   // begin public properties
   
-    const version = '0.1d2';
+    const version = '0.1d3';
     
     // end public properties
     
@@ -233,13 +235,19 @@ const twcsl = ( ( ) => {
 
     // end public methods
     
+  $( ( ) => { // initialize
+  
+    _initializeStorePage ( );
+    
+    } );
+    
   return {
   
     // begin methods
     
-      getFormNth : getFormNth,
+      getFormNth    : getFormNth,
       
-      scrollEffect : scrollEffect,
+      scrollEffect  : scrollEffect,
       
       // end methods
       
@@ -253,10 +261,10 @@ const twcsl = ( ( ) => {
       
       storePage : _storePage,
       
-      version : version,
+      version   : version,
       
       // end properties
       
     };
     
-  } ) ( );
+  } ) ( jQuery );
