@@ -6,7 +6,7 @@ const twcsl = ( ( $ ) => {
   
   SS Versions   : 7.0, 7.1
   
-  Version       : 0.1d3
+  Version       : 0.1d4
   
   Dependancies  : jQuery
   
@@ -24,7 +24,29 @@ const twcsl = ( ( $ ) => {
     
     const _is71 = _ssVersion == '7.1';
     
-    var _storePage = {
+    const _eventPage = {
+    
+      categories : [ ],
+      
+      category : '',
+      
+      hasCategory : false,
+      
+      isDetail : false,
+      
+      isEventPage : false,
+      
+      hasTag : false,
+      
+      tag : '',
+      
+      tags : [ ],
+      
+      urlSlug : '',
+      
+      };
+      
+    const _storePage = {
     
       category : '',
       
@@ -48,33 +70,115 @@ const twcsl = ( ( $ ) => {
     
   // begin private methods
   
-    const _initializeStorePage = ( ) => {
+    const _getPageSearchParameter = p => {
+    
+      let v = new URLSearchParams ( location.search )
+      
+        .get ( p );
+        
+      if ( v === null ) v = '';
+      
+      return v;
+      
+      };
+      
+    const _getPageCategory = ( ) => {
+    
+      return _getPageSearchParameter ( 'category' );
+      
+      };
+      
+    const _getPageTag = ( ) => {
+    
+      return _getPageSearchParameter ( 'tag' );
+      
+      };
+      
+    const _isPageDetail = ( ) => {
+    
+      return $( '[id^="item-"]' ).length != 0;
+      
+      };
+      
+    const _getHrefQueryStringParameterValues = parameter => {
+    
+      const values = $( '[href*="?' + parameter + '="]' )
+      
+        .map ( function ( ) {
+        
+          const value = $( this )
+          
+            .attr ( 'href' )
+            
+            .split ( '=' ) [ 1 ];
+            
+          return value;
+          
+          } )
+          
+        .toArray ( );
+        
+      return values;
+      
+      };
+      
+    const _initializeEventPage = ( ) => { // initialize eventPage
+    
+      const o = _eventPage;
+      
+      o.isEventPage = Boolean ( $( 'body[class*="collection-type-events-"]' ) );
+      
+      if ( ! o.isEventPage ) return; // bail if not event page
+      
+      o.isDetail = _isPageDetail ( );
+      
+      o.categories = ( ( ) => {
+      
+        if ( ! o.isDetail ) return [ ]; // bail if not detail page
+        
+        return _getHrefQueryStringParameterValues ( 'category' );
+        
+        } ) ( );
+        
+      o.category = ( ( ) => {
+      
+        if ( o.isDetail ) return ''; // bail if detail page
+        
+        return _getPageCategory = ( );
+        
+        } ) ( );
+        
+      o.tag = _getPageTag ( );
+      
+      o.tags = ( ( ) => {
+      
+        if ( ! o.isDetail ) return [ ]; // bail if not detail page
+        
+        return _getHrefQueryStringParameterValues ( 'tag' );
+        
+        } ) ( );
+        
+      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
+      
+      o.hasCategory = o.category != '';
+      
+      o.hasTag = o.tag != '';
+      
+      } );
+      
+    const _initializeStorePage = ( ) => { // initialize storePage
     
       const o = _storePage;
       
       o.isStorePage = $( 'body' ).hasClass ( 'collection-type-products' );
       
-      if ( ! o.isStorePage ) return;
+      if ( ! o.isStorePage ) return; // bail if not store page
       
-      o.isDetail = $( '[id^="item-"]' ).length != 0;
-      
-      // begin tag
-      
-        o.tag = new URLSearchParams ( location.search )
-        
-          .get ( 'tag' );
-          
-        if ( o.tag === null ) o.tag = '';
-        
-        // end tag
-        
-      o.hasTag = o.tag != '';
+      o.isDetail = _isPageDetail ( );
       
       o.category = ( ( ) => {
       
-        if ( o.isDetail ) return ''; // bail if product detail page
-        
-        if ( o.hasTag ) return ''; // bail if tag page
+        if ( o.isDetail ) return ''; // bail if detail page
         
         let category;
         
@@ -82,11 +186,7 @@ const twcsl = ( ( $ ) => {
         
           case _is70 :
           
-            category = new URLSearchParams ( location.search )
-            
-              .get ( 'category' );
-              
-            if ( category === null ) category = '';
+            category = _getPageCategory = ( );
             
             break;
             
@@ -106,39 +206,29 @@ const twcsl = ( ( $ ) => {
         
         } ) ( );
         
-      o.hasCategory = o.category != '';
+      o.tag = _getPageTag ( );
       
       o.tags = ( ( ) => {
       
-        if ( ! o.isDetail ) return [ ]; // bail if not product detail page
+        if ( ! o.isDetail ) return [ ]; // bail if not detail page
         
-        const tags = $( '.ProductItem' )
-        
-          .attr ( 'class' )
-          
-          .split ( ' ' )
-          
-          .filter ( clss => clss.startsWith ( 'tag-' ) )
-          
-          .map ( ( tag ) => {
-          
-            return tag.slice ( 4 );
-            
-            } )
-            
-        return tags;
+        return _getHrefQueryStringParameterValues ( 'tag' );
         
         } ) ( );
         
       o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
       
-      };
+      o.hasTag = o.tag != '';
+      
+      o.hasCategory = o.category != '';
+      
+      } );
       
     // end private methods
     
   // begin public properties
   
-    const version = '0.1d3';
+    const version = '0.1d4';
     
     // end public properties
     
@@ -232,11 +322,13 @@ const twcsl = ( ( $ ) => {
         };
         
         // end scroll effect
-
+        
     // end public methods
     
   $( ( ) => { // initialize
   
+    _initializeEventPage ( );
+    
     _initializeStorePage ( );
     
     } );
@@ -253,6 +345,8 @@ const twcsl = ( ( $ ) => {
       
     // begin properties
     
+      eventPage : _eventPage,
+      
       is70      : _is70,
       
       is71      : _is71,
