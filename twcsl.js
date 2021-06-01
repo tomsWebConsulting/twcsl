@@ -144,7 +144,7 @@ const twcsl = ( ( $ ) => {
       
         if ( o.isDetail ) return ''; // bail if detail page
         
-        return _getPageCategory = ( );
+        return _getPageCategory ( );
         
         } ) ( );
         
@@ -186,7 +186,7 @@ const twcsl = ( ( $ ) => {
         
           case _is70 :
           
-            category = _getPageCategory = ( );
+            category = _getPageCategory ( );
             
             break;
             
