@@ -164,7 +164,7 @@ const twcsl = ( ( $ ) => {
       
       o.hasTag = o.tag != '';
       
-      } );
+      };
       
     const _initializeStorePage = ( ) => { // initialize storePage
     
@@ -222,7 +222,7 @@ const twcsl = ( ( $ ) => {
       
       o.hasCategory = o.category != '';
       
-      } );
+      };
       
     // end private methods
     
