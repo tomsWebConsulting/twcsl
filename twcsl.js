@@ -6,7 +6,7 @@ const twcsl = ( ( $ ) => {
   
   SS Versions   : 7.0, 7.1
   
-  Version       : 0.1d4
+  Version       : 0.1d5
   
   Dependancies  : jQuery
   
@@ -158,8 +158,6 @@ const twcsl = ( ( $ ) => {
         
         } ) ( );
         
-      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-      
       o.hasCategory = o.category != '';
       
       o.hasTag = o.tag != '';
@@ -175,6 +173,8 @@ const twcsl = ( ( $ ) => {
       if ( ! o.isStorePage ) return; // bail if not store page
       
       o.isDetail = _isPageDetail ( );
+      
+      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
       
       o.category = ( ( ) => {
       
@@ -196,8 +196,10 @@ const twcsl = ( ( $ ) => {
             
               .pathname
               
-              .replace ( o.urlSlug + '/', '' );
+              .replace ( o.urlSlug, '' );
               
+            if ( category ) category = category.slice ( 1 );
+            
             break;
             
           }
@@ -216,8 +218,6 @@ const twcsl = ( ( $ ) => {
         
         } ) ( );
         
-      o.urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-      
       o.hasTag = o.tag != '';
       
       o.hasCategory = o.category != '';
@@ -228,7 +228,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d4';
+    const version = '0.1d5';
     
     // end public properties
     

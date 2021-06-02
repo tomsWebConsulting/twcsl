@@ -29,7 +29,7 @@ number, code, read me, and etc.
 twcsl is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d4
+### Version 0.1d5
 
 ## Quick Install
 
@@ -119,6 +119,11 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2021-06-02**
+<br><br>
+  * fix storePage.category being erroneously populated
+  * bumped version to 0.1d5
+  <br><br>
 * **2021-06-01**
 <br><br>
   * added eventPage property
