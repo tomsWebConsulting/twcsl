@@ -1,0 +1,35 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add category attribute to event detail page
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    if ( ! twcsl.eventPage.isDetail ) return; // bail if not detail
+    
+    const separator = ', ';
+    
+    const categories = twcsl.eventPage.categories
+    
+      .join ( separator ) + separator;
+      
+    $( 'body' ).attr ( 'data-event-categories', categories );
+    
+    } );
+    
+  </script>
