@@ -1,4 +1,4 @@
-# Add Category Attribute to Event Detail Page
+# Add Categories Attribute to Event Detail Page
 
 ### Version 0.1d0
 
