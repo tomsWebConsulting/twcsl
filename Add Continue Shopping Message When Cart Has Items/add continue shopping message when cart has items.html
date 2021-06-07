@@ -1,0 +1,91 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      add continue shopping message when cart has items
+      
+      Version       : 0.1d1
+      
+      SS Versions   : 7.0, 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      the following values are optional, if left empty default values will be
+      provided. if the values have single quotes in them put a backslash before
+      the single quotes. example: it's becomes it\'s
+      
+      */
+      
+    let notEmptyMessage = '';
+    
+    let continueShoppingLinkText = '';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( location.pathname != '/cart' ) return; // bail if not cart
+    
+    if ( $( '.empty-message' ).length ) return; // bail if empty
+    
+    const selector = '[data-test=remove-item]';
+    
+    let continueShoppingLinkUrl = Static.SQUARESPACE_CONTEXT.websiteSettings
+    
+      .storeSettings.continueShoppingLinkUrl
+      
+    if ( ! continueShoppingLinkText )
+    
+      continueShoppingLinkText = 'Continue Shopping';
+      
+    if ( ! notEmptyMessage )
+    
+      notEmptyMessage = 'You have something in your shopping cart.';
+      
+    if ( continueShoppingLinkUrl != '/' )
+    
+      continueShoppingLinkUrl = '/' + continueShoppingLinkUrl;
+      
+    $( '<div class="not-empty-message">' +
+    
+      '<span>' +
+      
+        notEmptyMessage +
+        
+        '</span> ' + // space after the closing span
+        
+      '<a data-test="continue-shopping-link" href="' + continueShoppingLinkUrl +
+      
+        '">' +
+        
+        '<span>' +
+        
+          continueShoppingLinkText +
+          
+          '</span>' +
+          
+        '</a>' +
+        
+      '</div>' )
+      
+      .insertAfter ( '.cart-title' );
+      
+    $( document ).on ( 'click', selector, function ( ) {
+    
+      if ( $( selector ).length > 1 ) return; // bail if more than one
+      
+      $( '.not-empty-message' ).remove ( );
+      
+      $( document ).off ( 'click', selector );
+      
+      } );
+      
+    } );
+    
+  </script>
