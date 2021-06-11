@@ -2,11 +2,13 @@
 
   begin add store category page description
   
-  Version       : 0.2d0
+  Version       : 0.2d1
   
   SS Version    : 7.1
   
   Dependancies  : jQuery
+                  
+                  twcsl
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -14,11 +16,6 @@
   
   <script>
   
-    /* copy value from Store Settings > General > URL SLUG field. you only need
-       exactly what can be selected from the field */
-    
-    const storeUrlSlug = '[enter store url slug here between single quotes]';
-    
     const categoryUrlSlugDescriptionMap = {
     
       /*
@@ -156,27 +153,9 @@
           
         };
         
-      let pathname = location.pathname
+      if ( ! twcsl.storePage.hasCategory ) return;
       
-        .replace ( '/' + storeUrlSlug, '' );
-        
-      // bail on product detail pages
-      
-      if ( pathname.startsWith ( '/p/' ) ) return;
-      
-      if ( location.search ) { // bail if tag page
-      
-        const tag = new URLSearchParams ( location.search )
-        
-          .get ( 'tag' );
-          
-        if ( tag !== null ) return;
-        
-        }
-        
-      pathname = pathname.split ( '/' );
-      
-      const categoryUrlSlug = pathname [ pathname.length - 1 ];
+      const categoryUrlSlug = twcsl.storePage.categoryUrlSlug;
       
       if ( ! ( categoryUrlSlug in categoryUrlSlugDescriptionMap ) ) return;
       
