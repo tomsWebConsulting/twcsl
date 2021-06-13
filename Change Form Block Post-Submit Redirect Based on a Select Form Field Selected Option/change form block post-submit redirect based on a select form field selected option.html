@@ -1,0 +1,148 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change form block post-submit redirect based on a select form field
+      selected option
+      
+      Version       : 0.1d1
+      
+      SS Versions   : 7.0, 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const selectFormFieldName = 'Select Your State';
+    
+    const optionUrlMappings = {
+    
+      /*
+      
+        the format of each line is a select field option as entered in the SS
+        form block interface and the post-submit redirect URL for the option
+        
+        */
+        
+      // '[enter select field option here]' : '[enter url here]',
+      
+      'Alabama'        : '/alabama',
+      'Alaska'         : '/alaska',
+      'Arizona'        : '/arizona',
+      'Arkansas'       : '/arkansas',
+      'California'     : '/california',
+      'Colorado'       : '/colorado',
+      'Connecticut'    : '/connecticut',
+      'Delaware'       : '/delaware',
+      'Florida'        : '/florida',
+      'Georgia'        : '/georgia',
+      'Hawaii'         : '/hawaii',
+      'Idaho'          : '/idaho',
+      'Illinois'       : '/illinois',
+      'Indiana'        : '/indiana',
+      'Iowa'           : '/iowa',
+      'Kansas'         : '/kansas',
+      'Kentucky'       : '/kentucky',
+      'Louisiana'      : '/louisiana',
+      'Maine'          : '/maine',
+      'Maryland'       : '/maryland',
+      'Massachusetts'  : '/massachusetts',
+      'Michigan'       : '/michigan',
+      'Minnesota'      : '/minnesota',
+      'Mississippi'    : '/mississippi',
+      'Missouri'       : '/missouri',
+      'Montana'        : '/montana',
+      'Nebraska'       : '/nebraska',
+      'Nevada'         : '/nevada',
+      'New Hampshire'  : '/new-hampshire',
+      'New Jersey'     : '/new-jersey',
+      'New Mexico'     : '/new-mexico',
+      'New York'       : '/new-york',
+      'North Carolina' : '/north-carolina',
+      'North Dakota'   : '/north-dakota',
+      'Ohio'           : '/ohio',
+      'Oklahoma'       : '/oklahoma',
+      'Oregon'         : '/oregon',
+      'Pennsylvania'   : '/pennsylvania',
+      'Rhode Island'   : '/rhode-island',
+      'South Carolina' : '/south-carolina',
+      'South Dakota'   : '/south-dakota',
+      'Tennessee'      : '/tennessee',
+      'Texas'          : '/texas',
+      'Utah'           : '/utah',
+      'Vermont'        : '/vermont',
+      'Virginia'       : '/virginia',
+      'Washington'     : '/washington',
+      'West Virginia'  : '/west-virginia',
+      'Wisconsin'      : '/wisconsin',
+      
+      // last or only item doesn't get a comma at end of line
+      
+      'Wyoming'        : '/wyoming'
+      
+      }
+      
+    /*
+    
+      use dataFormId when there is more than one form block on the page, you
+      will need to find the id of the form you want to use with this code
+      
+      */
+      
+    const dataFormId = '';
+    
+    // do not change anything below, there be the borg here
+    
+    let $form;
+    
+    if ( dataFormId ) {
+    
+      $form = $( '[data-form-id="' + dataFormId + '"]' );
+      
+      } else {
+      
+        $form = $( '.sqs-block-form' );
+        
+        if ( $form.length != 1 ) return;
+        
+        $form = $( 'form', $form );
+        
+        }
+        
+    let $select = $( '.title:contains(' + selectFormFieldName + ')', $form )
+    
+      .filter ( function ( ) {
+      
+        const s = $( this ) [ 0 ].childNodes [ 0 ].nodeValue.trim ( );
+        
+        return s === selectFormFieldName;
+        
+        } );
+        
+    if ( $select.length != 1 ) return;
+    
+    $select = $select.next ( 'select' );
+    
+    const firstOption = $( 'option:eq( 0 )', $select )
+    
+      .attr ( 'value' );
+      
+    $form.attr ( 'data-success-redirect', optionUrlMappings [ firstOption ] );
+    
+    $select
+    
+      .change ( function ( ) {
+      
+        $form.attr ( 'data-success-redirect', optionUrlMappings [
+        
+          $( this ).val ( ) ] );
+          
+        } );
+        
+    } );
+    
+  </script>
