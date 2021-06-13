@@ -19,11 +19,11 @@ Page Header Code Injection for the page.
 
 ## Changes
 
-<* **2021-06-13**
+* **2021-06-13**
 <br><br>
   * use twcsl
   * bumped version to 0.1d2
   <br><br>
-* **2020-03-28**
+* **2021-03-28**
 <br><br>
   * initial version
