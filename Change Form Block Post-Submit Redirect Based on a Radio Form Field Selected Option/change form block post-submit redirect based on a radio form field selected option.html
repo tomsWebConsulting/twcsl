@@ -1,0 +1,90 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change form block post-submit redirect based on a radio form field
+      selected option
+      
+      Version       : 0.1d0
+      
+      SS Versions   : 7.0, 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const radioFormFieldName = 'Have you secured this budget?';
+    
+    const optionUrlMap = {
+    
+      /*
+      
+        the format of each line is a radio field option as entered in the SS
+        form block interface and the post-submit redirect URL for the option
+        
+        an empty url means no post-submit redirect
+        
+        */
+        
+      // '[enter radio field option here between single quotes]' : '[enter url here between single quotes]',
+      
+      };
+      
+    /*
+    
+      use dataFormId when there is more than one form block on the page, you
+      will need to find the id of the form you want to use with this code
+      
+      */
+      
+    const dataFormId = '';
+    
+    // do not change anything below, there be the borg here
+    
+    let $form;
+    
+    if ( dataFormId ) {
+    
+      $form = $( '[data-form-id="' + dataFormId + '"]' );
+      
+      } else {
+      
+        $form = $( '.sqs-block-form' );
+        
+        if ( $form.length != 1 ) return;
+        
+        $form = $( 'form', $form );
+        
+        }
+        
+    let $radio = $( '.title:contains(' + radioFormFieldName + ')', $form )
+    
+      .filter ( function ( ) {
+      
+        const s = $( this ) [ 0 ].childNodes [ 0 ].nodeValue.trim ( );
+        
+        return s === radioFormFieldName;
+        
+        } );
+        
+    if ( $radio.length != 1 ) return;
+    
+    $radio
+    
+      .parent ( )
+      
+      .change ( function ( ) {
+      
+        const s = $( '.option input:checked', $( this ) ).val ( );
+        
+        $form.attr ( 'data-success-redirect', optionUrlMap [ s ] );
+        
+        } );
+        
+    } );
+    
+  </script>
