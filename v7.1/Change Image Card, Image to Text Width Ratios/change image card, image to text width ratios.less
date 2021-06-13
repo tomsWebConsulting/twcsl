@@ -1,0 +1,40 @@
+/*
+
+  begin change image card, image to text width ratios
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : LESS
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  #page-section-6019f74588988b10419eb99c .sqs-block-image {
+  
+    @image-width : 35%; /* how much the image takes up of the total width (100%)
+                           available */
+    
+    // do not change anything below, there be the borg here
+    
+    .design-layout-card:not( .sqs-narrow-width ) {
+    
+      align-items: center;
+      
+      > div:first-child {
+      
+        width : @image-width - 2.5%;
+        
+        }
+        
+      .image-card-wrapper {
+      
+        width : 100% - @image-width - 2.5%;
+        
+        }
+      }
+    }
+    
+  // end change image card, image to text width ratios
