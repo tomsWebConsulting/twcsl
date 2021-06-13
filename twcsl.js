@@ -18,7 +18,7 @@ const twcsl = ( ( $ ) => {
                     your template is not listed? then it is not currently
                     supported
                     
-  Version         : 0.1d6
+  Version         : 0.1d7
   
   Dependancies    : jQuery
   
@@ -30,66 +30,88 @@ const twcsl = ( ( $ ) => {
   
   // begin private properties
   
-    const _ssVersion = Static.SQUARESPACE_CONTEXT.templateVersion;
+    // begin first order
     
-    const _is70 = _ssVersion == '7';
+      const _eventPage = {
+      
+        categories : [ ],
+        
+        category : '',
+        
+        categoryUrlSlug : '',
+        
+        categoryUrlSlugs : [ ],
+        
+        hasCategory : false,
+        
+        hasTag : false,
+        
+        isDetail : false,
+        
+        isEventPage : false,
+        
+        tag : '',
+        
+        tagUrlSlug : '',
+        
+        tagUrlSlugs : [ ],
+        
+        urlSlug : '',
+        
+        };
+        
+      const _isCart = location.pathname == '/cart';
+      
+      const _isSearch = location.pathname == '/search';
+      
+      const _ssVersion = Static.SQUARESPACE_CONTEXT.templateVersion;
+      
+      const _storePage = {
+      
+        category : '',
+        
+        categoryUrlSlug : '',
+        
+        classTags : [ ],
+        
+        hasCategory : false,
+        
+        hasTag : false,
+        
+        isDetail : false,
+        
+        isStorePage : false,
+        
+        tag : '',
+        
+        tagUrlSlug : '',
+        
+        urlSlug : '',
+        
+        };
+        
+      // begin _urlSlug
+      
+        let _urlSlug = '';
+        
+        try {
+        
+          _urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
+          
+          } catch ( e ) { }
+          
+        // end _urlSlug
+        
+      // end first order
+      
+    // begin second order
     
-    const _is71 = _ssVersion == '7.1';
-    
-    const _eventPage = {
-    
-      categories : [ ],
+      const _is70 = _ssVersion == '7';
       
-      category : '',
+      const _is71 = _ssVersion == '7.1';
       
-      categoryUrlSlug : '',
+      // end second order
       
-      categoryUrlSlugs : [ ],
-      
-      hasCategory : false,
-      
-      hasTag : false,
-      
-      isDetail : false,
-      
-      isEventPage : false,
-      
-      tag : '',
-      
-      tagUrlSlug : '',
-      
-      tagUrlSlugs : [ ],
-      
-      urlSlug : '',
-      
-      };
-      
-    const _storePage = {
-    
-      category : '',
-      
-      categoryUrlSlug : '',
-      
-      classTags : [ ],
-      
-      hasCategory : false,
-      
-      hasTag : false,
-      
-      isDetail : false,
-      
-      isStorePage : false,
-      
-      tag : '',
-      
-      tagUrlSlug : '',
-      
-      urlSlug : '',
-      
-      };
-      
-    const _urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-    
     // end private properties
     
   // begin private methods
@@ -438,7 +460,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d6';
+    const version = '0.1d7';
     
     // end public properties
     
@@ -560,6 +582,10 @@ const twcsl = ( ( $ ) => {
       is70      : _is70,
       
       is71      : _is71,
+      
+      isCart    : _isCart,
+      
+      isSearch  : _isSearch,
       
       ssVersion : _ssVersion,
       

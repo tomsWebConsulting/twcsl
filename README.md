@@ -29,7 +29,7 @@ number, code, read me, and etc.
 twcsl is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d6
+### Version 0.1d7
 
 ## Quick Install
 
@@ -37,7 +37,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d6/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d7/twcsl.js"></script>
 ```
 
 ## Example
@@ -103,6 +103,10 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
   <br><br>
 * is71 ( boolean )
   <br><br>
+* isCart ( boolean )
+  <br><br>
+* isSearch ( boolean )
+  <br><br>
 * ssVersion ( string )
   <br><br>
 * storePage ( object )
@@ -131,6 +135,12 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2021-06-07**
+<br><br>
+  * fix for _urlSlug undefined error on non-collection pages
+  * added isCart and isSearch properties
+  * bumped version to 0.1d7
+  <br><br>
 * **2021-06-04**
 <br><br>
   * reworked what was being labeled as category and tag, in many cases what was
