@@ -7,17 +7,19 @@
       change form block post-submit redirect based on a radio form field
       selected option
       
-      Version       : 0.1d0
+      Version       : 0.1d1
       
       SS Versions   : 7.0, 7.1
       
       Dependancies  : jQuery
+                      
+                      twcsl
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
-    const radioFormFieldName = 'Have you secured this budget?';
+    const radioFormFieldLabel = '[enter radio form field label here between single quotes]';
     
     const optionUrlMap = {
     
@@ -28,46 +30,35 @@
         
         an empty url means no post-submit redirect
         
+        if a radio field option has single quotes in it then put a backslash
+        before the single quotes. example: it's becomes it\'s
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many a radio field options as you want to change the redirect
+        url.
+        
         */
         
       // '[enter radio field option here between single quotes]' : '[enter url here between single quotes]',
       
       };
       
-    /*
-    
-      use dataFormId when there is more than one form block on the page, you
-      will need to find the id of the form you want to use with this code
-      
-      */
-      
-    const dataFormId = '';
+    const formNth = 1; // which form block from the page to use
     
     // do not change anything below, there be the borg here
     
-    let $form;
+    const $form = twcsl.getFormNth ( formNth );
     
-    if ( dataFormId ) {
+    if ( $form === undefined ) return; // bail if no form
     
-      $form = $( '[data-form-id="' + dataFormId + '"]' );
-      
-      } else {
-      
-        $form = $( '.sqs-block-form' );
-        
-        if ( $form.length != 1 ) return;
-        
-        $form = $( 'form', $form );
-        
-        }
-        
-    let $radio = $( '.title:contains(' + radioFormFieldName + ')', $form )
+    const $radio = $( '.title:contains(' + radioFormFieldLabel + ')', $form )
     
       .filter ( function ( ) {
       
         const s = $( this ) [ 0 ].childNodes [ 0 ].nodeValue.trim ( );
         
-        return s === radioFormFieldName;
+        return s === radioFormFieldLabel;
         
         } );
         
