@@ -2,99 +2,144 @@
 
   begin add store description
   
-  Version       : 0.1d0
+  Version       : 0.2d0
   
   SS Version    : 7.1
   
   Dependancies  : jQuery
                   
-  Note          : the code is comprised of a style and script tag each must be
+                  twcsl
+  
+  Note          : the code is comprised of several tags all of which must be
                   present for the effect to work
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   -->
   
+  <script>
+  
+    /*
+    
+      if the description has single quotes it then put a backslash before
+      the single quotes. example: it's becomes it\'s.
+      
+      */
+      
+    const description = '[enter description here between single quotes]';
+    
+    /*
+    
+      use one of the following paragraph styles. if left empty ( i.e. '' ) then
+      Heading 3 will be used
+      
+      Heading 1
+      Heading 2
+      Heading 3
+      Heading 4
+      Paragraph 1
+      Paragraph 2
+      Paragraph 3
+      Monospace
+      
+      */
+      
+    let paragraphStyle = '';
+    
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
   <style>
   
-      @media screen and ( min-width: 576px ) {
+    @media screen and ( min-width : 576px ) { /* sidebar */
+    
+      .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title {
       
-        .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title {
+        margin-bottom : calc( 37px / 2 ); /* default divided */
+        padding-bottom : 0;
         
-          margin-bottom: calc( 37px / 2 );
-          padding-bottom: 0;
-          
-          }
-          
-        .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title::after {
-        
-          all: unset;
-          
-          }
-          
-        .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-description {
-        
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          
-          -webkit-box-orient: horizontal;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-          flex-direction: row;
-          
-          margin-bottom: 37px;
-          padding-bottom: calc( 54px / 2 );
-          position: relative;
-          
-          }
-          
-        .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-description::after {
-        
-          border-bottom: 1px solid;
-          bottom: 0;
-          content: '';
-          left: 0;
-          opacity: .2;
-          position: absolute;
-          width: 100%;
-          
-          }
         }
         
-      /* end add store description */
+      .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title::after {
       
+        all : unset;
+        
+        }
+        
+      .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .twc-nested-category-description {
+      
+        display : -webkit-box;
+        display : -ms-flexbox;
+        display : flex;
+        
+        -webkit-box-orient : horizontal;
+        -webkit-box-direction : normal;
+        -ms-flex-direction : row;
+        flex-direction : row;
+        
+        margin-bottom : 37px;
+        padding-bottom : calc( 54px / 2 ); /* default divided */
+        position : relative;
+        
+        }
+        
+      .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .twc-nested-category-description::after {
+      
+        border-bottom : 1px solid;
+        bottom : 0;
+        content : '';
+        left : 0;
+        opacity : 0.2;
+        position : absolute;
+        width : 100%;
+        
+        }
+      }
+      
+    /* no top rulesets */
+    
     </style>
     
   <script>
   
     $( ( ) => {
     
-      /*
+      if ( twcsl.storePage.isDetail ) return; // bail if detail
       
-        if the description has single quotes it then put a backslash before
-        the single quotes. example: it's becomes it\'s.
+      const paragraphStyles = {
+      
+        'Heading 1'   : '<h1>',
+        'Heading 2'   : '<h2>',
+        'Heading 3'   : '<h3>',
+        'Heading 4'   : '<h4>',
+        'Paragraph 1' : '<p class="sqsrte-large">',
+        'Paragraph 2' : '<p>',
+        'Paragraph 3' : '<p class="sqsrte-small">',
+        'Monospace'   : '<pre>' +
         
-        */
-        
-      const description = '[enter description here between single quotes]';
-      
-      // do not change anything below, there be the borg here
-      
-      if ( location.pathname == '/shop' ) return;
-      
-      $( '.nested-category-title' )
-      
-        .after ( '<div class="nested-category-description">' +
-        
-          '<p>' +
+          '<code>' +
           
-            description +
+            '</code>' +
             
-            '</p>' +
-            
-          '</div>' );
+          '</pre>',
           
+        };
+        
+      if ( ! paragraphStyle ) paragraphStyle = 'Heading 3';
+      
+      $( '<div class="twc-nested-category-description">' )
+      
+        .append ( paragraphStyles [ paragraphStyle ] )
+        
+        .find ( ':last' )
+        
+          .text ( description )
+          
+          .end ( )
+          
+        .insertAfter ( '.nested-category-title' );
+        
       } );
       
     </script>
