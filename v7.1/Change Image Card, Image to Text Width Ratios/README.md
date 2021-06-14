@@ -1,6 +1,6 @@
 # Change Image Card, Image to Text Width Ratios
 
-### Version 0.1d0
+### Version 0.2d0
 
 ---
 
@@ -11,11 +11,11 @@ Design > Custom CSS.
 
 ## Changes
 
-<!-- * **2021-06-13**
+* **2021-06-13**
 <br><br>
-  * use twcsl
-  * bumped version to 0.1d2
-  <br><br -->
+  * encapsulate main part of effect into mixin
+  * bumped version to 0.2d0
+  <br><br>
 * **2021-02-15**
 <br><br>
   * initial version

@@ -2,7 +2,7 @@
 
   begin change image card, image to text width ratios
   
-  Version       : 0.1d0
+  Version       : 0.2d0
   
   SS Version    : 7.1
   
@@ -12,27 +12,84 @@
   
   */
   
-  #page-section-6019f74588988b10419eb99c .sqs-block-image {
+  @image-width : 35%; /* how much the image takes up of the total width (100%)
+                         available */
   
-    @image-width : 35%; /* how much the image takes up of the total width (100%)
-                           available */
+  /*
+  
+    the following targets all image cards, if you want to target specific ones
+    then put // ( forward slash twice and space ) before the next line. that
+    disables the site-wide effect. then use the multi-selector section to target
+    specific image cards
     
-    // do not change anything below, there be the borg here
+    */
     
-    .design-layout-card:not( .sqs-narrow-width ) {
+  #imageTextRatio();
+  
+  /*
+  
+    multi-selector section
     
-      align-items: center;
+    here is where you can build up selectors to target specific image cards.
+    when targeting multiple items each line should end with a comma except for
+    the last line. following are some examples
+    
+    targeting a single item
+    
+      a page
       
-      > div:first-child {
+        #collection-5ff75ce123b8f237e195b9d3
+        
+      a page section
       
-        width : @image-width - 2.5%;
+        #page-section-6019f74588988b10419eb99c
         
-        }
-        
-      .image-card-wrapper {
+      an image block
       
-        width : 100% - @image-width - 2.5%;
+        #block-yui_3_17_2_1_1621396382553_4638
         
+    targeting multiple items
+    
+      image blocks
+      
+        block-yui_3_17_2_1_1621396382553_4638,
+        block-yui_3_17_2_1_1621970255707_4758
+        
+    */
+    
+  /* remove this line to use multi-selectors
+  
+  [enter CSS selector(s) here to target your image card(s)]
+  
+    {
+    
+      #imageTextRatio();
+      
+      }
+      
+    remove this line to use multi-selectors */
+    
+  // do not change anything below, there be the borg here
+  
+  #imageTextRatio() {
+  
+    .sqs-block-image {
+    
+      .design-layout-card:not( .sqs-narrow-width ) {
+      
+        align-items : center;
+        
+        > div:first-child {
+        
+          width : @image-width - 2.5%;
+          
+          }
+          
+        .image-card-wrapper {
+        
+          width : 100% - @image-width - 2.5%;
+          
+          }
         }
       }
     }
