@@ -1,6 +1,6 @@
 # Add Store Category Page Description
 
-### Version 0.2d1
+### Version 0.2d2
 
 ---
 
@@ -18,11 +18,12 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
-<!-- * **2021-06-11**
+* **2021-06-15**
 <br><br>
-  * use twcsl
-  * bumped version to 0.2d1
-  <br><br -->
+  * fix issue with not being able to add category description to store page
+    grid/listing
+  * bumped version to 0.2d2
+  <br><br>
 * **2021-06-11**
 <br><br>
   * use twcsl
