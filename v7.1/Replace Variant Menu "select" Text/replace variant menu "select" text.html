@@ -1,0 +1,93 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      replace variant menu "select" text
+      
+      Version       : 0.1d1
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const fromText = 'Sélectionnez';
+    
+    const toText = 'Select';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! $( '.ProductItem' ).length ) return; // bail if not product detail
+    
+    if ( ! 'MutationObserver' in window ) return;
+    
+    // begin replace text
+    
+      $( '.variant-option' ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let attribute = 'aria-label';
+        
+        let $e = $( '[data-variant-option-name]', $this );
+        
+        let s = $e
+        
+          .attr ( attribute )
+          
+          .replace ( fromText, toText );
+          
+        $e.attr ( attribute, s );
+        
+        $e = $( 'option:first', $this );
+        
+        s = $e
+        
+          .text ( )
+          
+          .replace ( fromText, toText );
+          
+        $e.text ( s );
+        
+        } );
+        
+      // end replace text
+      
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        const attribute = 'data-text';
+        
+        if ( this.attributeName != attribute ) return;
+        
+        const $e = $( this.target );
+        
+        let s = $e.attr ( attribute );
+        
+        if ( ! s.includes ( fromText ) ) return;
+        
+        s = s.replace ( fromText, toText );
+        
+        $e.attr ( attribute, s );
+        
+        } );
+        
+      } );
+      
+    // start listening for changes in varient menu
+    
+    $( '.variant-select-wrapper' ).each ( function ( ) {
+    
+      observer.observe ( this, { attributes : true } );
+      
+      } );
+      
+    } );
+    
+  </script>
