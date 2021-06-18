@@ -1,0 +1,85 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin reposition first page section background so header does not hide it
+      
+      Version       : 0.2d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      // increase section height the same amount the image is moved down
+      
+      const increaseSectionHeight = false;
+      
+      // do not change anything below, there be the borg here
+      
+      $( window )
+      
+        .resize ( function ( ) {
+        
+          const h = $( '#header' ).height ( );
+          
+          const $firstPageSection =
+          
+            $( ':not( #footer-sections ) > .page-section:first' );
+            
+          if ( ! $firstPageSection.length ) return; // bail if no first section
+          
+          const selector = '.section-background img, ' +
+          
+            '.section-background .sqs-video-background';
+            
+          const $e = $( selector, $firstPageSection );
+          
+          $e.css ( 'top', h + 'px' );
+          
+          // bail if no section height increase
+          
+          if ( ! increaseSectionHeight ) return;
+          
+          let minHeight = 0;
+          
+          switch ( true ) {
+          
+            case $firstPageSection.hasClass ( 'section-height--medium' ) :
+            
+              minHeight = 66;
+              
+              break;
+              
+            case $firstPageSection.hasClass ( 'section-height--small' ) :
+            
+              minHeight = 33;
+              
+              break;
+              
+            default :
+            
+              minHeight = 100;
+              
+            }
+            
+          if ( minHeight )
+          
+            $firstPageSection.css ( 'min-height', 'calc( ' + minHeight +
+            
+              'vh + ' + h + 'px )' );
+              
+          } )
+          
+        .resize ( );
+        
+      // end reposition first page section background so header does not hide it
+      
+    } );
+    
+  </script>
