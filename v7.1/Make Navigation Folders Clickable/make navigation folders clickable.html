@@ -6,7 +6,7 @@
     
       begin make navigation folder URL Slugs clickable
       
-      Version      : 0.5d1
+      Version      : 0.5d2
       
       SS Version   : 7.1
       
@@ -65,13 +65,13 @@
             
             .attr ( 'href' );
             
-          if ( url === undefined ) return true
+          if ( url === undefined ) return true;
           
           url = url.slice ( 1 );
           
           folderToPageUrlSlugMap [ key ] = url;
           
-          } );
+          } ); // end each
           
         }
         
@@ -83,21 +83,23 @@
         
         if ( ! url.includes ( '://' ) ) url = '/' + url;
         
-        $( '.header-nav-folder-title[href="/' + key + '"]' ).each ( function ( ) {
+        $( '.header-nav-folder-title[href="/' + key + '"]' )
         
-          $( this )
+          .each ( function ( ) {
           
-            .attr ( 'href', url )
+            $( this )
             
-            .click ( function ( ) {
+              .attr ( 'href', url )
+              
+              .click ( function ( ) {
+              
+                location.href = $( this ).attr ( 'href' );
+                
+                } );
+                
+            } ); // end each
             
-              location.href = $( this ).attr ( 'href' );
-              
-              } );
-              
-          } );
-          
-        } );
+        } ); // end each
         
       // end make navigation folder URL Slugs clickable
       
