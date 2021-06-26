@@ -4,39 +4,42 @@
   
     /*
     
-    redirect to url after add to cart button has been clicked and SS indicates
-    item has been added to cart
-    
-    SS Versions   : 7.0, 7.1
-    
-    Version       : 0.1d1
-    
-    Dependancies  : jQuery
-                    
-                    twcsl
-    
-    Note          : has auto click feature, meaning the add to cart button will
-                    automatically be clicked when the page is loaded
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
+      redirect to url after add to cart button has been clicked and SS indicates
+      item has been added to cart
+      
+      SS Versions   : 7.0, 7.1
+      
+      Version       : 0.1d2
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      Note          : has auto click feature, meaning the add to cart button
+                      will automatically be clicked when the page is loaded. if
+                      there is more than one atcb on the page then the setting
+                      is ignored. the setting will always work on the product
+                      detail page but will target only the first atcb
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
     /*
     
       the url can be any valid url. It can be a full (external to your site) one
       like 'http://www.tomsWeb.consulting/' or a partial (internal to your site)
-      one like '/checkout'
+      one like '/cart'
       
       */
-    
+      
     const url = '[enter url here between single quotes]';
     
     const autoClick = false;
     
     // do not change anything below, there be the borg here
     
-    if ( ! twcsl.storePage.isDetail ) return; // bail if not product detail page
+    // bail if no mutation observer available
     
     if ( ! ( 'MutationObserver' in window ) ) return;
     
@@ -56,21 +59,33 @@
         
       } );
       
-    const $addToCartButton = $( '.sqs-add-to-cart-button-wrapper:first' );
+    // start listening for changes in specified elements
     
-    // start listening for changes in specified element
+    const $addToCartButtons = $( '.sqs-add-to-cart-button-wrapper' );
     
-    observer.observe ( $( '.sqs-add-to-cart-button', $addToCartButton ) [ 0 ], {
+    if ( ! $addToCartButtons.length ) return; // bail if no buttons
     
-      attributes : true
+    $addToCartButtons.each ( function ( ) {
+    
+      observer.observe ( $( '.sqs-add-to-cart-button', $( this ) ) [ 0 ], {
       
+        attributes : true
+        
+        } );
+        
       } );
       
-    // auto click add to cart button
+    // begin auto click add to cart button
     
-    if ( autoClick )
-    
-      $( '.sqs-add-to-cart-button-inner', $addToCartButton ).click ( );
+      if ( ! autoClick ) return; // bail if not auto click
+      
+      if ( ! twcsl.storePage.isDetail && $addToCartButtons.length > 1 ) return;
+      
+      $( '.sqs-add-to-cart-button-inner', $addToCartButtons.first ( ) )
+      
+        .click ( );
+        
+      // end auto click add to cart button
       
     } );
     
