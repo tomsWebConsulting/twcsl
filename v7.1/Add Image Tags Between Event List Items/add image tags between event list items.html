@@ -1,0 +1,60 @@
+<!--
+
+  begin add image tags between event list items
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  Note          : the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    const imageUrl = '[enter image url here between single quotes]';
+    
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-event-separator {
+    
+      display : block;
+      margin : auto;
+      margin-top : 68px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( twcsl.eventPage.isDetail ) return; // bail if detail
+      
+      $( '.eventlist-event:not( :last )' ).each ( function ( ) {
+      
+        $imageTag = $( '<img class="twc-event-separator">' )
+        
+          .attr ( 'src', imageUrl )
+          
+          .insertAfter ( $( this ) );
+          
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end add image tags between event list items -->
