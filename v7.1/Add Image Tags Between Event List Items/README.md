@@ -1,6 +1,6 @@
 # Add Image Tags Between Event List Items
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
@@ -18,13 +18,11 @@ Event Settings > Advanced > Page Header Code Injection for the event page.
 
 ## Changes
 
-<!-- * **2021-06-14**
+* **2021-06-26**
 <br><br>
-  * reworked the autoClick part of the code to work in the wider variety of
-    situations
-  * code should now work on any page where there are atcb
-  * bumped version to 0.1d2
-  <br><br -->
+  * add window.twc
+  * bumped version to 0.1d1
+  <br><br>
 * **2021-06-25**
 <br><br>
   * initial version

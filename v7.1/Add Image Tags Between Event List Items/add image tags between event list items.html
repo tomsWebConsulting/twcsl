@@ -2,7 +2,7 @@
 
   begin add image tags between event list items
   
-  Version       : 0.1d0
+  Version       : 0.1d1
   
   SS Version    : 7.1
   
@@ -19,8 +19,16 @@
   
   <script>
   
-    const imageUrl = '[enter image url here between single quotes]';
+    window.twc = {
     
+      '822bae52' : {
+      
+        url : '[enter image url here between single quotes]',
+        
+        }
+        
+      };
+      
     </script>
     
   <!-- do not change anything below, there be the borg here -->
@@ -43,11 +51,13 @@
     
       if ( twcsl.eventPage.isDetail ) return; // bail if detail
       
+      const url = twc [ '822bae52' ].url;
+      
       $( '.eventlist-event:not( :last )' ).each ( function ( ) {
       
         $imageTag = $( '<img class="twc-event-separator">' )
         
-          .attr ( 'src', imageUrl )
+          .attr ( 'src', url )
           
           .insertAfter ( $( this ) );
           
