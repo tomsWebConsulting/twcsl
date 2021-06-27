@@ -29,7 +29,7 @@ number, code, read me, and etc.
 twcsl is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d7
+### Version 0.1d8
 
 ## Quick Install
 
@@ -37,7 +37,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d7/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d8/twcsl.js"></script>
 ```
 
 ## Example
@@ -71,6 +71,34 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Properties
 
+* blogPage ( object )
+  <br><br>
+  * categories ( array, for detail page only )
+    <br><br>
+  * category ( string )
+    <br><br>
+  * categoryUrlSlug ( string )
+    <br><br>
+  * categoryUrlSlugs ( array, for detail page only )
+    <br><br>
+  * hasCategory ( boolean )
+    <br><br>
+  * hasTag ( boolean )
+    <br><br>
+  * isBlogPage ( boolean )
+    <br><br>
+  * isDetail ( boolean )
+    <br><br>
+  * tag ( string )
+    <br><br>
+  * tags ( array, for detail page only )
+    <br><br>
+  * tagUrlSlug ( string )
+    <br><br>
+  * tagUrlSlugs ( array, for detail page only )
+    <br><br>
+  * urlSlug ( string )
+    <br><br>
 * eventPage ( object )
   <br><br>
   * categories ( array, for detail page only )
@@ -107,6 +135,10 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
   <br><br>
 * isSearch ( boolean )
   <br><br>
+* navigator ( object )
+  <br><br>
+  * hasTouchScreen ( boolean )
+    <br><br>
 * ssVersion ( string )
   <br><br>
 * storePage ( object )
@@ -135,6 +167,12 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2021-06-27**
+<br><br>
+  * added storePage.classCategories
+  * added blogPage
+  * bumped version to 0.1d8
+  <br><br>
 * **2021-06-07**
 <br><br>
   * fix for _urlSlug undefined error on non-collection pages

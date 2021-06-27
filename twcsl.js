@@ -4,6 +4,8 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
+  Version         : 0.1d8
+  
   SS Versions     : 7.0, 7.1
   
   v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
@@ -18,8 +20,6 @@ const twcsl = ( ( $ ) => {
                     your template is not listed? then it is not currently
                     supported
                     
-  Version         : 0.1d7
-  
   Dependancies    : jQuery
   
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
@@ -32,6 +32,36 @@ const twcsl = ( ( $ ) => {
   
     // begin first order
     
+      const _blogPage = {
+      
+        categories : [ ],
+        
+        category : '',
+        
+        categoryUrlSlug : '',
+        
+        categoryUrlSlugs : [ ],
+        
+        hasCategory : false,
+        
+        hasTag : false,
+        
+        isBlogPage : false,
+        
+        isDetail : false,
+        
+        tag : '',
+        
+        tags : [ ],
+        
+        tagUrlSlug : '',
+        
+        tagUrlSlugs : [ ],
+        
+        urlSlug : '',
+        
+        };
+        
       const _eventPage = {
       
         categories : [ ],
@@ -52,6 +82,8 @@ const twcsl = ( ( $ ) => {
         
         tag : '',
         
+        tags : [ ],
+        
         tagUrlSlug : '',
         
         tagUrlSlugs : [ ],
@@ -64,6 +96,12 @@ const twcsl = ( ( $ ) => {
       
       const _isSearch = location.pathname == '/search';
       
+      const _navigator = {
+      
+        hasTouchScreen : false,
+        
+        };
+        
       const _ssVersion = Static.SQUARESPACE_CONTEXT.templateVersion;
       
       const _storePage = {
@@ -71,6 +109,8 @@ const twcsl = ( ( $ ) => {
         category : '',
         
         categoryUrlSlug : '',
+        
+        classCategories : [ ],
         
         classTags : [ ],
         
@@ -112,83 +152,691 @@ const twcsl = ( ( $ ) => {
       
       // end second order
       
+    // begin third order
+    
+      const _firstPageSection = ( ( ) => {
+      
+        let $e = $( 'x-empty' );
+        
+        if ( _is71 )
+        
+          $e = $( ':not( #footer-sections ) > .page-section:first' );
+          
+        return $e;
+        
+        } ) ( );
+        
+      // end third order
+      
     // end private properties
     
   // begin private methods
   
-    const _getHrefQueryStringParameterValues = parameter => {
+    // begin first order
     
-      const values = $( '[href*="?' + parameter + '="]' )
+      const _getHrefQueryStringParameterValues = p => {
       
-        .map ( function ( ) {
-        
-          const value = $( this )
-          
-            .attr ( 'href' )
-            
-            .split ( '=' ) [ 1 ];
-            
-          return value;
-          
-          } )
-          
-        .toArray ( );
-        
-      return values;
-      
-      };
-      
-    const _getPageSearchParameter = p => {
-    
-      let v = new URLSearchParams ( location.search )
-      
-        .get ( p );
-        
-      if ( v === null ) v = '';
-      
-      return v;
-      
-      };
-      
-    const _isPageDetail = ( ) => {
-    
-      return $( '[id^="item-"]' ).length != 0;
-      
-      };
-      
-    const _getPageCategory = ( ) => {
-    
-      return _getPageSearchParameter ( 'category' );
-      
-      };
-      
-    const _getPageTag = ( ) => {
-    
-      return _getPageSearchParameter ( 'tag' );
-      
-      };
-      
-    const _initializeEventPage = ( ) => { // initialize eventPage
-    
-      const o = _eventPage;
-      
-      o.isEventPage = Boolean ( $( 'body[class*="collection-type-events-"]' )
-      
-        .length );
-        
-      if ( ! o.isEventPage ) return; // bail if not event page
-      
-      o.isDetail = _isPageDetail ( );
-      
-      o.categories = ( ( ) => {
-      
-        if ( ! o.isDetail ) return [ ]; // bail if not detail page
-        
-        const categories = $( '.eventitem-meta-cats a' )
+        const values = $( '[href*="?' + p + '="]' )
         
           .map ( function ( ) {
           
-            const category = $( this )
+            const value = $( this )
+            
+              .attr ( 'href' )
+              
+              .split ( '=' ) [ 1 ];
+              
+            return value;
+            
+            } )
+            
+          .toArray ( );
+          
+        return values;
+        
+        };
+        
+      const _getPageSearchParameter = p => {
+      
+        let v = new URLSearchParams ( location.search )
+        
+          .get ( p );
+          
+        if ( v === null ) v = '';
+        
+        return v;
+        
+        };
+        
+      const _initializeNavigator = ( ) => { // initialize _navigator
+      
+        const o = _navigator;
+        
+        // begin has touch screen
+        
+          // based on code from MDN < https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent >
+          
+          switch ( true ) {
+          
+            case 'maxTouchPoints' in navigator :
+            
+              o.hasTouchScreen = navigator.maxTouchPoints > 0;
+              
+              break;
+              
+            case 'msMaxTouchPoints' in navigator :
+            
+              o.hasTouchScreen = navigator.msMaxTouchPoints > 0;
+              
+              break;
+              
+            default :
+            
+              const mQ = window.matchMedia && matchMedia ( '(pointer:coarse)' );
+              
+              switch ( true ) {
+              
+                case mQ && mQ.media === '(pointer:coarse)' :
+                
+                  o.hasTouchScreen = !! mQ.matches;
+                  
+                  break;
+                  
+                case 'orientation' in window :
+                
+                  o.hasTouchScreen = true; // deprecated, but good fallback
+                  
+                  break;
+                  
+                default :
+                
+                  // Only as a last resort, fall back to user agent sniffing
+                  
+                  const UA = navigator.userAgent;
+                  
+                  o.hasTouchScreen = (
+                  
+                    /\b(BlackBerry|webOS|iPhone|IEMobile)\b/i.test ( UA ) ||
+                    
+                    /\b(Android|Windows Phone|iPad|iPod)\b/i.test ( UA )
+                    
+                    );
+                    
+                } // end switch
+                
+            } // end switch
+            
+          // end has touch screen
+          
+        }; // end initialize _navigator
+        
+      const _isPageDetail = ( ) => {
+      
+        return $( 'body[id^="item-"]' ).length != 0;
+        
+        };
+        
+      // end first order
+      
+    // begin second order
+    
+      const _getPageCategory = ( ) => {
+      
+        return _getPageSearchParameter ( 'category' );
+        
+        };
+        
+      const _getPageTagSlug = ( ) => {
+      
+        return _getPageSearchParameter ( 'tag' );
+        
+        };
+        
+      // end second order
+      
+    // begin third order
+    
+      const _initializeBlogPage = ( ) => { // initialize blogPage
+      
+        const o = _blogPage;
+        
+        // begin first order
+        
+          const selector =
+          
+            'body[class~="collection-type-blog"], ' +
+            
+            'body[class*="collection-type-blog-"]';
+            
+          o.isBlogPage = Boolean ( $( selector ).length );
+          
+          if ( ! o.isBlogPage ) return; // bail if not blog page
+          
+          o.isDetail = _isPageDetail ( );
+          
+          o.urlSlug = _urlSlug;
+          
+          // end first order
+          
+        // begin second order
+        
+          o.categories = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const selector =
+            
+              '.blog-item-category, ' +
+              
+              '.Blog-meta-item-category, ' +
+              
+              '.meta-above-title .entry-category a';
+              
+            const categories = $( selector )
+            
+              .map ( function ( ) {
+              
+                const category = $( this )
+                
+                  .text ( )
+                  
+                  .trim ( );
+                  
+                return category;
+                
+                } )
+                
+              .toArray ( );
+              
+            return categories;
+            
+            } ) ( );
+            
+          o.categoryUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            const regex = /\//g;
+            
+            let slug = location
+            
+              .pathname
+              
+              .replace ( o.urlSlug + '/category/', '' );
+              
+            if ( regex.test ( slug ) ) return '';
+            
+            return slug;
+            
+            } ) ( );
+            
+          o.categoryUrlSlugs = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const selector =
+            
+              '.blog-item-category, ' +
+              
+              '.Blog-meta-item-category, ' +
+              
+              '.meta-above-title .entry-category a';
+              
+            const urlSlugs = $( selector )
+            
+              .map ( function ( ) {
+              
+                const urlSlug = $( this )
+                
+                  .attr ( 'href' )
+                  
+                  .replace ( o.urlSlug + '/category/', '' );
+                  
+                return urlSlug;
+                
+                } )
+                
+              .toArray ( );
+              
+            return urlSlugs;
+            
+            } ) ( );
+            
+          o.tags = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const tags = $( '.Blog-meta-item-tag, .blog-item-tag' )
+            
+              .map ( function ( ) {
+              
+                const tag = $( this )
+                
+                  .text ( )
+                  
+                  .trim ( );
+                  
+                return tag;
+                
+                } )
+                
+              .toArray ( );
+              
+            return tags;
+            
+            } ) ( );
+            
+          o.tagUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            const regex = /\//g;
+            
+            let slug = location
+            
+              .pathname
+              
+              .replace ( o.urlSlug + '/tag/', '' );
+              
+            if ( regex.test ( slug ) ) return '';
+            
+            return slug;
+            
+            } ) ( );
+             
+          o.tagUrlSlugs = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const urlSlugs = $( '.Blog-meta-item-tag, .blog-item-tag' )
+            
+              .map ( function ( ) {
+              
+                const urlSlug = $( this )
+                
+                  .attr ( 'href' )
+                  
+                  .replace ( o.urlSlug + '/tag/', '' );
+                  
+                return urlSlug;
+                
+                } )
+                
+              .toArray ( );
+              
+            return urlSlugs;
+            
+            } ) ( );
+            
+          // end second order
+          
+        // begin third order
+        
+          o.hasCategory = Boolean ( o.categoryUrlSlug );
+          
+          o.hasTag = Boolean ( o.tagUrlSlug );
+          
+          // end third order
+          
+        // begin fourth order
+        
+          o.category = ( ( ) => {
+          
+            if ( ! o.hasCategory ) return ''; // bail if not category
+            
+            let category = $( 'title' )
+            
+              .text ( )
+              
+              .split ( ' — ' ) [ 0 ];
+              
+            return category;
+            
+            } ) ( );
+            
+          o.tag = ( ( ) => {
+          
+            if ( ! o.hasTag ) return ''; // bail if not tag
+            
+            let tag = $( 'title' )
+            
+              .text ( )
+              
+              .split ( ' — ' ) [ 0 ];
+              
+            return tag;
+            
+            } ) ( );
+            
+          // end fourth order
+          
+        }; // end initialize blogPage
+        
+      const _initializeEventPage = ( ) => { // initialize eventPage
+      
+        const o = _eventPage;
+        
+        const selector =
+        
+          'body[class~="collection-type-events"], ' +
+          
+          'body[class*="collection-type-events-"]';
+          
+        o.isEventPage = Boolean ( $( selector ).length );
+        
+        if ( ! o.isEventPage ) return; // bail if not event page
+        
+        // begin first order
+        
+          o.isDetail = _isPageDetail ( );
+          
+          o.urlSlug = _urlSlug;
+          
+          // end first order
+          
+        // begin second order
+        
+          o.categories = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const categories = $( '.eventitem-meta-cats a' )
+            
+              .map ( function ( ) {
+              
+                const category = $( this )
+                
+                  .text ( )
+                  
+                  .trim ( );
+                  
+                return category;
+                
+                } )
+                
+              .toArray ( );
+              
+            return categories;
+            
+            } ) ( );
+            
+          o.categoryUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            let slug = _getPageCategory ( );
+            
+            slug = encodeURIComponent ( slug )
+            
+              .replaceAll ( '%20', '+' );
+              
+            return slug;
+            
+            } ) ( );
+            
+          o.categoryUrlSlugs = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            return _getHrefQueryStringParameterValues ( 'category' );
+            
+            } ) ( );
+            
+          o.tags = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const tags = $( '.eventitem-meta-tags a' )
+            
+              .map ( function ( ) {
+              
+                const tag = $( this )
+                
+                  .text ( )
+                  
+                  .trim ( );
+                  
+                return tag;
+                
+                } )
+                
+              .toArray ( );
+              
+            return tags;
+            
+            } ) ( );
+            
+          o.tagUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            let slug = _getPageTagSlug ( );
+            
+            slug = encodeURIComponent ( slug )
+            
+              .replaceAll ( '%20', '+' );
+              
+            return slug;
+            
+            } ) ( );
+            
+          o.tagUrlSlugs = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            return _getHrefQueryStringParameterValues ( 'tag' );
+            
+            } ) ( );
+            
+          // end second order
+          
+        // begin third order
+        
+          o.hasCategory = Boolean ( o.categoryUrlSlug );
+          
+          o.hasTag = Boolean ( o.tagUrlSlug );
+          
+          // end third order
+          
+        // begin forth order
+        
+          o.category = ( ( ) => {
+          
+            if ( ! o.hasCategory ) return ''; // bail if not category
+            
+            let category = $( '.eventlist-filter' )
+            
+              .text ( )
+              
+              .split ( ': ' ) [ 1 ]
+              
+              .replace ( /(?:“)(.+)(?:”)/, '$1' )
+              
+              .trim ( );
+              
+            return category;
+            
+            } ) ( );
+            
+          o.tag = ( ( ) => {
+          
+            if ( ! o.hasTag ) return ''; // bail if not tag
+            
+            let tag = $( '.eventlist-filter' )
+            
+              .text ( )
+              
+              .split ( ': ' ) [ 1 ]
+              
+              .replace ( /(?:“)(.+)(?:”)/, '$1' )
+              
+              .trim ( );
+              
+            return tag;
+            
+            } ) ( );
+            
+          // end forth order
+          
+        }; // end initialize eventPage
+        
+      const _initializeStorePage = ( ) => { // initialize _storePage
+      
+        const o = _storePage;
+        
+        o.isStorePage = $( 'body' ).hasClass ( 'collection-type-products' );
+        
+        if ( ! o.isStorePage ) return; // bail if not store page
+        
+        // begin first order
+        
+          o.isDetail = _isPageDetail ( );
+          
+          o.urlSlug = _urlSlug;
+          
+          // end first order
+          
+        // begin second order
+        
+          o.categoryUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            let slug = '';
+            
+            switch ( true ) {
+            
+              case _is70 :
+              
+                slug = _getPageCategory ( );
+                
+                slug = encodeURIComponent ( slug )
+                
+                  .replaceAll ( '%20', '+' );
+                  
+                break;
+                
+              case _is71 :
+              
+                slug = location
+                
+                  .pathname
+                  
+                  .replace ( o.urlSlug, '' );
+                  
+                if ( slug )
+                
+                  slug = slug.slice ( 1 );
+                  
+                break;
+                
+              }
+              
+            return slug;
+            
+            } ) ( );
+            
+          o.classCategories = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const selector =
+            
+              '.ProductItem, ' +
+              
+              '.productWrapper, ' +
+              
+              '#productWrapper';
+              
+            let categories = $( selector )
+            
+              .attr ( 'class' )
+              
+              .split ( ' ' )
+              
+              .filter ( clss => clss.startsWith ( 'category-' ) )
+              
+              .map ( ( category ) => {
+              
+                return category.slice ( 9 );
+                
+                } );
+                
+            return categories;
+            
+            } ) ( );
+            
+          o.classTags = ( ( ) => {
+          
+            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            
+            const selector =
+            
+              '.ProductItem, ' +
+              
+              '.productWrapper, ' +
+              
+              '#productWrapper';
+              
+            let tags = $( selector )
+            
+              .attr ( 'class' )
+              
+              .split ( ' ' )
+              
+              .filter ( clss => clss.startsWith ( 'tag-' ) )
+              
+              .map ( ( tag ) => {
+              
+                return tag.slice ( 4 );
+                
+                } );
+                
+            return tags;
+            
+            } ) ( );
+            
+          o.tagUrlSlug = ( ( ) => {
+          
+            if ( o.isDetail ) return ''; // bail if detail
+            
+            let slug = _getPageTagSlug ( );
+            
+            slug = encodeURIComponent ( slug )
+            
+              .replaceAll ( '%20', '+' );
+              
+            return slug;
+            
+            } ) ( );
+            
+          // end second order
+          
+        // begin third order
+        
+          o.hasCategory = Boolean ( o.categoryUrlSlug );
+          
+          o.hasTag = Boolean ( o.tagUrlSlug );
+          
+          // end third order
+          
+        // begin forth order
+        
+          o.category = ( ( ) => {
+          
+            if ( ! o.hasCategory ) return ''; // bail if not category
+            
+            const selector =
+            
+              '.filter-by-category, ' +
+              
+              '.nested-category-title, ' +
+              
+              '.ProductList-filter-list-item--active';
+              
+            const $category = $( selector );
+            
+            const category = $category
             
               .text ( )
               
@@ -196,47 +844,17 @@ const twcsl = ( ( $ ) => {
               
             return category;
             
-            } )
+            } ) ( );
             
-          .toArray ( );
+          o.tag = ( ( ) => {
           
-        return categories;
-        
-        } ) ( );
-        
-      o.categoryUrlSlugs = ( ( ) => {
-      
-        if ( ! o.isDetail ) return [ ]; // bail if not detail page
-        
-        return _getHrefQueryStringParameterValues ( 'category' );
-        
-        } ) ( );
-        
-      o.categoryUrlSlug = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        let slug = _getPageCategory ( );
-        
-        slug = encodeURIComponent ( slug )
-        
-          .replaceAll ( '%20', '+' );
-          
-        return slug;
-        
-        } ) ( );
-        
-      o.tag = _getPageTag ( );
-      
-      o.tags = ( ( ) => {
-      
-        if ( ! o.isDetail ) return [ ]; // bail if not detail page
-        
-        const tags = $( '.eventitem-meta-tags a' )
-        
-          .map ( function ( ) {
-          
-            const tag = $( this )
+            if ( ! o.hasTag ) return ''; // bail if not tag
+            
+            if ( ! _is70 ) return ''; // bail if not v7.0
+            
+            const $tag = $( '.filter-by-tag' );
+            
+            const tag = $tag
             
               .text ( )
               
@@ -244,223 +862,19 @@ const twcsl = ( ( $ ) => {
               
             return tag;
             
-            } )
+            } ) ( );
             
-          .toArray ( );
+          // end forth order
           
-        return tags;
+        }; // end initialize _storePage
         
-        } ) ( );
-        
-      o.tagUrlSlugs = ( ( ) => {
-      
-        if ( ! o.isDetail ) return [ ]; // bail if not detail page
-        
-        return _getHrefQueryStringParameterValues ( 'tag' );
-        
-        } ) ( );
-        
-      o.tagUrlSlug = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        let slug = _getPageTag ( );
-        
-        slug = encodeURIComponent ( slug )
-        
-          .replaceAll ( '%20', '+' );
-          
-        return slug;
-        
-        } ) ( );
-        
-      o.urlSlug = _urlSlug;
-      
-      o.hasCategory = Boolean ( o.categoryUrlSlug );
-      
-      o.hasTag = Boolean ( o.tagUrlSlug );
-      
-      o.category = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        if ( ! o.hasCategory ) return ''; // bail if not category
-        
-        let category = $( '.eventlist-filter' )
-        
-          .text ( )
-          
-          .split ( ': ' ) [ 1 ]
-          
-          .replace ( /(?:“)(.+)(?:”)/, '$1' )
-          
-          .trim ( );
-          
-        return category;
-        
-        } ) ( );
-        
-      o.tag = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        if ( ! o.hasTag ) return ''; // bail if not tag
-        
-        let tag = $( '.eventlist-filter' )
-        
-          .text ( )
-          
-          .split ( ': ' ) [ 1 ]
-          
-          .replace ( /(?:“)(.+)(?:”)/, '$1' )
-          
-          .trim ( );
-          
-        return tag;
-        
-        } ) ( );
-        
-      };
-      
-    const _initializeStorePage = ( ) => { // initialize storePage
-    
-      const o = _storePage;
-      
-      o.isStorePage = $( 'body' ).hasClass ( 'collection-type-products' );
-      
-      if ( ! o.isStorePage ) return; // bail if not store page
-      
-      o.isDetail = _isPageDetail ( );
-      
-      o.urlSlug = _urlSlug;
-      
-      o.categoryUrlSlug = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        let slug = '';
-        
-        switch ( true ) {
-        
-          case _is70 :
-          
-            slug = _getPageCategory ( );
-            
-            slug = encodeURIComponent ( slug )
-            
-              .replaceAll ( '%20', '+' );
-              
-            break;
-            
-          case _is71 :
-          
-            slug = location
-            
-              .pathname
-              
-              .replace ( o.urlSlug, '' );
-              
-            if ( slug )
-            
-              slug = slug.slice ( 1 );
-              
-            break;
-            
-          }
-          
-        return slug;
-        
-        } ) ( );
-        
-      o.classTags = ( ( ) => {
-      
-        if ( ! o.isDetail ) return [ ]; // bail if not detail page
-        
-        let tags = $( '.ProductItem, .productWrapper' )
-        
-          .attr ( 'class' )
-          
-          .split ( ' ' )
-          
-          .filter ( clss => clss.startsWith ( 'tag-' ) )
-          
-          .map ( ( tag ) => {
-          
-            return tag.slice ( 4 );
-            
-            } );
-            
-        return tags;
-        
-        } ) ( );
-        
-      o.tagUrlSlug = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        let slug = _getPageTag ( );
-        
-        slug = encodeURIComponent ( slug )
-        
-          .replaceAll ( '%20', '+' );
-          
-        return slug;
-        
-        } ) ( );
-        
-      o.hasCategory = Boolean ( o.categoryUrlSlug );
-      
-      o.hasTag = Boolean ( o.tagUrlSlug );
-      
-      o.category = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        if ( ! o.hasCategory ) return ''; // bail if not category
-        
-        const selector = '.ProductList-filter-list-item--active, ' +
-        
-          '.nested-category-title, .filter-by-category';
-          
-        const $category = $( selector );
-        
-        const category = $category
-        
-          .text ( )
-          
-          .trim ( );
-          
-        return category;
-        
-        } ) ( );
-        
-      o.tag = ( ( ) => {
-      
-        if ( o.isDetail ) return ''; // bail if detail page
-        
-        if ( ! o.hasTag ) return ''; // bail if not tag
-        
-        if ( ! _is70 ) return ''; // bail if not v7.0
-        
-        const $tag = $( '.filter-by-tag' );
-        
-        const tag = $tag
-        
-          .text ( )
-          
-          .trim ( );
-          
-        return tag;
-        
-        } ) ( );
-        
-      };
+      // end third order
       
     // end private methods
     
   // begin public properties
   
-    const version = '0.1d7';
+    const version = '0.1d8';
     
     // end public properties
     
@@ -559,7 +973,11 @@ const twcsl = ( ( $ ) => {
     
   $( ( ) => { // initialize
   
+    _initializeBlogPage ( );
+    
     _initializeEventPage ( );
+    
+    _initializeNavigator ( );
     
     _initializeStorePage ( );
     
@@ -577,21 +995,27 @@ const twcsl = ( ( $ ) => {
       
     // begin properties
     
-      eventPage : _eventPage,
+      blogPage          : _blogPage,
       
-      is70      : _is70,
+      eventPage         : _eventPage,
       
-      is71      : _is71,
+      firstPageSection  : _firstPageSection,
       
-      isCart    : _isCart,
+      is70              : _is70,
       
-      isSearch  : _isSearch,
+      is71              : _is71,
       
-      ssVersion : _ssVersion,
+      isCart            : _isCart,
       
-      storePage : _storePage,
+      isSearch          : _isSearch,
       
-      version   : version,
+      navigator         : _navigator,
+      
+      ssVersion         : _ssVersion,
+      
+      storePage         : _storePage,
+      
+      version           : version,
       
       // end properties
       
