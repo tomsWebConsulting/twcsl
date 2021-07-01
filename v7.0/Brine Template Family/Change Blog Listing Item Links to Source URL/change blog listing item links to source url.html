@@ -1,0 +1,107 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change blog listing item links to source url
+      
+      Version       : 0.1d2
+      
+      SS Version    : 7.0
+      
+      Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const changeImageLink = true;
+    
+    const changeReadMoreLink = true;
+    
+    let targetAtttributeValue = ''; /* use _self | _blank | _parent | _top |
+                                       framename see
+                                       < https://mzl.la/2Q0JROF > */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.blogPage.isBlogPage ) return; // bail if not blog page
+    
+    if ( twcsl.blogPage.isDetail ) return; // bail if detail
+    
+    const setTargetAtttributeValue = ( $this, $e ) => {
+    
+      if ( targetAtttributeValue )
+      
+        $e.attr ( 'target', targetAtttributeValue );
+        
+      }
+      
+    $( '.BlogList-item-title' )
+    
+      .filter ( function ( ) {
+      
+        return $( this ).attr ( 'target' ) !== undefined;
+        
+        } )
+        
+      .each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const url = $this.attr ( 'href' );
+        
+        if ( ! targetAtttributeValue ) {
+        
+          const v = $this.attr ( 'target' );
+          
+          if ( v !== undefined ) targetAtttributeValue = v;
+          
+          }
+          
+        if ( changeImageLink ) {
+        
+          let $imageLink = $this
+          
+            .prev ( '.BlogList-item-image' )
+            
+            .find ( '.BlogList-item-image-link' )
+            
+              .attr ( 'href', url );
+              
+          setTargetAtttributeValue ( $this, $imageLink );
+          
+          }
+          
+        if ( changeReadMoreLink ) {
+        
+          let $readMoreLink = $this
+          
+            .parent ( )
+            
+            .find ( '.BlogList-item-readmore' )
+            
+              .attr ( 'href', url );
+              
+          setTargetAtttributeValue ( $this, $readMoreLink );
+          
+          }
+          
+        } );
+        
+    } );
+    
+  </script>
