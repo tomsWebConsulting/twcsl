@@ -1,0 +1,75 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change blog listing item image url to source url
+      
+      Version       : 0.1d1
+      
+      SS Version    : 7.0
+      
+      Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    let targetAtttributeValue = ''; /* use _self | _blank | _parent | _top |
+                                       framename see
+                                       < https://mzl.la/2Q0JROF > */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! $( '.BlogList' ).length ) return; // bail if not blog listing page
+    
+    $( '.BlogList-item-title' )
+    
+      .filter ( function ( ) {
+      
+        return $( this ).attr ( 'target' ) !== undefined;
+        
+        } )
+        
+      .each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const url = $this.attr ( 'href' );
+        
+        let $imageLink = $this
+        
+          .prev ( '.BlogList-item-image' )
+          
+          .find ( '.BlogList-item-image-link' )
+          
+            .attr ( 'href', url );
+            
+        if ( ! targetAtttributeValue ) {
+        
+          const v = $this.attr ( 'target' );
+          
+          if ( v !== undefined ) targetAtttributeValue = v;
+          
+          }
+          
+        if ( targetAtttributeValue )
+        
+          $imageLink.attr ( 'target', targetAtttributeValue );
+          
+        } );
+        
+    } );
+    
+  </script>
