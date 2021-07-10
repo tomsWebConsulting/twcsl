@@ -1,0 +1,93 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      auto click user items list arrow right
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >.
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const clickIntervalSeconds = 6;
+    
+    const dataSectionIds = [
+    
+      /*
+      
+        to limit the effect to certain page sections, enter data section ids for
+        each page section.
+        
+        the format of each line is a data section id
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many data sections ids as needed
+        
+        */
+        
+      // '[enter data section id here between single quotes]',
+      
+      ];
+      
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    let selector = [
+    
+      '.user-items-list-banner-slideshow__arrow-button--right',
+      
+      '.user-items-list-carousel__arrow-button--right',
+      
+      ];
+      
+    // begin shotgun selector
+    
+      if ( ! dataSectionIds.length ) dataSectionIds.push ( '' );
+      
+      selector = $.map ( selector, function ( s, i ) {
+      
+        if ( ! dataSectionIds.length ) dataSectionIds.push ( '' );
+        
+        const a = $.map ( dataSectionIds, function ( d, i ) {
+        
+          if ( d ) d = '[data-section-id="' + d + '"] ';
+          
+          return d + s;
+          
+          } )
+          
+        return a;
+        
+        } )
+        
+        .join ( ', ' );
+        
+      // end shotgun selector
+    
+    const $button = $( selector );
+    
+    if ( ! $button.length ) return; // bail if no button
+    
+    const click = ( ) => {
+    
+      $button.click ( );
+      
+      }
+      
+    setInterval ( click, clickIntervalSeconds * 1000 );
+    
+    } );
+    
+  </script>
