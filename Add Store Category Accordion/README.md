@@ -1,6 +1,6 @@
 # Add Store Category Accordion
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
@@ -49,6 +49,11 @@ interface.
 
 ## Changes
 
+* **2021-07-11**
+<br><br>
+  * fix syntax errors
+  * bumped version to 0.2d1
+  <br><br>
 * **2021-07-10**
 <br><br>
   * support v7.1
