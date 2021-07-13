@@ -6,7 +6,7 @@
     
       replace variant menu "select" text
       
-      Version       : 0.1d1
+      Version       : 0.1d2
       
       SS Version    : 7.1
       
@@ -24,7 +24,7 @@
     
     if ( ! $( '.ProductItem' ).length ) return; // bail if not product detail
     
-    if ( ! 'MutationObserver' in window ) return;
+    if ( ! ( 'MutationObserver' in window ) ) return;
     
     // begin replace text
     

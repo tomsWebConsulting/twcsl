@@ -1,6 +1,6 @@
 # Replace Variant Menu "select" Text
 
-### Version 0.1d1
+### Version 0.1d2
 
 ---
 
@@ -17,13 +17,11 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
-<!-- * **2021-06-14**
+* **2021-07-12**
 <br><br>
-  * reworked the autoClick part of the code to work in the wider variety of
-    situations
-  * code should now work on any page where there are atcb
+  * fix mutation observer available guard
   * bumped version to 0.1d2
-  <br><br -->
+  <br><br>
 * **2021-04-22**
 <br><br>
   * initial version
