@@ -2,21 +2,32 @@
 
   begin mobile menu sweep from left edge of viewport
   
-  Version       : 0.2d0
+  Version       : 0.3d0
   
   SS Version    : 7.1
   
   Dependancies  : LESS
   
-  Note          : uses LESS syntax
+  Notes         : uses LESS syntax
+                  
+                  the reveal menu items code supports up to 32 menu items in a
+                  menu
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
-  @transition-duration : 0.6s;
+  @sweep-transition-duration : 0.6s;
   
   @sweep-out : false; // should the menu sweep out?, use false or true
+  
+  // should the menu items be revealed?, use false or true
+  
+  @reveal-menu-items : false;
+  
+  // ignored if @reveal-menu-items is false
+  
+  @reveal-menu-items-delay-step : 0.03s;
   
   // do not change anything below, there be the borg here
   
@@ -65,7 +76,7 @@
       
       */
       
-    left : calc( -1024px - 10% );
+    left : ( -1024px - 10% );
     .sweep-out ( );
     will-change : left;
     
@@ -77,9 +88,45 @@
   
     left : 0;
     
-    -webkit-transition-duration : @transition-duration;
-    -o-transition-duration : @transition-duration;
-    transition-duration : @transition-duration;
+    -webkit-transition-duration : @sweep-transition-duration;
+    -o-transition-duration : @sweep-transition-duration;
+    transition-duration : @sweep-transition-duration;
+    
+    }
+    
+  .reveal-menu-items ( @sweep-transition-duration, @reveal-menu-items-delay-step );
+  
+  // reveal menu items
+  
+  .reveal-menu-items ( @start, @step ) when ( @reveal-menu-items = true ) {
+  
+    @iterations : 32;
+    
+    .header-menu-nav-item {
+    
+      visibility : hidden;
+      
+      }
+      
+    .header--menu-open .header-menu-nav-item {
+    
+      visibility : visible;
+      
+      }
+      
+    .transition-delays ( @i ) when ( @i > 0 ) {
+    
+      .header-menu-nav-item:nth-child( @{i} ) {
+      
+        transition-delay : round( @i * @step + @start, 3 );
+        
+        }
+        
+      .transition-delays ( @i - 1 );
+      
+      }
+      
+    .transition-delays ( @iterations );
     
     }
     
@@ -87,9 +134,9 @@
   
   .sweep-out ( ) when ( @sweep-out = true ) {
   
-    -webkit-transition-duration : @transition-duration;
-    -o-transition-duration : @transition-duration;
-    transition-duration : @transition-duration;
+    -webkit-transition-duration : @sweep-transition-duration;
+    -o-transition-duration : @sweep-transition-duration;
+    transition-duration : @sweep-transition-duration;
     
     }
     
