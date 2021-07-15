@@ -1,0 +1,96 @@
+/*
+
+  begin mobile menu sweep from left edge of viewport
+  
+  Version       : 0.2d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : LESS
+  
+  Notes         : uses LESS syntax
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  @transition-duration : 0.6s;
+  
+  @sweep-out : false; // should the menu sweep out?, use false or true
+  
+  // do not change anything below, there be the borg here
+  
+  // begin unset SS built-in menu effect
+  
+    @media only screen and ( pointer : coarse) and ( max-width : 1024px ),
+    screen and ( max-width : 799px )
+    
+      {
+      
+        .header-menu {
+        
+          -webkit-transition : unset;
+          -o-transition : unset;
+          transition : unset;
+          
+          }
+        }
+        
+    .header--menu-open .header-menu .header-menu-cta,
+    .header-menu-cta,
+    .header-menu-nav-list
+    
+      {
+      
+        -webkit-transform : unset;
+        -ms-transform : unset;
+        transform : unset;
+        
+        -webkit-transition : unset;
+        -o-transition : unset;
+        transition : unset;
+        
+        }
+        
+    // end unset SS built-in menu effect
+    
+  .header-menu {
+  
+    /*
+    
+      pull the menu off the left edge of the viewport
+      
+      -1024px off the left edge of screen plus a little extra because it might
+      not be quite enough on a 1024px wide viewport
+      
+      */
+      
+    left : calc( -1024px - 10% );
+    .sweep-out ( );
+    will-change : left;
+    
+    }
+    
+  // when the menu is open sweep in from the left
+  
+  .header--menu-open .header-menu {
+  
+    left : 0;
+    
+    -webkit-transition-duration : @transition-duration;
+    -o-transition-duration : @transition-duration;
+    transition-duration : @transition-duration;
+    
+    }
+    
+  // sweep out menu
+  
+  .sweep-out ( ) when ( @sweep-out = true ) {
+  
+    -webkit-transition-duration : @transition-duration;
+    -o-transition-duration : @transition-duration;
+    transition-duration : @transition-duration;
+    
+    }
+    
+  // end mobile menu sweep from left edge of viewport
