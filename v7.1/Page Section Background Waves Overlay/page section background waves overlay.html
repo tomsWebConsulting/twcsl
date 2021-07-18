@@ -1,0 +1,175 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      page section background waves overlay
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const dataSectionIdData = {
+    
+      /*
+      
+        following is an example data structure. copy the structure below and
+        paste after the example. remove the forward slash asterisk space at
+        beginning of the structure and asterisk backslash at the end. repeat
+        for as many page sections as you want the wave overlay effect.
+        
+        orientation can be either bottom or top. if you want a single page
+        section to have both a bottom and top wave effect then enter both a
+        bottom and top data structure for the data section id
+        
+        */
+        
+      /* '[enter data section id here between single quotes]' : {
+      
+        [enter orientation here] : {
+        
+          fill : '[enter fill color here between single quotes]',
+          height : '[enter height here between single quotes]'
+          
+          },
+          
+        }, */
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const pageSections = $.map ( dataSectionIdData, function ( value, key ) {
+    
+      const $pageSection = $( '[data-section-id="' + key + '"]' );
+      
+      if ( ! $pageSection.length ) return undefined;
+      
+      return $pageSection;
+      
+      } );
+      
+    // bail if no target page sections
+    
+    if ( ! pageSections.length ) return;
+    
+    const wavesData = [
+    
+      '<path d="M0,288L60,256C120,224,240,160,360,144C480,128,600,160,720,149.3C840,139,960,85,1080,80C1200,75,1320,117,1380,138.7L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill-opacity="0.33">' +
+      
+        '</path>' +
+        
+      '<path d="M0,64L60,90.7C120,117,240,171,360,170.7C480,171,600,117,720,122.7C840,128,960,192,1080,186.7C1200,181,1320,107,1380,69.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" fill-opacity="0.66">' +
+      
+        '</path>' +
+        
+      '<path d="M0,128L30,149.3C60,171,120,213,180,240C240,267,300,277,360,256C420,235,480,181,540,165.3C600,149,660,171,720,181.3C780,192,840,192,900,202.7C960,213,1020,235,1080,218.7C1140,203,1200,149,1260,112C1320,75,1380,53,1410,42.7L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z">' +
+      
+        '</path>',
+        
+      '<path d="M0,32L30,48C60,64,120,96,180,106.7C240,117,300,107,360,112C420,117,480,139,540,138.7C600,139,660,117,720,101.3C780,85,840,75,900,80C960,85,1020,107,1080,96C1140,85,1200,43,1260,32C1320,21,1380,43,1410,53.3L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z" fill-opacity="0.33">' +
+      
+        '</path>' +
+        
+      '<path d="M0,256L30,256C60,256,120,256,180,229.3C240,203,300,149,360,128C420,107,480,117,540,138.7C600,160,660,192,720,218.7C780,245,840,267,900,229.3C960,192,1020,96,1080,85.3C1140,75,1200,149,1260,149.3C1320,149,1380,75,1410,37.3L1440,0L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z" fill-opacity="0.66">' +
+      
+        '</path>' +
+        
+      '<path d="M0,256L24,261.3C48,267,96,277,144,250.7C192,224,240,160,288,149.3C336,139,384,181,432,181.3C480,181,528,139,576,144C624,149,672,203,720,234.7C768,267,816,277,864,261.3C912,245,960,203,1008,186.7C1056,171,1104,181,1152,202.7C1200,224,1248,256,1296,234.7C1344,213,1392,139,1416,101.3L1440,64L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z">' +
+      
+        '</path>',
+        
+      '<path d="M0,96L20,128C40,160,80,224,120,240C160,256,200,224,240,176C280,128,320,64,360,64C400,64,440,128,480,149.3C520,171,560,149,600,144C640,139,680,149,720,128C760,107,800,53,840,69.3C880,85,920,171,960,213.3C1000,256,1040,256,1080,229.3C1120,203,1160,149,1200,138.7C1240,128,1280,160,1320,176C1360,192,1400,192,1420,192L1440,192L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z" fill-opacity="0.33">' +
+      
+        '</path>' +
+        
+      '<path d="M0,64L48,106.7C96,149,192,235,288,250.7C384,267,480,213,576,213.3C672,213,768,267,864,261.3C960,256,1056,192,1152,160C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill-opacity="0.66">' +
+      
+        '</path>' +
+        
+      '<path d="M0,256L48,256C96,256,192,256,288,266.7C384,277,480,299,576,309.3C672,320,768,320,864,293.3C960,267,1056,213,1152,186.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">' +
+      
+        '</path>',
+        
+      ];
+      
+    $( '<style>\n\n' +
+    
+      '.twc-waves-overlay {\n\n' +
+      
+        'display : block;\n' +
+        'position : absolute;\n' +
+        'width : 100%;\n\n' +
+        
+        '}\n\n' +
+        
+      '</style>' )
+      
+      .appendTo ( 'head' );
+      
+    $.each ( pageSections, function ( ) {
+    
+      const dataSectionId = this.attr ( 'data-section-id' );
+      
+      pageSection = this;
+      
+      const data = dataSectionIdData [ dataSectionId ];
+      
+      $.each ( data, function ( orientation, properties ) {
+      
+        const i = ( Math.floor ( Math.random ( ) * ( wavesData.length - 1 + 1
+        
+          ) ) + 1 ) - 1;
+          
+        switch ( orientation ) {
+        
+          case 'bottom' :
+          
+            orientation = { 'bottom' : 0, 'top' : 'auto' };
+            
+            break;
+            
+          case 'top' :
+          
+            orientation = {
+            
+              'bottom' : 'auto',
+              'top' : 0,
+              'transform' : 'rotate( 180deg )'
+              
+              };
+              
+            break
+            
+          }
+          
+        properties = Object.assign ( properties, orientation );
+        
+        const $svg = $( '<svg class="twc-waves-overlay" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1440 320">' +
+        
+          wavesData [ i ] +
+          
+          '</svg>' )
+          
+          .css ( properties );
+          
+        $( '.section-background .section-background-overlay', pageSection )
+        
+          .css ( 'display', 'none' )
+          
+          .after ( $svg );
+          
+        } );
+        
+      } );
+      
+    } );
+  
+  </script>
