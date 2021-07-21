@@ -1,0 +1,59 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      auto change product grid image opacity on touch screen device
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+    
+    const intervalSeconds = 6;
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    if ( ! twcsl.navigator.hasTouchScreen ) return; // bail if no touch screen
+    
+    if ( ! twcsl.storePage.isStorePage ) return; // bail if not store page
+    
+    if ( twcsl.storePage.isDetail ) return; // bail if detail
+    
+    const $images = $( '.products .grid-item img' );
+    
+    const invert = ( ) => {
+    
+      $images.each ( function ( ) {
+      
+        $this = $( this );
+        
+        let opacity = $this.css ( 'opacity' );
+        
+        opacity = Number ( opacity );
+        
+        opacity = ! Boolean ( opacity );
+        
+        opacity = Number ( opacity );
+        
+        $this.css ( 'opacity', opacity );
+        
+        } );
+        
+      };
+      
+    setInterval ( invert, intervalSeconds * 1000 );
+    
+    } );
+    
+  </script>
