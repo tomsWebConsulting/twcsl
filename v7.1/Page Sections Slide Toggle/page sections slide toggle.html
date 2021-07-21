@@ -1,0 +1,227 @@
+<!--
+
+  begin page sections slide toggle
+  
+  Version       : 0.2d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  this effect is not active in SS Preview. to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >.
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    body:not( .sqs-edit-mode ) #page.container {
+    
+      --twc-toggle-arrow-thickness : 3px; /* the thickness of the arrow
+                                             line */
+      
+      --twc-toggle-arrow-size : 10px; /* the size of the arrow */
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    window.twc = {
+    
+      'a63af292' : {
+      
+        // duration, a number (milliseconds) or the word slow or fast
+        
+        duration : '[enter duration between single quotes]',
+        
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    body:not( .sqs-edit-mode ) .page-section,
+    body:not( .sqs-edit-mode ) .page-section .sqs-row > .sqs-col-12 > *
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    /* begin remove some vertical spacing */
+    
+      body:not( .sqs-edit-mode ) .page-section.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+      
+        min-height : 0; /* default 33vh */
+        
+        }
+        
+      body:not( .sqs-edit-mode ) .twc-psst.page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
+      
+        padding-bottom : 0; /* default 3.3vmax */
+        padding-top : 0; /* default 3.3vmax */
+        
+        }
+        
+      /* end remove some vertical spacing */
+      
+    body:not( .sqs-edit-mode ) #footer-sections .page-section {
+    
+      display : -webkit-box;
+      display : -ms-flexbox;
+      display : flex;
+      
+      }
+      
+    body:not( .sqs-edit-mode ) #footer-sections .page-section.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ),
+    body:not( .sqs-edit-mode ) .twc-psst--restore-spacing.page-section.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ),
+    body:not( .sqs-edit-mode ) .twc-psst--open.page-section.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section )
+    
+      {
+      
+        min-height : 33vh;
+        
+        }
+        
+    body:not( .sqs-edit-mode ) #footer-sections .page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper,
+    body:not( .sqs-edit-mode ) .twc-psst--restore-spacing.page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper,
+    body:not( .sqs-edit-mode ) .twc-psst--open.page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper
+    
+      {
+      
+        padding-bottom : 3.3vmax;
+        
+        }
+        
+    body:not( .sqs-edit-mode ) #footer-sections .page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper,
+    body:not( .sqs-edit-mode ) .twc-psst--restore-spacing.page-section.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper
+    
+      {
+      
+        padding-top : 3.3vmax;
+        
+        }
+        
+    body:not( .sqs-edit-mode ) #footer-sections .page-section .sqs-row > .sqs-col-12 > *,
+    body:not( .sqs-edit-mode ) .twc-psst--restore-spacing .sqs-row > .sqs-col-12 > *,
+    body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 )
+    
+      {
+      
+        display : block;
+        
+        }
+        
+    body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) .sqs-block-content {
+    
+      cursor : pointer;
+      display : inline-block;
+      
+      }
+      
+    /* begin toggle arrows */
+    
+      body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      
+        border : solid black;
+        border-width : 0;
+        border-bottom-width : var( --twc-toggle-arrow-thickness );
+        border-right-width : var( --twc-toggle-arrow-thickness );
+        content : '';
+        display : inline-block;
+        height : var( --twc-toggle-arrow-size );
+        margin-left : 1em;
+        
+        -webkit-transform : rotate( 45deg );
+        -ms-transform : rotate( 45deg );
+        transform : rotate( 45deg );
+        
+        width : var( --twc-toggle-arrow-size );
+        
+        }
+        
+      body:not( .sqs-edit-mode ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      
+        -webkit-transform : rotate( -135deg );
+        -ms-transform : rotate( -135deg );
+        transform : rotate( -135deg );
+        
+        }
+        
+      /* end toggle arrows */
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      $( ':not( #footer-sections ) > .page-section' ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const isSectionToggle =
+        
+          Boolean ( $( '.twc-psst', $this ).length );
+          
+        let duration = twc [ 'a63af292' ].duration;
+        
+        $this.css ( {
+        
+          'display' : '-webkit-box',
+          'display' : '-ms-flexbox',
+          'display' : 'flex'
+          
+          } );
+        
+        if ( ! isSectionToggle ) {
+        
+          if ( $this.hasClass ( 'section-height--small' ) )
+          
+            $this.addClass ( 'twc-psst--restore-spacing' );
+            
+          return;
+          
+          }
+          
+        $this.addClass ( 'twc-psst' );
+        
+        $( '.sqs-row > .sqs-col-12 > .sqs-block:eq( 1 )', $this )
+        
+          .click ( function ( ) {
+          
+            if ( ! isNaN ( duration ) ) duration = Number ( duration );
+            
+            $( this )
+            
+              .nextUntil ( '.page-section', '.sqs-block' )
+              
+              .slideToggle ( duration )
+              
+              .parents ( '.page-section' )
+              
+                .toggleClass ( 'twc-psst--open' );
+                
+            } );
+            
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end slide toggle page sections -->
