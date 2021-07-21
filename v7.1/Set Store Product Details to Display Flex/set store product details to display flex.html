@@ -1,0 +1,60 @@
+<style>
+
+  /*
+  
+    begin set store product details to display flex
+    
+    Version     : 0.1d0
+    
+    SS Version  : 7.1
+    
+    Note        : this is a base effect meant as a base for other effects. this
+                  code alone shouldn't produce any visible change on desktop to
+                  product details. to reorder product detail elements add your
+                  custom code after this code. order is important
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    @media screen and ( min-width : 768px ) {
+    
+      /*
+      
+        normally on desktop .ProductItem-details .ProductItem-details-checkout
+        is set to display block. on mobile 767px and below display is flex and
+        the order property is set for child elements. the order is different
+        between desktop (natural order) and mobile (SS defined order). to use
+        flex on desktop we reset the order to natural order
+        
+        */
+        
+      .ProductItem-details .product-quantity-input,
+      .ProductItem-details .product-variants,
+      .ProductItem-details .ProductItem-details-excerpt,
+      .ProductItem-details .ProductItem-product-price,
+      .ProductItem-details .sqs-add-to-cart-button-wrapper
+      
+        {
+        
+          -webkit-box-ordinal-group : unset;
+          -moz-box-ordinal-group : unset;
+          -ms-flex-order : unset;
+          -webkit-order : unset;
+          order : unset;
+          
+          }
+          
+      .ProductItem-details .ProductItem-details-checkout {
+      
+        display : -webkit-box;
+        display : -ms-flexbox;
+        display : flex;
+        
+        }
+        
+      }
+      
+   /* set store product details to display flex */
+   
+  </style>
