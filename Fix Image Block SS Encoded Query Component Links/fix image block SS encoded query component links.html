@@ -1,0 +1,76 @@
+<script>
+
+  /*
+  
+    begin fix image block SS encoded query component links
+    
+    Version         : 0.1d0
+    
+    SS Versions     : 7.0, 7.1
+    
+    Dependancies    : jQuery
+    
+    By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    $( ( ) => {
+    
+      const urlPrefixMatches = [
+      
+        /*
+        
+          url prefix matches are used to restrict which urls will fixed. not all
+          urls need to be fixed
+          
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at beginning of pasted line.
+          repeat for as many url prefixes you want to match
+          
+          */
+          
+        // '[enter url prefix here between single quotes]',
+        
+        ];
+        
+      // do not change anything below, there be the borg here
+      
+      const getUriParser = uri => {
+      
+        const parser = document.createElement ( 'a' );
+        
+        parser.href = uri;
+        
+        return parser;
+        
+        };
+        
+      $( '.sqs-block-image-link' ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let href = $this.attr ( 'href' );
+        
+        if ( urlPrefixMatches.length ) {
+        
+          const m = urlPrefixMatches.find ( s => href.startsWith ( s ) );
+          
+          if ( m === undefined ) return true;
+          
+          }
+          
+        const uriParser = getUriParser ( href );
+        
+        uriParser.search = decodeURIComponent ( uriParser.search );
+        
+        href = uriParser.toString ( );
+        
+        $this.attr ( 'href', href );
+        
+        } );
+        
+      // end fix image block SS encoded query component links
+      
+      } );
+      
+  </script>
