@@ -1,0 +1,126 @@
+<!--
+
+  begin move product detail additional info first n blocks to end of product
+  details
+  
+  Version         : 0.2d0
+  
+  SS Versions     : 7.0, 7.1
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                    Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                    Stella, Thorne, Vow, Wav, West )
+                    
+                    Wexley
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependancies    : jQuery
+                    
+                    twcsl
+  
+  Notes           : the code is comprised of several tags all of which must be
+                    present for the effect to work
+                    
+                    this effect is not active in SS Preview. to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    window.twc = {
+    
+      'af4b3333' : {
+      
+        numberOfBlocks : 1
+        
+        }
+        
+      }
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    /* no CSS needed for Wexley */
+    
+    .ProductItem-details .twc-af4b3333 { /* v7.1 */
+    
+      order : 999;
+      padding-top : 0;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
+      
+      const n = twc [ 'af4b3333' ].numberOfBlocks;
+      
+      let selector = [
+      
+        'product-description',
+        
+        'ProductItem-additional',
+        
+        ];
+        
+      selector = $.map ( selector, function ( v, i ) {
+      
+        return '.' + v + ' .sqs-block';
+        
+        } )
+        
+        .join ( ', ' );
+        
+      const $blocks = $( selector )
+      
+        .slice ( 0, n )
+        
+        .addClass ( 'twc-af4b3333' )
+        
+        .removeAttr ( 'id' );
+        
+      switch ( true ) {
+      
+        case twcsl.is70 :
+        
+          selector =
+          
+            '.ProductItem-details:not( .ProductItem-details--mobile), ' + // Brine
+            
+            '#productDetails'; // Wexley
+            
+          break;
+          
+        case twcsl.is71 :
+        
+          selector = '.ProductItem-details .ProductItem-details-checkout';
+          
+          break;
+          
+        }
+        
+      $( selector ).append ( $blocks );
+      
+      } );
+      
+    </script>
+    
+  <!-- end move product detail additional info first n blocks to end of product
+       details -->
