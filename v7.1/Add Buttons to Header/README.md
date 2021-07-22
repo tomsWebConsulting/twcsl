@@ -1,6 +1,6 @@
 # Add Buttons to Header
 
-### Version 0.6d0
+### Version 0.6d1
 
 ---
 
@@ -17,11 +17,11 @@ Code Injection > FOOTER.
 
 ## Changes
 
-<!-- * **2021-05-19**
+* **2021-07-22**
 <br><br>
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
+  * fix issue with orientation on mobile, force column at 575px and below
+  * use a less heavy hand manipulating margins, keeping closer to SS settings
+  * bumped version to 0.6d1
   <br><br -->
 * **2021-05-23**
 <br><br>

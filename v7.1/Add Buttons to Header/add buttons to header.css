@@ -2,11 +2,14 @@
 
   begin add buttons to header
   
-  Version       : 0.6d0
+  Version       : 0.6d1
   
   SS Version    : 7.1
   
   Dependancies  : LESS
+  
+  Note          : on mobile at 575px and below the orientation is forced to
+                  column
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -14,46 +17,39 @@
   
   @gap : 0.5rem; // space between buttons
   
-  /* direction-order controls whether buttons will be oriented in a row or
-     column and if they will be in normal or reversed order. the first argument
-     can be row or column, the second argument can be normal or reverse */
+  /*
   
-  .direction-order ( row, normal );
+    direction-order controls whether buttons will be oriented in a row or column
+    and if they will be in normal or reversed order. the first argument can be
+    row or column, the second argument can be normal or reverse.
+    
+    */
+    
+  .direction-order ( row, reverse );
   
   // do not change anything below, there be the borg here
   
-  .header .header-actions-action--cta, .header-menu-cta {
+  .header .header-actions-action--cta, // desktop
+  .header-menu-cta // mobile
   
-    display : -webkit-box;
-    display : -ms-flexbox;
-    display : flex;
+    {
     
-    -webkit-box-orient : @d3;
-    -webkit-box-direction : @d2;
-    -ms-flex-direction : @d1;
-    flex-direction : @d1;
-    
-    grid-gap : @gap;
-    gap : @gap;
-    
-    text-align : center;
-    
-    }
-    
-  .header-menu-cta {
+      display : -webkit-box;
+      display : -ms-flexbox;
+      display : flex;
+      
+      -webkit-box-orient : @d3;
+      -webkit-box-direction : @d2;
+      -ms-flex-direction : @d1;
+      flex-direction : @d1;
+      
+      grid-gap : @gap;
+      gap : @gap;
+      
+      }
+      
+  // desktop
   
-    justify-content : center;
-    margin : auto;
-    margin-bottom : calc( @gap * 1.25 );
-    
-    }
-    
-  .header-menu-cta a {
-  
-    margin : 0;
-    
-    }
-    
   @media only screen and ( pointer : coarse ) and ( max-width : 1024px ),
     screen and ( max-width : 799px ) {
     
@@ -64,44 +60,103 @@
       }
     }
     
-   // direction row, normal
-   
-  .direction-order ( @d, @o ) when ( @d = row ) and ( @o = normal ) {
+  // begin mobile
   
-    @d1 : row;
-    @d2 : normal;
-    @d3 : horizontal;
+    .header-menu-cta {
     
-    }
+      justify-content : center;
+      
+      }
+      
+    @media screen and ( max-width : 575px ) {
     
-   // direction row, reverse
-   
-  .direction-order ( @d, @o ) when ( @d = row ) and ( @o = reverse ) {
+      .header-menu-cta {
+      
+        -webkit-box-orient : @d6;
+        -webkit-box-direction : @d5;
+        -ms-flex-direction : @d4;
+        flex-direction : @d4;
+        
+        }
+      }
+      
+    .header-menu-cta a {
+    
+      margin-left : auto;
+      margin-right : auto;
+      
+      }
+      
+    // end mobile
+    
+  // begin direction mixins
   
-    @d1 : row-reverse;
-    @d2 : reverse;
-    @d3 : horizontal;
+    // begin desktop
     
-    }
+      // direction row, normal
+      
+      .direction-order ( @d, @o ) when ( @d = row ) and ( @o = normal ) {
+      
+        @d1 : row;
+        @d2 : normal;
+        @d3 : horizontal;
+        
+        }
+        
+      // direction row, reverse
+      
+      .direction-order ( @d, @o ) when ( @d = row ) and ( @o = reverse ) {
+      
+        @d1 : row-reverse;
+        @d2 : reverse;
+        @d3 : horizontal;
+        
+        }
+        
+      // direction column, normal
+      
+      .direction-order ( @d, @o ) when ( @d = column ) and ( @o = normal ) {
+      
+        @d1 : column;
+        @d2 : normal;
+        @d3 : vertical;
+        
+        }
+        
+      // direction column, reverse
+      
+      .direction-order ( @d, @o ) when ( @d = column ) and ( @o = reverse ) {
+      
+        @d1 : column-reverse;
+        @d2 : reverse;
+        @d3 : vertical;
+        
+        }
+        
+      // end desktop
+      
+    // mobile
     
-   // direction column, normal
-   
-  .direction-order ( @d, @o ) when ( @d = column ) and ( @o = normal ) {
-  
-    @d1 : column;
-    @d2 : normal;
-    @d3 : vertical;
-    
-    }
-    
-   // direction column, reverse
-   
-  .direction-order ( @d, @o ) when ( @d = column ) and ( @o = reverse ) {
-  
-    @d1 : column-reverse;
-    @d2 : reverse;
-    @d3 : vertical;
-    
-    }
+      // direction column, normal
+      
+      .direction-order ( @d, @o ) when ( @o = normal ) {
+      
+        @d4 : column;
+        @d5 : normal;
+        @d6 : vertical;
+        
+        }
+        
+      // direction column, reverse
+      
+      .direction-order ( @d, @o ) when ( @o = reverse ) {
+      
+        @d4 : column-reverse;
+        @d5 : reverse;
+        @d6 : vertical;
+        
+        }
+        
+    // end direction mixins
     
   /* end add buttons to header */
