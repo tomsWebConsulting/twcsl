@@ -1,6 +1,6 @@
 # Add Store Category Page Description
 
-### Version 0.2d2
+### Version 0.2d3
 
 ---
 
@@ -10,7 +10,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d7/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d9/twcsl.js"></script>
 ```
 
 Add code from file **add store category page description.html** to
@@ -18,6 +18,12 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
+* **2021-06-27**
+<br><br>
+  * added window.twc
+  * remove debugger statement
+  * bumped version to 0.2d3
+  <br><br>
 * **2021-06-15**
 <br><br>
   * fix issue with not being able to add category description to store page
@@ -37,9 +43,4 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
   <br><br>
 * **2021-01-14**
 <br><br>
-  * better support for mobile
-  * fix an issue with desktop buttons continuing to display when in mobile
-  * allow user to more easily change the direction and order of the buttons.
-    using LESS mixins the choices are row or column direction and normal or
-    reverse order
   * initial version
