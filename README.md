@@ -17,7 +17,7 @@ various effects to Squarespace v7.0 and v7.1 sites.
 
 * twcsl
 
-twcsl contains nearly 50 effects. To find an effect browse the repository.
+twcsl contains over 50 effects. To find an effect browse the repository.
 Each effect has it's own version number, code, read me, and etc.
 
 ## Make a Donation
