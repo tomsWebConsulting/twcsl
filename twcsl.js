@@ -4,11 +4,13 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d8
+  Version         : 0.1d9
   
   SS Versions     : 7.0, 7.1
   
-  v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+  v7.0 Templates  : Avenue
+                    
+                    Bedford ( Anya, Bryant, Hayden )
                     
                     Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
                     Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
@@ -156,13 +158,13 @@ const twcsl = ( ( $ ) => {
     
       const _firstPageSection = ( ( ) => {
       
-        let $e = $( 'x-empty' );
+        let $element = $( 'x-empty' );
         
         if ( _is71 )
         
-          $e = $( ':not( #footer-sections ) > .page-section:first' );
+          $element = $( ':not( #footer-sections ) > .page-section:first' );
           
-        return $e;
+        return $element;
         
         } ) ( );
         
@@ -174,6 +176,22 @@ const twcsl = ( ( $ ) => {
   
     // begin first order
     
+      const _getClassEventlistFilterText = ( ) => {
+      
+        const text = $( '.eventlist-filter' )
+        
+          .text ( )
+          
+          .split ( ': ' ) [ 1 ]
+          
+          .replace ( /(?:“)(.+)(?:”)/, '$1' )
+          
+          .trim ( );
+          
+        return text;
+        
+        }
+        
       const _getHrefQueryStringParameterValues = p => {
       
         const values = $( '[href*="?' + p + '="]' )
@@ -644,17 +662,7 @@ const twcsl = ( ( $ ) => {
           
             if ( ! o.hasCategory ) return ''; // bail if not category
             
-            let category = $( '.eventlist-filter' )
-            
-              .text ( )
-              
-              .split ( ': ' ) [ 1 ]
-              
-              .replace ( /(?:“)(.+)(?:”)/, '$1' )
-              
-              .trim ( );
-              
-            return category;
+            return _getClassEventlistFilterText ( );
             
             } ) ( );
             
@@ -662,17 +670,7 @@ const twcsl = ( ( $ ) => {
           
             if ( ! o.hasTag ) return ''; // bail if not tag
             
-            let tag = $( '.eventlist-filter' )
-            
-              .text ( )
-              
-              .split ( ': ' ) [ 1 ]
-              
-              .replace ( /(?:“)(.+)(?:”)/, '$1' )
-              
-              .trim ( );
-              
-            return tag;
+            return _getClassEventlistFilterText ( );;
             
             } ) ( );
             
@@ -828,16 +826,26 @@ const twcsl = ( ( $ ) => {
             
             const selector =
             
-              '.filter-by-category, ' +
+              // begin first order
               
-              '.nested-category-title, ' +
+                '.filter-by-category, ' + // Bedford
+                
+                '.nested-category-title, ' + // v7.1
+                
+                // end first order
+                
+              // begin second order
               
-              '.ProductList-filter-list-item--active';
-              
-            const $category = $( selector );
+                '#categoryNav ul li.active-link:not(.all) a, ' + // Avenue
+                
+                '.ProductList-filter-list-item--active'; // Brine
+                
+                // end second order
+                
+            const category = $( selector )
             
-            const category = $category
-            
+              .eq ( 0 )
+              
               .text ( )
               
               .trim ( );
@@ -874,12 +882,36 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d8';
+    const version = '0.1d9';
     
     // end public properties
     
   // begin public methods
   
+    // begin get form field label
+    
+      const getFormFieldLabel = $field => {
+      
+        const title = $( '.title', $field )
+        
+          .clone ( )
+          
+          .children ( )
+          
+          .remove ( )
+          
+          .end ( )
+          
+          .text ( )
+          
+          .trim ( );
+          
+        return title;
+        
+        }
+        
+      // end get form field label
+      
     // begin get form nth
     
       const getFormNth = ( nth = 1 ) => {
@@ -895,6 +927,20 @@ const twcsl = ( ( $ ) => {
         }
         
       // end get form nth
+      
+    // begin get url parser
+    
+      const getUriParser = url => {
+      
+        const parser = document.createElement ( 'a' );
+        
+        parser.href = url;
+        
+        return parser;
+        
+        }
+        
+      // end get uri parser
       
     // begin scroll effect
     
@@ -988,6 +1034,8 @@ const twcsl = ( ( $ ) => {
     // begin methods
     
       getFormNth    : getFormNth,
+      
+      getUrlParser  : getUrlParser,
       
       scrollEffect  : scrollEffect,
       
