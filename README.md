@@ -22,15 +22,12 @@ Each effect has it's own version number, code, read me, and etc.
 
 ## Make a Donation
 
-Please consider making a donation. Your donations help me to continue to help
-you realize your website goals! The donation amounts are suggested amounts. Any
-donation amount is greatly appreciated!
+Please consider making a donation.
 
-<form action="https://www.paypal.com/donate" method="post" target="_top">
-<input type="hidden" name="hosted_button_id" value="FSPYTKHXHRU5U" />
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-</form>
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=FSPYTKHXHRU5U)
+
+Your donations help me to continue to help you realize your website goals! The
+donation amounts are suggested amounts. Any donation amount is greatly appreciated!
 
 ## Need Help Installing or Customizing the Code?
 
