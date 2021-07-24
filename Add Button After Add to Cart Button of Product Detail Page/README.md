@@ -6,34 +6,23 @@
 
 ## Quick Install
 
-Add code from file **add button after add to cart button of product detail page.html**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+Add the following to Settings > Advanced > Code Injection > HEADER.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+
+Add code from file **add button after add to cart button of product detail
+page.html** to Store Settings > Advanced > Page Header Code Injection for the
+store page.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-05-12
-      </strong>
-    <ul>
-      <li>
-        add support for guard processor
-        </li>
-      <li>
-        bumped version to 0.2d0
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-04-05
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-05-12**
+<br><br>
+  * add support for guard processor
+  * bumped version to 0.2d0
+  <br><br>
+* **2021-04-05**
+<br><br>
+  * initial version
