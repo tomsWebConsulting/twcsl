@@ -1,0 +1,19 @@
+/*
+
+  begin move header cta element to left side
+  
+  Version     : 0.1d0
+  
+  SS Version  : 7.1
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .header-display-desktop .header-actions-action--cta {
+  
+    margin-right : 1.2vw;
+    
+    }

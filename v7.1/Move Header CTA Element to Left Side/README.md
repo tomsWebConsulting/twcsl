@@ -1,0 +1,25 @@
+# Move Header CTA Element to Left Side
+
+### Version 0.1d0
+
+---
+
+## Quick Install
+
+Add code from file **move header cta element to left side.css** to Design >
+Custom CSS.
+
+Add code from file **move header cta element to left side.html** to Settings >
+Advanced > Code Injection > FOOTER.
+
+## Changes
+
+<!-- * **2021-07-01**
+<br><br>
+  * added code to change read more link
+  * use twcsl
+  * bumped version to 0.1d2
+  <br><br -->
+* **2021-03-14**
+<br><br>
+  * initial version
