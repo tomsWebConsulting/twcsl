@@ -4,21 +4,32 @@
   
     /*
     
-      begin move last footer section to first section of page
+      move page last footer section to first
       
-      SS Version : 7.1
+      Version       : 0.1d1
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >.
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
       
       */
       
-    // no user serviceable parts below
+    if ( window.frameElement !== null ) return; // bail if in Preview
     
-    if ( window.frameElement !== null ) return;
-    
-    let $firstSection = $( 'article .page-section' );
+    const $firstSection = twcsl.getFirstPageSection ( );
     
     const firstSectionPaddingTop = $firstSection.css ( 'padding-top' );
     
-    let $footerLastSection = $( '#footer-sections .page-section:last' )
+    $( '#footer-sections .page-section:last' )
     
       .css ( 'padding-top', firstSectionPaddingTop )
       
