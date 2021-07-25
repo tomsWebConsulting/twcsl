@@ -9,6 +9,12 @@
 Add code from file **move header cta element to left side.css** to Design >
 Custom CSS.
 
+Add the following to Settings > Advanced > Code Injection > HEADER.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+
 Add code from file **move header cta element to left side.html** to Settings >
 Advanced > Code Injection > FOOTER.
 
