@@ -6,7 +6,7 @@
     
       begin add store category page description
       
-      Version       : 0.1d0
+      Version       : 0.2d0
       
       SS Version    : 7.0
       
@@ -25,63 +25,49 @@
                       supported
                       
       Dependancies  : jQuery
+                      
+                      twcsl
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
-    /* copy value for storeUrlSlug from Store Settings > General > URL SLUG
-       field. you only need exactly what can be selected from the field */
-       
-    const storeUrlSlug = '[enter store url slug here between single quotes]';
-    
-    const categoryDescriptionMappings = {
+    const categoryDescriptionMap = {
     
       /*
       
-        the format of each line is a category URL Slug and a description for the
+        the format of each line is a category and a description for the
         category
         
-        for each category URL Slug copy value from Store Settings > Categories >
-        [tag name] > Edit Category > URL SLUG field for the store page. you only
-        need exactly what can be selected from the field. if you want to add a
-        description to the Store page ( i.e. grid/listing ) leave the category
-        URL Slug empty
+        for each category copy value from Store Settings > Advanced >
+        Manage Category > [category name] (click on category) > Edit for the
+        store page. you only need exactly what can be selected from the field
+        
+        if you want to add a description to the Store page ( i.e. grid/listing )
+        leave the category empty
         
         if the description has single quotes in it then put a backslash before
         the single quotes. example: it's becomes it\'s
         
-        */
-        
-      /*
-      
         following is an example line. copy the example line below and paste
         after the example line. remove '// ' at beginning of pasted line. repeat
-        for as many categories as you want to add a description.
+        for as many categories as you want to add a description
         
         */
         
-      // '[enter category url slug here between single quotes]' : '[enter category description here between single quotes]',
+      // '[enter category here between single quotes]' : '[enter category description here between single quotes]',
       
       };
       
     // do not change anything below, there be the borg here
     
-    // are we on the store page, if not bail
+    if ( ! twcsl.storePage.hasCategory ) return; // bail if not category
     
-    if ( location.pathname !== '/' + storeUrlSlug ) return;
+    const category = twcsl.storePage.category;
     
-    // are we on a category page, if not bail
+    // if category not defined bail
     
-      const searchParams = new URLSearchParams ( location.search );
-      
-      const category = searchParams.get ( 'category' );
-      
-      if ( category == null ) return;
-      
-    // has a category been defined by the user, if not bail
-    
-    if ( ! ( category in categoryDescriptionMappings ) ) return;
+    if ( ! ( category in categoryDescriptionMap ) ) return;
     
     // can we get a template id, if not bail
     
@@ -118,11 +104,11 @@
       
     // add the category description
     
-    $( '<div class="tc-category-description">' +
+    $( '<div class="twc-category-description">' +
     
       '<p>' +
       
-        categoryDescriptionMappings [ category ] +
+        categoryDescriptionMap [ category ] +
         
         '</p>' +
         
