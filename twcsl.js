@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d9
+  Version         : 0.1d10
   
   SS Versions     : 7.0, 7.1
   
@@ -882,7 +882,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d9';
+    const version = '0.1d10';
     
     // end public properties
     
@@ -930,7 +930,7 @@ const twcsl = ( ( $ ) => {
       
     // begin get url parser
     
-      const getUriParser = url => {
+      const getUrlParser = url => {
       
         const parser = document.createElement ( 'a' );
         
@@ -940,7 +940,7 @@ const twcsl = ( ( $ ) => {
         
         }
         
-      // end get uri parser
+      // end get url parser
       
     // begin scroll effect
     

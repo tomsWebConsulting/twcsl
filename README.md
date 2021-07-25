@@ -42,7 +42,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d9
+### Version 0.1d10
 
 ## Quick Install
 
@@ -50,7 +50,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d9/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d10/twcsl.js"></script>
 ```
 
 ## Example
@@ -195,6 +195,11 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 ## Changes
 
 
+* **2021-07-25**
+<br><br>
+  * fix for getUrlParser not defined
+  * bumped version to 0.1d10
+  <br><br>
 * **2021-07-24**
 <br><br>
   * added getUrlParser method
