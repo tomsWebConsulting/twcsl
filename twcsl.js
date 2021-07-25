@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d10
+  Version         : 0.1d11
   
   SS Versions     : 7.0, 7.1
   
@@ -153,22 +153,6 @@ const twcsl = ( ( $ ) => {
       const _is71 = _ssVersion == '7.1';
       
       // end second order
-      
-    // begin third order
-    
-      const _firstPageSection = ( ( ) => {
-      
-        let $element = $( 'x-empty' );
-        
-        if ( _is71 )
-        
-          $element = $( ':not( #footer-sections ) > .page-section:first' );
-          
-        return $element;
-        
-        } ) ( );
-        
-      // end third order
       
     // end private properties
     
@@ -888,6 +872,22 @@ const twcsl = ( ( $ ) => {
     
   // begin public methods
   
+    // begin get first page section
+    
+      const getFirstPageSection = ( ) => {
+      
+        let $element = $( 'x-twc-empty' );
+        
+        if ( _is71 )
+        
+          $element = $( ':not( #footer-sections ) > .page-section:first' );
+          
+        return $element;
+        
+        };
+        
+      // end get first page section
+      
     // begin get form field label
     
       const getFormFieldLabel = $field => {
@@ -1033,11 +1033,13 @@ const twcsl = ( ( $ ) => {
   
     // begin methods
     
-      getFormNth    : getFormNth,
+      getFirstPageSection : getFirstPageSection,
       
-      getUrlParser  : getUrlParser,
+      getFormNth          : getFormNth,
       
-      scrollEffect  : scrollEffect,
+      getUrlParser        : getUrlParser,
+      
+      scrollEffect        : scrollEffect,
       
       // end methods
       
@@ -1046,8 +1048,6 @@ const twcsl = ( ( $ ) => {
       blogPage          : _blogPage,
       
       eventPage         : _eventPage,
-      
-      firstPageSection  : _firstPageSection,
       
       is70              : _is70,
       
