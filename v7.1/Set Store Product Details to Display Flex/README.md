@@ -6,6 +6,10 @@
 
 ## Quick Install
 
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+
 Add code from file **set store product details to display flex.html** to Store
 Settings > Advanced > Page Header Code Injection for the store page.
 
