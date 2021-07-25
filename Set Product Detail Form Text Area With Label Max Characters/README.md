@@ -8,7 +8,7 @@
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d9/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d10/twcsl.js"></script>
 ```
 
 Add code from file **set product detail form text area with label max
