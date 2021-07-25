@@ -1,0 +1,35 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin move last footer section to first section of page
+      
+      SS Version : 7.1
+      
+      */
+      
+    // no user serviceable parts below
+    
+    if ( window.frameElement !== null ) return;
+    
+    let $firstSection = $( 'article .page-section' );
+    
+    const firstSectionPaddingTop = $firstSection.css ( 'padding-top' );
+    
+    let $footerLastSection = $( '#footer-sections .page-section:last' )
+    
+      .css ( 'padding-top', firstSectionPaddingTop )
+      
+      .prependTo ( 'article' );
+      
+    $firstSection.css ( 'padding-top', '' );
+    
+    $( '#footer-sections .page-section:last' ).css ( 'display', 'unset' );
+    
+    // end move last footer section to first section of page
+    
+    } );
+    
+  </script>

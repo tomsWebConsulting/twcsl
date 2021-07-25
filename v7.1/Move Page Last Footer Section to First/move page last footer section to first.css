@@ -1,0 +1,20 @@
+/*
+
+  move page last footer section to first
+  
+  Version     : 0.1d0
+  
+  SS Version  : 7.1
+  
+  Note        : this effect is not active in SS Preview to test it use private
+                browsing < https://bit.ly/3f6lhq2 >.
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+body:not( .sqs-edit-mode ) #footer-sections .page-section:last-child {
+
+  display : none;
+  
+  }
