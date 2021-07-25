@@ -1,0 +1,33 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin change site title space runs to break element
+      
+      Version       : 0.1d1
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      const $element = $( '#site-title' );
+      
+      const s = $element.html ( )
+      
+        .replace ( / {2,}/g, '<br>' );
+        
+      $element.html ( s );
+      
+      /* end change site title space runs to break element */
+      
+    } );
+    
+  </script>
