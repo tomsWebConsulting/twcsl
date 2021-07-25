@@ -6,7 +6,7 @@
     
       set product detail form text area with label max characters
       
-      Version         : 0.1d1
+      Version         : 0.1d2
       
       SS Versions     : 7.0, 7.1
       
@@ -117,12 +117,8 @@
       
     // start listening for changes in body
     
-    observer.observe ( document.body, {
+    observer.observe ( document.body, { childList : true } );
     
-      childList : true
-      
-      } );
-      
     } );
     
   </script>

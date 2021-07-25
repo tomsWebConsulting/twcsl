@@ -1,6 +1,6 @@
 # Set Product Detail Form Text Area With Label Max Characters
 
-### Version 0.1d1
+### Version 0.1d2
 
 ---
 
@@ -23,6 +23,6 @@ the store page.
   * use twcsl
   * bumped version to 0.1d2
   <br><br -->
-* **2021-07-25**
+* **2020-11-21**
 <br><br>
   * initial version
