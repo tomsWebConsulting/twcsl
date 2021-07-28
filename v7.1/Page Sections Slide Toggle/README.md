@@ -1,6 +1,6 @@
 # Page Sections Slide Toggle
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
@@ -27,12 +27,11 @@ After the code block add a text block with the label text for the page section.
 
 ## Changes
 
-<!-- * **2021-07-01**
+* **2021-07-28**
 <br><br>
-  * added code to change read more link
-  * use twcsl
-  * bumped version to 0.1d2
-  <br><br -->
+  * fix for .nextUntil ( ) skipping .sqs-row
+  * bumped version to 0.2d1
+  <br><br>
 * **2021-07-19**
 <br><br>
   * initial version
