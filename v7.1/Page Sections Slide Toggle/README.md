@@ -1,6 +1,6 @@
 # Page Sections Slide Toggle
 
-### Version 0.2d1
+### Version 0.2d2
 
 ---
 
@@ -25,8 +25,18 @@ page section. In the code block add the following.
 
 After the code block add a text block with the label text for the page section.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
+* **2021-07-28**
+<br><br>
+  * take a less tortuous route for CSS
+  * fix for page section blocks being hidden without code block tag being set
+  * bumped version to 0.2d2
+  <br><br>
 * **2021-07-28**
 <br><br>
   * fix for .nextUntil ( ) skipping .sqs-row
