@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d11
+  Version         : 0.1d12
   
   SS Versions     : 7.0, 7.1
   
@@ -866,7 +866,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d10';
+    const version = '0.1d12';
     
     // end public properties
     
@@ -1034,6 +1034,8 @@ const twcsl = ( ( $ ) => {
     // begin methods
     
       getFirstPageSection : getFirstPageSection,
+      
+      getFormFieldLabel   : getFormFieldLabel,
       
       getFormNth          : getFormNth,
       
