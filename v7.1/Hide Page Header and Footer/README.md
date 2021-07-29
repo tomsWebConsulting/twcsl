@@ -9,6 +9,10 @@
 Add code from file **hide page header and footer.html** to Page Settings >
 Advanced > Page Header Code Injection for the page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 <!--
 
 ## Changes

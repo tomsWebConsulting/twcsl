@@ -16,6 +16,10 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 Add code from file **add store description.html** to Store Settings > Advanced >
 Page Header Code Injection for the store page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-06-12**

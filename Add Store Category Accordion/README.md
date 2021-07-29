@@ -47,6 +47,10 @@ After the code block add an image and text block. Repeat this pattern for all
 categories. The category must match the category text as entered in the SS
 interface.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-07-11**

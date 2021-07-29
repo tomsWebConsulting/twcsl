@@ -13,6 +13,10 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 Add code from file **change blog listing item image URL to Source URL.html** to
 Blog Settings > Advanced > Page Header Code Injection for the blog page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 <!--
 
 ## Changes

@@ -18,6 +18,10 @@ Add code from file **redirect to url after add to cart button has been clicked
 and SS indicates item has been added to cart.html** to Settings > Advanced >
 Code Injection > FOOTER.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-06-14**

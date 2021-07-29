@@ -15,6 +15,10 @@ Add code from file **add buttons to header.css** to Design > Custom CSS.
 Add code from file **add buttons to header.html** to Settings > Advanced >
 Code Injection > FOOTER.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-07-22**

@@ -14,6 +14,10 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 .one-left class is not used by SS. To take advantage of it you need to use code
 to add the class.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-05-18**

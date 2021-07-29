@@ -27,6 +27,10 @@ to be updated to work properly.
 <healcode-widget data-version="0.2" data-link-class="loginRegister" data-site-id="[data site id]" data-mb-site-id="[data mb site id]" data-type="account-link" data-inner-html="Login | Register" />
 ```
     
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 <!--
 
 ## Changes

@@ -16,6 +16,10 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 Add code from file **add images to product detail page based on tags above additional info.html**
 to Settings > Advanced > Code Injection > FOOTER.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 <!-- * **2021-05-19**

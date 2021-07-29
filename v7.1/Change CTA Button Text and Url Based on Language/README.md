@@ -19,6 +19,10 @@ Settings > Advanced > Code Injection > FOOTER.
 
 Make sure to place this code after the language switching software has run.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-04-30**

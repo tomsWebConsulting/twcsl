@@ -15,6 +15,10 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 Add code from file **add continue shopping message when cart has items.html** to
 Add the following to Settings > Advanced > Code Injection > FOOTER.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 <!-- * **2021-05-19**

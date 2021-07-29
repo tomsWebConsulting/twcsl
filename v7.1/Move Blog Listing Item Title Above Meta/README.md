@@ -9,6 +9,10 @@
 Add code from file **move blog listing item title above meta.html** to Blog
 Settings > Advanced > Page Header Code Injection for the blog page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 <!--
 
 ## Changes

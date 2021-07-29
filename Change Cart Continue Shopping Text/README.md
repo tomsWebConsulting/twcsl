@@ -9,6 +9,10 @@
 Add code from file **change cart continue shopping text.css** to Design > Custom
 CSS.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 <!-- * **2021-07-01**

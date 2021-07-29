@@ -15,6 +15,10 @@ It is beyond the scope of this code to explain how anchor/svg shape tags work.
 For some examples and more information please see [Add Multiple Links on Top of
 Image](https://forum.squarespace.com/topic/161526-add-multiple-links-on-top-of-image).
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 <!--
 
 ## Changes

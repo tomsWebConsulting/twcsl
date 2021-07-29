@@ -17,6 +17,10 @@ Add code from file **change form block post-submit redirect based on a select
 form field selected option.html** to Page Settings > Advanced >
 Page Header Code Injection for the page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 * **2021-06-13**
