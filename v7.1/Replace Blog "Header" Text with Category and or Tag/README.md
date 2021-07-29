@@ -11,43 +11,16 @@ to Blog Settings > Advanced > Page Header Code Injection for the blog page.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-02-24
-      </strong>
-    <ul>
-      <li>
-        fix issue where "header" would show before text replacements occurred
-        </li>
-      <li>
-        bumped version to 0.2d1
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-02-23
-      </strong>
-    <ul>
-      <li>
-        added user settable prefix and suffix text for category/tag
-        </li>
-      <li>
-        bumped version to 0.2d0
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-02-23
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-02-24**
+<br><br>
+  * fix issue where "header" would show before text replacements occurred
+  * bumped version to 0.2d1
+  <br><br>
+* **2021-02-23**
+<br><br>
+  * added user settable prefix and suffix text for category/tag
+  * bumped version to 0.2d0
+  <br><br>
+* **2021-02-23**
+<br><br>
+  * initial version

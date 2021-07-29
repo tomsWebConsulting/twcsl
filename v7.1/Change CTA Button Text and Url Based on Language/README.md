@@ -14,36 +14,18 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 *You may have already done this if you are using language switching software.*
 
-Add code from file **change cta button text and url based on language.html**
-to Settings > Advanced > Code Injection > FOOTER.
+Add code from file **change cta button text and url based on language.html** to
+Settings > Advanced > Code Injection > FOOTER.
 
 Make sure to place this code after the language switching software has run.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-04-30
-      </strong>
-    <ul>
-      <li>
-        fixed issue with code not changing language for mobile button
-        </li>
-      <li>
-        bumped version to v0.1d1
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-02-02
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-04-30**
+<br><br>
+  * fixed issue with code not changing language for mobile button
+  * bumped version to 0.1d1
+  <br><br>
+* **2021-02-02**
+<br><br>
+  * initial version

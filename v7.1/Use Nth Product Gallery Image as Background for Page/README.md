@@ -17,35 +17,13 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-04-30
-      </strong>
-    <ul>
-      <li>
-        use SS focal point data to position background image
-        </li>
-      <li>
-        fixed issue with scroll fade effect breaking when window is resized
-        </li>
-      <li>
-        bumped version to v0.3d0
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-03-30
-      </strong>
-    <ul>
-      <li>
-        added non-linear scroll fade effect
-        </li>
-      <li>
-        bumped version to v0.2d0
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-04-30**
+<br><br>
+  * use SS focal point data to position background image
+  * fixed issue with scroll fade effect breaking when window is resized
+  * bumped version to 0.3d0
+  <br><br>
+* **2021-03-30**
+<br><br>
+  * added non-linear scroll fade effect
+  * bumped version to v0.2d0

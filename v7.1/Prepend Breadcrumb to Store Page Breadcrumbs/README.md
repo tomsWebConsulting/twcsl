@@ -11,29 +11,12 @@ Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
-<ul>
-  <!-- li>
-    <strong>
-      2021-04-30
-      </strong>
-    <ul>
-      <li>
-        fixed issue with code not changing language for mobile button
-        </li>
-      <li>
-        bumped version to v0.1d1
-        </li>
-      </ul>
-    <br>
-    </li -->
-  <li>
-    <strong>
-      2021-05-02
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+<!-- * **2021-07-01**
+<br><br>
+  * added code to change read more link
+  * use twcsl
+  * bumped version to 0.1d2
+  <br><br -->
+* **2021-05-02**
+<br><br>
+  * initial version

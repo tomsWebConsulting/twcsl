@@ -10,29 +10,12 @@ Add code from file **change cart empty message.html** to Design > Custom CSS.
 
 ## Changes
 
-<ul>
-  <!-- li>
-    <strong>
-      2021-04-30
-      </strong>
-    <ul>
-      <li>
-        fixed issue with code not changing language for mobile button
-        </li>
-      <li>
-        bumped version to v0.1d1
-        </li>
-      </ul>
-    <br>
-    </li -->
-  <li>
-    <strong>
-      2021-05-03
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+<!-- * **2021-07-01**
+<br><br>
+  * added code to change read more link
+  * use twcsl
+  * bumped version to 0.1d2
+  <br><br -->
+* **2021-05-03**
+<br><br>
+  * initial version

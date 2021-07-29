@@ -16,54 +16,19 @@ to add the class.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-05-18
-      </strong>
-    <ul>
-      <li>
-        added code for reset order for .ProductItem-details-checkout child
-        elements
-        </li>
-      <li>
-        bumped version to 0.2d1
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-05-17
-      </strong>
-    <ul>
-      <li>
-        added code to work with add one left class to product detail page code
-        </li>
-      <li>
-        added check for not .one-left class
-        </li>
-      <li>
-        use a less heavy hand when changing margins, better looking spacing
-        overall
-        </li>
-      <li>
-        align add to cart button to end
-        </li>
-      <li>
-        bumped version to 0.2d0
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2021-03-23
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-05-18**
+<br><br>
+  * added code for reset order for .ProductItem-details-checkout child elements
+  * bumped version to 0.2d1
+  <br><br>
+* **2021-05-17**
+<br><br>
+  * added code to work with add one left class to product detail page code
+  * added check for not .one-left class
+  * use a less heavy hand when changing margins, better looking spacing overall
+  * align add to cart button to end
+  * bumped version to 0.2d0
+  <br><br>
+* **2021-03-23**
+<br><br>
+  * initial version

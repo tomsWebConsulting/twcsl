@@ -11,32 +11,12 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Changes
 
-<ul>
-  <li>
-    <strong>
-      2021-05-13
-      </strong>
-    <ul>
-      <li>
-        made code a litte more generic and minor clean up
-        </li>
-      <li>
-        added no MutationObserver guard
-        </li>
-      <li>
-        bumped version to 0.1d2
-        </li>
-      </ul>
-    <br>
-    </li>
-  <li>
-    <strong>
-      2020-12-21
-      </strong>
-    <ul>
-      <li>
-        initial version
-        </li>
-      </ul>
-    </li>
-  </ul>
+* **2021-05-13**
+<br><br>
+  * made code a litte more generic and minor clean up
+  * added no MutationObserver guard
+  * bumped version to 0.1d2
+  <br><br>
+* **2020-12-21**
+<br><br>
+  * initial version
