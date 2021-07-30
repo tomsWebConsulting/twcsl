@@ -1,10 +1,12 @@
 # Set Store Product Detail Named Form Labeled Text Field Character Max Length
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
 ## Quick Install
+
+Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,6 +23,11 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
+* **2021-07-30**
+<br><br>
+  * added missing quick install text
+  * bumped version to 0.2d1
+  <br><br>
 * **2021-07-28**
 <br><br>
   * generalized a bit to handle text and text area fields
