@@ -6,6 +6,12 @@
 
 ## Quick Install
 
+Add the following to Settings > Advanced > Code Injection > HEADER.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+
 Add code from file **change unable to add item to cart alert.html** to Store
 Settings > Advanced > Page Header Code Injection for the store page.
 
