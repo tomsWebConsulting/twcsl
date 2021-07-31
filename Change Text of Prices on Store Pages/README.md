@@ -1,10 +1,16 @@
 # Change Text of Prices on Store Pages
 
-### Version 0.2d0
+### Version 0.2d1
 
 ---
 
 ## Quick Install
+
+Add the following to Settings > Advanced > Code Injection > HEADER.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
 
 Add code from file **change text of prices on store pages.html** to Store
 Settings > Advanced > Page Header Code Injection for the store page.
@@ -32,6 +38,11 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
+* **2021-07-31**
+<br><br>
+  * added missing quick install text
+  * bumped version to 0.2d1
+  <br><br>
 * **2021-05-15**
 <br><br>
   * changed name from *Remove Word From, from Prices on Store Pages* to *Change
