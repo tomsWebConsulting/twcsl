@@ -6,7 +6,7 @@
 
 ## Quick Install
 
-Add code from file **change cart empty message.html** to Design > Custom CSS.
+Add code from file **change cart empty message.css** to Design > Custom CSS.
 
 ## Make a Donation
 

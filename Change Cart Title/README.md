@@ -6,7 +6,7 @@
 
 ## Quick Install
 
-Add code from file **change cart title.html** to Design > Custom CSS.
+Add code from file **change cart title.css** to Design > Custom CSS.
 
 ## Make a Donation
 
