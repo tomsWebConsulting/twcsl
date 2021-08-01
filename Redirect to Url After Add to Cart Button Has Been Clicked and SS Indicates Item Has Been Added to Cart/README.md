@@ -1,5 +1,4 @@
-# Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates
-  Item Has Been Added to Cart
+# Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart
 
 ### Version 0.1d2
 
