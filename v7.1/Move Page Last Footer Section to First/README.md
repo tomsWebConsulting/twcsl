@@ -18,6 +18,10 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 Add code from file **move page last footer section to first.html** to
 Page Settings > Advanced > Page Header Code Injection for the page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
 <!-- * **2021-07-01**

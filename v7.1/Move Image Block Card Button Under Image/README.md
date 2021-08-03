@@ -12,8 +12,15 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 ```
 
-Add code from file **move image block card button under image.html** to Page
-Settings > Advanced > Page Header Code Injection for the page.
+Add code from file **move image block card button under image.html** to:
+
+* Site Wide Effect
+<br><br>
+  * Settings > Advanced > Code Injection > HEADER.
+  <br><br>
+* Page Only Effect
+<br><br>
+  * Page Settings > Advanced > Page Header Code Injection for the page.
 
 ## Make a Donation
 
