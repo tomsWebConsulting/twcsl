@@ -1,0 +1,40 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      move image block card button under image
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    const selector = '.image-block-v2.design-layout-card';
+    
+    $( selector ).each ( function ( ) {
+    
+      const $this = ( this );
+      
+      const $image = $( '.image-inset', $this );
+      
+      $( '.image-button-wrapper', $this )
+      
+        .insertAfter ( $image );
+        
+      } );
+      
+    } );
+    
+  </script>
