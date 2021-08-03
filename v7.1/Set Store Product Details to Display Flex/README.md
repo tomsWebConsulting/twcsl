@@ -1,26 +1,25 @@
 # Set Store Product Details to Display Flex
 
-### Version 0.1d0
+### Version 0.1d1
 
 ---
 
 ## Quick Install
 
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-```
-
 Add code from file **set store product details to display flex.html** to Store
 Settings > Advanced > Page Header Code Injection for the store page.
 
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
 ## Changes
 
-<!-- * **2021-07-01**
+* **2021-08-02**
 <br><br>
-  * added code to change read more link
-  * use twcsl
-  * bumped version to 0.1d2
-  <br><br -->
+  * fix minor documentation issues
+  * bumped version to 0.1d1
+  <br><br>
 * **2021-07-20**
 <br><br>
   * initial version
