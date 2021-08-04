@@ -24,7 +24,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 <br><br>
   * added support for v7.0 Brine template family and Adirondack template
   * bumped version to 1.1
-  <br><br -->
+  <br><br>
 * **2021-07-26**
 <br><br>
   * initial version
