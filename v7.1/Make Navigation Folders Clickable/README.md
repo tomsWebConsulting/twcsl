@@ -10,7 +10,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>`
 
-Add code from file **make navigation folders clickable.html** to Settings >
+Add code from file **[make navigation folders clickable.html](make%20navigation%20folders%20clickable.html)** to Settings >
 Advanced > Code Injection > FOOTER.
 
 ## Make a Donation
