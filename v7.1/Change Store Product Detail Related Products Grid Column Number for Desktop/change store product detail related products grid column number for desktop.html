@@ -1,30 +1,49 @@
-<style>
+<!--
 
-  /*
+  begin change store product detail related products grid column number for
+  desktop
   
-    begin change store product detail related products grid column number for
-    desktop
-    
-    Version      : 0.1d1
-    
-    SS Version   : 7.1
-    
-    By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-    @media screen and ( min-width : 768px ) {
-    
-      .products.collection-content-wrapper .ProductItem-relatedProducts .list-grid {
+  Version     : 0.2d0
+  
+  SS Version  : 7.1
+  
+  Note        : the code is comprised of two style tags. both are needed for the
+                full effect to work
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+      @media screen and ( min-width : 768px ) {
       
-        grid-template-columns : repeat( 5, minmax( 0, 1fr ) );
-        grid-row-gap : unset;
+        .products.collection-content-wrapper .ProductItem-relatedProducts .list-grid {
         
+          --columns : [ enter columns here ]; /* 3 is default */
+          
+          }
+          
         }
         
-      }
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+      @media screen and ( min-width : 768px ) {
       
-    /* end change store product detail related products grid column number for
-       desktop */
-       
-  </style>
+        .products.collection-content-wrapper .ProductItem-relatedProducts .list-grid {
+        
+          grid-row-gap : unset;
+          grid-template-columns : repeat( var( --columns ), minmax( 0, 1fr ) );
+          
+          }
+          
+        }
+        
+    </style>
+    
+  <!-- end change store product detail related products grid column number for
+        desktop -->

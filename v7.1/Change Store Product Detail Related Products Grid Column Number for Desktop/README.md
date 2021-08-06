@@ -1,6 +1,6 @@
 # Change Store Product Detail Related Products Grid Column Number for Desktop
 
-### Version 0.1d1
+### Version 0.2d0
 
 #### SS Version 7.1
 
@@ -19,12 +19,11 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-07-01**
+* **2021-08-05**
 <br><br>
-  * added code to change read more link
-  * use twcsl
-  * bumped version to 0.1d2
-  <br><br -->
+  * added user settable number of columns
+  * bumped version to 0.2d0
+  <br><br>
 * **2021-03-27**
 <br><br>
   * initial version
