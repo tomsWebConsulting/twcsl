@@ -1,0 +1,63 @@
+<!--
+
+  begin move blog post first image to top area
+  
+  Version      : 0.1d0
+  
+  SS Version   : 7.1
+  
+  Dependancies : jQuery
+                 
+                 twcsl
+  
+  Notes        : the code is comprised of several tags. all are needed for the
+                 full effect to work
+                 
+                 this effect is not active in SS Preview to test it use private
+                 browsing < https://bit.ly/3f6lhq2 >.
+  
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .blog-item-wrapper .blog-item-top-wrapper {
+    
+      /* default is natural order, use a number to change order */
+      
+      --image-order : initial;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .blog-item-wrapper .blog-item-top-wrapper .sqs-block-image {
+    
+      order : var( --image-order );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      if ( ! twcsl.blogPage.isPost ) return; // bail if not post
+      
+      $( '.sqs-block-image:first' )
+      
+        .appendTo ( '.blog-item-top-wrapper' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end move blog post first image before title -->
