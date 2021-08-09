@@ -16,7 +16,7 @@ Add code from file **[move image block card button under image.html](move%20imag
 
 * Site Wide Effect
 <br><br>
-  * Settings > Advanced > Code Injection > HEADER.
+  * Settings > Advanced > Code Injection > FOOTER.
   <br><br>
 * Page Only Effect
 <br><br>
