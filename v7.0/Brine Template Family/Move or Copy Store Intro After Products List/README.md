@@ -2,6 +2,8 @@
 
 ### Version 0.2d0
 
+#### SS Version 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
+
 ---
 
 ## Quick Install
