@@ -1,0 +1,32 @@
+# Move or Copy Store Intro After Products List
+
+### Version 0.2d0
+
+---
+
+## Quick Install
+
+Add the following to Settings > Advanced > Code Injection > HEADER.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+```
+
+Add code from file
+**[move or copy store intro after products list.html](move%20or%20copy%20store%20intro%20after%20products%20list.html#L1)**
+to Store Settings > Advanced > Page Header Code Injection for the store page.
+
+## Make a Donation
+
+Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
+## Changes
+
+* **2021-08-11**
+<br><br>
+  * changed from copy code to move or copy
+  * bumped version to 0.2d0
+  <br><br>
+* **2021-05-21**
+<br><br>
+  * initial version

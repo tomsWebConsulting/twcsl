@@ -1,0 +1,91 @@
+<!--
+
+  begin move or copy store intro after products list
+  
+  Version       : 0.2d0
+  
+  SS Version    : 7.0
+  
+  Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                  Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                  Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                  Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                  Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella,
+                  Thorne, Vow, Wav, West )
+                  
+                  your template is not listed? then it is not currently
+                  supported
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    window.twc = {
+    
+      '1fc009ea' : {
+      
+        copyIntro : true /* value is false or true. true means copy the intro
+                            instead of moving it */
+        
+        }
+        
+      }
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .Intro:last-child .Intro-content {
+    
+      padding-top : 0;
+      
+      }
+      
+    .Main-content {
+    
+      padding-bottom : 0;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      let $element = $( '.Intro' );
+      
+      if ( twc [ '1fc009ea' ].copyIntro ) {
+      
+        $element = $element.clone ( );
+        
+        $( '[id]', $element ).each ( function ( ) {
+        
+          $this = $( this );
+          
+          let id = $this.attr ( 'id' );
+          
+          id += '_twc-mocsiapl';
+          
+          $this.attr ( 'id', id );
+          
+          } );
+          
+        }
+        
+      $element.insertAfter ( '.Main--products-list' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end move or copy store intro after products list -->
