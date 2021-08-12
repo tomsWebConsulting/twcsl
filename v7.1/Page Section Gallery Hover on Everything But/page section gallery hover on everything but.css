@@ -1,0 +1,57 @@
+/*
+
+  begin page section gallery hover on everything but
+  
+  Version     : 0.1d1
+  
+  SS Version  : 7.1
+  
+  Note        : gallery types slideshow full and simple are not included in this
+                effect
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .gallery-grid-item,
+  .gallery-masonry-item,
+  .gallery-reel-item,
+  .gallery-strips-item
+  
+    {
+    
+      -webkit-transition : opacity 0.25s;
+      -o-transition : opacity 0.25s;
+      transition : opacity 0.25s;
+      
+      }
+      
+  .gallery-grid-wrapper:hover .gallery-grid-item,
+  .gallery-masonry-wrapper:hover .gallery-masonry-item,
+  .gallery-reel-wrapper:hover .gallery-reel-item,
+  .gallery-strips-wrapper:hover .gallery-strips-item
+  
+    {
+    
+      -webkit-filter : grayscale( 1 );
+      filter : grayscale( 1 );
+      
+      opacity : 0.5;
+      
+      }
+      
+  .gallery-grid-wrapper:hover .gallery-grid-item:hover,
+  .gallery-masonry-wrapper:hover .gallery-masonry-item:hover,
+  .gallery-reel-wrapper:hover .gallery-reel-item:hover,
+  .gallery-strips-wrapper:hover .gallery-strips-item:hover
+  
+    {
+    
+      -webkit-filter : grayscale( 0 );
+      filter : grayscale( 0 );
+      
+      opacity : 1.0;
+      
+      }
+      
+  /* end page section gallery hover on everything but */
