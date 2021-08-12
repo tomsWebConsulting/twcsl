@@ -12,8 +12,9 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 ```
 
-Add code from file **change text of prices on store pages.html** to Store
-Settings > Advanced > Page Header Code Injection for the store page.
+Add code from file
+**[change text of prices on store pages.html](change%20text%20of%20prices%20on%20store%20pages.html#L1)**
+to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## searchReplaceText Example Lines
 
@@ -34,7 +35,8 @@ Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
