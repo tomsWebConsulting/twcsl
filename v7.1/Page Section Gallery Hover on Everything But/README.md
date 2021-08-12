@@ -7,7 +7,7 @@
 ## Quick Install
 
 Add code from file
-**[page section gallery masonry hover on everything but.css](page section gallery masonry hover on everything but.css#L1)**
+**[page section gallery masonry hover on everything but.css](page%20section%20gallery%20masonry%20hover%20on%20everything%20but.css#L1)**
 to Design > Custom CSS.
 
 ## Make a Donation
