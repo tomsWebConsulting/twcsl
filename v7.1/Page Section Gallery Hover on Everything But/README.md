@@ -1,4 +1,4 @@
-# Page Section Gallery Masonry Hover on Everything But
+# Page Section Gallery Hover on Everything But
 
 ### Version 0.1d1
 
