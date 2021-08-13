@@ -2,7 +2,7 @@
 
   begin add store category page description
   
-  Version       : 0.2d3
+  Version       : 0.3d0
   
   SS Version    : 7.1
   
@@ -23,29 +23,32 @@
     
       '8a8efe37' : {
       
-        categoryUrlSlugDescriptionMap : {
+        categoryDescriptionMap : {
         
           /*
           
-            the format of each line is a category URL Slug and a description for
-            the category
+            the format of each line is a category and a description for the
+            category
             
-            for each category URL Slug copy value from Store Settings >
-            Categories > [category name] > Edit Category > URL SLUG field for
-            the store page. you only need exactly what can be selected from the
+            for each category copy value from Store Settings >
+            Categories > [category name] > Edit Category > NAME field for the
+            store page. you only need exactly what can be selected from the
             field. if you want to add a description to the Store page ( i.e.
-            grid/listing ) leave the category URL Slug empty
+            grid/listing ) leave the category empty, i.e. ''
             
             if the description has single quotes in it then put a backslash
             before the single quotes. example: it's becomes it\'s
             
             following is an example line. copy the example line below and paste
             after the example line. remove '// ' at beginning of pasted line.
-            repeat for as many categories as you want to add a description.
+            repeat for as many categories as you want to add a description. this
+            has been done once initially
             
             */
             
-          // '[enter category url slug here between single quotes]' : '[enter category description here between single quotes]',
+          // '[enter category here between single quotes]' : '[enter category description here between single quotes]',
+          
+          '[enter category here between single quotes]' : '[enter category description here between single quotes]',
           
           }
           
@@ -168,17 +171,17 @@
       
       if ( twcsl.storePage.hasTag ) return; // bail on tag
       
-      const categoryUrlSlug = twcsl.storePage.categoryUrlSlug;
+      const category = twcsl.storePage.category;
       
       // bail if no category url slug mapped
       
-      if ( ! ( categoryUrlSlug in
+      if ( ! ( category in
       
-        twc [ '8a8efe37' ].categoryUrlSlugDescriptionMap ) ) return;
+        twc [ '8a8efe37' ].categoryDescriptionMap ) ) return;
         
-      const description = twc [ '8a8efe37' ].categoryUrlSlugDescriptionMap [
+      const description = twc [ '8a8efe37' ].categoryDescriptionMap [
       
-        categoryUrlSlug ];
+        category ];
         
       if ( ! paragraphStyle ) paragraphStyle = 'Heading 3';
       
@@ -188,7 +191,7 @@
         
         .find ( ':last' )
         
-          .text ( description )
+          .html ( description )
           
           .end ( )
           

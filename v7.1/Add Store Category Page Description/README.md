@@ -1,6 +1,6 @@
 # Add Store Category Page Description
 
-### Version 0.2d3
+### Version 0.3d0
 
 ---
 
@@ -10,7 +10,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d10/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d13/twcsl.js"></script>
 ```
 
 Add code from file **add store category page description.html** to
@@ -22,6 +22,12 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
+* **2021-08-12**
+<br><br>
+  * support for HTML in descriptions
+  * use category instead of category slugs
+  * bumped version to 0.3d0
+  <br><br>
 * **2021-06-27**
 <br><br>
   * added window.twc
