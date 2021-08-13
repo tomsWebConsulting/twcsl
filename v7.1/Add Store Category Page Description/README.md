@@ -13,12 +13,14 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d13/twcsl.js"></script>
 ```
 
-Add code from file **add store category page description.html** to
-Store Settings > Advanced > Page Header Code Injection for the store page.
+Add code from file
+**[add store category page description.html](add%20store%20category%20page%20description.html#L1)**
+to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
