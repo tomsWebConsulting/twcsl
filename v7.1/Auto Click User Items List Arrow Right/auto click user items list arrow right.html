@@ -6,7 +6,7 @@
     
       auto click user items list arrow right
       
-      Version       : 0.1d0
+      Version       : 0.2d0
       
       SS Version    : 7.1
       
@@ -40,6 +40,11 @@
       
       ];
       
+    /* kill upon user action, set to false or true. true means with user
+       interaction the auto click is disabled until the page is reloaded */
+       
+    const killUponUserAction = true;
+    
     // do not change anything below, there be the borg here
     
     if ( window.frameElement !== null ) return; // bail if in Preview
@@ -76,18 +81,38 @@
         
       // end shotgun selector
     
-    const $button = $( selector );
+    const $buttons = $( selector );
     
-    if ( ! $button.length ) return; // bail if no button
+    if ( ! $buttons.length ) return; // bail if no buttons
     
-    const click = ( ) => {
+    $buttons.each ( function ( ) {
     
-      $button.click ( );
+      const click = ( ) => {
       
-      }
+        $this.click ( );
+        
+        }
+        
+      const id = setInterval ( click, clickIntervalSeconds * 1000 );
       
-    setInterval ( click, clickIntervalSeconds * 1000 );
-    
+      const $this = $( this );
+      
+      const $pageSection = $this.parents ( '.page-section' );
+      
+      // continue if no kill on user interaction
+      
+      if ( ! killUponUserAction ) return true;
+      
+      $pageSection.on ( 'mousedown touchstart', function ( ) {
+      
+        clearInterval ( id );
+        
+        $( this ).off ( 'mousedown touchstart' );
+        
+        } );
+        
+      } );
+      
     } );
     
   </script>
