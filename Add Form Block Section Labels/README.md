@@ -22,9 +22,7 @@ Add your desired fields to the form block.
 Where you want to have a "section label" add a line field. Set the field label
 to the title of your form section. Set Underline to off.
 
-<img alt="label field example settings" src="/tomsWebConsulting/twcsl/raw/main/Add%20Form%20Block%20Section%20Labels/read%20me%20assets/line%20field.png" width="319">
-
-<!-- ![label field example settings](read%20me%20assets/line%20field.png) -->
+![label field example settings](read%20me%20assets/line%20field.png)
 
 Save the page.
 
