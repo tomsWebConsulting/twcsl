@@ -1,4 +1,4 @@
-# Change Text of Prices on Store Pages
+# Change Store Product Detail Price Text
 
 ### Version 0.3d0
 
