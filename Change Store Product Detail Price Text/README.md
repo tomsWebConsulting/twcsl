@@ -50,6 +50,7 @@ Please consider
   * changed name from *Change Text of Prices on Store Pages* to *Change Store
     Product Detail Price Text*
   * added ability to call replacment text function
+  * use twcsl
   * bumped version to 0.3d0
   
 * **2021-07-31**
