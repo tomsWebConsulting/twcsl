@@ -1,6 +1,6 @@
 # Change Store Product Detail Price Text
 
-### Version 0.3d0
+### Version 0.3d1
 
 ---
 
@@ -35,7 +35,7 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ```
 
 ```javascript
-      '/\\d+.\\d+/' : spdpt, /* replacement text function name */
+      '/.*?\\d+.\\d+/' : retoreSqsMoneyNative, /* replacement text function name */
 ```
 
 ## Make a Donation
@@ -45,6 +45,12 @@ Please consider
 
 ## Changes
 
+* **2021-08-20**
+
+  * disconnect observer before text changes and "reconnect" after changes,
+    more efficient
+  * bumped version to 0.3d1
+  
 * **2021-08-19**
 
   * changed name from *Change Text of Prices on Store Pages* to *Change Store

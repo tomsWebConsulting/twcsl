@@ -2,7 +2,7 @@
 
   begin change store product detail price text
   
-  Version         : 0.3d0
+  Version         : 0.3d1
   
   SS Versions     : 7.1, 7.0
   
@@ -171,8 +171,20 @@
             
               return;
               
+        observer.disconnect ( );
+        
         changeText ( target, true );
         
+        observer.observe ( productPrice [ 0 ], {
+        
+          attributeFilter : [ attribute ],
+          
+          attributeOldValue : true,
+          
+          childList : true
+          
+          } );
+          
         } );
         
       const productPrice = $productPrices
