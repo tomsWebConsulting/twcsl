@@ -1,0 +1,55 @@
+<script>
+
+  /*
+  
+    store product detail price total
+    
+    Version       : 0.1d0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : change store product detail price text
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const febc23ef = ( node ) => {
+  
+    let selectedVariant = $( '.product-variants' )
+    
+      .attr ( 'data-selected-variant' );
+      
+    // bail if no variant selected
+    
+    if ( selectedVariant === undefined ) return false;
+    
+    const hasClass = $( node )
+    
+      .parent ( )
+      
+      .hasClass ( 'original-price' );
+      
+    let price;
+    
+    selectedVariant = JSON.parse ( selectedVariant );
+    
+    price = ! selectedVariant.onSale || ( selectedVariant.onSale && hasClass ) ?
+    
+      selectedVariant.priceMoney.value : selectedVariant.salePriceMoney.value;
+      
+    let quantity = $( '.product-quantity-input input' ).val ( );
+    
+    price = Number ( price );
+    
+    quantity = Number ( quantity );
+    
+    price = price * quantity;
+    
+    price = price.toFixed ( 2 );
+    
+    return price;
+    
+    };
+    
+  </script>
