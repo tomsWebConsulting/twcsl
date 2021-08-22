@@ -1,0 +1,53 @@
+<script>
+
+  /*
+  
+    store product detail price add sqs-money-native for variants
+    
+    Version       : 0.1d0
+    
+    SS Versions   : 7.1
+    
+    Dependancies  : change store product detail price text
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const ffee6bf1 = ( node ) => {
+  
+    const selectedVariant = $( '.product-variants' )
+    
+      .attr ( 'data-selected-variant' );
+      
+    // bail if no variant selected
+    
+    if ( selectedVariant === undefined ) return false;
+    
+    const $element = $( node );
+    
+    const isOriginalPrice = $element
+    
+      .parent ( )
+      
+      .hasClass ( 'original-price' );
+      
+    const isProductPrice = $element
+    
+      .parent ( )
+      
+      .hasClass ( 'product-price' );
+      
+    // bail if no elements we are interested in
+    
+    if ( ! isOriginalPrice && ! isProductPrice ) return false;
+    
+    const r = node.data.match ( /(\d+\.\d+)/ ) [ 1 ];
+    
+    $element.wrap ( '<span class="sqs-money-native"></span>' );
+    
+    return r;
+    
+    };
+    
+  </script>
