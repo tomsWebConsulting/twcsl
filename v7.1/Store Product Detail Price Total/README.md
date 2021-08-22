@@ -12,7 +12,7 @@
   **[Change Store Product Detail Price Text](https://github.com/tomsWebConsulting/twcsl/tree/main/Change%20Store%20Product%20Detail%20Price%20Text#change-store-product-detail-price-text)**.
   
 * Add code from file
-  **[store%20product%20detail%20price%20total.html](store%20product%20detail%20price%20total.html#L1)**
+  **[store product detail price total.html](store%20product%20detail%20price%20total.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page
   before the **change store product detail price text** code.
   
