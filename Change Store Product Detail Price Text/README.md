@@ -2,6 +2,8 @@
 
 ### Version 0.3d1
 
+#### SS Versions 7.1, 7.0
+
 ---
 
 ## Quick Install
@@ -35,7 +37,7 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ```
 
 ```javascript
-      '/.*?\\d+.\\d+/' : retoreSqsMoneyNative, /* replacement text function name */
+      '/.*?\\d+.\\d+/' : ffee6bf1, /* replacement text function name */
 ```
 
 ## Make a Donation
