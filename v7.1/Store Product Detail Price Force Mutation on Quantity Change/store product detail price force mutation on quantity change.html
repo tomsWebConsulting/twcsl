@@ -1,0 +1,31 @@
+<script>
+
+  /*
+  
+    begin store product detail price force mutation on quantity change
+    
+    Version       : 0.1d0
+    
+    SS Versions   : 7.1
+    
+    Dependancies  : change store product detail price text
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    $( ( ) => {
+    
+      $( '.product-quantity-input' ).change ( function ( ) {
+      
+        $( '.ProductItem .ProductItem-details .product-price' )
+        
+          .attr ( 'data-twc-cspdpt-mo', 'true' );
+          
+        } );
+        
+      } );
+      
+    /* end store product detail price force mutation on quantity change */
+    
+  </script>
