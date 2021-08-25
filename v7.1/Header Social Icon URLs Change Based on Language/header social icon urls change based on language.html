@@ -1,0 +1,94 @@
+<script>
+
+  /*
+  
+    header social icon urls change based on language
+    
+    Version      : 0.1d0
+    
+    SS Version   : 7.1
+    
+    Dependancies : jQuery
+                   
+                   a language variable being set by language switching code
+    
+    Note         : this code is a function and you must pass a language
+                   variable to the function
+    
+    By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const adb9c2ef = ( lang ) => {
+  
+    const languageUrlsMap = {
+    
+      /*
+      
+        following is an example data structure. copy the example data
+        structure below and paste after the example data structure. remove
+        the forward slash asterisk and asterisk forward slash lines from
+        before and after the example data structure. repeat for as many
+        languages as are needed. this has been done once initially
+        
+        */
+        
+      /*
+      
+        [enter language code here] : [
+        
+          // the following structure can be repeated for as many urls as need
+          // to be changed
+          
+          {
+          
+            fromUrl : '[enter url here between single quotes]',
+            
+            toUrl : '[enter url here between single quotes]'
+            
+            },
+            
+          ],
+          
+        */
+        
+      [enter language code here] : [
+      
+        // the following structure can be repeated for as many urls as need
+        // to be changed
+        
+        {
+        
+          fromUrl : '[enter url here between single quotes]',
+          
+          toUrl : '[enter url here between single quotes]'
+          
+          },
+          
+        ],
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    // bail if lang not defined
+    
+    if ( ! ( lang in languageUrlsMap ) ) return;
+    
+    const selector = '.header-actions-action--social, ' +
+    
+      'header-menu-actions-action--social';
+      
+    const $elements = $( selector );
+    
+    $.each ( languageUrlsMap [ lang ], function ( ) {
+    
+      $( `a[href="${ this.fromUrl }"]`, $elements )
+      
+        .attr ( 'href', `${ this.toUrl }` );
+        
+      } );
+      
+    };
+    
+  </script>
