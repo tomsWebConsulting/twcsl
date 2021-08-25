@@ -1,6 +1,6 @@
 # Store Product Grid Images Hide
 
-### Version 0.1d0
+### Version 0.1d1
 
 #### SS Version 7.1
 
@@ -18,11 +18,12 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
-<!-- * **2021-08-15**
-  
-  * added kill upon user action
-  * bumped version to 0.2d0
-  -->
 * **2021-08-24**
+
+  * add is loaded class to grid items
+  * effect not active in Preview
+  * bumped version to 0.1d1
   
+* **2021-08-24**
+
   * initial version

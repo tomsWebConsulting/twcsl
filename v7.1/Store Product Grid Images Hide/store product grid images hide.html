@@ -1,29 +1,43 @@
-<style>
+<!--
 
-  /*
+  begin store product grid images hide
   
-    begin store product grid images hide
-    
-    Version     : 0.1d0
-    
-    SS Version  : 7.1
-    
-    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-    .products.collection-content-wrapper .grid-item {
-    
-      opacity : 1;
-      
-      }
-      
-    .products.collection-content-wrapper .list-grid .grid-item .grid-image {
+  Version       : 0.1d1
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >.
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    body:not( .sqs-edit-mode ) .products.collection-content-wrapper .list-grid .grid-item .grid-image {
     
       display : none;
       
       }
       
-    /* end store product grid images hide */
+    </style>
     
-  </style>
+  <script>
+  
+    $( ( ) => {
+    
+      $( '.products.collection-content-wrapper .grid-item' )
+      
+        .addClass ( 'is-loaded' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store product grid images hide -->
