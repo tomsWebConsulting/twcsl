@@ -23,22 +23,25 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ```javascript
       'from' : '', // remove word from
-```
+  ```
 
 ```javascript
       'from' : 'fra', // change language of word from, from english to swedish
-```
+  ```
 
 ```javascript
       '/(\\d+).00/' : '$1', /* remove decimal from price, using regular
                                expression, backslash must be escaped with \, the
                                replacement text can use special replacement
                                patterns */
-```
+  ```
 
 ```javascript
       '/.*?\\d+.\\d+/' : ffee6bf1, /* replacement text function name */
-```
+  ```
+
+*Note : Changing prices on a Store page does not effect the cart, checkout, or
+other SS pages/backend storage. This is purely a cosmetic change.*
 
 ## Make a Donation
 
