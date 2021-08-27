@@ -33,6 +33,6 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   * added kill upon user action
   * bumped version to 0.2d0
   -->
-* **2021-08-21**
+* **2021-08-27**
   
   * initial version
