@@ -1,0 +1,29 @@
+<script>
+
+  /*
+  
+    cart prices sqs-money-native add
+    
+    Version       : 0.1d0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Dependancies  : cart prices change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const x828dc1d3 = ( node ) => {
+  
+    const r = node.data.match ( /(\d+\.\d+)/ ) [ 1 ];
+    
+    const $element = $( node );
+    
+    $element.wrap ( '<span class="sqs-money-native"></span>' );
+    
+    return r;
+    
+    };
+    
+  </script>
