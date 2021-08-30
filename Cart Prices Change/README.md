@@ -1,6 +1,6 @@
 # Cart Prices Change
 
-### Version 0.1d0
+### Version 0.1d1
 
 #### SS Versions 7.1, 7.0
 
@@ -26,12 +26,14 @@ to Settings > Advanced > Code Injection > FOOTER.
   ```
 
 ```javascript
-      '/.*?\\d+.\\d+/' : x828dc1d3, // replacement text function name
+      '/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/' : x828dc1d3, // replacement text function name
   ```
 
-*Note : Changing prices on the cart page does not effect the store/product
+## Note
+
+Changing prices on the cart page does not effect the store/product
 pages, checkout, or other SS pages/backend storage. This is purely a cosmetic
-change. No code can change the checkout page. It is an SS security feature.*
+change. No code can change the checkout page. It is an SS security feature.
 
 ## Make a Donation
 
@@ -40,11 +42,11 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-05-08**
+* **2021-08-29**
 
-  * verified code works on v7.0 using Brine template family
-  * bumped version to 0.1d2
-  -->
+  * added missing is cart page check
+  * bumped version to 0.1d1
+  
 * **2021-08-27**
 
   * initial version

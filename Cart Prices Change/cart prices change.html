@@ -2,7 +2,7 @@
 
   begin cart prices change
   
-  Version         : 0.1d0
+  Version         : 0.1d1
   
   SS Versions     : 7.1, 7.0
   
@@ -21,6 +21,8 @@
                     supported
   
   Dependancies    : jQuery
+                    
+                    twcsl
   
   Notes           : the code is comprised of several tags all of which must be
                     present for the effect to work
@@ -88,6 +90,8 @@
   
     $( ( ) => {
     
+      if ( ! twcsl.isCart ) return; // bail if not cart page
+      
       const changeText = ( node ) => {
       
         const walker = document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
