@@ -4,24 +4,28 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d12
+  Version         : 0.1d14
   
-  SS Versions     : 7.0, 7.1
+  SS Versions     : 7.1, 7.0
   
   v7.0 Templates  : Avenue
                     
                     Bedford ( Anya, Bryant, Hayden )
                     
-                    Brine ( Aria, Blend, Cacao, Clay, Fairfield, Feed,
+                    Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
                     Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
                     Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                    Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                    Stella, Thorne, Vow, Wav, West )
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    Five
+                    
+                    Montauk ( Julia, Kent, Om )
                     
                     your template is not listed? then it is not currently
                     supported
-                    
+  
   Dependancies    : jQuery
   
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
@@ -50,7 +54,9 @@ const twcsl = ( ( $ ) => {
         
         isBlogPage : false,
         
-        isDetail : false,
+        isList : false,
+        
+        isPost : false,
         
         tag : '',
         
@@ -64,7 +70,7 @@ const twcsl = ( ( $ ) => {
         
         };
         
-      const _eventPage = {
+      const _eventsPage = {
       
         categories : [ ],
         
@@ -78,9 +84,9 @@ const twcsl = ( ( $ ) => {
         
         hasTag : false,
         
-        isDetail : false,
+        isEvent : false,
         
-        isEventPage : false,
+        isEventsPage : false,
         
         tag : '',
         
@@ -272,7 +278,7 @@ const twcsl = ( ( $ ) => {
           
         }; // end initialize _navigator
         
-      const _isPageDetail = ( ) => {
+      const _isCollectionItemPage = ( ) => {
       
         return $( 'body[id^="item-"]' ).length != 0;
         
@@ -314,7 +320,7 @@ const twcsl = ( ( $ ) => {
           
           if ( ! o.isBlogPage ) return; // bail if not blog page
           
-          o.isDetail = _isPageDetail ( );
+          o.isPost = _isCollectionItemPage ( );
           
           o.urlSlug = _urlSlug;
           
@@ -322,9 +328,51 @@ const twcsl = ( ( $ ) => {
           
         // begin second order
         
+          o.categoryUrlSlug = ( ( ) => {
+          
+            if ( o.isPost ) return ''; // bail if post
+            
+            const regex = /\//g;
+            
+            let slug = location
+            
+              .pathname
+              
+              .replace ( o.urlSlug + '/category/', '' );
+              
+            if ( regex.test ( slug ) ) return '';
+            
+            return slug;
+            
+            } ) ( ); // end categoryUrlSlug
+            
+          o.isList = ! o.isPost;
+          
+          o.tagUrlSlug = ( ( ) => {
+          
+            if ( o.isPost ) return ''; // bail if post
+            
+            const regex = /\//g;
+            
+            let slug = location
+            
+              .pathname
+              
+              .replace ( o.urlSlug + '/tag/', '' );
+              
+            if ( regex.test ( slug ) ) return '';
+            
+            return slug;
+            
+            } ) ( ); // end tagUrlSlug
+             
+          // end second order
+          
+        // begin third order
+        
           o.categories = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( o.isList ) return [ ]; // bail if list
             
             const selector =
             
@@ -352,29 +400,11 @@ const twcsl = ( ( $ ) => {
               
             return categories;
             
-            } ) ( );
-            
-          o.categoryUrlSlug = ( ( ) => {
-          
-            if ( o.isDetail ) return ''; // bail if detail
-            
-            const regex = /\//g;
-            
-            let slug = location
-            
-              .pathname
-              
-              .replace ( o.urlSlug + '/category/', '' );
-              
-            if ( regex.test ( slug ) ) return '';
-            
-            return slug;
-            
-            } ) ( );
+            } ) ( ); // end categories
             
           o.categoryUrlSlugs = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( o.islist ) return [ ]; // bail if list
             
             const selector =
             
@@ -402,11 +432,15 @@ const twcsl = ( ( $ ) => {
               
             return urlSlugs;
             
-            } ) ( );
+            } ) ( ); // end categoryUrlSlugs
             
+          o.hasCategory = Boolean ( o.categoryUrlSlug );
+          
+          o.hasTag = Boolean ( o.tagUrlSlug );
+          
           o.tags = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( o.isList ) return [ ]; // bail if list
             
             const tags = $( '.Blog-meta-item-tag, .blog-item-tag' )
             
@@ -426,29 +460,11 @@ const twcsl = ( ( $ ) => {
               
             return tags;
             
-            } ) ( );
+            } ) ( ); // end tags
             
-          o.tagUrlSlug = ( ( ) => {
-          
-            if ( o.isDetail ) return ''; // bail if detail
-            
-            const regex = /\//g;
-            
-            let slug = location
-            
-              .pathname
-              
-              .replace ( o.urlSlug + '/tag/', '' );
-              
-            if ( regex.test ( slug ) ) return '';
-            
-            return slug;
-            
-            } ) ( );
-             
           o.tagUrlSlugs = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( o.isList ) return [ ]; // bail if list
             
             const urlSlugs = $( '.Blog-meta-item-tag, .blog-item-tag' )
             
@@ -468,16 +484,8 @@ const twcsl = ( ( $ ) => {
               
             return urlSlugs;
             
-            } ) ( );
+            } ) ( ); // tagUrlSlugs
             
-          // end second order
-          
-        // begin third order
-        
-          o.hasCategory = Boolean ( o.categoryUrlSlug );
-          
-          o.hasTag = Boolean ( o.tagUrlSlug );
-          
           // end third order
           
         // begin fourth order
@@ -494,7 +502,7 @@ const twcsl = ( ( $ ) => {
               
             return category;
             
-            } ) ( );
+            } ) ( ); // end category
             
           o.tag = ( ( ) => {
           
@@ -508,15 +516,15 @@ const twcsl = ( ( $ ) => {
               
             return tag;
             
-            } ) ( );
+            } ) ( ); // end tag
             
           // end fourth order
           
         }; // end initialize blogPage
         
-      const _initializeEventPage = ( ) => { // initialize eventPage
+      const _initializeEventsPage = ( ) => { // initialize eventsPage
       
-        const o = _eventPage;
+        const o = _eventsPage;
         
         const selector =
         
@@ -524,13 +532,13 @@ const twcsl = ( ( $ ) => {
           
           'body[class*="collection-type-events-"]';
           
-        o.isEventPage = Boolean ( $( selector ).length );
+        o.isEventsPage = Boolean ( $( selector ).length );
         
-        if ( ! o.isEventPage ) return; // bail if not event page
+        if ( ! o.isEventsPage ) return; // bail if not event page
         
         // begin first order
         
-          o.isDetail = _isPageDetail ( );
+          o.isEvent = _isCollectionItemPage ( );
           
           o.urlSlug = _urlSlug;
           
@@ -540,7 +548,7 @@ const twcsl = ( ( $ ) => {
         
           o.categories = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( ! o.isEvent ) return [ ]; // bail if not detail
             
             const categories = $( '.eventitem-meta-cats a' )
             
@@ -564,7 +572,7 @@ const twcsl = ( ( $ ) => {
             
           o.categoryUrlSlug = ( ( ) => {
           
-            if ( o.isDetail ) return ''; // bail if detail
+            if ( o.isEvent ) return ''; // bail if detail
             
             let slug = _getPageCategory ( );
             
@@ -578,7 +586,7 @@ const twcsl = ( ( $ ) => {
             
           o.categoryUrlSlugs = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( ! o.isEvent ) return [ ]; // bail if not detail
             
             return _getHrefQueryStringParameterValues ( 'category' );
             
@@ -586,7 +594,7 @@ const twcsl = ( ( $ ) => {
             
           o.tags = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( ! o.isEvent ) return [ ]; // bail if not detail
             
             const tags = $( '.eventitem-meta-tags a' )
             
@@ -610,7 +618,7 @@ const twcsl = ( ( $ ) => {
             
           o.tagUrlSlug = ( ( ) => {
           
-            if ( o.isDetail ) return ''; // bail if detail
+            if ( o.isEvent ) return ''; // bail if detail
             
             let slug = _getPageTagSlug ( );
             
@@ -624,7 +632,7 @@ const twcsl = ( ( $ ) => {
             
           o.tagUrlSlugs = ( ( ) => {
           
-            if ( ! o.isDetail ) return [ ]; // bail if not detail
+            if ( ! o.isEvent ) return [ ]; // bail if not detail
             
             return _getHrefQueryStringParameterValues ( 'tag' );
             
@@ -660,7 +668,7 @@ const twcsl = ( ( $ ) => {
             
           // end forth order
           
-        }; // end initialize eventPage
+        }; // end initialize eventsPage
         
       const _initializeStorePage = ( ) => { // initialize _storePage
       
@@ -672,7 +680,7 @@ const twcsl = ( ( $ ) => {
         
         // begin first order
         
-          o.isDetail = _isPageDetail ( );
+          o.isDetail = _isCollectionItemPage ( );
           
           o.urlSlug = _urlSlug;
           
@@ -866,7 +874,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d12';
+    const version = '0.1d14';
     
     // end public properties
     
@@ -1021,7 +1029,7 @@ const twcsl = ( ( $ ) => {
   
     _initializeBlogPage ( );
     
-    _initializeEventPage ( );
+    _initializeEventsPage ( );
     
     _initializeNavigator ( );
     
@@ -1049,7 +1057,7 @@ const twcsl = ( ( $ ) => {
     
       blogPage          : _blogPage,
       
-      eventPage         : _eventPage,
+      eventsPage         : _eventsPage,
       
       is70              : _is70,
       
