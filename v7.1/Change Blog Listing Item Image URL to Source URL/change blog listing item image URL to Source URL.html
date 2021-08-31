@@ -6,13 +6,15 @@
     
       change blog listing item image URL to Source URL
       
-      Version      : 0.1d0
+      Version       : 0.1d1
       
-      SS Version   : 7.1
+      SS Version    : 7.1
       
-      Dependancies : jQuery
+      Dependancies  : jQuery
       
-      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
@@ -22,8 +24,8 @@
     
     // do not change anything below, there be the borg here
     
-    if ( ! $( '.blog-basic-grid' ).length ) return; /* bail if not blog listing
-                                                       page */
+    if ( ! twcsl.blogPage.isList ) return; // bail if not blog listing
+    
     $( '.blog-title .passthrough-link' )
     
       .filter ( function ( ) {
@@ -42,7 +44,7 @@
         
           .parents ( '.blog-item' )
           
-          .find ( 'div:first .image-wrapper' )
+          .find ( '.image-wrapper' )
           
             .attr ( 'href', url );
             
