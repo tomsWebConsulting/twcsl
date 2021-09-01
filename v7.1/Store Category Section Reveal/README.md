@@ -24,6 +24,9 @@ block at the top of the section with the following code.
 <div data-category="[enter category here between double quotes]"></div>
 ```
 
+Repeat this pattern for as many categories as desired. The category must match
+the category text as entered in the SS interface.
+
 You can have a default section revealed when no section with a category is
 defined. This default section will show on all non-category pages or category
 pages with no corresponding page section defined. To have a default section add
@@ -32,9 +35,6 @@ a code block at the top of the section with the following code.
 ```html
 <div data-category="default"></div>
 ```
-
-Repeat this pattern for as many categories as desired. The category must match
-the category text as entered in the SS interface.
 
 ## Note
 
