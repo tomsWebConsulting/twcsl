@@ -1,0 +1,75 @@
+<!--
+
+  begin store category section reveal
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >.
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+      body:not( .sqs-edit-mode ) #page .page-section:not( .collection-type-products ) {
+      
+        display : none;
+        
+        }
+        
+      </style>
+      
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const paddingTop = twcsl.getFirstPageSection ( )
+      
+        .css ( 'padding-top' );
+        
+      let category = twcsl.storePage.category;
+      
+      category = category && $( `div[data-category="${category}"]` ).length ?
+      
+        category : 'default';
+        
+      // remove unused sections
+      
+      $( 'div[data-category]' )
+      
+        .filter ( `div[data-category!="${category}"]` )
+        
+        .parents ( '.page-section' )
+        
+        .remove ( );
+        
+      twcsl.getFirstPageSection ( )
+      
+        .css ( 'padding-top', paddingTop );
+        
+      // show the remaining sections
+      
+      $( '#page .page-section:not( .collection-type-products )' )
+      
+        .css ( 'display', 'flex' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store category section reveal -->
