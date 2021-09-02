@@ -1,17 +1,21 @@
-# Mobile Menu Sweep From Left Edge of Viewport
+# Mobile Menu Left Flyout
 
 ### Version 0.3d1
+
+#### SS Version 7.1
 
 ---
 
 ## Quick Install
 
-Add code from file **mobile menu sweep from left edge of viewport.less** to
-Design > Custom CSS.
+Add code from file
+**[mobile menu left flyout.less](mobile%20menu%20left%20flyout.less#L1)**
+to Design > Custom CSS.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
