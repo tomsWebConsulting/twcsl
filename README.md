@@ -23,8 +23,9 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains over 80 effects. Each effect has it's own version number, code,
-read me, and etc.
+twcsl contains over 85 effects. Each effect has it's own version number, code,
+read me, and etc. Each effect is independant. In other words all the effects are
+not necessarily designed to all work together.
 
 * v7.0 and v7.1 effects
 
@@ -104,6 +105,10 @@ read me, and etc.
     
   * [Add Store Category Page Description](v7.0/Add%20Store%20Category%20Page%20Description)
     
+  * [Bedford Template Family](v7.0/Bedford%20Template%20Family)
+    
+    * [Blog Post Tag Url Change](v7.0/Brine%20Template%20Family/Blog%20Post%20Tag%20Url%20Change)
+      
   * [Brine Template Family](v7.0/Brine%20Template%20Family)
     
     * [Change Blog Listing Item Links to Source URL](v7.0/Brine%20Template%20Family/Change%20Blog%20Listing%20Item%20Links%20to%20Source%20URL)
@@ -151,6 +156,8 @@ read me, and etc.
   * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
     
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
+    
+  * [Header Social Icon Discord Generic Icon to Discord Change](v7.1/Header%20Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
     
   * [Header Social Icon URLs Change Based on Language](v7.1/Header%20Social%20Icon%20URLs%20Change%20Based%20on%20Language)
     
@@ -204,6 +211,8 @@ read me, and etc.
     
   * [Site Wide Rounded Image Corners](v7.1/Site%20Wide%20Rounded%20Image%20Corners)
     
+  * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
+    
   * [Store Product Detail Price Add Sqs-Money-Native for Variants](v7.1/Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
     
   * [Store Product Detail Price Force Mutation on Quantity Change](v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
@@ -223,7 +232,7 @@ read me, and etc.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d14
+### Version 0.1d15
 
 ## Quick Install
 
@@ -231,7 +240,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d14/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
 ```
 
 ## Example
@@ -382,6 +391,12 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2021-09-03**
+
+  * fixed bad blogPage isList check
+  * fixes for blogPage for various v7.0 templates
+  * bumped version to 0.1d15
+  
 * **2021-08-31**
 
   * added blogPage.isList

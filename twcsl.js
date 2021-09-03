@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d14
+  Version         : 0.1d15
   
   SS Versions     : 7.1, 7.0
   
@@ -306,27 +306,63 @@ const twcsl = ( ( $ ) => {
     
       const _initializeBlogPage = ( ) => { // initialize blogPage
       
-        const o = _blogPage;
-        
         // begin first order
         
-          const selector =
+          const o = _blogPage;
           
-            'body[class~="collection-type-blog"], ' +
+          const selector = [
+          
+            'body[class~="collection-type-blog"]',
             
-            'body[class*="collection-type-blog-"]';
+            'body[class*="collection-type-blog-"]',
+            
+            ]
+            
+            .join ( ', ' );
             
           o.isBlogPage = Boolean ( $( selector ).length );
           
           if ( ! o.isBlogPage ) return; // bail if not blog page
           
+          // end first order
+          
+        // begin second order
+        
+          const categorySelector = [
+          
+            '.blog-item-category', // v7.1
+            
+            '.Blog-meta-item-category', // Brine
+            
+            '.categories a', // Avenue, Five, Montauk
+            
+            '.meta-above-title .entry-category a', // Bedford
+            
+            ]
+            
+            .join ( ', ' );
+            
+          const tagsSelector = [
+          
+            '.blog-item-tag', // v7.1
+            
+            '.Blog-meta-item-tag', // Brine
+            
+            '.tags a', // Avenue, Five, Montauk
+            
+            '.entry-tags a', // Bedford
+            
+            ]
+            
+            .join ( ', ' );
+            
           o.isPost = _isCollectionItemPage ( );
           
           o.urlSlug = _urlSlug;
           
-          // end first order
+          // end second order
           
-        // begin second order
+        // begin third order
         
           o.categoryUrlSlug = ( ( ) => {
           
@@ -366,23 +402,15 @@ const twcsl = ( ( $ ) => {
             
             } ) ( ); // end tagUrlSlug
              
-          // end second order
+          // end third order
           
-        // begin third order
+        // begin forth order
         
           o.categories = ( ( ) => {
           
             if ( o.isList ) return [ ]; // bail if list
             
-            const selector =
-            
-              '.blog-item-category, ' +
-              
-              '.Blog-meta-item-category, ' +
-              
-              '.meta-above-title .entry-category a';
-              
-            const categories = $( selector )
+            const categories = $( categorySelector )
             
               .map ( function ( ) {
               
@@ -404,17 +432,9 @@ const twcsl = ( ( $ ) => {
             
           o.categoryUrlSlugs = ( ( ) => {
           
-            if ( o.islist ) return [ ]; // bail if list
+            if ( o.isList ) return [ ]; // bail if list
             
-            const selector =
-            
-              '.blog-item-category, ' +
-              
-              '.Blog-meta-item-category, ' +
-              
-              '.meta-above-title .entry-category a';
-              
-            const urlSlugs = $( selector )
+            const urlSlugs = $( categorySelector )
             
               .map ( function ( ) {
               
@@ -442,7 +462,7 @@ const twcsl = ( ( $ ) => {
           
             if ( o.isList ) return [ ]; // bail if list
             
-            const tags = $( '.Blog-meta-item-tag, .blog-item-tag' )
+            const tags = $( tagsSelector )
             
               .map ( function ( ) {
               
@@ -466,7 +486,7 @@ const twcsl = ( ( $ ) => {
           
             if ( o.isList ) return [ ]; // bail if list
             
-            const urlSlugs = $( '.Blog-meta-item-tag, .blog-item-tag' )
+            const urlSlugs = $( tagsSelector )
             
               .map ( function ( ) {
               
@@ -486,9 +506,9 @@ const twcsl = ( ( $ ) => {
             
             } ) ( ); // tagUrlSlugs
             
-          // end third order
+          // end forth order
           
-        // begin fourth order
+        // begin fifth order
         
           o.category = ( ( ) => {
           
@@ -518,7 +538,7 @@ const twcsl = ( ( $ ) => {
             
             } ) ( ); // end tag
             
-          // end fourth order
+          // end fifth order
           
         }; // end initialize blogPage
         
