@@ -1,0 +1,71 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      blog post tag url change
+      
+      Version         : 0.1d0
+      
+      SS Version      : 7.0
+      
+      v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      Note            : this effect is not active in SS Preview or Full preview
+                        of blog posts. to test it use private browsing
+                        < https://bit.ly/3f6lhq2 >
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const tagUrlMap = {
+      
+        /*
+        
+          the format of each line is a tag as entered in Blog Settings >
+          Advanced > Manage Tags and a URL for the tag
+          
+          the URL can be any valid URL. it can be a full (external to your site)
+          one like < http://www.tomsWeb.consulting/ > or a partial (internal to
+          your site) one like '/contact'
+          
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at the beginning of pasted line.
+          repeat for as many tags as you want to change the url. this has been
+          done once initially
+          
+          */
+          
+        // '[enter tag here between single quotes]' : '[enter url here between single quotes]',
+        
+        '[enter tag here between single quotes]' : '[enter url here between single quotes]',
+        
+        };
+        
+      // do not change anything below, there be the borg here
+      
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      if ( ! twcsl.blogPage.isPost ) return; // bail if not post
+      
+      const keys = Object.keys ( tagUrlMap );
+      
+      $.each ( keys, function ( i, key ) {
+      
+        const url = tagUrlMap [ key ];
+        
+        $( `.entry-tags a[href$="/${key}"]` )
+        
+          .attr ( 'href', url );
+        
+        } ); // end each
+        
+    } );
+    
+  </script>
