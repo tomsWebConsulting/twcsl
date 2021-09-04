@@ -42,72 +42,72 @@ not necessarily designed to all work together.
 ## Effects
 
 * [Add Button After Add to Cart Button of Product Detail Page](Add%20Button%20After%20Add%20to%20Cart%20Button%20of%20Product%20Detail%20Page)
-
+  
 * [Add Category Attribute to a Store Category Page](Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page)
-
+  
 * [Add Continue Shopping Message When Cart Has Items](Add%20Continue%20Shopping%20Message%20When%20Cart%20Has%20Items)
-
+  
 * [Add Form Block Section Labels](Add%20Form%20Block%20Section%20Labels)
-
+  
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
-
+  
 * [Add One Left Class to Product Detail Page](Add%20One%20Left%20Class%20to%20Product%20Detail%20Page)
-
+  
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
-
+  
 * [Add Text Based on Tags After Matched Text to Product Description](Add%20Text%20Based%20on%20Tags%20After%20Matched%20Text%20to%20Product%20Description)
-
+  
 * [Cart Prices Change](Cart%20Prices%20Change)
-
+  
 * [Cart Prices Sqs-Money-Native Add](Cart%20Prices%20Sqs-Money-Native%20Add)
-
+  
 * [Change Add to Cart Adding Added Button Text](Change%20Add%20to%20Cart%20Adding%20Added%20Button%20Text)
-
+  
 * [Change Cart Continue Shopping Text](Change%20Cart%20Continue%20Shopping%20Text)
-
+  
 * [Change Cart Empty Message](Change%20Cart%20Empty%20Message)
-
+  
 * [Change Cart Title](Change%20Cart%20Title)
-
+  
 * [Change Form Block Post-Submit Redirect Based on a Radio Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Radio%20Form%20Field%20Selected%20Option)
-
+  
 * [Change Form Block Post-Submit Redirect Based on a Select Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Select%20Form%20Field%20Selected%20Option)
-
+  
 * [Change Search Page Input Placeholder Text](Change%20Search%20Page%20Input%20Placeholder%20Text)
-
+  
 * [Change Unable to Add Item to Cart Alert for Only N Available](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Only%20N%20Available)
-
+  
 * [Change Unable to Add Item to Cart Alert for Out of Stock Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Out%20of%20Stock%20Variants)
-
+  
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
-
+  
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
-
+  
 * [Hide Product Detail Add to Cart Tagged "hide atc"](Hide%20Product%20Detail%20Add%20to%20Cart%20Tagged%20"hide%20atc")
-
+  
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
-
+  
 * [Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart](Redirect%20to%20Url%20After%20Add%20to%20Cart%20Button%20Has%20Been%20Clicked%20and%20SS%20Indicates%20Item%20Has%20Been%20Added%20to%20Cart)
-
+  
 * [Replace Form Submit Button Submitting Text](Replace%20Form%20Submit%20Button%20Submitting%20Text)
-
+  
 * [Responsive Image Map Template](Responsive%20Image%20Map%20Template)
-
+  
 * [Set Store Product Detail Named Form Labeled Text Field Character Max Length](Set%20Store%20Product%20Detail%20Named%20Form%20Labeled%20Text%20Field%20Character%20Max%20Length)
-
+  
 * [Store Price Change](Store%20Price%20Change)
-
+  
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
-
+  
 * [v7.0](v7.0)
-
+  
   * [Add Content of a Page to Products Page](v7.0/Add%20Content%20of%20a%20Page%20to%20Products%20Page)
     
   * [Add Store Category Page Description](v7.0/Add%20Store%20Category%20Page%20Description)
     
   * [Bedford Template Family](v7.0/Bedford%20Template%20Family)
     
-    * [Blog Post Tag Url Change](v7.0/Brine%20Template%20Family/Blog%20Post%20Tag%20Url%20Change)
+    * [Blog Post Tag Url Change](v7.0/Bedford%20Template%20Family/Blog%20Post%20Tag%20Url%20Change)
       
   * [Brine Template Family](v7.0/Brine%20Template%20Family)
     
@@ -122,7 +122,7 @@ not necessarily designed to all work together.
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
       
 * [v7.1](v7.1)
-
+  
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
     
   * [Add Categories Attribute to Event Detail Page](v7.1/Add%20Categories%20Attribute%20to%20Event%20Detail%20Page)
@@ -144,8 +144,6 @@ not necessarily designed to all work together.
   * [Change CTA Button Text and Url Based on Language](v7.1/Change%20CTA%20Button%20Text%20and%20Url%20Based%20on%20Language)
     
   * [Change Default Image Aspect Ratios for Store Page](v7.1/Change%20Default%20Image%20Aspect%20Ratios%20for%20Store%20Page)
-    
-  * [Change Header Social Icon URLs Based on Language](v7.1/Change%20Header%20Social%20Icon%20URLs%20Based%20on%20Language)
     
   * [Change Image Card, Image to Text Width Ratios](v7.1/Change%20Image%20Card,%20Image%20to%20Text%20Width%20Ratios)
     
