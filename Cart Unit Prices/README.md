@@ -13,9 +13,17 @@
   
 * Add code from file
   **[cart unit prices.html](cart%20unit%20prices.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER after **cart prices change**
-  code.
-  
+  to Settings > Advanced > Code Injection > FOOTER after the **cart prices
+  change** code.
+
+## Notes
+
+Adding unit prices to the cart page does not effect the store/product
+pages, checkout, or other SS pages/backend storage. This is purely a cosmetic
+change. No code can change the checkout page. It is an SS security feature.
+
+The effect is not active on mobile.
+
 ## Make a Donation
 
 Please consider
@@ -29,6 +37,6 @@ Please consider
     format
   * bumped version to 0.1d1
   -->
-* **2021-09-03**
+* **2021-09-04**
 
   * initial version

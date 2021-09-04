@@ -14,6 +14,8 @@
   
   Note          : the code is comprised of several tags. all are needed for the
                   full effect to work
+                  
+                  the effect is not active on mobile
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -21,7 +23,7 @@
   
   <style>
   
-    .twc-unit-price,
+    .twc-item-list-label--unit-price,
     .twc-item-unit-price
     
       {
@@ -33,7 +35,7 @@
     @media only screen and ( pointer : coarse ) and ( min-width : 1025px ),
     screen and ( min-width : 800px ) {
     
-      .twc-unit-price {
+      .twc-item-list-label--unit-price {
       
         display : inline-block;
         font-size : 16px;
@@ -55,7 +57,7 @@
         
         }
         
-      ._26eXSmpLx, /* item price */
+      .item-price, /* ._26eXSmpLx */
       
       .XgjsO_M3Y /* price label */
       
@@ -109,7 +111,7 @@
           
         }
         
-      $( `<div class="twc-unit-price">
+      $( `<div class="twc-item-list-label--unit-price">
       
         <span class="_3zzV1fDFF">
         
