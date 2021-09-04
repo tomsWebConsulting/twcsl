@@ -1,6 +1,6 @@
 # Cart Prices Change
 
-### Version 0.1d1
+### Version 0.1d2
 
 #### SS Versions 7.1, 7.0
 
@@ -12,7 +12,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d13/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
 ```
 
 Add code from file
@@ -42,6 +42,11 @@ Please consider
 
 ## Changes
 
+* **2021-09-04**
+
+  * when quantity is changed run search replace for changed item and subtotal
+  * bumped version to 0.1d2
+  
 * **2021-08-29**
 
   * added missing is cart page check

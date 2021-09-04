@@ -2,7 +2,7 @@
 
   begin cart prices change
   
-  Version         : 0.1d1
+  Version         : 0.1d2
   
   SS Versions     : 7.1, 7.0
   
@@ -134,11 +134,23 @@
       
       const selector = '._2JFeDgZcv, .item-price';
       
-      const $prices = $( selector ).each ( function ( ) {
+      $( selector ).each ( function ( ) {
       
         changeText ( this );
         
         $( this ).css ( 'visibility', 'visible' );
+        
+        } );
+        
+      $( '.qrq0lfTEB' ).change ( function ( ) {
+      
+        let node = $( '.item-price', $( this ) ) [ 0 ];
+        
+        changeText ( node );
+        
+        node = $( '._2JFeDgZcv' ) [ 0 ];
+        
+        changeText ( node );
         
         } );
         
