@@ -1,0 +1,109 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin member area sign in window title change
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const title = '[enter title text here between single quotes]';
+      
+      // do not change anything below, there be the borg here
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const observer = new MutationObserver ( function ( mutations ) {
+      
+        $.each ( mutations, function ( ) {
+        
+          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+          
+          const $element = $( this.addedNodes [ 0 ] );
+          
+          const id = $element.attr ( 'id' );
+          
+          if ( id != 'accountFrame' ) return; // bail if not sign in window
+          
+          $element.on ( 'load', function ( ) {
+          
+            const script = document.createElement ( 'script' );
+            
+            script.innerHTML = `
+            
+              const observer = new MutationObserver ( mutations => {
+              
+                mutations.forEach ( mutation => {
+                
+                  // bail if no nodes added
+                  
+                  if ( ! mutation.addedNodes.length ) return;
+                  
+                  const node = mutation.addedNodes [ 0 ];
+                  
+                  // continue if class is not of interest
+                  
+                  if ( ! node.classList.contains ( 'uCx0nn2K5' ) ) return;
+                  
+                  node
+                  
+                    .getElementsByTagName ( 'h1' ) [ 0 ]
+                    
+                    .innerHTML = '${title}';
+                    
+                  } ); // end mutations
+                  
+                } ); // end observer
+                
+              // start listening for changes in specified element
+              
+              const node =
+              
+                document.getElementsByClassName ( '_1UWQmBVyx' ) [ 0 ];
+                
+              observer.observe ( node, {
+              
+                childList : true
+                
+                } );
+                
+              `;
+              
+            this
+            
+              .contentDocument
+              
+              .getElementsByTagName ( 'head' ) [ 0 ]
+              
+              .appendChild ( script );
+              
+            } ); // end on load
+            
+          } ); // end mutations
+          
+        } ); // end observer
+        
+      // start listening for changes in specified element
+      
+      observer.observe ( document.body, {
+      
+        childList : true
+        
+        } );
+        
+      // end member area sign in window title change
+      
+    } );
+    
+  </script>
