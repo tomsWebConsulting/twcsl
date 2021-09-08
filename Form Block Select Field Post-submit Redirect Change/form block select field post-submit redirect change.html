@@ -1,0 +1,111 @@
+<!--
+
+  begin form block select field post-submit redirect change
+  
+  Version       : 0.2d0
+  
+  SS Versions   : 7.0, 7.1
+  
+  Dependancies  : jQuery
+  
+  Note          : does not work form blocks with lightbox toggled on
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .form-wrapper .field-list .description {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const selector = '.form-wrapper .field-list ' +
+      
+        '.description:contains(\'fbsfpsrc\')';
+        
+      $( selector ).each ( function ( ) {
+      
+        const optionUrlMap = { };
+        
+        const $this = $( this );
+        
+        const $form = $this.parents ( 'form' );
+        
+        const $select = $this.next ( 'select' );
+        
+        let a = $this // split field description into array
+        
+          .text ( )
+          
+          .split ( 'fbsfpsrc' );
+          
+        a = $.map ( a, function ( value ) { // trim array values
+        
+          value = value.trim ( )
+          
+          return value;
+          
+          } );
+          
+        if ( a [ 0 ] ) { // set description or remove
+        
+          $this.text ( ) = a [ 0 ];
+          
+          $this.css ( 'display', 'block' ); // show description
+          
+          } else {
+          
+            $this.remove ( );
+            
+            }
+            
+        // begin build optionUrlMap
+        
+          a [ 1 ] = a [ 1 ].split ( '\n' );
+          
+          $.each ( a [ 1 ], function ( i, value ) {
+          
+            if ( i % 2 != 0 ) return true; // continue if odd
+            
+            optionUrlMap [ value ] = a [ 1 ] [ i + 1 ];
+            
+            } );
+            
+          // end build optionUrlMap
+          
+        // begin set a default post-submit redirect
+        
+          const firstOption = $( 'option:eq( 0 )', $select )
+          
+            .attr ( 'value' );
+            
+          $form.attr ( 'data-success-redirect', optionUrlMap [ firstOption ] );
+          
+          // end set a default post-submit redirect
+          
+        $select // on select change update post-submit redirect
+        
+          .change ( function ( ) {
+          
+            $form.attr ( 'data-success-redirect', optionUrlMap [ $( this ).val ( )
+            
+              ] );
+              
+            } );
+            
+        } );
+        
+      } );
+      
+    </script>
