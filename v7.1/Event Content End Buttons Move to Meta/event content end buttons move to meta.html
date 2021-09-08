@@ -1,0 +1,101 @@
+<!--
+
+  begin event content end buttons move to meta
+  
+  Version       : 0.2d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    body:not( .sqs-edit-mode ) .eventitem-column-content > .sqs-grid-12 > .sqs-row > .sqs-col-12 > .sqs-block-horizontalrule:nth-last-of-type( 2 ),
+    body:not( .sqs-edit-mode ) .eventitem-column-content > .sqs-grid-12 > .sqs-row > .sqs-col-12 > .sqs-row:last-child
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    .eventitem-meta-buttons {
+    
+      -webkit-box-align : start;
+      -ms-flex-align : start;
+      align-items : flex-start;
+      
+      display : -webkit-box;
+      display : -ms-flexbox;
+      display : flex;
+      
+      gap : 1em;
+      
+      -webkit-box-pack : justify;
+      -ms-flex-pack : justify;
+      justify-content : space-between;
+      
+      }
+      
+    .eventitem-meta-buttons .sqs-block-button {
+    
+      padding : 0;
+      white-space : nowrap;
+      
+      }
+      
+    @media only screen and ( max-width : 639px ) {
+    
+      .eventitem-meta-buttons {
+      
+        -webkit-box-pack : unset;
+        -ms-flex-pack : unset;
+        justify-content : unset;
+        
+        }
+        
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const selector = '.eventitem-column-content > .sqs-grid-12 > ' +
+      
+        '.sqs-row > .sqs-col-12 > .sqs-row:last .sqs-block-button';
+      
+      $( `<ul class="eventitem-meta event-meta event-meta-button-container">
+      
+        <li class="eventitem-meta-item event-meta-item eventitem-meta-buttons">
+        
+          </li>
+          
+        </ul>` )
+        
+        .appendTo ( '.eventitem-column-meta' );
+        
+      $( selector )
+        
+        .appendTo ( '.eventitem-meta-buttons' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end event content end buttons move to meta -->
