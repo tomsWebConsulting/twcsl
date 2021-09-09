@@ -1,0 +1,37 @@
+<style>
+
+  /*
+  
+    begin event meta data make sticky
+    
+    Version     : 0.1d0
+    
+    SS Version  : 7.1
+    
+    Note        : this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    @media only screen and ( pointer : coarse) and ( min-width : 1025px ),
+      screen and ( min-width : 800px ) {
+      
+        body:not( .sqs-edit-mode ) .eventitem-column-meta {
+        
+          -ms-flex-item-align : start;
+          align-self : flex-start;
+          
+          position : sticky;
+          top : 50px;
+          
+          }
+          
+        }
+        
+    /* end event meta data make sticky */
+    
+  </style>
