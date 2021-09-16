@@ -1,0 +1,81 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      image block image spinner
+      
+      SS Versions   : 7.1, 7.0
+      
+      Version       : 0.1d0
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >.
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const imageBlockIds = [
+    
+      /*
+      
+        the format of each line is a block id without the #
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line.
+        repeat for as many image block images you want to spin. this has been
+        done once initially
+        
+        */
+        
+      // '[enter block id here between single quotes]',
+      
+      '[enter block id here between single quotes]',
+      
+      ];
+      
+    const speedMultiplier = 0.5; // lower number is slower spin, higher faster
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    if ( speedMultiplier <= 0 ) return; // bail if zero or less
+    
+    const selectorSuffix = '.sqs-block-image img';
+    
+    const selector = '#' +
+    
+      imageBlockIds
+      
+        .join ( `{ selectorSuffix }, #` ) +
+        
+      selectorSuffix;
+      
+    const $images = $( selector );
+    
+    $( window )
+    
+      .scroll ( function ( ) {
+      
+        const scrollTop = $( window ).scrollTop ( );
+        
+        const degree = scrollTop * speedMultiplier;
+        
+        $images.each ( function ( ) {
+        
+          $( this )
+          
+            .css ( 'transform', `rotate( ${ degree }deg )` );
+            
+          } );
+          
+        } );
+        
+    } );
+    
+  </script>
