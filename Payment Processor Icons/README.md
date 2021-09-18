@@ -60,11 +60,11 @@ Be very careful editing the lines. Computers don't like it when things are not
 just so.
 
 It is the same process for the remaining icons. Decide which ones you want to
-show or hide and set the appropriate value. I have arranged the code in a kind
+hide or show and set the appropriate value. I have arranged the code in a kind
 of outline to help you know which icons you are changing.
 
-You can of course change your mind later on which icons you want to show or
-hide.
+You can of course change your mind later on which icons you want to hide or
+show.
 
 ### Order Icons
 
@@ -80,7 +80,7 @@ the icons you chose to be shown.
 ### Gray Background
 
 Once you are happy with the icons you want to show and the order you can
-comment the gray background color to get rid of it.
+change the **gray** background color to **unset**.
 
 Look for the following line.
 
@@ -92,7 +92,7 @@ Look for the following line.
 Change it to the following.
 
 ```css
-      /* background-color : gray; */
+      background-color : unset;
       
 ```
 
