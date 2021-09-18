@@ -2,7 +2,7 @@
 
   begin payment processor icons css
   
-  Version     : 0.1d0
+  Version     : 0.2d0
   
   SS Versions : 7.1, 7.0
   
@@ -20,335 +20,134 @@
       --max-height-width : 75px;
       --spacing : 20px;
       
-      /* for diagnostics uncomment the background color property value pair */
+      /* begin display/order icons */
+      
+        /* begin afterpay */
+        
+          /* begin badge */
+          
+            /* black on bondi mint */
+            
+            --afterpay--badge--black-on-bondi-mint--display : unset;
+            --afterpay--badge--black-on-bondi-mint--order : 0;
+            
+            /* bondi mint on black */
+            
+            --afterpay--badge--bondi-mint-on-black--display : unset;
+            --afterpay--badge--bondi-mint-on-black--order : 0;
+            
+            /* white on black */
+            
+            --afterpay--badge--white-on-black--display : unset;
+            --afterpay--badge--white-on-black--order : 0;
+            
+            /* black on white */
+            
+            --afterpay--badge--black-on-white--display : unset;
+            --afterpay--badge--black-on-white--order : 0;
+            
+            /* end badge */
+            
+          /* begin lockup */
+          
+            /* black */
+            
+            --afterpay--lockup--black--display : unset;
+            --afterpay--lockup--black--order : 0;
+            
+            /* white */
+            
+            --afterpay--lockup--white--display : unset;
+            --afterpay--lockup--white--order : 0;
+            
+            /* end lockup */
+            
+          /* end afterpay */
+          
+        /* apple */
+        
+        --apple-pay-mark-icon--display : unset;
+        --apple-pay-mark-icon--order : 0;
+        
+        /* begin mastercard */
+        
+          /* symbol */
+          
+          --mastercard-symbol-icon--display : unset;
+          --mastercard-symbol-icon--order : 0;
+          
+          /* begin brand mark */
+          
+            /* white and light backgrounds vertical */
+            
+            --mastercard--brand-mark--white-light--vertical--display : unset;
+            --mastercard--brand-mark--white-light--vertical--order : 0;
+            
+            /* black and dark backgrounds vertical */
+            
+            --mastercard--brand-mark--black-dark--vertical--display : unset;
+            --mastercard--brand-mark--black-dark--vertical--order : 0;
+            
+            /* white and light backgrounds horizontal */
+            
+            --mastercard--brand-mark--white-light--horizontal--display : unset;
+            --mastercard--brand-mark--white-light--horizontal--order : 0;
+            
+            /* black and dark backgrounds horizontal */
+            
+            --mastercard--brand-mark--black-dark--horizontal--display : unset;
+            --mastercard--brand-mark--black-dark--horizontal--order : 0;
+            
+            /* end brand mark */
+            
+          /* end mastercard */
+          
+        /* begin stripe wordmark */
+        
+          /* slate */
+          
+          --stripe-wordmark--slate--display : unset;
+          --stripe-wordmark--slate--order : 0;
+          
+          /* white */
+          
+          --stripe-wordmark--white--display : unset;
+          --stripe-wordmark--white--order : 0;
+          
+          /* blurple */
+          
+          --stripe-wordmark--blurple--display : unset;
+          --stripe-wordmark--blurple--order : 0;
+          
+          /* end stripe wordmark */
+          
+        /* begin visa */
+        
+          /* black */
+          
+          --visa--black--display : unset;
+          --visa--black--order : 0;
+          
+          /* white */
+          
+          --visa--white--display : unset;
+          --visa--white--order : 0;
+          
+          /* blue */
+          
+          --visa--blue--display : unset;
+          --visa--blue--order : 0;
+          
+          /* end visa */
+          
+        /* end display/order icons */
+        
+      /* for diagnostics the background color is set to gray, for production
+         change gray to unset */
       
       background-color : gray;
       
       }
-      
-    /* begin hide icons */
-    
-      /* begin afterpay */
-      
-        /* begin badge */
-        
-          /* black on bondi mint */
-          
-          /* #twc-payment-processors .afterpay.badge.black-on-bondi-mint.twc-pp-icon, */
-          
-          /* bondi mint on black */
-          
-          /* #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon, */
-          
-          /* white on black */
-          
-          /* #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon, */
-          
-          /* black on white */
-          
-          /* #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon, */
-          
-          /* end badge */
-          
-        /* begin lockup */
-        
-          /* black */
-          
-          /* #twc-payment-processors .afterpay.lockup.black.twc-pp-icon, */
-          
-          /* white */
-          
-          /* #twc-payment-processors .afterpay.lockup.white.twc-pp-icon, */
-          
-          /* end lockup */
-          
-      /* end afterpay */
-      
-      /* apple */
-      
-      /* #twc-payment-processors #apple-pay-mark-icon, */
-      
-      /* begin mastercard */
-      
-        /* symbol */
-        
-          /* #twc-payment-processors #mastercard-symbol-icon, */
-        
-        /* begin brand mark */
-        
-          /* white and light backgrounds vertical */
-          
-          /* #twc-payment-processors .mastercard.brand-mark.white-light.vertical.twc-pp-icon, */
-          
-          /* black and dark backgrounds vertical */
-          
-          /* #twc-payment-processors .mastercard.brand-mark.black-dark.vertical.twc-pp-icon, */
-          
-          /* white and light backgrounds horizontal */
-          
-          /* #twc-payment-processors .mastercard.brand-mark.white-light.horizontal.twc-pp-icon, */
-          
-          /* black and dark backgrounds horizontal */
-          
-          /* #twc-payment-processors .mastercard.brand-mark.black-dark.horizontal.twc-pp-icon, */
-          
-          /* end brand mark */
-          
-        /* end mastercard */
-        
-      /* begin stripe wordmark */
-      
-        /* slate */
-        
-        /* #twc-payment-processors .stripe-wordmark.slate.twc-pp-icon, */
-        
-        /* white */
-        
-          /* #twc-payment-processors .stripe-wordmark.white.twc-pp-icon, */
-        
-        /* blurple */
-        
-          /* #twc-payment-processors .stripe-wordmark.blurple.twc-pp-icon, */
-        
-        /* end stripe wordmark */
-        
-      /* begin visa */
-      
-        /* black */
-        
-          /* #twc-payment-processors .visa.black.twc-pp-icon, */
-        
-        /* white */
-        
-          /* #twc-payment-processors .visa.white.twc-pp-icon, */
-        
-        /* blue */
-        
-        /* #twc-payment-processors .visa.blue.twc-pp-icon, */
-        
-        /* end visa */
-        
-      #twc-selector /* dummy selector so that each selector line above can end
-                       with a comma */
-        {
-        
-          display : none;
-          
-          }
-          
-      /* end hide icons */
-      
-    /* begin order icons */
-    
-      /* begin afterpay */
-      
-        /* begin badge */
-        
-          /* black on bondi mint */
-          
-          #twc-payment-processors .afterpay.badge.black-on-bondi-mint.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* bondi mint on black */
-          
-          #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* white on black */
-          
-          #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* black on white */
-          
-          #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* end badge */
-          
-        /* begin lockup */
-        
-          /* black */
-          
-          #twc-payment-processors .afterpay.lockup.black.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* white */
-          
-          #twc-payment-processors .afterpay.lockup.white.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* end lockup */
-          
-        /* end afterpay */
-        
-      /* apple */
-      
-      #twc-payment-processors #apple-pay-mark-icon {
-      
-        -webkit-box-ordinal-group : 1;
-        -ms-flex-order : 0;
-        order : 0;
-        
-        }
-        
-      /* begin mastercard */
-      
-        /* symbol */
-        
-        #twc-payment-processors #mastercard-symbol-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* begin brand mark */
-        
-          /* white and light backgrounds vertical */
-          
-          #twc-payment-processors .mastercard.brand-mark.white-light.vertical.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* black and dark backgrounds vertical */
-          
-          #twc-payment-processors .mastercard.brand-mark.black-dark.vertical.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* white and light backgrounds horizontal */
-          
-          #twc-payment-processors .mastercard.brand-mark.white-light.horizontal.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* black and dark backgrounds horizontal */
-          
-          #twc-payment-processors .mastercard.brand-mark.black-dark.horizontal.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-          /* end brand mark */
-          
-        /* end mastercard */
-        
-      /* begin stripe wordmark */
-      
-        /* slate */
-        
-        #twc-payment-processors .stripe-wordmark.slate.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* white */
-        
-        #twc-payment-processors .stripe-wordmark.white.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* blurple */
-        
-        #twc-payment-processors .stripe-wordmark.blurple.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* end stripe wordmark */
-        
-      /* begin visa */
-      
-        /* black */
-        
-        #twc-payment-processors .visa.black.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* white */
-        
-        #twc-payment-processors .visa.white.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* blue */
-        
-        #twc-payment-processors .visa.blue.twc-pp-icon {
-          
-            -webkit-box-ordinal-group : 1;
-            -ms-flex-order : 0;
-            order : 0;
-            
-            }
-            
-        /* end visa */
-        
-      /* end order icons */
       
     /* do not change anything below, there be the borg here */
     
@@ -402,6 +201,394 @@
         
         }
         
+    /* begin hide icons */
+    
+      /* begin afterpay */
+      
+        /* begin badge */
+        
+          /* black on bondi mint */
+          
+          #twc-payment-processors .afterpay.badge.black-on-bondi-mint.twc-pp-icon {
+          
+            display : var( --afterpay--badge--black-on-bondi-mint--display );
+            
+            }
+            
+          /* bondi mint on black */
+          
+          #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon {
+          
+            display : var( --afterpay--badge--bondi-mint-on-black--display );
+            
+            }
+            
+          /* white on black */
+          
+          #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon {
+          
+            display : var( --afterpay--badge--white-on-black--display );
+            
+            }
+            
+          /* black on white */
+          
+          #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon {
+          
+            display : var( --afterpay--badge--black-on-white--display );
+            
+            }
+            
+          /* end badge */
+          
+        /* begin lockup */
+        
+          /* black */
+          
+          #twc-payment-processors .afterpay.lockup.black.twc-pp-icon {
+          
+            display : var( --afterpay--lockup--black--display );
+            
+            }
+            
+          /* white */
+          
+          #twc-payment-processors .afterpay.lockup.white.twc-pp-icon {
+          
+            display : var( --afterpay--lockup--white--display );
+            
+            }
+            
+          /* end lockup */
+          
+      /* end afterpay */
+      
+      /* apple */
+      
+      #twc-payment-processors #apple-pay-mark-icon {
+          
+            display : var( --apple-pay-mark-icon--display );
+            
+            }
+            
+      /* begin mastercard */
+      
+        /* symbol */
+        
+          #twc-payment-processors #mastercard-symbol-icon {
+          
+            display : var( --mastercard-symbol-icon--display );
+            
+            }
+            
+        /* begin brand mark */
+        
+          /* white and light backgrounds vertical */
+          
+          #twc-payment-processors .mastercard.brand-mark.white-light.vertical.twc-pp-icon {
+          
+            display : var( --mastercard--brand-mark--white-light--vertical--display );
+            
+            }
+            
+          /* black and dark backgrounds vertical */
+          
+          #twc-payment-processors .mastercard.brand-mark.black-dark.vertical.twc-pp-icon {
+          
+            display : var( --mastercard--brand-mark--black-dark--vertical--display );
+            
+            }
+            
+          /* white and light backgrounds horizontal */
+          
+          #twc-payment-processors .mastercard.brand-mark.white-light.horizontal.twc-pp-icon {
+          
+            display : var( --mastercard--brand-mark--white-light--horizontal--display );
+            
+            }
+            
+          /* black and dark backgrounds horizontal */
+          
+          #twc-payment-processors .mastercard.brand-mark.black-dark.horizontal.twc-pp-icon {
+          
+            display : var( --mastercard--brand-mark--black-dark--horizontal--display );
+            
+            }
+            
+          /* end brand mark */
+          
+        /* end mastercard */
+        
+      /* begin stripe wordmark */
+      
+        /* slate */
+        
+        #twc-payment-processors .stripe-wordmark.slate.twc-pp-icon {
+          
+            display : var( --stripe-wordmark--slate--display );
+            
+            }
+            
+        /* white */
+        
+          #twc-payment-processors .stripe-wordmark.white.twc-pp-icon {
+          
+            display : var( --stripe-wordmark--white--display );
+            
+            }
+            
+        /* blurple */
+        
+          #twc-payment-processors .stripe-wordmark.blurple.twc-pp-icon {
+          
+            display : var( --stripe-wordmark--blurple--display );
+            
+            }
+            
+        /* end stripe wordmark */
+        
+      /* begin visa */
+      
+        /* black */
+        
+          #twc-payment-processors .visa.black.twc-pp-icon {
+          
+            display : var( --visa--black--display );
+            
+            }
+            
+        /* white */
+        
+          #twc-payment-processors .visa.white.twc-pp-icon {
+          
+            display : var( --visa--white--display );
+            
+            }
+            
+        /* blue */
+        
+        #twc-payment-processors .visa.blue.twc-pp-icon {
+          
+            display : var( --visa--blue--display );
+            
+            }
+            
+        /* end visa */
+        
+      /* end hide icons */
+      
+    /* begin order icons */
+    
+      /* begin afterpay */
+      
+        /* begin badge */
+        
+          /* black on bondi mint */
+          
+          #twc-payment-processors .afterpay.badge.black-on-bondi-mint.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --afterpay--badge--black-on-bondi-mint--order ) + 1 );
+            -ms-flex-order : var( --afterpay--badge--black-on-bondi-mint--order );
+            order : var( --afterpay--badge--black-on-bondi-mint--order );
+            
+            }
+            
+          /* bondi mint on black */
+          
+          #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var ( --afterpay--badge--bondi-mint-on-black--order ) + 1 );
+            -ms-flex-order : var ( --afterpay--badge--bondi-mint-on-black--order );
+            order : var ( --afterpay--badge--bondi-mint-on-black--order );
+            
+            }
+            
+          /* white on black */
+          
+          #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var ( --afterpay--badge--white-on-black--order ) + 1 );
+            -ms-flex-order : var ( --afterpay--badge--white-on-black--order );
+            order : var ( --afterpay--badge--white-on-black--order );
+            
+            }
+            
+          /* black on white */
+          
+          #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --afterpay--badge--black-on-white--order ) + 1 );
+            -ms-flex-order : var( --afterpay--badge--black-on-white--order );
+            order : var( --afterpay--badge--black-on-white--order );
+            
+            }
+            
+          /* end badge */
+          
+        /* begin lockup */
+        
+          /* black */
+          
+          #twc-payment-processors .afterpay.lockup.black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --afterpay--lockup--black--order ) + 1 );
+            -ms-flex-order : var( --afterpay--lockup--black--order );
+            order : var( --afterpay--lockup--black--order );
+            
+            }
+            
+          /* white */
+          
+          #twc-payment-processors .afterpay.lockup.white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --afterpay--lockup--white--order ) + 1 );
+            -ms-flex-order : var( --afterpay--lockup--white--order );
+            order : var( --afterpay--lockup--white--order );
+            
+            }
+            
+          /* end lockup */
+          
+        /* end afterpay */
+        
+      /* apple */
+      
+      #twc-payment-processors #apple-pay-mark-icon {
+      
+        -webkit-box-ordinal-group : calc( var( --apple-pay-mark-icon--order ) + 1 );
+        -ms-flex-order : var( --apple-pay-mark-icon--order );
+        order : var( --apple-pay-mark-icon--order );
+        
+        }
+        
+      /* begin mastercard */
+      
+        /* symbol */
+        
+        #twc-payment-processors #mastercard-symbol-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --mastercard-symbol-icon--order ) + 1 );
+            -ms-flex-order : var( --mastercard-symbol-icon--order );
+            order : var( --mastercard-symbol-icon--order );
+            
+            }
+            
+        /* begin brand mark */
+        
+          /* white and light backgrounds vertical */
+          
+          #twc-payment-processors .mastercard.brand-mark.white-light.vertical.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --mastercard--brand-mark--white-light--vertical--order ) + 1 );
+            -ms-flex-order : var( --mastercard--brand-mark--white-light--vertical--order );
+            order : var( --mastercard--brand-mark--white-light--vertical--order );
+            
+            }
+            
+          /* black and dark backgrounds vertical */
+          
+          #twc-payment-processors .mastercard.brand-mark.black-dark.vertical.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --mastercard--brand-mark--black-dark--vertical--order ) + 1  );
+            -ms-flex-order : var( --mastercard--brand-mark--black-dark--vertical--order );
+            order : var( --mastercard--brand-mark--black-dark--vertical--order );
+            
+            }
+            
+          /* white and light backgrounds horizontal */
+          
+          #twc-payment-processors .mastercard.brand-mark.white-light.horizontal.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --mastercard--brand-mark--white-light--horizontal--order ) + 1 );
+            -ms-flex-order : var( --mastercard--brand-mark--white-light--horizontal--order );
+            order : var( --mastercard--brand-mark--white-light--horizontal--order );
+            
+            }
+            
+          /* black and dark backgrounds horizontal */
+          
+          #twc-payment-processors .mastercard.brand-mark.black-dark.horizontal.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --mastercard--brand-mark--black-dark--horizontal--order ) + 1 );
+            -ms-flex-order : var( --mastercard--brand-mark--black-dark--horizontal--order );
+            order : var( --mastercard--brand-mark--black-dark--horizontal--order );
+            
+            }
+            
+          /* end brand mark */
+          
+        /* end mastercard */
+        
+      /* begin stripe wordmark */
+      
+        /* slate */
+        
+        #twc-payment-processors .stripe-wordmark.slate.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --stripe-wordmark--slate--order ) + 1 );
+            -ms-flex-order : var( --stripe-wordmark--slate--order );
+            order : var( --stripe-wordmark--slate--order );
+            
+            }
+            
+        /* white */
+        
+        #twc-payment-processors .stripe-wordmark.white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --stripe-wordmark--white--order ) + 1 );
+            -ms-flex-order : var( --stripe-wordmark--white--order );
+            order : var( --stripe-wordmark--white--order );
+            
+            }
+            
+        /* blurple */
+        
+        #twc-payment-processors .stripe-wordmark.blurple.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --stripe-wordmark--blurple--order ) + 1 );
+            -ms-flex-order : var( --stripe-wordmark--blurple--order );
+            order : var( --stripe-wordmark--blurple--order );
+            
+            }
+            
+        /* end stripe wordmark */
+        
+      /* begin visa */
+      
+        /* black */
+        
+        #twc-payment-processors .visa.black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --visa--black--order ) + 1 );
+            -ms-flex-order : var( --visa--black--order );
+            order : var( --visa--black--order );
+            
+            }
+            
+        /* white */
+        
+        #twc-payment-processors .visa.white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --visa--white--order ) + 1 );
+            -ms-flex-order : var( --visa--white--order );
+            order : var( --visa--white--order );
+            
+            }
+            
+        /* blue */
+        
+        #twc-payment-processors .visa.blue.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --visa--blue--order ) + 1 );
+            -ms-flex-order : var( --visa--blue--order );
+            order : var( --visa--blue--order );
+            
+            }
+            
+        /* end visa */
+        
+      /* end order icons */
+      
     </style>
     
   <!-- end payment processor icons css -->

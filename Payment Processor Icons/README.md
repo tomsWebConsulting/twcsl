@@ -1,6 +1,6 @@
 # Payment Processor Icons
 
-### Version 0.1d0
+### Version 0.2d0
 
 #### SS Versions 7.1, 7.0
 
@@ -22,87 +22,64 @@ to a code block in the footer of your site.
 
 ## Configuration
 
+Upon initial install you will see all the icons available over a gray
+background. The gray background can be turned off later. Initially it is there
+to help you see all the icons.
+
 ### Hiding Icons
 
-Upon initial install you will see all the icons available over a gray
-background. The gray background can be turned off later. It is there to help you
-see all the icons.
+You will need to decide which icons you do not want to be shown. Let's keep the
+first Afterpay icon as that is the one AP prefers you use and hide the rest.
 
-You will need to decide what icons you want to use and then hide the ones you
-do not want to use. Lets keep the first Afterpay icon as that is the one AP
-prefers you use and hide the rest.
-
-In the **payment processor icons css** code installed in the first step find the
+In the **payment processor icons css** code installed in the first step you will
+find a section of the code with the label **display/order icons**. Find the
 following lines.
 
 ```html
-          /* #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon, */
-          
-          /* #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon, */
-          
-          /* #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon, */
-          
+            --afterpay--badge--bondi-mint-on-black--display : unset;
+            --afterpay--badge--white-on-black--display : unset;
+            --afterpay--badge--black-on-white--display : unset;
+            --afterpay--lockup--black--display : unset;
+            --afterpay--lockup--white--display : unset;
 ```
+
+Change **unset** to **none** so the lines look like the following.
 
 ```html
-          /* #twc-payment-processors .afterpay.lockup.black.twc-pp-icon, */
-          
-          /* #twc-payment-processors .afterpay.lockup.white.twc-pp-icon, */
-          
+            --afterpay--badge--bondi-mint-on-black--display : none;
+            --afterpay--badge--white-on-black--display : none;
+            --afterpay--badge--black-on-white--display : none;
+            --afterpay--lockup--black--display : none;
+            --afterpay--lockup--white--display : none;
 ```
 
-For each of those lines remove the **/\*** ( forward slash asterisk ) and
-**\*/** ( asterisk forward slash ). Removing those characters tells the code
-to hide those icons.
+The value **none** means do not display the icon and **unset** means use the
+default, which shows the icon.
 
 Be very careful editing the lines. Computers don't like it when things are not
 just so.
 
-By the way in CSS lines or blocks of text beginning with **/\*** and ending with
-**\*/** are known as comments. Bits of text in the code that do not do anything
-and the computer ignores but help us humans have a chance to know what is going
-on in the code.
+It is the same process for the remaining icons. Decide which ones you want to
+show or hide and set the appropriate value. I have arranged the code in a kind
+of outline to help you know which icons you are changing.
 
-So the code will now look like the following.
-
-```css
-          #twc-payment-processors .afterpay.badge.bondi-mint-on-black.twc-pp-icon,
-          
-          #twc-payment-processors .afterpay.badge.white-on-black.twc-pp-icon,
-          
-          #twc-payment-processors .afterpay.badge.black-on-white.twc-pp-icon,
-          
-```
-
-```css
-          #twc-payment-processors .afterpay.lockup.black.twc-pp-icon,
-          
-          #twc-payment-processors .afterpay.lockup.white.twc-pp-icon,
-          
-```
-
-It the same process for the rest of the icons. Decide which ones you want to
-keep and leave them alone. For the ones you want to hide remove those comment
-characters.
-
-You can also reverse the process. If for example later you decide to change the
-icons you want to use. Just remember, to hide uncomment the appropriate lines
-and to show comment lines.
+You can of course change your mind later on which icons you want to show or
+hide.
 
 ### Order Icons
 
-Once you've narrowed down the icons you may want to change their order of
-appearance. By default I've put them in company alphabetical order.
+Once you have narrowed down the icons you may want to change their order of
+appearance. By default I have put them in company alphabetical order.
 
-There is a section in the code below the hide icons section labeled **order
-icons**. You just need to find the icons whose order you want to control and
-change their order number. You only need to do this for the icons you chose to
-keep visible. So for the icon you want to show first you set the order number to
-1, the second icon to 2 and so on.
+In the section of code labeled **display/order icons** there are also lines to
+control the order the shown icons are presented. You may have noticed the lines
+ending with **--order : 0;**. For the icon you want to show first you set the
+order value to 1, the second icon to 2 and so on. You only need to do this for
+the icons you chose to be shown.
 
 ### Gray Background
 
-Once you are happy with the icons you want to use and the order you can
+Once you are happy with the icons you want to show and the order you can
 comment the gray background color to get rid of it.
 
 Look for the following line.
@@ -133,12 +110,11 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
-<!-- * **2021-07-01**
+* **2021-09-17**
 <br><br>
-  * added code to change read more link
-  * use twcsl
-  * bumped version to 0.1d2
-  <br><br -->
+  * reworked how the user configures icon hide and order
+  * bumped version to 0.2d0
+  <br><br>
 * **2021-09-17**
 <br><br>
   * initial version
