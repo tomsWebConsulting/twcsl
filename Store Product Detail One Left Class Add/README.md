@@ -26,12 +26,12 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 * **2021-09-18**
-<br><br>
+
   * changed name from Add One Left Class to Product Detail Page to Store Product
     Detail One Left Class Add
   * use twcsl
   * bumped version to 0.2d0
-  <br><br>
+
 * **2021-05-17**
-<br><br>
+
   * initial version
