@@ -12,7 +12,7 @@
   **[Store Product Detail One Left Class Add](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Detail%20One%20Left%20Class%20Add)**.
   
 * Add code from file
-  **[store product detail add to cart button right of quantity.html](store product detail add to cart button right of quantity.html#L1)**
+  **[store product detail add to cart button right of quantity.html](store%20product%20detail%20add%20to%20cart%20button%20right%20of%20quantity.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
