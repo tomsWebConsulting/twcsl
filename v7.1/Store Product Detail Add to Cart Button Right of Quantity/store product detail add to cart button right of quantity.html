@@ -1,0 +1,130 @@
+<!--
+
+  begin store product detail add to cart button right of quantity
+  
+  Version       : 0.3d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+                  
+                  store product detail one left class add
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  this code should be installed after the store product detail
+                  one left class add code. order is important
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    #twc-quantity-atcb {
+    
+      --gap : 2rem;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .ProductItem-details .product-quantity-input,
+    .ProductItem-details .sqs-add-to-cart-button-wrapper
+    
+      {
+      
+        -webkit-box-ordinal-group : unset;
+        -ms-flex-order : unset;
+        order : unset;
+        
+        }
+        
+    .ProductItem-details .ProductItem-details-checkout {
+    
+      opacity : 0;
+      
+      -webkit-transition : opacity 0.5s;
+      -o-transition : opacity 0.5s;
+      transition : opacity 0.5s;
+      
+      }
+      
+    .ProductItem-details .ProductItem-details-checkout.twc-quantity-atcb-show {
+    
+      opacity : 1;
+      
+      }
+      
+    #twc-quantity-atcb {
+    
+      margin-bottom : 20px;
+      
+      }
+      
+    #twc-quantity-atcb > * {
+    
+      margin-bottom : unset;
+      
+      }
+      
+    #twc-quantity-atcb {
+    
+      -webkit-box-align : end;
+      -ms-flex-align : end;
+      align-items : flex-end;
+      
+      display : -webkit-box;
+      display : -ms-flexbox;
+      display : flex;
+      
+      gap : var( --gap );
+      
+      -webkit-box-ordinal-group : 4;
+      -ms-flex-order : 3;
+      order : 3;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const $checkout =
+      
+        $( '.ProductItem-details .ProductItem-details-checkout' );
+        
+      const $element = $( '<div>' )
+      
+        .attr ( 'id', 'twc-quantity-atcb' )
+        
+        .appendTo ( $checkout );
+        
+      let selector = [
+      
+        '.ProductItem-details .product-quantity-input',
+        
+        '.ProductItem-details .sqs-add-to-cart-button-wrapper',
+        
+        ];
+        
+      selector = selector.join ( ', ' );
+      
+      $( selector )
+      
+        .appendTo ( $element );
+        
+      $checkout.addClass ( 'twc-quantity-atcb-show' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end store product detail add to cart button right of quantity -->
