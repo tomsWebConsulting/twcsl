@@ -9,10 +9,10 @@
 ## Quick Install
 
 * Install the code from
-  **[Store Product Details Natural Order Desktop](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Details%20Natural%20Order%20Desktop)**.
+  **[Store Product Details Natural Order Desktop](https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop#store-product-details-natural-order-desktop)**.
   
 * Install the code from
-  **[Store Product Detail One Left Class Add](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Detail%20One%20Left%20Class%20Add)**.
+  **[Store Product Detail One Left Class Add](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Detail%20One%20Left%20Class%20Add#store-product-detail-one-left-class-add)**.
   
 * Add code from file
   **[store product detail add to cart button right of quantity.html](store%20product%20detail%20add%20to%20cart%20button%20right%20of%20quantity.html#L1)**
