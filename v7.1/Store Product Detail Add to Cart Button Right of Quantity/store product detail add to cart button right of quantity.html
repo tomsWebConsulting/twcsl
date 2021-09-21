@@ -2,19 +2,24 @@
 
   begin store product detail add to cart button right of quantity
   
-  Version       : 0.3d0
+  Version       : 0.3d1
   
   SS Version    : 7.1
   
-  Dependancies  : jQuery
+  Dependancies  : store product details natural order desktop
                   
                   store product detail one left class add
   
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
+  Notes         : the code is comprised of two style tags. both are needed for
+                  the effect to work
                   
-                  this code should be installed after the store product detail
-                  one left class add code. order is important
+                  this effect should be installed after the following code :
+                  
+                    store product details natural order desktop
+                    
+                    store product detail one left class add
+                    
+                  order is important
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -22,7 +27,7 @@
   
   <style>
   
-    #twc-quantity-atcb {
+    .ProductItem-details .ProductItem-details-checkout {
     
       --gap : 2rem;
       
@@ -34,97 +39,96 @@
   
   <style>
   
-    .ProductItem-details .product-quantity-input,
-    .ProductItem-details .sqs-add-to-cart-button-wrapper
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout {
     
-      {
-      
-        -webkit-box-ordinal-group : unset;
-        -ms-flex-order : unset;
-        order : unset;
-        
-        }
-        
-    .ProductItem-details .ProductItem-details-checkout {
-    
-      opacity : 0;
-      
-      -webkit-transition : opacity 0.5s;
-      -o-transition : opacity 0.5s;
-      transition : opacity 0.5s;
+      display : grid;
+      gap : var( --gap );
+      grid-template-columns : repeat( 5, 1fr );
       
       }
       
-    .ProductItem-details .ProductItem-details-checkout.twc-quantity-atcb-show {
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-variants {
     
-      opacity : 1;
-      
-      }
-      
-    #twc-quantity-atcb {
-    
-      margin-bottom : 20px;
-      
-      }
-      
-    #twc-quantity-atcb > * {
-    
-      margin-bottom : unset;
-      
-      }
-      
-    #twc-quantity-atcb {
-    
-      -webkit-box-align : end;
-      -ms-flex-align : end;
-      align-items : flex-end;
-      
       display : -webkit-box;
       display : -ms-flexbox;
       display : flex;
       
-      gap : var( --gap );
+      -webkit-box-orient : vertical;
+      -webkit-box-direction : normal;
+      -ms-flex-direction : column;
+      flex-direction : column;
       
-      -webkit-box-ordinal-group : 4;
-      -ms-flex-order : 3;
-      order : 3;
+      gap : var( --gap );
       
       }
       
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > *:not( .product-variants ),
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .variant-option,
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-price
+    
+      {
+      
+        margin : 0 !important;
+        width : unset !important;
+        
+        }
+        
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout > * {
+    
+      grid-column : 1 / 6;
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-quantity-input {
+    
+      grid-column : 1 / 2;
+      
+      }
+      
+    .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .sqs-add-to-cart-button-wrapper {
+    
+      align-self : flex-end;
+      grid-column : 2 / 6;
+      
+      }
+      
+    @media screen and ( min-width : 433px ) {
+    
+      .tweak-product-basic-item-text-alignment-left .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .sqs-add-to-cart-button-wrapper {
+      
+        align-self : flex-end;
+        grid-column : 2 / 5;
+        
+        }
+        
+      .tweak-product-basic-item-text-alignment-center .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-quantity-input {
+      
+        grid-column : 2 / 3;
+        
+        }
+        
+      .tweak-product-basic-item-text-alignment-center .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .sqs-add-to-cart-button-wrapper {
+      
+        align-self : flex-end;
+        grid-column : 3 / 5;
+        
+        }
+        
+      .tweak-product-basic-item-text-alignment-right .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .product-quantity-input {
+      
+        grid-column : 2 / 3;
+        
+        }
+        
+      .tweak-product-basic-item-text-alignment-right .ProductItem:not( .one-left ):not( .sold-out ) .ProductItem-details .ProductItem-details-checkout .sqs-add-to-cart-button-wrapper {
+      
+        align-self : flex-end;
+        grid-column : 3 / 6;
+        
+        }
+        
+      }
+      
     </style>
-    
-  <script>
-  
-    $( ( ) => {
-    
-      const $checkout =
-      
-        $( '.ProductItem-details .ProductItem-details-checkout' );
-        
-      const $element = $( '<div>' )
-      
-        .attr ( 'id', 'twc-quantity-atcb' )
-        
-        .appendTo ( $checkout );
-        
-      let selector = [
-      
-        '.ProductItem-details .product-quantity-input',
-        
-        '.ProductItem-details .sqs-add-to-cart-button-wrapper',
-        
-        ];
-        
-      selector = selector.join ( ', ' );
-      
-      $( selector )
-      
-        .appendTo ( $element );
-        
-      $checkout.addClass ( 'twc-quantity-atcb-show' );
-      
-      } );
-      
-    </script>
     
   <!-- end store product detail add to cart button right of quantity -->
