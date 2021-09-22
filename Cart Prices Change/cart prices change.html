@@ -2,7 +2,7 @@
 
   begin cart prices change
   
-  Version         : 0.1d2
+  Version         : 0.2d0
   
   SS Versions     : 7.1, 7.0
   
@@ -80,7 +80,17 @@
     
       {
       
-        visibility : hidden;
+        opacity : 0;
+        transition : opacity 0.5s;
+        
+        }
+        
+    ._2JFeDgZcv.twc-cpc-show, /* subtotal */
+    .item-price.twc-cpc-show
+    
+      {
+      
+        opacity : 1;
         
         }
         
@@ -90,9 +100,13 @@
   
     $( ( ) => {
     
+      // bail if no mutation observer available
+    
+      if ( ! ( 'MutationObserver' in window ) ) return;
+    
       if ( ! twcsl.isCart ) return; // bail if not cart page
       
-      const changeText = ( node ) => {
+      const changeText = node => {
       
         const walker = document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
         
@@ -128,32 +142,57 @@
           
           }
           
-        } // end changeText
+        }; // end changeText
         
       const keys = Object.keys ( searchReplaceText );
       
+      const observer = new MutationObserver ( mutations => {
+      
+        $.each ( mutations, function ( ) {
+        
+          // bail if not character data
+          
+          if ( this.type != 'characterData' ) return;
+          
+          observer.disconnect ( );
+          
+          changeText ( this.target.parentNode );
+          
+          startObserver ( ); // restart observer
+          
+          } );
+          
+        } );
+        
       const selector = '._2JFeDgZcv, .item-price';
       
+      const startObserver = ( ) => {
+      
+        $( selector ).each ( function ( ) {
+        
+          // start listening for changes in specified element
+          
+          observer.observe ( this, {
+          
+            characterData : true,
+            subtree: true,
+            
+            } );
+            
+          } );
+          
+        };
+        
       $( selector ).each ( function ( ) {
       
         changeText ( this );
         
-        $( this ).css ( 'visibility', 'visible' );
+        $( this ).addClass ( 'twc-cpc-show' );
         
         } );
         
-      $( '.qrq0lfTEB' ).change ( function ( ) {
+      startObserver ( );
       
-        let node = $( '.item-price', $( this ) ) [ 0 ];
-        
-        changeText ( node );
-        
-        node = $( '._2JFeDgZcv' ) [ 0 ];
-        
-        changeText ( node );
-        
-        } );
-        
       } );
       
     </script>

@@ -1,6 +1,6 @@
 # Cart Prices Change
 
-### Version 0.1d2
+### Version 0.2d0
 
 #### SS Versions 7.1, 7.0
 
@@ -42,6 +42,11 @@ Please consider
 
 ## Changes
 
+* **2021-09-21**
+
+  * use mutation observer to watch price elements instead of events on quantity
+  * bumped version to 0.2d0
+  
 * **2021-09-04**
 
   * when quantity is changed run search replace for changed item and subtotal
