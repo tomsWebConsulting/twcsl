@@ -1,0 +1,101 @@
+<!--
+
+  form text field max length
+  
+  Version       : 0.3d0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <script>
+  
+    $( ( ) => {
+    
+      const setMaxLengths = ( ) => {
+      
+        const selector = '.form-wrapper .field-list ' +
+        
+          '.description:contains(\'ftfml\')';
+          
+        $( selector ).each ( function ( ) {
+        
+          const $description = $( this );
+          
+          let text = $description.text ( );
+          
+          const m = text.match ( /^ftfml\s*:\s*(\d+)$/ );
+          
+          if ( m == null ) return true; // continue if null
+          
+          const maxLength = m [ 1 ];
+          
+          $description
+          
+            .siblings ( '.text, .textarea' )
+            
+            .attr ( 'maxlength', maxLength );
+            
+          text = text
+          
+            .replace ( m [ 0 ], '' )
+            
+            .trim ( );
+            
+          if ( text ) { // set/show description or remove
+          
+            $description.text ( ) = text;
+            
+            $description.addClass ( 'twc-ftfml-show' ); // show description
+            
+            } else {
+            
+              $description.remove ( );
+              
+              }
+              
+          } ); // end each
+          
+        }; // end set max lengths
+        
+      setMaxLengths ( ); // process fields already on the DOM
+      
+      // bail if not store product detail
+      
+      if ( ! twcsl.storePage.isDetail ) return;
+    
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const observer = new MutationObserver ( function ( mutations ) {
+      
+        $.each ( mutations, function ( ) {
+        
+          if ( ! this.addedNodes.length ) return;
+          
+          let $element = $( this.addedNodes [ 0 ] );
+          
+          if ( ! $element.hasClass ( 'sqs-modal-lightbox' ) ) return;
+          
+          setMaxLengths ( );
+          
+          } );
+          
+        } );
+        
+      // start listening for changes in body
+      
+      observer.observe ( document.body, { childList : true } );
+      
+      } );
+      
+    </script>
