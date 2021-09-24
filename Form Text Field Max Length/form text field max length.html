@@ -2,7 +2,7 @@
 
   form text field max length
   
-  Version       : 0.3d0
+  Version       : 0.3d1
   
   SS Versions   : 7.1, 7.0
   
@@ -32,7 +32,7 @@
           
           let text = $description.text ( );
           
-          const m = text.match ( /^ftfml\s*:\s*(\d+)$/ );
+          const m = text.match ( /^ftfml\s*:\s*(\d+)$/m );
           
           if ( m == null ) return true; // continue if null
           
@@ -52,7 +52,7 @@
             
           if ( text ) { // set/show description or remove
           
-            $description.text ( ) = text;
+            $description.text ( text );
             
             $description.addClass ( 'twc-ftfml-show' ); // show description
             

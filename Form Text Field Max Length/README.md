@@ -1,6 +1,6 @@
 # Form Text Field Max Length
 
-### Version 0.3d0
+### Version 0.3d1
 
 #### SS Versions 7.1, 7.0
 
@@ -47,6 +47,12 @@ Please consider
 
 ## Changes
 
+* **2021-09-24**
+
+  * fix invalid left hand assignment
+  * add m flag to regular expression
+  * bumped version to 0.3d1
+  
 * **2021-09-23**
 
   * reworked the code to be much more generalized
