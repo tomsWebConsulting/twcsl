@@ -39,15 +39,13 @@ to Settings > Advanced > Code Injection > FOOTER.
   ```
   
   If you want to have placeholder text for the field that the user will see
-  enter if after the ftfml directive. An example.
+  enter it after the ftfml directive. An example.
   
   ```
   ftfml : { 10 } My placeholder text that helps the user.
   ```
 
-## Products
-
-### Store Products
+## Store Products
 
 Let's say you are selling engraved, decorated, or monogrammed products and those
 products need max length limits. You proceed as above, of course creating a form
@@ -55,53 +53,47 @@ for your product instead of on a page. Instead of the **ftfml : { 10 }** format
 used in the PLACEHOLDER as above you can use the following.
 
 ```
-ftfml : { sku : 10 }
+ftfml : { skuOrProductId : 10 }
 ```
 
-You would of course replace **sku** with the SKU of your product.
+You would of course replace **skuOrProductId** with the SKU or product id of
+your product. Use SKUs for products with variants. Use product ids for products
+with no variants. SS does not provide access to SKUs across the board which this
+code can access, hence the having to use SKUs and products ids. I'll refer to
+SKUs and product ids collectively as id or ids.
 
-For multiple SKUs separate them with commas as in the following.
+For multiple ids separate them with commas as in the following.
 
 ```
-ftfml : { sku1 : 10, sku2 : 5, sku3 : 15 }
+ftfml : { skuOrProductId1 : 10, skuOrProductId2 : 5, skuOrProductId3 : 15 }
 ```
 
-And to have a default if there are no matching SKUs it would look like the
+And to have a default if there are no matching ids it would look like the
 following.
 
 ```
-ftfml : { sku1 : 20, default : 10 }
+ftfml : { skuOrProductId1 : 20, default : 10 }
 ```
 
-The SKUs and default can be in any order. As long as you follow the general
-format sku colon number comma for each sku/number pair.
+The ids and default can be in any order. As long as you follow the general
+format id colon number comma for each id/number pair.
 
-### Product With No Variants
-
-For products with no variants you need to use product ids instead of SKUs. Its
-a limitation of what SS provides on pages that this code can access.
-
-You can find a no variants product id by using Check out Heather Tovey's
+You can find a no variants product id by using Heather Tovey's
 [Squarespace ID Finder](https://www.heathertovey.com/squarespace-id-finder/).
 Alternately you can export your inventory and grab the id from the CSV file.
 
 To use SIF go to your product detail page and use SIF. You will see something
-like to following.
+like the following.
 
 ![squarespace id finder example](read%20me%20assets/product%20id.png)
 
 You only need the number after **#item-**.
 
-The format for product block form field max lengths follow the same pattern as
-store product details. Using product ids instead of SKUs.
-
 ```
 ftfml : { productId : 10 }
 ```
 
-You can mix SKUs and product ids. This way you can have a product detail page
-and any products linked to it via product blocks and etc. can have form field
-max lengths.
+You can mix SKUs and product ids.
 
 ```
 ftfml : { sku : 10, productId : 10 }
