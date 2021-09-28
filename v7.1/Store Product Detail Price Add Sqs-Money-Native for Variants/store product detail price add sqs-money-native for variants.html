@@ -4,7 +4,7 @@
   
     store product detail price add sqs-money-native for variants
     
-    Version       : 0.1d1
+    Version       : 0.1d2
     
     SS Version    : 7.1
     
@@ -14,15 +14,15 @@
     
     */
     
-  const ffee6bf1 = ( node ) => {
+  const ffee6bf1 = ( node, searchText ) => {
   
     const selectedVariant = $( '.product-variants' )
     
       .attr ( 'data-selected-variant' );
       
-    // bail if no variant selected
+    // continue if no variant selected
     
-    if ( selectedVariant === undefined ) return false;
+    if ( selectedVariant === undefined ) return null;
     
     const $element = $( node );
     
@@ -38,11 +38,11 @@
       
       .hasClass ( 'product-price' );
       
-    // bail if no elements we are interested in
+    // continue if no elements we are interested in
     
-    if ( ! isOriginalPrice && ! isProductPrice ) return false;
+    if ( ! isOriginalPrice && ! isProductPrice ) return null;
     
-    const r = node.data.match ( /(\d+\.\d+)/ ) [ 1 ];
+    const r = node.data.match ( searchText ) [ 1 ];
     
     $element.wrap ( '<span class="sqs-money-native"></span>' );
     

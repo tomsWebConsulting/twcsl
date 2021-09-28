@@ -1,6 +1,6 @@
 # Store Product Detail Price Add Sqs-Money-Native for Variants
 
-### Version 0.1d1
+### Version 0.1d2
 
 #### SS Version 7.1
 
@@ -14,7 +14,7 @@
 * In the above code after the searchReplaceText example lines add the following
   code.
   ```javascript
-      '/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/' : ffee6bf1, // store product detail price add sqs-money-native for variants
+      '/.*?(\\d+(?:,\\d{3})*(?:\\.\\d{2})?)/' : ffee6bf1, // store product detail price add sqs-money-native for variants
     ```
     
 * Add code from file
@@ -28,11 +28,16 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
-* **2021-08-29**
+* **2021-09-28**
+
+  * updated to work with newer version of store price change
+  * bumped version to 0.1d2
   
+* **2021-08-29**
+
   * updated references to code which this code depends on
   * bumped version to 0.1d1
   
 * **2021-08-21**
-  
+
   * initial version
