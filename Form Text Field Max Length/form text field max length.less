@@ -1,0 +1,30 @@
+/*
+
+  form text field max length
+  
+  Version       : 0.4d0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependancies  : LESS
+  
+  Note          : this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  html:not( .squarespace-damask ) .form-wrapper .field-list [placeholder*="ftfml"] {
+  
+    visibility : hidden;
+    
+    &.twc-ftfml-show {
+    
+      visibility : visible;
+      
+      }
+      
+    }
