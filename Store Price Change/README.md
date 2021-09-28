@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d2
+### Version 0.3d3
 
 #### SS Versions 7.1, 7.0
 
@@ -12,7 +12,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d13/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
 ```
 
 Add code from file
@@ -53,6 +53,13 @@ Please consider
 
 ## Changes
 
+* **2021-09-28**
+  * change where searchReplaceText is stored to reduce varible already defined
+    error
+  * functions now always run instead of just for variant changes
+  * use class to show price instead of setting style on elements
+  * bumped version to 0.3d3
+  
 * **2021-08-29**
 
   * changed name from *Change Store Product Detail Price Text* to *Store Price
