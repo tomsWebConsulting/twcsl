@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d3
+### Version 0.3d4
 
 #### SS Versions 7.1, 7.0
 
@@ -22,22 +22,27 @@ to Store Settings > Advanced > Page Header Code Injection for the store page.
 ## searchReplaceText Example Lines
 
 ```javascript
-      'from' : '', // remove word from
+          'from' : '', // remove word from
   ```
 
 ```javascript
-      'from' : 'fra', // change language of word from, from english to swedish
+          'from' : 'fra', // change language of word from, from english to swedish
   ```
 
 ```javascript
-      '/(\\d+).00/' : '$1', /* remove decimal from price, using regular
-                               expression, backslash must be escaped with \, the
-                               replacement text can use special replacement
-                               patterns */
+          /* remove decimal from price, using regular expression, backslash must
+             be escaped with \, the replacement text uses special replacement
+             patterns */
+          
+          '/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/' : '$1',
   ```
 
 ```javascript
-      '/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/' : ffee6bf1, /* replacement text function name */
+          '/\\d(?=(?:\\d{3})+(?!\\d))/g' : '$&,', // add thousands separator
+  ```
+
+```javascript
+          '/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/' : ffee6bf1, /* replacement text function name */
   ```
 
 ## Note
@@ -53,6 +58,10 @@ Please consider
 
 ## Changes
 
+* **2021-09-30**
+  * pass more parameters to functions so they can do more
+  * bumped version to 0.3d4
+  
 * **2021-09-28**
   * change where searchReplaceText is stored to reduce varible already defined
     error

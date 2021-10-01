@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.3d3
+  Version         : 0.3d4
   
   SS Versions     : 7.1, 7.0
   
@@ -32,6 +32,9 @@
                     the attribute value to true you will cause a mutation which
                     will cause the search replace text to run. the attribute
                     value will be set to false after the search replace text run
+                    
+                    the code fails silently. poorly formed regular expressions
+                    will stop the processing of search/replace text pairs
   
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -59,11 +62,11 @@
             replacement text can use regular expression grouping syntax when the
             search text is a regular expression
             
-            replacement text functions need to accept a node and searchText
-            parameter. the function must return replacement text or null. null
-            tells the code to continue to the next search/replace pair without
-            making the replacement. your function needs to be defined before
-            this code runs
+            replacement text functions need to accept node, isDetail, text, and
+            searchText parameters. the function must return replacement text or
+            null. null tells the code to continue to the next search/replace
+            pair without making the replacement. your function needs to be
+            defined before this code runs
             
             following is are example lines. copy an example line below and paste
             after the example lines. remove '// ' at beginning of pasted line.
@@ -109,9 +112,11 @@
   
     $( ( ) => {
     
+      isDetail = twcsl.storePage.isDetail;
+      
       const keys = Object.keys ( twc.x8af7a0e8.searchReplaceText );
       
-      const changeText = ( node, searchText ) => {
+      const changeText = ( node ) => {
       
         const walker = document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
         
@@ -121,21 +126,33 @@
           
           let t = node.data;
           
-          $.each ( keys, function ( i, key ) {
+          $.each ( keys, function ( i, s ) {
           
-            const m = key.match ( /\/(.+)\/(.*)/ );
+            const m = s.match ( /\/(.+)\/(.*)/ );
             
-            let r = twc.x8af7a0e8.searchReplaceText [ key ];
+            let r = twc.x8af7a0e8.searchReplaceText [ s ];
             
-            let s = key;
+            if ( m !== null ) { // m appears to be a regex pattern
             
-            if ( m !== null ) s = new RegExp ( m [ 1 ], m [ 2 ] );
+              try {
+              
+                s = new RegExp ( m [ 1 ], m [ 2 ] );
+                
+                } catch {
+                
+                  return; // bail on error
+                  
+                  }
+                  
+              if ( ! s.test ( t ) ) return true; // continue if text no match
             
+              }
+              
             if ( typeof r == 'function' ) {
             
-              r = r ( node, s );
+              r = r ( node, isDetail, t, s );
               
-              if ( r == null ) return true; // continue if r is null
+              if ( r === null ) return true; // continue if r is null
               
               }
               
@@ -149,15 +166,17 @@
           
         }
         
-      const $productPrices = $( '.product-price' ).each ( function ( ) {
+      const $productPrices = $( '.product-price' )
       
-        changeText ( this );
+        .each ( function ( ) {
         
-        $( this ).addClass ( 'twc-spc-show' );
-        
-        } );
-        
-      if ( ! twcsl.storePage.isDetail ) return; // bail if not product detail
+          changeText ( this );
+          
+          $( this ).addClass ( 'twc-spc-show' );
+          
+          } );
+          
+      if ( ! isDetail ) return; // bail if not detail
       
       // bail if no mutation observer available
       
@@ -185,9 +204,9 @@
               
         observer.disconnect ( );
         
-        changeText ( target, true );
+        changeText ( target );
         
-        observer.observe ( productPrice [ 0 ], {
+        observer.observe ( productPrice, {
         
           attributeFilter : [ attribute ],
           
@@ -203,11 +222,13 @@
       
         .first ( )
         
-        .attr ( attribute, 'false' );
+        .attr ( attribute, 'false' )
+        
+        .get ( 0 );
         
       // start listening for changes in product price
       
-      observer.observe ( productPrice [ 0 ], {
+      observer.observe ( productPrice, {
       
         attributeFilter : [ attribute ],
         
