@@ -4,46 +4,62 @@
   
     store product detail price total
     
-    Version       : 0.1d1
+    Version       : 0.2d0
     
     SS Version    : 7.1
     
     Dependancies  : store price change
+                    
+                    store product detail price add sqs-money-native for variants
+                    
+                    store product detail price force mutation on quantity change
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
     */
     
-  const febc23ef = ( node ) => {
+  const febc23ef = ( node, isDetail, text, searchText ) => {
   
+    if ( ! isDetail ) return null; // continue if not detail
+    
+    const isOriginalPrice = Boolean ( $( node )
+    
+      .parents ( '.original-price' )
+      
+      .length );
+      
+    const quantity = Number ( $( '.product-quantity-input input' ).val ( ) );
+    
     let selectedVariant = $( '.product-variants' )
     
       .attr ( 'data-selected-variant' );
       
-    // bail if no variant selected
+    if ( selectedVariant === undefined ) {
     
-    if ( selectedVariant === undefined ) return false;
-    
-    const hasClass = $( node )
-    
-      .parent ( )
+      selectedVariant = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ];
       
-      .hasClass ( 'original-price' );
+        price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
+        
+          isOriginalPrice ) ? selectedVariant.price.value :
+          
+          selectedVariant.salePrice.value;
+          
+        price = price / 100;
+        
+      } else {
       
-    let price;
-    
-    selectedVariant = JSON.parse ( selectedVariant );
-    
-    price = ! selectedVariant.onSale || ( selectedVariant.onSale && hasClass ) ?
-    
-      selectedVariant.priceMoney.value : selectedVariant.salePriceMoney.value;
-      
-    let quantity = $( '.product-quantity-input input' ).val ( );
-    
-    price = Number ( price );
-    
-    quantity = Number ( quantity );
-    
+        selectedVariant = JSON.parse ( selectedVariant );
+        
+        price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
+        
+          isOriginalPrice ) ? selectedVariant.priceMoney.value :
+          
+          selectedVariant.salePriceMoney.value;
+          
+          price = Number ( price );
+          
+        }
+        
     price = price * quantity;
     
     price = price.toFixed ( 2 );
