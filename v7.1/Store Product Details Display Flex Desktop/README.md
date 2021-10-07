@@ -1,0 +1,29 @@
+# Store Product Details Natural Order Desktop
+
+### Version 0.1d0
+
+#### SS Version 7.1
+
+---
+
+## Quick Install
+
+Add code from file
+**[store product details natural order desktop.html](store%20product%20details%20natural%20order%20desktop.html#L1)**
+to Store Settings > Advanced > Page Header Code Injection for the store page.
+
+## Make a Donation
+
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
+## Changes
+
+<!-- * **2021-08-02**
+
+  * fix minor documentation issues
+  * bumped version to 0.1d1
+  -->
+* **2021-09-18**
+
+  * initial version

@@ -1,0 +1,57 @@
+<style>
+
+  /*
+  
+    begin store product details display flex desktop
+    
+    Version       : 0.1d0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : store product details natural order desktop
+    
+    Note          : this code is meant as a base for other effects
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    @media screen and ( min-width : 768px ) {
+    
+      .ProductItem-details .ProductItem-details-checkout {
+      
+        display : -webkit-box;
+        display : -ms-flexbox;
+        display : flex;
+        
+        gap : 1em;
+        
+        }
+        
+      .ProductItem-details .ProductItem-details-checkout > *,
+      .ProductItem-details .ProductItem-product-price .product-price,
+      .ProductItem-details .variant-option
+      
+        {
+        
+          margin : 0;
+          
+          }
+          
+      .collection-type-products .ProductItem-details .ProductItem-details-excerpt p:first-child {
+      
+        margin-top : 0;
+        
+        }
+        
+      .collection-type-products .ProductItem-details .ProductItem-details-excerpt p:last-child {
+      
+        margin-bottom : 0;
+        
+        }
+        
+      }
+      
+   /* end store product details display flex desktop */
+   
+  </style>
