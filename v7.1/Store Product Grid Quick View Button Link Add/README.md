@@ -9,7 +9,7 @@
 ## Quick Install
 
 * Install code from
-  **[Store Product Grid Quick View Button Link Add](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)**.
+  **[store product grid quick view button link add.html](store%20product%20grid%20quick%20view%20button%20link%20add.html#L1)**.
   
 * Set the text and url variables near the top of the code.
   
