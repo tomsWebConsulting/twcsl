@@ -1,0 +1,99 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store category theme change
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const categoryThemeMap = {
+    
+      /*
+      
+        the format of each line is a category and a theme
+        
+        for each category copy value from Store Settings > Categories >
+        [category name] > Edit Category > NAME field for the store page. you
+        only need exactly what can be selected from the field
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many categories as you want to change the theme. this has been
+        done once initially
+        
+        */
+        
+      // '[enter category here between single quotes]' : '[enter theme here between single quotes]',
+      
+      '[enter category here between single quotes]' : '[enter theme here between single quotes]',
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.storePage.hasCategory ) return; // bail if not category
+    
+    const category = twcsl.storePage.category;
+    
+    const classToColorThemes = {
+    
+      'black-bold'      : [ 'Darkest 2', 'Black Bold' ],
+      'black'           : [ 'Darkest 1', 'Black Minimal' ],
+      'bright-inverse'  : [ 'Bright 1', 'Accent Bold' ],
+      'bright'          : [ 'Bright 2', 'Accent Minimal' ],
+      'dark-bold'       : [ 'Dark 2', 'Dark Bold' ],
+      'dark'            : [ 'Dark 1', 'Dark Minimal' ],
+      'light-bold'      : [ 'Light 2', 'Light Bold' ],
+      'light'           : [ 'Light 1', 'Light Minimal' ],
+      'white-bold'      : [ 'Lightest 2', 'White Bold' ],
+      'white'           : [ 'Lightest 1', 'White Minimal' ]
+      
+      }
+      
+    const colorThemeToClass = { };
+    
+    // populate colorThemeToClass
+    
+    $.each ( classToColorThemes, function ( key, obj ) {
+    
+      $.each ( obj, function ( i, v ) {
+      
+        colorThemeToClass [ v ] = key;
+        
+        } );
+        
+      } );
+      
+    // bail if not a category we want to change
+    
+    if ( ! ( category in categoryThemeMap ) ) return;
+    
+    const classes = Object
+    
+      .keys ( classToColorThemes )
+      
+      .join ( ' ' );
+      
+    const clss = colorThemeToClass [ categoryThemeMap [ category ] ];
+    
+    $( '.page-section.collection-type-products' )
+    
+      .removeClass ( classes )
+      
+      .addClass ( clss );
+      
+    } );
+    
+  </script>
