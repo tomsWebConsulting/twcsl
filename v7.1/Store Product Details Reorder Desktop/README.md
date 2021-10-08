@@ -1,4 +1,4 @@
-# Store Product Details Reorder
+# Store Product Details Reorder Desktop
 
 ### Version 0.1d0
 
