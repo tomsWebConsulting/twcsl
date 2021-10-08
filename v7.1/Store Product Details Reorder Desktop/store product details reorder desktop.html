@@ -1,0 +1,85 @@
+<style>
+
+  /*
+  
+    begin store product details reorder desktop
+    
+    Version       : 0.1d0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : store product details display flex desktop
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    @media screen and ( min-width : 768px ) {
+    
+      .ProductItem-details .ProductItem-details-checkout {
+      
+        --add-to-cart-button : unset;
+        --description : unset;
+        --price : unset;
+        --quantity : unset;
+        --variants : unset;
+        
+        }
+        
+      /* do not change anything below, there be the borg here */
+      
+      .ProductItem-details .product-quantity-input {
+      
+        -webkit-box-ordinal-group : calc( var( --quantity ) + 1 );
+        -moz-box-ordinal-group : calc( var( --quantity ) + 1 );
+        -ms-flex-order : var( --quantity );
+        -webkit-order : var( --quantity );
+        order : var( --quantity );
+        
+        }
+        
+      .ProductItem-details .product-variants {
+      
+        -webkit-box-ordinal-group : calc( var( --variants ) + 1 );
+        -moz-box-ordinal-group : calc( var( --variants ) + 1 );
+        -ms-flex-order : var( --variants );
+        -webkit-order : var( --variants );
+        order : var( --variants );
+        
+        }
+        
+      .ProductItem-details .ProductItem-details-excerpt {
+      
+        -webkit-box-ordinal-group : calc( var( --description ) + 1 );
+        -moz-box-ordinal-group : calc( var( --description ) + 1 );
+        -ms-flex-order : var( --description );
+        -webkit-order : var( --description );
+        order : var( --description );
+        
+        }
+        
+      .ProductItem-details .ProductItem-product-price {
+      
+        -webkit-box-ordinal-group : calc( var( --price ) + 1 );
+        -moz-box-ordinal-group : calc( var( --price ) + 1 );
+        -ms-flex-order : var( --price );
+        -webkit-order : var( --price );
+        order : var( --price );
+        
+        }
+        
+      .ProductItem-details .sqs-add-to-cart-button-wrapper {
+      
+        -webkit-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+        -moz-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+        -ms-flex-order : var( --add-to-cart-button );
+        -webkit-order : var( --add-to-cart-button );
+        order : var( --add-to-cart-button );
+        
+        }
+        
+      }
+      
+   /* end store product details reorder desktop */
+   
+  </style>
