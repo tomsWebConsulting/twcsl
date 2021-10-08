@@ -1,4 +1,4 @@
-# Store Product Details Natural Order Desktop
+# Store Product Details Display Flex Desktop
 
 ### Version 0.1d0
 
@@ -8,9 +8,12 @@
 
 ## Quick Install
 
-Add code from file
-**[store product details natural order desktop.html](store%20product%20details%20natural%20order%20desktop.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+* Install the code from
+  **[Store Product Details Natural Order Desktop](https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop#store-product-details-natural-order-desktop)**.
+  
+* Add code from file
+  **[store product details display flex desktop.html](store%20product%20details%20display%20flex%20desktop.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
 
@@ -24,6 +27,6 @@ Please consider
   * fix minor documentation issues
   * bumped version to 0.1d1
   -->
-* **2021-09-18**
+* **2021-10-07**
 
   * initial version
