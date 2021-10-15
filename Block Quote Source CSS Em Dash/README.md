@@ -8,15 +8,15 @@
 
 ## Quick Install
 
+* Add code from file
+  **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
+  to Design > Custom CSS.
+  
 * Add the following to Settings > Advanced > Code Injection > HEADER.
   
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 ```
-  
-* Add code from file
-  **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
-  to Design > Custom CSS.
   
 * Add code from file
   **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
