@@ -12,8 +12,9 @@
   **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
   to Design > Custom CSS.
   
-* Install code from file
-  **[block quote source CSS em dash.html](https://github.com/tomsWebConsulting/twcsl/tree/main/block%20quote%20source%20CSS%20em%20dash.html#L1)**.
+* Add code from file
+  **[block quote source CSS em dash.html](https://github.com/tomsWebConsulting/twcsl/tree/main/block%20quote%20source%20CSS%20em%20dash.html#L1)**
+  to Settings > Advanced > Code Injection > FOOTER.
 
 ## Make a Donation
 
