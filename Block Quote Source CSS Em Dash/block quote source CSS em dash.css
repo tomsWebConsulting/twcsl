@@ -1,0 +1,32 @@
+/*
+
+  begin block quote source CSS em dash
+  
+  Version         : 0.1d0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Foster,
+                    Greenwich, Hatch, Heights, Hunter, Hyde, Impact, Jaunt,
+                    Juke, Keene, Kin, Lincoln, Maple, Margot, Marta, Mentor,
+                    Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .sqs-block-quote .source::before {
+  
+    content : '—';
+    padding-right : 0.5em;
+    
+    }
+    
+  /* end block quote source CSS em dash */
