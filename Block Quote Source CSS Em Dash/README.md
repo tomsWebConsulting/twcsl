@@ -22,6 +22,14 @@
   **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
   to Settings > Advanced > Code Injection > FOOTER.
 
+## Notes
+
+If you don't want the em dash then you can leave out the CSS install step or
+comment it out.
+
+By changing the content property value you can change the em dash to something
+else.
+
 ## Make a Donation
 
 Please consider
