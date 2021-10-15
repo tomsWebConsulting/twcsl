@@ -13,7 +13,7 @@
   to Design > Custom CSS.
   
 * Add code from file
-  **[block quote source CSS em dash.html](https://github.com/tomsWebConsulting/twcsl/tree/main/block%20quote%20source%20CSS%20em%20dash.html#L1)**
+  **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
   to Settings > Advanced > Code Injection > FOOTER.
 
 ## Make a Donation
