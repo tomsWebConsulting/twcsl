@@ -15,7 +15,7 @@
 ```
   
 * Add code from file
-  **[page section background color change on scroll.html](page section background color change on scroll.html#L1)**
+  **[page section background color change on scroll.html](page%20section%20background%20color%20change%20on%20scroll.html#L1)**
   to Page Settings > Advanced > Page Header Code Injection for the page.
 
 ## Demo
