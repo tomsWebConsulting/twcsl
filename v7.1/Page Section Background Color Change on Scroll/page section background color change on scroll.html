@@ -1,0 +1,119 @@
+<!--
+
+  begin page section background color change on scroll
+  
+  Version      : 0.1d1
+  
+  SS Version   : 7.1
+  
+  Dependancies : jQuery
+  
+  Notes        : the code is comprised of several tags. all are needed for the
+                 effect to work
+                 
+                 effect does not change the footer
+                 
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    body {
+    
+      --timing-function : linear;
+      --delay : 0.5s;
+      
+       /* background color should match first page section color from
+          sectionColors below */
+          
+      background-color : [enter first page section color here between single quotes];
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+      var sectionColors = [
+      
+        /*
+        
+          the format of each line is a color. add a color for each page section,
+          except for the sections in the footer
+                               
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at beginning of pasted line.
+          repeat for as many sections there are on the page, except the footer.
+          this has been done once initially
+          
+          */
+          
+        // '[enter page section color here between single quotes]',
+        
+        '[enter page section color here between single quotes]',
+        
+        ];
+        
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    /* unset all background colors making them transparent */
+    
+    [data-header-style="dynamic"].header,
+    [data-header-style="theme"].header,
+    #page :not( .has-background ) .section-background,
+    #page .black:not( .has-background ) .section-background,
+    #page .black-bold:not( .has-background ) .section-background,
+    #page .bright:not( .has-background ) .section-background,
+    #page .bright-inverse:not( .has-background ) .section-background,
+    #page .dark:not( .has-background ) .section-background,
+    #page .dark-bold:not( .has-background ) .section-background,
+    #page .light:not( .has-background ) .section-background,
+    #page .light-bold:not( .has-background ) .section-background,
+    #page .page-section,
+    #page .white:not( .has-background ) .section-background,
+    #page .white-bold:not( .has-background ) .section-background
+    
+      {
+      
+        background-color : unset;
+        
+        }
+        
+    body {
+    
+      -webkit-transition : background-color var( --delay ) var( --timing-function );
+      -o-transition : background-color var( --delay ) var( --timing-function );
+      transition : background-color var( --delay ) var( --timing-function );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      $( window ).scroll ( function ( ) {
+      
+        $( ':not( #footer-sections ) > .page-section' ).each ( function ( i ) {
+        
+          if ( ! ( $( this ).position ( ).top <= $( window ).scrollTop ( ) ) )
+          
+            return true;
+            
+          $( 'body' ).css ( 'background-color', sectionColors [ i ] );
+          
+          } );
+          
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end page section background color change on scroll -->
