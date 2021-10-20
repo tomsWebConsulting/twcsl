@@ -1,0 +1,71 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      search page input aria-label attribute add
+      
+      Version         : 0.1d0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = '[enter aria-label attribute value text here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.isSearch ) return; // bail if not search page
+    
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        if ( ! this.addedNodes.length ) return;
+        
+        const $element = $( 'input', $( this.addedNodes [ 0 ] ) );
+        
+        if ( ! $element.length ) return;
+        
+        $element.attr ( 'aria-label', text );
+        
+        observer.disconnect ( );
+        
+        } );
+        
+      } );
+      
+    // start listening for changes in search input
+    
+    const searchPageInput = $( '.sqs-search-page-input' ).get ( 0 );
+    
+    observer.observe ( searchPageInput, {
+    
+      childList : true
+      
+      } );
+      
+    } );
+    
+  </script>
