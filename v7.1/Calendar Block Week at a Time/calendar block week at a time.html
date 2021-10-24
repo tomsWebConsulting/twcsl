@@ -1,0 +1,289 @@
+<!--
+
+  begin calendar block week at a time
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use private
+                  browsing
+                  
+                  < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .sqs-block-calendar
+    
+      {
+      
+        visibility : hidden;
+        
+        }
+        
+    html .sqs-block-calendar.twc-cbcwo-show {
+    
+      visibility : visible;
+      
+      }
+      
+    html:not( .squarespace-damask ) .yui3-squarespacecalendar .yui3-calendar-header .yui3-calendarnav-nextmonth:nth-last-of-type( 1 ),
+    html:not( .squarespace-damask ) .yui3-squarespacecalendar .yui3-calendar-header .yui3-calendarnav-prevmonth:nth-of-type( 1 ),
+    html:not( .squarespace-damask ) .sqs-block-calendar .yui3-calendar-row
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const changeMonth = ( $calendarBlock, direction ) => {
+      
+        const pseudos = {
+        
+          next : {
+          
+            calendarRow : 'first',
+            navigation : 'last'
+            
+            },
+            
+          prev : {
+          
+            calendarRow : 'last',
+            navigation : 'first'
+            
+            },
+            
+          };
+          
+        let pseudo = pseudos [ direction ].navigation;
+        
+        const selector = `.yui3-calendarnav-${ direction }month:${ pseudo }`;
+        
+        const node = $( selector, $calendarBlock ).get ( 0 );
+        
+        Y
+        
+          .one ( node )
+          
+          .simulate ( 'click' );
+          
+        pseudo = pseudos [ direction ].calendarRow;
+        
+        const $element = $( `.yui3-calendar-row:${ pseudo }`, $calendarBlock )
+        
+          .css ( 'display', 'table-row' );
+          
+        if ( direction == 'next' ) return;
+        
+        if ( ! $element.height ( ) ) {
+        
+          $element
+          
+            .css ( 'display', '' )
+            
+            .prev ( )
+            
+            .css ( 'display', 'table-row' );
+            
+          }
+          
+        } // end changeMonth
+        
+      const changeWeek = ( event ) => {
+      
+        const direction = event.data.direction;
+        
+        const $calendarBlock = $( event.target )
+        
+          .parents ( '.sqs-block-calendar' );
+          
+        let $week = $calendarBlock
+        
+          .find ( '.yui3-calendar-row' )
+          
+          .filter ( function ( ) {
+          
+            const $this =  $( this );
+            
+            const display = $this.css ( 'display' );
+            
+            if ( display == 'table-row' ) return true;
+            
+            } )
+            
+          .css ( 'display', '' );
+          
+        switch ( direction ) {
+        
+          case 'next' :
+          
+            $week = $week.next ( );
+            
+            break;
+            
+          case 'prev' :
+          
+            $week = $week.prev ( );
+            
+            break;
+            
+          }
+          
+        $week.css ( 'display', 'table-row' );
+        
+        if ( ! $week.length ) {
+        
+          changeMonth ( $calendarBlock, direction );
+          
+          return;
+          
+          }
+          
+        if ( ! $week.height ( ) ) {
+        
+          if ( direction == 'next' ) $week.css ( 'display', '' );
+          
+          changeMonth ( $calendarBlock, direction );
+          
+          }
+          
+        } // end changeWeek
+        
+      const observer = new MutationObserver ( function ( mutations ) {
+      
+        $.each ( mutations, function ( ) {
+        
+          // bail if not attribute class
+          
+          if ( this.attributeName != 'class' ) return;
+          
+          const $target = $( this.target );
+          
+          // bail if no today class
+          
+          if ( ! $target.hasClass ( 'today' ) ) return;
+          
+          const skip = 'data-twc-cbcwo-attribute-skip';
+          
+          // bail if attribute skip
+          
+          if ( $target.get ( 0 ).hasAttribute ( skip ) ) return;
+          
+          $target.attr ( skip, '' );
+        
+          const $calendar = $target
+          
+            .parent ( '.yui3-calendar-row' )
+            
+            .css ( 'display', 'table-row' )
+            
+            .parents ( '.sqs-block-calendar' )
+            
+            .addClass ( 'twc-cbcwo-show' );
+            
+          // week navigation
+          
+          $.each ( [ 'next', 'prev' ], function ( i, direction ) {
+          
+            const selector = `.yui3-calendarnav-${ direction }month`;
+            
+            const $element = $( selector, $calendar );
+            
+            let $elementClone = $element
+            
+              .clone ( )
+              
+              .removeAttr ( 'id' )
+              
+              .click ( { direction : direction }, changeWeek );
+              
+            let ariaLabel = $elementClone
+            
+              .attr ( 'aria-label' )
+              
+              .replace ( 'month', 'week' );
+              
+            $elementClone.attr ( 'aria-label', ariaLabel );
+            
+            switch ( direction ) {
+            
+              case 'next' :
+              
+                $elementClone.insertBefore ( $element );
+                
+                break;
+                
+              case 'prev' :
+              
+                $elementClone.insertAfter ( $element );
+                
+                break;
+                
+              }
+              
+            } ); // end week navigation
+            
+          ;
+          
+          // continue if not all calendars processed
+          
+          if ( $( '.sqs-block-calendar:not( .twc-cbcwo-show )' ).length )
+          
+            return true;
+            
+          observer.disconnect ( );
+          
+          return false;
+          
+          } ); // end each
+          
+        } ); // end mo
+        
+      const $calendars = $( '.sqs-block-calendar' );
+      
+      const calendarCount = $calendars.length;
+      
+      let count = 0;
+      
+      $calendars.each ( function ( ) {
+      
+        observer.observe ( this, {
+        
+          attributes : true,
+          
+          subtree : true
+          
+          } );
+          
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end calendar block week at a time -->
