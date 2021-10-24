@@ -21,7 +21,7 @@
 ## Demo
 
 You can see a
-[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/page-section-background-color-change-on-scroll?password=twcdemos).
+[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/calendar-block-week-at-a-time?password=twcdemos).
 
 ## Make a Donation
 
