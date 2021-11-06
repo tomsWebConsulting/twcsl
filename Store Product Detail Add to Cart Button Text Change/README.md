@@ -16,7 +16,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 ```
 
 Add code from file
-**[store product detail one left class add.html](store%20product%20detail%20one%20left%20class%20add.html#L1)**
+**[store product detail add to cart button text change.html](store%20product%20detail%20add%20to%20cart%20button%20text%20change.html#L1)**
 to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
