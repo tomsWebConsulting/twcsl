@@ -1,0 +1,181 @@
+<!--
+
+  begin store category page description add
+  
+  Version       : 0.3d0
+  
+  SS Version    : 7.0
+  
+  Templates     : Avenue
+  
+                  Bedford ( Anya, Bryant, Hayden )
+                  
+                  Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                  Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                  Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                  Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                  Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                  Stella, Thorne, Vow, Wav, West )
+                  
+                  your template is not listed? then it is not currently
+                  supported
+                  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    window.twc = {
+    
+      x5a47ab0f : {
+      
+        categoryDescriptionMap : {
+        
+          /*
+          
+            the format of each line is a category and a description for the
+            category
+            
+            for each category copy value from Store Settings > Advanced >
+            Manage Category > [category name] (click on category) > Edit for the
+            store page. you only need exactly what can be selected from the
+            field
+            
+            if you want to add a description to the Store page ( i.e.
+            grid/listing ) leave the category empty
+            
+            if the description has single quotes in it then put a backslash
+            before the single quotes. example: it's becomes it\'s
+            
+            following is an example line. copy the example line below and paste
+            after the example line. remove '// ' at beginning of pasted line.
+            repeat for as many categories as you want to add a description this
+            has been done once initially
+            
+            */
+            
+          // '[enter category here between single quotes]' : '[enter category description here between single quotes]',
+          
+          '[enter category here between single quotes]' : '[enter category description here between single quotes]',
+          
+          }
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-category-description {
+    
+      margin-bottom : 25px;
+      width : calc( 100% + 15px );
+      
+      }
+      
+    .tweak-product-list-filter-display-right-side .twc-category-description {
+    
+      width : unset;
+      
+      }
+      
+    @media only screen and ( min-width : 641px ) {
+    
+      .tweak-product-list-filter-display-left-side .ProductList-filter + .twc-category-description + .ProductList-grid,
+      .tweak-product-list-filter-display-right-side .ProductList-filter + .twc-category-description + .ProductList-grid
+      
+        {
+        
+          box-sizing : border-box;
+          clear : none;
+          float : left;
+          width : calc( 85% + 15px );
+          
+          }
+          
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( ! twcsl.storePage.hasCategory ) return; // bail if not category
+      
+      const category = twcsl.storePage.category;
+      
+      const categoryDescriptionMap = twc.x5a47ab0f.categoryDescriptionMap;
+      
+      // if category not defined bail
+      
+      if ( ! ( category in categoryDescriptionMap ) ) return;
+      
+      // can we get a template id, if not bail
+      
+        let templateId;
+        
+        try { templateId = Static.SQUARESPACE_CONTEXT.templateId } catch {
+        
+          return; };
+          
+      // is the template id one we support, if not bail
+      
+        const templateIds = {
+        
+          '4fd11f32c4aad9b01c9e624c' : { // Avenue
+          
+            insertBeforeSelector : '#productList'
+            
+            },
+            
+          '52a74dafe4b073a80cd253c5' : { // Bedford family
+          
+            insertBeforeSelector : '#productList'
+            
+            },
+            
+          '55f0aac0e4b0f0a5b7e0b22e' : { // Brine family
+          
+            insertBeforeSelector : '.ProductList-grid'
+            
+            }
+            
+          }
+          
+        if ( ! ( templateId in templateIds ) ) return;
+        
+      // add the category description
+      
+      const description = categoryDescriptionMap [ category ];
+      
+      const selector =
+      
+        templateIds [ templateId ].insertBeforeSelector;
+        
+      $( `<div class="twc-category-description">
+      
+        <p>
+        
+          ${ description }
+          
+          </p>
+          
+        </div>` )
+        
+        .insertBefore ( selector );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store category page description add -->
