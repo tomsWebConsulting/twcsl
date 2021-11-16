@@ -16,7 +16,7 @@
   ```
   
 * Add code from file
-**[add store category page description.html](add%20store%20category%20page%20description.html#L1)**
+**[store category page description add.html](store%20category%20page%20description%20add.html#L1)**
 to Store Settings > Advanced > Page Header Code Injection for the store page.
 Read the code for any instructions within.
 
