@@ -29,7 +29,7 @@ Please consider
 
 * **2021-11-15**
 
-  * fix for description layout issue when categories are set to side
+  * fix for description layout issue when categories are set to side for Brine
   * bumped version to 0.3d0
   
 * **2021-07-25**
