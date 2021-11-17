@@ -1,0 +1,65 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin form block post-submit redirect url email parameter add
+      
+      Version       : 0.1d0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      const $form = twcsl.getFormNth ( );
+      
+      if ( $form === undefined ) return; // bail if no form
+      
+      const attribute = 'data-success-redirect';
+      
+      let url = $form.attr ( attribute );
+      
+      if ( ! url ) return; // bail if no attribute value
+      
+      const $emailField = $( '.email', $form );
+      
+      const label = twcsl.getFormFieldLabel ( $emailField );
+      
+      const $input = $( 'input', $emailField );
+      
+      $input.change ( function ( ) {
+      
+        const email = $( this ).val ( );
+        
+        const urlParser = twcsl.getUrlParser ( url );
+        
+        let search = urlParser.search;
+        
+        const searchParams = new URLSearchParams ( search );
+        
+        searchParams.set ( label, email );
+        
+        search = searchParams.toString ( );
+        
+        urlParser.search = search;
+        
+        url = urlParser.href;
+        
+        $form.attr ( 'data-success-redirect', url );
+        
+        } );
+        
+      // end form block post-submit redirect url email parameter add
+      
+    } );
+    
+  </script>
