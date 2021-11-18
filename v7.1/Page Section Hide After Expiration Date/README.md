@@ -54,7 +54,7 @@ You can find a page section id by using Heather Tovey's
 To use SIF go to your page and use SIF. You will see something like the
 following.
 
-![squarespace id finder example](read%20me%20assets/data%20%20id.png)
+![squarespace id finder example](read%20me%20assets/data%20section%20id.png)
 
 ## Make a Donation
 
