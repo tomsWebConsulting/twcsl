@@ -1,0 +1,103 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      page section hide after expiration date
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Notes         : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+                      
+                      for a list of utc time offsets see
+                      < https://bit.ly/3kLFh3f >. the list shows standard times.
+                      if your expiration is in daylist saving time then adjust
+                      the value from the list by the appropriate amount. for
+                      example Pacific Standard Time is -8:00 so when daylight
+                      saving time is active the offset is -7:00
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const dataSectionId = '[enter data section id here between single quotes]';
+    
+    let expiration = {
+    
+      year : [enter year number here],
+      month : [enter month number here],
+      day : [enter day number here],
+      hour : [enter hour number here],
+      minute : [enter minute number here],
+      second : [enter second number here],
+      
+      utcTimeOffset : {
+      
+        hour : [enter ±hour number here],
+        minute : [enter minute number here]
+        
+        }
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    const d = new Date ( );
+    
+    const selector = `[data-section-id="${ dataSectionId }"]`;
+    
+    let utcTimeOffsetHour =
+    
+      String ( expiration.utcTimeOffset.hour ).match ( /([^\d]+)(\d+)/ );
+      
+    utcTimeOffsetHour = utcTimeOffsetHour [ 1 ] +
+    
+      utcTimeOffsetHour [ 2 ].padStart ( 2, '0' );
+      
+    expiration = expiration.year +
+    
+      '-' +
+      
+      String ( expiration.month ).padStart ( 2, '0' ) +
+      
+      '-' +
+      
+      String ( expiration.day ).padStart ( 2, '0' ) +
+      
+      'T' +
+      
+      String ( expiration.hour ).padStart ( 2, '0' ) +
+      
+      ':' +
+      
+      String ( expiration.minute ).padStart ( 2, '0' ) +
+      
+      ':' +
+      
+      String ( expiration.second ).padStart ( 2, '0' ) +
+      
+      utcTimeOffsetHour +
+      
+      ':' +
+      
+      String ( expiration.utcTimeOffset.minute ).padStart ( 2, '0' );
+      
+    expiration = Date.parse ( expiration );
+    
+    expiration = new Date ( expiration );
+    
+    if ( d < expiration ) return; // bail not expired
+    
+    $( selector ).css ( 'display', 'none' );
+    
+    } );
+    
+  </script>
