@@ -1,0 +1,27 @@
+/*
+
+  begin header cart icon hide when zero
+  
+  Version     : 0.1d0
+  
+  SS Version  : 7.1
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .header-actions-action--cart {
+  
+    display : none;
+    
+    }
+    
+  .twc-show {
+  
+    display : block;
+    
+    }
+    
+  /* end cart icon hide when zero */

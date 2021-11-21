@@ -1,0 +1,76 @@
+<script>
+
+  /*
+  
+    begin header cart icon hide when zero
+    
+    Version     : 0.1d0
+    
+    SS Version  : 7.1
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    window.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const observer = new MutationObserver ( mutations => {
+      
+        for ( const mutation of mutations ) {
+        
+          // bail if no added nodes
+          
+          if ( ! mutation.addedNodes.length ) return;
+          
+          const node = mutation.addedNodes [ 0 ];
+          
+          if ( node.nodeName !== '#text' ) return; // bail if not text node
+          
+          const elements =
+          
+            document.querySelectorAll ( '.header-actions-action--cart' );
+            
+          const quantity = Number ( node.nodeValue );
+          
+          const showClass = 'twc-show';
+          
+          for ( const element of elements ) {
+          
+            if ( quantity ) {
+            
+              element.classList.add ( showClass );
+              
+              } else {
+              
+                element.classList.remove ( showClass );
+                
+                }
+                
+            }
+            
+          }
+          
+        } );
+        
+      // start listening for changes in specified element
+      
+      const element = document.querySelector ( '.sqs-cart-quantity' );
+      
+      observer.observe ( element, {
+      
+        characterData : true,
+        childList : true
+        
+        } );
+        
+      } );
+      
+    /* end header cart icon hide when zero */
+    
+  </script>
