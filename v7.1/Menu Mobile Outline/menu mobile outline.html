@@ -1,0 +1,162 @@
+<!--
+
+  begin menu mobile outline
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both must be
+                  present for the effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .header-menu-nav-folder {
+    
+      transform : unset;
+      
+      }
+      
+    .header-menu-nav-folder-content > .header-menu-nav-item > a {
+    
+      pointer-events : none;
+      
+      }
+      
+    .header-menu-nav-folder-content > .header-menu-nav-item > a:only-child {
+    
+      pointer-events : unset;
+      
+      }
+      
+    .header-menu-nav-folder-content .chevron--right {
+    
+      margin-right : 2.5vw;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const $navigation = $( '.header-menu .header-menu-nav-list' );
+      
+      const contentClass = 'header-menu-nav-folder-content';
+      
+      const $menu = $( `<div class="header-menu-nav-folder twc-mmo-outline">
+      
+        <div class="${ contentClass }">
+        
+          </div>
+          
+        </div>` );
+        
+      const $menuContent = $( `.${ contentClass }`, $menu );
+      
+      let selector = '.header-menu .header-menu-nav a:not( .btn ):eq( 0 )';
+      
+      const folderCssPropeties = $( selector ).css ( [ 'color', 'font-size' ] );
+      
+      const div = ( $element, isFolder = false, isLevelOne = false ) => {
+      
+        const href = $element.attr ( 'href' );
+        
+        const $div = $( `<div class="header-menu-nav-item">
+        
+          <a href="${ href }">
+          
+            </a>
+            
+          </div>` );
+          
+        const $last = $( ':last', $div );
+        
+        if ( isFolder ) {
+        
+          $( 'span:not( [class*="chevron-"] )', $element )
+          
+            .appendTo ( $last );
+            
+          } else {
+          
+            const chevron = '<span class="chevron chevron--right">';
+        
+            const text = $element.text ( );
+            
+            $last.text ( text );
+            
+            if ( isLevelOne ) {
+            
+              $last.append ( chevron );
+              
+              } else {
+              
+                $last.prepend ( chevron );
+              
+                }
+                
+            }
+            
+        return $div;
+        
+        }; // end div
+        
+      selector = '[data-folder="root"] .header-menu-nav-item a';
+      
+      $( selector, $navigation ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const dataFolderId = $this.attr ( 'data-folder-id' );
+        
+        const isFolder = dataFolderId === undefined ? false : true;
+        
+        const isLevelOne = true;
+        
+        const $div = div ( $this, isFolder, isLevelOne );
+        
+        if ( isFolder ) {
+        
+          selector = `[data-folder="${ dataFolderId }"] ` +
+          
+            '.header-menu-nav-item:not( .header-menu-controls ) a';
+            
+          $( selector ).each ( function ( ) {
+          
+            const $this = $( this );
+            
+            div ( $this )
+            
+              .appendTo ( $div );
+              
+            } );
+            
+          }
+          
+        $menuContent.append ( $div );
+          
+        } );
+        
+      $navigation
+      
+        .children ( )
+        
+        .remove ( );
+        
+      $navigation.append ( $menu );
+      
+      } );
+      
+    </script>
+    
+  <!-- end menu mobile outline -->
