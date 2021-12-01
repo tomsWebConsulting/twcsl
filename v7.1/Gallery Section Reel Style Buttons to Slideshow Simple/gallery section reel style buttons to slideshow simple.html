@@ -6,7 +6,7 @@
     
       begin gallery section reel style buttons to slideshow simple
       
-      Version       : 0.1d2
+      Version       : 0.1d3
       
       SS Version    : 7.1
       
@@ -16,21 +16,27 @@
       
       */
       
-      const buttonSvg = ( direction, points ) => {
+      const svg = ( direction ) => {
       
-        // returns svg element
+        const points = {
         
-        $e = $( '<svg class="caret-' + direction + '-icon--small" viewBox="0 0 9 16">' +
-        
-          '<polyline fill="none" stroke-miterlimit="10" points="' + points + ' ">' +
+          left : '7.3,14.7 2.5,8 7.3,1.2',
           
-            '</polyline>' +
+          right : '1.6,1.2 6.5,7.9 1.6,14.7'
+          
+          };
+          
+        const svg = `<svg class="caret-${ direction }-icon--small" viewBox="0 0 9 16">
+        
+          <polyline fill="none" stroke-miterlimit="10" points="${ points [ direction ] }">
+          
+            </polyline>
             
-          '</svg>' );
+          </svg>`;
           
-        return $e;
+        return svg;
         
-        }
+        };
         
       $( '.gallery-reel-controls' )
       
@@ -48,10 +54,10 @@
         
         .each ( function ( ) {
         
-          $( 'svg', $( this ) )
+          const s = svg ( 'left' );
           
-            .replaceWith ( buttonSvg ( 'left', '7.3,14.7 2.5,8 7.3,1.2' ) );
-            
+          $( 'svg', $( this ) ).replaceWith ( s );
+          
           } );
           
       // next button
@@ -64,10 +70,10 @@
         
         .each ( function ( ) {
         
-          $( 'svg', $( this ) )
+          const s = svg ( 'right' );
           
-            .replaceWith ( buttonSvg ( 'right', '1.6,1.2 6.5,7.9 1.6,14.7' ) );
-            
+          $( 'svg', $( this ) ).replaceWith ( s );
+          
           } );
           
       $( '.gallery-reel-control-btn' )

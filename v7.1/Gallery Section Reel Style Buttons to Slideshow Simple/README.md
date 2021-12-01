@@ -1,6 +1,6 @@
 # Gallery Section Reel Style Buttons to Slideshow Simple
 
-### Version 0.1d2
+### Version 0.1d3
 
 #### SS Version 7.1
 
@@ -29,12 +29,12 @@ Please consider
 
   * fix for description layout issue when categories are set to side for Brine
   * bumped version to 0.3d0
-  
-* **2021-07-25**
-
-  * use twcsl
-  * bumped version to 0.2d0
   -->
+* **2021-12-01**
+
+  * restructure and clean up code, no functional change
+  * bumped version to 0.1d3
+  
 * **2021-12-01**
 
   * initial version
