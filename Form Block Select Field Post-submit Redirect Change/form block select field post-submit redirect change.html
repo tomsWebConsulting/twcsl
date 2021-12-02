@@ -2,13 +2,13 @@
 
   begin form block select field post-submit redirect change
   
-  Version       : 0.2d0
+  Version       : 0.2d1
   
-  SS Versions   : 7.0, 7.1
+  SS Versions   : 7.1, 7.0
   
   Dependancies  : jQuery
   
-  Note          : does not work form blocks with lightbox toggled on
+  Note          : does not work for form blocks with lightbox toggled on
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -94,18 +94,22 @@
           
           // end set a default post-submit redirect
           
-        $select // on select change update post-submit redirect
+        // on select change post-submit redirect
         
-          .change ( function ( ) {
+        $select.change ( function ( ) {
+        
+          let value = $( this ).val ( );
           
-            $form.attr ( 'data-success-redirect', optionUrlMap [ $( this ).val ( )
-            
-              ] );
-              
-            } );
-            
+          value = optionUrlMap [ value ];
+          
+          $form.attr ( 'data-success-redirect', value );
+          
+          } );
+          
         } );
         
       } );
       
     </script>
+    
+  <!-- end form block select field post-submit redirect change -->
