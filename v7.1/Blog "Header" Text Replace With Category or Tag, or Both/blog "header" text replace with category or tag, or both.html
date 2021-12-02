@@ -1,0 +1,121 @@
+<!--
+
+  begin blog "header" text replace with category or tag, or both
+  
+  Version       : 0.3d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  the blog "header" in this case is a page section added above a
+                  normal blog page with a single text block
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .page-section:first-child .sqs-row:first-child .sqs-block-html:first-child > .sqs-block-content > *:first-child {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const replaceWithCategory = true;
+      
+      const replaceWithTag = false;
+      
+      const categoryPrefixText = '';
+      
+      const categorySuffixText = '';
+      
+      const tagPrefixText = '';
+      
+      const tagSuffixText = '';
+      
+      // do not change anything below, there be the borg here
+      
+      let $textElement = $( '.page-section:first .sqs-row:first ' +
+      
+        '.sqs-block-html:first > .sqs-block-content > *:first' );
+        
+      ( ( ) => {
+      
+        const pathnameParts = location.pathname.split ( '/' );
+        
+        const categoryOrTag = pathnameParts [ 2 ];
+        
+        if ( categoryOrTag == undefined ) return;
+        
+        const pagesToAddTextTo = [ 'category', 'tag' ];
+        
+        function remove ( v ) {
+        
+          const i = pagesToAddTextTo.indexOf ( v );
+          
+          if ( i == -1 ) return;
+          
+          pagesToAddTextTo.splice ( i, 1 );
+          
+          }
+          
+        if ( ! replaceWithCategory ) remove ( 'category' );
+        
+        if ( ! replaceWithTag ) remove ( 'tag' );
+        
+        if ( ! pagesToAddTextTo.length ) return;
+        
+        if ( ! pagesToAddTextTo.includes ( categoryOrTag ) ) return;
+        
+        let prefixText, suffixText;
+        
+        switch ( true ) {
+        
+          case replaceWithCategory :
+          
+            prefixText = categoryPrefixText;
+            
+            suffixText = categorySuffixText;
+            
+            break;
+            
+          case replaceWithTag :
+          
+            prefixText = tagPrefixText;
+            
+            suffixText = tagSuffixText;
+            
+            break;
+            
+          }
+          
+        const text = prefixText +
+        
+          pathnameParts [ 3 ]
+          
+            .replaceAll ( '+', ' ' ) +
+            
+          suffixText;
+          
+        $textElement.text ( text );
+        
+        } ) ( );
+        
+      $textElement.css ( 'visibility', 'visible' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end blog "header" text replace with category or tag, or both -->
