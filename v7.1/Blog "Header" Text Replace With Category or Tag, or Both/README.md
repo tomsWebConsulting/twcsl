@@ -1,6 +1,6 @@
 # Blog "Header" Text Replace With Category or Tag, or Both
 
-### Version 0.3d0
+### Version 0.4d0
 
 #### SS Version 7.1
 
@@ -12,6 +12,7 @@
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
   ```
   
 * Add code from file
@@ -19,9 +20,9 @@
   to Blog Settings > Advanced > Page Header Code Injection for the blog page.
   Read the code for any instructions within.
   
-* Add a page section above your blog section, if you don't already have one. Add
-  a text block as the first block in the section. The text block contents will
-  be replaced with a category or tag.
+* Add a section above the blog section of your blog page, if you don't already
+  have one. Add a text block as the first block in the section. The text block
+  contents will be replaced with a category or tag.
 
 ## Make a Donation
 
@@ -34,12 +35,13 @@ Please consider
 
   * fix for description layout issue when categories are set to side for Brine
   * bumped version to 0.3d0
-  
-* **2021-07-25**
-
-  * use twcsl
-  * bumped version to 0.2d0
   -->
 * **2021-12-02**
+
+  * fix issue with CSS code hiding first text block of blog posts
+  * use twcsl
+  * bumped version to 0.4d0
+  
+* **2021-02-24**
 
   * initial version

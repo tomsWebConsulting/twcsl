@@ -2,14 +2,19 @@
 
   begin blog "header" text replace with category or tag, or both
   
-  Version       : 0.3d0
+  Version       : 0.4d0
   
   SS Version    : 7.1
   
   Dependancies  : jQuery
+                  
+                  twcsl
   
-  Notes         : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
+  Notes         : this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+                  
+                  the code is comprised of several tags. all are needed for the
+                  full effect to work
                   
                   the blog "header" in this case is a page section added above a
                   normal blog page with a single text block
@@ -18,101 +23,128 @@
   
   -->
   
+  <script>
+  
+    window.twc = {
+    
+      x0121f5f3 : {
+      
+        category : {
+        
+          active : false, // set to false or true
+          
+          prefixText : '[enter text here between single quotes]',
+          
+          suffixText : '[enter text here between single quotes]'
+          
+          },
+          
+        tag : {
+        
+          active : false, // set to false or true
+          
+          prefixText : '[enter text here between single quotes]',
+          
+          suffixText : '[enter text here between single quotes]'
+          
+          }
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
   <style>
   
-    .page-section:first-child .sqs-row:first-child .sqs-block-html:first-child > .sqs-block-content > *:first-child {
+    html:not( .squarespace-damask ) body:not( .view-item )[class~="collection-type-blog"] .page-section:first-child .sqs-row:first-child .sqs-block-html:first-child > .sqs-block-content > *:first-child,
+    html:not( .squarespace-damask ) body:not( .view-item )[class*="collection-type-blog-"] .page-section:first-child .sqs-row:first-child .sqs-block-html:first-child > .sqs-block-content > *:first-child
     
-      visibility : hidden;
+      {
       
-      }
-      
+        visibility : hidden;
+        
+        }
+        
     </style>
     
   <script>
   
     $( ( ) => {
     
-      const replaceWithCategory = true;
+      if ( window.frameElement !== null ) return; // bail if in Preview
       
-      const replaceWithTag = false;
+      if ( ! twcsl.blogPage.isBlogPage ) return; // bail if not blog page
       
-      const categoryPrefixText = '';
+      const options = twc.x0121f5f3;
       
-      const categorySuffixText = '';
+      const revealText = ( ) => {
       
-      const tagPrefixText = '';
-      
-      const tagSuffixText = '';
-      
-      // do not change anything below, there be the borg here
-      
-      let $textElement = $( '.page-section:first .sqs-row:first ' +
+        $element.css ( 'visibility', 'visible' );
+        
+        };
+        
+      const $element = $( '.page-section:first .sqs-row:first ' +
       
         '.sqs-block-html:first > .sqs-block-content > *:first' );
         
-      ( ( ) => {
+      // bail if category and tag not active
       
-        const pathnameParts = location.pathname.split ( '/' );
+      if ( ! ( options.category.active || options.tag.active ) ) {
+      
+        revealText ( );
         
-        const categoryOrTag = pathnameParts [ 2 ];
+        return;
         
-        if ( categoryOrTag == undefined ) return;
+        }
         
-        const pagesToAddTextTo = [ 'category', 'tag' ];
+      // bail if not category or tag page
+      
+      if ( ! ( twcsl.blogPage.hasCategory || twcsl.blogPage.hasTag ) ) {
+      
+        revealText ( );
         
-        function remove ( v ) {
+        return;
         
-          const i = pagesToAddTextTo.indexOf ( v );
+        }
+        
+      let prefixText, suffixText, text;
+      
+      switch ( true ) {
+      
+        case twcsl.blogPage.hasCategory && options.category.active :
+        
+          prefixText = options.category.prefixText;
           
-          if ( i == -1 ) return;
+          suffixText = options.category.suffixText;
           
-          pagesToAddTextTo.splice ( i, 1 );
+          text = twcsl.blogPage.category;
           
-          }
+          break;
           
-        if ( ! replaceWithCategory ) remove ( 'category' );
+        case twcsl.blogPage.hasTag && options.tag.active :
         
-        if ( ! replaceWithTag ) remove ( 'tag' );
-        
-        if ( ! pagesToAddTextTo.length ) return;
-        
-        if ( ! pagesToAddTextTo.includes ( categoryOrTag ) ) return;
-        
-        let prefixText, suffixText;
-        
-        switch ( true ) {
-        
-          case replaceWithCategory :
+          prefixText = options.tag.prefixText;
           
-            prefixText = categoryPrefixText;
-            
-            suffixText = categorySuffixText;
-            
-            break;
-            
-          case replaceWithTag :
+          suffixText = options.tag.suffixText;
           
-            prefixText = tagPrefixText;
-            
-            suffixText = tagSuffixText;
-            
-            break;
-            
-          }
+          text = twcsl.blogPage.tag;
           
-        const text = prefixText +
+          break;
+          
+        }
         
-          pathnameParts [ 3 ]
-          
-            .replaceAll ( '+', ' ' ) +
-            
-          suffixText;
-          
-        $textElement.text ( text );
+      text = prefixText +
+      
+        text +
         
-        } ) ( );
+        suffixText;
         
-      $textElement.css ( 'visibility', 'visible' );
+      $element.text ( text )
+      
+      revealText ( );
       
       } );
       
