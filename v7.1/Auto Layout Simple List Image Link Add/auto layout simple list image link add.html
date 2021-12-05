@@ -1,0 +1,93 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      auto layout simple list image link add
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const dataSectionIds = [
+    
+      /*
+      
+        to limit the effect to certain page sections, enter data section ids for
+        each page section.
+        
+        the format of each line is a data section id
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many data section ids as needed
+        
+        */
+        
+      // '[enter data section id here between single quotes]',
+      
+      ];
+      
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    let selector = [ '.user-items-list-simple .list-item' ];
+    
+    // begin build selector
+    
+      if ( ! dataSectionIds.length ) dataSectionIds.push ( '' );
+      
+      selector = $.map ( selector, function ( s ) {
+      
+        const a = $.map ( dataSectionIds, function ( dataSectionId, i ) {
+        
+          if ( dataSectionId )
+          
+            dataSectionId = `[data-section-id="${ dataSectionId }"] `;
+            
+          return dataSectionId + s;
+          
+          } )
+          
+        return a;
+        
+        } )
+        
+        .join ( ', ' );
+        
+      // end build selector
+    
+    const $listItems = $( selector );
+    
+    if ( ! $listItems.length ) return; // bail if no lists
+    
+    $listItems.each ( function ( ) {
+    
+      const $this = $( this );
+      
+      const $buttonClone = $( '.list-item-content__button', $this )
+      
+        .clone ( )
+        
+        .removeAttr ( 'class' )
+        
+        .empty ( );
+        
+      $( '.list-image', $this ).wrap ( $buttonClone );
+      
+      } );
+      
+    } );
+    
+  </script>

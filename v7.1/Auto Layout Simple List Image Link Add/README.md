@@ -1,0 +1,36 @@
+# Auto Layout Simple List Image Link Add
+
+### Version 0.1d0
+
+#### SS Version v7.1
+
+---
+
+## Quick Install
+
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+  
+* Add code from file
+  **[auto layout simple list image link add.html](auto%20layout%20simple%20list%20image%20link%20add.html#L1)**
+  to Page Settings > Advanced > Page Header Code Injection for the page. Read
+  the code for any instructions within.
+
+## Make a Donation
+
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
+## Changes
+
+<!-- * **2021-08-15**
+  
+  * added kill upon user action
+  * bumped version to 0.2d0
+  -->
+* **2021-12-05**
+  
+  * initial version
