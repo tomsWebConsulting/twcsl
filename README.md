@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains over 85 effects. Each effect has it's own version number, code,
+twcsl contains over 120 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to all work together.
 
@@ -51,15 +51,17 @@ not necessarily designed to all work together.
   
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
   
-* [Add One Left Class to Product Detail Page](Add%20One%20Left%20Class%20to%20Product%20Detail%20Page)
-  
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
   
 * [Add Text Based on Tags After Matched Text to Product Description](Add%20Text%20Based%20on%20Tags%20After%20Matched%20Text%20to%20Product%20Description)
   
+* [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
+  
 * [Cart Prices Change](Cart%20Prices%20Change)
   
 * [Cart Prices Sqs-Money-Native Add](Cart%20Prices%20Sqs-Money-Native%20Add)
+  
+* [Cart Unit Prices](Cart%20Unit%20Prices)
   
 * [Change Add to Cart Adding Added Button Text](Change%20Add%20to%20Cart%20Adding%20Added%20Button%20Text)
   
@@ -71,8 +73,6 @@ not necessarily designed to all work together.
   
 * [Change Form Block Post-Submit Redirect Based on a Radio Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Radio%20Form%20Field%20Selected%20Option)
   
-* [Change Form Block Post-Submit Redirect Based on a Select Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Select%20Form%20Field%20Selected%20Option)
-  
 * [Change Search Page Input Placeholder Text](Change%20Search%20Page%20Input%20Placeholder%20Text)
   
 * [Change Unable to Add Item to Cart Alert for Only N Available](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Only%20N%20Available)
@@ -83,9 +83,19 @@ not necessarily designed to all work together.
   
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
   
+* [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
+  
+* [Form Block Select Field Post-submit Redirect Change](Form%20Block%20Select%20Field%20Post-submit%20Redirect%20Change)
+  
+* [Form Text Field Max Length](Form%20Text%20Field%20Max%20Length)
+  
 * [Hide Product Detail Add to Cart Tagged "hide atc"](Hide%20Product%20Detail%20Add%20to%20Cart%20Tagged%20"hide%20atc")
   
+* [Image Block Image Spinner](Image%20Block%20Image%20Spinner)
+  
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
+  
+* [Payment Processor Icons](Payment%20Processor%20Icons)
   
 * [Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart](Redirect%20to%20Url%20After%20Add%20to%20Cart%20Button%20Has%20Been%20Clicked%20and%20SS%20Indicates%20Item%20Has%20Been%20Added%20to%20Cart)
   
@@ -93,17 +103,19 @@ not necessarily designed to all work together.
   
 * [Responsive Image Map Template](Responsive%20Image%20Map%20Template)
   
-* [Set Store Product Detail Named Form Labeled Text Field Character Max Length](Set%20Store%20Product%20Detail%20Named%20Form%20Labeled%20Text%20Field%20Character%20Max%20Length)
+* [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
 * [Store Price Change](Store%20Price%20Change)
+  
+* [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
+  
+* [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
 * [v7.0](v7.0)
   
   * [Add Content of a Page to Products Page](v7.0/Add%20Content%20of%20a%20Page%20to%20Products%20Page)
-    
-  * [Add Store Category Page Description](v7.0/Add%20Store%20Category%20Page%20Description)
     
   * [Bedford Template Family](v7.0/Bedford%20Template%20Family)
     
@@ -121,6 +133,8 @@ not necessarily designed to all work together.
     
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
       
+  * [Store Category Page Description Add](v7.0/Store%20Category%20Page%20Description%20Add)
+    
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -137,7 +151,13 @@ not necessarily designed to all work together.
     
   * [Auto Change Product Grid Image Opacity on Touch Screen Device](v7.1/Auto%20Change%20Product%20Grid%20Image%20Opacity%20on%20Touch%20Screen%20Device)
     
-  * [Auto Click User Items List Arrow Right](v7.1/Auto%20Click%20User%20Items%20List%20Arrow%20Right)
+  * [Auto Layout Right Arrow Auto Click](v7.1/Auto%20Layout%20Right%20Arrow%20Auto%20Click)
+    
+  * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
+    
+  * [Blog "Header" Text Replace With Category or Tag, or Both](v7.1/Blog%20"Header"%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
+    
+  * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
     
   * [Change Blog Listing Item Image URL to Source URL](v7.1/Change%20Blog%20Listing%20Item%20Image%20URL%20to%20Source%20URL)
     
@@ -155,9 +175,21 @@ not necessarily designed to all work together.
     
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
     
+  * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
+    
+  * [Event Meta Data Make Sticky](v7.1/Event%20Meta%20Data%20Make%20Sticky)
+    
+  * [Gallery Section Grid Item Order Randomize](v7.1/Gallery%20Section%20Grid%20Item%20Order%20Randomize)
+    
+  * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
+    
+  * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
+    
   * [Header Social Icon Discord Generic Icon to Discord Change](v7.1/Header%20Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
     
   * [Header Social Icon URLs Change Based on Language](v7.1/Header%20Social%20Icon%20URLs%20Change%20Based%20on%20Language)
+    
+  * [Header Social Icon Whatsapp Generic Icon to Whatsapp Change](v7.1/Header%20Social%20Icon%20Whatsapp%20Generic%20Icon%20to%20Whatsapp%20Change)
     
   * [Hide Blog Post Tags](v7.1/Hide%20Blog%20Post%20Tags)
     
@@ -169,9 +201,11 @@ not necessarily designed to all work together.
     
   * [Make Navigation Folders Clickable](v7.1/Make%20Navigation%20Folders%20Clickable)
     
-  * [Mobile Menu Left Flyout](v7.1/Mobile%20Menu%20Left%20Flyout)
+  * [Member Area Sign in Window Title Change](v7.1/Member%20Area%20Sign%20in%20Window%20Title%20Change)
     
-  * [Move Add To Cart Button to Right of Quantity](v7.1/Move%20Add%20To%20Cart%20Button%20to%20Right%20of%20Quantity)
+  * [Menu Mobile Outline](v7.1/Menu%20Mobile%20Outline)
+    
+  * [Mobile Menu Left Flyout](v7.1/Mobile%20Menu%20Left%20Flyout)
     
   * [Move Blog Listing Item Title Above Meta](v7.1/Move%20Blog%20Listing%20Item%20Title%20Above%20Meta)
     
@@ -183,11 +217,13 @@ not necessarily designed to all work together.
     
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
     
+  * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
+    
   * [Page Section Background Waves Overlay](v7.1/Page%20Section%20Background%20Waves%20Overlay)
     
   * [Page Section Gallery Hover on Everything But](v7.1/Page%20Section%20Gallery%20Hover%20on%20Everything%20But)
     
-  * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
+  * [Page Section Hide After Expiration Date](v7.1/Page%20Section%20Hide%20After%20Expiration%20Date)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
     
@@ -211,16 +247,30 @@ not necessarily designed to all work together.
     
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
+  * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
+    
+  * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
+    
   * [Store Product Detail Price Add Sqs-Money-Native for Variants](v7.1/Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
     
   * [Store Product Detail Price Force Mutation on Quantity Change](v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
     
   * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
     
+  * [Store Product Details Display Flex Desktop](v7.1/Store%20Product%20Details%20Display%20Flex%20Desktop)
+    
+  * [Store Product Details Natural Order Desktop](v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop)
+    
+  * [Store Product Details Reorder Desktop](v7.1/Store%20Product%20Details%20Reorder%20Desktop)
+    
   * [Store Product Grid Images Hide](v7.1/Store%20Product%20Grid%20Images%20Hide)
     
-  * [Use Nth Product Gallery Image as Background for Page](v7.1/Use%20Nth%20Product%20Gallery%20Image%20as%20Background%20for%20Page)
+  * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
     
+  * [Store Product Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Store%20Product%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
+    
+  * [Use Nth Product Gallery Image as Background for Page](v7.1/Use%20Nth%20Product%20Gallery%20Image%20as%20Background%20for%20Page)
+
 ---
 
 **The rest of this document covers twcsl.js**.
@@ -230,7 +280,7 @@ not necessarily designed to all work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d15
+### Version 0.1d16
 
 ## Quick Install
 
@@ -238,7 +288,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d16/twcsl.js"></script>
 ```
 
 ## Example
@@ -278,6 +328,12 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
   * getUrlParser ( url )
   
     * Returns an anchor element.
+    
+* isElementInViewport
+  
+  * isElementInViewport ( jQuery object )
+  
+    * Returns boolean.
     
 * scrollEffect
 
@@ -389,6 +445,11 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2021-12-07**
+
+  * added isElementInViewport method
+  * bumped version to 0.1d16
+  
 * **2021-09-03**
 
   * fixed bad blogPage isList check

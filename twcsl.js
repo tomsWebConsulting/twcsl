@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d15
+  Version         : 0.1d16
   
   SS Versions     : 7.1, 7.0
   
@@ -894,7 +894,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d14';
+    const version = '0.1d16';
     
     // end public properties
     
@@ -969,6 +969,24 @@ const twcsl = ( ( $ ) => {
         }
         
       // end get url parser
+      
+    // begin is element in viewport
+    
+      const isElementInViewport = $element => {
+      
+        const { top, bottom } = $element
+        
+          .get ( 0 )
+          
+          .getBoundingClientRect ( );
+          
+        const b = top >= 0 && bottom <= window.innerHeight;
+        
+        return b;
+        
+        }
+        
+      // end is element in viewport
       
     // begin scroll effect
     
@@ -1068,6 +1086,8 @@ const twcsl = ( ( $ ) => {
       getFormNth          : getFormNth,
       
       getUrlParser        : getUrlParser,
+      
+      isElementInViewport : isElementInViewport,
       
       scrollEffect        : scrollEffect,
       
