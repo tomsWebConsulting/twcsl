@@ -1,0 +1,149 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store product detail add to cart button change to url redirect
+      
+      Version         : 0.1d5
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Pacific ( Bryler, Charlotte, Fulton*, Horizon, Naomi )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+                        * discontinued < https://bit.ly/30fUkey >
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const skuUrlMap = {
+    
+      /*
+      
+        the format of each line is a sku as appears in the SS product editing
+        interface and a URL
+        
+        copy and repeat the line below for each mapping, remove the "// " at the
+        beginning of the line and enter the appropriate data
+        
+        the url can be any valid url. it can be a full (external to your site)
+        one like < https://www.tomsWeb.consulting/ > or a partial (internal to
+        your site) one like '/contact'
+        
+        copy and repeat the line below for each mapping, remove the "// " at the
+        beginning of the line and enter the appropriate data. this has been done
+        once initially
+        
+        */
+        
+      // '[enter sku here between single quotes]' : '[enter url here between single quotes]',
+      
+      '[enter sku here between single quotes]' : '[enter url here between single quotes]',
+      
+      }
+      
+    /*
+    
+      used when a mapping is not defined for a product that has other mappings
+      defined
+      
+      */
+      
+    const defaultUrl = '[enter url here between single quotes]';
+    
+    const targetAtttributeValue = ''; /* use _self (default, if left empty) |
+                                         _blank | _parent | _top | framename */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
+    
+    const excludeButtonAttributes = [ 'id', 'data-collection-id',
+    
+      'data-item-id', 'data-original-label', 'data-product-type' ];
+      
+    const skus = $.map ( Static.SQUARESPACE_CONTEXT.product.variants,
+    
+      function ( v ) {
+      
+        return ( v.sku );
+        
+        } );
+        
+    /*
+    
+      if our skus don't contain a mapped sku then bail, in other words does not
+      replace add to cart button
+      
+      */
+      
+    if ( ! skus.some ( r => Object.keys ( skuUrlMap ).indexOf ( r ) >= 0 ) )
+    
+      return;
+      
+    const $addToCartButton = $( '.sqs-add-to-cart-button' );
+    
+    const $anchorTag = $( '<a>' )
+    
+      .click ( function ( ) {
+      
+        let sku = skus [ 0 ]; // we assume one variant for product item
+        
+        // we go looking for more than one
+        
+        const $productVariants = $( '.product-variants' );
+        
+        if ( $productVariants.length ) {
+        
+          let selectedVariant = $( '.product-variants' )
+          
+            .attr ( 'data-selected-variant' );
+            
+          if ( selectedVariant === undefined ) return;
+          
+          selectedVariant = JSON.parse ( selectedVariant );
+          
+          sku = selectedVariant.sku;
+          
+          }
+          
+        const url = sku in skuUrlMap ? skuUrlMap [ sku ] : defaultUrl;
+        
+        $( this ).attr ( 'href', url )
+        
+        } );
+        
+    const atcbAttributes = $addToCartButton.prop ( 'attributes' );
+    
+    $.each ( atcbAttributes, function ( ) {
+    
+      if ( excludeButtonAttributes.includes ( this.name ) ) return true;
+      
+      $anchorTag.attr ( this.name, this.value );
+      
+      } );
+      
+    if ( targetAtttributeValue )
+    
+      $anchorTag.attr ( 'target', targetAtttributeValue );
+      
+    $addToCartButton
+    
+      .children ( )
+      
+      .appendTo ( $anchorTag );
+      
+    $addToCartButton.replaceWith ( $anchorTag );
+    
+    } );
+    
+  </script>
