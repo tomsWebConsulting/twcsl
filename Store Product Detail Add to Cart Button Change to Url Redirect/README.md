@@ -16,7 +16,7 @@
   ```
 
 * Add code from file
-  **[store product detail add to cart button change to url redirect.html(store%20product%20detail%20add%20to%20cart%20button%20change%20to%20url%20redirect.html#L1)**
+  **[store product detail add to cart button change to url redirect.html](store%20product%20detail%20add%20to%20cart%20button%20change%20to%20url%20redirect.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
   Read the code for any instructions within.
 
