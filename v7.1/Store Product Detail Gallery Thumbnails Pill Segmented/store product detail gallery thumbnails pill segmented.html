@@ -1,0 +1,76 @@
+<style>
+
+  /*
+  
+    begin store product detail gallery thumbnails pill segmented
+    
+    Version     : 0.1d0
+    
+    SS Version  : 7.1
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    .ProductItem-gallery-thumbnails {
+    
+      --spdgtps-border-size : thin;
+      --spdgtps-border-style : solid;
+      --spdgtps-border-color : black;
+
+      --spdgtps-radius : 25px;
+      
+      }
+      
+    /* do not change anything below, there be the borg here */
+    
+    .ProductItem-gallery-thumbnails {
+    
+      --spdgtps-border : var( --spdgtps-border-size ) var( --spdgtps-border-style ) var( --spdgtps-border-color );
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item {
+    
+      margin-bottom : 0;
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item img {
+    
+      border : var( --spdgtps-border );
+      
+      -webkit-box-sizing : border-box;
+      box-sizing : border-box;
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item img {
+    
+      border-top : unset;
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item:first-child img {
+    
+      border : var( --spdgtps-border );
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item:first-child img {
+    
+      border-top-left-radius : var( --spdgtps-radius );
+      border-top-right-radius : var( --spdgtps-radius );
+      
+      }
+      
+    .ProductItem-gallery-thumbnails-item:last-child img {
+    
+      border-bottom-left-radius : var( --spdgtps-radius );
+      border-bottom-right-radius : var( --spdgtps-radius );
+      
+      }
+      
+    /* end store product detail gallery thumbnails pill segmented */
+    
+  </style>
