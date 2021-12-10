@@ -2,25 +2,29 @@
 
 ### Version 1.0
 
+#### SS Versions 7.0, 7.1
+
 ---
 
 ## Quick Install
 
-Add code from file **change cart continue shopping text.css** to Design > Custom
-CSS.
+Add code from file
+**[change cart continue shopping text.css](change%20cart%20continue%20shopping%20text.css#L1)**
+to Design > Custom CSS. Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
 <!-- * **2021-07-01**
-<br><br>
+
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
-  <br><br -->
+  -->
 * **2021-05-21**
-<br><br>
+
   * initial version
