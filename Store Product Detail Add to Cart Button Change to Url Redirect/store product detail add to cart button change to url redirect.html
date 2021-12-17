@@ -6,7 +6,7 @@
     
       store product detail add to cart button change to url redirect
       
-      Version         : 0.1d5
+      Version         : 0.1d6
       
       SS Versions     : 7.1, 7.0
       
@@ -31,9 +31,6 @@
       
         the format of each line is a sku as appears in the SS product editing
         interface and a URL
-        
-        copy and repeat the line below for each mapping, remove the "// " at the
-        beginning of the line and enter the appropriate data
         
         the url can be any valid url. it can be a full (external to your site)
         one like < https://www.tomsWeb.consulting/ > or a partial (internal to
@@ -63,6 +60,8 @@
     const targetAtttributeValue = ''; /* use _self (default, if left empty) |
                                          _blank | _parent | _top | framename */
     
+    const bailIfNoSkusInMap = true; // use true or false
+    
     // do not change anything below, there be the borg here
     
     if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
@@ -81,17 +80,25 @@
         
     /*
     
-      if our skus don't contain a mapped sku then bail, in other words does not
-      replace add to cart button
+      begin bail if no skus in map
+      
+      if the bailIfNoSkusInMap is true and our skus don't contain a mapped sku
+      then bail, in other words does not replace add to cart button
       
       */
       
-    if ( ! skus.some ( r => Object.keys ( skuUrlMap ).indexOf ( r ) >= 0 ) )
-    
-      return;
+      const b = bailIfNoSkusInMap &&
       
-    const $addToCartButton = $( '.sqs-add-to-cart-button' );
+        ! skus.some ( r => Object.keys ( skuUrlMap ).indexOf ( r ) >= 0 );
+        
+      if ( b ) return;
+      
+      // end bail if no skus in map
+      
+    const $addToCartButton =
     
+      $( '.ProductItem-details .sqs-add-to-cart-button' );
+      
     const $anchorTag = $( '<a>' )
     
       .click ( function ( ) {
