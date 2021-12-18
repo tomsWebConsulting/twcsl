@@ -1,0 +1,189 @@
+<!--
+
+  begin blog page section text replace with category or tag, or both
+  
+  Version       : 0.5d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  Notes         : this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+                  
+                  the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    window.twc = {
+    
+      ea95bf0b : {
+      
+        category : {
+        
+          // set to false or true, if false then no category is added
+          
+          active : false,
+          
+          prefixText : '[enter text here between single quotes]',
+          
+          suffixText : '[enter text here between single quotes]'
+          
+          },
+          
+        tag : {
+        
+          // set to false or true, if false then no tag is added
+          
+          active : false,
+          
+          prefixText : '[enter text here between single quotes]',
+          
+          suffixText : '[enter text here between single quotes]'
+          
+          }
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #page {
+    
+      --sqs-block-html-visibility : hidden;
+      --x-twc-bpstrwcotob-display : none;
+      
+      }
+      
+    html:not( .squarespace-damask ) body:not( .view-item )[class~="collection-type-blog"] #page .sqs-block-html,
+    html:not( .squarespace-damask ) body:not( .view-item )[class*="collection-type-blog-"] #page .sqs-block-html
+    
+      {
+      
+        visibility : var( --sqs-block-html-visibility );
+        
+        }
+        
+    x-twc-bpstrwcotob {
+    
+      display : var( --x-twc-bpstrwcotob-display );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      if ( ! twcsl.blogPage.isBlogPage ) return; // bail if not blog page
+      
+      const customElement = 'x-twc-bpstrwcotob';
+      
+      const options = twc.ea95bf0b;
+      
+      const triggerText = '[[bpstrwcotob]]';
+      
+      const selector = '#page .sqs-block-html > .sqs-block-content > ' +
+        
+        `*:contains(${ triggerText })`
+        
+      const $page = $( '#page' );
+      
+      // swap out the user entered trigger text for a hidden element
+      
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const html = $this
+        
+          .html ( )
+          
+          .replaceAll ( triggerText, `<${ customElement }>` );
+          
+        $this.html ( html );
+        
+        } );
+        
+      // make text blocks visible
+      
+      $page.css ( '--sqs-block-html-visibility', 'visible' );
+      
+      // bail if category and tag not active
+      
+      if ( ! ( options.category.active || options.tag.active ) ) return;
+      
+      // bail if not category or tag page
+      
+      if ( ! ( twcsl.blogPage.hasCategory || twcsl.blogPage.hasTag ) ) return;
+      
+      const $elements = $( customElement );
+      
+      // bail if no elements
+      
+      if ( ! $elements.length ) return;
+      
+      let prefixText = suffixText = text = '';
+      
+      switch ( true ) {
+      
+        case twcsl.blogPage.hasCategory && options.category.active :
+        
+          prefixText = options.category.prefixText;
+          
+          suffixText = options.category.suffixText;
+          
+          text = twcsl.blogPage.category;
+          
+          break;
+          
+        case twcsl.blogPage.hasTag && options.tag.active :
+        
+          prefixText = options.tag.prefixText;
+          
+          suffixText = options.tag.suffixText;
+          
+          text = twcsl.blogPage.tag;
+          
+          break;
+          
+        default :
+        
+          // empty text
+          
+        }
+        
+      text = prefixText +
+      
+        text +
+        
+        suffixText;
+        
+      $elements.each ( function ( ) {
+      
+        $( this ).text ( text );
+        
+        } );
+        
+      $page.css ( '--x-twc-bpstrwcotob-display', 'inherit' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end blog page section text replace with category or tag, or both -->
