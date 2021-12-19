@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.2d0
+  Version         : 0.3d0
   
   SS Versions     : 7.1, 7.0
   
@@ -39,7 +39,18 @@
     
       'af4b3333' : {
       
-        numberOfBlocks : 1
+        numberOfBlocks : 1,
+        
+        /*
+        
+          guard processor for other conditions which prevent the code from
+          running. replace undefined with the name of your custom function. your
+          function must return a boolean. false means do not move the blocks and
+          true means move the blocks
+          
+          */
+          
+        guardProcessor : undefined
         
         }
         
@@ -70,7 +81,15 @@
       
       if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
       
-      const n = twc [ 'af4b3333' ].numberOfBlocks;
+      const options = twc [ 'af4b3333' ];
+      
+      const guardProcessor = options.guardProcessor;
+      
+      if ( guardProcessor !== undefined ) // guard processor
+      
+        if ( ! guardProcessor ( ) ) return; // bail if guard processor false
+        
+      const n = options.numberOfBlocks;
       
       let selector = [
       

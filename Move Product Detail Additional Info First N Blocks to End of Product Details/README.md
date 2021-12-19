@@ -1,6 +1,6 @@
 # Move Product Detail Additional Info First N Blocks to End of Product Details
 
-### Version 0.2d0
+### Version 0.3d0
 
 #### SS Versions 7.1, 7.0
 
@@ -26,6 +26,11 @@ Please consider
 
 ## Changes
 
+* **2021-12-19**
+
+  * add support for guard processor
+  * bumped version to 0.3d0
+  
 * **2021-07-20**
 
   * effect not active in Preview
