@@ -1,6 +1,6 @@
 # Move Product Detail Additional Info First N Blocks to End of Product Details
 
-### Version 0.3d1
+### Version 0.3d0
 
 #### SS Versions 7.1, 7.0
 
@@ -28,12 +28,7 @@ Please consider
 
 * **2021-12-19**
 
-  * add support to pass a parameter to guard function
-  * bumped version to 0.3d1
-  
-* **2021-12-19**
-
-  * add support for guard function
+  * add support for guard processor
   * bumped version to 0.3d0
   
 * **2021-07-20**

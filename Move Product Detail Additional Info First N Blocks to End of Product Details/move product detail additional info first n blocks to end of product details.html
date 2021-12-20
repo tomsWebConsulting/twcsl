@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.3d1
+  Version         : 0.3d0
   
   SS Versions     : 7.1, 7.0
   
@@ -43,24 +43,14 @@
         
         /*
         
-          guard is a function for other conditions which prevent the code from
+          guard processor for other conditions which prevent the code from
           running. replace undefined with the name of your custom function. your
           function must return a boolean. false means do not move the blocks and
           true means move the blocks
           
           */
           
-        guard : undefined,
-        
-        /*
-        
-          guard parameter can be use to pass data into your custom function.
-          only one parameter can be passed to your function. if you need
-          multiple parameters pass in an object
-          
-          */
-          
-        guardParameter : undefined
+        guardProcessor : undefined
         
         }
         
@@ -93,13 +83,11 @@
       
       const options = twc [ 'af4b3333' ];
       
-      const guard = options.guard;
+      const guardProcessor = options.guardProcessor;
       
-      if ( guard !== undefined ) // run guard if defined
+      if ( guardProcessor !== undefined ) // guard processor
       
-        // bail if guard false
-        
-        if ( ! guard ( guardParameter ) ) return;
+        if ( ! guardProcessor ( ) ) return; // bail if guard processor false
         
       const n = options.numberOfBlocks;
       
