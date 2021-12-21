@@ -1,0 +1,41 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      blog category page category attribute add
+      
+      Version         : 0.1d0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const category = twcsl.blogPage.category;
+    
+    if ( ! category ) return; // bail if no category
+    
+    $( 'body' ).attr ( 'data-blog-category', category );
+    
+    } );
+    
+  </script>
