@@ -8,9 +8,15 @@
 
 ## Quick Install
 
-Add code from file
-**[product block improperly encoded ampersand fix.html](product%20block%20improperly%20encoded%20ampersand%20fix.html#L1)**
-to Page Settings > Advanced > Page Header Code Injection for the page.
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+  
+* Add code from file
+  **[product block improperly encoded ampersand fix.html](product%20block%20improperly%20encoded%20ampersand%20fix.html#L1)**
+  to Page Settings > Advanced > Page Header Code Injection for the page.
 
 ## Make a Donation
 
