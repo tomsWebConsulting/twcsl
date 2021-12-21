@@ -1,4 +1,4 @@
-# Site Wide Rounded Image Corners
+# Site Wide Image Corners Round
 
 ### Version 0.3d0
 
@@ -9,7 +9,7 @@
 ## Quick Install
 
 Add code from file
-**[site wide rounded image corners.less](site%20wide%20rounded%20image%20corners.less#L1)**
+**[site wide image corners round.less](site%20wide%20image%20corners%20round.less#L1)**
 to Design > Custom CSS.
 
 ## Make a Donation
