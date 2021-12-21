@@ -1,0 +1,35 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      product block improperly encoded ampersand fix
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.0
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    $( '.product-block .productDetails .product-title' )
+    
+      .each ( function ( ) {
+      
+        $this = $( this )
+        
+        const html = $this.html ( )
+        
+          .replaceAll ( '&amp;amp;', '&amp;' );
+        
+        $this.html ( html );
+        
+        } );
+        
+    } );
+    
+  </script>
