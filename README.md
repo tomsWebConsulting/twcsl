@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains over 120 effects. Each effect has it's own version number, code,
+twcsl contains over 130 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to all work together.
 
@@ -56,6 +56,10 @@ not necessarily designed to all work together.
 * [Add Text Based on Tags After Matched Text to Product Description](Add%20Text%20Based%20on%20Tags%20After%20Matched%20Text%20to%20Product%20Description)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
+  
+* [Blog Category Page Category Attribute Add](Blog%20Category%20Page%20Category%20Attribute%20Add)
+  
+* [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
 * [Cart Prices Change](Cart%20Prices%20Change)
   
@@ -107,9 +111,15 @@ not necessarily designed to all work together.
   
 * [Store Price Change](Store%20Price%20Change)
   
+* [Store Product Detail Add to Cart Button Change to Url Redirect](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Change%20to%20Url%20Redirect)
+  
 * [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
   
 * [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
+  
+* [Store Product Detail Price Add Sqs-Money-Native for Variants](Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
+  
+* [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
@@ -133,6 +143,8 @@ not necessarily designed to all work together.
     
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
       
+  * [Product Block Improperly Encoded Ampersand Fix](v7.0/Product%20Block%20Improperly%20Encoded%20Ampersand%20Fix)
+    
   * [Store Category Page Description Add](v7.0/Store%20Category%20Page%20Description%20Add)
     
 * [v7.1](v7.1)
@@ -155,7 +167,7 @@ not necessarily designed to all work together.
     
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
-  * [Blog "Header" Text Replace With Category or Tag, or Both](v7.1/Blog%20"Header"%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
+  * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
     
@@ -221,9 +233,17 @@ not necessarily designed to all work together.
     
   * [Page Section Background Waves Overlay](v7.1/Page%20Section%20Background%20Waves%20Overlay)
     
+  * [Page Section First Blocks Full Bleed](v7.1/Page%20Section%20First%20Blocks%20Full%20Bleed)
+    
   * [Page Section Gallery Hover on Everything But](v7.1/Page%20Section%20Gallery%20Hover%20on%20Everything%20But)
     
   * [Page Section Hide After Expiration Date](v7.1/Page%20Section%20Hide%20After%20Expiration%20Date)
+    
+  * [Page Section Nth Blocks Full Bleed Template](v7.1/Page%20Section%20Nth%20Blocks%20Full%20Bleed%20Template)
+    
+  * [Page Section Second Blocks Full Bleed](v7.1/Page%20Section%20Second%20Blocks%20Full%20Bleed)
+    
+  * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
     
@@ -233,8 +253,6 @@ not necessarily designed to all work together.
     
   * [Replace Blog "Header" Text with Category and or Tag](v7.1/Replace%20Blog%20"Header"%20Text%20with%20Category%20and%20or%20Tag)
     
-  * [Replace Product Detail Add to Cart Button With Button that Redirects to a Url](v7.1/Replace%20Product%20Detail%20Add%20to%20Cart%20Button%20With%20Button%20that%20Redirects%20to%20a%20Url)
-    
   * [Replace Variant Menu "select" Text](v7.1/Replace%20Variant%20Menu%20"select"%20Text)
     
   * [Reposition First Page Section Background so Header Does Not Hide It](v7.1/Reposition%20First%20Page%20Section%20Background%20so%20Header%20Does%20Not%20Hide%20It)
@@ -243,15 +261,17 @@ not necessarily designed to all work together.
     
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
     
-  * [Site Wide Rounded Image Corners](v7.1/Site%20Wide%20Rounded%20Image%20Corners)
+  * [Site Wide Image Corners Round](v7.1/Site%20Wide%20Image%20Corners%20Round)
     
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
   * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
     
+  * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
+    
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
-  * [Store Product Detail Price Add Sqs-Money-Native for Variants](v7.1/Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
+  * [Store Product Detail Gallery Thumbnails Pill Segmented](v7.1/Store%20Product%20Detail%20Gallery%20Thumbnails%20Pill%20Segmented)
     
   * [Store Product Detail Price Force Mutation on Quantity Change](v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
     
