@@ -1,6 +1,6 @@
 # Store Product Detail Price Add Sqs-Money-Native for Variants
 
-### Version 0.1d1
+### Version 0.1d4
 
 #### SS Versions 7.1, 7.0
 
