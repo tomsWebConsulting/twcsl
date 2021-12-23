@@ -1,0 +1,67 @@
+<script>
+
+  /*
+  
+    store product detail price add sqs-money-native for variants
+    
+    Version         : 0.1d4
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      Five
+                      
+                      Montauk ( Julia, Kent, Om )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependancies    : store price change
+    
+    By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const ffee6bf1 = ( node, isDetail, text, searchText ) => {
+  
+    if ( ! isDetail ) return null; // continue if not detail
+    
+    const selectedVariant = $( '.product-variants' )
+    
+      .attr ( 'data-selected-variant' );
+      
+    // continue if no variant selected
+    
+    if ( selectedVariant === undefined ) return null;
+    
+    const $element = $( node );
+    
+    const isOriginalPrice = $element
+    
+      .parent ( )
+      
+      .hasClass ( 'original-price' );
+      
+    const isProductPrice = $element
+    
+      .parent ( )
+      
+      .hasClass ( 'product-price' );
+      
+    // continue if no elements we are interested in
+    
+    if ( ! isOriginalPrice && ! isProductPrice ) return null;
+    
+    $element.wrap ( '<span class="sqs-money-native">' );
+    
+    return '';
+    
+    };
+    
+  </script>
