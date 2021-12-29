@@ -1,0 +1,37 @@
+/*
+
+  begin site style animation flex center
+  
+  Version       : 1.0
+  
+  SS Version    : 7.1
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .tweak-global-animations-animation-type-flex .header-nav-item:not( .header-nav-item--folder ) a::after,
+  .tweak-global-animations-animation-type-flex .header-nav-folder-item a::after
+  
+    {
+    
+      transform-origin : center;
+      
+    }
+    
+  @media ( hover : hover ) {
+  
+    .tweak-global-animations-animation-type-flex .header-nav-item:not( .header-nav-item--folder ) a:hover::after,
+    .tweak-global-animations-animation-type-flex .header-nav-folder-item a:hover::after
+    
+      {
+      
+        transform-origin : center;
+        
+        }
+        
+    }
+    
+  /* end site style animation flex center */
