@@ -34,6 +34,6 @@ Please consider
     header social icon discord generic icon to discord change
   * bumped version to 0.2d0
   -->
-* **2020-12-30**
+* **2021-12-30**
 
   * initial version
