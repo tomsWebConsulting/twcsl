@@ -1,0 +1,330 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      header social icon bandcamp generic icon to bandcamp change
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Notes         : < https://bandcamp.com/buttons >
+                      
+                      svg icons created with macOS Preview and Inkscape
+                      < http://www.inkscape.org/ > from bandcamp official files
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      for style use circle, circle line, circle b/w, circle b/w line, or ss
+      
+      circle has a colored circle and white center. it does not support the
+      white color
+      
+      circle line has a colored circle line, center, and transparent background.
+      it does not support the white color
+      
+      circle b/w has a white circle and colored center. it supports black and
+      green colors
+      
+      circle b/w line has a white circle line, colored center, and transparent
+      background. it supports white and green colors
+      
+      ss is like circle line but uses the color defined by Squarespace
+      
+      */
+      
+    const style = 'ss';
+    
+    // use black, green, grey, aqua, or white
+    
+    const color = 'green';
+    
+    // do not change anything below, there be the borg here
+    
+    const colors = {
+    
+      'black' : 'black',
+      
+      'green' : '#60929c',
+      
+      'grey'  : '#a5a5a5',
+      
+      'auqa'  : '#10a1c3',
+      
+      'white'  : 'white',
+      
+      };
+      
+    let styleLogic = style;
+    
+    let circleFill, squareFill, stroke, supportedColors;
+    
+    switch ( styleLogic ) {
+    
+      case 'circle' :
+      
+        if ( color == 'white' ) return;
+        
+        circleFill = color;
+        
+        squareFill = 'white';
+        
+        break;
+        
+      case 'circle line' :
+      
+        // bail if color not supported
+        
+        if ( color == 'white' ) return;
+        
+        squareFill = stroke = color;
+        
+        break;
+        
+      case 'circle b/w' :
+      
+        supportedColors = [
+        
+          'black',
+          
+          'green',
+          
+          ];
+          
+        // bail if color not supported
+        
+        if ( ! supportedColors.includes ( color ) ) return;
+        
+        circleFill = 'white';
+        
+        squareFill = color;
+        
+        styleLogic = 'circle';
+        
+        break;
+        
+      case 'circle b/w line' :
+      
+        supportedColors = [
+        
+          'white',
+          
+          'green',
+          
+          ];
+          
+        // bail if color not supported
+        
+        if ( ! supportedColors.includes ( color ) ) return;
+        
+        circleFill = 'none';
+        
+        squareFill = stroke = color;
+        
+        styleLogic = 'circle line';
+        
+        break;
+        
+      case 'ss' :
+      
+        circleFill = 'none';
+        
+        squareFill = stroke = 'inherit';
+        
+        styleLogic = 'circle line';
+        
+        break;
+        
+      }
+      
+    const styles = {
+    
+      'circle' : `
+      
+        <svg version="1.1" id="svg9" xml:space="preserve" width="815.90436" height="816" viewBox="0 0 815.90436 816" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        
+          <defs id="defs13">
+          
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath25">
+            
+              <path d="M 306,90 C 474.9993,90 612,227.0007 612,396 612,564.9993 474.9993,702 306,702 137.0007,702 0,564.9993 0,396 0,227.0007 137.0007,90 306,90 Z" clip-rule="evenodd" id="path23" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath31">
+            
+              <path d="M 0.07171875,90 H 612.00002 V 702 H 0.07171875 Z" id="path29" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath41">
+            
+              <path d="M 365.5003,299.7714 H 142.2386 L 246.4973,492.2286 H 469.7614 L 365.5003,299.7714" clip-rule="evenodd" id="path39" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath47">
+            
+              <path d="M 0,90 H 612 V 702 H 0 Z" id="path45" />
+              
+              </clipPath>
+              
+            </defs>
+            
+          <g id="g15" transform="matrix(1.3333333,0,0,-1.3333333,-0.095625,935.99998)">
+          
+            <g id="g19">
+            
+              <g id="g21" clip-path="url(#clipPath25)">
+              
+                <g id="g27" clip-path="url(#clipPath31)">
+                
+                  <path d="M 0.07171875,90 H 612.11952 V 702.0478 H 0.07171875 Z" style="fill:${circleFill};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path33" />
+                  
+                  </g>
+                  
+                </g>
+                
+              </g>
+              
+            <g id="g35">
+            
+              <g id="g37" clip-path="url(#clipPath41)">
+              
+                <g id="g43" clip-path="url(#clipPath47)">
+                
+                  <path d="M 142.2183,299.7056 H 469.8295 V 492.3422 H 142.2183 Z" style="fill:${squareFill};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path49" />
+                  
+                  </g>
+                  
+                </g>
+                
+              </g>
+              
+            </g>
+            
+          </svg>
+          
+        `,
+        
+      'circle line' : `
+      
+        <svg version="1.1" id="svg9" xml:space="preserve" width="815.90436" height="816" viewBox="0 0 815.90436 816" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        
+          <defs id="defs13">
+          
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath25">
+            
+              <path d="M 306,90 C 474.9993,90 612,227.0007 612,396 612,564.9993 474.9993,702 306,702 137.0007,702 0,564.9993 0,396 0,227.0007 137.0007,90 306,90 Z" clip-rule="evenodd" id="path23" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath31">
+            
+              <path d="M 0.07171875,90 H 612.00002 V 702 H 0.07171875 Z" id="path29" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath43">
+            
+              <path d="M 365.5003,299.7714 H 142.2386 L 246.4973,492.2286 H 469.7614 L 365.5003,299.7714" clip-rule="evenodd" id="path41" />
+              
+              </clipPath>
+              
+            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath49">
+            
+              <path d="M 0,90 H 612 V 702 H 0 Z" id="path47" />
+              
+              </clipPath>
+              
+            </defs>
+            
+          <g id="g15" transform="matrix(1.3333333,0,0,-1.3333333,-0.095625,935.99998)">
+          
+            <g id="g19">
+            
+              <g id="g21" clip-path="url(#clipPath25)">
+              
+                <g id="g27" clip-path="url(#clipPath31)">
+                
+                  <g id="g33" transform="matrix(1.195312,0,0,1.195312,0,90)">
+                  
+                    <path d="M 256,0 C 397.385,0 512,114.615 512,256 512,397.385 397.385,512 256,512 114.615,512 0,397.385 0,256 0,114.615 114.615,0 256,0 Z" style="fill:none;stroke:${stroke};stroke-width:32;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path35" />
+                    
+                    </g>
+                    
+                  </g>
+                  
+                </g>
+                
+              </g>
+              
+            <g id="g37">
+            
+              <g id="g39" clip-path="url(#clipPath43)">
+              
+                <g id="g45" clip-path="url(#clipPath49)">
+                
+                  <path d="M 142.2183,299.7056 H 469.8295 V 492.3422 H 142.2183 Z" style="fill:${squareFill};fill-opacity:1;fill-rule:nonzero;stroke:none" id="path51" />
+                  
+                  </g>
+                  
+                </g>
+                
+              </g>
+              
+            </g>
+            
+          </svg>
+          
+        `,
+        
+      };
+      
+    const selector = [
+    
+      '.header-actions-action--social [href$=".bandcamp.com/"] svg',
+      
+      '.header-actions-action--social [href$=".bandcamp.com"] svg',
+      
+      ]
+      
+      .join ( ', ' );
+      
+    const svg = styles [ styleLogic ];
+    
+    let $elements = $( selector );
+    
+    $elements.replaceWith ( svg );
+    
+    if ( style == 'ss' ) {
+    
+      // retarget elements
+      
+      $elements = $( selector );
+      
+      $elements
+      
+        .parents ( '.icon' )
+        
+        .addClass ( 'icon--stroke' )
+        
+        .end ( )
+        
+        .find ( '#path35' )
+        
+        .css ( 'stroke-width', '64' );
+        
+      }
+      
+    } );
+    
+  </script>
