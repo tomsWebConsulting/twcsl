@@ -1,0 +1,105 @@
+/*
+
+  begin social icon discord generic icon to discord change
+  
+  Version         : 0.3d0
+  
+  SS Versions     : 7.1, v7.0
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Note            : this effect is not active in SS Preview. to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .twc-icon-fill-discord-black svg {
+  
+    fill : black;
+    
+    }
+    
+  .twc-icon-fill-discord-burple svg {
+  
+    fill : #5865F2;
+    
+    }
+    
+  .twc-icon-fill-discord-fuchsia svg {
+  
+    fill : #EB459E;
+    
+    }
+    
+  .twc-icon-fill-discord-green svg {
+  
+    fill : #57F287;
+    
+    }
+    
+  .twc-icon-fill-discord-red svg {
+  
+    fill : #ED4245;
+    
+    }
+    
+  .twc-icon-fill-discord-white svg {
+  
+    fill : white;
+    
+    }
+    
+  .twc-icon-fill-discord-yellow svg {
+  
+    fill : #FEE75C;
+    
+    }
+    
+  /* begin v7.0 */
+  
+    .tweak-social-icons-style-regular .SocialLinks:hover .twc-use--icon, /* header */
+    body:not( .sqs-seven-one ) .social-icons-style-regular .sqs-svg-icon--list:hover .twc-use--icon /* social block */
+    
+      {
+      
+        opacity : 0.4;
+        
+        }
+        
+    .tweak-social-icons-style-regular .SocialLinks:hover .SocialLinks-link:hover .twc-use--icon, /* header */
+    body:not( .sqs-seven-one ) .social-icons-style-regular .sqs-svg-icon--list:hover .sqs-svg-icon--wrapper:hover .twc-use--icon /* social block */
+    
+      {
+      
+        opacity : 1;
+        
+        }
+        
+    .SocialLinks .twc-use--icon, /* header */
+    .sqs-svg-icon--list .twc-use--icon /* social block */
+    
+      {
+      
+        -webkit-transition : opacity 170ms ease-in-out;
+        -moz-transition : opacity 170ms ease-in-out;
+        -ms-transition : opacity 170ms ease-in-out;
+        -o-transition : opacity 170ms ease-in-out;
+        transition : opacity 170ms ease-in-out;
+        
+        }
+        
+    /* end v7.0 */
+    
+  /* end social icon discord generic icon to discord change */

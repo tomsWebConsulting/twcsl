@@ -1,0 +1,106 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      social icon discord generic icon to discord change
+      
+      Version         : 0.3d0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+      
+      Note            : this effect is not active in SS Preview. to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // use color name black, blurple, fuchsia, green, red, white, or yellow
+    
+    const color = '[enter color name here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    const linkPrefix = 'https://discord.gg/';
+    
+    const hrefSelector = `[href^="${linkPrefix}"]`;
+    
+    const selector = [
+    
+      '.header-actions .header-actions-action--social', // v7.1, desktop
+      
+      '.header-menu-actions-action', // v7.1, mobile
+      
+      '.socialaccountlinks-v2-block', // v7.1, social block
+      
+      '.Header-social', // v7.0 ( Brine ), header
+      
+      '.social-account-links-v2-block', // v7.0 ( Brine ), social block
+      
+      ]
+      
+      .join ( ` ${ hrefSelector }, ` ) +
+      
+      ` ${ hrefSelector }`;
+      
+    $( selector )
+    
+      .addClass ( `twc-icon-fill-discord-${ color }` )
+      
+      .removeClass ( 'icon--fill' ) // v7.1, removes fill property
+      
+      .find ( 'svg' )
+      
+        .removeClass ( 'sqs-svg-icon--social' ) // v7.1, removes fill property
+        
+        .end ( )
+        
+      .find ( 'use' )
+      
+        .filter ( ':not( .sqs-use--mask, .SocialLinks-link-mask )' )
+        
+          // v7.1, v7.0, removes fill property
+          
+          .removeClass ( 'sqs-use--icon SocialLinks-link-icon' )
+          
+          .addClass ( 'twc-use--icon' )
+          
+          .each ( function ( ) {
+          
+            this.href.baseVal = '#discord-unauth-icon';
+            
+            } )
+            
+          .end ( )
+          
+        .filter ( '.sqs-use--mask, .SocialLinks-link-mask' )
+        
+          .each ( function ( ) {
+          
+            this.href.baseVal = '#discord-unauth-mask';
+            
+            } )
+            
+          .end ( )
+          
+        .end ( );
+        
+    } );
+    
+  </script>
