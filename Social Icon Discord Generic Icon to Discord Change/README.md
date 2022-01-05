@@ -24,7 +24,7 @@
   instructions within.
   
 * Add code from file
-  **[social icon discord generic icon to discord change svg symbol.svg](social%20icon%20discord%20generic%20icon%20to%20discord%20change%20svg%20symbol.svg#L1)**
+  **[social icon discord generic icon to discord change svg symbol.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change%20svg%20symbol.html#L1)**
   to Settings > Advanced > Code Injection > FOOTER.
 
 ## Make a Donation
