@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.3d0
+  Version         : 0.3d1
   
   SS Versions     : 7.1, 7.0
   
@@ -93,9 +93,9 @@
       
       let selector = [
       
-        'product-description',
+        'product-description', // Wexley
         
-        'ProductItem-additional',
+        'ProductItem-additional', // v7.1, Brine
         
         ];
         
@@ -117,20 +117,20 @@
         
       switch ( true ) {
       
+        case twcsl.is71 :
+        
+          selector = '.product-details';
+          
+          break;
+          
         case twcsl.is70 :
         
           selector =
           
-            '.ProductItem-details:not( .ProductItem-details--mobile), ' + // Brine
+            '.ProductItem-details:not( .ProductItem-details--mobile ), ' + // Brine
             
             '#productDetails'; // Wexley
             
-          break;
-          
-        case twcsl.is71 :
-        
-          selector = '.ProductItem-details .ProductItem-details-checkout';
-          
           break;
           
         }
