@@ -6,7 +6,7 @@
     
       store product detail add to cart button text change
       
-      Version         : 0.2d0
+      Version         : 0.2d1
       
       SS Versions     : 7.1, 7.0
       
@@ -47,8 +47,8 @@
       
     /*
     
-      for language use English (United States), French (Canada),
-      French (France), or German (Germany)
+      for language use English (Canada), English (United States),
+      French (Canada), French (France), or German (Germany)
       
       if you leave language empty ( '' ) then the values for addToCart, adding,
       and added can be used
@@ -89,20 +89,14 @@
     
     const languages = {
     
-      'English (United States)' : {
+      'English (Canada)' : 'English',
       
-        addToCart : 'Add To Cart',
-        
-        adding : 'Adding…',
-        
-        added : 'Added!',
-        
-        },
-        
+      'English (United States)' : 'English',
+      
       'French (Canada)' : 'French',
-        
+      
       'French (France)' : 'French',
-        
+      
       'German (Germany)' : {
       
         addToCart : 'Zum Warenkorb hinzufügen',
@@ -127,6 +121,16 @@
       
     const languagesRoot = {
     
+      'English' : {
+      
+        addToCart : 'Add To Cart',
+        
+        adding : 'Adding…',
+        
+        added : 'Added!',
+        
+        },
+        
       'French' : {
       
         addToCart : 'Ajouter au panier',

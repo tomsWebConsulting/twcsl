@@ -1,6 +1,6 @@
 # Store Product Detail Add to Cart Button Text Change
 
-### Version 0.2d0
+### Version 0.2d1
 
 #### SS Versions 7.1, 7.0
 
@@ -26,6 +26,11 @@ Please consider
 
 ## Changes
 
+* **2022-01-05**
+
+  * added English (Canada) language
+  * bumped version to 0.2d1
+  
 * **2022-01-05**
 
   * folded in code from change add to cart button original label
