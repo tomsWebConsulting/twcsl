@@ -6,7 +6,7 @@
     
       store product detail add to cart button text change
       
-      Version         : 0.1d0
+      Version         : 0.2d0
       
       SS Versions     : 7.1, 7.0
       
@@ -24,17 +24,204 @@
                         
                         twcsl
       
+      Note            : this code depends on languages. only a few languages are
+                        currently supported. the code attempts to find the site
+                        language based on the site settings. if the code doesn't
+                        have a language for the language your site is set to
+                        then the code won't work properly. if you need a
+                        language not supported by the code add a post to the
+                        SS forum thread for this code < https://bit.ly/3tgWWFd >
+                        and make a request. no promises that i can add languages
+                        but it doesn't hurt to ask. i need to know two things.
+                        the language set in site settings and the language you
+                        want to change to. the change to language must be listed
+                        is the site settings if you want the code to do it all
+                        for you. if you want to customize the change to language
+                        then only the site language setting is needed. please
+                        see Language and region settings
+                        < https://bit.ly/3n2THgB >
+      
       By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
-    const text = '[enter add to cart button text here between single quotes]';
+    /*
+    
+      for language use English (United States), French (Canada),
+      French (France), or German (Germany)
+      
+      if you leave language empty ( '' ) then the values for addToCart, adding,
+      and added can be used
+      
+      */
+
+    let language = 'English (United States)';
+    
+    let addToCart = '[enter replacement add to cart text here between single quotes]';
+    
+    // if you leave adding empty ( '' ) then the default value will be used
+    
+    const adding = '[enter replacement adding text here between single quotes]';
+    
+    // if you leave added empty ( '' ) then the default value will be used
+    
+    const added = '[enter replacement added text here between single quotes]';
+    
+    /*
+    
+      postAddedText is a special feature. for the default SS behaviour, which is
+      to restore the button's original text, leave it empty ( '' ). otherwise
+      enter your text between single quotes
+      
+      */
+      
+    let postAddedText = '';
     
     // do not change anything below, there be the borg here
     
     if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
     
-    $( '.sqs-add-to-cart-button-inner' ).text ( text );
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const lang = $( 'html' ).attr ( 'lang' );
+    
+    const languages = {
+    
+      'English (United States)' : {
+      
+        addToCart : 'Add To Cart',
+        
+        adding : 'Adding…',
+        
+        added : 'Added!',
+        
+        },
+        
+      'French (Canada)' : 'French',
+        
+      'French (France)' : 'French',
+        
+      'German (Germany)' : {
+      
+        addToCart : 'Zum Warenkorb hinzufügen',
+        
+        adding : 'Hinzufügen ...',
+        
+        added : 'Hinzugefügt!',
+        
+        },
+        
+      '' : {
+      
+        addToCart : addToCart,
+        
+        adding : adding,
+        
+        added : added,
+        
+        },
+        
+      };
+      
+    const languagesRoot = {
+    
+      'French' : {
+      
+        addToCart : 'Ajouter au panier',
+        
+        adding : 'Ajout en cours...',
+        
+        added : 'Ajout effectué&nbsp;!',
+        
+        },
+        
+      };
+      
+    const langLanguageMap = {
+    
+      'de-DE' : 'German (Germany)',
+      
+      'en-US' : 'English (United States)',
+      
+      'fr-CA' : 'French (Canada)',
+      
+      'fr-FR' : 'French (France)',
+      
+      };
+      
+    const getLanguage = language => {
+    
+      language = languages [ language ];
+      
+      if ( typeof language == 'string' )
+      
+        language = languagesRoot [ language ];
+        
+      return language;
+      
+      };
+      
+    let siteLanguage = langLanguageMap [ lang ];
+    
+    siteLanguage = getLanguage ( siteLanguage );
+    
+    language = getLanguage ( language );
+    
+    if ( language.adding )
+    
+      language [ siteLanguage.adding ] = language.adding;
+      
+    if ( language.added )
+    
+      language [ siteLanguage.added ] = language.added;
+      
+    addToCart = language.addToCart;
+    
+    if ( ! postAddedText )
+    
+      postAddedText = addToCart;
+      
+    $( '.sqs-add-to-cart-button' )
+    
+      .attr ( 'data-original-label', postAddedText );
+      
+    $( '.sqs-add-to-cart-button-inner' ).html ( addToCart );
+    
+    // bail if not adding or added changes
+    
+    if ( ! language.adding && ! language.added ) return;
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        if ( ! this.addedNodes.length ) return;
+        
+        let $element = $( this.addedNodes [ 0 ] );
+        
+        if ( ! $element.hasClass ( 'status-text' ) ) return;
+        
+        const html = $element.html ( );
+        
+        if ( ! language.hasOwnProperty ( html ) ) return;
+        
+        $element.html ( language [ html ] );
+        
+        } );
+        
+      } );
+      
+    // start listening for changes in specified element
+    
+    const selector = '.sqs-add-to-cart-button-wrapper:first ' +
+    
+      '.sqs-add-to-cart-button-inner';
+      
+    const element = $( selector ).get ( 0 );
+    
+    observer.observe ( element, { childList : true } );
     
     } );
     
