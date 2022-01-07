@@ -1,6 +1,6 @@
 # Move Product Detail Additional Info First N Blocks to End of Product Details
 
-### Version 0.3d1
+### Version 0.3d2
 
 #### SS Versions 7.1, 7.0
 
@@ -19,6 +19,10 @@
   **[move product detail additional info first n blocks to end of product details.html](move%20product%20detail%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20details.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
 
+## Note
+
+Accordion blocks are not moved. They break when moved.
+
 ## Make a Donation
 
 Please consider
@@ -26,6 +30,12 @@ Please consider
 
 ## Changes
 
+* **2022-01-06**
+
+  * filter out accordion from blocks to move, they break when moved
+  * more fixes for SS html structure and class name changes
+  * bumped version to 0.3d2
+  
 * **2022-01-05**
 
   * fix for SS html structure and class name changes

@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.3d1
+  Version         : 0.3d2
   
   SS Versions     : 7.1, 7.0
   
@@ -28,6 +28,9 @@
                     
                     this effect is not active in SS Preview. to test it use
                     private browsing < https://bit.ly/3f6lhq2 >
+                    
+                    accordion blocks will be filtered out of the blocks being
+                    moved. moving them causes breakage
   
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -64,10 +67,9 @@
   
     /* no CSS needed for Wexley */
     
-    .ProductItem-details .twc-af4b3333 { /* v7.1 */
+    .ProductItem-details .twc-af4b3333 { /* 7.0 Brine */
     
       order : 999;
-      padding-top : 0;
       
       }
       
@@ -93,9 +95,9 @@
       
       let selector = [
       
-        'product-description', // Wexley
+        'product-description', // 7.0 Wexley
         
-        'ProductItem-additional', // v7.1, Brine
+        'ProductItem-additional', // 7.1, 7.0 Brine
         
         ];
         
@@ -111,6 +113,8 @@
       
         .slice ( 0, n )
         
+        .filter ( ':not( .sqs-block-accordion )' )
+        
         .addClass ( 'twc-af4b3333' )
         
         .removeAttr ( 'id' );
@@ -125,11 +129,15 @@
           
         case twcsl.is70 :
         
-          selector =
+          selector = [
           
-            '.ProductItem-details:not( .ProductItem-details--mobile ), ' + // Brine
+            '.ProductItem-details:not( .ProductItem-details--mobile )' // Brine
             
-            '#productDetails'; // Wexley
+            '#productDetails', // Wexley
+            
+            ]
+            
+            .join ( ', ' );
             
           break;
           
