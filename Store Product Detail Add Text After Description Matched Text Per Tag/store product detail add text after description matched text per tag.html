@@ -1,0 +1,107 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store product detail add text after description matched text per tag
+      
+      Version         : 0.1d1
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const searchText = '[enter search text here between single quotes]';
+    
+    const classTagTextMap = {
+    
+      /*
+      
+        the format of each line is a class tag ( minus the tag- prefix ) and
+        text
+        
+        if the text has single quotes in them then put a backslash before the
+        single quotes. example: it's becomes it\'s
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line.
+        repeat for as many times as needed
+        
+        */
+        
+      // '[enter class tag here between single quotes]' : '[enter text here between single quotes]',
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
+    
+    const selector = [
+    
+      '.pdp-details-excerpt', // 7.1
+      
+      '.ProductItem-details-excerpt', // 7.0 ( Brine )
+      
+      ]
+      
+      .join ( ', ' );
+      
+    const $elements = $( selector );
+    
+    if ( ! $elements.length ) return; // bail if no elements
+    
+    const keys = Object.keys ( classTagTextMap );
+    
+    const text = twcsl
+    
+      .storePage
+      
+        .classTags
+        
+          .filter ( classTag => classTagTextMap [ classTag ] !== undefined )
+          
+            .map ( function ( classTag ) {
+            
+              return classTagTextMap [ classTag ];
+              
+              } )
+              
+            .join ( ', ' );
+            
+    $elements.each ( function ( ) {
+    
+      const walker = document.createTreeWalker ( this, NodeFilter.SHOW_TEXT );
+      
+      while ( walker.nextNode ( ) ) {
+      
+        const s = walker.currentNode.data;
+        
+        if ( ! s.includes ( searchText ) ) continue;
+        
+        $( walker.currentNode.parentNode ) [ 0 ].after ( text );
+        
+        }
+        
+      } );
+      
+    } );
+    
+  </script>
