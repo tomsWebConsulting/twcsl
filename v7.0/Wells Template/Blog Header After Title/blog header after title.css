@@ -1,0 +1,40 @@
+/*
+
+  begin blog header after title
+  
+  Version     : 0.1d0
+  
+  SS Version  : 7.0
+  
+  Template    : Wells
+                
+                your template is not listed? then it is not currently supported
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .collection-type-blog article {
+  
+    display : flex;
+    flex-direction : column;
+    
+    }
+    
+  .collection-type-blog article .special-content,
+  .collection-type-blog article .entry-content,
+  .collection-type-blog article footer
+  
+    {
+    
+      order : 2;
+      
+      }
+      
+  .collection-type-blog article header {
+  
+    order : 1;
+    
+    }
+    
+  /* end blog header after title */
