@@ -33,7 +33,7 @@ Please consider
 * **2022-01-06**
 
   * filter out accordion from blocks to move, they break when moved
-  * more fixes for SS html structure and class name changes
+  * more fixes for SS Dec. 20th 2021 structure/CSS changes
   * bumped version to 0.3d2
   
 * **2022-01-05**
