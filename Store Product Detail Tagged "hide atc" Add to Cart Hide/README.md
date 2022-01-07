@@ -8,8 +8,9 @@
 
 ## Quick Install
 
-Add code from file **hide product detail add to cart tagged "hide atc".html** to
-Store Settings > Advanced > Page Header Code Injection for the store page.
+Add code from file
+**[store product detail tagged "hide atc" add to cart hide.html](store%20product%20detail%20tagged%20"hide%20atc"%20add%20to%20cart%20hide.html#L1)**
+to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 Add a "hide atc" tag, without the quotes, to each product where you want to hide
 the Add To Cart button.
