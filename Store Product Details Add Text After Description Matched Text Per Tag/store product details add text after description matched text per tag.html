@@ -54,7 +54,17 @@
     
     if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
     
-    const $elements = $( '.pdp-details-excerpt' );
+    const selector = [
+    
+      '.pdp-details-excerpt', // 7.1
+      
+      '.ProductItem-details-excerpt', // 7.0 ( Brine )
+      
+      ]
+      
+      .join ( ', ' );
+      
+    const $elements = $( selector );
     
     if ( ! $elements.length ) return; // bail if no elements
     
