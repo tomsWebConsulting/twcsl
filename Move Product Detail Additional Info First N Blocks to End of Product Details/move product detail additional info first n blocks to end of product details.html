@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.3d2
+  Version         : 0.3d3
   
   SS Versions     : 7.1, 7.0
   
@@ -65,14 +65,28 @@
   
   <style>
   
-    /* no CSS needed for Wexley */
+    /* 7.1 ( simple layout ), 7.0 ( Brine ) */
     
-    .ProductItem-details .twc-af4b3333 { /* 7.0 Brine */
+    .ProductItem-details .twc-af4b3333 {
     
       order : 999;
       
       }
       
+    /* 7.1 */
+    
+    /* half, full, and wide layouts */
+    
+    .sqs-seven-one .pdp-details .twc-af4b3333 {
+    
+      order : 999;
+      
+      }
+      
+    /* 7.0 */
+    
+    /* no CSS needed for Wexley */
+    
     </style>
     
   <script>
@@ -95,9 +109,9 @@
       
       let selector = [
       
-        'product-description', // 7.0 Wexley
-        
         'ProductItem-additional', // 7.1, 7.0 Brine
+        
+        'product-description', // 7.0 Wexley
         
         ];
         
@@ -123,15 +137,27 @@
       
         case twcsl.is71 :
         
-          selector = '.product-details';
+          const b = $( '#pdp' ).hasClass ( 'product-layout-side-by-side' );
           
+          if ( b ) {
+          
+            // simple layout
+            
+            selector = '.product-details .ProductItem-details-checkout';
+            
+            } else {
+            
+              selector = '.product-details';
+              
+              }
+              
           break;
           
         case twcsl.is70 :
         
           selector = [
           
-            '.ProductItem-details:not( .ProductItem-details--mobile )' // Brine
+            '.ProductItem-details:not( .ProductItem-details--mobile )', // Brine
             
             '#productDetails', // Wexley
             

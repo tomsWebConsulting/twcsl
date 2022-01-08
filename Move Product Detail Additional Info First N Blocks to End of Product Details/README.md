@@ -1,6 +1,6 @@
 # Move Product Detail Additional Info First N Blocks to End of Product Details
 
-### Version 0.3d2
+### Version 0.3d3
 
 #### SS Versions 7.1, 7.0
 
@@ -30,15 +30,20 @@ Please consider
 
 ## Changes
 
+* **2022-01-07**
+
+  * yet more fixes for SS Dec. 20th 2021 HTML/CSS changes
+  * bumped version to 0.3d3
+  
 * **2022-01-06**
 
   * filter out accordion from blocks to move, they break when moved
-  * more fixes for SS Dec. 20th 2021 structure/CSS changes
+  * more fixes for SS Dec. 20th 2021 HTML/CSS changes
   * bumped version to 0.3d2
   
 * **2022-01-05**
 
-  * fix for SS html structure and class name changes
+  * fix for SS Dec. 20th 2021 HTML/CSS changes
   * bumped version to 0.3d1
   
 * **2021-12-19**
