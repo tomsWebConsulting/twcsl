@@ -1,6 +1,6 @@
 # Social Icon Discord Generic Icon to Discord Change
 
-### Version 0.3d0
+### Version 0.3d1
 
 #### SS Versions 7.1, 7.0
 
@@ -34,7 +34,13 @@ Please consider
 
 ## Changes
 
+* **2022-01-10**
+
+  * fix misspelled blurple
+  * bumped version to 0.3d1
+  
 * **2022-01-04**
+
   * support for changing social block discord generic icons to discord, the
     previous version did change the social block icon but it was a bug that it
     did
@@ -44,6 +50,7 @@ Please consider
   * bumped version to 0.3d0
   
 * **2021-09-02**
+
   * add icon color choices
   * update to latest official svg
   * automatically detect social link
