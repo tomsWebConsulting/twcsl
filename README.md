@@ -53,8 +53,6 @@ not necessarily designed to all work together.
   
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
   
-* [Add Text Based on Tags After Matched Text to Product Description](Add%20Text%20Based%20on%20Tags%20After%20Matched%20Text%20to%20Product%20Description)
-  
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Blog Category Page Category Attribute Add](Blog%20Category%20Page%20Category%20Attribute%20Add)
@@ -66,8 +64,6 @@ not necessarily designed to all work together.
 * [Cart Prices Sqs-Money-Native Add](Cart%20Prices%20Sqs-Money-Native%20Add)
   
 * [Cart Unit Prices](Cart%20Unit%20Prices)
-  
-* [Change Add to Cart Adding Added Button Text](Change%20Add%20to%20Cart%20Adding%20Added%20Button%20Text)
   
 * [Change Cart Continue Shopping Text](Change%20Cart%20Continue%20Shopping%20Text)
   
@@ -93,8 +89,6 @@ not necessarily designed to all work together.
   
 * [Form Text Field Max Length](Form%20Text%20Field%20Max%20Length)
   
-* [Hide Product Detail Add to Cart Tagged "hide atc"](Hide%20Product%20Detail%20Add%20to%20Cart%20Tagged%20"hide%20atc")
-  
 * [Image Block Image Spinner](Image%20Block%20Image%20Spinner)
   
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
@@ -109,7 +103,11 @@ not necessarily designed to all work together.
   
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
+* [Social Icon Discord Generic Icon to Discord Change](Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
+  
 * [Store Price Change](Store%20Price%20Change)
+  
+* [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
   
 * [Store Product Detail Add to Cart Button Change to Url Redirect](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Change%20to%20Url%20Redirect)
   
@@ -120,6 +118,8 @@ not necessarily designed to all work together.
 * [Store Product Detail Price Add Sqs-Money-Native for Variants](Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
   
 * [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
+  
+* [Store Product Detail Tagged "hide atc" Add to Cart Hide](Store%20Product%20Detail%20Tagged%20"hide%20atc"%20Add%20to%20Cart%20Hide)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
@@ -147,6 +147,10 @@ not necessarily designed to all work together.
     
   * [Store Category Page Description Add](v7.0/Store%20Category%20Page%20Description%20Add)
     
+  * [Wells Template](v7.0/Wells%20Template)
+    
+    * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
+      
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -197,7 +201,7 @@ not necessarily designed to all work together.
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
     
-  * [Header Social Icon Discord Generic Icon to Discord Change](v7.1/Header%20Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
+  * [Header Social Icon Bandcamp Generic Icon to Bandcamp Change](v7.1/Header%20Social%20Icon%20Bandcamp%20Generic%20Icon%20to%20Bandcamp%20Change)
     
   * [Header Social Icon URLs Change Based on Language](v7.1/Header%20Social%20Icon%20URLs%20Change%20Based%20on%20Language)
     
@@ -233,6 +237,8 @@ not necessarily designed to all work together.
     
   * [Page Section Background Waves Overlay](v7.1/Page%20Section%20Background%20Waves%20Overlay)
     
+  * [Page Section First Blank Hide](v7.1/Page%20Section%20First%20Blank%20Hide)
+    
   * [Page Section First Blocks Full Bleed](v7.1/Page%20Section%20First%20Blocks%20Full%20Bleed)
     
   * [Page Section Gallery Hover on Everything But](v7.1/Page%20Section%20Gallery%20Hover%20on%20Everything%20But)
@@ -260,6 +266,8 @@ not necessarily designed to all work together.
   * [Scroll to Top of Store Category Product Grid](v7.1/Scroll%20to%20Top%20of%20Store%20Category%20Product%20Grid)
     
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
+    
+  * [Site Style Animation Flex Center](v7.1/Site%20Style%20Animation%20Flex%20Center)
     
   * [Site Wide Image Corners Round](v7.1/Site%20Wide%20Image%20Corners%20Round)
     
@@ -300,7 +308,7 @@ not necessarily designed to all work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d16
+### Version 0.1d17
 
 ## Quick Install
 
@@ -308,7 +316,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d16/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
 ```
 
 ## Example
@@ -445,7 +453,9 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
   
   * categoryUrlSlug ( string )
   
-  * classTags ( array, for detail page only )
+  * classCategories ( array, detail page only, v7.0 only )
+  
+  * classTags ( array, detail page only )
   
   * hasCategory ( boolean )
   
@@ -465,6 +475,15 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2022-01-10**
+
+  * reworked categoryUrlSlug, categoryUrlSlugs, tagUrlSlug, and tagUrlSlugs code
+    to return a slug more like what is seen in the SS user interface. format is
+    /aSlugHere and category=aSlugHere depending filtered list access method
+  * fix hasCategory and hasTag not working when page is homepage ( / )
+  * fixes for SS Dec. 20th 2021 structure/CSS changes
+  * bumped version to 0.1d17
+  
 * **2021-12-07**
 
   * added isElementInViewport method
