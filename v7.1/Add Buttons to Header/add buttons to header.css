@@ -2,7 +2,7 @@
 
   begin add buttons to header
   
-  Version       : 0.6d1
+  Version       : 0.7d0
   
   SS Version    : 7.1
   
@@ -51,13 +51,14 @@
   // desktop
   
   @media only screen and ( pointer : coarse ) and ( max-width : 1024px ),
-    screen and ( max-width : 799px ) {
-    
+  screen and ( max-width : 799px ) {
+  
     .header .header-actions-action--cta {
     
       display : none;
       
       }
+      
     }
     
   // begin mobile
@@ -78,6 +79,7 @@
         flex-direction : @d4;
         
         }
+        
       }
       
     .header-menu-cta a {

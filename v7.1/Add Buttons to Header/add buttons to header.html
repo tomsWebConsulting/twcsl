@@ -6,7 +6,7 @@
     
       begin add buttons to header
       
-      Version       : 0.6d1
+      Version       : 0.7d0
       
       SS Version    : 7.1
       
@@ -49,15 +49,39 @@
           
         ]
         
+      /*
+      
+        targetAtttributeValue is an optional setting. enter _self | _blank |
+        _parent | _top | framename see < https://mzl.la/2Q0JROF > between single
+        quotes
+        
+        */
+        
+      const targetAtttributeValue = '';
+      
+      /*
+      
+        buttonOriginalTargetAttributeAdd is an optional setting. use false or
+        true. when true the target attribute will be added to SS's built-in cta
+        button
+        
+        */
+        
+      const buttonOriginalTargetAttributeAdd = false;
+      
       // do not change anything below, there be the borg here
       
-      $( '.header-actions-action--cta, .header-menu-cta' ).each ( function ( ) {
+      const selector = '.header-actions-action--cta, .header-menu-cta';
+      
+      $( selector ).each ( function ( ) {
       
         const $this = $( this );
         
+        const $buttonOriginal = $( '.btn:first', $this );
+        
         $.each ( buttonsTextUrl, function ( index, buttonTextUrl ) {
         
-          $( '.btn:first', $this )
+          const $button = $buttonOriginal
           
             .clone ( )
             
@@ -67,7 +91,15 @@
             
             .appendTo ( $this );
             
+          if ( targetAtttributeValue )
+          
+            $button.attr ( 'target', targetAtttributeValue );
+            
           } );
+          
+        if ( buttonOriginalTargetAttributeAdd && targetAtttributeValue )
+        
+          $buttonOriginal.attr ( 'target', targetAtttributeValue );
           
         } );
         
