@@ -1,0 +1,39 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store product list empty text add
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = '[enter text here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! $( '.view-list' ).length ) return;
+    
+    const $listGrid = $( '.list-grid' );
+    
+    if ( $listGrid.children ( ).length ) return;
+    
+    $( '<p id="tc-empty-products-pages-text">' +
+    
+      text +
+      
+      '</p>' )
+      
+      .appendTo ( $listGrid );
+       
+    } );
+    
+  </script>
