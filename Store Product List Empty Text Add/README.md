@@ -1,6 +1,6 @@
 # Store Product List Empty Text Add
 
-### Version 0.2d0
+### Version 0.2d1
 
 #### SS Versions 7.1, 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
 
@@ -26,11 +26,11 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-06-11**
+* **2022-01-12**
 
-  * use twcsl
+  * make ajax compatible for v7.0
   * bumped version to 0.2d1
-  -->
+  
 * **2022-01-11**
 
   * added support for v7.0 (Brine)
