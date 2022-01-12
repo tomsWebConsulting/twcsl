@@ -6,13 +6,25 @@
     
       store product list empty text add
       
-      Version       : 0.1d0
+      Version         : 0.2d0
       
-      SS Version    : 7.1
+      SS Versions     : 7.1, 7.0
       
-      Dependancies  : jQuery
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
@@ -20,19 +32,35 @@
     
     // do not change anything below, there be the borg here
     
-    if ( ! $( '.view-list' ).length ) return;
+    if ( twcsl.storePage.isDetail ) return; // bail on detail
     
-    const $listGrid = $( '.list-grid' );
+    let selector = [
     
-    if ( $listGrid.children ( ).length ) return;
-    
-    $( '<p id="tc-empty-products-pages-text">' +
-    
-      text +
+      '.list-grid', // 7.1
       
-      '</p>' )
+      '.ProductList-grid', // 7.0 ( Brine )
       
-      .appendTo ( $listGrid );
+      ]
+      
+      .join ( ', ' );
+      
+    const $list = $( selector );
+    
+    const length = $list
+    
+      .children ( )
+      
+      .length;
+      
+    if ( length ) return; // bail if list not empty
+    
+    $( `<p id="twc-empty-product-list-text">
+    
+      ${ text }
+      
+      </p>` )
+      
+      .appendTo ( $list );
        
     } );
     
