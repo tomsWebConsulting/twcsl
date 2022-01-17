@@ -11,8 +11,8 @@
 * Add the following to Settings > Advanced > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>`
-    ```
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
   
 * Add code from file
   **[add buttons to header.css](add%20buttons%20to%20header.css#L1)**
