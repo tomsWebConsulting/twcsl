@@ -1,0 +1,106 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      cart page observe changes
+      
+      Version       : 0.1d0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Dependancies  : jQuery
+      
+      Note          : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be all
+                      of mutation observers. it may not cover your needs
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      nodesAddedCallback is a custom function for processing nodes added to the
+      DOM. replace undefined with the name of your custom function. your
+      function must accept a jQuery object parameter
+      
+      */
+      
+    const nodesAddedCallback = undefined;
+    
+    /*
+    
+      nodesRemovedCallback is a custom function for processing nodes added to
+      the DOM. replace undefined with the name of your custom function. your
+      function must accept a jQuery object parameter
+      
+      */
+      
+    const nodesRemovedCallback = undefined;
+    
+    // do not change anything below, there be the borg here
+    
+    if ( location.pathname != '/cart' ) return; // bail if not cart page
+    
+    // bail if no mutation observer available
+  
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const observer = new MutationObserver ( mutations => {
+    
+      $.each ( mutations, function ( ) {
+      
+        const wereNodesAdded = Boolean ( this.addedNodes.length );
+        
+        const wereNodesRemoved = Boolean ( this.removedNodes.length );
+        
+        let $element;
+        
+        switch ( true ) {
+        
+          case wereNodesAdded :
+          
+            $element = $( this.addedNodes [ 0 ] );
+            
+            if ( nodesAddedCallback == undefined ) return;
+            
+            nodesAddedCallback ( $element );
+            
+            break;
+            
+          case wereNodesRemoved :
+          
+            $element = $( this.removedNodes [ 0 ] );
+            
+            if ( nodesRemovedCallback == undefined ) return;
+            
+            nodesRemovedCallback ( $element );
+            
+            break;
+            
+          }
+          
+        return;
+        
+        } );
+        
+      } );
+      
+    // begin listening for changes in specified element
+    
+    const element = $( '#sqs-cart-container' )
+    
+      .get ( 0 );
+      
+    observer.observe ( element, {
+    
+      childList : true,
+      subtree : true
+      
+      } );
+      
+    } );
+    
+  </script>
