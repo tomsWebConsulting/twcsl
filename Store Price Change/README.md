@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d4
+### Version 0.3d5
 
 #### SS Versions 7.1, 7.0
 
@@ -8,16 +8,16 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Advanced > Code Injection > HEADER.
 
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
-```
-
-Add code from file
-**[store price change.html](store%20price%20change.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
+  ```
+  
+* Add code from file
+  **[store price change.html](store%20price%20change.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## searchReplaceText Example Lines
 
@@ -58,6 +58,10 @@ Please consider
 
 ## Changes
 
+* **2022-01-20**
+  * fix variable without const keyword
+  * bumped version to 0.3d5
+  
 * **2021-09-30**
   * pass more parameters to functions so they can do more
   * bumped version to 0.3d4
@@ -71,8 +75,8 @@ Please consider
   
 * **2021-08-29**
 
-  * changed name from *Change Store Product Detail Price Text* to *Store Price
-    Change*, previous name was a misnomer
+  * changed name from \*Change Store Product Detail Price Text\* to \*Store Price
+    Change\*, previous name was a misnomer
   * bumped version to 0.3d2
   
 * **2021-08-20**
