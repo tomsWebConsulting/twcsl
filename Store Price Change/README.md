@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d5
+### Version 0.3d6
 
 #### SS Versions 7.1, 7.0
 
@@ -58,6 +58,10 @@ Please consider
 
 ## Changes
 
+* **2022-01-21**
+  * make ajax compatible for v7.0
+  * bumped version to 0.3d6
+  
 * **2022-01-20**
   * fix variable without const keyword
   * bumped version to 0.3d5
