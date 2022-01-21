@@ -12,7 +12,7 @@
 
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d18/twcsl.js"></script>
   ```
   
 * Add code from file
