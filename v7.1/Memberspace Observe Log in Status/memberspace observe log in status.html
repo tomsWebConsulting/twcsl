@@ -1,0 +1,117 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      memberspace observe log in status
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be all
+                      of mutation observers. it may not cover your needs
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      isLoggedInCallback is a custom function that is called when ms indicates a
+      member is logged in. replace undefined with the name of your custom
+      function
+      
+      */
+      
+    const isLoggedInCallback = undefined;
+    
+    /*
+    
+      isNotLoggedInCallback is a custom function that is called when ms
+      indicates a member is not logged in. replace undefined with the name of
+      your custom function
+      
+      */
+      
+    const isNotLoggedInCallback = undefined;
+    
+    // do not change anything below, there be the borg here
+    
+    // bail if no mutation observer available
+  
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const observer = new MutationObserver ( mutations => {
+    
+      $.each ( mutations, function ( ) {
+      
+        if ( ! this.addedNodes.length ) return; // bail if not added nodes
+        
+        let $element = $( this.addedNodes [ 0 ] );
+        
+        const tagName = $element.prop ( 'tagName' );
+        
+        const b = [ 'MS-WIDGET-CSS-SEED', 'MS-BUTTON' ].includes ( tagName );
+        
+        if ( ! b ) return; // bail if tags not of interest
+        
+        $element = $( 'ms-widget-root > ms-widget-css-seed > ms-button' );
+        
+        if ( ! $element.length ) return; // bail if element not found
+        
+        observer.disconnect ( );
+        
+        const buttonText = $element
+        
+          .text ( );
+          
+        switch ( buttonText ) {
+        
+          case 'Log In / Sign Up' :
+          
+            // bail if callback undefined
+            
+            if ( isNotLoggedInCallback == undefined ) return;
+            
+            isNotLoggedInCallback ( );
+            
+            break;
+            
+          case 'Your Account' :
+          
+            // bail if callback undefined
+            
+            if ( isLoggedInCallback !== undefined ) return;
+            
+            isLoggedInCallback ( );
+            
+            break;
+            
+          }
+          
+        } );
+        
+      } );
+      
+    // begin listening for changes in specified element
+    
+    const element = $( 'body' )
+    
+      .get ( 0 );
+      
+    observer.observe ( element, {
+    
+      childList : true,
+      
+      subtree : true
+      
+      } );
+      
+    } );
+    
+  </script>

@@ -1,0 +1,30 @@
+# Memberspace Observe Log in Status
+
+### Version 0.1d
+
+#### SS Version 7.1
+
+---
+
+## Quick Install
+
+* Add code from file
+  **[memberspace observe log in status.html](memberspace%20observe%20log%20in%20status.html#L1)**
+  to Settings > Advanced > Code Injection > FOOTER. Read the code for any
+  instructions within.
+
+## Make a Donation
+
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+
+## Changes
+
+<!-- * **2021-08-02**
+
+  * fix minor documentation issues
+  * bumped version to 0.1d1
+  -->
+* **2022-01-20**
+
+  * initial version
