@@ -59,6 +59,8 @@ not necessarily designed to all work together.
   
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
+* [Cart Page Observe Changes](Cart%20Page%20Observe%20Changes)
+  
 * [Cart Prices Change](Cart%20Prices%20Change)
   
 * [Cart Prices Sqs-Money-Native Add](Cart%20Prices%20Sqs-Money-Native%20Add)
@@ -122,6 +124,8 @@ not necessarily designed to all work together.
 * [Store Product Detail Tagged "hide atc" Add to Cart Hide](Store%20Product%20Detail%20Tagged%20"hide%20atc"%20Add%20to%20Cart%20Hide)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
+  
+* [Store Product List Empty Text Add](Store%20Product%20List%20Empty%20Text%20Add)
   
 * [v7.0](v7.0)
   
@@ -219,6 +223,8 @@ not necessarily designed to all work together.
     
   * [Member Area Sign in Window Title Change](v7.1/Member%20Area%20Sign%20in%20Window%20Title%20Change)
     
+  * [Memberspace Observe Log in Status](v7.1/Memberspace%20Observe%20Log%20in%20Status)
+    
   * [Menu Mobile Outline](v7.1/Menu%20Mobile%20Outline)
     
   * [Mobile Menu Left Flyout](v7.1/Mobile%20Menu%20Left%20Flyout)
@@ -308,7 +314,7 @@ not necessarily designed to all work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d17
+### Version 0.1d18
 
 ## Quick Install
 
@@ -316,7 +322,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
+<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d18/twcsl.js"></script>
 ```
 
 ## Example
@@ -475,11 +481,16 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2022-01-21**
+
+  * make ajax compatible for v7.0
+  * bumped version to 0.1d18
+  
 * **2022-01-10**
 
   * reworked categoryUrlSlug, categoryUrlSlugs, tagUrlSlug, and tagUrlSlugs code
     to return a slug more like what is seen in the SS user interface. format is
-    /aSlugHere and category=aSlugHere depending filtered list access method
+    /aSlugHere and category=aSlugHere depending on filtered list access method
   * fix hasCategory and hasTag not working when page is homepage ( / )
   * fixes for SS Dec. 20th 2021 structure/CSS changes
   * bumped version to 0.1d17
