@@ -8,9 +8,16 @@
 
 ## Quick Install
 
-Add code from file
-**[store product detail slideshow item badge add.html](store%20product%20detail%20slideshow%20item%20badge%20add.html#L1)**
-to Design > Custom CSS. Read the code for any instructions within.
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
+  ```
+  
+* Add code from file
+  **[store product detail slideshow item badge add.html](store%20product%20detail%20slideshow%20item%20badge%20add.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
 
