@@ -4,32 +4,32 @@
   
     /*
     
-    scroll to top of store category product grid
+      scroll to top of store category product grid
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // bail if not store category page
     
-    Version       : 0.1d0
+    if ( ! twcsl.storePage.hasCategory ) return;
     
-    SS Version    : 7.1
+    const productsListTop = $( '.products-list' )
     
-    Dependancies  : jQuery
-                    
-                    twcsl
-                    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      .offset ( )
+      
+      .top;
+      
+    window.scrollTo ( 0, productsListTop );
     
-    */
+    } );
     
-  // bail if not store category page
-  
-  if ( ! twcsl.storePage.hasCategory ) return;
-  
-  const productsListTop = $( '.products-list' )
-  
-    .offset ( )
-    
-    .top;
-    
-  window.scrollTo ( 0, productsListTop );
-  
-  } );
-  
   </script>

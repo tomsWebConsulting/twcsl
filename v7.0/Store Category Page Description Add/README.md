@@ -12,13 +12,13 @@
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d18/twcsl.js"></script>
   ```
   
 * Add code from file
-**[store category page description add.html](store%20category%20page%20description%20add.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
-Read the code for any instructions within.
+  **[store category page description add.html](store%20category%20page%20description%20add.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  Read the code for any instructions within.
 
 ## Make a Donation
 

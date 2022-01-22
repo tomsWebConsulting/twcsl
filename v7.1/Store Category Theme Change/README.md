@@ -8,11 +8,18 @@
 
 ## Quick Install
 
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d18/twcsl.js"></script>
+  ```
+  
 * Install code from
   **[store category theme change.html](store%20category%20theme%20change.html#L1)**.
   
 * Set category and theme pairs in the categoryThemeMap constant.
-  
+
 ## Make a Donation
 
 Please consider
