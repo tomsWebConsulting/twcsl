@@ -1,0 +1,67 @@
+<style>
+
+  /*
+  
+    begin store product detail elements tagged hide
+    
+    Version         : 2.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.0 Templates  : Adirondack
+    
+                      Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      York ( Artesia, Flores, Harris, Jasper, Jones, Lange,
+                      Shibori, Taylor )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Note            : the following tags added to your products will hide
+                      elements
+                      
+                        hide atc ( add to cart )
+                        
+                        hide quantity
+    
+    By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    /* 7.1 */
+    
+    .tag-hide-atc .pdp-details .sqs-add-to-cart-button-wrapper,
+    
+    .tag-hide-quantity .pdp-details .product-quantity-input,
+    
+    /* 7.0 */
+    
+    /* Brine, York */
+    
+    .tag-hide-quantity .ProductItem-details .product-quantity-input,
+    
+    .tag-hide-atc .ProductItem-details .sqs-add-to-cart-button-wrapper,
+    
+    /* Adirondack */
+    
+    .tag-hide-atc #productDetails .sqs-add-to-cart-button-wrapper,
+    
+    .tag-hide-quantity .product-quantity-input,
+    
+    twc-selector /* dummy selector so that each selector line above can ends
+                    with a comma */
+      {
+      
+        display : none;
+        
+        }
+        
+    /* end store product detail elements tagged hide */
+    
+  </style>
