@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.3d6
+  Version         : 0.3d7
   
   SS Versions     : 7.1, 7.0
   
@@ -110,7 +110,7 @@
     
   <script>
   
-    Squarespace.onInitialize ( Y, ( ) => {
+    const initialize = ( ) => {
     
       const isDetail = twcsl.storePage.isDetail;
       
@@ -238,7 +238,23 @@
         
         } );
         
-      } );
+      };
+      
+    switch ( true ) {
+    
+      case twcsl.is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case twcsl.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
       
     </script>
     
