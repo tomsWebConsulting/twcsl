@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains over 130 effects. Each effect has it's own version number, code,
+twcsl contains over 135 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to all work together.
 
@@ -115,13 +115,13 @@ not necessarily designed to all work together.
   
 * [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
   
+* [Store Product Detail Elements Tagged Hide](Store%20Product%20Detail%20Elements%20Tagged%20Hide)
+  
 * [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
   
 * [Store Product Detail Price Add Sqs-Money-Native for Variants](Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
   
 * [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
-  
-* [Store Product Detail Tagged "hide atc" Add to Cart Hide](Store%20Product%20Detail%20Tagged%20"hide%20atc"%20Add%20to%20Cart%20Hide)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
@@ -258,6 +258,8 @@ not necessarily designed to all work together.
   * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
+    
+  * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
     
@@ -481,6 +483,11 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2022-01-28**
+
+  * fix for initialization code break for v7.1
+  * bumped version to 0.1d19
+  
 * **2022-01-21**
 
   * make ajax compatible for v7.0

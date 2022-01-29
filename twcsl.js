@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1d18
+  Version         : 0.1d19
   
   SS Versions     : 7.1, 7.0
   
@@ -912,7 +912,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.1d18';
+    const version = '0.1d19';
     
     // end public properties
     
@@ -1081,17 +1081,37 @@ const twcsl = ( ( $ ) => {
         
     // end public methods
     
-  Squarespace.onInitialize ( Y, ( ) => { // initialize
+  ( ( ) => { // initialize
   
-    _initializeBlogPage ( );
+    const initialize = ( ) => {
     
-    _initializeEventsPage ( );
+      _initializeBlogPage ( );
+      
+      _initializeEventsPage ( );
+      
+      _initializeNavigator ( );
+      
+      _initializeStorePage ( );
+      
+      };
+      
+    switch ( true ) {
     
-    _initializeNavigator ( );
-    
-    _initializeStorePage ( );
-    
-    } );
+      case _is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case _is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
+      
+    } ) ( );
     
   return {
   
