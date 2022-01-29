@@ -1,6 +1,6 @@
 # Store Product Detail Price Total
 
-### Version 0.2d0
+### Version 0.2d1
 
 #### SS Version 7.1
 
@@ -31,6 +31,11 @@
   to Store Settings > Advanced > Page Header Code Injection for the store page
   **before** the **store price change** code.
 
+## Demo
+
+You can see a
+[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/store/p/spring-pickle-mix?password=twcdemos).
+
 ## Make a Donation
 
 Please consider
@@ -38,6 +43,11 @@ Please consider
 
 ## Changes
 
+* **2022-01-29**
+
+  * do not total on out of stock items
+  * bumped version to 0.2d1
+  
 * **2021-09-29**
 
   * updated to work with newer version of store price change
