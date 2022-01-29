@@ -15,7 +15,7 @@
   **[Store Product Detail Price Add Sqs-Money-Native for Variants](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)**.
   
 * Install code from
-  **[Store Product Detail Price Force Mutation on Quantity Change](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)**.
+  **[Store Product Detail Price Force Mutation on Quantity Change](https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)**.
   
 * In the store price change code after the searchReplaceText example lines add
   the following code.
