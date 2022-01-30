@@ -1,6 +1,6 @@
 # Payment Processor Icons
 
-### Version 0.2d1
+### Version 0.2d2
 
 #### SS Versions 7.1, 7.0
 
@@ -116,6 +116,11 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
+* **2022-01-30**
+
+  * add missing show/hide code for Clearpay
+  * bumped version to 0.2d2
+  
 * **2022-01-29**
 
   * added support for --justify-content CSS variable, default is center

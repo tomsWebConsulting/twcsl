@@ -2,7 +2,7 @@
 
   begin payment processor icons css
   
-  Version     : 0.2d1
+  Version     : 0.2d2
   
   SS Versions : 7.1, 7.0
   
@@ -354,11 +354,79 @@
       /* apple */
       
       #twc-payment-processors #apple-pay-mark-icon {
+      
+        display : var( --apple-pay-mark-icon--display );
+        
+        }
+        
+      /* begin clearpay */
+      
+        /* begin badge */
+        
+          /* black on bondi mint */
           
-            display : var( --apple-pay-mark-icon--display );
+          #twc-payment-processors .clearpay.badge.black-on-bondi-mint.twc-pp-icon {
+          
+            display : var( --clearpay--badge--black-on-bondi-mint--display );
             
             }
             
+          /* bondi mint on black */
+          
+          #twc-payment-processors .clearpay.badge.bondi-mint-on-black.twc-pp-icon {
+          
+            display : var( --clearpay--badge--bondi-mint-on-black--display );
+            
+            }
+            
+          /* white on black */
+          
+          #twc-payment-processors .clearpay.badge.white-on-black.twc-pp-icon {
+          
+            display : var( --clearpay--badge--white-on-black--display );
+            
+            }
+            
+          /* black on white */
+          
+          #twc-payment-processors .clearpay.badge.black-on-white.twc-pp-icon {
+          
+            display : var( --clearpay--badge--black-on-white--display );
+            
+            }
+            
+          /* end badge */
+          
+        /* begin lockup */
+        
+          /* black */
+          
+          #twc-payment-processors .clearpay.lockup.black.twc-pp-icon {
+          
+            display : var( --clearpay--lockup--black--display );
+            
+            }
+            
+          /* mint */
+          
+          #twc-payment-processors .clearpay.lockup.mint.twc-pp-icon {
+          
+            display : var( --clearpay--lockup--mint--display );
+            
+            }
+            
+          /* white */
+          
+          #twc-payment-processors .clearpay.lockup.white.twc-pp-icon {
+          
+            display : var( --clearpay--lockup--white--display );
+            
+            }
+            
+          /* end lockup */
+          
+      /* end clearpay */
+      
       /* begin mastercard */
       
         /* symbol */
