@@ -118,6 +118,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 * **2022-01-29**
 
+  * added support for --justify-content CSS variable, default is center
   * added support for PayPal
   * added support for Clearpay
   * added Afterpay mint lockup
