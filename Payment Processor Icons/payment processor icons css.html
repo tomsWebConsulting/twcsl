@@ -2,7 +2,7 @@
 
   begin payment processor icons css
   
-  Version     : 0.2d0
+  Version     : 0.2d1
   
   SS Versions : 7.1, 7.0
   
@@ -55,6 +55,11 @@
             --afterpay--lockup--black--display : unset;
             --afterpay--lockup--black--order : 0;
             
+            /* mint */
+            
+            --afterpay--lockup--mint--display : unset;
+            --afterpay--lockup--mint--order : 0;
+            
             /* white */
             
             --afterpay--lockup--white--display : unset;
@@ -68,6 +73,58 @@
         
         --apple-pay-mark-icon--display : unset;
         --apple-pay-mark-icon--order : 0;
+        
+        /* begin clearpay */
+        
+          /* begin badge */
+          
+            /* black on bondi mint */
+            
+            --clearpay--badge--black-on-bondi-mint--display : unset;
+            --clearpay--badge--black-on-bondi-mint--order : 0;
+            
+            /* bondi mint on black */
+            
+            --clearpay--badge--bondi-mint-on-black--display : unset;
+            --clearpay--badge--bondi-mint-on-black--order : 0;
+            
+            /* white on black */
+            
+            --clearpay--badge--white-on-black--display : unset;
+            --clearpay--badge--white-on-black--order : 0;
+            
+            /* black on white */
+            
+            --clearpay--badge--black-on-white--display : unset;
+            --clearpay--badge--black-on-white--order : 0;
+            
+            /* end badge */
+            
+          /* begin lockup */
+          
+            /* black */
+            
+            --clearpay--lockup--black--display : unset;
+            --clearpay--lockup--black--order : 0;
+            
+            /* mint */
+            
+            --clearpay--lockup--mint--display : unset;
+            --clearpay--lockup--mint--order : 0;
+            
+            /* white */
+            
+            --clearpay--lockup--white--display : unset;
+            --clearpay--lockup--white--order : 0;
+            
+            /* end lockup */
+            
+          /* end clearpay */
+          
+        /* paypal */
+        
+        --paypal-logo-icon--display : unset;
+        --paypal-logo-icon--order : 0;
         
         /* begin mastercard */
         
@@ -180,12 +237,23 @@
     .afterpay.badge.white-on-black.twc-pp-icon,
     .afterpay.badge.black-on-white.twc-pp-icon,
     .afterpay.lockup.black.twc-pp-icon,
-    .afterpay.lockup.white.twc-pp-icon
+    .afterpay.lockup.mint.twc-pp-icon,
+    .afterpay.lockup.white.twc-pp-icon,
+    
+    /* clearpay */
+    
+    .clearpay.badge.black-on-bondi-mint.twc-pp-icon,
+    .clearpay.badge.bondi-mint-on-black.twc-pp-icon,
+    .clearpay.badge.white-on-black.twc-pp-icon,
+    .clearpay.badge.black-on-white.twc-pp-icon,
+    .clearpay.lockup.black.twc-pp-icon,
+    .clearpay.lockup.mint.twc-pp-icon,
+    .clearpay.lockup.white.twc-pp-icon
     
       {
       
         max-width : calc( var( --max-height-width ) * 1.66666667 );
-        min-width : 75px; /* ap allows down to 64px */
+        min-width : 75px; /* ap and cp allow down to 64px */
         
         }
         
@@ -197,6 +265,14 @@
       {
       
         max-width : calc( var( --max-height-width ) * 2.33333333 );
+        min-width : 125px;
+        
+        }
+        
+    /* paypal */
+    
+    .twc-pp-icon#paypal-logo-icon {
+      
         min-width : 125px;
         
         }
@@ -248,6 +324,14 @@
           #twc-payment-processors .afterpay.lockup.black.twc-pp-icon {
           
             display : var( --afterpay--lockup--black--display );
+            
+            }
+            
+          /* mint */
+          
+          #twc-payment-processors .afterpay.lockup.mint.twc-pp-icon {
+          
+            display : var( --afterpay--lockup--mint--display );
             
             }
             
@@ -319,6 +403,14 @@
           
         /* end mastercard */
         
+      /* paypal */
+      
+      #twc-payment-processors #paypal-logo-icon {
+          
+            display : var( --paypal-logo-icon--display );
+            
+            }
+            
       /* begin stripe wordmark */
       
         /* slate */
@@ -437,6 +529,16 @@
             
             }
             
+          /* mint */
+          
+          #twc-payment-processors .afterpay.lockup.mint.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --afterpay--lockup--mint--order ) + 1 );
+            -ms-flex-order : var( --afterpay--lockup--mint--order );
+            order : var( --afterpay--lockup--mint--order );
+            
+            }
+            
           /* white */
           
           #twc-payment-processors .afterpay.lockup.white.twc-pp-icon {
@@ -458,6 +560,98 @@
         -webkit-box-ordinal-group : calc( var( --apple-pay-mark-icon--order ) + 1 );
         -ms-flex-order : var( --apple-pay-mark-icon--order );
         order : var( --apple-pay-mark-icon--order );
+        
+        }
+        
+      /* begin clearpay */
+      
+        /* begin badge */
+        
+          /* black on bondi mint */
+          
+          #twc-payment-processors .clearpay.badge.black-on-bondi-mint.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --clearpay--badge--black-on-bondi-mint--order ) + 1 );
+            -ms-flex-order : var( --clearpay--badge--black-on-bondi-mint--order );
+            order : var( --clearpay--badge--black-on-bondi-mint--order );
+            
+            }
+            
+          /* bondi mint on black */
+          
+          #twc-payment-processors .clearpay.badge.bondi-mint-on-black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var ( --clearpay--badge--bondi-mint-on-black--order ) + 1 );
+            -ms-flex-order : var ( --clearpay--badge--bondi-mint-on-black--order );
+            order : var ( --clearpay--badge--bondi-mint-on-black--order );
+            
+            }
+            
+          /* white on black */
+          
+          #twc-payment-processors .clearpay.badge.white-on-black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var ( --clearpay--badge--white-on-black--order ) + 1 );
+            -ms-flex-order : var ( --clearpay--badge--white-on-black--order );
+            order : var ( --clearpay--badge--white-on-black--order );
+            
+            }
+            
+          /* black on white */
+          
+          #twc-payment-processors .clearpay.badge.black-on-white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --clearpay--badge--black-on-white--order ) + 1 );
+            -ms-flex-order : var( --clearpay--badge--black-on-white--order );
+            order : var( --clearpay--badge--black-on-white--order );
+            
+            }
+            
+          /* end badge */
+          
+        /* begin lockup */
+        
+          /* black */
+          
+          #twc-payment-processors .clearpay.lockup.black.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --clearpay--lockup--black--order ) + 1 );
+            -ms-flex-order : var( --clearpay--lockup--black--order );
+            order : var( --clearpay--lockup--black--order );
+            
+            }
+            
+          /* mint */
+          
+          #twc-payment-processors .clearpay.lockup.mint.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --clearpay--lockup--mint--order ) + 1 );
+            -ms-flex-order : var( --clearpay--lockup--mint--order );
+            order : var( --clearpay--lockup--mint--order );
+            
+            }
+            
+          /* white */
+          
+          #twc-payment-processors .clearpay.lockup.white.twc-pp-icon {
+          
+            -webkit-box-ordinal-group : calc( var( --clearpay--lockup--white--order ) + 1 );
+            -ms-flex-order : var( --clearpay--lockup--white--order );
+            order : var( --clearpay--lockup--white--order );
+            
+            }
+            
+          /* end lockup */
+          
+        /* end clearpay */
+        
+      /* paypal */
+      
+      #twc-payment-processors #paypal-logo-icon {
+      
+        -webkit-box-ordinal-group : calc( var( --paypal-logo-icon--order ) + 1 );
+        -ms-flex-order : var( --paypal-logo-icon--order );
+        order : var( --paypal-logo-icon--order );
         
         }
         

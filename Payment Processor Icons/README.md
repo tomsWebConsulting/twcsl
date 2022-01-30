@@ -1,6 +1,6 @@
 # Payment Processor Icons
 
-### Version 0.2d0
+### Version 0.2d1
 
 #### SS Versions 7.1, 7.0
 
@@ -8,17 +8,17 @@
 
 ## Quick Install
 
-Add code from file
-**[payment processor icons css.html](payment%20processor%20icons%20css.html#L1)**
-to Settings > Advanced > Code Injection > HEADER.
-
-Add code from file
-**[payment processor icons svg symbol.html](payment%20processor%20icons%20svg%20symbol.html#L1)**
-to Settings > Advanced > Code Injection > FOOTER.
-
-Add code from file
-**[payment processor icons.html](payment%20processor%20icons.html#L1)**
-to a code block in the footer of your site.
+* Add code from file
+  **[payment processor icons css.html](payment%20processor%20icons%20css.html#L1)**
+  to Settings > Advanced > Code Injection > HEADER.
+  
+* Add code from file
+  **[payment processor icons svg symbol.html](payment%20processor%20icons%20svg%20symbol.html#L1)**
+  to Settings > Advanced > Code Injection > FOOTER.
+  
+* Add code from file
+  **[payment processor icons.html](payment%20processor%20icons.html#L1)**
+  to a code block in the footer of your site.
 
 ## Configuration
 
@@ -79,8 +79,8 @@ the icons you chose to be shown.
 
 ### Gray Background
 
-Once you are happy with the icons you want to show and the order you can
-change the **gray** background color to **unset**.
+Once you are happy with the icons you want to show and the order you can change
+the **gray** background color to **unset**.
 
 Look for the following line.
 
@@ -96,13 +96,19 @@ Change it to the following.
       
 ```
 
+## Demo
+
+You can see a
+[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/payment-processor-icons?password=twcdemos).
+
 ## Note
 
 This code is designed to be a site-wide effect. For example you'd want the icons
 to show up in the footer for a site. However with some minor tweaks the code
 could be restricted to a single page. It is also possible to have different sets
 of icons shown on different pages, with some tweaks. If you need custom
-installation help, [contact me for paid consulting](http://www.tomsWeb.consulting/contact).
+installation help,
+[contact me for paid consulting](http://www.tomsWeb.consulting/contact).
 
 ## Make a Donation
 
@@ -110,11 +116,20 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
 ## Changes
 
+* **2022-01-29**
+
+  * added support for PayPal
+  * added support for Clearpay
+  * added Afterpay mint lockup
+  * removed unneeded class attributes
+  * removed redundant id attributes
+  * bumped version to 0.2d1
+  
 * **2021-09-17**
-<br><br>
+
   * reworked how the user configures icon hide and order
   * bumped version to 0.2d0
-  <br><br>
+  
 * **2021-09-17**
-<br><br>
+
   * initial version
