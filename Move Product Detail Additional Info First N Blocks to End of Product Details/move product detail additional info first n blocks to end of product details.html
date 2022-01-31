@@ -3,7 +3,7 @@
   begin move product detail additional info first n blocks to end of product
   details
   
-  Version         : 0.3d3
+  Version         : 0.3d4
   
   SS Versions     : 7.1, 7.0
   
@@ -38,25 +38,23 @@
   
   <script>
   
-    window.twc = {
+    if ( window.twc == undefined ) window.twc = { };
     
-      'af4b3333' : {
+    twc.af4b3333 = {
+    
+      numberOfBlocks : 1,
       
-        numberOfBlocks : 1,
+      /*
+      
+        guard processor for other conditions which prevent the code from
+        running. replace undefined with the name of your custom function. your
+        function must return a boolean. false means do not move the blocks and
+        true means move the blocks
         
-        /*
+        */
         
-          guard processor for other conditions which prevent the code from
-          running. replace undefined with the name of your custom function. your
-          function must return a boolean. false means do not move the blocks and
-          true means move the blocks
-          
-          */
-          
-        guardProcessor : undefined
-        
-        }
-        
+      guardProcessor : undefined
+      
       }
       
     </script>
@@ -97,7 +95,7 @@
       
       if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
       
-      const options = twc [ 'af4b3333' ];
+      const options = twc.af4b3333;
       
       const guardProcessor = options.guardProcessor;
       
@@ -127,8 +125,6 @@
       
         .slice ( 0, n )
         
-        .filter ( ':not( .sqs-block-accordion )' )
-        
         .addClass ( 'twc-af4b3333' )
         
         .removeAttr ( 'id' );
@@ -147,7 +143,7 @@
             
             } else {
             
-              selector = '.product-details';
+              selector = '.product-details:first';
               
               }
               
@@ -171,6 +167,24 @@
         
       $( selector ).append ( $blocks );
       
+      const isDetailMultiple = $( '.product-details' ).length;
+      
+      if ( isDetailMultiple )
+      
+        $( window ).resize ( function ( ) {
+        
+          const selector = '.product-details:not( :visible ) > .twc-af4b3333';
+          
+          const $elements = $( selector );
+          
+          if ( ! $elements.length ) return; // bail if no elements
+          
+          $( '.product-details:visible' ).append ( $elements );
+          
+          } )
+          
+          .resize ( );
+          
       } );
       
     </script>
