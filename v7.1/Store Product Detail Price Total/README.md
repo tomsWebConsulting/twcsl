@@ -1,6 +1,6 @@
 # Store Product Detail Price Total
 
-### Version 0.2d1
+### Version 0.2d2
 
 #### SS Version 7.1
 
@@ -43,6 +43,11 @@ Please consider
 
 ## Changes
 
+* **2022-01-31**
+
+  * updated for compatibility with Store Price Change v0.3d8
+  * bumped version to 0.2d2
+  
 * **2022-01-29**
 
   * do not total on out of stock items

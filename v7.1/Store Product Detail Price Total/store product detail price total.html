@@ -4,7 +4,7 @@
   
     store product detail price total
     
-    Version       : 0.2d1
+    Version       : 0.2d2
     
     SS Version    : 7.1
     
@@ -20,7 +20,7 @@
     
   const febc23ef = ( node, isDetail, text, searchText ) => {
   
-    if ( ! isDetail ) return null; // continue if not detail
+    if ( ! isDetail ) return true; // continue if not detail
     
     const isOriginalPrice = Boolean ( $( node )
     
@@ -54,7 +54,7 @@
         
           selectedVariant.qtyInStock == 0;
           
-        if ( b ) return null; // bail if sold out
+        if ( b ) return true; // bail if sold out
         
         price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
         

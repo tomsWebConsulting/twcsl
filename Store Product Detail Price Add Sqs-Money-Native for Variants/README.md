@@ -1,6 +1,6 @@
 # Store Product Detail Price Add Sqs-Money-Native for Variants
 
-### Version 0.1d4
+### Version 0.1d5
 
 #### SS Versions 7.1, 7.0
 
@@ -31,6 +31,11 @@ Please consider
 
 ## Changes
 
+* **2022-01-31**
+
+  * updated for compatibility with Store Price Change v0.3d8
+  * bumped version to 0.1d5
+  
 * **2021-12-22**
 
   * verified code works on v7.0 (Brine, Five, and Montauk templates)
