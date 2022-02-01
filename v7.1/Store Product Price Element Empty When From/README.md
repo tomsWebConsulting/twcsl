@@ -11,6 +11,13 @@
 * Install code from
   **[Store Price Change](https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store%20price%20change)**.
   
+* In the store price change code after the searchReplaceText example lines add
+  the following code.
+  
+  ```javascript
+          'from' : x146d4ed5, // store product price element empty when from
+  ```
+  
 * Add code from file
   **[store product price element empty when from.html](store%20product%20price%20element%20empty%20when%20from.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
