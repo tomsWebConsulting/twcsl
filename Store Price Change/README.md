@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d7
+### Version 0.3d8
 
 #### SS Versions 7.1, 7.0
 
@@ -18,6 +18,7 @@
 * Add code from file
   **[store price change.html](store%20price%20change.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
+  Read the code for any instructions within.
 
 ## searchReplaceText Example Lines
 
@@ -47,9 +48,9 @@
 
 ## Note
 
-Changing prices on a Store page does not effect the cart, checkout, or
-other SS pages/backend storage. This is purely a cosmetic change. No code can
-change the checkout page. It is a SS security feature.
+Changing prices on a Store page does not effect the cart, checkout, or other SS
+pages/backend storage. This is purely a cosmetic change. No code can change the
+checkout page. It is a SS security feature.
 
 ## Make a Donation
 
@@ -58,23 +59,34 @@ Please consider
 
 ## Changes
 
+* **2022-01-31**
+
+  * rework how code responds to function results, it is now possible to stop
+    further processing of remaining search/replace pairs
+  * bumped version to 0.3d8
+  
 * **2022-01-29**
+
   * fix for initialization code break for v7.1
   * bumped version to 0.3d7
   
 * **2022-01-21**
+
   * make ajax compatible for v7.0
   * bumped version to 0.3d6
   
 * **2022-01-20**
+
   * fix variable without const keyword
   * bumped version to 0.3d5
   
 * **2021-09-30**
+
   * pass more parameters to functions so they can do more
   * bumped version to 0.3d4
   
 * **2021-09-28**
+
   * change where searchReplaceText is stored to reduce varible already defined
     error
   * functions now always run instead of just for variant changes
