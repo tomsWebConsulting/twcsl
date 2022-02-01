@@ -1,0 +1,33 @@
+<script>
+
+  /*
+  
+    store product price element empty when from
+    
+    Version       : 0.1d0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : store price change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const x146d4ed5 = ( node, isDetail, text, searchText ) => {
+  
+    if ( ! text.includes ( 'from' ) ) return true;
+    
+    $( node )
+    
+      .parents ( '.product-price' )
+      
+      .empty ( );
+      
+    return false;
+    
+    };
+    
+  </script>
