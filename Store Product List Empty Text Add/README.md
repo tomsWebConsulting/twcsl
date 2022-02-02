@@ -1,6 +1,6 @@
 # Store Product List Empty Text Add
 
-### Version 0.2d1
+### Version 0.2d2
 
 #### SS Versions 7.1, 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
 
@@ -12,7 +12,7 @@
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
   ```
   
 * Add code from file
@@ -26,6 +26,11 @@ Please consider
 
 ## Changes
 
+* **2022-02-02**
+
+  * fix for initialization code break for v7.1
+  * bumped version to 0.2d2
+  
 * **2022-01-12**
 
   * make ajax compatible for v7.0
