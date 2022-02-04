@@ -1,83 +1,87 @@
 <script>
 
-  /*
+  ( ( ) => {
   
-    store product list empty text add
+    /*
     
-    Version         : 0.2d2
+      store product list empty text add
     
-    SS Versions     : 7.1, 7.0
+      Version         : 0.2d3
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const text = '[enter text here between single quotes]';
     
-    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                      Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                      Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
-                      Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
-                      Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
-                      Sonora, Stella, Thorne, Vow, Wav, West )
-                      
-                      your template is not listed? then it is not currently
-                      supported
+    // do not change anything below, there be the borg here
     
-    Dependancies    : jQuery
-                      
-                      twcsl
-    
-    By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-  const text = '[enter text here between single quotes]';
-  
-  // do not change anything below, there be the borg here
-  
-  const initialize = ( ) => {
-  
     if ( twcsl.storePage.isDetail ) return; // bail on detail
     
-    let selector = [
+    const initialize = ( ) => {
     
-      '.list-grid', // 7.1
+      let selector = [
       
-      '.ProductList-grid', // 7.0 ( Brine )
+        '.list-grid', // 7.1
+        
+        '.ProductList-grid', // 7.0 ( Brine )
+        
+        ]
+        
+        .join ( ', ' );
+        
+      const $list = $( selector );
       
-      ]
+      const length = $list
       
-      .join ( ', ' );
+        .children ( )
+        
+        .length;
+        
+      if ( length ) return; // bail if list not empty
       
-    const $list = $( selector );
+      $( `<p id="twc-empty-product-list-text">
+      
+        ${ text }
+        
+        </p>` )
+        
+      .appendTo ( $list );
+      
+      };
+      
+    switch ( true ) {
     
-    const length = $list
-    
-      .children ( )
+      case twcsl.is71 :
       
-      .length;
+        $( initialize );
+        
+        break;
+        
+      case twcsl.is70 :
       
-    if ( length ) return; // bail if list not empty
-    
-    $( `<p id="twc-empty-product-list-text">
-    
-      ${ text }
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
       
-      </p>` )
-      
-    .appendTo ( $list );
-    
-    };
-    
-  switch ( true ) {
-  
-    case twcsl.is71 :
-    
-      $( initialize );
-      
-      break;
-      
-    case twcsl.is70 :
-    
-      Squarespace.onInitialize ( Y, initialize );
-      
-      break;
-      
-    }
+    } ) ( );
     
   </script>

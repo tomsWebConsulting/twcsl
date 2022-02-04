@@ -1,6 +1,6 @@
 # Store Product List Empty Text Add
 
-### Version 0.2d2
+### Version 0.2d3
 
 #### SS Versions 7.1, 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
 
@@ -26,6 +26,12 @@ Please consider
 
 ## Changes
 
+* **2022-02-03**
+
+  * wrap code in a Immediately-Invoked Function Expression to isolate initialize
+    function
+  * bumped version to 0.2d3
+  
 * **2022-02-02**
 
   * fix for initialization code break for v7.1

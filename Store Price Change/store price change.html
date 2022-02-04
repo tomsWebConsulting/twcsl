@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.3d8
+  Version         : 0.3d9
   
   SS Versions     : 7.1, 7.0
   
@@ -108,103 +108,129 @@
     
   <script>
   
-    const initialize = ( ) => {
+    ( ( ) => {
     
       const isDetail = twcsl.storePage.isDetail;
-      
-      const options = twc.x8af7a0e8;
-      
-      const keys = Object.keys ( options.searchReplaceText );
-      
-      const changeText = ( node ) => {
-      
-        const walker = document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
-        
-        while ( walker.nextNode ( ) ) {
-        
-          const node = walker.currentNode;
-          
-          let t = node.data;
-          
-          $.each ( keys, function ( i, s ) {
-          
-            const m = s.match ( /\/(.+)\/(.*)/ );
-            
-            let r = options.searchReplaceText [ s ];
-            
-            if ( m !== null ) { // m appears to be a regex pattern
-            
-              try {
-              
-                s = new RegExp ( m [ 1 ], m [ 2 ] );
-                
-                } catch {
-                
-                  return; // bail on error
-                  
-                  }
-                  
-              if ( ! s.test ( t ) ) return true; // continue if text no match
-            
-              }
-              
-            if ( typeof r == 'function' ) {
-            
-              r = r ( node, isDetail, t, s );
-              
-              if ( typeof r == 'boolean' ) return r;
-              
-              }
-              
-            t = t.replace ( s, r );
-            
-            } );
-            
-          node.data = t;
-          
-          }
-          
-        }
-        
-      const $productPrices = $( '.product-price' )
-      
-        .each ( function ( ) {
-        
-          changeText ( this );
-          
-          $( this ).addClass ( 'twc-spc-show' );
-          
-          } );
-          
+    
       if ( ! isDetail ) return; // bail if not detail
       
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const attribute = 'data-twc-spc-mo';
+      const initialize = ( ) => {
       
-      const observer = new MutationObserver ( mutations => {
-      
-        const firstMutation = mutations [ 0 ];
+        const options = twc.x8af7a0e8;
         
-        const target = firstMutation.target;
+        const keys = Object.keys ( options.searchReplaceText );
         
-        // previous change was forced
+        const changeText = ( node ) => {
         
-        if ( firstMutation.attributeName == attribute )
-        
-          if ( $( firstMutation.target ).attr ( attribute ) == 'true' )
+          const walker =
           
-            $( firstMutation.target ).attr ( attribute, 'false' );
+            document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
             
-            else if ( firstMutation.oldValue == 'true' )
+          while ( walker.nextNode ( ) ) {
+          
+            const node = walker.currentNode;
             
-              return;
+            let t = node.data;
+            
+            $.each ( keys, function ( i, s ) {
+            
+              const m = s.match ( /\/(.+)\/(.*)/ );
               
-        observer.disconnect ( );
+              let r = options.searchReplaceText [ s ];
+              
+              if ( m !== null ) { // m appears to be a regex pattern
+              
+                try {
+                
+                  s = new RegExp ( m [ 1 ], m [ 2 ] );
+                  
+                  } catch {
+                  
+                    return; // bail on error
+                    
+                    }
+                    
+                if ( ! s.test ( t ) ) return true; // continue if text no match
+                
+                }
+                
+              if ( typeof r == 'function' ) {
+              
+                r = r ( node, isDetail, t, s );
+                
+                if ( typeof r == 'boolean' ) return r;
+                
+                }
+                
+              t = t.replace ( s, r );
+              
+              } );
+              
+            node.data = t;
+            
+            }
+            
+          }
+          
+        const $productPrices = $( '.product-price' )
         
-        changeText ( target );
+          .each ( function ( ) {
+          
+            changeText ( this );
+            
+            $( this ).addClass ( 'twc-spc-show' );
+            
+            } );
+            
+        const attribute = 'data-twc-spc-mo';
+        
+        const observer = new MutationObserver ( mutations => {
+        
+          const firstMutation = mutations [ 0 ];
+          
+          const target = firstMutation.target;
+          
+          // previous change was forced
+          
+          if ( firstMutation.attributeName == attribute )
+          
+            if ( $( firstMutation.target ).attr ( attribute ) == 'true' )
+            
+              $( firstMutation.target ).attr ( attribute, 'false' );
+              
+              else if ( firstMutation.oldValue == 'true' )
+              
+                return;
+                
+          observer.disconnect ( );
+          
+          changeText ( target );
+          
+          observer.observe ( productPrice, {
+          
+            attributeFilter : [ attribute ],
+            
+            attributeOldValue : true,
+            
+            childList : true
+            
+            } );
+            
+          } );
+          
+        const productPrice = $productPrices
+        
+          .first ( )
+          
+          .attr ( attribute, 'false' )
+          
+          .get ( 0 );
+          
+        // start listening for changes in product price
         
         observer.observe ( productPrice, {
         
@@ -216,45 +242,25 @@
           
           } );
           
-        } );
+        };
         
-      const productPrice = $productPrices
+      switch ( true ) {
       
-        .first ( )
+        case twcsl.is71 :
         
-        .attr ( attribute, 'false' )
+          $( initialize );
+          
+          break;
+          
+        case twcsl.is70 :
         
-        .get ( 0 );
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
         
-      // start listening for changes in product price
-      
-      observer.observe ( productPrice, {
-      
-        attributeFilter : [ attribute ],
-        
-        attributeOldValue : true,
-        
-        childList : true
-        
-        } );
-        
-      };
-      
-    switch ( true ) {
-    
-      case twcsl.is71 :
-      
-        $( initialize );
-        
-        break;
-        
-      case twcsl.is70 :
-      
-        Squarespace.onInitialize ( Y, initialize );
-        
-        break;
-        
-      }
+      } ) ( );
       
     </script>
     

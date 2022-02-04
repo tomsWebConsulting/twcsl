@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d8
+### Version 0.3d89
 
 #### SS Versions 7.1, 7.0
 
@@ -59,6 +59,12 @@ Please consider
 
 ## Changes
 
+* **2022-02-03**
+
+  * wrap some code in a Immediately-Invoked Function Expression to isolate
+    initialize function
+  * bumped version to 0.3d9
+  
 * **2022-01-31**
 
   * rework how code responds to function results, it is now possible to stop
