@@ -16,7 +16,9 @@
   to Page Settings > Advanced > Page Header Code Injection for the page. Read
   the code for any instructions within.
 
-## Note
+## Notes
+
+This is meant as a base for other effects.
 
 This effect works best with background images that have undifferentiated edges.
 Like sand or a very tight weaved textile. It does not work with images that
@@ -26,8 +28,6 @@ when repeated the edges must match exactly to look good.
 
 You can see a
 [demo of this effect here](https://toms-web-consulting-demos.squarespace.com/page-section-background-transparent?password=twcdemos).
-
-This is meant as a base for other effects.
 
 ## Make a Donation
 
