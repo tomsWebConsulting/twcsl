@@ -1,6 +1,6 @@
 # Auto Layout Right Arrow Auto Click
 
-### Version 0.2d1
+### Version 0.2d2
 
 #### SS Version v7.1
 
@@ -19,6 +19,15 @@
   to Page Settings > Advanced > Page Header Code Injection for the page. Read
   the code for any instructions within.
 
+## Note
+
+Only slideshow banner and carousel auto layouts are supported.
+
+## Demo
+
+You can see a
+[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/auto-layout-right-arrow-auto-click?password=twcdemos).
+
 ## Make a Donation
 
 Please consider
@@ -26,6 +35,11 @@ Please consider
 
 ## Changes
 
+* **2022-02-18**
+  
+  * target mobile right arrow for click. it is there regardless of arrow setting
+  * bumped version to 0.2d2
+  
 * **2021-12-05**
   
   * removed extra dataSectionIds push line

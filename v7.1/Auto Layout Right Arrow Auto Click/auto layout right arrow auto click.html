@@ -6,7 +6,7 @@
     
       auto layout right arrow auto click
       
-      Version       : 0.2d1
+      Version       : 0.2d2
       
       SS Version    : 7.1
       
@@ -14,6 +14,9 @@
       
       Note          : this effect is not active in SS Preview to test it use
                       private browsing < https://bit.ly/3f6lhq2 >
+                      
+                      only slideshow banner and carousel auto layouts are
+                      supported
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -51,9 +54,9 @@
     
     let selector = [
     
-      '.user-items-list-banner-slideshow__arrow-button--right',
+      '.user-items-list-banner-slideshow',
       
-      '.user-items-list-carousel__arrow-button--right',
+      '.user-items-list-carousel',
       
       ];
       
@@ -69,7 +72,9 @@
           
             dataSectionId = `[data-section-id="${ dataSectionId }"] `;
             
-          return dataSectionId + s;
+          s = `${ dataSectionId }${ s } .mobile-arrow-button--right`;
+          
+          return s;
           
           } )
           
