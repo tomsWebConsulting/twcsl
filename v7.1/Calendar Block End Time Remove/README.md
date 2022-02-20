@@ -8,6 +8,12 @@
 
 ## Quick Install
 
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+  
 * Add code from file
   **[calendar block end time remove.html](calendar%20block%20end%20time%20remove.html#L1)**
   to Page Settings > Advanced > Page Header Code Injection for the page.
