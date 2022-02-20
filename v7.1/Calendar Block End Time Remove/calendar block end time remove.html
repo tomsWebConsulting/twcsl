@@ -1,0 +1,109 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      calendar block end time remove
+      
+      Version       : 0.1d0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    if ( window.frameElement !== null ) return; // bail if in Preview
+    
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const $calendars = $( '.sqs-block-calendar' );
+    
+    if ( ! $calendars.length ) return; // bail if no calendars
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        const $target = $( this.target );
+        
+        if ( ! this.addedNodes.length ) return;
+        
+        if ( ! $target.hasClass ( 'has-event' ) ) return;
+        
+        $.each ( this.addedNodes, function ( ) {
+        
+          const $this = $( this );
+          
+          const isItemList = $this.hasClass ( 'itemlist' );
+          
+          const isItemListFlyOut = $this.hasClass ( 'flyoutitemlist' );
+          
+          // bail if no item list
+          
+          if ( ! isItemList && ! isItemListFlyOut ) return;
+          
+          switch ( true ) {
+          
+            case isItemList :
+            
+            $( '.item-enddate', $this ).remove ( );
+            
+              break;
+              
+            case isItemListFlyOut :
+            
+              $( '.flyoutitem-datetime', $this ).each ( function ( ) {
+              
+                const $this = $( this );
+                
+                const text = $this
+                
+                  .text ( )
+                  
+                  .split ( '–' )
+                  
+                  [ 0 ]
+                  
+                  .trim ( );
+                  
+                $this.text ( text );
+                
+                } );
+                
+              break;
+              
+            }
+            
+          } );
+          
+        } );
+        
+      } );
+      
+    // start listening for changes in specified elements
+    
+    $calendars.each ( function ( ) {
+    
+      observer.observe ( this, {
+      
+        childList : true,
+        subtree : true
+        
+        } );
+        
+      } );
+      
+    } );
+    
+  </script>
