@@ -1,0 +1,39 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      portfolio page project collection type class add
+      
+      Version         : 1.0
+      
+      SS Version     : 7.1
+      
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const selector = '.item-pagination[data-collection-type^="portfolio"]';
+    
+    const portfolioPagination = document.querySelector ( selector );
+    
+    // bail if no portfolio navigation
+    
+    if ( portfolioPagination == null ) return;
+    
+    document
+    
+      .getElementsByTagName ( 'body' )
+      
+      [ 0 ]
+      
+      .classList
+      
+      .add ( 'twc-collection-type-portfolio' );
+      
+    } );
+    
+  </script>
