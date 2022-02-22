@@ -17,9 +17,11 @@
   ```
   
 * Just above the lines in the previous step add code from file
-**[cta button text and url change based on language.js](cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1)**
-Be very careful inserting the code. You don't want to change any of the lines in
-the existing code, just add in this new code.
+  **[cta button text and url change based on language.js](cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1)**.
+  Read the code for any instructions within.
+  
+  Be very careful inserting the code. You don't want to change any of the lines
+  in the existing code, just add in this new code.
 
 ## Make a Donation
 
