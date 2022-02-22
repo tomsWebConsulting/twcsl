@@ -17,7 +17,7 @@
   ```
   
 * Just above the lines in the previous step add code from file
-**[change cta button text and url based on language.js](change%20cta%20button%20text%20and%20url%20based%20on%20language.js#L1)**
+**[cta button text and url change based on language.js](cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1)**
 Be very careful inserting the code. You don't want to change any of the lines in
 the existing code, just add in this new code.
 
