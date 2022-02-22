@@ -23,9 +23,10 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains over 135 effects. Each effect has it's own version number, code,
+twcsl contains      143
+ effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
-not necessarily designed to all work together.
+not necessarily designed to work together.
 
 * v7.0 and v7.1 effects
 
@@ -177,11 +178,11 @@ not necessarily designed to all work together.
     
   * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
+  * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
+    
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
     
   * [Change Blog Listing Item Image URL to Source URL](v7.1/Change%20Blog%20Listing%20Item%20Image%20URL%20to%20Source%20URL)
-    
-  * [Change CTA Button Text and Url Based on Language](v7.1/Change%20CTA%20Button%20Text%20and%20Url%20Based%20on%20Language)
     
   * [Change Default Image Aspect Ratios for Store Page](v7.1/Change%20Default%20Image%20Aspect%20Ratios%20for%20Store%20Page)
     
@@ -194,6 +195,8 @@ not necessarily designed to all work together.
   * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
     
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
+    
+  * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
     
@@ -241,6 +244,10 @@ not necessarily designed to all work together.
     
   * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
     
+  * [Page Section Background Image Repeat](v7.1/Page%20Section%20Background%20Image%20Repeat)
+    
+  * [Page Section Background Transparent](v7.1/Page%20Section%20Background%20Transparent)
+    
   * [Page Section Background Waves Overlay](v7.1/Page%20Section%20Background%20Waves%20Overlay)
     
   * [Page Section First Blank Hide](v7.1/Page%20Section%20First%20Blank%20Hide)
@@ -258,6 +265,8 @@ not necessarily designed to all work together.
   * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
+    
+  * [Portfolio Page Project Collection Type Class Add](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add)
     
   * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
     
@@ -303,10 +312,12 @@ not necessarily designed to all work together.
     
   * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
     
+  * [Store Product Price Element Empty When From](v7.1/Store%20Product%20Price%20Element%20Empty%20When%20From)
+    
   * [Store Product Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Store%20Product%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
     
   * [Use Nth Product Gallery Image as Background for Page](v7.1/Use%20Nth%20Product%20Gallery%20Image%20as%20Background%20for%20Page)
-
+    
 ---
 
 **The rest of this document covers twcsl.js**.
