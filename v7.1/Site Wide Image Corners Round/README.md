@@ -1,6 +1,6 @@
 # Site Wide Image Corners Round
 
-### Version 0.3d0
+### Version 0.3d1
 
 #### SS Version 7.1
 
@@ -19,6 +19,11 @@ Please consider
 
 ## Changes
 
+* **2022-02-22**
+
+  * fix for header logo getting rounded
+  * bumped version to 0.3d1
+  
 * **2021-05-25**
 
   * fix for Safari transition/transform square corner issue
@@ -35,6 +40,7 @@ Please consider
 
   * added coverage for store product grid image hover
   * bumped version to v0.1d1
+  
 * **2021-03-11**
 
   * initial version

@@ -2,7 +2,7 @@
 
   begin site wide image corners round
   
-  Version       : 0.3d0
+  Version       : 0.3d1
   
   SS Version    : 7.1
   
@@ -31,6 +31,14 @@
     
     }
     
+  // for some image elements we don't want to have any radius
+  
+  .header-title-logo img {
+  
+    border-radius : unset;
+    
+    }
+    
   /* for some image elements we don't want to have a radius on the image itself
      we'll be putting the radius on a parent element */
   
@@ -48,6 +56,7 @@
         border-radius : unset;
         
         }
+        
       }
       
   .ProductItem-gallery-slides-item-image,
@@ -68,12 +77,12 @@
   .blog-single-column .image-wrapper
   
     {
-  
-    border-radius : @site-wide-image-radius;
-    z-index : 1;
     
-    }
-    
+      border-radius : @site-wide-image-radius;
+      z-index : 1;
+      
+      }
+      
   // image block
   
   .sqs-block-image .intrinsic {
@@ -93,6 +102,7 @@
       border-radius : @site-wide-image-radius;
       
       }
+      
     }
     
   // store product grid
@@ -122,6 +132,7 @@
       border-radius : @site-wide-image-radius;
       
       }
+      
     }
     
   // end site wide image corners round
