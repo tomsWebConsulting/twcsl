@@ -4,21 +4,24 @@
   
     begin page section first blank hide
     
-    Version     : 0.1d0
+    Version     : 0.1d1
     
     SS Version  : 7.1
+    
+    Note        : this effect is not active in SS Preview. to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
     
     By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
     */
     
-    .page-section:first-child.section-height--medium:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    html:not( .squarespace-damask ) .page-section:first-child.section-height--medium:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
     
       min-height : unset;
       
       }
       
-    .page-section:first-child > .content-wrapper {
+    html:not( .squarespace-damask ) .page-section:first-child > .content-wrapper {
     
       display : none;
       

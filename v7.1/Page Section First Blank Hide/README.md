@@ -1,6 +1,6 @@
 # Page Section First Blank Hide
 
-### Version 0.1d0
+### Version 0.1d1
 
 #### SS Version v7.1
 
@@ -14,7 +14,7 @@
   
 * Add a new blank section at the top of the page. Do not alter any of its
   settings. Save the page.
-  
+
 ## Note
 
 This is meant as a base for other effects.
@@ -26,14 +26,10 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-09-02**
-  * add icon color choices
-  * update to latest official svg
-  * automatically detect social link
-  * changed name from replace generic svg social link icon with discord to
-    header social icon discord generic icon to discord change
-  * bumped version to 0.2d0
-  -->
+* **2022-02-22**
+  * effect not active in preview
+  * bumped version to 0.1d1
+  
 * **2021-12-30**
 
   * initial version
