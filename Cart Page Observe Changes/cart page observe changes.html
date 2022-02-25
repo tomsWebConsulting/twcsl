@@ -6,7 +6,7 @@
     
       cart page observe changes
       
-      Version       : 0.1d0
+      Version       : 0.1d1
       
       SS Versions   : 7.1, 7.0
       
@@ -56,27 +56,27 @@
         
         const wereNodesRemoved = Boolean ( this.removedNodes.length );
         
-        let $element;
+        let $node;
         
         switch ( true ) {
         
           case wereNodesAdded :
           
-            $element = $( this.addedNodes [ 0 ] );
+            $node = $( this.addedNodes [ 0 ] );
             
             if ( nodesAddedCallback == undefined ) return;
             
-            nodesAddedCallback ( $element );
+            nodesAddedCallback ( $node );
             
             break;
             
           case wereNodesRemoved :
           
-            $element = $( this.removedNodes [ 0 ] );
+            $node = $( this.removedNodes [ 0 ] );
             
             if ( nodesRemovedCallback == undefined ) return;
             
-            nodesRemovedCallback ( $element );
+            nodesRemovedCallback ( $node );
             
             break;
             
