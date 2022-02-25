@@ -32,9 +32,9 @@ cart page observe changes code.
   
     console.log ( $node );
     
-  	};
-  	
-</script>
+    };
+    
+  </script>
 ```
 
 ## Make a Donation
