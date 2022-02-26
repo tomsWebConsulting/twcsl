@@ -22,14 +22,31 @@
 ## Example Callback
 
 Following is an example callback. It doesn't do anything except log to the
-console nodes that were added to the cart page. Add your callbacks before the
-cart page observe changes code.
+console nodes that were added to the cart page. Add your callbacks **before**
+the cart page observe changes code.
 
 ```html
 <script>
 
   const cpocNodeAddedLog = ( $node ) => {
   
+    console.log ( $node );
+    
+    };
+    
+  </script>
+```
+
+In a real callback you are going to want to check $node to see if it is a node
+you are interested in.
+
+```html
+<script>
+
+  const cpocNodeAddedLog = ( $node ) => {
+  
+    if ( ! $node.hasClass ( 'checkout' ) ) return; // bail if not checkout
+    
     console.log ( $node );
     
     };
