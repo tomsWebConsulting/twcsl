@@ -12,7 +12,7 @@
                   full effect to work
                   
                   this effect is not active in SS Preview. to test it use
-                  private browsing < https://bit.ly/3f6lhq2 >.
+                  private browsing < https://bit.ly/3f6lhq2 >
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -20,7 +20,7 @@
   
   <style>
   
-    body:not( .sqs-edit-mode ) #page {
+    html:not( .squarespace-damask ) #page {
     
       --twc-toggle-arrow-thickness : 3px; /* the thickness of the arrow line */
       
@@ -50,8 +50,8 @@
   
   <style>
   
-    body:not( .sqs-edit-mode ) #page .page-section,
-    body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > *
+    html:not( .squarespace-damask ) #page .page-section,
+    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > *
     
       {
       
@@ -59,8 +59,8 @@
         
         }
         
-    body:not( .sqs-edit-mode ) #page .twc-psst,
-    body:not( .sqs-edit-mode ) #page .twc-psst--non.page-section
+    html:not( .squarespace-damask ) #page .twc-psst,
+    html:not( .squarespace-damask ) #page .twc-psst--non.page-section
     
       {
       
@@ -72,13 +72,13 @@
         
     /* begin remove some vertical spacing */
     
-      body:not( .sqs-edit-mode ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+      html:not( .squarespace-damask ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
       
         min-height : 0; /* default 33vh */
         
         }
         
-      body:not( .sqs-edit-mode ) .twc-psst.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
+      html:not( .squarespace-damask ) .twc-psst.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
       
         padding-bottom : 0; /* default 3.3vmax */
         padding-top : 0; /* default 3.3vmax */
@@ -89,13 +89,13 @@
       
     /* begin restore some vertical spacing when page section is open */
     
-      body:not( .sqs-edit-mode ) .twc-psst--open.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+      html:not( .squarespace-damask ) .twc-psst--open.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
       
         min-height : 33vh;
         
         }
         
-      body:not( .sqs-edit-mode ) .twc-psst--open.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
+      html:not( .squarespace-damask ) .twc-psst--open.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
       
         padding-bottom : 3.3vmax;
         
@@ -103,13 +103,13 @@
         
       /* end restore some vertical spacing when page section is open */
       
-    body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) {
+    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) {
     
       display : block;
       
       }
       
-    body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) .sqs-block-content {
+    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) .sqs-block-content {
     
       cursor : pointer;
       display : inline-block;
@@ -118,7 +118,7 @@
       
     /* begin toggle arrows */
     
-      body:not( .sqs-edit-mode ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
       
         border : solid black;
         border-width : 0;
@@ -137,7 +137,7 @@
         
         }
         
-      body:not( .sqs-edit-mode ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      html:not( .squarespace-damask ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
       
         -webkit-transform : rotate( -135deg );
         -ms-transform : rotate( -135deg );

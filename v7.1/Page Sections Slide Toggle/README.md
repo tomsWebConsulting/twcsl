@@ -15,7 +15,7 @@ Add the following to Settings > Advanced > Code Injection > HEADER.
 ```
 
 Add code from file
-**[slide toggle page sections.html](slide%20toggle%20page%20sections.html#L1)**
+**[page sections slide toggle.html](page%20sections%20slide%20toggle.html#L1)**
 to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 For each page section you want to be able to toggle set it's height to small and
@@ -27,6 +27,12 @@ page section. In the code block add the following.
 ```
 
 After the code block add a text block with the label text for the page section.
+From there you can add whatever blocks you want to the section.
+
+## Demo
+
+You can see a
+[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos).
 
 ## Make a Donation
 
