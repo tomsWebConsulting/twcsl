@@ -1,0 +1,59 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin element hover parent class toggle
+      
+      SS Versions   : 7.1, 7.0
+      
+      Version       : 0.1d0
+      
+      Dependancies  : jQuery
+      
+      Notes         : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+                      
+                      this is a base effect meant as a base for other effects.
+                      this code alone shouldn't produce any visible change
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const hoverSelector = '[enter selector here between single quotes]';
+      
+      const parentSelector = '[enter selector here between single quotes]';
+      
+      // do not change anything below, there be the borg here
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const clss = 'twc-ehpct';
+      
+      const $hoverElement = $( hoverSelector );
+      
+      const $parentElement = $hoverElement
+      
+        .parents ( parentSelector );
+        
+      $( hoverSelector )
+      
+        .on ( 'mouseover', function ( ) {
+        
+          $parentElement.addClass ( clss );
+          
+          } )
+          
+        .on ( 'mouseout', function ( ) {
+        
+          $parentElement.removeClass ( clss );
+          
+          } );
+          
+      // end element hover parent class toggle
+      
+    } );
+    
+  </script>
