@@ -2,7 +2,7 @@
 
 ### Version 2.0
 
-#### SS Versions 7.1, 7.0 (Adirondack, [Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family), [York template family](https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family))
+#### SS Versions 7.1, 7.0 ([Adirondack][2], [Brine template family][1], [York template family][3])
 
 ---
 
@@ -41,3 +41,7 @@ Please consider
 * **2021-07-26**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[2]: https://support.squarespace.com/hc/en-us/articles/206545397-Adirondack-template
+[3]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
