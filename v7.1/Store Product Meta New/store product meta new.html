@@ -1,0 +1,119 @@
+<!--
+
+  store product meta new
+  
+  SS Version    : 7.1
+  
+  Version       : 0.1d0
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  Notes         : the code is comprised of a number style tags. all of them are
+                  needed for the full effect to work
+                  
+                  this code will overwrite existing product marks. for example
+                  if you put a new tag on a sale or sold out product
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .products {
+    
+      --spmn-grid-color : [enter color of word new here];
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .products.collection-content-wrapper .product-mark.new {
+    
+      color : var( --spmn-grid-color );
+      
+      }
+      
+    .tag-new .product-details .product-mark.new {
+    
+      display : block;
+      font-weight : normal;
+      text-transform : capitalize;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const productMarkNew = ( $element ) => {
+      
+        let $productMark = $( '.product-mark', $element );
+        
+        if ( $productMark.length ) {
+        
+          $productMark
+          
+            .removeClass ( 'sale sold-out' )
+            
+            .addClass ( 'new' )
+            
+            .text ( 'new' );
+            
+          } else {
+          
+            $productMark = $( `<div class="product-mark new">
+            
+              new
+              
+              </div>` )
+              
+              .appendTo ( $element );
+              
+            } // end if
+            
+          }; // end productMarkNew
+          
+      let selector;
+      
+      if ( ! twcsl.storePage.isDetail ) {
+      
+        selector = '.products.collection-content-wrapper .grid-item.tag-new';
+        
+        } else {
+        
+          selector = [
+          
+            '.ProductItem.tag-new .ProductItem-details .ProductItem-product-price',
+            
+            '.pdp-layout.tag-new .pdp-details-price'
+            
+            ]
+            
+            .join ( ', ' );
+        
+          }
+          
+        $( selector ).each ( function ( ) {
+        
+          let $this = $( this );
+          
+          if ( ! twcsl.storePage.isDetail )
+      
+            $this = $( '.grid-meta-status', $this );
+            
+          productMarkNew ( $this );
+          
+          } );
+          
+      } );
+      
+    </script>
