@@ -1,6 +1,6 @@
 # Store Product Detail Add to Cart Button Change to Url Redirect
 
-### Version 0.1d6
+### Version 0.2d0
 
 #### SS Versions 7.1, 7.0
 
@@ -12,7 +12,7 @@
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d16/twcsl.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
   ```
 
 * Add code from file
@@ -43,6 +43,12 @@ Please consider
 
 ## Changes
 
+* **2022-02-28**
+
+  * checked for v7.0 Brine template family compatibility
+  * updated to work with v7.1 product detail layouts
+  * bumped version to 0.2d0
+  
 * **2021-12-17**
 
   * added bailIfNoSkusInMap flag to control if that check is done or not

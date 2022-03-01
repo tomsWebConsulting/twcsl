@@ -6,11 +6,18 @@
     
       store product detail add to cart button change to url redirect
       
-      Version         : 0.1d6
+      Version         : 0.2d0
       
       SS Versions     : 7.1, 7.0
       
-      v7.0 Templates  : Pacific ( Bryler, Charlotte, Fulton*, Horizon, Naomi )
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        Pacific ( Bryler, Charlotte, Fulton*, Horizon, Naomi )
                         
                         your template is not listed? then it is not currently
                         supported
@@ -95,62 +102,84 @@
       
       // end bail if no skus in map
       
-    const $addToCartButton =
+    let selector = [
     
-      $( '.ProductItem-details .sqs-add-to-cart-button' );
+      '.pdp-details .sqs-add-to-cart-button', // 7.1
       
-    const $anchorTag = $( '<a>' )
+      '.ProductItem-details .sqs-add-to-cart-button', // 7.0 ( Brine, Pacific )
+      
+      ]
+      
+      .join ( ', ' );
+      
+    const $addToCartButtons = $( selector );
     
-      .click ( function ( ) {
+    $addToCartButtons.each ( function ( ) {
+    
+      const $anchorTag = $( '<a>' )
       
-        let sku = skus [ 0 ]; // we assume one variant for product item
+        .click ( function ( ) {
         
-        // we go looking for more than one
-        
-        const $productVariants = $( '.product-variants' );
-        
-        if ( $productVariants.length ) {
-        
-          let selectedVariant = $( '.product-variants' )
+          const $this = $( this );
           
-            .attr ( 'data-selected-variant' );
+          let sku = skus [ 0 ]; // we assume one variant for product item
+          
+          // we go looking for more than one
+          
+          const $productVariants = $this
+          
+            .parent ( )
             
-          if ( selectedVariant === undefined ) return;
+            .siblings ( '.product-variants' );
+            
+          if ( $productVariants.length ) {
           
-          selectedVariant = JSON.parse ( selectedVariant );
+            let selectedVariant = $productVariants
+            
+              .attr ( 'data-selected-variant' );
+              
+            if ( selectedVariant === undefined ) return;
+            
+            selectedVariant = JSON.parse ( selectedVariant );
+            
+            sku = selectedVariant.sku;
+            
+            }
+            
+          const url = sku in skuUrlMap ? skuUrlMap [ sku ] : defaultUrl;
           
-          sku = selectedVariant.sku;
+          $this.attr ( 'href', url )
           
-          }
+          } ); // end $anchorTag
           
-        const url = sku in skuUrlMap ? skuUrlMap [ sku ] : defaultUrl;
+      const atcbAttributes = $this.prop ( 'attributes' );
+      
+      $.each ( atcbAttributes, function ( ) {
+      
+        let b = this.name;
         
-        $( this ).attr ( 'href', url )
+        b = excludeButtonAttributes.includes ( b );
+        
+        if ( b ) return true;
+        
+        $anchorTag.attr ( this.name, this.value );
         
         } );
         
-    const atcbAttributes = $addToCartButton.prop ( 'attributes' );
-    
-    $.each ( atcbAttributes, function ( ) {
-    
-      if ( excludeButtonAttributes.includes ( this.name ) ) return true;
+      if ( targetAtttributeValue )
       
-      $anchorTag.attr ( this.name, this.value );
+        $anchorTag.attr ( 'target', targetAtttributeValue );
+        
+      $this
+      
+        .children ( )
+        
+        .appendTo ( $anchorTag );
+        
+      $this.replaceWith ( $anchorTag );
       
       } );
       
-    if ( targetAtttributeValue )
-    
-      $anchorTag.attr ( 'target', targetAtttributeValue );
-      
-    $addToCartButton
-    
-      .children ( )
-      
-      .appendTo ( $anchorTag );
-      
-    $addToCartButton.replaceWith ( $anchorTag );
-    
     } );
     
   </script>
