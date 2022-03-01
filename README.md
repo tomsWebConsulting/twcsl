@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      144
+twcsl contains      145
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -303,6 +303,8 @@ not necessarily designed to work together.
   * [Store Product Detail Price Force Mutation on Quantity Change](v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
     
   * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
+    
+  * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
     
   * [Store Product Details Display Flex Desktop](v7.1/Store%20Product%20Details%20Display%20Flex%20Desktop)
     
