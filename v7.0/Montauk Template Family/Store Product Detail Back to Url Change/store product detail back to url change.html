@@ -1,0 +1,61 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store product detail back to url change
+      
+      Version         : 0.1d0
+      
+      SS Version      : 7.0
+      
+      v7.0 Templates  : Montauk ( Julia, Kent, Om )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+                        
+                        twcsl
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      the url can be any valid url. It can be a full (external to your site) one
+      like 'http://www.tomsWeb.consulting/' or a partial (internal to your site)
+      one like '/page'
+      
+      */
+      
+    const url = '[enter url here between single quotes]';
+    
+    /* text is an optional parameter. to change the text of the link replace the
+       supplied value with your own text */
+       
+    const text = '[enter text here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
+    
+    const selector = '#productNav a';
+    
+    const $element = $( selector )
+    
+      .attr ( 'href', url );
+      
+    let b = new RegExp ( '\\[.*\\]' );
+    
+    b.test ( text );
+    
+    if ( b ) return; // bail if most likely default
+    
+    $element.text ( text );
+    
+    } );
+    
+  </script>
