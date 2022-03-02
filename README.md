@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      146
+twcsl contains      147
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -149,6 +149,8 @@ not necessarily designed to work together.
   * [Montauk Template Family](v7.0/Montauk%20Template%20Family)
     
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
+      
+    * [Store Product Detail Back to Url Change](v7.0/Montauk%20Template%20Family/Store%20Product%20Detail%20Back%20to%20Url%20Change)
       
   * [Product Block Improperly Encoded Ampersand Fix](v7.0/Product%20Block%20Improperly%20Encoded%20Ampersand%20Fix)
     
