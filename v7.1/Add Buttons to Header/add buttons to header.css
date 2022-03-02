@@ -2,7 +2,7 @@
 
   begin add buttons to header
   
-  Version       : 0.7d0
+  Version       : 0.7d1
   
   SS Version    : 7.1
   
@@ -50,6 +50,12 @@
       
   // desktop
   
+  .header .header-actions-action--cta {
+  
+      text-align : center;
+      
+      }
+      
   @media only screen and ( pointer : coarse ) and ( max-width : 1024px ),
   screen and ( max-width : 799px ) {
   

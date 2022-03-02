@@ -1,6 +1,6 @@
 # Add Buttons to Header
 
-### Version 0.7d0
+### Version 0.7d1
 
 #### SS Version 7.1
 
@@ -30,6 +30,11 @@ Please consider
 
 ## Changes
 
+* **2022-03-01**
+
+  * fix for button text not centered when in column on desktop
+  * bumped version to 0.7d1
+  
 * **2022-01-11**
 
   * added code for adding target attribute to buttons
