@@ -2,7 +2,7 @@
 
   begin site wide image corners round
   
-  Version       : 0.3d1
+  Version       : 0.3d2
   
   SS Version    : 7.1
   
@@ -39,15 +39,22 @@
     
     }
     
-  /* for some image elements we don't want to have a radius on the image itself
-     we'll be putting the radius on a parent element */
+  /*
   
+    for some image elements we don't want to have a radius on the image itself
+    we'll be putting the radius on a ancestor element. in addition some elements
+    we don't want a radius at all, at least at the start
+    
+    */
+    
   .blog-alternating-side-by-side .image-wrapper,
   .blog-basic-grid .image-wrapper,
   .blog-masonry .image-wrapper,
   .blog-side-by-side .image-wrapper,
   .blog-single-column .image-wrapper,
-  .portfolio-grid-basic .grid-item .grid-image .grid-image-inner-wrapper
+  .portfolio-grid-basic .grid-item .grid-image .grid-image-inner-wrapper,
+  .section-background,
+  .sqs-block-summary-v2 .img-wrapper,
   
     {
     
@@ -105,6 +112,18 @@
       
     }
     
+  // section background
+  
+  .section-background ( @section-background ) when ( @section-background = true ) {
+  
+    .has-background .section-background {
+    
+      border-radius : @site-wide-image-radius;
+      
+      }
+      
+    }
+    
   // store product grid
   
   .products.collection-content-wrapper .grid-image-wrapper {
@@ -123,16 +142,12 @@
     
     }
     
-  // section background
+  // summary block
   
-  .section-background ( @section-background ) when ( @section-background = true ) {
+  .sqs-block-summary-v2 .img-wrapper {
   
-    .has-background .section-background {
+    border-radius : 25px;
     
-      border-radius : @site-wide-image-radius;
-      
-      }
-      
     }
     
   // end site wide image corners round

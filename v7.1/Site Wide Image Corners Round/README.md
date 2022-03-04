@@ -1,6 +1,6 @@
 # Site Wide Image Corners Round
 
-### Version 0.3d1
+### Version 0.3d2
 
 #### SS Version 7.1
 
@@ -19,6 +19,12 @@ Please consider
 
 ## Changes
 
+* **2022-03-04**
+
+  * fix for section background getting rounded by default
+  * add coverage for summary blocks
+  * bumped version to 0.3d2
+  
 * **2022-02-22**
 
   * fix for header logo getting rounded
