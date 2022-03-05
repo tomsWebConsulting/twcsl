@@ -2,14 +2,21 @@
 
   begin site wide image corners round
   
-  Version       : 0.3d2
+  Version       : 0.4d0
   
   SS Version    : 7.1
   
   Dependancies  : LESS
   
-  Notes         : this effect is not complete. portfolios look problematic for
-                  one
+  Notes         : this effect is not complete
+                  
+                  this effect won't magically fix your images if there are
+                  transparent areas around the image and round the corners. the
+                  same is true if the image has a border that matches the
+                  background behind the image
+                  
+                  there is not switch for portfolio projects as SS does not
+                  disguinsh them from regular pages
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -17,137 +24,305 @@
   
   @site-wide-image-radius : 25px;
   
-   // section background image rounding, use false or true
-   
-  .section-background ( false );
+  // use false or true for each area where you want the effect to be active
+  
+  .blog-list( true );
+  
+  .blog-post( true );
+  
+  .event-list( true );
+  
+  .event( true );
+  
+  .gallery-block( true );
+  
+  .gallery-section( true );
+  
+  .portfolio-list( true );
+  
+  .section-background( false );
+  
+  .store-product-grid( true );
+  
+  .store-product-detail( true );
+  
+  .store-product-detail-additional-info( true );
+  
+  .summary-block( true );
   
   // do not change anything below, there be the borg here
   
-  // this will catch some images but not all
-  
-  img {
+  .swicr-properties {
   
     border-radius : @site-wide-image-radius;
+    z-index : 1;
     
     }
     
-  // for some image elements we don't want to have any radius
+  .swicr-image-block {
   
-  .header-title-logo img {
-  
-    border-radius : unset;
+    .sqs-block-image .intrinsic {
     
-    }
-    
-  /*
-  
-    for some image elements we don't want to have a radius on the image itself
-    we'll be putting the radius on a ancestor element. in addition some elements
-    we don't want a radius at all, at least at the start
-    
-    */
-    
-  .blog-alternating-side-by-side .image-wrapper,
-  .blog-basic-grid .image-wrapper,
-  .blog-masonry .image-wrapper,
-  .blog-side-by-side .image-wrapper,
-  .blog-single-column .image-wrapper,
-  .portfolio-grid-basic .grid-item .grid-image .grid-image-inner-wrapper,
-  .section-background,
-  .sqs-block-summary-v2 .img-wrapper,
-  
-    {
-    
-      img {
+      .image-block-wrapper, // inline
+      .image-inset // card, collage, overlap, poster, stack
       
-        border-radius : unset;
+        {
         
+          .swicr-properties( );
+          
+          }
+          
+      .image-overlay {
+      
+          .swicr-properties( );
+          
+        }
+        
+      } // end sqs-block-image
+      
+    }
+    
+  .blog-list( @boolean ) when ( @boolean = true ) { // blog grid
+  
+    body[class*="collection-type-blog-"].view-list {
+    
+      .page-section[class*="collection-type-blog-"] {
+      
+        .image-wrapper {
+        
+          .swicr-properties( );
+          
+          }
+          
         }
         
       }
       
-  .ProductItem-gallery-slides-item-image,
-  .products.collection-content-wrapper .grid-item .grid-item-image
-  
-    {
+    } // end blog grid
     
-      border-radius : unset;
+  // blog post
+  
+  .blog-post( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-blog-"].view-item {
+    
+      .sqs-block-image .intrinsic {
       
+        .image-block-wrapper, // inline
+        .image-inset // card, collage, overlap, poster, stack
+        
+          {
+          
+            .swicr-properties( );
+            
+            }
+            
+        .image-overlay {
+        
+            .swicr-properties( );
+            
+          }
+          
+        } // end sqs-block-image
+        
       }
       
-  // blog
-  
-  .blog-alternating-side-by-side .image-wrapper,
-  .blog-basic-grid .image-wrapper,
-  .blog-masonry .image-wrapper,
-  .blog-side-by-side .image-wrapper,
-  .blog-single-column .image-wrapper
-  
-    {
+    }
     
-      border-radius : @site-wide-image-radius;
-      z-index : 1;
-      
-      }
-      
-  // image block
+  // event list
   
-  .sqs-block-image .intrinsic {
+  .event-list( @boolean ) when ( @boolean = true ) {
   
-    .image-block-wrapper, // inline
-    .image-inset // card, collage, overlap, poster, stack
+    body[class*="collection-type-events-"].view-list .page-section[class*="collection-type-events-"] {
     
-      {
+      .eventlist-column-thumbnail {
       
-        border-radius : @site-wide-image-radius;
+        .swicr-properties( );
+        
+        }
+        
+      .eventlist-column-date {
+      
         z-index : 1;
         
         }
         
-    .image-overlay {
-    
-      border-radius : @site-wide-image-radius;
-      
       }
       
+    }
+    
+  // event
+  
+  .event( @boolean ) when ( @boolean = true ) {
+  
+      body[class*="collection-type-events-"].view-item {
+      
+        .sqs-block-image .intrinsic {
+        
+          .image-block-wrapper, // inline
+          .image-inset // card, collage, overlap, poster, stack
+          
+            {
+            
+              .swicr-properties( );
+              
+              }
+              
+          .image-overlay {
+          
+              .swicr-properties( );
+              
+            }
+            
+          } // end sqs-block-image
+          
+        }
+        
+    }
+    
+  // gallery block
+  
+  .gallery-block( @boolean ) when ( @boolean = true ) {
+  
+    .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
+    .sqs-gallery-block-slideshow,
+    .sqs-gallery-block-stacked .image-wrapper,
+    .sqs-gallery-design-stacked-slide,
+    .sqs-gallery-design-strip-slide
+    
+      {
+      
+        .swicr-properties( );
+        
+        }
+        
+    }
+    
+  // gallery section
+  
+  .gallery-section( @boolean ) when ( @boolean = true ) {
+  
+    .gallery-section {
+    
+      .gallery-fullscreen-slideshow-item-img,
+      .gallery-grid-item-wrapper,
+      .gallery-masonry-item-wrapper,
+      .gallery-reel-item-src,
+      .gallery-slideshow-item-img,
+      .gallery-strips-item-wrapper
+      
+        {
+        
+         img {
+          
+          .swicr-properties( );
+          
+          }
+          
+        }
+        
+      }
+      
+    }
+    
+  // portfolio list
+  
+  .portfolio-list( @boolean ) when ( @boolean = true ) {
+  
+    body.view-list .page-section[class*="collection-type-portfolio-"]
+    
+      {
+      
+        .portfolio-grid-basic,
+        .portfolio-grid-overlay
+        
+          {
+          
+            .grid-item {
+            
+              .grid-image,
+              .portfolio-overlay
+              
+                {
+                
+                  .swicr-properties( );
+                  
+                  }
+                  
+              }
+              
+            }
+            
+        .portfolio-hover-backgrounds-wrapper
+        
+          {
+          
+            .swicr-properties( );
+            
+            }
+            
+        }
+        
     }
     
   // section background
   
-  .section-background ( @section-background ) when ( @section-background = true ) {
+  .section-background ( @boolean ) when ( @boolean = true ) {
   
     .has-background .section-background {
     
-      border-radius : @site-wide-image-radius;
+      .swicr-properties( );
       
       }
       
     }
     
-  // store product grid
+  // store product grid ( page section )
   
-  .products.collection-content-wrapper .grid-image-wrapper {
+  .store-product-grid( @boolean ) when ( @boolean = true ) {
   
-    border-radius : @site-wide-image-radius;
-    z-index : 1;
+    body.collection-type-products.view-list .page-section.collection-type-products .grid-image-wrapper {
+    
+      .swicr-properties( );
+      
+      }
     
     }
     
   // store product detail
   
-  .ProductItem-gallery-slides-item {
+  .store-product-detail( @boolean ) when ( @boolean = true ) {
   
-    border-radius : @site-wide-image-radius;
-    z-index : 1;
+    body.collection-type-products.view-item .ProductItem-gallery-slides-item {
     
+      .swicr-properties( );
+      
+      }
+      
+    }
+    
+  // store product detail additional info
+  
+  .store-product-detail-additional-info( @boolean ) when ( @boolean = true ) {
+  
+    .ProductItem .ProductItem-additional {
+    
+      .swicr-image-block( );
+      
+      }
+      
     }
     
   // summary block
   
-  .sqs-block-summary-v2 .img-wrapper {
+  .summary-block( @boolean ) when ( @boolean = true ) {
   
-    border-radius : 25px;
+    .sqs-block-summary-v2 .img-wrapper {
     
+      .swicr-properties( );
+      
+      }
+      
     }
     
   // end site wide image corners round

@@ -1,6 +1,6 @@
 # Site Wide Image Corners Round
 
-### Version 0.3d2
+### Version 0.4d0
 
 #### SS Version 7.1
 
@@ -19,6 +19,12 @@ Please consider
 
 ## Changes
 
+* **2022-03-05**
+
+  * use LESS Parametric Mixins feature to be able to turn on and off some of
+    which images get rounded corners
+  * bumped version to 0.4d0
+  
 * **2022-03-04**
 
   * fix for section background getting rounded by default
