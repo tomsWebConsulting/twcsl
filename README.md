@@ -234,7 +234,7 @@ not necessarily designed to work together.
     
   * [Menu Mobile Outline](v7.1/Menu%20Mobile%20Outline)
     
-  * [Mobile Menu Left Flyout](v7.1/Mobile%20Menu%20Left%20Flyout)
+  * [Mobile Menu Flyout](v7.1/Mobile%20Menu%20Flyout)
     
   * [Move Blog Listing Item Title Above Meta](v7.1/Move%20Blog%20Listing%20Item%20Title%20Above%20Meta)
     
