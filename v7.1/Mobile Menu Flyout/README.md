@@ -10,7 +10,7 @@
 
 Add code from file
 **[mobile menu flyout.less](mobile%20menu%20flyout.less#L1)**
-to Design > Custom CSS.
+to Design > Custom CSS. Read the code for any instructions within.
 
 ## Make a Donation
 
@@ -24,7 +24,7 @@ Please consider
   * converted a bunch of repeated value/property pairs into mixin utilities for
     easier maintenance
   * added some vendor prefixes
-  * added suppport for flyout from right
+  * added support for flyout from right
   * bumped version to 0.4d0
   
 * **2021-07-16**
