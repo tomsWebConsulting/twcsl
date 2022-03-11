@@ -1,6 +1,6 @@
 # Store Product Detail Related Product Four
 
-### Version 0.1d0
+### Version 0.1d1
 
 #### SS Version 7.1
 
@@ -19,11 +19,11 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-08-03**
+* **2022-03-10**
 
-  * added support for v7.0 Brine template family and Adirondack template
-  * bumped version to 1.1
-  -->
+  * fix for hiding items in product grid
+  * bumped version to 0.1d1
+  
 * **2022-02-28**
 
   * initial version
