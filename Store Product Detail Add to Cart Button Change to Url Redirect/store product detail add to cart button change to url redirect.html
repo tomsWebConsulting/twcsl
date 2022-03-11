@@ -6,7 +6,7 @@
     
       store product detail add to cart button change to url redirect
       
-      Version         : 0.2d0
+      Version         : 0.2d1
       
       SS Versions     : 7.1, 7.0
       
@@ -67,7 +67,7 @@
     const targetAtttributeValue = ''; /* use _self (default, if left empty) |
                                          _blank | _parent | _top | framename */
     
-    const bailIfNoSkusInMap = true; // use true or false
+    const bailIfNoSkusInMap = true; // use false or true
     
     // do not change anything below, there be the borg here
     
@@ -116,6 +116,8 @@
     
     $addToCartButtons.each ( function ( ) {
     
+      const $this = $( this );
+      
       const $anchorTag = $( '<a>' )
       
         .click ( function ( ) {

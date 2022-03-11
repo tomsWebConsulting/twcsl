@@ -1,6 +1,6 @@
 # Store Product Detail Add to Cart Button Change to Url Redirect
 
-### Version 0.2d0
+### Version 0.2d1
 
 #### SS Versions 7.1, 7.0
 
@@ -43,6 +43,11 @@ Please consider
 
 ## Changes
 
+* **2022-03-10**
+
+  * fix for $this undefined
+  * bumped version to 0.2d1
+  
 * **2022-02-28**
 
   * checked for v7.0 Brine template family compatibility
