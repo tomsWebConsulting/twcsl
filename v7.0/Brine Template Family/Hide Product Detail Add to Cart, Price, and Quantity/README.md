@@ -20,7 +20,9 @@ Please consider
 
 * **2022-03-12**
 
-  * cleanup selectors and added note in code, updated read me
+  * updated read me
+  * added note in code
+  * cleanup selectors
   * bumped version to 0.1d1
   
 * **2021-07-12**
