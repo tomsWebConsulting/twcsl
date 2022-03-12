@@ -1,6 +1,6 @@
 # Store Product Detail Elements Tagged Hide
 
-### Version 2.0
+### Version 2.1
 
 #### SS Versions 7.1, 7.0 ([Adirondack][2], [Brine template family][1], [York template family][3])
 
@@ -22,6 +22,11 @@ Please consider
 
 ## Changes
 
+* **2022-03-12**
+
+  * added support for hiding price
+  * bumped version to 2.1
+  
 * **2022-01-25**
 
   * added support for v7.0 York template family

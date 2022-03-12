@@ -4,7 +4,7 @@
   
     begin store product detail elements tagged hide
     
-    Version         : 2.0
+    Version         : 2.1
     
     SS Versions     : 7.1, 7.0
     
@@ -28,6 +28,8 @@
                       
                         hide atc ( add to cart )
                         
+                        hide price
+                        
                         hide quantity
     
     By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
@@ -36,25 +38,61 @@
     
     /* 7.1 */
     
-    .tag-hide-atc .pdp-details .sqs-add-to-cart-button-wrapper,
+    /* begin atc */
     
-    .tag-hide-quantity .pdp-details .product-quantity-input,
+      /* layout simple */
+      
+      .tag-hide-atc .ProductItem-details .sqs-add-to-cart-button-wrapper,
+      
+      /* layouts full, half, wrap */
+      
+      .tag-hide-atc.pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper,
+      
+      /* end atc */
+      
+    /* begin price */
     
+      /* layout simple */
+      
+      .tag-hide-price .ProductItem-details .ProductItem-product-price,
+      
+      /* layouts full, half, wrap */
+      
+      .tag-hide-price.pdp-layout .pdp-details .pdp-details-price,
+      
+      /* end price */
+      
+    /* begin quantity */
+    
+      /* layout simple */
+      
+      .tag-hide-quantity .ProductItem .ProductItem-details .product-quantity-input,
+      
+      /* layouts full, half, wrap */
+      
+      .tag-hide-quantity.pdp-layout .pdp-details .pdp-details-quantity,
+      
+      /* end quantity */
+      
     /* 7.0 */
     
     /* Brine, York */
     
-    .tag-hide-quantity .ProductItem-details .product-quantity-input,
-    
     .tag-hide-atc .ProductItem-details .sqs-add-to-cart-button-wrapper,
+    
+    .tag-hide-price .ProductItem-details .product-price,
+    
+    .tag-hide-quantity .ProductItem-details .product-quantity-input,
     
     /* Adirondack */
     
     .tag-hide-atc #productDetails .sqs-add-to-cart-button-wrapper,
     
-    .tag-hide-quantity .product-quantity-input,
+    .tag-hide-price #productDetails .product-price,
     
-    twc-selector /* dummy selector so that each selector line above can ends
+    .tag-hide-quantity #productDetails .product-quantity-input,
+    
+    twc-selector /* dummy selector so that each selector line above can end
                     with a comma */
       {
       
