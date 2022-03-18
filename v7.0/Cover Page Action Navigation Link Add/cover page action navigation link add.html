@@ -1,0 +1,121 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin cover page action navigation link add
+      
+      Version         : 0.1d0
+      
+      SS Version      : 7.0
+      
+      v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+                        
+                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                        Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                        Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const textUrls = [
+      
+        /*
+        
+          following is an example of a new link data structure. copy the example
+          new link data structure and paste after the example new link data
+          structure. remove the forward slash asterisk and asterisk forward
+          slash lines from before and after the copied example. repeat for as
+          many new links you want to create. this has been done once initially
+          
+          */
+          
+        /*
+        
+          {
+          
+            text : '[enter link text here between single quotes]',
+            url : '[enter url here between single quotes]'
+            
+            },
+            
+          */
+          
+        {
+        
+          text : '[enter link text here between single quotes]',
+          url : '[enter url here between single quotes]'
+          
+          },
+          
+        ]
+        
+      /*
+      
+        targetAtttributeValue is an optional setting. enter _self | _blank |
+        _parent | _top | framename see < https://mzl.la/2Q0JROF > between single
+        quotes
+        
+        */
+        
+      const targetAtttributeValue = '';
+      
+      /*
+      
+        originalTargetAttributeAdd is an optional setting. use false or
+        true. when true the target attribute will be added to SS's built-in
+        action links
+        
+        */
+        
+      const originalTargetAttributeAdd = false;
+      
+      // do not change anything below, there be the borg here
+      
+      const selector = '.sqs-slide-wrapper[ data-slide-type="cover-page" ] ' +
+      
+        '.sqs-slice-navigation ul';
+        
+      const $elements = $( selector );
+      
+      if ( ! $elements.length ) return; // bail if no list
+      
+      if ( originalTargetAttributeAdd && targetAtttributeValue )
+      
+        $( 'a', $elements ).attr ( 'target', targetAtttributeValue );
+        
+      $.each ( textUrls, function ( i, o ) {
+      
+        const $li = $( `<li>
+        
+          <a href="${ o.url }">
+          
+            ${ o.text }
+            
+            </a>
+            
+          </li>` );
+          
+        if ( targetAtttributeValue )
+        
+          $( 'a', $li ).attr ( 'target', targetAtttributeValue );
+          
+        $li.appendTo ( $elements );
+        
+        } );
+        
+      /* end cover page action navigation link add */
+      
+    } );
+    
+  </script>
