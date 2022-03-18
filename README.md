@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      147
+twcsl contains      149
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -146,6 +146,8 @@ not necessarily designed to work together.
       
     * [Move or Copy Store Intro After Products List](v7.0/Brine%20Template%20Family/Move%20or%20Copy%20Store%20Intro%20After%20Products%20List)
       
+  * [Cover Page Action Navigation Link Add](v7.0/Cover%20Page%20Action%20Navigation%20Link%20Add)
+    
   * [Montauk Template Family](v7.0/Montauk%20Template%20Family)
     
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
@@ -245,6 +247,8 @@ not necessarily designed to work together.
   * [Move Image Block Card Button Under Image](v7.1/Move%20Image%20Block%20Card%20Button%20Under%20Image)
     
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
+    
+  * [Navigation Center Bottom Sticky Desktop](v7.1/Navigation%20Center%20Bottom%20Sticky%20Desktop)
     
   * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
     
