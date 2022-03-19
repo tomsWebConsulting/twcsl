@@ -2,7 +2,7 @@
 
   begin calendar block week at a time
   
-  Version       : 0.1d0
+  Version       : 0.1d1
   
   SS Version    : 7.1
   
@@ -98,6 +98,8 @@
         
           .css ( 'display', 'table-row' );
           
+        forceImageDisplay ( $element );
+        
         if ( direction == 'next' ) return;
         
         if ( ! $element.height ( ) ) {
@@ -110,6 +112,8 @@
             
             .css ( 'display', 'table-row' );
             
+          forceImageDisplay ( $element );
+          
           }
           
         } // end changeMonth
@@ -156,6 +160,8 @@
           
         $week.css ( 'display', 'table-row' );
         
+        forceImageDisplay ( $week );
+        
         if ( ! $week.length ) {
         
           changeMonth ( $calendarBlock, direction );
@@ -172,7 +178,21 @@
           
           }
           
+        // forceImageDisplay ( $week );
+        
         } // end changeWeek
+        
+      const forceImageDisplay = $element => {
+      
+        if ( ! $element.length ) return; // bail if no element
+        
+        Y
+        
+          .one ( $element.get ( 0 ) )
+          
+          .simulate ( 'resize' );
+          
+        };
         
       const observer = new MutationObserver ( function ( mutations ) {
       
@@ -206,6 +226,8 @@
             
             .addClass ( 'twc-cbcwo-show' );
             
+          forceImageDisplay ( $calendar );
+          
           // week navigation
           
           $.each ( [ 'next', 'prev' ], function ( i, direction ) {

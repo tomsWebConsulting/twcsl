@@ -1,6 +1,6 @@
 # Calendar Block Week at a Time
 
-### Version 0.1d0
+### Version 0.1d1
 
 #### SS Version 7.1
 
@@ -30,11 +30,11 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-08-02**
+* **2022-03-18**
 
-  * fix minor documentation issues
+  * fix for images not displaying
   * bumped version to 0.1d1
-  -->
+  
 * **2021-10-23**
 
   * initial version
