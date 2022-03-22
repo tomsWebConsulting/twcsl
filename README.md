@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      149
+twcsl contains      150
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -213,6 +213,8 @@ not necessarily designed to work together.
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
+    
+  * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
   * [Header Social Icon Bandcamp Generic Icon to Bandcamp Change](v7.1/Header%20Social%20Icon%20Bandcamp%20Generic%20Icon%20to%20Bandcamp%20Change)
     
