@@ -1,0 +1,66 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      header navigation link text replace with image
+      
+      Version         : 0.1d0
+      
+      SS Version      : 7.1
+      
+      Dependancies    : jQuery
+    
+      Note            : this effect is not active in SS Preview to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // linkUrl is the url of the link as entered in the SS interface
+    
+    const linkUrl = '[enter link url here between single quotes]';
+    
+    const imageUrl = '[enter image url here between single quotes]';
+    
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    let selector = [
+    
+      '.header-nav-item',
+      
+      '.header-menu-nav-item'
+      
+      ];
+      
+    selector = $.map ( selector, function ( v ) {
+    
+      const selectorSuffix = ` a[href="${ linkUrl }"]`;
+      
+      v += selectorSuffix;
+      
+      return v;
+      
+      } )
+      
+      .join ( ', ' );
+      
+    $( selector ).each ( function ( ) {
+    
+      $this = $( this );
+      
+      const height = $this.height ( );
+      
+      $this
+      
+        .html ( `<img src="${ imageUrl }" style="height : ${ height }px">` );
+        
+      } );
+    
+    } );
+    
+  </script>
