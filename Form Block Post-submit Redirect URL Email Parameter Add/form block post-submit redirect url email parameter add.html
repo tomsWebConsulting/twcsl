@@ -6,7 +6,7 @@
     
       begin form block post-submit redirect url email parameter add
       
-      Version       : 0.1d0
+      Version       : 0.2d0
       
       SS Versions   : 7.1, 7.0
       
@@ -16,10 +16,14 @@
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
-      no user serviceable parts below
-      
       */
       
+      // false or true, set to false to not encode the email parameter
+      
+      const encode = true;
+      
+      // do not change anything below, there be the borg here
+  
       const $form = twcsl.getFormNth ( );
       
       if ( $form === undefined ) return; // bail if no form
@@ -44,12 +48,30 @@
         
         let search = urlParser.search;
         
-        const searchParams = new URLSearchParams ( search );
+        if ( encode ) {
         
-        searchParams.set ( label, email );
-        
-        search = searchParams.toString ( );
-        
+          const searchParams = new URLSearchParams ( search );
+          
+          searchParams.set ( label, email );
+          
+          search = searchParams.toString ( );
+          
+          } else {
+          
+            const s = `${ label }=${ email }`;
+            
+            if ( search ) {
+            
+              search += `&${ s }`;
+              
+              } else {
+              
+                search = `?${ s }`;
+              
+                }
+                
+            }
+            
         urlParser.search = search;
         
         url = urlParser.href;

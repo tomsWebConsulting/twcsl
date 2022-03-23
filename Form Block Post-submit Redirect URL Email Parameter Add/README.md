@@ -1,6 +1,6 @@
 # Form Block Post-submit Redirect URL Email Parameter Add
 
-### Version 0.1d0
+### Version 0.2d0
 
 #### SS Versions 7.1, 7.0
 
@@ -12,7 +12,7 @@
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
+  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
   ```
   
 * Add code from file
@@ -31,12 +31,12 @@ Please consider
 
   * fix for description layout issue when categories are set to side for Brine
   * bumped version to 0.3d0
-  
-* **2021-07-25**
-
-  * use twcsl
-  * bumped version to 0.2d0
   -->
+* **2022-03-23**
+
+  * add encode flag to control if email address is encoded per url spec
+  * bumped version to 0.2d0
+  
 * **2021-11-17**
 
   * initial version
