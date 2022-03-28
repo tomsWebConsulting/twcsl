@@ -4,7 +4,7 @@
   
   Version         : 0.1d1
   
-  SS Versions     : 7.0, 7.1
+  SS Versions     : 7.1, 7.0
   
   v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
                     Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
@@ -45,11 +45,14 @@
         interface and an image URL
         
         copy and repeat the line below for each mapping, remove the "// " at the
-        beginning of the line and enter the appropriate data
+        beginning of the line and enter the appropriate data. this has been done
+        once initially
         
         */
         
       // '[enter tag here]' : '[enter image url here]',
+      
+      '[enter tag here]' : '[enter image url here]',
       
       };
       
@@ -73,16 +76,12 @@
     
       if ( window.frameElement !== null ) return; // bail if in Preview
       
-      if ( ! twcsl.storePage.isDetail ) return; // bail if not product detail
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not product detail
       
-      const tags = twcsl
+      const tags = twcsl.page.store.detail.classTags
       
-        .storePage
+        .filter ( tag => tagImageUrlMap [ tag ] !== undefined );
         
-          .tags
-          
-          .filter ( tag => tagImageUrlMap [ tag ] !== undefined );
-          
       const rows = Math.ceil ( tags.length / columns );
       
       const span = 12 / columns;
