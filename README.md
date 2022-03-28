@@ -296,7 +296,7 @@ not necessarily designed to work together.
     
   * [Site Style Animation Flex Center](v7.1/Site%20Style%20Animation%20Flex%20Center)
     
-  * [Site Wide Image Corners Round](v7.1/Site%20Wide%20Image%20Corners%20Round)
+  * [Site Wide Image Borders](v7.1/Site%20Wide%20Image%20Borders)
     
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
@@ -341,35 +341,74 @@ not necessarily designed to work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.1d19
+### Version 0.2d0
 
-## Quick Install
+## Install Options
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+* Upload the **twcsl.js** file to your site. This is the preferred option but
+  this will not work for trial sites.
+  
+  * In your web browser visit the following URL.
+  
+    ```
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2d0/twcsl.js
+    ```
+    
+    The **twcsl.js** file will be downloaded to your computer.
+    
+  * In **Pages > Not Linked**
+    [add a **Link** page](https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link)
+    and [link to the **twcsl.js** file](https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file).
+    
+  * Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+    ```html
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/s/twcsl.js"></script>
+    ```
 
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
-```
-
+* Copy and add the contents of the **twcsl.html** file to your site. Use this
+  option if your site is a trial site. Once your site is out of trial you can
+  switch over to the preferred option if you like. Just reverse the below
+  steps. You may find it useful to use multiple tabs/windows for the copying and
+  pasting. If you do you can bypass the first save step and save all the code
+  with one click.
+  
+  * Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+    ```html
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    ```
+    
+  * Click Save.
+  
+  * In your web browser visit the following URL.
+  
+    ```
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2d0/twcsl.html
+    ```
+    
+    The **twcsl.html** file will display in your browser.
+    
+  * Copy the entire contents of the page and add it to Settings > Advanced >
+    Code Injection > HEADER after the previously installed code. jQuery must be
+    before the twcsl code.
+  
+  * Click Save.
+  
 ## Example
 
 You want to build an effect that does something when you are on a store category
-product grid page. You can use twcsl to test if you are on such a page with the
+product list page. You can use twcsl to test if you are on such a page with the
 following.
 
 ```javascript
-if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
+if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 ```
 
 ## Methods
 
-* getFirstPageSection
-
-  * getFirstPageSection ( )
-  
-    * Returns jQuery object.
-    
 * getFormFieldLabel
 
   * getFormFieldLabel ( field )
@@ -384,6 +423,13 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
     * Default is the first form on the page.
     * Returns jQuery object or undefined for no form.
     
+* getPageSectionNth
+
+  * getPageSectionNth ( [nth section on page] )
+  
+    * Default is the first section on the page.
+    * Returns jQuery object or undefined for no page section.
+    
 * getUrlParser
 
   * getUrlParser ( url )
@@ -392,8 +438,9 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
     
 * isElementInViewport
   
-  * isElementInViewport ( jQuery object )
+  * isElementInViewport ( element )
   
+    * Element is a jQuery object.
     * Returns boolean.
     
 * scrollEffect
@@ -408,106 +455,182 @@ if ( twcsl.storePage.hasCategory ) console.log ( 'has category' );
       
 ## Properties
 
-* blogPage ( object )
-
-  * categories ( array, for detail page only )
-  
-  * category ( string )
-  
-  * categoryUrlSlug ( string )
-  
-  * categoryUrlSlugs ( array, for detail page only )
-  
-  * hasCategory ( boolean )
-  
-  * hasTag ( boolean )
-  
-  * isBlogPage ( boolean )
-  
-  * isList ( boolean )
-  
-  * isPost ( boolean )
-  
-  * tag ( string )
-  
-  * tags ( array, for detail page only )
-  
-  * tagUrlSlug ( string )
-  
-  * tagUrlSlugs ( array, for detail page only )
-  
-  * urlSlug ( string )
-  
-* eventsPage ( object )
-
-  * categories ( array, for detail page only )
-  
-  * category ( string )
-  
-  * categoryUrlSlug ( string )
-  
-  * categoryUrlSlugs ( array, for detail page only )
-  
-  * hasCategory ( boolean )
-  
-  * hasTag ( boolean )
-  
-  * isEvent ( boolean )
-  
-  * isEventPage ( boolean )
-  
-  * tag ( string )
-  
-  * tags ( array, for detail page only )
-  
-  * tagUrlSlug ( string )
-  
-  * tagUrlSlugs ( array, for detail page only )
-  
-  * urlSlug ( string )
-  
-* is70 ( boolean )
-
-* is71 ( boolean )
-
-* isCart ( boolean )
-
-* isSearch ( boolean )
-
 * navigator ( object )
 
   * hasTouchScreen ( boolean )
   
-* ssVersion ( string )
+* page ( object )
 
-* storePage ( object )
+  * album ( object )
+  
+    * is ( boolean )
+    
+    * urlSlug ( string )
+    
+  * blog ( object )
+  
+    * is ( boolean )
+  
+    * list ( object )
+    
+      * category ( string )
+      
+      * categoryUrlSlug ( string )
+      
+      * hasCategory ( boolean )
+      
+      * hasTag ( boolean )
+      
+      * is ( boolean )
+      
+      * tag ( string )
+      
+      * tagUrlSlug ( string )
+      
+    * post ( object )
+  
+      * categories ( array )
+      
+      * categoryUrlSlugs ( array )
+      
+      * is ( boolean )
+      
+      * tags ( array )
+      
+      * tagUrlSlugs ( array )
+      
+    * urlSlug ( string )
+    
+  * cart ( object )
+  
+    * is ( boolean )
+    
+  * cover ( object )
+  
+    * is ( boolean )
+    
+    * urlSlug ( string )
+    
+  * events ( object )
+  
+    * event ( object )
+    
+      * categories ( array )
+      
+      * categoryUrlSlugs ( array )
+      
+      * is ( boolean )
+      
+      * tags ( array )
+      
+      * tagUrlSlugs ( array )
+      
+    * is ( boolean )
+    
+    * list ( object )
+    
+      * category ( string )
+      
+      * categoryUrlSlug ( string )
+      
+      * hasCategory ( boolean )
+      
+      * hasTag ( boolean )
+      
+      * is ( boolean )
+      
+      * tag ( string )
+      
+      * tagUrlSlug ( string )
+      
+    * urlSlug ( string )
+    
+  * gallery ( object )
+  
+    * is ( boolean )
+    
+    * urlSlug ( string )
+    
+  * index ( object )
+  
+    * is ( boolean )
+    
+    * urlSlug ( string )
+    
+  * portfolio ( object )
+  
+    * is ( boolean )
+    
+    * list ( object )
+    
+      * is ( boolean )
+      
+    * subPage ( object )
+    
+      * is ( boolean )
+      
+    * urlSlug ( string )
+    
+  * search ( object )
+  
+    * is ( boolean )
 
-  * category ( string )
+  * store ( object )
   
-  * categoryUrlSlug ( string )
+    * detail ( object )
+    
+      * classCategories ( array, v7.0 only )
+      
+      * classTags ( array )
+      
+      * is ( boolean )
+      
+    * is ( boolean )
+    
+    * list ( object )
+    
+      * category ( string )
+      
+      * categoryUrlSlug ( string )
+      
+      * hasCategory ( boolean )
+      
+      * hasTag ( boolean )
+      
+      * is ( boolean )
+      
+      * tag ( string )
+      
+      * tagUrlSlug ( string )
+      
+    * urlSlug ( string )
+    
+  * videos ( object )
   
-  * classCategories ( array, detail page only, v7.0 only )
+    * is ( boolean )
+    
+    * urlSlug ( string )
+    
+* ss ( object )
+
+  * is70 ( boolean )
   
-  * classTags ( array, detail page only )
+  * is71 ( boolean )
   
-  * hasCategory ( boolean )
-  
-  * hasTag ( boolean )
-  
-  * isDetail ( boolean )
-  
-  * isStorePage ( boolean )
-  
-  * tag ( string )
-  
-  * tagUrlSlug ( string )
-  
-  * urlSlug ( string )
+  * version ( string )
   
 * version ( string, twcsl version )
 
 ## Changes
 
+* **2022-03-25**
+
+  * cart and search pages are under the page object instead of being top level
+    is flags
+  * added page types album, cover, gallery, index, portfolio, and videos
+  * massive restructuring, the overall functionality of v0.1d19 is preserved
+  * bumped version to 0.2d0
+  
 * **2022-01-28**
 
   * fix for initialization code break for v7.1
