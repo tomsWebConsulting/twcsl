@@ -8,7 +8,7 @@
       
       Version         : 0.1d1
       
-      SS Versions     : 7.0, 7.1
+      SS Versions     : 7.1, 7.0
       
       v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
                         Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
@@ -24,25 +24,32 @@
                         
                         twcsl
       
+      Note            : SS often does text transforms on button text, enter the
+                        replacement text as you would want it to appear, when SS
+                        doesn't change it
+      
       By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
-    /* SS often does text transforms on button text, enter the replacement text
-       as you would want it to appear, when SS doesn't change it */
-    
     const replacmentText = '[enter replacement submitting text here between single quotes]';
     
+    const nth = 1; // nth form on page
+    
     // do not change anything below, there be the borg here
-    
-    const $form = twcsl.getFormNth ( );
-    
-    if ( $form === undefined ) return; // bail if no form
     
     // bail if no mutation observer available
     
     if ( ! ( 'MutationObserver' in window ) ) return;
     
+    const $form = twcsl.getFormNth ( nth );
+    
+    if ( $form === undefined ) return; // bail if no form
+    
+    const element = $( 'input[type="submit"]', $form )
+    
+      .get ( 0 );
+      
     const observer = new MutationObserver ( function ( mutations ) {
     
       $.each ( mutations, function ( ) {
@@ -55,19 +62,19 @@
         
         if ( $( '.field-error:first', $form ).length ) return;
         
-        const $e = $( this.target );
+        const $element = $( this.target );
         
         // bail if submit is hidden, indicates form was submitted
         
-        if ( $e.hasClass ( 'hidden' ) ) return;
+        if ( $element.hasClass ( 'hidden' ) ) return;
         
-        const v = $e.val ( );
+        const value = $element.val ( );
         
         // bail if button text already set
         
-        if ( v == replacmentText ) return;
+        if ( value == replacmentText ) return;
         
-        $e.val ( replacmentText );
+        $element.val ( replacmentText );
         
         } );
         
@@ -75,7 +82,7 @@
       
     // start listening for changes in specified element
     
-    observer.observe ( $( 'input[type="submit"]', $form ) [ 0 ], {
+    observer.observe ( element, {
     
       attributes : true
       
