@@ -1,6 +1,6 @@
 # Site Wide Image Borders
 
-### Version 0.5d0
+### Version 0.5d1
 
 #### SS Version 7.1
 
@@ -19,6 +19,11 @@ Please consider
 
 ## Changes
 
+* **2022-03-28**
+
+  * fix for visual issues with some image block designs
+  * bumped version to 0.5d1
+  
 * **2022-03-27**
 
   * generalized the effect to not only do corners but borders as well

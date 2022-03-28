@@ -2,7 +2,7 @@
 
   begin site wide image borders
   
-  Version       : 0.5d0
+  Version       : 0.5d1
   
   SS Version    : 7.1
   
@@ -17,6 +17,12 @@
                   
                   there is no switch for portfolio projects as SS does not
                   disguinsh them from regular pages
+                  
+                  this effect doesn't work with :
+                  
+                    image block shapes
+                    
+                    gallery section > type > grid mansonry
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -81,24 +87,11 @@
     
   .swib-image-block {
   
-    .sqs-block-image .intrinsic {
+    .sqs-block-image .sqs-image-shape-container-element {
     
-      .image-block-wrapper, // inline
-      .image-inset // card, collage, overlap, poster, stack
+      .swib-properties( );
       
-        {
-        
-          .swib-properties( );
-          
-          }
-          
-      .image-overlay {
-      
-          .swib-properties( );
-          
-        }
-        
-      } // end sqs-block-image
+      }
       
     }
     
