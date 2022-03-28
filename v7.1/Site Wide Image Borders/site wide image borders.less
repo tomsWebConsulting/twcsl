@@ -1,0 +1,356 @@
+/*
+
+  begin site wide image borders
+  
+  Version       : 0.5d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : LESS
+  
+  Notes         : this effect is not complete
+                  
+                  this effect won't magically fix your images if there are
+                  transparent areas around the image and apply the effect. the
+                  same is true if the image has a border that matches the
+                  background behind the image
+                  
+                  there is no switch for portfolio projects as SS does not
+                  disguinsh them from regular pages
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  @border-color : none;
+  @border-radius : 0px;
+  @border-style : none;
+  @border-width : 0px;
+  
+  // use false or true for each area where you want the effect to be active
+  
+  .blog-list( true );
+  
+  .blog-post( true );
+  
+  .event-list( true );
+  
+  .event( true );
+  
+  .gallery-block( true );
+  
+  .gallery-section( true );
+  
+  .image-block( true );
+  
+  .portfolio-list( true );
+  
+  .section-background( false );
+  
+  .store-product-grid( true );
+  
+  .store-product-detail( true );
+  
+  .store-product-detail-additional-info( true );
+  
+  .summary-block( true );
+  
+  .custom-declarations {
+  
+    /* for your own declarations ( property/value pairs ). these will be placed
+       after the built-in properties ( border-color, border-radius,
+       border-style, border-width, and z-index ) */
+       
+    // enter your property/value pairs here
+    
+    }
+    
+  // do not change anything below, there be the borg here
+  
+  .swib-properties {
+  
+    border-color : @border-color;
+    border-radius : @border-radius;
+    border-style : @border-style;
+    border-width : @border-width;
+    z-index : 1;
+    
+    .custom-declarations( );
+    
+    }
+    
+  .swib-image-block {
+  
+    .sqs-block-image .intrinsic {
+    
+      .image-block-wrapper, // inline
+      .image-inset // card, collage, overlap, poster, stack
+      
+        {
+        
+          .swib-properties( );
+          
+          }
+          
+      .image-overlay {
+      
+          .swib-properties( );
+          
+        }
+        
+      } // end sqs-block-image
+      
+    }
+    
+  .blog-list( @boolean ) when ( @boolean = true ) { // blog grid
+  
+    body[class*="collection-type-blog-"].view-list {
+    
+      .page-section[class*="collection-type-blog-"] {
+      
+        .image-wrapper {
+        
+          .swib-properties( );
+          
+          }
+          
+        }
+        
+      }
+      
+    } // end blog grid
+    
+  // blog post
+  
+  .blog-post( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-blog-"].view-item {
+    
+      .sqs-block-image .intrinsic {
+      
+        .image-block-wrapper, // inline
+        .image-inset // card, collage, overlap, poster, stack
+        
+          {
+          
+            .swib-properties( );
+            
+            }
+            
+        .image-overlay {
+        
+            .swib-properties( );
+            
+          }
+          
+        } // end sqs-block-image
+        
+      }
+      
+    }
+    
+  // event list
+  
+  .event-list( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-events-"].view-list .page-section[class*="collection-type-events-"] {
+    
+      .eventlist-column-thumbnail {
+      
+        .swib-properties( );
+        
+        }
+        
+      .eventlist-column-date {
+      
+        z-index : 1;
+        
+        }
+        
+      }
+      
+    }
+    
+  // event
+  
+  .event( @boolean ) when ( @boolean = true ) {
+  
+      body[class*="collection-type-events-"].view-item {
+      
+        .sqs-block-image .intrinsic {
+        
+          .image-block-wrapper, // inline
+          .image-inset // card, collage, overlap, poster, stack
+          
+            {
+            
+              .swib-properties( );
+              
+              }
+              
+          .image-overlay {
+          
+              .swib-properties( );
+              
+            }
+            
+          } // end sqs-block-image
+          
+        }
+        
+    }
+    
+  // gallery block
+  
+  .gallery-block( @boolean ) when ( @boolean = true ) {
+  
+    .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
+    .sqs-gallery-block-slideshow,
+    .sqs-gallery-block-stacked .image-wrapper,
+    .sqs-gallery-design-stacked-slide,
+    .sqs-gallery-design-strip-slide
+    
+      {
+      
+        .swib-properties( );
+        
+        }
+        
+    }
+    
+  // gallery section
+  
+  .gallery-section( @boolean ) when ( @boolean = true ) {
+  
+    .gallery-section {
+    
+      .gallery-fullscreen-slideshow-item-img,
+      .gallery-grid-item-wrapper,
+      .gallery-masonry-item-wrapper,
+      .gallery-reel-item-src,
+      .gallery-slideshow-item-img,
+      .gallery-strips-item-wrapper
+      
+        {
+        
+         img {
+          
+          .swib-properties( );
+          
+          }
+          
+        }
+        
+      }
+      
+    }
+    
+  // image block
+  
+  .image-block( @boolean ) when ( @boolean = true ) {
+  
+    .swib-image-block( );
+    
+    }
+    
+  // portfolio list
+  
+  .portfolio-list( @boolean ) when ( @boolean = true ) {
+  
+    body.view-list .page-section[class*="collection-type-portfolio-"]
+    
+      {
+      
+        .portfolio-grid-basic,
+        .portfolio-grid-overlay
+        
+          {
+          
+            .grid-item {
+            
+              .grid-image,
+              .portfolio-overlay
+              
+                {
+                
+                  .swib-properties( );
+                  
+                  }
+                  
+              }
+              
+            }
+            
+        .portfolio-hover-backgrounds-wrapper
+        
+          {
+          
+            .swib-properties( );
+            
+            }
+            
+        }
+        
+    }
+    
+  // section background
+  
+  .section-background ( @boolean ) when ( @boolean = true ) {
+  
+    .has-background .section-background {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
+  // store product grid ( page section )
+  
+  .store-product-grid( @boolean ) when ( @boolean = true ) {
+  
+    body.collection-type-products.view-list .page-section.collection-type-products .grid-image-wrapper {
+    
+      .swib-properties( );
+      
+      }
+    
+    }
+    
+  // store product detail
+  
+  .store-product-detail( @boolean ) when ( @boolean = true ) {
+  
+    body.collection-type-products.view-item .ProductItem-gallery-slides-item {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
+  // store product detail additional info
+  
+  .store-product-detail-additional-info( @boolean ) when ( @boolean = true ) {
+  
+    .ProductItem .ProductItem-additional {
+    
+      .swib-image-block( );
+      
+      }
+      
+    }
+    
+  // summary block
+  
+  .summary-block( @boolean ) when ( @boolean = true ) {
+  
+    .sqs-block-summary-v2 .img-wrapper {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
+  // end site wide image borders
