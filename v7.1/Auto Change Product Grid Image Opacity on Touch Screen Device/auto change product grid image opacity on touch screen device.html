@@ -26,9 +26,9 @@
     
     if ( ! twcsl.navigator.hasTouchScreen ) return; // bail if no touch screen
     
-    if ( ! twcsl.storePage.isStorePage ) return; // bail if not store page
+    if ( ! twcsl.page.store.is ) return; // bail if not store page
     
-    if ( twcsl.storePage.isDetail ) return; // bail if detail
+    if ( twcsl.page.store.detail.is ) return; // bail if detail
     
     const $images = $( '.products .grid-item img' );
     
