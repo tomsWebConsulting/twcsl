@@ -1,23 +1,19 @@
 # Cart Prices Change
 
-### Version 0.2d0
+### Version 0.2d1
 
-#### SS Versions 7.1, 7.0
+#### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk][3])
 
 ---
 
-## Quick Install
+## Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
-
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
-```
-
-Add code from file
-**[cart prices change.html](cart%20prices%20change.html#L1)**
-to Settings > Advanced > Code Injection > FOOTER.
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+  
+* Add code from file
+  **[cart prices change.html](cart%20prices%20change.html#L1)**
+  to Settings > Advanced > Code Injection > FOOTER.
 
 ## searchReplaceText Example Lines
 
@@ -42,6 +38,12 @@ Please consider
 
 ## Changes
 
+* **2023-03-29**
+
+  * twcsl 0.2d0 reformat
+  * update classes because of SS changes
+  * bumped version to 0.2d1
+  
 * **2021-09-21**
 
   * use mutation observer to watch price elements instead of events on quantity
@@ -60,3 +62,7 @@ Please consider
 * **2021-08-27**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[2]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
+[3]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family

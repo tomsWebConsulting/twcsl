@@ -2,7 +2,7 @@
 
   begin cart prices change
   
-  Version         : 0.2d0
+  Version         : 0.2d1
   
   SS Versions     : 7.1, 7.0
   
@@ -75,8 +75,8 @@
   
   <style>
   
-    ._2JFeDgZcv, /* subtotal */
-    .item-price
+    .cart-row-price,
+    .cart-subtotal-price
     
       {
       
@@ -85,8 +85,8 @@
         
         }
         
-    ._2JFeDgZcv.twc-cpc-show, /* subtotal */
-    .item-price.twc-cpc-show
+    .cart-row-price.twc-cpc-show,
+    .cart-subtotal-price.twc-cpc-show
     
       {
       
@@ -101,10 +101,10 @@
     $( ( ) => {
     
       // bail if no mutation observer available
-    
+      
       if ( ! ( 'MutationObserver' in window ) ) return;
-    
-      if ( ! twcsl.isCart ) return; // bail if not cart page
+      
+      if ( ! twcsl.page.cart.is ) return; // bail if not cart page
       
       const changeText = node => {
       
@@ -164,7 +164,7 @@
           
         } );
         
-      const selector = '._2JFeDgZcv, .item-price';
+      const selector = '.cart-row-price, .cart-subtotal-price';
       
       const startObserver = ( ) => {
       
