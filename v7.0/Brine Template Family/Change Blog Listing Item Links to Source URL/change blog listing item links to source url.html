@@ -38,15 +38,15 @@
     
     // do not change anything below, there be the borg here
     
-    if ( ! twcsl.blogPage.isBlogPage ) return; // bail if not blog page
+    if ( ! twcsl.page.blog.is ) return; // bail if not blog page
     
-    if ( twcsl.blogPage.isDetail ) return; // bail if detail
+    if ( twcsl.page.blog.post.is ) return; // bail if post
     
-    const setTargetAtttributeValue = ( $this, $e ) => {
+    const setTargetAtttributeValue = ( $this, $element ) => {
     
       if ( targetAtttributeValue )
       
-        $e.attr ( 'target', targetAtttributeValue );
+        $element.attr ( 'target', targetAtttributeValue );
         
       }
       
@@ -54,7 +54,9 @@
     
       .filter ( function ( ) {
       
-        return $( this ).attr ( 'target' ) !== undefined;
+        const b = $( this ).attr ( 'target' ) !== undefined;
+        
+        return b;
         
         } )
         
@@ -66,10 +68,12 @@
         
         if ( ! targetAtttributeValue ) {
         
-          const v = $this.attr ( 'target' );
+          const value = $this.attr ( 'target' );
           
-          if ( v !== undefined ) targetAtttributeValue = v;
+          if ( value !== undefined )
           
+            targetAtttributeValue = value;
+            
           }
           
         if ( changeImageLink ) {
