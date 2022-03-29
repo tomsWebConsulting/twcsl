@@ -11,7 +11,7 @@
       SS Version    : 7.1
       
       Dependancies  : jQuery
-      
+                      
                       twcsl
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
@@ -20,13 +20,17 @@
       
       */
       
-    if ( ! twcsl.eventPage.isDetail ) return; // bail if not detail
+    if ( ! twcsl.page.events.event.is ) return; // bail if not event
     
     const separator = ', ';
     
-    const categories = twcsl.eventPage.categories
+    const categories = twcsl.page.events.event.categories
     
-      .join ( separator ) + separator;
+      .join ( separator )
+      
+      +
+      
+      separator; // add the separator at end to make selectors easier to write
       
     $( 'body' ).attr ( 'data-event-categories', categories );
     
