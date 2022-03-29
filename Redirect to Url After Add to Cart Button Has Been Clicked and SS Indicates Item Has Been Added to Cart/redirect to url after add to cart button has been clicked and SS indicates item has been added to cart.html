@@ -9,7 +9,7 @@
       
       Version       : 0.1d2
       
-      SS Versions   : 7.0, 7.1
+      SS Versions   : 7.1, 7.0
       
       Dependancies  : jQuery
                       
@@ -49,9 +49,9 @@
       
         if ( this.attributeName != 'class' ) return;
         
-        const $e = $( this.target );
+        const $element = $( this.target );
         
-        if ( ! $e.hasClass ( 'cart-added' ) ) return;
+        if ( ! $element.hasClass ( 'cart-added' ) ) return;
         
         location.href = url;
         
@@ -67,7 +67,11 @@
     
     $addToCartButtons.each ( function ( ) {
     
-      observer.observe ( $( '.sqs-add-to-cart-button', $( this ) ) [ 0 ], {
+      const element = $( '.sqs-add-to-cart-button', this )
+      
+        .get ( 0 );
+        
+      observer.observe ( element, {
       
         attributes : true
         
@@ -79,7 +83,9 @@
     
       if ( ! autoClick ) return; // bail if not auto click
       
-      if ( ! twcsl.storePage.isDetail && $addToCartButtons.length > 1 ) return;
+      const b = twcsl.page.store.detail.is && $addToCartButtons.length > 1;
+      
+      if ( ! b ) return;
       
       $( '.sqs-add-to-cart-button-inner', $addToCartButtons.first ( ) )
       
