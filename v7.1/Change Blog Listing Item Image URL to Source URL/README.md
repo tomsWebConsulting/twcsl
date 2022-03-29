@@ -2,20 +2,18 @@
 
 ### Version 0.1d1
 
+#### SS Version 7.1
+
 ---
 
-## Quick Install
+## Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
-
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d14/twcsl.js"></script>
-```
-
-Add code from file
-**[change blog listing item image URL to Source URL.html](change%20blog%20listing%20item%20image%20URL%20to%20Source%20URL.html#L1)**
-to Blog Settings > Advanced > Page Header Code Injection for the blog page.
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+  
+* Add code from file
+  **[change blog listing item image URL to Source URL.html](change%20blog%20listing%20item%20image%20URL%20to%20Source%20URL.html#L1)**
+  to Blog Settings > Advanced > Page Header Code Injection for the blog page.
 
 ## Make a Donation
 
