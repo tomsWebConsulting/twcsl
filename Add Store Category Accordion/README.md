@@ -2,23 +2,18 @@
 
 ### Version 0.2d1
 
+#### SS Versions 7.1, 7.0
+
 ---
 
-## Quick Install
+## Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
-
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d8/twcsl.js"></script>
-```
-
-Add code from
-[Add Category Attribute to a Store Category Page](https://github.com/tomsWebConsulting/twcsl/tree/main/Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page)
-ignoring the first install step about jQuery and twcsl.
-
-Add code from file **add store category accordion.html** to Store Settings >
-Advanced > Page Header Code Injection for the store page.
+* Add code from
+  [Add Category Attribute to a Store Category Page](https://github.com/tomsWebConsulting/twcsl/tree/main/Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page).
+  
+* Add code from file
+  **[add store category accordion.html](add%20store%20category%20accordion.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Example Use Case
 
@@ -49,20 +44,21 @@ interface.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
 * **2021-07-11**
-<br><br>
+
   * fix syntax errors
   * bumped version to 0.2d1
-  <br><br>
+  
 * **2021-07-10**
-<br><br>
+
   * support v7.1
   * bumped version to 0.2d0
-  <br><br>
+  
 * **2021-05-20**
-<br><br>
+
   * initial version
