@@ -6,7 +6,7 @@
 
 ---
 
-## Quick Install
+## Install
 
 * Install
   [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
