@@ -2,18 +2,14 @@
 
 ### Version 0.1d0
 
-#### SS Version 7.0 ([Bedford template family](https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family))
+#### SS Version 7.0 ([Bedford template family][1])
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
   **[blog post tag url change.html](blog%20post%20tag%20url%20change.html#L1)**
@@ -33,3 +29,5 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-09-03**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
