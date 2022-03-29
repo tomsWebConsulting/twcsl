@@ -2,7 +2,7 @@
 
   form text field max length
   
-  Version       : 0.4d0
+  Version       : 0.4d1
   
   SS Versions   : 7.1, 7.0
   
@@ -123,13 +123,13 @@
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const isCart = twcsl.isCart;
+      const isCart = twcsl.page.cart.is;
       
       const isProductBlocks = Boolean ( $( '.sqs-block-product' ).length );
       
-      const isStoreProductDetail = twcsl.storePage.isDetail;
+      const isStoreProductDetail = twcsl.page.store.detail.is;
       
-      const isStoreProductGridWithQuickView = twcsl.storePage.isStorePage &&
+      const isStoreProductGridWithQuickView = twcsl.page.store.is &&
       
         Boolean ( $( '.list-grid.is-product-quick-view-enabled' ).length );
         
@@ -303,7 +303,7 @@
       
         // _3tQnbn8EH is cart page container
         
-        const cartPageContainer = $( '._3tQnbn8EH' ).get ( 0 );
+        const cartPageContainer = $( '._F2v_aAP6' ).get ( 0 );
         
         cartEditDetailsClick ( );
         

@@ -1,30 +1,26 @@
 # Form Text Field Max Length
 
-### Version 0.4d0
+### Version 0.4d1
 
 #### SS Versions 7.1, 7.0
 
 ---
 
-## Quick Install
+## Install
 
 * Add code from file
-**[form text field max length.less](form%20text%20field%20max%20length.less#L1)**
-to Design > Custom CSS.
-
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d15/twcsl.js"></script>
-  ```
+  **[form text field max length.less](form%20text%20field%20max%20length.less#L1)**
+  to Design > Custom CSS.
+  
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
-**[form text field max length.html](form%20text%20field%20max%20length.html#L1)**
-to Settings > Advanced > Code Injection > FOOTER.
-
+  **[form text field max length.html](form%20text%20field%20max%20length.html#L1)**
+  to Settings > Advanced > Code Injection > FOOTER.
+  
 * Add a form block to your page and set up as desired.
-
+  
   For each text or text area field where you want a max character limit do the
   following :
   
@@ -120,6 +116,12 @@ Please consider
 
 ## Changes
 
+* **2023-03-29**
+
+  * twcsl 0.2d0 reformat
+  * update classes because of SS changes
+  * bumped version to 0.4d1
+  
 * **2021-09-27**
 
   * use placeholder field instead of description for ftfml directive
