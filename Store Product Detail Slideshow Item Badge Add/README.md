@@ -2,18 +2,14 @@
 
 ### Version 0.1d2
 
-#### SS Versions 7.1, 7.0
+#### SS Versions 7.1, 7.0 ([Brine template family][1])
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
   **[store product detail slideshow item badge add.html](store%20product%20detail%20slideshow%20item%20badge%20add.html#L1)**
@@ -35,3 +31,5 @@ Please consider
 * **2021-12-22**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
