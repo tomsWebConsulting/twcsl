@@ -2,27 +2,24 @@
 
 ### Version 0.1d1
 
-#### SS Versions 7.1, 7.0
+#### SS Versions 7.1, 7.0 ([Brine template family][1])
 
 ---
 
-## Quick Install
+## Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
-
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
-```
-
-Add code from file
-**[store product detail add text after description matched text per tag.html](store%20product%20detail%20add%20text%20after%20description%20matched%20text%20per%20tag.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
-Read the code for any instructions within.
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+  
+* Add code from file
+  **[store product detail add text after description matched text per tag.html](store%20product%20detail%20add%20text%20after%20description%20matched%20text%20per%20tag.html#L1)**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider
+[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
 
 ## Changes
 
@@ -34,3 +31,5 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-06-28**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
