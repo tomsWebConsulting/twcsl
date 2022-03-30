@@ -6,14 +6,10 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d17/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
   **[blog page section text replace with category or tag, or both.html](blog%20page%20section%20text%20replace%20with%20category%20or%20tag,%20or%20both.html#L1)**

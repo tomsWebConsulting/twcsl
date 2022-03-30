@@ -90,7 +90,7 @@
     
       if ( window.frameElement !== null ) return; // bail if in Preview
       
-      if ( ! twcsl.blogPage.isBlogPage ) return; // bail if not blog page
+      if ( ! twcsl.page.blog.is ) return; // bail if not blog page
       
       const customElement = 'x-twc-bpstrwcotob';
       
@@ -128,9 +128,13 @@
       
       if ( ! ( options.category.active || options.tag.active ) ) return;
       
+      const hasCategory = twcsl.page.blog.list.hasCategory;
+      
+      const hasTag = twcsl.page.blog.list.hasTag;
+      
       // bail if not category or tag page
       
-      if ( ! ( twcsl.blogPage.hasCategory || twcsl.blogPage.hasTag ) ) return;
+      if ( ! ( hasCategory || hasTag ) return;
       
       const $elements = $( customElement );
       
@@ -142,23 +146,23 @@
       
       switch ( true ) {
       
-        case twcsl.blogPage.hasCategory && options.category.active :
+        case hasCategory && options.category.active :
         
           prefixText = options.category.prefixText;
           
           suffixText = options.category.suffixText;
           
-          text = twcsl.blogPage.category;
+          text = twcsl.page.blog.list.category;
           
           break;
           
-        case twcsl.blogPage.hasTag && options.tag.active :
+        case hasTag && options.tag.active :
         
           prefixText = options.tag.prefixText;
           
           suffixText = options.tag.suffixText;
           
-          text = twcsl.blogPage.tag;
+          text = twcsl.page.blog.list.tag;
           
           break;
           
