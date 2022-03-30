@@ -214,6 +214,8 @@ not necessarily designed to work together.
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
     
+  * [Header Navigation Center Bottom Sticky Desktop](v7.1/Header%20Navigation%20Center%20Bottom%20Sticky%20Desktop)
+    
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
   * [Header Social Icon Bandcamp Generic Icon to Bandcamp Change](v7.1/Header%20Social%20Icon%20Bandcamp%20Generic%20Icon%20to%20Bandcamp%20Change)
@@ -249,8 +251,6 @@ not necessarily designed to work together.
   * [Move Image Block Card Button Under Image](v7.1/Move%20Image%20Block%20Card%20Button%20Under%20Image)
     
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
-    
-  * [Navigation Center Bottom Sticky Desktop](v7.1/Navigation%20Center%20Bottom%20Sticky%20Desktop)
     
   * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
     
