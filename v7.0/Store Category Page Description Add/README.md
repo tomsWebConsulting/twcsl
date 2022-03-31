@@ -2,18 +2,14 @@
 
 ### Version 0.3d0
 
-#### SS Version 7.0 ([Avenue](https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template), [Bedford template family](https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template), [Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
+#### SS Version 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3])
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
   **[store category page description add.html](store%20category%20page%20description%20add.html#L1)**
@@ -40,3 +36,7 @@ Please consider
 * **2021-03-23**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template
+[2]: https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template
+[3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
