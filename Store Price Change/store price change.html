@@ -110,8 +110,8 @@
   
     ( ( ) => {
     
-      const isDetail = twcsl.storePage.isDetail;
-    
+      const isDetail = twcsl.page.store.detail.is;
+      
       if ( ! isDetail ) return; // bail if not detail
       
       // bail if no mutation observer available
@@ -246,13 +246,13 @@
         
       switch ( true ) {
       
-        case twcsl.is71 :
+        case twcsl.ss.is71 :
         
           $( initialize );
           
           break;
           
-        case twcsl.is70 :
+        case twcsl.ss.is70 :
         
           Squarespace.onInitialize ( Y, initialize );
           
