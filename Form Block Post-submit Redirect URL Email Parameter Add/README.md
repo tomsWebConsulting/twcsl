@@ -6,19 +6,15 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
-**[form block post-submit redirect url email parameter add.html](form%20block%20post-submit%20redirect%20url%20email%20parameter%20add.html#L1)**
-to Page Settings > Advanced > Page Header Code Injection for the page.
-Read the code for any instructions within.
+  **[form block post-submit redirect url email parameter add.html](form%20block%20post-submit%20redirect%20url%20email%20parameter%20add.html#L1)**
+  to Page Settings > Advanced > Page Header Code Injection for the page.
+  Read the code for any instructions within.
 
 ## Make a Donation
 
