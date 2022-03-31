@@ -167,11 +167,11 @@
           
         };
         
-      if ( twcsl.storePage.isDetail ) return; // bail on detail
+      if ( twcsl.page.store.detail.is ) return; // bail on detail
       
-      if ( twcsl.storePage.hasTag ) return; // bail on tag
+      if ( twcsl.page.store.list.hasTag ) return; // bail on tag
       
-      const category = twcsl.storePage.category;
+      const category = twcsl.page.store.list.category;
       
       // bail if no category url slug mapped
       
