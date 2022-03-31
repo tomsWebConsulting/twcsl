@@ -2,18 +2,14 @@
 
 ### Version 0.3d4
 
-#### SS Versions 7.1, 7.0
+#### SS Versions 7.1, 7.0 ([Brine template family][1])
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
   **[move product detail additional info first n blocks to end of product details.html](move%20product%20detail%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20details.html#L1)**
@@ -66,3 +62,5 @@ Please consider
 * **2021-06-05**
 
   * initial version
+
+[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family

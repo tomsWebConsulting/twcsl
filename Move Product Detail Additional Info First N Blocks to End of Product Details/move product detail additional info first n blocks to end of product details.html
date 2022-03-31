@@ -90,7 +90,7 @@
     
       if ( window.frameElement !== null ) return; // bail if in Preview
       
-      if ( ! twcsl.storePage.isDetail ) return; // bail if not detail
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
       const options = twc.af4b3333;
       
@@ -128,7 +128,7 @@
         
       switch ( true ) {
       
-        case twcsl.is71 :
+        case twcsl.ss.is71 :
         
           const b = $( '#pdp' ).hasClass ( 'product-layout-side-by-side' );
           
@@ -146,7 +146,7 @@
               
           break;
           
-        case twcsl.is70 :
+        case twcsl.ss.is70 :
         
           selector = [
           
