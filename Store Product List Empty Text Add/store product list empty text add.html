@@ -32,7 +32,7 @@
     
     // do not change anything below, there be the borg here
     
-    if ( twcsl.storePage.isDetail ) return; // bail on detail
+    if ( twcsl.page.store.detail.is ) return; // bail on detail
     
     const initialize = ( ) => {
     
@@ -68,13 +68,13 @@
       
     switch ( true ) {
     
-      case twcsl.is71 :
+      case twcsl.ss.is71 :
       
         $( initialize );
         
         break;
         
-      case twcsl.is70 :
+      case twcsl.ss.is70 :
       
         Squarespace.onInitialize ( Y, initialize );
         
