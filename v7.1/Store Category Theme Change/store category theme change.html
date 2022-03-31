@@ -47,9 +47,9 @@
       
         if ( window.frameElement !== null ) return; // bail if in Preview
         
-        if ( ! twcsl.storePage.hasCategory ) return; // bail if not category
+        if ( ! twcsl.page.store.list.hasCategory ) return; // bail if not category
         
-        const category = twcsl.storePage.category;
+        const category = twcsl.page.store.list.category;
         
         const categoryThemeMap = { };
         

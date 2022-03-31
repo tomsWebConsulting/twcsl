@@ -6,14 +6,10 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.1d19/twcsl.js"></script>
-  ```
+* Install
+  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Install code from
   **[store category theme change.html](store%20category%20theme%20change.html#L1)**.
