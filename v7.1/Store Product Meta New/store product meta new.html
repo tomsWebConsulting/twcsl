@@ -54,6 +54,10 @@
   
     $( ( ) => {
     
+      const isDetail = twcsl.page.store.detail.is;
+      
+      let selector;
+      
       const productMarkNew = ( $element ) => {
       
         let $productMark = $( '.product-mark', $element );
@@ -82,9 +86,7 @@
             
           }; // end productMarkNew
           
-      let selector;
-      
-      if ( ! twcsl.storePage.isDetail ) {
+      if ( ! isDetail ) {
       
         selector = '.products.collection-content-wrapper .grid-item.tag-new';
         
@@ -106,7 +108,7 @@
         
           let $this = $( this );
           
-          if ( ! twcsl.storePage.isDetail )
+          if ( ! isDetail )
       
             $this = $( '.grid-meta-status', $this );
             
