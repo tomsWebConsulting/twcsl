@@ -2,7 +2,7 @@
 
 ### Version 0.1d0
 
-#### SS Versions 7.1
+#### SS Version 7.1
 
 ---
 
@@ -12,7 +12,7 @@
   [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
   
 * Add code from file
-  **[store product detail move footer section nth content to additional info](store%20product%20detail%20move%20footer%20section%20nth%20content%20to%20additional%20info.html#L1)**
+  **[store product detail move footer section nth content to additional info.html](store%20product%20detail%20move%20footer%20section%20nth%20content%20to%20additional%20info.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the page.
   Read the code for any instructions within.
 
