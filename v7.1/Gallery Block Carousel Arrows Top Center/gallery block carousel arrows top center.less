@@ -1,0 +1,46 @@
+/*
+
+  begin gallery block carousel arrows top center
+  
+  Version       : 0.1d0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : LESS
+  
+  Note          : this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  html:not( .squarespace-damask ) .sqs-block-gallery .sqs-gallery-block-slider {
+  
+    display : flex;
+    flex-direction : column;
+    
+    & .sqs-gallery-meta-container {
+    
+      align-self : center;
+      order : -1;
+      
+      }
+      
+    & .sqs-gallery-controls {
+    
+      .next,
+      .previous
+      
+        {
+        
+          background : unset;
+          position : unset;
+          
+          }
+          
+      }
+      
+    }
+    
+  // end gallery block carousel arrows top center
