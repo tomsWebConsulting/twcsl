@@ -26,7 +26,7 @@ Please consider
 * **2022-04-06**
 
   * code aware of v7.1 store design formats
-  * fix for code not working with product with no variants
+  * fix for code not working with products with no variants
   * bumped version to 0.1d1
   
 * **2021-05-16**
