@@ -6,7 +6,7 @@
     
       add button after add to cart button of product detail page
       
-      Version         : 0.2d1
+      Version         : 0.3.0
       
       SS Versions     : 7.0, 7.1
       
@@ -50,67 +50,72 @@
     
     // do not change anything below, there be the borg here
     
-    const $addToCartButton = $( '.sqs-add-to-cart-button-wrapper:first' );
-    
-    /* bail if no add to cart button. the button not being displayed by means of
-       CSS has no effect */
-     
-    if ( ! $addToCartButton.length ) return;
-    
     if ( guardProcessor !== undefined ) // guard processor
     
       if ( ! guardProcessor ( ) ) return;
       
-    let $button = $addToCartButton
+    const selector = '.sqs-add-to-cart-button-wrapper';
     
-      .clone ( )
-      
-      .removeAttr ( 'id' );
-      
-    let $e = $( '.sqs-add-to-cart-button', $button )
+    $( selector ).each ( function ( ) {
     
-      .attr ( 'href', url )
+      const $this = $( this );
       
-      .removeAttr ( 'id ' +
+      const $button = $this
       
-        'data-collection-id ' +
+        .clone ( )
         
-        'data-item-id ' +
+        .removeAttr ( 'data-form' )
         
-        'data-original-label ' +
+        .removeAttr ( 'id' )
         
-        'data-product-type ' +
+        .removeClass ( 'use-form' );
         
-        'data-use-custom-label' )
-        
-      .find ( '.sqs-add-to-cart-button-inner' )
+      const $e = $( '.sqs-add-to-cart-button', $button )
       
-        .html ( text )
+        .attr ( 'href', url )
         
-        .end ( );
+        .removeAttr ( 'id ' +
         
-    if ( targetAtttributeValue )
+          'data-collection-id ' +
+          
+          'data-item-id ' +
+          
+          'data-original-label ' +
+          
+          'data-product-type ' +
+          
+          'data-use-custom-label' )
+          
+        .find ( '.sqs-add-to-cart-button-inner' )
+        
+          .html ( text )
+          
+          .end ( );
+          
+      if ( targetAtttributeValue )
+      
+        $e.attr ( 'target', targetAtttributeValue );
+        
+      const $anchorTag = $( '<a>' );
+      
+      $.each ( $e.prop ( 'attributes' ), function ( ) {
+      
+        $anchorTag.attr ( this.name, this.value );
+        
+        } );
+        
+      $e
+      
+        .children ( )
+        
+        .appendTo ( $anchorTag );
+        
+      $e.replaceWith ( $anchorTag )
+      
+      $button.insertAfter ( $this );
     
-      $e.attr ( 'target', targetAtttributeValue );
-      
-    let $anchorTag = $( '<a>' );
-    
-    $.each ( $e.prop ( 'attributes' ), function ( ) {
-    
-      $anchorTag.attr ( this.name, this.value );
-      
       } );
       
-    $e
-    
-      .children ( )
-      
-      .appendTo ( $anchorTag );
-      
-    $e.replaceWith ( $anchorTag )
-    
-    $button.insertAfter ( $addToCartButton );
-    
     } );
     
   </script>
