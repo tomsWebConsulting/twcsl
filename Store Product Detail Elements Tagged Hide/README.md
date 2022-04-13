@@ -8,12 +8,12 @@
 
 ## Quick Install
 
-* Add code from file
-  **[store product detail elements tagged hide.html](store%20product%20detail%20elements%20tagged%20hide.html#L1)**
+* Add code from file **[store product detail elements tagged hide.html][4]**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
   
-* Add "hide atc" and/or "hide quantity" tags, without the quote(s), to each
-  product where you want to hide the Add To Cart button and/or Quantity fields.
+* Add "hide atc", "hide price", and/or "hide quantity" tags, without the
+  quote(s), to each product where you want to hide the Add To Cart button and/or
+  Quantity fields.
 
 ## Make a Donation
 
@@ -50,3 +50,4 @@ Please consider
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [2]: https://support.squarespace.com/hc/en-us/articles/206545397-Adirondack-template
 [3]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
+[4]: store%20product%20detail%20elements%20tagged%20hide.html#L1
