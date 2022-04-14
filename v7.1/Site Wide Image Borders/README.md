@@ -19,7 +19,7 @@ Please consider
 
 ## Changes
 
-* **2022-03-28**
+* **2022-04-13**
 
   * fix for visual issues with some gallery block designs
   * bumped version to 0.5.2
