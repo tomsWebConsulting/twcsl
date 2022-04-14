@@ -1,0 +1,116 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      calendar block event change
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this code is a base for other effects. the code alone
+                      should not produce any visible change
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      itemCallback and itemFlyOutCallback are custom functions that are called
+      for each event item. replace undefined with the name of your custom
+      functions. you can set both one or both callbacks. your functions must
+      accept a jQuery object parameter
+      
+      */
+      
+    const itemCallback = undefined;
+    
+    const itemFlyOutCallback = undefined;
+    
+    // do not change anything below, there be the borg here
+    
+    // bail if no callbacks
+    
+    if ( itemCallback == undefined && itemFlyOutCallback == undefined ) return;
+    
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const $calendars = $( '.sqs-block-calendar' );
+    
+    if ( ! $calendars.length ) return; // bail if no calendars
+    
+    const observer = new MutationObserver ( function ( mutations ) {
+    
+      $.each ( mutations, function ( ) {
+      
+        const $target = $( this.target );
+        
+        if ( ! this.addedNodes.length ) return;
+        
+        if ( ! $target.hasClass ( 'has-event' ) ) return; // bail if not event
+        
+        $.each ( this.addedNodes, function ( ) {
+        
+          const $this = $( this );
+          
+          const isItemList = $this.hasClass ( 'itemlist' );
+          
+          const isItemListFlyOut = $this.hasClass ( 'flyoutitemlist' );
+          
+          // bail if no item list
+          
+          if ( ! isItemList && ! isItemListFlyOut ) return;
+          
+          switch ( true ) {
+          
+            case isItemList :
+            
+              // bail if no callback
+              
+              if ( itemCallback == undefined ) return;
+              
+              itemCallback ( $this );
+              
+              break;
+              
+            case isItemListFlyOut :
+            
+              // bail if no callback
+              
+              if ( itemFlyOutCallback == undefined ) return;
+              
+              itemFlyOutCallback ( $this );
+              
+              break;
+              
+            }
+            
+          } );
+          
+        } );
+        
+      } );
+      
+    // start listening for changes in specified elements
+    
+    $calendars.each ( function ( ) {
+    
+      observer.observe ( this, {
+      
+        childList : true,
+        subtree : true
+        
+        } );
+        
+      } );
+      
+    } );
+    
+  </script>
