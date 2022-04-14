@@ -8,7 +8,7 @@
 
 ## Quick Install
 
-Add code from file **[site wide image borders.less][1]** to Store Settings >
+Add code from file **[store category all list hide.html][1]** to Store Settings >
 Advanced > Page Header Code Injection for the store page. Please see per-page
 code injection.
 
