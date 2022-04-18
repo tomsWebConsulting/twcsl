@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.2d0
+  Version         : 0.2.1
   
   SS Versions     : 7.1, 7.0
   
@@ -91,16 +91,6 @@ const twcsl = ( ( $ ) => {
       const slug = `tag=${ tag }`;
       
       return slug;
-      
-      };
-      
-    const _getUrlParser = url => {
-    
-      const parser = document.createElement ( 'a' );
-      
-      parser.href = url;
-      
-      return parser;
       
       };
       
@@ -764,6 +754,52 @@ const twcsl = ( ( $ ) => {
         
         if ( ! d.is ) return; // bail if not detail
         
+        const getStockQuantity = ( ) => {
+        
+          const variants = Static.SQUARESPACE_CONTEXT.product.variants;
+          
+          let q;
+          
+          let variant;
+          
+          if ( variants.length == 1 ) {
+          
+            variant = variants [ 0 ];
+            
+            } else {
+            
+              variant = $( '.product-variants:visible' )
+              
+                .attr ( 'data-selected-variant' );
+                
+              // bail if no selected variant
+              
+              if ( variant === undefined ) return undefined;
+              
+              variant = JSON.parse ( variant );
+              
+              variant = variant.id;
+              
+              variant = variants.filter ( o => o.id == variant ) [ 0 ];
+              
+              }
+              
+          q = variant.stock;
+          
+          if ( q.unlimited ) {
+          
+            q = Infinity;
+            
+            } else {
+            
+              q = q.quantity;
+              
+              }
+              
+          return q;
+          
+          };
+          
         const setClassCategories = ( ) => {
         
           if ( _is71 ) return; // bail if 7.1
@@ -838,6 +874,14 @@ const twcsl = ( ( $ ) => {
           
           };
         
+        const setMethodsGet = ( ) => {
+        
+          const g = d [ 'get' ];
+          
+          g.stockQuantity = getStockQuantity;
+          
+          };
+          
         // begin first order
         
           setClassCategories ( );
@@ -848,6 +892,8 @@ const twcsl = ( ( $ ) => {
           
         // begin second order
         
+          setMethodsGet ( );
+          
           // end second order
           
         };
@@ -1158,6 +1204,8 @@ const twcsl = ( ( $ ) => {
           
           classTags : [ ],
           
+          'get' : { },
+          
           is : false,
           
           },
@@ -1210,7 +1258,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.2d0';
+    const version = '0.2.1';
     
     // end public properties
     
@@ -1269,6 +1317,16 @@ const twcsl = ( ( $ ) => {
         $e = undefined;
         
       return $e;
+      
+      };
+      
+    const getUrlParser = url => {
+    
+      const parser = document.createElement ( 'a' );
+      
+      parser.href = url;
+      
+      return parser;
       
       };
       
@@ -1415,6 +1473,8 @@ const twcsl = ( ( $ ) => {
       getFormNth          : getFormNth,
       
       getPageSectionNth   : getPageSectionNth,
+      
+      getUrlParser        : getUrlParser,
       
       isElementInViewport : isElementInViewport,
       
