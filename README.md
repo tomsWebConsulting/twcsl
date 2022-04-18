@@ -367,7 +367,7 @@ building effects in Squarespace sites.
   * In your web browser visit the following URL.
   
     ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2d0/twcsl.js
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.1/twcsl.js
     ```
     
     The **twcsl.js** file will be downloaded to your computer.
@@ -402,7 +402,7 @@ building effects in Squarespace sites.
   * In your web browser visit the following URL.
   
     ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2d0/twcsl.html
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.1/twcsl.html
     ```
     
     The **twcsl.html** file will display in your browser.
