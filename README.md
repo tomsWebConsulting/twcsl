@@ -469,7 +469,7 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
       invertScale ( boolean ), default is false
       
-## Properties
+## Properties and their Methods
 
 * navigator ( object )
 
@@ -599,6 +599,14 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
       * classTags ( array )
       
+      * get ( object, get methods )
+      
+        * stockQuantity ( method )
+        
+          * stockQuantity ( )
+          
+            * Returns number.
+            
       * is ( boolean )
       
     * is ( boolean )
@@ -639,6 +647,12 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2022-04-15**
+
+  * restore getUrlParser method
+  * added twcsl.page.store.detail.get.stockQuantity method
+  * bumped version to 0.2.1
+  
 * **2022-03-25**
 
   * cart and search pages are under the page object instead of being top level
