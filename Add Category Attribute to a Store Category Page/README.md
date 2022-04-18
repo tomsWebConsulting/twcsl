@@ -24,7 +24,7 @@ Please consider
 
 * **2021-06-15**
 
-  * change code to work on v7.1 and v7.0
+  * change code to work on v7.1 and v7.0 (Brine)
   * use twcsl
   * bumped version to 0.1d2
   
