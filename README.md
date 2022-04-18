@@ -357,7 +357,7 @@ not necessarily designed to work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.2d0
+### Version 0.2.1
 
 ## Install Options
 
