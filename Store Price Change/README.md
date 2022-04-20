@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.3d9
+### Version 0.4.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1])
 
@@ -46,7 +46,7 @@
 
 Changing prices on a Store page does not effect the cart, checkout, or other SS
 pages/backend storage. This is purely a cosmetic change. No code can change the
-checkout page. It is a SS security feature.
+checkout page or SS backend. It is a SS security feature.
 
 ## Make a Donation
 
@@ -55,6 +55,12 @@ Please consider
 
 ## Changes
 
+* **2022-04-20**
+
+  * add support for store detail layouts
+  * fix for 0.3d8 regression on being able to change store list prices
+  * bumped version to 0.4.0
+  
 * **2022-02-03**
 
   * wrap some code in a Immediately-Invoked Function Expression to isolate

@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.3d9
+  Version         : 0.4.0
   
   SS Versions     : 7.1, 7.0
   
@@ -110,16 +110,14 @@
   
     ( ( ) => {
     
-      const isDetail = twcsl.page.store.detail.is;
-      
-      if ( ! isDetail ) return; // bail if not detail
-      
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
       const initialize = ( ) => {
       
+        const isDetail = twcsl.page.store.detail.is;
+        
         const options = twc.x8af7a0e8;
         
         const keys = Object.keys ( options.searchReplaceText );
@@ -186,6 +184,8 @@
             
             } );
             
+        if ( ! isDetail ) return; // bail if not detail
+        
         const attribute = 'data-twc-spc-mo';
         
         const observer = new MutationObserver ( mutations => {
@@ -210,38 +210,34 @@
           
           changeText ( target );
           
-          observer.observe ( productPrice, {
+          pricesObserve ( );
           
-            attributeFilter : [ attribute ],
+          } );
+          
+        const pricesObserve = ( ) => {
+        
+          // listen for changes in product prices
+          
+          $productPrices.each ( function ( ) {
+          
+            $( this )
             
-            attributeOldValue : true,
+            observer.observe ( this, {
             
-            childList : true
-            
+              attributeFilter : [ attribute ],
+              
+              attributeOldValue : true,
+              
+              childList : true
+              
+              } );
+              
             } );
             
-          } );
+          };
           
-        const productPrice = $productPrices
+        pricesObserve ( );
         
-          .first ( )
-          
-          .attr ( attribute, 'false' )
-          
-          .get ( 0 );
-          
-        // start listening for changes in product price
-        
-        observer.observe ( productPrice, {
-        
-          attributeFilter : [ attribute ],
-          
-          attributeOldValue : true,
-          
-          childList : true
-          
-          } );
-          
         };
         
       switch ( true ) {
