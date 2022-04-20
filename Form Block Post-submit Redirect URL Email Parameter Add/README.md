@@ -1,6 +1,6 @@
 # Form Block Post-submit Redirect URL Email Parameter Add
 
-### Version 0.2d0
+### Version 0.3.0
 
 #### SS Versions 7.1, 7.0
 
@@ -23,11 +23,12 @@ Please consider
 
 ## Changes
 
-<!-- * **2021-11-15**
+* **2022-04-19**
 
-  * fix for description layout issue when categories are set to side for Brine
-  * bumped version to 0.3d0
-  -->
+  * add setting for nth form on page
+  * add setting to override default query string search parameter key
+  * bumped version to 0.3.0
+  
 * **2022-03-23**
 
   * add encode flag to control if email address is encoded per url spec

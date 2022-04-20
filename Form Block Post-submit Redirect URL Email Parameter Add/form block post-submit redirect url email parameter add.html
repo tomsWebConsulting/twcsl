@@ -6,7 +6,7 @@
     
       begin form block post-submit redirect url email parameter add
       
-      Version       : 0.2d0
+      Version       : 0.3.0
       
       SS Versions   : 7.1, 7.0
       
@@ -18,13 +18,19 @@
       
       */
       
+      const nth = 1; // which form block from the page to use
+      
       // false or true, set to false to not encode the email parameter
       
       const encode = true;
       
+      // optional, override default query string search parameter key
+      
+      let key = '[enter query string parameter key here between single quotes]';
+      
       // do not change anything below, there be the borg here
   
-      const $form = twcsl.getFormNth ( );
+      const $form = twcsl.getFormNth ( nth );
       
       if ( $form === undefined ) return; // bail if no form
       
@@ -36,7 +42,11 @@
       
       const $emailField = $( '.email', $form );
       
-      const label = twcsl.getFormFieldLabel ( $emailField );
+      const b = new RegExp ( '^\\[.+\\]$' )
+      
+        .test ( key );
+        
+      key = b ? twcsl.getFormFieldLabel ( $emailField ) : key;
       
       const $input = $( 'input', $emailField );
       
@@ -52,13 +62,13 @@
         
           const searchParams = new URLSearchParams ( search );
           
-          searchParams.set ( label, email );
+          searchParams.set ( key, email );
           
           search = searchParams.toString ( );
           
           } else {
           
-            const s = `${ label }=${ email }`;
+            const s = `${ key }=${ email }`;
             
             if ( search ) {
             
