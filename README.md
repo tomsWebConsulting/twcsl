@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      158
+twcsl contains      159
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -101,6 +101,8 @@ not necessarily designed to work together.
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
 * [Payment Processor Icons](Payment%20Processor%20Icons)
+  
+* [Product Block Quick View After Anchor Tag](Product%20Block%20Quick%20View%20After%20Anchor%20Tag)
   
 * [Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart](Redirect%20to%20Url%20After%20Add%20to%20Cart%20Button%20Has%20Been%20Clicked%20and%20SS%20Indicates%20Item%20Has%20Been%20Added%20to%20Cart)
   
