@@ -1,0 +1,44 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin product block quick view after anchor tag
+      
+      Version       : 0.1.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      $( '.sqs-block-product' ).each ( function ( ) {
+      
+        let selector = '.sqs-product-quick-view-button-wrapper';
+        
+        const $this = $( this );
+        
+        const $elementQuickViewButton = $( selector, $this );
+        
+        // continue if no quick view button
+        
+        if ( ! $elementQuickViewButton.length ) return true;
+        
+        selector = '.image-container a';
+        
+        $( selector, $this )
+        
+          .after ( $elementQuickViewButton );
+          
+        } );
+        
+      // end product block quick view after anchor tag
+      
+    } );
+    
+  </script>
+
