@@ -2,7 +2,7 @@
 
   begin page sections slide toggle
   
-  Version       : 0.2d2
+  Version       : 0.3.0
   
   SS Version    : 7.1
   
@@ -20,11 +20,13 @@
   
   <style>
   
-    html:not( .squarespace-damask ) #page {
+    html:not( .squarespace-damask ) #page .twc-psst {
     
-      --twc-toggle-arrow-thickness : 3px; /* the thickness of the arrow line */
+      /* the thickness of the toggle arrow line */
       
-      --twc-toggle-arrow-size : 10px; /* the size of the arrow */
+      --twc-psst-toggle-arrow-thickness : 3px;
+      
+      --twc-psst-toggle-arrow-size : 10px; /* the size of the toggle arrow */
       
       }
       
@@ -32,21 +34,21 @@
     
   <script>
   
-    window.twc = {
+    // initialize twc global if needed
     
-      'a63af292' : {
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.a63af292 = {
+    
+      // duration, a number (milliseconds) or the word slow or fast
       
-        // duration, a number (milliseconds) or the word slow or fast
-        
-        duration : '[enter duration between single quotes]',
-        
-        }
-        
+      duration : '[enter duration between single quotes]',
+      
       };
       
     </script>
     
-  <!-- do not change anything below, there be the borg here -->
+  <!-- do not alter anything below, there be the borg here -->
   
   <style>
   
@@ -60,7 +62,7 @@
         }
         
     html:not( .squarespace-damask ) #page .twc-psst,
-    html:not( .squarespace-damask ) #page .twc-psst--non.page-section
+    html:not( .squarespace-damask ) #page .twc-psst--not.page-section
     
       {
       
@@ -118,26 +120,28 @@
       
     /* begin toggle arrows */
     
-      html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block-html:nth-child( 2 ) .sqs-block-content > *:first-child::after {
       
-        border : solid black;
+        /* border-style : solid; */
+        border : solid var( --twc-psst-toggle-arrow-color );
         border-width : 0;
         border-bottom-width : var( --twc-toggle-arrow-thickness );
         border-right-width : var( --twc-toggle-arrow-thickness );
         content : '';
         display : inline-block;
-        height : var( --twc-toggle-arrow-size );
+        height : var( --twc-psst-toggle-arrow-size );
         margin-left : 1em;
         
         -webkit-transform : rotate( 45deg );
         -ms-transform : rotate( 45deg );
         transform : rotate( 45deg );
         
-        width : var( --twc-toggle-arrow-size );
+        vertical-align : middle;
+        width : var( --twc-psst-toggle-arrow-size );
         
         }
         
-      html:not( .squarespace-damask ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) p::after {
+      html:not( .squarespace-damask ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block-html:nth-child( 2 ) .sqs-block-content > *:first-child::after {
       
         -webkit-transform : rotate( -135deg );
         -ms-transform : rotate( -135deg );
@@ -153,28 +157,32 @@
   
     $( ( ) => {
     
-      if ( window.frameElement !== null ) return; // bail if in Preview
+      if ( window.frameElement !== null ) return; // bail if in preview
       
-      let duration = twc [ 'a63af292' ].duration;
+      let duration = twc.a63af292.duration;
       
       $( '#page .page-section' ).each ( function ( ) {
       
         const $this = $( this );
         
-        const isSectionToggle = Boolean ( $( '.twc-psst', $this ).length );
+        const $element = $( 'x-twc-psst', $this );
+        
+        const isSectionToggle = Boolean ( $element.length );
         
         if ( ! isSectionToggle ) {
         
-          $this.addClass ( 'twc-psst--non' );
+          $this.addClass ( 'twc-psst--not' );
           
           return true;
           
           }
           
-        $this.addClass ( 'twc-psst' );
+        const $blockHtmlFirst =
         
-        $( '.sqs-row > .sqs-col-12 > .sqs-block:eq( 1 )', $this )
-        
+          $( '.sqs-row > .sqs-col-12 > .sqs-block-html', $this )
+          
+          .eq ( 0 )
+          
           .click ( function ( ) {
           
             if ( ! isNaN ( duration ) ) duration = Number ( duration );
@@ -191,6 +199,14 @@
                 
             } );
             
+        let color = $element.attr ( 'data-toggle-arrow-color' );
+        
+        color = color == undefined ? $blockHtmlFirst.css ( 'color' ) : color;
+          
+        $blockHtmlFirst.css ( '--twc-psst-toggle-arrow-color', color );
+        
+        $this.addClass ( 'twc-psst' );
+        
         } );
         
       } );
