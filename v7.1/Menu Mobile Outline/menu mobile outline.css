@@ -1,0 +1,38 @@
+/*
+
+  begin menu mobile outline
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .twc-mmo-outline {
+  
+    align-self : center;
+    padding-left : 1em;
+    padding-right : 1em;
+    
+    text-align : left;
+    
+    }
+    
+  .twc-mmo-outline .header-menu-nav-item {
+  
+    padding-left : unset;
+    padding-right : unset;
+    
+    }
+    
+  .twc-mmo-outline .header-menu-nav-item .header-menu-nav-item {
+  
+    padding-left : 2em;
+    
+    }
+    
+  /* end menu mobile outline */

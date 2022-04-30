@@ -1,162 +1,83 @@
-<!--
+<script>
 
-  begin menu mobile outline
+  $( ( ) => {
   
-  Version       : 0.1d0
-  
-  SS Version    : 7.1
-  
-  Dependancies  : jQuery
-  
-  Notes         : the code is comprised of a style and script tag. both must be
-                  present for the effect to work
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <style>
-  
-    .header-menu-nav-folder {
+    /*
     
-      transform : unset;
+      begin menu mobile outline
       
-      }
+      Version       : 0.2.0
       
-    .header-menu-nav-folder-content > .header-menu-nav-item > a {
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const $menu = $( '<ul class="twc-mmo-outline">' );
     
-      pointer-events : none;
-      
-      }
-      
-    .header-menu-nav-folder-content > .header-menu-nav-item > a:only-child {
+    const $navigation = $( '.header-menu .header-menu-nav-list' );
     
-      pointer-events : unset;
-      
-      }
-      
-    .header-menu-nav-folder-content .chevron--right {
+    let selector = '[data-folder="root"] .header-menu-nav-item a';
     
-      margin-right : 2.5vw;
-      
-      }
-      
-    </style>
+    $( selector, $navigation ).each ( function ( ) {
     
-  <script>
-  
-    $( ( ) => {
-    
-      const $navigation = $( '.header-menu .header-menu-nav-list' );
+      const $this = $( this );
       
-      const contentClass = 'header-menu-nav-folder-content';
+      const dataFolderId = $this.attr ( 'data-folder-id' );
       
-      const $menu = $( `<div class="header-menu-nav-folder twc-mmo-outline">
+      const isFolder = dataFolderId === undefined ? false : true;
       
-        <div class="${ contentClass }">
+      $( '.chevron', $this ).remove ( );
+      
+      const $li = $( '<li class="header-menu-nav-item">' )
+      
+        .append ( $this );
         
-          </div>
+      if ( isFolder ) {
+      
+        const $ul = $( '<ul>' );
+        
+        selector = `[data-folder="${ dataFolderId }"] ` +
+        
+          '.header-menu-nav-item:not( .header-menu-controls ) a';
           
-        </div>` );
+        $( selector, $navigation ).each ( function ( ) {
         
-      const $menuContent = $( `.${ contentClass }`, $menu );
-      
-      let selector = '.header-menu .header-menu-nav a:not( .btn ):eq( 0 )';
-      
-      const folderCssPropeties = $( selector ).css ( [ 'color', 'font-size' ] );
-      
-      const div = ( $element, isFolder = false, isLevelOne = false ) => {
-      
-        const href = $element.attr ( 'href' );
-        
-        const $div = $( `<div class="header-menu-nav-item">
-        
-          <a href="${ href }">
+          const $this = $( this );
           
-            </a>
-            
-          </div>` );
+          $( '<li class="header-menu-nav-item">' )
           
-        const $last = $( ':last', $div );
-        
-        if ( isFolder ) {
-        
-          $( 'span:not( [class*="chevron-"] )', $element )
+            .append ( $this )
+            
+            .appendTo ( $ul );
+            
+          } );
           
-            .appendTo ( $last );
-            
-          } else {
-          
-            const chevron = '<span class="chevron chevron--right">';
+        $li.append ( $ul );
         
-            const text = $element.text ( );
-            
-            $last.text ( text );
-            
-            if ( isLevelOne ) {
-            
-              $last.append ( chevron );
-              
-              } else {
-              
-                $last.prepend ( chevron );
-              
-                }
-                
-            }
-            
-        return $div;
+        }
         
-        }; // end div
-        
-      selector = '[data-folder="root"] .header-menu-nav-item a';
-      
-      $( selector, $navigation ).each ( function ( ) {
-      
-        const $this = $( this );
-        
-        const dataFolderId = $this.attr ( 'data-folder-id' );
-        
-        const isFolder = dataFolderId === undefined ? false : true;
-        
-        const isLevelOne = true;
-        
-        const $div = div ( $this, isFolder, isLevelOne );
-        
-        if ( isFolder ) {
-        
-          selector = `[data-folder="${ dataFolderId }"] ` +
-          
-            '.header-menu-nav-item:not( .header-menu-controls ) a';
-            
-          $( selector ).each ( function ( ) {
-          
-            const $this = $( this );
-            
-            div ( $this )
-            
-              .appendTo ( $div );
-              
-            } );
-            
-          }
-          
-        $menuContent.append ( $div );
-          
-        } );
-        
-      $navigation
-      
-        .children ( )
-        
-        .remove ( );
-        
-      $navigation.append ( $menu );
+      $li.appendTo ( $menu );
       
       } );
       
-    </script>
+    $navigation
     
-  <!-- end menu mobile outline -->
+      .find ( '[data-folder]:not( [data-folder="root"] )' )
+      
+        .remove ( )
+        
+        .end ( )
+        
+      .find ( '.header-menu-nav-folder-content' )
+      
+        .replaceWith ( $menu );
+        
+    } );
+    
+  </script>
