@@ -1,0 +1,53 @@
+<script>
+
+  /*
+  
+    calendar event block event past class add
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : calendar block event change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    const cbepca = ( $element ) => {
+    
+      const clss = 'twc-is-past';
+      
+      $element = $element
+      
+        .parents ( '.yui3-calendar-day' );
+        
+      const day = $( '.marker-daynum', $element )
+      
+        .text ( )
+        
+        .trim ( );
+        
+      let d = $element
+      
+        .parents ( '.yui3-calendar-pane' )
+      
+        .find ( '.yui3-calendar-header-label' )
+        
+        .text ( )
+        
+        .split ( ' ' );
+        
+      d.splice ( 1, 0, day );
+      
+      d = d.join ( ' ' );
+        
+      d = new Date ( d );
+      
+      if ( d >= Date.now ( ) ) return true; // continue
+      
+      $element.addClass ( clss );
+      
+      };
+      
+  </script>
