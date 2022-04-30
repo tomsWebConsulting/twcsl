@@ -27,6 +27,12 @@
       const itemCallback = cbepca;
   ```
 
+## Note
+
+This is meant as a base for other effects. It adds an **twc-is-past** class to
+each past event which you can then use for your own CSS to manipulate past
+events.
+
 ## Make a Donation
 
 Please consider [making a donation][3].
