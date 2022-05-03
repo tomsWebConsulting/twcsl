@@ -361,7 +361,7 @@ not necessarily designed to work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.2.1
+### Version 0.2.2
 
 ## Install Options
 
@@ -371,7 +371,7 @@ building effects in Squarespace sites.
   * In your web browser visit the following URL.
   
     ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.1/twcsl.js
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.js
     ```
     
     The **twcsl.js** file will be downloaded to your computer.
@@ -406,7 +406,7 @@ building effects in Squarespace sites.
   * In your web browser visit the following URL.
   
     ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.1/twcsl.html
+    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.html
     ```
     
     The **twcsl.html** file will display in your browser.
@@ -651,6 +651,11 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2022-05-03**
+
+  * fix for value not defined in _getPageFilterSlug private method
+  * bumped version to 0.2.2
+  
 * **2022-04-15**
 
   * restore getUrlParser method
