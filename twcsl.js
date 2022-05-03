@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.2.1
+  Version         : 0.2.2
   
   SS Versions     : 7.1, 7.0
   
@@ -310,7 +310,7 @@ const twcsl = ( ( $ ) => {
       
         .replaceAll ( '%20', '+' );
         
-      const s = value ? `${ filter }=${ v }` : '';
+      const s = v ? `${ filter }=${ v }` : '';
       
       return s;
       
@@ -1258,7 +1258,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.2.1';
+    const version = '0.2.2';
     
     // end public properties
     
