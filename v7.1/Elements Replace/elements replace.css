@@ -1,0 +1,19 @@
+/*
+
+  begin elements replace
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  html:not( .squarespace-damask ) #footer-sections .page-section:last-child {
+  
+    display : none;
+    
+    }
+    
+  /* end elements replace */

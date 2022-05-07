@@ -1,0 +1,76 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      elements replace
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this code is a base for other effects. you will want to
+                      create CSS to hide and show elements. after an element is
+                      replaced the class twc-sr-show will be added to it which
+                      can be used to show elements
+                      
+                      this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const selectorsReplaceMap = {
+    
+      /*
+      
+        the format of each line is a selector source and destination pair
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many selector source and destination pairs as needed. this has
+        been done once initially
+        
+        */
+        
+      // '[enter selector source here between single quotes]' : '[enter selector destination here between single quotes]',
+      
+      '[enter selector source here between single quotes]' : '[enter selector destination here between single quotes]',
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    const selectorSources = Object.keys ( selectorsReplaceMap );
+    
+    $.each ( selectorSources, function ( index, selectorSource ) {
+    
+      const $elementSource = $( selectorSource );
+      
+      if ( ! $elementSource.length ) return true; // continue if no source
+      
+      const selectorDestination = selectorsReplaceMap [ selectorSource ];
+      
+      const $selectorDestination = $( selectorDestination );
+      
+      // continue if no destination
+      
+      if ( ! $selectorDestination.length ) return true;
+      
+      $selectorDestination
+      
+        .replaceWith ( $elementSource )
+        
+        .addClass ( 'twc-sr-show' );
+        
+      } );
+      
+    } );
+    
+  </script>
