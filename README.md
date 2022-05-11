@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      161
+twcsl contains      164
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -60,6 +60,10 @@ not necessarily designed to work together.
   
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
+* [Bookmarklet](Bookmarklet)
+  
+  * [Dropbox Files Download URLs](Bookmarklet/Dropbox%20Files%20Download%20URLs)
+    
 * [Cart Page Observe Changes](Cart%20Page%20Observe%20Changes)
   
 * [Cart Prices Change](Cart%20Prices%20Change)
@@ -125,6 +129,8 @@ not necessarily designed to work together.
 * [Store Product Detail Elements Tagged Hide](Store%20Product%20Detail%20Elements%20Tagged%20Hide)
   
 * [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
+  
+* [Store Product Detail Page Add Images Based on Tags](Store%20Product%20Detail%20Page%20Add%20Images%20Based%20on%20Tags)
   
 * [Store Product Detail Price Add Sqs-Money-Native for Variants](Store%20Product%20Detail%20Price%20Add%20Sqs-Money-Native%20for%20Variants)
   
