@@ -13,6 +13,7 @@
 * Add code from file
   **[store product detail page add images based on tags.html][3]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
+  Read the code for any instructions within.
 
 ## Make a Donation
 
