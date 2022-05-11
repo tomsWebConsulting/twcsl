@@ -10,7 +10,8 @@
 
 * Install [twcsl][2].
   
-* Add code from file **[product detail page add images based on tags.html][3]**
+* Add code from file
+  **[store%20product%20detail%20page%20add%20images%20based%20on%20tags.html][3]**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
 
 ## Make a Donation
