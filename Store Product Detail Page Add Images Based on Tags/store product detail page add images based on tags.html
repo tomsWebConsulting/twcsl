@@ -1,8 +1,8 @@
 <!--
 
-  begin store product detail page add images based on tags
+  begin product detail page add images based on tags
   
-  Version         : 0.1.1
+  Version         : 0.2.0
   
   SS Versions     : 7.1, 7.0
   
@@ -17,16 +17,18 @@
                     supported
   
   Dependancies    : jQuery
+                    
+                    twcsl
   
   Notes           : the code is comprised of several tags. all are needed for
                     the full effect to work
                     
-                    the images are added at the top of the product details
-                    area ( between title and price ) of the product detail page
-                    
                     this effect is not active in SS Preview to test it use
-                    private browsing < https://bit.ly/3f6lhq2 >.
+                    private browsing < https://bit.ly/3f6lhq2 >
                     
+                    the images are added at the end of the product details
+                    area
+  
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   -->
@@ -47,15 +49,18 @@
     
       /*
       
-        the format of each line is a tag as appears in the SS Product page
-        interface and an image URL
+        the format of each line is a tag as appears in the SS Product detail
+        page interface and an image URL
         
         copy and repeat the line below for each mapping, remove the "// " at the
-        beginning of the line and enter the appropriate data
+        beginning of the line and enter the appropriate data. this has been done
+        once initially
         
         */
         
       // '[enter tag here]' : '[enter image url here]',
+      
+      '[enter tag here]' : '[enter image url here]',
       
       };
       
@@ -91,9 +96,43 @@
     
       if ( window.frameElement !== null ) return; // bail if in Preview
       
-      if ( ! $( '.ProductItem' ).length ) return; // bail if not product detail
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
-      const tags = $( '.ProductItem' )
+      let selector = [
+      
+        '#pdp', // 7.1
+        
+        '.ProductItem', // 7.1, 7.0 ( Brine )
+        
+        ]
+        
+        .join ( ', ' );
+        
+      // begin format keys
+      
+        const keys = Object.keys ( tagImageUrlMap );
+        
+        $.each ( keys, function ( i, key ) {
+        
+          const keyNew = key
+          
+            .toLowerCase ( )
+            
+            .replaceAll ( ' ', '-' );
+            
+          delete Object.assign ( tagImageUrlMap,
+          
+            { [ keyNew ] : tagImageUrlMap [ key ] } ) [ key ];
+            
+          } );
+          
+        // end format keys
+        
+      const $element = $( selector )
+      
+        .last ( );
+        
+      const tags = $element
       
         .attr ( 'class' )
         
@@ -123,10 +162,30 @@
           
         } );
         
-      $imageTags.prependTo ( '.ProductItem-details-checkout' );
+      selector = [
       
+        '.product-details:not( .ProductItem-details )', // 7.1
+        
+        // 7.1, 7.0 ( Brine )
+        
+        '.ProductItem-details .ProductItem-details-checkout',
+        
+        ]
+        
+      .join ( ', ' );
+      
+      $( selector, $element ).each ( function ( ) {
+      
+        $imageTags
+        
+          .clone ( )
+          
+          .appendTo ( this );
+          
+        } );
+        
       } );
       
     </script>
     
-  <!-- end store product detail page add images based on tags -->
+  <!-- end product detail page add images based on tags -->
