@@ -14,6 +14,10 @@
   Store Settings > Advanced > Page Header Code Injection for the store page.
   Read the code for any instructions within. **There are some caveats to using
   this effect.**
+  
+* Add **[twc-spdd]** to the product description or/and text blocks in additional
+  info. [twc-spdd] will be replaced with the product dimensions. You can use
+  [twc-spdd] in multiple places.
 
 ## Make a Donation
 
