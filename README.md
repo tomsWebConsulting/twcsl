@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      164
+twcsl contains      167
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -236,6 +236,10 @@ not necessarily designed to work together.
     
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
+  * [Gallery Section Text Block Overlay](v7.1/Gallery%20Section%20Text%20Block%20Overlay)
+    
+    * [read me assests](v7.1/Gallery%20Section%20Text%20Block%20Overlay/read%20me%20assests)
+      
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
     
   * [Header Navigation Center Bottom Sticky Desktop](v7.1/Header%20Navigation%20Center%20Bottom%20Sticky%20Desktop)
@@ -331,6 +335,8 @@ not necessarily designed to work together.
   * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
+    
+  * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
   * [Store Product Detail Gallery Thumbnails Pill Segmented](v7.1/Store%20Product%20Detail%20Gallery%20Thumbnails%20Pill%20Segmented)
     
