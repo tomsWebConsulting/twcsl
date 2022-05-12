@@ -1,0 +1,251 @@
+<!--
+
+  begin store product detail dimensions
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+                  
+                  twcsl
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                    
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+                  
+                  this effect only considers the first variants dimensions. in
+                  other words is doesn't work with products that have more than
+                  one variant
+                  
+                  the dimensions entered in the SS interface are shipping
+                  dimensions, not product dimensions. if you need product
+                  dimensions then this effect is not for your need. some
+                  folks don't need the use shipping dimensions for shipping
+                  and can therefor use this effect
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdd = {
+    
+      /*
+      
+        format is a string used to replace [twc-spdd] in your page. following
+        are format tags for use in your format :
+        
+          %wIn   width inches
+          %lIn   length inches
+          %hIn   height inches
+          %wMm   width millimeters
+          %lMm   length millimeters
+          %hMmm  height millimeters
+          
+        following is a full example of the format string. your format goes
+        between the backticks
+        
+          format : `%wIn"W %lIn"D %hIn"H
+                    %wMm x %lMm x %hMm mm`,
+        
+        */
+        
+      format : `%wIn"W %lIn"D %hIn"H
+                %wMm x %lMm x %hMm mm`,
+      
+      /*
+      
+        the decimal places constants do not preserve precision, they simply
+        chop off or expand the places to the requested number. for example if
+        you have a dimension of 1.234 and the places are set to 2 then you will
+        get 1.23 as a result
+        
+        */
+        
+      inchesDecimalPlaces : 2,
+      
+      millimeterDecimalPlaces : 2
+      
+      };
+      
+    </script>
+    
+  <!-- do not alter anything below, there be the borg here -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .ProductItem-details .ProductItem-details-excerpt, /* layout simple */
+    html:not( .squarespace-damask ) .pdp-layout .pdp-details .pdp-details-excerpt, /* layout full, half, wrap */
+    html:not( .squarespace-damask ) .sqs-block-html .sqs-block-content
+    
+      {
+      
+        visibility : hidden;
+        
+        }
+        
+    html:not( .squarespace-damask ) .twc-spdd-show .ProductItem-details .ProductItem-details-excerpt, /* layout simple */
+    html:not( .squarespace-damask ) .pdp-layout.twc-spdd-show .pdp-details .pdp-details-excerpt, /* layout full, half, wrap */
+    html:not( .squarespace-damask ) .twc-spdd-show .sqs-block-html .sqs-block-content
+    
+      {
+      
+        visibility : visible;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const options = twc.spdd;
+      
+      const keys = {
+      
+        inches : {
+        
+          height : 'hIn',
+          
+          len : 'lIn',
+          
+          width : 'wIn',
+          
+          },
+          
+        millimeter : {
+        
+          hIn : 'hMm',
+          
+          lIn : 'lMm',
+          
+          wIn : 'wMm',
+          
+          },
+          
+        };
+        
+      const triggerText = '[twc-spdd]';
+      
+      const selectorSuffix = `:contains(${ triggerText })`;
+      
+      const selector = [
+      
+        '.ProductItem-details-excerpt', // layout simple
+        
+        '.pdp-details-excerpt', // layout full, half, wrap
+        
+        '.sqs-block-html .sqs-block-content',
+        
+        ]
+        
+        .join ( `${ selectorSuffix }, ` )
+        
+        +
+        
+        selectorSuffix;
+        
+      const inchesToMillimeters = ( inches, decimalPlaces = 2 ) => {
+      
+        let m = inches / 0.039370;
+        
+        m = m.toFixed ( decimalPlaces );
+        
+        return m;
+        
+        };
+        
+      d = Object.assign ( { },
+      
+        Static.SQUARESPACE_CONTEXT.product.variants [ 0 ].shippingSize );
+        
+      $.each ( keys.inches, function ( key, newKey ) {
+      
+        const decimalPlaces = options.millimeterDecimalPlaces;
+        
+        // rewrite inches keys
+        
+        delete Object.assign ( d,
+        
+          { [ newKey ] : d [ key ] } ) [ key ];
+          
+        const inches = d [ newKey ]
+        
+        key = keys.millimeter [ newKey ];
+        
+        // add millimeter
+        
+        d [ key ] = inchesToMillimeters ( inches, decimalPlaces );
+        
+        } );
+        
+      // inches decimal places
+      
+      $.each ( keys.inches, function ( key, newKey ) {
+      
+        const decimalPlaces = options.inchesDecimalPlaces;
+        
+        d [ newKey ] = d [ newKey ].toFixed ( decimalPlaces );
+        
+        } );
+        
+      // begin replace keys with values
+      
+        let format = options.format;
+        
+        $.each ( d, function ( key, value ) {
+        
+          key = `%${ key }`;
+          
+          format = format.replaceAll ( key, value );
+          
+          } );
+          
+        // end replace keys with values
+        
+      // trim whitespace from each line and replace \n with <br>
+      
+      format = format
+      
+        .replace ( /^\s+|\s+$/mg, '' )
+        
+        .replaceAll ( '\n', '<br>' );
+        
+      // replace trigger text
+      
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const html = $this
+        
+          .get ( 0 )
+          
+          .outerHTML
+          
+          .replaceAll ( `${ triggerText }`, format );
+          
+        $this.replaceWith ( html );
+        
+        } );
+        
+      $( '#pdp' ).addClass ( 'twc-spdd-show' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end store product detail dimensions -->
