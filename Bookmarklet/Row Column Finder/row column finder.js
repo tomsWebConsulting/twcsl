@@ -4,7 +4,7 @@
   
     row column finder
     
-    Version       : 0.1.0
+    Version       : 0.1.1
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -12,22 +12,32 @@
     
     */
     
+  const attribute = 'data-twc-rcf';
+  
   const l = document
   
     .querySelectorAll ( '.squarespace-config' )
     
     .length;
     
-  if ( ! l ) return; // bail if not config
+  let siteDocument;
   
-  const attribute = 'data-twc-rcf';
+  // set site document
   
-  const siteDocument = document
+  if ( l ) {
   
+    siteDocument = document
+    
     .querySelector ( 'iframe#sqs-site-frame' )
     
     .contentDocument;
     
+    } else {
+    
+      siteDocument = document;
+      
+      }
+      
   // begin deactivate
   
     let isActive = siteDocument

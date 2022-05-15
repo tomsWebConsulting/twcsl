@@ -1,6 +1,6 @@
 # Row Column Finder
 
-### Version 0.1.0
+### Version 0.1.1
 
 ---
 
@@ -47,11 +47,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2021-05-08**
+* **2022-05-15**
 
-  * added coverage for store product grid image hover
-  * bumped version to v0.1d1
-  -->
+  * fix for when site is not in config
+  * bumped version to v0.1.1
+  
 * **2022-05-15**
 
   * initial version
