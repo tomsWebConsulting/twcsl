@@ -1,0 +1,53 @@
+<script>
+
+  const cblrwel = ( $element ) => {
+  
+    /*
+    
+      calendar block link replace with excerpt link
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const linkText = '[enter link text here between single quotes]';
+      
+      // do not change anything below, there be the borg here
+      
+      const selector = `.flyoutitem-excerpt a:contains(${ linkText })`;
+      
+      const $anchor = $( selector, $element );
+      
+      if ( ! $anchor.length ) return; // bail if no anchor
+      
+      const href = $anchor.attr ( 'href' );
+      
+      $anchor
+      
+        .parents ( 'p' )
+        
+        .remove ( );
+        
+      const $elements = $( '.flyoutitem-link', $element );
+      
+      $element = $element
+      
+        .prev ( '.itemlist' )
+        
+        .find ( '.item-link' );
+        
+      $elements
+      
+        .add ( $element )
+        
+        .attr ( 'href', href );
+        
+    };
+    
+  </script>
