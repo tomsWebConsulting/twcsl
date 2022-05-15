@@ -9,7 +9,7 @@
 * Add code from file **[row column finder.bookmarklet][1]** as the URL for a
   bookmark in your browser named **Row Column Finder**.
   
-* Go to a page in a site and use the bookmarklet to tag the rows and column
+* Go to a page in a site and use the bookmarklet to tag the row and column
   elements of the page. To remove the tags use the bookmarklet again.
 
 ## Note
@@ -35,7 +35,7 @@ difficult to work with using CSS or JavaScript.
 
 In the first page section we see the target layout as desired. The second page
 section does not meet our target layout. We have a row with two columns. The
-the first row first column contains a row with two columns. Undesirable nesting!
+first row first column contains a row with two columns. Undesirable nesting!
 
 ## What is a bookmarket?
 
