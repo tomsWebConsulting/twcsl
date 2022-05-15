@@ -18,7 +18,7 @@
 * In the **calendar block event change** code set the constant
   itemFlyOutCallback to **cblrwel**.
   
-  ```html
+  ```javascript
       const itemFlyOutCallback = cblrwel;
   ```
 
