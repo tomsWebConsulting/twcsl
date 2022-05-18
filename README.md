@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      159
+twcsl contains      160
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -42,7 +42,9 @@ not necessarily designed to work together.
 
 ## Effects
 
-../[Add%20Button%20After%20Add%20to%20Cart%20Button%20of%20Product%20Detail%20Page]
+../[Accordion%20Block%20Top%20Bottom%20Border%20Hide]
+  Accordion Block Top Bottom Border Hide)
+* ./[Add%20Button%20After%20Add%20to%20Cart%20Button%20of%20Product%20Detail%20Page]
   Add Button After Add to Cart Button of Product Detail Page)
 * ./[Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page]
   Add Category Attribute to a Store Category Page)
