@@ -1,0 +1,10 @@
+/* accordion block top bottom border hide */
+
+.sqs-block-accordion .accordion-item:first-child .accordion-divider--top,
+.sqs-block-accordion .accordion-item:last-child .accordion-divider
+
+  {
+  
+    display : none;
+    
+    }
