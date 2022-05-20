@@ -1,0 +1,58 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      blog post categories and tags add
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      twcsl
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // selector where to add classes, body or article are typical choices
+    
+    const selector = 'body';
+    
+    // do not alter anything below, there be the borg here
+    
+    if ( ! twcsl.page.blog.post.is ) return; // bail if not post
+    
+    const makeClasses =
+    
+      c => `${ prefix }-${ c.toLowerCase ( ).replace ( ' ', '-' ) }`;
+      
+    let categoryClasses = twcsl.page.blog.post.categories;
+    
+    let prefix = 'category';
+    
+    let tagClasses = twcsl.page.blog.post.tags;
+    
+    categoryClasses = categoryClasses.map ( makeClasses );
+      
+    prefix = 'tag';
+    
+    tagClasses = tagClasses.map ( makeClasses );
+      
+    const classes = categoryClasses
+    
+      .concat ( tagClasses )
+      
+      .join ( ' ' );
+      
+    $( selector ).addClass ( classes );
+    
+    } );
+    
+  </script>
