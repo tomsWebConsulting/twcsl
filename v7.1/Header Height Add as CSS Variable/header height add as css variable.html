@@ -1,0 +1,49 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      header height add as css variable
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      Note          : this code is a base for other effects. on its own it
+                      doesn't do anything visible
+                      
+                      the code adds a twc-hhaacv-show class to your selector
+                      as well as setting the twc-hhaacv-height css variable
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const selector = 'body'; // where the css variable is added
+    
+    // do not change anything below, there be the borg here
+    
+    $( window ).resize ( function ( ) {
+    
+      const height = $( '#header' )
+      
+        .height ( );
+        
+      $( selector )
+      
+        .css ( '--twc-hhaacv-height', `${ height }px` );
+        
+      } )
+      
+      .resize ( );
+      
+    $( selector )
+    
+      .addClass ( 'twc-hhaacv-show' );
+      
+    } );
+    
+  </script>
