@@ -8,7 +8,7 @@ of code for adding various effects to Squarespace v7.1 and v7.0 sites.
 
 Please consider making a donation.
 
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=FSPYTKHXHRU5U)
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate?hosted_button_id=6WEYKMZS83E4G)
 
 Your donations help me to continue to help you realize your website goals! The
 donation amounts are suggested amounts. Any donation amount is greatly
@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      161
+twcsl contains      162
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -241,6 +241,8 @@ not necessarily designed to work together.
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
+    
+  * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
     
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
