@@ -1,0 +1,107 @@
+<script>
+
+  /*
+  
+    text block text class add
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : jQuery
+    
+    Notes         : this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+                      
+                    this is a base effect meant as a base for other effects.
+                    this code alone shouldn't produce any visible change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  $( ( ) => {
+  
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    $( 'x-twc-tbtca' ).each ( function ( ) {
+    
+      const $this = $( this );
+      
+      const $column = $this
+      
+        .parents ( '.col' )
+        
+        .first ( );
+        
+      const $row = $column
+      
+        .parents ( '.sqs-row' )
+        
+        .first ( )
+        
+        .addClass ( 'twc-tbtca' );
+      
+      $this
+      
+        .parents ( '.sqs-block-code' )
+        
+        .remove ( );
+        
+      $( '.sqs-block-html', $column )
+      
+        .addClass ( 'twc-tbtca-tab-label' )
+        
+        .each ( function ( i ) {
+        
+          const clss = 'twc-tbtca-'
+          
+            +
+            
+            $( this )
+            
+            .text ( )
+            
+            .trim ( )
+            
+            .replaceAll ( ' ', '-' )
+            
+            .replace ( /[^a-zA-Z0-9_-]*/g, '' )
+            
+            .replace ( /^\d+/, '' );
+            
+          $( this ).attr ( 'data-twc-tbtca-class', clss );
+          
+          if ( ! i ) $row.addClass ( clss );
+          
+          } )
+          
+        .click ( function ( ) {
+        
+          const clss = $( this ).attr ( 'data-twc-tbtca-class' );
+          
+          const classes = $row
+          
+            .attr ( 'class' )
+            
+            .split ( ' ' )
+            
+            .filter ( c => c.startsWith ( 'twc-tbtca-' ) )
+            
+            .join ( ' ' );
+            
+          $row
+          
+            .removeClass ( classes )
+            
+            .addClass ( clss );
+            
+          } );
+          
+      } );
+      
+    } );
+    
+  </script>
