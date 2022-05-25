@@ -34,7 +34,7 @@ your code.
 
 First you need to layout a page section similar to the following.
 
-![tabs layout](read%20me%20assets/tabs$20layout.png)
+![tabs layout](read%20me%20assets/tabs%20layout.png)
 
 The basic above is two columns. Left containing your tab labels. Right
 containing each tabs detail. Notice the code block in the left column. Add the
