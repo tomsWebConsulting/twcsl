@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains      162
+twcsl contains      163
  effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
@@ -361,6 +361,8 @@ not necessarily designed to work together.
   * [Store Product Price Element Empty When From](v7.1/Store%20Product%20Price%20Element%20Empty%20When%20From)
     
   * [Store Product Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Store%20Product%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
+    
+  * [Text Block Text Class Add](v7.1/Text%20Block%20Text%20Class%20Add)
     
   * [Use Nth Product Gallery Image as Background for Page](v7.1/Use%20Nth%20Product%20Gallery%20Image%20as%20Background%20for%20Page)
     
