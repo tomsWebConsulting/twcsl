@@ -120,7 +120,8 @@ html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row 
 
 ```
 
-You would of course change page section and block ids to match your page.
+You would of course change page section and block ids to match your page. Where
+you put the CSS depends on the effect you are trying to achieve.
 
 ## Note
 
