@@ -4,7 +4,7 @@
   
     begin store product details reorder
     
-    Version     : 0.1.0
+    Version     : 0.2.0
     
     SS Version  : 7.0
     
@@ -15,23 +15,101 @@
     
     */
     
-    /*
+    .ProductItem-details {
     
-    .ProductItem-details .product-quantity-input {
-    
-      -webkit-box-ordinal-group : 3 !important;
-      -ms-flex-order : 2 !important;
-      order : 2 !important;
+      /* this is where you control the order of elements. replace unset with a
+         number. use 1, 2, 3, etc. */
+      
+      --add-to-cart-button : unset;
+      --description : unset;
+      --price : unset;
+      --quantity : unset;
+      --review-summary : unset;
+      --share : unset;
+      --title : unset;
+      --variants : unset;
       
       }
       
-    */
+    /* do not change anything below, there be the borg here */
+      
+    .ProductItem-details .product-price {
     
+      -webkit-box-ordinal-group : calc( var( --price ) + 1 );
+      -moz-box-ordinal-group : calc( var( --price ) + 1 );
+      -ms-flex-order : var( --price );
+      -webkit-order : var( --price );
+      order : var( --price );
+      
+      }
+      
+    .ProductItem-details .product-quantity-input {
+    
+      -webkit-box-ordinal-group : calc( var( --quantity ) + 1 );
+      -moz-box-ordinal-group : calc( var( --quantity ) + 1 );
+      -ms-flex-order : var( --quantity );
+      -webkit-order : var( --quantity );
+      order : var( --quantity );
+      
+      }
+      
+    .ProductItem-details .product-variants {
+    
+      -webkit-box-ordinal-group : calc( var( --variants ) + 1 );
+      -moz-box-ordinal-group : calc( var( --variants ) + 1 );
+      -ms-flex-order : var( --variants );
+      -webkit-order : var( --variants );
+      order : var( --variants );
+      
+      }
+      
+    .ProductItem-details .ProductItem-details-excerpt {
+    
+      -webkit-box-ordinal-group : calc( var( --description ) + 1 );
+      -moz-box-ordinal-group : calc( var( --description ) + 1 );
+      -ms-flex-order : var( --description );
+      -webkit-order : var( --description );
+      order : var( --description );
+      
+      }
+      
+    .ProductItem-details .ProductItem-details-share {
+    
+      -webkit-box-ordinal-group : calc( var( --share ) + 1 );
+      -moz-box-ordinal-group : calc( var( --share ) + 1 );
+      -ms-flex-order : var( --share );
+      -webkit-order : var( --share );
+      order : var( --share );
+      
+      }
+      
+    .ProductItem-details h1.ProductItem-details-title {
+    
+      -webkit-box-ordinal-group : calc( var( --title ) + 1 );
+      -moz-box-ordinal-group : calc( var( --title ) + 1 );
+      -ms-flex-order : var( --title );
+      -webkit-order : var( --title );
+      order : var( --title );
+      
+      }
+      
+    .ProductItem-details .reviewSummary {
+    
+      -webkit-box-ordinal-group : calc( var( --review-summary ) + 1 );
+      -moz-box-ordinal-group : calc( var( --review-summary ) + 1 );
+      -ms-flex-order : var( --review-summary );
+      -webkit-order : var( --review-summary );
+      order : var( --review-summary );
+      
+      }
+      
     .ProductItem-details .sqs-add-to-cart-button-wrapper {
     
-      -webkit-box-ordinal-group : 3 !important;
-      -ms-flex-order : 2 !important;
-      order : 2 !important;
+      -webkit-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+      -moz-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+      -ms-flex-order : var( --add-to-cart-button );
+      -webkit-order : var( --add-to-cart-button );
+      order : var( --add-to-cart-button );
       
       }
       

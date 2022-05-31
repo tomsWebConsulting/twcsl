@@ -1,6 +1,6 @@
 # Store Product Details Reorder Desktop
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.0 ([York template family][1])
 
@@ -18,11 +18,11 @@ Please consider [making a donation][2].
 
 ## Changes
 
-<!-- * **2021-08-02**
+* **2022-05-31**
 
-  * fix minor documentation issues
-  * bumped version to 0.1d1
-  -->
+  * order more detail elements and easier user configuration
+  * bumped version to 0.2.0
+  
 * **2021-03-04**
 
   * initial version
