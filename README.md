@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 163 effects. Each effect has it's own version number, code,
+twcsl contains 165 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -176,6 +176,10 @@ not necessarily designed to work together.
   * [Wells Template](v7.0/Wells%20Template)
     
     * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
+      
+  * [York Template Family](v7.0/York%20Template%20Family)
+    
+    * [Store Product Details Reorder](v7.0/York%20Template%20Family/Store%20Product%20Details%20Reorder)
       
 * [v7.1](v7.1)
   
