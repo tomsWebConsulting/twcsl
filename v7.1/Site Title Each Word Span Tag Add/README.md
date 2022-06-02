@@ -47,8 +47,8 @@ Please consider [making a donation][5].
 
   * initial version
 
-[1]: site%20title%20each%20word%20add%20span%20tag.css#L1
-[2]: site%20title%20each%20word%20add%20span%20tag.html#L1
+[1]: site%20title%20each%20word%20span%20tag%20add.css#L1
+[2]: site%20title%20each%20word%20span%20tag%20add.html#L1
 [3]: https://bit.ly/3f6lhq2
 [4]: https://toms-web-consulting-demos.squarespace.com/site-title-each-word-span-tag-add?password=twcdemos
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
