@@ -1,0 +1,55 @@
+<script>
+
+  /*
+  
+    site title each word span tag add
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : jQuery
+    
+    Note          : this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+                    
+                    this is a base effect meant as a base for other effects.
+                    this code alone should produce little visible change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  $( ( ) => {
+  
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    const $siteTitle = $( '#site-title' );
+    
+    let html = '<span>'
+    
+      +
+      
+      $siteTitle
+      
+      .text ( )
+      
+      .split ( ' ' )
+      
+      .join ( '</span> <span>' )
+      
+      +
+      
+      '</span>';
+      
+    $siteTitle
+    
+      .html ( html )
+      
+      .addClass ( 'twc-stewsta-show' );
+      
+    } );
+    
+  </script>

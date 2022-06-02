@@ -1,0 +1,30 @@
+/*
+
+  begin site title each word span tag add
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.1
+  
+  Note        : this effect is not active in SS Preview to test it use private
+                browsing < https://bit.ly/3f6lhq2 >
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  html:not( .squarespace-damask ) #site-title {
+  
+    visibility : hidden;
+    
+    }
+    
+  html:not( .squarespace-damask ) #site-title.twc-stewsta-show {
+  
+    visibility : visible;
+    
+    }
+    
+  /* end site title each word add span tag */
