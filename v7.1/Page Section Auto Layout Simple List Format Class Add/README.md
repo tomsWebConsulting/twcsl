@@ -28,7 +28,7 @@
   **twc-psalslfca**. I also prefer to clear the other fields of content but it
   is not required.
   
-  ![basic description](basic%20description.png)
+  ![basic description](read%20me%20assets/basic%20description.png)
   
   The text **twc-psalslfca** tells the code that you want the effect applied to
   this auto layout section. The text also adds the default classes from a normal
@@ -37,7 +37,7 @@
 * You can add settings below the **twc-psalslfca**. Here is an example showing
   the default settings applied as mentioned above.
   
-  ![advanced description](advanced%20description.png)
+  ![advanced description](read%20me%20assets/advanced%20description.png)
   
   Following are the four settings you can use and their values:
   
