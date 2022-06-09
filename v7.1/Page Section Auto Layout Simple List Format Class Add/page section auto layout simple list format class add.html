@@ -1,0 +1,163 @@
+<!--
+
+  begin page section auto layout simple list format class add
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .user-items-list-simple .list-item {
+    
+      visibility : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) .user-items-list-simple.twc-psalslfca-show .list-item {
+    
+      visibility : unset;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const optionClassMap = {
+      
+        'section height' : {
+        
+          small : 'section-height--small',
+          medium : 'section-height--medium',
+          large : 'section-height--large',
+          
+          },
+          
+        'content width' : {
+        
+          small : 'content-width--narrow',
+          medium : 'content-width--medium',
+          large : 'content-width--wide',
+          
+          },
+          
+        'content alignment vertical' : {
+        
+          top : 'vertical-alignment--top',
+          center : 'vertical-alignment--middle',
+          bottom : 'vertical-alignment--bottom',
+          
+          },
+          
+        'content alignment horizontal' : {
+        
+          left : 'horizontal-alignment--left',
+          center : 'horizontal-alignment--center',
+          right : 'horizontal-alignment--right',
+          
+          }
+          
+        };
+      
+      const selector = 
+      
+        '.user-items-list-simple .list-item-content__description:contains(twc-psalslfca)';
+        
+      $( selector ).each ( function ( ) {
+      
+        const format = {
+        
+          'section height' : 'medium',
+          
+          'content width' : 'large',
+          
+          'content alignment vertical' : 'center',
+          
+          'content alignment horizontal' : 'center',
+          
+          };
+          
+        let settings = { };
+        
+        const $this = $( this );
+        
+        const $listSimple = $this
+        
+          .parents ( '.user-items-list-simple' );
+          
+        const $pageSection = $listSimple
+        
+          .parents ( '.page-section' );
+          
+        $( 'p', $this ).each ( function ( ) {
+        
+          let setting = $( this ).text ( );
+          
+          const b = setting.includes ( 'twc-psalslfca' ) || setting == '';
+          
+          if ( b ) return true; // continue
+          
+          setting = setting.split ( ':' );
+          
+          setting = $.map ( setting, function ( v ) {
+          
+            v = v.trim ( );
+            
+            return v;
+            
+            } );
+            
+          settings [ setting [ 0 ] ] = setting [ 1 ];
+          
+          } );
+          
+        Object.assign ( format, settings );
+        
+        $this
+        
+          .parents ( '.list-item' )
+          
+          .remove ( );
+          
+        settings = Object.keys ( format );
+        
+        const classes = $.map ( settings, function ( setting ) {
+        
+          const clss = optionClassMap [ setting ] [ format [ setting ] ];
+          
+          return clss;
+          
+          } )
+          
+          .join ( ' ' );
+          
+        $pageSection.addClass ( classes );
+        
+        $listSimple.addClass ( 'twc-psalslfca-show' );
+        
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end page section auto layout simple list format class add -->
