@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 166 effects. Each effect has it's own version number, code,
+twcsl contains 167 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -173,14 +173,14 @@ not necessarily designed to work together.
     
   * [Store Category Page Description Add](v7.0/Store%20Category%20Page%20Description%20Add)
     
+  * [Store Product Details Reorder](v7.0/Store%20Product%20Details%20Reorder)
+    
   * [Wells Template](v7.0/Wells%20Template)
     
     * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
       
   * [York Template Family](v7.0/York%20Template%20Family)
     
-    * [Store Product Details Reorder](v7.0/York%20Template%20Family/Store%20Product%20Details%20Reorder)
-      
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -284,6 +284,8 @@ not necessarily designed to work together.
   * [Move Image Block Card Button Under Image](v7.1/Move%20Image%20Block%20Card%20Button%20Under%20Image)
     
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
+    
+  * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
   * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
     
