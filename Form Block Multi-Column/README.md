@@ -54,7 +54,7 @@ Please consider [making a donation][5].
 
   * initial version
 
-[1]: form%20block%20multi-column.css#L1
+[1]: form%20block%20multi-column.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://bit.ly/3f6lhq2
 [4]: https://toms-web-consulting-demos.squarespace.com/form-block-multi-column?password=twcdemos
