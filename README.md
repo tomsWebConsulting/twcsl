@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 167 effects. Each effect has it's own version number, code,
+twcsl contains 168 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -94,6 +94,8 @@ not necessarily designed to work together.
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
   
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
+  
+* [Form Block Multi-Column](Form%20Block%20Multi-Column)
   
 * [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
   
