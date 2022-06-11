@@ -8,6 +8,12 @@
 
 ## Install
 
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  ```
+  
 * Site-wide
 
   * Add code from file **[form block multi-column.html][1]** to  Settings >
