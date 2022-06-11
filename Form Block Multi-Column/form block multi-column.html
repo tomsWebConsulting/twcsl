@@ -1,0 +1,165 @@
+<!--
+
+  begin form block multi-column
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .sqs-block-form {
+    
+      visibility : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) .twc-fbmc-show .sqs-block-form {
+    
+      visibility : visible;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const selector = '.sqs-block-form .title:contains(\'twc-fbmc\') ~ ' +
+      
+        '.description:contains(\'columns\')';
+        
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const formId = $this
+        
+          .parents ( 'form' )
+          
+          .attr ( 'data-form-id' );
+          
+        let column = 1;
+        
+        let columns = $this
+        
+          .text ( )
+          
+          .match ( /\d+/ )
+          
+          [ 0 ];
+          
+        let mode = 'end';
+        
+        let row = 1;
+        
+        let rulesets = '';
+        
+        columns = Number ( columns );
+        
+        $this
+        
+          .parents ( '.field-list' )
+          
+          .children ( )
+          
+          .each ( function ( ) {
+          
+            const $this = $( this );
+            
+            const selector = '.title:contains(\'twc-fbmc\')';
+            
+            const $element = $( selector, $this );
+            
+            if ( $element.length ) {
+            
+              mode = $element
+              
+                .text ( )
+                
+                .trim ( )
+                
+                .slice ( 9 );
+                
+              mode = mode ? mode : 'end';
+              
+              $( this ).remove ( );
+              
+              return true; // continue
+              
+              }
+              
+            if ( mode == 'end' ) {
+            
+              row++;
+              
+              return true; // continue
+              
+              }
+              
+            const id = $( this ).attr ( 'id' );
+            
+            const ruleset = `#${ id } {
+            
+              grid-area : ${ row } / ${ column++ } / ${ row } / ${ column };
+              
+              }
+              
+            `;
+            
+            rulesets += ruleset;
+            
+            if ( column > columns ) {
+            
+              column = 1;
+              
+              row++;
+              
+              }
+              
+            } );
+            
+        $( 'head' ).append ( `<style>
+        
+          [data-form-id="${ formId }"] .field-list {
+          
+            display : grid;
+            grid-template-columns : repeat( ${ columns }, 1fr );
+            
+            }
+            
+          [data-form-id="${ formId }"] .form-item {
+          
+            grid-column : 1 / -1;
+            
+            }
+            
+          ${ rulesets }
+          </style>` );
+          
+        } );
+        
+      $( 'body' ).addClass ( 'twc-fbmc-show' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end form block multi-column -->
