@@ -4,7 +4,7 @@
   
     text block text class add
     
-    Version       : 0.1.0
+    Version       : 0.2.0
     
     SS Version    : 7.1
     
@@ -12,7 +12,7 @@
     
     Notes         : this effect is not active in SS Preview to test it use
                     private browsing < https://bit.ly/3f6lhq2 >
-                      
+                    
                     this is a base effect meant as a base for other effects.
                     this code alone shouldn't produce any visible change
     
@@ -34,7 +34,9 @@
       
         .parents ( '.col' )
         
-        .first ( );
+        .first ( )
+        
+        .addClass ( 'twc-tbtca-column-labels' );
         
       const $row = $column
       
@@ -43,7 +45,7 @@
         .first ( )
         
         .addClass ( 'twc-tbtca' );
-      
+        
       $this
       
         .parents ( '.sqs-block-code' )
@@ -52,7 +54,7 @@
         
       $( '.sqs-block-html', $column )
       
-        .addClass ( 'twc-tbtca-tab-label' )
+        .addClass ( 'twc-tbtca-label' )
         
         .each ( function ( i ) {
         

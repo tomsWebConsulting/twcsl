@@ -1,6 +1,6 @@
 # Text Block Text Class Add
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -30,18 +30,18 @@
 
 As this is a base effect it is up to you to design your CSS using the tools
 this code gives you. I can provide some basic guidance on getting a start on
-your code.
+your code by way of a vertical tab example.
 
 First you need to layout a page section similar to the following.
 
 ![tabs layout](read%20me%20assets/tabs%20layout.png)
 
-The basic above is two columns. Left containing your tab labels. Right
-containing each tabs detail. Notice the code block in the left column. Add the
-following to it.
+The above is a basic two column layout. Left containing your tab labels. Right
+containing the detail of each tab. Notice the code block in the left column. Add
+the following to it.
 
 ```html
-<x-twc-tbtca></x-twc-tbtca>
+<x-twc-tbtca/>
 ```
 
 This tells the code that this column contains the tab labels. Also note the use
@@ -51,10 +51,9 @@ editing.
 Following is example CSS.
 
 ```css
-
 /* hide the blocks */
 
-html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row > .sqs-col-12 > .sqs-row:first-child .sqs-block {
+html:not( .squarespace-damask ) #page-section-628d8e17fbb0f46fdf5d3c47 .sqs-row > .sqs-col-12 > .sqs-row:first-child .sqs-block {
 
   visibility : hidden;
   
@@ -62,16 +61,16 @@ html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row 
   
 /* show the blocks */
 
-html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row > .sqs-col-12 > .sqs-row:first-child.twc-tbtca .sqs-block {
+html:not( .squarespace-damask ) #page-section-628d8e17fbb0f46fdf5d3c47 .sqs-row > .sqs-col-12 > .sqs-row:first-child.twc-tbtca .sqs-block {
 
   visibility : unset;
   
   }
   
-/* hide the line blocks and text blocks that are not tab labels */
+/* hide the line blocks and text blocks that are not labels */
 
 .twc-tbtca .sqs-block-horizontalrule,
-.twc-tbtca .sqs-block-html:not( .twc-tbtca-tab-label )
+.twc-tbtca .sqs-block-html:not( .twc-tbtca-label )
 
   {
   
@@ -79,11 +78,11 @@ html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row 
     
     }
     
-/* show tab detail when tab is selected */
+/* show detail when label is selected */
 
-.twc-tbtca-Dream-It #block-yui_3_17_2_1_1653363874270_6337,
-.twc-tbtca-Build-It #block-yui_3_17_2_1_1653347622381_5745,
-.twc-tbtca-Make-It #block-yui_3_17_2_1_1653347622381_7491
+.twc-tbtca-Dream-It #block-yui_3_17_2_1_1653444109200_3133,
+.twc-tbtca-Build-It #block-yui_3_17_2_1_1653444109200_7841,
+.twc-tbtca-Make-It #block-yui_3_17_2_1_1653444109200_9540
 
   {
   
@@ -92,15 +91,15 @@ html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row 
     
     }
     
-/* begin styling for tabs */
+/* begin styling for labels */
 
-  .twc-tbtca-tab-label:hover {
+  .twc-tbtca-label:hover {
   
     cursor : pointer;
     
     }
     
-  .twc-tbtca-tab-label:hover .sqs-block-content * {
+  .twc-tbtca-label:hover .sqs-block-content * {
   
     font-weight : bold;
     
@@ -116,8 +115,7 @@ html:not( .squarespace-damask ) #page-section-628c141547351548fbd44951 .sqs-row 
       
       }
       
-  /* end styling for tabs */
-
+  /* end styling for labels */
 ```
 
 You would of course change page section and block ids to match your page. Where
@@ -138,12 +136,12 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2022-05-10**
+* **2022-06-11**
 
-  * support for v7.1 product detail layouts
-  * use twcsl
+  * change twc-tbtca-tab-label to twc-tbtca-label
+  * add class to label column to differentiate it from other columns
   * bumped version to 0.2.0
-  -->
+  
 * **2022-05-24**
 
   * initial version
