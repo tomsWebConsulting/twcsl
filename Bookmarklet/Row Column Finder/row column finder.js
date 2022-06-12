@@ -4,7 +4,7 @@
   
     row column finder
     
-    Version       : 0.1.1
+    Version       : 0.1.2
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -104,25 +104,13 @@
       
       }
       
-    .sqs-layout .col .twc-column {
+    .sqs-layout .twc-row + .col > .twc-column {
     
       margin-left : 3em;
       
       }
       
-    .sqs-layout .row .col .row .twc-row {
-    
-      margin-left : 3em;
-      margin-top : 3em;
-      
-      }
-      
-    .sqs-layout .row .col .row .col .twc-column {
-    
-      margin-left : 6em;
-      margin-top : 3em;
-      
-      }`;
+    `;
       
   siteDocument.head.appendChild ( style );
   
