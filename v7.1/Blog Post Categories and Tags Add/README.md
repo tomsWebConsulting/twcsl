@@ -1,6 +1,6 @@
 # Blog Post Categories and Tags Add
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -29,11 +29,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2022-05-15**
+* **2022-06-12**
 
-  * fix for when site is not in config
-  * bumped version to v0.1.1
-  -->
+  * add twc-bpcata-show class
+  * bumped version to v0.2.0
+  
 * **2022-05-20**
 
   * initial version

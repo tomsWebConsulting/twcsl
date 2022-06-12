@@ -6,7 +6,7 @@
     
       blog post categories and tags add
       
-      Version       : 0.1.0
+      Version       : 0.2.0
       
       SS Version    : 7.1
       
@@ -40,16 +40,20 @@
     let tagClasses = twcsl.page.blog.post.tags;
     
     categoryClasses = categoryClasses.map ( makeClasses );
-      
+    
     prefix = 'tag';
     
     tagClasses = tagClasses.map ( makeClasses );
-      
+    
     const classes = categoryClasses
     
       .concat ( tagClasses )
       
-      .join ( ' ' );
+      .join ( ' ' )
+      
+      +
+      
+      ' twc-bpcata-show';
       
     $( selector ).addClass ( classes );
     
