@@ -1,0 +1,75 @@
+<script>
+
+  /*
+  
+    blog post title each word span tag add
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Dependancies  : jQuery
+                    
+                    twcsl
+    
+    Note          : this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+                    
+                    this is a base effect meant as a base for other effects.
+                    this code alone should produce little visible change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  $( ( ) => {
+  
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    if ( ! twcsl.page.blog.is ) return; // bail if not blog page
+    
+    const selector = '.blog-title a, ' +
+    
+      '.blog-item-wrapper .blog-item-title h1.entry-title';
+      
+    const wordsSpanWrap = text => {
+    
+      text = text.trim ( );
+      
+      const html = '<span>'
+      
+        +
+        
+        text
+        
+        .split ( ' ' )
+        
+        .join ( '</span> <span>' )
+        
+        +
+        
+        '</span>';
+        
+      return html;
+      
+      };
+      
+    $( selector ).each ( function ( ) {
+    
+      const $this = $( this );
+      
+      let html = $this.text ( );
+      
+      html = wordsSpanWrap ( html );
+      
+      $this.html ( html );
+      
+      } );
+      
+    $( 'body' ).addClass ( 'twc-bptewsta-show' );
+    
+    } );
+    
+  </script>
