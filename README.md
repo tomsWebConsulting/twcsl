@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 168 effects. Each effect has it's own version number, code,
+twcsl contains 169 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -206,6 +206,8 @@ not necessarily designed to work together.
   * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
   * [Blog Post Categories and Tags Add](v7.1/Blog%20Post%20Categories%20and%20Tags%20Add)
+    
+  * [Blog Post Title Each Word Span Tag Add](v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
     
