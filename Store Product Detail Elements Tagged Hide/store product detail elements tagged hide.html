@@ -4,7 +4,7 @@
   
     begin store product detail elements tagged hide
     
-    Version         : 2.1
+    Version         : 2.2
     
     SS Versions     : 7.1, 7.0
     
@@ -28,6 +28,8 @@
                       
                         hide atc ( add to cart )
                         
+                        hide mark
+                        
                         hide price
                         
                         hide quantity
@@ -38,13 +40,17 @@
     
     /* 7.1 */
     
+    /* full, half, simple, wrap layouts */
+    
+    .tag-hide-mark .product-details .product-mark,
+    
     /* begin atc */
     
-      /* layout simple */
+      /* simple layout */
       
       .tag-hide-atc .ProductItem-details .sqs-add-to-cart-button-wrapper,
       
-      /* layouts full, half, wrap */
+      /* full, half, wrap layouts */
       
       .tag-hide-atc.pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper,
       
@@ -52,11 +58,11 @@
       
     /* begin price */
     
-      /* layout simple */
+      /* simple layout */
       
       .tag-hide-price .ProductItem-details .ProductItem-product-price,
       
-      /* layouts full, half, wrap */
+      /* full, half, wrap layouts */
       
       .tag-hide-price.pdp-layout .pdp-details .pdp-details-price,
       
@@ -64,11 +70,11 @@
       
     /* begin quantity */
     
-      /* layout simple */
+      /* simple layout */
       
       .tag-hide-quantity .ProductItem .ProductItem-details .product-quantity-input,
       
-      /* layouts full, half, wrap */
+      /* full, half, wrap layouts */
       
       .tag-hide-quantity.pdp-layout .pdp-details .pdp-details-quantity,
       
@@ -80,6 +86,8 @@
     
     .tag-hide-atc .ProductItem-details .sqs-add-to-cart-button-wrapper,
     
+    .tag-hide-mark .ProductItem-details .product-mark,
+    
     .tag-hide-price .ProductItem-details .product-price,
     
     .tag-hide-quantity .ProductItem-details .product-quantity-input,
@@ -88,12 +96,14 @@
     
     .tag-hide-atc #productDetails .sqs-add-to-cart-button-wrapper,
     
+    .tag-hide-mark #productDetails .product-mark,
+    
     .tag-hide-price #productDetails .product-price,
     
     .tag-hide-quantity #productDetails .product-quantity-input,
     
-    twc-selector /* dummy selector so that each selector line above can end with
-                    a comma */
+    x-twc-selector /* dummy selector so that each selector line above can end
+                      with a comma */
       {
       
         display : none;
