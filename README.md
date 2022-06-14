@@ -265,8 +265,6 @@ not necessarily designed to work together.
     
   * [Hide Page Header and Footer](v7.1/Hide%20Page%20Header%20and%20Footer)
     
-  * [Hide Product Detail Price, Quantity, Add to Cart](v7.1/Hide%20Product%20Detail%20Price,%20Quantity,%20Add%20to%20Cart)
-    
   * [Hide Store Product Detail Recommended Product Last](v7.1/Hide%20Store%20Product%20Detail%20Recommended%20Product%20Last)
     
   * [Make Navigation Folders Clickable](v7.1/Make%20Navigation%20Folders%20Clickable)
@@ -346,6 +344,8 @@ not necessarily designed to work together.
   * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
+    
+  * [Store Product Detail Add to Cart, Mark, Price, Quantity Hide](v7.1/Store%20Product%20Detail%20Add%20to%20Cart,%20Mark,%20Price,%20Quantity%20Hide)
     
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
