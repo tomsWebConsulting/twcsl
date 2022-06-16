@@ -1,4 +1,4 @@
-# Blog Post Title Each Word Span Tag Add
+# Blog Non-Post Pages Meta Noindex Tag Add
 
 ### Version 0.2.0
 
