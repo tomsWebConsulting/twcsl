@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 169 effects. Each effect has it's own version number, code,
+twcsl contains 170 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -58,6 +58,8 @@ not necessarily designed to work together.
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Blog Category Page Category Attribute Add](Blog%20Category%20Page%20Category%20Attribute%20Add)
+  
+* [Blog Non-Post Pages Meta Noindex Tag Add](Blog%20Non-Post%20Pages%20Meta%20Noindex%20Tag%20Add)
   
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
