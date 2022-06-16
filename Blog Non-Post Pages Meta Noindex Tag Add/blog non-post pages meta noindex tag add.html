@@ -6,30 +6,43 @@
     
       blog non-post pages meta noindex tag add
       
-      Version       : 0.1d0
+      Version         : 0.2.0
       
-      SS Version    : 7.0
+      SS Versions     : 7.1, 7.0
       
-      Templates     : Montauk ( Julia, Kent, Om )
-                      
-                      your template is not listed? then it is not currently
-                      supported
+      v7.0 Templates  : Avenue
+                        
+                        Bedford ( Anya, Bryant, Hayden )
+                        
+                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        Five
+                        
+                        Montauk ( Julia, Kent, Om )
+                        
+                        your template is not listed? then it is not currently
+                        supported
       
-      Dependancies  : jQuery
+      Dependancies    : jQuery
+                        
+                        twcsl
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       no user serviceable parts below
       
       */
       
-    // bail if not blog page
+    if ( ! twcsl.page.blog.list.is ) return; // bail if not blog listing
     
-    if ( ! $( 'body[class~="collection-type-blog"]' ).length ) return;
+    const selector = '<meta content="noindex" name="robots">';
     
-    if ( $( 'body[id^="item-"]' ).length ) return; // bail if detail
-    
-    $( '<meta content="noindex" name="robots">' ).appendTo ( 'head' );
+    $( selector ).appendTo ( 'head' );
     
     } );
     
