@@ -1,6 +1,6 @@
 # Cart Prices Change
 
-### Version 0.3.0
+### Version 0.3.1
 
 #### SS Versions 7.1, 7.0
 
