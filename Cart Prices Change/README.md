@@ -8,10 +8,18 @@
 
 ## Quick Install
 
-* Install the code from **[Cart Page Observe Changes][1]**.
+* Install the code from **[Cart Page Observe Changes][1]**. In the code find the
+  following line.
+  
+  ```javascript
+      const nodesAddedCallback = undefined;
+  ```
+  
+  Change **undefined** to **cpc**.
   
 * Add code from file **[cart prices change.html][2]** to Settings > Advanced >
-  Code Injection > FOOTER.
+  Code Injection > FOOTER **before** the Cart Page Observe Changes code. Read
+  the code for any instructions within.
 
 ## searchReplaceText Example Lines
 
