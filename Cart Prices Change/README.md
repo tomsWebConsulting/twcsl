@@ -37,6 +37,11 @@ Please consider [making a donation][3].
 
 * **2022-06-21**
 
+  * fix regression for quantity changes
+  * bumped version to 0.3.1
+  
+* **2022-06-21**
+
   * use cart page observe changes
   * bumped version to 0.3.0
   
