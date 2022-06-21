@@ -2,27 +2,13 @@
 
   begin cart prices change
   
-  Version         : 0.2d1
+  Version         : 0.3.0
   
   SS Versions     : 7.1, 7.0
   
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
-                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
-                    Vow, Wav, West )
-                    
-                    Five
-                    
-                    Montauk ( Julia, Kent, Om )
-                    
-                    your template is not listed? then it is not currently
-                    supported
-  
   Dependancies    : jQuery
                     
-                    twcsl
+                    cart page observe changes
   
   Notes           : the code is comprised of several tags all of which must be
                     present for the effect to work
@@ -85,8 +71,8 @@
         
         }
         
-    .cart-row-price.twc-cpc-show,
-    .cart-subtotal-price.twc-cpc-show
+    .twc-cpc-show .cart-row-price,
+    .twc-cpc-show .cart-subtotal-price
     
       {
       
@@ -98,102 +84,59 @@
     
   <script>
   
-    $( ( ) => {
+    const cpc = $element => {
     
-      // bail if no mutation observer available
+      let selector = 'cart-container';
       
-      if ( ! ( 'MutationObserver' in window ) ) return;
+      // bail if not cart container
       
-      if ( ! twcsl.page.cart.is ) return; // bail if not cart page
+      if ( ! $element.hasClass ( selector ) ) return;
       
-      const changeText = node => {
+      const changeText = $element => {
       
-        const walker = document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
+        let t = $element.text ( );
         
-        while ( walker.nextNode ( ) ) {
+        $.each ( keys, function ( i, key ) {
         
-          const node = walker.currentNode;
+          const m = key.match ( /\/(.+)\/(.*)/ );
           
-          let t = node.data;
+          let r = searchReplaceText [ key ];
           
-          $.each ( keys, function ( i, key ) {
+          let s = key;
           
-            const m = key.match ( /\/(.+)\/(.*)/ );
-            
-            let r = searchReplaceText [ key ];
-            
-            let s = key;
-            
-            if ( m !== null ) s = new RegExp ( m [ 1 ], m [ 2 ] );
-            
-            if ( typeof r == 'function' ) {
-            
-              r = r ( node );
-              
-              if ( ! r ) return true; // continue if r is false
-              
-              }
-              
-            t = t.replace ( s, r );
-            
-            } );
-            
-          node.data = t;
+          if ( m !== null ) s = new RegExp ( m [ 1 ], m [ 2 ] );
           
-          }
+          if ( typeof r == 'function' ) {
           
+            r = r ( node );
+            
+            if ( ! r ) return true; // continue if r is false
+            
+            }
+            
+          t = t.replace ( s, r );
+          
+          } );
+          
+        $element.text ( t );
+        
         }; // end changeText
         
       const keys = Object.keys ( searchReplaceText );
       
-      const observer = new MutationObserver ( mutations => {
+      selector = '.cart-row-price, .cart-subtotal-price';
       
-        $.each ( mutations, function ( ) {
-        
-          // bail if not character data
-          
-          if ( this.type != 'characterData' ) return;
-          
-          observer.disconnect ( );
-          
-          changeText ( this.target.parentNode );
-          
-          startObserver ( ); // restart observer
-          
-          } );
-          
-        } );
-        
-      const selector = '.cart-row-price, .cart-subtotal-price';
-      
-      const startObserver = ( ) => {
-      
-        $( selector ).each ( function ( ) {
-        
-          // start listening for changes in specified element
-          
-          observer.observe ( this, {
-          
-            characterData : true,
-            subtree: true,
-            
-            } );
-            
-          } );
-          
-        };
-        
       $( selector ).each ( function ( ) {
       
-        changeText ( this );
+        const $this = $( this );
         
-        $( this ).addClass ( 'twc-cpc-show' );
+        changeText ( $this );
         
         } );
         
-      startObserver ( );
+      $( 'body' ).addClass ( 'twc-cpc-show' );
       
-      } );
+      };
       
     </script>
     

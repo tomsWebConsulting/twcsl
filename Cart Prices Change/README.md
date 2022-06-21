@@ -1,19 +1,17 @@
 # Cart Prices Change
 
-### Version 0.2d1
+### Version 0.3.0
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk][3])
+#### SS Versions 7.1, 7.0
 
 ---
 
-## Install
+## Quick Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install the code from **[Cart Page Observe Changes][1]**.
   
-* Add code from file
-  **[cart prices change.html](cart%20prices%20change.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER.
+* Add code from file **[cart prices change.html][2]** to Settings > Advanced >
+  Code Injection > FOOTER.
 
 ## searchReplaceText Example Lines
 
@@ -33,12 +31,16 @@ change. No code can change the checkout page. It is an SS security feature.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
-* **2023-03-29**
+* **2022-06-21**
+
+  * use cart page observe changes
+  * bumped version to 0.3.0
+  
+* **2022-03-29**
 
   * twcsl 0.2d0 reformat
   * update classes because of SS changes
@@ -63,6 +65,6 @@ Please consider
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[2]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
-[3]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
+[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
+[2]: cart%20prices%20change.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
