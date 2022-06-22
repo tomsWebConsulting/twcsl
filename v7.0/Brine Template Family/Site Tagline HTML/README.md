@@ -2,7 +2,7 @@
 
 ### Version 0.1.0
 
-#### SS Version 7.0 ([Brine template family][1]
+#### SS Version 7.0 ([Brine template family][1])
 
 ---
 
