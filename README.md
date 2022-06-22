@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 171 effects. Each effect has it's own version number, code,
+twcsl contains 172 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -166,6 +166,8 @@ not necessarily designed to work together.
     * [Hide Product Detail Add to Cart, Price, and Quantity](v7.0/Brine%20Template%20Family/Hide%20Product%20Detail%20Add%20to%20Cart,%20Price,%20and%20Quantity)
       
     * [Move or Copy Store Intro After Products List](v7.0/Brine%20Template%20Family/Move%20or%20Copy%20Store%20Intro%20After%20Products%20List)
+      
+    * [Site Tagline HTML](v7.0/Brine%20Template%20Family/Site%20Tagline%20HTML)
       
   * [Cover Page Action Navigation Link Add](v7.0/Cover%20Page%20Action%20Navigation%20Link%20Add)
     
