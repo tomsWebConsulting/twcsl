@@ -1,0 +1,97 @@
+<!--
+
+  store product detail related product sold out price zero remove
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependancies    : jQuery
+                    
+                    twcsl
+  
+  Notes           : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .ProductItem-relatedProducts .grid-item.sold-out .product-price, /* 7.1 */
+    html:not( .squarespace-damask ) .ProductItem-relatedProducts-item.sold-out .product-price /* 7.0 */
+    
+      {
+      
+        visibility : hidden;
+        
+        }
+        
+    html:not( .squarespace-damask ) .twc-spdrpsopzr-show .ProductItem-relatedProducts .grid-item.sold-out .product-price, /* 7.1 */
+    html:not( .squarespace-damask ) .twc-spdrpsopzr-show .ProductItem-relatedProducts-item.sold-out .product-price /* 7.0 */
+    
+      {
+      
+        visibility : visible;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not product detail
+      
+      const selector = [
+      
+        '.ProductItem-relatedProducts .grid-item.sold-out .product-price', // 7.1
+        
+        '.ProductItem-relatedProducts-item.sold-out .product-price' // 7.0
+        
+        ]
+        
+        .join ( ', ' );
+        
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let n = $this
+        
+          .text ( )
+          
+          .replaceAll ( ',', '' );
+          
+        n = Number ( n );
+        
+        if ( n ) return true; // continue
+        
+        $this.remove ( );
+        
+        } );
+        
+      $( 'body' ).addClass ( 'twc-spdrpsopzr-show' );
+      
+      } );
+      
+    </script>
