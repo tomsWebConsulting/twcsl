@@ -1,0 +1,76 @@
+<!--
+
+  begin page site title change
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.1
+  
+  Note        : the code is comprised of a several tags. all are needed for the
+                full effect to work
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.pstc = {
+    
+      title : '[enter page site title here between single quotes]'
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #site-title {
+    
+      display : none;
+      
+      }
+      
+    .twc-pstc-show #site-title {
+    
+      display : inline;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    const options = twc.pstc;
+    
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      document
+      
+        .querySelectorAll ( '#site-title' )
+        
+        .forEach ( ( element ) => {
+        
+          element.textContent = options.title;
+          
+          } );
+          
+      document
+      
+        .getElementById ( 'header' )
+        
+        .classList
+        
+        .add ( 'twc-pstc-show' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end page site title change -->
