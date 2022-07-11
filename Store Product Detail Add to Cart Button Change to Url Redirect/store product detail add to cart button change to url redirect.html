@@ -1,12 +1,12 @@
 <script>
 
-  $( ( ) => {
+  ( ( ) => {
   
     /*
     
       store product detail add to cart button change to url redirect
       
-      Version         : 0.2d1
+      Version         : 0.3.0
       
       SS Versions     : 7.1, 7.0
       
@@ -71,117 +71,135 @@
     
     // do not change anything below, there be the borg here
     
-    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+    const initialize = ( ) => {
     
-    const excludeButtonAttributes = [ 'id', 'data-collection-id',
-    
-      'data-item-id', 'data-original-label', 'data-product-type' ];
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
-    const skus = $.map ( Static.SQUARESPACE_CONTEXT.product.variants,
-    
-      function ( v ) {
+      const excludeButtonAttributes = [ 'id', 'data-collection-id',
       
-        return ( v.sku );
+        'data-item-id', 'data-original-label', 'data-product-type' ];
         
-        } );
+      const skus = $.map ( Static.SQUARESPACE_CONTEXT.product.variants,
+      
+        function ( v ) {
         
-    /*
-    
-      begin bail if no skus in map
+          return ( v.sku );
+          
+          } );
+          
+      /*
       
-      if the bailIfNoSkusInMap is true and our skus don't contain a mapped sku
-      then bail, in other words does not replace add to cart button
-      
-      */
-      
-      const b = bailIfNoSkusInMap &&
-      
-        ! skus.some ( r => Object.keys ( skuUrlMap ).indexOf ( r ) >= 0 );
+        begin bail if no skus in map
         
-      if ( b ) return;
-      
-      // end bail if no skus in map
-      
-    let selector = [
-    
-      '.pdp-details .sqs-add-to-cart-button', // 7.1
-      
-      '.ProductItem-details .sqs-add-to-cart-button', // 7.0 ( Brine, Pacific )
-      
-      ]
-      
-      .join ( ', ' );
-      
-    const $addToCartButtons = $( selector );
-    
-    $addToCartButtons.each ( function ( ) {
-    
-      const $this = $( this );
-      
-      const $anchorTag = $( '<a>' )
-      
-        .click ( function ( ) {
+        if the bailIfNoSkusInMap is true and our skus don't contain a mapped sku
+        then bail, in other words does not replace add to cart button
         
-          const $this = $( this );
+        */
+        
+        const b = bailIfNoSkusInMap &&
+        
+          ! skus.some ( r => Object.keys ( skuUrlMap ).indexOf ( r ) >= 0 );
           
-          let sku = skus [ 0 ]; // we assume one variant for product item
+        if ( b ) return;
+        
+        // end bail if no skus in map
+        
+      let selector = [
+      
+        '.pdp-details .sqs-add-to-cart-button', // 7.1
+        
+        '.ProductItem-details .sqs-add-to-cart-button', // 7.0 ( Brine, Pacific )
+        
+        ]
+        
+        .join ( ', ' );
+        
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const $anchorTag = $( '<a>' )
+        
+          .click ( function ( ) {
           
-          // we go looking for more than one
-          
-          const $productVariants = $this
-          
-            .parent ( )
+            const $this = $( this );
             
-            .siblings ( '.product-variants' );
+            let sku = skus [ 0 ]; // we assume one variant for product item
             
-          if ( $productVariants.length ) {
-          
-            let selectedVariant = $productVariants
+            // we go looking for more than one
             
-              .attr ( 'data-selected-variant' );
+            const $productVariants = $this
+            
+              .parent ( )
               
-            if ( selectedVariant === undefined ) return;
+              .siblings ( '.product-variants' );
+              
+            if ( $productVariants.length ) {
             
-            selectedVariant = JSON.parse ( selectedVariant );
+              let selectedVariant = $productVariants
+              
+                .attr ( 'data-selected-variant' );
+                
+              if ( selectedVariant === undefined ) return;
+              
+              selectedVariant = JSON.parse ( selectedVariant );
+              
+              sku = selectedVariant.sku;
+              
+              }
+              
+            const url = sku in skuUrlMap ? skuUrlMap [ sku ] : defaultUrl;
             
-            sku = selectedVariant.sku;
+            $this.attr ( 'href', url )
             
-            }
+            } ); // end $anchorTag
             
-          const url = sku in skuUrlMap ? skuUrlMap [ sku ] : defaultUrl;
-          
-          $this.attr ( 'href', url )
-          
-          } ); // end $anchorTag
-          
-      const atcbAttributes = $this.prop ( 'attributes' );
-      
-      $.each ( atcbAttributes, function ( ) {
-      
-        let b = this.name;
+        const atcbAttributes = $this.prop ( 'attributes' );
         
-        b = excludeButtonAttributes.includes ( b );
+        $.each ( atcbAttributes, function ( ) {
         
-        if ( b ) return true;
+          let b = this.name;
+          
+          b = excludeButtonAttributes.includes ( b );
+          
+          if ( b ) return true;
+          
+          $anchorTag.attr ( this.name, this.value );
+          
+          } );
+          
+        if ( targetAtttributeValue )
         
-        $anchorTag.attr ( this.name, this.value );
+          $anchorTag.attr ( 'target', targetAtttributeValue );
+          
+        $this
+        
+          .children ( )
+          
+          .appendTo ( $anchorTag );
+          
+        $this.replaceWith ( $anchorTag );
         
         } );
         
-      if ( targetAtttributeValue )
+      }; // end initialize
       
-        $anchorTag.attr ( 'target', targetAtttributeValue );
+    switch ( true ) {
+    
+      case twcsl.ss.is71 :
+      
+        $( initialize );
         
-      $this
-      
-        .children ( )
+        break;
         
-        .appendTo ( $anchorTag );
+      case twcsl.ss.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
         
-      $this.replaceWith ( $anchorTag );
+        break;
+        
+      }
       
-      } );
-      
-    } );
+    } ) ( );
     
   </script>
