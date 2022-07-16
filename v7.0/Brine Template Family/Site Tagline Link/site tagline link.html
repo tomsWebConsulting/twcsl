@@ -1,0 +1,51 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin site tagline link
+      
+      Version         : 0.2.0
+      
+      SS Version      : 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                        Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                        Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const url = '[enter url here between single quotes replacing square brackets]';
+      
+      // do not change anything below, there be the borg here
+      
+      const $tagline = $( '.Header-tagline' );
+      
+      const $anchorTag = $( '<a>' )
+      
+        .attr ( 'href', url )
+        
+        .text ( $tagline.text ( ) );
+        
+      $.each ( $tagline.prop ( 'attributes' ), function ( ) {
+      
+        $anchorTag.attr ( this.name, this.value );
+        
+        } );
+        
+      $tagline.replaceWith ( $anchorTag );
+      
+      // end site tagline link
+      
+    } );
+    
+  </script>
