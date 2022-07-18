@@ -1,0 +1,225 @@
+<!--
+
+  begin text block formats phrase filter
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-tbfpf-filter {
+    
+      --width : unset;
+      
+      margin-bottom : 1rem;
+      width : var( --width );
+      
+      }
+      
+    .twc-tbfpf-filter-title {
+    
+      font-size: 0.75rem;
+      line-height : 1;
+      margin-bottom : 0.75rem;
+      text-align : left;
+      
+      }
+      
+    .twc-tbfpf-filter-select-wrapper {
+    
+      align-items : center;
+      border : 1px solid;
+      color : inherit;
+      display : flex;
+      font-size : 1rem;
+      min-height : 50px;
+      position : relative;
+      
+      }
+      
+    .twc-tbfpf-filter-select-wrapper:after {
+    
+      border-bottom : 1px solid;
+      border-right : 1px solid;
+      content : '';
+      font-size : 1rem;
+      height : 1rem;
+      pointer-events : none;
+      position : absolute;
+      right : 1rem;
+      transform : rotate( 45deg );
+      transform-origin : top;
+      width : 1rem;
+      
+      }
+      
+    .twc-tbfpf-filter-select-wrapper:before {
+    
+      content : '';
+      display : inline-block;
+      
+      }
+      
+    .twc-tbfpf-filter select {
+    
+      appearance : none;
+      background : transparent;
+      color : inherit;
+      border : 0;
+      font-size : 1rem;
+      height : 100%;
+      padding-right : 3.5rem;
+      padding : 0.75rem;
+      position : static;
+      right : 0;
+      top : 0;
+      width : 100%;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const filterClass = 'twc-tbfpf-filter';
+      
+      $( '.sqs-block-code x-twc-tbfpf' ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let filterTitle = $this
+        
+          .attr ( 'data-filter-title' );
+          
+        if ( filterTitle == undefined ) filterTitle = 'Filter';
+        
+        const filterHtml = `<div class="${ filterClass }">
+        
+          <div class="twc-tbfpf-filter-title">
+          
+            ${ filterTitle }: 
+            
+            </div>
+            
+          <div class="twc-tbfpf-filter-select-wrapper">
+          
+            <select>
+            
+              </select>
+              
+            </div>
+            
+          </div>`;
+          
+        const filterText = $this
+        
+          .attr ( 'data-filter-text' )
+          
+          .split ( ',' )
+          
+          .map ( s => s.trim ( ) );
+          
+        const width =
+        
+          Math.max ( ... ( filterText.map ( s => s.length ) ) ) + 'em';
+          
+        let formatFirstNthSkip = $this
+        
+          .attr ( 'data-format-first-nth-skip' );
+          
+        if ( formatFirstNthSkip == undefined ) formatFirstNthSkip = 0;
+        
+        const $formats = $this
+        
+          .parents ( '.sqs-col-12' )
+          
+          .find ( '.sqs-block-html' )
+          
+          .find ( 'h1, h2, h3, h4, p' )
+          
+          .slice ( formatFirstNthSkip );
+          
+        const $options = $.map ( filterText, function ( text ) {
+        
+          const $option = $( `<option>
+          
+            ${ text }
+            
+            </option>` );
+            
+          return $option;
+          
+          } );
+          
+        const $filter = $( filterHtml )
+        
+          .find ( ':last' )
+          
+          .change ( function ( ) {
+          
+            const text = $( this )
+            
+              .val ( )
+              
+              .trim ( );
+              
+            if ( text == filterText [ 0 ] )
+            
+              $formats.show ( )
+              
+              else
+              
+                $formats
+                
+                  .show ( )
+                  
+                  .not ( `:contains(${ text })` )
+                  
+                  .hide ( );
+                  
+            } )
+          
+          .append ( $options )
+          
+          .end ( );
+          
+        $this
+        
+          .parents ( '.sqs-block-code' )
+          
+          .remove ( );
+          
+        $formats
+        
+          .first ( )
+          
+          .before ( $filter );
+          
+        $( `.${ filterClass }` ).css ( 'width', width );
+        
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end text block formats phrase filter -->
