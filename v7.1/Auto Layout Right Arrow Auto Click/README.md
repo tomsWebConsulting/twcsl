@@ -2,7 +2,9 @@
 
 ### Version 0.2d2
 
-#### SS Version v7.1
+#### SS Version 7.1
+
+#### Fluid Engine Compatible : Unknown
 
 ---
 

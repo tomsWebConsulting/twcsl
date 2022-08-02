@@ -4,7 +4,7 @@
 
 #### SS Versions 7.1, 7.0
 
-#### v7.1 Fluid Engine Compatibility Untested
+#### v7.1 Fluid Engine Compatibility Unknown
 
 ---
 

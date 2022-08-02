@@ -4,6 +4,8 @@
 
 #### SS Versions 7.1, 7.0 ([Adirondack][2], [Brine template family][1], [York template family][3])
 
+#### v7.1 Fluid Engine Compatibility Unknown
+
 ---
 
 ## Quick Install

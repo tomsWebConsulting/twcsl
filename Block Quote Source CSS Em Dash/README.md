@@ -4,6 +4,8 @@
 
 #### SS Versions 7.1, 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
 
+#### v7.1 Fluid Engine Compatibility Unknown
+
 ---
 
 ## Quick Install

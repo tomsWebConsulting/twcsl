@@ -4,6 +4,8 @@
 
 #### SS Version 7.1
 
+#### Fluid Engine Compatible : Not Applicable
+
 ---
 
 ## Quick Install

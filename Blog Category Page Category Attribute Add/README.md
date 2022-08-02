@@ -4,6 +4,8 @@
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1])
 
+#### v7.1 Fluid Engine Compatibility Unknown
+
 ---
 
 ## Install
