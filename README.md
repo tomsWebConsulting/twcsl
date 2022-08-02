@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 176 effects. Each effect has it's own version number, code,
+twcsl contains 177 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -129,9 +129,9 @@ not necessarily designed to work together.
   
 * [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
   
-* [Store Product Detail Add to Cart Button Change to Url Redirect](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Change%20to%20Url%20Redirect)
-  
 * [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
+  
+* [Store Product Detail Add to Cart Button Url Redirect](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
   
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
@@ -372,6 +372,8 @@ not necessarily designed to work together.
   * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
     
   * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
+    
+  * [Store Product Detail Related Product Three](v7.1/Store%20Product%20Detail%20Related%20Product%20Three)
     
   * [Store Product Details Display Flex Desktop](v7.1/Store%20Product%20Details%20Display%20Flex%20Desktop)
     
