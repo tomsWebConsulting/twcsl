@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 178 effects. Each effect has it's own version number, code,
+twcsl contains 179 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -356,6 +356,8 @@ not necessarily designed to work together.
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
   * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
+    
+  * [Store Listing Add to Cart Buttons](v7.1/Store%20Listing%20Add%20to%20Cart%20Buttons)
     
   * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
     
