@@ -1,0 +1,45 @@
+<script>
+
+  const cbmdefdca = ( $element ) => {
+  
+    /*
+    
+      calendar block multi day event first day class add
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      calendar block event change
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const selector = '.item--multiday .item-link';
+      
+      const $itemLink = $( selector, $element );
+      
+      if ( ! $itemLink.length ) return; // bail if no item link
+      
+      const href = $itemLink
+      
+        .attr ( 'href' );
+        
+      $element
+      
+        .parents ( 'tbody' )
+        
+        .find ( `.item-link[href="${ href }"]` )
+        
+        .first ( )
+        
+        .parents ( '.yui3-calendar-day' )
+        
+        .addClass ( 'twc-cbmdefdca-multiday-first' );
+        
+    };
+    
+  </script>
