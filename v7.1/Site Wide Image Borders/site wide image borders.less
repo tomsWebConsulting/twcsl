@@ -2,9 +2,13 @@
 
   begin site wide image borders
   
-  Version       : 0.5.2
+  Version       : 0.6.0
   
   SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Unknown
   
   Dependancies  : LESS
   
@@ -34,6 +38,8 @@
   @border-width : 0px;
   
   // use false or true for each area where you want the effect to be active
+  
+  .auto-layout( true );
   
   .blog-list( true );
   
@@ -95,7 +101,29 @@
       
     }
     
-  .blog-list( @boolean ) when ( @boolean = true ) { // blog grid
+  // auto layout
+  
+  .auto-layout( @boolean ) when ( @boolean = true ) {
+  
+    .user-items-list-banner-slideshow .slide-media-container,
+    .user-items-list-carousel__media-inner,
+    .user-items-list-simple .list-item-media-inner,
+    
+      {
+      
+        .swib-properties( );
+        
+        height : ~"calc( 100% - ( 2 *"@border-width~") )";
+        width : ~"calc( 100% - ( 2 *"@border-width~") )";
+        z-index : unset;
+        
+        }
+        
+    } // end auto layout
+    
+  // blog list
+  
+  .blog-list( @boolean ) when ( @boolean = true ) {
   
     body[class*="collection-type-blog-"].view-list {
     
@@ -111,7 +139,7 @@
         
       }
       
-    } // end blog grid
+    } // end blog list
     
   // blog post
   

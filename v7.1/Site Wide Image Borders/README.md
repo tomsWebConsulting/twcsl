@@ -1,6 +1,6 @@
 # Site Wide Image Borders
 
-### Version 0.5.2
+### Version 0.6.0
 
 #### SS Version 7.1
 
@@ -10,17 +10,19 @@
 
 ## Quick Install
 
-Add code from file
-**[site wide image borders.less](site%20wide%20image%20borders.less#L1)**
-to Design > Custom CSS.
+Add code from file **[site wide image borders.less][1]** to Design > Custom CSS.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
+* **2022-08-06**
+
+  * add support for some auto layouts
+  * bumped version to 0.6.0
+  
 * **2022-04-13**
 
   * fix for visual issues with some gallery block designs
@@ -74,3 +76,6 @@ Please consider
 * **2021-03-11**
 
   * initial version
+
+[1]: site%20wide%20image%20borders.less#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
