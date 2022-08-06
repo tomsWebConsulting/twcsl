@@ -412,58 +412,76 @@ building effects in Squarespace sites.
 
 ## Install Options
 
-* Upload the **twcsl.js** file to your site. This is the preferred option but
-  this will not work for trial sites.
-  
-  * In your web browser visit the following URL.
-  
-    ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.js
-    ```
+  * There are two options for installing twcsl on your site depending on if your
+    site is on a **[paid plan][1]** or in a **[trial period][2]**. Use **only
+    one** of the install options. Be sure to save the changes you make when
+    given the opportunity.
     
-    The **twcsl.js** file will be downloaded to your computer.
+    <a id="Paid-Plan-Install-Steps"></a>
     
-  * In **Pages > Not Linked**
-    [add a **Link** page](https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link)
-    and [link to the **twcsl.js** file](https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file).
+    * **Paid Plan Install Steps**
     
-  * Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-    ```html
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/s/twcsl.js"></script>
-    ```
-
-* Copy and add the contents of the **twcsl.html** file to your site. Use this
-  option if your site is a trial site. Once your site is out of trial you can
-  switch over to the preferred option if you like. Just reverse the below
-  steps. You may find it useful to use multiple tabs/windows for the copying and
-  pasting. If you do you can bypass the first save step and save all the code
-  with one click.
-  
-  * Add the following to Settings > Advanced > Code Injection > HEADER.
-  
-    ```html
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      * **Step 1**
+      
+        In your web browser visit the following URL.
+        
+        ```
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.js
+        ```
+        
+        The **twcsl.js** file will be downloaded to your computer.
+        
+      * **Step 2**
+      
+        In **Pages > Not Linked** [add a **Link** page][3] and [link to the
+        **twcsl.js** file][4].
+        
+      * **Step 3**
+      
+        Add the following to Settings > Advanced > Code Injection > HEADER.
+        
+        ```html
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/s/twcsl.js"></script>
+        ```
+        
+      * The paid plan install steps are finished.
+      
+    <a id="Trial-Period-Install-Steps"></a>
     
-    ```
+    * **Trial Period Install Steps**
     
-  * Click Save.
-  
-  * In your web browser visit the following URL.
-  
-    ```
-    https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.html
-    ```
-    
-    The **twcsl.html** file will display in your browser.
-    
-  * Copy the entire contents of the page and add it to Settings > Advanced >
-    Code Injection > HEADER after the previously installed code. jQuery must be
-    before the twcsl code.
-  
-  * Click Save.
-  
+      * **Step 1**
+      
+        Add the following to Settings > Advanced > Code Injection > HEADER.
+        
+        ```html
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        ```
+        
+      * **Step 2**
+      
+        In your web browser visit the following URL.
+        
+        ```
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.html
+        ```
+        
+        The **twcsl.html** file will display in your browser.
+        
+      * **Step 3**
+      
+        Copy the entire contents of the page and add it to Settings >
+        Advanced > Code Injection > HEADER after the previously installed code.
+        jQuery must be before the twcsl code.
+        
+      * The trial period install steps are finished.
+      
+      * *Once your site is out of the trial period you may want to switch over
+        to the paid plan install. Just reverse the trial period install steps
+        and then follow the paid plan install steps.*
+      
 ## Example
 
 You want to build an effect that does something when you are on a store category
@@ -837,3 +855,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 * **2021-05-22**
 
   * initial version
+
+[1]: #Paid-Plan-Install-Steps
+[2]: #Trial-Period-Install-Steps
+[3]: https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link
+[4]: https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file
