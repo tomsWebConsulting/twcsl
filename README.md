@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 179 effects. Each effect has it's own version number, code,
+twcsl contains 180 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -214,6 +214,8 @@ not necessarily designed to work together.
   * [Auto Layout Right Arrow Auto Click](v7.1/Auto%20Layout%20Right%20Arrow%20Auto%20Click)
     
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
+    
+  * [Blocks Boilerplate](v7.1/Blocks%20Boilerplate)
     
   * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
