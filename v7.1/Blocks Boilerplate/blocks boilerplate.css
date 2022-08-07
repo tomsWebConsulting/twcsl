@@ -1,0 +1,23 @@
+/*
+
+  begin blocks boilerplate
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  html:not( .squarespace-damask ) #footer-sections .page-section:last-child {
+  
+    display : none;
+    
+    }
+    
+  /* end blocks boilerplate */

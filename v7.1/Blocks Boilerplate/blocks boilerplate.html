@@ -1,0 +1,50 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      blocks boilerplate
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependancies  : jQuery
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    $( 'x-twc-bb' ).each ( function (  ) {
+    
+      const $this = $( this );
+      
+      let blockId = $this.attr ( 'data-block-id' );
+      
+      if ( blockId [ 0 ] != '#' ) blockId = '#' + blockId;
+      
+      const $block = $( blockId );
+      
+      $this
+      
+        .parents ( '.sqs-block-code' )
+        
+        .replaceWith ( $block );
+        
+      } );
+      
+    } );
+    
+  </script>
