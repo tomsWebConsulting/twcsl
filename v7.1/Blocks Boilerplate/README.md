@@ -20,7 +20,7 @@
   
 * Add code blocks wherever you want. In those code blocks add the following.
   ```html
-  <x-twc-bb data-block-id="[enter source block id here between single quotes replacing squarebrackets]">
+  <x-twc-bb data-block-id="[enter source block id here between single quotes replacing square brackets]">
   ```
   
   You can find block ids by using Heather Tovey's [Squarespace ID Finder][3].
