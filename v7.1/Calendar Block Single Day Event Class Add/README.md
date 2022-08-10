@@ -43,6 +43,6 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Calendar%20Block%20Event%20Change#calendar%20block%20link%20replace%20with%20excerpt%20link
+[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Calendar%20Block%20Event%20Change#calendar-block-event-change
 [2]: calendar%20block%20single%20day%20event%20class%20add.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
