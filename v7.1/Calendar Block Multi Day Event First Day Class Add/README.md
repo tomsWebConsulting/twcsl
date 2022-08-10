@@ -17,8 +17,8 @@
   the page **before** the **calendar block event change** code. Read the code
   for any instructions within.
   
-* In the **calendar block event change** code set the constant itemCallback to
-  **cbmdefdca**.
+* In the **calendar block event change** code set the constant
+  itemFlyOutCallbacks to **cbmdefdca**.
   
   ```javascript
   const itemFlyOutCallbacks = [
