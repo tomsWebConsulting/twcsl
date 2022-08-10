@@ -1,0 +1,43 @@
+<script>
+
+  const cbsdeca = ( $element ) => {
+  
+    /*
+    
+      calendar block single day event class add
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+                      
+                      calendar block event change
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      const selector = '.item--multiday';
+      
+      const $itemLink = $( selector, $element );
+      
+      if ( $itemLink.length ) return; // bail if multiday event
+      
+      const href = $( '.item-link', $element )
+      
+        .attr ( 'href' );
+        
+      $element
+      
+        .parents ( 'tbody' )
+        
+        .find ( `.item-link[href="${ href }"]` )
+        
+        .parents ( '.yui3-calendar-day' )
+        
+        .addClass ( 'twc-cbsdeca-single-day' );
+        
+    };
+    
+  </script>
