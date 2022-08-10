@@ -6,7 +6,7 @@
     
       calendar block event change
       
-      Version       : 0.1.0
+      Version       : 0.2.0
       
       SS Version    : 7.1
       
@@ -25,22 +25,30 @@
       
     /*
     
-      itemCallback and itemFlyOutCallback are custom functions that are called
-      for each event item. replace undefined with the name of your custom
-      functions. you can set one or both callbacks. your functions must
+      itemCallbacks and itemFlyOutCallbacks are arrays of function names that
+      are called for each event item. replace undefined with the name(s) of your
+      functions. you can set one or both callback constants. your functions must
       accept a jQuery object parameter
       
       */
       
-    const itemCallback = undefined;
+    const itemCallbacks = [
     
-    const itemFlyOutCallback = undefined;
+      [enter function name here replacing square brackets or remove line if not using],
+      
+      ];
+      
+    const itemFlyOutCallbacks = [
     
+      [enter function name here replacing square brackets or remove line if not using],
+      
+      ];
+      
     // do not change anything below, there be the borg here
     
     // bail if no callbacks
     
-    if ( itemCallback == undefined && itemFlyOutCallback == undefined ) return;
+    if ( ! itemCallbacks.length && ! itemFlyOutCallbacks.length ) return;
     
     // bail if no mutation observer available
     
@@ -76,22 +84,30 @@
           
             case isItemList :
             
-              // bail if no callback
+              // bail if no callbacks
               
-              if ( itemCallback == undefined ) return;
+              if ( ! itemCallbacks.length ) return;
               
-              itemCallback ( $this );
+              $.each ( itemCallbacks, function ( ) {
               
+                this ( $this );
+                
+                } );
+                
               break;
               
             case isItemListFlyOut :
             
-              // bail if no callback
+              // bail if no callbacks
               
-              if ( itemFlyOutCallback == undefined ) return;
+              if ( ! itemFlyOutCallbacks.length ) return;
               
-              itemFlyOutCallback ( $this );
+              $.each ( itemFlyOutCallbacks, function ( ) {
               
+                this ( $this );
+                
+                } );
+                
               break;
               
             }

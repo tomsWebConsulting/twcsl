@@ -1,6 +1,6 @@
 # Calendar Block Event Change
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -29,11 +29,11 @@ Please consider [making a donation][2].
 
 ## Changes
 
-<!-- * **2021-08-02**
+* **2022-08-09**
 
-  * fix minor documentation issues
-  * bumped version to 0.1d1
-  -->
+  * added ability to call multiple functions
+  * bumped version to 0.2.0
+  
 * **2022-04-14**
 
   * initial version
