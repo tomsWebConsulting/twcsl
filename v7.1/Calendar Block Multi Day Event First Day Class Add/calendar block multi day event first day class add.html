@@ -6,7 +6,7 @@
     
       calendar block multi day event first day class add
       
-      Version       : 0.1.0
+      Version       : 0.1.1
       
       SS Version    : 7.1
       
@@ -18,23 +18,45 @@
       
       */
       
-      const selector = '.item--multiday .item-link';
+      let selector = '.flyoutitem--multiday';
       
-      const $itemLink = $( selector, $element );
+      const $multiday = $( selector, $element );
       
-      if ( ! $itemLink.length ) return; // bail if no item link
+      if ( ! $multiday.length ) return; // bail if not multi day
       
-      const href = $itemLink
+      selector = '.flyoutitem-datetime--12hr';
+      
+      const dayName = $( selector, $multiday )
+      
+        .text ( )
+        
+        .match ( /^\s*([^,]+)/ )
+        
+        [ 1 ];
+        
+      const dayNameLocal = $( $element )
+      
+        .parents ( '.yui3-calendar-day' )
+        
+        .find ( '.marker-dayname' )
+        
+        .text ( )
+        
+        .trim ( );
+        
+      const href = $( '.flyoutitem-link', $multiday )
       
         .attr ( 'href' );
         
+      const end = dayName == dayNameLocal ? 1 : 2;
+      
       $element
       
         .parents ( 'tbody' )
         
         .find ( `.item-link[href="${ href }"]` )
         
-        .first ( )
+        .slice ( 0, end )
         
         .parents ( '.yui3-calendar-day' )
         

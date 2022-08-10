@@ -1,6 +1,6 @@
 # Calendar Block Multi Day Event First Day Class Add
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -21,7 +21,7 @@
   **cbmdefdca**.
   
   ```javascript
-  const itemCallbacks = [
+  const itemFlyOutCallbacks = [
   
     cbmdefdca,
     
@@ -34,11 +34,12 @@ Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2021-08-02**
+* **2021-08-09**
 
-  * fix minor documentation issues
-  * bumped version to 0.1d1
-  -->
+  * fix for first day of multi day event not spanning two days because of local
+    time zone
+  * bumped version to 0.1.1
+  
 * **2022-08-05**
 
   * initial version
