@@ -10,13 +10,11 @@
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[store price change.html](store%20price%20change.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
-  Read the code for any instructions within.
+* Add code from file **[store price change.html][3]** to Store Settings >
+  Advanced > Page Header Code Injection for the store page. Read the code for
+  any instructions within.
 
 ## searchReplaceText Example Lines
 
@@ -52,11 +50,15 @@ checkout page or SS backend. It is a SS security feature.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2022-08-13**
+
+  * remove an errant line of code, no functional change
+  * bumped version to 0.4.1
+  
 * **2022-04-20**
 
   * add support for store detail layouts
@@ -155,3 +157,6 @@ Please consider
   * initial version
 
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: store%20price%20change.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

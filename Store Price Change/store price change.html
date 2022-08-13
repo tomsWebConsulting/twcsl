@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.4.0
+  Version         : 0.4.1
   
   SS Versions     : 7.1, 7.0
   
@@ -20,9 +20,7 @@
                     your template is not listed? then it is not currently
                     supported
   
-  Dependancies    : jQuery
-                    
-                    twcsl
+  Dependancies    : twcsl < https://bit.ly/3JSggyu >
   
   Notes           : the code is comprised of several tags all of which must be
                     present for the effect to work
@@ -220,8 +218,6 @@
           
           $productPrices.each ( function ( ) {
           
-            $( this )
-            
             observer.observe ( this, {
             
               attributeFilter : [ attribute ],
