@@ -100,6 +100,6 @@ Please consider [making a donation][6].
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [2]: https://support.squarespace.com/hc/en-us/articles/206545347
 [3]: https://github.com/tomsWebConsulting/twcsl#install-options
-[4]: store%20product%20detail%20add%20to%20cart%20button%20change%20to%20url%20redirect.html#L1
+[4]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
