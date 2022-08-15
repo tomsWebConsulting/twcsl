@@ -1,0 +1,559 @@
+<!--
+
+  begin page section video scrubbing animation
+  
+  Version       : 0.1d2
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : No
+  
+  Dependancies  : jQuery
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+                  
+                  the images need to be the same width and height
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .twc-psvsa {
+    
+      /*
+      
+        because we are manipulating a page section with code sometimes it may
+        need some help with knowing the right background color to use. enter a
+        color value here if need be
+        
+        */
+        
+      --background-color : [ enter background color here ];
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    window.twc = {
+    
+      'd9770c1d' : {
+      
+        /*
+        
+          image urls can be either an array of urls or a function that returns
+          an array of urls. replace undefined with the array or function
+          
+          */
+          
+        /*
+        
+          following is imageUrls with an example array with one line for a
+          url. copy the example below and replace the imageUrls : undefined line
+          below. remove the forward slash asterisk and asterisk forward slash
+          lines from before and after the copied example. repeat the enter image
+          url here line for as many images as you need
+          
+          */
+           
+        /*
+        
+        imageUrls : [
+        
+          '[enter image url here between single quotes]',
+          
+          ]
+          
+          */
+          
+        /*
+        
+          following is imageUrls with an example function that returns an array
+          with one url. a function is useful if your image urls are a sequence
+          of images, i.e. image01.jpg, image02.jpg, image03.jpg, etc. this
+          example is nonsense but gives the general idea of a function structure
+          
+          */
+          
+        /*
+        
+        imageUrls : ( generateImageUrls => {
+        
+          const imageUrls = [
+          
+            '[enter image url here between single quotes]',
+            
+            ];
+            
+          return imageUrls;
+          
+          } ) ( ),
+          
+          */
+          
+        imageUrls : undefined,
+        
+        /*
+      
+          if your animation images don't have much of a top padding you can add
+          some top padding here. it is only needed for full bleed background
+          images. default is 0px
+        
+          */
+         
+        paddingTop : '0px',
+      
+        // how far from the top of the window should the animation start
+        
+        startAnimationFromWindowTopPercent : 0, // a number without % sign
+        
+        // begin callbacks
+        
+           // for adding extra functionality such as text effects
+           
+          /*
+          
+            initializeCallback is called after the main initialization of the
+            main code. an object with following parameters is passed to the
+            callback :
+            
+              canvasContext, imagesCount, $canvas, $pageSection
+              
+            */
+            
+          initializeCallback : undefined,
+          
+          /*
+          
+            resizeCallback is called after the window is resized. an object with
+            following parameters is passed to the callback :
+            
+              canvasContext, $canvas, $pageSection
+              
+            */
+            
+          resizeCallback : undefined,
+          
+          /*
+          
+            updateCallback is called after the image is updated. an object with
+            following parameters is passed to the callback :
+            
+              canvasContext, imageIndex, imagesCount, $canvas, $pageSection
+              
+            */
+            
+          updateCallback : undefined,
+          
+          // end callbacks
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-psvsa {
+    
+      background-color : var( --background-color );
+      display : block;
+      
+      }
+      
+    .twc-psvsa .section-background {
+    
+      background-color : var( --background-color );
+      bottom : unset;
+      left : unset;
+      position: sticky;
+      right : unset;
+      
+      }
+      
+    .twc-psvsa > .content-wrapper {
+    
+      display : block;
+      width : unset;
+      
+      }
+      
+    .twc-psvsa .section-background-canvas {
+    
+      display : block;
+      height : 100%;
+      margin  : auto;
+      max-height : 100%;
+      max-width : 100%;
+      position : unset;
+      width : 100%;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const consoleMessages = false;
+      
+      const o = twc [ 'd9770c1d' ];
+      
+      const imageUrls = o.imageUrls;
+      
+      // bail if imageUrls is not an array
+      
+      if ( imageUrls == undefined || ! Array.isArray ( imageUrls ) ) return;
+      
+      // first order
+      
+        const imagesCount = imageUrls.length;
+        
+        const images = [ ];
+        
+        const initializeCallback = o.initializeCallback;
+        
+        const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
+        
+          $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
+          
+        const resizeCallback = o.resizeCallback;
+        
+        const paddingTop = o.paddingTop;
+        
+        const selector = '#page .page-section x-twc-psvsa';
+        
+        const startAnimationFromWindowTopPercent =
+        
+          o.startAnimationFromWindowTopPercent;
+          
+        const updateCallback = o.updateCallback;
+        
+        const $sectionBackground = $( selector )
+        
+          .parents ( '.content-wrapper' )
+          
+          .siblings ( '.section-background' );
+          
+        let headerHeight = 0;
+        
+        let imageIndexPrevious = 0;
+        
+        let pageSectionOffsetBottom;
+        
+        let pageSectionOffsetTop;
+        
+        let scrollAnimationStart;
+        
+        let scrollAnimationStop;
+        
+        let scrollTopMax;
+        
+        // end first order
+        
+      // begin second order
+      
+        const $image = $( 'img', $sectionBackground );
+        
+        const $pageSection = $sectionBackground
+        
+          .parents ( '.page-section' )
+          
+          .addClass ( 'twc-psvsa' );
+          
+        // end second order
+        
+      // begin third order
+      
+        const imageDimensions = ( ( ) => {
+        
+          let [ w, h ] = $image
+          
+            .attr ( 'data-image-dimensions' )
+            
+            .split ( 'x' );
+            
+          if ( w > 2500 ) {
+          
+            const quotient = 2500 / w;
+            
+            h = Math.ceil ( h * quotient );
+            
+            w = 2500;
+            
+            }
+            
+          return { height : h, width : w };
+          
+          } ) ( );
+          
+        $image.replaceWith ( '<canvas class="section-background-canvas">' );
+        
+        const $canvas = $( '.section-background-canvas', $sectionBackground )
+        
+          .attr ( imageDimensions );
+          
+        // end third order
+        
+      // begin forth order
+      
+        const canvasContext = $canvas
+        
+          .get ( 0 )
+          
+          .getContext ( '2d' );
+          
+        const callbackParameters = {
+        
+          canvasContext : canvasContext,
+          
+          imageIndex : 0,
+          
+          imagesCount : imagesCount,
+          
+          $canvas : $canvas,
+          
+          $pageSection : $pageSection,
+          
+          };
+          
+        // end forth order
+        
+      const pxToNumber = ( px ) => {
+      
+        const n = px.match ( /^\d+(?:.\d+)?/ ) [ 0 ];
+        
+        return n;
+        
+        };
+        
+      const updateImage = i => {
+      
+        canvasContext.drawImage ( images [ i ], 0, 0 );
+        
+        if ( consoleMessages == true )
+        
+          console.log ( 'update image : ', i );
+          
+        }
+        
+      const viewportPercentWidth = ( w, vw ) => {
+      
+        vw = vw.replace ( 'vw', '' );
+        
+        vw = Number ( vw );
+        
+        const n = w * ( vw / 100 );
+        
+        return n;
+        
+        };
+        
+      // begin first image
+      
+        images [ 0 ] = new Image ( );
+        
+        images [ 0 ].src = imageUrls [ 0 ];
+        
+        images [ 0 ].onload = ( ) => {
+        
+          canvasContext.drawImage ( images [ 0 ], 0, 0 );
+          
+          }
+          
+        // end first image
+        
+      if ( initializeCallback !== undefined )
+      
+        initializeCallback ( callbackParameters );
+        
+      $( window )
+      
+        .resize ( function ( ) {
+        
+          const scrollTop = $( window ).scrollTop ( );
+          
+          const windowHeight = $( window ).height ( );
+          
+          let sectionBackgroundPaddingTop = 0;
+          
+          if ( isFixedHeader ) {
+          
+            headerHeight = $( '#header' ).css ( 'height' );
+            
+            headerHeight = pxToNumber ( headerHeight );
+            
+            if ( scrollTop < 11 ) {
+            
+              // begin first order
+              
+                const windowWith = $( window ).width ( );
+                
+                const $e = $( '.header .header-announcement-bar-wrapper' );
+                
+                // end first order
+                
+              // begin second order
+              
+                const ePaddingBottom = $e.css ( 'padding-bottom' );
+                
+                const ePaddingTop = $e.css ( 'padding-top' );
+                
+                // end second order
+                
+              // begin third order
+              
+                sectionBackgroundPaddingTop = headerHeight -
+                
+                  pxToNumber ( ePaddingBottom ) - pxToNumber ( ePaddingTop ) +
+                  
+                  ( viewportPercentWidth ( windowWith, '1.8vw' ) * 2 );
+                  
+                // end third order
+                
+              $sectionBackground
+              
+                .css ( 'padding-top',
+                
+                  `calc( ${ sectionBackgroundPaddingTop }px + ` +
+                  
+                  `${ paddingTop } )` );
+                  
+              }
+              
+            } // end is fixed header
+            
+          if ( consoleMessages == true )
+          
+            console.log ( 'headerHeight : ', headerHeight );
+            
+          pageSectionOffsetTop = $pageSection.offset ( ).top;
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'pageSectionOffsetTop : ', pageSectionOffsetTop );
+            
+          pageSectionOffsetBottom = pageSectionOffsetTop +
+          
+            $pageSection.height ( );
+            
+          if ( consoleMessages == true )
+          
+            console.log ( 'pageSectionOffsetBottom : ', pageSectionOffsetBottom );
+            
+          scrollAnimationStart = pageSectionOffsetTop - windowHeight *
+          
+            ( startAnimationFromWindowTopPercent / 100 ) +
+            
+            sectionBackgroundPaddingTop + pxToNumber ( paddingTop );
+            
+          if ( consoleMessages == true )
+          
+            console.log ( 'scrollAnimationStart : ', scrollAnimationStart );
+            
+          scrollAnimationStop = pageSectionOffsetBottom;
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'scrollAnimationStop : ', scrollAnimationStop );
+            
+          if ( resizeCallback !== undefined )
+          
+            resizeCallback ( callbackParameters );
+            
+          } )
+          
+        .resize ( )
+        
+        .scroll ( function ( ) {
+        
+          // current scroll position
+          
+          const scrollTop = $( window ).scrollTop ( );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'scrollTop : ', scrollTop );
+            
+          // bail if page section not at top of screen
+          
+          if ( scrollTop < scrollAnimationStart ) return;
+          
+          // bail if page section bottom past top of screen
+          
+          if ( scrollTop > scrollAnimationStop ) return;
+          
+          const dividend = scrollTop - scrollAnimationStart;
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'dividend : ', dividend );
+            
+          const divisor = Math.max ( scrollAnimationStop - scrollTop, 0 );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'divisor : ', divisor );
+            
+          const quotient = Math.min ( dividend / divisor, 1 );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'quotient : ', quotient );
+            
+          const imageIndex = Math.min ( imagesCount, Math.ceil ( quotient *
+          
+            imagesCount ) ) - 1;
+            
+          if ( consoleMessages == true )
+          
+            console.log ( 'imageIndex : ', imageIndex );
+            
+          if ( imageIndex == imageIndexPrevious ) return;
+          
+          imageIndexPrevious = imageIndex;
+          
+          requestAnimationFrame ( ( ) => updateImage ( imageIndex ) );
+          
+          if ( updateCallback === undefined ) return;
+          
+          callbackParameters.imageIndex = imageIndex;
+          
+          updateCallback ( callbackParameters );
+          
+          } );
+          
+      // begin preload images
+      
+        $.each ( imageUrls, function ( imageIndex, url ) {
+        
+          // skip first image as it is already loaded
+          
+          if ( ! imageIndex ) return true;
+          
+          images [ imageIndex ] = new Image ( );
+          
+          images [ imageIndex ].src = url;
+          
+          } );
+          
+      } );
+      
+    </script>
+    
+  <!-- end page section video scrubbing animation -->
