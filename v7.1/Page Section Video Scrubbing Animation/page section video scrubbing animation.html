@@ -2,13 +2,9 @@
 
   begin page section video scrubbing animation
   
-  Version       : 0.1d2
+  Version       : 0.2.0
   
   SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : No
   
   Dependancies  : jQuery
   
@@ -38,125 +34,118 @@
         
       --background-color : [ enter background color here ];
       
+      /*
+      
+        normally the animation starts when the page section reaches the bottom
+        of the header or the top of the viewport when the header is not fixed
+        
+        */
+        
+      --top-offset : 0px;
+      
       }
       
     </style>
     
   <script>
   
-    window.twc = {
+    if ( window.twc == undefined ) window.twc = { };
     
-      'd9770c1d' : {
+    twc.psvsa = {
+    
+      /*
       
-        /*
+        image urls can be either an array of urls or a function that returns
+        an array of urls. replace undefined with the array or function
         
-          image urls can be either an array of urls or a function that returns
-          an array of urls. replace undefined with the array or function
-          
-          */
-          
-        /*
+        */
         
-          following is imageUrls with an example array with one line for a
-          url. copy the example below and replace the imageUrls : undefined line
-          below. remove the forward slash asterisk and asterisk forward slash
-          lines from before and after the copied example. repeat the enter image
-          url here line for as many images as you need
-          
-          */
-           
-        /*
+      /*
+      
+        following is imageUrls with an example array with one line for a
+        url. copy the example below and replace the imageUrls : undefined line
+        below. remove the forward slash asterisk and asterisk forward slash
+        lines from before and after the copied example. repeat the enter image
+        url here line for as many images as you need
         
-        imageUrls : [
+        */
+         
+      /*
+      
+      imageUrls : [
+      
+        '[enter image url here between single quotes replacing square brackets]',
+        
+        ],
+        
+        */
+        
+      /*
+      
+        following is imageUrls with an example function that returns an array
+        with one url. a function is useful if your image urls are a sequence
+        of images, i.e. image01.jpg, image02.jpg, image03.jpg, etc. this
+        example is nonsense but gives the general idea of a function structure
+        
+        */
+        
+      /*
+      
+      imageUrls : ( generateImageUrls => {
+      
+        const imageUrls = [
         
           '[enter image url here between single quotes]',
           
-          ]
+          ];
           
-          */
-          
-        /*
+        return imageUrls;
         
-          following is imageUrls with an example function that returns an array
-          with one url. a function is useful if your image urls are a sequence
-          of images, i.e. image01.jpg, image02.jpg, image03.jpg, etc. this
-          example is nonsense but gives the general idea of a function structure
-          
-          */
-          
-        /*
+        } ) ( ),
         
-        imageUrls : ( generateImageUrls => {
+        */
         
-          const imageUrls = [
-          
-            '[enter image url here between single quotes]',
-            
-            ];
-            
-          return imageUrls;
-          
-          } ) ( ),
-          
-          */
-          
-        imageUrls : undefined,
-        
-        /*
+      imageUrls : undefined,
       
-          if your animation images don't have much of a top padding you can add
-          some top padding here. it is only needed for full bleed background
-          images. default is 0px
-        
-          */
+      // begin callbacks
+      
+         // for adding extra functionality such as text effects
          
-        paddingTop : '0px',
-      
-        // how far from the top of the window should the animation start
+        /*
         
-        startAnimationFromWindowTopPercent : 0, // a number without % sign
+          initializeCallback is called after the main initialization of the
+          main code. an object with following parameters is passed to the
+          callback :
+          
+            canvasContext, imagesCount, $canvas, $pageSection
+            
+          */
+          
+        initializeCallback : undefined,
         
-        // begin callbacks
+        /*
         
-           // for adding extra functionality such as text effects
-           
-          /*
+          resizeCallback is called after the window is resized. an object with
+          following parameters is passed to the callback :
           
-            initializeCallback is called after the main initialization of the
-            main code. an object with following parameters is passed to the
-            callback :
+            canvasContext, $canvas, $pageSection
             
-              canvasContext, imagesCount, $canvas, $pageSection
-              
-            */
+          */
+          
+        resizeCallback : undefined,
+        
+        /*
+        
+          updateCallback is called after the image is updated. an object with
+          following parameters is passed to the callback :
+          
+            canvasContext, imageIndex, imagesCount, $canvas, $pageSection
             
-          initializeCallback : undefined,
+          */
           
-          /*
-          
-            resizeCallback is called after the window is resized. an object with
-            following parameters is passed to the callback :
-            
-              canvasContext, $canvas, $pageSection
-              
-            */
-            
-          resizeCallback : undefined,
-          
-          /*
-          
-            updateCallback is called after the image is updated. an object with
-            following parameters is passed to the callback :
-            
-              canvasContext, imageIndex, imagesCount, $canvas, $pageSection
-              
-            */
-            
-          updateCallback : undefined,
-          
-          // end callbacks
-          
-        }
+        updateCallback : undefined,
+        
+        // end callbacks
         
       };
       
@@ -175,11 +164,14 @@
       
     .twc-psvsa .section-background {
     
+      --top : 0px;
+      
       background-color : var( --background-color );
       bottom : unset;
       left : unset;
       position: sticky;
       right : unset;
+      top : calc( var( --top ) + var( --top-offset ) );
       
       }
       
@@ -212,9 +204,9 @@
       
       const consoleMessages = false;
       
-      const o = twc [ 'd9770c1d' ];
+      const options = twc.psvsa;
       
-      const imageUrls = o.imageUrls;
+      const imageUrls = options.imageUrls;
       
       // bail if imageUrls is not an array
       
@@ -224,63 +216,7 @@
       
         const imagesCount = imageUrls.length;
         
-        const images = [ ];
-        
-        const initializeCallback = o.initializeCallback;
-        
-        const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
-        
-          $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
-          
-        const resizeCallback = o.resizeCallback;
-        
-        const paddingTop = o.paddingTop;
-        
-        const selector = '#page .page-section x-twc-psvsa';
-        
-        const startAnimationFromWindowTopPercent =
-        
-          o.startAnimationFromWindowTopPercent;
-          
-        const updateCallback = o.updateCallback;
-        
-        const $sectionBackground = $( selector )
-        
-          .parents ( '.content-wrapper' )
-          
-          .siblings ( '.section-background' );
-          
-        let headerHeight = 0;
-        
-        let imageIndexPrevious = 0;
-        
-        let pageSectionOffsetBottom;
-        
-        let pageSectionOffsetTop;
-        
-        let scrollAnimationStart;
-        
-        let scrollAnimationStop;
-        
-        let scrollTopMax;
-        
-        // end first order
-        
-      // begin second order
-      
-        const $image = $( 'img', $sectionBackground );
-        
-        const $pageSection = $sectionBackground
-        
-          .parents ( '.page-section' )
-          
-          .addClass ( 'twc-psvsa' );
-          
-        // end second order
-        
-      // begin third order
-      
-        const imageDimensions = ( ( ) => {
+        const imageDimensions = ( ) => {
         
           let [ w, h ] = $image
           
@@ -300,17 +236,111 @@
             
           return { height : h, width : w };
           
-          } ) ( );
+          };
           
-        $image.replaceWith ( '<canvas class="section-background-canvas">' );
+        const images = [ ];
         
-        const $canvas = $( '.section-background-canvas', $sectionBackground )
+        const initializeCallback = options.initializeCallback;
         
-          .attr ( imageDimensions );
+        const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
+        
+          $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
+          
+        if ( consoleMessages == true )
+        
+          console.log ( 'isFixedHeader : ', isFixedHeader );
+          
+        const pxToNumber = ( px ) => {
+        
+          let n = px.match ( /\d+(?:.\d+)?/ ) [ 0 ];
+          
+          n = Number ( n );
+          
+          return n;
+          
+          };
+          
+        const resizeCallback = options.resizeCallback;
+        
+        const selector = '#page .page-section x-twc-psvsa';
+        
+        const updateCallback = options.updateCallback;
+        
+        const updateImage = i => {
+        
+          canvasContext.drawImage ( images [ i ], 0, 0 );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'update image : ', i );
+            
+          }
+          
+        const viewportPercentWidth = ( w, vw ) => {
+        
+          vw = vw.replace ( 'vw', '' );
+          
+          vw = Number ( vw );
+          
+          const n = w * ( vw / 100 );
+          
+          return n;
+          
+          };
+          
+        const $header = $( '#header' );
+        
+        let headerHeight = 0;
+        
+        let imageIndexPrevious = 0;
+        
+        let pixelRange;
+        
+        let pixelInterval;
+        
+        // end first order
+        
+      // second order
+      
+        const $sectionBackground = $( selector )
+        
+          .parents ( '.content-wrapper' )
+          
+          .siblings ( '.section-background' );
+          
+        // end second order
+        
+      // third order
+      
+        const $image = $( 'img', $sectionBackground );
+        
+        const $pageSection = $sectionBackground
+        
+          .parents ( '.page-section' )
+          
+          .addClass ( 'twc-psvsa' );
+          
+        let topOffset = $pageSection
+        
+          .css ( '--top-offset' );
+          
+        topOffset = pxToNumber ( topOffset );
+        
+        if ( consoleMessages == true )
+        
+          console.log ( 'topOffset : ', topOffset );
           
         // end third order
         
-      // begin forth order
+      // begin fourth order
+      
+        const $canvas = $( '<canvas class="section-background-canvas">' )
+        
+          .attr ( imageDimensions ( ) );
+          
+        // end fourth order
+        
+      // begin fifth order
       
         const canvasContext = $canvas
         
@@ -318,6 +348,10 @@
           
           .getContext ( '2d' );
           
+        // end fifth order
+        
+      // begin six order
+      
         const callbackParameters = {
         
           canvasContext : canvasContext,
@@ -332,38 +366,10 @@
           
           };
           
-        // end forth order
+        // end six order
         
-      const pxToNumber = ( px ) => {
+      $image.replaceWith ( $canvas );
       
-        const n = px.match ( /^\d+(?:.\d+)?/ ) [ 0 ];
-        
-        return n;
-        
-        };
-        
-      const updateImage = i => {
-      
-        canvasContext.drawImage ( images [ i ], 0, 0 );
-        
-        if ( consoleMessages == true )
-        
-          console.log ( 'update image : ', i );
-          
-        }
-        
-      const viewportPercentWidth = ( w, vw ) => {
-      
-        vw = vw.replace ( 'vw', '' );
-        
-        vw = Number ( vw );
-        
-        const n = w * ( vw / 100 );
-        
-        return n;
-        
-        };
-        
       // begin first image
       
         images [ 0 ] = new Image ( );
@@ -382,99 +388,41 @@
       
         initializeCallback ( callbackParameters );
         
+      if ( isFixedHeader ) {
+      
+        headerHeight = $header.css ( 'height' );
+        
+        headerHeight = pxToNumber ( headerHeight );
+        
+        if ( consoleMessages == true )
+        
+          console.log ( 'headerHeight : ', headerHeight );
+          
+        $sectionBackground.css ( '--top', `${ headerHeight }px` );
+        
+        }
+        
       $( window )
       
         .resize ( function ( ) {
         
-          const scrollTop = $( window ).scrollTop ( );
+          pixelRange = $pageSection
           
-          const windowHeight = $( window ).height ( );
-          
-          let sectionBackgroundPaddingTop = 0;
-          
-          if ( isFixedHeader ) {
-          
-            headerHeight = $( '#header' ).css ( 'height' );
+            .outerHeight ( )
             
-            headerHeight = pxToNumber ( headerHeight );
+            +
             
-            if ( scrollTop < 11 ) {
-            
-              // begin first order
-              
-                const windowWith = $( window ).width ( );
-                
-                const $e = $( '.header .header-announcement-bar-wrapper' );
-                
-                // end first order
-                
-              // begin second order
-              
-                const ePaddingBottom = $e.css ( 'padding-bottom' );
-                
-                const ePaddingTop = $e.css ( 'padding-top' );
-                
-                // end second order
-                
-              // begin third order
-              
-                sectionBackgroundPaddingTop = headerHeight -
-                
-                  pxToNumber ( ePaddingBottom ) - pxToNumber ( ePaddingTop ) +
-                  
-                  ( viewportPercentWidth ( windowWith, '1.8vw' ) * 2 );
-                  
-                // end third order
-                
-              $sectionBackground
-              
-                .css ( 'padding-top',
-                
-                  `calc( ${ sectionBackgroundPaddingTop }px + ` +
-                  
-                  `${ paddingTop } )` );
-                  
-              }
-              
-            } // end is fixed header
+            topOffset;
             
           if ( consoleMessages == true )
           
-            console.log ( 'headerHeight : ', headerHeight );
+            console.log ( 'pixelRange : ', pixelRange );
             
-          pageSectionOffsetTop = $pageSection.offset ( ).top;
+          pixelInterval = pixelRange / imagesCount;
           
           if ( consoleMessages == true )
           
-            console.log ( 'pageSectionOffsetTop : ', pageSectionOffsetTop );
-            
-          pageSectionOffsetBottom = pageSectionOffsetTop +
-          
-            $pageSection.height ( );
-            
-          if ( consoleMessages == true )
-          
-            console.log ( 'pageSectionOffsetBottom : ', pageSectionOffsetBottom );
-            
-          scrollAnimationStart = pageSectionOffsetTop - windowHeight *
-          
-            ( startAnimationFromWindowTopPercent / 100 ) +
-            
-            sectionBackgroundPaddingTop + pxToNumber ( paddingTop );
-            
-          if ( consoleMessages == true )
-          
-            console.log ( 'scrollAnimationStart : ', scrollAnimationStart );
-            
-          scrollAnimationStop = pageSectionOffsetBottom;
-          
-          if ( consoleMessages == true )
-          
-            console.log ( 'scrollAnimationStop : ', scrollAnimationStop );
-            
-          if ( resizeCallback !== undefined )
-          
-            resizeCallback ( callbackParameters );
+            console.log ( 'pixelInterval : ', pixelInterval );
             
           } )
           
@@ -482,48 +430,58 @@
         
         .scroll ( function ( ) {
         
-          // current scroll position
+          const pageSectionTop = $pageSection
           
-          const scrollTop = $( window ).scrollTop ( );
-          
-          if ( consoleMessages == true )
-          
-            console.log ( 'scrollTop : ', scrollTop );
+            .get ( 0 )
             
-          // bail if page section not at top of screen
-          
-          if ( scrollTop < scrollAnimationStart ) return;
-          
-          // bail if page section bottom past top of screen
-          
-          if ( scrollTop > scrollAnimationStop ) return;
-          
-          const dividend = scrollTop - scrollAnimationStart;
-          
-          if ( consoleMessages == true )
-          
-            console.log ( 'dividend : ', dividend );
+            .getBoundingClientRect ( )
             
-          const divisor = Math.max ( scrollAnimationStop - scrollTop, 0 );
-          
-          if ( consoleMessages == true )
-          
-            console.log ( 'divisor : ', divisor );
+            .top;
             
-          const quotient = Math.min ( dividend / divisor, 1 );
+          const sectionBackgroundTop = $sectionBackground
           
-          if ( consoleMessages == true )
-          
-            console.log ( 'quotient : ', quotient );
+            .get ( 0 )
             
-          const imageIndex = Math.min ( imagesCount, Math.ceil ( quotient *
+            .getBoundingClientRect ( )
+            
+            .top;
+            
+          if ( isFixedHeader ) {
           
-            imagesCount ) ) - 1;
+            headerHeight = $( '#header' ).css ( 'height' );
+            
+            headerHeight = pxToNumber ( headerHeight );
+            
+            if ( consoleMessages == true )
+            
+              console.log ( 'headerHeight : ', headerHeight );
+              
+            $sectionBackground.css ( '--top', `${ headerHeight }px` );
+            
+            }
+            
+          // bail if values the same
+          
+          if ( pageSectionTop == sectionBackgroundTop ) return;
+          
+          // bail scroll range is greater than total pixel range
+          
+          const l = Math.abs ( pageSectionTop - topOffset - headerHeight ) >
+          
+            pixelRange;
+            
+          if ( l ) return;
+          
+          const imageIndex = Math.floor ( Math.abs ( pageSectionTop -
+          
+            topOffset - headerHeight ) / pixelInterval );
             
           if ( consoleMessages == true )
           
             console.log ( 'imageIndex : ', imageIndex );
             
+          // bail if values the same
+          
           if ( imageIndex == imageIndexPrevious ) return;
           
           imageIndexPrevious = imageIndex;

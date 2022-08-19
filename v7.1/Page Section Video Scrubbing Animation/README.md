@@ -1,6 +1,6 @@
 # Page Section Video Scrubbing Animation
 
-### Version 0.1d2
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -16,7 +16,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   ```
   
-* Add a blank section.
+* Add a classic editor blank section.
   
 * Edit the section.
   
@@ -36,7 +36,7 @@
   * Add the following code.
     
     ```html
-    <x-twc-psvsa></x-twc-psvsa>
+    <x-twc-psvsa/>
     ```
     
 * Delete the text block.
@@ -49,24 +49,24 @@
 
 * Save the section.
 
-* Add code from file
-  **[page section video scrubbing animation.html](page%20section%20video%20scrubbing%20animation.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+* Add code from file **[page section video scrubbing animation.html][1]** to
+  Page Settings > Advanced > Page Header Code Injection for the page. Read the
+  code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
-<!-- * **2021-07-01**
+* **2022-08-14**
 
-  * added code to change read more link
-  * use twcsl
-  * bumped version to 0.1d2
-  -->
+  * fix some spacing issues
+  * bumped version to 0.2.0
+  
 * **2021-08-15**
 
   * initial version
+
+[1]: page%20section%20video%20scrubbing%20animation.html#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
