@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 181 effects. Each effect has it's own version number, code,
+twcsl contains 182 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -326,6 +326,8 @@ not necessarily designed to work together.
   * [Page Section Nth Blocks Full Bleed Template](v7.1/Page%20Section%20Nth%20Blocks%20Full%20Bleed%20Template)
     
   * [Page Section Second Blocks Full Bleed](v7.1/Page%20Section%20Second%20Blocks%20Full%20Bleed)
+    
+  * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
     
