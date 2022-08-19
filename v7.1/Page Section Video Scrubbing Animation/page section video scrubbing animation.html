@@ -2,7 +2,7 @@
 
   begin page section video scrubbing animation
   
-  Version       : 0.2.0
+  Version       : 0.3.0
   
   SS Version    : 7.1
   
@@ -28,20 +28,11 @@
       
         because we are manipulating a page section with code sometimes it may
         need some help with knowing the right background color to use. enter a
-        color value here if need be
+        color value or unset
         
         */
         
-      --background-color : [ enter background color here ];
-      
-      /*
-      
-        normally the animation starts when the page section reaches the bottom
-        of the header or the top of the viewport when the header is not fixed
-        
-        */
-        
-      --top-offset : 0px;
+      --background-color : [ enter background color or unset here replacing square brackets ];
       
       }
       
@@ -107,45 +98,53 @@
         
       imageUrls : undefined,
       
-      // begin callbacks
+      callbacks : {
       
-         // for adding extra functionality such as text effects
-         
         /*
         
-          initializeCallback is called after the main initialization of the
-          main code. an object with following parameters is passed to the
-          callback :
+          initialize is called after the main initialization of the main code.
+          an object with following parameters is passed to the callback :
           
             canvasContext, imagesCount, $canvas, $pageSection
             
           */
           
-        initializeCallback : undefined,
+        initialize : undefined,
         
         /*
         
-          resizeCallback is called after the window is resized. an object with
-          following parameters is passed to the callback :
+          resize is called after the window is resized. an object with following
+          parameters is passed to the callback :
           
             canvasContext, $canvas, $pageSection
             
           */
           
-        resizeCallback : undefined,
+        resize : undefined,
         
         /*
         
-          updateCallback is called after the image is updated. an object with
-          following parameters is passed to the callback :
+          normally the animation starts when the page section reaches the bottom
+          of the header or the top of the viewport when the header is not fixed
+          
+          the top callback lets you override this default behavior
+          
+          */
+          
+        top : undefined,
+        
+        /*
+        
+          update is called after the image is updated. an object with following
+          parameters is passed to the callback :
           
             canvasContext, imageIndex, imagesCount, $canvas, $pageSection
             
           */
           
-        updateCallback : undefined,
+        update : undefined,
         
-        // end callbacks
+        },
         
       };
       
@@ -171,7 +170,7 @@
       left : unset;
       position: sticky;
       right : unset;
-      top : calc( var( --top ) + var( --top-offset ) );
+      top : var( --top );
       
       }
       
@@ -240,7 +239,7 @@
           
         const images = [ ];
         
-        const initializeCallback = options.initializeCallback;
+        const initializeCallback = options.callbacks.initialize;
         
         const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
         
@@ -260,11 +259,13 @@
           
           };
           
-        const resizeCallback = options.resizeCallback;
+        const resizeCallback = options.callbacks.resize;
         
         const selector = '#page .page-section x-twc-psvsa';
         
-        const updateCallback = options.updateCallback;
+        const topCallback = options.callbacks.top;
+        
+        const updateCallback = options.callbacks.update;
         
         const updateImage = i => {
         
@@ -298,6 +299,8 @@
         
         let pixelInterval;
         
+        let top = 0;
+        
         // end first order
         
       // second order
@@ -319,16 +322,6 @@
           .parents ( '.page-section' )
           
           .addClass ( 'twc-psvsa' );
-          
-        let topOffset = $pageSection
-        
-          .css ( '--top-offset' );
-          
-        topOffset = pxToNumber ( topOffset );
-        
-        if ( consoleMessages == true )
-        
-          console.log ( 'topOffset : ', topOffset );
           
         // end third order
         
@@ -398,21 +391,27 @@
         
           console.log ( 'headerHeight : ', headerHeight );
           
-        $sectionBackground.css ( '--top', `${ headerHeight }px` );
+        top = headerHeight;
         
+        if ( consoleMessages == true )
+        
+          console.log ( 'top : ', top );
+          
         }
         
+      if ( topCallback !== undefined )
+      
+        top = topCallback ( top, $sectionBackground );
+        
+      $sectionBackground.css ( '--top', `${ top }px` );
+      
       $( window )
       
         .resize ( function ( ) {
         
           pixelRange = $pageSection
           
-            .outerHeight ( )
-            
-            +
-            
-            topOffset;
+            .outerHeight ( );
             
           if ( consoleMessages == true )
           
@@ -456,17 +455,27 @@
             
               console.log ( 'headerHeight : ', headerHeight );
               
-            $sectionBackground.css ( '--top', `${ headerHeight }px` );
+            top = headerHeight;
             
+            if ( consoleMessages == true )
+            
+              console.log ( 'top : ', top );
+              
             }
             
+          if ( topCallback !== undefined )
+          
+            top = topCallback ( top, $sectionBackground );
+            
+          $sectionBackground.css ( '--top', `${ top }px` );
+      
           // bail if values the same
           
           if ( pageSectionTop == sectionBackgroundTop ) return;
           
           // bail scroll range is greater than total pixel range
           
-          const l = Math.abs ( pageSectionTop - topOffset - headerHeight ) >
+          const l = Math.abs ( pageSectionTop - headerHeight ) >
           
             pixelRange;
             
@@ -474,7 +483,7 @@
           
           const imageIndex = Math.floor ( Math.abs ( pageSectionTop -
           
-            topOffset - headerHeight ) / pixelInterval );
+            headerHeight ) / pixelInterval );
             
           if ( consoleMessages == true )
           
