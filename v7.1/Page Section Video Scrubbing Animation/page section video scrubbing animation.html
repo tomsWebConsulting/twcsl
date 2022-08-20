@@ -102,6 +102,14 @@
       
         /*
         
+          various callbacks to change the default behaviour of this effect.
+          replace undefined with the name(s) of your callback function(s). your
+          callback function(s) must proceed this code
+          
+          */
+          
+        /*
+        
           initialize is called after the main initialization of the main code.
           an object with following parameters is passed to the callback :
           
@@ -124,11 +132,14 @@
         
         /*
         
-          normally the animation starts when the page section reaches the bottom
-          of the header or the top of the viewport when the header is not fixed
+          top is called to adjust the top variable. normally the animation
+          starts when the page section reaches the bottom of the header or the
+          top of the viewport when the header is not fixed. this top callback
+          lets you override the default behavior. the following parameters are
+          passed to the callback :
           
-          the top callback lets you override this default behavior
-          
+            top, $sectionBackground
+            
           */
           
         top : undefined,
