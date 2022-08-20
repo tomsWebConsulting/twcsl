@@ -55,7 +55,7 @@
 
 ## Demos
 
-You can see a [demos of this effect here][2].
+You can see [demos of this effect here][2].
 
 ## Make a Donation
 
