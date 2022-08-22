@@ -35,7 +35,7 @@ Please consider [making a donation][4].
 
   * initial version
 
-[1]: page%20section%20video%20scrubbing%20animation.html#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page%20Section%20Video%20Scrubbing%20Animation#page-section-video-scrubbing-animation
 [2]: psvsa%20viewport%20middle.html#L1
 [3]: https://toms-web-consulting-demos.squarespace.com/page-section-video-scrubbing-animation/psvsa-viewport-middle?password=twcdemos
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
