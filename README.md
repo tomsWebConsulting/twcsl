@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 182 effects. Each effect has it's own version number, code,
+twcsl contains 184 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -339,6 +339,8 @@ not necessarily designed to work together.
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
     
+  * [PSVSA Viewport Middle](v7.1/PSVSA%20Viewport%20Middle)
+    
   * [Remove Product Detail Quantity Field Outer Outline When Focused](v7.1/Remove%20Product%20Detail%20Quantity%20Field%20Outer%20Outline%20When%20Focused)
     
   * [Replace Blog "Header" Text with Category and or Tag](v7.1/Replace%20Blog%20"Header"%20Text%20with%20Category%20and%20or%20Tag)
@@ -370,6 +372,8 @@ not necessarily designed to work together.
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
   * [Store Product Detail Add to Cart, Mark, Price, Quantity Hide](v7.1/Store%20Product%20Detail%20Add%20to%20Cart,%20Mark,%20Price,%20Quantity%20Hide)
+    
+  * [Store Product Detail Additional Info Add Footer Boilerplate](v7.1/Store%20Product%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
     
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
