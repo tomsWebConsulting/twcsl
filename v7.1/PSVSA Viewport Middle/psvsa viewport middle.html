@@ -1,0 +1,33 @@
+<script>
+
+  const psvsaViewportMiddle = ( top, $sectionBackground ) => {
+  
+    /*
+    
+      psvsa viewport middle
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependancies  : page section video scrubbing animation
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const sectionBackgroundHeight = $sectionBackground.outerHeight ( );
+    
+    const windowHeight = $( window ).height ( );
+    
+    let n = ( windowHeight - sectionBackgroundHeight ) / 2;
+    
+    if ( n < top )
+    
+      n = top;
+      
+    return n;
+    
+    };
+    
+  </script>
