@@ -66,7 +66,7 @@ Please consider [making a donation][5].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
-[2]: page%20section%20video%20scrubbing%20animation.css#L1
-[3]: psvsa%20viewport%20middle.html#L1
+[2]: store%20product%20detail%20additional%20info%20add%20footer%20boilerplate.css#L1
+[3]: store%20product%20detail%20additional%20info%20add%20footer%20boilerplate.html#L1
 [4]: https://www.heathertovey.com/squarespace-id-finder/
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
