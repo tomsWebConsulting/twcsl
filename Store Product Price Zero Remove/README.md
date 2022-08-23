@@ -2,7 +2,7 @@
 
 ### Version 0.1.0
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk][3])
+#### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
 
 #### v7.1 Fluid Engine Compatible : Yes
 
@@ -43,6 +43,6 @@ Please consider [making a donation][6].
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [2]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
 [3]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store%20price%20change
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store-price-change
 [5]: store%20product%20price%20zero%20remove.html#L1
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
