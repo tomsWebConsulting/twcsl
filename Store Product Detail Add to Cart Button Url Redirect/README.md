@@ -1,6 +1,6 @@
 # Store Product Detail Add to Cart Button Url Redirect
 
-### Version 0.4.0
+### Version 0.4.1
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Pacific template family][2])
 
@@ -60,6 +60,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2022-08-21**
+
+  * fix for atc button adding product to the cart
+  * bumped version to 0.4.1
+  
 * **2022-07-24**
 
   * add support for using products ids

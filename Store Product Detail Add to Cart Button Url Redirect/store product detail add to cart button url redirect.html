@@ -2,7 +2,7 @@
 
   begin store product detail add to cart button url redirect
   
-  Version         : 0.4.0
+  Version         : 0.4.1
   
   SS Versions     : 7.1, 7.0
   
@@ -20,9 +20,7 @@
                     
                     * discontinued < https://bit.ly/30fUkey >
   
-  Dependancies    : jQuery
-                    
-                    twcsl
+  Dependancies    : twcsl
   
   Note            : the code is comprised of two script tags. both are needed
                     for the full effect to work
@@ -103,6 +101,8 @@
           
           // end bail if no ids in map
           
+        Y.one ( selector ).detachAll ( );
+        
         $( selector ).mousedown ( function ( event ) {
         
           const isSameWindow = ! options.targetAtttributeValue ||
