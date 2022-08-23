@@ -4,7 +4,7 @@
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
 
-#### v7.1 Fluid Engine Compatible : Yes
+#### v7.1 Fluid Engine Compatible : Not Applicable
 
 ---
 
