@@ -1,0 +1,91 @@
+<script>
+
+  var cbemca = ( $element ) => {
+  
+    /*
+    
+      calendar block event multiday class add
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Dependancies  : jQuery
+                      
+                      calendar block event change
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const daySelector = '.yui3-calendar-day';
+    
+    const multidayClassName = 'twc-cbemca-multiday';
+    
+    const isCcbemca = $element
+    
+      .parents ( daySelector )
+      
+      .hasClass ( multidayClassName );
+      
+    if ( isCcbemca ) return; // bail if day processed
+    
+    let selector = '.flyoutitem--multiday';
+    
+    const $multiday = $( selector, $element );
+    
+    if ( ! $multiday.length ) return; // bail if not multi day
+    
+    const blockId = $element
+    
+      .parents ( '.sqs-block-calendar' )
+      
+      .attr ( 'id' );
+      
+    const href = $( '.flyoutitem-link', $multiday )
+    
+      .attr ( 'href' );
+      
+    const hrefClassName = href
+    
+      .split ( '/' )
+      
+      .slice ( -1 )
+      
+      [ 0 ]
+      
+      .replace ( /^([\d-_]{1})/, 'x-$1' );
+      
+    const classes = `${ multidayClassName } ${ hrefClassName }`;
+    
+    selector = '.flyoutitem-datetime--24hr';
+    
+    $element
+    
+      .parents ( 'tbody' )
+      
+      .find ( `.item-link[href="${ href }"]` )
+      
+      .parents ( daySelector )
+      
+      .addClass ( classes );
+      
+    selector = `#${ blockId } .${ multidayClassName }.${ hrefClassName }`;
+    
+    $( selector ).each ( function ( i ) {
+    
+      $( this )
+      
+        .addClass ( `${ multidayClassName }-${ i + 1 }` );
+        
+      } );
+      
+    };
+    
+  </script>
