@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 185 effects. Each effect has it's own version number, code,
+twcsl contains 186 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -228,6 +228,8 @@ not necessarily designed to work together.
   * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
     
   * [Calendar Block Event Change](v7.1/Calendar%20Block%20Event%20Change)
+    
+  * [Calendar Block Event Multiday Class Add](v7.1/Calendar%20Block%20Event%20Multiday%20Class%20Add)
     
   * [Calendar Block Link Replace With Excerpt Link](v7.1/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link)
     
