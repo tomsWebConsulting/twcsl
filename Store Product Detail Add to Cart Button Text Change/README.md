@@ -14,7 +14,7 @@
   
 * Add code from file **[store product detail add to cart button text
   change.html][3]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page.
+  for the store page. Read the code for any instructions within.
 
 ## Make a Donation
 
