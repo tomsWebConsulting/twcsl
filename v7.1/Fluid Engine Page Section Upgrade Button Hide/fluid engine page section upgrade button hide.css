@@ -1,0 +1,23 @@
+/*
+
+  fluid engine page section upgrade button hide
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.1
+  
+  Fluid
+  Engine
+  Compatible  : Not Applicable
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+.sqs-section-editing-ui.show-toolbar .control-buttons-parent .control-button-wrapper-left {
+
+  display : none;
+  
+  }
