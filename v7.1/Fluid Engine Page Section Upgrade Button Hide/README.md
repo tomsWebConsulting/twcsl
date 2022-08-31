@@ -28,5 +28,5 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: fluid%20engine%20page%20section%20upgrade%20button%20hide.css#L1
+[1]: fluid%20engine%20page%20section%20upgrade%20button%20hide.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
