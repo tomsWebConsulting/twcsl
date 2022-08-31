@@ -27,6 +27,10 @@
   ```
 
 ```javascript
+          '.00' : '', // remove zero decimal from price
+  ```
+
+```javascript
           /* remove decimal from price, using regular expression, backslash must
              be escaped with \, the replacement text uses special replacement
              patterns */
