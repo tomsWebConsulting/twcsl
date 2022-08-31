@@ -1,0 +1,56 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      fluid engine page section upgrade button hide
+      
+      Version     : 0.1.1
+      
+      SS Version  : 7.1
+      
+      Fluid
+      Engine
+      Compatible  : Not Applicable
+      
+      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    if ( window.frameElement == null ) return; // bail if not in Preview
+    
+    const style = parent.document.createElement ( 'style' );
+    
+    style.setAttribute ( 'type', 'text/css' );
+    
+    style.innerHTML = `
+    
+      .sqs-section-editing-ui .control-buttons-parent .control-button-wrapper-left {
+      
+        display : none;
+        transform : unset;
+        transition : unset;
+        
+        }
+        
+      .sqs-section-editing-ui.show-toolbar .control-buttons-parent .control-button-wrapper-left {
+      
+        display : none;
+        opacity : 0;
+        pointer-events : none;
+        transform : unset;
+        transition : unset;
+        visibility : hidden;
+        
+        }
+        
+      `;
+      
+    parent.document.head.appendChild ( style );
+    
+    } ) ( );
+    
+  </script>

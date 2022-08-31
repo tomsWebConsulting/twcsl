@@ -1,6 +1,6 @@
 # Fluid Engine Page Section Upgrade Button Hide
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -10,8 +10,8 @@
 
 ## Quick Install
 
-* Add code from file **[fluid engine page section upgrade button hide.css][1]**
-  to Design > Custom CSS.
+* Add code from file **[fluid engine page section upgrade button hide.html][1]**
+  to Settings > Advanced > Code Injection > HEADER.
 
 ## Make a Donation
 
@@ -19,11 +19,11 @@ Please consider [making a donation][2].
 
 ## Changes
 
-<!-- * **2022-01-05**
+* **2022-08-30**
 
-  * added English (Canada) language
-  * bumped version to 0.2d1
-  -->
+  * css only solution not workable
+  * bumped version to 0.1.1
+  
 * **2022-08-30**
 
   * initial version
