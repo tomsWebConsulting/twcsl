@@ -10,7 +10,8 @@
 
 ## Install
 
-* Install [twcsl][1].
+* Install [twcsl][1]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
 * Add code from file **[store product detail add to cart text change on quantity
   change.html][2]** to Store Settings > Advanced > Page Header Code Injection

@@ -8,9 +8,10 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Install [twcsl][6].
+* Install [twcsl][6]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
 * Add code from file **[blog non-post pages meta noindex tag add.html][7]**
   to...

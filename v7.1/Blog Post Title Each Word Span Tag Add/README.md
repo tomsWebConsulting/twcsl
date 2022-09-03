@@ -8,9 +8,10 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Install [twcsl][1].
+* Install [twcsl][1]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
 * Add code from file **[blog post title each word span tag add.css][2]** to
   Design > Custom CSS.

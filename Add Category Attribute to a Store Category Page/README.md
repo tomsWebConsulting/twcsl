@@ -10,7 +10,8 @@
 
 ## Install
 
-* Install [twcsl][2].
+* Install [twcsl][2]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
 * Add code from file **[add category attribute to a store category
   page.html][3]** to Store Settings > Advanced > Page Header Code Injection for
