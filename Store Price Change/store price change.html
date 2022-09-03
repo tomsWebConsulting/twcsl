@@ -2,7 +2,7 @@
 
   begin store price change
   
-  Version         : 0.4.1
+  Version         : 0.5.0
   
   SS Versions     : 7.1, 7.0
   
@@ -85,8 +85,10 @@
         
         // '[enter search text here between single quotes]' : [enter replacement text function name here],
         
-        }
+        },
         
+      afterpay : false, // change afterpay prices, use false or true
+      
       };
       
     </script>
@@ -95,18 +97,24 @@
   
   <style>
   
-    .product-price {
+    .ProductItem .ProductItem-details .product-price,
+    .ProductItem .ProductItem-details .afterpayString
     
-      visibility : hidden;
+      {
       
-      }
-      
-    .product-price.twc-spc-show {
+        visibility : hidden;
+        
+        }
+        
+    body.twc-spc-show .ProductItem .ProductItem-details .product-price,
+    body.twc-spc-show .ProductItem .ProductItem-details .afterpayString
     
-      visibility : visible;
+      {
       
-      }
-      
+        visibility : visible;
+        
+        }
+        
     </style>
     
   <script>
@@ -183,7 +191,15 @@
           
             changeText ( this );
             
-            $( this ).addClass ( 'twc-spc-show' );
+            } );
+            
+        const $afterpayPrices = $( '.afterpayString' );
+        
+        if ( options.afterpay )
+        
+          $afterpayPrices.each ( function ( ) {
+          
+            changeText ( this );
             
             } );
             
@@ -193,28 +209,34 @@
         
         const observer = new MutationObserver ( mutations => {
         
-          const firstMutation = mutations [ 0 ];
+          $.each ( mutations, function ( ) {
           
-          const target = firstMutation.target;
-          
-          // previous change was forced
-          
-          if ( firstMutation.attributeName == attribute )
-          
-            if ( $( firstMutation.target ).attr ( attribute ) == 'true' )
+            // continue if no added nodes
             
-              $( firstMutation.target ).attr ( attribute, 'false' );
+            if ( ! this.addedNodes.length ) return true;
+            
+            const target = this.target;
+            
+            // previous change was forced
+            
+            if ( this.attributeName == attribute )
+            
+              if ( $( target ).attr ( attribute ) == 'true' )
               
-              else if ( firstMutation.oldValue == 'true' )
-              
-                return;
+                $( target ).attr ( attribute, 'false' );
                 
-          observer.disconnect ( );
-          
-          changeText ( target );
-          
-          pricesObserve ( );
-          
+                else if ( this.oldValue == 'true' )
+                
+                  return true;
+                  
+            observer.disconnect ( );
+            
+            changeText ( target );
+            
+            pricesObserve ( );
+            
+            } );
+            
           } );
           
         const pricesObserve = ( ) => {
@@ -235,9 +257,31 @@
               
             } );
             
+          // listen for changes in afterpay prices
+          
+          if ( options.afterpay )
+          
+            $afterpayPrices.each ( function ( ) {
+            
+              observer.observe ( this, {
+              
+                attributeFilter : [ attribute ],
+                
+                attributeOldValue : true,
+                
+                childList : true,
+                
+                subtree : true
+                
+                } );
+                
+              } );
+            
           };
           
         pricesObserve ( );
+        
+        $( 'body' ).addClass ( 'twc-spc-show' );
         
         };
         

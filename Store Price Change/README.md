@@ -1,6 +1,6 @@
 # Store Price Change
 
-### Version 0.4.1
+### Version 0.5.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
 
@@ -10,7 +10,8 @@
 
 ## Install
 
-* Install [twcsl][4].
+* Install [twcsl][4]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
 * Add code from file **[store price change.html][5]** to Store Settings >
   Advanced > Page Header Code Injection for the store page. Read the code for
@@ -58,6 +59,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2022-09-02**
+
+  * add option to change afterpay price
+  * bumped version to 0.5.0
+  
 * **2022-08-13**
 
   * remove an errant line of code, no functional change
