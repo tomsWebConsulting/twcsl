@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 187 effects. Each effect has it's own version number, code,
+twcsl contains 188 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -120,6 +120,8 @@ not necessarily designed to work together.
 * [Replace Form Submit Button Submitting Text](Replace%20Form%20Submit%20Button%20Submitting%20Text)
   
 * [Responsive Image Map Template](Responsive%20Image%20Map%20Template)
+  
+* [Scrolling Block Text Gradient](Scrolling%20Block%20Text%20Gradient)
   
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
