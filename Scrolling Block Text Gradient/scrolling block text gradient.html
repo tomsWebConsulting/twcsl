@@ -1,0 +1,127 @@
+<!--
+
+  begin scrolling block text gradient
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependancies  : jQuery
+  
+  Note          : the code is comprised of two script tags. both are needed for
+                  the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.sbtg = {
+    
+      blockIdLinearGradientMap : {
+      
+        /*
+      
+          following is an example data structure which consists of a scrolling
+          block id and an SVG linearGradient element. be sure that the
+          linearGradient element has a id attribute. remove the forward slash
+          asterisk and asterisk forward slash lines from before and after the
+          example data structure. repeat for as many scrolling blocks as needed.
+          this has been done once initially
+          
+          */
+          
+        /*
+        
+        '[enter scrolling block id here between single quotes replacing the square brackets]' : `
+        
+          [enter SVG linearGradient element here replacing the square brackets]
+          
+          `,
+          
+        */
+          
+        '[enter scrolling block id here between single quotes replacing the square brackets]' : `
+        
+          [enter SVG linearGradient element here replacing the square brackets]
+          
+          `,
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const options = twc.sbtg;
+      
+      const xmlNameSpace = 'http://www.w3.org/2000/svg';
+      
+      const keys = Object.keys ( options.blockIdLinearGradientMap );
+      
+      let ruleSets = '';
+      
+      $.each ( keys, function ( i, scrollingBlockId ) {
+      
+        const defs = document.createElementNS ( xmlNameSpace, 'defs' );
+        
+        defs.innerHTML = options.blockIdLinearGradientMap [ scrollingBlockId ];
+        
+        if ( scrollingBlockId [ 0 ] != '#' )
+        
+          scrollingBlockId = '#' + scrollingBlockId;
+          
+        $( `${ scrollingBlockId } svg` )
+        
+          .prepend ( defs );
+          
+        const url = $( 'linearGradient', defs ).attr ( 'id' );
+        
+        ruleSets = `${ ruleSets }
+        
+          html:not( .squarespace-damask ) ${ scrollingBlockId } svg text {
+          
+            fill : url( #${ url } );
+            
+            }
+            
+          `;
+          
+        } );
+        
+      const style = `
+      
+        <style>
+        
+          ${ ruleSets }
+          
+          </style>
+          
+        `;
+        
+      $( 'head' ).append ( style );
+      
+      } );
+      
+    </script>
+    
+  <!-- end scrolling block text gradient -->
