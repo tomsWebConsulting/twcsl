@@ -34,14 +34,15 @@
 ## Notes
 
 You can find block ids by using Heather Tovey's [Squarespace ID Finder][3].
+Learn more about the SVG [linearGradient][4]  element.
 
 ## Demo
 
-You can see a [demo of this effect here][4].
+You can see a [demo of this effect here][5].
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -57,5 +58,6 @@ Please consider [making a donation][5].
 [1]: scrolling%20block%20text%20gradient.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://www.heathertovey.com/squarespace-id-finder/
-[4]: https://toms-web-consulting-demos.squarespace.com/scrolling-block-text-gradient?password=twcdemos
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
+[5]: https://toms-web-consulting-demos.squarespace.com/scrolling-block-text-gradient?password=twcdemos
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
