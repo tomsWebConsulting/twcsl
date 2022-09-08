@@ -1,6 +1,6 @@
 # Fluid Engine Page Section Upgrade Button Hide
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Version 7.1
 
@@ -19,6 +19,11 @@ Please consider [making a donation][2].
 
 ## Changes
 
+* **2022-09-08**
+
+  * fix for add block button being hidden for FE sections
+  * bumped version to 0.1.2
+  
 * **2022-08-30**
 
   * css only solution not workable

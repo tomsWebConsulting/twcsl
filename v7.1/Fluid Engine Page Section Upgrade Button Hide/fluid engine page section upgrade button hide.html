@@ -6,7 +6,7 @@
     
       fluid engine page section upgrade button hide
       
-      Version     : 0.1.1
+      Version     : 0.1.2
       
       SS Version  : 7.1
       
@@ -28,7 +28,7 @@
     
     style.innerHTML = `
     
-      .sqs-section-editing-ui .control-buttons-parent .control-button-wrapper-left {
+      .sqs-section-editing-ui .control-buttons-parent .control-button-wrapper-left [data-test="toolbar-button-convert"] {
       
         display : none;
         transform : unset;
@@ -36,7 +36,7 @@
         
         }
         
-      .sqs-section-editing-ui.show-toolbar .control-buttons-parent .control-button-wrapper-left {
+      .sqs-section-editing-ui.show-toolbar .control-buttons-parent .control-button-wrapper-left [data-test="toolbar-button-convert"] {
       
         display : none;
         opacity : 0;
