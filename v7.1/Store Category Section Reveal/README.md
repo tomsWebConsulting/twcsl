@@ -4,24 +4,23 @@
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Yes
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][1]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
-* Add code from file
-  **[store category section reveal.html](store%20category%20section%20reveal.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+* Add code from file **[store category section reveal.html][2]** to Store
+  Settings > Advanced > Page Header Code Injection for the store page.
   
-​* In the store page add a page section. Set the section up as desired. Add a 
+* In the store page add a page section. Set the section up as desired. Add a 
   code block at the top of the section with the following code.
   
   ```html
-  <div data-category="[enter category here between double quotes]"></div>
+  <div data-category="[enter category here between double quotes replacing square brackets]"></div>
   ```
   
   Repeat this pattern for as many categories as desired. The category must match
@@ -43,11 +42,14 @@ displayed.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
 * **2021-08-31**
 
   * initial version
+
+[1]: https://github.com/tomsWebConsulting/twcsl#install-options
+[2]: store%20category%20section%20reveal.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
