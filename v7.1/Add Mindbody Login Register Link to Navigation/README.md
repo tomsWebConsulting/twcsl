@@ -8,7 +8,7 @@
 
 Add the following to Settings > Advanced > Code Injection > HEADER.
 
-`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>`
+`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>`
 
 Add code from file **add mindbody login register link to navigation.html** to
 Settings > Advanced > Code Injection > FOOTER.
