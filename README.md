@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 190 effects. Each effect has it's own version number, code,
+twcsl contains 191 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -334,6 +334,8 @@ not necessarily designed to work together.
   * [Page Section Gallery Hover on Everything But](v7.1/Page%20Section%20Gallery%20Hover%20on%20Everything%20But)
     
   * [Page Section Hide After Expiration Date](v7.1/Page%20Section%20Hide%20After%20Expiration%20Date)
+    
+  * [Page Section Info](v7.1/Page%20Section%20Info)
     
   * [Page Section Nth Blocks Full Bleed Template](v7.1/Page%20Section%20Nth%20Blocks%20Full%20Bleed%20Template)
     
