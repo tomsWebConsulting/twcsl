@@ -1,0 +1,282 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      page section info
+      
+      Version     : 0.1.0
+      
+      SS Version  : 7.1
+      
+      Fluid
+      Engine
+      Compatible  : Not Applicable
+      
+      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    if ( window.frameElement == null ) return; // bail if not in preview
+    
+    const callback = ( mutations ) => {
+    
+      mutations.forEach ( mutation => {
+      
+        if ( ! mutation.addedNodes.length ) return false;
+        
+        const element = mutation.addedNodes [ 0 ];
+        
+        if ( element.nodeName == '#text' ) return true; // continue if text node
+        
+        let className = 'js-section-editor-ui-container';
+        
+        const isSectionEditorUi = element
+        
+          .classList
+          
+          .contains ( className );
+          
+        if ( ! isSectionEditorUi ) return; // bail if not section editor ui
+        
+        const dataSectionId = element
+        
+          .getAttribute ( 'data-section-id' );
+          
+        let selector =
+        
+          `[data-section-id="${ dataSectionId }"]`;
+          
+        const pageSection = document.querySelector ( selector );
+        
+        const b =
+        
+          pageSection.classList.contains ( 'collection-type-products' ) ||
+          
+          pageSection.classList.contains ( 'gallery-section' );
+          
+        if ( b ) return true; // continue if not user editable section
+        
+        const attribute = 'class';
+        
+        const callback = ( mutations ) => {
+        
+          mutations.forEach ( mutation => {
+          
+            // bail if not attribute
+            
+            if ( mutation.attributeName != attribute ) return;
+            
+            const target = mutation.target;
+            
+            const b = target
+            
+              .classList
+              
+              .contains ( 'show-toolbar' );
+              
+            if ( ! b ) return; // bail if not toolbar
+            
+            const dataSectionId = target
+            
+              .closest ( '.js-section-editor-ui-container' )
+              
+              .getAttribute ( 'data-section-id' );
+              
+            let selector =
+            
+              `[data-section-id="${ dataSectionId }"] .sqs-block`;
+              
+            const blockCount = document
+            
+              .querySelectorAll ( selector )
+              
+              .length;
+              
+            selector = '.twc-psi-data-blocks-number .twc-psi-data-data';
+            
+            toolbar
+            
+              .querySelector ( selector )
+              
+              .innerText = blockCount;
+              
+            } );
+            
+          };
+          
+        const config = {
+        
+          attributeFilter : [ attribute ],
+          
+          attributeOldValue : true,
+          
+          childList : true
+          
+          };
+          
+        const observer = new MutationObserver ( callback );
+        
+        let template =
+        
+          `
+          
+            <div class="twc-psi-fe-info">
+            
+              <div class="twc-psi-title">
+              
+                Info
+                
+                </div>
+                
+              <table class="twc-psi-data">
+              
+                <tbody>
+                
+                  <tr class="twc-psi-data-blocks-number">
+                  
+                    <td class="twc-psi-data-title">
+                    
+                      Blocks
+                      
+                      </td>
+                      
+                    <td class="twc-psi-data-data">
+                    
+                      </td>
+                      
+                    </tr>
+                    
+                  </tbody>
+                  
+                </div>
+                
+              </table>
+              
+              `;
+              
+        template = new DOMParser ( )
+        
+          .parseFromString ( template, 'text/html' );
+        
+        template = template.body.firstChild
+        
+        selector = 'js-section-toolbar';
+        
+        const toolbar = element
+        
+          .getElementsByClassName ( selector )
+          
+          [ 0 ];
+          
+        toolbar.append ( template );
+        
+        selector = 'sqs-section-editing-ui';
+        
+        const editingUi = element
+        
+          .getElementsByClassName ( selector )
+          
+          [ 0 ];
+          
+        // start listening for changes in editor ui
+        
+        observer.observe ( editingUi, config );
+        
+        } );
+        
+      }; // end callback
+      
+    const config = {
+    
+      childList : true,
+      
+      subtree : true
+      
+      };
+      
+    const observer = new MutationObserver ( callback );
+    
+    const parentDocument = parent.document;
+    
+    const style = parentDocument.createElement ( 'style' );
+    
+    style.setAttribute ( 'type', 'text/css' );
+    
+    style.innerHTML = `
+    
+      .twc-psi-fe-info {
+      
+        -webkit-box-sizing : border-box;
+        box-sizing : border-box;
+        
+        border : 1px solid rgb( 231, 231, 231 );
+        border-radius : 4px;
+        
+        display : -webkit-box;
+        display : -ms-flexbox;
+        display : flex;
+        
+        -webkit-box-orient : vertical;
+        -webkit-box-direction : normal;
+        -ms-flex-direction : column;
+        flex-direction : column;
+        
+        gap : 4px;
+        padding : 4px;
+        
+        }
+        
+      .twc-psi-fe-info .twc-psi-title {
+      
+        font-size : smaller;
+        font-weight : bold;
+        text-align : center;
+        text-transform : uppercase;
+        width : 100%;
+        
+        }
+        
+      .twc-psi-fe-info .twc-psi-data {
+      
+        padding: 10px 8px;
+        
+        }
+        
+      .twc-psi-data-title {
+      
+        font-weight : bold;
+        width : 1%;
+        
+        }
+        
+      td.twc-psi-data-data::before {
+      
+        content : ':';
+        margin-left : 0.5em;
+        margin-right : 0.5em;
+        
+        }
+        
+      `;
+      
+    parentDocument
+    
+      .head
+      
+      .appendChild ( style );
+      
+    // start listening for changes in parent document body
+    
+    observer.observe ( parentDocument.body, config );
+    
+    } );
+    
+  </script>
