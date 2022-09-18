@@ -2,7 +2,7 @@
 
   begin store category section reveal
   
-  Version       : 0.1d0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -40,7 +40,7 @@
     
       if ( window.frameElement !== null ) return; // bail if in preview
       
-      const paddingTop = twcsl.getFirstPageSection ( )
+      const paddingTop = twcsl.getPageSectionNth ( )
       
         .css ( 'padding-top' );
         
@@ -60,7 +60,7 @@
         
         .remove ( );
         
-      twcsl.getFirstPageSection ( )
+      twcsl.getPageSectionNth ( )
       
         .css ( 'padding-top', paddingTop );
         

@@ -1,6 +1,6 @@
 # Store Category Section Reveal
 
-### Version 0.1d0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -46,6 +46,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
+* **2022-09-18**
+
+  * replace twcsl getFirstPageSection method with getPageSectionNth
+  * bumped version to 0.1.1
+  
 * **2021-08-31**
 
   * initial version
