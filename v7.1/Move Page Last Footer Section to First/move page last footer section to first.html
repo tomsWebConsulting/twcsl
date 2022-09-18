@@ -6,16 +6,18 @@
     
       move page last footer section to first
       
-      Version       : 0.1d1
+      Version       : 0.1.2
       
       SS Version    : 7.1
       
-      Dependancies  : jQuery
-                      
-                      twcsl
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependancies  : twcsl
       
       Note          : this effect is not active in SS Preview to test it use
-                      private browsing < https://bit.ly/3f6lhq2 >.
+                      private browsing < https://bit.ly/3f6lhq2 >
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -23,9 +25,9 @@
       
       */
       
-    if ( window.frameElement !== null ) return; // bail if in Preview
+    if ( window.frameElement !== null ) return; // bail if in preview
     
-    const $firstSection = twcsl.getFirstPageSection ( );
+    const $firstSection = twcsl.getPageSectionNth ( );
     
     const firstSectionPaddingTop = $firstSection.css ( 'padding-top' );
     
@@ -37,8 +39,12 @@
       
     $firstSection.css ( 'padding-top', '' );
     
-    $( '#footer-sections .page-section:last' ).css ( 'display', 'unset' );
+    $( '#footer-sections .page-section' )
     
+      .last ( )
+      
+      .css ( 'display', 'unset' );
+      
     // end move last footer section to first section of page
     
     } );
