@@ -1,0 +1,166 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      page section first css variable padding-top add
+      
+      Version      : 0.1.0
+      
+      SS Version   : 7.1
+      
+      Dependancies : twcsl
+      
+      Notes        : this code is a base for other effects. the code alone
+                     should not produce any visible change
+      
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    // bail if no mutation observer available
+    
+    if ( ! ( 'MutationObserver' in window ) ) return;
+    
+    const attribute = 'style';
+    
+    const getPageSectionFirstPaddingTop = ( ) => {
+    
+      const paddingTop = twcsl
+      
+        .getPageSectionNth ( )
+        
+        .css ( 'padding-top' );
+        
+      return paddingTop;
+      
+      };
+      
+    const paddingTop = getPageSectionFirstPaddingTop ( );
+    
+    const pageSectionFirstCallback = ( mutations ) => {
+    
+      mutations.forEach ( mutation => {
+      
+        // continue if not attribute
+        
+        if ( mutation.type != 'attributes' ) return true;
+        
+        // continue if not style
+        
+        if ( mutation.attributeName != attribute ) return true;
+        
+        const $target = $( mutation.target );
+        
+        // continue if not first child
+        
+        if ( $target.index ( ) != 1 ) return true;
+        
+        const paddingTop = $target
+        
+          .css ( 'padding-top' );
+          
+        setSectionsCssVariable ( paddingTop );
+        
+        } ); // end forEach
+        
+      }; // end pageSectionFirstCallback
+      
+    const pageSectionFirstConfig = {
+    
+      attributeFilter : [ attribute ],
+      
+      childList : true
+      
+      };
+      
+    const pageSectionFirstObserve = ( ) => {
+    
+      const selector = '#page .page-section';
+      
+      const pageSectionFirst = $( selector )
+      
+        .first ( )
+        
+        .get ( 0 );
+        
+      pageSectionFirstObserver =
+      
+        new MutationObserver ( pageSectionFirstCallback );
+        
+      // starts listening for changes in page section first
+      
+      pageSectionFirstObserver
+      
+        .observe ( pageSectionFirst, pageSectionFirstConfig );
+        
+      };
+      
+    const sections = $( '#sections' )
+    
+      .get ( 0 );
+      
+    const sectionsCallback = ( mutations ) => {
+    
+      mutations.forEach ( mutation => {
+      
+        console.log ( mutation );
+        
+        // bail if nodes added or removed
+        
+        if ( ! mutation.addedNodes.length && ! mutation.removedNodes.length )
+        
+          return;
+          
+        const hasSection =
+        
+          $.merge ( $( mutation.addedNodes ), $( mutation.removedNodes ) )
+          
+          .is ( '.page-section' );
+          
+        if ( ! hasSection ) return true; // continue not hasSection
+        
+        pageSectionFirstObserver.disconnect ( );
+        
+        pageSectionFirstObserve ( );
+        
+        } ); // end forEach
+        
+      }; // end sectionsCallback
+      
+    const sectionsConfig = {
+    
+      childList : true
+      
+      };
+      
+    const sectionsObserver = new MutationObserver ( sectionsCallback );
+    
+    const setSectionsCssVariable = ( paddingTop ) => {
+    
+      const cssVariableName = '--section-first-padding-top';
+      
+      const selector = '#sections';
+      
+      $( selector )
+      
+        .css ( cssVariableName, paddingTop );
+        
+      };
+      
+    let pageSectionFirstObserver;
+    
+    setSectionsCssVariable ( paddingTop );
+    
+    // starts listening for changes in sections
+    
+    sectionsObserver.observe ( sections, sectionsConfig );
+    
+    pageSectionFirstObserve ( );
+    
+    } );
+    
+  </script>
