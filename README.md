@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 191 effects. Each effect has it's own version number, code,
+twcsl contains 192 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -330,6 +330,8 @@ not necessarily designed to work together.
   * [Page Section First Blank Hide](v7.1/Page%20Section%20First%20Blank%20Hide)
     
   * [Page Section First Blocks Full Bleed](v7.1/Page%20Section%20First%20Blocks%20Full%20Bleed)
+    
+  * [Page Section First CSS Variable Padding-Top Add](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add)
     
   * [Page Section Gallery Hover on Everything But](v7.1/Page%20Section%20Gallery%20Hover%20on%20Everything%20But)
     
