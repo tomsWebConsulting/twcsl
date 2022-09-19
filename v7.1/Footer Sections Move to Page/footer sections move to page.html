@@ -1,0 +1,110 @@
+<!--
+
+  begin footer sections move to page
+  
+  Version      : 0.1.0
+  
+  SS Version   : 7.1
+  
+  Dependancies : page section first css variable padding-top add
+  
+  Notes        : this effect is not active in SS Preview to test it use
+                 private browsing < https://bit.ly/3f6lhq2 >
+                 
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.fpsmtp = {
+    
+      // location to append or prepend the moved footer sections to page
+      
+      location : 'append' // use append or prepend
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #footer-sections .page-section {
+    
+      display : none;
+      
+      }
+      
+    html:not( .squarespace-damask ) body.twc-fpsmtp-show #footer-sections .page-section {
+    
+      display : flex;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const options = twc.fpsmtp;
+      
+      const tag = 'x-twc-fpsmtp';
+      
+      let selector = '#page .page-section';
+      
+      const $pagePageSectionFirst = $( selector )
+      
+        .first ( );
+        
+      selector = '#sections';
+      
+      const $sections = $( selector )
+      
+      selector = '#footer-sections .page-section';
+      
+      const $footerPageSections = $( selector )
+      
+        .has ( tag )
+        
+        .find ( tag )
+        
+        .parents ( '.sqs-block-code' )
+        
+        .remove ( )
+        
+        .end ( )
+        
+        .end ( );
+        
+      switch ( options.location ) {
+      
+        case 'append' :
+        
+          $sections.append ( $footerPageSections )
+          
+          break;
+          
+        case 'prepend' :
+        
+          $sections.prepend ( $footerPageSections )
+          
+          break;
+          
+        }
+        
+      $pagePageSectionFirst.css ( 'padding-top', '' );
+      
+      $( 'body' ).addClass ( 'twc-fpsmtp-show' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end footer page sections move to page -->
