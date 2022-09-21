@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 192 effects. Each effect has it's own version number, code,
+twcsl contains 193 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -270,6 +270,8 @@ not necessarily designed to work together.
   * [Event Meta Data Make Sticky](v7.1/Event%20Meta%20Data%20Make%20Sticky)
     
   * [Fluid Engine Page Section Upgrade Button Hide](v7.1/Fluid%20Engine%20Page%20Section%20Upgrade%20Button%20Hide)
+    
+  * [Footer Sections Move to Page](v7.1/Footer%20Sections%20Move%20to%20Page)
     
   * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
     
