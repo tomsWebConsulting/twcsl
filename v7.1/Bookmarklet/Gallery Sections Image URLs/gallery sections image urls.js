@@ -4,7 +4,7 @@
   
     gallery sections image urls
     
-    Version       : 0.1.0
+    Version       : 0.1.1
     
     SS Version    : 7.1
     
@@ -46,9 +46,11 @@
       
       }
       
-  siteDocument
+  const gallerySections = siteDocument
   
-    .getElementsByClassName ( className )
+    .getElementsByClassName ( className );
+    
+  [...gallerySections]
     
     .forEach ( gallerySection => {
     

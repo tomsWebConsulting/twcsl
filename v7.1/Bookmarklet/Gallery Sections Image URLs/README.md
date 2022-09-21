@@ -1,6 +1,6 @@
 # Gallery Sections Image URLs
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -26,11 +26,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2022-05-15**
+* **2022-09-21**
 
-  * fix for when site is not in config
-  * bumped version to v0.1.1
-  -->
+  * fix forEach error on HTMLCollection
+  * bumped version to 0.1.1
+  
 * **2022-09-04**
 
   * initial version
