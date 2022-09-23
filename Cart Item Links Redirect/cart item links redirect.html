@@ -1,0 +1,104 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      cart item links redirect
+      
+      Version         : 0.1.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Not Applicable
+      
+      Notes           : the code is comprised of several tags all of which must
+                        be present for the effect to work
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const urlSlugMap = {
+    
+      'store' : {  /* for a single Store page, copy value here from
+                      Store Settings > General > URL SLUG field. you only need
+                      exactly what can be selected from the field */
+                      
+        /*
+      
+          the format of each line is a Product URL and a Page URL Slug
+          
+          for each product, copy a value from Edit Service Product > Options >
+          Product URL field. you only need exactly what can be selected from the
+          field
+          
+          for a single Page, copy a value from Page Settings > General >
+          URL SLUG field. you only need exactly what can be selected from the
+          field
+          
+          */
+          
+        // '[enter product url field here]' : '[enter page url slug here]',
+        
+        '1' : 'a',
+        '2' : 'b',
+        '3' : 'c',
+        
+        }
+        
+      }
+      
+    const errorPageUrlSlug = 'error'; /* page to go to in case a product url
+                                         is not found */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( location.pathname != '/cart' ) return;
+    
+    // begin build one to one data
+    
+      let oneToOne = { };
+      
+      $.each ( urlSlugMap, function ( storeUrlSlug, obj ) {
+      
+        $.each ( obj, function ( productUrl, redirectUrl ) {
+        
+          oneToOne [ '/' + storeUrlSlug + '/p/' + productUrl ] = '/' +
+          
+            redirectUrl;
+            
+          } );
+          
+        } );
+        
+      // end build one to one data
+      
+    // replace urls
+    
+    $( '._1MDgZZPKX a' ).each ( function ( ) { // item title
+    
+      const $this = $( this );
+      
+      let href = $this.attr ( 'href' );
+      
+      if ( href in oneToOne ) {
+      
+        href = oneToOne [ href ];
+        
+        } else {
+        
+          href = '/' + errorPageUrlSlug;
+          
+          }
+          
+      $this.attr ( 'href', href );
+      
+      } );
+      
+    } );
+    
+  </script>
