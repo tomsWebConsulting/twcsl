@@ -1,6 +1,6 @@
 # Cart Item Links Redirect
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Versions 7.1, 7.0
 
@@ -10,29 +10,34 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Install the code from **[Cart Page Observe Changes][1]**. In the code find the
+  following line.
   
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  ```javascript
+      const nodesAddedCallback = undefined;
   ```
   
-* Add code from file **[cart item links redirect.html][1]** to Settings >
-  Advanced > Code Injection > FOOTER. Read the code for any instructions within.
+  Change **undefined** to **cartItemLinksRedirect**.
   
+* Add code from file **[cart item links redirect.html][2]** to Settings >
+  Advanced > Code Injection > FOOTER before the cart page observe changes code.
+  Read the code for any instructions within.
+
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2022-09-23**
+* **2022-09-23**
 
-  * css only solution not workable
-  * bumped version to 0.1.1
-  -->
+  * adapt for Cart Page Observe Changes
+  * bumped version to 0.2.0
+  
 * **2020-11-11**
 
   * initial version
 
-[1]: cart%20item%20links%20redirect.html#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
+[2]: cart%20item%20links%20redirect.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
