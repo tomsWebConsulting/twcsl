@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 193 effects. Each effect has it's own version number, code,
+twcsl contains 194 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -69,6 +69,8 @@ not necessarily designed to work together.
     
   * [Row Column Finder](Bookmarklet/Row%20Column%20Finder)
     
+* [Cart Item Links Redirect](Cart%20Item%20Links%20Redirect)
+  
 * [Cart Page Observe Changes](Cart%20Page%20Observe%20Changes)
   
 * [Cart Prices Change](Cart%20Prices%20Change)
