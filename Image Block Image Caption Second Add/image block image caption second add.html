@@ -6,31 +6,68 @@
     
       begin image block image caption second add
       
-      Version       : 0.1d2
+      Version         : 0.2.0
       
-      SS Version    : 7.1
+      SS Versions     : 7.1, 7.0
       
-      Dependancies  : jQuery
+      v7.1
+      Fluid
+      Engine
+      Compatible      : No
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                        Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                        Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : jQuery
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       no user serviceable parts below
       
       */
       
-      $( '.design-layout-card' ).each ( function ( ) {
+      const selector =
       
-        let $this = $( this );
+        ':not( .fe-block ) > .sqs-block-image .image-block-outer-wrapper';
         
-        const s = $( 'img', $this ).attr ( 'alt' );
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
         
-        let $e = $( '<div>' )
+        const isInline = $this.is ( '.design-layout-inline' );
         
-          .addClass ( 'image-card-secondary-caption' )
+        const caption = $( 'img', $this )
+        
+          .attr ( 'alt' );
           
-          .text ( s )
+        const $div = $( '<div>' )
+        
+          .addClass ( 'twc-ibicsa-caption-second' )
           
-          .appendTo ( $( '.image-inset', $this ) );
+          .text ( caption );
+          
+        const targetSelector = isInline ?
+        
+          /* card, collage, overlap, poster, stack */
+          
+          '.image-block-wrapper'
+          
+          :
+          
+          /* inline */
+          
+          '.image-inset'; 
+          
+        $( targetSelector, $this )
+        
+          .append ( $div );
           
         } );
         
