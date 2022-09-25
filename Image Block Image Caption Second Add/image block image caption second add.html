@@ -1,0 +1,41 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin image block image caption second add
+      
+      Version       : 0.1d2
+      
+      SS Version    : 7.1
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      $( '.design-layout-card' ).each ( function ( ) {
+      
+        let $this = $( this );
+        
+        const s = $( 'img', $this ).attr ( 'alt' );
+        
+        let $e = $( '<div>' )
+        
+          .addClass ( 'image-card-secondary-caption' )
+          
+          .text ( s )
+          
+          .appendTo ( $( '.image-inset', $this ) );
+          
+        } );
+        
+      // end image block image caption second add
+      
+    } );
+    
+  </script>
