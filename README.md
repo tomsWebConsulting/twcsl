@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 194 effects. Each effect has it's own version number, code,
+twcsl contains 195 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -106,6 +106,8 @@ not necessarily designed to work together.
 * [Form Block Select Field Post-submit Redirect Change](Form%20Block%20Select%20Field%20Post-submit%20Redirect%20Change)
   
 * [Form Text Field Max Length](Form%20Text%20Field%20Max%20Length)
+  
+* [Image Block Image Caption Second Add](Image%20Block%20Image%20Caption%20Second%20Add)
   
 * [Image Block Image Spinner](Image%20Block%20Image%20Spinner)
   
