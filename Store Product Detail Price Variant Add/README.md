@@ -24,12 +24,12 @@
   **before** the **store price change** code. Read the code for any instructions
   within.
 
-## Notes
+## Note
 
 The search text you enter needs to target the end of the price. For prices that
-end with a currency symbol, it is easy. For example if you currency is Euros
-then you enter **€** for search text. If the symbol is in another location then
-things get a bit trickier. You need to use a regular expression. For example
+end with a currency symbol, it is easy. For example if the currency is Euros
+then you enter **€** for search text. If the price ends with numbers then things
+get a bit trickier. You need to use a regular expression. For example
 **/(\\\d+(?:,\\\d{3})*)(\\\\.\\\d{2})?/**.
 
 ## Make a Donation
