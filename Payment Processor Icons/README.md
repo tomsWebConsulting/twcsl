@@ -118,5 +118,5 @@ Please consider [making a donation][6].
 [2]: payment%20processor%20icons%20svg%20symbol.html#L1
 [3]: payment%20processor%20icons.html#L1
 [4]: https://toms-web-consulting-demos.squarespace.com/payment-processor-icons?password=twcdemos
-[5]: http://www.tomsWeb.consulting/contact
+[5]: http://www.tomsWeb.consulting/contact.html
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
