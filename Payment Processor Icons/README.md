@@ -4,14 +4,14 @@
 
 #### SS Versions 7.1, 7.0
 
-#### v7.1 Fluid Engine Compatible : Not Applicable
+#### v7.1 Fluid Engine Compatible : Yes
 
 ---
 
 ## Quick Install
 
-* Add code from file **[payment processor icons.less][1]** to Design >
-  Custom CSS.
+* Add code from file **[payment processor icons.less][1]** to Design > Custom
+  CSS.
   
 * Add code from file **[payment processor icons svg symbol.html][2]** to
   Settings > Advanced > Code Injection > FOOTER.
