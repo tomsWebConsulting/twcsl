@@ -4,7 +4,7 @@
   
     store product price zero remove
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Versions     : 7.1, 7.0
     
@@ -37,7 +37,7 @@
     
   const sppzr = ( node, isDetail, text, searchText ) => {
   
-    if ( searchText == text )
+    if ( text.includes ( searchText ) )
     
       $( node )
       

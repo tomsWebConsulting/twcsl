@@ -1,6 +1,6 @@
 # Store Product Price Zero Remove
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
 
@@ -16,7 +16,7 @@
   the following code.
   
   ```javascript
-          '0.00' : sppzr, // store product price zero remove
+          '$0.00' : sppzr, // store product price zero remove
   ```
   
 * Add code from **[store product price zero remove.html][5]** to
@@ -24,18 +24,21 @@
   **before** the **store price change** code. Read the code for any instructions
   within.
 
+## Note
+
+If your currency symbol is not dollar sign then use the one set for your site.
+
 ## Make a Donation
 
 Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2021-06-15**
+* **2022-10-10**
 
-  * change code to work on v7.1 and v7.0 (Brine)
-  * use twcsl
-  * bumped version to 0.1d2
-  -->
+  * check text includes instead of ==
+  * bumped version to 0.1.1
+  
 * **2022-08-23**
 
   * initial version
