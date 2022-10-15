@@ -1,0 +1,107 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store product detail title text to link
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependancies  : twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdtttl = {
+    
+      textUrlMap : {
+      
+        /*
+        
+          the format of each line is text and a url
+          
+          the url can be any valid url. it can be a full (external to your site)
+          one like < https://www.tomsWeb.consulting/ > or a partial (internal to
+          your site) one like '/contact'
+          
+          copy and repeat the line below for each mapping, remove the "// " at
+          the beginning of the line and enter the appropriate data. this has
+          been done once initially
+          
+          */
+          
+        // '[enter text here between single quotes replacing square brackets]' : '[enter url here between single quotes replacing square brackets]',
+        
+        '[enter text here between single quotes replacing square brackets]' : '[enter url here between single quotes replacing square brackets]',
+        
+        },
+        
+      seperator : ' | ',
+      
+      html : `
+      
+        <br>
+        
+        <a class="twc-spdtttl" href="[url]">
+        
+          [text]
+          
+          </a>
+          
+        `,
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+    
+    const options = twc.spdtttl;
+    
+    const seperator = options.seperator;
+    
+    const textUrlMap = options.textUrlMap;
+    
+    let selector = '.ProductItem-details h1.ProductItem-details-title';
+    
+    const $title = $( selector );
+    
+    let html = $title.html ( );
+    
+    const text = html
+    
+      .split ( seperator )
+      
+      [ 1 ]
+      
+      .trim ( );
+      
+    if ( ! ( text in textUrlMap ) ) return; // bail if no text
+    
+    const url = textUrlMap [ text ];
+    
+    options.html = options.html
+    
+      .replaceAll ( '[text]', text )
+      
+      .replaceAll ( '[url]', url );
+      
+    html = html.replace ( `${ seperator }${ text }`, options.html );
+    
+    $title.html ( html );
+    
+    } );
+    
+  </script>
