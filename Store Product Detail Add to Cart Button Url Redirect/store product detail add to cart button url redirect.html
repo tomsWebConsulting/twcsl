@@ -2,7 +2,7 @@
 
   begin store product detail add to cart button url redirect
   
-  Version         : 0.4.1
+  Version         : 0.4.2
   
   SS Versions     : 7.1, 7.0
   
@@ -69,6 +69,8 @@
             
             } );
             
+        const isVariantsNone = ! ids.length;
+        
         const options = twc.spdatcbur;
         
         const selector = [
@@ -131,9 +133,17 @@
             
             id = selectedVariant.sku;
             
-            } else
+            } else {
             
-              id = $this.attr ( 'data-item-id' );
+              if ( ! isVariantsNone )
+              
+                id = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ].sku;
+                
+                else
+                
+                  id = $this.attr ( 'data-item-id' );
+                  
+              }
               
           const url =
           
