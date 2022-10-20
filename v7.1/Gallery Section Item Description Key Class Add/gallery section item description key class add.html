@@ -1,0 +1,91 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      gallery section item description key class add
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Dependancies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const classNamePrefix = '[enter class name prefix here between single quotes replacing square brackets]';
+    
+    const keys = [
+    
+      /*
+      
+        the format of each line is a key
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many keys needed. this has been done once initially
+        
+        */
+        
+      // '[enter key here between single quotes replacing square brackets]',
+      
+      '[enter key here between single quotes replacing square brackets]',
+      
+      ];
+      
+    // do not change anything below, there be the borg here
+    
+    const selectorTemplate =
+    
+      '.gallery-section .gallery-caption p:contains([key])';
+      
+    $.each ( keys, function ( i, key ) {
+    
+      const selector = selectorTemplate
+      
+        .replace ( '[key]', key );
+        
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this )
+        
+          .parents ( '.gallery-grid-item' )
+          
+          .addClass ( `${ classNamePrefix }${ key }` )
+          
+          .end ( );
+          
+        const text = $this
+        
+          .text ( )
+          
+          .replace ( `[${ key }]`, '' )
+          
+          .trim ( );
+          
+        if ( text )
+        
+          $this.text ( text );
+          
+          else
+          
+            $this
+            
+              .parents ( 'figcaption' )
+              
+              .remove ( );
+              
+        } );
+        
+      } );
+      
+    } );
+    
+  </script>
