@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 197 effects. Each effect has it's own version number, code,
+twcsl contains 198 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -282,6 +282,8 @@ not necessarily designed to work together.
   * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
     
   * [Gallery Section Grid Item Order Randomize](v7.1/Gallery%20Section%20Grid%20Item%20Order%20Randomize)
+    
+  * [Gallery Section Item Description Key Class Add](v7.1/Gallery%20Section%20Item%20Description%20Key%20Class%20Add)
     
   * [Gallery Section Reel Arrows Top Center](v7.1/Gallery%20Section%20Reel%20Arrows%20Top%20Center)
     
