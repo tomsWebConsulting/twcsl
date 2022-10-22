@@ -1,6 +1,6 @@
 # Page Section Info
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -19,11 +19,11 @@ Please consider [making a donation][2].
 
 ## Changes
 
-<!-- * **2022-08-30**
+* **2022-08-30**
 
-  * css only solution not workable
+  * exclude gallery and user list sections
   * bumped version to 0.1.1
-  -->
+  
 * **2022-09-13**
 
   * initial version

@@ -6,7 +6,7 @@
     
       page section info
       
-      Version     : 0.1.0
+      Version     : 0.1.1
       
       SS Version  : 7.1
       
@@ -56,15 +56,27 @@
         
           `[data-section-id="${ dataSectionId }"]`;
           
-        const pageSection = document.querySelector ( selector );
+        let classes = document
+        
+          .querySelector ( selector )
+          
+          .classList;
+          
+        classes = [ ...classes ];
         
         const b =
         
-          pageSection.classList.contains ( 'collection-type-products' ) ||
+          classes.some ( clss =>
           
-          pageSection.classList.contains ( 'gallery-section' );
+            clss.startsWith ( 'collection-type-portfolio-' ) ) ||
+            
+          classes.contains ( 'collection-type-products' ) ||
           
-        if ( b ) return true; // continue if not user editable section
+          classes.contains ( 'gallery-section' ) ||
+          
+          classes.contains ( 'user-items-list-section' );
+          
+        if ( b ) return true; // continue if section doesn't use blocks
         
         const attribute = 'class';
         
