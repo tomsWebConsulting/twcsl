@@ -1,0 +1,119 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      portfolio page grid image aspect ratio change
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependancies  : twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // aspect ratios, use 1:1, 3:2, 2:3, 4:3, 3:4, 16:9, or uw
+    
+    const aspectRatio = '[enter apect ratio here between single quotes replacing square brackets]';
+    
+    // do not change anything below, there be the borg here
+    
+    // bail if not portfoliio list
+    
+    if ( ! twcsl.page.portfolio.list.is ) return;
+    
+    // begin bail layout if not of interest
+    
+      let prefix = '#page .page-section.collection-type-portfolio-grid-';
+      
+      const selector =
+      
+        prefix
+        
+        +
+        
+        [
+        
+          'basic',
+          
+          'overlay',
+          
+          ]
+          
+        .join ( `, ${ prefix }` );
+        
+      const $pageSection = $( selector );
+      
+      if ( ! $pageSection.length ) return;
+      
+      // end bail layout if not of interest
+      
+    // begin layout
+    
+      prefix = 'collection-type-portfolio-grid-';
+      
+      let layout;
+      
+      switch ( true ) {
+      
+        case $pageSection.hasClass ( `${ prefix }basic` ) :
+        
+          layout = 'basic';
+          
+          break;
+          
+        case $pageSection.hasClass ( `${ prefix }overlay` ) :
+        
+          layout = 'overlay';
+          
+          break;
+          
+        }
+        
+      // end layout
+      
+    const aspectRatios = {
+    
+      '1:1' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-11-square`,
+      
+      '3:2' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-32-standard`,
+      
+      '2:3' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-23-standard-vertical`,
+      
+      '4:3' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-43-four-three`,
+      
+      '3:4' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-34-three-four-vertical`,
+      
+      '16:9' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-169-widescreen`,
+      
+      'uw' : `tweak-portfolio-grid-${ layout }-image-aspect-ratio-ultra-widescreen`,
+      
+      };
+      
+    const ratioClass = aspectRatios [ aspectRatio ];
+    
+    let ratioClasses = Object.values ( aspectRatios );
+    
+    const i = ratioClasses
+    
+      .indexOf ( ratioClass );
+      
+    ratioClasses.splice ( i, 1 );
+    
+    ratioClasses = ratioClasses.join ( ' ' );
+    
+    $( 'body' ).addClass ( ratioClass );
+    
+    $( 'body' ).removeClass ( ratioClasses );
+    
+    } );
+    
+  </script>
