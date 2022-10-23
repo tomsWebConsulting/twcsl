@@ -34,5 +34,5 @@ Please consider [making a donation][3].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
-[2]: change%20default%20image%20aspect%20ratios%20for%20store%20page.html#L1
+[2]: portfolio%20page%20grid%20image%20aspect%20ratio%20change.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
