@@ -13,9 +13,9 @@
 * Install [twcsl][1]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[change default image aspect ratios for store
-  page.html][2]** to Page Settings > Advanced > Page Header Code Injection for
-  the store page. Read the code for any instructions within.
+* Add code from file **[portfolio page grid image aspect ratio change.html][2]**
+  to Page Settings > Advanced > Page Header Code Injection for the page. Read
+  the code for any instructions within.
 
 ## Make a Donation
 
