@@ -6,7 +6,7 @@
     
       page section info
       
-      Version     : 0.1.1
+      Version     : 0.1.2
       
       SS Version  : 7.1
       
@@ -66,16 +66,20 @@
         
         const b =
         
-          classes.some ( clss =>
-          
-            clss.startsWith ( 'collection-type-portfolio-' ) ) ||
-            
           classes.contains ( 'collection-type-products' ) ||
           
           classes.contains ( 'gallery-section' ) ||
           
-          classes.contains ( 'user-items-list-section' );
+          classes.contains ( 'user-items-list-section' ) ||
           
+          classes.some ( clss =>
+          
+            clss.startsWith ( 'collection-type-events-' ) ||
+            
+            clss.startsWith ( 'collection-type-portfolio-' )
+            
+            );
+            
         if ( b ) return true; // continue if section doesn't use blocks
         
         const attribute = 'class';

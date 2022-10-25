@@ -1,6 +1,6 @@
 # Page Section Info
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Version 7.1
 
@@ -19,7 +19,12 @@ Please consider [making a donation][2].
 
 ## Changes
 
-* **2022-08-30**
+* **2022-10-25**
+
+  * exclude events sections
+  * bumped version to 0.1.2
+  
+* **2022-10-22**
 
   * exclude gallery and user list sections
   * bumped version to 0.1.1
