@@ -2,7 +2,7 @@
 
   begin store product detail add to cart button url redirect
   
-  Version         : 0.4.2
+  Version         : 0.5.0
   
   SS Versions     : 7.1, 7.0
   
@@ -75,9 +75,11 @@
         
         const selector = [
         
-          '.pdp-details .sqs-add-to-cart-button', // 7.1
+          '.pdp-details .sqs-add-to-cart-button', // 7.1 ( Full, Half, Wrap )
           
-          '.ProductItem-details .sqs-add-to-cart-button', // 7.0 ( Brine, Pacific )
+          // 7.1 ( Simple ), 7.0 ( Brine, Pacific )
+          
+          '.ProductItem-details .sqs-add-to-cart-button',
           
           ]
           
@@ -105,54 +107,60 @@
           
         Y.one ( selector ).detachAll ( );
         
-        $( selector ).mousedown ( function ( event ) {
+        $( selector )
         
-          const isSameWindow = ! options.targetAtttributeValue ||
+          .parents ( '.sqs-add-to-cart-button-wrapper' )
           
-            options.targetAtttributeValue == '_self';
+          .addClass ( 'twc-spdatcbur' )
+          
+          .end ( )
+          
+          .mousedown ( function ( event ) {
+          
+            const isSameWindow = ! options.targetAtttributeValue ||
             
-          const $this = $( this );
-          
-          let id;
-          
-          const $productVariants = $this
-          
-            .parent ( )
-            
-            .siblings ( '.product-variants' );
-            
-          if ( $productVariants.length ) {
-          
-            let selectedVariant = $productVariants
-            
-              .attr ( 'data-selected-variant' );
+              options.targetAtttributeValue == '_self';
               
-            if ( selectedVariant === undefined ) return;
+            const $this = $( this );
             
-            selectedVariant = JSON.parse ( selectedVariant );
+            let id;
             
-            id = selectedVariant.sku;
+            const $productVariants = $this
             
-            } else {
-            
-              if ( ! isVariantsNone )
+              .parent ( )
               
-                id = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ].sku;
+              .siblings ( '.product-variants' );
+              
+            if ( $productVariants.length ) {
+            
+              let selectedVariant = $productVariants
+              
+                .attr ( 'data-selected-variant' );
                 
-                else
+              if ( selectedVariant === undefined ) return;
+              
+              selectedVariant = JSON.parse ( selectedVariant );
+              
+              id = selectedVariant.sku;
+              
+              } else
+              
+                if ( ! isVariantsNone )
                 
-                  id = $this.attr ( 'data-item-id' );
+                  id = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ].sku;
                   
-              }
-              
-          const url =
-          
-            id in options.idUrlMap ? options.idUrlMap [ id ] : options.url;
+                  else
+                  
+                    id = $this.attr ( 'data-item-id' );
+                    
+            const url =
             
-          window.open ( url, options.targetAtttributeValue );
-          
-          } );
-          
+              id in options.idUrlMap ? options.idUrlMap [ id ] : options.url;
+              
+            window.open ( url, options.targetAtttributeValue );
+            
+            } );
+            
         }; // end initialize
         
       switch ( true ) {

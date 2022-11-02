@@ -1,6 +1,6 @@
 # Store Product Detail Add to Cart Button Url Redirect
 
-### Version 0.4.2
+### Version 0.5.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Pacific template family][2])
 
@@ -61,6 +61,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2022-11-02**
+
+  * add class to atc button
+  * bumped version to 0.5.0
+  
 * **2022-10-19**
 
   * fix sku not working for products with no variants
