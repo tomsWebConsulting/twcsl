@@ -6,7 +6,7 @@
     
       page section info
       
-      Version     : 0.1.2
+      Version     : 0.1.3
       
       SS Version  : 7.1
       
@@ -17,6 +17,8 @@
       Note        : this effect is only active in SS Preview
       
       By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      License     : < https://bit.ly/3Ob7JsO >
       
       no user serviceable parts below
       
@@ -56,31 +58,45 @@
         
           `[data-section-id="${ dataSectionId }"]`;
           
-        let classes = document
+        let bodyClasses = document
+        
+          .body
+          
+          .classList;
+          
+        bodyClasses = [ ...bodyClasses ];
+        
+        let sectionClasses = document
         
           .querySelector ( selector )
           
           .classList;
           
-        classes = [ ...classes ];
+        sectionClasses = [ ...sectionClasses ];
         
         const b =
         
-          classes.contains ( 'collection-type-products' ) ||
+          sectionClasses.contains ( 'collection-type-products' ) ||
           
-          classes.contains ( 'gallery-section' ) ||
+          sectionClasses.contains ( 'gallery-section' ) ||
           
-          classes.contains ( 'user-items-list-section' ) ||
+          sectionClasses.contains ( 'user-items-list-section' ) ||
           
-          classes.some ( clss =>
+          sectionClasses.some ( clss =>
           
             clss.startsWith ( 'collection-type-events-' ) ||
             
-            clss.startsWith ( 'collection-type-portfolio-' )
+            clss.startsWith ( 'collection-type-portfolio-' ) || (
+            
+              clss.startsWith ( 'collection-type-blog-' ) &&
+              
+              bodyClasses.contains ( 'view-list' )
+            
+              )
             
             );
             
-        if ( b ) return true; // continue if section doesn't use blocks
+        if ( b ) return true; // continue if section not of interest
         
         const attribute = 'class';
         

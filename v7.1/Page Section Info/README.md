@@ -1,6 +1,8 @@
 # Page Section Info
 
-### Version 0.1.2
+### [License][1]
+    
+### Version 0.1.3
 
 #### SS Version 7.1
 
@@ -10,15 +12,20 @@
 
 ## Quick Install
 
-* Add code from file **[page section info.html][1]** to Settings > Advanced >
+* Add code from file **[page section info.html][2]** to Settings > Advanced >
   Code Injection > HEADER.
 
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][3].
 
 ## Changes
 
+* **2022-11-16**
+
+  * exclude blog list sections
+  * bumped version to 0.1.3
+  
 * **2022-10-25**
 
   * exclude events sections
@@ -33,5 +40,6 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: page%20section%20info.html#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: page%20section%20info.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
