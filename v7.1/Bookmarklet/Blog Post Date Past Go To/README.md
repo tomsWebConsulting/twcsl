@@ -45,6 +45,6 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: blog%20post%20date%20past%20go%20to.html#L1
+[2]: blog%20post%20date%20past%20go%20to.bookmarklet#L1
 [3]: https://en.wikipedia.org/wiki/Bookmarklet
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
