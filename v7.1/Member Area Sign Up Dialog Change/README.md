@@ -34,5 +34,5 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: member%20area%20sign%20up%20window%20change.html#L1
+[1]: member%20area%20sign%20up%20dialog%20change.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
