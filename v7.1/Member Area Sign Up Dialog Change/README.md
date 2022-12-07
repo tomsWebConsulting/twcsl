@@ -1,5 +1,7 @@
 # Member Area Sign Up Dialog Change
 
+### [License][1]
+    
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -16,13 +18,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[member area sign up window change.html][1]** to
+* Add code from file **[member area sign up window change.html][2]** to
   Settings > Advanced > Code Injection > FOOTER. Read the code for any
   instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -34,5 +36,6 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: member%20area%20sign%20up%20dialog%20change.html#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: member%20area%20sign%20up%20dialog%20change.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

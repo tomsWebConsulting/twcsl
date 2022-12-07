@@ -1,5 +1,7 @@
 # Member Area Sign In Dialog Change
 
+### [License][1]
+    
 ### Version 0.2.0
 
 #### SS Version 7.1
@@ -22,7 +24,7 @@
 
 ## Make a Donation
 
-Please consider [making a donation][1].
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -35,5 +37,6 @@ Please consider [making a donation][1].
 
   * initial version
 
-[1]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: member%20area%20sign%20in%20dialog%20change.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
