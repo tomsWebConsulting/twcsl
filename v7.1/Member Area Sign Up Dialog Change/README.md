@@ -18,7 +18,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[member area sign up window change.html][2]** to
+* Add code from file **[member area sign up dialog change.html][2]** to
   Settings > Advanced > Code Injection > FOOTER. Read the code for any
   instructions within.
 
