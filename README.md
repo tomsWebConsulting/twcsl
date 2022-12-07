@@ -311,7 +311,7 @@ not necessarily designed to work together.
     
   * [Make Navigation Folders Clickable](v7.1/Make%20Navigation%20Folders%20Clickable)
     
-  * [Member Area Sign in Window Title Change](v7.1/Member%20Area%20Sign%20in%20Window%20Title%20Change)
+  * [Member Area Sign In Dialog Change](v7.1/Member%20Area%20Sign%20In%20Dialog%20Change)
     
   * [Member Area Sign Up Dialog Change](v7.1/Member%20Area%20Sign%20Up%20Dialog%20Change)
     
