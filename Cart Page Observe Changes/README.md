@@ -1,10 +1,12 @@
 # Cart Page Observe Changes
 
+### [License][1]
+    
 ### Version 0.1d1
 
 #### SS Versions 7.1, 7.0
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### v7.1 Fluid Engine Compatible : Not Applicable
 
 ---
 
@@ -15,11 +17,10 @@
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
-
-* Add code from file
-  **[cart page observe changes.html](cart%20page%20observe%20changes.html#L1)**
-  to Add the following to Settings > Advanced > Code Injection > FOOTER. Read
-  the code for any instructions within.
+  
+* Add code from file **[cart page observe changes.html][2]** to Add the
+  following to Settings > Advanced > Code Injection > FOOTER. Read the code for
+  any instructions within.
 
 ## Example Callback
 
@@ -58,8 +59,7 @@ you are interested in.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -72,3 +72,7 @@ Please consider
 * **2022-01-16**
 
   * initial version
+
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: cart%20page%20observe%20changes.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
