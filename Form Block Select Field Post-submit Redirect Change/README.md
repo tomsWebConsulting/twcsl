@@ -1,14 +1,16 @@
 # Form Block Select Field Post-submit Redirect Change
 
+### [License][6]
+    
 ### Version 0.2d1
 
 #### SS Versions 7.1, 7.0
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### v7.1 Fluid Engine Compatible : Yes
 
 ---
 
-## Quick Install
+## Install
 
 * Add the following to Settings > Advanced > Code Injection > HEADER.
   
@@ -16,16 +18,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[form block select field post-submit redirect change.html](form%20block%20select%20field%20post-submit%20redirect%20change.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+* Add code from file **[form block select field post-submit redirect
+  change.html][1]** to Page Settings > Advanced > Page Header Code Injection for
+  the page. Please see [per-page code injection][2]. Read the code for any
+  instructions within.
   
 * Add a form block to your page and set up as desired.
-
-* For the form
-  [add a post-submit redirect](https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect).
-  In the REDIRECT URL field enter **#**.
+  
+* For the form [add a post-submit redirect][3]. In the REDIRECT URL field enter
+  **#**.
   
 * For the select field description on a line by itself enter **fbsfpsrc**. This
   indicates to the code that you want the code to act upon this select field and
@@ -40,6 +41,7 @@
   Following is a common partial example.
   
   ```
+  fbsfpsrc
   Alabama
   http://www.tomsWeb.consulting/Alabama
   Alaska
@@ -55,8 +57,7 @@
 
 ## Demo
 
-You can see a
-[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos).
+You can see a [demo of this effect here][4].
 
 ## Note
 
@@ -64,8 +65,7 @@ This code does not work for form blocks with lightbox toggled on.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -89,3 +89,10 @@ Please consider
 * **2021-03-28**
 
   * initial version
+
+[1]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
+[4]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
