@@ -6,13 +6,18 @@
     
       begin form block post-submit redirect url email parameter add
       
-      Version       : 0.3.0
+      License       : < https://bit.ly/3F8sn8W >
+      
+      Version       : 0.3.1
       
       SS Versions   : 7.1, 7.0
       
-      Dependancies  : jQuery
-                      
-                      twcsl
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Dependancies  : twcsl
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -86,7 +91,7 @@
         
         url = urlParser.href;
         
-        $form.attr ( 'data-success-redirect', url );
+        $form.attr ( attribute, url );
         
         } );
         
