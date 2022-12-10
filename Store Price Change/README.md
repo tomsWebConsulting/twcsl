@@ -1,8 +1,10 @@
 # Store Price Change
 
+### [License][1]
+    
 ### Version 0.5.0
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
+#### SS Versions 7.1, 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
 
 #### v7.1 Fluid Engine Compatibility : Not Applicable
 
@@ -10,12 +12,12 @@
 
 ## Install
 
-* Install [twcsl][4]. After you install twcsl be sure to continue on with the
+* Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[store price change.html][5]** to Store Settings >
-  Advanced > Page Header Code Injection for the store page. Read the code for
-  any instructions within.
+* Add code from file **[store price change.html][6]** to Store Settings >
+  Advanced > Page Header Code Injection for the store page. Please see [per-page
+  code injection][8]. Read the code for any instructions within.
 
 ## searchReplaceText Example Lines
 
@@ -55,7 +57,7 @@ checkout page or SS backend. It is a SS security feature.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -166,9 +168,11 @@ Please consider [making a donation][6].
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[2]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
-[3]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
-[4]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%20price%20change.html#L1
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
+[4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
+[5]: https://github.com/tomsWebConsulting/twcsl#install-options
+[6]: store%20price%20change.html#L1
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
