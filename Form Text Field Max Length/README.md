@@ -1,6 +1,6 @@
 # Form Text Field Max Length
 
-### [License][99]
+### [License][1]
 
 ### Version 0.4d1
 
@@ -12,16 +12,14 @@
 
 ## Install
 
-* Add code from file
-  **[form text field max length.less](form%20text%20field%20max%20length.less#L1)**
-  to Design > Custom CSS.
+* Add code from file **[form text field max length.less][2]** to Design >
+  Custom CSS.
   
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][3]. After you install twcsl be sure to continue on with the
+  rest of the steps.
   
-* Add code from file
-  **[form text field max length.html](form%20text%20field%20max%20length.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER.
+* Add code from file **[form text field max length.html][4]** to Settings >
+  Advanced > Code Injection > FOOTER.
   
 * Add a form block to your page and set up as desired.
   
@@ -78,9 +76,9 @@ ftfml : { skuOrProductId1 : 20, default : 10 }
 The ids and default can be in any order. As long as you follow the general
 format id colon number comma for each id/number pair.
 
-You can find a no variants product id by using Heather Tovey's
-[Squarespace ID Finder](https://www.heathertovey.com/squarespace-id-finder/).
-Alternately you can export your inventory and grab the id from the CSV file.
+You can find a no variants product id by using Heather Tovey's [Squarespace ID
+Finder][5]. Alternately you can export your inventory and grab the id from the
+CSV file.
 
 To use SIF go to your product detail page and use SIF. You will see something
 like the following.
@@ -110,13 +108,11 @@ setting. In other words you still need to be checking manually when forms or
 orders come in to make sure your limits are not being exceeded. Consider this
 code more of an aid to help users not exceed your field max length limits.
 
-This effect is not active in SS Preview to test it use
-[private browsing](https://bit.ly/3f6lhq2).
+This effect is not active in SS Preview to test it use [private browsing][6].
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -159,4 +155,11 @@ Please consider
 * **2020-11-21**
 
   * initial version
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: form%20text%20field%20max%20length.less#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: form%20text%20field%20max%20length.html#L1
+[5]: https://www.heathertovey.com/squarespace-id-finder/
+[6]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
