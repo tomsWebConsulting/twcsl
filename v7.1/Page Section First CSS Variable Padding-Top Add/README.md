@@ -1,5 +1,7 @@
 # Page Section First CSS Variable Padding-Top Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -51,3 +53,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
 [2]: page%20section%20first%20css%20variable%20padding-top%20add.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

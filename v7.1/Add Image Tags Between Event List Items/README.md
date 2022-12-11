@@ -1,5 +1,7 @@
 # Add Image Tags Between Event List Items
 
+### [License][99]
+
 ### Version 0.1d1
 
 #### SS Version 7.1
@@ -32,3 +34,4 @@ Please consider
 * **2021-06-25**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

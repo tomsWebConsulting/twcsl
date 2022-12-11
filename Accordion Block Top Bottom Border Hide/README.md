@@ -1,5 +1,7 @@
 # Accordion Block Top Bottom Border Hide
 
+### [License][99]
+
 ### Version 1.0
 
 #### SS Versions 7.1, 7.0
@@ -41,3 +43,4 @@ Please consider [making a donation][4].
 [2]: accordion%20block%20top%20bottom%20border%20hide.html#L1
 [3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Store Category All List Hide
 
+### [License][99]
+
 ### Version 1.0
 
 #### SS Version 7.1
@@ -31,3 +33,4 @@ Please consider [making a donation][2].
 
 [1]: store%20category%20all%20list%20hide.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

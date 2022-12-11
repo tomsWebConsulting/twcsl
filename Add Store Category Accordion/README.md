@@ -1,5 +1,7 @@
 # Add Store Category Accordion
 
+### [License][99]
+
 ### Version 0.2d1
 
 #### SS Versions 7.1, 7.0
@@ -64,3 +66,4 @@ Please consider
 * **2021-05-20**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

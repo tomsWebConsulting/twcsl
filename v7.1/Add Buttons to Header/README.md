@@ -1,5 +1,7 @@
 # Add Buttons to Header
 
+### [License][99]
+
 ### Version 0.7d1
 
 #### SS Version 7.1
@@ -56,3 +58,4 @@ Please consider
     using LESS mixins the choices are row or column direction and normal or
     reverse order
   * bumped version to 0.6d0
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

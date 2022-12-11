@@ -1,5 +1,7 @@
 # Social Icon Discord Generic Icon to Discord Change
 
+### [License][99]
+
 ### Version 0.3d1
 
 #### SS Versions 7.1, 7.0
@@ -63,3 +65,4 @@ Please consider
 * **2020-11-29**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

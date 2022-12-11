@@ -1,5 +1,7 @@
 # Add Button After Add to Cart Button of Product Detail Page
 
+### [License][99]
+
 ### Version 0.3.0
 
 ---
@@ -43,3 +45,4 @@ Please consider [making a donation][2].
 
 [1]: add%20button%20after%20add%20to%20cart%20button%20of%20product%20detail%20page.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

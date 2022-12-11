@@ -1,5 +1,7 @@
 # Make Navigation Folders Clickable
 
+### [License][99]
+
 ### Version 0.5d2
 
 ---
@@ -34,3 +36,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 <br><br>
   * fix disappearing folder title in some circumstances
   * bumped version to 0.4d1
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

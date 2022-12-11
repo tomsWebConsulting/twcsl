@@ -1,5 +1,7 @@
 # Change Cart Empty Message
 
+### [License][99]
+
 ### Version 1.0
 
 ---
@@ -23,3 +25,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-05-03**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Gallery Section Item Description Key Class Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -55,3 +57,4 @@ Please consider [making a donation][3].
 [1]: gallery%20section%20item%20description%20key%20class%20add.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

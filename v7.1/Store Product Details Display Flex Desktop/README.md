@@ -1,5 +1,7 @@
 # Store Product Details Display Flex Desktop
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.1
@@ -32,3 +34,4 @@ Please consider
 * **2021-10-07**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

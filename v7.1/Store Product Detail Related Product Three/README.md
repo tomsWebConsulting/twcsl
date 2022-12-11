@@ -1,5 +1,7 @@
 # Store Product Detail Related Product Three
 
+### [License][99]
+
 ### Version 1.0
 
 #### SS Version 7.1
@@ -30,3 +32,4 @@ Please consider [making a donation][2].
 
 [1]: store%20product%20detail%20related%20product%20three.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

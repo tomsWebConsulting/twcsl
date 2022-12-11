@@ -1,5 +1,7 @@
 # Store Product Detail One Left Class Add
 
+### [License][99]
+
 ### Version 0.2d0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1])
@@ -36,3 +38,4 @@ Please consider
   * initial version
 
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

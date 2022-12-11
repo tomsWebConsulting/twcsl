@@ -1,5 +1,7 @@
 # Add Continue Shopping Message When Cart Has Items
 
+### [License][99]
+
 ### Version 0.1d1
 
 ---
@@ -30,3 +32,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-06-07**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

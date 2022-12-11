@@ -1,5 +1,7 @@
 # Store Product Detail Add to Cart Button Text Change
 
+### [License][99]
+
 ### Version 0.2d1
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1])
@@ -43,3 +45,4 @@ Please consider [making a donation][4].
 [2]: https://github.com/tomsWebConsulting/twcsl#install-options
 [3]: store%20product%20detail%20add%20to%20cart%20button%20text%20change.html#L1
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

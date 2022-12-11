@@ -1,5 +1,7 @@
 # Page Section Auto Layout Simple List Format Class Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -78,3 +80,4 @@ Please consider [making a donation][4].
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://support.squarespace.com/hc/en-us/articles/360057763852-Auto-layouts
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

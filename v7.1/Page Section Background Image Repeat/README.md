@@ -1,5 +1,7 @@
 # Page Section Background Image Repeat
 
+### [License][99]
+
 ### Version 1.0
 
 #### SS Version 7.1
@@ -46,3 +48,4 @@ Please consider
 * **2022-02-17**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Blog Header After Title
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.0 (Wells)
@@ -26,3 +28,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2022-01-07**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

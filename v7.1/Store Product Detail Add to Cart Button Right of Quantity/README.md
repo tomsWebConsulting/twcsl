@@ -1,5 +1,7 @@
 # Store Product Detail Add to Cart Button Right of Quantity
 
+### [License][99]
+
 ### Version 0.3d1
 
 #### SS Version 7.1
@@ -64,3 +66,4 @@ Please consider
 * **2021-03-23**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

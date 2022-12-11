@@ -1,5 +1,7 @@
 # Gallery Sections Image URLs
 
+### [License][99]
+
 ### Version 0.1.1
 
 #### SS Version 7.1
@@ -38,3 +40,4 @@ Please consider [making a donation][3].
 [1]: gallery%20sections%20image%20urls.bookmarklet#L1
 [2]: https://en.wikipedia.org/wiki/Bookmarklet
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

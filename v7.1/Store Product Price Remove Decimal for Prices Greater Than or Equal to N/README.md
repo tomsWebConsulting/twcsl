@@ -1,5 +1,7 @@
 # Store Product Price Remove Decimal for Prices Greater Than or Equal to N
 
+### [License][99]
+
 ### Version 0.1d1
 
 #### SS Version 7.1
@@ -40,3 +42,4 @@ Please consider
 * **2021-09-28**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Store Product Detail Elements Tagged Hide
 
+### [License][99]
+
 ### Version 2.2
 
 #### SS Versions 7.1, 7.0 ([Adirondack][2], [Brine template family][1], [York template family][3])
@@ -58,3 +60,4 @@ Please consider [making a donation][5].
 [3]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
 [4]: store%20product%20detail%20elements%20tagged%20hide.html#L1
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

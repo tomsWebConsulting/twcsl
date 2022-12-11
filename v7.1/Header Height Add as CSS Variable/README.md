@@ -1,5 +1,7 @@
 # Header Height Add as CSS Variable
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -48,3 +50,4 @@ Please consider [making a donation][3].
 [1]: header%20height%20add%20as%20css%20variable.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

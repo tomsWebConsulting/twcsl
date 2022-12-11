@@ -1,5 +1,7 @@
 # CTA Button Text and Url Change Based on Language
 
+### [License][99]
+
 ### Version 0.2d0
 
 #### SS Version 7.1
@@ -44,3 +46,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-02-02**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

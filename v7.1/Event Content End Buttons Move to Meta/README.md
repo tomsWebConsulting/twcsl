@@ -1,5 +1,7 @@
 # Event Content End Buttons Move to Meta
 
+### [License][99]
+
 ### Version 0.2d0
 
 #### SS Version 7.1
@@ -48,3 +50,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-02-25**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

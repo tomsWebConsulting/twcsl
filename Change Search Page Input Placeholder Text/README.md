@@ -1,5 +1,7 @@
 # Change Search Page Input Placeholder Text
 
+### [License][99]
+
 ### Version 0.1d1
 
 ---
@@ -30,3 +32,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-05-15**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

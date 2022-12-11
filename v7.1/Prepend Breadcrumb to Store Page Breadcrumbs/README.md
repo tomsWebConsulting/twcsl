@@ -1,5 +1,7 @@
 # Prepend Breadcrumb to Store Page Breadcrumbs
 
+### [License][99]
+
 ### Version 0.1d0
 
 ---
@@ -30,3 +32,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-05-02**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

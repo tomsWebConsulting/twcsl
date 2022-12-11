@@ -1,5 +1,7 @@
 # Blog Non-Post Pages Meta Noindex Tag Add
 
+### [License][99]
+
 ### Version 0.2.0
 
 #### SS Versions 7.1, 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3], [Five][4], [Montauk][5])
@@ -49,3 +51,4 @@ Please consider [making a donation][9].
 [7]: blog%20non-post%20pages%20meta%20noindex%20tag%20add.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

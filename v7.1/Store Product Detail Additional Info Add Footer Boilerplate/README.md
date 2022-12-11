@@ -1,5 +1,7 @@
 # Store Product Detail Additional Info Add Footer Boilerplate
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -70,3 +72,4 @@ Please consider [making a donation][5].
 [3]: store%20product%20detail%20additional%20info%20add%20footer%20boilerplate.html#L1
 [4]: https://www.heathertovey.com/squarespace-id-finder/
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

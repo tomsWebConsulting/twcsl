@@ -1,5 +1,7 @@
 # Change Form Block Post-Submit Redirect Based on a Radio Form Field Selected Option
 
+### [License][99]
+
 ### Version 0.1d1
 
 #### SS Versions 7.1, 7.0
@@ -32,3 +34,4 @@ Please consider
 * **2021-05-14**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

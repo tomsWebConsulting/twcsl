@@ -1,5 +1,7 @@
 # Payment Processor Icons
 
+### [License][99]
+
 ### Version 0.3.0
 
 #### SS Versions 7.1, 7.0
@@ -120,3 +122,4 @@ Please consider [making a donation][6].
 [4]: https://toms-web-consulting-demos.squarespace.com/payment-processor-icons?password=twcdemos
 [5]: http://www.tomsWeb.consulting/contact.html
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

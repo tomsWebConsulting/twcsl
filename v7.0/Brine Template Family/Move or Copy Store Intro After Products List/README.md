@@ -1,5 +1,7 @@
 # Move or Copy Store Intro After Products List
 
+### [License][99]
+
 ### Version 0.2d0
 
 #### SS Version 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
@@ -32,3 +34,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-05-21**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

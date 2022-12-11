@@ -1,5 +1,7 @@
 # Site Tagline HTML
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.0 ([Brine template family][1])
@@ -37,3 +39,4 @@ Please consider [making a donation][3].
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [2]: site%20tagline%20html.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

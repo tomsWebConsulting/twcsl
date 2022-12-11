@@ -1,5 +1,7 @@
 # Row Column Finder
 
+### [License][99]
+
 ### Version 0.1.2
 
 ---
@@ -64,3 +66,4 @@ Please consider [making a donation][3].
 [1]: row%20column%20finder.bookmarklet#L1
 [2]: https://en.wikipedia.org/wiki/Bookmarklet
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

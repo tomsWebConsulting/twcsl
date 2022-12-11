@@ -1,5 +1,7 @@
 # Store Product Detail Add to Cart Text Change on Quantity Change
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Versions 7.1, 7.0
@@ -36,3 +38,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
 [2]: store%20product%20detail%20add%20to%20cart%20text%20change%20on%20quantity%20change.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

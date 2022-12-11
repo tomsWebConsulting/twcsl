@@ -1,5 +1,7 @@
 # Footer Sections Move to Page
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -48,3 +50,4 @@ Please consider [making a donation][4].
 [2]: footer%20sections%20move%20to%20page.html#L1
 [3]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

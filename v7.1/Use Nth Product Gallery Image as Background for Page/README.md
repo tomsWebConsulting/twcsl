@@ -1,5 +1,7 @@
 # Use Nth Product Gallery Image as Background for Page
 
+### [License][99]
+
 ### Version 0.3d0
 
 ---
@@ -31,3 +33,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 <br><br>
   * added non-linear scroll fade effect
   * bumped version to v0.2d0
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Store Product Detail Related Product Sold Out Price Zero Remove
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1])
@@ -43,3 +45,4 @@ Please consider [making a donation][5].
 [3]: store%20product%20detail%20related%20product%20sold%20out%20price%20zero%20remove.html#L1
 [4]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

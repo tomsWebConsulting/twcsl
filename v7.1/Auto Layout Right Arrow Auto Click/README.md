@@ -1,5 +1,7 @@
 # Auto Layout Right Arrow Auto Click
 
+### [License][99]
+
 ### Version 0.2d2
 
 #### SS Version 7.1
@@ -55,3 +57,4 @@ Please consider
 * **2021-07-10**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

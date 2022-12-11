@@ -1,5 +1,7 @@
 # Gallery Section Reel Style Buttons to Slideshow Simple
 
+### [License][99]
+
 ### Version 0.1d3
 
 #### SS Version 7.1
@@ -40,3 +42,4 @@ Please consider
 * **2021-12-01**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

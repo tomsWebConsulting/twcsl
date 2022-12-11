@@ -1,5 +1,7 @@
 # Page Sections Slide Toggle
 
+### [License][99]
+
 ### Version 0.3.0
 
 #### SS Version 7.1
@@ -84,3 +86,4 @@ Please consider
   * initial version
 
 [1]: page%20sections%20slide%20toggle.html#L1
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Store Product Detail Add to Cart Button Url Redirect
 
+### [License][99]
+
 ### Version 0.5.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Pacific template family][2])
@@ -119,3 +121,4 @@ Please consider [making a donation][6].
 [4]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

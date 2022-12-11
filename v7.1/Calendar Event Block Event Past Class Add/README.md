@@ -1,5 +1,7 @@
 # Calendar Event Block Event Past Class Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -48,3 +50,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Calendar%20Block%20Event%20Change#calendar-block-event-change
 [2]: calendar%20event%20block%20event%20past%20class%20add.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

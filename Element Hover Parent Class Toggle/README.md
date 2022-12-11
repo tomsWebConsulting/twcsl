@@ -1,5 +1,7 @@
 # Element Hover Parent Class Toggle
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Versions 7.1, 7.0
@@ -45,3 +47,4 @@ Please consider
 * **2022-02-28**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

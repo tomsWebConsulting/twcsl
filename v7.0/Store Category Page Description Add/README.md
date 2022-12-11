@@ -1,5 +1,7 @@
 # Store Category Page Description Add
 
+### [License][99]
+
 ### Version 0.4.0
 
 #### SS Version 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3])
@@ -53,3 +55,4 @@ Please consider [making a donation][7].
 [5]: store%20category%20page%20description%20add.css#L1
 [6]: store%20category%20page%20description%20add.html#L1
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

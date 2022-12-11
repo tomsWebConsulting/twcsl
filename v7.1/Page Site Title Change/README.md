@@ -1,5 +1,7 @@
 # Page Site Title Change
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -32,3 +34,4 @@ Please consider [making a donation][3].
 [1]: page%20site%20title%20change.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

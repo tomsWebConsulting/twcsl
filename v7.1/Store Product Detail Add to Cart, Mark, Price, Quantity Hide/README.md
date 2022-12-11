@@ -1,5 +1,7 @@
 # Store Product Detail Add to Cart, Mark, Price, Quantity Hide
 
+### [License][99]
+
 ### Version 0.2.0
 
 ---
@@ -28,3 +30,4 @@ Please consider [making a donation][2].
 
 [1]: store%20product%20detail%20add%20to%20cart,%20mark,%20price,%20quantity%20hide.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

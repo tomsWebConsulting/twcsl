@@ -1,5 +1,7 @@
 # Auto Layout Simple List Image Link Add
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.1
@@ -36,3 +38,4 @@ Please consider
 * **2021-12-05**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

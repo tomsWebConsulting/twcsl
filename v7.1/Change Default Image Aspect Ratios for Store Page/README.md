@@ -1,5 +1,7 @@
 # Change Default Image Aspect Ratios for Store Page
 
+### [License][99]
+
 ### Version 0.1d0
 
 ---
@@ -34,3 +36,4 @@ Please consider [making a donation][2].
 
 [1]: change%20default%20image%20aspect%20ratios%20for%20store%20page.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

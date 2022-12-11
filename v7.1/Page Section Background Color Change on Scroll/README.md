@@ -1,5 +1,7 @@
 # Page Section Background Color Change on Scroll
 
+### [License][99]
+
 ### Version 0.1.2
 
 #### SS Version 7.1
@@ -42,3 +44,4 @@ Please consider [making a donation][3].
 [1]: page%20section%20background%20color%20change%20on%20scroll.html#L1
 [2]: https://toms-web-consulting-demos.squarespace.com/page-section-background-color-change-on-scroll?password=twcdemos
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

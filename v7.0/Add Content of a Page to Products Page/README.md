@@ -1,5 +1,7 @@
 # Add Content of a Page to Products Page
 
+### [License][99]
+
 ### Version 0.1d3
 
 ---
@@ -28,3 +30,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-02-11**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

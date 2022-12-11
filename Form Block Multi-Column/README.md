@@ -1,5 +1,7 @@
 # Form Block Multi-Column
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Versions 7.1, 7.0
@@ -67,3 +69,4 @@ Please consider [making a donation][5].
 [3]: https://bit.ly/3f6lhq2
 [4]: https://toms-web-consulting-demos.squarespace.com/form-block-multi-column?password=twcdemos
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

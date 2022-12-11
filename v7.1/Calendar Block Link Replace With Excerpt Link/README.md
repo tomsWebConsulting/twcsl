@@ -1,5 +1,7 @@
 # Calendar Block Link Replace With Excerpt Link
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -42,3 +44,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Calendar%20Block%20Event%20Change#calendar%20block%20link%20replace%20with%20excerpt%20link
 [2]: calendar%20block%20link%20replace%20with%20excerpt%20link.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

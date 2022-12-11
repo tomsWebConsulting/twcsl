@@ -1,5 +1,7 @@
 # Fluid Engine Page Section Upgrade Button Hide
 
+### [License][99]
+
 ### Version 0.1.2
 
 #### SS Version 7.1
@@ -35,3 +37,4 @@ Please consider [making a donation][2].
 
 [1]: fluid%20engine%20page%20section%20upgrade%20button%20hide.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

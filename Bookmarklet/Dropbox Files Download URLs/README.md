@@ -1,5 +1,7 @@
 # Dropbox Files Download URLs
 
+### [License][99]
+
 ### Version 0.1.0
 
 ---
@@ -32,3 +34,4 @@ Please consider [making a donation][2].
 [1]: dropbox%20files%20download%20urls.bookmarklet#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [3]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

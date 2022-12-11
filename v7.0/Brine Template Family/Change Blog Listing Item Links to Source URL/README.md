@@ -1,5 +1,7 @@
 # Change Blog Listing Item Links to Source URL
 
+### [License][99]
+
 ### Version 0.1d2
 
 #### SS Version 7.0 ([Brine template family][1])
@@ -33,3 +35,4 @@ Please consider
   * initial version
 
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

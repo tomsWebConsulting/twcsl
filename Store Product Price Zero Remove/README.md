@@ -1,5 +1,7 @@
 # Store Product Price Zero Remove
 
+### [License][99]
+
 ### Version 0.1.1
 
 #### SS Versions 7.1, 7.0 ([Brine template family][1], [Five][2], [Montauk template family][3])
@@ -49,3 +51,4 @@ Please consider [making a donation][6].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store-price-change
 [5]: store%20product%20price%20zero%20remove.html#L1
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

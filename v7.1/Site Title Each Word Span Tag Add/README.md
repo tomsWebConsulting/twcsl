@@ -1,5 +1,7 @@
 # Site Title Each Word Span Tag Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -54,3 +56,4 @@ Please consider [making a donation][5].
 [3]: https://bit.ly/3f6lhq2
 [4]: https://toms-web-consulting-demos.squarespace.com/site-title-each-word-span-tag-add?password=twcdemos
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

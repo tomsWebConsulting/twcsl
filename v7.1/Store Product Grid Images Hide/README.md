@@ -1,5 +1,7 @@
 # Store Product Grid Images Hide
 
+### [License][99]
+
 ### Version 0.1d1
 
 #### SS Version 7.1
@@ -29,3 +31,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-08-24**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

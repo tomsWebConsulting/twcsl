@@ -1,5 +1,7 @@
 # Portfolio Page Grid Image Aspect Ratio Change
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -36,3 +38,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
 [2]: portfolio%20page%20grid%20image%20aspect%20ratio%20change.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

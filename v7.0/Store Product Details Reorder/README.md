@@ -1,5 +1,7 @@
 # Store Product Details Reorder
 
+### [License][99]
+
 ### Version 0.3.0
 
 #### SS Version 7.0 ([Brine template family][1], [York template family][2])
@@ -35,3 +37,4 @@ Please consider [making a donation][3].
 [1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [2]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Change Cart Title
 
+### [License][99]
+
 ### Version 1.0
 
 ---
@@ -26,3 +28,4 @@ Please consider
 * **2021-04-30**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

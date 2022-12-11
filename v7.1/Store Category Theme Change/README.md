@@ -1,5 +1,7 @@
 # Store Category Theme Change
 
+### [License][99]
+
 ### Version 0.2d0
 
 #### SS Version 7.1
@@ -45,3 +47,4 @@ Please consider
 * **2021-10-06**
   
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Page Section Video Scrubbing Animation
 
+### [License][99]
+
 ### Version 0.3.0
 
 #### SS Version 7.1
@@ -80,3 +82,4 @@ Please consider [making a donation][3].
 [1]: page%20section%20video%20scrubbing%20animation.html#L1
 [2]: https://toms-web-consulting-demos.squarespace.com/page-section-video-scrubbing-animation?password=twcdemos
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

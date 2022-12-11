@@ -1,5 +1,7 @@
 # Cover Page Action Navigation Link Add
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.0 ([Bedford template family][1], [Brine template family][2])
@@ -38,3 +40,4 @@ Please consider
 
 [1]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

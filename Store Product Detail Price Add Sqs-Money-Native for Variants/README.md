@@ -1,5 +1,7 @@
 # Store Product Detail Price Add Sqs-Money-Native for Variants
 
+### [License][99]
+
 ### Version 0.1d5
 
 #### SS Versions 7.1, 7.0
@@ -62,3 +64,4 @@ Please consider
 * **2021-08-21**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

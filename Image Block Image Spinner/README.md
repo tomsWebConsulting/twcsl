@@ -1,5 +1,7 @@
 # Image Block Image Spinner
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Versions 7.1, 7.0
@@ -35,3 +37,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-09-16**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

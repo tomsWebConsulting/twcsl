@@ -1,5 +1,7 @@
 # Change Cart Continue Shopping Text
 
+### [License][99]
+
 ### Version 1.0
 
 #### SS Versions 7.0, 7.1
@@ -30,3 +32,4 @@ Please consider
 * **2021-05-21**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Change Image Card, Image to Text Width Ratios
 
+### [License][99]
+
 ### Version 0.2d0
 
 ---
@@ -23,3 +25,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-02-15**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

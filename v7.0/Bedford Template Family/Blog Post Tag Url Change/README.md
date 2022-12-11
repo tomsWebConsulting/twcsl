@@ -1,5 +1,7 @@
 # Blog Post Tag Url Change
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.0 ([Bedford template family][1])
@@ -31,3 +33,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   * initial version
 
 [1]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

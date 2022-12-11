@@ -1,5 +1,7 @@
 # Menu Mobile Outline
 
+### [License][99]
+
 ### Version 0.2.0
 
 #### SS Version 7.1
@@ -45,3 +47,4 @@ Please consider [making a donation][3].
 [1]: menu%20mobile%20outline.css#L1
 [2]: menu%20mobile%20outline.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

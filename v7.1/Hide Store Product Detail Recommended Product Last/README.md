@@ -1,5 +1,7 @@
 # Hide Store Product Detail Recommended Product Last
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.1
@@ -28,3 +30,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-08-04**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

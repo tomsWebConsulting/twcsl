@@ -1,5 +1,7 @@
 # Store Category Section Reveal
 
+### [License][99]
+
 ### Version 0.1.1
 
 #### SS Version 7.1
@@ -58,3 +60,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
 [2]: store%20category%20section%20reveal.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

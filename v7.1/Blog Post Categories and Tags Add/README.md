@@ -1,5 +1,7 @@
 # Blog Post Categories and Tags Add
 
+### [License][99]
+
 ### Version 0.2.0
 
 #### SS Version 7.1
@@ -45,3 +47,4 @@ Please consider [making a donation][4].
 [2]: blog%20post%20categories%20and%20tags%20add.html#L1
 [3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

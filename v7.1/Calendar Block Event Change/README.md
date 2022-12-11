@@ -1,5 +1,7 @@
 # Calendar Block Event Change
 
+### [License][99]
+
 ### Version 0.2.0
 
 #### SS Version 7.1
@@ -40,3 +42,4 @@ Please consider [making a donation][2].
 
 [1]: calendar%20block%20event%20change.html#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

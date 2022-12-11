@@ -1,5 +1,7 @@
 # Store Product Price Swap Sale Original
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Versions 7.1, 7.0
@@ -42,3 +44,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store%20price%20change
 [2]: store%20product%20price%20swap%20sale%20original.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

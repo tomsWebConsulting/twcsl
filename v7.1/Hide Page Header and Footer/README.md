@@ -1,5 +1,7 @@
 # Hide Page Header and Footer
 
+### [License][99]
+
 ### Version 1.0
 
 ---
@@ -32,3 +34,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   </p>
 
 -->
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Hide Product Detail Add to Cart, Price, and Quantity
 
+### [License][99]
+
 ### Version 0.1d1
 
 ---
@@ -28,3 +30,4 @@ Please consider
 * **2021-07-12**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

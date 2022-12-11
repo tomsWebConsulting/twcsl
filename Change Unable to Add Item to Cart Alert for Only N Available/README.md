@@ -1,5 +1,7 @@
 # Change Unable to Add Item to Cart Alert for Only N Available
 
+### [License][99]
+
 ### Version 0.1d1
 
 ---
@@ -32,3 +34,4 @@ Please consider
 * **2021-05-16**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -1,5 +1,7 @@
 # Cart Prices Change
 
+### [License][99]
+
 ### Version 0.3.1
 
 #### SS Versions 7.1, 7.0
@@ -83,3 +85,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [2]: cart%20prices%20change.html#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

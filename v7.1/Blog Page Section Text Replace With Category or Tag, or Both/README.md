@@ -1,5 +1,7 @@
 # Blog Page Section Text Replace With Category or Tag, or Both
 
+### [License][99]
+
 ### Version 0.5d0
 
 #### SS Version 7.1
@@ -45,3 +47,4 @@ Please consider
 * **2021-02-24**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

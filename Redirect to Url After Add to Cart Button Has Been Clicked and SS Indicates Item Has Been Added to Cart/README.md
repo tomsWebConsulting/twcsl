@@ -1,5 +1,7 @@
 # Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart
 
+### [License][99]
+
 ### Version 0.1d2
 
 #### SS Versions 7.1, 7.0
@@ -34,3 +36,4 @@ Please consider
 * **2021-05-23**
 
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

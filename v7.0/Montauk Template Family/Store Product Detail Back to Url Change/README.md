@@ -1,5 +1,7 @@
 # Store Product Detail Back to Url Change
 
+### [License][99]
+
 ### Version 0.1d0
 
 #### SS Version 7.0 ([Montauk][1])
@@ -35,3 +37,4 @@ Please consider
   * initial version
 
 [1]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

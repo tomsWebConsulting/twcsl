@@ -1,5 +1,7 @@
 # Blog Post Title Each Word Span Tag Add
 
+### [License][99]
+
 ### Version 0.1.0
 
 #### SS Version 7.1
@@ -61,3 +63,4 @@ Please consider [making a donation][7].
 [5]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [6]: https://toms-web-consulting-demos.squarespace.com/blog-bptewsta/blog-post-title-one-cfdgj?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

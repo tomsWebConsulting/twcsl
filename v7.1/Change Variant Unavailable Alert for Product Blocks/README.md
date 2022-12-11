@@ -1,5 +1,7 @@
 # Change Variant Unavailable Alert for Product Blocks
 
+### [License][99]
+
 ### Version 0.1d2
 
 ---
@@ -30,3 +32,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2020-12-21**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

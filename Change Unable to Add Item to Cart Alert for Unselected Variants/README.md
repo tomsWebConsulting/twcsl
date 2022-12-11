@@ -1,5 +1,7 @@
 # Change Unable to Add Item to Cart Alert for Unselected Variants
 
+### [License][99]
+
 ### Version 0.2d4
 
 ---
@@ -55,3 +57,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 * **2021-05-08**
 <br><br>
   * initial version
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
