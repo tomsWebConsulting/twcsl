@@ -2,6 +2,8 @@
 
   begin cta button text and url change based on language
   
+  License      : < https://bit.ly/3F8sn8W >
+  
   Version      : 0.2d0
   
   SS Version   : 7.1

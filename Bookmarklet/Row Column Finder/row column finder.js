@@ -4,6 +4,8 @@
   
     row column finder
     
+    License       : < https://bit.ly/3F8sn8W >
+    
     Version       : 0.1.2
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >

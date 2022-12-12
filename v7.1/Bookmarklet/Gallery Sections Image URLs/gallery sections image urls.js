@@ -4,6 +4,8 @@
   
     gallery sections image urls
     
+    License       : < https://bit.ly/3F8sn8W >
+    
     Version       : 0.1.1
     
     SS Version    : 7.1

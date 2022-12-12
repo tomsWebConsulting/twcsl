@@ -4,6 +4,8 @@
   
     dropbox files download urls
     
+    License       : < https://bit.ly/3F8sn8W >
+    
     Version       : 0.1.0
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >

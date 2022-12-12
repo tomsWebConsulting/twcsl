@@ -4,6 +4,8 @@
   
     blog post date past go to
     
+    License     : < https://bit.ly/3F8sn8W >
+    
     Version     : 0.1.0
     
     SS Version  : 7.1
