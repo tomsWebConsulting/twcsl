@@ -38,4 +38,5 @@ Please consider
 * **2020-10-17**
 
   * initial version
+
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
