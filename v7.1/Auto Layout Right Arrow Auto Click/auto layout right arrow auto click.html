@@ -8,9 +8,13 @@
       
       License       : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.2d2
+      Version       : 0.2.3
       
       SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Yes
       
       Dependancies  : jQuery
       
@@ -96,6 +100,10 @@
     
       const click = ( ) => {
       
+        const $element = $( '.sqs-modal-lightbox-focused' );
+        
+        if ( $element.length ) return; // bail if modal lightbox focused
+        
         $this.click ( );
         
         }

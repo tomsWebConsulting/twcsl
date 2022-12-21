@@ -1,12 +1,12 @@
 # Auto Layout Right Arrow Auto Click
 
-### [License][99]
+### [License][1]
 
-### Version 0.2d2
+### Version 0.2.3
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Yes
 
 ---
 
@@ -18,10 +18,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[auto layout right arrow auto click.html](auto%20layout%20right%20arrow%20auto%20click.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+* Add code from file **[auto layout right arrow auto click.html][2]** to
+  Page Settings > Advanced > Page Header Code Injection for the page. Read the
+  code for any instructions within.
 
 ## Note
 
@@ -29,16 +28,19 @@ Only slideshow banner and carousel auto layouts are supported.
 
 ## Demo
 
-You can see a
-[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/auto-layout-right-arrow-auto-click?password=twcdemos).
+You can see a [demo of this effect here][3].
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2022-02-18**
+  
+  * fix for auto clicks closing lightbox forms
+  * bumped version to 0.2.3
+  
 * **2022-02-18**
   
   * target mobile right arrow for click. it is there regardless of arrow setting
@@ -58,4 +60,7 @@ Please consider
   
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: auto%20layout%20right%20arrow%20auto%20click.html#L1
+[3]: https://toms-web-consulting-demos.squarespace.com/auto-layout-right-arrow-auto-click?password=twcdemos
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
