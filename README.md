@@ -405,13 +405,13 @@ not necessarily designed to work together.
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
-  * [Store Product Detail Add to Cart, Mark, Price, Quantity Hide](v7.1/Store%20Product%20Detail%20Add%20to%20Cart,%20Mark,%20Price,%20Quantity%20Hide)
-    
   * [Store Product Detail Additional Info Add Footer Boilerplate](v7.1/Store%20Product%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
     
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
   * [Store Product Detail Gallery Thumbnails Pill Segmented](v7.1/Store%20Product%20Detail%20Gallery%20Thumbnails%20Pill%20Segmented)
+    
+  * [Store Product Detail Hide](v7.1/Store%20Product%20Detail%20Hide)
     
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
     
