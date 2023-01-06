@@ -1,12 +1,12 @@
 # Add Buttons to Header
 
-### [License][99]
+### [License][1]
 
 ### Version 0.7d1
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Not Applicable
 
 ---
 
@@ -18,19 +18,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[add buttons to header.css](add%20buttons%20to%20header.css#L1)**
-  to Design > Custom CSS.
+* Add code from file **[add buttons to header.css][2]** to Design > Custom CSS.
   
-* Add code from file
-  **[add buttons to header.html](add%20buttons%20to%20header.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER. Read the code for any
-  instructions within.
+* Add code from file **[add buttons to header.html][3]** to Settings >
+  Advanced > Code Injection > FOOTER. Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -58,4 +53,8 @@ Please consider
     using LESS mixins the choices are row or column direction and normal or
     reverse order
   * bumped version to 0.6d0
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: add%20buttons%20to%20header.css#L1
+[3]: add%20buttons%20to%20header.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
