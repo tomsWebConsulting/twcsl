@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 203 effects. Each effect has it's own version number, code,
+twcsl contains 204 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -98,6 +98,8 @@ not necessarily designed to work together.
 * [Change Unable to Add Item to Cart Alert for Out of Stock Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Out%20of%20Stock%20Variants)
   
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
+  
+* [Configurator Page Text and Image Blocks](Configurator%20Page%20Text%20and%20Image%20Blocks)
   
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
   
