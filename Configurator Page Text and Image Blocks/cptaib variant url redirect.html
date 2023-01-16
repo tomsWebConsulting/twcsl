@@ -1,0 +1,88 @@
+<script>
+
+  const cptaibVur = ( codePrefixSuffix, label, options, variantsUrlMap ) => {
+  
+    /*
+    
+      cptaib variant url redirect
+      
+      License         : < https://bit.ly/3F8sn8W >
+      
+      Version         : 0.1.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Yes
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : configurator page text and image blocks
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // do not change anything below, there be the borg here
+    
+    const debugFlag = false;
+    
+    if ( debugFlag ) {
+    
+      console.log ( codePrefixSuffix );
+      
+      console.log ( label );
+      
+      console.log ( options );
+      
+      }
+      
+    let keys = Object.keys ( localStorage );
+    
+    keys = $.map ( keys, function ( key ) {
+    
+      const b = key.startsWith ( `${ codePrefixSuffix },${ label },` );
+      
+      if ( ! b ) key = null;
+      
+      return key;
+      
+      } );
+      
+    const variants = $.map ( options, function ( option ) {
+    
+      key = $.map ( keys, function ( key ) {
+      
+        const b = key.endsWith ( `,${ option }` );
+        
+        if ( ! b ) key = null;
+        
+        return key;
+        
+        } )
+        
+        [ 0 ];
+        
+      const variant = localStorage.getItem ( key );
+      
+      return variant;
+      
+      } )
+      
+      .join ( ',' );
+      
+    location = variantsUrlMap [ variants ];
+    
+    };
+    
+  </script>

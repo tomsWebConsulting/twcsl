@@ -1,0 +1,407 @@
+<!--
+
+  begin configurator page text and image blocks
+  
+  License         : < https://bit.ly/3F8sn8W >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                    Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                    Stella, Thorne, Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependancies    : jQuery
+  
+  Note            : this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    #page .page-section, /* 7.1 */
+    .Index /* 7.0 ( Brine ) */
+    
+      {
+      
+        --twc-cptaib-color : gray;
+        --twc-cptaib-hilight-color : green;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.cptaib = {
+    
+      /*
+      
+        the cptaibVur callback name can be replaced with a custom one of your
+        own design. the callback must accept the following parameters :
+        codePrefixSuffix, label, and options
+        
+        */
+        
+      doneCallback : cptaibVur,
+      
+      // replace undefined with the name of your done function name
+      
+      // doneCallback = undefined;
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #page .page-section, /* 7.1 */
+    .Index /* 7.0 ( Brine ) */
+    
+      {
+      
+        --twc-cptaib-block-display : none;
+        
+        }
+        
+    /* restore first image block padding top */
+    
+    .sqs-layout:not( .sqs-editing ) .sqs-row .sqs-block-image:not( .float ):not( .sqs-feature-gated-wrapper ):first-child {
+    
+      padding-top : 17px;
+      
+      }
+      
+    html:not( .squarespace-damask ) #page .sqs-block, /* 7.1 */
+    html:not( .squarespace-damask ) .Index-page .sqs-block /* 7.0 ( Brine ) */
+    
+      {
+      
+        display : var( --twc-cptaib-block-display );
+        
+        }
+        
+    html:not( .squarespace-damask ) #page .sqs-block.twc-cptaib-hide, /* 7.1 */
+    html:not( .squarespace-damask ) .Index-page .sqs-block.twc-cptaib-hide /* 7.0 ( Brine ) */
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    html:not( .squarespace-damask ) .twc-cptaib-variant {
+      
+      border-bottom : thin solid var( --twc-cptaib-color );
+      
+      }
+      
+    html:not( .squarespace-damask ) .twc-cptaib-variant:hover,
+    html:not( .squarespace-damask ) .twc-cptaib-variant-selected
+    
+      {
+      
+        border-bottom : 2px solid var( --twc-cptaib-hilight-color );
+        color : var( --twc-cptaib-hilight-color );
+        cursor : pointer;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      debugger;
+      
+      const doneCallback = twc.cptaib.doneCallback;
+      
+      if ( doneCallback == undefined ) return; // bail if no done callback
+      
+      const blockSelector = '.sqs-block';
+      
+      const codePrefixSuffix = 'twc-cptaib';
+      
+      const debugFlag = false;
+      
+      const layoutSelector = '.sqs-layout, .fluid-engine';
+      
+      const options = [ ];
+      
+      /* 7.1, 7.0 ( Brine ) */
+      
+      const sectionSelector = '.page-section, .Index-page';
+      
+      const variantsUrlMap = { };
+      
+      const classHide = `${ codePrefixSuffix }-hide`;
+      
+      const variantSelectedSelector = `${ codePrefixSuffix }-variant-selected`;
+      
+      let selector = `x-${ codePrefixSuffix }`;
+      
+      const $element = $( selector );
+      
+      const label = $element.attr ( 'data-label' );
+      
+      selector = `${ blockSelector }, .fe-block`;
+      
+      $element
+      
+        .parents ( selector )
+        
+        .last ( )
+        
+        .remove ( );
+        
+      selector = `.sqs-block-html p:contains("${ codePrefixSuffix },")`;
+      
+      $( selector ).each ( function ( ) {
+      
+        let $this = $( this );
+        
+        const selector = '.sqs-block-html p:contains("exclude")';
+        
+        const option = $this
+          
+          .text ( )
+          
+          .split ( ',' )
+          
+          [ 1 ]
+          
+          .trim ( );
+          
+        if ( debugFlag )
+        
+          console.log ( option );
+          
+        const optionKey = `${ codePrefixSuffix },${ label },${ option }`;
+        
+        if ( debugFlag )
+        
+          console.log ( optionKey );
+          
+        const $option = $this
+        
+          .parents ( layoutSelector );
+          
+        options.push ( option );
+        
+        $this.remove ( );
+        
+        $this = $( selector, $option );
+        
+        const $textBlocksExclude = $this
+        
+          .parents ( '.sqs-block-html' );
+          
+        $this.remove ( );
+        
+        const $textBlocks = $option
+        
+          .find ( '.sqs-block-html' )
+          
+          .not ( $textBlocksExclude );
+          
+        if ( debugFlag )
+        
+          console.log ( $textBlocks );
+          
+        const $imageBlocks = $option
+        
+          .parents ( sectionSelector )
+          
+          .next ( )
+          
+          .addClass ( `${ codePrefixSuffix }-images` )
+          
+          .find ( '.sqs-block-image' )
+          
+          .addClass ( classHide )
+            
+          .first ( )
+          
+            .removeClass ( classHide )
+            
+            .end ( );
+            
+        if ( debugFlag )
+        
+          console.log ( $imageBlocks );
+          
+        $textBlocks
+        
+          .each ( function ( i ) {
+          
+            const $this = $( this )
+            
+            $this.addClass ( `${ codePrefixSuffix }-variant` )
+            
+            if ( ! i ) {
+            
+              const variant = $( 'p', $this )
+              
+                .text ( )
+                
+                .trim ( );
+                
+              $this.addClass ( variantSelectedSelector )
+              
+              localStorage.setItem ( optionKey, variant );
+              
+              }
+              
+            } )
+            
+          .click ( function ( ) {
+          
+            const i = $textBlocks.index ( this );
+            
+            const $this = $( this );
+            
+            const variant = $this
+            
+              .text ( )
+              
+              .trim ( );
+              
+            $textBlocks.removeClass ( variantSelectedSelector );
+            
+            $this.addClass ( variantSelectedSelector );
+            
+            $imageBlocks
+            
+              .addClass ( classHide )
+              
+              .eq ( i )
+              
+              .removeClass ( classHide );
+              
+            localStorage.setItem ( optionKey, variant );
+            
+            } );
+            
+        } );
+        
+      selector = `.sqs-block-button a[href="#${ codePrefixSuffix }"]`;
+      
+      const $button = $( selector );
+      
+      const $layout = $button.parents ( layoutSelector );
+      
+      const isFluidEngine = $( $layout )
+      
+        .hasClass ( 'fluid-engine' );
+        
+      let $textBlockLast = $layout
+      
+        .find ( '.sqs-block-html' )
+        
+        .last ( )
+        
+        .find ( '[href]' )
+        
+        .each ( function ( ) {
+        
+          const $this = $( this );
+          
+          const href = $( this ).attr ( 'href' );
+          
+          const variants = $this
+          
+            .text ( )
+            
+            .trim ( );
+            
+          variantsUrlMap [ variants ] = href;
+          
+          } )
+          
+        .end ( );
+        
+      if ( isFluidEngine )
+      
+        $textBlockLast = $textBlockLast
+        
+          .parent ( '.fe-block' )
+          
+      $textBlockLast.remove ( );
+      
+      $button.click ( function ( event ) {
+      
+        doneCallback ( codePrefixSuffix, label, options, variantsUrlMap );
+        
+        event.preventDefault ( );
+        
+        } );
+        
+      if ( isFluidEngine ) {
+      
+        // begin shrink fluid engine rows
+        
+          const gridRowEnd = $layout
+          
+            .find ( '.fe-block' )
+            
+            .last ( )
+            
+            .css ( 'grid-row-end' );
+            
+          const css = `repeat( ${ gridRowEnd }, minmax( calc( var( `
+          
+            +
+            
+            '--container-width ) * var( --row-height-scaling-factor ) ), '
+            
+            +
+            
+            'auto ) )';
+            
+          $layout.css ( 'grid-template-rows', css );
+          
+          // end shrink fluid engine rows
+          
+          }
+          
+      selector = [
+      
+        '#page .page-section', // 7.1
+        
+        '.Index', // 7.0
+        
+        ]
+        
+        .join ( ',' );
+        
+      $( selector ).css ( '--twc-cptaib-block-display', 'block' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end configurator page text and image blocks -->

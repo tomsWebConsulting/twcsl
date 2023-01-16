@@ -1,0 +1,104 @@
+<script>
+
+  $( ( ) => {
+
+    /*
+    
+      cptaib store page product detail options and variants select
+      
+      License         : < https://bit.ly/3F8sn8W >
+      
+      Version         : 0.1.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Not Applicable
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                        Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependancies    : configurator page text and image blocks
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+    
+    const initialize = ( ) => {
+    
+      const codePrefixSuffix = 'twc-cptaib';
+      
+      let selector = `x-${ codePrefixSuffix }`;
+      
+      const $element = $( selector );
+      
+      const label = $element.attr ( 'data-label' );
+      
+      const keyPrefix = `${ codePrefixSuffix },${ label },`;
+      
+      $element
+      
+        .parents ( '.sqs-block-code' )
+        
+        .remove ( );
+        
+      selector = '.product-details .variant-option select';
+      
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const option = $this.attr ( 'data-variant-option-name' );
+        
+        const key = `${ keyPrefix }${ option }`;
+        
+        const variant = localStorage.getItem ( key );
+        
+        if ( variant == null ) return true; // bail if no variant
+        
+        $this.val ( variant );
+        
+        const node = $this.get ( 0 );
+        
+        Y
+        
+          .one ( node )
+          
+          .simulate ( 'change' );
+          
+        } );
+        
+      };
+      
+    switch ( true ) {
+    
+      case twcsl.ss.is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case twcsl.ss.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
+      
+    } );
+    
+  </script>
