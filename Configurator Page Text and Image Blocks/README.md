@@ -6,7 +6,7 @@
 
 #### SS Versions 7.1, 7.0 ([Brine template family][2])
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Yes
 
 ---
 
@@ -105,7 +105,7 @@ Please consider [making a donation][12].
 [6]: read%20me%20assets/option%20variant%20text.png
 [7]: read%20me%20assets/option%20variant%20image.png
 [8]: read%20me%20assets/done%20options%20variants%20links.png
-[9]: https://github.com/tomsWebConsulting/twcsl/blob/main/Bookmarklet/Text%20Block%20Easy%20Links/text%20block%20easy%20links.bookmarklet#L1
-[10]: cptaib%20store%20page%20product%20detail%20options%20and%20variants%20%20select.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/Bookmarklet/Text%20Block%20Easy%20Links#text-block-easy-links
+[10]: cptaib%20store%20page%20product%20detail%20options%20and%20variants%20select.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/configurator-page-text-and-image-blocks?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
