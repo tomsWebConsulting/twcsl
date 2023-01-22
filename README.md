@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 204 effects. Each effect has it's own version number, code,
+twcsl contains 205 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -192,6 +192,8 @@ not necessarily designed to work together.
     * [Site Tagline Link](v7.0/Brine%20Template%20Family/Site%20Tagline%20Link)
       
   * [Cover Page Action Navigation Link Add](v7.0/Cover%20Page%20Action%20Navigation%20Link%20Add)
+    
+  * [Member Area Sign In and up Dialog Change](v7.0/Member%20Area%20Sign%20In%20and%20up%20Dialog%20Change)
     
   * [Montauk Template Family](v7.0/Montauk%20Template%20Family)
     
