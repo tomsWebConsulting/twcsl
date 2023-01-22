@@ -1,0 +1,266 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin member area sign in and up dialog change
+      
+      License      : < https://bit.ly/3F8sn8W >
+      
+      Version      : 0.1.0
+      
+      SS Version   : 7.0
+      
+      Dependancies : jQuery
+      
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      /*
+      
+        leaving signInCss, signInTitle, signUpCss, or signUpTitle unaltered
+        tells the code to not make changes to those elements
+        
+        */
+        
+      const signInTitle = '[enter sign in title text here between single quotes replacing square brackets]';
+      
+      const signInCss = `
+      
+        [enter sign in css here between single quotes replacing square brackets]
+        
+        `;
+        
+      const signInTitle = '[enter sign up title text here between single quotes replacing square brackets]';
+      
+      const signUpCss = `
+      
+        [enter sign up css here between single quotes replacing square brackets]
+        
+        `;
+        
+      // do not change anything below, there be the borg here
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const observer = new MutationObserver ( mutations => {
+      
+        $.each ( mutations, function ( ) {
+        
+          // bail if no nodes added
+          
+          if ( ! this.addedNodes.length ) return true;
+          
+          const node = this.addedNodes [ 0 ];
+          
+          const b = node.tagName != 'IFRAME' && node.id != 'accountFrame' &&
+          
+            node.getAttribute ( 'src' ) != '';
+            
+          if ( b ) return true; // bail if not sign in
+          
+          const data = {
+          
+            css : {
+            
+              in : signInCss,
+              
+              up : signUpCss
+              
+              },
+              
+            title : {
+            
+              in : signInTitle,
+              
+              up : signUpTitle
+              
+              }
+              
+            };
+            
+          $( node ).on ( 'load', data, function ( event ) {
+          
+            const dcmnt = this
+            
+              .contentDocument;
+              
+            const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
+            
+            const id = 'user-account-login-root';
+            
+            const script = dcmnt.createElement ( 'script' );
+            
+            script.innerHTML = `
+            
+              const observer = new MutationObserver ( mutations => {
+              
+                mutations.forEach ( mutation => {
+                
+                  // bail if no nodes added
+                  
+                  if ( ! mutation.addedNodes.length ) return;
+                  
+                  const node = mutation.addedNodes [ 0 ];
+                  
+                  let selector = 'button[type="submit"]' +
+                  
+                    '[data-test="create-account-create-button"]';
+                    
+                  const isSignUp = node.querySelector ( selector ) != null;
+                  
+                  selector = 'button[type="submit"]' +
+                  
+                    '[data-test="login-button"]';
+                    
+                  const isSignIn = node.querySelector ( selector ) != null;
+                  
+                  // bail if not sign in or up
+                  
+                  if ( ! ( isSignIn || isSignUp ) ) return;
+                  
+                  /* begin remove style element */
+                  
+                    selector = 'style[data-twc-masiaudc]';
+                    
+                    const style = document
+                    
+                      .body
+                      
+                      .querySelector ( selector );
+                      
+                    if ( style != null ) style.remove ( );
+                    
+                    /* end remove style element */
+                    
+                  document
+                  
+                    .getElementById ( '${ id }' )
+                    
+                    .classList
+                    
+                    .add ( 'twc-masiaudc' );
+                    
+                  // begin add css
+                  
+                    let css;
+                    
+                    switch ( true ) {
+                    
+                      case isSignIn :
+                      
+                        css = \`${ event.data.css.in }\`;
+                        
+                        break;
+                        
+                      case isSignUp :
+                      
+                        css = \`${ event.data.css.up }\`;
+                        
+                        break;
+                        
+                      }
+                      
+                    let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
+                    
+                    const addCSS = ! p.test ( css );
+                    
+                    if ( addCSS ) {
+                    
+                      const style = document.createElement ( 'style' );
+                      
+                      style.innerHTML = css;
+                      
+                      style.setAttribute ( 'data-twc-masiaudc', '' );
+                      
+                      document.body.appendChild ( style );
+                      
+                      }
+                      
+                    // end add css
+                    
+                  // begin change title
+                  
+                    let title;
+                    
+                    switch ( true ) {
+                    
+                      case isSignIn :
+                      
+                        title = \`${ event.data.title.in }\`; 
+                        
+                        break;
+                        
+                      case isSignUp :
+                      
+                        title = \`${ event.data.title.up }\`;
+                        
+                        break;
+                        
+                      }
+                      
+                    p = new RegExp ( '^\\\\[.+\\\\]$' );
+                    
+                    const changeTitle = ! p.test ( title );
+                    
+                    if ( changeTitle )
+                    
+                      node
+                      
+                        .getElementsByTagName ( 'h1' ) [ 0 ]
+                        
+                        .innerHTML = title;
+                        
+                      // end change title
+                      
+                  } ); // end mutations
+                  
+                } ); // end observer
+                
+              // start listening for changes in specified element
+              
+              const node = document
+              
+                .getElementById ( '${ id }' )
+                
+                .lastChild;
+                
+              observer.observe ( node, {
+              
+                childList : true
+                
+                } );
+                
+              `;
+              
+            this
+            
+              .contentDocument
+              
+              .getElementsByTagName ( 'head' ) [ 0 ]
+              
+              .appendChild ( script );
+              
+            } ); // end on load
+            
+          return; // bail out
+          
+          } ); // end mutations
+          
+        } ); // end observer
+        
+      observer.observe ( document.body, {
+      
+        childList : true
+        
+        } );
+        
+      // end member area sign in and up dialog change
+      
+    } );
+    
+  </script>
