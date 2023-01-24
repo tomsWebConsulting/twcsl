@@ -1,8 +1,8 @@
 # Form Block Select Field Post-submit Redirect Change
 
-### [License][6]
+### [License][1]
     
-### Version 0.2d1
+### Version 0.2.2
 
 #### SS Versions 7.1, 7.0
 
@@ -19,13 +19,13 @@
   ```
   
 * Add code from file **[form block select field post-submit redirect
-  change.html][1]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Please see [per-page code injection][2]. Read the code for any
+  change.html][2]** to Page Settings > Advanced > Page Header Code Injection for
+  the page. Please see [per-page code injection][3]. Read the code for any
   instructions within.
   
 * Add a form block to your page and set up as desired.
   
-* For the form [add a post-submit redirect][3]. In the REDIRECT URL field enter
+* For the form [add a post-submit redirect][4]. In the REDIRECT URL field enter
   **#**.
   
 * For the select field description on a line by itself enter **fbsfpsrc**. This
@@ -57,7 +57,7 @@
 
 ## Demo
 
-You can see a [demo of this effect here][4].
+You can see a [demo of this effect here][5].
 
 ## Note
 
@@ -65,10 +65,15 @@ This code does not work for form blocks with lightbox toggled on.
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][6].
 
 ## Changes
 
+* **2023-01-24**
+
+  * fix for description being set
+  * bumped version to 0.2.2
+  
 * **2021-12-02**
 
   * no functional changes, fixed some formatting issues in code and read me
@@ -90,9 +95,9 @@ Please consider [making a donation][5].
 
   * initial version
 
-[1]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[3]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
-[4]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[6]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
+[5]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
