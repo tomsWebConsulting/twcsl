@@ -1,0 +1,49 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin page section attribute id add
+      
+      SS Version : 7.1
+      
+      Note       : excludes header and footer sections
+      
+      */
+      
+      /*
+      
+        the ids are added by position so for each section an entry must be added
+        to sectionIds, if you don't want to add an id to a particular section,
+        leave the id empty
+        
+        */
+        
+      const sectionIds = [
+      
+        '',
+        
+        'about',
+        
+        'contact',
+        
+        ]
+        
+      // do not change anything below, there be the borg here
+      
+      $( '#sections section' ).each ( function ( i ) {
+      
+        const sectionId = sectionIds [ i ];
+        
+        if ( ! sectionId ) return true;
+        
+        $( this ).attr ( 'id', sectionId );
+        
+        } );
+        
+      // end page section attribute id add
+      
+    } );
+    
+  </script>
