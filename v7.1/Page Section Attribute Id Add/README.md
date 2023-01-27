@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -21,6 +21,13 @@
 * Add code from file **[page section attribute id add.html][2]** to
   Page Settings > Advanced > Page Header Code Injection for the page. Read the
   code for any instructions within.
+  
+* For each section you want to add an id add a code block to the section. In the
+  code add the following.
+  
+  ```html
+  <x-twc-psaia>[enter id here replacing square brackets]</x-twc-psaia>
+  ```
 
 ## Make a Donation
 
@@ -28,12 +35,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2021-04-30**
+* **2023-01-26**
 
-  * use SS focal point data to position background image
-  * fixed issue with scroll fade effect breaking when window is resized
-  * bumped version to 0.3d0
-  -->
+  * use code blocks to configure code
+  * bumped version to 0.2.0
+  
 * **2021-04-20**
 
   * initial version
