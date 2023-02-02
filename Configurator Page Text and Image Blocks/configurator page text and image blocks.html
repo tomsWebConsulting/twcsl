@@ -4,7 +4,7 @@
   
   License         : < https://bit.ly/3F8sn8W >
   
-  Version         : 0.1.0
+  Version         : 0.2.0
   
   SS Versions     : 7.1, 7.0
   
@@ -13,7 +13,9 @@
   Engine
   Compatible      : Yes
   
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+  v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+                    
+                    Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
                     Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
                     Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
                     Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
@@ -35,6 +37,7 @@
   <style>
   
     #page .page-section, /* 7.1 */
+    #content, /* 7.0 ( Bedford ) */
     .Index /* 7.0 ( Brine ) */
     
       {
@@ -77,6 +80,7 @@
   <style>
   
     #page .page-section, /* 7.1 */
+    #content, /* 7.0 ( Bedford ) */
     .Index /* 7.0 ( Brine ) */
     
       {
@@ -94,6 +98,7 @@
       }
       
     html:not( .squarespace-damask ) #page .sqs-block, /* 7.1 */
+    html:not( .squarespace-damask ) #content .sqs-block, /* 7.0 ( Bedford ) */
     html:not( .squarespace-damask ) .Index-page .sqs-block /* 7.0 ( Brine ) */
     
       {
@@ -103,6 +108,7 @@
         }
         
     html:not( .squarespace-damask ) #page .sqs-block.twc-cptaib-hide, /* 7.1 */
+    html:not( .squarespace-damask ) #content .sqs-block.twc-cptaib-hide, /* 7.0 ( Bedford ) */
     html:not( .squarespace-damask ) .Index-page .sqs-block.twc-cptaib-hide /* 7.0 ( Brine ) */
     
       {
@@ -136,8 +142,6 @@
     
       if ( window.frameElement !== null ) return; // bail if in Preview
       
-      debugger;
-      
       const doneCallback = twc.cptaib.doneCallback;
       
       if ( doneCallback == undefined ) return; // bail if no done callback
@@ -152,9 +156,19 @@
       
       const options = [ ];
       
-      /* 7.1, 7.0 ( Brine ) */
+      /* ,  */
       
-      const sectionSelector = '.page-section, .Index-page';
+      const sectionSelector = [
+      
+        '.page-section', // 7.1
+        
+        '.index-section', // 7.0 ( Bedford )
+        
+        '.Index-page', // 7.0 ( Brine )
+        
+        ]
+        
+        .join ( ', ' );
       
       const variantsUrlMap = { };
       
@@ -388,17 +402,7 @@
           
           }
           
-      selector = [
-      
-        '#page .page-section', // 7.1
-        
-        '.Index', // 7.0
-        
-        ]
-        
-        .join ( ',' );
-        
-      $( selector ).css ( '--twc-cptaib-block-display', 'block' );
+      $( sectionSelector ).css ( '--twc-cptaib-block-display', 'block' );
       
       } );
       
