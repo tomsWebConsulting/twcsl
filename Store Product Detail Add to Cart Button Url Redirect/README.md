@@ -1,22 +1,22 @@
 # Store Product Detail Add to Cart Button Url Redirect
 
-### [License][99]
+### [License][1]
 
-### Version 0.5.0
+### Version 0.6.0
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1], [Pacific template family][2])
+#### SS Versions 7.1, 7.0 ([Bedford template family][4], [Brine template family][3], [Pacific template family][2])
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### v7.1 Fluid Engine Compatibility : Not Applicable
 
 ---
 
 ## Install
 
-* Install [twcsl][3]. After you install twcsl be sure to continue on with the
+* Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
 * Add code from file **[store product detail add to cart button url
-  redirect.html][4]** to Store Settings > Advanced > Page Header Code Injection
+  redirect.html][6]** to Store Settings > Advanced > Page Header Code Injection
   for the store page. Read the code for any instructions within.
   
 * Options
@@ -25,7 +25,7 @@
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][5].
+    * Add the following to a code block in [Additional Info][7].
       
       ```html
       <script>
@@ -59,10 +59,15 @@
     
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-02-01**
+
+  * support v7.0 Bedford template family
+  * bumped version to 0.6.0
+  
 * **2022-11-02**
 
   * add class to atc button
@@ -115,10 +120,11 @@ Please consider [making a donation][6].
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/206545347
-[3]: https://github.com/tomsWebConsulting/twcsl#install-options
-[4]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[4]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[5]: https://github.com/tomsWebConsulting/twcsl#install-options
+[6]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

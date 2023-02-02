@@ -4,11 +4,18 @@
   
   License         : < https://bit.ly/3F8sn8W >
   
-  Version         : 0.5.0
+  Version         : 0.6.0
   
   SS Versions     : 7.1, 7.0
   
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+  
+                    Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
                     Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
                     Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
                     Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
@@ -75,17 +82,25 @@
         
         const options = twc.spdatcbur;
         
+        const prefixSuffix = '.sqs-add-to-cart-button';
+        
         const selector = [
         
-          '.pdp-details .sqs-add-to-cart-button', // 7.1 ( Full, Half, Wrap )
+          '.pdp-details', // 7.1 ( Full, Half, Wrap )
           
           // 7.1 ( Simple ), 7.0 ( Brine, Pacific )
           
-          '.ProductItem-details .sqs-add-to-cart-button',
+          '.ProductItem-details',
+          
+          '#productDetails', // 7.0 ( Bedford )
           
           ]
           
-          .join ( ', ' );
+          .join ( ` ${ prefixSuffix }, ` )
+          
+          +
+          
+          ` ${ prefixSuffix }`;
           
         if ( options.idUrlMap == undefined ) options.idUrlMap = { };
         
