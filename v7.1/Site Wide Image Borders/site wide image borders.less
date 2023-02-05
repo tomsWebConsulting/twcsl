@@ -4,13 +4,13 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.6.0
+  Version       : 0.7.0
   
   SS Version    : 7.1
   
   Fluid
   Engine
-  Compatible    : No
+  Compatible    : Yes
   
   Dependancies  : LESS
   
@@ -24,11 +24,17 @@
                   there is no switch for portfolio projects as SS does not
                   disguinsh them from regular pages
                   
+                  elements that have badges may appear outside the image border
+                  effect. for those cases you will need custom CSS to try and
+                  move the badge as needed
+                  
                   this effect doesn't work with :
                   
                     image block shapes
                     
-                    gallery section > type > grid mansonry
+                    gallery section > type > grid masonry
+                    
+                    video blocks
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -58,6 +64,8 @@
   .image-block( true );
   
   .portfolio-list( true );
+  
+  .product-block( true );
   
   .section-background( false );
   
@@ -95,12 +103,15 @@
     
   .swib-image-block {
   
-    .sqs-block-image .sqs-image-shape-container-element {
+    .sqs-block-image .sqs-image-shape-container-element, // layout engine
+    .sqs-block-image .sqs-image-content, // fluid engine
     
-      .swib-properties( );
+      {
       
-      }
-      
+        .swib-properties( );
+        
+        }
+        
     }
     
   // auto layout
@@ -334,6 +345,18 @@
         
     }
     
+  // product block
+  
+  .product-block( @boolean ) when ( @boolean = true ) {
+  
+    .product-block .image-container img {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
   // section background
   
   .section-background ( @boolean ) when ( @boolean = true ) {
@@ -386,7 +409,7 @@
   
   .summary-block( @boolean ) when ( @boolean = true ) {
   
-    .sqs-block-summary-v2 .img-wrapper {
+    .sqs-block-summary-v2 .img-wrapper img {
     
       .swib-properties( );
       

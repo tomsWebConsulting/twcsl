@@ -1,25 +1,32 @@
 # Site Wide Image Borders
 
-### [License][99]
+### [License][1]
 
-### Version 0.6.0
+### Version 0.7.0
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : No
+#### Fluid Engine Compatible : Yes
 
 ---
 
 ## Quick Install
 
-Add code from file **[site wide image borders.less][1]** to Design > Custom CSS.
+Add code from file **[site wide image borders.less][2]** to Design > Custom CSS.
 
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][3].
 
 ## Changes
 
+* **2023-02-04**
+
+  * fix summary block image border
+  * add support for product blocks
+  * add support for fluid engine
+  * bumped version to 0.7.0
+  
 * **2022-08-06**
 
   * add support for some auto layouts
@@ -79,6 +86,6 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: site%20wide%20image%20borders.less#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: site%20wide%20image%20borders.less#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
