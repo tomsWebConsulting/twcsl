@@ -1,12 +1,12 @@
 # Page Sections Slide Toggle
 
-### [License][99]
+### [License][1]
 
-### Version 0.3.0
+### Version 0.4.0
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Yes
 
 ---
 
@@ -18,49 +18,63 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[page sections slide toggle.html][1]** to
-  Store Settings > Advanced > Page Header Code Injection for the store page.
-  Read the code for any instructions within.
+* Add code from file **[page sections slide toggle.html][2]** to Page Settings >
+  Advanced > Page Header Code Injection for the page. Read the code for any
+  instructions within.
   
-* For each page section you want to be able to toggle.
-
-  * Set it's height to small and alignment to top in the SS editor.
+* Add a section and set it's height to small. This whole section will become a
+  clickable zone for the toggle effect.
   
-  * Add a code block as the first block for the page section.
+  * Add a text block with text to be used as a label for the section.
   
-  * In the code block add the following.
+  * Add a code block and add the following.
   
     ```html
     <x-twc-psst></x-twc-psst>
     ```
     
-  * After the code block add a text block with text to be used as a label for
-    the page section.
+    You can add a **data-toggle-color** attribute to the **&lt;x-twc-psst
+    &gt;&lt;/x-twc-psst&gt;** tag to override the default color the code picks
+    for the toggle icon. An example.
     
-  * From there you can add whatever blocks you want to the section.
-
-## Note
-
-You can add a **data-toggle-arrow-color** attribute to the
-**&lt;x-twc-psst&gt;&lt;/x-twc-psst&gt;** tag to override the default color the code picks
-for the toggle arrow. An example.
-
-```html
-<x-twc-psst data-toggle-arrow-color="red"></x-twc-psst>
-```
+    ```html
+    <x-twc-psst data-toggle-color="red"></x-twc-psst>
+    ```
+    
+    You can add a **data-toggle-icon** attribute to the **&lt;x-twc-psst
+    &gt;&lt;/x-twc-psst&gt;** tag to override the default toggle icon. An
+    example.
+    
+    ```html
+    <x-twc-psst data-toggle-icon="plus"></x-twc-psst>
+    ```
+    
+    This code block will become the toggle icon. Generally you will want to
+    place the code block in horizontal alignment with the previous mentioned
+    text block.
+    
+* Add a section after the previous section and add whatever blocks you want to
+  the section. This will be the content of that gets hidden/shown.
+  
+* You can repeat the previous two section pattern for as many toggle sections as
+  you want.
 
 ## Demo
 
-You can see a
-[demo of this effect here](https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos).
+You can see a [demo of this effect here][3].
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-02-08**
+
+  * add plus toggle icon option
+  * add fluid engine compatibility
+  * bumped version to 0.4.0
+  
 * **2022-04-29**
 
   * user can override default toggle arrow color
@@ -85,5 +99,7 @@ Please consider
 
   * initial version
 
-[1]: page%20sections%20slide%20toggle.html#L1
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: page%20sections%20slide%20toggle.html#L1
+[3]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

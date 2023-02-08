@@ -4,9 +4,13 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.3.0
+  Version       : 0.4.0
   
   SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
   
   Dependancies  : jQuery
   
@@ -24,11 +28,11 @@
   
     html:not( .squarespace-damask ) #page .twc-psst {
     
-      /* the thickness of the toggle arrow line */
+      /* the thickness of the toggle lines */
       
-      --twc-psst-toggle-arrow-thickness : 3px;
+      --twc-psst-toggle-thickness : 3px;
       
-      --twc-psst-toggle-arrow-size : 10px; /* the size of the toggle arrow */
+      --twc-psst-toggle-size : 10px; /* the size of the toggle */
       
       }
       
@@ -44,114 +48,123 @@
     
       // duration, a number (milliseconds) or the word slow or fast
       
-      duration : '[enter duration between single quotes]',
+      duration : '10',
+      
+      // duration : '[enter duration between single quotes replacing square brackets]',
       
       };
       
     </script>
     
-  <!-- do not alter anything below, there be the borg here -->
+  <!-- do not change anything below, there be the borg here -->
   
   <style>
   
-    html:not( .squarespace-damask ) #page .page-section,
-    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > *
+    html:not( .squarespace-damask ) #page {
     
-      {
-      
-        display : none;
-        
-        }
-        
-    html:not( .squarespace-damask ) #page .twc-psst,
-    html:not( .squarespace-damask ) #page .twc-psst--not.page-section
-    
-      {
-      
-        display : -webkit-box;
-        display : -ms-flexbox;
-        display : flex;
-        
-        }
-        
-    /* begin remove some vertical spacing */
-    
-      html:not( .squarespace-damask ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
-      
-        min-height : 0; /* default 33vh */
-        
-        }
-        
-      html:not( .squarespace-damask ) .twc-psst.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
-      
-        padding-bottom : 0; /* default 3.3vmax */
-        padding-top : 0; /* default 3.3vmax */
-        
-        }
-        
-      /* end remove some vertical spacing */
-      
-    /* begin restore some vertical spacing when page section is open */
-    
-      html:not( .squarespace-damask ) .twc-psst--open.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
-      
-        min-height : 33vh;
-        
-        }
-        
-      html:not( .squarespace-damask ) .twc-psst--open.vertical-alignment--top:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ).section-height--small > .content-wrapper {
-      
-        padding-bottom : 3.3vmax;
-        
-        }
-        
-      /* end restore some vertical spacing when page section is open */
-      
-    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) {
-    
-      display : block;
+      --twc-psst-section-display-webkit-box : none;
+      --twc-psst-section-display-ms-flexbox : none;
+      --twc-psst-section-display : none;
       
       }
       
-    html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block:nth-child( 2 ) .sqs-block-content {
+    html:not( .squarespace-damask ) #page .page-section {
     
-      cursor : pointer;
-      display : inline-block;
+      display : var( --twc-psst-section-display-webkit-box );
+      display : var( --twc-psst-section-display-ms-flexbox );
+      display : var( --twc-psst-section-display );
       
       }
       
-    /* begin toggle arrows */
+    /* remove some vertical spacing */
     
-      html:not( .squarespace-damask ) .twc-psst .sqs-row > .sqs-col-12 > .sqs-block-html:nth-child( 2 ) .sqs-block-content > *:first-child::after {
+    html:not( .squarespace-damask ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    
+      min-height : 0; /* default 33vh */
       
-        /* border-style : solid; */
-        border : solid var( --twc-psst-toggle-arrow-color );
-        border-width : 0;
-        border-bottom-width : var( --twc-toggle-arrow-thickness );
-        border-right-width : var( --twc-toggle-arrow-thickness );
-        content : '';
-        display : inline-block;
-        height : var( --twc-psst-toggle-arrow-size );
-        margin-left : 1em;
-        
-        -webkit-transform : rotate( 45deg );
-        -ms-transform : rotate( 45deg );
-        transform : rotate( 45deg );
-        
-        vertical-align : middle;
-        width : var( --twc-psst-toggle-arrow-size );
+      }
+      
+    /* restore some vertical spacing when page section is open */
+    
+    html:not( .squarespace-damask ) .twc-psst--open.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    
+      min-height : 33vh;
+      
+      }
+      
+    /* begin toggles */
+    
+      html:not( .squarespace-damask ) .twc-psst /* .sqs-block-content */ {
+      
+        cursor : pointer;
         
         }
         
-      html:not( .squarespace-damask ) .twc-psst--open .sqs-row > .sqs-col-12 > .sqs-block-html:nth-child( 2 ) .sqs-block-content > *:first-child::after {
+      html:not( .squarespace-damask ) x-twc-psst {
       
-        -webkit-transform : rotate( -135deg );
-        -ms-transform : rotate( -135deg );
-        transform : rotate( -135deg );
+        display : block;
+        height : var( --twc-psst-toggle-size );
+        width : var( --twc-psst-toggle-size );
         
         }
         
-      /* end toggle arrows */
+      /* begin arrow */
+      
+        html:not( .squarespace-damask ) x-twc-psst .arrow {
+        
+          border : solid 0 red;
+          border-bottom-width : var( --twc-psst-toggle-thickness );
+          border-right-width : var( --twc-psst-toggle-thickness );
+          height : 100%;
+          
+          -webkit-transform : rotate( 45deg );
+          -ms-transform : rotate( 45deg );
+          transform : rotate( 45deg );
+          
+          transition : transform 0.2s;
+          
+          width : 100%;
+          
+          }
+          
+        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .arrow {
+        
+          -webkit-transform : rotate( -135deg );
+          -ms-transform : rotate( -135deg );
+          transform : rotate( -135deg );
+          
+          }
+          
+        /* end arrow */
+        
+      /* begin plus */
+      
+        html:not( .squarespace-damask ) x-twc-psst .plus {
+        
+          background-color : red;
+          height : 3px;
+          position : absolute;
+          transition : transform 0.2s;
+          width : 10px;
+          
+          }
+          
+        html:not( .squarespace-damask ) x-twc-psst .plus.vertical-line {
+        
+          transform : rotate( 90deg );
+          transition : transform 0.2s;
+          
+          }
+          
+        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .plus.vertical-line {
+        
+          transform : unset;
+          
+          }
+          
+        /* end plus */
+        
+      /* end toggles */
       
     </style>
     
@@ -161,58 +174,82 @@
     
       if ( window.frameElement !== null ) return; // bail if in preview
       
+      const css = {
+      
+        '--twc-psst-section-display-webkit-box' : '-webkit-box',
+        '--twc-psst-section-display-ms-flexbox' : '-ms-flexbox',
+        '--twc-psst-section-display' : 'flex',
+        
+        };
+        
+      const iconHtml = {
+      
+        arrow : `<div class="arrow">
+      
+          </div>`,
+          
+        plus : `<div class="plus horizontal-line">
+        
+          </div>
+          
+        <div class="plus vertical-line">
+        
+          </div>`,
+          
+        };
+        
       let duration = twc.a63af292.duration;
       
       $( '#page .page-section' ).each ( function ( ) {
       
         const $this = $( this );
         
-        const $element = $( 'x-twc-psst', $this );
+        let $element = $( 'x-twc-psst', $this );
         
-        const isSectionToggle = Boolean ( $element.length );
+        const makeSectionToggle = Boolean ( $element.length );
         
-        if ( ! isSectionToggle ) {
+        if ( ! makeSectionToggle ) return true; // continue if not make toggle
         
-          $this.addClass ( 'twc-psst--not' );
-          
-          return true;
-          
-          }
-          
-        const $blockHtmlFirst =
+        const $sectionNext = $this.next ( '.page-section' );
         
-          $( '.sqs-row > .sqs-col-12 > .sqs-block-html', $this )
-          
-          .eq ( 0 )
+        let color = $element.attr ( 'data-toggle-color' );
+        
+        let icon = $element.attr ( 'data-toggle-icon' );
+        
+        $this
+        
+          .addClass ( 'twc-psst' )
           
           .click ( function ( ) {
           
             if ( ! isNaN ( duration ) ) duration = Number ( duration );
             
-            $( this )
+            $sectionNext.slideToggle ( duration );
             
-              .nextUntil ( '.page-section', '.sqs-row, .sqs-block' )
-              
-              .slideToggle ( duration )
-              
-              .parents ( '.page-section' )
-              
-                .toggleClass ( 'twc-psst--open' );
-                
+            $this.toggleClass ( 'twc-psst--open' );
+            
             } );
             
-        let color = $element.attr ( 'data-toggle-arrow-color' );
-        
-        color = color == undefined ? $blockHtmlFirst.css ( 'color' ) : color;
+        color = color == undefined ? $this.css ( 'color' ) : color;
           
-        $blockHtmlFirst.css ( '--twc-psst-toggle-arrow-color', color );
+        icon = icon == undefined ? 'arrow' : icon;
+          
+        const html = iconHtml [ icon ];
         
-        $this.addClass ( 'twc-psst' );
+        $this.css ( '--twc-psst-toggle-color', color );
         
+        $element.append ( html );
+        
+        $sectionNext
+        
+          .css ( 'display', 'none' )
+          
         } );
         
+      $( '#page' ).css ( css );
+      
       } );
       
     </script>
     
-  <!-- end slide toggle page sections -->
+  <!-- end page sections slide toggle -->
