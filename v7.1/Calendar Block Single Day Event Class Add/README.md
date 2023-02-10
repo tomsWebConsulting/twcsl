@@ -1,6 +1,6 @@
 # Calendar Block Single Day Event Class Add
 
-### [License][99]
+### [License][1]
 
 ### Version 0.1.0
 
@@ -10,29 +10,29 @@
 
 ---
 
-## Quick Install
+## Install
 
-* Install the code from **[Calendar Block Event Change][1]**.
+* Install **[Calendar Block Event Change][2]**. After you install the code be
+  sure to continue on with the rest of the steps.
   
-* Add code from file **[calendar block single day event class add.html][2]** to
+* Add code from file **[calendar block single day event class add.html][3]** to
   Page Settings > Advanced > Page Header Code Injection for the page **before**
   the **calendar block event change** code. Read the code for any instructions
   within.
   
-* In the **calendar block event change** code set the constant itemCallbacks to
-  **cbsdeca**.
+* In the **calendar block event change** code set item to **cbsdeca**.
   
   ```javascript
-  const itemCallbacks = [
-
-    cbsdeca,
-
-    ];
+      item : [
+      
+        cbsdeca,
+        
+        ],
   ```
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -45,7 +45,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Calendar%20Block%20Event%20Change#calendar-block-event-change
-[2]: calendar%20block%20single%20day%20event%20class%20add.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Calendar%20Block%20Event%20Change#calendar-block-event-change
+[3]: calendar%20block%20single%20day%20event%20class%20add.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
