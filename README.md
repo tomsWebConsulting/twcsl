@@ -71,6 +71,8 @@ not necessarily designed to work together.
     
   * [Text Block Easy Links](Bookmarklet/Text%20Block%20Easy%20Links)
     
+* [Calendar Block Event Change](Calendar%20Block%20Event%20Change)
+  
 * [Cart Item Links Redirect](Cart%20Item%20Links%20Redirect)
   
 * [Cart Page Observe Changes](Cart%20Page%20Observe%20Changes)
@@ -244,8 +246,6 @@ not necessarily designed to work together.
     * [Gallery Sections Image URLs](v7.1/Bookmarklet/Gallery%20Sections%20Image%20URLs)
       
   * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
-    
-  * [Calendar Block Event Change](v7.1/Calendar%20Block%20Event%20Change)
     
   * [Calendar Block Event Multiday Class Add](v7.1/Calendar%20Block%20Event%20Multiday%20Class%20Add)
     
