@@ -6,9 +6,14 @@
     
     License       : < https://bit.ly/3F8sn8W >
     
-    Version       : 0.1d0
+    Version       : 0.2.0
     
     SS Version    : 7.1
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
     
     Dependancies  : store product details display flex desktop
     
@@ -18,71 +23,92 @@
     
     @media screen and ( min-width : 768px ) {
     
-      .ProductItem-details .ProductItem-details-checkout {
+      /* this is where you control the order of elements. replace unset with a
+         number. use 1, 2, 3, etc. */
       
-        /* this is where you control the order of elements. replace unset with a
-           number. use 1, 2, 3, etc. */
+      .ProductItem-details .ProductItem-details-checkout, /* simple */
+      .pdp-layout .pdp-details /* full, half, wrap */
+      
+        {
         
-        --add-to-cart-button : unset;
-        --description : unset;
-        --price : unset;
-        --quantity : unset;
-        --variants : unset;
-        
-        }
-        
+          --add-to-cart-button : unset;
+          --description : unset;
+          --price : unset;
+          --quantity : unset;
+          --variants : unset;
+          
+          }
+          
       /* do not change anything below, there be the borg here */
       
-      .ProductItem-details .product-quantity-input {
+      .ProductItem-details .product-quantity-input, /* simple */
+      .pdp-layout .pdp-details .product-quantity-input /* full, half, wrap */
       
-        -webkit-box-ordinal-group : calc( var( --quantity ) + 1 );
-        -moz-box-ordinal-group : calc( var( --quantity ) + 1 );
-        -ms-flex-order : var( --quantity );
-        -webkit-order : var( --quantity );
-        order : var( --quantity );
-        
-        }
-        
-      .ProductItem-details .product-variants {
+        {
       
-        -webkit-box-ordinal-group : calc( var( --variants ) + 1 );
-        -moz-box-ordinal-group : calc( var( --variants ) + 1 );
-        -ms-flex-order : var( --variants );
-        -webkit-order : var( --variants );
-        order : var( --variants );
+          -webkit-box-ordinal-group : calc( var( --quantity ) + 1 );
+          -moz-box-ordinal-group : calc( var( --quantity ) + 1 );
+          -ms-flex-order : var( --quantity );
+          -webkit-order : var( --quantity );
+          order : var( --quantity );
         
-        }
+          }
         
-      .ProductItem-details .ProductItem-details-excerpt {
+      .ProductItem-details .product-variants, /* simple */
+      .pdp-layout .pdp-details .product-variants /* full, half, wrap */
       
-        -webkit-box-ordinal-group : calc( var( --description ) + 1 );
-        -moz-box-ordinal-group : calc( var( --description ) + 1 );
-        -ms-flex-order : var( --description );
-        -webkit-order : var( --description );
-        order : var( --description );
-        
-        }
-        
-      .ProductItem-details .ProductItem-product-price {
+        {
       
-        -webkit-box-ordinal-group : calc( var( --price ) + 1 );
-        -moz-box-ordinal-group : calc( var( --price ) + 1 );
-        -ms-flex-order : var( --price );
-        -webkit-order : var( --price );
-        order : var( --price );
+          -webkit-box-ordinal-group : calc( var( --variants ) + 1 );
+          -moz-box-ordinal-group : calc( var( --variants ) + 1 );
+          -ms-flex-order : var( --variants );
+          -webkit-order : var( --variants );
+          order : var( --variants );
         
-        }
+          }
         
-      .ProductItem-details .sqs-add-to-cart-button-wrapper {
+      .ProductItem-details .ProductItem-details-excerpt, /* simple */
+      .pdp-layout .pdp-details .pdp-details-excerpt /* full, half, wrap */
       
-        -webkit-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
-        -moz-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
-        -ms-flex-order : var( --add-to-cart-button );
-        -webkit-order : var( --add-to-cart-button );
-        order : var( --add-to-cart-button );
+        {
+      
+          -webkit-box-ordinal-group : calc( var( --description ) + 1 );
+          -moz-box-ordinal-group : calc( var( --description ) + 1 );
+          -ms-flex-order : var( --description );
+          -webkit-order : var( --description );
+          order : var( --description );
         
-        }
+          }
         
+      .ProductItem-details .ProductItem-product-price, /* simple */
+      .pdp-layout .pdp-details .pdp-details-price /* full, half, wrap */
+      
+        {
+        
+          -webkit-box-ordinal-group : calc( var( --price ) + 1 );
+          -moz-box-ordinal-group : calc( var( --price ) + 1 );
+          -ms-flex-order : var( --price );
+          -webkit-order : var( --price );
+          order : var( --price );
+          
+          }
+          
+      .ProductItem-details .sqs-add-to-cart-button-wrapper, /* simple */
+      
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper
+      
+        {
+        
+          -webkit-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+          -moz-box-ordinal-group : calc( var( --add-to-cart-button ) + 1 );
+          -ms-flex-order : var( --add-to-cart-button );
+          -webkit-order : var( --add-to-cart-button );
+          order : var( --add-to-cart-button );
+          
+          }
+          
       }
       
    /* end store product details reorder desktop */

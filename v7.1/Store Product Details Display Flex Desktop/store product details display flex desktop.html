@@ -6,9 +6,14 @@
     
     License       : < https://bit.ly/3F8sn8W >
     
-    Version       : 0.1d0
+    Version       : 0.2.0
     
     SS Version    : 7.1
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
     
     Dependancies  : store product details natural order desktop
     
@@ -20,19 +25,44 @@
     
     @media screen and ( min-width : 768px ) {
     
-      .ProductItem-details .ProductItem-details-checkout {
+      /* simple */
       
-        display : -webkit-box;
-        display : -ms-flexbox;
-        display : flex;
+      .ProductItem-details .ProductItem-details-checkout,
+      
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details
+      
+        {
         
-        gap : 1em;
+          display : -webkit-box;
+          display : -ms-flexbox;
+          display : flex;
+          
+          gap : 1em;
+          
+          }
+          
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details {
+      
+        flex-direction : column;
         
         }
         
+      /* simple */
+      
       .ProductItem-details .ProductItem-details-checkout > *,
       .ProductItem-details .ProductItem-product-price .product-price,
-      .ProductItem-details .variant-option
+      .ProductItem-details .variant-option,
+      
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details > *,
+      .pdp-layout .pdp-details .pdp-details-excerpt,
+      .pdp-layout .pdp-details .pdp-details-title,
+      .pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper::before
       
         {
         
