@@ -1,6 +1,6 @@
 # Store Category Page Description Add
 
-### [License][99]
+### [License][1]
 
 ### Version 0.4.0
 
@@ -12,15 +12,16 @@
 
 ## Install
 
-* Install [twcsl][1]. After you install twcsl be sure to continue on with the
+* Install [twcsl][2]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[add store category page description.html][2]** to Store
-  Settings > Advanced > Page Header Code Injection for the store page.
+* Add code from file **[add store category page description.html][3]** to Store
+  Settings > Advanced > Page Header Code Injection for the store page. Read the
+  code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -63,7 +64,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[1]: https://github.com/tomsWebConsulting/twcsl#install-options
-[2]: add%20store%20category%20page%20description.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: store%20category%20page%20description%20add.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
