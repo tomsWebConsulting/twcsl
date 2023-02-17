@@ -223,8 +223,6 @@ not necessarily designed to work together.
     
   * [Add Mindbody Login Register Link to Navigation](v7.1/Add%20Mindbody%20Login%20Register%20Link%20to%20Navigation)
     
-  * [Add Store Category Page Description](v7.1/Add%20Store%20Category%20Page%20Description)
-    
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
   * [Auto Change Product Grid Image Opacity on Touch Screen Device](v7.1/Auto%20Change%20Product%20Grid%20Image%20Opacity%20on%20Touch%20Screen%20Device)
@@ -400,6 +398,8 @@ not necessarily designed to work together.
   * [Site Wide Image Borders](v7.1/Site%20Wide%20Image%20Borders)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
+    
+  * [Store Category Page Description Add](v7.1/Store%20Category%20Page%20Description%20Add)
     
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
