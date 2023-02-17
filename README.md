@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 204 effects. Each effect has it's own version number, code,
+twcsl contains 205 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -140,6 +140,8 @@ not necessarily designed to work together.
 * [Store Price Change](Store%20Price%20Change)
   
 * [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
+  
+* [Store Product Detail Add to Cart Button After Added Callback](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20After%20Added%20Callback)
   
 * [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
   
