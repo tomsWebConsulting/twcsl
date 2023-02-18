@@ -460,7 +460,7 @@ not necessarily designed to work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.2.2
+### Version 0.3.0
 
 ## Install Options
 
@@ -478,7 +478,7 @@ building effects in Squarespace sites.
         In your web browser visit the following URL.
         
         ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.js
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.0/twcsl.js
         ```
         
         The **twcsl.js** file will be downloaded to your computer.
@@ -517,7 +517,7 @@ building effects in Squarespace sites.
         In your web browser visit the following URL.
         
         ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.2.2/twcsl.html
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.0/twcsl.html
         ```
         
         The **twcsl.html** file will display in your browser.
@@ -573,6 +573,13 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * Returns an anchor element.
     
+* isElementInPage
+  
+  * isElementInPage ( element )
+  
+    * Element is a jQuery object.
+    * Returns boolean.
+    
 * isElementInViewport
   
   * isElementInViewport ( element )
@@ -590,6 +597,24 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
       invertScale ( boolean ), default is false
       
+* go
+
+  * go ( callback )
+  
+    An initialize method if you want to write code using twcsl that works
+    on both v7.1 and v7.0.
+    
+    * callback is a function name
+      
+* urlToCssClassName
+  
+  * urlToCssClassName ( url )
+  
+    * Url is a string.
+    * Returns a string. If the first character of the url is a number, dash, or
+      or underscore character **x-** is added to the beginning of the class
+      name.
+
 ## Properties and their Methods
 
 * navigator ( object )
@@ -734,6 +759,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
     
     * list ( object )
     
+      * categories ( string, v7.1 only )
+      
       * category ( string )
       
       * categoryUrlSlug ( string )
@@ -768,6 +795,15 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Changes
 
+* **2023-02-18**
+
+  * added twcsl.page.store.list.categories for v7.1 hierarchical categories
+  * add urlToCssClassName method
+  * add isElementInPage method
+  * fix for twcsl.page.store.list.categoryUrlSlug for v7.1 not returning
+    hierarchical slugs
+  * bumped version to 0.3.0
+  
 * **2022-05-03**
 
   * fix for value not defined in _getPageFilterSlug private method
