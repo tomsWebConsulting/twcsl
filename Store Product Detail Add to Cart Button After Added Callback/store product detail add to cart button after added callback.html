@@ -4,7 +4,7 @@
   
   License         : < https://bit.ly/3F8sn8W >
   
-  Version         : 0.1.0
+  Version         : 0.1.1
   
   SS Versions     : 7.1, 7.0
   
@@ -66,175 +66,195 @@
   
     $( ( ) => {
     
-      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      const initialize = ( ) => {
       
-      // bail if no mutation observer available
-      
-      if ( ! ( 'MutationObserver' in window ) ) return;
-      
-      const options = twc.spdatcbaac;
-      
-      if ( options.callback == undefined ) return; // bail if no callback
-      
-      const debugFlag = false;
-      
-      const getLanguage = language => {
-      
-        language = languages [ language ];
+        if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
         
-        if ( typeof language == 'string' )
+        // bail if no mutation observer available
         
-          language = languagesRoot [ language ];
+        if ( ! ( 'MutationObserver' in window ) ) return;
+        
+        const options = twc.spdatcbaac;
+        
+        if ( options.callback == undefined ) return; // bail if no callback
+        
+        const debugFlag = false;
+        
+        const getLanguage = language => {
+        
+          language = languages [ language ];
           
-        return language;
-        
-        };
-        
-      const lang = $( 'html' ).attr ( 'lang' );
-      
-      if ( debugFlag )
-      
-        console.log ( lang );
-        
-      const langLanguageMap = {
-      
-        'de-DE' : 'German (Germany)',
-        
-        'en-AU' : 'English (Australia)',
-        
-        'en-CA' : 'English (Canada)',
-        
-        'en-IN' : 'English (India)',
-        
-        'en-IE' : 'English (Ireland)',
-        
-        'en-NZ' : 'English (New Zealand)',
-        
-        'en-ZA' : 'English (South Africa)',
-        
-        'en-GB' : 'English (United Kingdom)',
-        
-        'en-US' : 'English (United States)',
-        
-        'fr-CA' : 'French (Canada)',
-        
-        'fr-FR' : 'French (France)',
-        
-        };
-        
-      const languages = {
-      
-        'English (Australia)' : 'English',
-        
-        'English (Canada)' : 'English',
-        
-        'English (India)' : 'English',
-        
-        'English (Ireland)' : 'English',
-        
-        'English (New Zealand)' : 'English',
-        
-        'English (South Africa)' : 'English',
-        
-        'English (United Kingdom)' : 'English',
-        
-        'English (United States)' : 'English',
-        
-        'French (Canada)' : 'French',
-        
-        'French (France)' : 'French',
-        
-        'German (Germany)' : {
-        
-          added : 'Hinzugefügt!',
+          if ( typeof language == 'string' )
           
-          },
-          
-        };
-      
-      const languagesRoot = {
-      
-        'English' : {
-        
-          added : 'Added!',
-          
-          },
-          
-        'French' : {
-        
-          added : 'Ajout effectué&nbsp;!',
-          
-          },
-          
-        };
-      
-      const observer = new MutationObserver ( function ( mutations ) {
-      
-        $.each ( mutations, function ( ) {
-        
-          if ( ! this.addedNodes.length ) return;
-          
-          let $element = $( this.addedNodes [ 0 ] );
-          
-          const b = $element.hasClass ( 'status-text' );
-          
-          if ( ! b ) return true; // continue if no status text
-          
-          const addedLanguage = siteLanguage.added;
-          
-          const html = $element.html ( );
-          
-          if ( debugFlag )
-          
-            console.log ( html );
+            language = languagesRoot [ language ];
             
-          if ( html != addedLanguage ) return; // bail if status text not added
+          return language;
           
-          $element = $element
+          };
           
-            .parents ( '.sqs-add-to-cart-button-wrapper' );
+        const lang = $( 'html' ).attr ( 'lang' );
+        
+        if ( debugFlag )
+        
+          console.log ( lang );
+          
+        const langLanguageMap = {
+        
+          'de-DE' : 'German (Germany)',
+          
+          'en-AU' : 'English (Australia)',
+          
+          'en-CA' : 'English (Canada)',
+          
+          'en-IN' : 'English (India)',
+          
+          'en-IE' : 'English (Ireland)',
+          
+          'en-NZ' : 'English (New Zealand)',
+          
+          'en-ZA' : 'English (South Africa)',
+          
+          'en-GB' : 'English (United Kingdom)',
+          
+          'en-US' : 'English (United States)',
+          
+          'fr-CA' : 'French (Canada)',
+          
+          'fr-FR' : 'French (France)',
+          
+          };
+          
+        const languages = {
+        
+          'English (Australia)' : 'English',
+          
+          'English (Canada)' : 'English',
+          
+          'English (India)' : 'English',
+          
+          'English (Ireland)' : 'English',
+          
+          'English (New Zealand)' : 'English',
+          
+          'English (South Africa)' : 'English',
+          
+          'English (United Kingdom)' : 'English',
+          
+          'English (United States)' : 'English',
+          
+          'French (Canada)' : 'French',
+          
+          'French (France)' : 'French',
+          
+          'German (Germany)' : {
+          
+            added : 'Hinzugefügt!',
             
-          options.callback ( $element );
+            },
+            
+          };
           
-          } );
-          
-        } );
+        const languagesRoot = {
         
-      let siteLanguage = langLanguageMap [ lang ];
-      
-      siteLanguage = getLanguage ( siteLanguage );
-      
-      // begin listening for changes in specified elements
-      
-        const selectorPrefixSuffix = '.sqs-add-to-cart-button-inner';
+          'English' : {
+          
+            added : 'Added!',
+            
+            },
+            
+          'French' : {
+          
+            added : 'Ajout effectué&nbsp;!',
+            
+            },
+            
+          };
+          
+        const observer = new MutationObserver ( function ( mutations ) {
         
-        const selector = [
-        
-          '.ProductItem-details', // simple
+          $.each ( mutations, function ( ) {
           
-          // full, half, wrap
-          
-          '.pdp-layout .pdp-details'
-          
-          ]
-          
-          .join ( ` ${ selectorPrefixSuffix }, ` )
-          
-          +
-          
-          ` ${ selectorPrefixSuffix }`;
-          
-        $( selector ).each ( function ( ) {
-        
-          observer.observe ( this, {
-          
-            childList : true
+            if ( ! this.addedNodes.length ) return;
+            
+            let $element = $( this.addedNodes [ 0 ] );
+            
+            const b = $element.hasClass ( 'status-text' );
+            
+            if ( ! b ) return true; // continue if no status text
+            
+            const addedLanguage = siteLanguage.added;
+            
+            const html = $element.html ( );
+            
+            if ( debugFlag )
+            
+              console.log ( html );
+              
+            if ( html != addedLanguage ) return; // bail if status text not added
+            
+            $element = $element
+            
+              .parents ( '.sqs-add-to-cart-button-wrapper' );
+              
+            options.callback ( $element );
             
             } );
             
           } );
           
-        // end listening for changes in specified elements
+        let siteLanguage = langLanguageMap [ lang ];
+        
+        siteLanguage = getLanguage ( siteLanguage );
+        
+        // begin listening for changes in specified elements
+        
+          const selectorPrefixSuffix = '.sqs-add-to-cart-button-inner';
+          
+          const selector = [
+          
+            '.ProductItem-details', // simple
+            
+            // full, half, wrap
+            
+            '.pdp-layout .pdp-details'
+            
+            ]
+            
+            .join ( ` ${ selectorPrefixSuffix }, ` )
+            
+            +
+            
+            ` ${ selectorPrefixSuffix }`;
+            
+          $( selector ).each ( function ( ) {
+          
+            observer.observe ( this, {
+            
+              childList : true
+              
+              } );
+              
+            } );
+            
+          // end listening for changes in specified elements
+          
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.ss.is71 :
+        
+          $( initialize );
+          
+          break;
+          
+        case twcsl.ss.is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
         
       } );
       

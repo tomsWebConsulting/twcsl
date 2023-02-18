@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Versions 7.1, 7.0
 
@@ -29,12 +29,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-12-10**
+* **2023-02-17**
 
-  * freshen read me and other minor tweaks, no functional changes
-  * tested v7.0 Pacific template family compatibility
-  * bumped version to 0.1d5
-  -->
+  * it helps if the 7.1/7.0 initialization code is in place
+  * bumped version to 0.1.1
+  
 * **2023-01-27**
 
   * initial version
