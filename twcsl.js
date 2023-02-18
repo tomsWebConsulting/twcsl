@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.2.2
+  Version         : 0.3.0
   
   SS Versions     : 7.1, 7.0
   
@@ -910,25 +910,47 @@ const twcsl = ( ( $ ) => {
           
         let category = '';
         
+        const setCategories = ( ) => {
+        
+          if ( _is70 ) return; // bail if 7.0
+          
+          const selector = '.category-link.activeParent, .category-link.active';
+          
+          const categories = $( selector ).map ( function ( ) {
+          
+            const category = $( this ).text ( );
+            
+            return category;
+            
+            } )
+            
+            .toArray ( )
+            
+            .join ( ' > ' );
+            
+          l.categories = categories;
+          
+          };
+          
         const setCategory = ( ) => {
         
           if ( ! category ) return; // bail if not category
           
-          const selector =
+          const selector = [
           
-            //
+            '.filter-by-category', // 7.0 ( Bedford )
             
-            '.filter-by-category, ' + // 7.0 ( Bedford )
-            
-            '.nested-category-title, ' + // 7.1
-            
-            //
+            '.nested-category-title', // 7.1
             
             // 7.0
             
-            '#categoryNav ul li.active-link:not(.all) a, ' + // Avenue
+            '#categoryNav ul li.active-link:not(.all) a', // Avenue
             
-            '.ProductList-filter-list-item--active'; // Brine
+            '.ProductList-filter-list-item--active', // Brine
+            
+            ]
+            
+            .join ( ', ' );
             
           const c = $( selector )
           
@@ -984,11 +1006,11 @@ const twcsl = ( ( $ ) => {
               
             case _is71 :
             
-              slug = '/' + location.pathname
+              slug = location
               
-                .split ( '/' )
+                .pathname
                 
-                .slice ( -1 ) [ 0 ];
+                .replace ( twcsl.page.store.urlSlug, '' );
                 
               break;
               
@@ -1021,6 +1043,8 @@ const twcsl = ( ( $ ) => {
         //
         
         l.hasTag = Boolean ( tag );
+        
+        setCategories ( );
         
         setCategoryLocal ( );
         
@@ -1214,6 +1238,8 @@ const twcsl = ( ( $ ) => {
         
         list : {
         
+          categories : '',
+          
           category : '',
           
           categoryUrlSlug : '',
@@ -1258,7 +1284,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.2.2';
+    const version = '0.3.0';
     
     // end public properties
     
@@ -1327,6 +1353,48 @@ const twcsl = ( ( $ ) => {
       parser.href = url;
       
       return parser;
+      
+      };
+      
+    const go = callback => {
+    
+      switch ( true ) {
+      
+        case _is71 :
+        
+          $( callback );
+          
+          break;
+          
+        case _is70 :
+        
+          Squarespace.onInitialize ( Y, callback );
+          
+          break;
+          
+        }
+        
+      };
+      
+    const isElementInPage = $element => {
+    
+      const elementHeight = $element.outerHeight ( );
+      
+      const pageTop = $( '#header' ).outerHeight ( );
+      
+      const pageHeight = $( window ).height ( ) - pageTop;
+      
+      const { top, bottom } = $element
+      
+        .get ( 0 )
+        
+        .getBoundingClientRect ( );
+        
+      const b = ( top >= pageTop && bottom <= window.innerHeight ) ||
+      
+        ( elementHeight > pageHeight && top <= pageTop );
+        
+      return b;
       
       };
       
@@ -1414,6 +1482,26 @@ const twcsl = ( ( $ ) => {
           
       };
       
+    const urlToCssClassName = url => {
+    
+      url = getUrlParser ( url );
+      
+      url = url.pathname;
+      
+      const className = url
+      
+        .split ( '/' )
+        
+        .slice ( -1 )
+        
+        [ 0 ]
+        
+        .replace ( /^([\d-_]{1})/, 'x-$1' );
+        
+      return className;
+      
+      };
+      
     // end public methods
     
   ( ( ) => { // initialize
@@ -1440,22 +1528,8 @@ const twcsl = ( ( $ ) => {
       
       };
       
-    switch ( true ) {
+    go ( initialize );
     
-      case _is70 :
-      
-        Squarespace.onInitialize ( Y, initialize );
-        
-        break;
-        
-      case _is71 :
-      
-        $( initialize );
-        
-        break;
-        
-      }
-      
     } ) ( );
     
   return {
@@ -1476,9 +1550,15 @@ const twcsl = ( ( $ ) => {
       
       getUrlParser        : getUrlParser,
       
+      go                  : go,
+      
+      isElementInPage     : isElementInPage,
+      
       isElementInViewport : isElementInViewport,
       
       scrollEffect        : scrollEffect,
+      
+      urlToCssClassName   : urlToCssClassName,
       
       // end methods
       
