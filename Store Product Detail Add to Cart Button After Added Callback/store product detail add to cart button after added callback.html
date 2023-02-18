@@ -4,7 +4,7 @@
   
   License         : < https://bit.ly/3F8sn8W >
   
-  Version         : 0.1.1
+  Version         : 0.1.2
   
   SS Versions     : 7.1, 7.0
   
@@ -64,9 +64,9 @@
   
   <script>
   
-    $( ( ) => {
+    ( ( ) => { // initialize
     
-      const initialize = ( ) => {
+      const spdatcbaac = ( ) => {
       
         if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
         
@@ -244,20 +244,20 @@
       
         case twcsl.ss.is71 :
         
-          $( initialize );
+          $( spdatcbaac );
           
           break;
           
         case twcsl.ss.is70 :
         
-          Squarespace.onInitialize ( Y, initialize );
+          Squarespace.onInitialize ( Y, spdatcbaac );
           
           break;
           
         }
         
-      } );
+      } ) ( );
       
     </script>
     
-  <!-- begin store product detail add to cart button after added callback -->
+  <!-- end store product detail add to cart button after added callback -->

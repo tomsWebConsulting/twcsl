@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Versions 7.1, 7.0
 
@@ -29,6 +29,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-02-18**
+
+  * remove jQuery document ready at top level for 7.1/7.0 code
+  * bumped version to 0.1.2
+  
 * **2023-02-17**
 
   * it helps if the 7.1/7.0 initialization code is in place
