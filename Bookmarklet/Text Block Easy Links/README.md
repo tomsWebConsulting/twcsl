@@ -45,7 +45,7 @@ Please consider [making a donation][4].
 
   * initial version
 
-[1]: text%20block%20easy%20links.bookmarklet#L1
-[2]: https://en.wikipedia.org/wiki/Bookmarklet
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[4]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: text%20block%20easy%20links.bookmarklet#L1
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
