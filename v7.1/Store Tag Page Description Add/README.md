@@ -39,13 +39,18 @@
   
   Add tag and description pairs on lines by themselves. Each tag must match
   exactly what you entered for each tag in the SS interface. Each description
-  must be on a single line.
+  must be on a single line. Keep in mind that word wrap 
   
   You can add a data-paragraph-style attribute to the x-twc-stpda tag to select
   a paragraph style. If the attribute is not added then Heading 3 will be used.
   
   ```html
   <x-twc-stpda data-paragraph-style="Heading 3">
+  
+      [enter tag here replacing square brackets]
+      [enter description here replacing square brackets]
+      
+    </x-twc-stpda>
   ```
   
   Use one of the following paragraph styles.
