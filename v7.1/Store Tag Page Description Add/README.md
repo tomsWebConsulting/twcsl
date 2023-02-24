@@ -56,14 +56,21 @@
   Use one of the following paragraph styles.
   
   Heading 1
+
   Heading 2
+
   Heading 3
+
   Heading 4
+
   Paragraph 1
+
   Paragraph 2
+
   Paragraph 3
+
   Monospace
-  
+
 ## Make a Donation
 
 Please consider [making a donation][4].
