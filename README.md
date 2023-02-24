@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 206 effects. Each effect has it's own version number, code,
+twcsl contains 207 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -412,6 +412,8 @@ not necessarily designed to work together.
   * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
+    
+  * [Store Product Detail Add To Cart Show After Date Time](v7.1/Store%20Product%20Detail%20Add%20To%20Cart%20Show%20After%20Date%20Time)
     
   * [Store Product Detail Additional Info Add Footer Boilerplate](v7.1/Store%20Product%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
     
