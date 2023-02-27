@@ -219,8 +219,6 @@ not necessarily designed to work together.
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
     
-  * [Add Categories Attribute to Event Detail Page](v7.1/Add%20Categories%20Attribute%20to%20Event%20Detail%20Page)
-    
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
     
   * [Add Mindbody Login Register Link to Navigation](v7.1/Add%20Mindbody%20Login%20Register%20Link%20to%20Navigation)
@@ -280,6 +278,8 @@ not necessarily designed to work together.
   * [Elements Replace](v7.1/Elements%20Replace)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
+    
+  * [Event Detail Page Categories Attribute Add](v7.1/Event%20Detail%20Page%20Categories%20Attribute%20Add)
     
   * [Event Meta Data Make Sticky](v7.1/Event%20Meta%20Data%20Make%20Sticky)
     
