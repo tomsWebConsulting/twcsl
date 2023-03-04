@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.3.0
+  Version         : 0.3.1
   
   SS Versions     : 7.1, 7.0
   
@@ -406,11 +406,17 @@ const twcsl = ( ( $ ) => {
         
           if ( ! l.hasTag ) return; // bail if not tag
           
-          let t = $( 'title' )
+          let t = $( 'link[ rel="canonical" ]' )
           
-            .text ( )
+            .attr ( 'href' )
             
-            .split ( ' — ' ) [ 0 ];
+            .split ( '/' )
+            
+            .splice ( -1 );
+            
+          t = decodeURIComponent ( t )
+          
+            .replaceAll ( '+', ' ' );
             
           l.tag = t;
           
@@ -1284,7 +1290,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.3.0';
+    const version = '0.3.1';
     
     // end public properties
     
