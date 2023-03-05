@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.3.1
+  Version         : 0.3.2
   
   SS Versions     : 7.1, 7.0
   
@@ -79,18 +79,6 @@ const twcsl = ( ( $ ) => {
       if ( value === null ) value = '';
       
       return value;
-      
-      };
-      
-    const _getPageTagSlug = ( tag ) => {
-    
-      tag = encodeURIComponent ( tag )
-      
-        .replaceAll ( '%20', '+' );
-        
-      const slug = `tag=${ tag }`;
-      
-      return slug;
       
       };
       
@@ -302,16 +290,42 @@ const twcsl = ( ( $ ) => {
       
     const _getPageFilterSlug = ( filter ) => {
     
-      let v = _getPageSearchParameter ( filter );
+      let s;
       
-      if ( ! v ) return ''; // bail if empty
+      switch ( true ) {
       
-      v = encodeURIComponent ( v )
-      
-        .replaceAll ( '%20', '+' );
+        case _is70 :
         
-      const s = v ? `${ filter }=${ v }` : '';
-      
+          let v = _getPageSearchParameter ( filter );
+          
+          if ( ! v ) return ''; // bail if empty
+          
+          v = encodeURIComponent ( v )
+          
+            .replaceAll ( '%20', '+' );
+            
+          s = v ? `${ filter }=${ v }` : '';
+          
+          break;
+          
+        case _is71 :
+        
+          s = location
+          
+            .pathname
+            
+            .split ( '/' )
+            
+            .slice ( -2 );
+            
+          if ( s [ 0 ] != filter ) return ''; // bail if no filter match
+            
+          s = s.join ( '/' );
+          
+          break;
+          
+        }
+        
       return s;
       
       };
@@ -354,32 +368,6 @@ const twcsl = ( ( $ ) => {
         
         if ( ! l.is ) return; // bail if not list
         
-        const getPageFilterSlug = ( filter ) => {
-        
-          const pathnameParts = location
-          
-            .pathname
-            
-            .split ( '/' );
-            
-          const pathnamePartFilter = pathnameParts
-            
-            .slice ( -2, -1 ) [ 0 ]; // position of filter
-            
-          // bail if not filter of interest
-          
-          if ( filter != pathnamePartFilter ) return '';
-          
-          let slug = '/' +
-          
-            pathnameParts
-            
-            .slice ( -1 ) [ 0 ];
-            
-          return slug;
-          
-          }; // end getPageFilterSlug
-          
         const setCategory = ( ) => {
         
           if ( ! l.hasCategory ) return; // bail if not category
@@ -396,7 +384,7 @@ const twcsl = ( ( $ ) => {
           
         const setCategoryUrlSlug = ( ) => {
         
-          const s = getPageFilterSlug ( 'category' );
+          const s = _getPageFilterSlug ( 'category' );
           
           l.categoryUrlSlug = s;
           
@@ -424,7 +412,7 @@ const twcsl = ( ( $ ) => {
           
         const setTagUrlSlug = ( ) => {
         
-          const s = getPageFilterSlug ( 'tag' );
+          const s = _getPageFilterSlug ( 'tag' );
           
           l.tagUrlSlug = s;
           
@@ -1290,7 +1278,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.3.1';
+    const version = '0.3.2';
     
     // end public properties
     
