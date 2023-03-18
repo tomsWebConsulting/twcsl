@@ -13,7 +13,8 @@
 ## Quick Install
 
 * Add code from file **[text block links open in new window.html][2]** to
-  Settings > Advanced > Code Injection > FOOTER.
+  Settings > Advanced > Code Injection > FOOTER.  Read the code for any
+  instructions within.
 
 ## Make a Donation
 
