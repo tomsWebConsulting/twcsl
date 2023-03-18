@@ -12,6 +12,12 @@
 
 ## Quick Install
 
+* Add the following to Settings > Advanced > Code Injection > HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  ```
+  
 * Add code from file **[text block links open in new window.html][2]** to
   Settings > Advanced > Code Injection > FOOTER.  Read the code for any
   instructions within.
