@@ -1,12 +1,12 @@
 # Menu Mobile Outline
 
-### [License][99]
+### [License][1]
 
-### Version 0.2.0
+### Version 0.2.1
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Unknown
+#### Fluid Engine Compatible : Not Applicable
 
 ---
 
@@ -18,22 +18,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[menu mobile outline.css][1]** to Design > Custom CSS.
+* Add code from file **[menu mobile outline.css][2]** to Design > Custom CSS.
   
-* Add code from file **[menu mobile outline.html][2]** to Settings > Advanced >
+* Add code from file **[menu mobile outline.html][3]** to Settings > Advanced >
   Code Injection > FOOTER.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-11-15**
+* **2023-03-22**
 
-  * fix for description layout issue when categories are set to side for Brine
-  * bumped version to 0.3d0
-  -->
+  * fix for menu not being built in editor
+  * bumped version to 0.2.1
+  
 * **2022-04-30**
 
   * fix for blowing away menu action and cta elements
@@ -44,7 +44,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: menu%20mobile%20outline.css#L1
-[2]: menu%20mobile%20outline.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: menu%20mobile%20outline.css#L1
+[3]: menu%20mobile%20outline.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

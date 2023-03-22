@@ -8,9 +8,13 @@
       
       License       : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.2.0
+      Version       : 0.2.1
       
       SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
       
       Dependancies  : jQuery
       
@@ -19,66 +23,126 @@
       no user serviceable parts below
       
       */
-      
-    const $menu = $( '<ul class="twc-mmo-outline">' );
     
-    const $navigation = $( '.header-menu .header-menu-nav-list' );
+    const build = ( ) => {
     
-    let selector = '[data-folder="root"] .header-menu-nav-item a';
-    
-    $( selector, $navigation ).each ( function ( ) {
-    
-      const $this = $( this );
+      const $menu = $( '<ul class="twc-mmo-outline">' );
       
-      const dataFolderId = $this.attr ( 'data-folder-id' );
+      const $navigation = $( '.header-menu .header-menu-nav-list' );
       
-      const isFolder = dataFolderId === undefined ? false : true;
+      selector = `${ rootSelector } .header-menu-nav-item a`;
       
-      $( '.chevron', $this ).remove ( );
+      $( selector, $navigation ).each ( function ( ) {
       
-      const $li = $( '<li class="header-menu-nav-item">' )
-      
-        .append ( $this );
+        const $this = $( this );
         
-      if ( isFolder ) {
-      
-        const $ul = $( '<ul>' );
+        const dataFolderId = $this.attr ( 'data-folder-id' );
         
-        selector = `[data-folder="${ dataFolderId }"] ` +
+        const isFolder = dataFolderId === undefined ? false : true;
         
-          '.header-menu-nav-item:not( .header-menu-controls ) a';
+        $( '.chevron', $this ).remove ( );
+        
+        const $li = $( '<li class="header-menu-nav-item">' )
+        
+          .append ( $this );
           
-        $( selector, $navigation ).each ( function ( ) {
+        if ( isFolder ) {
         
-          const $this = $( this );
+          const $ul = $( '<ul>' );
           
-          $( '<li class="header-menu-nav-item">' )
+          selector = `[data-folder="${ dataFolderId }"] ` +
           
-            .append ( $this )
+            '.header-menu-nav-item:not( .header-menu-controls ) a';
             
-            .appendTo ( $ul );
-            
-          } );
+          $( selector, $navigation ).each ( function ( ) {
           
-        $li.append ( $ul );
+            const $this = $( this );
+            
+            $( '<li class="header-menu-nav-item">' )
+            
+              .append ( $this )
+              
+              .appendTo ( $ul );
+              
+            } );
+            
+          $li.append ( $ul );
+          
+          }
+          
+        $li.appendTo ( $menu );
+        
+        } );
+        
+      $navigation
+      
+        .find ( `[data-folder]:not( ${ rootSelector } )` )
+        
+          .remove ( )
+          
+          .end ( )
+          
+        .find ( '.header-menu-nav-folder-content' )
+        
+          .replaceWith ( $menu );
+          
+      };
+      
+    const clssActive = 'header-menu-nav-folder--active';
+    
+    const rootSelector = '[data-folder="root"]';
+    
+    let selector = `${ rootSelector }.header-menu-nav-folder`;
+    
+    let $element = $( selector );
+    
+    const isActive = $element.hasClass ( clssActive );
+    
+    if ( isActive )
+    
+      build ( );
+      
+      else {
+      
+        const callback = ( mutations ) => {
+        
+          $.each ( mutations, function ( ) {
+          
+            // continue if not class
+            
+            if ( this.attributeName != 'class' ) return true;
+            
+            $element = $( this.target );
+            
+            b = $element.hasClass ( clssActive );
+            
+            if ( ! b ) return true; // continue if no active class
+            
+            observer.disconnect ( );
+            
+            build ( );
+            
+            return false;
+            
+            } );
+            
+          }; // end callback
+          
+        const config = {
+        
+          attributes : true
+          
+          };
+          
+        const observer = new MutationObserver ( callback );
+        
+        // start listening for changes in element
+        
+        const element = $element.get ( 0 );
+        
+        observer.observe ( element, config );
         
         }
-        
-      $li.appendTo ( $menu );
-      
-      } );
-      
-    $navigation
-    
-      .find ( '[data-folder]:not( [data-folder="root"] )' )
-      
-        .remove ( )
-        
-        .end ( )
-        
-      .find ( '.header-menu-nav-folder-content' )
-      
-        .replaceWith ( $menu );
         
     } );
     
