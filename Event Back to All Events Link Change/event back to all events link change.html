@@ -1,0 +1,58 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      change event back to all events link to back in some circumstances
+      
+      SS Version : 7.0
+      
+      Template   : Brine template family
+      
+      Notes      : the whole back thing is not perfect, i won't go into the long
+                   and boring ins and outs of it but you can research on the web
+                   if you are interested
+      
+      */
+      
+    if ( $( '.Main--events-item' ).length ) return;
+    
+    const referrer = document.referrer;
+    
+    if ( referrer ) {
+    
+      var $a = $( '<a>' )
+      
+        .attr ( 'href', referrer );
+        
+      if ( location.pathname.startsWith ( $a.prop ( 'pathname' ) ) ) return;
+      
+      }
+      
+    let $e = $( '.eventitem-backlink' )
+    
+      .text ( 'Back' );
+      
+    if ( referrer ) {
+    
+      $e.attr ( 'href', referrer )
+      
+      } else {
+      
+        $e
+        
+          .css ( 'cursor', 'pointer' )
+          
+          .removeAttr ( 'href' )
+          
+          .one ( 'click', function ( ) {
+          
+            history.back ( );
+            
+            } );
+        }
+        
+    } );
+    
+  </script>
