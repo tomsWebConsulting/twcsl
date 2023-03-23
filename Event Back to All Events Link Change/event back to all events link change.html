@@ -4,43 +4,73 @@
   
     /*
     
-      change event back to all events link to back in some circumstances
+      event back to all events link change
       
-      SS Version : 7.0
+      License         : < https://bit.ly/3F8sn8W >
       
-      Template   : Brine template family
+      Version         : 0.2.0
       
-      Notes      : the whole back thing is not perfect, i won't go into the long
-                   and boring ins and outs of it but you can research on the web
-                   if you are interested
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Not Applicable
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+      
+      Dependancies    : twcsl
+      
+      Note            : the whole back thing is not perfect, i won't go into the
+                        long and boring ins and outs of it but you can research
+                        on the web if you are interested
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
       
       */
       
-    if ( $( '.Main--events-item' ).length ) return;
+    if ( ! twcsl.page.events.event.is ) return; // bail if not event
     
     const referrer = document.referrer;
     
     if ( referrer ) {
     
-      var $a = $( '<a>' )
+      const $a = $( '<a>' )
       
         .attr ( 'href', referrer );
         
-      if ( location.pathname.startsWith ( $a.prop ( 'pathname' ) ) ) return;
+      const pathname = $a.prop ( 'pathname' );
+      
+      const b = location
+      
+        .pathname
+        
+        .startsWith ( pathname );
+        
+      if ( b ) return; // bail
       
       }
       
-    let $e = $( '.eventitem-backlink' )
+    const selector = '.eventitem-backlink'; // 7.1, 7.0 ( Brine );
+    
+    const $element = $( selector )
     
       .text ( 'Back' );
       
-    if ( referrer ) {
+    if ( referrer )
     
-      $e.attr ( 'href', referrer )
+      $element.attr ( 'href', referrer )
       
-      } else {
+      else
       
-        $e
+        $element
         
           .css ( 'cursor', 'pointer' )
           
@@ -51,8 +81,7 @@
             history.back ( );
             
             } );
-        }
-        
+            
     } );
     
   </script>
