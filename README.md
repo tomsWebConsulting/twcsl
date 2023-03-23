@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 208 effects. Each effect has it's own version number, code,
+twcsl contains 209 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -102,6 +102,8 @@ not necessarily designed to work together.
 * [Configurator Page Text and Image Blocks](Configurator%20Page%20Text%20and%20Image%20Blocks)
   
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
+  
+* [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
   
