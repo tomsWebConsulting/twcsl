@@ -6,7 +6,7 @@
 
 #### SS Versions 7.1, 7.0 ([Brine template family][2])
 
-#### Fluid Engine Compatible : Yes
+#### Fluid Engine Compatible : Not Applicable
 
 ---
 
