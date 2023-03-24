@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 209 effects. Each effect has it's own version number, code,
+twcsl contains 210 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -448,6 +448,8 @@ not necessarily designed to work together.
   * [Store Product Grid Images Hide](v7.1/Store%20Product%20Grid%20Images%20Hide)
     
   * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
+    
+  * [Store Product List Out of Stock Badge](v7.1/Store%20Product%20List%20Out%20of%20Stock%20Badge)
     
   * [Store Product Meta New](v7.1/Store%20Product%20Meta%20New)
     
