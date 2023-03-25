@@ -1,0 +1,273 @@
+/*
+
+  begin store product list out of stock badge
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependancies  : LESS
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  @text : Sold Out;
+  @style : rectangle; // values are circle, rectangle, and square
+  @background-color : black;
+  @color : white;
+  @font-family : unset;
+  @font-weight : 400;
+  @font-style : normal; // values are italic and normal
+  @font-size : 10px;
+  @letter-spacing : 0.06em;
+  @text-transform : uppercase; // values are capitalize, lowercase, and uppercase
+  @padding : 1.5em;
+  
+  // values are bottom-center, bottom-left, bottom-right, center, center-left,
+  // center-right, top-center, top-left, top-right
+  
+  @position : top-right;
+  
+  // values are dock-horizontally, dock-vertically, floating, and flush
+  
+  @inset : floating;
+  
+  @inset-size : 1em;
+  
+  /* do not change anything below, there be the borg here */
+  
+  @align-items : unset;
+  @bottom : unset;
+  @border-radius : unset;
+  @display : unset;
+  @height : unset;
+  @left : unset;
+  @right : unset;
+  @text-align : unset;
+  @top : unset;
+  @width : unset;
+  @x : 0;
+  @y : 0;
+  
+  // begin position
+  
+    .position( ) when ( @position = bottom-center ) {
+    
+      @bottom : @inset-size;
+      @left : 50%;
+      @x : -50%;
+      
+      }
+      
+    .position( ) when ( @position = bottom-left ) {
+    
+      @bottom : @inset-size;
+      @left : @inset-size;
+      
+      }
+      
+    .position( ) when ( @position = bottom-right ) {
+    
+      @bottom : @inset-size;
+      @right : @inset-size;
+      
+      }
+      
+    .position( ) when ( @position = center ) {
+    
+      @left : 50%;
+      @top : 50%;
+      @x : -50%;
+      @y : -50%;
+      
+      }
+      
+    .position( ) when ( @position = center-left ) {
+    
+      @left : @inset-size;
+      @top : 50%;
+      @y : -50%;
+      
+      }
+      
+    .position( ) when ( @position = center-right ) {
+    
+      @right : @inset-size;
+      @top : 50%;
+      @y : -50%;
+      
+      }
+      
+    .position( ) when ( @position = top-center ) {
+    
+      @left : 50%;
+      @top : @inset-size;
+      @x : -50%;
+      @y : 0;
+      
+      }
+      
+    .position( ) when ( @position = top-left ) {
+    
+      @left : @inset-size;
+      @top : @inset-size;
+      
+      }
+      
+    .position( ) when ( @position = top-right ) {
+    
+      @right : @inset-size;
+      @top : @inset-size;
+      
+      }
+      
+    .position( );
+    
+    // end position
+    
+  // begin inset
+  
+    .inset( ) when ( @inset = dock-horizontally ) {
+    
+      .and ( ) when ( @position = bottom-left ), ( @position = center-left ), ( @position = top-left ) {
+      
+        @left : 0;
+        
+        }
+        
+      .and( ) when ( @position = bottom-right ), ( @position = center-right ), ( @position = top-right ) {
+      
+        @right : 0;
+        
+        }
+        
+      .and ( );
+      
+      }
+      
+    .inset( ) when ( @inset = dock-vertically ) {
+    
+      .and( ) when ( @position = bottom-center ), ( @position = bottom-left ), ( @position = bottom-right ) {
+      
+        @bottom : 0;
+        
+        }
+        
+      .and( ) when ( @position = top-center ), ( @position = top-left ), ( @position = top-right ) {
+      
+        @top : 0;
+        
+        }
+        
+      .and( );
+      
+      }
+      
+    .inset( ) when ( @inset = flush ) {
+    
+      .not( ) when not ( @style = circle ) {
+      
+        .and ( ) when ( @position = bottom-center ), ( @position = bottom-left ), ( @position = bottom-right ) {
+      
+          @bottom : 0;
+        
+          }
+        
+        .and ( ) when ( @position = bottom-left ), ( @position = center-left ), ( @position = top-left ) {
+      
+          @left : 0;
+        
+          }
+        
+        .and ( ) when ( @position = top-center ), ( @position = top-left ), ( @position = top-right ) {
+      
+          @top : 0;
+        
+          }
+        
+        .and ( ) when ( @position = center-right ), ( @position = top-right ), ( @position = bottom-right ) {
+      
+          @right : 0;
+        
+          }
+        
+        .and ( );
+        
+        }
+        
+      .not( );
+      
+      }
+      
+    .inset( );
+    
+    // end inset
+    
+  // begin style
+  
+    .style( ) when ( @style = circle ) {
+    
+      @border-radius : 100%;
+      
+      }
+      
+    .style( ) when ( @style = circle ), ( @style = square ) {
+    
+      @align-items : center;
+      @display : flex;
+      @height : 30px;
+      @padding : 0.5em;
+      @text-align : center;
+      @width : 30px;
+      
+      }
+      
+    .style( );
+    
+  @media screen and ( min-width : 768px ) {
+  
+    .products.collection-content-wrapper .product-mark.sold-out {
+    
+      display : none;
+      
+      }
+      
+    .products.collection-content-wrapper .grid-item.sold-out .grid-image::before {
+    
+      align-items : @align-items;
+      background-color : @background-color;
+      bottom : @bottom;
+      border-radius : @border-radius;
+      content : ~"'@{text}'";
+      color : @color;
+      display : @display;
+      font-family : @font-family;
+      font-size : @font-size;
+      font-style : @font-style;
+      font-weight : @font-weight;
+      height : @height;
+      left : @left;
+      letter-spacing : @letter-spacing;
+      line-height : 1em;
+      padding : @padding;
+      position : absolute;
+      right : @right;
+      text-align : @text-align;
+      text-transform : @text-transform;
+      top : @top;
+      transform : translate( @x, @y );
+      width : @width;
+      z-index : 9;
+      
+      }
+      
+    }
+    
+  /* end store product list out of stock badge */

@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -12,27 +12,128 @@
 
 ## Quick Install
 
-Add code from file **[store product list out of stock badge.html][2]** to
-Store Settings > Advanced > Page Header Code Injection for the store page.
-Please see [per-page code injection][3]. Read the code for any instructions
-within.
+Add code from file **[store product list out of stock badge.less][2]** to
+Design > Custom CSS. Read the code for any instructions within.
+
+## Badge Options
+
+* Style
+
+  * Rectangle
+  
+    ![style rectangle][3]
+    
+  * Square
+  
+    ![style square][4]
+
+  * Circle
+  
+    ![style circle][5]
+    
+* Background Color and Color (text)
+
+  ![background color and color][6]
+  
+* Font : family, weight, style (italic and normal), size, letter spacing, and
+  text transform (capitalize, lowercase, uppercase)
+  
+* Padding (around the out of stock text)
+
+* Position
+
+  <style>
+  
+    #position {
+    
+      display : grid;
+      gap : 10px;
+      grid-template-columns : repeat( 3, 1fr );
+      
+      }
+      
+    </style>
+    
+  <div id="position">
+  
+    ![position top left][7]
+    
+    ![position top center][8]
+    
+    ![position top right][9]
+    
+    ![position center left][10]
+    
+    ![position center][11]
+    
+    ![position center right][12]
+    
+    ![position bottom left][13]
+    
+    ![position bottom center][14]
+    
+    ![position bottom right][15]
+    
+    </div>
+    
+* Inset
+
+  * Floating
+  
+    ![inset floating][9]
+    
+  * Flush
+  
+    ![inset flush][16]
+    
+  * Dock Vertically
+    
+    ![inset dock vertically][17]
+    
+  * Dock Horizontally
+    
+    ![inset dock horizontally][18]
+    
+* Inset Size (margin around the badge for options that have an inset)
+
+## Demo
+
+You can see a [demo of this effect here][19].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][20].
 
 ## Changes
 
-<!-- * **2021-05-08**
+* **2023-03-25**
 
-  * added coverage for store product grid image hover
-  * bumped version to v0.1d1
-  -->
+  * support as closely as possible the full range of Product Status Badge tweaks
+    available in v7.0 Brine template family
+  * use LESS
+  * bumped version to v0.2.0
+  
 * **2023-03-24**
 
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20product%20list%20out%20of%20stock%20badge.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: read%20me%20assets/style%20rectangle.png
+[4]: read%20me%20assets/style%20square.png
+[5]: read%20me%20assets/style%20circle.png
+[6]: background%20color%20and%20color.png
+[7]: position%20top%20left.png
+[8]: position%20top%20center.png
+[9]: position%20top%20right.png
+[10]: position%20center%20left.png
+[11]: position%20center.png
+[12]: position%20center%20right.png
+[13]: position%20bottom%20left.png
+[14]: position%20bottom%20center.png
+[15]: position%20bottom%20right.png
+[16]: inset%20flush.png
+[17]: inset%20dock%20horizontally.png
+[18]: inset%20dock%20vertically.png
+[19]: https://toms-web-consulting-demos.squarespace.com/store-product-list-out-of-stock-badge?password=twcdemos
+[20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
