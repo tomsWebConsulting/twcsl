@@ -42,6 +42,7 @@ Design > Custom CSS. Read the code for any instructions within.
 
 * Position
 
+  |        |                             |                               |                              |        |
   | ------:|:---------------------------:|:-----------------------------:|:----------------------------:|:------ |
   |        | Left                        | Center                        | Right                        |        |
   | Top    | ![position top left][7]     | ![position top center][8]     | ![position top right][9]     | Top    |
