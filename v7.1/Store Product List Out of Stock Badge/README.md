@@ -46,7 +46,7 @@ Design > Custom CSS. Read the code for any instructions within.
   | ----------:|:---------------------------:|:-----------------------------:|:----------------------------:|:---------- |
   | **Top**    | ![position top left][7]     | ![position top center][8]     | ![position top right][9]     | **Top**    |
   | **Center** | ![position center left][10] | ![position center][11]        | ![position center right][12] | **Center** |
-  | **Bottom** | ![position bottom left][13] | ![position bottom center][14] | ![position bottom right][15] | **Left**   |
+  | **Bottom** | ![position bottom left][13] | ![position bottom center][14] | ![position bottom right][15] | **Bottom** |
   |            | **Left**                    | **Center**                    | **Right**                    |            |
 
 * Inset
