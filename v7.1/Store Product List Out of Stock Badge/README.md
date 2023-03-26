@@ -42,98 +42,12 @@ Design > Custom CSS. Read the code for any instructions within.
 
 * Position
 
-  <table>
-  
-    <tbody>
-    
-      <tr>
-      
-        <td>
-        
-          Top Left
-          
-          ![position top left][7]
-          
-          </td>
-          
-        <td>
-        
-          Top Center
-          
-          ![position top center][8]
-          
-          </td>
-          
-        <td>
-        
-          Top Right
-          
-          ![position top right][9]
-          
-          </td>
-          
-        </tr>
-        
-      <tr>
-      
-        <td>
-        
-          Center Left
-          
-          ![position center left][10]
-          
-          </td>
-          
-        <td>
-        
-          Center
-          
-          ![position center][11]
-          
-          </td>
-          
-        <td>
-        
-          Center Right
-          
-          ![position center right][12]
-          
-          </td>
-          
-        </tr>
-        
-      <tr>
-      
-        <td>
-        
-          Bottom Left
-          
-          ![position bottom left][13]
-          
-          </td>
-          
-        <td>
-        
-          Bottom Center
-          
-          ![position bottom center][14]
-          
-          </td>
-          
-        <td>
-        
-          Bottom Right
-          
-          ![position bottom right][15]
-    
-          </td>
-          
-        </tr>
-        
-      </tbody>
-      
-    </table>
-    
+  |        | Left                        | Center                        | Right                        |
+  | ------ | --------------------------- | ----------------------------- | ---------------------------- |
+  | Top    | ![position top left][7]     | ![position top center][8]     | ![position top right][9]     |
+  | Center | ![position center left][10] | ![position center][11]        | ![position center right][12] |
+  | Bottom | ![position bottom left][13] | ![position bottom center][14] | ![position bottom right][15] |
+
 * Inset
 
   * Floating
