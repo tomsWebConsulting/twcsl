@@ -42,39 +42,97 @@ Design > Custom CSS. Read the code for any instructions within.
 
 * Position
 
-  <style>
+  <table>
   
-    #position {
+    <tbody>
     
-      display : grid;
-      gap : 10px;
-      grid-template-columns : repeat( 3, 1fr );
+      <tr>
       
-      }
+        <td>
+        
+          Top Left
+          
+          ![position top left][7]
+          
+          </td>
+          
+        <td>
+        
+          Top Center
+          
+          ![position top center][8]
+          
+          </td>
+          
+        <td>
+        
+          Top Right
+          
+          ![position top right][9]
+          
+          </td>
+          
+        </tr>
+        
+      <tr>
       
-    </style>
+        <td>
+        
+          Center Left
+          
+          ![position center left][10]
+          
+          </td>
+          
+        <td>
+        
+          Center
+          
+          ![position center][11]
+          
+          </td>
+          
+        <td>
+        
+          Center Right
+          
+          ![position center right][12]
+          
+          </td>
+          
+        </tr>
+        
+      <tr>
+      
+        <td>
+        
+          Bottom Left
+          
+          ![position bottom left][13]
+          
+          </td>
+          
+        <td>
+        
+          Bottom Center
+          
+          ![position bottom center][14]
+          
+          </td>
+          
+        <td>
+        
+          Bottom Right
+          
+          ![position bottom right][15]
     
-  <div id="position">
-  
-    ![position top left][7]
-    
-    ![position top center][8]
-    
-    ![position top right][9]
-    
-    ![position center left][10]
-    
-    ![position center][11]
-    
-    ![position center right][12]
-    
-    ![position bottom left][13]
-    
-    ![position bottom center][14]
-    
-    ![position bottom right][15]
-    
-    </div>
+          </td>
+          
+        </tr>
+        
+      </tbody>
+      
+    </table>
     
 * Inset
 
@@ -118,22 +176,22 @@ Please consider [making a donation][20].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: store%20product%20list%20out%20of%20stock%20badge.html#L1
+[2]: store%20product%20list%20out%20of%20stock%20badge.less#L1
 [3]: read%20me%20assets/style%20rectangle.png
 [4]: read%20me%20assets/style%20square.png
 [5]: read%20me%20assets/style%20circle.png
-[6]: background%20color%20and%20color.png
-[7]: position%20top%20left.png
-[8]: position%20top%20center.png
-[9]: position%20top%20right.png
-[10]: position%20center%20left.png
-[11]: position%20center.png
-[12]: position%20center%20right.png
-[13]: position%20bottom%20left.png
-[14]: position%20bottom%20center.png
-[15]: position%20bottom%20right.png
-[16]: inset%20flush.png
-[17]: inset%20dock%20horizontally.png
-[18]: inset%20dock%20vertically.png
+[6]: read%20me%20assets/background%20color%20and%20color.png
+[7]: read%20me%20assets/position%20top%20left.png
+[8]: read%20me%20assets/position%20top%20center.png
+[9]: read%20me%20assets/position%20top%20right.png
+[10]: read%20me%20assets/position%20center%20left.png
+[11]: read%20me%20assets/position%20center.png
+[12]: read%20me%20assets/position%20center%20right.png
+[13]: read%20me%20assets/position%20bottom%20left.png
+[14]: read%20me%20assets/position%20bottom%20center.png
+[15]: read%20me%20assets/position%20bottom%20right.png
+[16]: read%20me%20assets/inset%20flush.png
+[17]: read%20me%20assets/inset%20dock%20horizontally.png
+[18]: read%20me%20assets/inset%20dock%20vertically.png
 [19]: https://toms-web-consulting-demos.squarespace.com/store-product-list-out-of-stock-badge?password=twcdemos
 [20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
