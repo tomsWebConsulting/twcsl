@@ -4,9 +4,14 @@
   
   License         : < https://bit.ly/3F8sn8W >
   
-  Version         : 0.1d2
+  Version         : 0.2.0
   
   SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
   
   v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
                     Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
@@ -18,7 +23,7 @@
                     your template is not listed? then it is not currently
                     supported
   
-  Dependancies    : jQuery
+  Dependencies    : squarespace plan that supports JavaScript
                     
                     twcsl
   
@@ -33,7 +38,7 @@
   
   <style>
   
-    .twc-ProductItem-variant-image-title {
+    .twc-spdsiba-variant-image-badge {
     
       background-color : black;
       bottom : 0;
@@ -53,17 +58,47 @@
     
       if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
-      $( '.ProductItem-gallery-slides-item' ).each ( function ( ) {
+      const selector = [
+      
+        '.ProductItem-gallery-slides-item', // 7.1 ( simple ), 7.0 ( Brine )
+        
+        // 7.1
+        
+        '.pdp-layout-full-width-carousel .pdp-gallery-slides', // full
+        
+        '.pdp-layout-full-bleed .pdp-gallery-slides', // half
+        
+        '.pdp-layout-wrap-around .pdp-gallery-slides' // wrap
+        
+        ]
+        
+        .join ( ', ' );
+        
+      $( selector ).each ( function ( ) {
       
         const $this = $( this );
         
-        const text = $( '.ProductItem-gallery-slides-item-image', $this )
+        const selector = [
+        
+          // 7.1 ( simple ), 7.0 ( Brine )
+          
+          '.ProductItem-gallery-slides-item-image',
+          
+          // 7.1
+          
+          '.pdp-gallery-slides-image' // full, half, wrap
+          
+          ]
+          
+          .join ( ', ' );
+          
+        const text = $( selector, $this )
         
           .attr ( 'alt' );
           
         if ( text == undefined ) return true;
         
-        $( '<div class="twc-ProductItem-variant-image-title">' )
+        $( '<div class="twc-spdsiba-variant-image-badge">' )
         
           .text ( text )
           
