@@ -12,7 +12,7 @@
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4]
+  * [Squarespace plan][3] that supports [JavaScript][4].
   
   * [twcsl][5]
 
