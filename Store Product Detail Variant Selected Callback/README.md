@@ -38,7 +38,7 @@ The following code simply logs the parameters to the console.
       
       SS Versions   : 7.1, 7.0
       
-      Dependancies  : store product detail variant selected callback
+      Dependencies  : store product detail variant selected callback
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
