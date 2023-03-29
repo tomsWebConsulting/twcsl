@@ -26,7 +26,7 @@ const twcsl = ( ( $ ) => {
                     your template is not listed? then it is not currently
                     supported
   
-  Dependancies    : jQuery
+  Dependencies    : jQuery
   
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   

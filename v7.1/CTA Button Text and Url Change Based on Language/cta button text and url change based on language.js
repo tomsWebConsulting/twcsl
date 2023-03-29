@@ -8,7 +8,7 @@
   
   SS Version   : 7.1
   
-  Dependancies : jQuery
+  Dependencies : jQuery
                  
                  lang variable being set by language switching code
                  
