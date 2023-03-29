@@ -8,7 +8,7 @@
       
       License       : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.2.1
+      Version       : 0.2.2
       
       SS Version    : 7.1
       
@@ -16,7 +16,7 @@
       Engine
       Compatible    : Not Applicable
       
-      Dependancies  : jQuery
+      Dependencies  : jQuery
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -34,7 +34,7 @@
       
       $( selector, $navigation ).each ( function ( ) {
       
-        const $this = $( this );
+        let $this = $( this );
         
         const dataFolderId = $this.attr ( 'data-folder-id' );
         
@@ -42,6 +42,12 @@
         
         $( '.chevron', $this ).remove ( );
         
+        const isUserAccounts = $this.hasClass ( 'user-accounts-text-link' );
+        
+        if ( isUserAccounts )
+        
+          $this = $this.parent ( );
+          
         const $li = $( '<li class="header-menu-nav-item">' )
         
           .append ( $this );

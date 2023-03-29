@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.2.1
+### Version 0.2.2
 
-#### SS Version 7.1
+#### SS Version
 
-#### Fluid Engine Compatible : Not Applicable
+  * 7.1
+
+#### Dependencies
+
+  * jQuery
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -29,6 +37,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-03-29**
+
+  * fix for user accounts info showing when it shouldn't
+  * bumped version to 0.2.2
+  
 * **2023-03-22**
 
   * fix for menu not being built in editor
