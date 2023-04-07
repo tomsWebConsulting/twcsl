@@ -8,7 +8,7 @@
       
       License      : < https://bit.ly/3F8sn8W >
       
-      Version      : 0.2.0
+      Version      : 0.2.1
       
       SS Version   : 7.1
       
@@ -43,127 +43,157 @@
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const selector = '#accountFrame[src="/account/frame/login"]';
+      const callback = ( mutations ) => {
       
-      const $element = $( selector );
+        $.each ( mutations, function ( ) {
+        
+          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+          
+          const $element = $( this.addedNodes [ 0 ] );
+          
+          const id = $element.attr ( 'id' );
+          
+          if ( id != 'accountFrame' ) return; // bail if not account frame
+          
+          const data = {
+          
+            css : css,
+            
+            };
+            
+          $element.on ( 'load', data, function ( event ) {
+          
+            const pathname = this.contentWindow.location.pathname;
+            
+            // bail if not sign in
+            
+            if ( pathname != '/account/frame/login' ) return;
+            
+            const css = event.data.css;
+            
+            const dcmnt = this.contentDocument;
+            
+            const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
+            
+            const id = 'user-account-login-root';
+            
+            const script = dcmnt.createElement ( 'script' );
+            
+            script.innerHTML = `
+            
+              const callback = mutations => {
+              
+                mutations.forEach ( mutation => {
+                
+                  // bail if no nodes added
+                  
+                  if ( ! mutation.addedNodes.length ) return;
+                  
+                  const node = mutation.addedNodes [ 0 ];
+                  
+                  const selector = 'button[type="submit"]' +
+                  
+                    '[data-test="login-button"]';
+                    
+                  const isSignIn = node.querySelector ( selector ) != null;
+                  
+                  if ( ! isSignIn ) return; // bail if not sign up
+                  
+                  document
+                  
+                    .getElementById ( '${ id }' )
+                    
+                    .classList
+                    
+                    .add ( 'twc-masidc' );
+                    
+                  // begin add css
+                  
+                    let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
+                    
+                    let s = \`${ css }\`;
+                    
+                    const addCSS = ! p.test ( s );
+                    
+                    if ( addCSS ) {
+                    
+                      const style = document.createElement ( 'style' );
+                      
+                      style.innerHTML = s;
+                      
+                      document.body.appendChild ( style );
+                      
+                      }
+                      
+                    // end add css
+                    
+                  // begin change title
+                  
+                    p = new RegExp ( '^\\\\[.+\\\\]$' );
+                    
+                    s = '${ title }';
+                    
+                    const changeTitle = ! p.test ( s );
+                    
+                    if ( changeTitle )
+                    
+                      node
+                      
+                        .getElementsByTagName ( 'h1' ) [ 0 ]
+                        
+                        .innerHTML = s;
+                        
+                      // end change title
+                      
+                  } ); // end mutations
+                  
+                };
+                
+              const config = {
+              
+                childList : true
+                
+                };
+                
+              const observer = new MutationObserver ( callback );
+              
+              // start listening for changes in specified element
+              
+              const node = document
+              
+                .getElementById ( '${ id }' )
+                
+                .lastChild;
+                
+              observer.observe ( node, config );
+              
+              `;
+              
+            this
+            
+              .contentDocument
+              
+              .getElementsByTagName ( 'head' ) [ 0 ]
+              
+              .appendChild ( script );
+              
+            } ); // end on load
+            
+          } ); // end mutations
+          
+        }; // end callback
+        
+      const config = {
       
-      if ( ! $element.length ) return; // bail if no element
-      
-      const data = {
-      
-        css : css,
+        childList : true
         
         };
         
-      $element.on ( 'load', data, function ( event ) {
+      const observer = new MutationObserver ( callback );
       
-        const css = event.data.css;
-        
-        const dcmnt = this
-        
-          .contentDocument;
-        
-        const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
-        
-        const id = 'user-account-login-root';
-        
-        const script = dcmnt.createElement ( 'script' );
-        
-        script.innerHTML = `
-        
-          const observer = new MutationObserver ( mutations => {
-          
-            mutations.forEach ( mutation => {
-            
-              // bail if no nodes added
-              
-              if ( ! mutation.addedNodes.length ) return;
-              
-              const node = mutation.addedNodes [ 0 ];
-              
-              const selector = 'button[type="submit"]' +
-              
-                '[data-test="login-button"]';
-                
-              const isSignIn = node.querySelector ( selector ) != null;
-              
-              if ( ! isSignIn ) return; // bail if not sign up
-              
-              document
-          
-                .getElementById ( '${ id }' )
-                
-                .classList
-                
-                .add ( 'twc-masidc' );
-                
-              // begin add css
-              
-                let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
-                
-                let s = \`${ css }\`;
-                
-                const addCSS = ! p.test ( s );
-                
-                if ( addCSS ) {
-                
-                  const style = document.createElement ( 'style' );
-                  
-                  style.innerHTML = s;
-                  
-                  document.body.appendChild ( style );
-                  
-                  }
-                  
-                // end add css
-                
-              // begin change title
-              
-                p = new RegExp ( '^\\\\[.+\\\\]$' );
-                
-                s = '${ title }';
-                
-                const changeTitle = ! p.test ( s );
-                
-                if ( changeTitle )
-                
-                  node
-                  
-                    .getElementsByTagName ( 'h1' ) [ 0 ]
-                    
-                    .innerHTML = s;
-                    
-                  // end change title
-                  
-              } ); // end mutations
-              
-            } ); // end observer
-            
-          // start listening for changes in specified element
-          
-          const node = document
-          
-            .getElementById ( '${ id }' )
-            
-            .lastChild;
-            
-          observer.observe ( node, {
-          
-            childList : true
-            
-            } );
-            
-          `;
-          
-        this
-        
-          .contentDocument
-          
-          .getElementsByTagName ( 'head' ) [ 0 ]
-          
-          .appendChild ( script );
-          
-        } ); // end on load
+      // start listening for changes in specified element
+      
+      observer.observe ( document.body, config );
         
       // end member area sign in dialog change
       
