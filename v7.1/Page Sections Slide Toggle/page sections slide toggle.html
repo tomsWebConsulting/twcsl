@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.4.0
+  Version       : 0.4.1
   
   SS Version    : 7.1
   
@@ -26,13 +26,11 @@
   
   <style>
   
-    html:not( .squarespace-damask ) #page .twc-psst {
+    html:not( .squarespace-damask ) .twc-psst {
     
-      /* the thickness of the toggle lines */
+      --twc-psst-toggle-thickness : 3px; /* thickness of the toggle lines */
       
-      --twc-psst-toggle-thickness : 3px;
-      
-      --twc-psst-toggle-size : 10px; /* the size of the toggle */
+      --twc-psst-toggle-size : 10px; /* size of the toggle */
       
       }
       
@@ -48,9 +46,7 @@
     
       // duration, a number (milliseconds) or the word slow or fast
       
-      duration : '10',
-      
-      // duration : '[enter duration between single quotes replacing square brackets]',
+      duration : '[enter duration between single quotes replacing square brackets]',
       
       };
       
@@ -94,7 +90,7 @@
       
     /* begin toggles */
     
-      html:not( .squarespace-damask ) .twc-psst /* .sqs-block-content */ {
+      html:not( .squarespace-damask ) .twc-psst {
       
         cursor : pointer;
         
@@ -112,8 +108,9 @@
       
         html:not( .squarespace-damask ) x-twc-psst .arrow {
         
-          border : solid 0 red;
+          border : 0 solid red;
           border-bottom-width : var( --twc-psst-toggle-thickness );
+          border-color : var( --twc-psst-toggle-color );
           border-right-width : var( --twc-psst-toggle-thickness );
           height : 100%;
           
@@ -141,7 +138,7 @@
       
         html:not( .squarespace-damask ) x-twc-psst .plus {
         
-          background-color : red;
+          background-color : var( --twc-psst-toggle-color );
           height : 3px;
           position : absolute;
           transition : transform 0.2s;
@@ -231,9 +228,9 @@
             } );
             
         color = color == undefined ? $this.css ( 'color' ) : color;
-          
+        
         icon = icon == undefined ? 'arrow' : icon;
-          
+        
         const html = iconHtml [ icon ];
         
         $this.css ( '--twc-psst-toggle-color', color );

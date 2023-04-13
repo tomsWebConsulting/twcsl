@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.4.0
+### Version 0.4.1
 
 #### SS Version 7.1
 
@@ -15,7 +15,7 @@
 * Add the following to Settings > Advanced > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file **[page sections slide toggle.html][2]** to Page Settings >
@@ -69,6 +69,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-04-12**
+
+  * fix issue with data-toggle-color attribute not working
+  * bumped version to 0.4.1
+  
 * **2023-02-08**
 
   * add plus toggle icon option
@@ -81,7 +86,7 @@ Please consider [making a donation][4].
   * code picks up a default color for toggle arrow from parent element
   * user can now use a text block with any Header or Paragraph style. previously
     the code only worked with Paragraph 2
-  * update code for twc global, multiple effect can coexist
+  * update code for twc global, multiple effects can coexist
   * bumped version to 0.3.0
   
 * **2021-07-28**
