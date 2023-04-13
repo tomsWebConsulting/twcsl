@@ -8,7 +8,7 @@
       
       License      : < https://bit.ly/3F8sn8W >
       
-      Version      : 0.2.1
+      Version      : 0.3.0
       
       SS Version   : 7.1
       
@@ -24,8 +24,8 @@
       
       /*
       
-        leaving title or css unaltered tells the code to not make element
-        changes to those elements
+        leaving title or css unaltered tells the code to not make changes to
+        those elements
         
         */
         
@@ -37,164 +37,227 @@
         
         `;
         
+      /*
+      
+        if your script code contains backtick characters you'll need to escape
+        them. to escape the backticks change them from ` to \\\`
+        
+        be sure not to disturb the backticks my code is using
+        
+        */
+        
+      const script = `
+      
+        [enter script here between single quotes replacing square brackets]
+        
+        `;
+        
       // do not change anything below, there be the borg here
       
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const callback = ( mutations ) => {
+      const load = ( $element ) => {
       
-        $.each ( mutations, function ( ) {
+        const data = {
         
-          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+          css : css,
           
-          const $element = $( this.addedNodes [ 0 ] );
+          script : script,
           
-          const id = $element.attr ( 'id' );
+          };
           
-          if ( id != 'accountFrame' ) return; // bail if not account frame
+        $element.on ( 'load', data, function ( event ) {
+        
+          const pathname = this
           
-          const data = {
+            .contentWindow
+            
+            .location
+            
+            .pathname;
+            
+          // bail if not sign in
           
-            css : css,
+          if ( pathname != '/account/frame/login' ) return;
+          
+          const css = event.data.css;
+          
+          const dcmnt = this.contentDocument;
+          
+          const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
+          
+          const id = 'user-account-login-root';
+          
+          const script = event.data.script;
+          
+          const scriptElement = dcmnt.createElement ( 'script' );
+          
+          scriptElement.innerHTML = `
+          
+            const callback = mutations => {
+            
+              mutations.forEach ( mutation => {
+              
+                // bail if no nodes added
+                
+                if ( ! mutation.addedNodes.length ) return;
+                
+                const node = mutation.addedNodes [ 0 ];
+                
+                const selector = 'button[type="submit"]' +
+                
+                  '[data-test="login-button"]';
+                  
+                const isSignIn = node.querySelector ( selector ) != null;
+                
+                if ( ! isSignIn ) return; // bail if not sign up
+                
+                document
+                
+                  .getElementById ( '${ id }' )
+                  
+                  .classList
+                  
+                  .add ( 'twc-masidc' );
+                  
+                // begin add css
+                
+                  let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
+                  
+                  let s = \`${ css }\`;
+                  
+                  let add = ! p.test ( s );
+                  
+                  if ( add ) {
+                  
+                    const style = document.createElement ( 'style' );
+                    
+                    style.innerHTML = s;
+                    
+                    document.body.append ( style );
+                    
+                    }
+                    
+                  // end add css
+                  
+                // begin add script
+                
+                  p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
+                  
+                  s = \`${ script }\`;
+                  
+                  add = ! p.test ( s );
+                  
+                  if ( add ) {
+                  
+                    const script = document.createElement ( 'script' );
+                    
+                    script.innerHTML = s;
+                    
+                    document.head.append ( script );
+                    
+                    }
+                    
+                  // end add script
+                  
+                // begin change title
+                
+                  p = new RegExp ( '^\\\\[.+\\\\]$' );
+                  
+                  s = '${ title }';
+                  
+                  const changeTitle = ! p.test ( s );
+                  
+                  if ( changeTitle )
+                  
+                    node
+                    
+                      .getElementsByTagName ( 'h1' ) [ 0 ]
+                      
+                      .innerHTML = s;
+                      
+                  // end change title
+                  
+                } ); // end mutations
+                
+              };
+              
+            const config = {
+            
+              childList : true
+              
+              };
+              
+            const observer = new MutationObserver ( callback );
+            
+            // start listening for changes in specified element
+            
+            const node = document
+            
+              .getElementById ( '${ id }' )
+              
+              .lastChild;
+              
+            observer.observe ( node, config );
+            
+            `;
+            
+          this
+          
+            .contentDocument
+            
+            .getElementsByTagName ( 'head' ) [ 0 ]
+            
+            .appendChild ( scriptElement );
+            
+          } ); // end on load
+          
+        };
+        
+      const selector = '#accountFrame';
+      
+      const $element = $( selector );
+      
+      if ( $element.length ) {
+      
+        load ( $element );
+        
+        } else {
+        
+          const callback = ( mutations ) => {
+          
+            $.each ( mutations, function ( ) {
+            
+              if ( ! this.addedNodes.length ) return; // bail if no nodes added
+              
+              const $element = $( this.addedNodes [ 0 ] );
+              
+              const id = $element.attr ( 'id' );
+              
+              if ( id != 'accountFrame' ) return; // bail if not account frame
+              
+              load ( $element );
+              
+              } ); // end mutations
+              
+            }; // end callback
+            
+          const config = {
+          
+            childList : true
             
             };
             
-          $element.on ( 'load', data, function ( event ) {
+          const observer = new MutationObserver ( callback );
           
-            const pathname = this.contentWindow.location.pathname;
-            
-            // bail if not sign in
-            
-            if ( pathname != '/account/frame/login' ) return;
-            
-            const css = event.data.css;
-            
-            const dcmnt = this.contentDocument;
-            
-            const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
-            
-            const id = 'user-account-login-root';
-            
-            const script = dcmnt.createElement ( 'script' );
-            
-            script.innerHTML = `
-            
-              const callback = mutations => {
-              
-                mutations.forEach ( mutation => {
-                
-                  // bail if no nodes added
-                  
-                  if ( ! mutation.addedNodes.length ) return;
-                  
-                  const node = mutation.addedNodes [ 0 ];
-                  
-                  const selector = 'button[type="submit"]' +
-                  
-                    '[data-test="login-button"]';
-                    
-                  const isSignIn = node.querySelector ( selector ) != null;
-                  
-                  if ( ! isSignIn ) return; // bail if not sign up
-                  
-                  document
-                  
-                    .getElementById ( '${ id }' )
-                    
-                    .classList
-                    
-                    .add ( 'twc-masidc' );
-                    
-                  // begin add css
-                  
-                    let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
-                    
-                    let s = \`${ css }\`;
-                    
-                    const addCSS = ! p.test ( s );
-                    
-                    if ( addCSS ) {
-                    
-                      const style = document.createElement ( 'style' );
-                      
-                      style.innerHTML = s;
-                      
-                      document.body.appendChild ( style );
-                      
-                      }
-                      
-                    // end add css
-                    
-                  // begin change title
-                  
-                    p = new RegExp ( '^\\\\[.+\\\\]$' );
-                    
-                    s = '${ title }';
-                    
-                    const changeTitle = ! p.test ( s );
-                    
-                    if ( changeTitle )
-                    
-                      node
-                      
-                        .getElementsByTagName ( 'h1' ) [ 0 ]
-                        
-                        .innerHTML = s;
-                        
-                      // end change title
-                      
-                  } ); // end mutations
-                  
-                };
-                
-              const config = {
-              
-                childList : true
-                
-                };
-                
-              const observer = new MutationObserver ( callback );
-              
-              // start listening for changes in specified element
-              
-              const node = document
-              
-                .getElementById ( '${ id }' )
-                
-                .lastChild;
-                
-              observer.observe ( node, config );
-              
-              `;
-              
-            this
-            
-              .contentDocument
-              
-              .getElementsByTagName ( 'head' ) [ 0 ]
-              
-              .appendChild ( script );
-              
-            } ); // end on load
-            
-          } ); // end mutations
+          // start listening for changes in specified element
           
-        }; // end callback
-        
-      const config = {
-      
-        childList : true
-        
-        };
-        
-      const observer = new MutationObserver ( callback );
-      
-      // start listening for changes in specified element
-      
-      observer.observe ( document.body, config );
-        
+          observer.observe ( document.body, config );
+          
+          }
+          
       // end member area sign in dialog change
       
     } );

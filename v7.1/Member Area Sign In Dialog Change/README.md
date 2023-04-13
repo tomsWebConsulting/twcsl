@@ -38,6 +38,13 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2023-04-12**
+
+  * add variable for adding a script tag to the dialog
+  * fix for code not running when the dialog is on screen and the page is
+    reloaded
+  * bumped version to 0.3.0
+
 * **2023-04-06**
 
   * fix for changes SS made that broke the code, no feature changes
@@ -45,7 +52,7 @@ Please consider [making a donation][7].
 
 * **2022-12-06**
 
-  * add parameter for CSS customization
+  * add variable for CSS customization
   * fix for changes SS made that broke the code
   * bumped version to 0.2.0
 
