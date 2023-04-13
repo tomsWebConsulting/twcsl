@@ -6,9 +6,17 @@
 
 #### SS Version 7.1
 
-#### Fluid Engine Compatible : Yes
+#### Dependencies
 
----
+  * [Squarespace plan][2] that supports [JavaScript][3].
+  
+  * [jQuery][4]
+
+#### Fluid Engine Compatible
+
+  * Yes
+
+--
 
 ## Install
 
@@ -18,7 +26,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Add code from file **[page sections slide toggle.html][2]** to Page Settings >
+* Add code from file **[page sections slide toggle.html][5]** to Page Settings >
   Advanced > Page Header Code Injection for the page. Read the code for any
   instructions within.
   
@@ -61,11 +69,11 @@
 
 ## Demo
 
-You can see a [demo of this effect here][3].
+You can see a [demo of this effect here][6].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -105,6 +113,9 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: page%20sections%20slide%20toggle.html#L1
-[3]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://jquery.com/
+[5]: page%20sections%20slide%20toggle.html#L1
+[6]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
