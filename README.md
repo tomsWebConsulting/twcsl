@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 210 effects. Each effect has it's own version number, code,
+twcsl contains 211 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -278,6 +278,8 @@ not necessarily designed to work together.
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
     
   * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
+    
+  * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
     
   * [Elements Replace](v7.1/Elements%20Replace)
     
