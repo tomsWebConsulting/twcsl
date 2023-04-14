@@ -1,0 +1,337 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      begin customer account panel change
+      
+      License      : < https://bit.ly/3F8sn8W >
+      
+      Version      : 0.1.0
+      
+      SS Version   : 7.1
+      
+      Fluid
+      Engine
+      Compatible   : Not Applicable
+      
+      Dependencies : jQuery
+      
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      /*
+      
+        leaving title or css unaltered tells the code to not make changes to
+        those elements
+        
+        */
+        
+      const title = '[enter title text here between single quotes replacing square brackets]';
+      
+      const css = `
+      
+        [enter css here between single quotes replacing square brackets]
+        
+        `;
+        
+      /*
+      
+        accountFrameCallback is a custom function that can be used for further
+        customization of the customer account panel. replace undefined with the
+        name of your custom function
+        
+        your callback must accept a document object. i suggest using dcmnt as
+        the parameter to remind you that you are working with a document object
+        but not the usual document you may be familiar with. otherwise in most
+        cases you can use dcmnt in place of document. they both pretty much have
+        the same behaviour
+        
+        */
+        
+      const accountFrameCallback = undefined;
+      
+      // do not change anything below, there be the borg here
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const accountFrameIdValue = 'accountFrame';
+      
+      const customerAccountPanelIdValue = 'user-profile-page-root';
+      
+      const load = ( $element ) => {
+      
+        const data = { css : css };
+        
+        $element.on ( 'load', data, function ( event ) {
+        
+          const pathname = this
+          
+            .contentWindow
+            
+            .location
+            
+            .pathname;
+            
+          const dcmnt = this.contentDocument;
+          
+          const isCustomerAccountPanel = pathname.startsWith ( '/account/frame'
+          
+            ) && dcmnt.getElementById ( customerAccountPanelIdValue ) != null;
+            
+          if ( ! isCustomerAccountPanel ) return; // bail if not customer panel
+          
+          const css = event.data.css;
+          
+          const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
+          
+          const callback = mutations => {
+          
+            mutations.forEach ( mutation => {
+            
+              // bail if no nodes added
+              
+              if ( ! mutation.addedNodes.length ) return;
+              
+              const node = mutation.addedNodes [ 0 ];
+              
+              if ( node.nodeType != 1 ) return; // bail if node not element
+              
+              const codeClassName = 'twc-capc';
+              
+              const classAdd = ( key ) => {
+              
+                const selector = `[ href="/account/${ key }" ]`;
+                
+                const element = dcmnt.querySelector ( selector );
+                
+                if ( element != null )
+                
+                  element.classList.add ( `${ codeClassName }-${ key }` );
+                  
+                return element;
+                
+                };
+                
+              let element = classAdd ( 'profile' );
+              
+              const isCustomerAccountPanel = element != null;
+              
+              // bail if not customer account panel
+              
+              if ( ! isCustomerAccountPanel ) return;
+              
+              // begin css add
+              
+                let p = new RegExp ( '^\s+\[.+\]\s+$' );
+                
+                let s = css;
+                
+                let add = ! p.test ( s );
+                
+                if ( add ) {
+                
+                  const style = dcmnt.createElement ( 'style' );
+                  
+                  style.innerHTML = s;
+                  
+                  dcmnt.body.append ( style );
+                  
+                  }
+                  
+                // end css add
+                
+              // begin code class add
+              
+                element = dcmnt.getElementById (
+                
+                  `${ customerAccountPanelIdValue }` );
+                  
+                element
+                
+                  .classList
+                  
+                  .add ( `${ codeClassName }` );
+                  
+                // end code class add
+                
+              // begin change title
+              
+                p = new RegExp ( '^\[.+\]$' );
+                
+                s = `${ title }`;
+                
+                const changeTitle = ! p.test ( s );
+                
+                if ( changeTitle )
+                
+                  element = dcmnt.getElementsByTagName ( 'div' );
+                  
+                  element = [ ...element ]
+                  
+                    .filter ( n => n.textContent == 'Account' )
+                    
+                    [ 0 ];
+                    
+                  element
+                  
+                    .classList
+                    
+                    .add ( `${ codeClassName }-title` );
+                    
+                  element.textContent = s;
+                  
+                // end change title
+                
+              // begin close class add
+              
+                element = dcmnt.getElementsByTagName ( 'span' );
+                
+                element = [ ...element ]
+                
+                  .filter ( n => n.textContent == 'Close' )
+                  
+                  [ 0 ];
+                  
+                element
+                
+                  .parentElement
+                  
+                  .classList
+                  
+                  .add ( `${ codeClassName }-close` );
+                  
+                // end close class add
+                
+              // begin greeting class add
+              
+                element = dcmnt.getElementsByTagName ( 'span' );
+                
+                element = [ ...element ]
+                
+                  .filter ( n => n.textContent.startsWith ( 'Hi, ' ) )
+                  
+                  [ 0 ];
+                  
+                element
+                
+                  .classList
+                  
+                  .add ( `${ codeClassName }-greeting` );
+                  
+                // end greeting class add
+                
+              // begin sign out class add
+              
+                element = dcmnt.getElementsByTagName ( 'span' );
+                
+                element = [ ...element ]
+                
+                  .filter ( n => n.textContent == 'Sign out' )
+                  
+                  [ 0 ];
+                  
+                element
+                
+                  .parentElement
+                  
+                  .classList
+                  
+                  .add ( `${ codeClassName }-sign-out` );
+                  
+                // end sign out class add
+                
+              element = classAdd ( 'orders' );
+              
+              element = classAdd ( 'addresses' );
+              
+              if ( accountFrameCallback !== undefined )
+              
+                accountFrameCallback ( dcmnt );
+                
+              } ); // end mutations
+              
+            };
+            
+          const config = {
+          
+            childList : true,
+            subtree : true
+            
+            };
+            
+          const observer = new MutationObserver ( callback );
+          
+          const selector = `#${ customerAccountPanelIdValue } *`;
+          
+          // start listening for changes in specified element
+          
+          let node = dcmnt
+          
+            .querySelectorAll ( `#${ customerAccountPanelIdValue } *` );
+            
+          node = [ ...node ]
+          
+            .slice ( -1 )
+            
+            [ 0 ];
+            
+          observer.observe ( node, config );
+          
+          } ); // end on load
+          
+        };
+        
+      const selector = `#${ accountFrameIdValue }`;
+      
+      const $element = $( selector );
+      
+      if ( $element.length ) {
+      
+        load ( $element );
+        
+        } else {
+        
+          const callback = ( mutations ) => {
+          
+            $.each ( mutations, function ( ) {
+            
+              if ( ! this.addedNodes.length ) return; // bail if no nodes added
+              
+              const $element = $( this.addedNodes [ 0 ] );
+              
+              const id = $element.attr ( 'id' );
+              
+              // bail if not account frame
+              
+              if ( id != `${ accountFrameIdValue }` ) return;
+              
+              load ( $element );
+              
+              } ); // end mutations
+              
+            }; // end callback
+            
+          const config = {
+          
+            childList : true
+            
+            };
+            
+          const observer = new MutationObserver ( callback );
+          
+          // start listening for changes in specified element
+          
+          observer.observe ( document.body, config );
+          
+          }
+          
+      // end customer account panel change
+      
+    } );
+    
+  </script>
