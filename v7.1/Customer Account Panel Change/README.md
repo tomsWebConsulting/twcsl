@@ -65,7 +65,7 @@ Please consider [making a donation][7].
 
   * initial version
 
-#### All trademarks are property of their respective owners.
+**All trademarks are property of their respective owners.**
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
