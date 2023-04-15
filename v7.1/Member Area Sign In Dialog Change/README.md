@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.3.0
+### Version 0.4.0
 
 #### SS Version
 
@@ -32,11 +32,39 @@
   Settings > Advanced > Code Injection > FOOTER. Please see [Add code to code
   injection][6]. Read the code for any instructions within.
 
+## Note
+
+Squarespace includes virtually no semantic class names for the sign in dialog.
+This code attempts to add some useful classes.
+
+  * twc-masidc-create
+  * twc-masidc-email
+  * twc-masidc-not-you
+  * twc-masidc-password
+  * twc-masidc-request-reset
+  * twc-masidc-sign-in-again-text
+  * twc-masidc-sign-in-email-text
+  * twc-masidc-title
+
+If you use SS dynamically generated class names, the ones that look like a
+string of gibberish, your code will most likely break pretty quickly. My code is
+not immune to breakage but I think my method will break at a slower rate. Also
+be aware that SS is doing some dynamic class add/remove behaviors based on
+elements being active/inactive. I know of no easy way to provide more semantic
+classes for these cases.
+
 ## Make a Donation
 
 Please consider [making a donation][7].
 
 ## Changes
+
+* **2023-04-15**
+
+  * restructured the code to reduce some nesting
+  * add classes to some elements for easier CSS creation
+  * fix for another case where code not running when a page is loaded
+  * bumped version to 0.4.0
 
 * **2023-04-12**
 

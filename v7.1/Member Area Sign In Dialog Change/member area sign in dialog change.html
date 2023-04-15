@@ -1,73 +1,85 @@
-<script>
+<!--
 
-  $( ( ) => {
+  begin member area sign in dialog change
   
-    /*
+  License      : < https://bit.ly/3F8sn8W >
+  
+  Version      : 0.4.0
+  
+  SS Version   : 7.1
+  
+  Fluid
+  Engine
+  Compatible   : Not Applicable
+  
+  Dependencies : jQuery
+  
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <x-twc-masidc-style style="display : none;">
+  
+    [enter css here between single quotes replacing square brackets]
     
-      begin member area sign in dialog change
-      
-      License      : < https://bit.ly/3F8sn8W >
-      
-      Version      : 0.3.0
-      
-      SS Version   : 7.1
-      
-      Fluid
-      Engine
-      Compatible   : Not Applicable
-      
-      Dependencies : jQuery
-      
-      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
+    </x-twc-masidc-style>
+    
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.masidc = {
+    
       /*
       
-        leaving title or css unaltered tells the code to not make changes to
-        those elements
+        leaving title unaltered tells the code not to make a change to the title
         
         */
         
-      const title = '[enter title text here between single quotes replacing square brackets]';
+      title : '[enter title text here between single quotes replacing square brackets]',
       
-      const css = `
-      
-        [enter css here between single quotes replacing square brackets]
-        
-        `;
-        
       /*
       
-        if your script code contains backtick characters you'll need to escape
-        them. to escape the backticks change them from ` to \\\`
+        accountFrameCallback is a custom function that can be used for further
+        customization of the sign in dialog. replace undefined with the
+        name of your custom function
         
-        be sure not to disturb the backticks my code is using
+        your callback must accept a document object. i suggest using dcmnt as
+        the parameter to remind you that you are working with a document object
+        but not the usual document you may be familiar with. otherwise in most
+        cases you can use dcmnt in place of document. they both pretty much have
+        the same behaviour
         
         */
         
-      const script = `
+      accountFrameCallback : undefined
       
-        [enter script here between single quotes replacing square brackets]
-        
-        `;
-        
-      // do not change anything below, there be the borg here
+      };
       
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    $( ( ) => {
+    
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
+      const accountFrameIdValue = 'accountFrame';
+      
       const load = ( $element ) => {
       
-        const data = {
+        const css = document
         
-          css : css,
+          .getElementsByTagName ( 'x-twc-masidc-style' )
           
-          script : script,
+          [ 0 ];
           
-          };
-          
+        const data = { css : css };
+        
         $element.on ( 'load', data, function ( event ) {
         
           const pathname = this
@@ -78,171 +90,286 @@
             
             .pathname;
             
-          // bail if not sign in
+          const b = pathname.startsWith ( '/account/frame/login' );
           
-          if ( pathname != '/account/frame/login' ) return;
-          
-          const css = event.data.css;
+          if ( ! b ) return; // bail if not sign in
           
           const dcmnt = this.contentDocument;
           
-          const head = dcmnt.getElementsByTagName ( 'head' ) [ 0 ];
-          
           const id = 'user-account-login-root';
           
-          const script = event.data.script;
+          const callback = mutations => {
           
-          const scriptElement = dcmnt.createElement ( 'script' );
-          
-          scriptElement.innerHTML = `
-          
-            const callback = mutations => {
+            mutations.forEach ( mutation => {
             
-              mutations.forEach ( mutation => {
+              // bail if no nodes added
               
-                // bail if no nodes added
+              if ( ! mutation.addedNodes.length ) return;
+              
+              const node = mutation.addedNodes [ 0 ];
+              
+              let selector = 'button[type="submit"]' +
+              
+                '[data-test="login-button"]';
                 
-                if ( ! mutation.addedNodes.length ) return;
+              const isSignIn = node.querySelector ( selector ) != null;
+              
+              if ( ! isSignIn ) return; // bail if not sign up
+              
+              const callback = mutations => {
+              
+                mutations.forEach ( mutation => {
                 
-                const node = mutation.addedNodes [ 0 ];
-                
-                const selector = 'button[type="submit"]' +
-                
-                  '[data-test="login-button"]';
+                  // bail if attribute not class
                   
-                const isSignIn = node.querySelector ( selector ) != null;
-                
-                if ( ! isSignIn ) return; // bail if not sign up
-                
-                document
-                
-                  .getElementById ( '${ id }' )
+                  if ( mutation.attributeName != 'class' ) return;
                   
-                  .classList
+                  const element = mutation.target;
                   
-                  .add ( 'twc-masidc' );
-                  
-                // begin add css
-                
-                  let p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
-                  
-                  let s = \`${ css }\`;
-                  
-                  let add = ! p.test ( s );
-                  
-                  if ( add ) {
-                  
-                    const style = document.createElement ( 'style' );
+                  const className = element
                     
-                    style.innerHTML = s;
+                    .getAttribute ( attributeNameClass );
                     
-                    document.body.append ( style );
-                    
-                    }
-                    
-                  // end add css
+                  // bail data class attribute is null
                   
-                // begin add script
+                  if ( className == null ) return;
+                  
+                  const b = element
+                  
+                    .classList
+                    
+                    .contains ( className );
+                    
+                  // bail class already added
+                  
+                  if ( b ) return;
+                  
+                  element
+                  
+                    .classList
+                    
+                    .add ( className );
+                    
+                  } );
+                  
+                }; // end mutations
                 
-                  p = new RegExp ( '^\\\\s+\\\\[.+\\\\]\\\\s+$' );
-                  
-                  s = \`${ script }\`;
-                  
-                  add = ! p.test ( s );
-                  
-                  if ( add ) {
-                  
-                    const script = document.createElement ( 'script' );
-                    
-                    script.innerHTML = s;
-                    
-                    document.head.append ( script );
-                    
-                    }
-                    
-                  // end add script
-                  
-                // begin change title
+              const codeClassName = 'twc-masidc';
+              
+              const classAdd = ( key ) => {
+            
+                const selector = `[ href="/account/login/${ key }" ]`;
+              
+                const element = dcmnt.querySelector ( selector );
+              
+                if ( element != null )
+              
+                  element.classList.add ( `${ codeClassName }-${ key }` );
                 
-                  p = new RegExp ( '^\\\\[.+\\\\]$' );
-                  
-                  s = '${ title }';
-                  
-                  const changeTitle = ! p.test ( s );
-                  
-                  if ( changeTitle )
-                  
-                    node
-                    
-                      .getElementsByTagName ( 'h1' ) [ 0 ]
-                      
-                      .innerHTML = s;
-                      
-                  // end change title
-                  
-                } ); // end mutations
+                return element;
+              
+                };
+              
+              const config = {
+              
+                attributes : true,
+                subtree : true
                 
-              };
+                };
+                
+              const observer = new MutationObserver ( callback );
               
-            const config = {
-            
-              childList : true
+              const options = twc.masidc;
               
-              };
+              const accountFrameCallback = options.accountFrameCallback;
               
-            const observer = new MutationObserver ( callback );
-            
-            // start listening for changes in specified element
-            
-            const node = document
-            
-              .getElementById ( '${ id }' )
+              const attributeNameClass = `data-${ codeClassName }-class`;
               
-              .lastChild;
+              let element;
               
-            observer.observe ( node, config );
-            
-            `;
-            
-          this
-          
-            .contentDocument
-            
-            .getElementsByTagName ( 'head' ) [ 0 ]
-            
-            .appendChild ( scriptElement );
-            
-          } ); // end on load
-          
-        };
-        
-      const selector = '#accountFrame';
-      
-      const $element = $( selector );
-      
-      if ( $element.length ) {
-      
-        load ( $element );
-        
-        } else {
-        
-          const callback = ( mutations ) => {
-          
-            $.each ( mutations, function ( ) {
-            
-              if ( ! this.addedNodes.length ) return; // bail if no nodes added
+              // begin add css
               
-              const $element = $( this.addedNodes [ 0 ] );
+                let p = new RegExp ( '^\s+\[.+\]\s+$' );
+                
+                let s = event
+                
+                  .data
+                  
+                  .css
+                  
+                  .textContent;
+                  
+                let add = ! p.test ( s );
+                
+                if ( add ) {
+                
+                  const style = dcmnt.createElement ( 'style' );
+                  
+                  style.textContent = s;
+                  
+                  dcmnt.body.append ( style );
+                  
+                  }
+                  
+                // end add css
+                
+              // code class add
               
-              const id = $element.attr ( 'id' );
+              dcmnt
               
-              if ( id != 'accountFrame' ) return; // bail if not account frame
+                .getElementById ( `${ id }` )
+                
+                .classList
+                
+                .add ( `${ codeClassName }` );
+                
+              // begin change title
               
-              load ( $element );
+                p = new RegExp ( '^\[.+\]$' );
+                
+                s = options.title;
+                
+                const changeTitle = ! p.test ( s );
+                
+                if ( changeTitle ) {
+                
+                  element = dcmnt
+                  
+                    .getElementsByTagName ( 'h1' )
+                    
+                    [ 0 ];
+                    
+                  element.classList
+                  
+                    .add ( `${ codeClassName }-title` );
+                    
+                  element.textContent = s;
+                  
+                  }
+                  
+                // end change title
+                
+              // begin sign in again class add
+              
+                element = dcmnt
+                
+                  .getElementsByTagName ( 'h3' )
+                  
+                  [ 0 ];
+                  
+                if ( element != null )
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( `${ codeClassName }-sign-in-again-text` );
+                    
+                // end sign in again class add
+                
+              // begin sign in email text class add
+              
+                let text = 'Sign in with';
+                
+                element = dcmnt.querySelectorAll ( 'form span' );
+                
+                element = [ ...element ]
+                
+                  .filter ( n => n.textContent.startsWith ( text ) )
+                  
+                  [ 0 ];
+                  
+                if ( element !== undefined ) {
+                
+                  s = `${ codeClassName }-sign-in-email-text`;
+                  
+                  element
+                  
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( s );
+                    
+                  }
+                  
+                // end sign in email text class add
+                
+              // begin email class add
+              
+                let value = `${ codeClassName }-email`;
+                
+                selector = 'form input[ type="email" ]';
+                
+                element = dcmnt.querySelector ( selector );
+                  
+                if ( element != null )
+                
+                  element
+                  
+                    .parentElement
+                    
+                    .parentElement
+                    
+                    .setAttribute ( attributeNameClass, value );
+                    
+                // end email class add
+                
+              // begin password class add
+              
+                selector = 'form input[ type="password" ]';
+                
+                value = `${ codeClassName }-password`;
+                
+                dcmnt
+                
+                  .querySelector ( selector )
+                  
+                  .parentElement
+                  
+                  .parentElement
+                  
+                  .setAttribute ( attributeNameClass, value );
+                  
+                // end password class add
+                
+              element = classAdd ( 'request-reset' );
+              
+              element = classAdd ( 'create' );
+              
+              // begin not you class add
+              
+                selector = 'footer [ href="#" ]';
+                
+                element = dcmnt.querySelector ( selector );
+                
+                if ( element != null ) {
+                
+                  s = `${ codeClassName }-not-you`;
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( s );
+                    
+                  }
+                  
+                // end not you class add
+                
+              if ( accountFrameCallback !== undefined )
+              
+                accountFrameCallback ( dcmnt );
+                
+              // start listening for changes in element
+              
+              element = dcmnt.querySelector ( 'form' );
+              
+              observer.observe ( element, config );
               
               } ); // end mutations
               
-            }; // end callback
+            };
             
           const config = {
           
@@ -254,12 +381,67 @@
           
           // start listening for changes in specified element
           
-          observer.observe ( document.body, config );
+          const node = dcmnt
           
-          }
+            .getElementById ( `${ id }` )
+            
+            .lastChild;
+            
+          observer.observe ( node, config );
           
-      // end member area sign in dialog change
+          } ); // end on load
+          
+        };
+        
+      const callback = ( mutations ) => {
       
-    } );
+        $.each ( mutations, function ( ) {
+        
+          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+          
+          const $element = $( this.addedNodes [ 0 ] );
+          
+          const id = $element.attr ( 'id' );
+          
+          // bail if not account frame
+          
+          if ( id != `${ accountFrameIdValue }` ) return;
+          
+          load ( $element );
+          
+          } ); // end mutations
+          
+        }; // end callback
+        
+      const config = {
+      
+        childList : true
+        
+        };
+        
+      const observer = new MutationObserver ( callback );
+      
+      const selector = `#${ accountFrameIdValue }`;
+      
+      const $element = $( selector );
+      
+      /*
+      
+        if the account frame is already on the DOM, load. if not, then watch for
+        it to appear on DOM and load
+        
+        */
+        
+      if ( $element.length )
+      
+        load ( $element );
+        
+      // start listening for changes in specified element
+      
+      observer.observe ( document.body, config );
+      
+      } );
+      
+    </script>
     
-  </script>
+  <!-- end member area sign in dialog change -->
