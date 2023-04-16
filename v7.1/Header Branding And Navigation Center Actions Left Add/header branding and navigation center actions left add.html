@@ -1,0 +1,111 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+
+    // debugger;
+    
+    /*
+    
+      header branding and navigation center actions left add
+      
+      License       : < https://bit.ly/3F8sn8W >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : jQuery
+      
+      Note          : if the actions left element already exists this code does
+                      nothing
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    let selector = '.header-layout-branding-center-nav-center';
+    
+    let element = document
+    
+      .querySelector ( selector );
+      
+    if ( element == null ) return; // bail if branding navigation doesn't exist
+    
+    selector = '.header-actions--left';
+    
+    element = document
+    
+      .querySelector ( selector );
+      
+    if ( element != null ) return; // bail if actions left exist
+    
+    selector = '.header-display-desktop';
+    
+    const node = document
+    
+      .querySelector ( selector );
+      
+    const walker = document.createTreeWalker (
+    
+      node,
+      NodeFilter.SHOW_COMMENT
+      
+      );
+      
+    while ( walker.nextNode ( ) ) {
+    
+      const node = walker.currentNode;
+      
+      const comment = node
+      
+        .data
+        
+        .trim ( );
+        
+      // continue if not comment of interest
+      
+      if ( comment != 'Title and nav wrapper' ) continue;
+      
+      console.log ( comment );
+      
+      const html = `
+      
+        <div class="header-actions header-actions--left">
+        
+          </div>
+          
+        `
+        
+        .trim ( );
+        
+      const template = document
+      
+        .createElement ( 'template' );
+        
+      template.innerHTML = html;
+      
+      const element = template
+      
+        .content
+        
+        .firstChild;
+        
+      node
+      
+        .parentNode
+        
+        .insertBefore ( element, node );
+        
+            break;
+            
+      }
+      
+    } );
+    
+  </script>
