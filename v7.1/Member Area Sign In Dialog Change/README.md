@@ -55,7 +55,7 @@ classes for these cases.
 
 ## accountFrameCallback Example
 
-You can optionally create a [callback][7] function for further custom
+You can optionally create a [callback][7] function to further customize the
 processing of the sign in dialog.
 
 Following is example code. Place your callback before the member area sign in
