@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.4.0
+### Version 0.4.1
 
 #### SS Version
 
@@ -86,6 +86,11 @@ the following.
 Please consider [making a donation][8].
 
 ## Changes
+
+* **2023-04-17**
+
+  * fix some residual issues after the code unnesting restructure
+  * bumped version to 0.4.1
 
 * **2023-04-15**
 
