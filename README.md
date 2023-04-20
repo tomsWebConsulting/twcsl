@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 213 effects. Each effect has it's own version number, code,
+twcsl contains 211 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -326,10 +326,6 @@ not necessarily designed to work together.
   * [Make Navigation Folders Clickable](v7.1/Make%20Navigation%20Folders%20Clickable)
     
   * [Member Area Log In Dialog Change](v7.1/Member%20Area%20Log%20In%20Dialog%20Change)
-    
-  * [Member Area Sign In Dialog Change](v7.1/Member%20Area%20Sign%20In%20Dialog%20Change)
-    
-  * [Member Area Sign Up Dialog Change](v7.1/Member%20Area%20Sign%20Up%20Dialog%20Change)
     
   * [Memberspace Observe Log in Status](v7.1/Memberspace%20Observe%20Log%20in%20Status)
     
