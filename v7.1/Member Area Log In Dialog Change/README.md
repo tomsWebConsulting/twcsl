@@ -48,11 +48,11 @@ This code attempts to add some useful classes.
   * twc-malidc-sign-up
   * twc-malidc-sign-up-password
   * twc-malidc-sign-up-password-confirm
-  * twc-masidc
-  * twc-masidc-create
-  * twc-masidc-email
-  * twc-masidc-password
-  * twc-masidc-request-reset
+  * twc-malidc
+  * twc-malidc-create
+  * twc-malidc-email
+  * twc-malidc-password
+  * twc-malidc-request-reset
 
 If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
