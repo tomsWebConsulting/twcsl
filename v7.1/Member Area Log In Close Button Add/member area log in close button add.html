@@ -1,0 +1,79 @@
+<script>
+
+  /*
+  
+    member area log in close button add
+    
+    License      : < https://bit.ly/3F8sn8W >
+    
+    Version      : 0.1.0
+    
+    SS Version   : 7.1
+    
+    Fluid
+    Engine
+    Compatible   : Not Applicable
+    
+    Dependencies : Member Area Log In Dialog Change < https://bit.ly/3UVvDf3 >
+    
+    By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const malicba = ( dcmnt, logInType ) => {
+  
+    const html = `
+    
+      <button class="close-btn" aria-label="Close">
+      
+        <div class="close-btn-icon">
+        
+          <svg viewBox="0 0 40 40">
+          
+            <path d="M4.3,35.7L35.7,4.3"></path>
+            
+            <path d="M4.3,4.3l31.4,31.4"></path>
+            
+            </svg>
+            
+          </div>
+          
+        </button>
+        
+      `;
+      
+    const id = 'user-account-login-root';
+    
+    const element = dcmnt
+    
+      .getElementsByTagName ( 'h1' )
+      
+      [ 0 ];
+      
+    let button = dcmnt.createElement ( 'div' );
+    
+    button.innerHTML = html;
+    
+    button = button.children [ 0 ];
+    
+    button.addEventListener ( 'click', event => {
+    
+      const selector = '.twc-malidc > *:first-child';
+      
+      dcmnt
+      
+        .querySelector ( selector )
+        
+        .click ( );
+        
+      } );
+      
+    element
+    
+      .parentElement
+      
+      .insertBefore ( button, element );
+      
+    }
+    
+  </script>
