@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version
 
@@ -40,10 +40,12 @@ Panel element. This code attempts to add some useful classes.
   * twc-capc-addresses
   * twc-capc-close
   * twc-capc-greeting
+  * twc-capc-greeting-sign-out
   * twc-capc-orders
   * twc-capc-profile
   * twc-capc-sign-out
   * twc-capc-title
+  * twc-capc-title-close
 
 If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
@@ -55,12 +57,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2022-12-06**
+* **2023-04-22**
 
-  * add variable for CSS customization
-  * fix for changes SS made that broke the code
+  * restructured the code to reduce some nesting
   * bumped version to 0.2.0
-  -->
+  
 * **2023-04-13**
 
   * initial version
