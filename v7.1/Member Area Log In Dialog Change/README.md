@@ -107,6 +107,8 @@ Please consider [making a donation][8].
 
   * initial version
 
+**All trademarks are property of their respective owners.**
+
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
