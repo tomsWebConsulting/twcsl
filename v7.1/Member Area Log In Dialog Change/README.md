@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version
 
@@ -97,12 +97,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2022-12-06**
+* **2023-04-27**
 
-  * add variable for CSS customization
-  * fix for changes SS made that broke the code
-  * bumped version to 0.2.0
-  -->
+  * fix for code picking up CSS from other code similar to this code
+  * bumped version to 0.1.1
+  
 * **2023-04-18**
 
   * initial version
