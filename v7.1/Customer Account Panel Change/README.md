@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.2.0
+### Version 0.2.1
 
 #### SS Version
 
@@ -32,7 +32,7 @@
   Advanced > Code Injection > FOOTER. Please see [Add code to code
   injection][6]. Read the code for any instructions within.
 
-## Note
+## Classes
 
 Squarespace includes virtually no semantic class names for the Customer Account
 Panel element. This code attempts to add some useful classes.
@@ -51,12 +51,45 @@ If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
 not immune to breakage but I think my method will break at a slower rate.
 
+## accountFrameCallback Example
+
+You can optionally create a [callback][7] function to further customize the
+processing of the sign in dialog.
+
+Following is example code. Place your callback before the customer account panel
+change code.
+
+```html
+<script>
+
+  const myNamedFunction = ( dcmnt ) => {
+  
+    console.log ( dcmnt );
+    
+    }
+    
+  </script>
+
+```
+
+Then in the customer account panel change code set accountFrameCallback to the
+following.
+
+```html
+      accountFrameCallback : myNamedFunction
+```
+
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-04-27**
+
+  * fix for code picking up CSS from other code similar to this code
+  * bumped version to 0.2.1
+  
 * **2023-04-22**
 
   * restructured the code to reduce some nesting
@@ -74,4 +107,5 @@ Please consider [making a donation][7].
 [4]: https://jquery.com/
 [5]: customer%20account%20panel%20change.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
