@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.2.1
+### Version 0.2.2
 
 #### SS Version
 
@@ -85,6 +85,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-05-06**
+
+  * fix for code not running is some circumtances
+  * bumped version to 0.2.2
+  
 * **2023-04-27**
 
   * fix for code picking up CSS from other code similar to this code
