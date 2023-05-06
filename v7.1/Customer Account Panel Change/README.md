@@ -87,7 +87,7 @@ Please consider [making a donation][8].
 
 * **2023-05-06**
 
-  * fix for code not running is some circumtances
+  * fix for code not running is some circumstances
   * bumped version to 0.2.2
   
 * **2023-04-27**
