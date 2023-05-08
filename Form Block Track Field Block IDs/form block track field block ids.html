@@ -1,0 +1,267 @@
+<!--
+
+  begin form block track field block ids
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : jQuery
+  
+  Note          : this code is a base for other effects. on its own it doesn't
+                  produce visible results
+                  
+                  this effect is not active in SS Preview to test it use private
+                  browsing < https://bit.ly/3f6lhq2 >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #siteWrapper {
+    
+      --twc-sqs-block-form-visibility : hidden;
+      --twc-fbtfbi : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) .sqs-block-form {
+    
+      visibility : var( --twc-sqs-block-form-visibility );
+      
+      }
+      
+    html:not( .squarespace-damask ) .sqs-block-form.twc-fbtfbi {
+    
+      visibility : var( --twc-fbtfbi );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    if ( twc.data == undefined ) twc.data = { };
+    
+    if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+    
+    if ( twc.data.hideShow [ '.sqs-block-form' ] == undefined )
+    
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ '.sqs-block-form' ]
+        
+        =
+        
+        [ ];
+        
+    twc
+    
+      .data
+      
+      .hideShow
+      
+      [ '.sqs-block-form' ]
+      
+      .push ( '--twc-fbtfbi' );
+      
+    </script>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const callback = mutations => {
+      
+        $.each ( mutations, function ( ) {
+        
+          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+          
+          const $this = $( this.addedNodes [ 0 ] );
+          
+          const b =
+          
+            $this
+            
+              .parents ( '.form-wrapper' )
+              
+              .attr ( `data-${ codeKey }` )
+              
+            ==
+            
+            undefined;
+            
+          if ( b ) return; // bail if not processed
+          
+          let selector = `.section .title:contains('${ codeKey }')`;
+          
+          $( selector, $this )
+          
+            .parents ( '.section' )
+            
+            .remove ( );
+            
+          selector = `.form-item .description:contains('${ codeKey }')`;
+          
+          $( selector, $this ).each ( function ( ) {
+          
+            const $this = $( this );
+            
+            const text = $this.text ( )
+            
+              .replace ( `${ codeKey }`, '' )
+              
+              .trim ( );
+              
+            if ( text )
+            
+              $this.text ( text );
+              
+              else
+              
+                $this.remove ( );
+                
+            } );
+            
+          } );
+          
+        }; // end callback
+        
+      const codeKey = 'twc-fbtfbi';
+      
+      const observer = new MutationObserver ( callback );
+      
+      let selector = `.sqs-block-form .section .title:contains('${ codeKey }')`;
+      
+      $( selector ).each ( function ( ) {
+      
+        const attribute = `data-${ codeKey }`;
+        
+        const selector = `.field-list .description:contains('${ codeKey }')`;
+          
+        const $this = $( this );
+        
+        const $form = $this
+        
+          .parents ( 'form' );
+          
+        const $formWrapper = $form
+        
+          .parents ( '.form-wrapper' );
+          
+        let blockIds = $formWrapper
+        
+          .attr ( attribute );
+          
+        if ( blockIds == undefined )
+        
+          blockIds = [ ];
+          
+          else
+          
+            return; // bail if already processed
+            
+        $this
+        
+          .parents ( '.section' )
+          
+          .remove ( );
+          
+        $( selector, $form )
+        
+          .each ( function ( ) {
+          
+            const id = '#'
+            
+              +
+              
+              $( this )
+              
+                .parents ( '.form-item' )
+                
+                .attr ( 'id' );
+                
+            blockIds.push ( id );
+            
+            } );
+            
+        blockIds = JSON.stringify ( blockIds );
+        
+        $formWrapper
+        
+          .attr ( attribute, blockIds );
+          
+        } );
+        
+      // begin listening for changes in specified elements
+      
+        selector = `[data-${ codeKey }]`;
+        
+        $( selector )
+        
+          .each ( function ( ) {
+          
+            observer.observe ( this, {
+            
+              childList : true
+              
+              } );
+              
+            } );
+            
+        // end listening for changes in specified elements
+        
+      $( '#siteWrapper' )
+      
+        .css ( `--${ codeKey }`, 'visible' );
+        
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ '.sqs-block-form' ]
+        
+        .pop ( '--twc-fbtfbi' );
+        
+      const l = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ '.sqs-block-form' ]
+        
+        .length;
+        
+      if ( ! l )
+      
+        $( '#siteWrapper' )
+        
+          .css ( '--twc-sqs-block-form-visibility', 'unset' );
+          
+      } );
+      
+    </script>
+    
+  <!-- end form block post-submit redirect url parameters add -->
