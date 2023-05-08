@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.1
+  Version       : 0.1.2
   
   SS Versions   : 7.1, 7.0
   
@@ -20,6 +20,9 @@
                   
                   this effect is not active in SS Preview to test it use private
                   browsing < https://bit.ly/3f6lhq2 >
+                  
+                  the code is comprised of a several tags. all are needed for
+                  the full effect to work
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -93,6 +96,10 @@
       ( ( ) => {
       
         if ( window.frameElement !== null ) return; // bail if in preview
+        
+        // bail if no mutation observer available
+        
+        if ( ! ( 'MutationObserver' in window ) ) return;
         
         const callback = mutations => {
         
@@ -238,7 +245,7 @@
       
         .css ( `--${ codeKey }`, 'visible' );
         
-      const i = twc
+      let i = twc
       
         .data
         
@@ -260,7 +267,7 @@
           
           .splice ( i, 1 );
           
-      const l = twc
+      i = twc
       
         .data
         
@@ -270,7 +277,7 @@
         
         .length;
         
-      if ( ! l )
+      if ( ! i )
       
         $( '#siteWrapper' )
         

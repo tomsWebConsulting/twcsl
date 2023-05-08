@@ -6,7 +6,7 @@
 
 Track tagged form block field block ids for later use in other code.
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Versions
 
@@ -67,6 +67,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-05-07**
+
+  * add some missing guard checks
+  * bumped version to 0.1.2
+  
 * **2023-05-07**
 
   * fix for cooperative elements hide/show code not working
