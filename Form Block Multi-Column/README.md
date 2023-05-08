@@ -43,12 +43,12 @@
     
 * Read the code for any instructions within.
 
-* Add or edit a form block. For the first field add a line field with a title of
+* Add or edit a form block. For the first field add a line field with a label of
   **twc-fbmc** and a description of **columns : n**. Replace **n** with the
   number of columns you want for the form.
 
 * For groups of fields that you want to have a column effect add a line field
-  with a title of **twc-fbmc-begin** before the first field of the column group.
+  with a label of **twc-fbmc-begin** before the first field of the column group.
   To end the column effect, after the last field of the column group add a line
   field with a title of **twc-fbmc-end**.
 
