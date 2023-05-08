@@ -6,7 +6,7 @@
 
 Track tagged form block field block ids for later use in other code.
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Versions
 
@@ -67,12 +67,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2022-05-10**
+* **2023-05-07**
 
-  * support for v7.1 product detail layouts
-  * use twcsl
-  * bumped version to 0.2.0
-  -->
+  * fix for cooperative elements hide/show code not working
+  * bumped version to 0.1.1
+  
 * **2023-05-07**
 
   * initial version

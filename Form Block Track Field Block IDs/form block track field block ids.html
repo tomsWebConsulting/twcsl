@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Versions   : 7.1, 7.0
   
@@ -88,153 +88,157 @@
   
     $( ( ) => {
     
-      if ( window.frameElement !== null ) return; // bail if in preview
+      const codeKey = 'twc-fbtfbi';
       
-      const callback = mutations => {
+      ( ( ) => {
       
-        $.each ( mutations, function ( ) {
+        if ( window.frameElement !== null ) return; // bail if in preview
         
-          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+        const callback = mutations => {
+        
+          $.each ( mutations, function ( ) {
           
-          const $this = $( this.addedNodes [ 0 ] );
-          
-          const b =
-          
-            $this
+            if ( ! this.addedNodes.length ) return; // bail if no nodes added
             
-              .parents ( '.form-wrapper' )
+            const $this = $( this.addedNodes [ 0 ] );
+            
+            const b =
+            
+              $this
               
-              .attr ( `data-${ codeKey }` )
+                .parents ( '.form-wrapper' )
+                
+                .attr ( `data-${ codeKey }` )
+                
+              ==
               
-            ==
+              undefined;
+              
+            if ( b ) return; // bail if not processed
             
-            undefined;
+            let selector = `.section .title:contains('${ codeKey }')`;
             
-          if ( b ) return; // bail if not processed
+            $( selector, $this )
+            
+              .parents ( '.section' )
+              
+              .remove ( );
+              
+            selector = `.form-item .description:contains('${ codeKey }')`;
+            
+            $( selector, $this ).each ( function ( ) {
+            
+              const $this = $( this );
+              
+              const text = $this.text ( )
+              
+                .replace ( `${ codeKey }`, '' )
+                
+                .trim ( );
+                
+              if ( text )
+              
+                $this.text ( text );
+                
+                else
+                
+                  $this.remove ( );
+                  
+              } );
+              
+            } );
+            
+          }; // end callback
           
-          let selector = `.section .title:contains('${ codeKey }')`;
+        const observer = new MutationObserver ( callback );
+        
+        let selector = `.sqs-block-form .section .title:contains('${ codeKey }')`;
+        
+        $( selector ).each ( function ( ) {
+        
+          const attribute = `data-${ codeKey }`;
           
-          $( selector, $this )
+          const selector = `.field-list .description:contains('${ codeKey }')`;
+          
+          const $this = $( this );
+          
+          const $form = $this
+          
+            .parents ( 'form' );
+            
+          const $formWrapper = $form
+          
+            .parents ( '.form-wrapper' );
+            
+          let blockIds = $formWrapper
+          
+            .attr ( attribute );
+            
+          if ( blockIds == undefined )
+          
+            blockIds = [ ];
+            
+            else
+            
+              return; // bail if already processed
+              
+          $this
           
             .parents ( '.section' )
             
             .remove ( );
             
-          selector = `.form-item .description:contains('${ codeKey }')`;
+          $( selector, $form )
           
-          $( selector, $this ).each ( function ( ) {
-          
-            const $this = $( this );
+            .each ( function ( ) {
             
-            const text = $this.text ( )
-            
-              .replace ( `${ codeKey }`, '' )
+              const id = '#'
               
-              .trim ( );
-              
-            if ( text )
-            
-              $this.text ( text );
-              
-              else
-              
-                $this.remove ( );
+                +
                 
-            } );
-            
-          } );
-          
-        }; // end callback
-        
-      const codeKey = 'twc-fbtfbi';
-      
-      const observer = new MutationObserver ( callback );
-      
-      let selector = `.sqs-block-form .section .title:contains('${ codeKey }')`;
-      
-      $( selector ).each ( function ( ) {
-      
-        const attribute = `data-${ codeKey }`;
-        
-        const selector = `.field-list .description:contains('${ codeKey }')`;
-          
-        const $this = $( this );
-        
-        const $form = $this
-        
-          .parents ( 'form' );
-          
-        const $formWrapper = $form
-        
-          .parents ( '.form-wrapper' );
-          
-        let blockIds = $formWrapper
-        
-          .attr ( attribute );
-          
-        if ( blockIds == undefined )
-        
-          blockIds = [ ];
-          
-          else
-          
-            return; // bail if already processed
-            
-        $this
-        
-          .parents ( '.section' )
-          
-          .remove ( );
-          
-        $( selector, $form )
-        
-          .each ( function ( ) {
-          
-            const id = '#'
-            
-              +
-              
-              $( this )
-              
-                .parents ( '.form-item' )
+                $( this )
                 
-                .attr ( 'id' );
-                
-            blockIds.push ( id );
-            
-            } );
-            
-        blockIds = JSON.stringify ( blockIds );
-        
-        $formWrapper
-        
-          .attr ( attribute, blockIds );
-          
-        } );
-        
-      // begin listening for changes in specified elements
-      
-        selector = `[data-${ codeKey }]`;
-        
-        $( selector )
-        
-          .each ( function ( ) {
-          
-            observer.observe ( this, {
-            
-              childList : true
+                  .parents ( '.form-item' )
+                  
+                  .attr ( 'id' );
+                  
+              blockIds.push ( id );
               
               } );
               
-            } );
+          blockIds = JSON.stringify ( blockIds );
+          
+          $formWrapper
+          
+            .attr ( attribute, blockIds );
             
-        // end listening for changes in specified elements
+          } );
+          
+        // begin listening for changes in specified elements
+        
+          selector = `[data-${ codeKey }]`;
+          
+          $( selector )
+          
+            .each ( function ( ) {
+            
+              observer.observe ( this, {
+              
+                childList : true
+                
+                } );
+                
+              } );
+              
+          // end listening for changes in specified elements
+          
+        } ) ( );
         
       $( '#siteWrapper' )
       
         .css ( `--${ codeKey }`, 'visible' );
         
-      twc
+      const i = twc
       
         .data
         
@@ -242,8 +246,20 @@
         
         [ '.sqs-block-form' ]
         
-        .pop ( '--twc-fbtfbi' );
+        .indexOf ( `--${ codeKey }` )
         
+      if ( i != -1 )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ '.sqs-block-form' ]
+          
+          .splice ( i, 1 );
+          
       const l = twc
       
         .data
@@ -264,4 +280,4 @@
       
     </script>
     
-  <!-- end form block post-submit redirect url parameters add -->
+  <!-- end form block track field block ids -->
