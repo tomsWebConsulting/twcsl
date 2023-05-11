@@ -55,18 +55,18 @@ Limit the number of characters allowed in form fields.
   Edit the field.
   
   At the beginning of the description field enter
-  **fbtfml : [enter max length number here replacing square brackets]**. An
+  **twc-fbtfml : [enter max length number here replacing square brackets]**. An
   example.
   
   ```
-  fbtfml : 10
+  twc-fbtfml : 10
   ```
   
   If you want to have description text for the field that the user will see
-  enter it after the fbtfml tag. An example.
+  enter it after the twc-fbtfml tag. An example.
   
   ```
-  fbtfml : 10
+  twc-fbtfml : 10
   My description text that helps the user.
   ```
 
