@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.0
+  Version       : 0.2.0
   
   SS Versions   : 7.1, 7.0
   
@@ -172,13 +172,13 @@
                 
               const $this = $( this );
               
-              const re = new RegExp ( 'twc-fbtfml\\s*:\\s*(\\d+)' );
+              const re = new RegExp ( 'twc-fbtfml\\s*:\\s*(\\d+)\n*' );
               
               let text = $this.text ( )
               
               let maxLength = text
               
-                .match ( re )
+                .match ( re );
                 
               text = text
               
@@ -194,13 +194,17 @@
                 
                 .attr ( 'maxlength', maxLength );
                 
-              if ( text )
+              if ( text ) {
               
                 $this.text ( text );
                 
-                else
+                $this.attr ( 'aria-label', text );
+                
+                } else {
                 
                   $this.remove ( );
+                  
+                  }
                   
               } );
               

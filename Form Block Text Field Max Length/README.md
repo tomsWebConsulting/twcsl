@@ -6,7 +6,7 @@
 
 Limit the number of characters allowed in form fields.
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Versions
 
@@ -90,10 +90,10 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2021-07-28**
+* **2023-05-11**
 
-  * generalized a bit to handle text and text area fields
-  * bumped version to 0.2d0
+  * clean up the aria-label on the description as well
+  * bumped version to 0.2.0
   -->
 * **2022-05-11**
 
