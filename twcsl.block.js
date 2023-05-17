@@ -6,6 +6,8 @@ xtwcsl.block = ( ( self ) => {
   
   Tom's Web Consulting Squarespace Library
   
+  License     : < https://bit.ly/3F8sn8W >
+  
   Submodule   : block
   
   Version     : 0.1.0
