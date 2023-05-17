@@ -180,22 +180,6 @@
   
         }
 
-      /*
-      
-      #modules li .v-7-1::after {
-      
-        content : ' (v7.1)';
-        
-        }
-        
-      #modules li[data-70] label::after {
-      
-        content : ' (v7.0)';
-        
-        }
-        
-      */
-      
       #site-type,
       #site-version
       
@@ -211,19 +195,13 @@
         
         }
         
-      #copy {
-      
-        /* padding : unset; */
-        
-        }
-        
-      #copy svg {
+      .copy svg {
       
         fill : white;
         
         }
         
-      #copy svg:hover {
+      .copy svg:hover {
       
         fill : lime;
         
@@ -295,106 +273,6 @@
 
     
 <main>
-  <!-- h1 class="visually-hidden">Heroes examples</h1>
-
-  <div class="px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="px-4 pt-5 my-5 text-center border-bottom">
-    <h1 class="display-4 fw-bold text-body-emphasis">Centered screenshot</h1>
-    <div class="col-lg-6 mx-auto">
-      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Primary button</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-      </div>
-    </div>
-    <div class="overflow-hidden" style="max-height: 30vh;">
-      <div class="container px-5">
-        <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
-        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
-        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-          <hr class="my-4">
-          <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div>
-
-  <div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Border hero with cropped image and shadows</h1>
-        <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-        </div>
-      </div>
-      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-          <img class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">
-      </div>
-    </div>
-  </div>
-
-  <div class="b-example-divider"></div -->
 
   <div class="bg-dark text-secondary px-4 py-5">
     <div class="py-5">
@@ -743,43 +621,72 @@
             
             </button>
             
-          <div class="mb-3" id="html">
+          <div id="html">
           
-            <p>
-            
-              HTML
-              
-              </p>
-              
-            <button aria-label="Copy to clipboard" class="btn btn-clipboard p-0 mb-3" data-bs-original-title="Copy to clipboard" id="copy" type="button">
-            
-              <svg height="20" role="img" width="20">
-              
-                <use xlink:href="#clipboard">
-                
-                  </use>
-                  
-                </svg>
-                
-              </button>
-              
-            <textarea cols="80" rows="24">
-            
-              </textarea>
-              
-            </div>
-            
-          <div class="mb-3" id="link">
-          
-            <ul class="d-flex flex-column">
+            <ul class="ps-3">
             
               <li class="mb-3">
               
-                <p class="h5 mb-3">
+                <h5>
                 
                   Step 1
                   
+                  </h5>
+                  
+                <p>
+                
+                  Add the following to Settings > Advanced > Code Injection >
+                  HEADER.
+                  
                   </p>
+                  
+                <button aria-label="Copy to clipboard" class="btn btn-clipboard copy mb-3 p-0" data-bs-original-title="Copy to clipboard" type="button">
+                
+                  <svg height="20" role="img" width="20">
+                  
+                    <use xlink:href="#clipboard">
+                    
+                      </use>
+                      
+                    </svg>
+                    
+                  </button>
+                  
+                <textarea cols="80" id="code" rows="24">
+                
+                  </textarea>
+                  
+                </li>
+                
+              <li class="mb-3">
+              
+                The trial period install steps are finished.
+                
+                </li>
+                
+              <li>
+              
+                Once your site is out of the trial period you may want to switch
+                over to the paid plan install. Just reverse the trial period
+                install steps and then follow the paid plan install steps.
+                
+                </li>
+                
+              </ul>
+              
+            </div>
+            
+          <div id="link">
+          
+            <ul class="ps-3">
+            
+              <li class="mb-3">
+              
+                <h5>
+                
+                  Step 1
+                  
+                  </h5>
                   
                 Click this
                  
@@ -793,11 +700,11 @@
                 
               <li class="mb-3">
               
-                <p class="h5 mb-3">
+                <h5>
                 
                   Step 2
                   
-                  </p>
+                  </h5>
                   
                 In Pages > Not Linked add a Link page and link to the twcsl.js
                 file.
@@ -806,11 +713,11 @@
                 
               <li class="mb-3">
               
-                <p class="h5 mb-3">
+                <h5>
                 
                   Step 3
                   
-                  </p>
+                  </h5>
                   
                 <p>
                 
@@ -818,8 +725,25 @@
                   HEADER.
                   
                   </p>
+                  
+                <button aria-label="Copy to clipboard" class="btn btn-clipboard copy mb-3 p-0" data-bs-original-title="Copy to clipboard" type="button">
                 
-                <pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"&gt;&lt;/script&gt;
+                  <svg height="20" role="img" width="20">
+                  
+                    <use xlink:href="#clipboard">
+                    
+                      </use>
+                      
+                    </svg>
+                    
+                  </button>
+                  
+                <textarea class="mb-3" cols="80" id="jquery-twcsl" rows="3">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="/s/twcsl.js"></script>
+</textarea>
+                  
+                <pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script src="/s/twcsl.js"&gt;&lt;/script&gt;
 
 </code></pre>
@@ -835,10 +759,11 @@
           </div>
           
       </div>
+      
     </div>
+    
   </div>
 
-  <!-- div class="b-example-divider mb-0"></div -->
 </main>
 
 
@@ -850,11 +775,15 @@
     
       // clipboard
       
-      const copy = ( ) => {
+      const copy = ( event ) => {
       
-        const t = document
+        const t = event
         
-          .querySelector ( '#html textarea' )
+          .target
+          
+          .closest ( '.copy' )
+          
+          .nextElementSibling
           
           .textContent;
           
@@ -871,33 +800,29 @@
         document.execCommand ( 'copy' );
         
         };
-      
-      document
-      
-        .querySelector ( '#copy' )
         
-        .addEventListener ( 'click', copy );
+      [ ...
+      
+        document
+      
+        .getElementsByClassName ( 'copy' )
         
+        ]
+        
+        .forEach ( ( element ) => {
+        
+          element
+          
+            .addEventListener ( 'click', copy );
+            
+          } );
+          
       // generate code
       
       let click = event => {
       
-        console.log ( event );
-        
         const promises = [ ];
         
-        /*
-        
-        [ ...
-        
-          document
-          
-            .querySelectorAll ( selector )
-            
-          ]
-          
-          */
-          
           let extension;
           
           let selector = 'input[ name="site-plan" ]:checked';
@@ -932,8 +857,6 @@
             
           .forEach ( element => {
           
-            console.log ( element );
-            
             const url = element
             
               .getAttribute ( 'data-src' )
@@ -952,10 +875,12 @@
         
           .then ( responses => {
           
-            console.log ( responses );
+            const promises = [
             
-            const promises = [ ];
-            
+              '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"><\/script>\n'
+              
+              ];
+              
             responses.forEach ( ( response ) => {
             
               promises.push ( response.text ( ) );
@@ -968,8 +893,6 @@
               
               .then ( texts => {
               
-                console.log ( texts );
-                
                 const html = document
                 
                   .getElementById ( 'html' );
@@ -1012,69 +935,17 @@
                     
                       .add ( 'show' );
                       
-                    /*
+                    location.href = '#link';
                     
-                    console.log ( texts );
-                    
-                    texts.forEach ( ( text, index, texts ) => {
-                    
-                      text = text
-                      
-                        .replace ( /^(.*)/gm, '  $1' );
-                        
-                      text = '<script>\n\n' +
-                      
-                        text +
-                        
-                        '<\/script>\n\n';
-                        
-                      texts [ index ] = text;
-                      
-                      } );
-                    
-                    console.log ( texts );
-                    
-                    texts = texts
-                    
-                      .join ( '' );
-                      
-                    texts = encodeURIComponent ( texts );
-                    
-                    texts = `data:application/javascript;charset=utf-8,${ texts }`;
-                    
-                    link
-                    
-                      .getElementsByTagName ( 'a' )
-                      
-                      [ 0 ]
-                      
-                      .setAttribute ( 'href', texts );
-                      
-                    linkClassList.remove ( 'show' );
-                    
-                    linkClassList
-                    
-                      .add ( 'show' );
-                      
-                    */
-                      
                     break;
                     
                   case 'trial' :
                   
-                    /*
+                    document
                     
-                    const s = texts
-                    
-                      .join ( '\n' );
+                      .getElementById ( 'code' )
                       
-                    */
-                    
-                    html
-                    
-                      .getElementsByTagName ( 'textarea' )
-                      
-                      [ 0 ]
+                      // [ 0 ]
                       
                       .innerHTML
                       
@@ -1136,8 +1007,6 @@
       
       click = event => {
       
-        console.log ( event );
-        
         const id = event
         
           .target
@@ -1202,8 +1071,6 @@
           
         if ( ! isInput ) return; // bail if not input
         
-        console.log ( event );
-        
         const isRequired = event
         
           .target
@@ -1252,8 +1119,6 @@
       
       click = event => {
       
-        console.log ( event );
-        
         const element = document
         
           .getElementById ( 'modules' );
