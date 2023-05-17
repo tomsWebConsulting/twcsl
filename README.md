@@ -562,6 +562,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Methods
 
+<a id="block"></a>
+
 * block ( object )
 
   * form ( object )
@@ -581,6 +583,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
         
           * Default is the first form on the page.
           * Returns jQuery object or undefined for no form.
+
+<a id="cookie"></a>
 
 * cookie ( object )
 
@@ -603,6 +607,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Key, value, expires, maxAge, path are strings.
       * Returns a string, the cookie value.
 
+<a id="element"></a>
+
 * element ( object )
 
   * is ( object )
@@ -618,6 +624,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
         * Element is a jQuery object.
         * Returns boolean.
+
+<a id="miscellaneous"></a>
 
 * miscellaneous ( object )
 
@@ -646,14 +654,20 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Returns a string. If the first character of the url is a number, dash, or
         underscore character **x-** is added to the beginning of the class name.
 
+<a id="page"></a>
+
 * page ( object )
 
+  <a id="page.album"></a>
+  
   * album ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="page.blog"></a>
+  
   * blog ( object )
   
     * is ( boolean )
@@ -692,12 +706,16 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
     
+  <a id="page.cover"></a>
+  
   * cover ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="page.events"></a>
+  
   * events ( object )
   
     * event ( object )
@@ -732,18 +750,24 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="page.gallery"></a>
+  
   * gallery ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="page.index"></a>
+  
   * index ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="page.portfolio"></a>
+  
   * portfolio ( object )
   
     * is ( boolean )
@@ -762,6 +786,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
 
+  <a id="page.store"></a>
+  
   * store ( object )
   
     * detail ( object )
@@ -802,12 +828,16 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="page.videos"></a>
+  
   * videos ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+<a id="section"></a>
+
 * section ( object )
 
   * get ( object )
