@@ -494,7 +494,7 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Methods
 
-<a href="twcsl.block"></a>
+<a id="twcsl.block"></a>
 
 * block ( object )
 
@@ -515,6 +515,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
         
           * Default is the first form on the page.
           * Returns jQuery object or undefined for no form.
+
+<a id="twcsl.cookie"></a>
 
 * cookie ( object )
 
