@@ -478,78 +478,10 @@ building effects in Squarespace sites.
 
 ### Version 0.4.0
 
-## Install Options
+## Install
 
-  * There are two options for installing twcsl on your site depending on if your
-    site is on a **[paid plan][1]** or in a **[trial period][2]**. Use **only
-    one** of the install options. Be sure to save the changes you make when
-    given the opportunity.
-    
-    <a id="Paid-Plan-Install-Steps"></a>
-    
-    * **Paid Plan Install Steps**
-    
-      * **Step 1**
-      
-        In your web browser visit the following URL.
-        
-        ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.2/twcsl.js
-        ```
-        
-        The **twcsl.js** file will be downloaded to your computer.
-        
-      * **Step 2**
-      
-        In **Pages > Not Linked** [add a **Link** page][3] and [link to the
-        **twcsl.js** file][4].
-        
-      * **Step 3**
-      
-        Add the following to Settings > Advanced > Code Injection > HEADER.
-        
-        ```html
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="/s/twcsl.js"></script>
-        ```
-        
-      * The paid plan install steps are finished.
-      
-    <a id="Trial-Period-Install-Steps"></a>
-    
-    * **Trial Period Install Steps**
-    
-      * **Step 1**
-      
-        Add the following to Settings > Advanced > Code Injection > HEADER.
-        
-        ```html
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        
-        ```
-        
-      * **Step 2**
-      
-        In your web browser visit the following URL.
-        
-        ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.2/twcsl.html
-        ```
-        
-        The **twcsl.html** file will display in your browser.
-        
-      * **Step 3**
-      
-        Copy the entire contents of the page and add it to Settings >
-        Advanced > Code Injection > HEADER after the previously installed code.
-        jQuery must be before the twcsl code.
-        
-      * The trial period install steps are finished.
-      
-      * *Once your site is out of the trial period you may want to switch over
-        to the paid plan install. Just reverse the trial period install steps
-        and then follow the paid plan install steps.*
-      
+Use the [configurator][1] to install twcsl.
+
 ## Example
 
 You want to build an effect that does something when you are on a store category
@@ -561,8 +493,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 ```
 
 ## Methods
-
-<a id="block"></a>
 
 * block ( object )
 
@@ -583,8 +513,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
         
           * Default is the first form on the page.
           * Returns jQuery object or undefined for no form.
-
-<a id="cookie"></a>
 
 * cookie ( object )
 
@@ -607,8 +535,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Key, value, expires, maxAge, path are strings.
       * Returns a string, the cookie value.
 
-<a id="element"></a>
-
 * element ( object )
 
   * is ( object )
@@ -624,8 +550,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
         * Element is a jQuery object.
         * Returns boolean.
-
-<a id="miscellaneous"></a>
 
 * miscellaneous ( object )
 
@@ -654,20 +578,14 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Returns a string. If the first character of the url is a number, dash, or
         underscore character **x-** is added to the beginning of the class name.
 
-<a id="page" name="page"></a>
-
 * page ( object )
 
-  <a id="page.album"></a>
-  
   * album ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
-  <a id="page.blog"></a>
-  
   * blog ( object )
   
     * is ( boolean )
@@ -706,16 +624,12 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
     
-  <a id="page.cover"></a>
-  
   * cover ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
-  <a id="page.events"></a>
-  
   * events ( object )
   
     * event ( object )
@@ -750,24 +664,18 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
-  <a id="page.gallery"></a>
-  
   * gallery ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
-  <a id="page.index"></a>
-  
   * index ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
-  <a id="page.portfolio"></a>
-  
   * portfolio ( object )
   
     * is ( boolean )
@@ -786,8 +694,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
 
-  <a id="page.store"></a>
-  
   * store ( object )
   
     * detail ( object )
@@ -828,16 +734,12 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
-  <a id="page.videos"></a>
-  
   * videos ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
-<a id="section"></a>
-
 * section ( object )
 
   * get ( object )
@@ -904,6 +806,11 @@ design pattern.
 
 ## Changes
 
+* **2023-05-17**
+
+  * reworked code in to multi-module based code
+  * bumped twcsl.js version to 0.4.0
+  
 * **2023-03-05**
 
   * fix for twcsl.page.blog.hasCategory not recognizing category url slugs in
@@ -1064,7 +971,6 @@ design pattern.
 
   * initial version
 
-[1]: #Paid-Plan-Install-Steps
-[2]: #Trial-Period-Install-Steps
-[3]: https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link
-[4]: https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file
+[1]: https://tomswebconsulting.github.io/twcsl/
+[2]: https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link
+[3]: https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file
