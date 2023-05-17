@@ -654,7 +654,7 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Returns a string. If the first character of the url is a number, dash, or
         underscore character **x-** is added to the beginning of the class name.
 
-<a id="page"></a>
+<a id="page" name="page"></a>
 
 * page ( object )
 
