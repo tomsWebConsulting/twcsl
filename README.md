@@ -494,6 +494,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Methods
 
+<a href="twcsl.block"></a>
+
 * block ( object )
 
   * form ( object )
