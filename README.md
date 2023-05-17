@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 224 effects. Each effect has it's own version number, code,
+twcsl contains 213 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -54,8 +54,6 @@ not necessarily designed to work together.
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
   
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
-  
-* [assets](assets)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
@@ -104,8 +102,6 @@ not necessarily designed to work together.
 * [Configurator Page Text and Image Blocks](Configurator%20Page%20Text%20and%20Image%20Blocks)
   
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
-  
-* [Elements Manipulate](Elements%20Manipulate)
   
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
@@ -225,10 +221,6 @@ not necessarily designed to work together.
     
     * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
       
-  * [York Template Family](v7.0/York%20Template%20Family)
-    
-    * [Project Page Image Clickthrough Add](v7.0/York%20Template%20Family/Project%20Page%20Image%20Clickthrough%20Add)
-      
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -246,10 +238,6 @@ not necessarily designed to work together.
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
   * [Blocks Boilerplate](v7.1/Blocks%20Boilerplate)
-    
-  * [Blog List Image Aspect Ratio Change](v7.1/Blog%20List%20Image%20Aspect%20Ratio%20Change)
-    
-  * [Blog Page List Meta Copy](v7.1/Blog%20Page%20List%20Meta%20Copy)
     
   * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
@@ -294,6 +282,8 @@ not necessarily designed to work together.
   * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
     
   * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
+    
+  * [Elements Replace](v7.1/Elements%20Replace)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
     
@@ -393,8 +383,6 @@ not necessarily designed to work together.
     
   * [Portfolio Page Grid Image Aspect Ratio Change](v7.1/Portfolio%20Page%20Grid%20Image%20Aspect%20Ratio%20Change)
     
-  * [Portfolio Page Hover Background Autoplay](v7.1/Portfolio%20Page%20Hover%20Background%20Autoplay)
-    
   * [Portfolio Page Project Collection Type Class Add](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add)
     
   * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
@@ -420,10 +408,6 @@ not necessarily designed to work together.
   * [Site Title Each Word Span Tag Add](v7.1/Site%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Site Wide Image Borders](v7.1/Site%20Wide%20Image%20Borders)
-    
-  * [Store Categories Cache](v7.1/Store%20Categories%20Cache)
-    
-  * [Store Categories Mega](v7.1/Store%20Categories%20Mega)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
     
@@ -471,11 +455,7 @@ not necessarily designed to work together.
     
   * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
     
-  * [Store Product List Badges](v7.1/Store%20Product%20List%20Badges)
-    
   * [Store Product List Out of Stock Badge](v7.1/Store%20Product%20List%20Out%20of%20Stock%20Badge)
-    
-  * [Store Product List Sale Badge](v7.1/Store%20Product%20List%20Sale%20Badge)
     
   * [Store Product Meta New](v7.1/Store%20Product%20Meta%20New)
     
@@ -485,8 +465,6 @@ not necessarily designed to work together.
     
   * [Store Tag Page Description Add](v7.1/Store%20Tag%20Page%20Description%20Add)
     
-  * [Store Tag Rating](v7.1/Store%20Tag%20Rating)
-    
   * [Text Block Text Class Add](v7.1/Text%20Block%20Text%20Class%20Add)
     
 ---
@@ -495,85 +473,15 @@ not necessarily designed to work together.
 
 # twcsl.js
 
-twcsl.js is a Javascript library of common properties and methods useful for
-building effects in Squarespace sites.
+twcsl.js is a Javascript library of common properties, methods, and stubs useful
+for building effects in Squarespace sites.
 
-### Version 0.3.2
+### Version 0.4.0
 
-## Install Options
+## Install
 
-  * There are two options for installing twcsl on your site depending on if your
-    site is on a **[paid plan][1]** or in a **[trial period][2]**. Use **only
-    one** of the install options. Be sure to save the changes you make when
-    given the opportunity.
-    
-    <a id="Paid-Plan-Install-Steps"></a>
-    
-    * **Paid Plan Install Steps**
-    
-      * **Step 1**
-      
-        In your web browser visit the following URL.
-        
-        ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.2/twcsl.js
-        ```
-        
-        The **twcsl.js** file will be downloaded to your computer.
-        
-      * **Step 2**
-      
-        In **Pages > Not Linked** [add a **Link** page][3] and [link to the
-        **twcsl.js** file][4].
-        
-      * **Step 3**
-      
-        Add the following to Settings > Developer Tools > Code Injection >
-        HEADER.
-        
-        ```html
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-        <script src="/s/twcsl.js"></script>
-        ```
-        
-      * The paid plan install steps are finished.
-      
-    <a id="Trial-Period-Install-Steps"></a>
-    
-    * **Trial Period Install Steps**
-    
-      * **Step 1**
-      
-        Add the following to Settings > Developer Tools > Code Injection >
-        HEADER.
-        
-        ```html
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-        
-        ```
-        
-      * **Step 2**
-      
-        In your web browser visit the following URL.
-        
-        ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.2/twcsl.html
-        ```
-        
-        The **twcsl.html** file will display in your browser.
-        
-      * **Step 3**
-      
-        Copy the entire contents of the page and add it to Settings >
-        Developer Tools > Code Injection > HEADER after the previously installed
-        code. jQuery must be before the twcsl code.
-        
-      * The trial period install steps are finished.
-      
-      * *Once your site is out of the trial period you may want to switch over
-        to the paid plan install. Just reverse the trial period install steps
-        and then follow the paid plan install steps.*
-      
+Use the [configurator][1] to install twcsl.
+
 ## Example
 
 You want to build an effect that does something when you are on a store category
@@ -586,89 +494,114 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Methods
 
-* getFormFieldLabel
+<a id="twcsl.block"></a>
 
-  * getFormFieldLabel ( field )
-  
-    * Field is a jQuery object.
-    * Returns form field label as entered in SS form editor interface.
-    
-* getFormNth
+* block ( object )
 
-  * getFormNth ( [nth form on page] )
+  <a id="twcsl.block.form"></a>
   
-    * Default is the first form on the page.
-    * Returns jQuery object or undefined for no form.
+  * form ( object )
+  
+    * get ( object )
     
-* getPageSectionNth
-
-  * getPageSectionNth ( [nth section on page] )
-  
-    * Default is the first section on the page.
-    * Returns jQuery object or undefined for no page section.
-    
-* getUrlParser
-
-  * getUrlParser ( url )
-  
-    * Returns an anchor element.
-    
-* isElementInPage
-  
-  * isElementInPage ( element )
-  
-    * Element is a jQuery object.
-    * Returns boolean.
-    
-* isElementInViewport
-  
-  * isElementInViewport ( element )
-  
-    * Element is a jQuery object.
-    * Returns boolean.
-    
-* scrollEffect
-
-  * scrollEffect ( callback [, easingFunction, invertScale ] )
-  
-    * Calculates the scroll postion as a ratio that is passed to your callback.
-    
-      easingFunction ( string ), default is linear
+      * fieldLabel
       
-      invertScale ( boolean ), default is false
+        * fieldLabel ( field )
+        
+          * Field is a jQuery object.
+          * Returns form field label as entered in SS form editor interface.
+          
+      * nth
       
-* go
+        * nth ( [nth form on page] )
+        
+          * Default is the first form on the page.
+          * Returns jQuery object or undefined for no form.
 
-  * go ( callback )
+<a id="twcsl.cookie"></a>
+
+* cookie ( object )
+
+  * exists
   
-    An initialize method if you want to write code using twcsl that works
-    on both v7.1 and v7.0.
+    * exists ( cookie )
     
-    * callback is a function name
+      * Cookie is a string.
+      * Returns boolean.
       
-* urlToCssClassName
+  * value ( object )
   
-  * urlToCssClassName ( url )
+    * get ( cookie )
+    
+      * Cookie is a string.
+      * Returns a string, the cookie value.
+      
+    * set ( key, value, expires, maxAge, path )
+    
+      * Key, value, expires, maxAge, path are strings.
+      * Returns a string, the cookie value.
+
+<a id="twcsl.element"></a>
+
+* element ( object )
+
+  * is ( object )
   
-    * Url is a string.
-    * Returns a string. If the first character of the url is a number, dash, or
-      or underscore character **x-** is added to the beginning of the class
-      name.
+    * in ( object )
+    
+      * page
+      
+        * Element is a jQuery object.
+        * Returns boolean.
+        
+      * viewport
+      
+        * Element is a jQuery object.
+        * Returns boolean.
 
-## Properties and their Methods
+<a id="twcsl.miscellaneous"></a>
 
-* navigator ( object )
+* miscellaneous ( object )
 
-  * hasTouchScreen ( boolean )
+  * getUrlParser
   
+    * getUrlParser ( url )
+    
+      * Returns an anchor element.
+      
+  * scrollEffect
+  
+    * scrollEffect ( callback [, easingFunction, invertScale ] )
+    
+      * Calculates the scroll postion as a ratio that is passed to your
+        callback.
+      
+        easingFunction ( string ), default is linear
+        
+        invertScale ( boolean ), default is false
+        
+  * urlToCssClassName
+  
+    * urlToCssClassName ( url )
+    
+      * Url is a string.
+      * Returns a string. If the first character of the url is a number, dash, or
+        underscore character **x-** is added to the beginning of the class name.
+
+<a id="twcsl.page"></a>
+
 * page ( object )
 
+  <a id="twcsl.page.album"></a>
+  
   * album ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.blog"></a>
+  
   * blog ( object )
   
     * is ( boolean )
@@ -707,12 +640,16 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
     
+  <a id="twcsl.page.cover"></a>
+  
   * cover ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.events"></a>
+  
   * events ( object )
   
     * event ( object )
@@ -747,18 +684,24 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="twcsl.page.gallery"></a>
+  
   * gallery ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.index"></a>
+  
   * index ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.portfolio"></a>
+  
   * portfolio ( object )
   
     * is ( boolean )
@@ -777,6 +720,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
 
+  <a id="twcsl.page.store"></a>
+  
   * store ( object )
   
     * detail ( object )
@@ -817,12 +762,27 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="twcsl.page.videos"></a>
+  
   * videos ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+<a id="twcsl.section"></a>
+
+* section ( object )
+
+  * get ( object )
+  
+    * nth ( [nth section on page] )
+    
+    * Default is the first section on the page.
+    * Returns jQuery object or undefined for no page section.
+
+<a id="twcsl.ss"></a>
+
 * ss ( object )
 
   * is70 ( boolean )
@@ -831,10 +791,52 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
   * version ( string )
   
-* version ( string, twcsl version )
+<a id="twcsl.version"></a>
+
+* version ( object )
+
+  * twcsl ( twcsl version )
+  
+  * initializer ( object, initializer versions )
+  
+  * submodule ( object, submodule versions )
+
+## Properties and their Methods
+
+<a id="twcsl.navigator"></a>
+
+* navigator ( object )
+
+  * hasTouchScreen ( boolean )
+  
+## Notes
+
+Prior to v0.4.0 twcsl.js was a single code file. With v0.4.0 I am using module
+design patterns including submodules, cross-file private state, some loose
+augmentation, but generally tight augmentation. The later means that module
+order is mostly important. If you are a developer you should be able to
+determine when you can and can't use loose augmentation.
+
+There are pros and cons to using a more modular approach to the twcsl code. One
+con with previous versions was the monolithic nature of the code. You might be
+interested in a very limited number of features, for example twcsl.page.store.
+With it you can write code and check and do various things based on where you
+are within a Store page. However with a single piece of code you are also
+getting a bunch of code you don't need. That is one of the realities of using
+libraries. You get a bunch of code you aren't using. It's a convenience vs. the
+most efficient code.
+
+A more modular approach to the code generally improves the not loading code you
+don't need task wise. However there is the overhead using a multiple module
+design pattern.
 
 ## Changes
 
+* **2023-05-17**
+
+  * reworked code in to multi-module based code
+  * bumped twcsl.js version to 0.4.0
+  
 * **2023-03-05**
 
   * fix for twcsl.page.blog.hasCategory not recognizing category url slugs in
@@ -995,7 +997,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
   * initial version
 
-[1]: #Paid-Plan-Install-Steps
-[2]: #Trial-Period-Install-Steps
-[3]: https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link
-[4]: https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file
+[1]: https://tomswebconsulting.github.io/twcsl/
+[2]: https://support.squarespace.com/hc/en-us/articles/205814758-Adding-links-to-your-navigation#toc-add-a-link
+[3]: https://support.squarespace.com/hc/en-us/articles/205814758#toc-link-to-a-file
