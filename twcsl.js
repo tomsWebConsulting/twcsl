@@ -6,11 +6,13 @@ var xtwcsl = ( ( ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.4.0
+  License     : < https://bit.ly/3F8sn8W >
   
-  SS Versions     : 7.1, 7.0
+  Version     : 0.4.0
   
-  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  SS Versions : 7.1, 7.0
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   

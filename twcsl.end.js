@@ -6,13 +6,15 @@
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.1.0
+  License       : < https://bit.ly/3F8sn8W >
   
-  SS Versions     : Not Applicable
+  Version       : 0.1.0
   
-  Dependencies    : twcsl
+  SS Versions   : Not Applicable
   
-  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Dependencies  : twcsl
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
