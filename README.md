@@ -539,6 +539,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Key, value, expires, maxAge, path are strings.
       * Returns a string, the cookie value.
 
+<a id="twcsl.element"></a>
+
 * element ( object )
 
   * is ( object )
@@ -554,6 +556,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
         * Element is a jQuery object.
         * Returns boolean.
+
+<a id="twcsl.miscellaneous"></a>
 
 * miscellaneous ( object )
 
@@ -582,14 +586,20 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Returns a string. If the first character of the url is a number, dash, or
         underscore character **x-** is added to the beginning of the class name.
 
+<a id="twcsl.page"></a>
+
 * page ( object )
 
+  <a id="twcsl.page.album"></a>
+  
   * album ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.blog"></a>
+  
   * blog ( object )
   
     * is ( boolean )
@@ -628,12 +638,16 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
     
+  <a id="twcsl.page.cover"></a>
+  
   * cover ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.events"></a>
+  
   * events ( object )
   
     * event ( object )
@@ -668,18 +682,24 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="twcsl.page.gallery"></a>
+  
   * gallery ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.index"></a>
+  
   * index ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+  <a id="twcsl.page.portfolio"></a>
+  
   * portfolio ( object )
   
     * is ( boolean )
@@ -698,6 +718,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
     * is ( boolean )
 
+  <a id="twcsl.page.store"></a>
+  
   * store ( object )
   
     * detail ( object )
@@ -738,12 +760,16 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       
     * urlSlug ( string )
     
+  <a id="twcsl.page.videos"></a>
+  
   * videos ( object )
   
     * is ( boolean )
     
     * urlSlug ( string )
     
+<a id="twcsl.section"></a>
+
 * section ( object )
 
   * get ( object )
@@ -765,6 +791,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
       * Key, value, expires, maxAge, path are strings.
       * Returns a string, the cookie value.
 
+<a id="twcsl.ss"></a>
+
 * ss ( object )
 
   * is70 ( boolean )
@@ -773,6 +801,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
   * version ( string )
   
+<a id="twcsl.version"></a>
+
 * version ( object )
 
   * twcsl ( twcsl version )
@@ -782,6 +812,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   * submodule ( object, submodule versions )
 
 ## Properties and their Methods
+
+<a id="twcsl.navigator"></a>
 
 * navigator ( object )
 
