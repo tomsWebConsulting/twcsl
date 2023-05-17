@@ -97,6 +97,13 @@
 
     <style>
     
+      #clipboard-text {
+      
+        left : -1000px;
+        position : fixed;
+        
+        }
+        
       main {
       
         list-style-type : none;
@@ -204,6 +211,24 @@
         
         }
         
+      #copy {
+      
+        /* padding : unset; */
+        
+        }
+        
+      #copy svg {
+      
+        fill : white;
+        
+        }
+        
+      #copy svg:hover {
+      
+        fill : lime;
+        
+        }
+        
       </style>
       
     <!-- Custom styles for this template -->
@@ -217,6 +242,13 @@
       <symbol id="circle-half" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z">
       </symbol>
+      <symbol id="clipboard" viewBox="0 0 16 16">
+
+        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+  
+        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  
+        </symbol>
       <symbol id="moon-stars-fill" viewBox="0 0 16 16">
         <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
         <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
@@ -375,7 +407,7 @@
       
         <div class="d-flex flex-column fs-5 mb-4" id="settings">
         
-          <div class="mb-3" id="site-type">
+          <div class="mb-3" data-type="paid" id="site-type">
           
             <p>
             
@@ -453,9 +485,9 @@
           
             <li class="form-check">
             
-              <input checked class="form-check-input" data-required data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.js" type="checkbox" value="">
+              <input checked class="form-check-input" data-required data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl" id="twcsl" type="checkbox" value="">
               
-              <label class="form-check-label" for="twcsl.js">
+              <label class="form-check-label" for="twcsl">
               
                 twcsl
                 
@@ -465,7 +497,7 @@
               
             <li class="form-check">
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.block" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.block" id="twcsl.block" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.block">
               
@@ -484,7 +516,7 @@
               
             <li class="form-check">
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.cookie" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.cookie" id="twcsl.cookie" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.cookie">
               
@@ -502,7 +534,7 @@
               
             <li class="form-check">
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.element" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.element" id="twcsl.element" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.element">
               
@@ -520,7 +552,7 @@
               
             <li class="form-check">
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page" id="twcsl.page" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.page">
               
@@ -541,7 +573,7 @@
               
                 <li class="form-check" data-70>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.album" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.album" id="twcsl.page.album" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.album">
                   
@@ -553,7 +585,7 @@
                   
                 <li class="form-check">
                 
-                  <input  class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.blog" type="checkbox" value="">
+                  <input  class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.blog" id="twcsl.page.blog" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.blog">
                   
@@ -565,7 +597,7 @@
                   
                 <li class="form-check" data-70>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.cover" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.cover" id="twcsl.page.cover" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.cover">
                   
@@ -577,7 +609,7 @@
                   
                 <li class="form-check">
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.events" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.events" id="twcsl.page.events" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.events">
                   
@@ -589,7 +621,7 @@
                   
                 <li class="form-check" data-70>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.gallery" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.gallery" id="twcsl.page.gallery" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.gallery">
                   
@@ -601,7 +633,7 @@
                   
                 <li class="form-check" data-70>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.index" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.index" id="twcsl.page.index" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.index">
                   
@@ -613,7 +645,7 @@
                   
                 <li class="form-check" data-71>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.portfolio" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.portfolio" id="twcsl.page.portfolio" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.portfolio">
                   
@@ -625,7 +657,7 @@
                   
                 <li class="form-check">
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.store" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.store" id="twcsl.page.store" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.store">
                   
@@ -637,7 +669,7 @@
                   
                 <li class="form-check" data-71>
                 
-                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.page.video" type="checkbox" value="">
+                  <input class="form-check-input" data-parent-id="twcsl.page" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.page.video" id="twcsl.page.video" type="checkbox" value="">
                   
                   <label class="form-check-label" for="twcsl.page.video">
                   
@@ -653,7 +685,7 @@
               
             <li class="form-check">
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.navigator" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.navigator" id="twcsl.navigator" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.navigator">
               
@@ -671,7 +703,7 @@
               
             <li class="form-check" data-71>
             
-              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js" id="twcsl.section" type="checkbox" value="">
+              <input class="form-check-input" data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.section" id="twcsl.section" type="checkbox" value="">
               
               <label class="form-check-label mb-3" for="twcsl.section">
               
@@ -689,11 +721,11 @@
               
             <li class="form-check" style="pointer-events : none;">
             
-              <input checked class="form-check-input" data-required data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/main/twcsl.js"  id="twcsl-end.js" type="checkbox" value="">
+              <input checked class="form-check-input" data-required data-src="https://raw.githubusercontent.com/tomsWebConsulting/twcsl/0.4.0-alpha.1/twcsl.end"  id="twcsl.end" type="checkbox" value="">
               
-              <label class="form-check-label" for="twcsl.js">
+              <label class="form-check-label" for="twcsl.end">
               
-                twcsl-end
+                twcsl.end
                 
                 </label>
                 
@@ -701,6 +733,10 @@
               
             </ul>
             
+          </div>
+          
+        <div class="d-flex flex-column fs-5 mb-4" ">
+        
           <button class="btn btn-light m-auto mb-5 me-auto ms-0" id="generate" type="button">
           
             Generate Code
@@ -714,6 +750,18 @@
               HTML
               
               </p>
+              
+            <button aria-label="Copy to clipboard" class="btn btn-clipboard p-0 mb-3" data-bs-original-title="Copy to clipboard" id="copy" type="button">
+            
+              <svg height="20" role="img" width="20">
+              
+                <use xlink:href="#clipboard">
+                
+                  </use>
+                  
+                </svg>
+                
+              </button>
               
             <textarea cols="80" rows="24">
             
@@ -784,11 +832,8 @@
               
             </div>
             
-        </div>
-        <!-- div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Custom button</button>
-          <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button>
-        </div -->
+          </div>
+          
       </div>
     </div>
   </div>
@@ -803,6 +848,36 @@
   
     document.addEventListener ( 'DOMContentLoaded', ( ) => {
     
+      // clipboard
+      
+      const copy = ( ) => {
+      
+        const t = document
+        
+          .querySelector ( '#html textarea' )
+          
+          .textContent;
+          
+        const element = document
+        
+          .getElementById ( 'clipboard-text' );
+          
+        element
+        
+          .textContent = t;
+          
+        element.select ( );
+        
+        document.execCommand ( 'copy' );
+        
+        };
+      
+      document
+      
+        .querySelector ( '#copy' )
+        
+        .addEventListener ( 'click', copy );
+        
       // generate code
       
       let click = event => {
@@ -811,7 +886,7 @@
         
         const promises = [ ];
         
-        const selector = '#modules input:checked';
+        /*
         
         [ ...
         
@@ -821,13 +896,51 @@
             
           ]
           
+          */
+          
+          let extension;
+          
+          let selector = 'input[ name="site-plan" ]:checked';
+          
+          const plan = document
+          
+            .querySelector ( selector )
+            
+            .getAttribute ( 'id' );
+            
+          switch ( plan ) {
+          
+            case 'paid' :
+            
+              extension = '.js';
+              
+              break;
+              
+            case 'trial' :
+            
+              extension = '.html';
+              
+              break;
+              
+            }
+            
+        selector = '#modules input:checked';
+        
+          document
+          
+            .querySelectorAll ( selector )
+            
           .forEach ( element => {
           
             console.log ( element );
             
             const url = element
             
-              .getAttribute ( 'data-src' );
+              .getAttribute ( 'data-src' )
+              
+              +
+              
+              extension;
               
             const response = fetch ( url );
             
@@ -873,18 +986,34 @@
                 
                   .classList;
                   
-                const selector = 'input[ name="site-plan" ]:checked';
+                texts = texts
                 
-                const plan = document
-                
-                  .querySelector ( selector )
-                  
-                  .getAttribute ( 'id' );
+                  .join ( '\n' );
                   
                 switch ( plan ) {
                 
                   case 'paid' :
                   
+                    texts = encodeURIComponent ( texts );
+                    
+                    texts = `data:application/javascript;charset=utf-8,${ texts }`;
+                    
+                    link
+                    
+                      .getElementsByTagName ( 'a' )
+                      
+                      [ 0 ]
+                      
+                      .setAttribute ( 'href', texts );
+                      
+                    htmlClassList.remove ( 'show' );
+                    
+                    linkClassList
+                    
+                      .add ( 'show' );
+                      
+                    /*
+                    
                     console.log ( texts );
                     
                     texts.forEach ( ( text, index, texts ) => {
@@ -902,7 +1031,7 @@
                       texts [ index ] = text;
                       
                       } );
-                      
+                    
                     console.log ( texts );
                     
                     texts = texts
@@ -927,14 +1056,20 @@
                     
                       .add ( 'show' );
                       
+                    */
+                      
                     break;
                     
                   case 'trial' :
                   
+                    /*
+                    
                     const s = texts
                     
                       .join ( '\n' );
                       
+                    */
+                    
                     html
                     
                       .getElementsByTagName ( 'textarea' )
@@ -945,7 +1080,7 @@
                       
                       =
                       
-                      s;
+                      texts;
                       
                     htmlClassList
                     
@@ -1003,22 +1138,34 @@
       
         console.log ( event );
         
-        const element = document
+        const id = event
         
-          .getElementById ( 'html' )
+          .target
           
-          .classList
+          .getAttribute ( 'id' );
           
-          .remove ( 'show' );
+        document
+        
+          .getElementById ( 'site-type' )
+          
+          .setAttribute ( 'data-type', id );
           
         };
         
+      let selector = '#site-type input';
+      
       document
       
-        .getElementById ( 'paid' )
+        .querySelectorAll ( selector )
         
-        .addEventListener ( 'click', click );
+        .forEach ( element => {
         
+          element
+          
+            .addEventListener ( 'click', click );
+            
+          } );
+          
       // site plan
       
       /*
@@ -1151,7 +1298,7 @@
           
         };
         
-      const selector = '#site-version input';
+      selector = '#site-version input';
       
       document
       
@@ -1168,6 +1315,10 @@
       } );
       
     </script>
+    
+  <textarea id="clipboard-text">
+  
+    </textarea>
     
   </body>
 </html>
