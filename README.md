@@ -783,6 +783,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 <a id="twcsl.ss"></a>
 
+<a id="twcsl.ss"></a>
+
 * ss ( object )
 
   * is70 ( boolean )
