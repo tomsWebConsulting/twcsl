@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 214 effects. Each effect has it's own version number, code,
+twcsl contains 213 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -221,8 +221,6 @@ not necessarily designed to work together.
     
     * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
       
-  * [York Template Family](v7.0/York%20Template%20Family)
-    
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -478,7 +476,7 @@ not necessarily designed to work together.
 twcsl.js is a Javascript library of common properties and methods useful for
 building effects in Squarespace sites.
 
-### Version 0.3.2
+### Version 0.4.0
 
 ## Install Options
 
@@ -564,81 +562,90 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 ## Methods
 
-* getFormFieldLabel
+* block ( object )
 
-  * getFormFieldLabel ( field )
+  * form ( object )
   
-    * Field is a jQuery object.
-    * Returns form field label as entered in SS form editor interface.
+    * get ( object )
     
-* getFormNth
-
-  * getFormNth ( [nth form on page] )
-  
-    * Default is the first form on the page.
-    * Returns jQuery object or undefined for no form.
-    
-* getPageSectionNth
-
-  * getPageSectionNth ( [nth section on page] )
-  
-    * Default is the first section on the page.
-    * Returns jQuery object or undefined for no page section.
-    
-* getUrlParser
-
-  * getUrlParser ( url )
-  
-    * Returns an anchor element.
-    
-* isElementInPage
-  
-  * isElementInPage ( element )
-  
-    * Element is a jQuery object.
-    * Returns boolean.
-    
-* isElementInViewport
-  
-  * isElementInViewport ( element )
-  
-    * Element is a jQuery object.
-    * Returns boolean.
-    
-* scrollEffect
-
-  * scrollEffect ( callback [, easingFunction, invertScale ] )
-  
-    * Calculates the scroll postion as a ratio that is passed to your callback.
-    
-      easingFunction ( string ), default is linear
+      * fieldLabel
       
-      invertScale ( boolean ), default is false
+        * fieldLabel ( field )
+        
+          * Field is a jQuery object.
+          * Returns form field label as entered in SS form editor interface.
+          
+      * nth
       
-* go
+        * nth ( [nth form on page] )
+        
+          * Default is the first form on the page.
+          * Returns jQuery object or undefined for no form.
 
-  * go ( callback )
+* cookie ( object )
+
+  * exists
   
-    An initialize method if you want to write code using twcsl that works
-    on both v7.1 and v7.0.
+    * exists ( cookie )
     
-    * callback is a function name
+      * Cookie is a string.
+      * Returns boolean.
       
-* urlToCssClassName
+  * value ( object )
   
-  * urlToCssClassName ( url )
+    * get ( cookie )
+    
+      * Cookie is a string.
+      * Returns a string, the cookie value.
+      
+    * set ( key, value, expires, maxAge, path )
+    
+      * Key, value, expires, maxAge, path are strings.
+      * Returns a string, the cookie value.
+
+* element ( object )
+
+  * is ( object )
   
-    * Url is a string.
-    * Returns a string. If the first character of the url is a number, dash, or
-      or underscore character **x-** is added to the beginning of the class
-      name.
+    * in ( object )
+    
+      * page
+      
+        * Element is a jQuery object.
+        * Returns boolean.
+        
+      * viewport
+      
+        * Element is a jQuery object.
+        * Returns boolean.
 
-## Properties and their Methods
+* miscellaneous ( object )
 
-* navigator ( object )
-
-  * hasTouchScreen ( boolean )
+  * getUrlParser
   
+    * getUrlParser ( url )
+    
+      * Returns an anchor element.
+      
+  * scrollEffect
+  
+    * scrollEffect ( callback [, easingFunction, invertScale ] )
+    
+      * Calculates the scroll postion as a ratio that is passed to your
+        callback.
+      
+        easingFunction ( string ), default is linear
+        
+        invertScale ( boolean ), default is false
+        
+  * urlToCssClassName
+  
+    * urlToCssClassName ( url )
+    
+      * Url is a string.
+      * Returns a string. If the first character of the url is a number, dash, or
+        underscore character **x-** is added to the beginning of the class name.
+
 * page ( object )
 
   * album ( object )
@@ -801,6 +808,27 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
     
     * urlSlug ( string )
     
+* section ( object )
+
+  * get ( object )
+  
+    * nth ( [nth section on page] )
+    
+    * Default is the first section on the page.
+    * Returns jQuery object or undefined for no page section.
+      
+  * value ( object )
+  
+    * get ( cookie )
+    
+      * Cookie is a string.
+      * Returns a string, the cookie value.
+      
+    * set ( key, value, expires, maxAge, path )
+    
+      * Key, value, expires, maxAge, path are strings.
+      * Returns a string, the cookie value.
+
 * ss ( object )
 
   * is70 ( boolean )
@@ -809,7 +837,40 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
   * version ( string )
   
-* version ( string, twcsl version )
+* version ( object )
+
+  * twcsl ( twcsl version )
+  
+  * initializer ( object, initializer versions )
+  
+  * submodule ( object, submodule versions )
+
+## Properties and their Methods
+
+* navigator ( object )
+
+  * hasTouchScreen ( boolean )
+  
+## Notes
+
+Prior to v0.4.0 twcsl.js was a single code file. With v0.4.0 I am using module
+design patterns including submodules, cross-file private state, some loose
+augmentation, but generally tight augmentation. The later means that module
+order is mostly important. If you are a developer you should be able to
+determine when you can and can't use loose augmentation.
+
+There are pros and cons to using a more modular approach to the twcsl code. One
+con with previous versions was the monolithic nature of the code. You might be
+interested in a very limited number of features, for example twcsl.page.store.
+With it you can write code and check and do various things based on where you
+are within a Store page. However with a single piece of code you are also
+getting a bunch of code you don't need. That is one of the realities of using
+libraries. You get a bunch of code you aren't using. It's a convenience vs. the
+most efficient code.
+
+A more modular approach to the code generally improves the not loading code you
+don't need task wise. However there is the overhead using a multiple module
+design pattern.
 
 ## Changes
 
