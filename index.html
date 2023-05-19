@@ -754,6 +754,32 @@
               
             </div>
             
+          <div>
+          
+            <h5>
+            
+              Share Selected Modules
+              
+              </h5>
+              
+            <button aria-label="Copy to clipboard" class="btn btn-clipboard copy mb-3 p-0" data-bs-original-title="Copy to clipboard" type="button">
+            
+              <svg height="20" role="img" width="20">
+              
+                <use xlink:href="#clipboard">
+                
+                  </use>
+                  
+                </svg>
+                
+              </button>
+              
+            <textarea cols="80" id="share" rows="2">
+            
+              </textarea>
+              
+            </div>
+            
           </div>
           
       </div>
@@ -771,6 +797,50 @@
   
     document.addEventListener ( 'DOMContentLoaded', ( ) => {
     
+      const setShare = ( ) => {
+      
+        const s = searchParams
+        
+          .toString ( )
+          
+          .replaceAll ( '=', '' );
+          
+        document
+        
+          .getElementById ( 'share' )
+          
+          .textContent
+          
+          =
+          
+          `${ url }?${ s }`;
+          
+        };
+        
+      const url = `${ location.protocol }\/\/${ location.pathname }`;
+      
+      // search parameters
+      
+      const searchParams =
+      
+        new URLSearchParams ( location.search );
+        
+      const keys = searchParams.keys ( );
+      
+      for ( const key of keys ) {
+      
+        const element = document
+        
+          .getElementById ( key );
+          
+        if ( element == null ) continue;
+        
+          element.click ( );
+          
+        }
+        
+      setShare ( );
+      
       // clipboard
       
       const copy = ( event ) => {
@@ -1033,34 +1103,14 @@
             
           } );
           
-      // site plan
-      
-      /*
-      
-      [ ...
-      
-        document
-        
-          .querySelectorAll ( selector )
-          
-        ]
-        
-        .forEach ( element => {
-        
-          element
-          
-            .addEventListener ( 'click', click );
-            
-          } );
-          
-      */
+      // modules
       
       click = event => {
       
-        const isInput = event
+        let element = event.target;
         
-          .target
-          
+        const isInput = element
+        
           .tagName
           
           ==
@@ -1069,17 +1119,15 @@
           
         if ( ! isInput ) return; // bail if not input
         
-        const isRequired = event
+        const isRequired = element
         
-          .target
-          
           .getAttribute ( 'data-required' )
           
           !=
           
           null;
           
-        if ( isRequired ) {
+        if ( isRequired ) { // bail if is required
         
           event.preventDefault ( );
           
@@ -1087,23 +1135,61 @@
           
           }
           
-        const element = event.target;
-
-        if ( ! element.checked ) return; // bail if not checked
+        const id = element.id;
         
-        const parent = element
+        const isChecked = element.checked;
+        
+        if ( isChecked )
+        
+          searchParams.set ( id, '' );
+          
+          else
+          
+            searchParams.delete ( id );
+            
+        setShare ( );
+        
+        let parent = element
         
           .getAttribute ( 'data-parent-id' );
           
-        if ( parent == null ) return; // bail if no parent
+        let hasParent = parent != null;
         
-        document
+        parent = document
         
-          .getElementById ( parent )
+          .getElementById ( parent );
           
-          .checked
+        hasParent = parent != null;
+        
+        if ( ! hasParent ) {
+        
+          if ( isChecked ) return; // bail if no parent and checked
           
-          = true;
+          const selector = `input[data-parent-id="${ id }"]:checked`;
+          
+          document
+          
+            .querySelectorAll ( selector )
+            
+            .forEach ( element => {
+            
+              element
+              
+                .click  ( );
+                
+              } );
+              
+          }
+          
+        if ( ! hasParent ) return; // bail if parent doesn't exist
+        
+        const isParentChecked = parent.checked;
+        
+        const b = isChecked && ! isParentChecked;
+        
+        if ( b )
+        
+          parent.click ( );
           
         };
         
