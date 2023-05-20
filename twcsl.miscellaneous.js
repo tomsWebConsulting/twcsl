@@ -48,7 +48,7 @@ twcsl.miscellaneous = ( ( self ) => {
       
       return parser;
       
-      };
+      },
       
     scrollEffect : ( callback, easingFunction = 'linear', invertScale = false
     
@@ -118,7 +118,7 @@ twcsl.miscellaneous = ( ( self ) => {
           
           } );
           
-      };
+      },
       
     urlToCssClassName : url => {
     
@@ -138,7 +138,7 @@ twcsl.miscellaneous = ( ( self ) => {
         
       return className;
       
-      };
+      },
       
     };
     
