@@ -14,6 +14,10 @@
   
   SS Version        : 7.1
   
+  Dependencies      : twcsl
+                      
+                      jQuery
+  
   By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
@@ -33,6 +37,8 @@
     '0.1.0';
     
   if ( self.ss.is70 ) return; // bail if 7.0
+  
+  const $ = jQuery;
   
   // begin is list
   
@@ -66,4 +72,4 @@
   
   p.urlSlug = _urlSlug;
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );

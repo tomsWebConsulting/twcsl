@@ -1,6 +1,6 @@
 // debugger;
 
-var xtwcsl = ( ( ) => {
+const twcsl = ( ( ) => {
 
   /*
   
@@ -74,7 +74,7 @@ var xtwcsl = ( ( ) => {
       
     version : {
     
-      'xtwcsl' : '0.4.0',
+      'twcsl' : '0.4.0',
       
       initializer : { },
       
@@ -95,8 +95,6 @@ var xtwcsl = ( ( ) => {
       },
       
     */
-    
-    // page : { },
     
     };
     

@@ -1,20 +1,24 @@
 // debugger;
 
-xtwcsl.element = ( ( self ) => {
+twcsl.element = ( ( self ) => {
 
   /*
   
   Tom's Web Consulting Squarespace Library
   
-  License     : < https://bit.ly/3F8sn8W >
+  License       : < https://bit.ly/3F8sn8W >
   
-  Submodule   : element
+  Submodule     : element
   
-  Version     : 0.1.0
+  Version       : 0.1.0
   
-  SS Versions : 7.1, 7.0
+  SS Versions   : 7.1, 7.0
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Dependencies  : twcsl
+                  
+                  jQuery
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
@@ -32,6 +36,8 @@ xtwcsl.element = ( ( self ) => {
     
     '0.1.0';
     
+  const $ = jQuery;
+  
   const element = {
   
     is : {
@@ -80,4 +86,4 @@ xtwcsl.element = ( ( self ) => {
     
   return element;
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );

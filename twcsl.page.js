@@ -1,23 +1,27 @@
 // debugger;
 
-xtwcsl.page = ( ( self ) => {
+twcsl.page = ( ( self ) => {
 
   /*
   
   Tom's Web Consulting Squarespace Library
   
-  License     : < https://bit.ly/3F8sn8W >
+  License       : < https://bit.ly/3F8sn8W >
   
-  Submodule   : page
+  Submodule     : page
   
-  Version     : 0.1.0
+  Version       : 0.1.0
   
-  SS Versions : 7.1, 7.0
+  SS Versions   : 7.1, 7.0
   
-  Note        : this sub-module is a stub for page types. other sub-modules will
-                need be added to fill in page object
+  Note          : this sub-module is a stub for page types. other sub-modules
+                  will need be added to fill in page object
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Dependencies  : twcsl
+                  
+                  jQuery
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
@@ -45,6 +49,8 @@ xtwcsl.page = ( ( self ) => {
     
     { };
     
+  const $ = jQuery;
+  
   // begin private methods
   
     m.isCollectionItem = ( ) => {
@@ -341,4 +347,4 @@ xtwcsl.page = ( ( self ) => {
     
   return page;
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );
