@@ -34,18 +34,30 @@
     
   if ( self.ss.is70 ) return; // bail if 7.0
   
-  const $ = jQuery;
+  const _videos = ( ) => {
   
-  let is = $( '.lessons-list-section' ).length;
+    const $ = jQuery;
+    
+    let is = $( '.lessons-list-section' ).length;
+    
+    is = Boolean ( is );
+    
+    if ( ! is ) return; // bail if not videos
+    
+    const p = self.page.videos;
+    
+    p.is = is;
+    
+    p.urlSlug = self._.urlSlug;
+    
+    };
+    
+  self
   
-  is = Boolean ( is );
-  
-  if ( ! is ) return; // bail if not videos
-  
-  const p = self.page.videos;
-  
-  p.is = is;
-  
-  p.urlSlug = self._.urlSlug;
-  
+    ._
+    
+    .initialize
+    
+    .push ( _videos );
+    
   } ) ( twcsl );
