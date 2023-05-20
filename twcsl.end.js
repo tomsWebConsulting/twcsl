@@ -20,15 +20,13 @@
   
   'use strict';
   
-  const $ = jQuery;
-  
-  const initialize = ( ) => {
+  const _initialize = ( ) => {
   
     const initialize = self._.initialize;
     
-    $.each ( initialize, function ( ) {
+    initialize.forEach ( ( callback ) => {
     
-      this ( );
+      callback ( );
       
       } );
       
@@ -38,13 +36,13 @@
   
     case self.ss.is71 :
     
-      initialize ( );
+      _initialize ( );
       
       break;
       
     case self.ss.is70 :
     
-      Squarespace.onInitialize ( Y, initialize );
+      Squarespace.onInitialize ( Y, _initialize );
       
       break;
       
@@ -52,4 +50,4 @@
     
   self._seal ( );
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );

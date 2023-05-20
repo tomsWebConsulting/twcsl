@@ -14,6 +14,10 @@
   
   SS Version        : 7.0
   
+  Dependencies      : twcsl
+                      
+                      jQuery
+  
   By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
@@ -33,6 +37,8 @@
     '0.1.0';
     
   if ( self.ss.is71 ) return; // bail if 7.1
+  
+  const $ = jQuery;
   
   const initialize = ( ) => {
   
@@ -56,4 +62,4 @@
     
     .push ( initialize );
     
-  } ) ( xtwcsl );
+  } ) ( twcsl );

@@ -1,20 +1,24 @@
 // debugger;
 
-xtwcsl.section = ( ( self ) => {
+twcsl.section = ( ( self ) => {
 
   /*
   
   Tom's Web Consulting Squarespace Library
   
-  License     : < https://bit.ly/3F8sn8W >
+  License       : < https://bit.ly/3F8sn8W >
   
-  Submodule   : section
+  Submodule     : section
   
-  Version     : 0.1.0
+  Version       : 0.1.0
   
-  SS Version  : 7.1
+  SS Version    : 7.1
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Dependencies  : twcsl
+                  
+                  jQuery
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
@@ -33,6 +37,8 @@ xtwcsl.section = ( ( self ) => {
     '0.1.0';
     
   if ( ! self.ss.is71 ) return; // bail if not 7.1
+  
+  const $ = jQuery;
   
   const section = {
   
@@ -68,4 +74,4 @@ xtwcsl.section = ( ( self ) => {
     
   return section;
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );

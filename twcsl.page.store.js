@@ -14,6 +14,10 @@
   
   SS Versions       : 7.1, 7.0
   
+  Dependencies      : twcsl
+                      
+                      jQuery
+  
   By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
@@ -32,6 +36,8 @@
     
     '0.1.0';
     
+  const $ = jQuery;
+  
   const initialize = ( ) => {
   
     const m = self._.page; // methods
@@ -374,4 +380,4 @@
     
     .push ( initialize );
     
-  } ) ( xtwcsl );
+  } ) ( twcsl );

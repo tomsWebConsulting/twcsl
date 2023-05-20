@@ -34,6 +34,8 @@
     
   if ( self.ss.is70 ) return; // bail if 7.0
   
+  const $ = jQuery;
+  
   let is = $( '.lessons-list-section' ).length;
   
   is = Boolean ( is );
@@ -46,4 +48,4 @@
   
   p.urlSlug = self._.urlSlug;
   
-  } ) ( xtwcsl );
+  } ) ( twcsl );
