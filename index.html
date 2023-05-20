@@ -799,12 +799,14 @@
     
       const setShare = ( ) => {
       
-        const s = searchParams
+        let s = searchParams
         
           .toString ( )
           
           .replaceAll ( '=', '' );
           
+        if ( s ) s = '?' + s;
+        
         document
         
           .getElementById ( 'share' )
@@ -813,7 +815,7 @@
           
           =
           
-          `${ url }?${ s }`;
+          `${ url }${ s }`;
           
         };
         
@@ -824,6 +826,14 @@
       const searchParams =
       
         new URLSearchParams ( location.search );
+        
+      const is70 = searchParams
+      
+        .has ( '70' );
+        
+      if ( ! is70 )
+      
+        searchParams.set ( '71', '' );
         
       const keys = searchParams.keys ( );
       
@@ -1227,6 +1237,8 @@
               
               '--display-71 : block; --display-70 : none';
               
+            searchParams.delete ( '70' );
+            
             break;
             
           case '70' :
@@ -1241,10 +1253,16 @@
               
               '--display-71 : none; --display-70 : block';
               
+            searchParams.delete ( '71' );
+            
             break;
             
           }
           
+        searchParams.set ( id, '' );
+        
+        setShare ( );
+        
         };
         
       selector = '#site-version input';
