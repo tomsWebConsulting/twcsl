@@ -274,7 +274,7 @@
     
     postInitialize ( );
     
-      };
+    };
     
   self
   
