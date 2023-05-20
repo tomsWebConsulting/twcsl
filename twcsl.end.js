@@ -36,7 +36,7 @@
   
     case self.ss.is71 :
     
-      _initialize ( );
+      $( _initialize );
       
       break;
       
