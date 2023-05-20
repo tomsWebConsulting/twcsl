@@ -778,18 +778,6 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
     
     * Default is the first section on the page.
     * Returns jQuery object or undefined for no page section.
-      
-  * value ( object )
-  
-    * get ( cookie )
-    
-      * Cookie is a string.
-      * Returns a string, the cookie value.
-      
-    * set ( key, value, expires, maxAge, path )
-    
-      * Key, value, expires, maxAge, path are strings.
-      * Returns a string, the cookie value.
 
 <a id="twcsl.ss"></a>
 
