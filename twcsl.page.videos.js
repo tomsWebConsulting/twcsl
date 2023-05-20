@@ -60,4 +60,6 @@
     
     .push ( _videos );
     
+  return self;
+  
   } ) ( twcsl );
