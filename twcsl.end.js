@@ -30,6 +30,8 @@
       
       } );
       
+    self._seal ( );
+    
     };
     
   switch ( true ) {
@@ -48,6 +50,4 @@
       
     }
     
-  self._seal ( );
-  
   } ) ( twcsl );
