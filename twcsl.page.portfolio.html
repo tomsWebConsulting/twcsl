@@ -1,78 +1,68 @@
 <script>
 
-  // debugger;
-  
   ( ( self ) => {
   
     /*
     
     Tom's Web Consulting Squarespace Library
     
-    License           : < https://bit.ly/3F8sn8W >
+    License       : < https://bit.ly/3F8sn8W >
     
-    Page Initializer  : page.portfolio
+    Initializer   : page.portfolio
     
-    Version           : 0.1.0
+    Version       : 0.1.0
     
-    SS Version        : 7.1
+    SS Version    : 7.1
     
-    Dependencies      : twcsl
-                        
-                        jQuery
+    Dependencies  : twcsl
     
-    By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
     */
     
     'use strict';
     
-    self
-    
-      .version
-      
-      .initializer
-      
-      [ 'page.portfolio' ]
-      
-      =
-      
-      '0.1.0';
-      
     if ( self.ss.is70 ) return; // bail if 7.0
     
-    const $ = jQuery;
+    const $ = self._.$;
     
-    // begin is list
+    const portfolio = ( ) => {
     
-      let selector = '.page-section[class*="collection-type-portfolio-"]';
+      // begin is list
       
-      let isList = $( selector );
+        let selector = '.page-section[class*="collection-type-portfolio-"]';
+        
+        let isList = $( selector );
+        
+        isList = Boolean ( isList.length );
+        
+        // end is list
+        
+      // begin is sub-page
       
-      isList = Boolean ( isList.length );
+        selector = '.item-pagination[data-collection-type^="portfolio"]';
+        
+        let isSubPage = $( selector );
+        
+        isSubPage = Boolean ( isSubPage.length );
+        
+        // end is sub-page
+        
+      if ( ! isList && ! isSubPage ) return; // bail if not portfolio
       
-      // end is list
+      const p = self.page.portfolio;
       
-    // begin is sub-page
-    
-      selector = '.item-pagination[data-collection-type^="portfolio"]';
+      p.is = true;
       
-      let isSubPage = $( selector );
+      p.list.is = isList;
       
-      isSubPage = Boolean ( isSubPage.length );
+      p.subPage.is = isSubPage;
       
-      // end is sub-page
+      p.urlSlug = _urlSlug;
       
-    if ( ! isList && ! isSubPage ) return; // bail if not portfolio
-    
-    const p = self.page.portfolio;
-    
-    p.is = true;
-    
-    p.list.is = isList;
-    
-    p.subPage.is = isSubPage;
-    
-    p.urlSlug = _urlSlug;
+      };
+      
+    self._.addInitializer ( portfolio, 'page.portfolio', '0.1.0' );
     
     } ) ( twcsl );
     
