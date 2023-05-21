@@ -1,44 +1,28 @@
-// debugger;
-
 ( ( self ) => {
 
   /*
   
   Tom's Web Consulting Squarespace Library
   
-  License           : < https://bit.ly/3F8sn8W >
+  License       : < https://bit.ly/3F8sn8W >
   
-  Page Initializer  : page.events
+  Initializer   : page.events
   
-  Version           : 0.1.0
+  Version       : 0.1.0
   
-  SS Versions       : 7.1, 7.0
+  SS Versions   : 7.1, 7.0
   
-  Dependencies      : twcsl
-                      
-                      jQuery
+  Dependencies  : twcsl
   
-  By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
   'use strict';
   
-  self
+  const $ = self._.$;
   
-    .version
-    
-    .initializer
-    
-    [ 'page.events' ]
-    
-    =
-    
-    '0.1.0';
-    
-  const $ = jQuery;
-  
-  const initialize = ( ) => {
+  const events = ( ) => {
   
     const m = self._.page; // methods
     
@@ -200,12 +184,6 @@
     
     };
     
-  self
+  self._.addInitializer ( events, 'page.events', '0.1.0' );
   
-    ._
-    
-    .initialize
-    
-    .push ( initialize );
-    
   } ) ( twcsl );

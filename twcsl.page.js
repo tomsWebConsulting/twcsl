@@ -1,5 +1,3 @@
-// debugger;
-
 twcsl.page = ( ( self ) => {
 
   /*
@@ -14,12 +12,10 @@ twcsl.page = ( ( self ) => {
   
   SS Versions   : 7.1, 7.0
   
-  Note          : this sub-module is a stub for page types. other sub-modules
-                  will need be added to fill in page object
+  Note          : this submodule is a stub for page types. other submodules will
+                  need be added to fill in page object
   
   Dependencies  : twcsl
-                  
-                  jQuery
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -39,7 +35,7 @@ twcsl.page = ( ( self ) => {
     
     '0.1.0';
     
-  const m = self // method
+  const p = self // method
   
     ._
     
@@ -49,11 +45,11 @@ twcsl.page = ( ( self ) => {
     
     { };
     
-  const $ = jQuery;
+  const $ = self._.$;
   
   // begin private methods
   
-    m.isCollectionItem = ( ) => {
+    p.isCollectionItem = ( ) => {
     
       const selector = 'body[id^="item-"]';
       
@@ -63,7 +59,7 @@ twcsl.page = ( ( self ) => {
       
       };
       
-    m.isCollectionList = ( ) => {
+    p.isCollectionList = ( ) => {
     
       const selector = 'body[id^="collection-"]';
       
@@ -73,15 +69,15 @@ twcsl.page = ( ( self ) => {
       
       };
       
-    m.getCategory = ( ) => {
+    p.getCategory = ( ) => {
     
-      const v = m.getSearchParameter ( 'category' );
+      const v = p.getSearchParameter ( 'category' );
       
       return v;
       
       };
       
-    m.getFilterSlug = ( filter ) => {
+    p.getFilterSlug = filter => {
     
       let s;
       
@@ -89,7 +85,7 @@ twcsl.page = ( ( self ) => {
       
         case self.ss.is70 :
         
-          let v = m.getSearchParameter ( filter );
+          let v = p.getSearchParameter ( filter );
           
           if ( ! v ) return ''; // bail if empty
           
@@ -123,7 +119,7 @@ twcsl.page = ( ( self ) => {
       
       };
       
-    m.getSearchParameter = p => {
+    p.getSearchParameter = p => {
     
       let value = new URLSearchParams ( location.search )
       
@@ -135,9 +131,9 @@ twcsl.page = ( ( self ) => {
       
       };
       
-    m.getSearchParameterTag = ( ) => {
+    p.getSearchParameterTag = ( ) => {
     
-      const t = m.getSearchParameter ( 'tag' );
+      const t = p.getSearchParameter ( 'tag' );
       
       return t;
       

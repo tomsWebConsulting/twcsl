@@ -1,46 +1,30 @@
-// debugger;
-
 ( ( self ) => {
 
   /*
   
   Tom's Web Consulting Squarespace Library
   
-  License           : < https://bit.ly/3F8sn8W >
+  License       : < https://bit.ly/3F8sn8W >
   
-  Page Initializer  : page.index
+  Initializer   : page.index
   
-  Version           : 0.1.0
+  Version       : 0.1.0
   
-  SS Version        : 7.0
+  SS Version    : 7.0
   
-  Dependencies      : twcsl
-                      
-                      jQuery
+  Dependencies  : twcsl
   
-  By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   */
   
   'use strict';
   
-  self
-  
-    .version
-    
-    .initializer
-    
-    [ 'page.index' ]
-    
-    =
-    
-    '0.1.0';
-    
   if ( self.ss.is71 ) return; // bail if 7.1
   
-  const $ = jQuery;
+  const $ = self._.$;
   
-  const initialize = ( ) => {
+  const index = ( ) => {
   
     const p = self.page.index;
     
@@ -52,12 +36,6 @@
     
     };
     
-  self
+  self._.addInitializer ( index, 'page.index', '0.1.0' );
   
-    ._
-    
-    .initialize
-    
-    .push ( initialize );
-    
   } ) ( twcsl );

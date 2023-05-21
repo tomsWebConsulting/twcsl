@@ -1,5 +1,3 @@
-// debugger;
-
 twcsl.navigator = ( ( self ) => {
 
   /*
