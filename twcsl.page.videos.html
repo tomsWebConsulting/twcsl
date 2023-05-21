@@ -1,47 +1,37 @@
 <script>
 
-  // debugger;
-  
   ( ( self ) => {
   
     /*
     
     Tom's Web Consulting Squarespace Library
     
-    License           : < https://bit.ly/3F8sn8W >
+    License       : < https://bit.ly/3F8sn8W >
     
-    Page Initializer  : page.videos
+    Initializer   : page.videos
     
-    Version           : 0.1.0
+    Version       : 0.1.0
     
-    SS Version        : 7.1
+    SS Version    : 7.1
     
-    By                : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    Dependencies  : twcsl
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
     */
     
     'use strict';
     
-    self
-    
-      .version
-      
-      .initializer
-      
-      [ 'page.videos' ]
-      
-      =
-      
-      '0.1.0';
-      
     if ( self.ss.is70 ) return; // bail if 7.0
     
-    const _videos = ( ) => {
+    const $ = self._.$;
     
-      const $ = jQuery;
+    const videos = ( ) => {
+    
+      let is = $( '.lessons-list-section' )
       
-      let is = $( '.lessons-list-section' ).length;
-      
+        .length;
+        
       is = Boolean ( is );
       
       if ( ! is ) return; // bail if not videos
@@ -54,14 +44,8 @@
       
       };
       
-    self
+    self._.addInitializer ( videos, 'page.videos', '0.1.0' );
     
-      ._
-      
-      .initialize
-      
-      .push ( _videos );
-      
     return self;
     
     } ) ( twcsl );
