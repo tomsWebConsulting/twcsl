@@ -1,5 +1,3 @@
-// debugger;
-
 twcsl.section = ( ( self ) => {
 
   /*
@@ -15,8 +13,6 @@ twcsl.section = ( ( self ) => {
   SS Version    : 7.1
   
   Dependencies  : twcsl
-                  
-                  jQuery
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -38,7 +34,7 @@ twcsl.section = ( ( self ) => {
     
   if ( ! self.ss.is71 ) return; // bail if not 7.1
   
-  const $ = jQuery;
+  const $ = self._.$;
   
   const section = {
   

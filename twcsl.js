@@ -1,5 +1,3 @@
-// debugger;
-
 const twcsl = ( ( ) => {
 
   /*
@@ -22,14 +20,38 @@ const twcsl = ( ( ) => {
   
   const _ssVersion = Static
     
-      .SQUARESPACE_CONTEXT
-      
-      .templateVersion;
-      
+    .SQUARESPACE_CONTEXT
+    
+    .templateVersion;
+    
+  // private methods
+  
+  const _seal = ( ) => {
+  
+    delete self._;
+    
+    delete self._seal;
+    
+    delete self._unseal;
+    
+    };
+    
+  const _unseal = ( ) => {
+  
+    self._ = _;
+    
+    self._seal = _seal;
+    
+    self._unseal = _unseal;
+    
+    };
+    
   const self = {
   
     _ : { // shared private
     
+      $ : jQuery,
+      
       initialize : [ ],
       
       // property
@@ -48,20 +70,36 @@ const twcsl = ( ( ) => {
         
         } ) ( ),
         
-      // method
+      // methods
       
+      addInitializer : ( callback, name, version ) => {
+      
+        self
+        
+          .version
+          
+          .initializer
+          
+          [ name ]
+          
+          =
+          
+          version;
+          
+        self
+        
+          ._
+          
+          .initialize
+          
+          .push ( callback );
+          
+        },
+        
       },
       
-    _seal : ( ) => {
+    // properties
     
-      delete self._;
-      
-      delete self._seal;
-      
-      delete self._unseal;
-      
-      },
-      
     ss : {
     
       is70    : _ssVersion == '7',
@@ -81,20 +119,8 @@ const twcsl = ( ( ) => {
       submodule : { }
       
       },
-    
-    /*
-    
-    _unseal : ( ) => {
-    
-      self._ = _;
       
-      self._seal = _seal;
-      
-      self._unseal = _unseal;
-      
-      },
-      
-    */
+    // method
     
     };
     

@@ -1,5 +1,3 @@
-// debugger;
-
 ( ( self ) => {
 
   /*
@@ -20,7 +18,7 @@
   
   'use strict';
   
-  const _initialize = ( ) => {
+  const initialize = ( ) => {
   
     const initialize = self._.initialize;
     
@@ -38,13 +36,15 @@
   
     case self.ss.is71 :
     
-      $( _initialize );
+      const $ = self._.$;
+      
+      $( initialize );
       
       break;
       
     case self.ss.is70 :
     
-      Squarespace.onInitialize ( Y, _initialize );
+      Squarespace.onInitialize ( Y, initialize );
       
       break;
       

@@ -1,5 +1,3 @@
-// debugger;
-
 twcsl.cookie = ( ( self ) => {
 
   /*
@@ -14,8 +12,8 @@ twcsl.cookie = ( ( self ) => {
   
   SS Versions   : 7.1, 7.0
   
-  Note          : this sub-module is a stub for page types. other sub-modules
-                  will need be added to fill in page object
+  Note          : this submodule is a stub for page types. other submodules will
+                  need be added to fill in page object
   
   Dependencies  : twcsl
   

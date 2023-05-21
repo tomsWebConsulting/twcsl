@@ -1,5 +1,3 @@
-// debugger;
-
 twcsl.miscellaneous = ( ( self ) => {
 
   /*
@@ -15,8 +13,6 @@ twcsl.miscellaneous = ( ( self ) => {
   SS Versions   : 7.1, 7.0
   
   Dependencies  : twcsl
-                  
-                  jQuery
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -36,7 +32,7 @@ twcsl.miscellaneous = ( ( self ) => {
     
     '0.1.0';
     
-  const $ = jQuery;
+  const $ = self._.$;
   
   const miscellaneous = {
   
