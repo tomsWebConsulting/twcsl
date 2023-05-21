@@ -1,4 +1,4 @@
-const twcsl = ( ( ) => {
+var twcsl = ( ( self ) => {
 
   /*
   
@@ -24,9 +24,61 @@ const twcsl = ( ( ) => {
     
     .templateVersion;
     
+  // shared private
+  
+  const _ = self._ = self._ || {
+  
+    initialize : [ ],
+    
+    $ : jQuery,
+    
+    // property
+    
+    urlSlug : ( ( ) => {
+    
+      let urlSlug = '';
+      
+      try {
+      
+        urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
+        
+        } catch ( e ) { }
+        
+      return urlSlug;
+      
+      } ) ( ),
+      
+    // method
+    
+    addInitializer : ( callback, name, version ) => {
+    
+      self
+      
+        .version
+        
+        .initializer
+        
+        [ name ]
+        
+        =
+        
+        version;
+        
+      self
+      
+        ._
+        
+        .initialize
+        
+        .push ( callback );
+        
+      },
+      
+    };
+    
   // private methods
   
-  const _seal = ( ) => {
+  const _seal = self._seal = self._seal || function ( ) {
   
     delete self._;
     
@@ -36,7 +88,9 @@ const twcsl = ( ( ) => {
     
     };
     
-  const _unseal = ( ) => {
+  /*
+  
+  const _unseal = self._unseal = self._unseal || function ( ) {
   
     self._ = _;
     
@@ -46,61 +100,11 @@ const twcsl = ( ( ) => {
     
     };
     
-  const self = {
+  */
   
-    _ : { // shared private
-    
-      $ : jQuery,
-      
-      initialize : [ ],
-      
-      // property
-      
-      urlSlug : ( ( ) => {
-      
-        let urlSlug = '';
-        
-        try {
-        
-          urlSlug = Static.SQUARESPACE_CONTEXT.collection.fullUrl;
-          
-          } catch ( e ) { }
-          
-        return urlSlug;
-        
-        } ) ( ),
-        
-      // methods
-      
-      addInitializer : ( callback, name, version ) => {
-      
-        self
-        
-          .version
-          
-          .initializer
-          
-          [ name ]
-          
-          =
-          
-          version;
-          
-        self
-        
-          ._
-          
-          .initialize
-          
-          .push ( callback );
-          
-        },
-        
-      },
-      
-    // properties
-    
-    ss : {
+  // begin public properties
+  
+    self.ss = {
     
       is70    : _ssVersion == '7',
       
@@ -108,9 +112,9 @@ const twcsl = ( ( ) => {
       
       version : _ssVersion,
       
-      },
+      };
       
-    version : {
+    self.version = {
     
       'twcsl' : '0.4.0',
       
@@ -118,12 +122,10 @@ const twcsl = ( ( ) => {
       
       submodule : { }
       
-      },
+      };
       
-    // method
-    
-    };
+    // end public properties
     
   return self;
   
-  } ) ( );
+  } ) ( twcsl || { } );
