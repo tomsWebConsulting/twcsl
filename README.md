@@ -473,8 +473,8 @@ not necessarily designed to work together.
 
 # twcsl.js
 
-twcsl.js is a Javascript library of common properties and methods useful for
-building effects in Squarespace sites.
+twcsl.js is a Javascript library of common properties, methods, and stubs useful
+for building effects in Squarespace sites.
 
 ### Version 0.4.0
 
@@ -498,6 +498,8 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
 * block ( object )
 
+  <a id="twcsl.block.form"></a>
+  
   * form ( object )
   
     * get ( object )
