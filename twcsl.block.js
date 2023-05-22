@@ -32,50 +32,92 @@ twcsl.block = ( ( self ) => {
     
     '0.1.0';
     
-  const $ = self._.$;
+  // public object
   
   const block = {
   
-    form : {
+    accordion : { },
     
-      get : {
-      
-        fieldLabel : $field => {
-        
-          const title = $( '.title', $field )
-          
-            .clone ( )
-            
-            .children ( )
-            
-            .remove ( )
-            
-            .end ( )
-            
-            .text ( )
-            
-            .trim ( );
-            
-          return title;
-          
-          },
-          
-        nth : ( nth = 1 ) => {
-        
-          // n is 1 based for the user but we need zero based
-          
-          const $form = $( `.sqs-block-form:eq( ${ --nth } )` );
-          
-          if ( ! $form.length ) return undefined;
-          
-          return $( 'form', $form );
-          
-          },
-          
-        },
-        
-      },
-      
+    amazon : { },
+    
+    archive : { },
+    
+    audio : { },
+    
+    bandsintown : { },
+    
+    button : { },
+    
+    calendar : { },
+    
+    chart : { },
+    
+    code : { },
+    
+    'content-link' : { },
+    
+    donation : { },
+    
+    embed : { },
+    
+    events : { },
+    
+    flickr : { },
+    
+    form : { },
+    
+    gallery : { },
+    
+    image : { },
+    
+    instagram : { },
+    
+    line : { },
+    
+    map : { },
+    
+    markdown : { },
+    
+    'member-sign-up' : { },
+    
+    menu : { },
+    
+    newsletter : { },
+    
+    opentable : { },
+    
+    product : { },
+    
+    quote : { },
+    
+    reservations : { },
+    
+    rss : { },
+    
+    scheduling : { },
+    
+    scrolling : { },
+    
+    search : { },
+    
+    'social-links' : { },
+    
+    soundcloud : { },
+    
+    spacer : { },
+    
+    summary : { },
+    
+    swarm : { },
+    
+    'tag-cloud' : { },
+    
+    text : { },
+    
+    video : { },
+    
+    zola : { },
+    
     };
     
   return block;
