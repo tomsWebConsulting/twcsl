@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 214 effects. Each effect has it's own version number, code,
+twcsl contains 215 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -54,6 +54,8 @@ not necessarily designed to work together.
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
   
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
+  
+* [assets](assets)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
@@ -221,8 +223,6 @@ not necessarily designed to work together.
     
     * [Blog Header After Title](v7.0/Wells%20Template/Blog%20Header%20After%20Title)
       
-  * [York Template Family](v7.0/York%20Template%20Family)
-    
 * [v7.1](v7.1)
   
   * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
@@ -458,6 +458,8 @@ not necessarily designed to work together.
   * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
     
   * [Store Product List Out of Stock Badge](v7.1/Store%20Product%20List%20Out%20of%20Stock%20Badge)
+    
+  * [Store Product List Sale Badge](v7.1/Store%20Product%20List%20Sale%20Badge)
     
   * [Store Product Meta New](v7.1/Store%20Product%20Meta%20New)
     
