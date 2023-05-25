@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.0
+  Version       : 0.2.0
   
   SS Version    : 7.1
   
@@ -235,43 +235,39 @@
       
     .style( );
     
-  @media screen and ( min-width : 768px ) {
+  .products.collection-content-wrapper .product-mark.sale {
   
-    .products.collection-content-wrapper .product-mark.sale {
+    display : none;
     
-      display : none;
-      
-      }
-      
-    .products.collection-content-wrapper .grid-item.on-sale .grid-image::before {
+    }
     
-      align-items : @align-items;
-      background-color : @background-color;
-      bottom : @bottom;
-      border-radius : @border-radius;
-      content : ~"'@{text}'";
-      color : @color;
-      display : @display;
-      font-family : @font-family;
-      font-size : @font-size;
-      font-style : @font-style;
-      font-weight : @font-weight;
-      height : @height;
-      left : @left;
-      letter-spacing : @letter-spacing;
-      line-height : 1em;
-      padding : @padding;
-      position : absolute;
-      right : @right;
-      text-align : @text-align;
-      text-transform : @text-transform;
-      top : @top;
-      transform : translate( @x, @y );
-      width : @width;
-      z-index : 9;
-      
-      }
-      
+  .products.collection-content-wrapper .grid-item.on-sale .grid-image::before {
+  
+    align-items : @align-items;
+    background-color : @background-color;
+    bottom : @bottom;
+    border-radius : @border-radius;
+    content : ~"'@{text}'";
+    color : @color;
+    display : @display;
+    font-family : @font-family;
+    font-size : @font-size;
+    font-style : @font-style;
+    font-weight : @font-weight;
+    height : @height;
+    left : @left;
+    letter-spacing : @letter-spacing;
+    line-height : 1em;
+    padding : @padding;
+    position : absolute;
+    right : @right;
+    text-align : @text-align;
+    text-transform : @text-transform;
+    top : @top;
+    transform : translate( @x, @y );
+    width : @width;
+    z-index : 9;
+    
     }
     
   /* end store product list sale badge */

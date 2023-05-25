@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -16,6 +16,8 @@ Add code from file **[store product list sale badge.less][2]** to Design >
 Custom CSS. Read the code for any instructions within.
 
 ## Badge Options
+
+*Note : the images are examples and the text can be whatever you want.*
 
 * Style
 
@@ -78,6 +80,10 @@ You can see a [demo of this effect here][19].
 Please consider [making a donation][20].
 
 ## Changes
+
+* **2023-05-25**
+
+  * make effect available on mobile
 
 * **2023-05-22**
 
