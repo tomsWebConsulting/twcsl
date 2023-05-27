@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 215 effects. Each effect has it's own version number, code,
+twcsl contains 216 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -384,6 +384,8 @@ not necessarily designed to work together.
   * [Page Site Title Change](v7.1/Page%20Site%20Title%20Change)
     
   * [Portfolio Page Grid Image Aspect Ratio Change](v7.1/Portfolio%20Page%20Grid%20Image%20Aspect%20Ratio%20Change)
+    
+  * [Portfolio Page Hover Background Autoplay](v7.1/Portfolio%20Page%20Hover%20Background%20Autoplay)
     
   * [Portfolio Page Project Collection Type Class Add](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add)
     
