@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.2.0
+### Version 0.3.0
 
 #### SS Version 7.1
 
@@ -78,6 +78,11 @@ You can see a [demo of this effect here][19].
 Please consider [making a donation][20].
 
 ## Changes
+
+* **2023-05-27**
+
+  * make effect available on mobile
+  * bumped version to v0.3.0
 
 * **2023-03-25**
 
