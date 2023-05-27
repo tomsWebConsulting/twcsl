@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.2.0
+### Version 0.3.0
 
 #### SS Version 7.1
 
@@ -81,9 +81,16 @@ Please consider [making a donation][20].
 
 ## Changes
 
+* **2023-05-27**
+
+  * locally scope variables so code can run along side similar code without
+    conflicts
+  * bumped version to v0.3.0
+
 * **2023-05-25**
 
   * make effect available on mobile
+  * bumped version to v0.2.0
 
 * **2023-05-22**
 
