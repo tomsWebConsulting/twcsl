@@ -1,0 +1,193 @@
+<!--
+
+  begin portfolio page hover background autoplay
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of a several tags. all are needed for
+                  the full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .portfolio-hover-display {
+    
+      flex-direction : row-reverse; /* values can be row-reverse or row */
+      
+      }
+      
+    </style>
+    
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.pphba = {
+    
+      durationSeconds : [enter number here replacing square brackets]
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .portfolio-hover-base {
+    
+      bottom : unset;
+      flex-grow : 1;
+      left : unset;
+      position : unset;
+      top : unset;
+      width : unset;
+      
+      }
+      
+    .portfolio-hover-items {
+    
+      flex-grow : unset;
+      flex-shrink : unset;
+      width : unset;
+      
+      }
+      
+    .portfolio-hover[ data-mode="hover-cover" ] .portfolio-hover-items-list {
+    
+      padding-left : 0;
+      
+      }
+      
+    .portfolio-hover[ data-mode="hover-cover" ] .portfolio-hover-bg.twc-pphba .portfolio-hover-bg-img {
+    
+      opacity : unset;
+      visibility : unset;
+      
+      }
+      
+    .portfolio-hover[ data-mode="hover-cover" ] .portfolio-hover-bg.twc-pphba .portfolio-hover-bg-img img {
+    
+      display : unset;
+      visibility : unset;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      let selector = '.collection-type-portfolio-index-background';
+      
+      const l = $( selector ).length;
+      
+      if ( ! l ) return; // bail if not hover background
+      
+      const codeKey = 'twc-pphba';
+      
+      const milliseconds = twc
+      
+        .pphba
+        
+        .durationSeconds
+        
+        *
+        
+        1000;
+        
+      selector = '.portfolio-hover-items-list li';
+      
+      const $element = $( selector )
+      
+        .first ( )
+        
+        .addClass ( codeKey );
+        
+      const text = $element
+      
+        .text ( )
+        
+        .trim ( );
+        
+      selector = `.portfolio-hover-bg-img img[alt="${ text }"]`;
+      
+      $( selector )
+      
+        .parents ( '.portfolio-hover-bg' )
+        
+        .addClass ( codeKey );
+        
+      setInterval ( ( ) => {
+      
+        let selector = '.portfolio-hover-bg[ data-active="true" ]';
+        
+        let l = $( selector ).length;
+        
+        if ( l ) return; // bail if user hovering
+        
+        selector = '.portfolio-hover-items-list li';
+        
+        const $elements = $( selector );
+        
+        selector = `${ selector }.${ codeKey }`;
+        
+        let $element = $( selector );
+        
+        const b = $element.is ( ':last-child' );
+        
+        selector = [
+        
+          '.portfolio-hover-items-list li',
+          
+          '.portfolio-hover[ data-mode="hover-cover" ] .portfolio-hover-bg'
+          
+          ]
+          
+          .join ( ', ' )
+          
+        $( selector )
+        
+          .removeClass ( codeKey )
+          
+        if ( ! b )
+        
+          $element = $element.next ( );
+          
+          else
+          
+            $element = $elements.first ( );
+            
+        $element.addClass ( codeKey );
+        
+        const text = $element
+        
+          .text ( )
+          
+          .trim ( );
+          
+        selector = `.portfolio-hover-bg-img img[alt="${ text }"]`;
+        
+        $( selector )
+        
+          .parents ( '.portfolio-hover-bg' )
+          
+          .addClass ( codeKey );
+          
+        }, milliseconds );
+        
+      } );
+      
+    </script>
+    
+  <!-- end portfolio page hover background autoplay -->
