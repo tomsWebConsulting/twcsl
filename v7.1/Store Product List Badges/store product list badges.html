@@ -1,0 +1,505 @@
+<!--
+
+  begin store product list badges
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of a several tags. all are needed for
+                  the full effect to work
+                  
+                  the code makes a call to the json version of the store page to
+                  grab the tags as entered in the UI
+                  
+                  the size of the badge for circle and square are not
+                  automatically calculated you need to adjust the size to fit
+                  the text you use
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .products.collection-content-wrapper .list-grid {
+    
+      --twc-splb-background-color : black;
+      --twc-splb-color : white;
+      --twc-splb-font-family : unset;
+      --twc-splb-font-size : 10px;
+      --twc-splb-font-style : normal; /* values are italic and normal */
+      --twc-splb-font-weight : 400;
+
+      /* values are dock-horizontally, dock-vertically, floating, and flush */
+      
+      --twc-splb-inset : floating;
+      
+      --twc-splb-inset-space : 1em;
+      --twc-splb-letter-spacing : 0.06em;
+      --twc-splb-padding : 0.5em 1em;
+      
+      /*
+      
+        values are bottom-center, bottom-left, bottom-right, center,
+        center-left, center-right, top-center, top-left, top-right
+        
+        */
+        
+      --twc-splb-position : top-right;
+      
+      /* values are circle, rectangle, and square */
+      
+      --twc-splb-shape : rectangle;
+      
+      --twc-splb-shape-size : unset; /* used for circle and square shapes
+      
+      /*  values are capitalize, lowercase, and uppercase */
+      
+      --twc-splb-text-transform : uppercase;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .products.collection-content-wrapper .product-mark.sale,
+    .products.collection-content-wrapper .product-mark.sold-out
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    .products.collection-content-wrapper .list-grid {
+    
+      --twc-splb-border-radius : unset;
+      --twc-splb-bottom : unset;
+      --twc-splb-left : unset;
+      --twc-splb-right : unset;
+      --twc-splb-top : unset;
+      --twc-splb-x : 0;
+      --twc-splb-y : 0;
+      
+      }
+      
+    .twc-splb-item {
+    
+      bottom : var( --twc-splb-bottom );
+      display : flex;
+      flex-direction : column;
+      font-family : var( --twc-splb-font-family );
+      font-size : var( --twc-splb-font-size );
+      font-style : var( --twc-splb-font-style );
+      font-weight : var( --twc-splb-font-weight );
+      gap : 0.5em;
+      left : var( --twc-splb-left );
+      letter-spacing : var( --twc-splb-letter-spacing );
+      line-height : 1em;
+      list-style-type : none;
+      margin : 0;
+      padding : 0;
+      position : absolute;
+      right : var( --twc-splb-right );
+      text-transform : var( --twc-splb-text-transform );
+      top : var( --twc-splb-top );
+      transform : translate( var( --twc-splb-x ), var( --twc-splb-y ) );
+      
+      }
+      
+    .twc-splb-item li {
+    
+      background-color : var( --twc-splb-background-color );
+      border-radius : var( --twc-splb-border-radius );
+      color : var( --twc-splb-color );
+      height : var( --twc-splb-shape-size );
+      padding : var( --twc-splb-padding );
+      text-align : center;
+      width : var( --twc-splb-shape-size );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( ! twcsl.page.store.list.is ) return; // bail if not list
+      
+      const url = `${ twcsl.page.store.urlSlug }?format=json`;
+      
+      $.getJSON ( url, function ( data ) {
+      
+        const codeKey = 'twc-splb';
+        
+        const tags = data
+        
+          .collection
+          
+          .tags
+          
+          .map ( tag => tag.replace ( /^twc splb /, '' ) );
+          
+        let selector = '.products.collection-content-wrapper .list-grid';
+        
+        const $grid = $( selector );
+        
+        // begin design
+        
+          const position = $grid
+          
+            .css ( '--twc-splb-position' );
+            
+          const prefix = `--${ codeKey }-`;
+          
+          const shape = $grid
+          
+            .css ( '--twc-splb-shape' );
+            
+          const shapeSize = $grid
+          
+            .css ( '--twc-splb-shape-size' );
+            
+          const inset = $grid
+          
+            .css ( `${ prefix }inset` );
+            
+          const insetSpace = $grid
+          
+            .css ( `${ prefix }inset-space` );
+            
+          let bottom = left = right = t0p = 0;
+          
+          switch ( inset ) {
+          
+            case 'dock-horizontally' :
+            
+              bottom = t0p = insetSpace;
+              
+              break;
+              
+            case 'dock-vertically' :
+            
+              left = right = insetSpace;
+                
+              break;
+              
+            case 'floating' :
+            
+              bottom = left = right = t0p = insetSpace;
+              
+              break;
+              
+            }
+            
+          switch ( position ) {
+          
+            case 'bottom-center' :
+            case 'bottom-left' :
+            case 'bottom-right' :
+            
+              $grid
+              
+                .css ( `${ prefix }bottom`, bottom );
+                
+              break;
+              
+            case 'center-left' :
+            case 'center-right' :
+            
+              $grid
+              
+                .css ( {
+                
+                  [ `${ prefix }top` ] : '50%',
+                  
+                  [ `${ prefix }y` ] : '-50%',
+                  
+                  } );
+                  
+              break;
+              
+            case 'top-center' :
+            case 'top-left' :
+            case 'top-right' :
+            
+              $grid
+              
+                .css ( `${ prefix }top`, t0p );
+                
+              break;
+              
+            }
+            
+          switch ( position ) {
+          
+            case 'bottom-center' :
+            
+              $grid
+              
+                .css ( {
+                
+                  [ `${ prefix }left` ] : '50%',
+                  
+                  [ `${ prefix }x` ] : '-50%',
+                  
+                  } );
+                  
+              break;
+              
+            case 'bottom-left' :
+            
+              $grid
+              
+                .css ( `${ prefix }left`, left );
+                
+              break;
+              
+            case 'bottom-right' :
+            
+              $grid
+              
+                .css ( `${ prefix }right`, right );
+                
+              break;
+              
+            case 'center' :
+            
+              $grid
+              
+                .css ( {
+                
+                  [ `${ prefix }left` ] : '50%',
+                  
+                  [ `${ prefix }top` ] : '50%',
+                  
+                  [ `${ prefix }x` ] : '-50%',
+                  
+                  [ `${ prefix }y` ] : '-50%',
+                  
+                  } );
+                  
+              break;
+              
+            case 'center-left' :
+            
+              $grid
+              
+                .css ( `${ prefix }left`, left );
+                
+              break;
+              
+            case 'center-right' :
+            
+              $grid
+              
+                .css ( `${ prefix }right`, right );
+                
+              break;
+              
+            case 'top-center' :
+            
+              $grid
+              
+                .css ( {
+                
+                  [ `${ prefix }left` ] : '50%',
+                  
+                  [ `${ prefix }top` ] : 0,
+                  
+                  [ `${ prefix }x` ] : '-50%',
+                  
+                  [ `${ prefix }y` ] : 0,
+                  
+                  } );
+                  
+            case 'top-left' :
+            
+              $grid
+              
+                .css ( `${ prefix }left`, left );
+                  
+              break;
+              
+            case 'top-right' :
+            
+              $grid
+              
+                .css ( `${ prefix }right`, right );
+                
+              break;
+              
+            }
+            
+          // begin shape
+          
+            let b = [
+            
+              'circle',
+              
+              'square'
+              
+              ]
+              
+              .includes ( shape );
+              
+            if ( b )
+            
+              $grid
+              
+                .css ( {
+                
+                  [ `${ prefix }height` ] : shapeSize,
+                  
+                  [ `${ prefix }width` ] : shapeSize,
+                  
+                  } );
+                  
+            if ( b )
+            
+              $grid
+              
+                .css ( `${ prefix }border-radius`, '100%' );
+                
+            // end shape
+            
+          // end design
+          
+        selector = [
+        
+          '.products.collection-content-wrapper .product-mark',
+          
+          '.products.collection-content-wrapper ' +
+          
+            '.grid-item[class*="tag-twc-splb-"]'
+            
+          ]
+          
+          .join ( ', ' );
+          
+        $( selector )
+        
+          .map ( function ( ) {
+          
+            const selector = '.products.collection-content-wrapper .grid-item';
+            
+            const $this = $( this );
+            
+            let $element = $this
+            
+              .parents ( selector );
+              
+            const b = ! $element.length;
+            
+            if ( b ) $element = $this;
+            
+            return $element;
+            
+            } )
+            
+          .each ( function ( ) {
+          
+            const $this = $( this );
+            
+            const $ul = $( `<ul class="${ codeKey }-item">` );
+            
+            selector = '.product-mark';
+            
+            $( selector, $this ).each ( function ( ) {
+            
+              const text = $( this )
+              
+                .text ( )
+                
+                .trim ( );
+                
+              const li = `<li>
+              
+                ${ text }
+                
+                </li>
+                
+                `;
+                
+              $ul.append ( li );
+              
+              } );
+              
+            // custom badges
+            
+            $this
+            
+              .attr ( 'class' )
+              
+              .split ( ' ' )
+              
+              .filter ( clss => clss.startsWith ( `tag-${ codeKey }-` ) )
+              
+              .map ( tag => {
+              
+                tag = tag
+                
+                  .replace ( `tag-${ codeKey }-`, '' )
+                  
+                  .replaceAll ( '-', '[ -]' );
+                  
+                tag = new RegExp ( tag, 'i' );
+                
+                tag = tags
+              
+                .filter ( t => t.match ( tag ) != null )
+                
+                [ 0 ];
+                
+                return tag;
+                
+                } )
+                
+              .forEach ( text => {
+              
+                const li = `<li>
+                
+                  ${ text }
+                  
+                  </li>
+                  
+                  `;
+                  
+                $ul.append ( li );
+                
+              } );
+              
+            const b = $ul
+            
+              .children ( )
+              
+              .length;
+              
+            if ( ! b ) return true; // continue
+            
+            $( '.grid-image', $this )
+            
+              .append ( $ul );
+              
+            } );
+            
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store product list badges -->
