@@ -12,16 +12,16 @@
 
 ## Install
 
-* Site-wide
-
-  * Add code from file **[page section auto layout simple list format class
-    add.html][1]** to  Settings > Advanced > Code Injection > FOOTER.
-    
 * Page Specific
 
   * Add code from file **[page section auto layout simple list format class
     add.html][1]** to Page Settings > Advanced > Page Header Code Injection
     for the page. Please see [per-page code injection][2].
+    
+* Site-wide
+
+  * Add code from file **[page section auto layout simple list format class
+    add.html][1]** to  Settings > Developer Tools > Code Injection > FOOTER.
     
 * Read the code for any instructions within.
 

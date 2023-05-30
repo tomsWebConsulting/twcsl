@@ -8,10 +8,10 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 ```
 
 Add code from file **move main content down so header doesn't hide it.html** to
@@ -24,13 +24,13 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 * **2021-06-18**
-<br><br>
+
   * added increase section height feature
   * fix issue with footer being partially covered
   * bumped version to 0.2d0
-  <br><br>
+  
 * **2021-06-05**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

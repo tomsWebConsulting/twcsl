@@ -12,8 +12,8 @@
 
 ## Quick Install
 
-* Add code from file **[page section info.html][2]** to Settings > Advanced >
-  Code Injection > HEADER.
+* Add code from file **[page section info.html][2]** to Settings >
+  Developer Tools > Code Injection > HEADER.
 
 ## Make a Donation
 

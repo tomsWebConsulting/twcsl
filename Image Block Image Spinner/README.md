@@ -12,10 +12,10 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file
@@ -29,13 +29,13 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 <!-- * **2021-07-01**
-<br><br>
+
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
   <br><br -->
 * **2021-09-16**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

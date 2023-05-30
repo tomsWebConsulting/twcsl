@@ -12,10 +12,10 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file
@@ -24,12 +24,12 @@
   
 * Add code from file
   **[social icon discord generic icon to discord change.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER. Read the code for any
+  to Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
   instructions within.
   
 * Add code from file
   **[social icon discord generic icon to discord change svg symbol.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change%20svg%20symbol.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER.
+  to Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

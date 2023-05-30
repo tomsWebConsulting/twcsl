@@ -12,16 +12,16 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file **[add buttons to header.css][2]** to Design > Custom CSS.
   
 * Add code from file **[add buttons to header.html][3]** to Settings >
-  Advanced > Code Injection > FOOTER. Read the code for any instructions within.
+  Developer Tools > Code Injection > FOOTER. Read the code for any instructions within.
 
 ## Make a Donation
 

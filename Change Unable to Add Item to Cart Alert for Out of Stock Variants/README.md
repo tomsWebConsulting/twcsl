@@ -8,10 +8,10 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 ```
 
 Add code from file **change unable to add item to cart alert for out of stock
@@ -25,17 +25,17 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 * **2021-05-16**
-<br><br>
+
   * fix for not replacing message when append false
   * bumped version to 0.1d2
-  <br><br>
+  
 * **2021-05-16**
-<br><br>
+
   * put in placeholder text for message and title text
   * bumped version to 0.1d1
-  <br><br>
+  
 * **2021-05-16**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

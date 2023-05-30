@@ -20,14 +20,14 @@
   
 * Add code from file **[blog post title each word span tag add.html][3]** to...
 
-  * Site-wide Effect
-  
-    * Settings > Advanced > Code Injection > FOOTER.
-    
   * Page Specific Effect
   
     * Blog Settings > Advanced > Page Header Code Injection for the page. Please
       see [per-page code injection][4].
+      
+  * Site-wide Effect
+  
+    * Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Notes
 

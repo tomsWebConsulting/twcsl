@@ -18,7 +18,7 @@
   
 * Add code from file
   **[header cart icon hide when zero.html](header%20cart%20icon%20hide%20when%20zero.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER.
+  to Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

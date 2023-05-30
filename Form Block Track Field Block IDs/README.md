@@ -28,23 +28,23 @@ Track tagged form block field block ids for later use in other code.
 
 ## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Site-wide
-
-  * Add code from file **[form block track field block ids.html][5]** to
-    Settings > Advanced > Code Injection > FOOTER.
-    
 * Page Specific
 
   * Add code from file **[form block track field block ids.html][5]** to Page
     Settings > Advanced > Page Header Code Injection for the page. Please see
     [per-page code injection][6].
     
+* Site-wide
+
+  * Add code from file **[form block track field block ids.html][5]** to
+    Settings > Developer Tools > Code Injection > FOOTER.
+
 * Read the code for any instructions within.
 
 * Add or edit a form block. For the first field add a line field with a label of

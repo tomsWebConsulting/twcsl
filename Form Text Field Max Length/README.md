@@ -19,7 +19,7 @@
   rest of the steps.
   
 * Add code from file **[form text field max length.html][4]** to Settings >
-  Advanced > Code Injection > FOOTER.
+  Developer Tools > Code Injection > FOOTER.
   
 * Add a form block to your page and set up as desired.
   

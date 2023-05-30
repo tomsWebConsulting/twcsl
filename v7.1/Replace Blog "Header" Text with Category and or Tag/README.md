@@ -8,10 +8,10 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 ```
 
 Add code from file **replace blog "header" text with category and or tag.html**
@@ -24,17 +24,17 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 * **2021-02-24**
-<br><br>
+
   * fix issue where "header" would show before text replacements occurred
   * bumped version to 0.2d1
-  <br><br>
+  
 * **2021-02-23**
-<br><br>
+
   * added user settable prefix and suffix text for category/tag
   * bumped version to 0.2d0
-  <br><br>
+  
 * **2021-02-23**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

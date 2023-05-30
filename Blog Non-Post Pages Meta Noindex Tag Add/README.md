@@ -18,14 +18,14 @@
 * Add code from file **[blog non-post pages meta noindex tag add.html][7]**
   to...
   
-  * Site-wide Effect
-  
-    * Settings > Advanced > Code Injection > FOOTER.
-    
   * Page Specific Effect
   
     * Blog Settings > Advanced > Page Header Code Injection for the page. Please
       see [per-page code injection][8].
+      
+  * Site-wide Effect
+  
+    * Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

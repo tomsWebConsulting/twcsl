@@ -17,7 +17,7 @@
   
 * Add code from file
   **[add images to product detail page based on tags above additional info.html](add%20images%20to%20product%20detail%20page%20based%20on%20tags%20above%20additional%20info.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER.
+  to Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

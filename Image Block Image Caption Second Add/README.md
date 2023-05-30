@@ -12,24 +12,24 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Options
 
-  * Site-wide
-  
-    * Add code from file **[image block image caption second add.html][2]** to
-      Settings > Advanced > Code Injection > FOOTER.
-      
   * Page Specific
   
     * Add code from file **[image block image caption second add.html][2]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Please
       see [per-page code injection][3].
+      
+  * Site-wide
+  
+    * Add code from file **[image block image caption second add.html][2]** to
+      Settings > Developer Tools > Code Injection > FOOTER.
 
 ## Note
 

@@ -8,10 +8,10 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 ```
 
 Add code from file **fix image block SS encoded query component links.html** to
@@ -24,7 +24,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 <!-- * **2021-07-20**
-<br><br>
+
   * effect not active in Preview
   * generalized code to move first n blocks
   * changed name from 'Move Product Detail Additional Info Donate Block After
@@ -33,7 +33,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   * bumped version to 0.2d0
   <br><br -->
 * **2021-07-20**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

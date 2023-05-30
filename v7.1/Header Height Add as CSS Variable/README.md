@@ -12,23 +12,23 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file **[header height add as css variable.html][1]** to...
 
-  * Site-wide
-  
-    * Settings > Advanced > Code Injection > FOOTER.
-    
   * Page Specific
   
     * Page Settings > Advanced > Page Header Code Injection for the page. Please
       see [per-page code injection][2].
       
+  * Site-wide
+  
+    * Settings > Developer Tools > Code Injection > FOOTER.
+
 * Read the code for any instructions within.
 
 ## Make a Donation

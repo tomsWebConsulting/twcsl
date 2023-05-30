@@ -21,8 +21,9 @@
 ## Quick Install
 
 * Add code from file **[header branding and navigation center actions left
-  add.html][4]** to Settings > Advanced > Code Injection > FOOTER. Please see
-  [Add code to code injection][5]. Read the code for any instructions within.
+  add.html][4]** to Settings > Developer Tools > Code Injection > FOOTER. Please
+  see [Add code to code injection][5]. Read the code for any instructions
+  within.
 
 ## Note
 

@@ -12,23 +12,23 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
-  
-* Site-wide Effect
-  
-  * Add code from file
-    **[gallery section grid item order randomize.html](gallery%20section%20grid%20item%20order%20randomize.html#L1)**
-    to Design > Custom CSS.
   
 * Page Only Effect
   
   * Add code from file
     **[gallery section grid item order randomize.html](gallery%20section%20grid%20item%20order%20randomize.html#L1)**
     to Page Settings > Advanced > Page Header Code Injection for the page.
+    
+* Site-wide Effect
+  
+  * Add code from file
+    **[gallery section grid item order randomize.html](gallery%20section%20grid%20item%20order%20randomize.html#L1)**
+    to Design > Custom CSS.
 
 ## Make a Donation
 

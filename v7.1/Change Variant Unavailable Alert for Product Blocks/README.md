@@ -8,10 +8,10 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 ```
 
 Add code from file **change variant unavailable alert for product blocks.html**
@@ -24,13 +24,13 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 * **2021-05-13**
-<br><br>
+
   * made code a litte more generic and minor clean up
   * added no MutationObserver guard
   * bumped version to 0.1d2
-  <br><br>
+  
 * **2020-12-21**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

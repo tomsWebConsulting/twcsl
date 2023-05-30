@@ -22,14 +22,14 @@
 
 ## Quick Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
 * Add code from file **[make navigation folders clickable.html][5]** to
-  Settings > Advanced > Code Injection > FOOTER.  Please see [Add code to code
+  Settings > Developer Tools > Code Injection > FOOTER.  Please see [Add code to code
   injection][6]. Read the code for any instructions within.
 
 ## Make a Donation

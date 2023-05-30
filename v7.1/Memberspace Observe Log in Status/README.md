@@ -14,7 +14,7 @@
 
 * Add code from file
   **[memberspace observe log in status.html](memberspace%20observe%20log%20in%20status.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER. Read the code for any
+  to Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
   instructions within.
 
 ## Make a Donation

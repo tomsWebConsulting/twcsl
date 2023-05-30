@@ -14,8 +14,9 @@
 
 * Add code from file **[elements replace.css][1]** to Design > Custom CSS.
 
-* Add code from file **[elements replace.html][2]** to Settings > Advanced >
-  Code Injection > FOOTER. Read the code for any instructions within.
+* Add code from file **[elements replace.html][2]** to Settings >
+  Developer Tools > Code Injection > FOOTER. Read the code for any instructions
+  within.
   
 * Add a section to the site footer as the last section. Add your source
   elements (usually blocks) there.

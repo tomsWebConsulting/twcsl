@@ -12,13 +12,13 @@
 
 ## Quick Install
 
-Add the following to Settings > Advanced > Code Injection > HEADER.
+Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
-`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>`
+`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>`
 
 Add code from file
 **[header social icon urls change based on language.html](header%20social%20icon%20urls%20change%20based%20on%20language.html#L1)**
-to Settings > Advanced > Code Injection > FOOTER.
+to Settings > Developer Tools > Code Injection > FOOTER.
 
 Add the following code to the end of the language initialization code.
 
@@ -36,11 +36,11 @@ Please consider
 ## Changes
 
 <!-- * **2021-07-01**
-<br><br>
+
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
-  <br><br -->
+  -->
 * **2021-08-06**
 
   * initial version

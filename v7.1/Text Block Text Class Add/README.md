@@ -12,17 +12,12 @@
 
 ## Install
 
-* Add the following to Settings > Advanced > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Site-wide Effect
-
-  * Add code from file **[text block text class add.html][1]** to Settings >
-    Advanced > Code Injection > FOOTER.
-    
 * Page Specific Effect
 
   * Add code from file **[text block text class add.html][1]** to
@@ -30,6 +25,11 @@
     see [per-page code injection][2]. Read the code for any instructions
     within.
     
+* Site-wide Effect
+
+  * Add code from file **[text block text class add.html][1]** to Settings >
+    Developer Tools > Code Injection > FOOTER.
+
 ## How To Use
 
 As this is a base effect it is up to you to design your CSS using the tools
