@@ -65,7 +65,7 @@
       
     // do not change anything below, there be the borg here
     
-    // if ( window.frameElement !== null ) return; // bail if in preview
+    if ( window.frameElement !== null ) return; // bail if in preview
     
     $.each ( selectorsActionsMap, function ( selectorSource, object ) {
     
