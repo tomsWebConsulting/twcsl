@@ -1,0 +1,122 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      elements manipulate
+      
+      License       : < https://bit.ly/3F8sn8W >
+      
+      Version       : 0.2.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : jQuery
+      
+      Note          : this code is a base for other effects. you will want to
+                      create CSS to hide and show elements. after an element is
+                      replaced the class twc-em-show will be added to it which
+                      can be used to show elements
+                      
+                      this effect is not active in SS Preview to test it use
+                      private browsing < https://bit.ly/3f6lhq2 >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const selectorsActionsMap = {
+    
+      /*
+      
+        the format of each data structure is a selector source and destination,
+        and an action
+        
+        following is an example data structure. copy the example data structure
+        below and paste after the example data structure. remove the forward
+        slash asterisk and asterisk forward slash lines from before and after
+        the example data structure. repeat for as many as many elements as you
+        need to manipulate. this has been done once initially
+        
+        */
+        
+      /* '[enter selector source here between single quotes replacing square brackets]' : {
+      
+        selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
+        
+        action : 'append' // values are append or replace
+        
+        }, */
+        
+      '[enter selector source here between single quotes replacing square brackets]' : {
+      
+        selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
+        
+        action : 'append' // values are append, prepend or replace
+        
+        },
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    // if ( window.frameElement !== null ) return; // bail if in preview
+    
+    $.each ( selectorsActionsMap, function ( selectorSource, object ) {
+    
+      const $elementSource = $( selectorSource );
+      
+      if ( ! $elementSource.length ) return true; // continue if no source
+      
+      const selectorDestination = object.selectorDestination;
+      
+      const $selectorDestination = $( selectorDestination );
+      
+      // continue if no destination
+      
+      if ( ! $selectorDestination.length ) return true;
+      
+      const action = object.action;
+        
+      switch ( action ) {
+      
+        case 'append' :
+        
+          $selectorDestination
+          
+            .append ( $elementSource );
+            
+          break;
+          
+        case 'prepend' :
+        
+          $selectorDestination
+          
+            .prepend ( $elementSource );
+            
+          break;
+          
+        case 'replace' :
+        
+          $selectorDestination
+          
+          .replaceWith ( $elementSource );
+          
+          break;
+          
+        }
+        
+      $selectorDestination
+      
+        .addClass ( 'twc-em-show' );
+        
+      } );
+      
+    } );
+    
+  </script>
