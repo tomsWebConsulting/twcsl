@@ -2,6 +2,10 @@
 
 ### [License][1]
     
+### Synopsis
+
+Move right actions of header layout branding and navigation center to left.
+
 ### Version 0.1.0
 
 #### SS Version
@@ -36,11 +40,10 @@ Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2022-12-06**
+<!-- * **2023-05-30**
 
-  * add variable for CSS customization
-  * fix for changes SS made that broke the code
-  * bumped version to 0.2.0
+  * remove errants break statement, no functional changes
+  * bumped version to 0.1.1
   -->
 * **2023-04-15**
 
