@@ -47,11 +47,8 @@ Add simple category descriptions to store category pages.
       where you want to have this effect.
       
     * Add code from file **[store category page description add.html][4]** to
-      Settings > Developer Tools > Code Injection > FOOTER.
-      
-      Store Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Add code to code injection][5]. Read the code for any
-      instructions within.
+      Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
+      to code injection][5]. Read the code for any instructions within.
 
 ## Make a Donation
 
