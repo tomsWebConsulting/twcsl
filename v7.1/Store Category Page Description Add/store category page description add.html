@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.4.0
+  Version       : 0.4.1
   
   SS Version    : 7.1
   
@@ -168,11 +168,29 @@
       
       if ( twcsl.page.store.list.hasTag ) return; // bail on tag
       
-      const categoryUrlSlug = location
+      const categoryUrlSlug = twcsl.page.store.list.categoryUrlSlug;
       
-        .pathname
+      // begin make slugs
+      
+        const map = twc.scpda.urlSlugDescriptionMap;
         
-        .replace ( twcsl.page.store.urlSlug, '' )
+        const keys = Object.keys ( map );
+        
+        $.each ( keys, function ( index, key ) {
+        
+          const b = key [ 1 ] == '/';
+          
+          if ( b ) return true; // continue
+          
+          const newKey = `/${ key }`;
+          
+          delete Object.assign ( map,
+          
+            { [ newKey ] : map [ key ] } ) [ key ];
+            
+          } );
+          
+        // end make slugs
         
       // bail if no category url slug mapped
       

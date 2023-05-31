@@ -2,29 +2,69 @@
 
 ### [License][1]
 
-### Version 0.4.0
+### Synopsis
 
-#### SS Version 7.1
+Add simple category descriptions to store category pages.
 
-#### Fluid Engine Compatible : Not Applicable
+### Version
+
+  * 0.4.1
+
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
+
+#### Dependencies
+
+  * [Tom's Web Consulting Squarespace Library][2]
 
 ---
 
 ## Install
 
-* Install [twcsl][2]. After you install twcsl be sure to continue on with the
+* Install [twcsl][3]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[store category page description add.html][3]** to Store
-  Settings > Advanced > Page Header Code Injection for the store page. Read the
-  code for any instructions within.
+* Options
+
+  * Store Page Specific
+  
+    * This option will be the one most will want to use if you have only a
+      single store page you want to have this effect.
+      
+    * Add code from file **[store category page description add.html][4]** to
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Please see [Per-page code injection][6]. Read the code for any
+      instructions within.
+      
+  * Site-wide
+  
+    * This option is the one you want to use if you have multiple store pages
+      where you want to have this effect.
+      
+    * Add code from file **[store category page description add.html][4]** to
+      Settings > Developer Tools > Code Injection > FOOTER.
+      
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Please see [Add code to code injection][5]. Read the code for any
+      instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][7].
 
 ## Changes
 
+* **2023-05-31**
+
+  * make code for urlSlugs work the way the text describes to enter them. also
+    be flexible with either starting with a forward slash or not
+  * bumped version to 0.4.1
+  
 * **2023-02-16**
 
   * revert back to using category slugs instead of name, better support for
@@ -65,6 +105,9 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#install-options
-[3]: store%20category%20page%20description%20add.html#L1
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://github.com/tomsWebConsulting/twcsl
+[3]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: store%20category%20page%20description%20add.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
