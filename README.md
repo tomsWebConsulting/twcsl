@@ -285,7 +285,7 @@ not necessarily designed to work together.
     
   * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
     
-  * [Elements Replace](v7.1/Elements%20Replace)
+  * [Elements Manipulate](v7.1/Elements%20Manipulate)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
     
