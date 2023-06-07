@@ -8,7 +8,7 @@
       
       License       : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.2.0
+      Version       : 0.3.0
       
       SS Version    : 7.1
       
@@ -49,6 +49,16 @@
       
         selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
         
+        /*
+        
+          selectorParentDestination is optional, use when you want to first find
+          a selector destination but then work up the ancestor hierarchy to
+          manipulate it
+          
+          */
+        
+        selectorParentDestination : '[enter selector parent destination here between single quotes replacing square brackets]',
+        
         action : 'append' // values are append or replace
         
         }, */
@@ -56,6 +66,16 @@
       '[enter selector source here between single quotes replacing square brackets]' : {
       
         selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
+        
+        /*
+        
+          selectorParentDestination is optional, use when you want to first find
+          a selector destination but then work up the ancestor hierarchy to
+          manipulate it
+          
+          */
+          
+        selectorParentDestination : '[enter selector parent destination here between single quotes replacing square brackets]',
         
         action : 'append' // values are append, prepend or replace
         
@@ -75,19 +95,29 @@
       
       const selectorDestination = object.selectorDestination;
       
-      const $selectorDestination = $( selectorDestination );
+      let $elementDestination = $( selectorDestination );
       
       // continue if no destination
       
-      if ( ! $selectorDestination.length ) return true;
+      if ( ! $elementDestination.length ) return true;
       
       const action = object.action;
+      
+      const hasParentSelector = ! new RegExp ( '^\\[.+\\]$' )
+      
+        .test ( object.selectorParentDestination );
         
+      if ( hasParentSelector )
+      
+        $elementDestination = $elementDestination
+        
+          .parents ( object.selectorParentDestination );
+          
       switch ( action ) {
       
         case 'append' :
         
-          $selectorDestination
+          $elementDestination
           
             .append ( $elementSource );
             
@@ -95,7 +125,7 @@
           
         case 'prepend' :
         
-          $selectorDestination
+          $elementDestination
           
             .prepend ( $elementSource );
             
@@ -103,15 +133,15 @@
           
         case 'replace' :
         
-          $selectorDestination
+          $elementDestination
           
-          .replaceWith ( $elementSource );
-          
+            .replaceWith ( $elementSource );
+            
           break;
           
         }
         
-      $selectorDestination
+      $elementDestination
       
         .addClass ( 'twc-em-show' );
         

@@ -4,12 +4,12 @@
 
 ### Synopsis
 
-Move a selector source to a destination source with the action of append,
+Move a selector source to a selector destination with the action of append,
 prepend, or replace.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -50,6 +50,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-06-06**
+
+  * add a selector parent destination
+  * bumped version to 0.3.0
+  
 * **2023-05-31**
 
   * add ability to append and prepend to selector destination
