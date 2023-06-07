@@ -2,11 +2,27 @@
 
 ### [License][1]
 
-### Version 0.3.0
+### Synopsis
 
-#### SS Versions 7.1, 7.0 ([Brine template family][2])
+Monitor changes to calendar block and call custom callbacks.
 
-#### Fluid Engine Compatible : Yes
+### Version
+
+  * 0.3.0
+
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0 ([Brine template family][2])
+
+#### v7.1 Fluid Engine Compatible
+
+  * Yes
+
+#### Dependencies
+
+  * [Tom's Web Consulting Squarespace Library][2]
 
 ---
 
@@ -25,7 +41,8 @@
 
   * Site-wide Effect
   
-    * Settings > Developer Tools > Code Injection > FOOTER.
+    * Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
+      to code injection][6].
     
 ## Note
 
@@ -33,7 +50,7 @@ This code is meant as a base for other effects.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -57,4 +74,5 @@ Please consider [making a donation][6].
 [3]: https://github.com/tomsWebConsulting/twcsl#install-options
 [4]: calendar%20block%20event%20change.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
