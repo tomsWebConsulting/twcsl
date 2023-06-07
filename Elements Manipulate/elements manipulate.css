@@ -1,0 +1,26 @@
+/*
+
+  begin elements manipulate
+  
+  License     : < https://bit.ly/3F8sn8W >
+  
+  Version     : 0.3.0
+  
+  SS Versions : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible  : Yes
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  html:not( .squarespace-damask ) #footer-sections .page-section:last-child {
+  
+    display : none;
+    
+    }
+    
+  /* end elements manipulate */
