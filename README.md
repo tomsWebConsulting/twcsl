@@ -105,6 +105,8 @@ not necessarily designed to work together.
   
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
   
+* [Elements Manipulate](Elements%20Manipulate)
+  
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
@@ -284,8 +286,6 @@ not necessarily designed to work together.
   * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
     
   * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
-    
-  * [Elements Manipulate](v7.1/Elements%20Manipulate)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
     
