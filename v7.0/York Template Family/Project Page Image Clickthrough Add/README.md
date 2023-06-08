@@ -56,6 +56,6 @@ Please consider [making a donation][8].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://jquery.com/
-[9]: project%20page%20image%20clickthrough%20restore.html#L1
+[6]: project%20page%20image%20clickthrough%20restore.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
