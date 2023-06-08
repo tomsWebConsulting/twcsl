@@ -31,7 +31,7 @@ use it in the page code.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Add code from file **[project page image clickthrough restore.html][6]** to
+* Add code from file **[project page image clickthrough add.html][6]** to
   Project Settings > Advanced > Page Header Code Injection for the project page.
   Please see per-page code injection. Please see [Add code to code
   injection][7].
@@ -56,6 +56,6 @@ Please consider [making a donation][8].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://jquery.com/
-[6]: project%20page%20image%20clickthrough%20restore.html#L1
+[6]: project%20page%20image%20clickthrough%20add.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
