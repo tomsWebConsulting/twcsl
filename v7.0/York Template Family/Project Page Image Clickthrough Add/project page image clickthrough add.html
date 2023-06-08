@@ -1,0 +1,56 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      project page image clickthrough add
+      
+      License       : < https://bit.ly/3F8sn8W >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.0
+      
+      Template      : York ( Artesia, Flores, Harris, Jasper, Jones, Lange,
+                      Shibori, Taylor )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+      
+      Dependencies  : jQuery
+      
+      Note          : the code makes a call to the json version of the project
+                      page to grab clickthrough urls
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const url = `${ location.pathname }?format=json`;
+    
+    $.getJSON ( url, function ( data ) {
+    
+      $.each ( data.items, function ( i, item ) {
+      
+        const selector = `.project-slide[ data-slide-id="${ item.id }" ]`;
+        
+        $( selector )
+        
+          .click ( function ( ) {
+        
+            location = item.clickthroughUrl;
+          
+            } )
+            
+          .css ( 'cursor', 'pointer' );
+          
+        } );
+        
+      } );
+      
+    } );
+    
+  </script>
