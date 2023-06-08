@@ -9,7 +9,7 @@ prepend, or replace.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Versions
 
@@ -52,6 +52,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-06-08**
+
+  * fix syntax errors
+  * bumped version to 0.3.1
+  
 * **2023-06-06**
 
   * add a selector parent destination
