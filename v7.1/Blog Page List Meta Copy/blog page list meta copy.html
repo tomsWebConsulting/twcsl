@@ -1,0 +1,61 @@
+<!--
+
+  begin blog page list meta copy
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tags. both are
+                  needed for the full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .blog-masonry .blog-meta-section:nth-of-type( 2 ) {
+    
+      margin-top: 20px;
+      order : 1;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const selector = 'collection-type-blog-masonry.view-list .blog-masonry .entry';
+      
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let selector = '.blog-meta-section';
+        
+        const $metaClone = $( selector, $this )
+        
+          .clone ( );
+          
+        selector = '.blog-title';
+        
+        $( selector, $this )
+        
+          .after ( $metaClone );
+          
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end blog page list date badge -->
