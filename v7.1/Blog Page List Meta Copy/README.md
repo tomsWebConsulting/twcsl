@@ -34,13 +34,13 @@ Copy blog page list meta after blog title.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
-* Add code from file **[blog page list meta copy.html][4]** to Block Settings >
+* Add code from file **[blog page list meta copy.html][5]** to Block Settings >
   Advanced > Page Header Code Injection for the blog page. Please see [Per-page
-  code injection][5]. Read the code for any instructions within.
+  code injection][6]. Read the code for any instructions within.
   
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -57,6 +57,7 @@ Please consider [making a donation][6].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: blog%20page%20list%20meta%20copy.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://jquery.com/
+[5]: blog%20page%20list%20meta%20copy.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
