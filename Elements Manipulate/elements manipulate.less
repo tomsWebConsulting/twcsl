@@ -1,0 +1,86 @@
+/*
+
+  begin elements manipulate
+  
+  License         : < https://bit.ly/3F8sn8W >
+  
+  Version         : 0.4.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                    Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                    Stella, Thorne, Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : LESS
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  // use false or true for an element you want to hide
+  
+  .v7-1( false ); // last footer section
+  
+  .v7-0-brine( false ); // bottom footer
+  
+  // custom selector, optional
+  
+  .custom-selector ( ~'[enter selector here between single quotes replacing square brackets]' );
+  
+  // do not change anything below, there be the borg here
+  
+  .v7-1( @boolean ) when ( @boolean = true ) {
+  
+    html:not( .squarespace-damask ) {
+    
+      #footer-sections .page-section:last-child {
+      
+        display : none;
+        
+        }
+        
+      }
+      
+    }
+    
+  .v7-0-brine( @boolean ) when ( @boolean = true ) {
+  
+    html:not( .squarespace-damask ) {
+    
+      .Footer-blocks--bottom {
+      
+        display : none;
+        
+        }
+        
+      }
+      
+    }
+    
+  .custom-selector( @selector ) when not ( @selector = ~'[enter selector here between single quotes replacing square brackets]' ) {
+  
+    html:not( .squarespace-damask ) {
+    
+      @{selector} {
+      
+        display : none;
+        
+        }
+        
+      }
+      
+    }
+    
+  /* end elements manipulate */

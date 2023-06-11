@@ -6,28 +6,38 @@
     
       elements manipulate
       
-      License       : < https://bit.ly/3F8sn8W >
+      License         : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.3.1
+      Version         : 0.4.0
       
-      SS Versions   : 7.1, 7.0
+      SS Versions     : 7.1, 7.0
       
       v7.1
       Fluid
       Engine
-      Compatible    : Yes
+      Compatible      : Yes
       
-      Dependencies  : jQuery
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
       
-      Note          : this code is a base for other effects. you will want to
-                      create CSS to hide and show elements. after an element is
-                      replaced the class twc-em-show will be added to it which
-                      can be used to show elements
-                      
-                      this effect is not active in SS Preview to test it use
-                      private browsing < https://bit.ly/3f6lhq2 >
+      Dependencies    : jQuery
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Note            : this code is a base for other effects. you will want to
+                        create CSS to hide and show elements. after an element
+                        is replaced the class twc-em-show will be added to it
+                        which can be used to show elements
+                        
+                        this effect is not active in SS Preview to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
       */
       
@@ -50,13 +60,18 @@
       
         selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
         
+        action : 'append', // value is append, prepend or replace
+        
         // selectorParentDestination is optional, use when you want to first
         // find a selector destination but then work up the ancestor hierarchy
         // to manipulate it
         
         selectorParentDestination : '[enter selector parent destination here between single quotes replacing square brackets]',
         
-        action : 'append' // values are append or replace
+        // selectorCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        sourceCopy : false,
         
         }, */
         
@@ -64,13 +79,18 @@
       
         selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
         
+        action : 'append', // value is append, prepend or replace
+        
         // selectorParentDestination is optional, use when you want to first
         // find a selector destination but then work up the ancestor hierarchy
         // to manipulate it
         
         selectorParentDestination : '[enter selector parent destination here between single quotes replacing square brackets]',
         
-        action : 'append' // values are append, prepend or replace
+        // selectorCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        sourceCopy : false,
         
         },
         
@@ -82,10 +102,14 @@
     
     $.each ( selectorsActionsMap, function ( selectorSource, object ) {
     
-      const $elementSource = $( selectorSource );
+      let $elementSource = $( selectorSource );
       
       if ( ! $elementSource.length ) return true; // continue if no source
       
+      if ( object.sourceCopy )
+      
+        $elementSource = $elementSource.clone ( );
+        
       const selectorDestination = object.selectorDestination;
       
       let $elementDestination = $( selectorDestination );

@@ -4,18 +4,18 @@
 
 ### Synopsis
 
-Move a selector source to a selector destination with the action of append,
-prepend, or replace.
+Move or copy a selector source to a selector destination with the action of
+append, prepend, or replace.
 
 ### Version
 
-  * 0.3.1
+  * 0.4.0
 
 #### SS Versions
 
   * 7.1
   
-  * 7.0
+  * 7.0 ([Brine template family][2])
 
 #### v7.1 Fluid Engine Compatible
 
@@ -23,15 +23,16 @@ prepend, or replace.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
+  * [Squarespace plan][3] that supports [JavaScript][4].
   
-  * [jQuery][4]
+  * [jQuery][5]
 
 ---
 
 ## Install
 
-* Add code from file **[elements manipulate.css][5]** to Design > Custom CSS.
+* Add code from file **[elements manipulate.less][6]** to Design > Custom CSS.
+  Read the code for any instructions within.
 
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
@@ -39,19 +40,24 @@ prepend, or replace.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Add code from file **[elements manipulate.html][6]** to Settings >
+* Add code from file **[elements manipulate.html][7]** to Settings >
   Developer Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7]. Read the code for any instructions within.
+  injection][8]. Read the code for any instructions within.
   
 * Add a section to the site footer as the last section. Add your source
   elements (usually blocks) there.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-06-08**
+
+  * add source selector copy feature
+  * bumped version to 0.4.0
+  
 * **2023-06-08**
 
   * fix syntax errors
@@ -72,10 +78,11 @@ Please consider [making a donation][8].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: elements%20manipulate.css#L1
-[6]: elements%20manipulate.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: https://www.squarespace.com/pricing
+[4]: https://en.wikipedia.org/wiki/JavaScript
+[5]: https://jquery.com/
+[6]: elements%20manipulate.less#L1
+[7]: elements%20manipulate.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
