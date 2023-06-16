@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.4.1
+  * 0.5.0
 
 #### SS Version
 
@@ -50,12 +50,23 @@ Add simple category descriptions to store category pages.
       Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][5]. Read the code for any instructions within.
 
+## Note
+
+The code contains default settings to place the description on the top of the
+page. If you want to place the description in another location you will need to
+create your own settings to do so.
+
 ## Make a Donation
 
 Please consider [making a donation][7].
 
 ## Changes
 
+* **2023-06-16**
+
+  * make code more flexible in where the description can be placed
+  * bumped version to 0.5.0
+  
 * **2023-05-31**
 
   * make code for urlSlugs work the way the text describes to enter them. also
