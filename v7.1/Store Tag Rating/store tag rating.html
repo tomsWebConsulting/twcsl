@@ -1,0 +1,258 @@
+<!--
+
+  begin store tag rating
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : squarespace plan that supports JavaScript
+                  
+                  twcsl
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  this is not an site visitor rating system
+                  
+                  the code makes a call to the json version of the store page to
+                  grab the tags as entered in the UI
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .twc-str {
+    
+      --twc-str-list-margin-top : 8px;
+      --twc-str-detail-margin : 1em 0;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.str = {
+    
+      /*
+      
+        nPointScale is the number of points in the scale, for a 5 point scale
+        use 5. for a 3 point scale use 3, and etc
+        
+        */
+        
+      nPointScale : 5,
+      
+      trueSymbol : '★',
+      
+      falseSymbol : '☆',
+      
+      productDetailSelector : [
+      
+        '.ProductItem-details .sqs-add-to-cart-button-wrapper', // simple layout
+        
+        /*
+        
+          full, half, and wrap layouts
+          
+          use a selector that is within the element with the pdp-layout class
+          
+          */
+          
+        '.pdp-details .sqs-add-to-cart-button-wrapper',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-str {
+    
+      display : flex;
+      flex-direction : column; /* value is column or column-reverse */
+      gap : 0.5em;
+      
+      }
+      
+    .products.collection-content-wrapper .grid-main-meta .twc-str {
+    
+      margin-top : var( --twc-str-list-margin-top );
+      
+      }
+      
+    .ProductItem-details .twc-str, /* simple layout */
+    .pdp-layout .pdp-details .twc-str /* full, half, and wrap layouts */
+    
+      {
+      
+        margin : var( --twc-str-detail-margin );
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const url = `${ twcsl.page.store.urlSlug }?format=json`;
+      
+      $.getJSON ( url, function ( data ) {
+      
+        const options = twc.str;
+        
+        const codeKey = 'twc-str';
+        
+        const tags = data
+        
+          .collection
+          
+          .tags
+          
+          .filter ( tag => tag.startsWith ( `${ codeKey } ` ) );
+          
+        $.each ( tags, function ( i, tag ) {
+        
+          const re = new RegExp ( `^(${ codeKey } )(.+) (\\d+)$` );
+          
+          let label = tag
+          
+            .match ( re );
+            
+          const rating = Number (
+          
+            label [ 3 ]
+            
+            );
+            
+            const n = options
+            
+              .nPointScale
+              
+              -
+              
+              rating;
+              
+            const ratingFalse = options
+            
+              .falseSymbol
+              
+              .repeat ( n );
+              
+            const ratingTrue = options
+            
+              .trueSymbol
+              
+              .repeat ( rating )
+              
+          label = label [ 2 ];
+          
+          tag = tag.toLowerCase ( )
+            
+            .replaceAll ( ' ', '-' )
+            
+            .replace ( /[^\w-]+/g, '' );
+            
+          const suffix = `.tag-${ tag }`;
+          
+          const selector = [
+          
+            '.products.collection-content-wrapper .grid-item',
+            
+            '.ProductItem', // simple layout
+            
+            '.pdp-layout', // full, half, and wrap layouts
+            
+            '.ProductItem-details .ProductItem-product-price',
+            
+            ]
+            
+            .join ( `${ suffix }, ` )
+            
+            +
+            
+            suffix;
+            
+          $( selector ).each ( function ( ) {
+          
+            let html = `
+            
+              <div class="rating">
+              
+                <span class="true">
+                
+                  ${ ratingTrue }</span><span class="false">${ ratingFalse }
+                  
+                    </span>
+                    
+                <span class="label">
+                
+                  ${ label }
+                  
+                  </span>
+                  
+                </div>
+                
+                `;
+                
+            let selector = [
+            
+              '.grid-main-meta',
+              
+              ]
+              
+              .concat ( options.productDetailSelector )
+              
+              .join ( ', ' );
+              
+            let $element = $( selector, this );
+            
+            selector = `.${ codeKey }`;
+            
+            $element = $( selector, $element );
+            
+            if ( ! $element.length ) {
+            
+              const html = `<div class="${ codeKey }">`;
+              
+              $element = $element
+              
+                .prevObject
+                
+                .append ( html )
+                
+                .find ( `.${ codeKey }` );
+                
+              }
+              
+            $element.append ( html );
+            
+            } );
+            
+          } );
+          
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store tag rating -->
