@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.1
+  Version       : 0.2.0
   
   SS Version    : 7.1
   
@@ -28,7 +28,7 @@
   
   <style>
   
-      body:not( .sqs-edit-mode ) #page .page-section:not( .collection-type-products ) {
+      html:not( .squarespace-damask ) #page .page-section:not( .collection-type-products ) {
       
         display : none;
         
@@ -46,17 +46,19 @@
       
         .css ( 'padding-top' );
         
-      let category = twcsl.page.store.list.category;
+      let categories = twcsl.page.store.list.categories;
       
-      category = category && $( `div[data-category="${category}"]` ).length ?
+      categories = categories &&
       
-        category : 'default';
+        $( `x-twc-scsr[data-categories="${ categories }"]` ).length ?
+        
+        categories : 'default';
         
       // remove unused sections
       
-      $( 'div[data-category]' )
+      $( 'x-twc-scsr[data-categories]' )
       
-        .filter ( `div[data-category!="${category}"]` )
+        .filter ( `x-twc-scsr[data-categories!="${ categories }"]` )
         
         .parents ( '.page-section' )
         
