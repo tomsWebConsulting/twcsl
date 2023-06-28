@@ -1,8 +1,8 @@
 # Page Section Video Scrubbing Animation
 
-### [License][99]
+### [License][1]
 
-### Version 0.3.0
+### Version 0.3.1
 
 #### SS Version 7.1
 
@@ -51,20 +51,25 @@
 
 * Save the section.
 
-* Add code from file **[page section video scrubbing animation.html][1]** to
+* Add code from file **[page section video scrubbing animation.html][2]** to
   Page Settings > Advanced > Page Header Code Injection for the page. Read the
   code for any instructions within.
 
 ## Demos
 
-You can see [demos of this effect here][2].
+You can see [demos of this effect here][3].
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-06-26**
+
+  * fix for changes SS made to section backgrounds
+  * bumped version to 0.3.1
+  
 * **2022-08-19**
 
   * add callback to adjust top
@@ -79,7 +84,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: page%20section%20video%20scrubbing%20animation.html#L1
-[2]: https://toms-web-consulting-demos.squarespace.com/page-section-video-scrubbing-animation?password=twcdemos
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: page%20section%20video%20scrubbing%20animation.html#L1
+[3]: https://toms-web-consulting-demos.squarespace.com/page-section-video-scrubbing-animation?password=twcdemos
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
