@@ -2,16 +2,14 @@
 
   begin page section video scrubbing animation
   
-  License       : < https://bit.ly/3F8sn8W >
-  
-  Version       : 0.3.1
+  Version       : 0.4.0
   
   SS Version    : 7.1
   
   Dependencies  : jQuery
   
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
+  Notes         : the code is comprised of style and script tags. both are
+                  needed for the full effect to work
                   
                   this effect is not active in SS Preview to test it use
                   private browsing < https://bit.ly/3f6lhq2 >
@@ -20,165 +18,12 @@
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
+  no user serviceable parts below
+  
   -->
   
   <style>
   
-    .twc-psvsa {
-    
-      /*
-      
-        because we are manipulating a page section with code sometimes it may
-        need some help with knowing the right background color to use. enter a
-        color value or unset
-        
-        */
-        
-      --background-color : [ enter background color or unset here replacing square brackets ];
-      
-      }
-      
-    </style>
-    
-  <script>
-  
-    if ( window.twc == undefined ) window.twc = { };
-    
-    twc.psvsa = {
-    
-      /*
-      
-        image urls can be either an array of urls or a function that returns
-        an array of urls. replace undefined with the array or function
-        
-        */
-        
-      /*
-      
-        following is imageUrls with an example array with one line for a
-        url. copy the example below and replace the imageUrls : undefined line
-        below. remove the forward slash asterisk and asterisk forward slash
-        lines from before and after the copied example. repeat the enter image
-        url here line for as many images as you need
-        
-        */
-         
-      /*
-      
-      imageUrls : [
-      
-        '[enter image url here between single quotes replacing square brackets]',
-        
-        ],
-        
-        */
-        
-      /*
-      
-        following is imageUrls with an example function that returns an array
-        with one url. a function is useful if your image urls are a sequence
-        of images, i.e. image01.jpg, image02.jpg, image03.jpg, etc. this
-        example is nonsense but gives the general idea of a function structure
-        
-        */
-        
-      /*
-      
-      imageUrls : ( generateImageUrls => {
-      
-        const imageUrls = [
-        
-          '[enter image url here between single quotes]',
-          
-          ];
-          
-        return imageUrls;
-        
-        } ) ( ),
-        
-        */
-        
-      imageUrls : undefined,
-      
-      callbacks : {
-      
-        /*
-        
-          various callbacks to change the default behaviour of this effect.
-          replace undefined with the name(s) of your callback function(s). your
-          callback function(s) must proceed this code
-          
-          */
-          
-        /*
-        
-          initialize is called after the main initialization of the main code.
-          an object with following parameters is passed to the callback :
-          
-            canvasContext, imagesCount, $canvas, $pageSection
-            
-          */
-          
-        initialize : undefined,
-        
-        /*
-        
-          resize is called after the window is resized. an object with following
-          parameters is passed to the callback :
-          
-            canvasContext, $canvas, $pageSection
-            
-          */
-          
-        resize : undefined,
-        
-        /*
-        
-          top is called to adjust the top variable. normally the animation
-          starts when the page section reaches the bottom of the header or the
-          top of the viewport when the header is not fixed. this top callback
-          lets you override the default behavior. the following parameters are
-          passed to the callback :
-          
-            top, $sectionBackground
-            
-          */
-          
-        top : undefined,
-        
-        /*
-        
-          update is called after the image is updated. an object with following
-          parameters is passed to the callback :
-          
-            canvasContext, imageIndex, imagesCount, $canvas, $pageSection
-            
-          */
-          
-        update : undefined,
-        
-        },
-        
-      };
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
-  <style>
-  
-    .twc-psvsa {
-    
-      display : block;
-      
-      }
-      
-    .twc-psvsa .section-border {
-    
-      background-color : var( --background-color );
-      
-      }
-      
     .twc-psvsa .section-background {
     
       --top : 0px;
@@ -188,13 +33,6 @@
       position: sticky;
       right : unset;
       top : var( --top );
-      
-      }
-      
-    .twc-psvsa > .content-wrapper {
-    
-      display : block;
-      width : unset;
       
       }
       
@@ -210,17 +48,116 @@
       
       }
       
+    html:not( .squarespace-damask ) x-twc-psvsa {
+    
+      display : none;
+      
+      }
+      
     </style>
     
   <script>
   
     $( ( ) => {
     
-      if ( window.frameElement !== null ) return; // bail if in Preview
+      if ( window.frameElement !== null ) return; // bail if in preview
       
-      const consoleMessages = false;
+      const selector = '#page .page-section x-twc-psvsa';
       
-      const options = twc.psvsa;
+      const $psvsa = $( selector );
+      
+      if ( ! $psvsa.length ) return; // bail if no x-twc-psvsa element
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      let options = {
+      
+        callback : {
+        
+          /*
+          
+            initialize is called after the main initialization of the main code.
+            an object with the following parameters is passed to the callback :
+            
+              canvasContext, imagesCount, $canvas, $pageSection
+              
+            */
+            
+          initialize : undefined,
+          
+          /*
+          
+            resize is called after the window is resized. an object with the
+            following parameters is passed to the callback :
+            
+              canvasContext, $canvas, $pageSection
+              
+            */
+            
+          resize : undefined,
+          
+          /*
+          
+            top is called to adjust the top variable. normally the animation
+            starts when the page section reaches the bottom of the header or the
+            top of the viewport when the header is not fixed. this top callback
+            lets you override the default behavior. the the following parameters
+            are passed to the callback :
+            
+              top, $sectionBackground
+              
+            */
+            
+          top : undefined,
+          
+          /*
+          
+            update is called after the image is updated. an object with the
+            following parameters is passed to the callback :
+            
+              canvasContext, imageIndex, imagesCount, $canvas, $pageSection
+              
+            */
+            
+          update : undefined,
+          
+          },
+          
+        imageUrls : undefined
+        
+        };
+        
+      twc.psvsa = Object.assign ( options, twc.psvsa );
+      
+      if ( twc.psvsa.imageUrls == undefined ) {
+      
+        let b;
+        
+        try {
+        
+          twc.psvsa.imageUrls = $psvsa
+          
+            .text ( )
+            
+            .split ( '\n' )
+            
+            .map ( url => url.trim ( ) )
+            
+            .filter ( url => url != '' );
+            
+          b = false;
+          
+          } catch ( error ) {
+          
+            b = true;
+            
+            }
+            
+        if ( b ) return; // bail if error
+        
+        }
+        
+      options = twc.psvsa;
       
       const imageUrls = options.imageUrls;
       
@@ -228,160 +165,142 @@
       
       if ( imageUrls == undefined || ! Array.isArray ( imageUrls ) ) return;
       
-      // first order
+      const consoleMessages = false;
       
-        const imagesCount = imageUrls.length;
+      const imagesCount = imageUrls.length;
+      
+      const images = [ ];
+      
+      const initializeCallback = options.callback.initialize;
+      
+      const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
+      
+        $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
         
-        const imageDimensions = ( ) => {
+      if ( consoleMessages == true )
+      
+        console.log ( 'isFixedHeader : ', isFixedHeader );
         
-          let [ w, h ] = $image
-          
-            .attr ( 'data-image-dimensions' )
-            
-            .split ( 'x' );
-            
-          if ( w > 2500 ) {
-          
-            const quotient = 2500 / w;
-            
-            h = Math.ceil ( h * quotient );
-            
-            w = 2500;
-            
-            }
-            
-          return { height : h, width : w };
-          
-          };
-          
-        const images = [ ];
+      const pxToNumber = ( px ) => {
+      
+        let n = px.match ( /\d+(?:.\d+)?/ ) [ 0 ];
         
-        const initializeCallback = options.callbacks.initialize;
+        n = Number ( n );
         
-        const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
+        return n;
         
-          $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
-          
+        };
+        
+      const resizeCallback = options.callback.resize;
+      
+      const topCallback = options.callback.top;
+      
+      const updateCallback = options.callback.update;
+      
+      const updateImage = i => {
+      
+        canvasContext.drawImage ( images [ i ], 0, 0 );
+        
         if ( consoleMessages == true )
         
-          console.log ( 'isFixedHeader : ', isFixedHeader );
+          console.log ( 'update image : ', i );
           
-        const pxToNumber = ( px ) => {
+        }
         
-          let n = px.match ( /\d+(?:.\d+)?/ ) [ 0 ];
-          
-          n = Number ( n );
-          
-          return n;
-          
-          };
-          
-        const resizeCallback = options.callbacks.resize;
+      const viewportPercentWidth = ( w, vw ) => {
+      
+        vw = vw.replace ( 'vw', '' );
         
-        const selector = '#page .page-section x-twc-psvsa';
+        vw = Number ( vw );
         
-        const topCallback = options.callbacks.top;
+        const n = w * ( vw / 100 );
         
-        const updateCallback = options.callbacks.update;
+        return n;
         
-        const updateImage = i => {
+        };
         
-          canvasContext.drawImage ( images [ i ], 0, 0 );
+      const $header = $( '#header' );
+      
+      const $sectionBackground = $psvsa
+      
+        .parents ( '.content-wrapper' )
+        
+        .siblings ( '.section-border' )
+        
+        .find ( '.section-background' );
+        
+      const $pageSection = $sectionBackground
+      
+        .parents ( '.page-section' )
+        
+        .addClass ( 'twc-psvsa' );
+        
+      const $image = $( 'img', $sectionBackground );
+      
+      const imageDimensions = ( ) => {
+      
+        let [ w, h ] = $image
+        
+          .attr ( 'data-image-dimensions' )
           
-          if ( consoleMessages == true )
+          .split ( 'x' );
           
-            console.log ( 'update image : ', i );
-            
+        if ( w > 2500 ) {
+        
+          const quotient = 2500 / w;
+          
+          h = Math.ceil ( h * quotient );
+          
+          w = 2500;
+          
           }
           
-        const viewportPercentWidth = ( w, vw ) => {
+        return { height : h, width : w };
         
-          vw = vw.replace ( 'vw', '' );
-          
-          vw = Number ( vw );
-          
-          const n = w * ( vw / 100 );
-          
-          return n;
-          
-          };
-          
-        const $header = $( '#header' );
+        };
         
-        let headerHeight = 0;
-        
-        let imageIndexPrevious = 0;
-        
-        let pixelRange;
-        
-        let pixelInterval;
-        
-        let top = 0;
-        
-        // end first order
-        
-      // second order
+      const $canvas = $( '<canvas class="section-background-canvas"/>' )
       
-        const $sectionBackground = $( selector )
+        .attr ( imageDimensions ( ) );
         
-          .parents ( '.content-wrapper' )
-          
-          .siblings ( '.section-border' )
-          
-          .find ( '.section-background' );
-          
-        // end second order
-        
-      // third order
+      const canvasContext = $canvas
       
-        const $image = $( 'img', $sectionBackground );
+        .get ( 0 )
         
-        const $pageSection = $sectionBackground
+        .getContext ( '2d' );
         
-          .parents ( '.page-section' )
-          
-          .addClass ( 'twc-psvsa' );
-          
-        // end third order
-        
-      // begin fourth order
+      let backgroundColor = $psvsa.attr ( 'data-background-color' );
       
-        const $canvas = $( '<canvas class="section-background-canvas">' )
-        
-          .attr ( imageDimensions ( ) );
-          
-        // end fourth order
-        
-      // begin fifth order
+      let headerHeight = 0;
       
-        const canvasContext = $canvas
-        
-          .get ( 0 )
-          
-          .getContext ( '2d' );
-          
-        // end fifth order
-        
-      // begin six order
+      let imageIndexPrevious = 0;
       
-        const callbackParameters = {
-        
-          canvasContext : canvasContext,
-          
-          imageIndex : 0,
-          
-          imagesCount : imagesCount,
-          
-          $canvas : $canvas,
-          
-          $pageSection : $pageSection,
-          
-          };
-          
-        // end six order
-        
-      $image.replaceWith ( $canvas );
+      let isAnimationEndsBeforeLeavingViewport = $psvsa
       
+        .attr ( 'data-animation-ends-before-leaving-viewport' );
+        
+      let pixelRange;
+      
+      let pixelInterval;
+      
+      let sectionBackgroundHeight;
+      
+      let top = 0;
+      
+      const callbackParameters = {
+      
+        canvasContext : canvasContext,
+        
+        imageIndex : 0,
+        
+        imagesCount : imagesCount,
+        
+        $canvas : $canvas,
+        
+        $pageSection : $pageSection,
+        
+        };
+        
       // begin first image
       
         images [ 0 ] = new Image ( );
@@ -396,9 +315,23 @@
           
         // end first image
         
+      $image.replaceWith ( $canvas );
+      
       if ( initializeCallback !== undefined )
       
         initializeCallback ( callbackParameters );
+        
+      if ( isAnimationEndsBeforeLeavingViewport == undefined )
+      
+        isAnimationEndsBeforeLeavingViewport = true;
+        
+        else if ( isAnimationEndsBeforeLeavingViewport == "false" )
+        
+          isAnimationEndsBeforeLeavingViewport = false;
+          
+      if ( consoleMessages == true )
+      
+        console.log ( 'isAnimationEndsBeforeLeavingViewport : ', isAnimationEndsBeforeLeavingViewport );
         
       if ( isFixedHeader ) {
       
@@ -424,6 +357,18 @@
         
       $sectionBackground.css ( '--top', `${ top }px` );
       
+      if ( backgroundColor == undefined ) {
+      
+        backgroundColor = $pageSection
+        
+          .next ( '.page-section' )
+          
+          .css ( '--siteBackgroundColor' );
+          
+        }
+        
+      $pageSection.css ( '--siteBackgroundColor', backgroundColor );
+      
       $( window )
       
         .resize ( function ( ) {
@@ -431,6 +376,10 @@
           pixelRange = $pageSection
           
             .outerHeight ( );
+            
+          if ( isAnimationEndsBeforeLeavingViewport )
+          
+            pixelRange -= $( $sectionBackground ).outerHeight ( );
             
           if ( consoleMessages == true )
           
