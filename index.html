@@ -985,7 +985,7 @@
                   </button>
                   
                 <textarea class="mb-3" cols="80" id="jquery-twcsl" rows="3">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="/s/twcsl.js"></script>
 </textarea>
                 
@@ -1196,11 +1196,23 @@
         
           .then ( responses => {
           
-            const promises = [
+            const jqueryVersion = '3.7.0';
             
-              '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"><\/script>\n'
+            const promises = [ ];
+            
+            switch ( plan ) {
+            
+              case 'trial' :
               
-              ];
+                const s = '<script src="https://ajax.googleapis.com/ajax/' +
+                
+                  `libs/jquery/${ jqueryVersion }/jquery.min.js"><\/script>\n`;
+                  
+                  promises.push ( s );
+                  
+                break;
+                
+              }
               
             responses.forEach ( ( response ) => {
             
