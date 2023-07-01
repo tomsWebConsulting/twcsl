@@ -1,0 +1,148 @@
+<!--
+
+  begin store categories cache
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of two script tags. both are needed for
+                  the full effect to work
+                  
+                  the code makes a call to the json version of the store page
+                  for information that is not normally avaiable
+                  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.scc = {
+    
+      skipKeys : [ // keys not to be removed from a category
+      
+        'displayName',
+        
+        'fullUrl'
+        
+        ],
+        
+      /*
+      
+        callback is a custom function that is called after the categories data
+        has been loaded. replace undefined with the name of your custom function
+        
+        your callback must accept a JavaScript object
+        
+        */
+        
+      callback : undefined
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    $( ( ) => {
+    
+      if ( ! twcsl.page.store.list.is ) return; // bail if not list
+      
+      const options = twc.scc;
+      
+      if ( options.callback == undefined ) return; // bail if no callback
+      
+      const setCategories = ( ) => {
+      
+        const url = `${ twcsl.page.store.urlSlug }?format=json`;
+        
+        $.getJSON ( url, function ( data ) {
+        
+          const traverse = categories => {
+          
+            $.each ( categories, function ( i, category ) {
+            
+              const keys = Object.keys ( category )
+              
+              $.each ( keys, function ( i, key ) {
+              
+                const b = skipKeys.includes ( key );
+                
+                if ( b ) return true; // continue
+                
+                delete category [ key ];
+                
+                } );
+                
+              traverse ( category.children );
+              
+              } );
+              
+            };
+            
+          let categories = data.nestedCategories.all
+          
+          categories.children = data.nestedCategories.categories;
+          
+          categories = [ categories ];
+          
+          traverse ( categories )
+          
+          options.callback ( categories );
+          
+          categories = JSON.stringify ( categories );
+          
+          sessionStorage.setItem ( 'twc-scc', categories );
+          
+          } );
+          
+        };
+        
+      const unique = ( value, index, array ) => {
+      
+        const b = array.indexOf ( value ) === index;
+        
+        return b;
+        
+        };
+        
+      let categories = sessionStorage.getItem ( 'twc-scc' );
+      
+      let skipKeys = options.skipKeys;
+      
+      skipKeys.push ( 'children' );
+      
+      skipKeys = skipKeys.filter ( unique );
+      
+      if ( categories == null )
+      
+        setCategories ( );
+        
+        else {
+        
+          categories = JSON.parse ( categories );
+          
+          if ( options.callback == undefined ) return; // bail if no callback
+          
+          options.callback ( categories );
+          
+          }
+          
+      } );
+      
+    </script>
+    
+  <!-- end store categories cache -->
