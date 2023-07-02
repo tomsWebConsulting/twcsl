@@ -8,7 +8,7 @@
       
       License     : < https://bit.ly/3F8sn8W >
       
-      Version     : 0.1.3
+      Version     : 0.2.0
       
       SS Version  : 7.1
       
@@ -40,7 +40,9 @@
         
         const element = mutation.addedNodes [ 0 ];
         
-        if ( element.nodeName == '#text' ) return true; // continue if text node
+        let b = element.nodeName != 'DIV';
+        
+        if ( b ) return true; // continue if not DIV node
         
         let className = 'js-section-editor-ui-container';
         
@@ -76,7 +78,9 @@
           
         sectionClasses = [ ...sectionClasses ];
         
-        const b =
+        /*
+        
+        b =
         
           sectionClasses.contains ( 'collection-type-products' ) ||
           
@@ -88,17 +92,19 @@
           
             clss.startsWith ( 'collection-type-events-' ) ||
             
-            clss.startsWith ( 'collection-type-portfolio-' ) || (
+            clss.startsWith ( 'collection-type-portfolio-' ) /* || (
             
               clss.startsWith ( 'collection-type-blog-' ) &&
               
               bodyClasses.contains ( 'view-list' )
-            
+              
               )
-            
+              
             );
             
         if ( b ) return true; // continue if section not of interest
+        
+        */
         
         const attribute = 'class';
         
@@ -112,7 +118,7 @@
             
             const target = mutation.target;
             
-            const b = target
+            let b = target
             
               .classList
               
@@ -126,23 +132,309 @@
               
               .getAttribute ( 'data-section-id' );
               
-            let selector =
+            let selector = `[data-section-id="${ dataSectionId }"]`;
             
-              `[data-section-id="${ dataSectionId }"] .sqs-block`;
-              
-            const blockCount = document
+            const pageSection = document
             
-              .querySelectorAll ( selector )
+              .querySelector ( selector );
               
-              .length;
-              
-            selector = '.twc-psi-data-blocks-number .twc-psi-data-data';
+            // begin editor
             
-            toolbar
-            
-              .querySelector ( selector )
+              selector = '.twc-psi-data-editor';
               
-              .innerText = blockCount;
+              let element = toolbar
+              
+                .querySelector ( selector );
+                
+              const isClassicEditor = sectionClasses
+              
+                .contains ( 'layout-engine-section' )
+                
+                ||
+                
+                (
+                
+                  sectionClasses.some ( clss =>
+                  
+                    clss.startsWith ( 'collection-type-blog-' )
+                    
+                    )
+                    
+                  &&
+                  
+                  bodyClasses.contains ( 'view-item' )
+                  
+                  )
+                  
+                ||
+                
+                (
+                
+                  sectionClasses.some ( clss =>
+                  
+                    clss.startsWith ( 'collection-type-events-' )
+                    
+                    )
+                    
+                  &&
+                  
+                  bodyClasses.contains ( 'view-item' )
+                  
+                  );
+                  
+              const isFluidEngine = pageSection
+              
+                .hasAttribute ( 'data-fluid-engine-section' );
+                
+              b = isFluidEngine || isClassicEditor;
+              
+              if ( b ) {
+              
+                let editor = isFluidEngine ? 'Fluid Engine' : 'Classic Editor';
+                
+                element
+                
+                  .classList
+                  
+                  .remove ( 'hide' );
+                  
+                selector = '.twc-psi-data-data';
+                
+                element
+                
+                  .querySelector ( selector )
+                  
+                  .innerText = editor;
+                  
+                } else
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( 'hide' );
+                    
+              // end editor
+              
+            // begin type
+            
+              const isAutoLayout = sectionClasses
+              
+                .contains ( 'user-items-list-section' );
+                
+              const isBlank = sectionClasses
+              
+                .contains ( 'layout-engine-section' );
+                
+              const isBlog = sectionClasses.some ( clss =>
+              
+                clss.startsWith ( 'collection-type-blog-' ) &&
+                
+                bodyClasses.contains ( 'view-list' )
+                
+                );
+                
+              const isBlogPost = sectionClasses.some ( clss =>
+              
+                clss.startsWith ( 'collection-type-blog-' ) &&
+                
+                bodyClasses.contains ( 'view-item' )
+                
+                );
+                
+              const isEvent = sectionClasses.some ( clss =>
+              
+                clss.startsWith ( 'collection-type-events-' ) &&
+                
+                bodyClasses.contains ( 'view-item' )
+                
+                );
+                
+              const isEvents = sectionClasses.some ( clss =>
+              
+                clss.startsWith ( 'collection-type-events-' ) &&
+                
+                bodyClasses.contains ( 'view-list' )
+                
+                );
+                
+              const isGallery = sectionClasses
+              
+                .contains ( 'gallery-section' );
+                
+              const isPortfolio = sectionClasses.some ( clss =>
+              
+                clss.startsWith ( 'collection-type-portfolio-' )
+                
+                );
+                
+              const isStore = sectionClasses
+              
+                .contains ( 'collection-type-products' );
+                
+              const isVideo = sectionClasses
+              
+                .contains ( 'lessons-item-section' );
+                
+              selector = '#video-gallery-main-content';
+              
+              const isVideos = pageSection
+                
+                  .querySelector ( selector )
+                  
+                  !=
+                  
+                  null;
+                  
+              selector = '.twc-psi-data-type';
+              
+              element = toolbar
+              
+                .querySelector ( selector );
+                
+              let type;
+              
+              switch ( true ) {
+              
+                case isAutoLayout :
+                
+                  type = 'Auto Layout';
+                  
+                  break;
+                  
+                case isBlank :
+                
+                  type = 'Blank';
+                  
+                  break;
+                  
+                case isBlog :
+                
+                  type = 'Blog';
+                  
+                  break;
+                  
+                case isBlogPost :
+                
+                  type = 'Blog Post';
+                  
+                  break;
+                  
+                case isEvent :
+                
+                  type = 'Event';
+                  
+                  break;
+                  
+                case isEvents :
+                
+                  type = 'Events';
+                  
+                  break;
+                  
+                case isGallery :
+                
+                  type = 'Gallery';
+                  
+                  break;
+                  
+                case isPortfolio :
+                
+                  type = 'Portfolio';
+                  
+                  break;
+                  
+                case isStore :
+                
+                  type = 'Store';
+                  
+                  break;
+                  
+                case isVideo :
+                
+                  type = 'Video';
+                  
+                  break;
+                  
+                case isVideos :
+                
+                  type = 'Videos';
+                  
+                  break;
+                  
+                }
+                
+              if ( type ) {
+              
+                selector = '.twc-psi-data-data';
+                
+                element
+                
+                  .classList
+                  
+                  .remove ( 'hide' );
+                  
+                element
+                
+                  .querySelector ( selector )
+                  
+                  .innerText = type;
+                  
+                } else {
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( 'hide' );
+                    
+                  }
+                  
+              // end type
+              
+            // begin block count
+            
+              selector = '.sqs-block';
+                
+              const blockCount = pageSection
+              
+                .querySelectorAll ( selector )
+                
+                .length;
+                
+              selector = '.twc-psi-data-blocks-number';
+              
+              element = toolbar
+              
+                .querySelector ( selector );
+                
+              if ( blockCount ) {
+              
+                selector = '.twc-psi-data-data';
+                
+                element
+                
+                  .classList
+                  
+                  .remove ( 'hide' );
+                  
+                element
+                
+                  .querySelector ( selector )
+                  
+                  .innerText = blockCount;
+                  
+                } else {
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( 'hide' );
+                    
+                  }
+                  
+              // end block count
               
             } );
             
@@ -164,7 +456,7 @@
         
           `
           
-            <div class="twc-psi-fe-info">
+            <div class="twc-psi-info">
             
               <div class="twc-psi-title">
               
@@ -176,7 +468,35 @@
               
                 <tbody>
                 
-                  <tr class="twc-psi-data-blocks-number">
+                  <tr class="item twc-psi-data-editor">
+                  
+                    <td class="twc-psi-data-title">
+                    
+                      Editor
+                      
+                      </td>
+                      
+                    <td class="twc-psi-data-data">
+                    
+                      </td>
+                      
+                    </tr>
+                    
+                  <tr class="item twc-psi-data-type">
+                  
+                    <td class="twc-psi-data-title">
+                    
+                      Type
+                      
+                      </td>
+                      
+                    <td class="twc-psi-data-data">
+                    
+                      </td>
+                      
+                    </tr>
+                    
+                  <tr class="item twc-psi-data-blocks-number">
                   
                     <td class="twc-psi-data-title">
                     
@@ -212,8 +532,18 @@
           
           [ 0 ];
           
-        toolbar.append ( template );
+        const hasInfo = toolbar
         
+          .querySelector ( '.twc-psi-info' )
+          
+          !=
+          
+          null;
+          
+        if ( ! hasInfo )
+        
+          toolbar.append ( template );
+          
         selector = 'sqs-section-editing-ui';
         
         const editingUi = element
@@ -248,7 +578,7 @@
     
     style.innerHTML = `
     
-      .twc-psi-fe-info {
+      .twc-psi-info {
       
         -webkit-box-sizing : border-box;
         box-sizing : border-box;
@@ -270,7 +600,7 @@
         
         }
         
-      .twc-psi-fe-info .twc-psi-title {
+      .twc-psi-info .twc-psi-title {
       
         font-size : smaller;
         font-weight : bold;
@@ -280,9 +610,15 @@
         
         }
         
-      .twc-psi-fe-info .twc-psi-data {
+      .twc-psi-info .twc-psi-data {
       
         padding: 10px 8px;
+        
+        }
+        
+      .twc-psi-data .item.hide {
+      
+        display : none;
         
         }
         
