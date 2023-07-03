@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -19,10 +19,18 @@
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
+  no user serviceable parts below
+  
   -->
   
   <style>
   
+    .twc-scm {
+    
+      --spacing-left : calc( 40px / 2 );
+      
+      }
+      
     /* begin resets */
     
       .products.collection-content-wrapper .nested-category-children {
@@ -54,18 +62,33 @@
       
     @media screen and ( max-width : 799px ) {
     
-      .twc-scm li:not( :last-child ),
-      .twc-scm summary
+      .products.collection-content-wrapper .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
+
+        margin-left : var( --spacing-left );
+  
+        }
+
+      .twc-scm {
       
-        {
+        font-size : larger;
         
-          margin-bottom : 0.5em;
-          
-          }
-          
+        }
+        
+      .twc-scm li:not( :last-child ) {
+      
+        margin-bottom : 0.5em;
+        
+        }
+        
+      .twc-scm summary::marker {
+      
+        font-size : larger;
+        
+        }
+        
       .twc-scm ul {
       
-        padding-inline-start : calc( 40px / 2 );
+        padding-inline-start : var( --spacing-left );
         
         }
         
