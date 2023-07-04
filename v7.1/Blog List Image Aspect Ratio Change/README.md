@@ -36,12 +36,12 @@ Change image aspect ratio for blog list.
   
 * Add code from file **[blog list image aspect ratio change.html][5]** to
   Blog Settings > Advanced > Page Header Code Injection for the blog page.
-  Please see [Per-page code injection][7]. Read the code for any instructions
+  Please see [Per-page code injection][6]. Read the code for any instructions
   within.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -60,5 +60,5 @@ Please consider [making a donation][6].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: blog%20list%20image%20aspect%20ratio%20change.html#L1
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
