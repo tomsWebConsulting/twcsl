@@ -6,14 +6,11 @@ twcsl.cookie = ( ( self ) => {
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Submodule     : page
+  Submodule     : cookie
   
   Version       : 0.1.0
   
   SS Versions   : 7.1, 7.0
-  
-  Note          : this submodule is a stub for page types. other submodules will
-                  need be added to fill in page object
   
   Dependencies  : twcsl
   
@@ -75,16 +72,58 @@ twcsl.cookie = ( ( self ) => {
     
       get : _getCookieValue,
       
-      set : ( key, value, expires, maxAge, path ) => {
+      set : ( key, value, optional ) => {
       
+        value = encodeURIComponent ( value );
+        
         let cookie = `${ key }=${ value }`;
         
-        if ( expires ) cookie += `; ${ expires }`;
+        if ( optional == undefined ) return; // bail if no optional
         
-        if ( maxAge ) cookie += `; max-age=${ maxAge }`;
+        const entries = Object.entries ( optional );
         
-        if ( path ) cookie += `; path=${ path }`;
+        const keysNoValue = [
         
+          'partitioned',
+          
+          'secure',
+          
+          ];
+          
+        const keysOptional = [
+        
+          'domain',
+          
+          'expires',
+          
+          'max-age',
+          
+          'partitioned',
+          
+          'path',
+          
+          'samesite',
+          
+          'secure',
+          
+          ];
+          
+        for ( const [ key, value ] of entries ) {
+        
+          let b = ! keysOptional.includes ( key );
+          
+          if ( b ) continue;
+          
+          cookie += `; ${ key }`;
+        
+          b = keysNoValue.includes ( key );
+          
+          if ( b ) continue;
+          
+          cookie += `=${ value }`;
+        
+          }
+          
         document.cookie = cookie;
         
         },
