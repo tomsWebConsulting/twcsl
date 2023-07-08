@@ -1062,8 +1062,10 @@
           
         };
         
-      const url = `${ location.protocol }\/\/${ location.pathname }`;
+      const url = `${ location.protocol }\/\/${ location.host}` +
       
+        ${ location.pathname }`;
+        
       // search parameters
       
       const searchParams =
