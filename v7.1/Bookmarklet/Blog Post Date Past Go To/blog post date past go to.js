@@ -6,7 +6,7 @@
     
     License     : < https://bit.ly/3F8sn8W >
     
-    Version     : 0.1.0
+    Version     : 0.1.1
     
     SS Version  : 7.1
     
@@ -34,7 +34,7 @@
     
   if ( ! b ) return; // bail not squarespace site
   
-  const selector = '.vzz2ym99upYZOvj_GZAI'; // calendar
+  const selector = '.A7VY_Nft5uCZFrZstcwt'; // calendar
   
   let element = document.body.querySelector ( selector );
   

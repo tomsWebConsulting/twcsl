@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Version 7.1
 
@@ -35,11 +35,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-05-08**
+* **2023-07-09**
 
-  * added coverage for store product grid image hover
-  * bumped version to v0.1d1
-  -->
+  * update dynamic calendar class
+  * bumped version to 0.1.1
+  
 * **2022-11-15**
 
   * initial version
