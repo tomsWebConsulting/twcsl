@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 224 effects. Each effect has it's own version number, code,
+twcsl contains 225 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -146,6 +146,8 @@ not necessarily designed to work together.
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
 * [Social Icon Discord Generic Icon to Discord Change](Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
+  
+* [Store Page Commerce Elements Hide](Store%20Page%20Commerce%20Elements%20Hide)
   
 * [Store Price Change](Store%20Price%20Change)
   
