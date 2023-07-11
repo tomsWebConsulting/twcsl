@@ -1,6 +1,6 @@
 <script>
 
-  $( ( ) => {
+  Squarespace.onInitialize ( Y, ( ) => {
   
     /*
     
@@ -8,7 +8,7 @@
       
       License       : < https://bit.ly/3F8sn8W >
       
-      Version       : 0.4.0
+      Version       : 0.5.0
       
       SS Version    : 7.0
       
@@ -23,12 +23,12 @@
                       Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
                       Stella, Thorne, Vow, Wav, West )
                       
+                      Skye ( Foundry, Indigo, Ready, Skye, Tudor )
+                      
                       your template is not listed? then it is not currently
                       supported
       
-      Dependencies  : jQuery
-                      
-                      twcsl
+      Dependencies  : twcsl
       
       By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -36,7 +36,7 @@
       
     if ( window.twc == undefined ) window.twc = { };
     
-    twc.x5a47ab0f = {
+    twc.scpda = {
     
       categoryDescriptionMap : {
       
@@ -71,9 +71,13 @@
         
       insertPosition : 'before', // use after or before
       
-      /* use to override built in selectors. the selector you use may not be
-         supported by the CSS in this effect */
-         
+      /*
+      
+        use to override built in selectors. the selector you use may not be
+        supported by the CSS in this effect
+        
+        */
+        
       selector : ''
       
       };
@@ -84,7 +88,7 @@
     
     const category = twcsl.page.store.list.category;
     
-    const options = twc.x5a47ab0f;
+    const options = twc.scpda;
     
     const categoryDescriptionMap = options.categoryDescriptionMap;
     
@@ -96,10 +100,16 @@
     
       let templateId;
       
-      try { templateId = Static.SQUARESPACE_CONTEXT.templateId } catch {
+      try {
       
-        return; };
+        templateId = Static.SQUARESPACE_CONTEXT.templateId
         
+        } catch {
+      
+          return;
+          
+          };
+          
     // begin is the template id one we support, if not bail
     
       const templateIdSelectorMap = {
@@ -108,7 +118,11 @@
         
         '52a74dafe4b073a80cd253c5' : '#productList', // Bedford family
         
-        '55f0aac0e4b0f0a5b7e0b22e' : '.ProductList-grid', // Brine family
+        // Brine, Skye
+        
+        '55f0aac0e4b0f0a5b7e0b22e' : '.ProductList-grid',
+        
+        '54d3906fe4b04c1c9981b00e' : '.ProductList-grid',
         
         };
         
