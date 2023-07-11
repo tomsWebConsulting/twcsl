@@ -12,7 +12,7 @@ Add a category description to Store category pages.
 
 #### SS Version
 
-  * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Skye template family][5])
+  * 7.0 ([Avenue template][2], [Bedford template family][3], [Brine template family][4], [Skye template family][5])
 
 #### Dependencies
 
@@ -39,7 +39,7 @@ Add a category description to Store category pages.
       
     * Add code from file **[store category page description add.html][11]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Per-page code injection][10]. Read the code for any
+      Please see [Per-page code injection][12]. Read the code for any
       instructions within.
       
   * Site-wide
@@ -49,11 +49,11 @@ Add a category description to Store category pages.
       
     * Add code from file **[store category page description add.html][11]** to
       Settings > Developer Tools > FOOTER. Please see [Add code to code
-      injection][12]. Read the code for any instructions within.
+      injection][13]. Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][13].
+Please consider [making a donation][14].
 
 ## Changes
 
@@ -95,5 +95,6 @@ Please consider [making a donation][13].
 [9]: https://github.com/tomsWebConsulting/twcsl#install-options
 [10]: store%20category%20page%20description%20add.css#L1
 [11]: store%20category%20page%20description%20add.html#L1
-[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[13]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
