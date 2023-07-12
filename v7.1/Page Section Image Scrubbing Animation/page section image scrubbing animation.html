@@ -1,0 +1,620 @@
+<!--
+
+  begin page section image scrubbing animation
+  
+  Version       : 0.5.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of style and script tags. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >
+                  
+                  the images need to be the same width and height
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #sections {
+    
+      --twc-gallery-section-display : none;
+      
+      }
+
+    html:not( .squarespace-damask ) #sections .page-section.gallery-section {
+    
+      display : var( --twc-gallery-section-display );
+      
+      }
+      
+    html:not( .squarespace-damask ) #sections .page-section.gallery-section.twc-psisa {
+    
+      display : none;
+      
+      }
+      
+    .twc-psisa .section-background {
+    
+      --top : 0px;
+      
+      bottom : unset;
+      left : unset;
+      position: sticky;
+      right : unset;
+      top : var( --top );
+      
+      }
+      
+    .twc-psisa .section-background-canvas {
+    
+      display : block;
+      height : 100%;
+      margin  : auto;
+      max-height : 100%;
+      max-width : 100%;
+      position : unset;
+      width : 100%;
+      
+      }
+      
+    html:not( .squarespace-damask ) x-twc-psisa {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const codeKey = 'twc-psisa';
+      
+      const consoleMessages = false;
+      
+      const selectorKey = '.page-section.gallery-section';
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      if ( twc.data == undefined ) twc.data = { };
+      
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          =
+          
+          [ ];
+          
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .push ( `--${ codeKey }` );
+        
+      ( ( ) => {
+      
+        if ( window.frameElement !== null ) return; // bail if in preview
+        
+        let selector = `#page .page-section x-${ codeKey }`;
+        
+        const $psisa = $( selector );
+        
+        if ( ! $psisa.length ) return; // bail if no x-twc-psisa element
+        
+        const selectorImage = '.gallery-grid-item img';
+        
+        let options = {
+        
+          callback : {
+          
+            /*
+            
+              initialize is called after the main initialization of the main code.
+              an object with the following parameters is passed to the callback :
+              
+                canvasContext, imagesCount, $canvas, $pageSection
+                
+              */
+              
+            initialize : undefined,
+            
+            /*
+            
+              resize is called after the window is resized. an object with the
+              following parameters is passed to the callback :
+              
+                canvasContext, $canvas, $pageSection
+                
+              */
+              
+            resize : undefined,
+            
+            /*
+            
+              top is called to adjust the top variable. normally the animation
+              starts when the page section reaches the bottom of the header or the
+              top of the viewport when the header is not fixed. this top callback
+              lets you override the default behavior. the the following parameters
+              are passed to the callback :
+              
+                top, $sectionBackground
+                
+              */
+              
+            top : undefined,
+            
+            /*
+            
+              update is called after the image is updated. an object with the
+              following parameters is passed to the callback :
+              
+                canvasContext, imageIndex, imagesCount, $canvas, $pageSection
+                
+              */
+              
+            update : undefined,
+            
+            },
+            
+          imageUrls : undefined
+          
+          };
+          
+        twc.psisa = Object.assign ( options, twc.psisa );
+        
+        selector = `#sections ${ selectorImage }[alt="${ codeKey }"]`;
+        
+        let $element = $( selector );
+        
+        if ( $element.length ) {
+        
+          twc.psisa.imageUrls = [ ];
+          
+          $element = $( selector )
+          
+            .parents ( '.gallery-grid-wrapper' );
+            
+          $( selectorImage, $element )
+          
+            .each ( function ( ) {
+            
+              const url = $( this ).attr ( 'data-src' );
+              
+              twc.psisa.imageUrls.push ( url );
+              
+              } );
+              
+          $element
+          
+            .parents ( '.page-section' )
+            
+            .remove ( );
+            
+          } else {
+          
+            if ( twc.psisa.imageUrls == undefined ) {
+            
+              let b;
+              
+              try {
+              
+                twc.psisa.imageUrls = $psisa
+                
+                  .text ( )
+                  
+                  .split ( '\n' )
+                  
+                  .map ( url => url.trim ( ) )
+                  
+                  .filter ( url => url != '' );
+                  
+                b = false;
+                
+                } catch ( error ) {
+                
+                  b = true;
+                  
+                  }
+                  
+              if ( b ) return; // bail if error
+              
+              }
+              
+            }
+            
+        options = twc.psisa;
+        
+        const imageUrls = options.imageUrls;
+        
+        const b = imageUrls == undefined || ! Array.isArray ( imageUrls );
+        
+        if ( b ) return; // bail if imageUrls is not an array
+        
+        const imagesCount = imageUrls.length;
+        
+        const images = [ ];
+        
+        const initializeCallback = options.callback.initialize;
+        
+        const isFixedHeader = $( 'body' ).hasClass ( 'tweak-fixed-header' ) &&
+        
+          $( 'body' ).hasClass ( 'tweak-fixed-header-style-basic' );
+          
+        if ( consoleMessages == true )
+        
+          console.log ( 'isFixedHeader : ', isFixedHeader );
+          
+        const pxToNumber = ( px ) => {
+        
+          let n = px.match ( /\d+(?:.\d+)?/ ) [ 0 ];
+          
+          n = Number ( n );
+          
+          return n;
+          
+          };
+          
+        const resizeCallback = options.callback.resize;
+        
+        const topCallback = options.callback.top;
+        
+        const updateCallback = options.callback.update;
+        
+        const updateImage = i => {
+        
+          canvasContext.drawImage ( images [ i ], 0, 0 );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'update image : ', i );
+            
+          }
+          
+        const viewportPercentWidth = ( w, vw ) => {
+        
+          vw = vw.replace ( 'vw', '' );
+          
+          vw = Number ( vw );
+          
+          const n = w * ( vw / 100 );
+          
+          return n;
+          
+          };
+          
+        const $header = $( '#header' );
+        
+        const $sectionBackground = $psisa
+        
+          .parents ( '.content-wrapper' )
+          
+          .siblings ( '.section-border' )
+          
+          .find ( '.section-background' );
+          
+        const $pageSection = $sectionBackground
+        
+          .parents ( '.page-section' )
+          
+          .addClass ( 'twc-psisa' );
+          
+        const $image = $( 'img', $sectionBackground );
+        
+        const imageDimensions = ( ) => {
+        
+          let [ w, h ] = $image
+          
+            .attr ( 'data-image-dimensions' )
+            
+            .split ( 'x' );
+            
+          if ( w > 2500 ) {
+          
+            const quotient = 2500 / w;
+            
+            h = Math.ceil ( h * quotient );
+            
+            w = 2500;
+            
+            }
+            
+          return { height : h, width : w };
+          
+          };
+          
+        const $canvas = $( '<canvas class="section-background-canvas"/>' )
+        
+          .attr ( imageDimensions ( ) );
+          
+        const canvasContext = $canvas
+        
+          .get ( 0 )
+          
+          .getContext ( '2d' );
+          
+        let backgroundColor = $psisa.attr ( 'data-background-color' );
+        
+        let headerHeight = 0;
+        
+        let imageIndexPrevious = 0;
+        
+        let isAnimationEndsBeforeLeavingViewport = $psisa
+        
+          .attr ( 'data-animation-ends-before-leaving-viewport' );
+          
+        let pixelRange;
+        
+        let pixelInterval;
+        
+        let sectionBackgroundHeight;
+        
+        let top = 0;
+        
+        const callbackParameters = {
+        
+          canvasContext : canvasContext,
+          
+          imageIndex : 0,
+          
+          imagesCount : imagesCount,
+          
+          $canvas : $canvas,
+          
+          $pageSection : $pageSection,
+          
+          };
+          
+        // begin first image
+        
+          images [ 0 ] = new Image ( );
+          
+          images [ 0 ].src = imageUrls [ 0 ];
+          
+          images [ 0 ].onload = ( ) => {
+          
+            canvasContext.drawImage ( images [ 0 ], 0, 0 );
+            
+            }
+            
+          // end first image
+          
+        $image.replaceWith ( $canvas );
+        
+        if ( initializeCallback !== undefined )
+        
+          initializeCallback ( callbackParameters );
+          
+        if ( isAnimationEndsBeforeLeavingViewport == undefined )
+        
+          isAnimationEndsBeforeLeavingViewport = true;
+          
+          else if ( isAnimationEndsBeforeLeavingViewport == "false" )
+          
+            isAnimationEndsBeforeLeavingViewport = false;
+            
+        if ( consoleMessages == true )
+        
+          console.log ( 'isAnimationEndsBeforeLeavingViewport : ', isAnimationEndsBeforeLeavingViewport );
+          
+        if ( isFixedHeader ) {
+        
+          headerHeight = $header.css ( 'height' );
+          
+          headerHeight = pxToNumber ( headerHeight );
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'headerHeight : ', headerHeight );
+            
+          top = headerHeight;
+          
+          if ( consoleMessages == true )
+          
+            console.log ( 'top : ', top );
+            
+          }
+          
+        if ( topCallback !== undefined )
+        
+          top = topCallback ( top, $sectionBackground );
+          
+        $sectionBackground.css ( '--top', `${ top }px` );
+        
+        if ( backgroundColor == undefined ) {
+        
+          backgroundColor = $pageSection
+          
+            .next ( '.page-section' )
+            
+            .css ( '--siteBackgroundColor' );
+            
+          }
+          
+        $pageSection.css ( '--siteBackgroundColor', backgroundColor );
+        
+        $( window )
+        
+          .resize ( function ( ) {
+          
+            pixelRange = $pageSection
+            
+              .outerHeight ( );
+              
+            if ( isAnimationEndsBeforeLeavingViewport )
+            
+              pixelRange -= $( $sectionBackground ).outerHeight ( );
+              
+            if ( consoleMessages == true )
+            
+              console.log ( 'pixelRange : ', pixelRange );
+              
+            pixelInterval = pixelRange / imagesCount;
+            
+            if ( consoleMessages == true )
+            
+              console.log ( 'pixelInterval : ', pixelInterval );
+              
+            } )
+            
+          .resize ( )
+          
+          .scroll ( function ( ) {
+          
+            const pageSectionTop = $pageSection
+            
+              .get ( 0 )
+              
+              .getBoundingClientRect ( )
+              
+              .top;
+              
+            const sectionBackgroundTop = $sectionBackground
+            
+              .get ( 0 )
+              
+              .getBoundingClientRect ( )
+              
+              .top;
+              
+            if ( isFixedHeader ) {
+            
+              headerHeight = $( '#header' ).css ( 'height' );
+              
+              headerHeight = pxToNumber ( headerHeight );
+              
+              if ( consoleMessages == true )
+              
+                console.log ( 'headerHeight : ', headerHeight );
+                
+              top = headerHeight;
+              
+              if ( consoleMessages == true )
+              
+                console.log ( 'top : ', top );
+                
+              }
+              
+            if ( topCallback !== undefined )
+            
+              top = topCallback ( top, $sectionBackground );
+              
+            $sectionBackground.css ( '--top', `${ top }px` );
+        
+            // bail if values the same
+            
+            if ( pageSectionTop == sectionBackgroundTop ) return;
+            
+            // bail scroll range is greater than total pixel range
+            
+            const l = Math.abs ( pageSectionTop - headerHeight ) >
+            
+              pixelRange;
+              
+            if ( l ) return;
+            
+            const imageIndex = Math.floor ( Math.abs ( pageSectionTop -
+            
+              headerHeight ) / pixelInterval );
+              
+            if ( consoleMessages == true )
+            
+              console.log ( 'imageIndex : ', imageIndex );
+              
+            // bail if values the same
+            
+            if ( imageIndex == imageIndexPrevious ) return;
+            
+            imageIndexPrevious = imageIndex;
+            
+            requestAnimationFrame ( ( ) => updateImage ( imageIndex ) );
+            
+            if ( updateCallback === undefined ) return;
+            
+            callbackParameters.imageIndex = imageIndex;
+            
+            updateCallback ( callbackParameters );
+            
+            } );
+            
+        // preload images
+        
+        $.each ( imageUrls, function ( imageIndex, url ) {
+        
+          // skip first image as it is already loaded
+          
+          if ( ! imageIndex ) return true;
+          
+          images [ imageIndex ] = new Image ( );
+          
+          images [ imageIndex ].src = url;
+          
+          } );
+          
+        } ) ( );
+        
+      let i = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .indexOf ( `--${ codeKey }` )
+        
+      if ( i != -1 )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .splice ( i, 1 );
+          
+      i = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .length;
+        
+      if ( ! i )
+      
+        $( '#sections' )
+        
+          .css ( '--twc-gallery-section-display', 'flex' );
+          
+      } );
+      
+    </script>
+    
+  <!-- end page section video scrubbing animation -->
