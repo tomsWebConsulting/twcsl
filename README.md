@@ -381,13 +381,13 @@ not necessarily designed to work together.
     
   * [Page Section Hide After Expiration Date](v7.1/Page%20Section%20Hide%20After%20Expiration%20Date)
     
+  * [Page Section Image Scrubbing Animation](v7.1/Page%20Section%20Image%20Scrubbing%20Animation)
+    
   * [Page Section Info](v7.1/Page%20Section%20Info)
     
   * [Page Section Nth Blocks Full Bleed Template](v7.1/Page%20Section%20Nth%20Blocks%20Full%20Bleed%20Template)
     
   * [Page Section Second Blocks Full Bleed](v7.1/Page%20Section%20Second%20Blocks%20Full%20Bleed)
-    
-  * [Page Section Video Scrubbing Animation](v7.1/Page%20Section%20Video%20Scrubbing%20Animation)
     
   * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
     
@@ -403,7 +403,7 @@ not necessarily designed to work together.
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
     
-  * [PSVSA Viewport Middle](v7.1/PSVSA%20Viewport%20Middle)
+  * [PSISA Viewport Middle](v7.1/PSISA%20Viewport%20Middle)
     
   * [Remove Product Detail Quantity Field Outer Outline When Focused](v7.1/Remove%20Product%20Detail%20Quantity%20Field%20Outer%20Outline%20When%20Focused)
     
