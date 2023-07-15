@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 225 effects. Each effect has it's own version number, code,
+twcsl contains 226 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -120,6 +120,8 @@ not necessarily designed to work together.
 * [Form Block Text Field Max Length](Form%20Block%20Text%20Field%20Max%20Length)
   
 * [Form Block Track Field Block IDs](Form%20Block%20Track%20Field%20Block%20IDs)
+  
+* [Form Block Wrapper Observe Changes](Form%20Block%20Wrapper%20Observe%20Changes)
   
 * [Form Text Field Max Length](Form%20Text%20Field%20Max%20Length)
   
