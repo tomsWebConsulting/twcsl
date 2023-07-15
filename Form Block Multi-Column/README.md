@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version 0.2.0
 
 #### SS Versions
 
@@ -12,38 +12,42 @@
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [jQuery][4]
+  * [Form Block Wrapper Observe Changes][2]
 
 #### v7.1 Fluid Engine Compatible
 
-  * Not Applicable
+  * Yes
 
 ---
 
 ## Install
 
-* Add the following to Settings > Developer Tools > Code Injection > HEADER.
+* Install **[Form Block Wrapper Observe Changes][2]**. After you install the
+  code be sure to continue on with the rest of the steps.
   
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  ```
+* Options
+
+  * Page Specific
   
-* Site-wide
+    * This option will be the one most will want to use if you have only a
+      single page you want to have this effect.
+      
+    * Add code from file **[form block multi-column.html][3]** to Page
+      Settings > Advanced > Page Header Code Injection for the page **before**
+      the **Form Block Wrapper Observe Changes code**. Please see [per-page code
+      injection][4].
+      
+  * Site-wide
+  
+    * This option is the one you want to use if you have multiple pages where
+      you want to have this effect.
+      
+    * Add code from file **[form block multi-column.html][3]** to Settings >
+      Developer Tools > Code Injection > FOOTER **before** the **Form Block
+      Wrapper Observe Changes code**. Please see [Add code to code
+      injection][5].
 
-  * Add code from file **[form block multi-column.html][5]** to Settings >
-    Developer Tools > Code Injection > FOOTER.
-    
-* Page Specific
-
-  * Add code from file **[form block multi-column.html][5]** to Page Settings >
-    Advanced > Page Header Code Injection for the page. Please see
-    [per-page code injection][6].
-    
-* Read the code for any instructions within.
-
-* Add or edit a form block. For the first field add a line field with a label of
+* Add or edit a form block. For the second field add a line field with a label of
   **twc-fbmc** and a description of **columns : n**. Replace **n** with the
   number of columns you want for the form.
 
@@ -54,34 +58,28 @@
 
 ## Note
 
-This effect is not active in SS Preview to test it use [private browsing][7].
-
-## Demo
-
-You can see a [demo of this effect here][8].
+This effect is not active in SS Preview to test it use [private browsing][6].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2022-05-10**
+* **2023-07-14**
 
-  * support for v7.1 product detail layouts
-  * use twcsl
+  * convert to callback for use with form block wrapper observe changes after SS
+    form internationalization update
   * bumped version to 0.2.0
-  -->
+  
 * **2022-06-11**
 
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: form%20block%20multi-column.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[8]: https://toms-web-consulting-demos.squarespace.com/form-block-multi-column?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[3]: form%20block%20multi-column.html#L1
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

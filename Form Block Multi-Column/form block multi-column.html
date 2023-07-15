@@ -1,167 +1,147 @@
-<!--
+<script>
 
-  begin form block multi-column
+  /*
   
-  License       : < https://bit.ly/3F8sn8W >
-  
-  Version       : 0.1.0
-  
-  SS Versions   : 7.1, 7.0
-  
-  Dependencies  : jQuery
-  
-  Notes         : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-                  
-                  this effect is not active in SS Preview to test it use private
-                  browsing < https://bit.ly/3f6lhq2 >
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <style>
-  
-    html:not( .squarespace-damask ) .sqs-block-form {
+    begin form block multi-column
     
-      visibility : hidden;
-      
-      }
-      
-    html:not( .squarespace-damask ) .twc-fbmc-show .sqs-block-form {
+    License       : < https://bit.ly/3F8sn8W >
     
-      visibility : visible;
-      
-      }
-      
-    </style>
+    Version       : 0.2.0
     
-  <script>
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : form block wrapper observe changes
+    
+    Notes         : this effect is not active in SS Preview to test it use private
+                    browsing < https://bit.ly/3f6lhq2 >
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  var formBlockMultiColumn = $reactFormContents => {
   
-    $( ( ) => {
+    const codeKey = 'twc-fbmc';
     
-      if ( window.frameElement !== null ) return; // bail if in preview
+    const selector = `.title:contains('${ codeKey }') ~ ` +
+    
+      '.description:contains(\'columns\')';
       
-      const selector = '.sqs-block-form .title:contains(\'twc-fbmc\') ~ ' +
+    let $element = $( selector );
+    
+    if ( ! $element.length ) return; // bail if no trigger
+    
+    const blockId = $reactFormContents
+    
+      .parents ( '.sqs-block-form' )
       
-        '.description:contains(\'columns\')';
-        
-      $( selector ).each ( function ( ) {
+      .attr ( 'id' );
+      
+    let column = 1;
+    
+    let columns = $element
+    
+      .text ( )
+      
+      .match ( /\d+/ )
+      
+      [ 0 ];
+      
+    let mode = 'end';
+    
+    let row = 1;
+    
+    let rulesets = '';
+    
+    columns = Number ( columns );
+    
+    $element
+    
+      .parents ( '.field-list' )
+      
+      .children ( )
+      
+      .each ( function ( ) {
       
         const $this = $( this );
         
-        const formId = $this
+        const selector = '.title:contains(\'twc-fbmc\')';
         
-          .parents ( 'form' )
-          
-          .attr ( 'data-form-id' );
-          
-        let column = 1;
+        const $element = $( selector, $this );
         
-        let columns = $this
+        if ( $element.length ) {
         
-          .text ( )
+          mode = $element
           
-          .match ( /\d+/ )
+            .text ( )
+            
+            .trim ( )
+            
+            .slice ( 9 );
+            
+          mode = mode ? mode : 'end';
           
-          [ 0 ];
+          $( this ).remove ( );
           
-        let mode = 'end';
+          return true; // continue
+          
+          }
+          
+        if ( mode == 'end' ) {
         
-        let row = 1;
-        
-        let rulesets = '';
-        
-        columns = Number ( columns );
-        
-        $this
-        
-          .parents ( '.field-list' )
+          row++;
           
-          .children ( )
+          return true; // continue
           
-          .each ( function ( ) {
+          }
           
-            const $this = $( this );
-            
-            const selector = '.title:contains(\'twc-fbmc\')';
-            
-            const $element = $( selector, $this );
-            
-            if ( $element.length ) {
-            
-              mode = $element
-              
-                .text ( )
-                
-                .trim ( )
-                
-                .slice ( 9 );
-                
-              mode = mode ? mode : 'end';
-              
-              $( this ).remove ( );
-              
-              return true; // continue
-              
-              }
-              
-            if ( mode == 'end' ) {
-            
-              row++;
-              
-              return true; // continue
-              
-              }
-              
-            const id = $( this ).attr ( 'id' );
-            
-            const ruleset = `#${ id } {
-            
-              grid-area : ${ row } / ${ column++ } / ${ row } / ${ column };
-              
-              }
-              
-            `;
-            
-            rulesets += ruleset;
-            
-            if ( column > columns ) {
-            
-              column = 1;
-              
-              row++;
-              
-              }
-              
-            } );
-            
-        $( 'head' ).append ( `<style>
+        const id = $( this ).attr ( 'id' );
         
-          [data-form-id="${ formId }"] .field-list {
+        const ruleset = `.form-item#${ id } {
+        
+          grid-area : ${ row } / ${ column++ } / ${ row } / ${ column };
           
-            display : grid;
-            grid-template-columns : repeat( ${ columns }, 1fr );
-            
-            }
-            
-          [data-form-id="${ formId }"] .form-item {
+          }
           
-            grid-column : 1 / -1;
-            
-            }
-            
-          ${ rulesets }
-          </style>` );
+        `;
+        
+        rulesets += ruleset;
+        
+        if ( column > columns ) {
+        
+          column = 1;
+          
+          row++;
+          
+          }
           
         } );
         
-      $( 'body' ).addClass ( 'twc-fbmc-show' );
-      
-      } );
-      
-    </script>
+    $( 'head' ).append ( `<style>
     
-  <!-- end form block multi-column -->
+      #${ blockId } .field-list {
+      
+        display : grid;
+        grid-template-columns : repeat( ${ columns }, 1fr );
+        
+        }
+        
+      #${ blockId } .form-item {
+      
+        grid-column : 1 / -1;
+        
+        }
+        
+      ${ rulesets }
+      </style>` );
+      
+    };
+    
+  </script>
