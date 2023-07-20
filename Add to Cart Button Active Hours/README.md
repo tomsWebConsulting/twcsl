@@ -8,7 +8,7 @@ Enable add to cart buttons during active hours.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -58,12 +58,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2021-05-19**
+* **2023-07-19**
 
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
-  -->
+  * fix a bug in textToRanges returning bad ranges
+  * bumped version to 0.1.1
+  
 * **2023-07-19**
 
   * initial version

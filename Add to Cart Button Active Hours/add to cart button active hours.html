@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Versions   : 7.1, 7.0
   
@@ -145,37 +145,53 @@
         
           ];
 
-        const textToRanges = text => {
+        var hoursTextToRanges = text => {
         
-          let ranges = [ ];
+          let ranges = undefined;
           
+          text = text
+          
+            .match ( /(.+\s*-\s*.+(,[ ]*)?){1,}|All Day|Open|^$/ );
+            
+          if ( text == null )
+          
+            text = '';
+            
+            else
+            
+              text = text.input;
+              
           switch ( true ) {
           
             case ! text :
             
-              return ranges;
+              ranges = [ ]; // Closed
               
               break;
               
             case text == 'All Day':
             case text == 'Open':
             
-              ranges = {
+              ranges = [
               
-                from : 0,
+                {
                 
-                to : 1440
+                  from : 0,
+                  
+                  to : 1440
+                  
+                  }
+                  
+                ];
                 
-                };
-                
-              return ranges;
-              
               break;
               
             }
             
-          if ( ! text ) return [ ]; // Closed
+          if ( ranges !== undefined )
           
+            return ranges;
+            
           const textToMinutes = m => {
           
             m = m
@@ -276,7 +292,7 @@
             
               text : v,
               
-              ranges : textToRanges ( v )
+              ranges : hoursTextToRanges ( v )
               
               };
               
