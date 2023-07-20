@@ -41,8 +41,9 @@ Enable add to cart buttons during active hours.
 
 By default the code uses Settings > Business Information > BUSINESS HOURS to
 determine when the atc button is active. You can override the business hours set
-in your site using settings in the code. Use the [Formatting business hours][8]
-for your settings.
+in your site using settings in the code. Ese the same hours format as shown in
+the [support documentation][8] < https://tinyurl.com/ybunsvxz > or the user
+interface. 
 
 The button is inactive effect is minimal. You can of course use your own custom
 CSS to enhance or replace what the code does. A twc-atcbah class is added to
