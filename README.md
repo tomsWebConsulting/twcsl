@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 226 effects. Each effect has it's own version number, code,
+twcsl contains 229 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -54,6 +54,8 @@ not necessarily designed to work together.
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
   
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
+  
+* [Add to Cart Button Active Hours](Add%20to%20Cart%20Button%20Active%20Hours)
   
 * [assets](assets)
   
@@ -131,6 +133,10 @@ not necessarily designed to work together.
   
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
   
+* [Page](Page)
+  
+  * [Store](Page/Store)
+    
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
 * [Payment Processor Icons](Payment%20Processor%20Icons)
