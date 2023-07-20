@@ -41,18 +41,19 @@ Enable add to cart buttons during active hours.
 
 By default the code uses Settings > Business Information > BUSINESS HOURS to
 determine when the atc button is active. You can override the business hours set
-in your site using settings in the code.
+in your site using settings in the code. Use the [Formatting business hours][8]
+for your settings.
 
 The button is inactive effect is minimal. You can of course use your own custom
 CSS to enhance or replace what the code does. A twc-atcbah class is added to
 the atc wrapper element.
 
 If you need installation help or customization please [contact me for paid
-consulting][8].
+consulting][9].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -73,5 +74,6 @@ Please consider [making a donation][9].
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: add%20to%20cart%20button%20active%20hours.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: http://www.tomsWeb.consulting/contact.html
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/212872328-Business-Information-Settings#toc-formatting-business-hours
+[9]: http://www.tomsWeb.consulting/contact.html
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
