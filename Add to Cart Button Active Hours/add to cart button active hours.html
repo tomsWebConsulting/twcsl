@@ -1,0 +1,386 @@
+<!--
+
+  begin add to cart button active hours
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.atcbah = {
+    
+      hours : {
+      
+        /*
+        
+          optional, you can override the business hours set in Settings >
+          Business Information. use the same hours format as shown in the user
+          interface. remove the double forward slash space before a weekday name
+          and enter your hours
+          
+          */
+          
+        // monday : '',
+        
+        // tuesday : '',
+        
+        // wednesday : '',
+        
+        // thursday : '',
+        
+        // friday : '',
+        
+        // saturday : '',
+        
+        // sunday : '',
+        
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-atcbah {
+    
+      opacity : 0.5;
+      pointer-events : none;
+      
+      }
+      
+    .pdp-layout .pdp-details .twc-atcbah .sqs-add-to-cart-button,
+    .primary-button-style-outline .twc-atcbah .sqs-button-element--primary,
+    .primary-button-style-outline .sqs-modal-lightbox .sqs-modal-lightbox-content .twc-atcbah .sqs-button-element--primary
+    
+      {
+      
+        border-color : grey;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const initialize = ( ) => {
+      
+        let selector = '.sqs-product-quick-view-button-wrapper';
+        
+        const hasQuickView = $( selector ).length;
+        
+        selector = '.sqs-add-to-cart-button-wrapper';
+        
+        const hasAddToCart = $( selector ).length;
+        
+        const b = ! ( hasAddToCart || hasQuickView );
+        
+        if ( b ) return; // bail of no atc
+        
+        const businessHours = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .websiteSettings
+          
+          .businessHours;
+          
+        const convertTimeZone = ( d, timeZone ) => {
+        
+          d = typeof d === 'string' ? new Date ( d ) : d;
+          
+          d = d.toLocaleString ( 'en-US', { timeZone : timeZone } );
+          
+          d = new Date ( d );   
+          
+          return d;
+          
+          };
+          
+        const daysOfWeek = [
+
+          'sunday',
+        
+          'monday',
+        
+          'tuesday',
+        
+          'wednesday',
+        
+          'thursday',
+        
+          'friday',
+        
+          'saturday',
+        
+          ];
+
+        const textToRanges = text => {
+        
+          let ranges = [ ];
+          
+          switch ( true ) {
+          
+            case ! text :
+            
+              return ranges;
+              
+              break;
+              
+            case text == 'All Day':
+            case text == 'Open':
+            
+              ranges = {
+              
+                from : 0,
+                
+                to : 1440
+                
+                };
+                
+              return ranges;
+              
+              break;
+              
+            }
+            
+          if ( ! text ) return [ ]; // Closed
+          
+          const textToMinutes = m => {
+          
+            m = m
+            
+              .match ( /(\d+)(:\d+)?(:\d+)?(am|pm)?/ )
+              
+              .map ( t => t == undefined ? '' : t )
+              
+              .splice ( 1 );
+              
+            if ( ! m [ 1 ] ) m [ 1 ] = ':00';
+            
+            if ( ! m [ 2 ] ) m [ 1 ] = ':00';
+            
+            if ( m [ 3 ] ) m [ 3 ] = ` ${ m [ 3 ] }`;
+            
+            m = m.join ( '' );
+            
+            m = Date.parse ( `1/1/70; ${ m }` );
+            
+            m = new Date ( m );
+            
+            m = m.getHours ( ) * 60 + m.getMinutes ( );
+            
+            return m;
+            
+            };
+            
+          ranges = (
+          
+            text
+            
+            .split ( ',' )
+            
+            .map ( t => t.trim ( ) )
+            
+            .map ( t => {
+            
+              t = t
+              
+                .split ( '-' )
+                
+                .map ( s => s.trim ( ) );
+                
+              return t;
+              
+              } )
+              
+            )
+            
+            .map ( a => {
+            
+              const from = textToMinutes ( a [ 0 ] );
+              
+              const to = textToMinutes ( a [ 1 ] );
+              
+              a = {
+              
+                from : from,
+                
+                to : to
+                
+                };
+                
+              return a;
+              
+              } );
+              
+          return ranges;
+          
+          };
+          
+        const timeZone = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .website
+          
+          .timeZone;
+          
+        let d = new Date ( ); // comment out for debugging
+        
+        // let d = new Date ( '7/16/2023; 06:00:00' ); // for debugging
+        
+        d = convertTimeZone ( d, timeZone );
+        
+        const minutes = d.getHours ( ) * 60 + d.getMinutes ( );
+        
+        Object
+        
+          .keys ( twc.atcbah.hours )
+          
+          .forEach ( key => {
+          
+            const v = twc.atcbah.hours [ key ];
+            
+            twc.atcbah.hours [ key ] = {
+            
+              text : v,
+              
+              ranges : textToRanges ( v )
+              
+              };
+              
+            } );
+            
+        Object.assign ( businessHours, twc.atcbah.hours );
+        
+        let isOpen = d.getDay ( );
+        
+        isOpen = daysOfWeek [ isOpen ];
+        
+        isOpen = businessHours [ isOpen ];
+        
+        isOpen = isOpen
+        
+          .ranges
+          
+          .filter ( range => minutes >= range.from && minutes < range.to );
+          
+        isOpen = isOpen.length;
+        
+        if ( isOpen ) return; // bail if open
+        
+        $( selector ).addClass ( 'twc-atcbah' );
+        
+        if ( ! hasQuickView ) return; // bail if no quick view
+        
+        const callback = mutations => {
+        
+          mutations.forEach ( mutation => {
+          
+            if ( ! mutation.addedNodes.length ) return;
+            
+            const $element = $( mutation.addedNodes [ 0 ] );
+            
+            $( selector ).addClass ( 'twc-atcbah' );
+            
+            } );
+            
+          };
+          
+        const observer = new MutationObserver ( callback );
+        
+        const callbackQuickView = mutations => {
+        
+          mutations.forEach ( mutation => {
+          
+            if ( ! mutation.addedNodes.length ) return;
+            
+            const $element = $( mutation.addedNodes [ 0 ] );
+            
+            const clss = 'sqs-product-quick-view-lightbox';
+            
+            const isQuickView = $element.hasClass ( clss );
+            
+            if ( ! isQuickView ) return; // bail if not quick view
+            
+            observerQuickView.disconnect ( );
+            
+            // start listening for changes in element
+            
+            const selector = '.sqs-product-quick-view-content';
+            
+            const element = $( selector ).get ( 0 );
+            
+            observer.observe ( element, {
+            
+              childList : true
+              
+              } );
+              
+            } );
+            
+          };
+          
+        const observerQuickView = new MutationObserver ( callbackQuickView );
+        
+        // start listening for changes in body
+        
+        observerQuickView.observe ( document.body, {
+        
+          childList : true
+          
+          } );
+          
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.ss.is71 :
+        
+          $( initialize );
+          
+          break;
+          
+        case twcsl.ss.is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end add to cart button active hours -->
