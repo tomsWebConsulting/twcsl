@@ -1,0 +1,139 @@
+<!--
+
+  begin blog page list masonry design date badge
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of a several tags. all are needed for
+                  the full effect to work
+                  
+                  the code currently on works with mm/dd/yy date format
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .blog-masonry {
+    
+      --twc-bplmddb-background-color : black;
+      --twc-bplmddb-color : white;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .blog-masonry .blog-image-wrapper {
+    
+      margin-bottom : 0;
+      
+      }
+      
+    .blog-masonry .blog-meta-section:nth-of-type( 1 ) {
+    
+      align-items : center;
+      background-color : var( --twc-bplmddb-background-color );
+      border-radius : 50%;
+      display : flex;
+      height : 4em;
+      justify-content : center;
+      left : 50%;
+      position : absolute;
+      transform : translate( -50%, -50% );
+      width : 4em;
+      
+      }
+      
+    .blog-masonry .blog-meta-section:nth-of-type( 1 ) .blog-categories-list {
+  
+      display : none;
+  
+      }
+      
+    .blog-masonry .blog-meta-section:nth-of-type( 1 ) .blog-date {
+    
+      color : var( --twc-bplmddb-color );
+      
+      }
+      
+    .blog-masonry .blog-meta-section .blog-date .date-wrapper {
+    
+      font-weight : bold;
+      text-transform : uppercase;
+      
+      }
+      
+    .blog-masonry .blog-meta-section .blog-date .date-wrapper span {
+    
+      display : block;
+      
+      }
+      
+    .blog-masonry .blog-title {
+    
+      margin-top : 1.25em;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const selector = '.blog-masonry .blog-meta-section:nth-of-type( 1 ) ' +
+      
+        '.blog-date';
+        
+      $( selector ).each ( function ( ) {
+      
+        const $this = $( this );
+        
+        let d = $this.text ( );
+        
+        d = new Date ( d );
+        
+        const monthShort = d.toLocaleString ( 'en-US', { month : 'short' } );
+        
+        d = d.getDate ( );
+        
+        const html = `
+        
+          <div class="date-wrapper">
+          
+            <span class="month">
+            
+              ${ monthShort }
+              
+              </span>
+              
+            <span class="day">
+            
+              ${ d }
+              
+              </span>
+              
+            </div>
+            
+            `;
+            
+        $this.html ( html );
+        
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end blog page list date badge -->
