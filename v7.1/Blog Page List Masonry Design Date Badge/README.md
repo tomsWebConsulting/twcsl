@@ -34,7 +34,7 @@ Display blog page list masonry design dates as a badge.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   ```
   
-* Add code from file **[blog page list masonry design date badge.html][4]** to
+* Add code from file **[blog page list masonry design date badge.html][5]** to
   Block Settings > Advanced > Page Header Code Injection for the blog page.
   Please see [Per-page code injection][6]. Read the code for any instructions
   within.
