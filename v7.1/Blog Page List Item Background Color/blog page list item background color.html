@@ -1,0 +1,55 @@
+<!--
+
+  begin blog page list item background color
+  
+  License     : < https://bit.ly/3F8sn8W >
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.1
+  
+  Notes       : the code is comprised of two style tags. both are needed for the
+                full effect to work
+                
+                this effect works for grid and masonry designs
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .blog-basic-grid,
+    .blog-masonry-wrapper
+    
+      {
+      
+        --twc-bplibc-background-color : white;
+        
+        }
+        
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .blog-basic-grid .blog-article-spacer,
+    .blog-basic-grid .blog-basic-grid--text,
+    .blog-masonry .entry
+    
+      {
+      
+        background-color : var( --twc-bplibc-background-color );
+        
+        }
+        
+    .blog-basic-grid .blog-basic-grid--text {
+    
+      padding-bottom : 1em;
+      
+      }
+      
+    </style>
+    
+  <!-- end blog page list item background color -->
