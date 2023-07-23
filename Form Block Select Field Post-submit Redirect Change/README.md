@@ -1,6 +1,15 @@
 # Form Block Select Field Post-submit Redirect Change
 
-### [License][1]
+*This **code is currently broken** because of the recent (04/23) Squarespace
+redesigned form blocks. The specific issue is that SS removed support for the
+data-success-redirect attribute which allowed code to programmatically change
+the redirect URL on the fly and then SS would handle the actual redirect. Please
+contact SS [customer support][1] to encourage them to restore this functionality
+that existed in the prevoius version of the form block before the update.*
+
+*I hope to make this code function again in the future.*
+
+### [License][2]
     
 ### Version 0.2.2
 
@@ -15,17 +24,17 @@
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
 * Add code from file **[form block select field post-submit redirect
-  change.html][2]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Please see [per-page code injection][3]. Read the code for any
+  change.html][3]** to Page Settings > Advanced > Page Header Code Injection for
+  the page. Please see [per-page code injection][4]. Read the code for any
   instructions within.
   
 * Add a form block to your page and set up as desired.
   
-* For the form [add a post-submit redirect][4]. In the REDIRECT URL field enter
+* For the form [add a post-submit redirect][5]. In the REDIRECT URL field enter
   **#**.
   
 * For the select field description on a line by itself enter **fbsfpsrc**. This
@@ -57,7 +66,7 @@
 
 ## Demo
 
-You can see a [demo of this effect here][5].
+You can see a [demo of this effect here][6].
 
 ## Note
 
@@ -65,7 +74,7 @@ This code does not work for form blocks with lightbox toggled on.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -95,9 +104,10 @@ Please consider [making a donation][6].
 
   * initial version
 
-[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[4]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
-[5]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://support.squarespace.com/hc/en-us/requests/new
+[2]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[3]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
+[6]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
