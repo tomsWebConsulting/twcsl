@@ -30,7 +30,7 @@ Remove variants with **(Sold Out)** text.
 
 ## Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
+* Install [twcsl][4]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
 * Options
@@ -74,7 +74,7 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
+[4]: https://github.com/tomsWebConsulting/twcsl#twcsljs
 [5]: store%20product%20detail%20variant%20sold%20out%20remove.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
