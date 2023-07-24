@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 231 effects. Each effect has it's own version number, code,
+twcsl contains 232 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -184,6 +184,8 @@ not necessarily designed to work together.
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
 * [Store Product Detail Variant Selected Callback](Store%20Product%20Detail%20Variant%20Selected%20Callback)
+  
+* [Store Product Detail Variant Sold Out Remove](Store%20Product%20Detail%20Variant%20Sold%20Out%20Remove)
   
 * [Store Product List Empty Text Add](Store%20Product%20List%20Empty%20Text%20Add)
   
