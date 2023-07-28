@@ -2,6 +2,10 @@
 
 ### [License][1]
 
+### Synopsis
+
+Fill form fields from search query parameters of the page URL.
+
 ### Version 0.1.0
 
 #### SS Versions
