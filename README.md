@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 232 effects. Each effect has it's own version number, code,
+twcsl contains 233 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -112,6 +112,8 @@ not necessarily designed to work together.
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
+  
+* [Form Block Fields From Search Parameters](Form%20Block%20Fields%20From%20Search%20Parameters)
   
 * [Form Block Multi-Column](Form%20Block%20Multi-Column)
   
