@@ -15,7 +15,7 @@
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
   ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
 * Page Specific

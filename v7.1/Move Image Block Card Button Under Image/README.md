@@ -11,7 +11,7 @@
 Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 ```
 
 Add code from file **[move image block card button under image.html](move%20image%20block%20card%20button%20under%20image.html#L1)** to:
