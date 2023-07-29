@@ -38,7 +38,7 @@ Add ratings to Store page products.
     * This option will be the one most will want to use if you have only a
       single store page you want to have this effect.
       
-    * Add code from file **[store tag rating.html][5]** to Store Settings >
+    * Add code from file **[store page tag rating.html][5]** to Store Settings >
       Advanced > Page Header Code Injection for the store page. Please see
       [Per-page code injection][6]. Read the code for any insptructions within.
       
@@ -47,8 +47,8 @@ Add ratings to Store page products.
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store tag rating.html][5]** to Settings > Developer
-      Tools > Code Injection > FOOTER. Please see [Add code to code
+    * Add code from file **[store page tag rating.html][5]** to Settings >
+      Developer Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][7]. Read the code for any insptructions within.
 
 ## How To Use
