@@ -65,31 +65,27 @@ Fill form fields from search query parameters of the page URL.
   key and put the parameter value into the field, add a line of the following
   format to DESCRIPTION.
   
-  ```
-  text
+  ```text
   twc-fbffsp : text
   ```
   
   **text** is the search query string parameter key and would look like the
   following in a URL.
   
-  ```
-  text
+  ```text
   http://your-site.squarespace.com?text=your+text+here
   ```
   
   For a compound field like Address add a line of the following format.
   
-  ```
-  text
+  ```text
   twc-fbffsp : first=First Name, last=Last Name
   ```
   
   **first** and **last** are the search query string parameter keys and would
   look like the following in a URL.
   
-  ```
-  text
+  ```text
   http://your-site.squarespace.com?first=John&last=Doe
   ```
 
