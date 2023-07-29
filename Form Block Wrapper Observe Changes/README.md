@@ -9,7 +9,7 @@ nodes are added or removed from the [DOM][2].
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -58,29 +58,32 @@ nodes are added or removed from the [DOM][2].
       Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][8]. Read the code for any instructions within.
       
-* Add or edit a form block. For the first field add a line field with a label of
-  **twc-fbwoc** and description of the following...
+* Add or edit a form block.
+
+* Add a Line field with a LABEL of **twc-fbwoc** and DESCRIPTION of the
+  following...
   
   ```
   "callbacks" : {
-
-    "added" : "[optional, enter callback name here replacing square brackets]",
   
-    "removed" : "[optional, enter callback name here replacing square brackets]"
-  
+    "added" : "[optional, enter callback names here replacing square brackets]",
+    
+    "removed" : "[optional, enter callback names here replacing square brackets]"
+    
     }
   ```
   
-  Where indicated add the name of your callback(s). Added and removed are
-  optional.
+  Where indicated add the name(s) of your callback(s). Added and removed are
+  optional. You can supply one callback or a list of callbacks seperated by
+  comma space for example **callback1, callback2**.
 
 ## Callbacks
 
 Your callbacks must accept a jQuery object as a parameter.
 
 Following is a very generalized example of a callback. The callback(s) must be
-  installed before the code of this effect. Note the use of var.
-  
+defined before the code of this effect. Note the use of var.
+
 ```html
 <script>
 
@@ -104,11 +107,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2022-03-23**
+* **2023-07-28**
 
-  * add encode flag to control if email address is encoded per url spec
-  * bumped version to 0.2d0
-  -->
+  * support calling multiple callbacks
+  * bumped version to 0.2.0
+  
 * **2023-07-14**
 
   * initial version

@@ -2,9 +2,9 @@
 
   begin form block wrapper observe changes
   
-  License       : < https://bit.ly/3F8sn8W >
+  License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.2.0
   
   SS Versions   : 7.1, 7.0
   
@@ -66,6 +66,16 @@
     
       const codeKey = 'twc-fbwoc';
       
+      const version = '0.2.0-devlopment.1';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Form Block Wrapper Observe Changes v${ version }, License < ` +
+        
+        'https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+      
       const consoleMessages = false;
       
       const selectorKey = '.sqs-block-form';
@@ -106,7 +116,7 @@
         
         if ( ! ( 'MutationObserver' in window ) ) return;
         
-        // if ( window.frameElement !== null ) return; // bail if in preview
+        if ( window.frameElement !== null ) return; // bail if in preview
         
         const callback = mutations => {
         
@@ -146,6 +156,20 @@
             
             if ( ! b ) return true; // continue
             
+            const blockId = $node
+            
+              .parents ( '.sqs-block-form' )
+              
+              .attr ( 'id' );
+              
+            if ( blockId != undefined ) {
+            
+              const s = `${ codeKey } : form block id ${ blockId }`;
+              
+              console.log ( s );
+              
+              }
+              
             const selector = `.title:contains('${ codeKey }') ~ ` +
             
               '.description:contains(\'callbacks\')';
@@ -158,9 +182,9 @@
             
             let callbacks = {
             
-              added : undefined,
+              added : [ ],
               
-              removed : undefined
+              removed : [ ]
               
               };
               
@@ -176,22 +200,66 @@
                 
               c = JSON.parse ( c );
               
-              c.added = window [ c.added ];
+              for ( let [ key, value ] of Object.entries ( c ) ) {
               
-              c.removed = window [ c.removed ];
-              
+                if ( value [ 0 ] == '[' ) value = '';
+                
+                c [ key ] = value;
+                
+                }
+                
               } catch ( error ) {
               
-                const s = `${ codeKey } callback parse error : `;
+                const s = `${ codeKey } callbacks parse error : `;
                 
-                if ( consoleMessages )
+                console.error ( s, error );
                 
-                  console.error ( s, error );
-                  
                 return;
                 
                 }
                 
+            const parseCallbacks = ( type, callbacks ) => {
+            
+              callbacks = callbacks
+              
+                .split ( ', ' )
+                
+                .map ( c => {
+                
+                  const callback = window [ c ];
+                  
+                  if ( callback == undefined ) {
+                  
+                    const s = `${ codeKey } : ${ type } callback '${ c }' ` +
+                    
+                      'undefined';
+                      
+                    console.error ( s );
+                    
+                    }
+                    
+                  return callback;
+                  
+                  } )
+                  
+                .filter ( c => c != undefined );
+                
+              if ( ! callbacks.length ) {
+              
+                const s = `${ codeKey } : no ${ type } callbacks`;
+                
+                console.warn ( s );
+                
+                }
+                
+              return callbacks;
+              
+              };
+              
+            c.added = parseCallbacks ( 'added', c.added );
+            
+            c.removed = parseCallbacks ( 'removed', c.removed );
+            
             $description
             
               .parents ( '.section' )
@@ -200,46 +268,50 @@
               
             Object.assign ( callbacks, c );
             
-            let callback;
-            
             switch ( true ) {
             
               case nodesAdded :
               
-                callback = callbacks.added;
+                callbacks = callbacks.added;
                 
                 break;
                 
               case nodesRemoved :
               
-                callback = callbacks.removed;
+                callbacks = callbacks.removed;
                 
                 break;
                 
               }
               
-            // bail if no callback
+            // bail if no callbacks
             
-            if ( callback == undefined ) {
+            if ( ! callbacks.length ) {
             
-              const error = `${ codeKey } no callback :
+              const s = `${ codeKey } : no callbacks`;
               
-                added ${ callbacks.added }
-                
-                removed ${ callbacks.removed }
-                
-                `;
-                
-              if ( consoleMessages )
+              console.warn ( s );
               
-                console.warn ( error );
-                
               return;
               
               }
               
-            callback ( $node );
+            callbacks.forEach ( callback => {
             
+              try {
+              
+                callback ( $node );
+                
+                } catch ( error ) {
+                
+                  const s = `${ codeKey } callback error`;
+                  
+                  console.error ( s, error );
+                  
+                  }
+                  
+              } );
+              
             } );
             
           }; // end callback
