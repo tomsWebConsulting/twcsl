@@ -115,7 +115,7 @@ Please consider [making a donation][10].
     form internationalization update
   * bumped version to 0.2.0
   -->
-* **2022-07-29**
+* **2022-07-28**
 
   * initial version
 
