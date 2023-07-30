@@ -23,13 +23,13 @@ Change store page detail simple layout gallery thumbnails from scroll to grid.
 ## Quick Install
 
 * Add code from file **[store page detail simple layout gallery thumbnail below
-  scroll to grid.html][5]** to Store Settings > Advanced > Page Header Code
-  Injection for the store page. Please see [Per-page code injection][6]. Read
+  scroll to grid.html][2]** to Store Settings > Advanced > Page Header Code
+  Injection for the store page. Please see [Per-page code injection][3]. Read
   the code for any insptructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -43,6 +43,6 @@ Please consider [making a donation][9].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[5]: store%20page%20detail%20simple%20layout%20gallery%20thumbnail%20below%20scroll%20to%20grid.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: store%20page%20detail%20simple%20layout%20gallery%20thumbnail%20below%20scroll%20to%20grid.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
