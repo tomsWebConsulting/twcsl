@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 237 effects. Each effect has it's own version number, code,
+twcsl contains 238 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -383,6 +383,10 @@ not necessarily designed to work together.
         
       * * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
+      * [List](v7.1/Page/Store/List)
+        
+      * * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
+          
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
   * [Page Section Attribute Id Add](v7.1/Page%20Section%20Attribute%20Id%20Add)
@@ -450,8 +454,6 @@ not necessarily designed to work together.
   * [Site Wide Image Borders](v7.1/Site%20Wide%20Image%20Borders)
     
   * [Store Categories Cache](v7.1/Store%20Categories%20Cache)
-    
-  * [Store Categories Mega](v7.1/Store%20Categories%20Mega)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
     
