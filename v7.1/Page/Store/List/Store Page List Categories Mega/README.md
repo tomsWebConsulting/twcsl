@@ -71,9 +71,13 @@ Store page list categories mega menu.
 In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will need to
 refresh the page for the code to pickup on the change.
 
+## Demo
+
+You can see a [demo of this effect here][8].
+
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -99,4 +103,5 @@ Please consider [making a donation][8].
 [5]: store%20page%20list%20categories%20mega.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
