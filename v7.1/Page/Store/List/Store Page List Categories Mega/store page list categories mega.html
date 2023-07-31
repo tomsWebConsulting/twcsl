@@ -1,0 +1,391 @@
+<!--
+
+  begin store page list categories mega
+  
+  License       : < https://bit.ly/3F8sn8W >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : store categories cache < https://tinyurl.com/285tkudd >
+  
+  Notes         : the code is comprised of a style and script tag. all are
+                  needed for the full effect to work
+                  
+                  in the editor when you change the CATEGORIES TYPE ( Sidebar /
+                  Top ) you will need to refresh the page for the code to
+                  pickup on the change
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    #siteWrapper {
+    
+      --twc-products-collection-content-wrapper-visibility : hidden;
+      
+      }
+      
+    .collection-type-products.view-list .products.collection-content-wrapper {
+    
+      visibility : var( --twc-products-collection-content-wrapper-visibility );
+      
+      }
+      
+    /* begin resets */
+    
+      .products.collection-content-wrapper .nested-category-children {
+      
+        text-align : left;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-breadcrumb-list-item {
+      
+        display : unset;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
+      
+        margin : unset;
+        
+        }
+        
+      /* end resets */
+      
+    .tweak-products-breadcrumbs .products.collection-content-wrapper .nested-category-breadcrumb,
+    .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
+    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    .nested-category-children .active,
+    .nested-category-tree-wrapper .active
+    
+      {
+      
+        cursor : default;
+        
+        }
+        
+    .nested-category-children ul,
+    .products.collection-content-wrapper .nested-category-tree-wrapper ul
+    
+      {
+      
+        display: flex;
+        
+        }
+        
+    .nested-category-children summary,
+    .nested-category-tree-wrapper summary
+    
+      {
+      
+        display : list-item;
+        
+        }
+        
+    .nested-category-children summary::marker,
+    .nested-category-tree-wrapper summary::marker
+    
+      {
+      
+        font-size : larger;
+        
+        }
+        
+    /* begin sidebar */
+    
+      .nested-category-tree-wrapper .active {
+      
+        font-weight : 700;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-tree-wrapper ul {
+      
+        flex-direction : column;
+        
+        }
+        
+      /* end sidebar */
+      
+    /* begin top */
+    
+      .collection-type-products.view-list .products.collection-content-wrapper {
+      
+        --spacing-left : calc( 40px / 2 );
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-children .active {
+      
+        text-decoration : unset;
+        
+        }
+        
+      .nested-category-children ul {
+      
+        gap : 0.5em;
+        padding-inline-start : var( --spacing-left );
+        
+        }
+        
+      .nested-category-children ul ul {
+      
+        flex-direction : column;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item.children {
+      
+        display : flex;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item .nested-category-breadcrumb-list-item .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
+      
+        margin-left : calc( var( --spacing-left ) - 0.75em );
+        
+        }
+        
+      .nested-category-children .breadcrumb-separator {
+      
+        margin-left : 1vw;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-children > .nested-category-breadcrumb-list-item > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
+      
+        display : unset;
+        
+        }
+        
+      /* end top */
+      
+    </style>
+    
+  <script>
+  
+    var twcSplcm = categories => {
+    
+      const codeKey = 'twc-splcm';
+      
+      const version = '0.2.0';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Store Categories Mega v${ version }, License < ` +
+        
+        'https://tinyurl.com/s872fb68 >';
+        
+      const selectorKey = '.products.collection-content-wrapper';
+      
+      console.log ( s );
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      if ( twc.data == undefined ) twc.data = { };
+      
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          =
+          
+          [ ];
+          
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .push ( `--${ codeKey }` );
+        
+      ( ( ) => {
+      
+        const windowWidth = $( window ).width ( );
+        
+        const traverse = ( categories, $ul ) => {
+        
+          $.each ( categories, function ( i, category ) {
+          
+            const hasChildren = Boolean ( category.children.length );
+            
+            const $li = $( `
+            
+              <li class="nested-category-breadcrumb-list-item">
+              
+                <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
+                
+                  ${ category.displayName }
+                  
+                  </a>
+                  
+                <span class="breadcrumb-separator" aria-hidden="true">
+                
+                  |
+                  
+                  </span>
+                  
+                </li>
+                
+              ` );
+              
+            let $element;
+            
+            if ( hasChildren )
+            
+              $element = $li
+              
+                .addClass ( 'children' )
+                
+                .find ( '.nested-category-breadcrumb-link' )
+                
+                .wrap ( `
+                
+                  <details/>
+                  
+                    <summary/>
+                    
+                  ` )
+                  
+                .parents ( 'details' );
+                
+              else
+              
+                $element = $li;
+                
+            $ul.append ( $li );
+            
+            if ( ! hasChildren ) return true; // continue
+            
+            $childrenUl = $( '<ul/>' )
+            
+              .appendTo ( $element );
+              
+            traverse ( category.children, $childrenUl );
+            
+            } );
+            
+          };
+          
+        const $ul = $( '<ul/>' );
+        
+        let selector = `[href="${ twcsl.page.store.urlSlug }` +
+        
+          `${ twcsl.page.store.list.categoryUrlSlug }"]`;
+          
+        traverse ( categories, $ul )
+        
+        $( selector, $ul )
+        
+          .addClass ( 'active' )
+          
+          .removeAttr ( 'href' )
+          
+          .parents ( 'details' )
+          
+          .attr ( 'open', '' );
+          
+        const $element = $ul
+        
+          .clone ( )
+          
+          .addClass ( 'nested-category-children' );
+          
+        selector =
+        
+          '.products.collection-content-wrapper .nested-category-children';
+          
+        $( selector ).replaceWith ( $element );
+        
+        selector = '.active';
+        
+        const $active = $( selector, $element );
+        
+        const activeLeft = $active
+        
+          .offset ( )
+          
+          .left;
+          
+        if ( activeLeft > windowWidth )
+        
+          $active
+          
+            .parents ( '.nested-category-breadcrumb-list-item' )
+            
+            .first ( )
+            
+            .get ( 0 )
+            
+            .scrollIntoViewIfNeeded ( activeLeft );
+            
+        selector = '.products.collection-content-wrapper ' +
+        
+          '.nested-category-tree-wrapper ul';
+          
+        $( selector ).replaceWith ( $ul );
+        
+        } ) ( );
+        
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .pop ( `--${ codeKey }` );
+        
+      const l = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .length;
+        
+      if ( ! l )
+      
+        $( '#siteWrapper' )
+        
+          .css ( '--twc-products-collection-content-wrapper-visibility',
+          
+            'unset' );
+            
+      };
+      
+    </script>
+    
+  <!-- end store page list categories mega -->
