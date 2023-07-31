@@ -52,6 +52,20 @@ Store page list categories mega menu.
       Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][7]. Read the code for any instructions within.
 
+* In the **store categories cache** code set the callback.
+  
+  Change the following line...
+  
+  ```text
+      callback : undefined
+  ```
+  
+  ...to...
+  
+  ```text
+      callback : twcSplcm
+  ```
+
 ## Note
 
 In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will need to
