@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -81,6 +81,14 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-07-31**
+
+  * fix for levels that have no children not lining up with those that do for
+    type top
+  * fix for mega not not being added at farthest branches of tree
+  * add CSS to hide more elements not needed for effect
+  * bumped version to 0.2.1
+  
 * **2023-07-31**
 
   * support for mobile

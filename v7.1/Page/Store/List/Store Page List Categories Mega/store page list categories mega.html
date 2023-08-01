@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.2.0
+  Version       : 0.2.1
   
   SS Version    : 7.1
   
@@ -65,7 +65,8 @@
       
     .tweak-products-breadcrumbs .products.collection-content-wrapper .nested-category-breadcrumb,
     .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
-    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title
+    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
+    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title.nested-category-title-padding
     
       {
       
@@ -129,7 +130,7 @@
     
       .collection-type-products.view-list .products.collection-content-wrapper {
       
-        --spacing-left : calc( 40px / 2 );
+        --spacing-left : unset;
         
         }
         
@@ -158,15 +159,15 @@
         
         }
         
-      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item .nested-category-breadcrumb-list-item .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
-      
-        margin-left : calc( var( --spacing-left ) - 0.75em );
+      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
+
+        margin-left : var( --spacing-left );
         
         }
         
       .nested-category-children .breadcrumb-separator {
       
-        margin-left : 1vw;
+        margin-left : var( --spacing-left );
         
         }
         
@@ -186,7 +187,7 @@
     
       const codeKey = 'twc-splcm';
       
-      const version = '0.2.0';
+      const version = '0.2.1';
       
       const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
       
@@ -324,7 +325,49 @@
         
           '.products.collection-content-wrapper .nested-category-children';
           
-        $( selector ).replaceWith ( $element );
+        const $destination = $( selector );
+        
+        if ( $destination.length ) {
+        
+          $destination.replaceWith ( $element );
+          
+          } else {
+          
+            selector = '.nested-category-breadcrumb';
+            
+            $( selector ).after ( $element );
+            
+            }
+            
+        selector = '.nested-category-breadcrumb-list-item';
+        
+        const left1 = $( selector, $element )
+        
+          .first ( )
+          
+          .offset ( )
+          
+          .left;
+          
+        selector = '.nested-category-breadcrumb-list-item .nested-category-breadcrumb-link';
+        
+        let left = $( selector, $element )
+        
+          .first ( )
+          
+          .offset ( )
+          
+          .left;
+          
+        left -= left1;
+        
+        left = `${ left }px`;
+      
+        selector = '.collection-type-products.view-list .products.collection-' +
+        
+          'content-wrapper';
+          
+        $( selector ).css ( '--spacing-left', left );
         
         selector = '.active';
         
