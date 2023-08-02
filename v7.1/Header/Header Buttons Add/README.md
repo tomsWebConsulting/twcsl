@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add buttons the the site header.
+Add buttons to the site header.
 
 ### Version
 
@@ -81,7 +81,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
-[5]: header%20buttons%20add.css#L1
+[5]: header%20buttons%20add.less#L1
 [6]: header%20buttons%20add.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
