@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 238 effects. Each effect has it's own version number, code,
+twcsl contains 239 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -245,8 +245,6 @@ not necessarily designed to work together.
       
 * [v7.1](v7.1)
   
-  * [Add Buttons to Header](v7.1/Add%20Buttons%20to%20Header)
-    
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
     
   * [Add Mindbody Login Register Link to Navigation](v7.1/Add%20Mindbody%20Login%20Register%20Link%20to%20Navigation)
@@ -333,6 +331,10 @@ not necessarily designed to work together.
     
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
+  * [Header](v7.1/Header)
+    
+    * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
+      
   * [Header Branding And Navigation Center Actions Left Add](v7.1/Header%20Branding%20And%20Navigation%20Center%20Actions%20Left%20Add)
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
