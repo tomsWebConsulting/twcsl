@@ -2,9 +2,17 @@
 
 ### [License][1]
 
-### Version 0.4.1
+### Synopsis
 
-#### SS Version 7.1
+Add page section toggle effect to pages.
+
+### Version
+
+  * 0.4.1
+
+#### SS Version
+
+  * 7.1
 
 #### Dependencies
 
@@ -16,7 +24,7 @@
 
   * Yes
 
---
+---
 
 ## Install
 
