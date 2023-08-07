@@ -6,7 +6,7 @@
     
     License     : < https://bit.ly/3F8sn8W >
     
-    Version     : 0.1.1
+    Version     : 0.2.0
     
     SS Version  : 7.1
     
@@ -34,17 +34,9 @@
     
   if ( ! b ) return; // bail not squarespace site
   
-  const selector = '.A7VY_Nft5uCZFrZstcwt'; // calendar
+  const codeKey = 'twc-bpdpgt';
   
-  let element = document.body.querySelector ( selector );
-  
-  if ( element == null ) return; // bail if no calendar
-  
-  const prefix = 'twc-bpdpgt';
-  
-  element = element.parentElement;
-    
-  b = element.querySelector ( `#${ prefix }` ) != null;
+  b = document.body.querySelector ( `#${ codeKey }` ) != null;
   
   if ( b ) return; // bail if already installed
   
@@ -52,13 +44,25 @@
   
     event.preventDefault ( );
     
-    const button =
+    const button = document
     
-      document.querySelector ( '[data-test="month-nav-previous"]' );
+      .body
+      
+      .querySelector ( '[data-test="month-nav-previous"]' );
+      
+    if ( button == null ) {
+    
+      alert ( 'Please select the Published or Scheduled option.' );
+      
+      return; // bail if not published or scheduled selected
+      
+      }
       
     const day = document
     
-      .querySelector ( `#${ prefix } .day` )
+      .body
+      
+      .querySelector ( `#${ codeKey } .day` )
       
       .value;
       
@@ -100,7 +104,9 @@
       
     const year = document
     
-      .querySelector ( `#${ prefix } .year` )
+      .body
+      
+      .querySelector ( `#${ codeKey } .year` )
       
       .value;
       
@@ -110,7 +116,9 @@
     
     let month = document
     
-      .querySelector ( `#${ prefix } .month` )
+      .body
+      
+      .querySelector ( `#${ codeKey } .month` )
       
       .value;
       
@@ -170,6 +178,8 @@
         
         document
         
+          .body
+          
           .querySelector ( `[data-value="${ seconds }"]` )
           
           .click ( );
@@ -188,73 +198,107 @@
     
     };
     
+  const selector = 'label'; // calendar
+  
+  const elementLabels = [
+  
+    ...
+    
+    document
+  
+    .body
+    
+    .querySelectorAll ( selector )
+    
+    ];
+    
+  let elementOptions = elementLabels
+  
+    .filter ( l => l.textContent.includes ( 'Options' ) )
+    
+    [ 0 ];
+    
+  const labelClasses = elementOptions
+  
+    .classList
+    
+    .toString ( );
+    
+  const optionClasses = elementOptions
+  
+    .nextElementSibling
+    
+    .classList
+    
+    .toString ( );
+    
   const html = `
   
-    <div>
+    <div id="${ codeKey }">
     
-      <label class="css-jqwt0d" id="${ prefix }-label">
+      <label class="${ labelClasses }">
       
         Target Date
         
         </label>
         
-      </div>
+      <form class="${ optionClasses }">
       
-    <form class="css-roynbj" id="${ prefix }">
-    
-      <fieldset class="date-inputs">
-      
-        <div>
-        
-          <input class="year" name="year" placeholder="YYYY" type="number">
-          
-          <label class="label" for="year">
-          
-            YYYY
-            
-            </label>
-            
-          </div>
-          
-        <div>
-        
-          <input class="month" min="1" max="12" placeholder="MM" name="month" type="number">
-          
-          <label class="label" for="month">
-          
-            MM
-            
-            </label>
-            
-          </div>
-          
-        <div>
-        
-          <input class="day" min="1" max="31" placeholder="DD" name="day" type="number">
-          
-          <label class="label" for="day">
-          
-            DD
-            
-            </label>
-            
-          </div>
-          
-        <div>
+        <fieldset class="date-inputs">
         
           <div>
           
-            <input type="submit" value="Go To" />
+            <input class="year" name="year" placeholder="YYYY" type="number">
             
-            <div>
+            <label class="label" for="year">
             
-              </div>
+              YYYY
+              
+              </label>
               
             </div>
             
-        </fieldset>
-        
-      </form>
+          <div>
+          
+            <input class="month" min="1" max="12" placeholder="MM" name="month" type="number">
+            
+            <label class="label" for="month">
+            
+              MM
+              
+              </label>
+              
+            </div>
+            
+          <div>
+          
+            <input class="day" min="1" max="31" placeholder="DD" name="day" type="number">
+            
+            <label class="label" for="day">
+            
+              DD
+              
+              </label>
+              
+            </div>
+            
+          <div>
+          
+            <div>
+            
+              <input type="submit" value="Go To" />
+              
+              <div>
+              
+                </div>
+                
+              </div>
+              
+          </fieldset>
+          
+        </form>
+      
+      </div>
       
     `;
     
@@ -262,19 +306,18 @@
   
     <style>
     
-      #${ prefix } .date-inputs {
+      #twc-bpdpgt .date-inputs {
 
         border : none;
         display : flex;
         gap : 1em;
-        margin-left : 22px;
         margin-top : 0.5em;
         padding-block : unset;
         padding-inline : unset;
         
         }
         
-      #${ prefix } .date-inputs input {
+      #twc-bpdpgt .date-inputs input {
       
         background-color : #f5f5f5;
         padding : 5px 10px;
@@ -282,33 +325,34 @@
         
         }
         
-      #${ prefix } .date-inputs label {
+      #twc-bpdpgt .date-inputs label {
 
         display : block;
         padding-left : 10px;
         
         }
         
-      #${ prefix } .date-inputs input:first-child {
+      #twc-bpdpgt .date-inputs input:first-child {
       
         width : 4em;
         
         }
         
-      #${ prefix } .date-inputs input[type="submit"] {
-      
+      #twc-bpdpgt .date-inputs input[type="submit"] {
+
+        border : 1px solid;
         border-radius : 10px;
         width : 5em;
         
         }
         
-      #${ prefix } .date-inputs button:hover {
+      #twc-bpdpgt .date-inputs button:hover {
       
         background-color : #f5f5f5;
         
         }
         
-      #${ prefix } .date-inputs button:active {
+      #twc-bpdpgt .date-inputs button:active {
       
         background-color : #e1e1e1;
         
@@ -318,20 +362,26 @@
       
     `;
     
+  elementOptions = elementOptions
+  
+    .parentElement;
+    
   document
   
     .head
     
     .insertAdjacentHTML ( 'beforeend', style );
     
-  element.insertAdjacentHTML ( 'beforeend', html );
+  elementOptions
   
-  element
+    .insertAdjacentHTML ( 'afterend', html );
+    
+  document
   
-    .querySelector ( `#${ prefix }` )
+    .body
+    
+    .querySelector ( `#${ codeKey }` )
     
     .addEventListener ( 'submit', goTo );
     
-  element.scrollTo ( 0, element.scrollHeight );
-  
   } ( ) );

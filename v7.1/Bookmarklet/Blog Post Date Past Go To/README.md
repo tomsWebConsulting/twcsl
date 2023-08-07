@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.1.1
+### Version 0.2.0
 
 #### SS Version 7.1
 
@@ -35,6 +35,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-08-06**
+
+  * try to use the structure of options instead of dynamic CSS names
+  * bumped version to 0.2.0
+  
 * **2023-07-09**
 
   * update dynamic calendar class
