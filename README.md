@@ -387,6 +387,8 @@ not necessarily designed to work together.
           
       * [List](v7.1/Page/Store/List)
         
+      * * [Store Page List Categories Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add)
+          
       * * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
@@ -458,8 +460,6 @@ not necessarily designed to work together.
   * [Store Categories Cache](v7.1/Store%20Categories%20Cache)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
-    
-  * [Store Category Page Description Add](v7.1/Store%20Category%20Page%20Description%20Add)
     
   * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
