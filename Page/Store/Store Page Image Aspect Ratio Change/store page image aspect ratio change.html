@@ -1,0 +1,207 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      store page image aspect ratio change
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.2.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Not Applicable
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependencies    : twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      aspect ratios are 1:1, 3:2, 2:3, 4:3, 3:4, 16:9, 240aw ( v7.0 only ), or
+      uw ( v7.1 only )
+      
+      */
+      
+    const aspectRatios = {
+    
+      list : '[enter aspect ratio here between single quotes replacing square brackets]',
+      
+      detail : '[enter aspect ratio here between single quotes replacing square brackets]'
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const initialize = ( ) => {
+    
+      if ( ! twcsl.page.store.is ) return; // bail if not store page
+      
+      const aspectRatiosMap = {
+      
+        '7.1' : {
+        
+          detail : {
+          
+            '1:1' : 'tweak-product-basic-item-gallery-aspect-ratio-11-square',
+            
+            '3:2' : 'tweak-product-basic-item-gallery-aspect-ratio-32-standard',
+            
+            '2:3' : 'tweak-product-basic-item-gallery-aspect-ratio-23-standard-vertical',
+            
+            '4:3' : 'tweak-product-basic-item-gallery-aspect-ratio-43-four-three',
+            
+            '3:4' : 'tweak-product-basic-item-gallery-aspect-ratio-34-three-four-vertical',
+            
+            '16:9' : 'tweak-product-basic-item-gallery-aspect-ratio-169-widescreen',
+            
+            'uw' : 'tweak-product-basic-item-gallery-aspect-ratio-ultra-widescreen'
+            
+            },
+            
+          list : {
+          
+            '1:1' : 'tweak-products-image-aspect-ratio-11-square',
+            
+            '3:2' : 'tweak-products-image-aspect-ratio-32-standard',
+            
+            '2:3' : 'tweak-products-image-aspect-ratio-23-standard-vertical',
+            
+            '4:3' : 'tweak-products-image-aspect-ratio-43-four-three',
+            
+            '3:4' : 'tweak-products-image-aspect-ratio-34-three-four-vertical',
+            
+            '16:9' : 'tweak-products-image-aspect-ratio-169-widescreen',
+            
+            'uw' : 'tweak-products-image-aspect-ratio-ultra-widescreen'
+            
+            }
+            
+          },
+          
+        '7' : {
+        
+          detail : {
+          
+            '1:1' : 'tweak-product-item-gallery-aspect-ratio-11-square',
+            
+            '3:2' : 'tweak-product-item-gallery-aspect-ratio-32-standard',
+            
+            '2:3' : 'tweak-product-item-gallery-aspect-ratio-23-standard-vertical',
+            
+            '4:3' : 'tweak-product-item-gallery-aspect-ratio-43-four-three',
+            
+            '3:4' : 'tweak-product-item-gallery-aspect-ratio-34-three-four-vertical',
+            
+            '16:9' : 'tweak-product-item-gallery-aspect-ratio-169-widescreen',
+            
+            '240aw' : 'tweak-product-item-gallery-aspect-ratio-240-anamorphic-widescreen',
+            
+            },
+            
+          list : {
+          
+            '1:1' : 'tweak-product-list-image-aspect-ratio-11-square',
+            
+            '3:2' : 'tweak-product-list-image-aspect-ratio-32-standard',
+            
+            '2:3' : 'tweak-product-list-image-aspect-ratio-23-standard-vertical',
+            
+            '4:3' : 'tweak-product-list-image-aspect-ratio-43-four-three',
+            
+            '3:4' : 'tweak-product-list-image-aspect-ratio-34-three-four-vertical',
+            
+            '16:9' : 'tweak-product-list-image-aspect-ratio-169-widescreen',
+            
+            '240aw' : 'tweak-product-list-image-aspect-ratio-240-anamorphic-widescreen',
+            
+            }
+            
+          }
+          
+        };
+        
+      let pageType;
+      
+      switch ( true ) {
+      
+        case twcsl.page.store.list.is :
+        
+          pageType = 'list';
+          
+          break;
+          
+        case twcsl.page.store.detail.is :
+        
+          pageType = 'detail';
+          
+          break;
+          
+        }
+        
+      const imageAspectRatios = aspectRatiosMap
+      
+        [ twcsl.ss.version ]
+        
+        [ pageType ];
+        
+      const ratioClass = imageAspectRatios
+        
+        [
+        
+          aspectRatios [ pageType ]
+          
+          ];
+          
+      let ratioClasses = Object.values ( imageAspectRatios );
+      
+      const i = ratioClasses
+      
+        .indexOf ( ratioClass );
+        
+      ratioClasses.splice ( i, 1 );
+      
+      ratioClasses = ratioClasses.join ( ' ' );
+      
+      $( 'body' ).addClass ( ratioClass );
+      
+      $( 'body' ).removeClass ( ratioClasses );
+      
+      };
+      
+    switch ( true ) {
+    
+      case twcsl.ss.is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case twcsl.ss.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
+      
+    } ) ( );
+    
+  </script>
