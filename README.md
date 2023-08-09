@@ -139,6 +139,8 @@ not necessarily designed to work together.
   
   * [Store](Page/Store)
     
+    * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
+      
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
 * [Payment Processor Icons](Payment%20Processor%20Icons)
@@ -294,8 +296,6 @@ not necessarily designed to work together.
   * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
     
   * [Change Blog Listing Item Image URL to Source URL](v7.1/Change%20Blog%20Listing%20Item%20Image%20URL%20to%20Source%20URL)
-    
-  * [Change Default Image Aspect Ratios for Store Page](v7.1/Change%20Default%20Image%20Aspect%20Ratios%20for%20Store%20Page)
     
   * [Change Image Card, Image to Text Width Ratios](v7.1/Change%20Image%20Card,%20Image%20to%20Text%20Width%20Ratios)
     
