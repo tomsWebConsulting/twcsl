@@ -1,0 +1,148 @@
+<!--
+
+  begin events page event thumbnail add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0-development.1
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of two several tags. all are needed for
+                  the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use private
+                  browsing < https://tinyurl.com/54k5m2xu >
+                  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.epeta = {
+    
+      html : `
+      
+        [ optional, enter html here from bookmarklet replacing this line ]
+        
+        `,
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-eventitem-thumbnail {
+    
+      margin-bottom: calc( 34px / 2 );
+      width : 50%;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const codeKey = 'twc-epeta';
+      
+      const codeTitle = 'Events Page Event Thumbnail Add';
+      
+      const version = '0.1.0-development.2';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `${ codeTitle } Bookmarklet v${ version }, ` +
+        
+        'License < https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+  
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      if ( ! twcsl.page.events.event.is ) return; // bail if not detail
+      
+      const selector = 'meta[itemprop="thumbnailUrl"]';
+  
+      let url = $( selector );
+  
+      if ( ! url.length ) return; // bail if no thumbnail
+  
+      const options = twc.epeta;
+      
+      let html = options.html;
+      
+      html = html.trim ( );
+      
+      const isMeta = html [ 0 ] == '[';
+      
+      if ( isMeta )
+      
+        html = `
+        
+          <div class="twc-eventitem-thumbnail">
+          
+            <img data-stretch="false" data-src="[ url ]" data-image="[ url ]" data-image-dimensions="[ width ]x[ height ]" data-image-focal-point="0.5,0.5" alt="" data-load="false" src="[ url ]" width="[ width ]" height="[ height ]" sizes="100vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" srcset="[ url ]?format=100w 100w, [ url ]?format=300w 300w, [ url ]?format=500w 500w, [ url ]?format=750w 750w, [ url ]?format=1000w 1000w, [ url ]?format=1500w 1500w, [ url ]?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs" class="twc-eventitem-thumbnail">
+            
+            </div>
+            
+          `;
+          
+      url = url.attr ( 'content' )
+      
+        .split ( '?' )
+        
+        [ 0 ]
+        
+        .replace ( 'http://', 'https://' );
+        
+      html = html.replaceAll ( '[ url ]', url );
+      
+      const img = new Image ( );
+      
+      img.onload = function ( ) {
+      
+        let selector;
+        
+        html = html
+        
+          .replaceAll ( '[ height ]', this.height )
+          
+          .replaceAll ( '[ width ]', this.width );
+          
+        if ( isMeta ) {
+        
+          selector = '.eventitem-title';
+          
+          $( selector ).after ( html );
+          
+          } else {
+          
+            selector = '#page .sqs-col-12';
+            
+            $( selector ).prepend ( html );
+            
+            }
+            
+        };
+        
+      img.src = url;
+      
+      } );
+      
+    </script>
+    
+  <!-- end events page event thumbnail add -->
