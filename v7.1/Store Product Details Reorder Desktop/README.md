@@ -54,11 +54,11 @@ Reorder store page product detail elements.
   * Price, Variants, Quantity, Add to Cart, and Description
   
     ```css
-        --add-to-cart-button : 4;
-        --description : 5;
-        --price : 1;
-        --quantity : 3;
-        --variants : 2;
+          --add-to-cart-button : 4;
+          --description : 5;
+          --price : 1;
+          --quantity : 3;
+          --variants : 2;
     ```
 
 ## Make a Donation
