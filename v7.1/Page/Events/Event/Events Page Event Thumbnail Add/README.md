@@ -32,11 +32,14 @@ Use settings thumbnail as thumbnail for Event.
   rest of the steps.
   
 * Add code from file **[events page event thumbnail add.html][6]** to Events
-  Settings > Advanced > Page Header Code Injection for the events page.
-  Please see [Per-page code injection][7]. Read the code for any
-  instructions within.
+  Settings > Advanced > Page Header Code Injection for the events page. Please
+  see [Per-page code injection][7]. Read the code for any instructions within.
 
 ## Bookmarklet
+
+**What is a bookmarket?**
+
+Wikipedia has a nice entry on [bookmarklet][9].
 
 By default the code adds the thumbnail to the meta information area of an event.
 If you want the thumbnail to be added at the top of the content of the event
@@ -49,22 +52,20 @@ follow these steps.
 
 * Save the event and exit.
   
-You can use spacers to help control the size and spacing of the image. Keep the
-formatting really simple or things may break. This post is only a template.
+You can use spacers to help control the placement, size, and spacing of the
+image. Keep the formatting really simple or things may break. This post is only
+a template.
 
 * Add code from file **[events page event first image html
   get.bookmarklet][8]** as the URL for a bookmark in your browser named
   **Events Page Event First Image Html Get**.
 
-**What is a bookmarket?**
-
-Wikipedia has a nice entry on [bookmarklet][9].
-
 * In the event template you created select the **Events Page Event First Image
   Html Get** bookmark.
   
 A window/tab should pop-up with HTML code in it. If the pop-up doesn't appear be
-sure that you don't have pop-up or ad blocker software that is causing an issue.
+sure that you don't have a pop-up or ad blocker software that is preventing the
+pop-up from opening.
 
 * Copy all the HTML in the pop-up to your clipboard.
 
@@ -98,6 +99,6 @@ Please consider [making a donation][11].
 [6]: events%20page%20event%20thumbnail%20add.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: events%20page%20event%20first%20image%20html%20get.bookmarklet#L1
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [9]: https://en.wikipedia.org/wiki/Bookmarklet
+[10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
