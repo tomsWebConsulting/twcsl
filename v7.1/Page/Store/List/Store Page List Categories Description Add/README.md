@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.6.0
+  * 0.7.0
 
 #### SS Version
 
@@ -40,8 +40,7 @@ Add simple category descriptions to store category pages.
       
     * Add code from file **[store page list categories description
       add.html][6]** to Store Settings > Advanced > Page Header Code Injection
-      for the store page. Please see [Per-page code injection][7]. Read the code
-      for any instructions within.
+      for the store page. Please see [Per-page code injection][7].
       
   * Site-wide
   
@@ -50,14 +49,95 @@ Add simple category descriptions to store category pages.
       
     * Add code from file **[store page list categories description
       add.html][6]** to Settings > Developer Tools > Code Injection > FOOTER.
-      Please see [Add code to code injection][8]. Read the code for any
-      instructions within.
+      Please see [Add code to code injection][8].
+      
+* Add a section to the store page list as the last section.
 
-## Note
+* Add a code block to the section and set the content to the following. Read the
+  code for any instructions within.
+  
+  ```html
+  <x-twc-splcda>
+  
+    <!--
+    
+      the format of each line is a category list and a description for
+      the category list
+      
+      for category list use values from Store Settings > Categories >
+      [category name] > Edit > NAME field for the store page. you need all
+      the text from the field. if you want to add a description to the
+      Store page ( i.e. grid/listing ) leave the category empty, i.e. ''.
+      for a top level category you would enter something like
+      'Top Category'. For a nested category you enter something like
+      'Top Category > Sub Category'
+      
+      following is an example line. copy the example line below and paste
+      after the example line. remove the less than exclamation double dash space
+      from the beginning of the pasted line and space double dash greater than
+      from the end. repeat for as many categories as you want to add a
+      description. this has been done once initially
+      
+      -->
+      
+    <!-- [enter category list here between single quotes replacing square brackets] : [enter category description here between single quotes replacing square brackets] -->
+    
+    [enter category list here between single quotes replacing square brackets] : [enter category description here between single quotes replacing square brackets]
+    
+    <!--
+    
+      x-twc-splcda Optional Attribtues
+      
+      there are three optional attributes that can be added to the x-twc-splcda
+      tag.
+      
+        data-paragraph-style
+        
+          value is one of the following. the default is Heading 3
+          
+            Heading 1
+            Heading 2
+            Heading 3
+            Heading 4
+            Paragraph 1
+            Paragraph 2
+            Paragraph 3
+            Monospace
+            
+        data-selector-destination
+        
+          value is any valid selector value. the default is
+          .nested-category-title
+          
+        data-action
+        
+          value is one of the following. the default is after
+          
+            after
+            append
+            before
+            prepend
+            
+      Example of Adding an Attribute
+      
+        <x-twc-splcda data-paragraph-style="Heading 1">
+        
+      -->
+      
+    </x-twc-splcda>
+  ```
+  
+* Remove the default text block from the section.
+
+* Save the section.
+  
+## Notes
 
 The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
 create your own settings to do so.
+
+The last page section is only visible while editing the site.
 
 ## Make a Donation
 
@@ -65,6 +145,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-08-13**
+
+  * move configuration out of code and into code block
+  * bumped version to 0.7.0
+  
 * **2023-08-08**
 
   * support nested categories
