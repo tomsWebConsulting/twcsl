@@ -6,9 +6,9 @@
     
       cptaib store page product detail options and variants select
       
-      License         : < https://bit.ly/3F8sn8W >
+      License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.2.0
+      Version         : 0.2.1
       
       SS Versions     : 7.1, 7.0
       
@@ -37,19 +37,19 @@
       
       */
       
-    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
-    
     const initialize = ( ) => {
     
-      const codePrefixSuffix = 'twc-cptaib';
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
-      let selector = `x-${ codePrefixSuffix }`;
+      const codeKey = 'twc-cptaib';
+      
+      let selector = `x-${ codeKey }`;
       
       const $element = $( selector );
       
       const label = $element.attr ( 'data-label' );
       
-      const keyPrefix = `${ codePrefixSuffix },${ label },`;
+      const keyPrefix = `${ codeKey },${ label },`;
       
       $element
       
