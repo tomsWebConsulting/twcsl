@@ -2,7 +2,7 @@
 
 ### [License][1]
     
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Version
 
@@ -97,6 +97,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-08-16**
+
+  * fix for code not running after apparent changes by Squarespace
+  * bumped version to 0.1.2
+  
 * **2023-04-27**
 
   * fix for code picking up CSS from other code similar to this code
