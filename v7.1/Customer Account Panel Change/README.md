@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.2.3
+### Version 0.2.4
 
 #### SS Version
 
@@ -90,6 +90,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-08-16**
+
+  * restore missing callback code functionality
+  * bumped version to 0.2.4
+  
 * **2023-08-16**
 
   * changed twc-capc-title-close class to twc-capc-header

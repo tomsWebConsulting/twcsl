@@ -4,7 +4,7 @@
   
   License      : < https://bit.ly/3F8sn8W >
   
-  Version      : 0.2.3
+  Version      : 0.2.4
   
   SS Version   : 7.1
   
@@ -60,7 +60,7 @@
     
       const codeKey = 'twc-capc';
       
-      const version = '0.2.3';
+      const version = '0.2.4';
       
       const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
       
@@ -355,6 +355,10 @@
             
             element = classAdd ( 'profile' );
             
+            if ( options.accountFrameCallback !== undefined )
+            
+              options.accountFrameCallback ( dcmnt );
+              
             };
             
           const selector = `#${ customerAccountPanelIdValue } .CSSTG-group`;
