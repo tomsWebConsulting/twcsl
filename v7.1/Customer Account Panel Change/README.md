@@ -2,7 +2,12 @@
 
 ### [License][1]
     
-### Version 0.2.2
+### Synopsis
+
+Make changes to the Customer Account panel that can't be achieved through the
+Squarespace editor.
+
+### Version 0.2.3
 
 #### SS Version
 
@@ -35,17 +40,17 @@
 ## Classes
 
 Squarespace includes virtually no semantic class names for the Customer Account
-Panel element. This code attempts to add some useful classes.
+panel element. This code attempts to add some useful classes.
 
   * twc-capc-addresses
   * twc-capc-close
   * twc-capc-greeting
   * twc-capc-greeting-sign-out
+  * twc-capc-header
   * twc-capc-orders
   * twc-capc-profile
   * twc-capc-sign-out
   * twc-capc-title
-  * twc-capc-title-close
 
 If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
@@ -85,6 +90,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-08-16**
+
+  * changed twc-capc-title-close class to twc-capc-header
+  * fix for code not running after apparent changes by Squarespace
+  * bumped version to 0.2.3
+  
 * **2023-05-06**
 
   * fix for code not running is some circumstances
