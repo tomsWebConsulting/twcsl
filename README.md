@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 242 effects. Each effect has it's own version number, code,
+twcsl contains 241 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -56,8 +56,6 @@ not necessarily designed to work together.
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
   
 * [Add to Cart Button Active Hours](Add%20to%20Cart%20Button%20Active%20Hours)
-  
-* [assets](assets)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
@@ -383,19 +381,19 @@ not necessarily designed to work together.
       
       * [Event](v7.1/Page/Events/Event)
         
-      * * [Events Page Event Thumbnail Add](v7.1/Page/Events/Event/Events%20Page%20Event%20Thumbnail%20Add)
+        * [Events Page Event Thumbnail Add](v7.1/Page/Events/Event/Events%20Page%20Event%20Thumbnail%20Add)
           
     * [Store](v7.1/Page/Store)
       
       * [Detail](v7.1/Page/Store/Detail)
         
-      * * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
+        * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
       * [List](v7.1/Page/Store/List)
         
-      * * [Store Page List Categories Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add)
+        * [Store Page List Categories Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add)
           
-      * * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
+        * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
