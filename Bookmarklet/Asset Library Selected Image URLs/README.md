@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-List the URLs that are selected in the Asset Library.
+List selected image URLs in the Asset Library.
 
 ### Version
 
