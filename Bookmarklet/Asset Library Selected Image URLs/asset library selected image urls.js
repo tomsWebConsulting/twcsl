@@ -4,7 +4,7 @@
   
     asset library selected image urls
     
-    License       : < https://bit.ly/3F8sn8W >
+    License       : < https://tinyurl.com/s872fb68 >
     
     Version       : 0.1.1
     
