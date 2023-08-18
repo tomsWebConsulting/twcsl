@@ -6,7 +6,7 @@
     
     License       : < https://bit.ly/3F8sn8W >
     
-    Version       : 0.1.0
+    Version       : 0.1.1
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -24,10 +24,36 @@
 
   elements.forEach ( ( element ) => {
   
+    const selector = 'td:nth-child( 6 )';
+    
+    const types = [
+    
+      'GIF',
+      
+      'JPEG',
+      
+      'PNG'
+      
+      ];
+      
+    element = element
+    
+      .closest ( '.asset-item' );
+      
+    const type = element
+    
+      .querySelector ( selector )
+      
+      .textContent
+      
+      .trim ( );
+      
+    const b = ! types.includes ( type );
+    
+    if ( b ) return; // continue
+    
     let url = element
     
-      .closest ( '.asset-item' )
-      
       .querySelector ( 'img' )
       
       .getAttribute ( 'src' );
