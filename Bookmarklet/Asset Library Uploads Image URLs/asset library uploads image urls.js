@@ -4,9 +4,9 @@
   
     asset library uploads image urls
     
-    License       : < https://bit.ly/3F8sn8W >
+    License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version       : 0.1.1
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -14,82 +14,148 @@
     
     */
     
-  let selector = '.image-picker-overlay img';
+  const types = [
   
-  let elements = document.querySelectorAll ( selector );
-  
-  elements = Array.from ( elements );
-  
-  let l = elements.length;
-  
-  let urls = '';
-  
-  for ( let i = 0; i < l; i++ ) {
-  
-    let element = elements [ i ];
+    'gif',
     
-    let url = element.getAttribute ( 'src' );
+    'jpg',
     
-    url = new URL ( url );
+    'jpeg',
     
-    url = url.protocol + '//' + url.host + url.pathname
+    'png'
     
-    url = decodeURI ( url );
+    ];
     
-    urls += url + '\n';
+  // begin urls
+  
+    let selector = '.image-picker-overlay img';
     
-    }
+    let urls = '';
     
-  let html = `<pre><code>${ urls }</code></pre>`;
-  
-  let w = window.open ( '' );
-  
-  w.document.write ( html );
-  
-  let title = document.createElement ( 'title' );
-  
-  title.append ( 'Assest Library Image URLs' );
-  
-  w.document.head.append ( title );
-  
-  let filenames = '';
-  
-  selector =
-  
-    '.image-picker-overlay svg circle[ stroke="#CE2C30" ]';
+    [
     
-  elements = document.querySelectorAll ( selector );
-  
-  elements = Array.from ( elements );
-  
-  l = elements.length;
-  
-  for ( let i = 0; i < l; i++ ) {
-  
-    const f = elements [ i ]
-    
-      .closest ( 'div' )
+      ...
       
-      .previousSibling
+      document
       
-      .querySelector ( 'p' )
+        .querySelectorAll ( selector )
+        
+      ]
       
-      .textContent;
+      .forEach ( element => {
       
-    filenames += f + '\n';
+        const selector = 'div:nth-child( 2 )';
+        
+        let type = element
+        
+          .parentElement
+          
+          .parentElement
+          
+          .querySelector ( selector )
+          
+          .textContent
+          
+          .trim ( )
+          
+          .toLowerCase ( )
+          
+          .match ( /\.([^.\\/:*?"<>|\r\n]+)$/ )
+          
+          [ 1 ];
+          
+        const b = ! types
+        
+          .includes ( type );
+          
+        if ( b ) return; // continue
+        
+        let url = element.getAttribute ( 'src' );
+        
+        url = new URL ( url );
+        
+        url = url.protocol + '//' + url.host + url.pathname
+        
+        url = decodeURI ( url );
+        
+        urls += url + '\n';
+        
+        } );
+        
+    let html = `<pre><code>${ urls }</code></pre>`;
     
-    }
+    let w = window.open ( '' );
     
-  html = `<pre><code>${ filenames }</code></pre>`;
+    w.document.write ( html );
+    
+    let title = document.createElement ( 'title' );
+    
+    title.append ( 'Assest Library Image URLs' );
+    
+    w.document.head.append ( title );
+    
+    // end urls
+    
+  // begin errors
   
-  w = window.open ( '' );
-  
-  w.document.write ( html );
-  
-  title = document.createElement ( 'title' );
-  
-  title.append ( 'Asset Library Uploads Image Filename Errors' );
-  
-  w.document.head.append ( title );
-  
+    let filenames = '';
+    
+    selector =
+    
+      '.image-picker-overlay svg circle[ stroke="#CE2C30" ]';
+      
+    [
+    
+      ...
+      
+      document
+      
+        .querySelectorAll ( selector )
+        
+      ]
+      
+      .forEach ( element => {
+      
+        const f = element
+        
+          .closest ( 'div' )
+          
+          .previousSibling
+          
+          .querySelector ( 'p' )
+          
+          .textContent
+          
+          .trim ( );
+          
+        const type = f
+        
+          .match ( /\.([^.\\/:*?"<>|\r\n]+)$/ )
+          
+          [ 1 ];
+          
+        const b = ! types
+        
+          .includes ( type );
+          
+        if ( b ) return; // continue
+        
+        filenames += f + '\n';
+        
+        } );
+        
+    html = `<pre><code>${ filenames }</code></pre>`;
+    
+    w = window.open ( '' );
+    
+    w.document.write ( html );
+    
+    title = document.createElement ( 'title' );
+    
+    title.append ( 'Asset Library Uploads Image Filename Errors' );
+    
+    w.document.head.append ( title );
+    
+    // end errors
+    
   } ( ) );

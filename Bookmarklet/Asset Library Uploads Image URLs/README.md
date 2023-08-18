@@ -8,7 +8,7 @@ List the URLs that are in Asset Library Uploads.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -45,11 +45,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2022-05-15**
+* **2023-08-17**
 
-  * fix for when site is not in config
-  * bumped version to v0.1.1
-  -->
+  * fix for returning non-image urls
+  * bumped version to 0.1.1
+  
 * **2023-01-16**
 
   * initial version
