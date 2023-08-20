@@ -60,7 +60,7 @@ your site visitors to encourage sales.
 
 Edit the product and add a tag of **twc-sptr Wine Spectator s 4/5**. The
 twc-sptr indicates to the code that this is a rating. The entity text is the
-rating entity. The **s** tells the code you want to used the symbols set in the
+rating entity. The **s** tells the code you want to use the symbols set in the
 code. The numbers at the end are the rating and the scale.
 
 ## Tag Syntax
@@ -69,11 +69,11 @@ code. The numbers at the end are the rating and the scale.
   
   * rating entity name
   
-  * rating type, points, symbols, words
+  * rating type : points, symbols, or words
   
-    * use **p**, **s** or **w**
+    * use **p**, **s**, or **w**
     
-  * rating, the rating/scale numbers or words
+  * rating : the rating/scale numbers or words
   
     * for r/s, note the forward slash separating the rating and scale
 
