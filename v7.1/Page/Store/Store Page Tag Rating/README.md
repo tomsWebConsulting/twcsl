@@ -8,7 +8,7 @@ Add ratings to Store page products.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -49,7 +49,7 @@ Add ratings to Store page products.
       
     * Add code from file **[store page tag rating.html][5]** to Settings >
       Developer Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][7]. Read the code for any insptructions within.
+      injection][7]. Read the code for any instructions within.
 
 ## How To Use
 
@@ -58,9 +58,45 @@ been rated by entities like Wine Spectator. A bottle of wine you sell
 received a rating of 4 out of 5 stars and you want to display that rating to
 your site visitors to encourage sales.
 
-* Edit the product and add a tag of **twc-sptr Wine Spectator 4**. The twc-sptr
-  indicates to the code that this is a rating. The number at the end is the
-  rating. The text in the middle is the label.
+Edit the product and add a tag of **twc-sptr Wine Spectator s 4/5**. The
+twc-sptr indicates to the code that this is a rating. The entity text is the
+rating entity. The **s** tells the code you want to used the symbols set in the
+code. The numbers at the end are the rating and the scale.
+
+## Tag Syntax
+
+  * twc-sptr
+  
+  * rating entity name
+  
+  * rating type, points, symbols, words
+  
+    * use **p**, **s** or **w**
+    
+  * rating, the rating/scale numbers or words
+  
+    * for r/s, note the forward slash separating the rating and scale
+
+```text
+twc-sptr [ rating entity name here replacing square brackets ] [ rating type here replacing square brackets ] [ rating here replacing square brackets ]
+```
+
+#### Examples
+
+```text
+twc-sptr Decanter p 9.5/10
+```
+
+```text
+twc-sptr Wine Spectator s 4/5
+```
+
+```text
+twc-sptr Wine Press Northwest w Platinum
+```
+
+**Extra spaces or not following the format described will cause a rating to not
+be added to a product.**
 
 ## Classes
 
@@ -68,18 +104,23 @@ Some classes are provided for styling.
 
 * twc-sptr
 
-* label
-
-* rating
-
-  * true ( filled stars )
+  * rating
   
-  * false ( unfilled stars )
+    * label
+    
+    * points, symbols, and words
+    
+      * point
+      
+      * scale
+      
+      * symbol, true ( filled symbols ), and false ( unfilled symbols )
+      
+        * overlay
 
 ## Notes
 
-This is not an site visitor rating system. There are no half points. For example
-you can not have 3 1/2 stars.
+This is not a site visitor rating system.
 
 ## Demo
 
@@ -91,6 +132,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-08-20**
+
+  * add support for point ratings and words
+  * bumped version to 0.3.0
+  
 * **2023-07-28**
 
   * sort tags, simple alpha
