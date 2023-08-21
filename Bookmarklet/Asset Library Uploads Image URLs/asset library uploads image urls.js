@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.1
+    Version       : 0.1.2
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -82,18 +82,32 @@
         
         } );
         
+    let d = window
+    
+      .open ( '' )
+      
+      .document;
+      
     let html = `<pre><code>${ urls }</code></pre>`;
     
-    let w = window.open ( '' );
+    let title = document
     
-    w.document.write ( html );
+      .createElement ( 'title' );
+      
+    title.append ( 'Asset Library Uploads Image URLs' );
     
-    let title = document.createElement ( 'title' );
+    d
     
-    title.append ( 'Assest Library Image URLs' );
+      .head
+      
+      .append ( title );
+      
+    d
     
-    w.document.head.append ( title );
-    
+      .body
+      
+      .insertAdjacentHTML ( 'beforeend', html );
+      
     // end urls
     
   // begin errors
@@ -144,18 +158,30 @@
         
         } );
         
+    d = window
+    
+      .open ( '' )
+      
+      .document;
+      
     html = `<pre><code>${ filenames }</code></pre>`;
-    
-    w = window.open ( '' );
-    
-    w.document.write ( html );
     
     title = document.createElement ( 'title' );
     
     title.append ( 'Asset Library Uploads Image Filename Errors' );
     
-    w.document.head.append ( title );
+    d
     
+      .head
+      
+      .append ( title );
+      
+    d
+    
+      .body
+      
+      .insertAdjacentHTML ( 'beforeend', html );
+      
     // end errors
     
   } ( ) );

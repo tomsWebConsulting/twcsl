@@ -8,7 +8,7 @@ List the URLs that are in Asset Library Uploads.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### SS Versions
 
@@ -45,6 +45,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-08-21**
+
+  * do not use document.write
+  * bumped version to 0.1.2
+  
 * **2023-08-17**
 
   * fix for returning non-image urls

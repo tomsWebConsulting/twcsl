@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.1
+    Version       : 0.1.2
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -70,14 +70,26 @@
   
   const html = `<pre><code>${ urls }</code></pre>`;
   
-  const w = window.open ( '' );
-  
-  w.document.write ( html );
-  
   const title = document.createElement ( 'title' );
   
+  const d = window
+  
+    .open ( '' )
+    
+    .document;
+    
   title.append ( 'Asset Library Image URLs' );
   
-  w.document.head.append ( title );
+  d
   
+    .head
+    
+    .append ( title );
+    
+  d
+  
+    .body
+    
+    .insertAdjacentHTML ( 'beforeend', html );
+    
   } ( ) );
