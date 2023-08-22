@@ -1,33 +1,48 @@
 # Gallery Sections Image URLs
 
-### [License][99]
+### [License][1]
 
-### Version 0.1.1
+### Synopsis
 
-#### SS Version 7.1
+Get a list of image URLs of gallery sections.
 
-#### Fluid Engine Compatible : Unknown
+### Version
+
+  * 0.1.2
+
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible :
+
+  * Unknown
 
 ---
 
 ## Quick Install
 
-* Add code from file **[gallery sections image urls.bookmarklet][1]** as the URL
+* Add code from file **[gallery sections image urls.bookmarklet][2]** as the URL
   for a bookmark in your browser named **Gallery Sections Image URLs**.
   
-* Go to a page in a site with gallery sections and use the bookmarklet to get
-  the URLs of the images.
+* Go to a page in a site with gallery sections of type grid simple and use the
+  bookmarklet to get the URLs of the images.
 
 ## What is a bookmarket?
 
-Wikipedia has a nice entry on [bookmarklet][2].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-08-21**
+
+  * do not use document.write
+  * bumped version to 0.1.2
+  
 * **2022-09-21**
 
   * fix forEach error on HTMLCollection
@@ -37,7 +52,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: gallery%20sections%20image%20urls.bookmarklet#L1
-[2]: https://en.wikipedia.org/wiki/Bookmarklet
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: gallery%20sections%20image%20urls.bookmarklet#L1
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

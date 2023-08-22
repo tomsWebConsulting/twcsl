@@ -6,7 +6,7 @@
     
     License       : < https://bit.ly/3F8sn8W >
     
-    Version       : 0.1.1
+    Version       : 0.1.2
     
     SS Version    : 7.1
     
@@ -19,6 +19,18 @@
     no user serviceable parts below
     
     */
+    
+    const codeKey = 'twc-gsiu';
+    
+    const version = '0.1.2';
+    
+    const s = `Gallery Sections Image URLs v${ version }, License < ` +
+      
+      'https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
     
   const l = document
   
@@ -52,8 +64,8 @@
   
     .getElementsByClassName ( className );
     
-  [...gallerySections]
-    
+  [ ...gallerySections ]
+  
     .forEach ( gallerySection => {
     
       const dataSectionId = gallerySection.getAttribute ( 'data-section-id' );
@@ -80,16 +92,28 @@
   
   if ( ! urls ) return; // bails if no urls
   
+  const d = window
+  
+    .open ( '' )
+    
+    .document;
+    
   const html = `<pre><code>${ urls }</code></pre>`;
-  
-  const w = window.open ( '' );
-  
-  w.document.write ( html );
   
   const title = document.createElement ( 'title' );
   
   title.append ( 'Gallery Sections Image URLs' );
   
-  w.document.head.append ( title );
+  d
   
+    .head
+    
+    .append ( title );
+    
+  d
+  
+    .body
+    
+    .insertAdjacentHTML ( 'beforeend', html );
+    
   } ( ) );
