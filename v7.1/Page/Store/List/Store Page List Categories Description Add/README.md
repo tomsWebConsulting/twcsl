@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Version
 
@@ -67,10 +67,17 @@ Add simple category descriptions to store category pages.
       for category list use values from Store Settings > Categories >
       [category name] > Edit > NAME field for the store page. you need all
       the text from the field. if you want to add a description to the
-      Store page ( i.e. grid/listing ) leave the category empty, i.e. ''.
-      for a top level category you would enter something like
-      'Top Category'. For a nested category you enter something like
-      'Top Category > Sub Category'
+      main store page use All for the category list
+      
+      for a top level category you would enter something like...
+      
+        Top Category
+        
+      For a nested category you enter something like...
+      
+        Top Category > Sub Category
+        
+      the category list and description can not contain a colon character
       
       following is an example line. copy the example line below and paste
       after the example line. remove the less than exclamation double dash space
@@ -80,9 +87,9 @@ Add simple category descriptions to store category pages.
       
       -->
       
-    <!-- [enter category list here between single quotes replacing square brackets] : [enter category description here between single quotes replacing square brackets] -->
+    <!-- [enter category list here replacing square brackets] : [enter category description here replacing square brackets] -->
     
-    [enter category list here between single quotes replacing square brackets] : [enter category description here between single quotes replacing square brackets]
+    [enter category list here replacing square brackets] : [enter category description here replacing square brackets]
     
     <!--
     
@@ -145,6 +152,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-08-24**
+
+  * reworked the parsing code to be a bit more flexible
+  * fix disparity between how the read me said to configure category list and
+    how the code works
+  * bumped version to 0.7.1
+  
 * **2023-08-13**
 
   * move configuration out of code and into code block
