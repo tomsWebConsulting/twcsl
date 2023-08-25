@@ -152,6 +152,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-08-25**
+
+  * fix for code hiding product detail page contents
+  * bumped version to 0.7.2
+  
 * **2023-08-24**
 
   * reworked the parsing code to be a bit more flexible
