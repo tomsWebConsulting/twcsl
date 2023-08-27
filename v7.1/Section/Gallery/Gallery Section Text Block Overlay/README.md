@@ -47,17 +47,20 @@ Add styled text overlays to gallery section images.
     the code will hide this section.
     
   * Add text blocks that you want to use as gallery section image text overlays.
-    Use line blocks to keep text blocks from collapsing together.
+    For [Classic Editor][11] only use line blocks to keep text blocks from
+    collapsing together.
     
 * Add a gallery section to a page.
 
   * Add the gallery section just before the previous section you created.
   
+  * For Gallery Type select **Slideshow: simple**.
+  
   * Turn the **Captions** on.
   
   * In the first image description add the following line.
     
-    ```
+    ```text
     twc-gstbo
     ```
     
@@ -100,3 +103,4 @@ Please consider [making a donation][10].
 [8]: https://www.heathertovey.com/squarespace-id-finder/
 [9]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[11]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
