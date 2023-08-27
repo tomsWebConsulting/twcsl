@@ -1,0 +1,194 @@
+<script>
+
+  /*
+  
+    gallery section text block overlay
+    
+    License       : < https://bit.ly/3F8sn8W >
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Dependencies  : jQuery
+    
+    Notes         : this effect only supports gallery type slideshow simple
+                    
+                    this effect is not active in SS Preview to test it use
+                    private browsing < https://bit.ly/3f6lhq2 >
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  $( ( ) => {
+  
+    const codeKey = 'twc-gstbo';
+    
+    const version = '0.1.0';
+    
+    const s = `Gallery Section Text Block Overlay v${ version }, License < ` +
+      
+      'https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const selectorKey = '.page-section';
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    if ( twc.data == undefined ) twc.data = { };
+    
+    if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+    
+    if ( twc.data.hideShow [ selectorKey ] == undefined )
+    
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        =
+        
+        [ ];
+        
+    twc
+    
+      .data
+      
+      .hideShow
+      
+      [ selectorKey ]
+      
+      .push ( `--${ codeKey }` );
+      
+    ( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      $( '.gallery-section' ) // find and process gallery sections
+      
+        .filter ( function ( ) { // find gallery sections
+        
+          const selector = '.gallery-caption p.gallery-caption-content' +
+          
+            `:contains(${ codeKey })`;
+            
+          const $element = $( selector, this )
+          
+            .first ( );
+            
+          const enabled = Boolean (
+          
+            $element.length
+            
+            );
+            
+          if ( enabled ) {
+          
+            const text = $element
+            
+              .text ( )
+              
+              .replace ( `${ codeKey }`, '' )
+              
+              .trim ( );
+              
+            $element.text ( text );
+            
+            }
+            
+          return enabled;
+          
+          } ) // end filter
+          
+        .addClass ( codeKey )
+        
+        .each ( function ( ) { // process gallery sections
+        
+          const selector = '.gallery-caption p.gallery-caption-content';
+          
+          const $this = $( this );
+          
+          $( selector, $this ).each ( function ( ) {
+          
+            const $this = $( this );
+            
+            const selector = $this
+            
+              .text ( )
+              
+              .trim ( );
+              
+            let b = selector.startsWith ( '#block-' );
+            
+            if ( ! b ) return true; // continue
+            
+            const $block = $( selector );
+            
+            b = $block.hasClass ( 'sqs-block-html' );
+            
+            if ( ! b ) return true; // continue
+            
+            $this.replaceWith ( $block );
+            
+            } );
+            
+          $this
+          
+            .next ( '.page-section' )
+            
+            .remove ( );
+            
+          } );
+          
+      } ) ( );
+      
+    let i = twc
+    
+      .data
+      
+      .hideShow
+      
+      [ selectorKey ]
+      
+      .indexOf ( `--${ codeKey }` )
+      
+    if ( i != -1 )
+    
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .splice ( i, 1 );
+        
+    i = twc
+    
+      .data
+      
+      .hideShow
+      
+      [ selectorKey ]
+      
+      .length;
+      
+    if ( ! i )
+    
+      $( '#sections' )
+      
+        .css ( '--twc-page-section-display', 'flex' );
+        
+    } );
+    
+  </script>
