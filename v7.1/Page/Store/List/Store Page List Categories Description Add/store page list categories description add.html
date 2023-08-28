@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.2
+  Version       : 0.7.3
   
   SS Version    : 7.1
   
@@ -100,7 +100,7 @@
     
       const codeKey = 'twc-splcda';
       
-      const version = '0.7.1';
+      const version = '0.7.3';
       
       const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
       
@@ -122,11 +122,59 @@
       
       const categories = twcsl.page.store.list.categories;
       
+      const cleanCategoryList = s => {
+      
+        s = s
+        
+          .trim ( )
+          
+          .replaceAll ( '$gt;', '' );
+          
+        return s;
+        
+        };
+        
       const map = { };
       
       $element
       
-        .text ( )
+        .contents ( )
+        
+        .each ( function ( ) {
+        
+          if ( this.nodeType != Node.COMMENT_NODE ) return true; // continue
+          
+          this.remove ( );
+          
+          } )
+          
+        .map ( function ( ) {
+        
+          let s;
+          
+          switch ( this.nodeName ) {
+          
+            case '#text' :
+            
+              s = this.textContent;
+              
+              break;
+              
+            case 'A' :
+            
+              s = this.outerHTML;
+              
+              break;
+              
+            }
+            
+          return s;
+          
+          } )
+          
+        .toArray ( )
+        
+        .join ( '' )
         
         .trim ( )
         
@@ -134,10 +182,12 @@
         
         .split ( '\n' )
         
-        .map ( s => s.split ( ':' ) )
+        .map ( s => s.split ( /:(.*)/ ) )
         
-        .forEach ( a => map [ a [ 0 ].trim ( ) ] = a [ 1 ].trim ( ) );
+        .forEach ( a => map [ cleanCategoryList ( a [ 0 ] ) ] =
         
+          a [ 1 ].trim ( ) );
+          
       if ( ! ( categories in map ) ) return; // bail if no category
       
       const description = map [ categories ];
@@ -167,7 +217,7 @@
       
       let selectorDestination = $element.attr ( 'data-selector-destination' );
       
-      if ( action == undefined ) action = 'append';
+      if ( action == undefined ) action = 'after';
       
       if ( paragraphStyle == undefined ) paragraphStyle = 'Heading 3';
       

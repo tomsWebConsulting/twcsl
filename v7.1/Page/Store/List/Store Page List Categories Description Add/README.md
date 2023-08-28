@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.7.1
+  * 0.7.3
 
 #### SS Version
 
@@ -146,12 +146,21 @@ create your own settings to do so.
 
 The last page section is only visible while editing the site.
 
+## Demo
+
+You can see a [demo of this effect here][9].
+
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2023-08-28**
+
+  * fix parsing errors including description html not coming through
+  * bumped version to 0.7.3
+  
 * **2023-08-25**
 
   * fix for code hiding product detail page contents
@@ -232,4 +241,5 @@ Please consider [making a donation][9].
 [6]: store%20page%20list%20categories%20description%20add.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
