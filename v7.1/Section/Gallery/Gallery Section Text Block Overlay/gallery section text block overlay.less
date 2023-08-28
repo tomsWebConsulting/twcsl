@@ -1,0 +1,108 @@
+/*
+
+  begin gallery section text block overlay
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.2.0
+  
+  SS Version  : 7.1
+  
+  Note        : this effect is not active in SS Preview to test it use
+                private browsing < https://tinyurl.com/ynessvsf >
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  html:not( .squarespace-damask ) {
+  
+    #siteWrapper {
+    
+      --twc-page-section-display : none;
+      
+      }
+      
+    .page-section {
+    
+      display : var( --twc-page-section-display );
+      
+      }
+      
+    .twc-gstbo { /* galleries */
+    
+      .gallery-grid .gallery-grid-item {
+      
+        position : relative;
+        
+        }
+        
+      .gallery-caption {
+        
+        background-color : var( --siteBackgroundColor );
+        height : auto;
+        margin-top : 0;
+        opacity : 0.8;
+        position : absolute;
+        top : 50% !important;
+        
+        -webkit-transform : translateY( -50% );
+        -ms-transform : translateY( -50% );
+        transform : translateY( -50% );
+        
+        .gallery-caption-content {
+        
+          padding-bottom : 17px;
+          padding-top : 17px;
+          
+          }
+          
+        }
+        
+      .gallery-caption-grid-masonry,
+      .gallery-caption-grid-simple,
+      .gallery-caption-grid-strips
+      
+        {
+        
+          padding : 0;
+          
+          .sqs-block-html,
+          .gallery-caption-content
+          
+            {
+            
+              padding-left : 17px;
+              padding-right : 17px;
+              
+              }
+              
+          }
+          
+      .gallery-slideshow,
+      .gallery-fullscreen-slideshow
+      
+        {
+        
+          &[data-show-captions="true"] {
+          
+            &[data-width="full-bleed"],
+            &[data-thumbnails="false"]
+            
+              {
+              
+                margin-bottom : 50px;
+                
+                }
+                
+            }
+            
+          }
+          
+      } /* end galleries */
+      
+    } /* end is not preview */
+    
+  /* end gallery section text block overlay */

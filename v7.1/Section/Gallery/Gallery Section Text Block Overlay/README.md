@@ -8,7 +8,7 @@ Add styled text overlays to gallery section images.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -28,7 +28,7 @@ Add styled text overlays to gallery section images.
 
 ## Install
 
-* Add code from file **[gallery section text block overlay.css][5]** to
+* Add code from file **[gallery section text block overlay.less][5]** to
   Website > Website Tools > Design > Custom CSS.
   
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
@@ -47,7 +47,7 @@ Add styled text overlays to gallery section images.
     the code will hide this section.
     
   * Add text blocks that you want to use as gallery section image text overlays.
-    For [Classic Editor][11] only use line blocks to keep text blocks from
+    For [Classic Editor][8] only use line blocks to keep text blocks from
     collapsing together.
     
 * Add a gallery section to a page.
@@ -71,24 +71,27 @@ Add styled text overlays to gallery section images.
     ![first image description](read%20me%20assets/first%20image%20description.png)
     
     To find text block ids you can use a tool like Heather Tovey's most
-    excellent looking [Squarespace ID Finder][8].
+    excellent looking [Squarespace ID Finder][9].
+
+## Note
+
+This effect is not active in SS Preview to test it use [private browsing][10].
 
 ## Demo
 
-You can see a [demo of this effect here][9].
+You can see a [demo of this effect here][11].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][12].
 
 ## Changes
 
-<!-- * **2022-05-10**
+* **2023-08-27**
 
-  * support for v7.1 product detail layouts
-  * use twcsl
+  * add support for all Gallery Types
   * bumped version to 0.2.0
-  -->
+  
 * **2023-08-27**
 
   * initial version
@@ -97,10 +100,11 @@ Please consider [making a donation][10].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
-[5]: gallery%20section%20text%20block%20overlay.css#L1
+[5]: gallery%20section%20text%20block%20overlay.less#L1
 [6]: gallery%20section%20text%20block%20overlay.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://www.heathertovey.com/squarespace-id-finder/
-[9]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[11]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
+[8]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
+[9]: https://www.heathertovey.com/squarespace-id-finder/
+[10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[11]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
