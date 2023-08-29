@@ -4,7 +4,7 @@
   
   License     : < https://tinyurl.com/s872fb68 >
   
-  Version     : 0.2.0
+  Version     : 0.2.1
   
   SS Version  : 7.1
   
@@ -13,9 +13,11 @@
   
   By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
-  no user serviceable parts below
-  
   */
+  
+  @opacity : 0.8;
+  
+  /* do not change anything below, there be the borg here */
   
   html:not( .squarespace-damask ) {
   
@@ -33,18 +35,11 @@
       
     .twc-gstbo { /* galleries */
     
-      .gallery-grid .gallery-grid-item {
-      
-        position : relative;
-        
-        }
-        
       .gallery-caption {
         
         background-color : var( --siteBackgroundColor );
         height : auto;
         margin-top : 0;
-        opacity : 0.8;
         position : absolute;
         top : 50% !important;
         
@@ -81,6 +76,22 @@
               
           }
           
+      .gallery-caption-grid-masonry,
+      .gallery-caption-grid-simple,
+      .gallery-caption-grid-strips
+      
+        {
+        
+          opacity : @opacity;
+          
+          }
+          
+      .gallery-grid .gallery-grid-item {
+      
+        position : relative;
+        
+        }
+        
       .gallery-slideshow,
       .gallery-fullscreen-slideshow
       
@@ -101,6 +112,37 @@
             
           }
           
+      .gallery-fullscreen-slideshow-item,
+      .gallery-reel-item,
+      .gallery-slideshow-item
+      
+        {
+        
+          &[data-active="true"] {
+          
+            .gallery-caption-reel {
+            
+                opacity : @opacity;
+                
+              }
+              
+            &[data-in="true"] {
+            
+              .gallery-caption-fullscreen-slideshow,
+              .gallery-caption
+              
+                {
+                
+                  opacity : @opacity;
+                  
+                  }
+                  
+              }
+              
+            }
+            
+          }
+      
       } /* end galleries */
       
     } /* end is not preview */

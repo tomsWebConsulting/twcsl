@@ -8,7 +8,7 @@ Add styled text overlays to gallery section images.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -87,6 +87,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2023-08-28**
+
+  * fix for opacity issue
+  * bumped version to 0.2.1
+  
 * **2023-08-27**
 
   * add support for all Gallery Types
