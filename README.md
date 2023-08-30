@@ -337,6 +337,8 @@ not necessarily designed to work together.
     
     * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
       
+    * [Header Menu Mobile Outline](v7.1/Header/Header%20Menu%20Mobile%20Outline)
+      
   * [Header Branding And Navigation Center Actions Left Add](v7.1/Header%20Branding%20And%20Navigation%20Center%20Actions%20Left%20Add)
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
@@ -364,8 +366,6 @@ not necessarily designed to work together.
   * [Member Area Log In Dialog Change](v7.1/Member%20Area%20Log%20In%20Dialog%20Change)
     
   * [Memberspace Observe Log in Status](v7.1/Memberspace%20Observe%20Log%20in%20Status)
-    
-  * [Menu Mobile Outline](v7.1/Menu%20Mobile%20Outline)
     
   * [Mobile Menu Flyout](v7.1/Mobile%20Menu%20Flyout)
     
