@@ -34,12 +34,13 @@ Format mobile menu as an outline.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
-* Add code from file **[menu mobile outline.css][5]** to Website >
+* Add code from file **[header menu mobile outline.less][5]** to Website >
   Website Tools > Design > Custom CSS. Read the code for any instructions
   within.
   
-* Add code from file **[menu mobile outline.html][6]** to Settings > Developer
-  Tools > Code Injection > FOOTER. Please see [Add code to code injection][7].
+* Add code from file **[header menu mobile outline.html][6]** to Settings >
+  Developer Tools > Code Injection > FOOTER. Please see [Add code to code
+  injection][7].
 
 ## Make a Donation
 
@@ -76,7 +77,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
-[5]: menu%20mobile%20outline.css#L1
-[6]: menu%20mobile%20outline.html#L1
+[5]: header%20menu%20mobile%20outline.less#L1
+[6]: header%20menu%20mobile%20outline.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
