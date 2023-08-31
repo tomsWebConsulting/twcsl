@@ -8,7 +8,7 @@ List selected image URLs in the Asset Library.
 
 ### Version
 
-  * 0.1.2
+  * 0.2.0
 
 #### SS Versions
 
@@ -45,6 +45,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-08-30**
+
+  * alert when no images selected
+  * bumped version to 0.2.0
+  
 * **2023-08-21**
 
   * do not use document.write

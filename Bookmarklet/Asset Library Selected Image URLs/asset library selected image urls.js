@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.2
+    Version       : 0.2.0
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -16,8 +16,32 @@
     
   const selector = '.asset-item input[checked]';
   
-  let elements = document.querySelectorAll ( selector );
+  const title = 'Asset Library Selected Image URLs';
   
+  const version = '0.2.0';
+  
+  let s = `${ title } v${ version }, License < ` +
+    
+    'https://tinyurl.com/s872fb68 >, ' +
+    
+    'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+    
+  console.log ( s );
+  
+  let elements = document
+  
+    .querySelectorAll ( selector );
+    
+  if ( ! elements.length ) {
+  
+    s = `${ title } :\n\nPlease select Asset Library images.`;
+    
+    alert ( s );
+    
+    return;
+    
+    }
+    
   elements = Array.from ( elements );
   
   let urls = '';
@@ -70,7 +94,7 @@
   
   const html = `<pre><code>${ urls }</code></pre>`;
   
-  const title = document.createElement ( 'title' );
+  const titleElement = document.createElement ( 'title' );
   
   const d = window
   
@@ -78,13 +102,13 @@
     
     .document;
     
-  title.append ( 'Asset Library Image URLs' );
+  titleElement.append ( 'Asset Library Image URLs' );
   
   d
   
     .head
     
-    .append ( title );
+    .append ( titleElement );
     
   d
   
