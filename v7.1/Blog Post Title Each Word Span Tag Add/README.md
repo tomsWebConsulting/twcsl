@@ -16,7 +16,7 @@
   rest of the steps.
   
 * Add code from file **[blog post title each word span tag add.css][2]** to
-  Design > Custom CSS.
+  Website > Website Tools > Custom CSS.
   
 * Add code from file **[blog post title each word span tag add.html][3]** to...
 

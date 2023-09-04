@@ -8,8 +8,8 @@
 
 ## Quick Install
 
-Add code from file **move header cta element to left side.css** to Design >
-Custom CSS.
+Add code from file **move header cta element to left side.css** to Website >
+Website Tools > Custom CSS.
 
 Add the following to Settings > Developer Tools > Code Injection > HEADER.
 

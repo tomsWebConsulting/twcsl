@@ -13,17 +13,16 @@
 ## Quick Install
 
 * Site-wide Effect
-<br><br>
+
   * Add code from file
     **[hide blog post tags.css](hide%20blog%20post%20tags.css#L1)**
-    to Design > Custom CSS.
-  <br><br>
+    to Website > Website Tools > Custom CSS.
+    
 * Blog Only Effect
-<br><br>
+
   * Add code from file
     **[hide blog post tags.html](hide%20blog%20post%20tags.html#L1)**
     to Blog Settings > Advanced > Page Header Code Injection for the blog page.
-  <br><br>
 
 ## Make a Donation
 

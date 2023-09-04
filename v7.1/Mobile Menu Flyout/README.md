@@ -14,7 +14,8 @@
 
 Add code from file
 **[mobile menu flyout.less](mobile%20menu%20flyout.less#L1)**
-to Design > Custom CSS. Read the code for any instructions within.
+to Website > Website Tools > Custom CSS. Read the code for any instructions
+within.
 
 ## Make a Donation
 

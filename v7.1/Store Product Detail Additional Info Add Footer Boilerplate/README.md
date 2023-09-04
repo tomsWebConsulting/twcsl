@@ -16,13 +16,13 @@
   rest of the steps.
   
 * Add code from file **[store product detail additional info add footer
-  boilerplate.css][2]** to Design > Custom CSS. Read the code for any
-  instructions within.
-
+  boilerplate.css][2]** to Website > Website Tools > Custom CSS. Read the code
+  for any instructions within.
+  
 * Add code from file **[store product detail additional info add footer
   boilerplate.html][3]** to Store Settings > Advanced > Page Header Code
   Injection for the store page.
-
+  
 * Add a classic editor section as the last section of the site footer.
 
   * Add a code block as the first block of the section. Make sure it spans the
@@ -50,8 +50,8 @@ You can find data section ids by using Heather Tovey's [Squarespace ID
 Finder][4]. When using SIF you only need the number from between the quotes. For
 example if SIF put **section[data-section-id="123456789012345678901234"]** on
 your clipboard you would only need to enter **123456789012345678901234** in
-Design > Custom CSS for the **store product detail additional info add footer
-boilerplate.css** you added there.
+Website > Website Tools > Custom CSS for the **store product detail additional
+info add footer boilerplate.css** you added there.
 
 ## Make a Donation
 

@@ -13,7 +13,7 @@
 ## Quick Install
 
 Add code from file **[store product list out of stock badge.less][2]** to
-Design > Custom CSS. Read the code for any instructions within.
+Website > Website Tools > Custom CSS. Read the code for any instructions within.
 
 ## Badge Options
 

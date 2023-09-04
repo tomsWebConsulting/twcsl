@@ -10,7 +10,7 @@
 
 Add code from file
 **[page section gallery hover on everything but.css](page%20section%20gallery%20hover%20on%20everything%20but.css#L1)**
-to Design > Custom CSS.
+to Website > Website Tools > Custom CSS.
 
 ## Make a Donation
 

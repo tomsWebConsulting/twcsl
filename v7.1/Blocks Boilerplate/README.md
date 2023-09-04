@@ -12,8 +12,9 @@
 
 ## Install
 
-* Add code from file **[blocks boilerplate.css][1]** to Design > Custom CSS.
-
+* Add code from file **[blocks boilerplate.css][1]** to Website >
+  Website Tools > Custom CSS.
+  
 * Add code from file **[blocks boilerplate.html][2]** to Settings >
   Developer Tools > Code Injection > FOOTER. Read the code for any instructions
   within.
@@ -22,6 +23,7 @@
   blocks to the section.
   
 * Add code blocks wherever you want. In those code blocks add the following.
+
   ```html
   <x-twc-bb data-block-id="[enter source block id here between single quotes replacing square brackets]">
   ```

@@ -34,8 +34,8 @@ Add buttons to the site header.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
-* Add code from file **[header buttons add.less][5]** to Design > Custom CSS.
-   Read the code for any instructions within.
+* Add code from file **[header buttons add.less][5]** to Website >
+  Website Tools > Custom CSS. Read the code for any instructions within.
   
 * Add code from file **[header buttons add.html][6]** to Settings > Developer
   Tools > Code Injection > FOOTER. Please see [Add code to code injection][7].

@@ -14,7 +14,7 @@
 
 * Add code from file
   **[header cart icon hide when zero.css](header%20cart%20icon%20hide%20when%20zero.css#L1)**
-  to Design > Custom CSS.
+  to Website > Website Tools > Custom CSS.
   
 * Add code from file
   **[header cart icon hide when zero.html](header%20cart%20icon%20hide%20when%20zero.html#L1)**

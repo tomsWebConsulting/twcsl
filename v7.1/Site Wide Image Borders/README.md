@@ -12,7 +12,8 @@
 
 ## Quick Install
 
-Add code from file **[site wide image borders.less][2]** to Design > Custom CSS.
+Add code from file **[site wide image borders.less][2]** to Website >
+Website Tools > Custom CSS.
 
 ## Make a Donation
 

@@ -28,7 +28,7 @@
   
   * Add code from file
     **[gallery section grid item order randomize.html](gallery%20section%20grid%20item%20order%20randomize.html#L1)**
-    to Design > Custom CSS.
+    to Website > Website Tools > Custom CSS.
 
 ## Make a Donation
 

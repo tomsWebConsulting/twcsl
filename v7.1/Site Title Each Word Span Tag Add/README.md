@@ -13,7 +13,7 @@
 ## Quick Install
 
 * Add code from file **[site title each word span tag add.css][1]** to
-  Design > Custom CSS.
+  Website > Website Tools > Custom CSS.
   
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
