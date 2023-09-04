@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.2.1
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -18,7 +18,7 @@
   
   const title = 'Asset Library Selected Image URLs';
   
-  const version = '0.2.0';
+  const version = '0.2.1';
   
   let s = `${ title } v${ version }, License < ` +
     
@@ -42,6 +42,16 @@
     
     }
     
+  const codeKey = 'twc-alsiu';
+  
+  let debug = false;
+  
+  try {
+  
+    debug = twc.alsiu.debug;
+    
+    } catch ( e ) { }
+    
   elements = Array.from ( elements );
   
   let urls = '';
@@ -60,6 +70,10 @@
       
       ];
       
+    if ( debug )
+    
+      console.log ( `${ codeKey } element :`, element );
+      
     element = element
     
       .closest ( '.asset-item' );
@@ -74,6 +88,12 @@
       
     const b = ! types.includes ( type );
     
+    if ( debug ) {
+    
+      console.log ( `${ codeKey } element closest :`, element );
+      
+      }
+      
     if ( b ) return; // continue
     
     let url = element
@@ -88,6 +108,12 @@
     
     url = decodeURI ( url );
     
+    if ( debug ) {
+    
+      console.log ( `${ codeKey } url :`, url );
+      
+      }
+      
     urls = urls + url + '\n';
     
     } );

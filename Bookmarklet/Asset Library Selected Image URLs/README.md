@@ -8,7 +8,7 @@ List selected image URLs in the Asset Library.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -37,7 +37,7 @@ Wikipedia has a nice entry on [bookmarklet][3].
 The code attempts to open a new window/tab with a listing of selected Asset
 Library image URLs. If you are using a pop-up or ad blocker, you will need to
 allow pop-ups for each site where you use the bookmarklet. If you select a large
-number of images, it can take a moment for the window with the URLs to open.
+number of images, it can take a moment for the window with the URLs to populate.
 
 ## Make a Donation
 
@@ -45,6 +45,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-09-04**
+
+  * added some debugging code
+  * bumped version to 0.2.1
+  
 * **2023-08-30**
 
   * alert when no images selected
