@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 246 effects. Each effect has it's own version number, code,
+twcsl contains 247 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -141,6 +141,10 @@ not necessarily designed to work together.
   
   * [Store](Page/Store)
     
+    * [Detail](Page/Store/Detail)
+      
+      * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
+        
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
       
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
@@ -170,8 +174,6 @@ not necessarily designed to work together.
 * [Store Product Detail Add to Cart Button After Added Callback](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20After%20Added%20Callback)
   
 * [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
-  
-* [Store Product Detail Add to Cart Button Url Redirect](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
   
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
