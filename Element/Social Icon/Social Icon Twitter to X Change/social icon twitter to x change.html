@@ -1,0 +1,122 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      social icon twitter to x change
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.1.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependencies    : jQuery
+      
+      Note            : this effect is not active in SS Preview. to test it use
+                        private browsing < https://tinyurl.com/mrx6rs47 >
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const codeKey = 'twc-sittxc';
+    
+    const version = '0.1.0';
+    
+    const s = `Social Icon Twitter to X Change v${ version }, License ` +
+    
+      '< https://tinyurl.com/s872fb68 >, Tom\'s Web Consulting < ' +
+      
+      'http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    const attribute = 'xlink:href';
+    
+    const selector = [
+    
+      '.header-actions .header-actions-action--social', // v7.1, desktop
+      
+      '.header-menu-actions-action', // v7.1, mobile
+      
+      '.socialaccountlinks-v2-block', // v7.1, social block
+      
+      '.Header-social', // v7.0 ( Brine ), header
+      
+      '.social-account-links-v2-block', // v7.0 ( Brine ), social block
+      
+      ]
+      
+      .map ( selector => {
+      
+        selector += ' [href^="http"][href*="://twitter.com/"]';
+        
+        return selector;
+        
+        } )
+        
+      .join ( ', ' );
+      
+    $( selector )
+    
+      .addClass ( `${ codeKey }` )
+    
+      .find ( 'use' )
+      
+        .filter ( ':not( .sqs-use--mask, .SocialLinks-link-mask )' )
+        
+          .addClass ( `${ codeKey }-use--icon` )
+          
+          .each ( function ( ) {
+          
+            const value = `#${ codeKey }-x-unauth-icon`;
+            
+            const $this = $( this );
+            
+            $this.removeAttr ( attribute );
+            
+            $this.attr ( attribute, value );
+            
+            this.href.baseVal = value;
+            
+            } )
+            
+          .end ( )
+          
+        .filter ( '.sqs-use--mask, .SocialLinks-link-mask' )
+        
+          .addClass ( `${ codeKey }-use--mask` )
+          
+          .each ( function ( ) {
+          
+            const value = `#${ codeKey }-x-unauth-mask`;
+            
+            const $this = $( this );
+            
+            $this.removeAttr ( attribute );
+            
+            $this.attr ( attribute, value );
+            
+            this.href.baseVal = value;
+            
+            } );
+      
+     } );
+    
+  </script>
