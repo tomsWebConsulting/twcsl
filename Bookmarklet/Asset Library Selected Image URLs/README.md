@@ -8,7 +8,7 @@ List selected image URLs in the Asset Library.
 
 ### Version
 
-  * 0.2.2
+  * 0.3.0
 
 #### SS Versions
 
@@ -32,12 +32,10 @@ List selected image URLs in the Asset Library.
 
 * Go to the Assest Library.
 
-* Select the list layout.
-
 * Select some images.
 
 * Select the **Asset Library Selected Image URLs** bookmark. A new window/tab
-  should appear with a list of image URLs.
+  should appear with a list of selected image URLs.
 
 ## What is a bookmarket?
 
@@ -57,6 +55,12 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-09-10**
+
+  * added Asset Library page check
+  * added support for grid layout
+  * bumped version to 0.3.0
+  
 * **2023-09-05**
 
   * added a list layout check

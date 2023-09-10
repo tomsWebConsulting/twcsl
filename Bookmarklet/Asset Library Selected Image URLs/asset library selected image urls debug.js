@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.2
+    Version       : 0.3.0
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -16,7 +16,7 @@
     
   const title = 'Asset Library Selected Image URLs Debug';
   
-  const version = '0.2.2';
+  const version = '0.3.0';
   
   let s = `${ title } v${ version }, License < ` +
     

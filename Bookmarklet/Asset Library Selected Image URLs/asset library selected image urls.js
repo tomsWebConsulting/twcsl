@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.2
+    Version       : 0.3.0
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -14,20 +14,18 @@
     
     */
     
-  let selector = '[data-test="file-drop-container"] table';
-  
-  const isListLayout = document
-  
-    .querySelector ( selector )
-    
-    !=
-    
-    null;
-    
   const title = 'Asset Library Selected Image URLs';
   
-  const version = '0.2.2';
+  const version = '0.3.0';
   
+  const xpath = '//span[text()="Asset Library"]';
+  
+  let element = document
+  
+    .getElementsByClassName ( 'sqs-damask-panel-content' )
+    
+    [ 0 ];
+    
   let s = `${ title } v${ version }, License < ` +
     
     'https://tinyurl.com/s872fb68 >, ' +
@@ -36,9 +34,17 @@
     
   console.log ( s );
   
-  if ( ! isListLayout ) {
+  element = document
   
-    s = `${ title } :\n\nPlease select the list layout.`;
+    .evaluate ( xpath, element, null, XPathResult.FIRST_ORDERED_NODE_TYPE,
+    
+      null )
+      
+    .singleNodeValue;
+    
+  if ( element == null ) {
+  
+    s = `${ title } :\n\nPlease go to the Assest Library.`;
     
     alert ( s );
     
@@ -46,8 +52,16 @@
     
     }
     
-  selector = '.asset-item input[checked]';
+  const selector = [
   
+    '[ data-test="asset-item" ] [ data-test="checkbox-checked" ]', // grid
+    
+    '.asset-item input[checked]' // list
+    
+    ]
+    
+    .join ( ', ' );
+    
   let elements = document
   
     .querySelectorAll ( selector );
@@ -74,52 +88,48 @@
     
   elements = Array.from ( elements );
   
+  console.log ( elements );
+  
   let urls = '';
 
   elements.forEach ( ( element ) => {
   
-    const selector = 'td:nth-child( 6 )';
+    let selector = [
     
-    const types = [
+      '[ data-test="asset-item" ]', // grid
+      
+      '.asset-item' // list
+      
+      ]
+      
+      .join ( ', ' );
     
-      'GIF',
-      
-      'JPEG',
-      
-      'PNG'
-      
-      ];
-      
     if ( debug )
     
       console.log ( `${ codeKey } element :`, element );
       
     element = element
     
-      .closest ( '.asset-item' );
+      .closest ( selector );
       
-    const type = element
+    if ( debug )
     
-      .querySelector ( selector )
+      console.log ( `${ codeKey } element closest:`, element );
       
-      .textContent
-      
-      .trim ( );
-      
-    const b = ! types.includes ( type );
+    selector = 'img[src*="?content-type=image%2F"]';
     
-    if ( debug ) {
+    element = element
     
-      console.log ( `${ codeKey } element closest :`, element );
+      .querySelector ( selector );
       
-      }
+    if ( debug )
+    
+      console.log ( `${ codeKey } element image:`, element );
       
-    if ( b ) return; // continue
+    if ( element == null ) return; // continue
     
     let url = element
     
-      .querySelector ( 'img' )
-      
       .getAttribute ( 'src' );
       
     url = new URL ( url );
@@ -142,7 +152,7 @@
   
   const titleElement = document.createElement ( 'title' );
   
-  const d = window
+  const dcmnt = window
   
     .open ( '' )
     
@@ -150,13 +160,13 @@
     
   titleElement.append ( 'Asset Library Image URLs' );
   
-  d
+  dcmnt
   
     .head
     
     .append ( titleElement );
     
-  d
+  dcmnt
   
     .body
     
