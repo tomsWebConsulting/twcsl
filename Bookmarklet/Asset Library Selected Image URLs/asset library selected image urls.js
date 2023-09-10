@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.1
+    Version       : 0.2.2
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -14,11 +14,19 @@
     
     */
     
-  const selector = '.asset-item input[checked]';
+  let selector = '[data-test="file-drop-container"] table';
   
+  const isListLayout = document
+  
+    .querySelector ( selector )
+    
+    !=
+    
+    null;
+    
   const title = 'Asset Library Selected Image URLs';
   
-  const version = '0.2.1';
+  const version = '0.2.2';
   
   let s = `${ title } v${ version }, License < ` +
     
@@ -28,13 +36,25 @@
     
   console.log ( s );
   
+  if ( ! isListLayout ) {
+  
+    s = `${ title } :\n\nPlease select the list layout.`;
+    
+    alert ( s );
+    
+    return;
+    
+    }
+    
+  selector = '.asset-item input[checked]';
+  
   let elements = document
   
     .querySelectorAll ( selector );
     
   if ( ! elements.length ) {
   
-    s = `${ title } :\n\nPlease select Asset Library images.`;
+    s = `${ title } :\n\nPlease select images.`;
     
     alert ( s );
     

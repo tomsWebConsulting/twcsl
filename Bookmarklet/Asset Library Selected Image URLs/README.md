@@ -8,7 +8,7 @@ List selected image URLs in the Asset Library.
 
 ### Version
 
-  * 0.2.1
+  * 0.2.2
 
 #### SS Versions
 
@@ -28,6 +28,17 @@ List selected image URLs in the Asset Library.
   the URL for a bookmark in your browser named **Asset Library Selected Image
   URLs**.
 
+## How to Use
+
+* Go to the Assest Library.
+
+* Select the list layout.
+
+* Select some images.
+
+* Select the **Asset Library Selected Image URLs** bookmark. A new window/tab
+  should appear with a list of image URLs.
+
 ## What is a bookmarket?
 
 Wikipedia has a nice entry on [bookmarklet][3].
@@ -37,7 +48,8 @@ Wikipedia has a nice entry on [bookmarklet][3].
 The code attempts to open a new window/tab with a listing of selected Asset
 Library image URLs. If you are using a pop-up or ad blocker, you will need to
 allow pop-ups for each site where you use the bookmarklet. If you select a large
-number of images, it can take a moment for the window with the URLs to populate.
+number of images, it can take a moment for the window/tab with the URLs to
+populate.
 
 ## Make a Donation
 
@@ -45,6 +57,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2023-09-05**
+
+  * added a list layout check
+  * bumped version to 0.2.2
+  
 * **2023-09-04**
 
   * added some debugging code
