@@ -1,0 +1,189 @@
+<!--
+
+  begin store page list category section reveal
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.3.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : twcsl
+                  
+                  page section first blank hide
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://bit.ly/3f6lhq2 >.
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #siteWrapper {
+    
+      --twc-page-section-display : none;
+      
+      }
+      
+    html:not( .squarespace-damask ) #page .page-section:not( .collection-type-products ) {
+    
+      display : var( --twc-page-section-display );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.3.0';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Store Page List Category Section Reveal v${ version }, ` +
+        
+        'License < https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+    
+      const codeKey = 'twc-splcsr';
+      
+      const selectorKey = '.page-section';
+    
+      if ( window.twc == undefined ) window.twc = { };
+    
+      if ( twc.data == undefined ) twc.data = { };
+    
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+    
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+    
+        twc
+      
+          .data
+        
+          .hideShow
+        
+          [ selectorKey ]
+        
+          =
+        
+          [ ];
+        
+      twc
+    
+        .data
+      
+        .hideShow
+      
+        [ selectorKey ]
+      
+        .push ( `--${ codeKey }` );
+      
+      ( ( ) => {
+      
+        const b = ! twcsl.page.store.list.is;
+        
+        if ( b ) return; // bail if not list
+        
+        const selector = `x-${ codeKey }`;
+        
+        const $elements = $( selector );
+        
+        let categories = twcsl.page.store.list.categories;
+        
+        categories = categories &&
+        
+          $elements
+          
+            .text ( )
+            
+            .includes ( `${ categories }\n` )
+            
+          ? categories : 'default';
+          
+        $elements
+        
+          .filter ( function ( ) {
+          
+            const b = ! this
+            
+              .textContent
+              
+              .includes ( `${ categories }\n` );
+              
+            return b;
+            
+            } )
+            
+          .parents ( '.page-section' )
+          
+          .remove ( )
+          
+          .end ( )
+          
+          .end ( )
+          
+          .parents ( '.fe-block, .sqs-block-code' )
+          
+          .remove ( );
+          
+        } ) ( );
+        
+      let i = twc
+        
+        .data
+          
+        .hideShow
+          
+        [ selectorKey ]
+          
+        .indexOf ( `--${ codeKey }` )
+          
+      if ( i != -1 )
+        
+        twc
+          
+          .data
+            
+          .hideShow
+            
+          [ selectorKey ]
+            
+          .splice ( i, 1 );
+            
+      i = twc
+        
+        .data
+          
+        .hideShow
+          
+        [ selectorKey ]
+          
+        .length;
+          
+      if ( ! i )
+        
+        $( '#sections' )
+          
+          .css ( '--twc-page-section-display', 'flex' );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store category section reveal -->
