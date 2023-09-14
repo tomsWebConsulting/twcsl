@@ -36,8 +36,8 @@ Store category page custom headers.
 * Install [Page Section First Blank Hide][5]. After you install Page Section
   First Blank Hide be sure to continue on with the rest of the steps.
   
-* Add code from file **[store category section reveal.html][7]** to Store
-  Settings > Advanced > Page Header Code Injection for the store page.
+* Add code from file **[store page list category section reveal.html][7]** to
+  Store Settings > Advanced > Page Header Code Injection for the store page.
   
 * In the store page add a page section. Set the section up as desired. Add a 
   code block at the top of the section with the following code.
@@ -142,5 +142,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page%20Section%20First%20Blank%20Hide#quick-install
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
-[7]: store%20category%20section%20reveal.html#L1
+[7]: store%20page%20list%20category%20section%20reveal.html#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
