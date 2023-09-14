@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 250 effects. Each effect has it's own version number, code,
+twcsl contains 251 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -151,6 +151,8 @@ not necessarily designed to work together.
       
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
         
+    * [List](Page/Store/List)
+      
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
       
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
@@ -407,6 +409,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Category Section Reveal](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Section%20Reveal)
+          
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
   * [Page Section Attribute Id Add](v7.1/Page%20Section%20Attribute%20Id%20Add)
@@ -482,8 +486,6 @@ not necessarily designed to work together.
   * [Store Categories Cache](v7.1/Store%20Categories%20Cache)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
-    
-  * [Store Category Section Reveal](v7.1/Store%20Category%20Section%20Reveal)
     
   * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
     
