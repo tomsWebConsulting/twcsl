@@ -1,0 +1,47 @@
+<style>
+
+  /*
+  
+    store page detail variant display button readability fix
+    
+    License     : < https://tinyurl.com/s872fb68 >
+    
+    Version     : 0.1.0
+    
+    SS Version  : 7.1
+    
+    Fluid
+    Engine
+    Compatible  : Not Applicable
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  .secondary-button-style-outline .site-wrapper .ProductItem-details .variant-radiobtn-wrapper label.sqs-button-element--secondary {
+  
+    border-color : hsla( var( --safeDarkAccent-hsl ), 0.4 );
+    
+    }
+    
+  @media ( hover : hover ) {
+  
+    .secondary-button-style-outline .site-wrapper .ProductItem-details .variant-radiobtn-wrapper label.sqs-button-element--secondary:hover {
+    
+      border-color : border-color: var( --secondaryButtonBackgroundColor );
+      background-color : unset;
+      color : var( --secondaryButtonBackgroundColor );
+      
+      }
+      
+    }
+    
+  .ProductItem-details .variant-radiobtn-wrapper input[ type="radio" ]:checked + label.sqs-button-element--secondary {
+  
+    border-color : var( --secondaryButtonBackgroundColor );
+    
+    }
+    
+  </style>
