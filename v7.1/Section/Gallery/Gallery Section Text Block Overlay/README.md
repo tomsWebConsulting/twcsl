@@ -29,7 +29,7 @@ Add styled text overlays to gallery section images.
 ## Install
 
 * Add code from file **[gallery section text block overlay.less][5]** to
-  Website > Website Tools > Design > Custom CSS.
+  Website > Website Tools > Custom CSS.
   
 * Add the following to Settings > Developer Tools > Code Injection > HEADER.
   
