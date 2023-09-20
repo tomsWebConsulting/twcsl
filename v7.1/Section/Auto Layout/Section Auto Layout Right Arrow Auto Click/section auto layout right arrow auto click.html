@@ -1,0 +1,323 @@
+<!--
+
+  begin section auto layout right arrow auto click
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.3.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : jQuery
+  
+  Note          : this effect is not active in SS Preview to test it use
+                  private browsing < https://tinyurl.com/ynessvsf >
+                  
+                  only slideshow banner and carousel auto layouts are
+                  supported
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #siteWrapper {
+    
+      --twc-user-items-list-section : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) .user-items-list-section {
+    
+      visibility : var( --twc-user-items-list-section );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.3.0';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Section Auto Layout Right Arrow Auto Click v${ version }, License < ` +
+        
+        'https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const codeKey = 'twc-alraac';
+    
+      const selectorKey = '.user-items-list-section';
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      if ( twc.data == undefined ) twc.data = { };
+      
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          =
+          
+          [ ];
+          
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .push ( `--${ codeKey }` );
+        
+      ( ( ) => {
+      
+        const autoLayoutSelector = [
+        
+          '.user-items-list-banner-slideshow',
+          
+          '.user-items-list-carousel',
+          
+          ]
+          
+          .join ( ', ' )
+          
+        const $elements = $( autoLayoutSelector );
+        
+        if ( ! $elements.length ) return; // bail if no auto layouts of interest
+        
+        const optionsGlobal = {
+        
+          clickIntervalSeconds : 6,
+          
+          killUponUserAction : true
+          
+          };
+          
+        const selector = `x-${ codeKey }`;
+        
+        const $element = $( selector );
+        
+        const isGlobal = Boolean (
+        
+          $element.length
+          
+          );
+          
+        if ( isGlobal ) {
+        
+          // begin clickIntervalSeconds
+          
+            let value = $element
+            
+              .attr ( 'data-click-interval-seconds' );
+              
+            value = Number ( value );
+            
+            if ( ! isNaN ( value ) )
+            
+              optionsGlobal.clickIntervalSeconds = value;
+              
+            // end clickIntervalSeconds
+            
+          // begin killUponUserAction
+          
+            value = $element
+            
+              .attr ( 'data-kill-upon-user-action' );
+              
+            if ( value != undefined ) {
+            
+              value = value
+              
+                .toLowerCase ( );
+                
+              optionsGlobal.killUponUserAction =
+              
+                value == 'false' ? false : true;
+                
+              }
+              
+            // end killUponUserAction
+            
+          }
+          
+        $elements.each ( function ( ) {
+        
+          const options =
+          
+            JSON.parse ( JSON.stringify ( optionsGlobal ) );
+            
+          const $this = $( this );
+          
+          let $element = $this
+          
+            .siblings ( '.list-section-title' )
+            
+            .find ( `p:contains(${ codeKey })` );
+            
+          const isLocal = Boolean (
+          
+            $element.length
+            
+            );
+            
+          let b = ! ( isGlobal || isLocal );
+          
+          if ( b ) return; // bail if not global or local
+          
+          if ( isLocal ) {
+          
+            let o = $element
+            
+              .text ( )
+              
+              .replace ( /[“”]/g, '"' )
+              
+              .split ( ':' )
+              
+              .slice ( 1 )
+              
+              .join ( ':' );
+              
+            o = ! o ? { } : JSON.parse ( o );
+            
+            Object.assign ( options, o );
+            
+            $element.remove ( );
+            
+            $element = $element
+            
+              .prevObject;
+              
+            b = $element
+            
+              .children ( )
+              
+              .length;
+              
+            if ( ! b ) {
+            
+              const selector = '.section-title-vertical-padding-spacer';
+              
+              $element.remove ( );
+              
+              $element = $element
+              
+                .prevObject;
+                
+              $element
+              
+                .siblings ( selector )
+                
+                .remove ( );
+                
+              }
+              
+            if ( o.clickIntervalSeconds < 0 ) return true; // continue
+            
+            }
+            
+          const selector = '.mobile-arrow-button--right';
+          
+          $( selector, $this ).each ( function ( ) {
+          
+            const click = ( ) => {
+            
+              const selector = '.sqs-modal-lightbox-focused';
+              
+              const $element = $( selector );
+              
+              if ( $element.length ) return; // bail if modal lightbox focused
+              
+              $this.click ( );
+              
+              }
+              
+            const id =
+            
+              setInterval ( click, options.clickIntervalSeconds * 1000 );
+              
+            const $this = $( this );
+            
+            const $pageSection = $this
+            
+              .parents ( '.page-section' );
+              
+            // continue if no kill on user interaction
+            
+            if ( ! options.killUponUserAction ) return true;
+            
+            $pageSection.on ( 'mousedown touchstart', function ( ) {
+            
+              clearInterval ( id );
+              
+              $( this )
+              
+                .off ( 'mousedown touchstart' );
+                
+              } );
+              
+            } );
+            
+          } );
+          
+        } ) ( );
+        
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .pop ( `--${ codeKey }` );
+        
+      const l = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .length;
+        
+      if ( ! l )
+      
+        document
+        
+          .getElementById ( 'siteWrapper' )
+          
+          .style
+          
+          .setProperty ( '--twc-user-items-list-section', 'visible' );
+          
+      } );
+      
+    </script>
+    
+  <!-- end section auto layout right arrow auto click -->
