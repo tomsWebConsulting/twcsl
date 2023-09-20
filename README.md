@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 253 effects. Each effect has it's own version number, code,
+twcsl contains 254 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -267,8 +267,6 @@ not necessarily designed to work together.
     
   * [Auto Change Product Grid Image Opacity on Touch Screen Device](v7.1/Auto%20Change%20Product%20Grid%20Image%20Opacity%20on%20Touch%20Screen%20Device)
     
-  * [Auto Layout Right Arrow Auto Click](v7.1/Auto%20Layout%20Right%20Arrow%20Auto%20Click)
-    
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
   * [Blocks Boilerplate](v7.1/Blocks%20Boilerplate)
@@ -475,6 +473,10 @@ not necessarily designed to work together.
     
   * [Section](v7.1/Section)
     
+    * [Auto Layout](v7.1/Section/Auto%20Layout)
+      
+      * [Section Auto Layout Right Arrow Auto Click](v7.1/Section/Auto%20Layout/Section%20Auto%20Layout%20Right%20Arrow%20Auto%20Click)
+        
     * [Gallery](v7.1/Section/Gallery)
       
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
