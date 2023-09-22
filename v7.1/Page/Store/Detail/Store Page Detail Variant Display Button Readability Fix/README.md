@@ -26,6 +26,15 @@ Display store detail variant buttons in a more readable manner.
   fix.html][2]** to Store Settings > Advanced > Page Header Code Injection
   for the store page. Please see [Per-page code injection][3].
 
+## Note
+
+This effect effect doesn't cover all button style configurations. It is best
+suited to Secondary buttons with the following general style settings.
+            
+  * no fill
+    
+  * outline is 1px or more
+
 ## Demo
 
 You can see a [demo of this effect here][4].
