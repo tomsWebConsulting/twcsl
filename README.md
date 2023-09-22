@@ -149,6 +149,8 @@ not necessarily designed to work together.
     
     * [Detail](Page/Store/Detail)
       
+      * [Store Product Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
+        
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
         
     * [List](Page/Store/List)
@@ -180,8 +182,6 @@ not necessarily designed to work together.
 * [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
   
 * [Store Product Detail Add to Cart Button After Added Callback](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20After%20Added%20Callback)
-  
-* [Store Product Detail Add to Cart Button Text Change](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
   
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
