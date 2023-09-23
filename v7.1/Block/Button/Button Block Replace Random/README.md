@@ -36,8 +36,7 @@ Display random buttons in a section.
   
 * Add code from file **[button block replace random.html][5]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-  Please see [Per-page code injection][6]. Read the code for any instructions
-  within.
+  Please see [Per-page code injection][6].
 
 ## Make a Donation
 
