@@ -22,7 +22,7 @@ Display random buttons in a section.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [jQuery][15]
+  * [jQuery][4]
 
 ---
 
@@ -34,14 +34,14 @@ Display random buttons in a section.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   ```
   
-* Add code from file **[store product detail variant title selected
-  add.html][6]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page. Please see [Per-page code injection][7]. Read the code for any
-  instructions within.
+* Add code from file **[button block replace random.html][5]** to
+  Store Settings > Advanced > Page Header Code Injection for the store page.
+  Please see [Per-page code injection][6]. Read the code for any instructions
+  within.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -58,7 +58,7 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[15]: https://jquery.com/
-[6]: store%20product%20detail%20variant%20title%20selected%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://jquery.com/
+[5]: button%20block%20replace%20random.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
