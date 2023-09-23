@@ -1,0 +1,175 @@
+<!--
+
+  begin button block replace random
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview. to test it use
+                  private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #page {
+    
+      --twc-page-section-visibility : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) #page .page-section {
+    
+      visibility : var( --twc-page-section-visibility );
+      
+      }
+      
+    html:not( .squarespace-damask ) #page .page-section:last-child {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Button Block Replace Random v${ version }, ` +
+        
+        'License < https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+      
+      const codeKey = 'twc-bbrr';
+      
+      const selectorKey = '#page .page-section';
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      if ( twc.data == undefined ) twc.data = { };
+      
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          =
+          
+          [ ];
+          
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .push ( `--${ codeKey }` );
+        
+      ( ( ) => {
+      
+        if ( window.frameElement !== null ) return; // bail if in preview
+        
+        let selector = `${ codeKey }[data-destination]`;
+        
+        const $destination = $( selector )
+        
+          .parents ( '.page-section' );
+          
+        selector = `${ codeKey }[data-source]`;
+        
+        const $source = $( selector )
+        
+          .parents ( '.page-section' );
+          
+        selector = `${ codeKey }`;
+        
+        $( selector ).remove ( );
+        
+        selector = '.sqs-block-button';
+        
+        $( selector, $destination )
+        
+          .each ( function ( ) {
+          
+            let $button = $( selector, $source );
+            
+            const i = Math.floor ( Math.random ( ) * $button.length );
+            
+            $button = $button.eq ( i );
+            
+            $( this )
+            
+              .replaceWith ( $button );
+              
+            } );
+            
+        } ) ( );
+        
+      let i = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .indexOf ( `--${ codeKey }` )
+        
+      if ( i != -1 )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .splice ( i, 1 );
+          
+      i = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .length;
+        
+      if ( ! i )
+      
+        $( '#page' )
+        
+          .css ( '--twc-page-section-visibility', 'visible' );
+          
+      } );
+      
+    </script>
+    
+  <!-- end button block replace random -->
