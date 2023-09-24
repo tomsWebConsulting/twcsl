@@ -37,10 +37,45 @@ Display random buttons in a section.
 * Add code from file **[button block replace random.html][5]** to
   Page Settings > Advanced > Page Header Code Injection for the page. Please see
   [Per-page code injection][6].
+  
+* Buttons
+
+  * Destination
+    
+    The destination buttons are the buttons that will be replaced by randomly
+    selected source buttons.
+    
+    * Add button blocks to a section. There is no need to customize the buttons,
+      other than their placement, as they will be replaced with source buttons.
+      
+    * Add a code block with the following code to the same section.
+      
+      ```html
+      <twc-bbrr data-destination/>
+      ```
+      
+  * Source
+    
+    The source buttons are the buttons that will be selected randomly to replace
+    the destination buttons.
+    
+    * Add a section at the bottom of the page.
+    
+    * Add a code block with the following code.
+      
+      ```html
+      <twc-bbrr data-source/>
+      ```
+      
+    * Add your button blocks.
+
+## Note
+
+This effect is not active in SS Preview to test it use [private browsing][7].
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -60,4 +95,5 @@ Please consider [making a donation][7].
 [4]: https://jquery.com/
 [5]: button%20block%20replace%20random.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
