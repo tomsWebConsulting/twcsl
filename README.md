@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 257 effects. Each effect has it's own version number, code,
+twcsl contains 260 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -243,9 +243,15 @@ not necessarily designed to work together.
       
     * [Store Product Detail Back to Url Change](v7.0/Montauk%20Template%20Family/Store%20Product%20Detail%20Back%20to%20Url%20Change)
       
-  * [Product Block Improperly Encoded Ampersand Fix](v7.0/Product%20Block%20Improperly%20Encoded%20Ampersand%20Fix)
+  * [Page](v7.0/Page)
     
-  * [Store Category Page Description Add](v7.0/Store%20Category%20Page%20Description%20Add)
+    * [Store](v7.0/Page/Store)
+      
+      * [List](v7.0/Page/Store/List)
+        
+        * [Store Page List Category Description Add](v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add)
+          
+  * [Product Block Improperly Encoded Ampersand Fix](v7.0/Product%20Block%20Improperly%20Encoded%20Ampersand%20Fix)
     
   * [Store Product Details Reorder](v7.0/Store%20Product%20Details%20Reorder)
     
