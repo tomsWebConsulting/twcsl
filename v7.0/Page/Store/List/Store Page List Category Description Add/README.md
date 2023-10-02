@@ -1,4 +1,4 @@
-# Store Category Page Description Add
+# Store Page List Category Description Add
 
 ### [License][1]
 
