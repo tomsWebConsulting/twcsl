@@ -14,7 +14,7 @@
 
 Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
-`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>`
+`<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`
 
 Add code from file
 **[header social icon urls change based on language.html](header%20social%20icon%20urls%20change%20based%20on%20language.html#L1)**
