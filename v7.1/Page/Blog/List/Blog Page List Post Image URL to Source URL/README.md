@@ -37,14 +37,14 @@ Change blog post image URL to source URL.
   
     * Add code from file **[blog page list post image url to source
       url.html][6]** to Blog Settings > Advanced > Page Header Code Injection
-      for the blog page. Please see [per-page code injection][7]. Please see
-      [Add code to code injection][8].
+      for the blog page. Please see [per-page code injection][7].
       
   * Site-wide
   
     * Add code from file **[blog page list post image url to source
       url.html][6]** to Settings > Developer Tools > Code Injection > FOOTER.
-      
+      Please see [Add code to code injection][8].
+
 * Read the code for any instructions within.
 
 ## Make a Donation
