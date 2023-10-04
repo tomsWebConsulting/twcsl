@@ -1,0 +1,75 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      blog page list post image url to source url
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.1
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : twcsl
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    let targetAtttributeValue = ''; /* use _self | _blank | _parent | _top |
+                                       framename see
+                                       < https://mzl.la/2Q0JROF > */
+    
+    // do not change anything below, there be the borg here
+    
+    if ( ! twcsl.page.blog.list.is ) return; // bail if not blog listing
+    
+    $( '.blog-title .passthrough-link' )
+    
+      .filter ( function ( ) {
+      
+        const b = $( this ).attr ( 'target' ) !== undefined;
+        
+        return b;
+        
+        } )
+        
+      .each ( function ( ) {
+      
+        const $this = $( this );
+        
+        const url = $this.attr ( 'href' );
+        
+        const $imageLink = $this
+        
+          .parents ( '.blog-item' )
+          
+          .find ( '.image-wrapper' )
+          
+            .attr ( 'href', url );
+            
+        if ( ! targetAtttributeValue ) {
+        
+          const value = $this.attr ( 'target' );
+          
+          if ( value !== undefined )
+          
+            targetAtttributeValue = value;
+            
+          }
+          
+        if ( targetAtttributeValue )
+        
+          $imageLink.attr ( 'target', targetAtttributeValue );
+          
+        } );
+        
+    } );
+    
+  </script>
