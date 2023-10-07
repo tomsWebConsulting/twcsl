@@ -431,6 +431,8 @@ not necessarily designed to work together.
           
         * [Store Page List Category Section Reveal](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Section%20Reveal)
           
+      * [Store Page Product Element Hide](v7.1/Page/Store/Store%20Page%20Product%20Element%20Hide)
+        
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
   * [Page Section Attribute Id Add](v7.1/Page%20Section%20Attribute%20Id%20Add)
@@ -526,8 +528,6 @@ not necessarily designed to work together.
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
   * [Store Product Detail Gallery Thumbnails Pill Segmented](v7.1/Store%20Product%20Detail%20Gallery%20Thumbnails%20Pill%20Segmented)
-    
-  * [Store Product Detail Hide](v7.1/Store%20Product%20Detail%20Hide)
     
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
     
