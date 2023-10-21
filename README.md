@@ -153,6 +153,8 @@ not necessarily designed to work together.
     
     * [Detail](Page/Store/Detail)
       
+      * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
+        
       * [Store Product Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
         
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
@@ -204,8 +206,6 @@ not necessarily designed to work together.
 * [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
-  
-* [Store Product Detail Variant Selected Callback](Store%20Product%20Detail%20Variant%20Selected%20Callback)
   
 * [Store Product Detail Variant Sold Out Remove](Store%20Product%20Detail%20Variant%20Sold%20Out%20Remove)
   
@@ -421,6 +421,8 @@ not necessarily designed to work together.
       
       * [Detail](v7.1/Page/Store/Detail)
         
+        * [Store Page Detail Additional Info Add Footer Boilerplate](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
+          
         * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
         * [Store Page Detail Variant Display Button Readability Fix](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Readability%20Fix)
@@ -526,8 +528,6 @@ not necessarily designed to work together.
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
   * [Store Product Detail Add To Cart Show After Date Time](v7.1/Store%20Product%20Detail%20Add%20To%20Cart%20Show%20After%20Date%20Time)
-    
-  * [Store Product Detail Additional Info Add Footer Boilerplate](v7.1/Store%20Product%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
     
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
