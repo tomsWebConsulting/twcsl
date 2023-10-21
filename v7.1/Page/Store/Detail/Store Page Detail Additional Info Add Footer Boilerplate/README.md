@@ -36,8 +36,8 @@ Add footer boilerplate section elements to product detail additional info.
   for any instructions within.
   
 * Add code from file **[store page detail additional info add footer
-  boilerplate.html][7]** to Website > Website Tools > Code Injection > HEADER.
-  Please see [Add code to code injection][8].
+  boilerplate.html][7]** to Store Settings > Advanced > Page Header Code
+  Injection for the store page. Please see [per-page code injection][8].
   
 * Add a [Classic Editor][9] section to the footer.
 
@@ -98,7 +98,7 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: store%20page%20detail%20additional%20info%20add%20footer%20boilerplate.css#L1
 [7]: store%20page%20detail%20additional%20info%20add%20footer%20boilerplate.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/6421525446541-Editing-your-site-with-Fluid-Engine#toc-fluid-engine-vs--classic-editor
 [10]: https://www.heathertovey.com/squarespace-id-finder/
 [11]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
