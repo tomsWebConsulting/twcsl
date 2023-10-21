@@ -60,5 +60,5 @@ Please consider [making a donation][6].
 [2]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#install-options
 [4]: form%20block%20post-submit%20redirect%20url%20email%20parameter%20add.html#L1
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

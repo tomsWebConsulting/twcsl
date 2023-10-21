@@ -239,7 +239,7 @@ Please consider [making a donation][10].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: store%20page%20list%20categories%20description%20add.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

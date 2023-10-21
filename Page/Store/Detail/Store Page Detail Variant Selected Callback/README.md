@@ -98,5 +98,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: store%20page%20detail%20variant%20selected%20callback.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
