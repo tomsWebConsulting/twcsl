@@ -1,201 +1,98 @@
-<!--
+<script>
 
-  begin store page detail additional info add footer boilerplate
+  $( ( ) => {
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.2.0
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : No
-  
-  Dependencies  : twcsl
-  
-  Note          : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-                  
-                  this effect is not active in SS Preview to test it use
-                  private browsing < https://tinyurl.com/ynessvsf >
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <style>
-  
-    html:not( .squarespace-damask ) #footer-sections {
+    /*
     
-      --twc-footer-display : none;
+      store page detail additional info add footer boilerplate
       
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.1
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : No
+      
+      Dependencies  : twcsl
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://tinyurl.com/ynessvsf >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.2.1';
+    
+    const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+    
+      'Store Product Detail Additional Info Add Footer Boilerplate ' +
+      
+      `v${ version }, License < https://tinyurl.com/s872fb68 >`;
+      
+    console.log ( s );
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+    
+    let selector = '#footer-sections x-twc-spdaiafb';
+    
+    let $element = $( selector );
+    
+    if ( ! $element.length ) return; // bail if no custom tag
+    
+    let position = $element.attr ( 'data-position' );
+    
+    $element = $( selector )
+    
+      .parents ( '.sqs-block-code' );
+      
+    const $row = $element
+    
+      .parents ( '.sqs-row' );
+      
+    const l = $( '.sqs-block', $row ).length;
+    
+    const $boilerplate = $element
+    
+      .parents ( '.sqs-grid-12' )
+      
+      .children ( );
+      
+    selector = '.ProductItem .ProductItem-additional .sqs-grid-12';
+    
+    const $additionalInfo = $( selector );
+    
+    $element.remove ( );
+    
+    if ( position === undefined )
+    
+      position = 'bottom';
+      
+    switch ( position ) {
+    
+      case 'bottom' :
+      
+        $additionalInfo.append ( $boilerplate );
+        
+        break;
+        
+      case 'top' :
+      
+        $additionalInfo.prepend ( $boilerplate );
+        
+        break;
+        
       }
       
-    html:not( .squarespace-damask ) #footer-sections .page-section {
+    if ( ! l ) $row.remove ( );
     
-      display : var( --twc-footer-display );
-      
-      }
-      
-    </style>
+    } );
     
-  <script>
-
-    $( ( ) => {
-    
-      const version = '0.2.0';
-      
-      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
-      
-        'Store Page Detail Additional Info Add Footer Boilerplate ' +
-        
-        `v${ version }, License < https://tinyurl.com/s872fb68 >`;
-        
-      console.log ( s );
-      
-      const codeKey = 'twc-spdaiafb';
-      
-      const selectorKey = '#footer-sections .page-section';
-      
-      if ( window.twc === undefined ) window.twc = { };
-      
-      if ( twc.data === undefined ) twc.data = { };
-      
-      if ( twc.data.hideShow === undefined ) twc.data.hideShow = { };
-      
-      if ( twc.data.hideShow [ selectorKey ] === undefined )
-      
-        twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          =
-          
-          [ ];
-          
-      twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .push ( `--${ codeKey }` );
-        
-      ( ( ) => {
-      
-        if ( window.frameElement !== null ) return; // bail if in preview
-        
-        if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
-        
-        let selector = '#footer-sections x-twc-spdaiafb';
-        
-        let $element = $( selector );
-        
-        if ( ! $element.length ) return; // bail if no element
-        
-        $element = $element
-        
-          .parents ( '.sqs-block-code' );
-          
-        const $row = $element
-        
-          .parents ( '.sqs-row' );
-          
-        const $boilerplate = $row
-        
-          .parents ( '.sqs-grid-12' )
-          
-          .children ( );
-          
-        const $pageSection = $boilerplate
-        
-          .parents ( '.page-section' );
-          
-        let position = $element.attr ( 'data-position' );
-        
-        selector = '.ProductItem .ProductItem-additional .sqs-grid-12';
-        
-        const $additionalInfo = $( selector );
-        
-        $element.remove ( );
-        
-        const l = $( '.sqs-block', $row ).length;
-        
-        if ( position === undefined )
-        
-          position = 'bottom';
-          
-        switch ( position ) {
-        
-          case 'bottom' :
-          
-            $additionalInfo.append ( $boilerplate );
-            
-            break;
-            
-          case 'top' :
-          
-            $additionalInfo.prepend ( $boilerplate );
-            
-            break;
-            
-          }
-          
-        $pageSection.remove ( );
-        
-        if ( ! l ) $row.remove ( );
-        
-        } ) ( );
-        
-      let i = twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .indexOf ( `--${ codeKey }` )
-        
-      if ( i != -1 )
-      
-        twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .splice ( i, 1 );
-          
-      i = twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .length;
-        
-      if ( ! i )
-      
-        $( '#footer-sections' )
-        
-          .css ( '--twc-footer-display', 'flex' );
-          
-      } );
-      
-    </script>
-    
-  <!-- end store page detail additional info add footer boilerplate -->
+  </script>
