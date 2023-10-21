@@ -8,7 +8,7 @@ Create effects when a variant is selected.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
