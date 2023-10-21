@@ -1,6 +1,6 @@
 # Cart Prices Change
 
-### [License][99]
+### [License][1]
 
 ### Version 0.3.1
 
@@ -12,7 +12,7 @@
 
 ## Quick Install
 
-* Install the code from **[Cart Page Observe Changes][1]**. In the code find the
+* Install the code from **[Cart Page Observe Changes][2]**. In the code find the
   following line.
   
   ```javascript
@@ -21,9 +21,9 @@
   
   Change **undefined** to **cpc**.
   
-* Add code from file **[cart prices change.html][2]** to Settings > Advanced >
-  Code Injection > FOOTER **before** the Cart Page Observe Changes code. Read
-  the code for any instructions within.
+* Add code from file **[cart prices change.html][3]** to Website > Website
+  Tools > Code Injection > FOOTER **before** the Cart Page Observe Changes code.
+  Read the code for any instructions within.
 
 ## searchReplaceText Example Lines
 
@@ -43,7 +43,7 @@ change. No code can change the checkout page. It is an SS security feature.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -82,7 +82,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
-[2]: cart%20prices%20change.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
+[3]: cart%20prices%20change.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

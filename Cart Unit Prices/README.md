@@ -1,6 +1,6 @@
 # Cart Unit Prices
 
-### [License][99]
+### [License][1]
 
 ### Version 0.1d0
 
@@ -12,26 +12,22 @@
 
 ## Quick Install
 
-* Install code from
-  **[Cart Prices Sqs-Money-Native Add](https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Prices%20Sqs-Money-Native%20Add)**.
+* Install code from **[Cart Prices Sqs-Money-Native Add][2]**.
   
-* Add code from file
-  **[cart unit prices.html](cart%20unit%20prices.html#L1)**
-  to Settings > Advanced > Code Injection > FOOTER after the **cart prices
-  change** code.
+* Add code from file **[cart unit prices.html][3]** to Website > Website Tools >
+  Code Injection > FOOTER after the **cart prices change** code.
 
 ## Notes
 
-Adding unit prices to the cart page does not effect the store/product
-pages, checkout, or other SS pages/backend storage. This is purely a cosmetic
-change. No code can change the checkout page. It is an SS security feature.
+Adding unit prices to the cart page does not effect the store/product pages,
+checkout, or other SS pages/backend storage. This is purely a cosmetic change.
+No code can change the checkout page. It is an SS security feature.
 
 The effect is not active on mobile.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -45,4 +41,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Cart%20Prices%20Sqs-Money-Native%20Add
+[3]: cart%20unit%20prices.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

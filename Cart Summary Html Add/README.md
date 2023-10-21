@@ -15,12 +15,12 @@
 * Install [Cart Page Observe Changes][2]. After you install Cart Page Observe
   Changes be sure to continue on with the rest of the steps.
   
-* Add code from file **[cart summary html add.html][3]** to Settings >
-  Advanced > Code Injection > FOOTER **before** the **cart page observe
-  changes** code. In the **cart page observe changes** code set the
-  nodesAddedCallback constant to cartSummaryHtmlAdd.
+* Add code from file **[cart summary html add.html][3]** to Website > Website
+  Tools > Code Injection > FOOTER **before** the **cart page observe changes**
+  code. In the **cart page observe changes** code set the nodesAddedCallback
+  constant to cartSummaryHtmlAdd.
   
-```javascript
+  ```javascript
     const nodesRemovedCallback = cartSummaryHtmlAdd;
   ```
   
