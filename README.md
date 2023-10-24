@@ -423,6 +423,8 @@ not necessarily designed to work together.
         
         * [Store Page Detail Additional Info Add Footer Boilerplate](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
           
+        * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
+          
         * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
         * [Store Page Detail Variant Display Button Readability Fix](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Readability%20Fix)
@@ -548,8 +550,6 @@ not necessarily designed to work together.
   * [Store Product Details Display Flex Desktop](v7.1/Store%20Product%20Details%20Display%20Flex%20Desktop)
     
   * [Store Product Details Natural Order Desktop](v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop)
-    
-  * [Store Product Details Reorder Desktop](v7.1/Store%20Product%20Details%20Reorder%20Desktop)
     
   * [Store Product Grid Images Hide](v7.1/Store%20Product%20Grid%20Images%20Hide)
     
