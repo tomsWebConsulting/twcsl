@@ -1,0 +1,63 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      section blank attribute id add or change
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.1
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Dependencies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.2.1';
+    
+    const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+    
+      `Section Blank Attribute Id Add or Change v${ version }, License < ` +
+      
+      'https://tinyurl.com/s872fb68 >';
+      
+    console.log ( s );
+    
+    $( 'x-twc-sbaiaoc' ).each ( function ( ) {
+    
+      const $this = $( this );
+      
+      const id = $this
+      
+        .text ( )
+        
+        .trim ( );
+        
+      $this
+      
+        .parents ( '.page-section' )
+        
+        .attr ( 'id', id );
+        
+      $this
+      
+        .parents ( '.sqs-block, .fe-block' )
+        
+        .remove ( );
+        
+      } );
+      
+    } );
+    
+  </script>
