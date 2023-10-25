@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 265 effects. Each effect has it's own version number, code,
+twcsl contains 266 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -443,8 +443,6 @@ not necessarily designed to work together.
         
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
-  * [Page Section Attribute Id Add](v7.1/Page%20Section%20Attribute%20Id%20Add)
-    
   * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
   * [Page Section Background Color Change on Scroll](v7.1/Page%20Section%20Background%20Color%20Change%20on%20Scroll)
@@ -504,6 +502,10 @@ not necessarily designed to work together.
     * [Auto Layout](v7.1/Section/Auto%20Layout)
       
       * [Section Auto Layout Right Arrow Auto Click](v7.1/Section/Auto%20Layout/Section%20Auto%20Layout%20Right%20Arrow%20Auto%20Click)
+        
+    * [Blank](v7.1/Section/Blank)
+      
+      * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
         
     * [Gallery](v7.1/Section/Gallery)
       
