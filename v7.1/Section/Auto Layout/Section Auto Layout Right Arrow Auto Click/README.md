@@ -8,7 +8,7 @@ Auto click right arrow of Auto Layout section.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
@@ -66,7 +66,7 @@ Auto click right arrow of Auto Layout section.
     Code Injection > HEADER.
     
     ```html
-    <x-twc-alraac data-click-interval-seconds="6" data-kill-upon-user-action="true"/>
+    <x-twc-salraac data-click-interval-seconds="6" data-kill-upon-user-action="true"/>
     ```
     
     * Attributes
@@ -86,7 +86,7 @@ Auto click right arrow of Auto Layout section.
       Title Text on a line by itself.
       
       ```text
-      twc-alraac : { "clickIntervalSeconds" : 6, "killUponUserAction" : true }
+      twc-salraac : { "clickIntervalSeconds" : 6, "killUponUserAction" : true }
       ```
       
       * Properties
@@ -119,6 +119,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-10-25**
+  
+  * fix code key
+  * bumped version to 0.3.1
+  
 * **2023-09-19**
   
   * added support for global or section specific effects
