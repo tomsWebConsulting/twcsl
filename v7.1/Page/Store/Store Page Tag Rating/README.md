@@ -53,7 +53,7 @@ Add ratings to Store page products.
 
 ## How To Use
 
-Lets say you have site that sells bottles of wine. The bottles of wine have
+Lets say you have a site that sells bottles of wine. The bottles of wine have
 been rated by entities like Wine Spectator. A bottle of wine you sell
 received a rating of 4 out of 5 stars and you want to display that rating to
 your site visitors to encourage sales.
