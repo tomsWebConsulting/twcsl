@@ -8,7 +8,7 @@ Reorder store page product detail elements.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
@@ -44,6 +44,7 @@ Reorder store page product detail elements.
   * Add to Cart button after Price
   
     ```css
+          --add-ons : unset;
           --add-to-cart-button : -1;
           --description : unset;
           --price : -1;
@@ -55,6 +56,7 @@ Reorder store page product detail elements.
   * Price, Variants, Quantity, Add to Cart, and Description
   
     ```css
+          --add-ons : unset;
           --add-to-cart-button : 4;
           --description : 5;
           --price : 1;
@@ -66,6 +68,7 @@ Reorder store page product detail elements.
   * Price after Description
   
     ```css
+          --add-ons : unset;
           --add-to-cart-button : unset;
           --description : -1;
           --price : unset;
@@ -80,6 +83,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2023-11-02**
+
+  * add support for add ons
+  * bumped version to 0.4.0
+  
 * **2023-10-23**
 
   * add support for title element of store layouts half, full, wrap
