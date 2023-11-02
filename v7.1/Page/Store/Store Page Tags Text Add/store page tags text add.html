@@ -1,0 +1,263 @@
+<!--
+
+  begin store page tags text add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  the code makes a call to an unofficial api for information
+                  that is not normally avaiable on the page
+                  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.sptta = {
+    
+      productDetailSelector : [
+      
+        '.ProductItem-details .ProductItem-details-checkout', // simple layout
+        
+         // full
+        
+        '.pdp-layout.pdp-layout-full-width-carousel .pdp-details .pdp-selection',
+          
+        '.pdp-layout.pdp-layout-full-bleed .pdp-details', // half
+        
+        '.pdp-layout.pdp-layout-wrap-around .pdp-details' // wrap
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-sptta {
+
+      display : flex;
+      gap : 2em;
+      list-style-position : inside;
+      padding : 0;
+      
+      }
+      
+    .products.collection-content-wrapper .grid-item .twc-sptta {
+
+      flex-direction : column;
+      gap : 0.25em;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = 'Tom\'s Web Consulting < http://www.tomsWeb.consulting >, ' +
+      
+        `Store Page Tags Text Add v${ version }, License < ` +
+        
+        'https://tinyurl.com/s872fb68 >';
+        
+      console.log ( s );
+      
+      if ( ! twcsl.page.store.is ) return; // bail if not store
+      
+      const collectionId = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collectionId;;
+        
+      const url =
+      
+        `/api/commondata/GetCollectionTags?collectionId=${ collectionId }`;
+        
+      $.getJSON ( url, function ( tags ) {
+      
+        const callback = ( i, tag ) => {
+        
+          const re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` );
+          
+          const m = tag
+          
+            .name
+            
+            .match ( re );
+            
+          // continue if tag doesn't match format
+          
+          if ( m == null ) return true;
+          
+          function callback ( ) {
+          
+            let url = `http://twc.sptta${ twcsl.page.store.urlSlug }`
+            
+            url = new URL ( url );
+            
+            url = new URLSearchParams ( url.search );
+            
+            url.append ( 'tag', tag.name );
+            
+            url = `${ twcsl.page.store.urlSlug }?${ url }`;
+            
+            const li = `
+            
+              <li data-tag-text="${ text }">
+              
+                <a href="${ url }">
+                
+                  ${ text }
+                  
+                  </a>
+                  
+                </li>
+                
+              `;
+              
+            let selector = [
+            
+              '.grid-main-meta',
+              
+              ]
+              
+              .concat ( options.productDetailSelector )
+              
+              .join ( ', ' );
+              
+            let $ul = $( selector, this );
+            
+            selector = `.${ codeKey }`;
+            
+            $ul = $( selector, $ul );
+            
+            if ( ! $ul.length ) {
+            
+              const html = `
+              
+                <ul class="${ codeKey }">
+                
+                  </ul>
+                  
+                `;
+                
+              $ul = $ul
+              
+                .prevObject
+                
+                .append ( html )
+                
+                .find ( `.${ codeKey }` );
+                
+              }
+              
+            $ul.append ( li );
+            
+            };
+            
+          const isDetail = twcsl.page.store.detail.is;
+          
+          const isList = twcsl.page.store.list.is;
+          
+          const tagNameToCssClassName = name => {
+          
+            const className = 'tag-'
+            
+              +
+              
+              name
+              
+                .replaceAll ( ' ', '-' )
+                
+                .toLowerCase ( )
+                
+                .replace ( /[^\w-]+/g, '' )
+                
+                .replaceAll ( '--', '-' );
+                
+            return className;
+            
+            };
+            
+          const text = m [ 1 ];
+          
+          const pageShow = m [ 2 ];
+          
+          const b = isList && pageShow == 'd' || isDetail && pageShow == 'l';
+          
+          if ( b ) return true; // continue
+          
+          const className =
+          
+            tagNameToCssClassName ( m [ 0 ] );
+            
+          const selector = [
+          
+            '.products.collection-content-wrapper .grid-item',
+            
+            '.ProductItem', // simple layout
+            
+            '.pdp-layout' // full, half, and wrap layouts
+            
+            ]
+            
+            .join ( `.${ className }, ` )
+            
+            +
+            
+            `.${ className }`;
+            
+          // begin run through elements that match tag
+          
+            let $element = $( selector );
+            
+            if ( twcsl.page.store.detail.is )
+            
+              $element = $element.parent ( );
+              
+            $element.each ( callback );
+            
+          };
+          
+        const codeKey = 'twc-sptta';
+        
+        tags = tags.filter ( x => x.name.startsWith ( `${ codeKey } ` ) );
+        
+        if ( ! tags.length ) return; // bail if no tags of interest
+        
+        const options = twc.sptta;
+        
+        $.each ( tags, callback ) // run through the tags
+        
+        } );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store page tags text add -->
