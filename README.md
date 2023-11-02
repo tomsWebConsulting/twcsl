@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 266 effects. Each effect has it's own version number, code,
+twcsl contains 267 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -442,6 +442,8 @@ not necessarily designed to work together.
       * [Store Page Product Element Hide](v7.1/Page/Store/Store%20Page%20Product%20Element%20Hide)
         
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
+        
+      * [Store Page Tags Text Add](v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add)
         
   * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
