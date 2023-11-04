@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 267 effects. Each effect has it's own version number, code,
+twcsl contains 270 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -63,6 +63,12 @@ not necessarily designed to work together.
     
     * [Form Block Wrapper Observe Changes](Block/Form/Form%20Block%20Wrapper%20Observe%20Changes)
       
+  * [Summary](Block/Summary)
+    
+    * [Events](Block/Summary/Events)
+      
+      * [Summary Block Events End Time Remove](Block/Summary/Events/Summary%20Block%20Events%20End%20Time%20Remove)
+        
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Blog Category Page Category Attribute Add](Blog%20Category%20Page%20Category%20Attribute%20Add)
