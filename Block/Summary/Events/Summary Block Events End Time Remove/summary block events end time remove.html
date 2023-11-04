@@ -1,0 +1,82 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      begin summary block events end time remove
+      
+      License       : < https://bit.ly/3F8sn8W >
+      
+      Version       : 0.1.0-development.1
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const version = '0.1.0-development.1';
+    
+    const s = `Summary Block Events End Time Remove v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const callback = ( ) => {
+    
+      const selector = [
+      
+        '.sqs-block-summary-v2 .event-time-12hr',
+        
+        '.sqs-block-summary-v2 .event-time-24hr',
+        
+        '.sqs-block-summary-v2 .event-time-localized',
+        
+        ]
+        
+        .join ( ', ' );
+        
+      [
+      
+        ...
+        
+        document
+        
+          .querySelectorAll ( selector )
+          
+        ]
+        
+        .forEach ( e => {
+        
+          const text = 
+          
+            e
+            
+              .textContent
+              
+              .split ( ' – ' )
+              
+              [ 0 ];
+              
+          e.textContent = text;
+          
+          } );
+          
+      };
+      
+    document.addEventListener ( 'DOMContentLoaded', callback );
+    
+    } ) ( );
+    
+    /* end summary block events end time remove */
+    
+  </script>
