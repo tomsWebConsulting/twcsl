@@ -44,37 +44,37 @@ Reorder store page product detail elements.
   * Add to Cart button after Price
   
     ```css
-          --add-ons : unset;
-          --add-to-cart-button : -1;
-          --description : unset;
-          --price : -1;
-          --quantity : unset;
-          --title : unset; /* full, half, wrap layout only */
-          --variants : unset;
+        --add-ons : unset;
+        --add-to-cart-button : -1;
+        --description : unset;
+        --price : -1;
+        --quantity : unset;
+        --title : unset; /* full, half, wrap layout only */
+        --variants : unset;
     ```
     
   * Price, Variants, Quantity, Add to Cart, and Description
   
     ```css
-          --add-ons : unset;
-          --add-to-cart-button : 4;
-          --description : 5;
-          --price : 1;
-          --quantity : 3;
-          --title : unset; /* full, half, wrap layout only */
-          --variants : 2;
+        --add-ons : unset;
+        --add-to-cart-button : 4;
+        --description : 5;
+        --price : 1;
+        --quantity : 3;
+        --title : unset; /* full, half, wrap layout only */
+        --variants : 2;
     ```
     
   * Price after Description
   
     ```css
-          --add-ons : unset;
-          --add-to-cart-button : unset;
-          --description : -1;
-          --price : unset;
-          --quantity : unset;
-          --title : -1; /* full, half, wrap layout only */
-          --variants : unset;
+        --add-ons : unset;
+        --add-to-cart-button : unset;
+        --description : -1;
+        --price : unset;
+        --quantity : unset;
+        --title : -1; /* full, half, wrap layout only */
+        --variants : unset;
     ```
 
 ## Make a Donation
