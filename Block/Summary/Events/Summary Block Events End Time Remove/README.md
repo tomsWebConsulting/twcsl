@@ -60,7 +60,7 @@ Please consider [making a donation][7].
     form internationalization update
   * bumped version to 0.2.0
   -->
-* **2023-11-01**
+* **2023-11-03**
 
   * initial version
 
