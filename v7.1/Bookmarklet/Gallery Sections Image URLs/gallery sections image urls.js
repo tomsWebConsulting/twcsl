@@ -24,9 +24,9 @@
     
     const version = '0.1.2';
     
-    const s = `Gallery Sections Image URLs v${ version }, License < ` +
-      
-      'https://tinyurl.com/s872fb68 >, ' +
+    const s = `Gallery Sections Image URLs v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
       
       'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
       

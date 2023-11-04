@@ -26,9 +26,9 @@
     
     [ 0 ];
     
-  let s = `${ title } v${ version }, License < ` +
+  let s = `${ title } v${ version }, ` +
     
-    'https://tinyurl.com/s872fb68 >, ' +
+    'License < https://tinyurl.com/s872fb68 >, ' +
     
     'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
     
