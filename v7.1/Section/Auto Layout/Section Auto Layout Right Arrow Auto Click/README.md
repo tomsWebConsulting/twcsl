@@ -8,7 +8,7 @@ Auto click right arrow of Auto Layout section.
 
 ### Version
 
-  * 0.3.1
+  * 0.3.2
 
 #### SS Version
 
@@ -52,7 +52,7 @@ Auto click right arrow of Auto Layout section.
       effect.
       
     * Add code from file **[section auto layout right arrow auto
-      click.html][5]** to Settings > Developer Tools > Code Injection > FOOTER.
+      click.html][5]** to Website > Website Tools > Code Injection > FOOTER.
       Please see [Add code to code injection][7]. Read the code for any
       instructions within.
 
@@ -62,14 +62,14 @@ Auto click right arrow of Auto Layout section.
 
   * Global
     
-    For a global effect add the following to Settings > Developer Tools >
+    For a global effect add the following to Website > Website Tools >
     Code Injection > HEADER.
     
     ```html
-    <x-twc-salraac data-click-interval-seconds="6" data-kill-upon-user-action="true"/>
+    <meta name="twc-salraac" content="click-interval-seconds=6, kill-upon-user-action=true" />
     ```
     
-    * Attributes
+    * content attribute value settings
     
       * data-click-interval-seconds
         
@@ -119,6 +119,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-11-06**
+  
+  * use meta tag instead of custom tag for global settings
+  * bumped version to 0.3.2
+  
 * **2023-10-25**
   
   * fix code key

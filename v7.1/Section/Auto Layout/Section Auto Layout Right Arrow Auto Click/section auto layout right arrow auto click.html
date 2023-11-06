@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.1
+  Version       : 0.3.2
   
   SS Version    : 7.1
   
@@ -46,7 +46,7 @@
   
     $( ( ) => {
     
-      const version = '0.3.0';
+      const version = '0.3.2';
       
       const s = `Section Auto Layout Right Arrow Auto Click v${ version }, ` +
       
@@ -116,7 +116,7 @@
           
           };
           
-        const selector = `x-${ codeKey }`;
+        const selector = `meta[name="${ codeKey }"]`;
         
         const $element = $( selector );
         
@@ -128,30 +128,44 @@
           
         if ( isGlobal ) {
         
+          const content = $element.attr ( 'content' );
+          
           // begin clickIntervalSeconds
           
-            let value = $element
+            let value = content
             
-              .attr ( 'data-click-interval-seconds' );
+              .match ( /click-interval-seconds=(\d+)/ );
               
-            value = Number ( value );
+            if ( value !== null ) {
             
-            if ( ! isNaN ( value ) )
-            
-              optionsGlobal.clickIntervalSeconds = value;
+              value = Number (
+              
+                value
+                
+                  [ 1 ]
+                  
+                );
+                
+              if ( ! isNaN ( value ) )
+              
+                optionsGlobal.clickIntervalSeconds = value;
+                
+              }
               
             // end clickIntervalSeconds
             
           // begin killUponUserAction
           
-            value = $element
+            value = content
             
-              .attr ( 'data-kill-upon-user-action' );
+              .match ( /kill-upon-user-action=(.+)/ );
               
-            if ( value != undefined ) {
+            if ( value !== null ) {
             
               value = value
               
+                [ 1 ]
+                
                 .toLowerCase ( );
                 
               optionsGlobal.killUponUserAction =
