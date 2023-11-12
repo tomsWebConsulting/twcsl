@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 270 effects. Each effect has it's own version number, code,
+twcsl contains 274 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -249,6 +249,14 @@ not necessarily designed to work together.
     
   * [Member Area Sign In and up Dialog Change](v7.0/Member%20Area%20Sign%20In%20and%20up%20Dialog%20Change)
     
+  * [Momentum Template](v7.0/Momentum%20Template)
+    
+    * [Page](v7.0/Momentum%20Template/Page)
+      
+      * [Gallery](v7.0/Momentum%20Template/Page/Gallery)
+        
+        * [Gallery Page Previous Next Links Add](v7.0/Momentum%20Template/Page/Gallery/Gallery%20Page%20Previous%20Next%20Links%20Add)
+          
   * [Montauk Template Family](v7.0/Montauk%20Template%20Family)
     
     * [Change Unable to Add Item to Cart Alert](v7.0/Montauk%20Template%20Family/Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert)
