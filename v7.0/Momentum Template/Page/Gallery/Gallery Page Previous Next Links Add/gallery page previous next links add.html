@@ -1,0 +1,135 @@
+<!--
+
+  begin gallery page previous next links add
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.0
+  
+  Template    : Momentum
+                
+                your template is not listed? then it is not currently supported
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-gppnla {
+    
+      bottom : 89px;
+      display : flex;
+      justify-content : space-between;
+      left : 50px;
+      position : fixed;
+      width : calc( 100vw - 100px );
+      z-index : 999;
+      
+      }
+      
+    .twc-gppnla a[href="#"] {
+    
+      display : none;
+      
+      }
+      
+    </style>
+  
+  <script>
+  
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      const version = '0.1.0';
+    
+      const s = `Gallery Page Previous Next Links Add v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+      console.log ( s );
+    
+      let selector = 'body.collection-type-gallery';
+      
+      let element = document
+      
+        .querySelector ( selector );
+        
+      if ( element == null ) return; // bail if not gallery page
+      
+      const codeKey = 'twc-gppnla';
+      
+      const xpath = `//p[starts-with(text(),'${ codeKey } :')]`;
+    
+      selector += ' #page .slide:first-child .image-detail-wrapper ' +
+      
+        '.image-description p:first-child';
+        
+      element = element
+      
+        .querySelector ( selector );
+        
+      element = document
+    
+        .evaluate ( xpath, element, null, XPathResult.FIRST_ORDERED_NODE_TYPE,
+      
+          null )
+        
+        .singleNodeValue;
+      
+      if ( element == null ) return; // bail if not our gallery
+      
+      const div = document
+      
+        .createElement ( 'div' );
+        
+      const elements = element
+      
+        .getElementsByTagName ( 'a' );
+        
+      const elementPrevious = elements
+      
+        [ 0 ]
+        
+        .classList
+        
+        .add ( `${ codeKey }-previous` );
+        
+      const elementNext = elements
+      
+        [ 1 ]
+        
+        .classList
+        
+        .add ( `${ codeKey }-next` );
+        
+      const slideshow = element
+      
+        .closest ( '.slideshow' );
+        
+      div
+      
+        .classList
+        
+        .add ( `${ codeKey }` );
+        
+      div
+      
+        .append ( ... elements )
+        
+      slideshow
+      
+        .append ( div );
+        
+      element.remove ( );
+      
+      } );
+      
+    </script>
+    
+  <!-- end gallery page previous next links add -->
