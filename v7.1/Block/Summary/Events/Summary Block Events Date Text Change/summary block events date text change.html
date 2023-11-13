@@ -1,0 +1,101 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      summary block events date text change
+      
+      License     : < https://tinyurl.com/s872fb68 >
+      
+      Version     : 0.1.0
+      
+      SS Version  : 7.1
+      
+      Fluid
+      Engine
+      Compatible  : Yes
+      
+      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const map = {
+    
+      /*
+      
+        the format of each line is a search text and a replacement text
+        
+        following is an example line. copy an example line below and paste
+        after the example lines. remove '// ' at beginning of pasted line.
+        repeat for as many times as needed
+        
+        */
+        
+      // '[enter search text here between single quotes replacing square brackets]' : '[enter replacement text here between single quotes replacing square brackets]',
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.1.0';
+    
+    const s = `Summary Block Events Date Text Change v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const selector = [
+    
+      'primary',
+      
+      'secondary'
+      
+      ]
+      
+      .map ( x => {
+      
+        const s = `.sqs-block-summary-v2 .summary-block-setting-${ x }` +
+        
+          `-metadata-date .summary-metadata--${ x } .summary-metadata-item` +
+          
+          '--date';
+          
+        return s;
+        
+        } )
+        
+      .join ( ', ' );
+      
+    document
+    
+      .querySelectorAll ( selector )
+      
+      .forEach ( e => {
+      
+        Object
+        
+          .entries ( map )
+          
+          .forEach ( x => {
+          
+            const text = e
+            
+              .textContent
+              
+              .replace ( x [ 0 ], x [ 1 ] );
+              
+            e.textContent = text;
+            
+            } );
+            
+        } );
+        
+    } );
+    
+  </script>
