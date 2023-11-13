@@ -2,7 +2,13 @@
 
 ### [License][1]
     
-### Version 0.1.2
+### Synopsis
+
+Alter member area sign up and in dialogs.
+
+### Version
+
+  * 0.1.2
 
 #### SS Version
 
@@ -29,8 +35,8 @@
   ```
   
 * Add code from file **[member area log in dialog change.html][5]** to
-  Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][6]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][6]. Read the code for any instructions within.
 
 ## Classes
 
