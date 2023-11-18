@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.3
+  Version       : 0.7.4
   
   SS Version    : 7.1
   
@@ -98,9 +98,7 @@
   
     $( ( ) => {
     
-      const codeKey = 'twc-splcda';
-      
-      const version = '0.7.3';
+      const version = '0.7.4';
       
       const s = `Store Page List Categories Description Add v${ version }, ` +
       
@@ -114,7 +112,9 @@
       
       if ( twcsl.page.store.list.hasTag ) return; // bail on tag
       
-      const selector = `#page .page-section x-${ codeKey }`;
+      const codeKey = 'twc-splcda';
+      
+      const selector = `#sections .page-section script[data-${ codeKey }]`;
       
       let $element = $( selector );
       
@@ -122,72 +122,18 @@
       
       const categories = twcsl.page.store.list.categories;
       
-      const cleanCategoryList = s => {
+      let map = $element
       
-        s = s
+        .text ( )
         
-          .trim ( )
-          
-          .replaceAll ( '$gt;', '' );
-          
-        return s;
+        .replace ( /\/\/.*|\/\*[^]*?\*\//g, '' ) // remove comments
         
-        };
+        .replaceAll ( '\n', '' )
         
-      const map = { };
+        .replace ( /, *} *$/, '}' ); // remove last item comma
+        
+      map = JSON.parse ( map );
       
-      $element
-      
-        .contents ( )
-        
-        .each ( function ( ) {
-        
-          if ( this.nodeType != Node.COMMENT_NODE ) return true; // continue
-          
-          this.remove ( );
-          
-          } )
-          
-        .map ( function ( ) {
-        
-          let s;
-          
-          switch ( this.nodeName ) {
-          
-            case '#text' :
-            
-              s = this.textContent;
-              
-              break;
-              
-            case 'A' :
-            
-              s = this.outerHTML;
-              
-              break;
-              
-            }
-            
-          return s;
-          
-          } )
-          
-        .toArray ( )
-        
-        .join ( '' )
-        
-        .trim ( )
-        
-        .replace ( /\s*\n+\s*/g, '\n' )
-        
-        .split ( '\n' )
-        
-        .map ( s => s.split ( /:(.*)/ ) )
-        
-        .forEach ( a => map [ cleanCategoryList ( a [ 0 ] ) ] =
-        
-          a [ 1 ].trim ( ) );
-          
       if ( ! ( categories in map ) ) return; // bail if no category
       
       const description = map [ categories ];

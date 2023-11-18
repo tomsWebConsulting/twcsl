@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.7.3
+  * 0.7.4
 
 #### SS Version
 
@@ -57,12 +57,12 @@ Add simple category descriptions to store category pages.
   code for any instructions within.
   
   ```html
-  <x-twc-splcda>
+  <script data-twc-splcda type="application/ld+json">
   
-    <!--
+    /*
     
-      the format of each line is a category list and a description for
-      the category list
+      the format of each entry is a category list and a description for the
+      category list
       
       for category list use values from Store Settings > Categories >
       [category name] > Edit > NAME field for the store page. you need all
@@ -77,26 +77,37 @@ Add simple category descriptions to store category pages.
       
         Top Category > Sub Category
         
-      the category list and description can not contain a colon character
+      following is an example entry. copy the example entry below and paste
+      after the example entry, removing the double forward slash space lines
+      from the beginning of each line. repeat for as many categories as you want
+      to add a description. this has been done once initially
       
-      following is an example line. copy the example line below and paste
-      after the example line. remove the less than exclamation double dash space
-      from the beginning of the pasted line and space double dash greater than
-      from the end. repeat for as many categories as you want to add a
-      description. this has been done once initially
+      if your description contains double quote characters they will need to be
+      escaped. " becomes \"
       
-      -->
+      */
       
-    <!-- [enter category list here replacing square brackets] : [enter category description here replacing square brackets] -->
+    {
     
-    [enter category list here replacing square brackets] : [enter category description here replacing square brackets]
-    
-    <!--
-    
-      x-twc-splcda Optional Attribtues
+      // "[enter category list here replacing square brackets]" : "
       
-      there are three optional attributes that can be added to the x-twc-splcda
-      tag.
+      //   [enter category description here replacing square brackets]
+        
+      //   ",
+            
+      "[enter category list here replacing square brackets]" : "
+      
+        [enter category description here replacing square brackets]
+        
+        ",
+        
+      }
+      
+    /*
+    
+      Optional Attribtues
+      
+      there are three optional attributes that can be added to the script tag
       
         data-paragraph-style
         
@@ -127,11 +138,11 @@ Add simple category descriptions to store category pages.
             
       Example of Adding an Attribute
       
-        <x-twc-splcda data-paragraph-style="Heading 1">
+        <script data-twc-splcda data-paragraph-style="Heading 1 type="application/ld+json"">
         
-      -->
+      */
       
-    </x-twc-splcda>
+    </script>
   ```
   
 * Remove the default text block from the section.
@@ -156,6 +167,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2023-11-17**
+
+  * second fix for description html not coming through
+  * bumped version to 0.7.4
+  
 * **2023-08-28**
 
   * fix parsing errors including description html not coming through
