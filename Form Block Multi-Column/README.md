@@ -77,7 +77,7 @@ Please consider [making a donation][7].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [3]: form%20block%20multi-column.html#L1
 [4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
