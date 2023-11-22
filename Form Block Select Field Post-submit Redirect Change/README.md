@@ -21,7 +21,8 @@ that existed in the prevoius version of the form block before the update.*
 
 ## Install
 
-* Add the following to Settings > Developer Tools > Code Injection > HEADER.
+* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
+  Injection > HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

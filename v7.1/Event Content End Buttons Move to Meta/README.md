@@ -25,7 +25,7 @@
   
   ![one buttons layout example](read%20me%20assets/one%20button%20layout.png)
   
-* Add the following to Settings > Developer Tools > Code Injection > HEADER.
+* Add the following to Website > Website Tools > Code Injection > HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
