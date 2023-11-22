@@ -15,7 +15,7 @@ Add the following to Settings > Developer Tools > Code Injection > HEADER.
 ```
 
 Add code from file **change search page input placeholder text.html** to
-Settings > Developer Tools > Code Injection > FOOTER.
+Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 
@@ -24,13 +24,13 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 <!-- * **2021-07-01**
-<br><br>
+
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
-  <br><br -->
+  -->
 * **2021-05-15**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

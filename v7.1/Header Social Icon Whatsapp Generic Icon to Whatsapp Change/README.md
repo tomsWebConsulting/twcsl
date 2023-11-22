@@ -20,7 +20,7 @@
   
 * Add code from file
   **[header social icon whatsapp generic icon to whatsapp change.html](header%20social%20icon%20whatsapp%20generic%20icon%20to%20whatsapp%20change.html#L1)**
-  to Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
+  to Website > Website Tools > Code Injection > FOOTER. Read the code for any
   instructions within.
 
 ## Make a Donation

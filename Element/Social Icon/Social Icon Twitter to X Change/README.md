@@ -37,12 +37,12 @@ Change old Twitter icon to X.
   ```
   
 * Add code from file **[social icon twitter to x change.html][6]** to
-  Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code to
-  code injection][7].
+  Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  Please see [Add code to code injection][7].
   
 * Add code from file **[social icon twitter to x change svg symbol.html][8]**
-  to Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
-  to code injection][7].
+  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  Please see [Add code to code injection][7].
 
 ## Note
 

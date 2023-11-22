@@ -8,14 +8,22 @@
 
 ## Quick Install
 
-Add the following to Settings > Developer Tools > Code Injection > HEADER.
+* Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-```
-
-Add code from file **add continue shopping message when cart has items.html** to
-Add the following to Settings > Developer Tools > Code Injection > FOOTER.
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  ```
+  
+* Add code from file **add continue shopping message when cart has items.html**
+  to...
+  
+  * v7.1
+  
+    Website > Website Tools > Code Injection > FOOTER
+    
+  * v7.0
+  
+    Website > Pages > Website Tools > Code Injection > FOOTER
 
 ## Make a Donation
 
@@ -24,13 +32,13 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 ## Changes
 
 <!-- * **2021-05-19**
-<br><br>
+
   * added a choice of paragraph styles
   * user can set store url slug
   * bumped version to [version]
-  <br><br -->
+  -->
 * **2021-06-07**
-<br><br>
+
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -29,8 +29,8 @@
   ```
   
 * Add code from file **[make navigation folders clickable.html][5]** to
-  Settings > Developer Tools > Code Injection > FOOTER.  Please see [Add code to code
-  injection][6]. Read the code for any instructions within.
+  Website > Website Tools > Code Injection > FOOTER.  Please see [Add code to
+  code injection][6]. Read the code for any instructions within.
 
 ## Make a Donation
 

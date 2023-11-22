@@ -30,8 +30,8 @@
   * Site-wide
   
     * Add code from file **[gallery section item description key class
-      add.html][1]** to Settings > Developer Tools > Code Injection > FOOTER. Read the
-      code for any instructions within.
+      add.html][1]** to Website > Website Tools > Code Injection > FOOTER. Read
+      the code for any instructions within.
 
 ## Note
 

@@ -21,7 +21,7 @@
 * Site-wide
 
   * Add code from file **[page section auto layout simple list format class
-    add.html][1]** to  Settings > Developer Tools > Code Injection > FOOTER.
+    add.html][1]** to  Website > Website Tools > Code Injection > FOOTER.
     
 * Read the code for any instructions within.
 

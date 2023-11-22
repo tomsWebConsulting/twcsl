@@ -51,9 +51,9 @@ Remove variants with **(Sold Out)** text.
       where you want to have this effect.
       
     * Add code from file **[store product detail variant sold out
-      remove.html][5]** to Settings > Developer Tools > Code Injection > FOOTER.
-      Please see [Add code to code injection][7]. Read the code for any
-      instructions within.
+      remove.html][5]** to Website > Pages ( v7.0 only ) > Website Tools > Code
+      Injection > FOOTER. Please see [Add code to code injection][7]. Read the
+      code for any instructions within.
 
 ## Make a Donation
 

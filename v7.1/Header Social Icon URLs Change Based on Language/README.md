@@ -18,7 +18,7 @@ Add the following to Settings > Developer Tools > Code Injection > HEADER.
 
 Add code from file
 **[header social icon urls change based on language.html](header%20social%20icon%20urls%20change%20based%20on%20language.html#L1)**
-to Settings > Developer Tools > Code Injection > FOOTER.
+to Website > Website Tools > Code Injection > FOOTER.
 
 Add the following code to the end of the language initialization code.
 

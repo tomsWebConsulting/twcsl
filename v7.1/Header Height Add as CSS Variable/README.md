@@ -27,7 +27,7 @@
       
   * Site-wide
   
-    * Settings > Developer Tools > Code Injection > FOOTER.
+    * Website > Website Tools > Code Injection > FOOTER.
 
 * Read the code for any instructions within.
 

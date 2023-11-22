@@ -27,7 +27,7 @@
       
   * Site-wide Effect
   
-    * Settings > Developer Tools > Code Injection > FOOTER.
+    * Website > Website Tools > Code Injection > FOOTER.
 
 ## Notes
 

@@ -48,7 +48,7 @@ Add simple category descriptions to store category pages.
       where you want to have this effect.
       
     * Add code from file **[store page list categories description
-      add.html][6]** to Settings > Developer Tools > Code Injection > FOOTER.
+      add.html][6]** to Website > Website Tools > Code Injection > FOOTER.
       Please see [Add code to code injection][8].
       
 * Add a section to the store page list as the last section.

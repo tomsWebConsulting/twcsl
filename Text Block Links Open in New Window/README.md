@@ -19,8 +19,8 @@
   ```
   
 * Add code from file **[text block links open in new window.html][2]** to
-  Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
-  instructions within.
+  Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Read
+  the code for any instructions within.
 
 ## Make a Donation
 

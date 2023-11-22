@@ -43,7 +43,7 @@ Limit the number of characters allowed in form fields.
 * Site-wide
 
   * Add code from file **[form block text field max length.html][5]** to
-    Settings > Developer Tools > Code Injection > FOOTER.
+    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
     
 * Read the code for any instructions within.
 

@@ -30,8 +30,8 @@
   * Site-wide
   
     * Add code from file **[scrolling block text gradient.html][1]** to
-      Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
-      instructions within.
+      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+      Read the code for any instructions within.
 
 ## Notes
 

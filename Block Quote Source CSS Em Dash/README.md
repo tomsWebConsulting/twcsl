@@ -24,7 +24,7 @@
   
 * Add code from file
   **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
-  to Settings > Developer Tools > Code Injection > FOOTER.
+  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
 
 ## Notes
 

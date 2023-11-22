@@ -41,9 +41,9 @@ Monitor changes to calendar block and call custom callbacks.
 
   * Site-wide Effect
   
-    * Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
-      to code injection][6].
-    
+    * Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+      Please see [Add code to code injection][6].
+
 ## Note
 
 This code is meant as a base for other effects.

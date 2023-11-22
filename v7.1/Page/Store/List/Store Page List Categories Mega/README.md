@@ -49,7 +49,7 @@ Store page list categories mega menu.
       where you want to have this effect.
       
     * Add code from file **[store page list categories mega.html][5]** to
-      Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
+      Website > Website Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][7]. Read the code for any instructions within.
 
 * In the **store categories cache** code set the callback.

@@ -27,7 +27,7 @@
 * Site-wide
 
   * Add code from file **[text block formats phrase filter.html][1]** to
-    Settings > Developer Tools > Code Injection > FOOTER.
+    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
     
 * Add a Classic Editor blank page section.
 

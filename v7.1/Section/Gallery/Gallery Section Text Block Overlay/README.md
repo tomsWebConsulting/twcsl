@@ -38,7 +38,7 @@ Add styled text overlays to gallery section images.
   ```
   
 * Add code from file **[gallery section text block overlay.html][6]** to
-  Settings > Developer Tools > Code Injection > FOOTER. Please see [Per-page
+  Website > Website Tools > Code Injection > FOOTER. Please see [Per-page
   code injection][7].
 
 * Add a section to a page.

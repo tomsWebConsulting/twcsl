@@ -17,8 +17,8 @@
   ```
   
 * Add code from file **[member area sign in and up dialog change.html][2]** to
-  Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code to
-  code injection][4]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][4]. Read the code for any instructions within.
 
 ## Make a Donation
 

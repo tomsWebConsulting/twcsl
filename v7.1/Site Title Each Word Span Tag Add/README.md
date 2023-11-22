@@ -22,7 +22,7 @@
   ```
   
 * Add code from file **[site title each word span tag add.html][2]** to
-  Settings > Developer Tools > Code Injection > FOOTER.
+  Website > Website Tools > Code Injection > FOOTER.
   
 ## Notes
 

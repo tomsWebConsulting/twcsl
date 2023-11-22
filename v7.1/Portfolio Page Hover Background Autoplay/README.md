@@ -35,7 +35,7 @@ Add an autoplay effect to a portfolio page using layout hover background.
 * Site-wide
 
   * Add code from file **[portfolio page hover background autoplay.html][5]**
-    to Settings > Developer Tools > Code Injection > FOOTER.
+    to Website > Website Tools > Code Injection > FOOTER.
     
 * Page Specific
 

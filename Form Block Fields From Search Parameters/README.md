@@ -49,9 +49,9 @@ Fill form fields from search query parameters of the page URL.
       you want to have this effect.
       
     * Add code from file **[form block fields from search parameters.html][5]**
-      to Settings > Developer Tools > Code Injection > FOOTER **before** the
-      **Form Block Wrapper Observe Changes** code. Please see [Add code to code
-      injection][7].
+      to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER
+      **before** the **Form Block Wrapper Observe Changes** code. Please see
+      [Add code to code injection][7].
 
 * In the **Form Block Wrapper Observe Changes** code set the **added** callback
   to **twcFbffsp** per the **Form Block Wrapper Observe Changes** code install

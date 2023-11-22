@@ -43,7 +43,7 @@ Track tagged form block field block ids for later use in other code.
 * Site-wide
 
   * Add code from file **[form block track field block ids.html][5]** to
-    Settings > Developer Tools > Code Injection > FOOTER.
+    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
 
 * Read the code for any instructions within.
 

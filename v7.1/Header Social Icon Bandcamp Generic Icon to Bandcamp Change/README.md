@@ -20,7 +20,7 @@
   
 * Add code from file
   **[header social icon bandcamp generic icon to bandcamp change.html](header%20social%20icon%20bandcamp%20generic%20icon%20to%20bandcamp%20change.html#L1)**
-  to Settings > Developer Tools > Code Injection > FOOTER.
+  to Website > Website Tools > Code Injection > FOOTER.
   
 ## Make a Donation
 

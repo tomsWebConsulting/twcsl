@@ -36,14 +36,14 @@ Reverse price and sale price on a store page.
 * Page Specific
 
   * Add code from file **[store page price and sale reverse.html][7]** to
-    Settings > Developer Tools > Code Injection > FOOTER. Please see [per-page
-    code injection][8].
+    Page Settings > Advanced > Page Header Code Injection for the page. Please
+    see [per-page code injection][8].
     
 * Site-wide
 
   * Add code from file **[store page price and sale reverse.html][7]** to
-    Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
-    to code injection][9].
+    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+    Please see [Add code to code injection][9].
 
 ## Make a Donation
 

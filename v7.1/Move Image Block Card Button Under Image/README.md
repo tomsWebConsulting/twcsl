@@ -22,7 +22,7 @@ Add code from file **[move image block card button under image.html](move%20imag
   
 * Site Wide Effect
 
-  * Settings > Developer Tools > Code Injection > FOOTER.
+  * Website > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

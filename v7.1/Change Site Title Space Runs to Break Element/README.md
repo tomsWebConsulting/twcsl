@@ -15,7 +15,7 @@ Add the following to Settings > Developer Tools > Code Injection > HEADER.
 ```
 
 Add code from file **change site title space runs to break element.html** to
-Settings > Developer Tools > Code Injection > FOOTER.
+Website > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

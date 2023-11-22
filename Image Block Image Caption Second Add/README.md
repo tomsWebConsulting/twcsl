@@ -29,7 +29,7 @@
   * Site-wide
   
     * Add code from file **[image block image caption second add.html][2]** to
-      Settings > Developer Tools > Code Injection > FOOTER.
+      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
 
 ## Note
 

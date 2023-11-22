@@ -17,8 +17,8 @@
   ```
   
 * Add code from file **[site tagline html.html][2]** to Add the following to
-  Settings > Developer Tools > Code Injection > FOOTER. Read the code for any
-  instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Read the code for
+  any instructions within.
 
 ## Make a Donation
 

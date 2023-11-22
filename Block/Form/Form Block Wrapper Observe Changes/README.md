@@ -55,7 +55,7 @@ nodes are added or removed from the [DOM][2].
       you want to have this effect.
       
     * Add code from file **[form block wrapper observe changes.html][6]** to
-      Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
+      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][8]. Read the code for any instructions within.
       
 * Add or edit a form block.

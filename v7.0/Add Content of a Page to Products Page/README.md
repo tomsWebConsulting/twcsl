@@ -13,7 +13,7 @@ Add the following to Settings > Developer Tools > Code Injection > HEADER.
 `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`
 
 Add code from file **[add content of a page to products page.html][1]** to
-Settings > Developer Tools > Code Injection > FOOTER.
+Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 
