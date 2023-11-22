@@ -39,21 +39,21 @@
       }
       
     </style>
-  
+    
   <script>
   
     document.addEventListener ( 'DOMContentLoaded', ( ) => {
     
       const version = '0.1.0';
-    
+      
       const s = `Gallery Page Previous Next Links Add v${ version }, ` +
       
         'License < https://tinyurl.com/s872fb68 >, ' +
         
         'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
+        
       console.log ( s );
-    
+      
       let selector = 'body.collection-type-gallery';
       
       let element = document
@@ -65,7 +65,7 @@
       const codeKey = 'twc-gppnla';
       
       const xpath = `//p[starts-with(text(),'${ codeKey } :')]`;
-    
+      
       selector += ' #page .slide:first-child .image-detail-wrapper ' +
       
         '.image-description p:first-child';
@@ -75,13 +75,13 @@
         .querySelector ( selector );
         
       element = document
-    
+      
         .evaluate ( xpath, element, null, XPathResult.FIRST_ORDERED_NODE_TYPE,
-      
-          null )
         
+          null )
+          
         .singleNodeValue;
-      
+        
       if ( element == null ) return; // bail if not our gallery
       
       const div = document
