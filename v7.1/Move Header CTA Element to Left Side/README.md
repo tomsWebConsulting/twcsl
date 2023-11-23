@@ -17,8 +17,8 @@ Add the following to Website > Website Tools > Code Injection > HEADER.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 ```
 
-Add code from file **move header cta element to left side.html** to Settings >
-Developer Tools > Code Injection > FOOTER.
+Add code from file **move header cta element to left side.html** to Website >
+Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

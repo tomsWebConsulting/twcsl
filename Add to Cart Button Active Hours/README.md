@@ -33,9 +33,9 @@ Enable add to cart buttons during active hours.
 * Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[add to cart button active hours.html][6]** to Settings >
-  Developer Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7]. Read the code for any instructions within.
+* Add code from file **[add to cart button active hours.html][6]** to Website >
+  Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][7]. Read the code for any instructions within.
 
 ## Notes
 

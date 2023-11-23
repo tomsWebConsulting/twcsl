@@ -17,9 +17,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[site header tagline link.html][2]** to Settings >
-  Developer Tools > Code Injection > FOOTER. Read the code for any instructions
-  within.
+* Add code from file **[site header tagline link.html][2]** to Website >
+  Pages > Website Tools > Code Injection > FOOTER. Read the code for any
+  instructions within.
 
 ## Make a Donation
 

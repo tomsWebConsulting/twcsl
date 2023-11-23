@@ -27,8 +27,8 @@
     
 * Site-wide Effect
 
-  * Add code from file **[text block text class add.html][1]** to Settings >
-    Developer Tools > Code Injection > FOOTER.
+  * Add code from file **[text block text class add.html][1]** to Website >
+    Website Tools > Code Injection > FOOTER.
 
 ## How To Use
 

@@ -48,8 +48,8 @@ Cache store page categories in sessionStorage.
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store categories cache.html][6]** to Settings >
-      Developer Tools > Code Injection > FOOTER. Please see [Add code to code
+    * Add code from file **[store categories cache.html][6]** to Website >
+      Website Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][8]. Read the code for any instructions within.
 
 ## Make a Donation

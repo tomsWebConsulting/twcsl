@@ -42,15 +42,15 @@
     * This option is the one you want to use if you have multiple pages where
       you want to have this effect.
       
-    * Add code from file **[form block multi-column.html][3]** to Settings >
-      Developer Tools > Code Injection > FOOTER **before** the **Form Block
-      Wrapper Observe Changes code**. Please see [Add code to code
-      injection][5].
-
-* Add or edit a form block. For the second field add a line field with a label of
-  **twc-fbmc** and a description of **columns : n**. Replace **n** with the
+    * Add code from file **[form block multi-column.html][3]** to Website >
+      Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER **before**
+      the **Form Block Wrapper Observe Changes code**. Please see [Add code to
+      code injection][5].
+      
+* Add or edit a form block. For the second field add a line field with a label
+  of **twc-fbmc** and a description of **columns : n**. Replace **n** with the
   number of columns you want for the form.
-
+  
 * For groups of fields that you want to have a column effect add a line field
   with a label of **twc-fbmc-begin** before the first field of the column group.
   To end the column effect, after the last field of the column group add a line

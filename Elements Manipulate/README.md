@@ -41,9 +41,9 @@ append, prepend, or replace.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[elements manipulate.html][7]** to Settings >
-  Developer Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][8]. Read the code for any instructions within.
+* Add code from file **[elements manipulate.html][7]** to Website >
+  Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][8]. Read the code for any instructions within.
   
 * Add a section to the site footer as the last section. Add your source
   elements (usually blocks) there.

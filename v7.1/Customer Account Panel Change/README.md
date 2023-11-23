@@ -33,8 +33,8 @@ Squarespace editor.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[customer account panel change.html][5]** to Settings >
-  Developer Tools > Code Injection > FOOTER. Please see [Add code to code
+* Add code from file **[customer account panel change.html][5]** to Website >
+  Website Tools > Code Injection > FOOTER. Please see [Add code to code
   injection][6]. Read the code for any instructions within.
 
 ## Classes

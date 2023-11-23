@@ -18,8 +18,8 @@
 * Install [twcsl][3]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[form text field max length.html][4]** to Settings >
-  Developer Tools > Code Injection > FOOTER.
+* Add code from file **[form text field max length.html][4]** to Website >
+  Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
   
 * Add a form block to your page and set up as desired.
   

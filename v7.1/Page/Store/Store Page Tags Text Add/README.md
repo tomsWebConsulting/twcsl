@@ -48,8 +48,8 @@ Add text to products.
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store page tags text add.html][5]** to Settings >
-      Developer Tools > Code Injection > FOOTER. Please see [Add code to code
+    * Add code from file **[store page tags text add.html][5]** to Website >
+      Website Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][7]. Read the code for any instructions within.
 
 ## How To Use
