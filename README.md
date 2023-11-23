@@ -638,8 +638,8 @@ building effects in Squarespace sites.
         
       * **Step 3**
       
-        Add the following to Settings > Developer Tools > Code Injection >
-        HEADER.
+        Add the following to Website > Pages ( v7.0 only ) > Website Tools >
+        Code Injection > HEADER.
         
         ```html
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -654,8 +654,8 @@ building effects in Squarespace sites.
     
       * **Step 1**
       
-        Add the following to Settings > Developer Tools > Code Injection >
-        HEADER.
+        Add the following to Website > Pages ( v7.0 only ) > Website Tools >
+        Code Injection > HEADER.
         
         ```html
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -674,8 +674,7 @@ building effects in Squarespace sites.
         
       * **Step 3**
       
-        Copy the entire contents of the page and add it to Settings >
-        Developer Tools > Code Injection > HEADER after the previously installed
+        Copy the entire contents of the page and add it to Website > Website Tools > Code Injection > HEADER after the previously installed
         code. jQuery must be before the twcsl code.
         
       * The trial period install steps are finished.
