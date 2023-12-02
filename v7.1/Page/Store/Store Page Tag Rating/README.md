@@ -136,7 +136,7 @@ Please consider [making a donation][9].
 
   * fix for ratings jumble when product detail page when related products is
     enabled
-    removed user configurable rating destinations
+  * removed user configurable rating destinations
   * bumped version to 0.3.1
   
 * **2023-08-20**
