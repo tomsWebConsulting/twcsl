@@ -4,7 +4,7 @@
   
   License       : < https://bit.ly/3F8sn8W >
   
-  Version       : 0.3.0
+  Version       : 0.3.1
   
   SS Version    : 7.1
   
@@ -49,22 +49,8 @@
     
       trueSymbol : '★',
       
-      falseSymbol : '☆',
+      falseSymbol : '☆'
       
-      productDetailSelector : [
-      
-        '.ProductItem-details .ProductItem-details-checkout', // simple layout
-        
-         // full
-        
-        '.pdp-layout.pdp-layout-full-width-carousel .pdp-details .pdp-selection',
-          
-        '.pdp-layout.pdp-layout-full-bleed .pdp-details', // half
-        
-        '.pdp-layout.pdp-layout-wrap-around .pdp-details' // wrap
-        
-        ]
-        
       };
       
     </script>
@@ -177,7 +163,7 @@
     
       const codeKey = 'twc-sptr';
       
-      const version = '0.3.0';
+      const version = '0.3.1';
       
       const s = `Store Page Tag Rating v${ version }, ` +
         
@@ -283,16 +269,8 @@
             
           // begin run through elements that match tag
           
-            let $element = $( selector );
+            function callback ( ) {
             
-            if ( twcsl.page.store.detail.is )
-            
-              $element = $element.parent ( );
-              
-            $element.each ( function ( ) {
-            
-              let classes;
-              
               let html = `
               
                 <tr class="rating">
@@ -309,21 +287,57 @@
                   
                 `;
                 
-              let i;
-              
-              let selector = [
-              
-                '.grid-main-meta',
-                
-                ]
-                
-                .concat ( options.productDetailSelector )
-                
-                .join ( ', ' );
-                
               const $rating = $( html );
               
-              let $sptr = $( selector, this );
+              let $this = $( this );
+              
+              const isDetailClass = $this
+              
+                .hasClass ( 'ProductItem' ) // simple layout
+                
+                ||
+                
+                $this
+                
+                  .hasClass ( 'pdp-layout' ); // full, half, and wrap layouts
+                  
+              const isGridItem = $this
+              
+                .hasClass ( 'grid-item' );
+                
+              let selector;
+              
+              switch ( true ) {
+              
+                case isDetailClass :
+                
+                  selector = [
+                  
+                    // simple layout
+                    
+                    '.ProductItem-details .ProductItem-details-checkout',
+                    
+                     // full
+                    
+                    '.pdp-layout-full-width-carousel .pdp-details .pdp-selection',
+                    
+                    '.pdp-details' // half, wrap
+                    
+                    ]
+                    
+                  .join ( ', ' );
+                  
+                  break;
+                  
+                case isGridItem :
+                
+                  selector = '.grid-main-meta';
+                  
+                  break;
+                  
+                }
+                
+              let $sptr = $( selector, $this );
               
               selector = `.${ codeKey }`;
               
@@ -391,6 +405,8 @@
                   
                 case type == 's' :
                 
+                  let i;
+                  
                   html = `
                   
                     <span class="false symbol true">
@@ -505,8 +521,10 @@
                 
               $sptr.append ( $rating );
               
-              } );
+              }
               
+            $( selector ).each ( callback );
+            
             // end run through elements that match tag
             
           } );

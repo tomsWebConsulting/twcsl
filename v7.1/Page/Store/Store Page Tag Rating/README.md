@@ -8,7 +8,7 @@ Add ratings to Store page products.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
@@ -132,6 +132,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2023-12-01**
+
+  * fix for ratings jumble when product detail page when related products is
+    enabled
+    removed user configurable rating destinations
+  * bumped version to 0.3.1
+  
 * **2023-08-20**
 
   * add support for point ratings and words
