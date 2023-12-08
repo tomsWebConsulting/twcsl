@@ -853,10 +853,15 @@ design pattern.
 
 ## Changes
 
-* **2023-05-17**
+* **2023-12-07**
 
   * reworked code in to multi-module based code
   * bumped twcsl.js version to 0.4.0
+  
+* **2023-12-07**
+
+  * fix for twcsl.scrollEffect ratio calculation
+  * bumped version to 0.3.3
   
 * **2023-03-05**
 
