@@ -46,9 +46,9 @@ twcsl.miscellaneous = ( ( self ) => {
       
       },
       
-    scrollEffect : ( callback, easingFunction = 'linear', invertScale = false
+    scrollEffect : ( callback, easingFunction = 'linear', invertScale =
     
-      ) => {
+      false ) => {
       
       if ( typeof callback != 'function' ) return; // bail if no callback
       
@@ -92,23 +92,23 @@ twcsl.miscellaneous = ( ( self ) => {
         
         } // end calculateRatio
         
-      let maxScrollTop;
-      
       $( window )
       
-        .resize ( function ( ) {
-        
-          maxScrollTop = $( document ).height ( ) - $( window ).height ( );
-          
-          } )
-          
-        .resize ( )
-        
         .scroll ( function ( ) {
         
-          const ratio = calculateRatio ( $( window ).scrollTop ( ),
+          const maxScrollY = $( document )
           
-            maxScrollTop, easingFunction, invertScale );
+            .height ( )
+            
+            -
+            
+            $( window )
+            
+              .height ( );
+              
+          const ratio = calculateRatio ( scrollY, maxScrollY, easingFunction,
+          
+            invertScale );
             
           callback ( ratio );
           
