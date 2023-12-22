@@ -95,7 +95,7 @@ Please consider [making a donation][10].
 
 * **2023-12-22**
 
-  * fix for tags not being retreived from api
+  * fix for tags not being retrieved from api
   * bumped version to 0.1.1
   
 * **2023-10-29**
