@@ -43,7 +43,7 @@ Change text of summary block events dates.
       you want to have this effect.
       
     * Add code from file **[summary block events date text change.html][4]** to
-      Settings > Developer Tools > Code Injection > FOOTER. Please see [Add code
+      Website > Website Tools > Code Injection > FOOTER. Please see [Add code
       to code injection][6].
 
 ## Make a Donation
