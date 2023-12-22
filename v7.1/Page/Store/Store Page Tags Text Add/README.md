@@ -8,7 +8,7 @@ Add text to products.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -28,7 +28,7 @@ Add text to products.
 
 ## Install
 
-* Install [twcsl][14]. After you install twcsl be sure to continue on with the
+* Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
 * Options
@@ -38,9 +38,9 @@ Add text to products.
     * This option will be the one most will want to use if you have only a
       single store page you want to have this effect.
       
-    * Add code from file **[store page tags text add.html][5]** to Store
+    * Add code from file **[store page tags text add.html][6]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Per-page code injection][6]. Read the code for any
+      Please see [Per-page code injection][7]. Read the code for any
       instructions within.
       
   * Site-wide
@@ -48,9 +48,9 @@ Add text to products.
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store page tags text add.html][5]** to Website >
+    * Add code from file **[store page tags text add.html][6]** to Website >
       Website Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][7]. Read the code for any instructions within.
+      injection][8]. Read the code for any instructions within.
 
 ## How To Use
 
@@ -85,19 +85,19 @@ The tags are a simple unordered list displayed with flexbox. There is a
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2023-07-28**
+* **2023-12-22**
 
-  * sort tags, simple alpha
-  * bumped version to 0.2.0
-  -->
+  * fix for tags not being retreived from api
+  * bumped version to 0.1.1
+  
 * **2023-10-29**
 
   * initial version
@@ -106,9 +106,9 @@ Please consider [making a donation][9].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl
-[14]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%20page%20tags%20text%20add.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://github.com/tomsWebConsulting/twcsl#install-options
+[6]: store%20page%20tags%20text%20add.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

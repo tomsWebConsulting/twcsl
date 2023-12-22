@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -17,8 +17,8 @@
   Notes         : the code is comprised of several tags. all are needed for the
                   full effect to work
                   
-                  the code makes a call to an unofficial api for information
-                  that is not normally avaiable on the page
+                  the code makes a call to the JSON version of the store page
+                  for information that is not normally avaiable on the page
                   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -76,7 +76,7 @@
   
     $( ( ) => {
     
-      const version = '0.1.0';
+      const version = '0.1.1';
       
       const s = `Store Page Tags Text Add v${ version }, ` +
       
@@ -88,28 +88,14 @@
       
       if ( ! twcsl.page.store.is ) return; // bail if not store
       
-      const collectionId = Static
-      
-        .SQUARESPACE_CONTEXT
-        
-        .collectionId;;
-        
-      const url =
-      
-        `/api/commondata/GetCollectionTags?collectionId=${ collectionId }`;
-        
-      $.getJSON ( url, function ( tags ) {
+      const callback = tags => {
       
         const callback = ( i, tag ) => {
         
           const re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` );
           
-          const m = tag
+          const m = tag.match ( re );
           
-            .name
-            
-            .match ( re );
-            
           // continue if tag doesn't match format
           
           if ( m == null ) return true;
@@ -246,7 +232,9 @@
           
         const codeKey = 'twc-sptta';
         
-        tags = tags.filter ( x => x.name.startsWith ( `${ codeKey } ` ) );
+        tags = tags.collection.tags;
+        
+        tags = tags.filter ( x => x.startsWith ( `${ codeKey } ` ) );
         
         if ( ! tags.length ) return; // bail if no tags of interest
         
@@ -254,7 +242,17 @@
         
         $.each ( tags, callback ) // run through the tags
         
-        } );
+        };
+        
+      const collectionId = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collectionId;;
+        
+      const url = `${ twcsl.page.store.urlSlug }?format=json`;
+      
+      $.getJSON ( url, callback );
         
       } );
       
