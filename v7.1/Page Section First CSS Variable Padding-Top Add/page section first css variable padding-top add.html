@@ -6,9 +6,9 @@
     
       page section first css variable padding-top add
       
-      License      : < https://bit.ly/3F8sn8W >
+      License      : < https://tinyurl.com/s872fb68 >
       
-      Version      : 0.1.0
+      Version      : 0.2.0
       
       SS Version   : 7.1
       
@@ -23,6 +23,16 @@
       
       */
       
+    const version = '0.2.0';
+    
+    const s = `Page Section First CSS Variable Padding-Top Add v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
     // bail if no mutation observer available
     
     if ( ! ( 'MutationObserver' in window ) ) return;
@@ -43,9 +53,9 @@
       
     const paddingTop = getPageSectionFirstPaddingTop ( );
     
-    const pageSectionFirstCallback = ( mutations ) => {
+    const pageSectionFirstCallback = mutations => {
     
-      mutations.forEach ( mutation => {
+      const callback = mutation => {
       
         // continue if not attribute
         
@@ -67,7 +77,9 @@
           
         setSectionsCssVariable ( paddingTop );
         
-        } ); // end forEach
+        };
+        
+      mutations.forEach ( callback );
         
       }; // end pageSectionFirstCallback
       
@@ -143,9 +155,9 @@
     
     const setSectionsCssVariable = ( paddingTop ) => {
     
-      const cssVariableName = '--section-first-padding-top';
+      const cssVariableName = '--twc-psfcvpta-section-first-padding-top';
       
-      const selector = '#sections';
+      const selector = ':root';
       
       $( selector )
       
