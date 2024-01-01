@@ -1,0 +1,31 @@
+/*
+
+  begin store page detail footer sections move
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .twc-spdfsm__block {
+  
+    display : none;
+    
+    }
+    
+  html:not( .squarespace-damask ) #footer-sections:not( [ data-twc-spdfsm ] ) .page-section:nth-child( n+[ enter footer section start nth child number to be hidden here replacing square brackets ] ):nth-child( -n+[ enter footer section end nth child number to be hidden here replacing square brackets ] ) {
+  
+    display : none;
+    
+    }
+    
+  /* end store page detail footer sections move */

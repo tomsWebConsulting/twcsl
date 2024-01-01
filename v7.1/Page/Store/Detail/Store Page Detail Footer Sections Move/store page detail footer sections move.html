@@ -1,0 +1,88 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store page detail footer sections move
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Dependencies  : twcsl
+      
+      Note          : this effect is not active in SS Preview to test it use
+                      private browsing < https://tinyurl.com/ynessvsf >
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.1.0';
+    
+    const s = `Store Page Detail Footer Sections Move v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    if ( window.frameElement !== null ) return; // bail if in preview
+    
+    if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+    
+    const codeKey = 'twc-spdfsm';
+    
+    let selector = `#footer-sections x-${ codeKey }`;
+    
+    let $elements = $( selector );
+    
+    if ( ! $elements.length ) return; // bail if no custom tags
+    
+    const callback = function ( ) {
+    
+      $( this )
+      
+        .parents ( '.fe-block, .sqs-block-code' )
+        
+        .last ( )
+        
+        .addClass ( `${ codeKey }__block` )
+        
+        .parents ( '.page-section' )
+        
+        .addClass ( `${ codeKey }__section` );
+        
+      };
+      
+    $elements.each ( callback );
+    
+    selector = `.${ codeKey }__section`;
+    
+    $elements = $( selector );
+    
+    selector = '#sections';
+    
+    $( selector )
+    
+      .append ( $elements );
+      
+    selector = '#footer-sections';
+    
+    $( selector )
+    
+      .attr ( `data-${ codeKey }`, '' );
+      
+    } );
+    
+  </script>
