@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 279 effects. Each effect has it's own version number, code,
+twcsl contains 280 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -448,6 +448,8 @@ not necessarily designed to work together.
         * [Store Page Detail Additional Info Add Footer Boilerplate](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
           
         * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
+          
+        * [Store Page Detail Footer Sections Move](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Sections%20Move)
           
         * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
