@@ -88,4 +88,3 @@ Please consider [making a donation][10].
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-
