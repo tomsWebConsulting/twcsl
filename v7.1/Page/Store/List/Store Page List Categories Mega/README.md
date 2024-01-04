@@ -39,9 +39,9 @@ Store page list categories mega menu.
       single store page you want to have this effect.
       
     * Add code from file **[store page list categories mega.html][5]** to Store
-      Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Per-page code injection][6]. Read the code for any
-      instructions within.
+      Settings > Advanced > Page Header Code Injection for the store page
+      **before** the **store categories cache** code. Please see [Per-page code
+      injection][6]. Read the code for any instructions within.
       
   * Site-wide
   
@@ -49,9 +49,10 @@ Store page list categories mega menu.
       where you want to have this effect.
       
     * Add code from file **[store page list categories mega.html][5]** to
-      Website > Website Tools > Code Injection > FOOTER. Please see [Add code
-      to code injection][7]. Read the code for any instructions within.
-
+      Website > Website Tools > Code Injection > FOOTER **before** the **store
+      categories cache** code. Please see [Add code to code injection][7]. Read
+      the code for any instructions within.
+      
 * In the **store categories cache** code set the callback.
   
   Change the following line...
