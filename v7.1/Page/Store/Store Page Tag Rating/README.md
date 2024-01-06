@@ -122,6 +122,9 @@ Some classes are provided for styling.
 
 This is not a site visitor rating system.
 
+The rating type words can not represent symbols such as ★. Use the symbols
+rating type for symbols. For best result use number and letter characters.
+
 ## Demo
 
 You can see a [demo of this effect here][8].
