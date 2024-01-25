@@ -8,7 +8,7 @@ Add text to products.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### SS Version
 
@@ -93,6 +93,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-01-25**
+
+  * fix for tags being misapplied
+  * bumped version to 0.1.2
+  
 * **2023-12-22**
 
   * fix for tags not being retrieved from api
