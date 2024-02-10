@@ -2,11 +2,21 @@
 
 ### [License][1]
 
-### Version 0.4.0
+### Synopsis
 
-#### SS Version 7.1
+Store page list out of stock badge.
 
-#### Fluid Engine Compatible : Not Applicable
+### Version
+
+  * 0.4.1
+
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -79,23 +89,28 @@ Please consider [making a donation][20].
 
 ## Changes
 
+* **2024-02-09**
+
+  * retrict effect to list page only
+  * bumped version to 0.4.1
+
 * **2023-05-27**
 
   * locally scope variables so code can run along side similar code without
     conflicts
-  * bumped version to v0.4.0
+  * bumped version to 0.4.0
 
 * **2023-05-27**
 
   * make effect available on mobile
-  * bumped version to v0.3.0
+  * bumped version to 0.3.0
 
 * **2023-03-25**
 
   * support as closely as possible the full range of Product Status Badge tweaks
     available in v7.0 Brine template family
   * use LESS
-  * bumped version to v0.2.0
+  * bumped version to 0.2.0
   
 * **2023-03-24**
 
