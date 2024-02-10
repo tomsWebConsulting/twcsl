@@ -91,7 +91,7 @@ Please consider [making a donation][20].
 
 * **2024-02-09**
 
-  * retrict effect to list page only
+  * restrict effect to list page only
   * bumped version to 0.4.1
 
 * **2023-05-27**
