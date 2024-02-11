@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 280 effects. Each effect has it's own version number, code,
+twcsl contains 281 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -172,6 +172,8 @@ not necessarily designed to work together.
     * [Store Page Price and Sale Reverse](Page/Store/Store%20Page%20Price%20and%20Sale%20Reverse)
       
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
+  
+* [Page Edit Keys](Page%20Edit%20Keys)
   
 * [Payment Processor Icons](Payment%20Processor%20Icons)
   
