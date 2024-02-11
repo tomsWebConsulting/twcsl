@@ -1,0 +1,96 @@
+<script>
+
+  /*
+  
+    page edit keys
+    
+    License     : < https://tinyurl.com/s872fb68 >
+    
+    Version     : 0.1.0-development.1
+    
+    SS Versions : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible  : Not Applicable
+    
+    Note        : this effect is not active in SS Preview
+    
+    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  // debugger;
+  
+  /*
+  
+    if you want to simulate SS's former edit page escape key behaviour use the
+    value Escape
+    
+    */
+    
+  const key = '[enter key here between single quotes replacing square brackets]';
+  
+  const altKey = false; // values are false or true
+  
+  const ctrlKey = false; // values are false or true
+  
+  const metaKey = false; // values are false or true
+  
+  // do not change anything below, there be the borg here
+  
+  const version = '0.1.0';
+  
+  const s = `Page Edit Keys v${ version }, ` +
+  
+    'License < https://tinyurl.com/s872fb68 >, ' +
+    
+    'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+    
+  console.log ( s );
+  
+  window.addEventListener ( 'keydown', event => {
+  
+    if ( event.defaultPrevented ) return; // bail if already processed
+    
+    const selector = 'html.squarespace-damask';
+    
+    const element = document
+    
+      .querySelector ( selector );
+      
+    if ( element !== null ) return; // bail if in preview
+    
+    if ( event.key !== key ) return; // bail if key doesn't match
+    
+    if ( event.altKey !== altKey ) return; // bail if alt doesn't match
+    
+    if ( event.ctrlKey !== ctrlKey ) return; // bail if ctrl doesn't match
+    
+    if ( event.metaKey !== metaKey ) return; // bail if meta doesn't match
+    
+    let url = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .website
+      
+      .identifier;
+      
+    url = `https://${ url }.squarespace.com/config/`;
+    
+    url = new URL ( url );
+    
+    url
+    
+      .searchParams
+      
+      .set ( 'frameUrl', `${ location.pathname }` );
+      
+    url = url.toString ( );
+    
+    window.location = url;
+    
+    } );
+    
+  </script>
