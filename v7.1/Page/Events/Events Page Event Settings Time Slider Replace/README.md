@@ -8,7 +8,7 @@ Replace event settings time slider with time input.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -52,12 +52,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2023-07-14**
+* **2024-02-13**
 
-  * convert to callback for use with form block wrapper observe changes after SS
-    form internationalization update
-  * bumped version to 0.2.0
-  -->
+  * fix for changes SS made by their use of React forms
+  * bumped version to 0.1.1
+  
 * **2023-11-21**
 
   * initial version
