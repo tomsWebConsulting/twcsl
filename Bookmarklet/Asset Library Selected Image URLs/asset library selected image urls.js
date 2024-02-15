@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.3.0
+    Version       : 0.3.1
     
     By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
     
@@ -16,9 +16,9 @@
     
   const title = 'Asset Library Selected Image URLs';
   
-  const version = '0.3.0';
+  const version = '0.3.1';
   
-  const xpath = '//span[text()="Asset Library"]';
+  const xpath = '//h1[text()="Asset Library"]';
   
   let element = document
   

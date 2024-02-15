@@ -8,7 +8,7 @@ List selected image URLs in the Asset Library.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Versions
 
@@ -55,6 +55,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2024-02-14**
+
+  * fix for Asset Library page check because of recent change SS made
+  * bumped version to 0.3.1
+  
 * **2023-09-10**
 
   * added Asset Library page check
