@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.5.0-development.1
+  * 0.5.0
 
 #### SS Version
 
