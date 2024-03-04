@@ -2,9 +2,9 @@
 
   begin page sections slide toggle
   
-  License       : < https://bit.ly/3F8sn8W >
+  License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.4.1
+  Version       : 0.5.0
   
   SS Version    : 7.1
   
@@ -26,7 +26,7 @@
   
   <style>
   
-    html:not( .squarespace-damask ) .twc-psst {
+    html:not( .squarespace-damask ) #page {
     
       --twc-psst-toggle-thickness : 3px; /* thickness of the toggle lines */
       
@@ -42,7 +42,7 @@
     
     if ( window.twc == undefined ) window.twc = { };
     
-    twc.a63af292 = {
+    twc.psst = {
     
       // duration, a number (milliseconds) or the word slow or fast
       
@@ -76,76 +76,89 @@
     
     html:not( .squarespace-damask ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
     
-      min-height : 0; /* default 33vh */
-      
-      }
-      
-    /* restore some vertical spacing when page section is open */
-    
-    html:not( .squarespace-damask ) .twc-psst--open.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
-    
-      min-height : 33vh;
+      min-height : unset;
       
       }
       
     /* begin toggles */
     
-      html:not( .squarespace-damask ) .twc-psst {
+      html:not( .squarespace-damask ) x-twc-psst-close,
+      html:not( .squarespace-damask ) .twc-psst
       
-        cursor : pointer;
+        {
         
-        }
-        
-      html:not( .squarespace-damask ) x-twc-psst {
+          cursor : pointer;
+          
+          }
+          
+      html:not( .squarespace-damask ) x-twc-psst,
+      html:not( .squarespace-damask ) x-twc-psst-close
       
-        display : block;
-        height : var( --twc-psst-toggle-size );
-        width : var( --twc-psst-toggle-size );
+        {
+        
+          display : block;
+          height : var( --twc-psst-toggle-size );
+          width : var( --twc-psst-toggle-size );
+          
+          }
+          
+      html:not( .squarespace-damask ) x-twc-psst-close {
+      
+        padding: 10px;
         
         }
         
       /* begin arrow */
       
-        html:not( .squarespace-damask ) x-twc-psst .arrow {
+        html:not( .squarespace-damask ) x-twc-psst .arrow,
+        html:not( .squarespace-damask ) x-twc-psst-close .arrow
         
-          border : 0 solid red;
-          border-bottom-width : var( --twc-psst-toggle-thickness );
-          border-color : var( --twc-psst-toggle-color );
-          border-right-width : var( --twc-psst-toggle-thickness );
-          height : 100%;
+          {
           
-          -webkit-transform : rotate( 45deg );
-          -ms-transform : rotate( 45deg );
-          transform : rotate( 45deg );
-          
-          transition : transform 0.2s;
-          
-          width : 100%;
-          
-          }
-          
-        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .arrow {
+            border : 0 solid red;
+            border-bottom-width : var( --twc-psst-toggle-thickness );
+            border-color : var( --twc-psst-toggle-color );
+            border-right-width : var( --twc-psst-toggle-thickness );
+            height : 100%;
+            
+            -webkit-transform : rotate( 45deg );
+            -ms-transform : rotate( 45deg );
+            transform : rotate( 45deg );
+            
+            transition : transform 0.2s;
+            
+            width : 100%;
+            
+            }
+            
+        html:not( .squarespace-damask ) x-twc-psst-close .arrow,
+        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .arrow
         
-          -webkit-transform : rotate( -135deg );
-          -ms-transform : rotate( -135deg );
-          transform : rotate( -135deg );
+          {
           
-          }
-          
+            -webkit-transform : rotate( -135deg );
+            -ms-transform : rotate( -135deg );
+            transform : rotate( -135deg );
+            
+            }
+            
         /* end arrow */
         
       /* begin plus */
       
-        html:not( .squarespace-damask ) x-twc-psst .plus {
+        html:not( .squarespace-damask ) x-twc-psst .plus,
+        html:not( .squarespace-damask ) x-twc-psst-close .plus
         
-          background-color : var( --twc-psst-toggle-color );
-          height : 3px;
-          position : absolute;
-          transition : transform 0.2s;
-          width : 10px;
+          {
           
-          }
-          
+            background-color : var( --twc-psst-toggle-color );
+            height : var( --twc-psst-toggle-thickness );
+            position : absolute;
+            transition : transform 0.2s;
+            width : var( --twc-psst-toggle-size );
+            
+            }
+            
         html:not( .squarespace-damask ) x-twc-psst .plus.vertical-line {
         
           transform : rotate( 90deg );
@@ -153,12 +166,15 @@
           
           }
           
-        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .plus.vertical-line {
+        html:not( .squarespace-damask ) x-twc-psst-close .plus.vertical-line,
+        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .plus.vertical-line
         
-          transform : unset;
+          {
           
-          }
-          
+            transform : unset;
+            
+            }
+            
         /* end plus */
         
       /* end toggles */
@@ -169,16 +185,22 @@
   
     $( ( ) => {
     
+      const version = '0.5.0';
+      
+      const s = `Page Sections Slide Toggle v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
       if ( window.frameElement !== null ) return; // bail if in preview
       
-      const css = {
+      const codeKey = 'twc-psst';
       
-        '--twc-psst-section-display-webkit-box' : '-webkit-box',
-        '--twc-psst-section-display-ms-flexbox' : '-ms-flexbox',
-        '--twc-psst-section-display' : 'flex',
-        
-        };
-        
+      const css = { };
+      
       const iconHtml = {
       
         arrow : `<div class="arrow">
@@ -195,55 +217,117 @@
           
         };
         
-      let duration = twc.a63af292.duration;
+      let callback = function ( ) {
       
-      $( '#page .page-section' ).each ( function ( ) {
-      
+        const callback = function ( ) {
+        
+          $( this )
+          
+            .toggleClass ( `${ codeKey }--open` );
+            
+          $sectionsNext.slideToggle ( duration );
+          
+          }
+          
+        const selector = '.page-section';
+        
         const $this = $( this );
         
-        let $element = $( 'x-twc-psst', $this );
+        let color = $this.attr ( 'data-toggle-color' );
         
-        const makeSectionToggle = Boolean ( $element.length );
+        let count = $this.attr ( 'data-section-count' );
         
-        if ( ! makeSectionToggle ) return true; // continue if not make toggle
+        let duration = twc.psst.duration;
         
-        const $sectionNext = $this.next ( '.page-section' );
+        let icon = $this.attr ( 'data-toggle-icon' );
         
-        let color = $element.attr ( 'data-toggle-color' );
+        color = color === undefined ? $this.css ( 'color' ) : color;
         
-        let icon = $element.attr ( 'data-toggle-icon' );
+        count = count === undefined ? 1 : Number ( count );
         
-        $this
+        duration = Number ( duration );
         
-          .addClass ( 'twc-psst' )
-          
-          .click ( function ( ) {
-          
-            if ( ! isNaN ( duration ) ) duration = Number ( duration );
-            
-            $sectionNext.slideToggle ( duration );
-            
-            $this.toggleClass ( 'twc-psst--open' );
-            
-            } );
-            
-        color = color == undefined ? $this.css ( 'color' ) : color;
-        
-        icon = icon == undefined ? 'arrow' : icon;
+        icon = icon === undefined ? 'arrow' : icon;
         
         const html = iconHtml [ icon ];
         
-        $this.css ( '--twc-psst-toggle-color', color );
+        const $sectionsNext = $this
         
-        $element.append ( html );
+          .append ( html )
         
-        $sectionNext
-        
-          .css ( 'display', 'none' )
+          .parents ( selector )
           
-        } );
+          .addClass ( `${ codeKey }` )
+          
+          .click ( callback )
+          
+          .css ( `--${ codeKey }-toggle-color`, color )
+          
+          .nextAll ( selector )
+          
+          .slice ( 0, count )
+          
+          .css ( 'display', 'none' );
+          
+        if ( ! isNaN ( duration ) )
         
+          duration = Number ( duration );
+          
+        }
+        
+      let selector = `#page .page-section x-${ codeKey }`;
+      
+      css [ `--${ codeKey }-section-display-webkit-box` ] = '-webkit-box';
+      
+      css [ `--${ codeKey }-section-display-ms-flexbox` ] = '-ms-flexbox';
+      
+      css [ `--${ codeKey }-section-display` ] = 'flex';
+      
       $( '#page' ).css ( css );
+      
+      $( selector ).each ( callback );
+      
+      callback = function ( ) {
+      
+        const callback = function ( ) {
+        
+          $( this )
+          
+            .parents ( '.page-section' )
+            
+            .prevAll ( `.${ codeKey }` )
+            
+            .first ( )
+            
+            .click ( );
+            
+          }
+          
+        const $this = $( this );
+        
+        let color = $this.attr ( 'data-toggle-color' );
+        
+        let icon = $this.attr ( 'data-toggle-icon' );
+        
+        color = color === undefined ? $this.css ( 'color' ) : color;
+        
+        icon = icon === undefined ? 'arrow' : icon;
+        
+        const html = iconHtml [ icon ];
+        
+        $this
+        
+          .append ( html )
+        
+          .click ( callback )
+          
+          .css ( `--${ codeKey }-toggle-color`, color );
+          
+        }
+        
+      selector = `#page .page-section x-${ codeKey }-close`;
+      
+      $( selector ).each ( callback );
       
       } );
       

@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.4.1
+  * 0.5.0-development.1
 
 #### SS Version
 
@@ -35,8 +35,8 @@ Add page section toggle effect to pages.
   ```
   
 * Add code from file **[page sections slide toggle.html][5]** to Page Settings >
-  Advanced > Page Header Code Injection for the page. Read the code for any
-  instructions within.
+  Advanced > Page Header Code Injection for the page. Please see [per-page code
+  injection][6]. Read the code for any instructions within.
   
 * Add a section and set it's height to small. This whole section will become a
   clickable zone for the toggle effect.
@@ -46,23 +46,33 @@ Add page section toggle effect to pages.
   * Add a code block and add the following.
   
     ```html
-    <x-twc-psst></x-twc-psst>
+    <x-twc-psst />
     ```
     
     You can add a **data-toggle-color** attribute to the **&lt;x-twc-psst
-    &gt;&lt;/x-twc-psst&gt;** tag to override the default color the code picks
-    for the toggle icon. An example.
+    /&gt;** tag to override the default color the code picks for the toggle
+    icon. An example.
     
     ```html
-    <x-twc-psst data-toggle-color="red"></x-twc-psst>
+    <x-twc-psst data-toggle-color="red" />
+    ```
+    
+    You can add a **data-section-count** attribute to the **&lt;x-twc-psst
+    /&gt;** tag to toggle multiple sections. The default value when this
+    attribute is not used is one. This effect does not check that you are using
+    resonable values in the context of what you are building. If the wrong
+    values used it can cause unusual results. A tag example.
+    
+    ```html
+    <x-twc-psst data-section-count="2" />
     ```
     
     You can add a **data-toggle-icon** attribute to the **&lt;x-twc-psst
-    &gt;&lt;/x-twc-psst&gt;** tag to override the default toggle icon. An
+    &gt;&lt; /&gt;** tag to override the default toggle icon. An
     example.
     
     ```html
-    <x-twc-psst data-toggle-icon="plus"></x-twc-psst>
+    <x-twc-psst data-toggle-icon="plus" />
     ```
     
     This code block will become the toggle icon. Generally you will want to
@@ -70,21 +80,36 @@ Add page section toggle effect to pages.
     text block.
     
 * Add a section after the previous section and add whatever blocks you want to
-  the section. This will be the content of that gets hidden/shown.
+  the section. This will be the content that gets toggled (hidden/shown).
   
 * You can repeat the previous two section pattern for as many toggle sections as
   you want.
 
+## x-twc-psst-close tag
+
+The **&lt;x-twc-psst-close /&gt;** tag can be added to a code block at the end
+of a section to close the section. This can be useful with long sections so you
+don't have to scroll up to click and close the section.
+
+This tag understands the data-toggle-color and data-toggle-icon attributes
+described previously.
+
 ## Demo
 
-You can see a [demo of this effect here][6].
+You can see a [demo of this effect here][7].
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-03-04**
+
+  * add feature to toggle multiple sections
+  * add feature to toggle sections from the end of a section
+  * bumped version to 0.5.0
+  
 * **2023-04-12**
 
   * fix issue with data-toggle-color attribute not working
@@ -125,5 +150,6 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: page%20sections%20slide%20toggle.html#L1
-[6]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
