@@ -495,8 +495,6 @@ not necessarily designed to work together.
     
   * [Page Section Image Scrubbing Animation](v7.1/Page%20Section%20Image%20Scrubbing%20Animation)
     
-  * [Page Section Info](v7.1/Page%20Section%20Info)
-    
   * [Page Section Nth Blocks Full Bleed Template](v7.1/Page%20Section%20Nth%20Blocks%20Full%20Bleed%20Template)
     
   * [Page Section Second Blocks Full Bleed](v7.1/Page%20Section%20Second%20Blocks%20Full%20Bleed)
@@ -541,6 +539,8 @@ not necessarily designed to work together.
       
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
+    * [Section Info](v7.1/Section/Section%20Info)
+      
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
     
   * [Site Style Animation Flex Center](v7.1/Site%20Style%20Animation%20Flex%20Center)
