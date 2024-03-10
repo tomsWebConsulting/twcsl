@@ -8,7 +8,7 @@ Activate Squarespace editor using a key sequence.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -46,13 +46,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2023-03-25**
+* **2024-03-10**
 
-  * support as closely as possible the full range of Product Status Badge tweaks
-    available in v7.0 Brine template family
-  * use LESS
-  * bumped version to 0.2.0
-  -->
+  * fix for variables polluting global space
+  * bumped version to 0.1.1
+  
 * **2024-02-09**
 
   * initial version
