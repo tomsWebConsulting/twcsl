@@ -4,7 +4,7 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
-  Version         : 0.3.2
+  Version         : 0.3.3
   
   SS Versions     : 7.1, 7.0
   
@@ -1278,7 +1278,7 @@ const twcsl = ( ( $ ) => {
     
   // begin public properties
   
-    const version = '0.3.2';
+    const version = '0.3.3';
     
     // end public properties
     
@@ -1452,23 +1452,23 @@ const twcsl = ( ( $ ) => {
         
         } // end calculateRatio
         
-      let maxScrollTop;
-      
       $( window )
       
-        .resize ( function ( ) {
-        
-          maxScrollTop = $( document ).height ( ) - $( window ).height ( );
-          
-          } )
-          
-        .resize ( )
-        
         .scroll ( function ( ) {
         
-          const ratio = calculateRatio ( $( window ).scrollTop ( ),
+          const maxScrollY = $( document )
           
-            maxScrollTop, easingFunction, invertScale );
+            .height ( )
+            
+            -
+            
+            $( window )
+            
+              .height ( );
+              
+          const ratio = calculateRatio ( scrollY, maxScrollY, easingFunction,
+          
+            invertScale );
             
           callback ( ratio );
           
@@ -1500,6 +1500,14 @@ const twcsl = ( ( $ ) => {
     
   ( ( ) => { // initialize
   
+    const s = `Tom's Web Consulting Squarespace Library v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
     const initialize = ( ) => {
     
       _pageAlbumInitialize ( );
