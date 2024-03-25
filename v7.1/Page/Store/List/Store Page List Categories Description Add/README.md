@@ -138,7 +138,7 @@ Add simple category descriptions to store category pages.
             
       Example of Adding an Attribute
       
-        <script data-twc-splcda data-paragraph-style="Heading 1 type="application/ld+json"">
+        <script data-twc-splcda data-paragraph-style="Heading 1" type="application/ld+json">
         
       */
       
