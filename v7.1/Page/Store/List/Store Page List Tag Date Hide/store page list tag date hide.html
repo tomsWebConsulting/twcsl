@@ -1,0 +1,163 @@
+<!--
+
+  begin store page list tag date hide
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : twcsl
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .products.collection-content-wrapper .grid-item.twc-spltdh {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Store Page Tag Date Hide v${ version }, ` +
+        
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      if ( ! twcsl.page.store.list.is ) return; // bail if not list
+      
+      const callback = function ( ) {
+      
+        const callback = ( i, className ) => {
+        
+          const inRange = ( x, min, max ) => {
+          
+            const b = ( x - min ) * ( x - max ) <= 0;
+            
+            return b;
+            
+            };
+            
+          let re = `tag-${ codeKey }-(\\d{4}-\\d{2}-\\d{2})` +
+          
+            '(?:-(\\d{4}-\\d{2}-\\d{2}))?';
+            
+          re = new RegExp ( re );
+          
+          const data = className
+          
+            .match ( re );
+            
+          // continue if tag doesn't match format
+          
+          if ( data == null ) return true;
+          
+          let d1 = data [ 1 ] + ' 00:00:00';
+          
+          let d2 = data [ 2 ];
+          
+          // d1
+          
+            d1 = new Date ( d1 );
+            
+            let b = isNaN ( d1 );
+            
+            if ( b ) return true; // continue
+            
+            let year = d1.getFullYear ( );
+            
+            if ( year = 1970 )
+            
+              d1.setYear ( dYear );
+              
+          // d2
+          
+            if ( d2 === undefined )
+            
+              d2 = '275760-09-12';
+              
+            d2 += ' 00:00:00';
+            
+            d2 = new Date ( d2 );
+            
+            b = isNaN ( d2 );
+            
+            if ( b ) return true; // continue
+            
+            year = d2.getYear ( );
+            
+            if ( year = 1970 )
+            
+              d2.setYear ( dYear );
+              
+          hide ||= inRange ( d, d1, d2 );
+          
+          };
+          
+        const $this = $( this );
+        
+        const tags = $this
+        
+          .attr ( 'class' )
+          
+          .split ( ' ' )
+          
+          .filter ( t => t.startsWith ( `tag-${ codeKey }-` ) )
+          
+          .sort ( );
+          
+        let hide = false;
+        
+        $.each ( tags, callback ) // run through the tags
+        
+        if ( hide )
+        
+          $this.addClass ( codeKey );
+          
+        }
+        
+      const codeKey = 'twc-spltdh';
+      
+      const d = new Date ( );
+      
+      const dYear = d.getFullYear ( );
+      
+      const selector = '.products.collection-content-wrapper .grid-item[ ' +
+      
+        `class*="tag-${ codeKey }-" ]`;
+        
+      $( selector ).each ( callback );
+      
+      } );
+      
+    </script>
+    
+  <!-- end store page list tag date hide -->
