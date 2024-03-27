@@ -8,13 +8,13 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 ### Version
 
-  * 0.6.1
+  * 0.7.0
 
 #### SS Versions
 
   * 7.1
   
-  * 7.0 ([Bedford template family][2], [Brine template family][3], [Pacific template family][4])
+  * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
 
 #### v7.1 Fluid Engine Compatibility
 
@@ -22,19 +22,19 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 #### Dependencies
 
-  * [Squarespace plan][5] that supports [JavaScript][6].
+  * [Squarespace plan][6] that supports [JavaScript][7].
   
-  * [Tom's Web Consulting Squarespace Library][7]
+  * [Tom's Web Consulting Squarespace Library][8]
 
 ---
 
 ## Install
 
-* Install [twcsl][7]. After you install twcsl be sure to continue on with the
+* Install [twcsl][8]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
 * Add code from file **[store product detail add to cart button url
-  redirect.html][8]** to Store Settings > Advanced > Page Header Code Injection
+  redirect.html][9]** to Store Settings > Advanced > Page Header Code Injection
   for the store page. Read the code for any instructions within.
   
 * Options
@@ -43,7 +43,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][9].
+    * Add the following to a code block in [Additional Info][10].
       
       ```html
       <script>
@@ -77,10 +77,15 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
     
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-03-26**
+
+  * checked for v7.0 Avenue template compatibility
+  * bumped version to 0.7.0
+  
 * **2023-09-07**
 
   * fix for Bedford template family both adding to cart and redirecting
@@ -144,12 +149,13 @@ Please consider [making a donation][10].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[4]: https://support.squarespace.com/hc/en-us/articles/206545347
-[5]: https://www.squarespace.com/pricing
-[6]: https://en.wikipedia.org/wiki/JavaScript
-[7]: https://github.com/tomsWebConsulting/twcsl#install-options
-[8]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template
+[3]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[4]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[5]: https://support.squarespace.com/hc/en-us/articles/206545347
+[6]: https://www.squarespace.com/pricing
+[7]: https://en.wikipedia.org/wiki/JavaScript
+[8]: https://github.com/tomsWebConsulting/twcsl#install-options
+[9]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

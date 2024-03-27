@@ -2,9 +2,9 @@
 
   begin store product detail add to cart button url redirect
   
-  License         : < https://bit.ly/3F8sn8W >
+  License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.6.1
+  Version         : 0.7.0
   
   SS Versions     : 7.1, 7.0
   
@@ -13,7 +13,9 @@
   Engine
   Compatible      : Not Applicable
   
-  v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+  v7.0 Templates  : Avenue
+                    
+                    Bedford ( Anya, Bryant, Hayden )
                     
                     Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
                     Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
@@ -27,7 +29,7 @@
                     your template is not listed? then it is not currently
                     supported
                     
-                    * discontinued < https://bit.ly/30fUkey >
+                    * discontinued < https://tinyurl.com/y9d8fwvx >
   
   Dependencies    : twcsl
   
@@ -66,11 +68,9 @@
   
     ( ( ) => {
     
-      const codeKey = 'twc-spdatcbur';
-      
       const title = 'Store Product Detail Add to Cart Button Url Redirect';
       
-      const version = '0.6.1';
+      const version = '0.7.0';
       
       const s = `${ title } v${ version }, ` +
       
@@ -83,6 +83,8 @@
       const initialize = ( ) => {
       
         if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+        
+        const codeKey = 'twc-spdatcbur';
         
         const ids = $.map ( Static.SQUARESPACE_CONTEXT.product.variants,
         
@@ -106,7 +108,7 @@
           
           '.ProductItem-details',
           
-          '#productDetails', // 7.0 ( Bedford )
+          '#productDetails', // 7.0 ( Avenue, Bedford )
           
           ]
           
@@ -146,7 +148,7 @@
         
           .parents ( '.sqs-add-to-cart-button-wrapper' )
           
-          .addClass ( 'twc-spdatcbur' )
+          .addClass ( codeKey )
           
           .end ( )
           
