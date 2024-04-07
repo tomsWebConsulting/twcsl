@@ -61,7 +61,7 @@ Some examples...
   
     site page link with a hash
     
-  * http://www.tomsWeb.consulting/?twc-hcbewsta#hash
+  * http&#58;&#47;&#47;www.tomsWeb.consulting/?twc-hcbewsta#hash
   
     external site link
 
@@ -92,7 +92,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: header%20cta%20buttons%20each%20word%20span%20tag%20add.css#L1
-[5]: header%20cta%20buttons%20each%20word%20span%20tag%20add#L1
+[5]: header%20cta%20buttons%20each%20word%20span%20tag%20add.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://tinyurl.com/ynessvsf
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
