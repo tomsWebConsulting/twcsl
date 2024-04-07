@@ -1,0 +1,48 @@
+/*
+
+  begin header cta buttons each word span tag add
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.1.0-development
+  
+  SS Version  : 7.1
+  
+  Note        : this effect is not active in SS Preview to test it use private
+                browsing < https://tinyurl.com/ynessvsf >
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  /* desktop */
+  
+  html:not( .squarespace-damask ) .header-actions .header-actions-action--cta,
+  
+  /* mobile */
+  
+	html:not( .squarespace-damask ) .header-menu .header-menu-cta
+	
+ 		{
+  	
+    	visibility : hidden;
+    	
+    	}
+    	
+  /* desktop */
+  
+  html:not( .squarespace-damask ) .header-actions .header-actions-action--cta.twc-hcbewsta-show,
+	
+  /* mobile */
+  
+	html:not( .squarespace-damask ) .header-menu .header-menu-cta.twc-hcbewsta-show
+	
+ 		{
+  	
+    	visibility : visible;
+    	
+    	}
+    	
+  /* end header cta buttons each word span tag add */
