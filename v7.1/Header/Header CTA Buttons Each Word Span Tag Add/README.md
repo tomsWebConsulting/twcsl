@@ -45,21 +45,29 @@ Add a query string parameter of **twc-hcbewsta** to each header CTA button link.
 
 Some examples...
 
-  * /?twc-hcbewsta
+  * site top level link
   
-    site top level link
+  	```
+  	/?twc-hcbewsta
+  	```
     
-  * /link?twc-hcbewsta
+  * site page link
   
-    site page link
+  	```
+  	/link?twc-hcbewsta
+  	```
     
-  * /link?parameter=1&twc-hcbewsta
+  * site page link that already has existing query string parameter
   
-    site page link that already has existing query string parameter
+  	```
+  	/link?parameter=1&twc-hcbewsta
+  	```
     
-  * /link?twc-hcbewsta#hash
+  * site page link with a hash
   
-    site page link with a hash
+  	```
+  	/link?twc-hcbewsta#hash
+  	```
     
   * external site link
   
