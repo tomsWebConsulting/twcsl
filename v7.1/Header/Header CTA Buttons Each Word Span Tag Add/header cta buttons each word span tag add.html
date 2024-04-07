@@ -26,92 +26,92 @@
     
   $( ( ) => {
   
-  	debugger;
-  	
-		const version = '0.1.0';
-		
-		const s = `Header CTA Buttons Each Word Span Tag Add v${ version }, ` +
-		
-			'License < https://tinyurl.com/s872fb68 >, ' +
-			
-			'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-			
-		console.log ( s );
-		
+    debugger;
+    
+    const version = '0.1.0';
+    
+    const s = `Header CTA Buttons Each Word Span Tag Add v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
     // if ( window.frameElement !== null ) return; // bail if in preview
     
     const callback = function ( ) {
     
-    	const $this = $( this );
-    	
-    	let href = document.createElement ( 'a' );
-    	
-    	href.href = $this.attr ( 'href' );
-    	
-    	href = new URL ( href.href );
-    	
-    	const searchParams = href.searchParams;
-    	
-    	const b = searchParams.has ( `${ codekey }` );
-    	
-    	if ( ! b ) return; // bail if no search params
-    	
-    	const re = RegExp ( `^${ Static.SQUARESPACE_CONTEXT.website.baseUrl }` );
-    	
-    	searchParams.delete ( `${ codekey }` );
-    	
-    	href = href
-    	
-    		.href
-    		
-    		.replace ( re, '' );
-    		
-    	$this.attr ( 'href', href );
-    	
-			let html = '<span>'
-			
-				+
-				
-				$this
-				
-				.text ( )
-				
-				.trim ( )
-				
-				.split ( ' ' )
-				
-				.join ( '</span> <span>' )
-				
-				+
-				
-				'</span>';
-				
-			$this.html ( html );
-			
-    	}
-    	
+      const $this = $( this );
+      
+      let href = document.createElement ( 'a' );
+      
+      href.href = $this.attr ( 'href' );
+      
+      href = new URL ( href.href );
+      
+      const searchParams = href.searchParams;
+      
+      const b = searchParams.has ( `${ codekey }` );
+      
+      if ( ! b ) return; // bail if no search params
+      
+      const re = RegExp ( `^${ Static.SQUARESPACE_CONTEXT.website.baseUrl }` );
+      
+      searchParams.delete ( `${ codekey }` );
+      
+      href = href
+      
+        .href
+        
+        .replace ( re, '' );
+        
+      $this.attr ( 'href', href );
+      
+      let html = '<span>'
+      
+        +
+        
+        $this
+        
+        .text ( )
+        
+        .trim ( )
+        
+        .split ( ' ' )
+        
+        .join ( '</span> <span>' )
+        
+        +
+        
+        '</span>';
+        
+      $this.html ( html );
+      
+      }
+      
     const codekey = 'twc-hcbewsta';
     
     const selector = [
     
-    	'.header-actions .header-actions-action--cta',
-    	
-			'.header-menu .header-menu-cta'
-			
-			]
-			
-			.join ( ', ' );
-			
-		$( selector )
-		
-			.find ( '.btn' )
-			
-			.each ( callback )
-			
-			.end ( )
-			
-			.addClass ( 'twc-hcbewsta-show' );
-			
+      '.header-actions .header-actions-action--cta',
+      
+      '.header-menu .header-menu-cta'
+      
+      ]
+      
+      .join ( ', ' );
+      
+    $( selector )
+    
+      .find ( '.btn' )
+      
+      .each ( callback )
+      
+      .end ( )
+      
+      .addClass ( 'twc-hcbewsta-show' );
+      
     } );
     
   </script>

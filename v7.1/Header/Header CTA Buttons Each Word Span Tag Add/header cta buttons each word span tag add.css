@@ -23,26 +23,26 @@
   
   /* mobile */
   
-	html:not( .squarespace-damask ) .header-menu .header-menu-cta
-	
- 		{
-  	
-    	visibility : hidden;
-    	
-    	}
-    	
+  html:not( .squarespace-damask ) .header-menu .header-menu-cta
+  
+     {
+    
+      visibility : hidden;
+      
+      }
+      
   /* desktop */
   
   html:not( .squarespace-damask ) .header-actions .header-actions-action--cta.twc-hcbewsta-show,
-	
+  
   /* mobile */
   
-	html:not( .squarespace-damask ) .header-menu .header-menu-cta.twc-hcbewsta-show
-	
- 		{
-  	
-    	visibility : visible;
-    	
-    	}
-    	
+  html:not( .squarespace-damask ) .header-menu .header-menu-cta.twc-hcbewsta-show
+  
+     {
+    
+      visibility : visible;
+      
+      }
+      
   /* end header cta buttons each word span tag add */

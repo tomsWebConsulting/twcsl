@@ -8,15 +8,15 @@ Add span tags around the words of CTA buttons in the header.
 
 ### Version
 
-	* 0.1.0-development
+  * 0.1.0
 
 #### SS Version
 
-	* 7.1
+  * 7.1
 
 #### Fluid Engine Compatible
 
-	* Not Applicable
+  * Not Applicable
 
 #### Dependencies
 
@@ -45,25 +45,25 @@ Add a query string parameter of **twc-hcbewsta** to each header CTA button link.
 
 Some examples...
 
-	* /?twc-hcbewsta
-	
-		site top level link
-		
-	* /link?twc-hcbewsta
-	
-		site page link
-		
-	* /link?parameter=1&twc-hcbewsta
-	
-		site page link that already has existing query string parameter
-		
-	* /link?twc-hcbewsta#hash
-	
-		site page link with a hash
-		
-	* http://www.tomsWeb.consulting/?twc-hcbewsta#hash
-	
-		external site link
+  * /?twc-hcbewsta
+  
+    site top level link
+    
+  * /link?twc-hcbewsta
+  
+    site page link
+    
+  * /link?parameter=1&twc-hcbewsta
+  
+    site page link that already has existing query string parameter
+    
+  * /link?twc-hcbewsta#hash
+  
+    site page link with a hash
+    
+  * http://www.tomsWeb.consulting/?twc-hcbewsta#hash
+  
+    external site link
 
 ## Notes
 
