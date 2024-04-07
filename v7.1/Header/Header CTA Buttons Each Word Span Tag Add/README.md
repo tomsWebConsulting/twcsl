@@ -61,9 +61,13 @@ Some examples...
   
     site page link with a hash
     
-  * http&#58;&#47;&#47;www&period;tomsWeb&period;consulting/?twc-hcbewsta#hash
+  * external site link
   
-    external site link
+  	```
+  	http://www.tomsWeb.consulting/?twc-hcbewsta#hash
+  	```
+  
+    
 
 ## Notes
 
