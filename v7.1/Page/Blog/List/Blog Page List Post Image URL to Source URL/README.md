@@ -22,7 +22,7 @@ Change blog post image URL to source URL.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Tom's Web Consulting Squarespace Library][4]
+  * [Tom's Web Consulting Squarespace Library][4].
 
 ---
 
@@ -46,6 +46,10 @@ Change blog post image URL to source URL.
       Please see [Add code to code injection][8].
 
 * Read the code for any instructions within.
+
+## Note
+
+This code is not designed to work with the Universal Filter plugin.
 
 ## Make a Donation
 
