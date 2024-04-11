@@ -24,8 +24,7 @@ Add Mindbody login or register links to header navigation.
 
 * Add the following to Website > Website Tools > Code Injection > HEADER.
   
-  ```
-  hmtl
+  ```hmtl
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
@@ -38,8 +37,7 @@ Before you install the code check your Mindbody generated code against the code
 snippet below. If the two codes look substantially different this code may need
 to be updated to work properly.
 
-```
-html
+```html
 <script src="https://widgets.mindbodyonline.com/javascripts/healcode.js" type="text/javascript">
 
   </script>
