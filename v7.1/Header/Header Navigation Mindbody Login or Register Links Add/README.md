@@ -24,7 +24,7 @@ Add Mindbody login or register links to header navigation.
 
 * Add the following to Website > Website Tools > Code Injection > HEADER.
   
-  ```hmtl
+  ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
