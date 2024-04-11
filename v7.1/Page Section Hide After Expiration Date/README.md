@@ -52,11 +52,12 @@ example of setting the value for the expiration variable.
       };
 ```      
 
-You can find a page section id by using Heather Tovey's
-[Squarespace ID Finder](https://www.heathertovey.com/squarespace-id-finder/).
+You can find a data section id by using Heather Tovey's [Squarespace ID
+Finder][1].
 
 To use SIF go to your page and use SIF. You will see something like the
-following.
+following. You only need the data-section-id value which is the number within
+the quotes to use in the code.
 
 ![squarespace id finder example](read%20me%20assets/data%20section%20id.png)
 
@@ -82,3 +83,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://www.heathertovey.com/squarespace-id-finder/
