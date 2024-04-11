@@ -419,8 +419,6 @@ not necessarily designed to work together.
     
   * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
     
-  * [Add Mindbody Login Register Link to Navigation](v7.1/Add%20Mindbody%20Login%20Register%20Link%20to%20Navigation)
-    
   * [Page Section First Blank Hide](v7.1/Page%20Section%20First%20Blank%20Hide)
     
   * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
@@ -488,6 +486,8 @@ not necessarily designed to work together.
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
       
     * [Header Menu Mobile Outline](v7.1/Header/Header%20Menu%20Mobile%20Outline)
+      
+    * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
       
     * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
       
