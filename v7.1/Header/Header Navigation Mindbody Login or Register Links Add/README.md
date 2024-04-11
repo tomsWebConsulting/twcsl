@@ -24,18 +24,22 @@ Add Mindbody login or register links to header navigation.
 
 * Add the following to Website > Website Tools > Code Injection > HEADER.
   
-  `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`
+  ```
+  hmtl
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  ```
   
 * Add code from file **[header navigation mindbody login or register links
   add.html][4]** to Website > Website Tools > Code Injection > FOOTER.
 
 ## Notes
 
-Before you install the code check your mindbody generated code against the code
+Before you install the code check your Mindbody generated code against the code
 snippet below. If the two codes look substantially different this code may need
 to be updated to work properly.
 
 ```
+html
 <script src="https://widgets.mindbodyonline.com/javascripts/healcode.js" type="text/javascript">
 
   </script>
