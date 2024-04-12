@@ -8,7 +8,7 @@ Hide products on product list pages using tags with dates.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -106,11 +106,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2023-05-30**
+* **2024-04-11**
 
-  * remove errants break statement, no functional changes
+  * fix for 1970 date check
   * bumped version to 0.1.1
-  -->
+  
 * **2024-03-24**
 
   * initial version

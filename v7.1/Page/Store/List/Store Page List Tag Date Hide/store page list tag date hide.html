@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -40,7 +40,7 @@
   
     $( ( ) => {
     
-      const version = '0.1.0';
+      const version = '0.1.1';
       
       const s = `Store Page Tag Date Hide v${ version }, ` +
         
@@ -94,7 +94,9 @@
             
             let year = d1.getFullYear ( );
             
-            if ( year = 1970 )
+            b = year == 1970;
+            
+            if ( b )
             
               d1.setYear ( dYear );
               
@@ -114,7 +116,9 @@
             
             year = d2.getYear ( );
             
-            if ( year = 1970 )
+            b = year == 1970;
+            
+            if ( b )
             
               d2.setYear ( dYear );
               
