@@ -47,8 +47,8 @@ Please consider [making a donation][6].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://en.wikipedia.org/wiki/JavaScript
-[3]: https://github.com/tomsWebConsulting/twcsl
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: header%20site%20title%20link%20not%20homepage%20change.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
