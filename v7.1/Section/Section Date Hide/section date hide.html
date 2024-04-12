@@ -1,0 +1,226 @@
+<!--
+
+  begin section date hide
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : jQuery
+  
+  Note          : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.sdh = {
+    
+      dataSectionIdDateMap : {
+      
+        /*
+        
+          the format of each data structure is a page section id, start date,
+          and optional stop date
+          
+          following is an example data structure. copy the example data
+          structure below and paste after the example data structure. remove the
+          forward slash asterisk and asterisk forward slash lines from before
+          and after the example data structure. repeat for as many page sections
+          as you need to manipulate
+          
+          the format of dates are YYYY-MM-DD
+          
+          */
+          
+        /*
+        
+        '[ enter data section id here between single quotes replacing square brackets ]' : [
+        
+          '[ enter start date here between single quotes replacing square brackets ]',
+          
+          '[ optional, enter stop date here between single quotes replacing square brackets ]'
+          
+          ],
+          
+        */
+        
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #siteWrapper {
+    
+      --twc-sdh-page-section-display : none;
+      
+      }
+      
+    .page-section {
+    
+      display : var( --twc-sdh-page-section-display );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `Section Date Hide v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const callback = function ( ) {
+      
+        const $this = $( this );
+        
+        const dataSectionId = $this
+        
+          .parents ( '.page-section' )
+          
+          .attr ( 'data-section-id' );
+          
+        dataSectionIdDateMap [ dataSectionId ] = [
+        
+          $this.attr ( 'data-date-start' ),
+          
+          $this.attr ( 'data-date-stop' )
+          
+          ];
+          
+        $this
+        
+          .parents ( '.fe-block, .sqs-block-code' )
+          
+          .last ( )
+          
+          .remove ( );
+          
+        }
+        
+      const codeKey = 'twc-sdh';
+      
+      const d = new Date ( );
+      
+      const dataSectionIdDateMap = twc.sdh.dataSectionIdDateMap;
+      
+      const dYear = d.getFullYear ( );
+      
+      let selector = `x-${ codeKey }`;
+      
+      $( selector ).each ( callback );
+      
+      const entries = Object.entries ( dataSectionIdDateMap );
+      
+      for ( const [ dataSectionId, value ] of entries ) {
+      
+        const inRange = ( x, min, max ) => {
+        
+          const b = ( x - min ) * ( x - max ) <= 0;
+          
+          return b;
+          
+          };
+          
+        let d1 = value [ 0 ];
+        
+        if ( d1 === undefined ) continue;
+        
+        let re = '\\d{4}-\\d{2}-\\d{2}';
+          
+        re = new RegExp ( re );
+        
+        let b = ! re.test ( d1 );
+        
+        if ( b ) continue;
+        
+        let d2 = value [ 1 ];
+        
+        // d1
+        
+          d1 += ' 00:00:00';
+          
+          d1 = new Date ( d1 );
+          
+          b = isNaN ( d1 );
+          
+          if ( b ) continue;
+          
+          let year = d1.getFullYear ( );
+          
+          if ( year == 1970 )
+          
+            d1.setYear ( dYear );
+            
+        // d2
+        
+          b = d2 === undefined || isNaN ( d2 [ 0 ] );
+          
+          if ( b )
+          
+            d2 = '275760-09-12';
+            
+          d2 += ' 00:00:00';
+          
+          d2 = new Date ( d2 );
+          
+          b = isNaN ( d2 );
+          
+          if ( b ) continue;
+          
+          year = d2.getYear ( );
+          
+          if ( year == 1970 )
+          
+            d2.setYear ( dYear );
+            
+        b = inRange ( d, d1, d2 );
+        
+        if ( b ) {
+        
+          const selector = `[ data-section-id = "${ dataSectionId }" ]`;
+          
+          $( selector ).remove ( );
+            
+          }
+          
+        }
+        
+      selector = '#siteWrapper';
+      
+      $( selector ).css ( `--${ codeKey }-page-section-display`, 'flex' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end section date hide -->
