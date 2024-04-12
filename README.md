@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 282 effects. Each effect has it's own version number, code,
+twcsl contains 283 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -488,6 +488,8 @@ not necessarily designed to work together.
     * [Header Menu Mobile Outline](v7.1/Header/Header%20Menu%20Mobile%20Outline)
       
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
+      
+    * [Header Site Title Link Not Homepage Change](v7.1/Header/Header%20Site%20Title%20Link%20Not%20Homepage%20Change)
       
     * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
       
