@@ -1,7 +1,7 @@
 # Section Date Hide
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Hide page sections using dates.
@@ -23,7 +23,7 @@ Hide page sections using dates.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [jQuery][4]
-  
+
 ---
 
 ## Install
