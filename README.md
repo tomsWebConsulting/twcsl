@@ -283,6 +283,8 @@ not necessarily designed to work together.
       
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
+    * [Section Date Hide](v7.1/Section/Section%20Date%20Hide)
+      
     * [Blank](v7.1/Section/Blank)
       
       * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
@@ -454,8 +456,6 @@ not necessarily designed to work together.
   * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
   * [Event Detail Page Categories Attribute Add](v7.1/Event%20Detail%20Page%20Categories%20Attribute%20Add)
-    
-  * [Page Section Hide After Expiration Date](v7.1/Page%20Section%20Hide%20After%20Expiration%20Date)
     
   * [Move Blog Post First Image to Top Area](v7.1/Move%20Blog%20Post%20First%20Image%20to%20Top%20Area)
     
