@@ -26,7 +26,7 @@ Auto click right arrow of Gallery sections.
 
 ---
 
-## Install
+## Quick Install
 
 * Add the following to Website > Pages > Website Tools > Code Injection >
   HEADER.
@@ -43,8 +43,9 @@ Auto click right arrow of Gallery sections.
       effect.
       
     * Add code from file **[gallery section right arrow auto click.html][5]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Please see
-      [Per-page code injection][6]. Read the code for any instructions within.
+      Page Settings > Advanced > Page Header Code Injection for the page. Please
+      see [Per-page code injection][6]. Read the code for any instructions
+      within.
       
   * Site-wide
   
@@ -55,13 +56,13 @@ Auto click right arrow of Gallery sections.
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
       code to code injection][7]. Read the code for any instructions within.
 
-* How to Use
+## How to Use
 
   * Add or modify a Gallery section.
     
   * Edit the section.
     
-  * Select a GALLERY TYPE of Simple, Slideshow: Full or Slideshow: Reel.
+  * Select a GALLERY TYPE of Simple, Slideshow: Full, or Slideshow: Reel.
     
   * For OPTIONS enable Captions and disable Autoplay (GALLERY TYPE Reel doesn't
     have this option).
@@ -80,15 +81,14 @@ Auto click right arrow of Gallery sections.
       
       * slideDuration
         
-        The number seconds a slide is visible or the current slide.
+        The number of seconds a slide is visible or the current slide.
         
       * intersectionObserver
         
         Values are **true** or **false**. True means wait for the Gallery
-        section to be visible in the viewport before the first right arrow
-        click. A value of false is supported but if you use it there is no need
-        for this code. You can just use the settings made available by
-        Squarespace.
+        section to be mostly visible in the viewport before the first right
+        arrow click after the slideDuration. False means start the first right
+        click after the slideDuration.
 
 ## Make a Donation
 
