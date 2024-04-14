@@ -1,0 +1,305 @@
+<!--
+
+  begin gallery section right arrow auto click
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                  
+                  this effect only supports gallery type slideshow simple
+                  
+                  this effect is not active in SS Preview to test it use
+                  private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #sections {
+    
+      --twc-gallery-section-visibility : hidden;
+      
+      }
+      
+    html:not( .squarespace-damask ) #sections .gallery-section {
+    
+      display : var( --twc-gallery-section-visibility );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Gallery Section Right Arrow Auto Click v${ version }, ` +
+        
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const codeKey = 'twc-gsraac';
+      
+      const selectorKey = '.gallery-section';
+      
+      // hide show register
+      
+      ( ( selectorKey ) => {
+      
+        if ( window.twc == undefined ) window.twc = { };
+        
+        if ( twc.data == undefined ) twc.data = { };
+        
+        if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+        
+        if ( twc.data.hideShow [ selectorKey ] == undefined )
+        
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            =
+            
+            [ ];
+            
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .push ( `--${ codeKey }` );
+          
+        } ) ( selectorKey );
+        
+      ( ( ) => {
+      
+        const callback = function ( ) {
+        
+          const $this = $( this );
+          
+          const re = new RegExp ( `^${ codeKey }\\s*:\\s*(.+)\$`, 'm' );
+          
+          let text = $this.text ( );
+          
+          let options = text.match ( re );
+          
+          if ( options === null ) return true; // continue
+          
+          const $section = $this
+          
+            .parents ( '.gallery-section' );
+            
+          const section = $section.get ( 0 );
+          
+          text = text
+          
+            .replace ( options [ 0 ], '' )
+            
+            .trim ( );
+            
+          options = JSON.parse ( options [ 1 ] );
+          
+          if ( text )
+          
+            $this.text ( text );
+            
+            else
+            
+              $this
+              
+                .parents ( '.gallery-caption' )
+                
+                .remove ( );
+                
+          const b = options.intersectionObserver;
+          
+          const slideshow = ( ) => {
+          
+            const click = ( ) => {
+            
+              const selector = [
+              
+                '.gallery-fullscreen-slideshow-control-btn[ data-next ]',
+                
+                '.gallery-reel-control-btn[ data-next ]',
+                
+                '.gallery-slideshow-control-next ' +
+                
+                  '.gallery-slideshow-control-btn'
+                  
+                ]
+                
+                .join ( ', ' );
+                
+              $( selector, $section ).click ( );
+              
+              };
+              
+            const milliseconds = options.slideDuration * 1000;
+            
+            const id =
+            
+              setInterval ( click, milliseconds );
+              
+            /*
+            
+            // continue if no kill on user interaction
+            
+            if ( ! options.killUponUserAction ) return true;
+            
+            const callback = function ( event ) {
+            
+              console.log ( event );
+              
+              clearInterval ( id );
+              
+              $( this )
+              
+                .off ( 'mousedown touchstart' );
+                
+              }
+              
+            const selector = [
+            
+              '.gallery-fullscreen-slideshow-wrapper',
+              
+              '.gallery-reel-wrapper',
+              
+              '.gallery-slideshow-wrapper'
+              
+              ]
+              
+              .join ( ', ' );
+              
+            $( selector, $section )
+            
+            $section
+            
+              .on ( 'mousedown touchstart', callback );
+              
+            */
+            
+            };
+            
+          if ( b ) {
+          
+            const callback = ( entries, observer ) => {
+            
+              const callback = ( entry ) => {
+              
+                const b = ! entry.isIntersecting;
+                
+                if ( b ) return true; // bail if not intersecting
+                
+                observer.disconnect ( );
+                
+                slideshow ( );
+                
+                };
+                
+              entries.forEach ( callback );
+              
+              };
+              
+            const options = {
+            
+              // root : document.querySelector ( '' ),
+              
+              rootMargin : '0px',
+              
+              threshold : 0.75
+              
+              };
+            
+            const observer = new IntersectionObserver ( callback, options );
+            
+            observer.observe ( section );
+            
+            } else
+            
+              slideshow ( );
+              
+          }
+          
+        const selector = '.gallery-section .gallery-caption ' +
+        
+          `p.gallery-caption-content:contains(${ codeKey })`;
+          
+        $( selector ).each ( callback );
+        
+        } ) ( );
+        
+      // hide show unregister
+      
+      ( ( selectorKey ) => {
+      
+        let i = twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .indexOf ( `--${ codeKey }` )
+          
+        if ( i != -1 )
+        
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .splice ( i, 1 );
+            
+        i = twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .length;
+          
+        if ( ! i )
+        
+          $( '#sections' )
+          
+            .css ( '--twc-gallery-section-visibility', 'visible' );
+            
+        } ) ( selectorKey );
+        
+      } );
+      
+    </script>
+  
+  <!-- end gallery section right arrow auto click -->
