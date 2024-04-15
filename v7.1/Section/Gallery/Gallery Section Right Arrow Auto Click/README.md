@@ -44,8 +44,7 @@ Auto click right arrow of Gallery sections.
       
     * Add code from file **[gallery section right arrow auto click.html][5]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [Per-page code injection][6]. Read the code for any instructions
-      within.
+      see [Per-page code injection][6].
       
   * Site-wide
   
@@ -54,7 +53,7 @@ Auto click right arrow of Gallery sections.
       
     * Add code from file **[gallery section right arrow auto click.html][5]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][7]. Read the code for any instructions within.
+      code to code injection][7].
 
 ## How to Use
 
@@ -90,9 +89,13 @@ Auto click right arrow of Gallery sections.
         arrow click after the slideDuration. False means start the first right
         click after the slideDuration.
 
+## Notes
+
+This effect is not active in SS Preview to test it use [private browsing][8].
+
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -112,4 +115,5 @@ Please consider [making a donation][8].
 [5]: gallery%20section%20right%20arrow%20auto%20click.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
