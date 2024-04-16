@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Version
 
@@ -28,7 +28,8 @@ Add page section toggle effect to pages.
 
 ## Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -61,7 +62,7 @@ Add page section toggle effect to pages.
     /&gt;** tag to toggle multiple sections. The default value when this
     attribute is not used is one. This effect does not check that you are using
     resonable values in the context of what you are building. If the wrong
-    values used it can cause unusual results. A tag example.
+    values are used it can cause unusual results. A tag example.
     
     ```html
     <x-twc-psst data-section-count="2" />
@@ -82,8 +83,8 @@ Add page section toggle effect to pages.
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
   
-* You can repeat the previous two section pattern for as many toggle sections as
-  you want.
+* You can repeat the previous two (or more when using the data-section-count
+  attribute) section pattern for as many toggle sections as you want.
 
 ## x-twc-psst-close tag
 
@@ -104,6 +105,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-04-16**
+
+  * fix for Gallery section elements not showing images
+  * bumped version to 0.5.1
+  
 * **2024-03-04**
 
   * add feature to toggle multiple sections
