@@ -2,18 +2,29 @@
 
 ### [License][1]
 
-### Version 0.7.0
+### Synopsis
 
-#### SS Version 7.1
+Add border images around image elements of a site.
 
-#### Fluid Engine Compatible : Yes
+### Version
+
+  * 0.7.1
+
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Yes
 
 ---
 
 ## Quick Install
 
-Add code from file **[site wide image borders.less][2]** to Website >
-Website Tools > Custom CSS.
+* Add code from file **[site wide image borders.less][2]** to Website > Pages >
+  Website Tools > Custom CSS. Read the code for any instructions within. Please
+  see [Using the CSS Editor][4].
 
 ## Make a Donation
 
@@ -21,6 +32,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
+* **2024-04-20**
+
+  * another fix for summary block image border
+  * bumped version to 0.7.1
+  
 * **2023-02-04**
 
   * fix summary block image border
@@ -90,3 +106,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20wide%20image%20borders.less#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

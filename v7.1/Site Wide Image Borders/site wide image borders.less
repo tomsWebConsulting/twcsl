@@ -2,9 +2,9 @@
 
   begin site wide image borders
   
-  License       : < https://bit.ly/3F8sn8W >
+  License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.0
+  Version       : 0.7.1
   
   SS Version    : 7.1
   
@@ -89,6 +89,15 @@
     
   // do not change anything below, there be the borg here
   
+  /*
+  
+    @border-color : red;
+    @border-radius : 10px;
+    @border-style : solid;
+    @border-width : 1px;
+    
+    */
+    
   .swib-properties {
   
     border-color : @border-color;
@@ -114,8 +123,6 @@
         
     }
     
-  // auto layout
-  
   .auto-layout( @boolean ) when ( @boolean = true ) {
   
     .user-items-list-banner-slideshow .slide-media-container,
@@ -132,10 +139,8 @@
         
         }
         
-    } // end auto layout
+    }
     
-  // blog list
-  
   .blog-list( @boolean ) when ( @boolean = true ) {
   
     body[class*="collection-type-blog-"].view-list {
@@ -152,10 +157,8 @@
         
       }
       
-    } // end blog list
+    }
     
-  // blog post
-  
   .blog-post( @boolean ) when ( @boolean = true ) {
   
     body[class*="collection-type-blog-"].view-item {
@@ -183,8 +186,6 @@
       
     }
     
-  // event list
-  
   .event-list( @boolean ) when ( @boolean = true ) {
   
     body[class*="collection-type-events-"].view-list .page-section[class*="collection-type-events-"] {
@@ -205,8 +206,6 @@
       
     }
     
-  // event
-  
   .event( @boolean ) when ( @boolean = true ) {
   
       body[class*="collection-type-events-"].view-item {
@@ -234,8 +233,6 @@
         
     }
     
-  // gallery block
-  
   .gallery-block( @boolean ) when ( @boolean = true ) {
   
     .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
@@ -270,8 +267,6 @@
       
     }
     
-  // gallery section
-  
   .gallery-section( @boolean ) when ( @boolean = true ) {
   
     .gallery-section {
@@ -297,16 +292,12 @@
       
     }
     
-  // image block
-  
   .image-block( @boolean ) when ( @boolean = true ) {
   
     .swib-image-block( );
     
     }
     
-  // portfolio list
-  
   .portfolio-list( @boolean ) when ( @boolean = true ) {
   
     body.view-list .page-section[class*="collection-type-portfolio-"]
@@ -345,8 +336,6 @@
         
     }
     
-  // product block
-  
   .product-block( @boolean ) when ( @boolean = true ) {
   
     .product-block .image-container img {
@@ -357,8 +346,6 @@
       
     }
     
-  // section background
-  
   .section-background ( @boolean ) when ( @boolean = true ) {
   
     .has-background .section-background {
@@ -381,8 +368,6 @@
     
     }
     
-  // store product detail
-  
   .store-product-detail( @boolean ) when ( @boolean = true ) {
   
     body.collection-type-products.view-item .ProductItem-gallery-slides-item {
@@ -393,8 +378,6 @@
       
     }
     
-  // store product detail additional info
-  
   .store-product-detail-additional-info( @boolean ) when ( @boolean = true ) {
   
     .ProductItem .ProductItem-additional {
@@ -405,11 +388,9 @@
       
     }
     
-  // summary block
-  
   .summary-block( @boolean ) when ( @boolean = true ) {
   
-    .sqs-block-summary-v2 .img-wrapper img {
+    .sqs-block-summary-v2 .img-wrapper {
     
       .swib-properties( );
       
