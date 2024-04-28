@@ -137,15 +137,11 @@ not necessarily designed to work together.
   
 * [Form Block Track Field Block IDs](Form%20Block%20Track%20Field%20Block%20IDs)
   
-* [Form Block Fields From Search Parameters](Form%20Block%20Fields%20From%20Search%20Parameters)
-  
 * [Add Continue Shopping Message When Cart Has Items](Add%20Continue%20Shopping%20Message%20When%20Cart%20Has%20Items)
   
 * [Cart Unit Prices](Cart%20Unit%20Prices)
   
 * [Page Edit Keys](Page%20Edit%20Keys)
-  
-* [Form Block Multi-Column](Form%20Block%20Multi-Column)
   
 * [Responsive Image Map Template](Responsive%20Image%20Map%20Template)
   
@@ -604,6 +600,10 @@ not necessarily designed to work together.
   * [Form](Block/Form)
     
     * [Form Block Wrapper Observe Changes](Block/Form/Form%20Block%20Wrapper%20Observe%20Changes)
+      
+    * [Form Block Fields From Search Parameters](Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters)
+      
+    * [Form Block Multi-Column](Block/Form/Form%20Block%20Multi-Column)
       
   * [Summary](Block/Summary)
     
