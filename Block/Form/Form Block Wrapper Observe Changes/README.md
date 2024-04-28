@@ -9,7 +9,7 @@ nodes are added or removed from the [DOM][2].
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
 #### SS Versions
 
@@ -31,8 +31,8 @@ nodes are added or removed from the [DOM][2].
 
 ## Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -56,8 +56,8 @@ nodes are added or removed from the [DOM][2].
       you want to have this effect.
       
     * Add code from file **[form block wrapper observe changes.html][6]** to
-      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Please see [Add code
-      to code injection][8]. Read the code for any instructions within.
+      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+      code to code injection][8]. Read the code for any instructions within.
       
 * Add or edit a form block.
 
@@ -88,9 +88,9 @@ defined before the code of this effect. Note the use of var.
 ```html
 <script>
 
-  var myNamedFunction = $node => {
+  var myNamedFunction = ( $node ) => {
   
-    console.log ( $node );
+    console.log ( 'myNamedFunction : , $node );
     
     };
     
@@ -108,6 +108,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-04-27**
+
+  * restructured the code
+  * fix for user callbacks not running
+  * bumped version to 0.3.0
+  
 * **2023-10-09**
 
   * remove some guard checks that prevented some nodes being passed to callbacks
