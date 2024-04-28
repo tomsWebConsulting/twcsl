@@ -6,7 +6,7 @@
 
 Fill form fields from search query parameters of the page URL.
 
-### Version 0.1.1
+### Version 0.2.0
 
 #### SS Versions
 
@@ -53,13 +53,10 @@ Fill form fields from search query parameters of the page URL.
       the **Form Block Wrapper Observe Changes** code. Please see [Add code to
       code injection][7].
 
-* In the **Form Block Wrapper Observe Changes** code set the **added** callback
-  to **twcFbffsp** per the **Form Block Wrapper Observe Changes** code install
-  steps.
-
 * Add or edit a form block.
 
-* Add a Line field with a LABEL of **twc-fbffsp**.
+* In the **Form Block Wrapper Observe Changes** code add **twcFbffsp** to
+  **added** per the **Form Block Wrapper Observe Changes** code install steps.
 
 * For each form field that you want to map from a search query string parameter
   key and put the parameter value into the field, add a line of the following
@@ -91,7 +88,8 @@ Fill form fields from search query parameters of the page URL.
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][8].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][8].
 
 This effect does not work with checkbox, radio, or survey fields.
 
@@ -105,6 +103,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-04-28**
+
+  * remove line field to trigger effect, adding the callback is the trigger
+  * bumped version to 0.2.0
+ 
 * **2024-04-27**
 
   * update to work with Form Block Wrapper Observe Changes v0.3.0
