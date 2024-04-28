@@ -61,8 +61,8 @@ nodes are added or removed from the [DOM][2].
       
 * Add or edit a form block.
 
-* Add a Line field with a LABEL of **twc-fbwoc** and DESCRIPTION of the
-  following...
+* Add a Line field as the first field with a LABEL of **twc-fbwoc** and
+  DESCRIPTION of the following...
   
   ```
   "callbacks" : {
@@ -99,8 +99,10 @@ defined before the code of this effect. Note the use of var.
 
 ## Notes
 
-This code is a base for other effects. This effect is not active in SS Preview
-to test it use [private browsing][9].
+This code is a base for other effects.
+
+This effect is not active in Squarespace Preview to test it use [private
+browsing][9].
 
 ## Make a Donation
 

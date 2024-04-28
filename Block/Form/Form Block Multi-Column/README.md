@@ -47,9 +47,15 @@
       Block Wrapper Observe Changes code**. Please see [Add code to code
       injection][5].
       
-* Add or edit a form block. For the second field add a line field with a label
-  of **twc-fbmc** and a description of **columns : n**. Replace **n** with the
-  number of columns you want for the form.
+* Add or edit a form block.
+
+* In the **Form Block Wrapper Observe Changes** code add
+  **twcFormBlockMultiColumn** to **added** per the **Form Block Wrapper Observe
+  Changes** code install steps.
+
+* For the second field add a line field with a label of **twc-fbmc** and a
+  description of **columns : n**. Replace **n** with the number of columns you
+  want for the form.
   
 * For groups of fields that you want to have a column effect add a line field
   with a label of **twc-fbmc-begin** before the first field of the column group.
@@ -59,8 +65,10 @@
 ## Notes
 
 This effect is not active in Squarespace Preview to test it use [private
-browsing][6]. The grid styling is very basic. You will need to write your own
-CSS if you want to change it.
+browsing][6].
+
+The grid styling is very basic. You will need to write your own CSS if you want
+to change it.
 
 ## Demo
 
