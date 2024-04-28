@@ -1,0 +1,101 @@
+<script>
+
+  /*
+  
+    begin form block text field max length
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Dependencies  : form block wrapper observe changes
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    ( ( ) => {
+    
+      const version = '0.3.0';
+      
+      const s = `Form Block Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcFbtfml = ( $node ) => {
+    
+      const b = ! $node.hasClass ( 'react-form-contents' );
+      
+      if ( b ) return; // bail if not react form
+      
+      const callback = function ( ) {
+      
+        const selector = [
+        
+          'input',
+          
+          'textarea',
+          
+          ]
+          
+          .join ( ', ' );
+          
+        const $this = $( this );
+        
+        const re = new RegExp ( `${ codeKey }\\s*:\\s*(\\d+)\n*` );
+        
+        let text = $this.text ( )
+        
+        let maxLength = text
+        
+          .match ( re );
+          
+        text = text
+        
+          .replace ( maxLength [ 0 ], '' )
+          
+          .trim ( );
+          
+        maxLength = maxLength [ 1 ];
+        
+        $this
+        
+          .siblings ( selector )
+          
+          .attr ( 'maxlength', maxLength );
+          
+        if ( text )
+        
+          $this
+          
+            .attr ( 'aria-label', text )
+            
+            .text ( text );
+            
+          else
+          
+            $this.remove ( );
+            
+        };
+        
+      const codeKey = 'twc-fbtfml';
+      
+      const selector = `.form-item .description:contains('${ codeKey }')`;
+      
+      $( selector, $node ).each ( callback );
+      
+      };
+      
+    /* end form block text field max length */
+    
+  </script>
