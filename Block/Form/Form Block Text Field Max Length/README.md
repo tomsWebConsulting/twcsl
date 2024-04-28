@@ -48,7 +48,8 @@ Limit the number of characters allowed in form block fields.
       you want to have this effect.
       
     * Add code from file **[form block text field max length.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER.
+      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+      code to code injection][7].
       
 * Add or edit a form block on your page and set up as desired.
   
@@ -75,7 +76,7 @@ Limit the number of characters allowed in form block fields.
 ## Notes
 
 This effect is not active in Squarespace Preview to test it use [private
-browsing][6].
+browsing][8].
 
 This code is client side and making use of an HTML form feature. Since this code
 is client side it is possible to bypass the max length limit this code is
@@ -85,11 +86,11 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -113,5 +114,7 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [5]: form%20block%20text%20field%20max%20length.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://toms-web-consulting-demos.squarespace.com/form-block-text-field-max-length?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[9]: https://toms-web-consulting-demos.squarespace.com/form-block-text-field-max-length?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
