@@ -591,8 +591,6 @@ not necessarily designed to work together.
     
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
-* [Form Block Text Field Max Length](Form%20Block%20Text%20Field%20Max%20Length)
-  
 * [Store Price Change](Store%20Price%20Change)
   
 * [Block](Block)
@@ -604,6 +602,8 @@ not necessarily designed to work together.
     * [Form Block Fields From Search Parameters](Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters)
       
     * [Form Block Multi-Column](Block/Form/Form%20Block%20Multi-Column)
+      
+    * [Form Block Text Field Max Length](Block/Form/Form%20Block%20Text%20Field%20Max%20Length)
       
   * [Summary](Block/Summary)
     
