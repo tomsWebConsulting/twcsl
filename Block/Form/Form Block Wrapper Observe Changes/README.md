@@ -90,7 +90,7 @@ defined before the code of this effect. Note the use of var.
 
   var myNamedFunction = ( $node ) => {
   
-    console.log ( 'myNamedFunction : , $node );
+    console.log ( 'myNamedFunction : ', $node );
     
     };
     
