@@ -28,8 +28,9 @@ Limit the number of characters allowed in form block fields.
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
-
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
+  
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
@@ -88,7 +89,7 @@ in which you are interested. For example.
       
     if ( node === null ) return; // bail if no cart container
     
-    console.log ( 'cpocNodeAddedLog : ', node );
+    console.log ( 'cartContinaerLog : ', node );
     
     };
     
