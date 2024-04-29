@@ -8,7 +8,7 @@ Limit the number of characters allowed in form block fields.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -43,12 +43,12 @@ Limit the number of characters allowed in form block fields.
 
 Following are example callbacks. They doen't do anything except log to the
 console nodes that were added or removed to/from the cart page. Add your
-callbacks **before** the cart page observe changes code.
+callbacks **before** the cart page observe changes code. Note the use of var.
 
 ```html
 <script>
 
-  const cpocNodeAddedLog = ( node ) => {
+  var cpocNodeAddedLog = ( node ) => {
   
     console.log ( 'cpocNodeAddedLog : ', node );
     
@@ -60,7 +60,7 @@ callbacks **before** the cart page observe changes code.
 ```html
 <script>
 
-  const cpocNodeRemovedLog = ( node ) => {
+  var cpocNodeRemovedLog = ( node ) => {
   
     console.log ( 'cpocNodeRemovedLog : ', node );
     
@@ -75,7 +75,7 @@ in which you are interested. For example.
 ```html
 <script>
 
-  const cartContinaerLog = ( node ) => {
+  var cartContinaerLog = ( node ) => {
   
     const b = node.querySelector === undefined;
     
@@ -102,6 +102,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2024-04-29**
+
+  * define callbacks as strings
+  * bumped version to 0.2.1
+  
 * **2024-04-28**
 
   * improved handling of nodes
