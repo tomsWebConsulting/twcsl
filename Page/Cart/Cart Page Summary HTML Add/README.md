@@ -8,7 +8,7 @@ Add HTML to the cart page summary.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -47,6 +47,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2024-04-29**
+
+  * make code running message appear once in console
+  * bumped version to 0.2.1
+  
 * **2024-04-28**
 
   * removed dependency on jQuery

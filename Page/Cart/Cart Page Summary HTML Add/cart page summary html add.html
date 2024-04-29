@@ -1,74 +1,88 @@
 <script>
 
-  var twcCartPageSummaryHtmlAdd = ( node ) => {
+  /*
   
-    /*
+    begin cart page summary html add
     
-      cart page summary html add
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.2.0
-      
-      SS Versions   : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible    : Not Applicable
-      
-      Dependencies  : cart page observe changes
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    let html = `
+    License       : < https://tinyurl.com/s872fb68 >
     
-      [ enter html here replacing square brackets ]
+    Version       : 0.2.1
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : cart page observe changes
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.cpsha = {
+    
+      html : `
       
-      `;
+        [ enter html here replacing square brackets ]
+        
+        `
+        
+      };
       
     // do not change anything below, there be the borg here
     
-    const version = '0.2.0';
+    ( ( ) => {
     
-    const s = `Cart Page Summary HTML Add v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
+      const version = '0.2.1';
       
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      const s = `Cart Page Summary HTML Add v${ version }, ` +
       
-    console.log ( s );
-    
-    const selector = '.cart-summary-container';
-    
-    let b = node.querySelector === undefined;
-    
-    if ( b ) return; // bail if no querySelector
-    
-    node = node
-    
-      .querySelector ( selector );
-      
-    b = node === null;
-    
-    if ( b ) return; // bail if no cart summary container
-    
-    html = `
-    
-      <div class="twc-csha">
-      
-        ${ html }
+        'License < https://tinyurl.com/s872fb68 >, ' +
         
-        </div>
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
         
-      `;
+      console.log ( s );
       
-    node
+      } ) ( );
+      
+    var twcCartPageSummaryHtmlAdd = ( node ) => {
     
-      .insertAdjacentHTML ( 'beforeend', html );
+      const selector = '.cart-summary-container';
       
-    };
+      let b = node.querySelector === undefined;
+      
+      if ( b ) return; // bail if no querySelector
+      
+      node = node
+      
+        .querySelector ( selector );
+        
+      b = node === null;
+      
+      if ( b ) return; // bail if no cart summary container
+      
+      html = `
+      
+        <div class="twc-csha">
+        
+          ${ twc.cpsha.html }
+          
+          </div>
+          
+        `;
+        
+      node
+      
+        .insertAdjacentHTML ( 'beforeend', html );
+        
+      };
+      
+    // end cart page summary html add
     
   </script>
