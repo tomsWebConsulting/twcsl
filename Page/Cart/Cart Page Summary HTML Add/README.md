@@ -38,7 +38,7 @@ Add HTML to the cart page summary.
   observe changes** code. Please see [Add code to code injection][6]. Read the
   code for any instructions within.
   
-  In the **cart page observe changes** code add **cartPageSummaryHtmlAdd** to
+  In the **cart page observe changes** code add **twcCartPageSummaryHtmlAdd** to
   callbacks added.
 
 ## Make a Donation
