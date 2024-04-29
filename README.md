@@ -61,6 +61,8 @@ not necessarily designed to work together.
     
     * [Cart Page Observe Changes](Page/Cart/Cart%20Page%20Observe%20Changes)
       
+    * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
+      
   * [Store](Page/Store)
     
     * [Detail](Page/Store/Detail)
@@ -152,8 +154,6 @@ not necessarily designed to work together.
 * [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
   
 * [Change Search Page Input Placeholder Text](Change%20Search%20Page%20Input%20Placeholder%20Text)
-  
-* [Cart Summary Html Add](Cart%20Summary%20Html%20Add)
   
 * [Elements Manipulate](Elements%20Manipulate)
   
