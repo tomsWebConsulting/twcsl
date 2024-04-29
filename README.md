@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 284 effects. Each effect has it's own version number, code,
+twcsl contains 285 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -57,6 +57,10 @@ not necessarily designed to work together.
   
 * [Page](Page)
   
+  * [Cart](Page/Cart)
+    
+    * [Cart Page Observe Changes](Page/Cart/Cart%20Page%20Observe%20Changes)
+      
   * [Store](Page/Store)
     
     * [Detail](Page/Store/Detail)
@@ -112,8 +116,6 @@ not necessarily designed to work together.
 * [Replace Form Submit Button Submitting Text](Replace%20Form%20Submit%20Button%20Submitting%20Text)
   
 * [Change Unable to Add Item to Cart Alert for Out of Stock Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Out%20of%20Stock%20Variants)
-  
-* [Cart Page Observe Changes](Cart%20Page%20Observe%20Changes)
   
 * [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
   
