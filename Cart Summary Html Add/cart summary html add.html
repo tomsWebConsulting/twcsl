@@ -1,14 +1,14 @@
 <script>
 
-  const cartSummaryHtmlAdd = $node => {
+  const cartSummaryHtmlAdd = ( node ) => {
   
     /*
     
       cart summary html add
       
-      License       : < https://bit.ly/3F8sn8W >
+      License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.1.0
+      Version       : 0.2.0-development.0
       
       SS Versions   : 7.1, 7.0
       
@@ -23,23 +23,51 @@
       
       */
       
-    const html = `
+    let html = `
     
-      [enter html here replacing square brackets]
+      [ enter html here replacing square brackets ]
       
       `;
       
     // do not change anything below, there be the borg here
     
-    $node = $( '.cart-summary-container', $node );
+    const version = '0.2.0-development.0';
     
-    if ( ! $node.length ) return; // bail if no cart summary
+    const s = `Cart Summary Html Add v${ version }, ` +
     
-    $( '<div class="twc-csha">' )
-    
-      .append ( html )
+      'License < https://tinyurl.com/s872fb68 >, ' +
       
-      .appendTo ( $node );
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const selector = '.cart-summary-container';
+    
+    let b = node.querySelector === undefined;
+    
+    if ( b ) return; // bail if no querySelector
+    
+    node = node
+    
+      .querySelector ( selector );
+      
+    b = node === null;
+    
+    if ( b ) return; // bail if no cart summary container
+    
+    html = `
+    
+      <div class="twc-csha">
+      
+        ${ html }
+        
+        </div>
+        
+      `;
+      
+    node
+    
+      .insertAdjacentHTML ( 'beforeend', html );
       
     };
     
