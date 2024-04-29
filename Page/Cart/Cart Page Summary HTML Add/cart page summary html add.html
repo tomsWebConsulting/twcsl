@@ -1,0 +1,74 @@
+<script>
+
+  const cartPageSummaryHtmlAdd = ( node ) => {
+  
+    /*
+    
+      cart page summary html add
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : cart page observe changes
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    let html = `
+    
+      [ enter html here replacing square brackets ]
+      
+      `;
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.2.0';
+    
+    const s = `Cart Page Summary HTML Add v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const selector = '.cart-summary-container';
+    
+    let b = node.querySelector === undefined;
+    
+    if ( b ) return; // bail if no querySelector
+    
+    node = node
+    
+      .querySelector ( selector );
+      
+    b = node === null;
+    
+    if ( b ) return; // bail if no cart summary container
+    
+    html = `
+    
+      <div class="twc-csha">
+      
+        ${ html }
+        
+        </div>
+        
+      `;
+      
+    node
+    
+      .insertAdjacentHTML ( 'beforeend', html );
+      
+    };
+    
+  </script>
