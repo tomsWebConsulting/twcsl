@@ -61,6 +61,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
-[5]: https://github.com/tomsWebConsulting/twcsl/blob/main/Cart%20Summary%20Html%20Add/cart%20summary%20html%20add.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl/blob/main/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.html
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
