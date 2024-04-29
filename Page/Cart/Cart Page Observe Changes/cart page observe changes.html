@@ -1,0 +1,164 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      cart page observe changes
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Note          : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be all
+                      of mutation observers. it may not cover your needs
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const callbacks = {
+    
+      added : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // [ optional, enter your callback name here replacing square brackets ],
+        
+        ],
+        
+      removed : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // [ optional, enter your callback name here replacing square brackets ],
+        
+        ]
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.2.0';
+    
+    const s = `Cart Page Observe Changes v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    let b = location.pathname != '/cart';
+    
+    if ( b ) return; // bail if not cart page
+    
+    b = ! ( 'MutationObserver' in window );
+    
+    if ( b ) return; // bail if no mutation observer available
+    
+    const callback = ( mutations ) => {
+    
+      const callback = ( mutation ) => {
+      
+        const callback = ( node ) => {
+        
+          const callback = ( callback ) => {
+          
+            try {
+            
+              callback ( node );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
+            };
+            
+          cllbcks.forEach ( callback );
+            
+          };
+          
+        const nodesAdded = mutation.addedNodes;
+        
+        const nodesRemoved = mutation.removedNodes;
+        
+        let cllbcks;
+        
+        let nodes;
+        
+        switch ( true ) {
+        
+          case Boolean ( nodesAdded.length ):
+          
+            cllbcks = callbacks.added;
+            
+            nodes = nodesAdded
+            
+            break;
+            
+          case Boolean ( nodesRemoved.length ) :
+          
+            cllbcks = callbacks.removed;
+            
+            nodes = nodesRemoved;
+            
+            break;
+            
+          }
+          
+        nodes.forEach ( callback );
+        
+        };
+        
+      mutations.forEach ( callback );
+      
+      };
+      
+    const codeKey = 'twc-cpoc';
+    
+    const observer = new MutationObserver ( callback );
+      
+    const element = document
+    
+      .getElementById ( 'sqs-cart-container' );
+      
+    const options = {
+    
+      childList : true,
+      
+      subtree : true
+      
+      };
+      
+    // begin listening for changes in element
+    
+    observer.observe ( element, options );
+      
+    } );
+    
+  </script>
