@@ -2,9 +2,9 @@
 
   begin store page list categories mega
   
-  License       : < https://bit.ly/3F8sn8W >
+  License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.1
+  Version       : 0.3.0
   
   SS Version    : 7.1
   
@@ -14,18 +14,34 @@
   
   Dependencies  : store categories cache < https://tinyurl.com/285tkudd >
   
-  Notes         : the code is comprised of a style and script tag. all are
-                  needed for the full effect to work
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
                   
-                  in the editor when you change the CATEGORIES TYPE ( Sidebar /
-                  Top ) you will need to refresh the page for the code to
-                  pickup on the change
+                  in the editor when you change the CATEGORIES TYPE
+                  (Sidebar/Top) you will see Squarespace's default style of
+                  categories until you save the page. If for some reason the
+                  categories don't update after saving the page, refresh the
+                  page
   
   By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
-  no user serviceable parts below
-  
   -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.splcm = {
+    
+      categoriesExpandedOnLoad : false, // value is false or true
+      
+      hideIcon : false // value is false or true
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
   
   <style>
   
@@ -179,34 +195,72 @@
         
       /* end top */
       
+    /* begin list style/marker hide */
+    
+      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary,
+      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary
+      
+        {
+        
+          list-style-type : none;
+          
+          }
+      
+      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary::marker, /* Chrome, Edge, Firefox */ 
+      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary::-webkit-details-marker /* Safari */
+      
+        {
+        
+          display : none;
+          
+          }
+          
+      /* end list style/marker hide */
+      
     </style>
     
   <script>
   
-    var twcSplcm = categories => {
+    var twcSplcm = ( categories ) => {
     
-      const codeKey = 'twc-splcm';
+      const version = '0.3.0';
       
-      const version = '0.2.1';
-      
-      const s = `Store Categories Mega v${ version }, ` +
+      const s = `Store Page List Categories Mega v${ version }, ` +
       
         'License < https://tinyurl.com/s872fb68 >, ' +
         
         'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
         
-      const selectorKey = '.products.collection-content-wrapper';
-      
       console.log ( s );
       
-      if ( window.twc == undefined ) window.twc = { };
+      const codeKey = 'twc-splcm';
       
-      if ( twc.data == undefined ) twc.data = { };
+      const selectorKey = '.products.collection-content-wrapper';
       
-      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      // hide show register
       
-      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      ( ( ) => {
       
+        if ( window.twc == undefined ) window.twc = { };
+        
+        if ( twc.data == undefined ) twc.data = { };
+        
+        if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+        
+        if ( twc.data.hideShow [ selectorKey ] == undefined )
+        
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            =
+            
+            [ ];
+            
         twc
         
           .data
@@ -215,22 +269,14 @@
           
           [ selectorKey ]
           
-          =
+          .push ( `--${ codeKey }` );
           
-          [ ];
-          
-      twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .push ( `--${ codeKey }` );
+        } ) ( );
         
       ( ( ) => {
       
+        const options = twc.splcm;
+        
         const windowWidth = $( window ).width ( );
         
         const traverse = ( categories, $ul ) => {
@@ -261,8 +307,10 @@
               
             let $element;
             
-            if ( hasChildren )
+            if ( hasChildren ) {
             
+              const openHtml = options.categoriesExpandedOnLoad ? ' open' : '';
+              
               $element = $li
               
                 .addClass ( 'children' )
@@ -271,7 +319,7 @@
                 
                 .wrap ( `
                 
-                  <details/>
+                  <details${ openHtml }/>
                   
                     <summary/>
                     
@@ -279,7 +327,7 @@
                   
                 .parents ( 'details' );
                 
-              else
+              } else
               
                 $element = $li;
                 
@@ -302,6 +350,14 @@
         let selector = `[href="${ twcsl.page.store.urlSlug }` +
         
           `${ twcsl.page.store.list.categoryUrlSlug }"]`;
+          
+        if ( options.hideIcon ) {
+        
+          const selector = '.products.collection-content-wrapper';
+          
+          $( selector ).attr ( 'data-twc-splcm-hide-icon', '' );
+          
+          }
           
         traverse ( categories, $ul )
         
@@ -362,7 +418,7 @@
         left -= left1;
         
         left = `${ left }px`;
-      
+        
         selector = '.collection-type-products.view-list .products.collection-' +
         
           'content-wrapper';
@@ -399,34 +455,40 @@
         
         } ) ( );
         
-      twc
+      // hide show unregister
       
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .pop ( `--${ codeKey }` );
-        
-      const l = twc
+      ( ( ) => {
       
-        .data
+        twc
         
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .length;
-        
-      if ( ! l )
-      
-        $( '#siteWrapper' )
-        
-          .css ( '--twc-products-collection-content-wrapper-visibility',
+          .data
           
-            'unset' );
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .pop ( `--${ codeKey }` );
+          
+        const l = twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .length;
+          
+        if ( ! l )
+        
+          $( '#siteWrapper' )
+          
+            .css ( '--twc-products-collection-content-wrapper-visibility',
             
+              'unset' );
+              
+        } ) ( );
+        
       };
       
     </script>

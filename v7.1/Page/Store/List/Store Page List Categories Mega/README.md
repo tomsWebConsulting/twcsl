@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
 #### SS Version
 
@@ -41,7 +41,7 @@ Store page list categories mega menu.
     * Add code from file **[store page list categories mega.html][5]** to Store
       Settings > Advanced > Page Header Code Injection for the store page
       **before** the **store categories cache** code. Please see [Per-page code
-      injection][6]. Read the code for any instructions within.
+      injection][6].
       
   * Site-wide
   
@@ -49,10 +49,12 @@ Store page list categories mega menu.
       where you want to have this effect.
       
     * Add code from file **[store page list categories mega.html][5]** to
-      Website > Website Tools > Code Injection > FOOTER **before** the **store
-      categories cache** code. Please see [Add code to code injection][7]. Read
-      the code for any instructions within.
+      Website > Pages > Website Tools > Code Injection > FOOTER **before** the
+      **store categories cache** code. Please see [Add code to code
+      injection][7].
       
+* Read the code for any instructions or options within.
+
 * In the **store categories cache** code set the callback.
   
   Change the following line...
@@ -69,8 +71,9 @@ Store page list categories mega menu.
 
 ## Note
 
-In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will need to
-refresh the page for the code to pickup on the change.
+In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will see
+Squarespace's default style of categories until you save the page. If for some
+reason the categories don't update after saving the page, refresh the page.
 
 ## Demo
 
@@ -82,6 +85,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2024-04-30**
+
+  * add option to hide icons
+  * add option to expand all categories on page load
+  * bumped version to 0.3.0
+  
 * **2023-07-31**
 
   * fix for levels that have no children not lining up with those that do for
