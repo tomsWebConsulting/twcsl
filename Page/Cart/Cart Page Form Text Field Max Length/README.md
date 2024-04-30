@@ -47,7 +47,7 @@ Limit cart product edit detail form text and text area fields lengths.
     Limit all products that use the custom form to a number.
     
     ```text
-    cpftfml : { 10 }
+    ftfml : { 10 }
     ```
     
     Limit a specific product that uses the custom form to a number. Replace
@@ -57,20 +57,20 @@ Limit cart product edit detail form text and text area fields lengths.
     code can access, hence the having to use SKUs and products ids.
     
     ```text
-    cpftfml : { skuOrProductId : 10 }
+    ftfml : { skuOrProductId : 10 }
     ```
     
     Limit specific products that use the custom form to a number. 
     
     ```text
-    cpftfml : { skuOrProductId1 : 10, skuOrProductId2 : 5, skuOrProductId3 : 15 }
+    ftfml : { skuOrProductId1 : 10, skuOrProductId2 : 5, skuOrProductId3 : 15 }
     ```
     
     Limit a specific product that uses the custom form to a number and another
     number for all other products. 
     
     ```
-    cpftfml : { skuOrProductId1 : 20, default : 10 }
+    ftfml : { skuOrProductId1 : 20, default : 10 }
     ```
     
     Henceforth I'll refer to SKUs and product ids collectively as id or ids. The
