@@ -30,12 +30,12 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ## Install
 
-* Install [Cart Page Observe Changes][4]. After you install Cart Page Observe
+* Install [Cart Page Observe Changes][5]. After you install Cart Page Observe
   Changes be sure to continue on with the rest of the steps.
   
-* Add code from file **[cart page form text field max length.html][4]** to
+* Add code from file **[cart page form text field max length.html][5]** to
   Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][16].
+  code to code injection][6].
   
 * Edit a Store page product and add a Custom Form.
 
@@ -78,7 +78,7 @@ Limit cart product edit detail form text and text area fields lengths.
     format id colon number comma for each id/number pair.
     
     You can find a product with no variants id by using Heather Tovey's
-    [Squarespace ID Finder][5]. Alternately you can export your inventory and
+    [Squarespace ID Finder][7]. Alternately you can export your inventory and
     grab the id from the CSV file.
     
     To use SIF go to your product detail page and use SIF. You will see something
@@ -90,7 +90,7 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][6].
+This effect is not active in SS Preview to test it use [private browsing][8].
 
 This code does not work on the checkout page. It is a Squarespace security
 feature that no code can alter the checkout page.
@@ -103,7 +103,7 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -119,8 +119,9 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: cart%20page%20form%20text%20field%20max%20length.html#L1
-[16]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[5]: https://www.heathertovey.com/squarespace-id-finder/
-[6]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
+[5]: cart%20page%20form%20text%20field%20max%20length.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://www.heathertovey.com/squarespace-id-finder/
+[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
