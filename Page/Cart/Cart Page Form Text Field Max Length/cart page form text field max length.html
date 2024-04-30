@@ -1,0 +1,291 @@
+<!--
+
+  begin cart page form text field max length
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : cart page observe changes
+  
+  Note          : this effect is not active in Squarespace Preview to test it
+                  use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #sqs-cart-container .cart-product-form-wrapper input[ placeholder*="cpftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Cart Page Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      // initialize twc global if needed
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      twc.cpftfml = {
+      
+        ids : undefined
+        
+        };
+        
+      } ) ( );
+      
+    var twcCpftfml = ( node ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      let b = node.querySelector === undefined;
+      
+      if ( b ) return; // bail if no querySelector
+      
+      // cart container
+      
+      ( ( ) => {
+      
+        let selector = '.cart-container';
+        
+        const cartContainerElement = node
+        
+          .querySelector ( selector );
+          
+        if ( cartContainerElement === null ) return; // bail if no element
+        
+        const callback = ( element ) => {
+        
+          const callback = ( event ) => {
+          
+            console.log ( event );
+            
+            const i = [
+            
+              ...
+              
+              cartRowElements
+              
+              ]
+              
+              .indexOf (
+              
+                element
+                
+                  .closest ( '.cart-row' )
+                  
+                );
+              
+            const selector = '#sqs-cart-root script[type="application/json"]';
+            
+            // begin items
+            
+              const callback = ( item ) => {
+              
+                console.log ( item );
+                
+                const b = ! ( 'productForm' in item );
+                
+                if ( b ) return [ ]; // bail if no product form
+                
+                const ids = [ item.productId ];
+                
+                if ( item.sku !== undefined )
+                
+                  ids.push ( item.sku );
+                  
+                return ids;
+                
+                };
+                
+              let items = document
+              
+                .querySelector ( selector )
+                
+                .textContent;
+                
+              items = JSON
+              
+                .parse ( items )
+                
+                .cart
+                
+                .items;
+                
+              // end items
+              
+            const ids = items.map ( callback );
+            
+            twc.cpftfml.ids = ids [ i ];
+            
+            };
+            
+          element.addEventListener ( 'click', callback );
+          
+          };
+          
+        selector = '.cart-row';
+        
+        const cartRowElements = cartContainerElement
+        
+          .querySelectorAll ( selector );
+          
+        selector = '.cart-row-edit';
+        
+        cartContainerElement
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        } ) ( );
+        
+      // cart product form container
+      
+      ( ( ) => {
+      
+        let selector = '.cart-product-form-container';
+        
+        let elements = node
+        
+          .querySelector ( selector );
+          
+        if ( elements === null ) return; // bail if no element
+        
+        const callback = ( element ) => {
+        
+          const attribute = 'placeholder';
+          
+          const re = /^cpftfml\s*:\s*{([^}]+)}\s*/;
+          
+          let text = element
+          
+            .getAttribute ( attribute );
+            
+          let m = text.match ( re );
+          
+          // begin clean up placeholder attribute value
+          
+            text = text
+            
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text ) // set/show placeholder or remove
+            
+              element
+              
+                .setAttribute ( attribute, text );
+                
+              else
+              
+                element.removeAttribute ( attribute );
+                
+            // end clean up placeholder attribute value
+            
+          let maxLength = m [ 1 ]
+          
+            .trim ( );
+            
+          if ( isNaN ( maxLength ) ) {
+          
+            const callback = ( key ) => {
+            
+              const b = ! twc
+              
+                .cpftfml
+                
+                .ids
+                
+                .includes ( key );
+                
+              if ( b ) return; // bail if no key
+              
+              maxLength = idMaxlengthMap [ key ];
+              
+              };
+              
+            const json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}';
+              
+            const key = 'default';
+            
+            const idMaxlengthMap = JSON.parse ( json );
+            
+            maxLength = '';
+            
+            if ( key in idMaxlengthMap )
+            
+              maxLength = idMaxlengthMap [ key ];
+              
+            Object
+            
+              .keys ( idMaxlengthMap )
+              
+              .forEach ( callback );
+              
+            }
+            
+          if ( maxLength )
+          
+            element
+            
+              .setAttribute ( 'maxlength', maxLength );
+              
+          };
+          
+        selector = '.cart-product-form-field-label ' +
+        
+          'input[ placeholder*="cpftfml" ]';
+          
+        elements = elements
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        } ) ( );
+        
+      };
+      
+    </script>
+    
+  <!-- end cart page form text field max length -->
