@@ -30,7 +30,7 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ## Install
 
-* Install [Cart Page Observe Changes][5]. After you install Cart Page Observe
+* Install [Cart Page Observe Changes][4]. After you install Cart Page Observe
   Changes be sure to continue on with the rest of the steps.
   
 * Add code from file **[cart page form text field max length.html][5]** to
