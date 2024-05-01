@@ -87,6 +87,11 @@ Please consider [making a donation][9].
 
 * **2024-04-30**
 
+  * fix for hide icons spacing issue
+  * bumped version to 0.3.1
+  
+* **2024-04-30**
+
   * add option to hide icons
   * add option to expand all categories on page load
   * bumped version to 0.3.0

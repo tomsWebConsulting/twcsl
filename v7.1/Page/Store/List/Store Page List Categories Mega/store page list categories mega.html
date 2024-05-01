@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.0
+  Version       : 0.3.1
   
   SS Version    : 7.1
   
@@ -195,35 +195,24 @@
         
       /* end top */
       
-    /* begin list style/marker hide */
+    /* list style/marker hide */
     
-      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary,
-      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary
+    .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary::marker, /* Chrome, Edge, Firefox */ 
+    .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary::-webkit-details-marker /* Safari */
+    
+      {
       
-        {
+        color : transparent;
         
-          list-style-type : none;
-          
-          }
-      
-      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary::marker, /* Chrome, Edge, Firefox */ 
-      .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary::-webkit-details-marker /* Safari */
-      
-        {
+        }
         
-          display : none;
-          
-          }
-          
-      /* end list style/marker hide */
-      
     </style>
     
   <script>
   
     var twcSplcm = ( categories ) => {
     
-      const version = '0.3.0';
+      const version = '0.3.1';
       
       const s = `Store Page List Categories Mega v${ version }, ` +
       
