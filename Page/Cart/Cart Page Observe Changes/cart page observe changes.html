@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.2.1
+      Version       : 0.2.2
       
       SS Versions   : 7.1, 7.0
       
@@ -59,7 +59,7 @@
       
     // do not change anything below, there be the borg here
     
-    const version = '0.2.1';
+    const version = '0.2.2';
     
     const s = `Cart Page Observe Changes v${ version }, ` +
     
@@ -85,15 +85,15 @@
         
           const callback = ( callback ) => {
           
+            const cllbck = window [ callback ];
+            
             try {
             
-              callback = window [ callback ];
-              
-              callback ( node );
+              cllbck ( node );
               
               } catch ( error ) {
               
-                const s = `${ codeKey } callback error`;
+                const s = `${ codeKey } : ${ callback } `;
                 
                 console.error ( s, error );
                 

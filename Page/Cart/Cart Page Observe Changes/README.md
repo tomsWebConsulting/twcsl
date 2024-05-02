@@ -8,7 +8,7 @@ Limit the number of characters allowed in form block fields.
 
 ### Version
 
-  * 0.2.1
+  * 0.2.2
 
 #### SS Versions
 
@@ -102,6 +102,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2024-05-01**
+
+  * improve error reporting
+  * bumped version to 0.2.2
+  
 * **2024-04-29**
 
   * define callbacks as strings
