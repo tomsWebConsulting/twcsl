@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.2.1
+  * 0.2.2
 
 #### SS Version
 
@@ -26,8 +26,8 @@ Add section editor info.
 
 ## Quick Install
 
-* Add code from file **[section info.html][4]** to Website > Website Tools >
-  Code Injection > HEADER.
+* Add code from file **[section info.html][4]** to Website > Pages > Website
+  Tools > Code Injection > HEADER.
 
 ## Make a Donation
 
@@ -35,6 +35,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2024-05-01**
+
+  * fix template HTML
+  * bumped version to 0.2.2
+  
 * **2024-03-05**
 
   * fix for changes SS made in how the HTML is loaded
