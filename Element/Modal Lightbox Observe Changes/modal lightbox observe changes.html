@@ -1,0 +1,142 @@
+<!--
+
+  begin modal lightbox observe changes
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Note          : this code is a base for other effects. on its own it
+                  doesn't do anything. this code is not the end all be all
+                  of mutation observers. it may not cover your needs
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.mloc = {
+    
+      callbacks : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ enter your callback name here replacing square brackets ]',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      debugger;
+      
+      const version = '0.1.0';
+      
+      const s = `Modal Lightbox Observe Changes v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          console.log ( 'mutation : ', mutation );
+          
+          const callback = ( node ) => {
+          
+            console.log ( 'node : ', node );
+            
+            const b = ! node
+            
+              .classList
+              
+              .contains ( 'sqs-modal-lightbox' );
+              
+            if ( b ) return; // bail if not element of interest
+            
+            const callback = ( callback ) => {
+            
+              try {
+              
+                callback = window [ callback ];
+                
+                callback ( node );
+                
+                } catch ( error ) {
+                
+                  const s = `${ codeKey } callback error`;
+                  
+                  console.error ( s, error );
+                  
+                  }
+                  
+              };
+              
+            twc
+            
+              .mloc
+              
+              .callbacks
+              
+              .forEach ( callback );
+              
+            };
+            
+          mutation
+          
+            .addedNodes
+            
+            .forEach ( callback );
+            
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const codeKey = 'twc-mloc';
+      
+      const config = {
+      
+        childList : true
+        
+        };
+        
+      const observer = new MutationObserver ( callback );
+      
+      // start listening for changes in body
+      
+      observer.observe ( document.body, config );
+      
+      } );
+      
+    </script>
+    
+  <!-- end modal lightbox observe changes -->
