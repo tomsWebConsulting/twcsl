@@ -77,6 +77,6 @@ Please consider [making a donation][7].
 [2]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: form%20block%20wrapper%20observe%20changes.html#L1
+[5]: modal%20lightbox%20observe%20changes.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
