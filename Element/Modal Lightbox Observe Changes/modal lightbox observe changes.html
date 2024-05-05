@@ -51,8 +51,6 @@
   
     document.addEventListener ( 'DOMContentLoaded', ( ) => {
     
-      debugger;
-      
       const version = '0.1.0';
       
       const s = `Modal Lightbox Observe Changes v${ version }, ` +
@@ -67,12 +65,8 @@
       
         const callback = ( mutation ) => {
         
-          console.log ( 'mutation : ', mutation );
-          
           const callback = ( node ) => {
           
-            console.log ( 'node : ', node );
-            
             const b = ! node
             
               .classList
