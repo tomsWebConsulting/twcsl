@@ -1,0 +1,455 @@
+<!--
+
+  begin store page form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : modal lightbox observe changes
+                    
+                    twcsl
+  
+  Note            : this effect is not active in Squarespace Preview to test it
+                    use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) .collection-type-products .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    var twcSpftfml = ( node ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const callback = ( element ) => {
+      
+        const attribute = 'placeholder';
+        
+        const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+        
+        let text = element
+        
+          .getAttribute ( attribute );
+          
+        let m = text.match ( re );
+        
+        // begin clean up placeholder attribute value
+        
+          text = text
+          
+            .replace ( m [ 0 ], '' )
+            
+            .trim ( );
+            
+          if ( text ) // set/show placeholder or remove
+          
+            element
+            
+              .setAttribute ( attribute, text );
+              
+            else
+            
+              element.removeAttribute ( attribute );
+              
+          // end clean up placeholder attribute value
+          
+        let maxLength = m [ 1 ]
+        
+          .trim ( );
+          
+        if ( isNaN ( maxLength ) ) {
+        
+          const callback = ( key ) => {
+          
+            const b = ! twc
+            
+              .spftfml
+              
+              .ids
+              
+              .includes ( key );
+              
+            if ( b ) return; // bail if no key
+            
+            maxLength = idMaxlengthMap [ key ];
+            
+            };
+            
+          const json = '{' +
+          
+            maxLength
+            
+              .replace ( /[\s]/g, '' )
+              
+              .split ( ',' )
+              
+              .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+              
+              .join ( ',' ) +
+              
+            '}';
+            
+          const key = 'default';
+          
+          const idMaxlengthMap = JSON.parse ( json );
+          
+          maxLength = '';
+          
+          if ( key in idMaxlengthMap )
+          
+            maxLength = idMaxlengthMap [ key ];
+            
+          Object
+          
+            .keys ( idMaxlengthMap )
+            
+            .forEach ( callback );
+            
+          }
+          
+        if ( maxLength )
+        
+          element
+          
+            .setAttribute ( 'maxlength', maxLength );
+            
+        };
+        
+      const selector = '.form-wrapper input[ placeholder*="ftfml" ]';
+      
+      node
+      
+        .querySelectorAll ( selector )
+        
+        .forEach ( callback );
+        
+      };
+      
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Store Page Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      // initialize twc global if needed
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      twc.spftfml = {
+      
+        ids : undefined
+        
+        };
+        
+      } ) ( );
+      
+    $( ( ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      const codeKey = 'twc-spftfml';
+      
+      const detail = ( ) => {
+      
+        const callback = function ( ) {
+        
+          console.log ( this );
+          
+          const data = twc.spftfml;
+          
+          const $this = $( this );
+          
+          const context = Static
+          
+            .SQUARESPACE_CONTEXT;
+            
+          data.ids = [
+          
+            context
+            
+              .itemId
+              
+            ];
+            
+          const variants = context
+          
+            .product
+            
+            .variants;
+            
+          if ( variants === undefined ) return; // bail if no variants
+          
+          if ( variants.length == 1 )
+          
+            data
+            
+              .ids
+              
+              .push ( variants [ 0 ].sku )
+              
+            else {
+            
+              let dataSelectedVariant = $this
+              
+                .parent ( )
+                
+                .siblings ( '.product-variants' )
+              
+                .attr ( 'data-selected-variant' );
+                
+              // bail if no variant selected
+              
+              if ( dataSelectedVariant === undefined ) return;
+              
+              const sku = JSON
+              
+                .parse ( dataSelectedVariant )
+                
+                .sku;
+                
+              data
+              
+                .ids
+                
+                .push ( sku );
+                
+              }
+              
+          };
+          
+        const selector = [
+        
+          '.ProductItem', // simple layout
+          
+          '.pdp-layout' // full, half, wrap layout
+          
+          ]
+          
+          .map ( l => `${ l }:not( .sold-out ) ` +
+          
+            '.sqs-add-to-cart-button-wrapper ' +
+            
+            '.sqs-add-to-cart-button.use-form' )
+            
+          .join ( ', ' );
+          
+        $( selector ).click ( callback );
+        
+        };
+        
+      const list = ( ) => {
+      
+        const clickCallback = function ( ) {
+        
+          const data = twc.spftfml;
+          
+          const $this = $( this );
+          
+          data.ids = [
+          
+            $this
+            
+              .attr ( 'data-item-id' )
+              
+            ];
+            
+          let b = $this
+          
+            .attr ( `data-${ codeKey }-no-sku` )
+            
+            !==
+            
+            undefined;
+            
+          if ( b ) return; // bail if attribute
+          
+          const $productVariants = $this
+          
+            .prop ( '$productVariants' );
+            
+          if ( $productVariants === undefined )
+          
+            data
+            
+              .ids
+              
+              .push (
+              
+                $this
+                
+                  .attr ( 'data-item-sku' )
+                  
+                );
+                
+            else {
+            
+              let dataSelectedVariant = $productVariants
+              
+                .attr ( 'data-selected-variant' );
+                
+              // bail if no variant selected
+              
+              if ( dataSelectedVariant === undefined ) return;
+              
+              const sku = JSON
+              
+                .parse ( dataSelectedVariant )
+                
+                .sku;
+                
+              data
+              
+                .ids
+                
+                .push ( sku );
+                
+              }
+              
+          };
+          
+        const eachCallback = function ( ) {
+        
+          const $this = $( this );
+          
+          const dataProductType = $this
+          
+            .attr ( 'data-product-type' );
+            
+          const b = [
+          
+            '2' // digital
+            
+            ]
+            
+            .includes ( dataProductType );
+            
+          if ( b ) {
+          
+            $this
+            
+              .attr ( `data-${ codeKey }-no-sku`, '' );
+              
+            return true; // continue
+            
+            }
+            
+          const callback = ( data ) => {
+          
+            const sku = data
+            
+              .item
+              
+              .variants
+              
+              [ 0 ]
+              
+              .sku;
+              
+            $this.attr ( 'data-item-sku', sku );
+            
+            };
+            
+          const $productVariants = $this
+          
+            .parent ( )
+            
+            .siblings ( '.product-variants' );
+            
+          if ( $productVariants.length ) {
+          
+            $this
+            
+              .prop ( '$productVariants', $productVariants );
+              
+            return true; // bail if variants
+            
+            }
+            
+          const url = $this
+          
+            .parents ( '.plp-grid-add-to-cart' )
+            
+            .prev ( )
+            
+            .attr ( 'href' )
+            
+            +
+            
+            '?format=json';
+            
+          $.getJSON ( url, callback );
+          
+          };
+          
+        const selector = '.products.collection-content-wrapper ' +
+        
+          '.grid-item:not( .sold-out ) .sqs-add-to-cart-button-wrapper ' +
+          
+          '.sqs-add-to-cart-button.use-form';
+        
+        $( selector )
+        
+          .each ( eachCallback )
+          
+          .click ( clickCallback );
+          
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.page.store.detail.is :
+        
+          detail ( );
+          
+          break;
+          
+        case twcsl.page.store.list.is :
+        
+          list ( );
+          
+          break;
+          
+        }
+        
+      } );
+      
+    </script>
+    
+  <!-- end store page form text field max length -->
