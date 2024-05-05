@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 287 effects. Each effect has it's own version number, code,
+twcsl contains 288 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -67,6 +67,8 @@ not necessarily designed to work together.
       
   * [Store](Page/Store)
     
+    * [Store Page Form Text Field Max Length](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length)
+      
     * [Detail](Page/Store/Detail)
       
       * [Store Product Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
