@@ -28,16 +28,17 @@ Add buttons to the site header.
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[header buttons add.less][5]** to Website >
+* Add code from file **[header buttons add.less][5]** to Website > Pages >
   Website Tools > Custom CSS. Read the code for any instructions within.
   
-* Add code from file **[header buttons add.html][6]** to Website >
+* Add code from file **[header buttons add.html][6]** to Website > Pages >
   Website Tools > Code Injection > FOOTER. Please see [Add code to code
   injection][7]. Read the code for any instructions within.
 

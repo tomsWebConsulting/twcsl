@@ -12,8 +12,8 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
   * Site-wide
   
     * Add code from file **[scrolling block text gradient.html][1]** to
-      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+      Website > Pages > Website Tools > Code Injection > FOOTER.
       Read the code for any instructions within.
 
 ## Notes

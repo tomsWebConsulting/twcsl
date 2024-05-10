@@ -28,7 +28,8 @@ Hide page sections using dates.
 
 ## Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -51,7 +52,7 @@ Hide page sections using dates.
       where you want to have this effect.
       
     * Add code from file **[section date hide.html][5]** to Website >
-      Website Tools > Code Injection > FOOTER. Please see [Add code to code
+      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][7].
       
   * Read the code for any instructions within.

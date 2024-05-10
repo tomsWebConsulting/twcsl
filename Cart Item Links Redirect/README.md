@@ -22,8 +22,8 @@
   Change **undefined** to **cartItemLinksRedirect**.
   
 * Add code from file **[cart item links redirect.html][3]** to Website >
-  Website Tools > Code Injection > FOOTER before the cart page observe changes
-  code. Read the code for any instructions within.
+  Pages > Website Tools > Code Injection > FOOTER before the cart page observe
+  changes code. Read the code for any instructions within.
 
 ## Make a Donation
 

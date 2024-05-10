@@ -14,7 +14,7 @@
 
 * Add code from file
   **[site style animation flex center.css](site%20style%20animation%20flex%20center.css#L1)**
-  to Website > Website Tools > Custom CSS.
+  to Website > Pages > Website Tools > Custom CSS.
 
 ## Make a Donation
 

@@ -25,8 +25,8 @@ Move right actions of header layout branding and navigation center to left.
 ## Quick Install
 
 * Add code from file **[header branding and navigation center actions left
-  add.html][4]** to Website > Website Tools > Code Injection > FOOTER. Please
-  see [Add code to code injection][5]. Read the code for any instructions
+  add.html][4]** to Website > Pages > Website Tools > Code Injection > FOOTER.
+  Please see [Add code to code injection][5]. Read the code for any instructions
   within.
 
 ## Note

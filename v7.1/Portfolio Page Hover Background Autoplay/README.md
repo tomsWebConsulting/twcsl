@@ -26,7 +26,8 @@ Add an autoplay effect to a portfolio page using layout hover background.
 
 ## Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -35,7 +36,7 @@ Add an autoplay effect to a portfolio page using layout hover background.
 * Site-wide
 
   * Add code from file **[portfolio page hover background autoplay.html][5]**
-    to Website > Website Tools > Code Injection > FOOTER.
+    to Website > Pages > Website Tools > Code Injection > FOOTER.
     
 * Page Specific
 

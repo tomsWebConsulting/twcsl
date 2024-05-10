@@ -48,8 +48,8 @@ Add ratings to Store page products.
       where you want to have this effect.
       
     * Add code from file **[store page tag rating.html][5]** to Website >
-      Website Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][7]. Read the code for any instructions within.
+      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
+      code injection][7]. Read the code for any instructions within.
 
 ## How To Use
 

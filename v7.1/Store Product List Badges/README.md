@@ -29,7 +29,7 @@ v7.0 templates.
 * Site-wide
 
   * Add code from file **[store product list badges.html][3]** to Website >
-    Website Tools > Code Injection > FOOTER.
+    Pages > Website Tools > Code Injection > FOOTER.
     
 * Read the code for any instructions within.
 

@@ -12,10 +12,10 @@
 
 ## Install
 
-* Add code from file **[blocks boilerplate.css][1]** to Website >
+* Add code from file **[blocks boilerplate.css][1]** to Website > Pages >
   Website Tools > Custom CSS.
   
-* Add code from file **[blocks boilerplate.html][2]** to Website >
+* Add code from file **[blocks boilerplate.html][2]** to Website > Pages >
   Website Tools > Code Injection > FOOTER. Read the code for any instructions
   within.
   

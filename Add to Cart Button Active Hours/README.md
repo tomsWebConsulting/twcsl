@@ -34,7 +34,7 @@ Enable add to cart buttons during active hours.
   rest of the steps.
   
 * Add code from file **[add to cart button active hours.html][6]** to Website >
-  Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Please see [Add
+  Pages > Website Tools > Code Injection > FOOTER. Please see [Add
   code to code injection][7]. Read the code for any instructions within.
 
 ## Notes

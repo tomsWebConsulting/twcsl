@@ -8,7 +8,7 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
+* Add the following to Website > Pages > Website Tools > Code
   Injection > HEADER.
   
   ```html
@@ -16,15 +16,7 @@
   ```
   
 * Add code from file **add continue shopping message when cart has items.html**
-  to...
-  
-  * v7.1
-  
-    Website > Website Tools > Code Injection > FOOTER
-    
-  * v7.0
-  
-    Website > Pages > Website Tools > Code Injection > FOOTER
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

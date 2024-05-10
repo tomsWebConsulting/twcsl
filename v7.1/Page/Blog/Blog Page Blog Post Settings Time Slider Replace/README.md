@@ -43,8 +43,8 @@ Replace blog post settings time slider with time input.
       where you want to have this effect.
       
     * Add code from file **[blog page blog post settings time slider
-      replace.html][4]** to Website > Website Tools > Code Injection > FOOTER.
-      Please see [Add code to code injection][6].
+      replace.html][4]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Please see [Add code to code injection][6].
 
 ## Make a Donation
 

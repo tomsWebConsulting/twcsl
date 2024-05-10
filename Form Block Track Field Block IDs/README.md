@@ -28,8 +28,8 @@ Track tagged form block field block ids for later use in other code.
 
 ## Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -44,7 +44,7 @@ Track tagged form block field block ids for later use in other code.
 * Site-wide
 
   * Add code from file **[form block track field block ids.html][5]** to
-    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+    Website > Pages > Website Tools > Code Injection > FOOTER.
 
 * Read the code for any instructions within.
 

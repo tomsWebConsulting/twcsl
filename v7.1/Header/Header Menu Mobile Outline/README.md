@@ -28,17 +28,18 @@ Format mobile menu as an outline.
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[header menu mobile outline.less][5]** to Website >
-  Website Tools > Custom CSS. Read the code for any instructions within.
+  Pages > Website Tools > Custom CSS. Read the code for any instructions within.
   
 * Add code from file **[header menu mobile outline.html][6]** to Website >
-  Website Tools > Code Injection > FOOTER. Please see [Add code to code
+  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
   injection][7].
 
 ## Make a Donation

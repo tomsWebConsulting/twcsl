@@ -12,7 +12,7 @@
 
 ## Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
+* Add the following to Website > Pages > Website Tools > Code
   Injection > HEADER.
   
   ```html
@@ -28,7 +28,7 @@
 * Site-wide
 
   * Add code from file **[text block formats phrase filter.html][1]** to
-    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+    Website > Pages > Website Tools > Code Injection > FOOTER.
     
 * Add a Classic Editor blank page section.
 

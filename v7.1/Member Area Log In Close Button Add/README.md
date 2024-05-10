@@ -45,8 +45,9 @@
   ```
   
 * Add the code from file **[member area log in close button add.html][6]** to
-  Website > Website Tools > Code Injection > FOOTER **before** the Member Area
-  Log In Dialog Change code. Please see [Add code to code injection][7].
+  Website > Pages > Website Tools > Code Injection > FOOTER **before** the
+  Member Area Log In Dialog Change code. Please see [Add code to code
+  injection][7].
 
 ## Make a Donation
 

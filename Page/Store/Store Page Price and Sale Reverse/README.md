@@ -42,8 +42,8 @@ Reverse price and sale price on a store page.
 * Site-wide
 
   * Add code from file **[store page price and sale reverse.html][7]** to
-    Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
-    Please see [Add code to code injection][9].
+    Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+    code to code injection][9].
 
 ## Make a Donation
 

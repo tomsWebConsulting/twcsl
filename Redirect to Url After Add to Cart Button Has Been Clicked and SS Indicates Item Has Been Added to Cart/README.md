@@ -17,7 +17,7 @@
   
 * Add code from file
   **[redirect to url after add to cart button has been clicked and SS indicates item has been added to cart.html](redirect%20to%20url%20after%20add%20to%20cart%20button%20has%20been%20clicked%20and%20SS%20indicates%20item%20has%20been%20added%20to%20cart.html#L1)**
-  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

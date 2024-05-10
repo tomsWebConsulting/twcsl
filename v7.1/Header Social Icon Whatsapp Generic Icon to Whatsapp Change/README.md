@@ -12,7 +12,8 @@
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -20,8 +21,8 @@
   
 * Add code from file
   **[header social icon whatsapp generic icon to whatsapp change.html](header%20social%20icon%20whatsapp%20generic%20icon%20to%20whatsapp%20change.html#L1)**
-  to Website > Website Tools > Code Injection > FOOTER. Read the code for any
-  instructions within.
+  to Website > Pages > Website Tools > Code Injection > FOOTER. Read the code
+  for any instructions within.
 
 ## Make a Donation
 

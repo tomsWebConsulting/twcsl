@@ -12,15 +12,15 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[text block links open in new window.html][2]** to
-  Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER. Read
+  Website > Pages > Website Tools > Code Injection > FOOTER. Read
   the code for any instructions within.
 
 ## Make a Donation

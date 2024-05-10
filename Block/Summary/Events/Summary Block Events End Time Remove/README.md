@@ -45,7 +45,7 @@ Remove summary block events end times.
       you want to have this effect.
       
     * Add code from file **[summary block events end time remove.html][4]** to
-      Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+      Website > Pages > Website Tools > Code Injection > FOOTER.
       Please see [Add code to code injection][6].
 
 ## Make a Donation

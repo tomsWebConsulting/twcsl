@@ -32,8 +32,8 @@ Add footer boilerplate section elements to product detail additional info.
   rest of the steps.
   
 * Add code from file **[store page detail additional info add footer
-  boilerplate.css][6]** to Website > Website Tools > Custom CSS. Read the code
-  for any instructions within.
+  boilerplate.css][6]** to Website > Pages > Website Tools > Custom CSS. Read
+  the code for any instructions within.
   
 * Add code from file **[store page detail additional info add footer
   boilerplate.html][7]** to Store Settings > Advanced > Page Header Code
@@ -66,7 +66,7 @@ You can find data section ids by using Heather Tovey's [Squarespace ID
 Finder][10]. When using SIF you only need the number from between the quotes.
 For example if SIF put **section[data-section-id="123456789012345678901234"]**
 on your clipboard you would only need to enter **123456789012345678901234** in
-Website > Website Tools > Custom CSS for the **store page detail additional info
+Website > Pages > Website Tools > Custom CSS for the **store page detail additional info
 add footer boilerplate.css** you added there.
 
 This effect is not active in SS Preview to test it use [private browsing][11].

@@ -16,8 +16,8 @@
   install the code be sure to continue on with the rest of the steps.
   
 * Add code from file **[footer sections move to page.html][2]** to
-  Website > Website Tools > Code Injection > FOOTER. Read the code for any
-  instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Read the code for
+  any instructions within.
   
 * Set up Footer sections that you want to move to the Page as desired. To each
   section you want to move add a code block with the following HTML.

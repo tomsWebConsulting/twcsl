@@ -30,19 +30,19 @@ Change old Twitter icon to X.
 
 ## Quick Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[social icon twitter to x change.html][6]** to
-  Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  Website > Pages > Website Tools > Code Injection > FOOTER.
   Please see [Add code to code injection][7].
   
 * Add code from file **[social icon twitter to x change svg symbol.html][8]**
-  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
   Please see [Add code to code injection][7].
 
 ## Note

@@ -12,8 +12,8 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -25,12 +25,12 @@
   
 * Add code from file
   **[social icon discord generic icon to discord change.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change.html#L1)**
-  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
   Read the code for any instructions within.
   
 * Add code from file
   **[social icon discord generic icon to discord change svg symbol.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change%20svg%20symbol.html#L1)**
-  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

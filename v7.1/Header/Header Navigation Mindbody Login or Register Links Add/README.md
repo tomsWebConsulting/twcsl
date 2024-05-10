@@ -22,14 +22,15 @@ Add Mindbody login or register links to header navigation.
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[header navigation mindbody login or register links
-  add.html][4]** to Website > Website Tools > Code Injection > FOOTER.
+  add.html][4]** to Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Notes
 

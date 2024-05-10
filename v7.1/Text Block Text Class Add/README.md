@@ -12,7 +12,8 @@
 
 ## Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -28,7 +29,7 @@
 * Site-wide Effect
 
   * Add code from file **[text block text class add.html][1]** to Website >
-    Website Tools > Code Injection > FOOTER.
+    Pages > Website Tools > Code Injection > FOOTER.
 
 ## How To Use
 

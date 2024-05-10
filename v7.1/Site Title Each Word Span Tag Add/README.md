@@ -13,16 +13,17 @@
 ## Quick Install
 
 * Add code from file **[site title each word span tag add.css][1]** to Website >
-  Website Tools > Custom CSS.
+  Pages > Website Tools > Custom CSS.
   
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[site title each word span tag add.html][2]** to
-  Website > Website Tools > Code Injection > FOOTER.
+  Website > Pages > Website Tools > Code Injection > FOOTER.
   
 ## Notes
 

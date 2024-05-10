@@ -48,8 +48,8 @@ Hide products on product list pages using tags with dates.
       where you want to have this effect.
       
     * Add code from file **[store page list tag date hide.html][5]** to
-      Website > Website Tools > Code Injection > FOOTER. Please see [Add code to
-      code injection][7].
+      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+      code to code injection][7].
 
 ## How To Use
 

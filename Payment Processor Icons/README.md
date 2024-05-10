@@ -16,7 +16,7 @@
   CSS.
   
 * Add code from file **[payment processor icons svg symbol.html][2]** to
-  Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  Website > Pages > Website Tools > Code Injection > FOOTER.
   
 * Add code from file **[payment processor icons.html][3]** to a code block in
   the footer of your site.

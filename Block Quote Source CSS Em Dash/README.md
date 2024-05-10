@@ -16,8 +16,8 @@
   **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
   to Design > Custom CSS.
   
-* Add the following to Website > Pages ( v7.0 only ) > Website Tools > Code
-  Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -25,7 +25,7 @@
   
 * Add code from file
   **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
-  to Website > Pages ( v7.0 only ) > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
 
 ## Notes
 

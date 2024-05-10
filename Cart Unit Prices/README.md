@@ -14,8 +14,8 @@
 
 * Install code from **[Cart Prices Sqs-Money-Native Add][2]**.
   
-* Add code from file **[cart unit prices.html][3]** to Website > Website Tools >
-  Code Injection > FOOTER after the **cart prices change** code.
+* Add code from file **[cart unit prices.html][3]** to Website > Pages >
+  Website Tools > Code Injection > FOOTER after the **cart prices change** code.
 
 ## Notes
 

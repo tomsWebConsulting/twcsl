@@ -12,7 +12,8 @@
 
 ## Quick Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -28,7 +29,7 @@
   
   * Add code from file
     **[gallery section grid item order randomize.html](gallery%20section%20grid%20item%20order%20randomize.html#L1)**
-    to Website > Website Tools > Custom CSS.
+    to Website > Pages > Website Tools > Custom CSS.
 
 ## Make a Donation
 

@@ -9,7 +9,7 @@
 ## Quick Install
 
 Add code from file **change image card, image to text width ratios.less** to
-Website > Website Tools > Custom CSS.
+Website > Pages > Website Tools > Custom CSS.
 
 ## Make a Donation
 

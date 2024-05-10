@@ -9,16 +9,16 @@
 ## Quick Install
 
 Add code from file **move header cta element to left side.css** to Website >
-Website Tools > Custom CSS.
+Pages > Website Tools > Custom CSS.
 
-Add the following to Website > Website Tools > Code Injection > HEADER.
+Add the following to Website > Pages > Website Tools > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 ```
 
 Add code from file **move header cta element to left side.html** to Website >
-Website Tools > Code Injection > FOOTER.
+Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 

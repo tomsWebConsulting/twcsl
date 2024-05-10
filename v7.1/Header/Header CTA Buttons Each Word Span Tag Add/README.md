@@ -28,18 +28,19 @@ Add span tags around the words of CTA buttons in the header.
 
 ## Quick Install
 
-* Add code from file **[header cta buttons each word span tag add.css][5]** to Website >
-  Website Tools > Custom CSS.
+* Add code from file **[header cta buttons each word span tag add.css][5]** to
+	Website > Pages > Website Tools > Custom CSS.
   
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+	HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[header cta buttons each word span tag add.html][6]** to
-  Website > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7].
+  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][7].
 
 ## How to Use
 
