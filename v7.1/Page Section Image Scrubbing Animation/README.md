@@ -84,7 +84,7 @@ Add image scrubbing effect to a page section.
     * Above the previous section add a Gallery section. Choose a simple grid
       layout as the section is only being used for to get the URLs for the
       images for the animation. There is no need for fancy styling as once the
-      URLs are retrived the section will be deleted. Be sure to remove the
+      URLs are retrieved the section will be deleted. Be sure to remove the
       default images.
       
       ![add gallery section][4]
@@ -125,9 +125,9 @@ Add image scrubbing effect to a page section.
   
     Image URLs can be added programmatically using a script tag.
     
-    * Set the content of the code block mention previously to the following. The
-      code shown is an example. You will of course need to write your own custom
-      script or [hire a consultant][5].
+    * Set the content of the code block mentioned previously to the following.
+      The code shown is an example. You will of course need to write your own
+      custom script or [hire a consultant][5].
       
       ```html
       <!-- begin programmatically -->
