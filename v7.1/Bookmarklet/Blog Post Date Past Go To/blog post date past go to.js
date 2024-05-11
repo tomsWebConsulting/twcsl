@@ -4,7 +4,7 @@
   
     blog post date past go to
     
-    License     : < https://bit.ly/3F8sn8W >
+    License     : < https://tinyurl.com/s872fb68 >
     
     Version     : 0.2.0
     

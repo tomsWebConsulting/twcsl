@@ -51,7 +51,7 @@ The following code simply logs the parameters to the console.
     
       store product detail variant selected callback callback example
       
-      License       : < https://bit.ly/3F8sn8W >
+      License       : < https://tinyurl.com/s872fb68 >
       
       Version       : 0.1.0
       
