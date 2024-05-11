@@ -6,9 +6,9 @@
     
       elements manipulate
       
-      License         : < https://bit.ly/3F8sn8W >
+      License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.4.0
+      Version         : 0.5.0
       
       SS Versions     : 7.1, 7.0
       
@@ -17,7 +17,9 @@
       Engine
       Compatible      : Yes
       
-      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+      v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+                        
+                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
                         Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
                         Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
                         Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
@@ -34,8 +36,8 @@
                         is replaced the class twc-em-show will be added to it
                         which can be used to show elements
                         
-                        this effect is not active in SS Preview to test it use
-                        private browsing < https://bit.ly/3f6lhq2 >
+                        this effect is not active in Squarespace Preview to test
+                        it use private browsing < https://tinyurl.com/ynessvsf >
       
       By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
       
@@ -60,7 +62,7 @@
       
         selectorDestination : '[enter selector destination here between single quotes replacing square brackets]',
         
-        action : 'append', // value is append, prepend or replace
+        action : 'append', // value is after, append, before, prepend or replace
         
         // selectorParentDestination is optional, use when you want to first
         // find a selector destination but then work up the ancestor hierarchy
@@ -132,11 +134,27 @@
           
       switch ( action ) {
       
+        case 'after' :
+        
+          $elementDestination
+          
+            .after ( $elementSource );
+            
+          break;
+          
         case 'append' :
         
           $elementDestination
           
             .append ( $elementSource );
+            
+          break;
+          
+        case 'before' :
+        
+          $elementDestination
+          
+            .before ( $elementSource );
             
           break;
           
