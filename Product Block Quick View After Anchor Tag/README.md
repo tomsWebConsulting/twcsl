@@ -21,7 +21,7 @@
   
 Add code from file
 **[product block quick view after anchor tag.html](product%20block%20quick%20view%20after%20anchor%20tag.html#L1)**
-to Design > Custom CSS.
+to Website > Pages > Website Tools > Custom CSS.
 
 ## Make a Donation
 

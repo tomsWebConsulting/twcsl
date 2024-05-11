@@ -15,7 +15,7 @@
   * Site-wide
 
     * Add code from file **[accordion block top bottom border hide.css][1]** to
-      Design > Custom CSS.
+      Website > Pages > Website Tools > Custom CSS.
       
   * Page Specific
   

@@ -14,7 +14,7 @@
 
 * Add code from file
   **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
-  to Design > Custom CSS.
+  to Website > Pages > Website Tools > Custom CSS.
   
 * Add the following to Website > Pages > Website Tools > Code Injection >
   HEADER.

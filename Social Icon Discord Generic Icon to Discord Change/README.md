@@ -21,7 +21,7 @@
   
 * Add code from file
   **[social icon discord generic icon to discord change.css](social%20icon%20discord%20generic%20icon%20to%20discord%20change.css#L1)**
-  to Design > Custom CSS.
+  to Website > Pages > Website Tools > Custom CSS.
   
 * Add code from file
   **[social icon discord generic icon to discord change.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change.html#L1)**
