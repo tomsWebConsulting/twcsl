@@ -42,8 +42,6 @@ Add sku to the description of store detail pages.
   **twcSpdsa** callback to the code. For example.
   
   ```javaScript
-      // callback : [enter function name here replacing square brackets]
-      
       callback : twcSpdsa
   ```
   
@@ -51,7 +49,7 @@ Add sku to the description of store detail pages.
   sku to appear.
   
   ```text
-  [twc-spdsa-sku]
+  [twc-spdsa]
   ```
 
 ## Make a Donation
