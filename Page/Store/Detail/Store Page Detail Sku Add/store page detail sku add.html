@@ -1,0 +1,205 @@
+<!--
+
+  begin store page detail sku add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependencies  : store page detail variant selected callback
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    /* begin style no variant text */
+    
+      /* simple */
+      
+      .ProductItem-details .ProductItem-details-excerpt .twc-spdsa.no-variant,
+      
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details .pdp-details-excerpt .twc-spdsa.no-variant
+      
+        {
+        
+          /*
+          
+            this is very simple styling. you can of course do anything you want
+            using CSS declarations
+            
+            */
+            
+          font-style : italic;
+          
+          }
+          
+      /* end style no variant text */
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdsa = {
+    
+      noVariantSelectedText : 'select a variant',
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #pdp {
+    
+      --twc-spdsa-excerpt-visibility : hidden;
+      
+      }
+      
+    .ProductItem-details .ProductItem-details-excerpt, /* simple */
+    .pdp-layout .pdp-details .pdp-details-excerpt /* full, half, wrap */
+    
+      {
+      
+        visibility : var( --twc-spdsa-excerpt-visibility );
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    twc
+    
+      .spdsa
+      
+      .codeKey
+      
+      =
+      
+      'twc-spdsa';
+      
+    $( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `Store Page Detail Sku Add v${ version }, ` +
+      
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+      console.log ( s );
+      
+      const callback = function ( ) {
+      
+        const $this = $( this );
+        
+        const html = $this
+        
+          .html ( )
+          
+          .replaceAll ( `[${ codeKey }-sku]`, span )
+          
+          .replace ( /\s+/g, ' ' );
+          
+        $this.html ( html );
+        
+        }
+        
+      const options = twc.spdsa;
+      
+      const codeKey = options.codeKey;
+      
+      const variants = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .product
+        
+        .variants;
+        
+      let selector = [
+      
+        '.ProductItem-details .ProductItem-details-excerpt', // simple
+        
+        '.pdp-layout .pdp-details .pdp-details-excerpt' // full, half, wrap
+        
+        ]
+        
+        .join ( ', ' );
+      
+      let sku;
+      
+      if ( variants.length == 1 )
+      
+        sku = variants [ 0 ].sku;
+        
+        else
+        
+          sku = options.noVariantSelectedText;
+          
+      const span = `
+      
+        <span class="${ codeKey }-sku">
+        
+          ${ sku }
+          
+          </span>
+          
+        `;
+        
+      $( selector ).each ( callback );
+      
+      selector = '#pdp';
+    
+      $( selector ).css ( '--twc-spdsa-excerpt-visibility', 'visible' );
+      
+      } );
+      
+    const twcSpdsa = ( sku, selectedVariant, $element ) => {
+    
+      const options = twc.spdsa;
+      
+      const codeKey = options.codeKey;
+      
+      const callback = function ( ) {
+      
+        $this = $( this );
+        
+        if ( sku )
+        
+          $this.removeClass ( 'no-variant' );
+          
+          else {
+          
+            sku = options.noVariantSelectedText;
+            
+            $this.addClass ( 'no-variant' );
+            
+            }
+            
+        $this.text ( sku );
+        
+        }
+        
+      const selector = `.${ codeKey }-sku`;
+      
+      $( selector ).each ( callback );
+      
+      };
+      
+    </script>
+    
+  <!-- end store page detail sku add -->
