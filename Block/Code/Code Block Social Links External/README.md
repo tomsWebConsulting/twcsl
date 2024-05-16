@@ -161,6 +161,10 @@ and wanted to include a Social Links block for each member of the community,
 Squarespace can't do it by default. This code provides a method to create
 individualized Social Links blocks.
 
+When editing your site you may see the **x-twc-cbsle** tag contents flash for a
+moment and then turn into social links. This is normal and won't be seen by your
+site visitors.
+
 The code has a cache for storing elements of the Social Links block you added to
 the twc-cbsle page you created. The cache is not used when in Squarespace
 Preview. The use of a cache means it is possible that the information will
