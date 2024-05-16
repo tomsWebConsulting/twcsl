@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.2.2
+  * 0.2.3
 
 #### SS Version
 
@@ -35,6 +35,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2024-05-5**
+
+  * fix console error generated when editing the header
+  * bumped version to 0.2.3
+  
 * **2024-05-01**
 
   * fix template HTML
