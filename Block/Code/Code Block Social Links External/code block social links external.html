@@ -1,0 +1,313 @@
+<!--
+
+  begin code block social links external
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                    Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                    Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                    Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                    Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                    Sonora, Stella, Thorne, Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : twcsl < https://tinyurl.com/27bpnu6f >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    x-twc-cbsle,
+    .sqs-svg-icon--wrapper[ href*="twc-cbsle" ]
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Code Block Social Links External v${ version }, ` +
+      
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+      console.log ( s );
+      
+      const initialize = ( ) => {
+      
+        const codeKey = 'twc-cbsle';
+        
+        const setTemplates = ( ) => {
+        
+          const callback = ( data ) => {
+          
+            let selector = '.sqs-block-socialaccountlinks-v2';
+            
+            $blockTemplate = $( selector, data )
+            
+              .first ( )
+            
+              .removeAttr ( 'id' );
+              
+            selector = 'style';
+            
+            $style = $( selector, $blockTemplate );
+            
+            const css = $style
+            
+              .text ( )
+              
+              .replace ( /#block-[^ ]+ /, '' );
+              
+            $style.text ( css );
+            
+            selector = '.sqs-svg-icon--wrapper:first-child';
+            
+            $listItemTemplate = $( selector, $blockTemplate )
+            
+              .attr ( 'href', '' )
+              
+              .removeAttr ( 'aria-label' )
+              
+              .removeAttr ( 'class' )
+              
+              .addClass ( 'sqs-svg-icon--wrapper' )
+              
+              .find ( '[*|href]' )
+              
+              .attr ( 'xlink:href', '' )
+              
+              .end ( );
+              
+            $blockTemplate
+            
+              .find ( '.sqs-svg-icon--list' )
+              
+              .empty ( );
+              
+            let templates = {
+            
+              block : $blockTemplate.prop ( 'outerHTML' ),
+              
+              listItem : $listItemTemplate.prop ( 'outerHTML' )
+              
+              };
+              
+            templates = JSON.stringify ( templates );
+            
+            sessionStorage.setItem ( codeKey, templates );
+            
+            build ( );
+            
+            };
+            
+          $.get ( `/${ codeKey }`, callback );
+          
+          };
+          
+        let selector = `x-${ codeKey }`;
+        
+        let $blockTemplate;
+        
+        let $listItemTemplate;
+        
+        const $elements = $( selector );
+        
+        if ( ! $elements.length ) return; // bail if no elements
+        
+        const build = ( ) => {
+        
+          const callback = function ( i ) {
+          
+            const $this = $( this );
+            
+            const blockId = `${ codeKey }-${ i }`;
+            
+            const callback = ( link, i ) => {
+            
+              const $listItem = $listItemTemplate
+              
+                .clone ( )
+                
+                .attr ( 'href', link )
+                
+              let service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com|(discord)\.gg|(twitch)\.tv)\//; // (snapchat)\.com\/add|
+              
+              let xlinkHref = {
+              
+                discord : 'discord-unauth',
+                
+                facebook : 'facebook-unauth',
+                
+                instagram : 'instagram-unauth',
+                
+                linkedin : 'linkedin-unauth',
+                
+                pinterest : 'pinterest-unauth',
+                
+                // snapchat : 'snapchat',
+                
+                tiktok : 'tiktok-unauth',
+                
+                tumblr : 'tumblr-unauth',
+                
+                twitch : 'twitch',
+                
+                twitter : 'twitter-unauth',
+                
+                x : 'x-formerly-twitter-unauth',
+                
+                youtube : 'youtube-unauth',
+                
+                default : 'url',
+                
+                };
+                
+              service = link.match ( service );
+              
+              if ( service === null )
+              
+                service = 'default';
+                
+                else
+                
+                  service = service
+                  
+                    .slice ( 1 )
+                    
+                    .join ( '' );
+                    
+              xlinkHref = xlinkHref [ service ];
+              
+              $listItem
+              
+                .find ( '.sqs-use--icon' )
+                
+                .attr ( 'xlink:href', `#${ xlinkHref }-icon` )
+                
+                .end ( )
+                
+                .find ( '.sqs-use--mask' )
+                
+                .attr ( 'xlink:href', `#${ xlinkHref }-mask` );
+                
+              let selector = '.sqs-svg-icon--list';
+              
+              $( selector, $block )
+              
+                .append ( $listItem );
+                
+              };
+              
+            const $block = $blockTemplate
+            
+              .clone ( )
+              
+              .attr ( 'id', blockId );
+              
+            let selector = 'style';
+            
+            $style = $( selector, $block );
+            
+            const css = $style
+            
+              .text ( )
+              
+              .replace ( '.', `#${ blockId } .` );
+              
+            $style.text ( css );
+            
+            const links = $( this )
+            
+              .text ( )
+              
+              .split ( '\n' )
+              
+              .map ( l => l.trim ( ) )
+              
+              .filter ( l => l != '' )
+              
+              .forEach ( callback );
+              
+            $this
+            
+              .parents ( '.sqs-block-code' )
+              
+              .replaceWith ( $block );
+              
+            }
+          
+          $elements.each ( callback );
+          
+          }
+          
+        let templates = sessionStorage
+        
+          .getItem ( codeKey );
+          
+        const b = window.frameElement !== null || templates === null;
+        
+        if ( b )
+        
+          setTemplates ( );
+          
+          else {
+          
+            templates = JSON.parse ( templates );
+            
+            $blockTemplate = $( templates.block );
+            
+            $listItemTemplate = $( templates.listItem );
+            
+            build ( );
+            
+            }
+            
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.ss.is71 :
+        
+          $( initialize );
+          
+          break;
+          
+        case twcsl.ss.is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+       } );
+      
+    </script>
+    
+  <!-- end code block social links external -->
