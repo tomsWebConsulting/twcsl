@@ -29,17 +29,18 @@ Add styled text overlays to gallery section images.
 ## Install
 
 * Add code from file **[gallery section text block overlay.less][5]** to
-  Website > Website Tools > Custom CSS.
+  Website > Pages > Website Tools > Custom CSS.
   
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
 * Add code from file **[gallery section text block overlay.html][6]** to
-  Website > Website Tools > Code Injection > FOOTER. Please see [Per-page
-  code injection][7].
+  Website > Pages > Website Tools > Code Injection > FOOTER. Please see
+  [Per-page code injection][7].
 
 * Add a section to a page.
 
