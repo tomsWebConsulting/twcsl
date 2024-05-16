@@ -169,11 +169,11 @@ The design will update when the browser session is restared.
 
 ## Demo
 
-You can see a [demo of this effect here][18].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -196,5 +196,5 @@ Please consider [making a donation][10].
 [7]: code%20block%20social%20links%20external.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[18]: https://toms-web-consulting-demos.squarespace.com/code-block-social-links-external?password=twcdemos
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://toms-web-consulting-demos.squarespace.com/code-block-social-links-external?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
