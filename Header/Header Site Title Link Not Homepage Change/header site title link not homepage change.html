@@ -1,0 +1,112 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      begin header site title link not homepage change
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.2.0
+      
+      SS Versions     : 7.1
+      
+      Fluid
+      Engine
+      Compatible      : Not Applicable
+      
+      v7.0 Templates  : Tremont ( Camino, Carson, and Henson )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const url = '[ enter url here between single quotes replacing square brackets ]';
+    
+    // do not change anything below, there be the borg here
+    
+    const version = '0.2.0';
+    
+    const s = `Header Site Title Link Not Homepage Change v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const callback = ( ) => {
+    
+      const callback = ( element ) => {
+      
+        const callback = ( element ) => {
+        
+          element
+          
+            .setAttribute ( 'href', url );
+          
+          };
+          
+        const selector = [
+        
+          '#site-title', // 7.1
+          
+          '.has-logo-image .Header-branding', // brine logo
+          
+          '.has-site-title .Header-branding', // brine tile
+          
+          '.site-branding h1 a', // tremont
+          
+          ]
+          
+          .join ( ', ' );
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      const element = document
+      
+        .querySelector ( '.homepage' );
+        
+      if ( element ) return; // bail if homepage
+      
+      const ssVersion = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .templateVersion;
+        
+      switch ( ssVersion ) {
+      
+        case '7.1' :
+        
+          callback ( );
+          
+          break;
+          
+        case '7' :
+        
+          Squarespace.onInitialize ( Y, callback );
+          
+          break;
+          
+        }
+        
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
+    
+  </script>
