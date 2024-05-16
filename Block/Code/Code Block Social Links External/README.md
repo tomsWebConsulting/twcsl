@@ -14,7 +14,7 @@ Create Social Links for entities outside your site.
 
   * 7.1
   
-  * 7.0 ([Brine template family][12])
+  * 7.0 ([Brine template family][2])
 
 #### Fluid Engine Compatible
 
@@ -22,15 +22,15 @@ Create Social Links for entities outside your site.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
+  * [Squarespace plan][3] that supports [JavaScript][4].
   
-  * [Tom's Web Consulting Squarespace Library][4]
+  * [Tom's Web Consulting Squarespace Library][5]
 
 ---
 
 ## Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
+* Install [twcsl][6]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
 * Options
@@ -40,46 +40,46 @@ Create Social Links for entities outside your site.
     * This option will be the one most will want to use if you have only a
       single page you want to have this effect.
       
-    * Add code from file **[code block social links external.html][6]** to Page
+    * Add code from file **[code block social links external.html][7]** to Page
       Settings > Advanced > Page Header Code Injection for the page. Please see
-      [Per-page code injection][7].
+      [Per-page code injection][8].
       
   * Site-wide
   
     * This option is the one you want to use if you have multiple pages where
       you want to have this effect.
       
-    * Add code from file **[code block social links external.html][6]** to
+    * Add code from file **[code block social links external.html][7]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][8].
+      code to code injection][9].
       
 * Create a blank page in the Not Linked area and set the PAGE TITLE, NAVIGATION
   TITLE, AND URL SLUG to **twc-cbsle** and add the following to Page Settings >
   Advanced > Page Header Code Injection for the page. Please see [Per-page code
-  injection][7].
+  injection][8].
   
   ```html
-<meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex" />
   ```
-  
+    
   Add a Code block to the page and add the following as the content.
   
   ```html
-<style>
-
-  #page .sqs-svg-icon--wrapper, /* 7.1 */
+  <style>
   
-  /* 7.0 */
-  
-  .Site .sqs-svg-icon--wrapper /* Brine */
-  
-    {
+    #page .sqs-svg-icon--wrapper, /* 7.1 */
     
-      display : inline-block !important;
+    /* 7.0 */
+    
+    .Site .sqs-svg-icon--wrapper /* Brine */
+    
+      {
       
-      }
-      
-  </style>
+        display : inline-block !important;
+        
+        }
+        
+    </style>
   ```
   
   Add a Social Links block to the page. Add the following social media links to
@@ -123,33 +123,33 @@ Create Social Links for entities outside your site.
   entity you want to represent.
   
   ```html
-<x-twc-cbsle>
-
-  https://discord.gg/twc-cbsle
+  <x-twc-cbsle>
   
-  https://facebook.com/twc-cbsle
-  
-  https://instagram.com/twc-cbsle
-  
-  https://linkedin.com/twc-cbsle
-  
-  https://pinterest.com/twc-cbsle
-  
-  https://tiktok.com/@twc-cbsle
-  
-  https://tumblr.com/twc-cbsle
-  
-  https://twitch.tv/twc-cbsle
-  
-  https://twitter.com/twc-cbsle
-  
-  https://youtube.com/twc-cbsle
-  
-  https://x.com/twc-cbsle
-  
-  https://default.com/twc-cbsle
-  
-  </x-twc-cbsle>
+    https://discord.gg/twc-cbsle
+    
+    https://facebook.com/twc-cbsle
+    
+    https://instagram.com/twc-cbsle
+    
+    https://linkedin.com/twc-cbsle
+    
+    https://pinterest.com/twc-cbsle
+    
+    https://tiktok.com/@twc-cbsle
+    
+    https://tumblr.com/twc-cbsle
+    
+    https://twitch.tv/twc-cbsle
+    
+    https://twitter.com/twc-cbsle
+    
+    https://youtube.com/twc-cbsle
+    
+    https://x.com/twc-cbsle
+    
+    https://default.com/twc-cbsle
+    
+    </x-twc-cbsle>
   ```
 
 ## Notes
@@ -161,15 +161,15 @@ and wanted to include a Social Links block for each member of the community,
 Squarespace can't do it by default. This code provides a method to create
 individualized Social Links blocks.
 
-The code has a cache for storing elements of the Social block you added to the
-twc-cbsle page you created. The cache is not used when in Squarespace Preview.
-The use of a cache means it is possible that the information will become stale.
-This effects the design of the social links, not links themselves. The design
-will update when the browser session is restared.
+The code has a cache for storing elements of the Social Links block you added to
+the twc-cbsle page you created. The cache is not used when in Squarespace
+Preview. The use of a cache means it is possible that the information will
+become stale. This effects the design of the social links, not links themselves.
+The design will update when the browser session is restared.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -185,11 +185,11 @@ Please consider [making a donation][9].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: code%20block%20social%20links%20external.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://www.squarespace.com/pricing
+[4]: https://en.wikipedia.org/wiki/JavaScript
+[5]: https://github.com/tomsWebConsulting/twcsl
+[6]: https://github.com/tomsWebConsulting/twcsl#install-options
+[7]: code%20block%20social%20links%20external.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
