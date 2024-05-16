@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.1.0
+  Version         : 0.1.1
   
   SS Versions     : 7.1, 7.0
   
@@ -25,13 +25,12 @@
   
   Dependencies    : twcsl < https://tinyurl.com/27bpnu6f >
   
-  Note            : the has a cache for storing elements of the social
-                    links block on the twc-cbsle page. the cache is not used
-                    when in squarespace preview. the use of a cache means it is
-                    possible that the information will become stale. this
-                    effects the design of the social links, not links
-                    themselves. the design will update when the browser session
-                    is restared
+  Note            : the has a cache for storing elements of the social links
+                    block on the twc-cbsle page. the cache is not used when in
+                    squarespace preview. the use of a cache means it is possible
+                    that the information will become stale. this effects the
+                    design of the social links, not links themselves. the
+                    design will update when the browser session is restared
 
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
@@ -56,7 +55,7 @@
   
     $( ( ) => {
     
-      const version = '0.1.0';
+      const version = '0.1.1';
       
       const s = `Code Block Social Links External v${ version }, ` +
       
@@ -164,7 +163,7 @@
                 
                 .attr ( 'href', link )
                 
-              let service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com|(discord)\.gg|(twitch)\.tv)\//; // (snapchat)\.com\/add|
+              let service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com|(discord)\.gg|open\.(spotify)\.com\/artist|(twitch)\.tv)\//; // (snapchat)\.com\/add|
               
               let xlinkHref = {
               
@@ -179,6 +178,8 @@
                 pinterest : 'pinterest-unauth',
                 
                 // snapchat : 'snapchat',
+                
+                spotify : 'spotify-unauth',
                 
                 tiktok : 'tiktok-unauth',
                 

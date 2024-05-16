@@ -8,7 +8,7 @@ Create Social Links for entities outside your site.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -105,7 +105,7 @@ Create Social Links for entities outside your site.
   
   http://twitter.com/twc-cbsle
   
-  http://youtube.com/twc-cbsle
+  http://youtube.com/@twc-cbsle
   
   http://x.com/twc-cbsle
   
@@ -181,12 +181,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2021-05-19**
+* **2024-05-16**
 
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
-  -->
+  * added support for spotify
+  * bumped version to 0.1.1
+  
 * **2024-05-15**
 
   * initial version
