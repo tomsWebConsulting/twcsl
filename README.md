@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 292 effects. Each effect has it's own version number, code,
+twcsl contains 293 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -499,8 +499,6 @@ not necessarily designed to work together.
       
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
       
-    * [Header Site Title Link Not Homepage Change](v7.1/Header/Header%20Site%20Title%20Link%20Not%20Homepage%20Change)
-      
     * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
       
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
@@ -539,6 +537,10 @@ not necessarily designed to work together.
   
 * [Store Product Detail Variant Sold Out Remove](Store%20Product%20Detail%20Variant%20Sold%20Out%20Remove)
   
+* [Header](Header)
+  
+  * [Header Site Title Link Not Homepage Change](Header/Header%20Site%20Title%20Link%20Not%20Homepage%20Change)
+    
 * [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
   
 * [Change Form Block Post-Submit Redirect Based on a Radio Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Radio%20Form%20Field%20Selected%20Option)
