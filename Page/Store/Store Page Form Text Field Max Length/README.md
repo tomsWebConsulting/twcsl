@@ -141,7 +141,7 @@ Please consider [making a donation][12].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [7]: https://github.com/tomsWebConsulting/twcsl#install-options
 [8]: store%20page%20form%20text%20field%20max%20length.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
