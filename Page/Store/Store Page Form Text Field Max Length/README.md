@@ -8,7 +8,7 @@ Limit store page form text and text area field lengths.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -26,7 +26,7 @@ Limit store page form text and text area field lengths.
   
   * [Tom's Web Consulting Squarespace Library][5]
   
-  * [Cart Page Observe Changes][6]
+  * [Modal Lightbox Observe Changes][6]
 
 ---
 
@@ -35,8 +35,8 @@ Limit store page form text and text area field lengths.
 * Install [twcsl][7]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Install [Cart Page Observe Changes][6]. After you install Cart Page Observe
-  Changes be sure to continue on with the rest of the steps.
+* Install [Modal Lightbox Observe Changes][6]. After you install the code be
+  sure to continue on with the rest of the steps.
   
 * Options
 
@@ -103,16 +103,14 @@ Limit store page form text and text area field lengths.
     [Squarespace ID Finder][11]. Alternately you can export your inventory and
     grab the id from the CSV file.
     
-    To use SIF go to your product detail page and use SIF. You will see something
-    like the following.
+    To use SIF go to your product detail page and use SIF. You will see
+    something like the following.
     
     ![squarespace id finder example](read%20me%20assets/product%20id.png)
     
     You only need the number after **#item-**.
 
 ## Notes
-
-This effect is not active in SS Preview to test it use [private browsing][12].
 
 This code does not work on the checkout page. It is a Squarespace security
 feature that no code can alter the checkout page.
@@ -125,15 +123,15 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][13].
+Please consider [making a donation][12].
 
 ## Changes
 
-<!-- * **2021-07-28**
+* **2024-05-18**
 
-  * generalized a bit to handle text and text area fields
-  * bumped version to 0.2d0
-  -->
+  * support quick view
+  * bumped version to 0.2.0
+  
 * **2024-05-04**
 
   * initial version
@@ -142,12 +140,11 @@ Please consider [making a donation][13].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [5]: https://github.com/tomsWebConsulting/twcsl
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [7]: https://github.com/tomsWebConsulting/twcsl#install-options
 [8]: store%20page%20form%20text%20field%20max%20length.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [11]: https://www.heathertovey.com/squarespace-id-finder/
-[12]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.1.0
+  Version         : 0.2.0
   
   SS Versions     : 7.1, 7.0
   
@@ -23,9 +23,9 @@
                     your template is not listed? then it is not currently
                     supported
   
-  Dependencies    : modal lightbox observe changes
+  Dependencies    : twcsl
                     
-                    twcsl
+                    modal lightbox observe changes
   
   Note            : this effect is not active in Squarespace Preview to test it
                     use private browsing < https://tinyurl.com/ynessvsf >
@@ -48,117 +48,9 @@
     
   <script>
   
-    var twcSpftfml = ( node ) => {
-    
-      if ( window.frameElement !== null ) return; // bail if in Preview
-      
-      const callback = ( element ) => {
-      
-        const attribute = 'placeholder';
-        
-        const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
-        
-        let text = element
-        
-          .getAttribute ( attribute );
-          
-        let m = text.match ( re );
-        
-        // begin clean up placeholder attribute value
-        
-          text = text
-          
-            .replace ( m [ 0 ], '' )
-            
-            .trim ( );
-            
-          if ( text ) // set/show placeholder or remove
-          
-            element
-            
-              .setAttribute ( attribute, text );
-              
-            else
-            
-              element.removeAttribute ( attribute );
-              
-          // end clean up placeholder attribute value
-          
-        let maxLength = m [ 1 ]
-        
-          .trim ( );
-          
-        if ( isNaN ( maxLength ) ) {
-        
-          const callback = ( key ) => {
-          
-            const b = ! twc
-            
-              .spftfml
-              
-              .ids
-              
-              .includes ( key );
-              
-            if ( b ) return; // bail if no key
-            
-            maxLength = idMaxlengthMap [ key ];
-            
-            };
-            
-          const json = '{' +
-          
-            maxLength
-            
-              .replace ( /[\s]/g, '' )
-              
-              .split ( ',' )
-              
-              .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
-              
-              .join ( ',' ) +
-              
-            '}';
-            
-          const key = 'default';
-          
-          const idMaxlengthMap = JSON.parse ( json );
-          
-          maxLength = '';
-          
-          if ( key in idMaxlengthMap )
-          
-            maxLength = idMaxlengthMap [ key ];
-            
-          Object
-          
-            .keys ( idMaxlengthMap )
-            
-            .forEach ( callback );
-            
-          }
-          
-        if ( maxLength )
-        
-          element
-          
-            .setAttribute ( 'maxlength', maxLength );
-            
-        };
-        
-      const selector = '.form-wrapper input[ placeholder*="ftfml" ]';
-      
-      node
-      
-        .querySelectorAll ( selector )
-        
-        .forEach ( callback );
-        
-      };
-      
     ( ( ) => {
     
-      const version = '0.1.0';
+      const version = '0.2.0';
       
       const s = `Store Page Form Text Field Max Length v${ version }, ` +
       
@@ -182,16 +74,12 @@
       
     $( ( ) => {
     
-      if ( window.frameElement !== null ) return; // bail if in Preview
-      
       const codeKey = 'twc-spftfml';
       
       const detail = ( ) => {
       
         const callback = function ( ) {
         
-          console.log ( this );
-          
           const data = twc.spftfml;
           
           const $this = $( this );
@@ -314,7 +202,7 @@
               
                 $this
                 
-                  .attr ( 'data-item-sku' )
+                  .attr ( `data-${ codeKey }-sku` )
                   
                 );
                 
@@ -360,9 +248,13 @@
             
             .includes ( dataProductType );
             
+          const $gridItem = $this
+          
+              .parents ( '.grid-item' );
+              
           if ( b ) {
           
-            $this
+            $gridItem
             
               .attr ( `data-${ codeKey }-no-sku`, '' );
               
@@ -382,8 +274,10 @@
               
               .sku;
               
-            $this.attr ( 'data-item-sku', sku );
+            $gridItem
             
+              .attr ( `data-${ codeKey }-sku`, sku );
+              
             };
             
           const $productVariants = $this
@@ -394,11 +288,11 @@
             
           if ( $productVariants.length ) {
           
-            $this
+            $gridItem
             
               .prop ( '$productVariants', $productVariants );
               
-            return true; // bail if variants
+            return true; // continue
             
             }
             
@@ -428,6 +322,8 @@
         
           .each ( eachCallback )
           
+          .parents ( '.grid-item' )
+          
           .click ( clickCallback );
           
         };
@@ -449,6 +345,250 @@
         }
         
       } );
+      
+    var twcSpftfml = ( node ) => {
+    
+      const b = node
+      
+        .classList
+        
+        .contains ( 'sqs-product-quick-view-lightbox' );
+        
+      const codeKey = 'twc-spftfml';
+      
+      const formCallback = ( ) => {
+      
+        const callback = ( element ) => {
+        
+          const attribute = 'placeholder';
+          
+          const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+          
+          let text = element
+          
+            .getAttribute ( attribute );
+            
+          let m = text.match ( re );
+          
+          // begin clean up placeholder attribute value
+          
+            text = text
+            
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text ) // set/show placeholder or remove
+            
+              element
+              
+                .setAttribute ( attribute, text );
+                
+              else
+              
+                element.removeAttribute ( attribute );
+                
+            // end clean up placeholder attribute value
+            
+          let maxLength = m [ 1 ]
+          
+            .trim ( );
+            
+          if ( isNaN ( maxLength ) ) {
+          
+            const callback = ( key ) => {
+            
+              const b = ! twc
+              
+                .spftfml
+                
+                .ids
+                
+                .includes ( key );
+                
+              if ( b ) return; // bail if no key
+              
+              maxLength = idMaxlengthMap [ key ];
+              
+              };
+              
+            const json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}';
+              
+            const key = 'default';
+            
+            const idMaxlengthMap = JSON.parse ( json );
+            
+            maxLength = '';
+            
+            if ( key in idMaxlengthMap )
+            
+              maxLength = idMaxlengthMap [ key ];
+              
+            Object
+            
+              .keys ( idMaxlengthMap )
+              
+              .forEach ( callback );
+              
+            }
+            
+          if ( maxLength )
+          
+            element
+            
+              .setAttribute ( 'maxlength', maxLength );
+              
+          };
+          
+        const selector = '.form-wrapper input[ placeholder*="ftfml" ]';
+        
+        node
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      const quickViewCallback = ( ) => {
+      
+        const callback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            const b = ! mutation.addedNodes.length;
+            
+            if ( b ) return; // continue
+            
+            const callback = function ( ) {
+            
+              const data = twc.spftfml;
+              
+              const itemId = this
+              
+                .getAttribute ( 'data-item-id' );
+                
+              const selector = `.grid-item[ data-item-id="${ itemId }" ]`;
+              
+              data.ids = [ itemId ];
+              
+              let sku = document
+              
+                .querySelector ( selector )
+              
+                .getAttribute ( `data-${ codeKey }-sku` );
+                
+              if ( sku !== null ) {
+              
+                data.ids.push ( sku );
+                
+                return; // bail if no sku
+              
+                }
+                
+              let noSku = document
+              
+                .querySelector ( selector )
+              
+                .getAttribute ( `data-${ codeKey }-no-sku` );
+                
+              let b = noSku !== null && ! noSku;
+              
+              if ( b ) return; // bail if no sku
+              
+              let variant = this
+              
+                .closest ( '.ProductItem-details-checkout' )
+                
+                .querySelector ( '.product-variants' )
+                
+                .getAttribute ( 'data-selected-variant' );
+                
+              if ( variant === null ) return; // bail if no selected variants
+              
+              variant = JSON.parse ( variant );
+              
+              data
+              
+                .ids
+                
+                .push ( variant.sku );
+                
+              }
+              
+            const selector = '.ProductItem:not( .sold-out ) ' +
+            
+              '.sqs-add-to-cart-button-wrapper ' +
+              
+              '.sqs-add-to-cart-button.use-form';
+              
+            const element = mutation
+            
+              .addedNodes
+              
+              [ 0 ];
+              
+            b = ! element
+            
+              .classList
+              
+              .contains ( '.ProductItem' );
+              
+            if ( b ) return; // bail if not product item
+              
+            element
+            
+              .querySelector ( selector )
+              
+              .addEventListener ( 'click', callback );
+              
+            };
+            
+          mutations.forEach ( callback );
+          
+          };
+          
+        const config = {
+        
+          childList : true
+          
+          };
+          
+        const selector = '.sqs-product-quick-view-content';
+        
+        const element = node
+        
+          .querySelector ( selector );
+          
+        const observer = new MutationObserver ( callback );
+        
+        // start listening for changes in body
+        
+        observer.observe ( element, config );
+        
+        };
+        
+      if ( b )
+      
+        quickViewCallback ( );
+        
+        else
+        
+          formCallback ( );
+          
+      };
       
     </script>
     
