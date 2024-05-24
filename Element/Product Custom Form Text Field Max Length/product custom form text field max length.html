@@ -1,0 +1,190 @@
+<!--
+
+  begin product custom form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : modal lightbox observe changes
+                    
+                    product quick view form text field max length
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const title = 'Product Custom Form Text Field Max Length';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcPcftfml = ( node ) => {
+    
+      const codeKeySuffix = 'pcftfml';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const selector = '.form-wrapper input[ placeholder*="ftfml" ]';
+      
+      const elements = node
+      
+        .querySelectorAll ( selector );
+        
+      if ( ! elements.length ) return; // bail if no elements
+      
+      const callback = ( ) => {
+      
+        const callback = ( element ) => {
+        
+          const attribute = 'placeholder';
+          
+          const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+          
+          let text = element
+          
+            .getAttribute ( attribute );
+            
+          let m = text.match ( re );
+          
+          // begin clean up placeholder attribute value
+          
+            text = text
+            
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text ) // set/show placeholder or remove
+            
+              element
+              
+                .setAttribute ( attribute, text );
+                
+              else
+              
+                element.removeAttribute ( attribute );
+                
+            // end clean up placeholder attribute value
+            
+          let maxLength = m [ 1 ]
+          
+            .trim ( );
+            
+          if ( isNaN ( maxLength ) ) {
+          
+            const callback = ( key ) => {
+            
+              const b = ! twc
+              
+                .ftfml
+                
+                .ids
+                
+                .includes ( key );
+                
+              if ( b ) return; // bail if no key
+              
+              maxLength = idMaxlengthMap [ key ];
+              
+              };
+              
+            const json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}';
+              
+            const key = 'default';
+            
+            const idMaxlengthMap = JSON.parse ( json );
+            
+            maxLength = '';
+            
+            if ( key in idMaxlengthMap )
+            
+              maxLength = idMaxlengthMap [ key ];
+              
+            Object
+            
+              .keys ( idMaxlengthMap )
+              
+              .forEach ( callback );
+              
+            }
+            
+          if ( maxLength )
+          
+            element
+            
+              .setAttribute ( 'maxlength', maxLength );
+              
+          };
+          
+        elements.forEach ( callback );
+        
+        };
+        
+      twc
+      
+        .ftfml
+        
+        .response
+        
+        .finally ( callback );
+        
+      };
+      
+    </script>
+    
+  <!-- end product custom form text field max length -->
