@@ -9,7 +9,7 @@ added to the [DOM][2].
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -29,10 +29,27 @@ added to the [DOM][2].
 
 ## Install
 
-* Add code from file **[modal lightbox observe changes.html][5]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][6]. Read the code for any instructions within.
+* Options
+
+  * Page Specific
   
+    * This option will be the one most will want to use if you have only a
+      single page you want to have this effect.
+      
+    * Add code from file **[modal lightbox observe changes.html][5]** to Page
+      Settings > Advanced > Page Header Code Injection for the page. Please see
+      [Per-page code injection][6]. Read the code for any instructions within.
+      
+  * Site-wide
+  
+    * This option is the one you want to use if you have multiple elements such
+      as a store page and product blocks where you want to have this effect.
+      
+    * Add code from file **[product quick view observe changes.html][5]**
+      to Website > Pages > Website Tools > Code Injection > FOOTER. Please see
+      [Add code to code injection][7]. Read the code for any instructions
+      within.
+      
 * Add your callback names to the code.
 
 ## Callbacks
@@ -60,15 +77,15 @@ This code is a base for other effects.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2023-07-28**
+* **2024-05-23**
 
-  * support calling multiple callbacks
-  * bumped version to 0.2.0
-  -->
+  * minor tweaks, no functional changes
+  * bumped version to 0.1.1
+  
 * **2024-05-01**
 
   * initial version
@@ -78,5 +95,6 @@ Please consider [making a donation][7].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: modal%20lightbox%20observe%20changes.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
