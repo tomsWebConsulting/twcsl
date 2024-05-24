@@ -92,9 +92,9 @@ Please consider [making a donation][12].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Observe%20Changes#product-quick-view-observe-changes
-[7]: product%20custom%20form%20text%20field%20max%20length.html#L1
+[7]: product%20quick%20view%20form%20text%20field%20max%20length.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [10]: https://www.heathertovey.com/squarespace-id-finder/
-[11]: http://www.tomsWeb.consulting/contact.html
+[11]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
