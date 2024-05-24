@@ -1,0 +1,157 @@
+<!--
+
+  begin store page list category description add
+  
+  License      : < http://tinyurl.com/bdhte7xp >
+  
+  Version      : 0.1.0
+  
+  SS Version   : 7.0
+  
+  Templates    : Bedford ( Anya, Bryant, Hayden )
+  
+  Dependencies : twcsl
+  
+  Notes        : the code is comprised of a style and script tag. both are
+                 needed for the effect to work
+  
+  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.splcda = {
+    
+      isDeveloperMode : true // values are false or true
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    /*
+    
+      the following rulesets are for sites not in developer mode. if your site
+      is in developer mode and you've customized the template that generates the
+      product listing page, you may need to create your own rulesets
+      
+      */
+      
+    /* bedford */
+    
+    #categoryNav ~ #content .sqs-col-12 [ class *= sqs-col ] .sqs-block
+    
+      {
+      
+        padding-left : unset;
+        padding-right : unset;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Store Page List Category Description Add v${ version }, ` +
+      
+        'License < http://tinyurl.com/bdhte7xp >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const initialize = ( ) => {
+      
+        const options = twc.splcda;
+        
+        if ( ! options.isDeveloperMode ) {
+        
+          const templateIds = [
+          
+            '52a74dafe4b073a80cd253c5', // bedford
+            
+            ];
+            
+          const b = templateIds
+          
+            .includes (
+            
+              Static
+              
+              .SQUARESPACE_CONTEXT
+              
+              .templateId
+              
+              );
+              
+          if ( ! b ) return; // bail if template id not supported
+          
+          }
+          
+        const callback = ( data ) => {
+        
+          const html = data.mainContent;
+          
+          const selector = '#content';
+          
+          $( selector ).prepend ( html );
+          
+          };
+          
+        const categoryUrlSlug =
+        
+          decodeURIComponent (
+          
+            twcsl
+            
+            .page
+            
+            .store
+            
+            .list
+            
+            .categoryUrlSlug
+            
+            .split ( '=' )
+            
+            [ 1 ]
+            
+            )
+            
+          .replace ( /[^a-z0-9]/g, '-' );
+          
+        const data = {
+        
+          format : 'json',
+          
+          _: new Date ( ).getTime ( )
+          
+          };
+          
+        const storeUrlSlug = twcsl.page.store.urlSlug;
+        
+        const url = `twc-splcda${ storeUrlSlug }/${ categoryUrlSlug }`;
+        
+        $.getJSON ( url, data, callback );
+  
+        };
+        
+      Squarespace.onInitialize ( Y, initialize );
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end store page list category description add -->
