@@ -104,6 +104,9 @@ Limit store page form text and text area field lengths.
     
     You only need the number after **#item-**.
 
+* If you need installation help or customization please [contact me for paid
+  consulting][10].
+
 ## Notes
 
 This code does not work on the checkout page. It is a Squarespace security
@@ -117,7 +120,7 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -149,4 +152,5 @@ Please consider [making a donation][10].
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://www.heathertovey.com/squarespace-id-finder/
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -125,7 +125,7 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][12].
 
 ## Changes
 
@@ -144,8 +144,9 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length#product-quick-view-form-text-field-max-length
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length#product-custom-form-text-field-max-length
-[7]: store%20page%20form%20text%20field%20max%20length.html#L1
+[7]: product%20block%20form%20text%20field%20max%20length.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [10]: https://www.heathertovey.com/squarespace-id-finder/
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[11]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
