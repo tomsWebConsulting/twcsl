@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 298 effects. Each effect has it's own version number, code,
+twcsl contains 299 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -564,6 +564,8 @@ not necessarily designed to work together.
   * [Bedford Template Family](v7.0/Bedford%20Template%20Family)
     
     * [Blog Post Tag Url Change](v7.0/Bedford%20Template%20Family/Blog%20Post%20Tag%20Url%20Change)
+      
+    * [Store Page List Category Description Add](v7.0/Bedford%20Template%20Family/Store%20Page%20List%20Category%20Description%20Add)
       
   * [Cover Page Action Navigation Link Add](v7.0/Cover%20Page%20Action%20Navigation%20Link%20Add)
     
