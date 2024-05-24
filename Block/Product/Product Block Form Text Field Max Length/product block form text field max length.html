@@ -1,0 +1,271 @@
+<!--
+
+  begin product block form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : product quick view form text field max length
+  
+                    product custom form text field max length
+  
+  Note            : this effect is not active in Squarespace Preview to test it
+                    use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .collection-type-page .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Product Block Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.twc === undefined ) // initialize twc global if needed
+      
+        window.twc = { };
+        
+      if ( twc.ftfml === undefined ) // initialize ftfml if needed
+      
+        twc.ftfml = {
+        
+          ids : undefined,
+          
+          productIdSkuMap : { },
+          
+          response : undefined
+          
+          };
+        
+      } ) ( );
+      
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      const callback = ( element ) => {
+      
+        const callback = function ( ) {
+        
+          const data = twc.ftfml;
+          
+          const itemId = this
+            
+            .getAttribute ( 'data-item-id' )
+            
+          const noSkuAttribute = `data-${ codeKey }-no-sku`;
+          
+          let b = this
+          
+            .getAttribute ( noSkuAttribute )
+            
+            !==
+            
+            null;
+            
+          data.ids = [ itemId ];
+            
+          if ( b ) { // bail if no sku
+          
+            data.response = Promise.resolve ( );
+            
+            return;
+            
+            }
+            
+          b = [
+          
+            '2' // digital
+            
+            ]
+            
+            .includes (
+            
+              this
+          
+              .getAttribute ( 'data-product-type' )
+              
+              );
+              
+          if ( b ) { // bail if no sku
+          
+            this
+            
+              .setAttribute ( noSkuAttribute, '' );
+              
+            data.response = Promise.resolve ( );
+            
+            return;
+            
+            }
+            
+          const skuAttribute = `data-${ codeKey }-sku`;
+          
+          let sku = this
+          
+            .getAttribute ( skuAttribute );
+            
+          if ( sku === null ) {
+          
+            const variantsElement = this
+            
+              .closest ( '.productDetails' )
+              
+              .querySelector ( '.product-variants' );
+              
+            if ( variantsElement !== null ) {
+            
+              sku = variantsElement
+                
+                .getAttribute ( 'data-selected-variant' );
+                
+              if ( sku === null ) return; // bail of no variant selected
+              
+              sku = JSON
+              
+                .parse ( sku )
+                
+                .sku;
+                
+              data
+                
+                .ids
+                
+                .push ( sku );
+                
+              data.response = Promise.resolve ( );
+              
+              } else {
+              
+                const callback = ( data ) => {
+                  
+                  sku = data
+                  
+                    .item
+                    
+                    .variants
+                    
+                    [ 0 ]
+                    
+                    .sku;
+                    
+                  this
+                  
+                    .setAttribute ( skuAttribute, sku );
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .productIdSkuMap
+                    
+                    [ itemId ]
+                    
+                    =
+                    
+                    sku;
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .ids
+                    
+                    .push ( sku );
+                    
+                  };
+                  
+                const url = this
+                
+                  .closest ( '.productDetails ' )
+                  
+                  .querySelector ( 'a' )
+                  
+                  .getAttribute ( 'href' )
+                  
+                  +
+                  
+                  '?format=json';
+                  
+                data.response = fetch ( url )
+                
+                  .then ( response => response.json ( ) )
+                  
+                  .then ( callback );
+                    
+                }
+                
+            }
+            
+          }
+          
+        const isSoldOut = element
+        
+          .closest ( '.product-block' )
+          
+          .querySelector ( '.image-container .product-mark.sold-out' )
+          
+          !==
+          
+          null;
+          
+        if ( isSoldOut ) return; // bail if sold out
+        
+        element
+        
+          .addEventListener ( 'click', callback )
+          
+        };
+        
+      const codeKey = 'twc-pbftfml';
+      
+      const selector = '.sqs-block-product .sqs-add-to-cart-button';
+      
+      document
+        
+        .querySelectorAll ( selector )
+        
+        .forEach ( callback );
+        
+      } );
+      
+    </script>
+    
+  <!-- end product block form text field max length -->
