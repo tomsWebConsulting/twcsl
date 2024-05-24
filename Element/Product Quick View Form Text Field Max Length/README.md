@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Limit product quick text and text area field lengths.
+Limit product quick view text and text area field lengths.
 
 ### Version
 
