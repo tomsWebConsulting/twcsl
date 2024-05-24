@@ -104,9 +104,9 @@ Please consider [making a donation][10].
 [2]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: modal%20lightbox%20observe%20changes.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [6]: product%20quick%20view%20observe%20changes.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: http://www.tomsWeb.consulting/contact.html
+[9]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
