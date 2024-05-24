@@ -1,0 +1,158 @@
+<!--
+
+  begin product quick view observe changes
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : modal lightbox observe changes
+  
+  Note          : this code is a base for other effects. on its own it doesn't
+                  do anything. this code is not the end all be all of mutation
+                  observers. it may not cover your needs
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.pqvoc = {
+    
+      callbacks : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ enter your callback name here replacing square brackets ]',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Product Quick View Observe Changes v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcPqvoc = ( node ) => {
+    
+      const b = ! node
+      
+        .classList
+        
+        .contains ( 'sqs-product-quick-view-lightbox' );
+        
+      if ( b ) return; // bail if no product quick view
+      
+      const callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          let b = ! mutation.addedNodes.length;
+          
+          if ( b ) return; // continue
+          
+          const element = mutation
+          
+            .addedNodes
+            
+            [ 0 ];
+            
+          b = ! element
+          
+            .classList
+            
+            .contains ( 'ProductItem' );
+            
+          if ( b ) return; // bail if not product item
+          
+          const callback = ( callback ) => {
+          
+            try {
+            
+              callback = window [ callback ];
+              
+              callback ( element );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
+            };
+            
+          twc
+          
+            [ codeKeySuffix ]
+            
+            .callbacks
+            
+            .forEach ( callback );
+            
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const codeKeySuffix = 'pqvoc';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const config = {
+      
+        childList : true
+        
+        };
+        
+      const selector = '.sqs-product-quick-view-content';
+      
+      const element = node
+      
+        .querySelector ( selector );
+        
+      const observer = new MutationObserver ( callback );
+      
+      // start listening for changes in element
+      
+      observer.observe ( element, config );
+      
+      };
+      
+    </script>
+    
+  <!-- end product quick view observe changes -->
