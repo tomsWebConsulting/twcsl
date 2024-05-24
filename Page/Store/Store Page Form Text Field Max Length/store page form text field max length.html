@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.3.0
+  Version         : 0.3.1
   
   SS Versions     : 7.1, 7.0
   
@@ -33,7 +33,7 @@
   
     ( ( ) => {
     
-      const version = '0.3.0';
+      const version = '0.3.1';
       
       const s = `Store Page Form Text Field Max Length v${ version }, ` +
       
@@ -47,6 +47,18 @@
       
     document.addEventListener ( 'DOMContentLoaded', ( ) => {
     
+      const selector = 'body';
+      
+      const b = ! document
+      
+        .querySelector ( selector )
+        
+        .classList
+        
+        .contains ( '.collection-type-products' );
+        
+      if ( b ) return; // bail if not store page
+      
       const codeKey = `twc-spftfml`;
       
       const detail = ( ) => {

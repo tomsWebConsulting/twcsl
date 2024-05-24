@@ -123,6 +123,11 @@ Please consider [making a donation][10].
 
 * **2024-05-23**
 
+  * only run code on store pages
+  * bumped version to 0.3.1
+  
+* **2024-05-23**
+
   * support Product Custom Form Text Field Max Length
   * bumped version to 0.3.0
   
