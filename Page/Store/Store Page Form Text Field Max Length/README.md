@@ -8,7 +8,7 @@ Limit store page form text and text area field lengths.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -24,19 +24,14 @@ Limit store page form text and text area field lengths.
 
   * [Squarespace plan][3] that supports [JavaScript][4].
   
-  * [Tom's Web Consulting Squarespace Library][5]
-  
-  * [Modal Lightbox Observe Changes][6]
+  * [Product Custom Form Text Field Max Length][5]
 
 ---
 
 ## Install
 
-* Install [twcsl][7]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
-* Install [Modal Lightbox Observe Changes][6]. After you install the code be
-  sure to continue on with the rest of the steps.
+* Install [Product Custom Form Text Field Max Length][5]. After you install the
+  code be sure to continue on with the rest of the steps.
   
 * Options
 
@@ -45,19 +40,18 @@ Limit store page form text and text area field lengths.
     * This option will be the one most will want to use if you have only a
       single store page you want to have this effect.
       
-    * Add code from file **[store page form text field max length.html][8]** to
+    * Add code from file **[store page form text field max length.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [Per-page code injection][9]. Read the code for any instructions
-      within.
+      see [Per-page code injection][7].
       
   * Site-wide
   
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store page form text field max length.html][8]** to
+    * Add code from file **[store page form text field max length.html][6]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][10]. Read the code for any instructions within.
+      code to code injection][8].
       
 * Edit a Store page product and add a Custom Form.
 
@@ -100,7 +94,7 @@ Limit store page form text and text area field lengths.
     format id colon number comma for each id/number pair.
     
     You can find a product with no variants id by using Heather Tovey's
-    [Squarespace ID Finder][11]. Alternately you can export your inventory and
+    [Squarespace ID Finder][9]. Alternately you can export your inventory and
     grab the id from the CSV file.
     
     To use SIF go to your product detail page and use SIF. You will see
@@ -123,10 +117,15 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-05-23**
+
+  * support Product Custom Form Text Field Max Length
+  * bumped version to 0.3.0
+  
 * **2024-05-18**
 
   * support quick view
@@ -140,11 +139,9 @@ Please consider [making a donation][12].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://github.com/tomsWebConsulting/twcsl
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
-[7]: https://github.com/tomsWebConsulting/twcsl#install-options
-[8]: store%20page%20form%20text%20field%20max%20length.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[11]: https://www.heathertovey.com/squarespace-id-finder/
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length#product-custom-form-text-field-max-length
+[6]: store%20page%20form%20text%20field%20max%20length.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://www.heathertovey.com/squarespace-id-finder/
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
