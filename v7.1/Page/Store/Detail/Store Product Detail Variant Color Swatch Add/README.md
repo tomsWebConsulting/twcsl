@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add selected variant to title.
+Add color swatch to variants.
 
 ### Version
 
