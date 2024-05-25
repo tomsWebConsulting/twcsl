@@ -1,0 +1,188 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      product option first variant select auto
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.3.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Yes
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependencies    : twcsl
+      
+      Notes           : the code is comprised of several tags. all are needed
+                        for the full effect to work
+      
+      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const productOptions = [
+    
+      /*
+      
+        the format of each line is a product variant option as entered in the
+        product editor. following is an example line. copy the example line
+        below and paste after the example line. remove '// ' at beginning of]
+        pasted line. this has been done once initially
+        
+        */
+      
+      // '[enter option here between single quotes replacing square brackets]',
+      
+      '[enter option here between single quotes replacing square brackets]',
+      
+      ];
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.3.0';
+    
+    const s = `Product Option First Variant Select Auto v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const initialize = ( ) => {
+    
+      const selector = '.sqs-block-product';
+      
+      const hasProductBlocks = Boolean (
+      
+        $( selector )
+        
+          .length
+          
+        );
+        
+      const b = ! ( hasProductBlocks || twcsl.page.store.is );
+      
+      if ( b ) return; // bail of no elements of interest
+      
+      const callback = option => {
+      
+        const selector = [
+        
+          // begin product block
+          
+            `.product-block .productDetails .product-variants .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
+            
+            `.product-block .productDetails .product-variants .variant-select-wrapper select[data-variant-option-name="${ option }"]`,
+            
+            // end product block
+            
+          // begin store page
+          
+            // begin 7.1
+            
+              // list
+              
+              `.tweak-products-add-to-cart-button.plp-add-to-cart .products.collection-content-wrapper .plp-grid-add-to-cart .variant-option select[data-variant-option-name="${ option }"]`,
+              
+              // begin detail
+              
+                // layouts
+                
+                // begin simple
+                
+                  `.ProductItem-details .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
+                  
+                  `.ProductItem-details .variant-select-wrapper[data-variant-option-name="${ option }"]`,
+                  
+                  // end simple
+                  
+                // begin full, half, wrap
+                
+                  `.pdp-layout .pdp-details .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
+                  
+                  `.pdp-layout .pdp-details .variant-select-wrapper[data-variant-option-name="${ option }"]`,
+                  
+                  // end full, half, wrap
+                  
+                // end detail
+                
+              // end 7.1
+              
+            // begin 7.0
+            
+              `.ProductItem-details .variant-select-wrapper select[data-variant-option-name="${ option }"]`,
+              
+              // end 7.0
+              
+            // end store page
+            
+          ]
+          
+          .join ( ', ' );
+          
+        function callback ( ) {
+        
+          const $this = $( this );
+          
+          const value = $( 'option:eq( 1 )', $this )
+          
+            .val ( );
+            
+          $this
+          
+            .val ( value )
+            
+          const node = $this.get ( 0 );
+          
+          Y
+          
+            .one ( node )
+            
+            .simulate ( 'change' );
+            
+          }
+          
+        $( selector ).each ( callback );
+        
+        };
+        
+      productOptions.forEach ( callback );
+      
+      };
+      
+    switch ( true ) {
+    
+      case twcsl.ss.is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case twcsl.ss.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
+      
+    } );
+    
+  </script>
