@@ -1,0 +1,248 @@
+<!--
+
+  begin store product detail variant color swatch add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : twcsl
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .twc-spdvcsa {
+    
+      --twc-spdvcsa-border-color : black;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdvcsa = {
+    
+      option : 'Color',
+      
+      colorMap : {
+      
+        /*
+        
+          the format of each line is a color word and a css color. there are
+          some special "colors" you can use...
+          
+            slash
+            
+              no color is added but a slash is added to the color swatch box
+          
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at beginning of pasted line.
+          repeat for as many variant options where you want the effect applied.
+          this has been done once for your initially
+          
+          */
+          
+        // '[enter color word here between single quotes replacing square brackets]' : '[enter css color here between single quotes replacing square brackets]',
+        
+        '[enter color word here between single quotes replacing square brackets]' : '[enter css color here between single quotes replacing square brackets]',
+        
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #siteWrapper {
+    
+      --twc-product-variants : hidden;
+      
+      }
+      
+    #siteWrapper {
+    
+      visibility : var( --twc-product-variants );
+      
+      }
+      
+    .ProductItem-details .twc-spdvcsa .variant-radiobtn-wrapper label {
+    
+      display : flex;
+      gap : 1em;
+      
+      }
+      
+    .ProductItem-details .twc-spdvcsa .variant-radiobtn-wrapper label span:first-child {
+    
+      border : 1px solid var( --twc-spdvcsa-border-color );
+      width : 50px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const title = 'Store Product Detail Variant Color Swatch Add';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const codeKey = 'twc-spdvcsa';
+      
+      const selectorKey = '.ProductItem-details .product-variants';
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      if ( twc.data == undefined ) twc.data = { };
+      
+      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+      
+      if ( twc.data.hideShow [ selectorKey ] == undefined )
+      
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          =
+          
+          [ ];
+          
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .push ( `--${ codeKey }` );
+        
+      ( ( ) => {
+      
+        if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+        
+        const options = twc.spdvcsa;
+        
+        const colorMap = options.colorMap;
+        
+        const selector =
+        
+          `.variant-option-title:contains(${ options.option }: )`;
+          
+        const $option = $( selector )
+        
+          .parent ( )
+          
+          .addClass ( codeKey );
+          
+        for ( let [ key, value ] of Object.entries ( colorMap ) ) {
+        
+          const selector =
+          
+            `[for="variant-option-${ options.option }-${ key }"]`;
+          
+          const $element = $( selector, $option );
+          
+          const $span = $( '<span/>' );
+          
+          let property;
+          
+          switch ( value ) {
+          
+            case 'slash' :
+            
+              property = 'background';
+              
+              value = 'linear-gradient( to top right, rgba( 0, 0, 0, 0 ) 0%, ' +
+              
+                'rgba( 0, 0, 0, 0 ) calc( 50% - 1px ), ' +
+                
+                'rgba( 191, 191, 191, 1 ) 50%, rgba( 0, 0, 0, 0 ) '+
+                
+                'calc( 50% + 1px ), rgba( 0, 0, 0, 0 ) 100% )';
+                
+              break;
+              
+            default :
+            
+              property = 'background-color';
+              
+              break;
+              
+            }
+            
+          $span.css ( property, value );
+          
+          const $e = $element
+          
+            .wrapInner ( '<span/>' )
+            
+            .prepend ( $span );
+            
+          }
+        
+        } ) ( );
+        
+      twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .pop ( `--${ codeKey }` );
+        
+      const l = twc
+      
+        .data
+        
+        .hideShow
+        
+        [ selectorKey ]
+        
+        .length;
+        
+      if ( ! l )
+      
+        document
+        
+          .getElementById ( 'siteWrapper' )
+          
+          .style
+          
+          .setProperty ( '--twc-product-variants', 'visible' );
+          
+      } );
+      
+    </script>
+    
+  <!-- end store product detail variant color swatch add -->
