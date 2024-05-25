@@ -1,0 +1,125 @@
+<!--
+
+  begin store product detail variant title selected add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : twcsl
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdvtsa = {
+    
+      options : [
+      
+        /*
+        
+          the format of each line is a variant option. use exactly what you
+          entered in the product editor UI
+          
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at beginning of pasted line.
+          repeat for as many variant options where you want the effect applied.
+          this has been done once for your initially
+          
+          */
+          
+        // '[enter variant option here between single quotes replacing square brackets]',
+        
+        '[enter variant option here between single quotes replacing square brackets]',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-spdvtsa {
+    
+      font-style : italic;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const title = 'Store Product Detail Variant Title Selected Add';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const codeKey = 'twc-spdvtsa';
+      
+      const options = twc.spdvtsa.options;
+      
+      const selectorTitle = '.variant-option-title';
+      
+      const selectorPrefix = `${ selectorTitle }:contains(`;
+      
+      const selectorSuffix = ': )';
+      
+      const span = `<span class="${ codeKey }"/>`;
+      
+      const selector = selectorPrefix
+      
+        +
+        
+        options
+        
+        .join ( `${ selectorSuffix }, ${ selectorPrefix }` )
+        
+        +
+        
+        selectorSuffix;
+        
+      $( selector )
+      
+        .append ( span )
+        
+        .parent ( )
+        
+        .on ( 'change', function ( event ) {
+        
+          const selector = `.${ codeKey }`;
+          
+          const $target = $( event.target );
+          
+          const value = $target.val ( );
+          
+          $( selector, this )
+          
+            .text ( value );
+            
+          } );
+          
+      } );
+      
+    </script>
+    
+  <!-- end store product detail variant title selected add -->
