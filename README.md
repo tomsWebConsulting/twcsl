@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 301 effects. Each effect has it's own version number, code,
+twcsl contains 303 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -142,6 +142,10 @@ not necessarily designed to work together.
   * [Social Icon](Element/Social%20Icon)
     
     * [Social Icon Twitter to X Change](Element/Social%20Icon/Social%20Icon%20Twitter%20to%20X%20Change)
+      
+  * [Product Variant](Element/Product%20Variant)
+    
+    * [Product Option First Variant Select Auto](Element/Product%20Variant/Product%20Option%20First%20Variant%20Select%20Auto)
       
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
