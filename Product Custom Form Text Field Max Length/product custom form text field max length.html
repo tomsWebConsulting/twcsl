@@ -1394,7 +1394,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Versions   : 7.1, 7.0
   
@@ -1428,7 +1428,7 @@
   
     ( ( ) => {
     
-      const version = '0.1.0';
+      const version = '0.1.1';
       
       const s = `Cart Page Form Text Field Max Length v${ version }, ` +
       
@@ -1452,8 +1452,6 @@
       
     var twcCpftfml = ( node ) => {
     
-      if ( window.frameElement !== null ) return; // bail if in Preview
-      
       let b = node.querySelector === undefined;
       
       if ( b ) return; // bail if no querySelector
