@@ -1,0 +1,163 @@
+<!--
+
+  begin store page detail additional info accordions tabbed
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependencies  : twcsl
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    #siteWrapper .sqs-block-button.twc-spdaiat .sqs-block-button-element {
+    
+      --twc-spdaiat-radius : 15px;
+      
+      border-top-left-radius : var( --twc-spdaiat-radius );
+      border-top-right-radius : var( --twc-spdaiat-radius );
+      padding : calc( 1.3rem / 2 ) calc( 2.171rem / 2 );
+      width : 100%;
+      
+      }
+      
+    .sqs-block-button.twc-spdaiat {
+    
+      padding : 0;
+      
+      }
+      
+    .sqs-block-button.twc-spdaiat .sqs-block-button-element {
+    
+      opacity : 0.5;
+      
+      }
+      
+    .sqs-block-button.twc-spdaiat.twc-spdaiat-active .sqs-block-button-element {
+    
+      opacity : unset;
+      
+      }
+      
+    .sqs-block-accordion.twc-spdaiat {
+    
+      display : none;
+      
+      }
+      
+    .sqs-block-accordion.twc-spdaiat.twc-spdaiat-show {
+    
+      display : unset;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const title = 'Store Page Detail Additional Info Accordions Tabbed';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const codeKey = 'twc-spdaiat';
+      
+      function callback ( ) {
+      
+        Y.one ( this ).detachAll ( );
+        
+        };
+        
+      function clickCallback ( event ) {
+      
+        event.preventDefault ( );
+        
+        const i = $buttons.index ( this );
+        
+        $buttons
+        
+          .removeClass ( `${ codeKey }-active` )
+          
+          .eq ( i )
+          
+          .addClass ( `${ codeKey }-active` );
+          
+        $accordions
+        
+          .removeClass ( `${ codeKey }-show` )
+          
+          .eq ( i )
+          
+          .addClass ( `${ codeKey }-show` );
+          
+        };
+        
+      let selector = `.sqs-block-button a[href^="#${ codeKey }"]`;
+      
+      const $buttons = $( selector )
+      
+        .removeAttr ( 'href' )
+        
+        .each ( callback )
+        
+        .parents ( '.sqs-block-button' )
+        
+        .addClass ( codeKey )
+        
+        .on ( 'click', clickCallback )
+        
+        .last ( )
+        
+        .addClass ( `${ codeKey }-active` )
+        
+        .end ( );
+        
+      selector = '.sqs-block-accordion .accordion-item__description > ' +
+      
+        `:first-of-type:contains(${ codeKey })`;
+        
+      const $elements = $( selector );
+      
+      const $accordions = $elements
+      
+        .parents ( '.sqs-block-accordion' )
+        
+        .addClass ( codeKey );
+        
+      $elements
+      
+        .remove ( );
+        
+      $accordions
+      
+        .last ( )
+        
+        .addClass ( `${ codeKey }-show` );
+        
+      } );
+      
+    </script>
+    
+  <!-- end store page detail additional info accordions tabbed -->
