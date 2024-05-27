@@ -10,9 +10,11 @@ Auto select the first variant of product options.
 
   * 0.3.0
 
-#### SS Version
+#### SS Versions
 
   * 7.1
+  
+  * 7.0
 
 #### Fluid Engine Compatible
 
@@ -33,11 +35,11 @@ Auto select the first variant of product options.
   
 * Add code from file **[product option first variant select auto.html][6]** to
   Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][8]. Read the code for any instructions within.
+  code to code injection][7]. Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -57,5 +59,5 @@ Please consider [making a donation][10].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: product%20option%20first%20variant%20select%20auto.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
