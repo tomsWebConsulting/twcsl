@@ -153,6 +153,8 @@ not necessarily designed to work together.
   
 * [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
   
+* [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
+  
 * [Cart Prices Change](Cart%20Prices%20Change)
   
 * [Add Button After Add to Cart Button of Product Detail Page](Add%20Button%20After%20Add%20to%20Cart%20Button%20of%20Product%20Detail%20Page)
@@ -196,8 +198,6 @@ not necessarily designed to work together.
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
   
 * [Blog Non-Post Pages Meta Noindex Tag Add](Blog%20Non-Post%20Pages%20Meta%20Noindex%20Tag%20Add)
-  
-* [Form Text Field Max Length](Form%20Text%20Field%20Max%20Length)
   
 * [Calendar Block Event Change](Calendar%20Block%20Event%20Change)
   
