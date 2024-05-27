@@ -8,7 +8,7 @@ Limit store page form text and text area field lengths.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.2
 
 #### SS Versions
 
@@ -124,6 +124,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-05-26**
+
+  * fix for store page check
+  * bumped version to 0.3.2
+  
 * **2024-05-23**
 
   * only run code on store pages
