@@ -107,11 +107,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2021-07-28**
+* **2024-05-27**
 
-  * generalized a bit to handle text and text area fields
-  * bumped version to 0.2d0
-  -->
+  * run in editor
+  * bumped version to 0.1.1
+  
 * **2024-04-29**
 
   * initial version
