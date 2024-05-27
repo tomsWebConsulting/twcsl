@@ -1,0 +1,1850 @@
+<!--
+
+  begin product block form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : product quick view form text field max length
+  
+                    product custom form text field max length
+  
+  Note            : this effect is not active in Squarespace Preview to test it
+                    use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .collection-type-page .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Product Block Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.twc === undefined ) // initialize twc global if needed
+      
+        window.twc = { };
+        
+      if ( twc.ftfml === undefined ) // initialize ftfml if needed
+      
+        twc.ftfml = {
+        
+          ids : undefined,
+          
+          productIdSkuMap : { },
+          
+          response : undefined
+          
+          };
+        
+      } ) ( );
+      
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      const callback = ( element ) => {
+      
+        const callback = function ( ) {
+        
+          const data = twc.ftfml;
+          
+          const itemId = this
+            
+            .getAttribute ( 'data-item-id' )
+            
+          const noSkuAttribute = `data-${ codeKey }-no-sku`;
+          
+          let b = this
+          
+            .getAttribute ( noSkuAttribute )
+            
+            !==
+            
+            null;
+            
+          data.ids = [ itemId ];
+            
+          if ( b ) { // bail if no sku
+          
+            data.response = Promise.resolve ( );
+            
+            return;
+            
+            }
+            
+          b = [
+          
+            '2' // digital
+            
+            ]
+            
+            .includes (
+            
+              this
+          
+              .getAttribute ( 'data-product-type' )
+              
+              );
+              
+          if ( b ) { // bail if no sku
+          
+            this
+            
+              .setAttribute ( noSkuAttribute, '' );
+              
+            data.response = Promise.resolve ( );
+            
+            return;
+            
+            }
+            
+          const skuAttribute = `data-${ codeKey }-sku`;
+          
+          let sku = this
+          
+            .getAttribute ( skuAttribute );
+            
+          if ( sku === null ) {
+          
+            const variantsElement = this
+            
+              .closest ( '.productDetails' )
+              
+              .querySelector ( '.product-variants' );
+              
+            if ( variantsElement !== null ) {
+            
+              sku = variantsElement
+                
+                .getAttribute ( 'data-selected-variant' );
+                
+              if ( sku === null ) return; // bail of no variant selected
+              
+              sku = JSON
+              
+                .parse ( sku )
+                
+                .sku;
+                
+              data
+                
+                .ids
+                
+                .push ( sku );
+                
+              data.response = Promise.resolve ( );
+              
+              } else {
+              
+                const callback = ( data ) => {
+                  
+                  sku = data
+                  
+                    .item
+                    
+                    .variants
+                    
+                    [ 0 ]
+                    
+                    .sku;
+                    
+                  this
+                  
+                    .setAttribute ( skuAttribute, sku );
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .productIdSkuMap
+                    
+                    [ itemId ]
+                    
+                    =
+                    
+                    sku;
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .ids
+                    
+                    .push ( sku );
+                    
+                  };
+                  
+                const url = this
+                
+                  .closest ( '.productDetails ' )
+                  
+                  .querySelector ( 'a' )
+                  
+                  .getAttribute ( 'href' )
+                  
+                  +
+                  
+                  '?format=json';
+                  
+                data.response = fetch ( url )
+                
+                  .then ( response => response.json ( ) )
+                  
+                  .then ( callback );
+                    
+                }
+                
+            }
+            
+          }
+          
+        const isSoldOut = element
+        
+          .closest ( '.product-block' )
+          
+          .querySelector ( '.image-container .product-mark.sold-out' )
+          
+          !==
+          
+          null;
+          
+        if ( isSoldOut ) return; // bail if sold out
+        
+        element
+        
+          .addEventListener ( 'click', callback )
+          
+        };
+        
+      const codeKey = 'twc-pbftfml';
+      
+      const selector = '.sqs-block-product .sqs-add-to-cart-button';
+      
+      document
+        
+        .querySelectorAll ( selector )
+        
+        .forEach ( callback );
+        
+      } );
+      
+    </script>
+    
+  <!-- end product block form text field max length -->
+
+<!--
+
+  begin store page form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.3.1
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.3.1';
+      
+      const s = `Store Page Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      const selector = 'body';
+      
+      const b = ! document
+      
+        .querySelector ( selector )
+        
+        .classList
+        
+        .contains ( '.collection-type-products' );
+        
+      if ( b ) return; // bail if not store page
+      
+      const codeKey = `twc-spftfml`;
+      
+      const detail = ( ) => {
+      
+        const callback = ( element ) => {
+        
+          const callback = function ( ) {
+          
+            const data = twc.ftfml;
+            
+            const context = Static
+            
+              .SQUARESPACE_CONTEXT;
+              
+            data.ids = [
+            
+              context
+              
+                .itemId
+                
+              ];
+              
+            const variants = context
+            
+              .product
+              
+              .variants;
+              
+            if ( variants === undefined ) { // bail if no variants
+            
+              data.response = Promise.resolve ( );
+              
+              return;
+              
+              }
+              
+            if ( variants.length == 1 ) {
+            
+              data
+              
+                .ids
+                
+                .push ( variants [ 0 ].sku )
+                
+              data.response = Promise.resolve ( );
+              
+              } else {
+              
+                let dataSelectedVariant = this
+                
+                  .closest (
+                  
+                    [
+                    
+                      // begin 7.1
+                      
+                        '.ProductItem-details-checkout', // simple layout
+                        
+                        '.product-details', // full, half, wrap layout
+                        
+                        // end 7.1
+                        
+                      '.ProductItem-details' // 7.0 Brine
+                      
+                      ]
+                      
+                      .join ( ', ' )
+                      
+                    )
+                  
+                  .querySelector ( '.product-variants' );
+                
+                // bail if no variants
+                
+                if ( dataSelectedVariant === null ) return;
+                
+                dataSelectedVariant = dataSelectedVariant
+                
+                  .getAttribute ( 'data-selected-variant' );
+                  
+                // bail if no variant selected
+                
+                if ( dataSelectedVariant === undefined ) return;
+                
+                const sku = JSON
+                
+                  .parse ( dataSelectedVariant )
+                  
+                  .sku;
+                  
+                data
+                
+                  .ids
+                  
+                  .push ( sku );
+                  
+                data.response = Promise.resolve ( );
+                
+                }
+                
+            }
+            
+          element
+          
+            .addEventListener ( 'click', callback );
+            
+          };
+          
+        const selector = [
+        
+          '.ProductItem', // simple layout
+          
+          '.pdp-layout' // full, half, wrap layout
+          
+          ]
+          
+          .map ( l => `${ l }:not( .sold-out ) ` +
+          
+            '.sqs-add-to-cart-button-wrapper ' +
+            
+            '.sqs-add-to-cart-button.use-form' )
+            
+          .join ( ', ' );
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+        
+        };
+        
+      const list = ( ) => {
+      
+        const callback = ( data ) => {
+          
+          const callback = ( item ) => {
+          
+            let b = item.additionalFieldsFormId === undefined;
+            
+            if ( b ) return; // bail if no form
+            
+            const selector = '.sqs-add-to-cart-button[ ' +
+            
+              `data-item-id="${ item.id }"]`;
+              
+            const element = document
+            
+              .querySelector ( selector );
+              
+            if ( element === null ) return; // bail if no element
+            
+            const callback = function ( ) {
+            
+              const data = twc.ftfml;
+              
+              const itemId = this
+              
+                .getAttribute ( 'data-item-id' )
+                
+              const noSku = this
+              
+                .getAttribute ( noSkuAttribute )
+                
+                !==
+                
+                null;
+                
+              data.ids = [ itemId ];
+              
+              if ( noSku ) { // bail if no sku
+              
+                data.response = Promise.resolve ( );
+                
+                return;
+                
+                }
+                
+              let sku = this
+              
+                .getAttribute ( `data-${ codeKey }-sku` );
+                
+              if ( sku !== null ) { // bail if sku
+              
+                data.ids.push ( sku );
+                
+                data.response = Promise.resolve ( );
+                
+                return;
+                
+                }
+                
+              let variant = this
+              
+                .closest ( '.plp-grid-add-to-cart' )
+                
+                .querySelector ( '.product-variants' )
+                
+                .getAttribute ( 'data-selected-variant' );
+                
+              if ( variant === null ) return; // bail if no selected variants
+              
+              variant = JSON.parse ( variant );
+              
+              data
+              
+                .ids
+                
+                .push ( variant.sku );
+                
+              data.response = Promise.resolve ( );
+              
+              }
+              
+            const noSkuAttribute = `data-${ codeKey }-no-sku`;
+            
+            const variants = item.variants;
+            
+            const l = variants.length;
+            
+            if ( ! l )
+            
+              element
+              
+                .setAttribute ( noSkuAttribute, '' );
+                
+              else if ( l == 1 ) {
+              
+                const variant = variants [ 0 ];
+                
+                const b = ! variant.unlimited && ! variant.qtyInStock;
+                
+                if ( b ) return; // bail no stock
+                
+                const sku = variant.sku;
+                
+                element
+                
+                  .setAttribute ( `data-${ codeKey }-sku`, sku );
+                  
+                }
+                
+            element
+            
+              .addEventListener ( 'click', callback );
+              
+            };
+            
+          data
+          
+            .items
+            
+            .forEach ( callback );
+            
+          };
+          
+        const url = location
+        
+          .pathname
+          
+          +
+          
+          '?format=json';
+          
+        fetch ( url )
+        
+          .then ( response => response.json ( ) )
+          
+          .then ( callback );
+            
+        };
+        
+      if ( window.twc === undefined ) // initialize twc global if needed
+      
+        window.twc = { };
+        
+      if ( twc.ftfml === undefined ) // initialize ftfml if needed
+      
+        twc.ftfml = {
+        
+          ids : undefined,
+          
+          productIdSkuMap : { },
+          
+          response : undefined
+          
+          };
+          
+      const isDetail = ( ( ) => {
+      
+        const selector = 'body[ id^="item-" ]';
+        
+        const is = document
+        
+          .querySelector ( selector )
+          
+          !==
+          
+          null;
+          
+        return is;
+        
+        } ) ( );
+        
+      const isList = ( ( ) => {
+      
+        const selector = 'body[ id^="collection-" ]';
+        
+        const is = document
+        
+          .querySelector ( selector )
+          
+          !==
+          
+          null;
+          
+        return is;
+        
+        } ) ( );
+        
+      switch ( true ) {
+      
+        case isDetail:
+        
+          detail ( );
+          
+          break;
+          
+        case isList:
+        
+          list ( );
+          
+          break;
+          
+        }
+        
+      } );
+      
+    </script>
+    
+  <!-- end store page form text field max length -->
+
+<!--
+
+  begin product custom form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : modal lightbox observe changes
+                    
+                    product quick view form text field max length
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const title = 'Product Custom Form Text Field Max Length';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcPcftfml = ( node ) => {
+    
+      const codeKeySuffix = 'pcftfml';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const selector = '.form-wrapper input[ placeholder*="ftfml" ]';
+      
+      const elements = node
+      
+        .querySelectorAll ( selector );
+        
+      if ( ! elements.length ) return; // bail if no elements
+      
+      const callback = ( ) => {
+      
+        const callback = ( element ) => {
+        
+          const attribute = 'placeholder';
+          
+          const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+          
+          let text = element
+          
+            .getAttribute ( attribute );
+            
+          let m = text.match ( re );
+          
+          // begin clean up placeholder attribute value
+          
+            text = text
+            
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text ) // set/show placeholder or remove
+            
+              element
+              
+                .setAttribute ( attribute, text );
+                
+              else
+              
+                element.removeAttribute ( attribute );
+                
+            // end clean up placeholder attribute value
+            
+          let maxLength = m [ 1 ]
+          
+            .trim ( );
+            
+          if ( isNaN ( maxLength ) ) {
+          
+            const callback = ( key ) => {
+            
+              const b = ! twc
+              
+                .ftfml
+                
+                .ids
+                
+                .includes ( key );
+                
+              if ( b ) return; // bail if no key
+              
+              maxLength = idMaxlengthMap [ key ];
+              
+              };
+              
+            const json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}';
+              
+            const key = 'default';
+            
+            const idMaxlengthMap = JSON.parse ( json );
+            
+            maxLength = '';
+            
+            if ( key in idMaxlengthMap )
+            
+              maxLength = idMaxlengthMap [ key ];
+              
+            Object
+            
+              .keys ( idMaxlengthMap )
+              
+              .forEach ( callback );
+              
+            }
+            
+          if ( maxLength )
+          
+            element
+            
+              .setAttribute ( 'maxlength', maxLength );
+              
+          };
+          
+        elements.forEach ( callback );
+        
+        };
+        
+      twc
+      
+        .ftfml
+        
+        .response
+        
+        .finally ( callback );
+        
+      };
+      
+    </script>
+    
+  <!-- end product custom form text field max length -->
+
+<!--
+
+  begin product quick view form text field max length
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : product quick view observe changes
+  
+  Note            : this effect is not active in Squarespace Preview to test it
+                    use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const title = 'Product Quick View Form Text Field Max Length';
+      
+      const version = '0.1.0';
+      
+      const s = `${ title } v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcPqvftfml = ( element ) => {
+    
+      const codeKeySuffix = 'pqvftfml';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const callback = function ( ) {
+      
+        const b = [
+        
+          '2' // digital
+          
+          ]
+          
+          .includes (
+          
+            this
+        
+            .getAttribute ( 'data-product-type' )
+            
+            );
+            
+        const data = twc.ftfml;
+        
+        const itemId = this
+        
+          .getAttribute ( 'data-item-id' );
+          
+        data.ids = [ itemId ];
+        
+        if ( b ) return; // bail if no sku
+        
+        let sku = data.productIdSkuMap [ itemId ];
+        
+        const detailsSelector = [
+              
+          '.ProductItem-details-checkout', // 7.1
+          
+          '.ProductItem-details' // 7.0
+          
+          ]
+          
+          .join ( ', ' );
+          
+        if ( sku === undefined ) {
+        
+          const variantsElement = this
+          
+            .closest ( detailsSelector )
+            
+            .querySelector ( '.product-variants' );
+            
+          if ( variantsElement !== null ) {
+          
+            sku = variantsElement
+              
+              .getAttribute ( 'data-selected-variant' );
+              
+            if ( sku === null ) return; // bail of no variant selected
+            
+            sku = JSON
+            
+              .parse ( sku )
+              
+              .sku;
+              
+            data.ids.push ( sku );
+            
+            data.response = Promise.resolve ( );
+            
+            } else {
+            
+              const url = this
+              
+                .closest ( detailsSelector )
+                
+                .querySelector ( 'a' )
+                
+                .getAttribute ( 'href' )
+                
+                +
+                
+                '?format=json';
+                
+              data.response = fetch ( url )
+              
+                .then ( response => response.json ( ) )
+                
+                .then ( data => {
+                
+                  sku = data
+                  
+                    .item
+                    
+                    .variants
+                    
+                    [ 0 ]
+                    
+                    .sku;
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .productIdSkuMap
+                    
+                    [ itemId ]
+                    
+                    =
+                    
+                    sku;
+                    
+                  twc
+                  
+                    .ftfml
+                    
+                    .ids
+                    
+                    .push ( sku );
+                    
+                  } );
+                  
+              }
+              
+          }
+          
+        }
+        
+      const selector = '.ProductItem:not( .sold-out ) ' +
+      
+        '.sqs-add-to-cart-button-wrapper ' +
+        
+        '.sqs-add-to-cart-button.use-form';
+        
+      if ( window.twc === undefined ) // initialize twc global if needed
+      
+        window.twc = { };
+        
+      if ( twc.ftfml === undefined ) // initialize ftfml if needed
+      
+        twc.ftfml = {
+        
+          ids : undefined,
+          
+          productIdSkuMap : { },
+          
+          response : undefined
+          
+          };
+          
+      element = element
+        
+        .querySelector ( selector );
+        
+      if ( element === null ) return; // bail if no element
+      
+      element
+      
+        .addEventListener ( 'click', callback );
+        
+      };
+      
+    </script>
+    
+  <!-- end product quick view form text field max length -->
+
+<!--
+
+  begin product quick view observe changes
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : modal lightbox observe changes
+  
+  Note          : this code is a base for other effects. on its own it doesn't
+                  do anything. this code is not the end all be all of mutation
+                  observers. it may not cover your needs
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.pqvoc = {
+    
+      callbacks : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ enter your callback name here replacing square brackets ]',
+        
+        'twcPqvftfml',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Product Quick View Observe Changes v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcPqvoc = ( node ) => {
+    
+      const b = ! node
+      
+        .classList
+        
+        .contains ( 'sqs-product-quick-view-lightbox' );
+        
+      if ( b ) return; // bail if no product quick view
+      
+      const callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          let b = ! mutation.addedNodes.length;
+          
+          if ( b ) return; // continue
+          
+          const element = mutation
+          
+            .addedNodes
+            
+            [ 0 ];
+            
+          b = ! element
+          
+            .classList
+            
+            .contains ( 'ProductItem' );
+            
+          if ( b ) return; // bail if not product item
+          
+          const callback = ( callback ) => {
+          
+            try {
+            
+              callback = window [ callback ];
+              
+              callback ( element );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
+            };
+            
+          twc
+          
+            [ codeKeySuffix ]
+            
+            .callbacks
+            
+            .forEach ( callback );
+            
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const codeKeySuffix = 'pqvoc';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const config = {
+      
+        childList : true
+        
+        };
+        
+      const selector = '.sqs-product-quick-view-content';
+      
+      const element = node
+      
+        .querySelector ( selector );
+        
+      const observer = new MutationObserver ( callback );
+      
+      // start listening for changes in element
+      
+      observer.observe ( element, config );
+      
+      };
+      
+    </script>
+    
+  <!-- end product quick view observe changes -->
+
+<!--
+
+  begin modal lightbox observe changes
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.1
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Note          : this code is a base for other effects. on its own it
+                  doesn't do anything. this code is not the end all be all
+                  of mutation observers. it may not cover your needs
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.mloc = {
+    
+      callbacks : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ enter your callback name here replacing square brackets ]',
+        
+        'twcPqvoc',
+        
+        'twcPcftfml',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      const version = '0.1.1';
+      
+      const s = `Modal Lightbox Observe Changes v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          const callback = ( node ) => {
+          
+            const b = ! node
+            
+              .classList
+              
+              .contains ( 'sqs-modal-lightbox' );
+              
+            if ( b ) return; // bail if not element of interest
+            
+            const callback = ( callback ) => {
+            
+              try {
+              
+                callback = window [ callback ];
+                
+                callback ( node );
+                
+                } catch ( error ) {
+                
+                  const s = `${ codeKey } callback error`;
+                  
+                  console.error ( s, error );
+                  
+                  }
+                  
+              };
+              
+            twc
+            
+              [ codeKeySuffix ]
+              
+              .callbacks
+              
+              .forEach ( callback );
+              
+            };
+            
+          mutation
+          
+            .addedNodes
+            
+            .forEach ( callback );
+            
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const codeKeySuffix = 'mloc';
+      
+      const codeKey = `twc-${ codeKeySuffix }`;
+      
+      const config = {
+      
+        childList : true
+        
+        };
+        
+      const observer = new MutationObserver ( callback );
+      
+      // start listening for changes in body
+      
+      observer.observe ( document.body, config );
+      
+      } );
+      
+    </script>
+    
+  <!-- end modal lightbox observe changes -->
+
+<!--
+
+  begin cart page form text field max length
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : cart page observe changes
+  
+  Note          : this effect is not active in Squarespace Preview to test it
+                  use private browsing < https://tinyurl.com/ynessvsf >
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    html:not( .squarespace-damask ) #sqs-cart-container .cart-product-form-wrapper input[ placeholder*="ftfml" ] {
+    
+      visibility : hidden;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Cart Page Form Text Field Max Length v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      // initialize twc global if needed
+      
+      if ( window.twc == undefined ) window.twc = { };
+      
+      twc.cpftfml = {
+      
+        ids : undefined
+        
+        };
+        
+      } ) ( );
+      
+    var twcCpftfml = ( node ) => {
+    
+      if ( window.frameElement !== null ) return; // bail if in Preview
+      
+      let b = node.querySelector === undefined;
+      
+      if ( b ) return; // bail if no querySelector
+      
+      // cart container
+      
+      ( ( ) => {
+      
+        let selector = '.cart-container';
+        
+        const cartContainerElement = node
+        
+          .querySelector ( selector );
+          
+        if ( cartContainerElement === null ) return; // bail if no element
+        
+        const callback = ( element ) => {
+        
+          const callback = ( event ) => {
+          
+            console.log ( event );
+            
+            const i = [
+            
+              ...
+              
+              cartRowElements
+              
+              ]
+              
+              .indexOf (
+              
+                element
+                
+                  .closest ( '.cart-row' )
+                  
+                );
+              
+            const selector = '#sqs-cart-root script[type="application/json"]';
+            
+            // begin items
+            
+              const callback = ( item ) => {
+              
+                console.log ( item );
+                
+                const b = ! ( 'productForm' in item );
+                
+                if ( b ) return [ ]; // bail if no product form
+                
+                const ids = [ item.productId ];
+                
+                if ( item.sku !== undefined )
+                
+                  ids.push ( item.sku );
+                  
+                return ids;
+                
+                };
+                
+              let items = document
+              
+                .querySelector ( selector )
+                
+                .textContent;
+                
+              items = JSON
+              
+                .parse ( items )
+                
+                .cart
+                
+                .items;
+                
+              // end items
+              
+            const ids = items.map ( callback );
+            
+            twc.cpftfml.ids = ids [ i ];
+            
+            };
+            
+          element.addEventListener ( 'click', callback );
+          
+          };
+          
+        selector = '.cart-row';
+        
+        const cartRowElements = cartContainerElement
+        
+          .querySelectorAll ( selector );
+          
+        selector = '.cart-row-edit';
+        
+        cartContainerElement
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        } ) ( );
+        
+      // cart product form container
+      
+      ( ( ) => {
+      
+        let selector = '.cart-product-form-container';
+        
+        let elements = node
+        
+          .querySelector ( selector );
+          
+        if ( elements === null ) return; // bail if no element
+        
+        const callback = ( element ) => {
+        
+          const attribute = 'placeholder';
+          
+          const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+          
+          let text = element
+          
+            .getAttribute ( attribute );
+            
+          let m = text.match ( re );
+          
+          // begin clean up placeholder attribute value
+          
+            text = text
+            
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text ) // set/show placeholder or remove
+            
+              element
+              
+                .setAttribute ( attribute, text );
+                
+              else
+              
+                element.removeAttribute ( attribute );
+                
+            // end clean up placeholder attribute value
+            
+          let maxLength = m [ 1 ]
+          
+            .trim ( );
+            
+          if ( isNaN ( maxLength ) ) {
+          
+            const callback = ( key ) => {
+            
+              const b = ! twc
+              
+                .cpftfml
+                
+                .ids
+                
+                .includes ( key );
+                
+              if ( b ) return; // bail if no key
+              
+              maxLength = idMaxlengthMap [ key ];
+              
+              };
+              
+            const json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}';
+              
+            const key = 'default';
+            
+            const idMaxlengthMap = JSON.parse ( json );
+            
+            maxLength = '';
+            
+            if ( key in idMaxlengthMap )
+            
+              maxLength = idMaxlengthMap [ key ];
+              
+            Object
+            
+              .keys ( idMaxlengthMap )
+              
+              .forEach ( callback );
+              
+            }
+            
+          if ( maxLength )
+          
+            element
+            
+              .setAttribute ( 'maxlength', maxLength );
+              
+          };
+          
+        selector = '.cart-product-form-field-label ' +
+        
+          'input[ placeholder*="ftfml" ]';
+          
+        elements = elements
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        } ) ( );
+        
+      };
+      
+    </script>
+    
+  <!-- end cart page form text field max length -->
+
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      cart page observe changes
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.2
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Note          : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be all
+                      of mutation observers. it may not cover your needs
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    const callbacks = {
+    
+      added : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ optional, enter your callback name here replacing square brackets ]',
+        
+        'twcCpftfml',
+        
+        ],
+        
+      removed : [
+      
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. replace
+          the name with your callback
+          
+          */
+          
+        // '[ optional, enter your callback name here replacing square brackets ]',
+        
+        ]
+        
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.2.2';
+    
+    const s = `Cart Page Observe Changes v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' +
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    let b = location.pathname != '/cart';
+    
+    if ( b ) return; // bail if not cart page
+    
+    b = ! ( 'MutationObserver' in window );
+    
+    if ( b ) return; // bail if no mutation observer available
+    
+    const callback = ( mutations ) => {
+    
+      const callback = ( mutation ) => {
+      
+        const callback = ( node ) => {
+        
+          const callback = ( callback ) => {
+          
+            const cllbck = window [ callback ];
+            
+            try {
+            
+              cllbck ( node );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } : ${ callback } `;
+                
+                console.error ( s, error );
+                
+                }
+                
+            };
+            
+          cllbcks.forEach ( callback );
+            
+          };
+          
+        const nodesAdded = mutation.addedNodes;
+        
+        const nodesRemoved = mutation.removedNodes;
+        
+        let cllbcks;
+        
+        let nodes;
+        
+        switch ( true ) {
+        
+          case Boolean ( nodesAdded.length ):
+          
+            cllbcks = callbacks.added;
+            
+            nodes = nodesAdded
+            
+            break;
+            
+          case Boolean ( nodesRemoved.length ) :
+          
+            cllbcks = callbacks.removed;
+            
+            nodes = nodesRemoved;
+            
+            break;
+            
+          }
+          
+        nodes.forEach ( callback );
+        
+        };
+        
+      mutations.forEach ( callback );
+      
+      };
+      
+    const codeKey = 'twc-cpoc';
+    
+    const observer = new MutationObserver ( callback );
+      
+    const element = document
+    
+      .getElementById ( 'sqs-cart-container' );
+      
+    const options = {
+    
+      childList : true,
+      
+      subtree : true
+      
+      };
+      
+    // begin listening for changes in element
+    
+    observer.observe ( element, options );
+      
+    } );
+    
+  </script>
