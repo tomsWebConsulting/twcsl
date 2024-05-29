@@ -1,0 +1,209 @@
+<!--
+
+  begin blocks tabbed
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : jQuery
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .sqs-block-button.twc-bt-tab .sqs-block-button-element {
+    
+      --twc-bt-radius : 15px;
+      
+      border-top-left-radius : var( --twc-bt-radius );
+      border-top-right-radius : var( --twc-bt-radius );
+      padding : calc( 1.3rem / 2 ) calc( 2.171rem / 2 );
+      width : 100%;
+      
+      }
+      
+    .sqs-block-button.twc-bt-tab {
+    
+      padding : 0;
+      
+      }
+      
+    .sqs-block-button.twc-bt-tab .sqs-block-button-element {
+    
+      opacity : 0.5;
+      
+      }
+      
+    .sqs-block-button.twc-bt-tab--active .sqs-block-button-element {
+    
+      opacity : unset;
+      
+      }
+      
+    .sqs-block.twc-bt-block {
+    
+      display : none;
+      
+      }
+      
+    .sqs-block.twc-bt-block.twc-bt-block--show {
+    
+      display : unset;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Blocks Tabbed v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const codeKey = 'twc-bt';
+      
+      const buttonSelector = `.sqs-block-button a[href^="#${ codeKey }-"]`;
+      
+      const callback = function ( ) {
+      
+        const blockClassName = `${ codeKey }-block`;
+        
+        function callback ( i ) {
+        
+          const selector = $( this )
+          
+            .attr ( 'href' )
+            
+            .replace ( `#${ codeKey }-`, '' );
+            
+          Y.one ( this ).detachAll ( );
+          
+          $( this )
+          
+            .attr ( 'href', selector );
+            
+          const $element = $( selector )
+          
+            .addClass ( blockClassName );
+            
+          if ( ! i )
+          
+            $element
+            
+              .addClass ( `${ codeKey }-block--show` );
+              
+          }
+          
+        function clickCallback ( event ) {
+        
+          const blockShowClassName = `${ codeKey }-block--show`;
+          
+          const className = 'preFade';
+          
+          const tabActiveClassName = `${ codeKey }-tab--active`;
+          
+          const $this = $( this );
+          
+          event.preventDefault ( );
+          
+          $buttons
+          
+            .removeClass ( tabActiveClassName );
+            
+          $this
+            
+            .addClass ( tabActiveClassName );
+            
+          $blocks
+          
+            .removeClass ( blockShowClassName );
+            
+          let selector = '.sqs-block-button-container a[href]';
+          
+          const blockId = $( selector, $this )
+          
+            .attr ( 'href' );
+            
+          selector = `.${ className }`;
+          
+          $( blockId )
+          
+            .find ( selector )
+            
+            .removeClass ( className )
+            
+            .end ( )
+            
+            .addClass ( blockShowClassName );
+            
+          }
+          
+        const selector = `.${ blockClassName }`;
+        
+        const $this = $( this );
+        
+        const $buttons = $( buttonSelector, $this )
+        
+          .each ( callback )
+          
+          .parents ( '.sqs-block-button' )
+          
+          .addClass ( `${ codeKey }-tab` )
+          
+          .on ( 'click', clickCallback )
+          
+          .last ( )
+          
+          .addClass ( `${ codeKey }-tab--active` )
+          
+          .end ( );
+          
+        const $blocks = $( selector, $this );
+        
+        }
+        
+      const filterCallback = function ( ) {
+      
+        const b = Boolean (
+        
+          $( buttonSelector, this )
+          
+          .length
+          
+          );
+          
+        return b;
+        
+        }
+        
+      const selector = '#siteWrapper .page-section';
+      
+      $( selector )
+      
+        .filter ( filterCallback )
+        
+        .each ( callback );
+        
+      } );
+      
+    </script>
+    
+  <!-- end blocks tabbed -->
