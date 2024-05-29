@@ -18,6 +18,8 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
 
+  * [jQuery][4]
+
 ---
 
 ## Install
@@ -36,18 +38,18 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
     * This option will be the one most will want to use if you have only a
       single page you want to have this effect.
       
-    * Add code from file **[blocks tabbed.html][4]** to Page Settings >
+    * Add code from file **[blocks tabbed.html][5]** to Page Settings >
       Advanced > Page Header Code Injection for the page. Please see [per-page
-      code injection][5].
+      code injection][6].
       
   * Site-wide
   
     * This option is the one you want to use if you have multiple pages where
       you want to have this effect.
       
-    * Add code from file **[blocks tabbed.html][4]** to Website > Pages >
+    * Add code from file **[blocks tabbed.html][5]** to Website > Pages >
       Website Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][6].
+      injection][7].
 
 * In a section add at least two button blocks. I suggest a horizontal
   orientation for the buttons as that is the easiest layout. You can do other
@@ -66,7 +68,7 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
   have a tendency to collapse together. Use line blocks in between to keep them
   separate. To hide line blocks use the following example code. Replace the
   example block ids with your own. You can find block ids by using Heather
-  Tovey's [Squarespace ID Finder][7].
+  Tovey's [Squarespace ID Finder][8].
   
   In Fluid Engine sections you will probably want to select the no grid gap
   option so that your tab buttons can abut each other.
@@ -76,7 +78,7 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
     * Page Specific
     
       Add the following to Page Settings > Advanced > Page Header Code Injection
-      for the page. Please see [per-page code injection][5].
+      for the page. Please see [per-page code injection][6].
     
       ```html
       <style>
@@ -115,7 +117,7 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
       ```
 
 * For each content block you will want to note its block id. You can find block
-  ids by using Heather Tovey's [Squarespace ID Finder][7].
+  ids by using Heather Tovey's [Squarespace ID Finder][8].
   
 * To link a tab block to a content block set the tab block's link to the
   following format.
@@ -134,11 +136,11 @@ This effect can only be applied once per section.
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -154,9 +156,10 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: blocks%20tabbed.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://toms-web-consulting-demos.squarespace.com/blocks-tabbed?password=twcdemos
-[7]: https://www.heathertovey.com/squarespace-id-finder/
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://jquery.com/
+[5]: blocks%20tabbed.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://toms-web-consulting-demos.squarespace.com/blocks-tabbed?password=twcdemos
+[8]: https://www.heathertovey.com/squarespace-id-finder/
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
