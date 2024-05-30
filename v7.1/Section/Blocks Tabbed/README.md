@@ -8,7 +8,7 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
 
 ### Version
 
- * 0.1.0
+ * 0.2.0
 
 #### SS Version
 
@@ -123,16 +123,23 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
   following format.
   
   ```text
-  #twc-bt-[ enter a content block id here replacing square brackets ]
+  #twc-bt-[ enter group here replacing square brackets ]-[ enter a content block id here replacing square brackets ]
   ```
   
-  An example **#twc-bt-#block-123456789012345678901234**.
+  The **group** helps the code keep track of tab and content blocks as groups.
+  You can use characters a - z, A - Z, and 0 - 9. Do not use the dash character.
+  
+  Some examples...
+  
+    * #twc-bt-1-#block-123456789012345678901234
+    
+    * #twc-bt-abc-#block-123456789012345678901234
+    
+  Please note that groups must be unique when a page loads. Otherwise you will
+  get strange results. This comes into play when you have multiple groups on a
+  page.
   
   Repeat for as many tab/content block pairs as you have.
-
-## Note
-
-This effect can only be applied once per section.
 
 ## Demo
 
@@ -144,11 +151,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2022-09-18**
+* **2024-05-29**
 
-  * replace twcsl getFirstPageSection method with getPageSectionNth
-  * bumped version to 0.1.1
-  -->
+  * remove one effect per page section restriction
+  * bumped version to 0.2.0
+  
 * **2024-05-28**
 
   * initial version
