@@ -8,7 +8,7 @@ Create rudimentary tabbed blocks with button blocks and other blocks.
 
 ### Version
 
- * 0.2.0
+ * 0.2.1
 
 #### SS Version
 
@@ -151,6 +151,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-05-30**
+
+  * remove href from tab button
+  * remove errant console.log statement
+  * bumped version to 0.2.1
+  
 * **2024-05-29**
 
   * remove one effect per page section restriction

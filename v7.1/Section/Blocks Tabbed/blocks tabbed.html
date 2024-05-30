@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.0
+  Version       : 0.2.1
   
   SS Version    : 7.1
   
@@ -68,7 +68,7 @@
   
     $( ( ) => {
     
-      const version = '0.2.0';
+      const version = '0.2.1';
       
       const s = `Blocks Tabbed v${ version }, ` +
       
@@ -84,13 +84,13 @@
       
       const clickCallback = function ( event ) {
       
-        const re = new RegExp ( `#${ codeKey }-(\.+)-(#.+)` );
+        const re = new RegExp ( `(\.+)-(#.+)` );
         
         const $this = $( this );
         
         let group = $this
         
-          .attr ( 'href' );
+          .attr ( dataAttribute );
           
         group = group.match ( re );
         
@@ -110,8 +110,6 @@
           
         $this
         
-          .parents ( buttonBlockSelector )
-          
           .addClass ( tabActiveClassName );
           
         group
@@ -133,6 +131,8 @@
         }
         
       const contentBlockShowClassName = `${ codeKey }-content--show`;
+      
+      const dataAttribute = `data-${ codeKey }`;
       
       const groups = { };
       
@@ -160,9 +160,7 @@
       
       const tabCallback = function ( ) {
       
-        console.log ( this );
-        
-        const re = new RegExp ( `#${ codeKey }-(.+)-(#.+)` );
+        const re = new RegExp ( `#${ codeKey }-((.+)-(#.+))` );
         
         const $this = $( this );
         
@@ -176,21 +174,27 @@
         
         const contentClassName = `${ codeKey }-content`;
         
-        const group = data [ 1 ];
+        const group = data [ 2 ];
         
         const b = groups [ group ];
         
-        const selector = data [ 2 ];
+        const selector = data [ 3 ];
         
+        const $contentElement = $( selector )
+        
+          .addClass ( contentClassName );
+          
         const $tabElement = $this
         
           .parents ( buttonBlockSelector )
           
-          .addClass ( `${ codeKey }-tab` );
+          .addClass ( `${ codeKey }-tab` )
           
-        const $contentElement = $( selector )
+          .attr ( dataAttribute, data [ 1 ] );
+          
+        $this
         
-          .addClass ( contentClassName );
+          .removeAttr ( 'href' );
           
         if ( b === undefined )
         
@@ -238,9 +242,11 @@
       
       $( selector )
       
-        .click ( clickCallback )
+        .each ( tabCallback )
         
-        .each ( tabCallback );
+        .parents ( buttonBlockSelector )
+        
+        .click ( clickCallback );
         
       Object
       
