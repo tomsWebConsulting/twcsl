@@ -678,15 +678,15 @@ building effects in Squarespace sites.
         In your web browser visit the following URL.
         
         ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.3/twcsl.js
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.3/twcsl-min.js
         ```
         
-        The **twcsl.js** file will be downloaded to your computer.
+        The **twcsl-min.js** file will be downloaded to your computer.
         
       * **Step 2**
       
         In **Pages > Not Linked** [add a **Link** page][3] and [link to the
-        **twcsl.js** file][4].
+        **twcsl-min.js** file][4].
         
       * **Step 3**
       
@@ -695,7 +695,7 @@ building effects in Squarespace sites.
         
         ```html
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="/s/twcsl.js"></script>
+        <script src="/s/twcsl-min.js"></script>
         ```
         
       * The paid plan install steps are finished.
@@ -706,8 +706,8 @@ building effects in Squarespace sites.
     
       * **Step 1**
       
-        Add the following to Website > Pages ( v7.0 only ) > Website Tools >
-        Code Injection > HEADER.
+        Add the following to Website > Pages > Website Tools > Code Injection >
+        HEADER.
         
         ```html
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -719,14 +719,15 @@ building effects in Squarespace sites.
         In your web browser visit the following URL.
         
         ```
-        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.3/twcsl.html
+        https://d1j8mu9lowy9zf.cloudfront.net/twcsl/0.3.3/twcsl.min.html
         ```
         
-        The **twcsl.html** file will display in your browser.
+        The **twcsl.min.html** file will display in your browser.
         
       * **Step 3**
       
-        Copy the entire contents of the page and add it to Website > Website Tools > Code Injection > HEADER after the previously installed
+        Copy the entire contents of the page and add it to Website > Pages >
+        Website Tools > Code Injection > HEADER after the previously installed
         code. jQuery must be before the twcsl code.
         
       * The trial period install steps are finished.
