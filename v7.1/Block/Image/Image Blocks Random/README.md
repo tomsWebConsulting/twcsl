@@ -57,6 +57,12 @@ Randomize the images of image blocks.
       Website Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][8].
 
+* Create a Fluid Engine page section.
+
+* Layout images blocks as desired.
+
+* For each image block you want to randomize set it's Link URL to **#twc-ibr**.
+
 ## Make a Donation
 
 Please consider [making a donation][9].
