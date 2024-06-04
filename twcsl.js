@@ -4,6 +4,8 @@ const twcsl = ( ( $ ) => {
   
   Tom's Web Consulting Squarespace Library
   
+  License         : < https://tinyurl.com/s872fb68 >
+  
   Version         : 0.3.3
   
   SS Versions     : 7.1, 7.0
