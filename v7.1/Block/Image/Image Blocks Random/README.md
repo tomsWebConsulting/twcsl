@@ -63,9 +63,13 @@ Randomize the images of image blocks.
 
 * For each image block you want to randomize set it's Link URL to **#twc-ibr**.
 
+## Demo
+
+You can see a [demo of this effect here][9].
+
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -87,4 +91,5 @@ Please consider [making a donation][9].
 [6]: image%20blocks%20random.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: https://toms-web-consulting-demos.squarespace.com/image-blocks-random?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
