@@ -1,0 +1,123 @@
+<!--
+
+  begin image blocks random
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : jQuery
+  
+                  Fluid Engine
+  
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-ibr--no-href {
+    
+      pointer-events : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      debugger;
+      
+      const version = '0.1.0';
+      
+      const s = `Image Blocks Random v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      const callback = function ( ) {
+      
+        const $this = $( this );
+        
+        let attribute = 'href';
+        
+        const href = $this
+        
+          .attr ( attribute )
+          
+          .replace ( `#${ codeKey }`, '' );
+        
+        const r = Math.floor ( Math.random ( ) * $images.length );
+        
+        const $image = $images.eq ( r );
+        
+        $this
+        
+          .append ( $image );
+          
+        $images = $images.not ( $image );
+        
+        if ( ! href ) {
+        
+          attribute += ' target';
+          
+          $this
+          
+          .removeAttr ( attribute )
+          
+          .addClass ( `${ codeKey }--no-href` );
+          
+          }
+          
+        }
+      
+      const codeKey = 'twc-ibr';
+      
+      const selectorPrefix = '.sqs-block-image .sqs-image .sqs-image-content ';
+      
+      const selectorSuffix = `[href*="#${ codeKey }"]`;
+      
+      const selector = `${ selectorPrefix }.` +
+      
+        [
+        
+          'content-fit',
+          
+          'content-fill'
+          
+          ]
+          
+          .join ( `${ selectorSuffix }, ${ selectorPrefix }.` )
+          
+        +
+        
+        selectorSuffix;
+        
+      const $elements = $( selector );
+      
+      let $images = $( 'img', $elements );
+      
+      $elements.each ( callback );
+      
+      } );
+      
+    </script>
+    
+  <!-- end image blocks random -->
