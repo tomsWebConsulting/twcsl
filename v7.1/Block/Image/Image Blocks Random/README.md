@@ -78,7 +78,7 @@ Please consider [making a donation][9].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: https://support.squarespace.com/hc/en-us/articles/6421525446541-Editing-your-site-with-Fluid-Engine
-[6]: image%20blocks%20random#L1
+[6]: image%20blocks%20random.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
