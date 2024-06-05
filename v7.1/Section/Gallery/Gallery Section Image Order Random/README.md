@@ -75,7 +75,7 @@ Please consider [making a donation][9].
 
 * **2024-06-05**
 
-  * use twcsl
+  * support all gallery types
   * bumped version to 0.2.0
   
 * **2021-12-06**
