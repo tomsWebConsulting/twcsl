@@ -1,0 +1,151 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      gallery section image order random
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Version    : 7.1
+      
+      Dependencies  : jQuery
+      
+      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      const version = '0.2.0';
+      
+      const s = `Gallery Section Image Order Random v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+    const codeKey = 'twc-gsior';
+    
+    const selectorPrefix = '.gallery-section ';
+    
+    const selectorSuffix = ' .gallery-caption ' +
+    
+      `p.gallery-caption-content:contains(${ codeKey })`;
+      
+    let selector = selectorPrefix
+    
+      +
+      
+      [
+      
+        '.gallery-fullscreen-slideshow',
+        
+        '.gallery-grid--layout-grid',
+        
+        '.gallery-masonry',
+        
+        '.gallery-reel',
+        
+        '.gallery-slideshow',
+        
+        '.gallery-strips--layout-strips'
+        
+        ]
+        
+      .join ( `${ selectorSuffix }, ${ selectorPrefix }` )
+      
+      +
+      
+      selectorSuffix;
+      
+    const $elements = $( selector );
+    
+    if ( ! $elements.length ) return; // bail if no $elements
+    
+    const $galleries = $elements
+    
+      .parents ( '.gallery-section' );
+      
+    let callback = function ( ) {
+    
+      const $this = $( this );
+      
+      let text = $this
+      
+        .text ( )
+        
+        .replace ( codeKey, '' )
+        
+        .trim ( );
+        
+      if ( text )
+      
+        $this
+        
+          .text ( text )
+          
+        else
+        
+          $this
+          
+            .parents ( 'figcaption' )
+            
+            .remove ( );
+            
+      }
+      
+    $elements.each ( callback );
+    
+    callback = function ( ) {
+    
+      const callback = function ( ) {
+      
+        const r = Math.floor ( Math.random ( ) * $images.length );
+        
+        const $image = $images.eq ( r );
+        
+        $( this )
+        
+          .append ( $image );
+          
+        $images = $images.not ( $image );
+        
+        }
+      
+      const selector = [
+      
+        '.gallery-fullscreen-slideshow-item-img',
+        
+        '.gallery-grid-item-wrapper',
+        
+        '.gallery-masonry-item-wrapper',
+        
+        '.gallery-reel-item-src',
+        
+        '.gallery-slideshow-item-img',
+        
+        '.gallery-strips-item-wrapper'
+        
+        ]
+        
+        .join ( ', ' );
+        
+      const $elements = $( selector, this );
+      
+      let $images = $( 'img', $elements );
+      
+      $elements.each ( callback );
+      
+      }
+      
+    $galleries.each ( callback );
+    
+    } );
+    
+  </script>
