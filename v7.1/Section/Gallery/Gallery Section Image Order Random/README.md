@@ -63,9 +63,13 @@ Randomize the images of gallery sections.
   Gallery. This text will be removed from the description. If you want a normal
   description, you can add it below the twc-gsior text.
 
+## Demo
+
+You can see a [demo of this effect here][8].
+
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -85,4 +89,5 @@ Please consider [making a donation][8].
 [5]: gallery%20section%20image%20order%20random.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://toms-web-consulting-demos.squarespace.com/gallery-section-image-order-random?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
