@@ -33,13 +33,6 @@ Toggle Fluid Engine grid show.
 
 Wikipedia has a nice entry on [bookmarklet][3].
 
-## Note
-
-The code uses a Squarespace dynamic class name. The effect will break when SS
-updates their code. If the effect stops working this is probably the reason. Let
-me know and I will attempt to update the code. I can not promise how quickly I
-can update the code.
-
 ## Make a Donation
 
 Please consider [making a donation][4].
@@ -51,7 +44,7 @@ Please consider [making a donation][4].
   * fix for Squarespace changes
   * bumped version to 0.1.1
   -->
-* **2024-06-07**
+* **2024-06-08**
   
   * initial version
 
