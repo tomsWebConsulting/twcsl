@@ -24,6 +24,10 @@ Toggle Fluid Engine grid show.
 
 * Add code from file **[fluid engine grid show.bookmarklet][2]** as the URL for
   a bookmark in your browser named **Fluid Engine Grid Show**.
+  
+* Edit a page with Fluid Engine sections.
+  
+* Use the bookmarket.
 
 ## What is a bookmarket?
 
