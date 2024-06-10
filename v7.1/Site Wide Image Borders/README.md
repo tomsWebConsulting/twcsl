@@ -8,7 +8,7 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.7.1
+  * 0.7.2
 
 #### SS Version
 
@@ -32,6 +32,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
+* **2024-06-10**
+
+  * use less comments, remove uneeded comments from compilation
+  * bumped version to 0.7.2
+  
 * **2024-04-20**
 
   * another fix for summary block image border
