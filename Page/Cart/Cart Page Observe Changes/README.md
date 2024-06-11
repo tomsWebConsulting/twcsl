@@ -4,7 +4,7 @@
     
 ### Synopsis
 
-Limit the number of characters allowed in form block fields.
+Observe cart page changes.
 
 ### Version
 
@@ -28,22 +28,18 @@ Limit the number of characters allowed in form block fields.
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
-  HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
 * Add code from file **[cart page observe changes.html][4]** to Website >
   Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
   injection][5]. Read the code for any instructions within.
+  
+* Add your custom callback names to the code. Your callbacks must be installed
+  before the code.
 
 ## Example Callbacks
 
-Following are example callbacks. They doen't do anything except log to the
-console nodes that were added or removed to/from the cart page. Add your
-callbacks **before** the cart page observe changes code. Note the use of var.
+Following are example callbacks. They don't do anything except log to the
+console nodes that were added or removed to/from the cart page. Note the use of
+var.
 
 ```html
 <script>
