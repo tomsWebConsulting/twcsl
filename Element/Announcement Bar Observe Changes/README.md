@@ -84,6 +84,6 @@ Please consider [making a donation][6].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: cart%20page%20observe%20changes.html#L1
+[4]: announcement%20bar%20observe%20changes.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
