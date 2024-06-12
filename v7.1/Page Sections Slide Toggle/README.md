@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.5.1
+  * 0.5.2
 
 #### SS Version
 
@@ -35,10 +35,26 @@ Add page section toggle effect to pages.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[page sections slide toggle.html][5]** to Page Settings >
-  Advanced > Page Header Code Injection for the page. Please see [per-page code
-  injection][6]. Read the code for any instructions within.
+* Options
+
+  * Page Specific
   
+    * This option will be the one most will want to use if you have only a
+      single store page you want to have this effect.
+      
+    * Add code from file **[page sections slide toggle.html][5]** to Page
+      Settings > Advanced > Page Header Code Injection for the page. Please see
+      [Per-page code injection][6]. Read the code for any instructions within.
+      
+  * Site-wide
+  
+    * This option is the one you want to use if you have multiple store pages
+      where you want to have this effect.
+      
+    * Add code from file **[page sections slide toggle.html][5]** to Website >
+      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
+      code injection][7]. Read the code for any instructions within.
+      
 * Add a section and set it's height to small. This whole section will become a
   clickable zone for the toggle effect.
   
@@ -97,14 +113,20 @@ described previously.
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2024-06-12**
+
+  * fix duration check
+  * remove non-blank page sections from hide/show page section code
+  * bumped version to 0.5.2
+  
 * **2024-04-16**
 
   * fix for Gallery section elements not showing images
@@ -157,5 +179,6 @@ Please consider [making a donation][8].
 [4]: https://jquery.com/
 [5]: page%20sections%20slide%20toggle.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

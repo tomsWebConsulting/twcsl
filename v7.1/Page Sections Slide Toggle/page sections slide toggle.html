@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.5.1
+  Version       : 0.5.2
   
   SS Version    : 7.1
   
@@ -64,7 +64,7 @@
       
       }
       
-    html:not( .squarespace-damask ) #page .page-section {
+    html:not( .squarespace-damask ) #page .page-section:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
     
       display : var( --twc-psst-section-display-webkit-box );
       display : var( --twc-psst-section-display-ms-flexbox );
@@ -185,7 +185,7 @@
   
     $( ( ) => {
     
-      const version = '0.5.1';
+      const version = '0.5.2';
       
       const s = `Page Sections Slide Toggle v${ version }, ` +
       
@@ -225,8 +225,18 @@
           
             .toggleClass ( `${ codeKey }--open` );
             
-          $sectionsNext.slideToggle ( duration );
+          if ( duration )
           
+            $sectionsNext
+            
+              .slideToggle ( duration );
+              
+            else
+            
+              $sectionsNext
+              
+                .slideToggle ( );
+                
           window.dispatchEvent ( new Event ( 'resize' ) );
           
           }
@@ -239,15 +249,11 @@
         
         let count = $this.attr ( 'data-section-count' );
         
-        let duration = twc.psst.duration;
-        
         let icon = $this.attr ( 'data-toggle-icon' );
         
         color = color === undefined ? $this.css ( 'color' ) : color;
         
         count = count === undefined ? 1 : Number ( count );
-        
-        duration = Number ( duration );
         
         icon = icon === undefined ? 'arrow' : icon;
         
@@ -271,12 +277,10 @@
           
           .css ( 'display', 'none' );
           
-        if ( ! isNaN ( duration ) )
-        
-          duration = Number ( duration );
-          
         }
         
+      let duration = twc.psst.duration;
+      
       let selector = `#page .page-section x-${ codeKey }`;
       
       css [ `--${ codeKey }-section-display-webkit-box` ] = '-webkit-box';
@@ -331,6 +335,16 @@
       
       $( selector ).each ( callback );
       
+      if ( isNaN ( duration ) ) {
+      
+        if ( duration [ 0 ] == '[' )
+        
+          duration = '';
+          
+        } else
+        
+          duration = Number ( duration );
+          
       } );
       
     </script>
