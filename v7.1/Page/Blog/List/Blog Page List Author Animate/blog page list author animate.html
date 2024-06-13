@@ -1,0 +1,65 @@
+<script>
+
+  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  
+    /*
+    
+      blog page list author animate
+      
+      License     : < https://tinyurl.com/s872fb68 >
+      
+      Version     : 0.1.0
+      
+      SS Version  : 7.1
+      
+      Fluid
+      Engine
+      Compatible  : Not Applicable
+      
+      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.1.0';
+    
+    const s = `Blog Page List Author Animate v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' + 
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    let selector = 'body.tweak-global-animations-enabled';
+    
+    const isAnimate = document
+    
+      .querySelector ( selector )
+      
+      !==
+      
+      null;
+      
+    if ( ! isAnimate ) return; // bail if no animation
+    
+    const callback = ( element ) => {
+    
+      element
+      
+        .setAttribute ( 'data-animation-role', 'content' );
+        
+      };
+      
+    selector = '.blog-basic-grid .blog-author';
+    
+    document
+     
+      .querySelectorAll ( selector )
+      
+      .forEach ( callback );
+      
+    } );
+    
+  </script>
