@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 308 effects. Each effect has it's own version number, code,
+twcsl contains 309 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -233,8 +233,6 @@ not necessarily designed to work together.
         
       * [List](v7.1/Page/Blog/List)
         
-        * [Blog Page List Author Animate](v7.1/Page/Blog/List/Blog%20Page%20List%20Author%20Animate)
-          
         * [Blog Page List Post Image URL to Source URL](v7.1/Page/Blog/List/Blog%20Page%20List%20Post%20Image%20URL%20to%20Source%20URL)
           
     * [Events](v7.1/Page/Events)
@@ -377,6 +375,10 @@ not necessarily designed to work together.
     
   * [Portfolio Page Hover Background Autoplay](v7.1/Portfolio%20Page%20Hover%20Background%20Autoplay)
     
+  * [Element](v7.1/Element)
+    
+    * [Element Animate](v7.1/Element/Element%20Animate)
+      
   * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
     
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
