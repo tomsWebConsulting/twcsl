@@ -49,8 +49,8 @@ Cache store page categories in sessionStorage.
       where you want to have this effect.
       
     * Add code from file **[store categories cache.html][6]** to Website >
-      Website Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][8]. Read the code for any instructions within.
+      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
+      code injection][8]. Read the code for any instructions within.
 
 ## Make a Donation
 
