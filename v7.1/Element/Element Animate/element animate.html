@@ -1,0 +1,123 @@
+<!--
+
+  begin element animate
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.2.0
+  
+  SS Version  : 7.1
+  
+  Fluid
+  Engine
+  Compatible  : Yes
+  
+  Note        : the code is comprised of two script tags. both are needed for
+                the effect to work
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.ea = {
+    
+      selectors : [
+      
+        /*
+        
+          the format of each line is a css selector
+          
+          following is an example line. copy the example line below and paste
+          after the example line. remove '// ' at beginning of pasted line.
+          repeat for as many css selectors where you want the effect applied.
+          this has been done once for your initially
+          
+          */
+          
+        // '[ enter css selector here replacing square brackets ]',
+        
+        '[ enter css selector here replacing square brackets ]',
+        
+        ]
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    
+      debugger;
+      
+      const version = '0.2.0';
+      
+      const s = `Element Animate v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' + 
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      let selector = 'body.tweak-global-animations-enabled';
+      
+      const isAnimate = document
+      
+        .querySelector ( selector )
+        
+        !==
+        
+        null;
+        
+      if ( ! isAnimate ) return; // bail if no animation
+      
+      const callback = ( selector ) => {
+      
+        const callback = ( element ) => {
+        
+          const b = element
+          
+            .getAttribute ( 'data-animation-role' )
+            
+            !==
+            
+            null;
+            
+          if ( b ) return; // bail if animate
+          
+          element
+          
+            .setAttribute ( 'data-animation-role', 'content' );
+            
+          };
+          
+        document
+         
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      twc
+      
+        .ea
+        
+        .selectors
+        
+        .forEach ( callback );
+        
+      } );
+      
+    </script>
+
+  <!-- end element animate -->
