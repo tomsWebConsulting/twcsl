@@ -1,0 +1,97 @@
+<!--
+
+  begin store page all redirect
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.2.0
+  
+  SS Version  : 7.1
+  
+  Fluid
+  Engine
+  Compatible  : Yes
+  
+  Note        : the code is comprised of two script tags. both are needed for
+                the effect to work
+                
+                this effect is not active in the SS editor. to test it use
+                private browsing < https://tinyurl.com/ynessvsf >
+  
+  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spar = {
+    
+      url : '[ enter url here replacing square brackets ]'
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `Store Page All Redirect v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' + 
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if editor
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        .type
+        
+        ==
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isAll = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        .fullUrl
+        
+        ==
+        
+        location
+        
+          .pathname;
+          
+      if ( ! isAll ) return; // bail if not all
+      
+      location = twc
+      
+        .spar
+        
+        .url;
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end store page all redirect -->
