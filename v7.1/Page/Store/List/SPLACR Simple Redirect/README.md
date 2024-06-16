@@ -32,6 +32,9 @@ Redirect store page all to a URL.
 * Add code from file **[store page spar simple redirect.html][4]** **before**
   the **Store Page List All Category Redirect** code. Read the code for any
   instructions within.
+  
+* In the **Store Page List All Category Redirect** code set **callback** to
+  **twcSplacrSimpleRedirect** per that code's install steps.
 
 ## Make a Donation
 
@@ -49,6 +52,6 @@ Please consider [making a donation][8].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20All%20Redirect#store-page-all-redirect
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20All%20Category%20Redirect#store-page-list-all-category-redirect
 [4]: store%20page%20spar%20simple%20redirect.html#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
