@@ -51,8 +51,8 @@ Redirect store page list all category to a URL.
 ## Example Callback
 
 Following is an example callback. Your callback must return a URL and be
-installed before the **store page list all category redirect** code. Note the
-use of var.
+installed **before** the **store page list all category redirect** code. Note
+the use of var.
 
 ```html
 <script>
