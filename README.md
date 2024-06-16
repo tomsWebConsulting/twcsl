@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 310 effects. Each effect has it's own version number, code,
+twcsl contains 311 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -269,13 +269,15 @@ not necessarily designed to work together.
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
           
-        * [Store Page All Redirect](v7.1/Page/Store/List/Store%20Page%20All%20Redirect)
-          
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
+          
+        * [Store Page List All Category Redirect](v7.1/Page/Store/List/Store%20Page%20List%20All%20Category%20Redirect)
           
         * [Store Page List Category Section Reveal](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Section%20Reveal)
           
         * [Store Page List Categories Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add)
+          
+        * [SPLACR Simple Redirect](v7.1/Page/Store/List/SPLACR%20Simple%20Redirect)
           
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
