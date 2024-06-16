@@ -1,0 +1,88 @@
+<script>
+
+  var twcSplacrDateProgressionRedirect = ( ) => {
+  
+    /*
+    
+      splacr date progression redirect
+      
+      License      : < https://tinyurl.com/s872fb68 >
+      
+      Version      : 0.1.0-development.0
+      
+      SS Version   : 7.1
+      
+      Fluid
+      Engine
+      Compatible   : Not Applicable
+      
+      Dependencies : store page list all category redirect
+      
+      Note         : this code is not time zone aware
+                     
+                     the code progresses through the urlDateMap in order. when
+                     the current date is greater than or equal to the map date,
+                     that is the URL that gets returned
+                     
+      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    debugger;
+    
+    const urlDateMap = {
+    
+      /*
+      
+        the format of each line is a URL and a date
+        
+        the date must be in the format of YYYY-MM-DDTHH:mm:ss. if you don't need
+        a time, then you can use the format YYYY-MM-DD
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many URL/date pairs as needed. this has been done once initially
+        
+        */
+        
+      // '[ enter url here replacing square brackets ]' : '[ enter date here replacing square brackets ]',
+      
+      '[ enter url here replacing square brackets ]' : '[ enter date here replacing square brackets ]',
+      
+      };
+      
+    // do not change anything below, there be the borg here
+    
+    const version = '0.1.0-development.0';
+    
+    const s = `SPLACR Date Progression Redirect v${ version }, ` +
+    
+      'License < https://tinyurl.com/s872fb68 >, ' + 
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      
+    console.log ( s );
+    
+    const entries = Object
+    
+      .entries ( urlDateMap );
+      
+    let redirectUrl;
+    
+    for ( const [ url, ud ] of entries ) {
+    
+      const d = new Date ( );
+      
+      const b = d >= new Date ( ud );
+      
+      if ( ! b ) break; // bail if not past date
+      
+      redirectUrl = url;
+      
+      }
+      
+    return redirectUrl;
+    
+    };
+    
+  </script>
