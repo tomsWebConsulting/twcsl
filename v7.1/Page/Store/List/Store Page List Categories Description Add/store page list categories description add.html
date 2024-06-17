@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.4
+  Version       : 0.8.0
   
   SS Version    : 7.1
   
@@ -98,7 +98,7 @@
   
     $( ( ) => {
     
-      const version = '0.7.4';
+      const version = '0.8.0';
       
       const s = `Store Page List Categories Description Add v${ version }, ` +
       
@@ -114,7 +114,7 @@
       
       const codeKey = 'twc-splcda';
       
-      const selector = `#sections .page-section script[data-${ codeKey }]`;
+      const selector = `#sections .page-section script[ data-${ codeKey } ]`;
       
       let $element = $( selector );
       
@@ -123,14 +123,16 @@
       const categories = twcsl.page.store.list.categories;
       
       let map = $element
-      
+        
         .text ( )
         
-        .replace ( /\/\/.*|\/\*[^]*?\*\//g, '' ) // remove comments
+        .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
         
-        .replaceAll ( '\n', '' )
+        .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
         
-        .replace ( /, *} *$/, '}' ); // remove last item comma
+        .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
+        
+        .replaceAll ( '\n', '' );
         
       map = JSON.parse ( map );
       
@@ -163,9 +165,9 @@
       
       let selectorDestination = $element.attr ( 'data-selector-destination' );
       
-      if ( action == undefined ) action = 'after';
+      if ( action === undefined ) action = 'after';
       
-      if ( paragraphStyle == undefined ) paragraphStyle = 'Heading 3';
+      if ( paragraphStyle === undefined ) paragraphStyle = 'Heading 3';
       
       paragraphStyle = paragraphStyles [
       
@@ -173,9 +175,15 @@
         
         ];
         
-      if ( selectorDestination == undefined )
+      if ( selectorDestination === undefined )
       
         selectorDestination = '.nested-category-title';
+        
+      $element
+      
+        .parents ( '.sqs-block-code' )
+        
+        .remove ( );
         
       $element = $( '<div class="twc-splcda-description"/>' )
         

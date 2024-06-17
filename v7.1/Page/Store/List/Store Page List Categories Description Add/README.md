@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.7.4
+  * 0.8.0
 
 #### SS Version
 
@@ -57,7 +57,7 @@ Add simple category descriptions to store category pages.
   code for any instructions within.
   
   ```html
-  <script data-twc-splcda type="application/ld+json">
+  <script data-twc-splcda type="application/json">
   
     /*
     
@@ -94,7 +94,7 @@ Add simple category descriptions to store category pages.
       //   [enter category description here replacing square brackets]
         
       //   ",
-            
+        
       "[enter category list here replacing square brackets]" : "
       
         [enter category description here replacing square brackets]
@@ -153,7 +153,7 @@ Add simple category descriptions to store category pages.
 
 The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
-create your own settings to do so.
+use the **Optional Attributes** to do so.
 
 The last page section is only visible while editing the site.
 
@@ -167,6 +167,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-06-16**
+
+  * potential fix for script ld+json consumers syntax error
+  * bumped version to 0.8.0
+  
 * **2023-11-17**
 
   * second fix for description html not coming through
