@@ -1,0 +1,107 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      page collection main page robots no index
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.1.0
+      
+      SS Versions     : 7.0, 7.1
+      
+      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                        
+      Note            : search engines may not honor the tag added by this code
+      
+      Copyright       : 2024 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.1.0';
+    
+    const s = `Page Collection Main Page Robots No Index v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2024 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+    console.log ( s );
+    
+    if ( window.frameElement !== null ) return; // bail if editor
+    
+    const isBlankPage = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .collection
+      
+      .type
+      
+      ==
+      
+      10;
+      
+    if ( isBlankPage ) return; // bail if blank page
+    
+    const fullUrl = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .collection
+      
+      .fullUrl;
+      
+    let url = location
+    
+      .href
+      
+      .replace ( location.origin, '' );
+      
+    if ( url != fullUrl ) return; // bail if not main page
+    
+    const callback = ( ) => {
+    
+      const selector = 'body.view-list';
+      
+      const element = document
+      
+        .querySelector ( selector );
+        
+      if ( element === null ) return; // bail if not list
+      
+      const html = '<meta name="robots" content="noindex">';
+    
+      document
+      
+        .head
+      
+        .insertAdjacentHTML ( 'beforeend', html );
+        
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
+    
+  </script>
