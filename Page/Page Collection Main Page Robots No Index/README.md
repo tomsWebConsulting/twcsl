@@ -1,6 +1,6 @@
 # Page Collection Main Page Robots No Index
 
-### [License][99]
+### [License][1]
 
 ### Synopsis
 
@@ -22,15 +22,15 @@ Add a robots no index tag to the main page of a collection.
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4].
+  * [Squarespace plan][2] that supports [JavaScript][3].
   
 ---
 
 ## Quick Install
 
-* Add code from file **[page collection main page robots no index.html][2]** to
+* Add code from file **[page collection main page robots no index.html][4]** to
   Page Settings > Advanced > Page Header Code Injection for the page. Please see
-  [Per-page code injection][6].
+  [Per-page code injection][5].
 
 ## Note
 
@@ -38,7 +38,7 @@ Search engines may not honor the no index request of this code.
 
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -51,9 +51,9 @@ Please consider [making a donation][2].
 
   * initial version
 
-[1]: page%20collection%20main%20page%20robots%20no%20index.html#L1
-[3]: https://www.squarespace.com/pricing
-[4]: https://en.wikipedia.org/wiki/JavaScript
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: page%20collection%20main%20page%20robots%20no%20index.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
