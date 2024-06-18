@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.2
+  Version       : 0.8.0
   
   SS Version    : 7.1
   
@@ -36,7 +36,9 @@
                     
                     video blocks
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   */
   
@@ -52,6 +54,8 @@
   .blog-list( true );
   
   .blog-post( true );
+  
+  .cookie-banner( true );
   
   .event-list( true );
   
@@ -178,6 +182,16 @@
           
         } // end sqs-block-image
         
+      }
+      
+    }
+    
+  .cookie-banner( @boolean ) when ( @boolean = true ) {
+  
+    .gdpr-cookie-banner {
+    
+      .swib-properties( );
+      
       }
       
     }
