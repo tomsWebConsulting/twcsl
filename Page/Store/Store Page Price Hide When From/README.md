@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Hide price when it contain from on Store page.
+Hide price when it contains from on Store page.
 
 ### Version
 
