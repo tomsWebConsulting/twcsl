@@ -1,0 +1,138 @@
+<!--
+
+  begin store page price hide when from
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.2.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Avenue
+                    
+                    Bedford ( Anya, Bryant, Hayden )
+                    
+                    Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    Pacific ( Bryler, Charlotte, Fulton*, Horizon, Naomi )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : store price change
+  
+  Copyright       : 2022-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    /* 7.1 */
+    
+      /* list */
+      
+        .collection-type-products .grid-prices .product-price.twc-spphwf,
+        
+      /* detail */
+      
+        /* simple layout */
+        
+        .ProductItem-details .ProductItem-product-price.twc-spphwf,
+        
+        /* full, half, wrap layouts */
+        
+        .pdp-layout .pdp-details .pdp-details-price.twc-spphwf,
+        
+    /* 7.0 */
+    
+      /* list */
+      
+        .ProductList .product-price.twc-spphwf, /* Brine */
+        
+        /* Avenue, Bedford, Pacific */
+        
+        #productList .product .product-price.twc-spphwf,
+        
+      /* detail */
+      
+        .ProductItem-details .product-price.twc-spphwf, /* Brine */
+        
+        /* Avenue, Bedford, Pacific */
+        
+        #productDetails .product-price.twc-spphwf
+        
+      {
+      
+        display : none;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `Store Page Price Hide When From v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    </script>
+    
+  <script>
+  
+    const twcSpphwf = ( node, isDetail, text, searchText ) => {
+    
+      const codeKey = 'twc-spphwf';
+      
+      const classList = node
+      
+        .parentElement
+      
+        .classList;
+        
+      if ( ! text.includes ( 'from' ) ) {
+      
+        classList
+        
+          .remove ( codeKey );
+          
+        return true;
+        
+        }
+        
+      classList.add ( codeKey );
+      
+      return false;
+      
+      };
+      
+    </script>
+
+  <!-- end store page price hide when from -->
