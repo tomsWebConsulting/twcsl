@@ -89,6 +89,8 @@ not necessarily designed to work together.
       
     * [Store Page Price and Sale Reverse](Page/Store/Store%20Page%20Price%20and%20Sale%20Reverse)
       
+    * [Store Page Price Hide When From](Page/Store/Store%20Page%20Price%20Hide%20When%20From)
+      
 * [Add to Cart Button Active Hours](Add%20to%20Cart%20Button%20Active%20Hours)
   
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
@@ -404,8 +406,6 @@ not necessarily designed to work together.
   * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
     
   * [Hide Blog Post Tags](v7.1/Hide%20Blog%20Post%20Tags)
-    
-  * [Store Product Price Element Empty When From](v7.1/Store%20Product%20Price%20Element%20Empty%20When%20From)
     
   * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
     
