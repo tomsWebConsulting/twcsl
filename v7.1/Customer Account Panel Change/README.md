@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.2.4
+### Version 0.2.5
 
 #### SS Version
 
@@ -91,6 +91,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-06-20**
+
+  * workaround for code not running
+  * bumped version to 0.2.5
+  
 * **2023-08-16**
 
   * restore missing callback code functionality

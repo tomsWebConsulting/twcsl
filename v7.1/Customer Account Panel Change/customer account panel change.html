@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.2.4
+  Version      : 0.2.5
   
   SS Version   : 7.1
   
@@ -287,14 +287,16 @@
                 
                 [ 0 ];
                 
-              element
+              if ( element !== undefined )
               
-                .parentElement
+                element
                 
-                .classList
-                
-                .add ( `${ codeKey }-close` );
-                
+                  .parentElement
+                  
+                  .classList
+                  
+                  .add ( `${ codeKey }-close` );
+                  
               // end close class add
               
             // begin greeting class add
@@ -307,28 +309,32 @@
                 
                 [ 0 ];
                 
-              element
+              if ( element !== undefined )
               
-                .parentElement
+                element
                 
-                .classList
-                
-                .add ( `${ codeKey }-greeting` );
-                
+                  .parentElement
+                  
+                  .classList
+                  
+                  .add ( `${ codeKey }-greeting` );
+                  
               // end greeting class add
               
             // greeting sign out class add
             
-            element
+            if ( element !== undefined )
             
-              .parentElement
-            
-              .parentElement
-            
-              .classList
+              element
               
-              .add ( `${ codeKey }-greeting-sign-out` );
+                .parentElement
               
+                .parentElement
+              
+                .classList
+                
+                .add ( `${ codeKey }-greeting-sign-out` );
+                
             // begin sign out class add
             
               element = node.getElementsByTagName ( 'span' );
@@ -339,14 +345,16 @@
                 
                 [ 0 ];
                 
-              element
+              if ( element !== undefined )
               
-                .parentElement
+                element
                 
-                .classList
-                
-                .add ( `${ codeKey }-sign-out` );
-                
+                  .parentElement
+                  
+                  .classList
+                  
+                  .add ( `${ codeKey }-sign-out` );
+                  
               // end sign out class add
               
             element = classAdd ( 'addresses' );
