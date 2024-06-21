@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.8.0
+  Version       : 0.7.3
   
   SS Version    : 7.1
   
@@ -32,8 +32,6 @@
                   
                     image block shapes
                     
-                    gallery section > type > grid masonry
-                    
                     video blocks
   
   Copyright     : 2021-2024 Thomas Creedon
@@ -54,8 +52,6 @@
   .blog-list( true );
   
   .blog-post( true );
-  
-  .cookie-banner( true );
   
   .event-list( true );
   
@@ -118,6 +114,8 @@
       {
       
         .swib-properties( );
+        
+        box-sizing : border-box;
         
         }
         
@@ -186,16 +184,6 @@
       
     }
     
-  .cookie-banner( @boolean ) when ( @boolean = true ) {
-  
-    .gdpr-cookie-banner {
-    
-      .swib-properties( );
-      
-      }
-      
-    }
-    
   .event-list( @boolean ) when ( @boolean = true ) {
   
     body[class*="collection-type-events-"].view-list .page-section[class*="collection-type-events-"] {
@@ -203,6 +191,8 @@
       .eventlist-column-thumbnail {
       
         .swib-properties( );
+        
+        overflow : hidden;
         
         }
         
@@ -255,6 +245,8 @@
       
         .swib-properties( );
         
+        box-sizing : border-box;
+        
         }
         
     .sqs-gallery-block-stacked .image-wrapper {
@@ -283,7 +275,6 @@
     
       .gallery-fullscreen-slideshow-item-img,
       .gallery-grid-item-wrapper,
-      .gallery-masonry-item-wrapper,
       .gallery-reel-item-src,
       .gallery-slideshow-item-img,
       .gallery-strips-item-wrapper
@@ -294,8 +285,24 @@
           
           .swib-properties( );
           
+          box-sizing : border-box;
+          
           }
           
+        }
+        
+      .gallery-masonry-item-wrapper {
+      
+        .swib-properties( );
+        
+        box-sizing : border-box;
+        
+        }
+        
+      .gallery-slideshow-item-img img {
+        
+        object-fit : unset !important;
+        
         }
         
       }
@@ -334,14 +341,12 @@
               
             }
             
-        .portfolio-hover-backgrounds-wrapper
-        
-          {
+        .portfolio-hover-backgrounds-wrapper {
           
-            .swib-properties( );
-            
-            }
-            
+          .swib-properties( );
+          
+          }
+          
         }
         
     }
@@ -380,9 +385,49 @@
     
   .store-product-detail( @boolean ) when ( @boolean = true ) {
   
+    // simple layout
+    
     body.collection-type-products.view-item .ProductItem-gallery-slides-item {
     
       .swib-properties( );
+      
+      box-sizing : border-box;
+      
+      }
+      
+    // full
+    
+    .pdp-layout-full-width-carousel .pdp-gallery-wrapper {
+    
+      .pdp-carousel-controls {
+      
+        left : 1vw;
+        
+        right : 1vw;
+        
+        }
+        
+      .pdp-gallery-slides {
+      
+        .swib-properties( );
+        
+        overflow : hidden;
+        
+        }
+        
+      }
+      
+    :not( .pdp-gallery-wrapper ) .pdp-gallery-images { // half
+      
+      .swib-properties( );
+      
+      }
+      
+    .pdp-layout-wrap-around .pdp-gallery-slides { // wrap
+    
+      .swib-properties( );
+      
+      // overflow : hidden;
       
       }
       

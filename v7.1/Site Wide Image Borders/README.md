@@ -8,7 +8,7 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.8.0
+  * 0.7.3
 
 #### SS Version
 
@@ -32,10 +32,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
-* **2024-06-18**
+* **2024-06-20**
 
-  * add cookie banner
-  * bumped version to 0.8.0
+  * bunch of tweaks to refine the effect for current v7.1
+  * regress from v0.8.0 back to v0.7.2
+  * bumped version to 0.7.3
   
 * **2024-06-10**
 
