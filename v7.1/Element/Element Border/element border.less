@@ -1,0 +1,71 @@
+/*
+
+  begin element border
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependancies  : LESS
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  @border-color : none;
+  @border-radius : 0px;
+  @border-style : none;
+  @border-width : 0px;
+  
+  // use false or true for each area where you want the effect to be active
+  
+  .cookie-banner( true );
+  
+  .custom-declarations {
+  
+    // for your own declarations ( property/value pairs ). these will be placed
+    // after the built-in properties ( border-color, border-radius,
+    // border-style, border-width, and z-index )
+       
+    // enter your property/value pairs here
+    
+    }
+    
+  // do not change anything below, there be the borg here
+  
+  // @border-color : red;
+  // @border-radius : 10px;
+  // @border-style : solid;
+  // @border-width : 1px;
+  
+  .eb-properties {
+  
+    border-color : @border-color;
+    border-radius : @border-radius;
+    border-style : @border-style;
+    border-width : @border-width;
+    z-index : 1;
+    
+    .custom-declarations( );
+    
+    }
+    
+  .cookie-banner( @boolean ) when ( @boolean = true ) {
+  
+    .gdpr-cookie-banner {
+    
+      .eb-properties( );
+      
+      }
+      
+    }
+    
+  // end site wide image borders
