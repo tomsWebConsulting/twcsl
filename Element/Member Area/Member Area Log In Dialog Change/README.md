@@ -105,6 +105,7 @@ Please consider [making a donation][8].
 * **2024-06-26**
 
   * support for sign up join
+  * support v7.0
   * removed dependency on jQuery
   * bumped version to 0.2.0
   
