@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 317 effects. Each effect has it's own version number, code,
+twcsl contains 318 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -135,6 +135,10 @@ not necessarily designed to work together.
   
 * [Element](Element)
   
+  * [Member Area](Element/Member%20Area)
+    
+    * [Member Area Log In Dialog Change](Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change)
+      
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
@@ -484,8 +488,6 @@ not necessarily designed to work together.
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
     
   * [Store Tag Page Description Add](v7.1/Store%20Tag%20Page%20Description%20Add)
-    
-  * [Member Area Log In Dialog Change](v7.1/Member%20Area%20Log%20In%20Dialog%20Change)
     
   * [Store Product List Sale Badge](v7.1/Store%20Product%20List%20Sale%20Badge)
     
