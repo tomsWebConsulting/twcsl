@@ -8,7 +8,7 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.1.2
+  * 0.2.0
 
 #### SS Version
 
@@ -17,8 +17,6 @@ Alter member area sign up and in dialogs.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [jQuery][4]
 
 #### Fluid Engine Compatible
 
@@ -28,13 +26,6 @@ Alter member area sign up and in dialogs.
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
-  HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
 * Add code from file **[member area log in dialog change.html][5]** to
   Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
   code to code injection][6]. Read the code for any instructions within.
@@ -53,6 +44,7 @@ This code attempts to add some useful classes.
   * twc-malidc-sign-in-email-text
   * twc-malidc-sign-in-password
   * twc-malidc-sign-up
+  * twc-malidc-sign-up-join
   * twc-malidc-sign-up-password
   * twc-malidc-sign-up-password-confirm
   * twc-malidc
@@ -74,12 +66,10 @@ You can optionally create a [callback][7] function to further customize the
 processing of the sign in dialog.
 
 Following is example code. Place your callback before the member area log in
-dialog change code.
-
-```html
+dialog change code.```html
 <script>
 
-  const myNamedFunction = ( dcmnt, logInType ) => {
+  const twcMalidcLog = ( dcmnt, logInType ) => {
   
     console.log ( dcmnt );
     
@@ -95,8 +85,16 @@ Then in the member area log in dialog change code set accountFrameCallback to
 the following.
 
 ```html
-      accountFrameCallback : myNamedFunction
+      accountFrameCallback : twcMalidcLog
 ```
+
+The logInType parameter value will be one of the following.
+
+  * sign in
+  
+  * sign up
+  
+  * sign up join
 
 ## Make a Donation
 
@@ -104,6 +102,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-06-26**
+
+  * support for sign up join
+  * removed dependency on jQuery
+  * bumped version to 0.2.0
+  
 * **2023-08-16**
 
   * fix for code not running after apparent changes by Squarespace
@@ -123,7 +127,6 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
 [5]: member%20area%20log%20in%20dialog%20change.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://en.wikipedia.org/wiki/Callback_(computer_programming)

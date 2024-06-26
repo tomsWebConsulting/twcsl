@@ -2,19 +2,19 @@
 
   begin member area log in dialog change
   
-  License      : < https://tinyurl.com/s872fb68 >
+  License       : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.1.2
+  Version       : 0.2.0
   
-  SS Version   : 7.1
+  SS Versions   : 7.1, 7.0
   
   Fluid
   Engine
-  Compatible   : Not Applicable
+  Compatible    : Not Applicable
   
-  Dependencies : jQuery
-  
-  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2023-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
   
@@ -26,15 +26,17 @@
     
   <script>
   
+    // initialize twc global if needed
+    
     if ( window.twc == undefined ) window.twc = { };
     
     twc.malidc = {
     
       title : {
       
-        signIn : '[optional, enter sign in title text here between single quotes replacing square brackets]',
+        signIn : '[ optional, enter sign in title text here between single quotes replacing square brackets ]',
         
-        signUp : '[optional, enter sign up title text here between single quotes replacing square brackets]',
+        signUp : '[ optional, enter sign up title text here between single quotes replacing square brackets ]',
         
         },
         
@@ -68,17 +70,19 @@
   
   <script>
   
-    $( ( ) => {
+    const callback = ( ) => {
     
-      const codeKey = 'twc-malidc';
+      const version = '0.2.0';
       
-      const version = '0.1.2';
+      const s = `Member Area Log In Dialog Change v${ version }
       
-      const s = `Member Area Log In Dialog Change v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        License < https://tinyurl.com/s872fb68 >
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        © 2023-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
         
       console.log ( s );
       
@@ -90,13 +94,15 @@
       
       const callback = ( mutations ) => {
       
-        $.each ( mutations, function ( ) {
+        const callback = ( mutation ) => {
         
-          if ( ! this.addedNodes.length ) return; // bail if no nodes added
+           // bail if no nodes added
           
-          const $element = $( this.addedNodes [ 0 ] );
+          if ( ! mutation.addedNodes.length ) return;
           
-          const id = $element.attr ( 'id' );
+          const element = mutation.addedNodes [ 0 ];
+          
+          const id = element.id;
           
           // bail if not account frame
           
@@ -104,8 +110,10 @@
           
           const baseUrl = `${ location.protocol }//${ location.host }`
           
-          let url = $element.attr ( 'src' );
+          let url = element
           
+            .getAttribute ( 'src' );
+            
           url = new URL ( url, baseUrl )
           
             .pathname;
@@ -114,54 +122,56 @@
           
           if ( ! isLogin ) return; // bail if not log in
           
-          load ( $element );
+          load ( element );
           
-          } ); // end mutations
+          };
           
+        mutations.forEach ( callback );
+        
         }; // end callback
         
+      const codeKey = 'twc-malidc';
+      
       const config = {
       
         childList : true
         
         };
         
-      const load = ( $element ) => {
+      const load = ( element ) => {
       
-        const css = document
+        const callback = ( event ) => {
         
-          .getElementsByTagName ( `x-${ codeKey }-style` )
+          const element = event.target;
           
-          [ 0 ]
-          
-          .textContent;
-          
-        $element.on ( 'load', function ( ) {
-        
-          const pathname = this
-          
+          const pathname = element
+            
             .contentWindow
             
             .location
             
             .pathname;
             
-          const b = pathname.startsWith ( '/account/frame/login' );
+          const b = pathname
           
+            .startsWith ( '/account/frame/login' );
+            
           if ( ! b ) return; // bail if not log in
           
-          const dcmnt = this.contentDocument;
+          const dcmnt = element.contentDocument;
           
           const id = 'user-account-login-root';
           
-          const callback = mutations => {
+          const callback = ( mutations ) => {
           
-            mutations.forEach ( mutation => {
+            const callback = ( mutation ) => {
             
               processMutationRecord ( mutation );
               
-              } ); // end mutations
+              };
               
+            mutations.forEach ( callback );
+            
             };
             
           const config = {
@@ -178,7 +188,7 @@
             
           const observer = new MutationObserver ( callback );
           
-          const processMutationRecord = mutation => {
+          const processMutationRecord = ( mutation ) => {
           
             // bail if no nodes added
             
@@ -190,21 +200,95 @@
             
               '[data-test="login-button"]';
               
-            const isSignIn = node.querySelector ( selector ) != null;
+            const isSignIn = node.querySelector ( selector ) !== null;
             
             selector = 'button[type="submit"]' +
             
               '[data-test="create-account-create-button"]';
               
-            const isSignUp = node.querySelector ( selector ) != null;
+            const isSignUp = node.querySelector ( selector ) !== null;
             
-            // continue if not sign in or up
+            // bail if not sign in or up
             
-            if ( ! ( isSignIn || isSignUp ) ) return true;
+            if ( ! ( isSignIn || isSignUp ) ) return;
             
-            const callback = mutations => {
+            const anchorClassAdd = ( key ) => {
             
-              mutations.forEach ( mutation => {
+              const selector = `[ href="/account/login/${ key }" ]`;
+              
+              const element = dcmnt.querySelector ( selector );
+              
+              if ( element !== null )
+              
+                element.classList.add ( `${ codeKey }-${ key }` );
+                
+              return element;
+              
+              };
+              
+            const attributeNameClass = `data-${ codeKey }-class`;
+            
+            const classAdd = ( element, classes ) => {
+            
+              const callback = ( clss ) => {
+                
+                element
+                
+                  .classList
+                  
+                  .add ( clss );
+                  
+                };
+                
+              classes
+              
+                .split ( ' ' )
+                
+                .forEach ( callback );
+                  
+              };
+              
+            const classRemove = ( element ) => {
+            
+              const classList = element.classList
+              
+              for ( const clss of classList ) {
+              
+                const isCodeClass =
+                
+                  clss.startsWith ( `${ codeKey }-` );
+                  
+                if ( ! isCodeClass ) continue; // continue
+                
+                classList.remove ( clss );
+                
+                }
+                
+              };
+              
+            const config = {
+            
+              attributes : true,
+              
+              subtree : true
+              
+              };
+              
+            const isSignUpJoin = dcmnt
+              
+              .querySelector ( 'h1' )
+              
+              .textContent
+              
+              .startsWith ( 'Join ' );
+              
+            const options = twc.malidc;
+            
+            const accountFrameCallback = options.accountFrameCallback;
+            
+            let callback = ( mutations ) => {
+            
+              const callback = ( mutation ) => {
               
                 // bail if attribute not class
                 
@@ -218,107 +302,102 @@
                   
                 // bail data class attribute is null
                 
-                if ( className == null ) return;
+                if ( className === null ) return;
                 
-                className
+                const classNames = className
                 
-                  .split ( ' ' )
+                  .split ( ' ' );
                   
-                  .forEach ( className => {
+                for ( const className of classNames ) {
+                
+                  const classList = element.classList;
                   
-                    const classList = element.classList;
+                  const b = classList
+                  
+                    .contains ( className );
                     
-                    const b = classList
+                  if ( b ) break; // bail if class already added
+                  
+                  classList
+                  
+                    .add ( className );
                     
-                      .contains ( className );
-                      
-                    if ( b ) return; // bail if class already added
-                    
-                    classList
-                    
-                      .add ( className );
-                      
-                    } );
-                    
-                } ); // end mutations
+                  }
+                  
+                };
+                
+              mutations.forEach ( callback );
                 
               }; // end callback
               
-            const anchorClassAdd = ( key ) => {
-            
-              const selector = `[ href="/account/login/${ key }" ]`;
-              
-              const element = dcmnt.querySelector ( selector );
-              
-              if ( element != null )
-              
-                element.classList.add ( `${ codeKey }-${ key }` );
-                
-              return element;
-              
-              };
-              
-            const classAdd = ( element, classes ) => {
-            
-              classes
-              
-                .split ( ' ' )
-                
-                .forEach ( clss => {
-                
-                  element
-                  
-                    .classList
-                    
-                    .add ( clss );
-                    
-                  } );
-                  
-              };
-              
-            const classRemove = ( element ) => {
-            
-              const classList = element.classList
-              
-              classList.forEach ( clss => {
-              
-                const isCodeClass =
-                
-                  clss.startsWith ( `${ codeKey }-` );
-                  
-                if ( ! isCodeClass ) return; // continue
-                
-                classList.remove ( clss );
-                
-                } );
-                
-              };
-              
-            const config = {
-            
-              attributes : true,
-              subtree : true
-              
-              };
-              
-            const options = twc.malidc;
-            
-            const observer = new MutationObserver ( callback );
-            
-            const accountFrameCallback = options.accountFrameCallback;
-            
-            const attributeNameClass = `data-${ codeKey }-class`;
-            
             let dialogType;
             
             let element;
             
             let s;
             
+            const observer = new MutationObserver ( callback );
+            
+            callback = ( element ) => {
+                
+              const dataTest = element
+              
+                .getAttribute ( 'data-test' );
+                
+              switch ( dataTest ) {
+              
+                case 'create-account-password' :
+                
+                  value = `${ valuePrefix }` +
+                  
+                    `${ codeKey }-sign-up-password`;
+                    
+                  break;
+                  
+                case 'create-account-confirm-password' :
+                
+                  value = `${ valuePrefix }` +
+                  
+                    `${ codeKey }-sign-up-password-confirm`;
+                    
+                  break;
+                  
+                case 'login-password' :
+                
+                  value = `${ valuePrefix }` +
+                  
+                    `${ codeKey }-sign-in-password`;
+                    
+                  break;
+                  
+                }
+                
+              const parentElement = element
+              
+                .parentElement
+                
+                .parentElement;
+                
+              classRemove ( parentElement );
+              
+              classAdd ( parentElement, value );
+              
+              parentElement
+              
+                .setAttribute ( attributeNameClass, value );
+                
+              };
+              
             // set dialog type
             
             switch ( true ) {
             
+              case isSignUpJoin :
+              
+                dialogType = 'sign-up-join';
+                
+                break;
+                
               case isSignIn :
               
                 dialogType = 'sign-in';
@@ -353,8 +432,10 @@
                 
               // end code and login type class add
               
-            // begin title change
+            const title = ( ) => {
             
+              if ( isSignUpJoin ) return; // bail if join
+              
               const p = new RegExp ( '^\\[.+\\]$' );
               
               switch ( true ) {
@@ -399,8 +480,10 @@
                   
                 }
                 
-              // end title change
+              };
               
+            title ( );
+            
             // begin email class add
             
               let value = `${ codeKey }-email`;
@@ -409,7 +492,7 @@
               
               element = dcmnt.querySelector ( selector );
                 
-              if ( element != null )
+              if ( element !== null )
               
                 element
                 
@@ -431,55 +514,7 @@
               
                 .querySelectorAll ( selector )
                 
-                .forEach ( ( element ) => {
-                
-                  const dataTest = element
-                  
-                    .getAttribute ( 'data-test' );
-                    
-                  switch ( dataTest ) {
-                  
-                    case 'create-account-password' :
-                    
-                      value = `${ valuePrefix }` +
-                      
-                        `${ codeKey }-sign-up-password`;
-                        
-                      break;
-                      
-                    case 'create-account-confirm-password' :
-                    
-                      value = `${ valuePrefix }` +
-                      
-                        `${ codeKey }-sign-up-password-confirm`;
-                        
-                      break;
-                      
-                    case 'login-password' :
-                    
-                      value = `${ valuePrefix }` +
-                      
-                        `${ codeKey }-sign-in-password`;
-                        
-                      break;
-                      
-                    }
-                    
-                  const parentElement = element
-                  
-                    .parentElement
-                    
-                    .parentElement;
-                    
-                  classRemove ( parentElement );
-                  
-                  classAdd ( parentElement, value );
-                  
-                  parentElement
-                  
-                    .setAttribute ( attributeNameClass, value );
-                    
-                  } );
+                .forEach ( callback );
                   
               // end password class add
               
@@ -495,7 +530,7 @@
                     
                     [ 0 ];
                     
-                  if ( element != null )
+                  if ( element !== undefined )
                   
                     element
                     
@@ -543,7 +578,7 @@
                   
                   element = dcmnt.querySelector ( selector );
                   
-                  if ( element != null ) {
+                  if ( element !== null ) {
                   
                     s = `${ codeKey }-not-you`;
                     
@@ -571,7 +606,7 @@
                     
                   element = dcmnt.querySelector ( selector );
                   
-                  if ( element != null )
+                  if ( element !== null )
                   
                     element
                     
@@ -595,7 +630,7 @@
                     
                   element = dcmnt.querySelector ( selector );
                   
-                  if ( element != null ) {
+                  if ( element !== null ) {
                   
                     parentElement = element
                     
@@ -691,16 +726,30 @@
           
           observer.observe ( node, config );
           
-          } ); // end on load
+          };
           
+        const css = document
+        
+          .getElementsByTagName ( `x-${ codeKey }-style` )
+          
+          [ 0 ]
+          
+          .textContent;
+          
+        element
+        
+          .addEventListener ( 'load', callback );
+        
         };
         
       const observer = new MutationObserver ( callback );
       
       const selector = `#${ accountFrameIdValue }`;
       
-      const $element = $( selector );
+      const element = document
       
+        .querySelector ( selector );
+        
       /*
       
         if the account frame is already on the DOM, load. if not, then watch for
@@ -708,11 +757,13 @@
         
         */
         
-      if ( $element.length ) {
+      if ( element !== null ) {
       
         const baseUrl = `${ location.protocol }//${ location.host }`;
         
-        let url = $element.attr ( 'src' );
+        let url = element
+        
+          .getgAttribute ( 'src' );
         
         url = new URL ( url, baseUrl )
         
@@ -722,7 +773,7 @@
         
         if ( isSignIn )
         
-          load ( $element );
+          load ( element );
           
         }
         
@@ -730,7 +781,11 @@
       
       observer.observe ( document.body, config );
       
-      } );
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
       
     </script>
     
