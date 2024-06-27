@@ -8,7 +8,7 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -102,6 +102,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-06-26**
+
+  * wrap code in IIFE to keep code out of global space
+  * bumped version to 0.2.1
+  
 * **2024-06-26**
 
   * support for sign up join
