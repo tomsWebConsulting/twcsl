@@ -1,0 +1,77 @@
+<!--
+
+  begin capc account settings link
+  
+  License      : < https://tinyurl.com/s872fb68 >
+  
+  Version      : 0.1.0
+  
+  SS Versions  : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible   : Not Applicable
+  
+  Copyright    : 2024 Thomas Creedon
+                
+                 Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc === undefined ) // initialize twc global if needed
+    
+      window.twc = { };
+      
+    twc.casl = {
+    
+      url : '[ enter url here between single quotes replacing square brakets ]'
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `CAPC Account Settings Link v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    const twcCapcAccountSettingsLink = ( dcmnt, panelType ) => {
+    
+      // bail if not digital products
+      
+      if ( panelType != 'digital products' ) return;
+      
+      const url = twc.casl.url;
+      
+      const selector = '.twc-capc-account-settings a';
+      
+      dcmnt
+      
+        .querySelector ( selector )
+        
+        .setAttribute ( 'href', url );
+        
+      }
+      
+    </script>
+    
+  <!-- end capc account settings link -->
