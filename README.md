@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 318 effects. Each effect has it's own version number, code,
+twcsl contains 320 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -145,6 +145,12 @@ not necessarily designed to work together.
     
   * [Product Custom Form Text Field Max Length](Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length)
     
+  * [Customer Account Panel](Element/Customer%20Account%20Panel)
+    
+    * [Customer Account Panel Change](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change)
+      
+    * [CAPC Account Settings Link](Element/Customer%20Account%20Panel/CAPC%20Account%20Settings%20Link)
+      
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
     
   * [Product Quick View Form Text Field Max Length](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length)
@@ -414,8 +420,6 @@ not necessarily designed to work together.
   * [Blocks Boilerplate](v7.1/Blocks%20Boilerplate)
     
   * [Scroll to Top of Store Category Product Grid](v7.1/Scroll%20to%20Top%20of%20Store%20Category%20Product%20Grid)
-    
-  * [Customer Account Panel Change](v7.1/Customer%20Account%20Panel%20Change)
     
   * [Hide Blog Post Tags](v7.1/Hide%20Blog%20Post%20Tags)
     
