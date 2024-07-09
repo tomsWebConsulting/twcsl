@@ -1,0 +1,95 @@
+<!--
+
+  begin capc greeting change
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : customer account panel change
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc === undefined ) // initialize twc global if needed
+    
+      window.twc = { };
+      
+    twc.cgc = {
+    
+      searchText : '[ enter search text here between single quotes replacing square brakets ]',
+      
+      replaceText : '[ enter replace text here between single quotes replacing square brakets ]'
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `CAPC Greeting Change v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcCapcGreetingChange = ( dcmnt, panelType ) => {
+    
+      // bail if not account
+      
+      if ( panelType != 'account' ) return;
+      
+      const selector = '.twc-capc-greeting span';
+      
+      const element = dcmnt
+      
+        .querySelector ( selector );
+        
+      if ( element === null ) return; // bail if no element
+      
+      const options = twc.cgc;
+      
+      const text = element
+      
+        .textContent
+        
+        .replaceAll (
+        
+          options.searchText,
+          
+          options.replaceText
+          
+          );
+      
+      element.textContent = text;
+      
+      }
+      
+    </script>
+    
+  <!-- end capc account settings link -->
