@@ -32,7 +32,7 @@ Change the Customer Account Panel greeting.
   sure to continue on with the rest of the steps.
   
 * In the **customer account panel change** code set accountFrameCallback to
-  twcCapcAccountSettingsLink.
+  twcCapcGreetingChange.
   
   ```javascript
       accountFrameCallback : twcCapcGreetingChange
