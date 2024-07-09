@@ -1,7 +1,11 @@
 # CAPC Account Settings Link
 
 ### [License][1]
-    
+
+### Synopsis
+
+Change the Customer Account Panel Account Settings link URL.
+
 ### Version 0.1.0
 
 #### SS Versions
