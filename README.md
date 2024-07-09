@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 320 effects. Each effect has it's own version number, code,
+twcsl contains 321 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -150,6 +150,8 @@ not necessarily designed to work together.
     * [Customer Account Panel Change](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change)
       
     * [CAPC Account Settings Link](Element/Customer%20Account%20Panel/CAPC%20Account%20Settings%20Link)
+      
+    * [CAPC Greeting Change](Element/Customer%20Account%20Panel/CAPC%20Greeting%20Change)
       
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
     
