@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.3.0
+### Version 0.4.0
 
 #### SS Versions
 
@@ -52,18 +52,20 @@ If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
 not immune to breakage but I think my method will break at a slower rate.
 
-## accountFrameCallback Example
+## Callbacks
 
-You can optionally create a [callback][6] function to further customize the
-processing of the sign in dialog.
+You can optionally add [callback][6] functions to further customize the
+processing of the account panel.
 
-Following is example code. Place your callback before the customer account panel
-change code.
+Your callbacks must accept a document element and string parameter.
+
+Following is example code. Place your callbacks before the customer account
+panel change code. Note the use of var.
 
 ```html
 <script>
 
-  const twcCapcLog = ( dcmnt, panelType ) => {
+  var twcCapcLog = ( dcmnt, panelType ) => {
   
     console.log ( 'twcCapc dcmnt : ', dcmnt );
     
@@ -75,12 +77,8 @@ change code.
 
 ```
 
-Then in the customer account panel change code set accountFrameCallback to the
-following.
-
-```html
-      accountFrameCallback : twcCapcLog
-```
+Then in the customer account panel change code set callbacks per the
+instructions in the code.
 
 ## Make a Donation
 
@@ -88,6 +86,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2024-07-08**
+
+  * support multiple callbacks
+  * bumped version to 0.4.0
+  
 * **2024-06-24**
 
   * support digital products panel

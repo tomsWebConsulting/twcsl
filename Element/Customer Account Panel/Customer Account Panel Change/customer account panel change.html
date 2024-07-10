@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.3.0
+  Version      : 0.4.0
   
   SS Versions  : 7.1, 7.0
   
@@ -38,23 +38,31 @@
         
         },
         
-      /*
+      callbacks : [
       
-        accountFrameCallback is an optional custom function that can be used for
-        further customization of the customer account panel. replace undefined
-        with the name of your custom function
+        /*
         
-        your callback must accept a document object and panel type ( string )
-        parameter. i suggest using dcmnt as the first parameter to remind you
-        that you are working with a document object but not the usual document
-        you may be familiar with. otherwise in most cases you can use dcmnt in
-        place of document. they both pretty much have the same behaviour. for
-        the panel type parameter i suggest using panelType
+          callbacks are optional custom functions that can be used for further
+          customization of the customer account panel
+          
+          your callback must accept a document object and panel type ( string )
+          parameter. i suggest using dcmnt as the first parameter to remind you
+          that you are working with a document object but not the usual document
+          you may be familiar with. otherwise in most cases you can use dcmnt in
+          place of document. they both pretty much have the same behaviour. for
+          the panel type parameter i suggest using panelType
+          
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. enter
+          your callback where indicated. you can repeat this for as many
+          callbacks as you want to add
+          
+          */
+          
+        // '[ enter your callback name here replacing square brackets ]',
         
-        */
+        ]
         
-      accountFrameCallback : undefined
-      
       };
       
     </script>
@@ -65,7 +73,7 @@
   
     ( ( ) => {
     
-      const version = '0.3.0';
+      const version = '0.4.0';
       
       const s = `Customer Account Panel Change v${ version }
       
@@ -191,6 +199,26 @@
                   
                 if ( b ) return; // bail if no button with title
                 
+                const callback = ( callback ) => {
+                
+                  try {
+                  
+                    callback = window [ callback ];
+                    
+                    callback ( dcmnt, panelType );
+                    
+                    } catch ( error ) {
+                    
+                      const s =
+                      
+                        `${ codeKey } callback '${ callback }' error : `;
+                        
+                      console.error ( s, error );
+                      
+                      }
+                      
+                  };
+                  
                 const closeClassAdd = ( ) => {
                 
                   const element = titleElement
@@ -309,14 +337,6 @@
                   
                 let panelType;
                 
-                b = options
-                
-                  .accountFrameCallback
-                  
-                  !==
-                  
-                  undefined;
-                  
                 setPanelType ( );
                 
                 headerClassAdd ( );
@@ -459,12 +479,12 @@
                     
                   }
                   
-                if ( b )
+                options
                 
-                  options
+                  .callbacks
                   
-                    .accountFrameCallback ( dcmnt, panelType );
-                    
+                  .forEach ( callback );
+                  
                 };
                 
               mutations.forEach ( callback );
