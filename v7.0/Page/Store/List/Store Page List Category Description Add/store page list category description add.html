@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.6.0
+      Version       : 0.6.1
       
       SS Version    : 7.0
       
@@ -32,7 +32,9 @@
       
       Dependencies  : twcsl
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Copyright     : 2021-2024 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       */
       
@@ -86,13 +88,21 @@
       
     // do not change anything below, there be the borg here
     
-    const version = '0.6.0';
+    const version = '0.6.1';
     
-    const s = `Store Page List Category Description Add v${ version }, ` +
+    const s = `
     
-      'License < https://tinyurl.com/s872fb68 >, ' +
+      Store Page List Category Description Add v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
       
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+      Copyright 2021-2024 Thomas Creedon
+      
+      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
       
     console.log ( s );
     

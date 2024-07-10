@@ -8,7 +8,7 @@ Add a category description to Store category pages.
 
 ### Version
 
-  * 0.6.0
+  * 0.6.1
 
 #### SS Version
 
@@ -57,6 +57,11 @@ Please consider [making a donation][15].
 
 ## Changes
 
+* **2024-07-10**
+
+  * fix for description floating after grid
+  * bumped version to 0.6.1
+  
 * **2023-10-01**
 
   * add support for Wells template
