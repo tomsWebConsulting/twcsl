@@ -6,7 +6,7 @@
 
 Change the Customer Account Panel Account Settings link URL.
 
-### Version 0.1.0
+### Version 0.1.1
 
 #### SS Versions
 
@@ -49,12 +49,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2022-12-06**
+* **2024-07-08**
 
-  * add variable for CSS customization
-  * fix for changes SS made that broke the code
-  * bumped version to 0.2.0
-  -->
+  * replace const with var for twcCapcAccountSettingsLink for v0.4.0 capc
+  * bumped version to 0.1.1
+  
 * **2024-07-02**
 
   * initial version
