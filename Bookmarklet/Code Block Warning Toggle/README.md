@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Toggle code block script warnings of and on.
+Toggle code block script warnings off and on.
 
 ### Version
 
