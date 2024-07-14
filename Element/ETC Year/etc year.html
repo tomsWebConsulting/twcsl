@@ -1,0 +1,61 @@
+<script>
+
+  /*
+  
+    begin etc year
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : element text change
+    
+    Copyright     : 2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `
+      
+        ETC Year v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcEtcYear = ( ) => {
+    
+      const year = new Date ( )
+      
+        .getFullYear ( );
+        
+      return year;
+      
+      };
+      
+    /* end etc year */
+    
+  </script>
