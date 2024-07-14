@@ -1,0 +1,210 @@
+<!--
+
+  begin element text change
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.1.0
+  
+  SS Versions : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible  : Yes
+  
+  Note        : if the element returned by a selector has event listeners this
+                code may break the functionality of the element. modifying
+                something relativley simple like a text block is not likely to
+                be an issue. something like a gallery block or gallery section
+                may
+  
+  Copyright   : 2024 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.etc = {
+    
+      selectorTextSearchReplaceMap : {
+      
+        /*
+        
+          if you are using a callback for replaceText it must return a value
+          that can be coerced to a string
+          
+          */
+          
+        /*
+        
+          following is an example data structure
+          
+          copy the example data structure below and paste after the example data
+          structure. remove the forward slash asterisk and asterisk forward
+          slash lines from before and after the example data structure. repeat
+          for as element where you want to search and replace text. this has
+          been done once initially
+          
+          */
+          
+        /*
+        
+        '[ enter selector here between single quotes replacing square brackets ]' : {
+        
+          searchText : '[ enter search text here between single quotes replacing square brackets ]',
+          
+          replaceText : '[ enter replacement text here between single quotes replacing square brackets, if using a callback replace the single quotes as well ]'
+          
+          },
+          
+        */
+        
+        '[ enter selector here between single quotes replacing square brackets ]' : {
+        
+          searchText : '[ enter search text here between single quotes replacing square brackets ]',
+          
+          replaceText : '[ enter replacement text here between single quotes replacing square brackets, if using a function replace the single quotes as well ]'
+          
+          },
+          
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `
+      
+        Element Text Change v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const codeKey = 'twc-etc';
+        
+        const map = twc
+        
+          .etc
+          
+          .selectorTextSearchReplaceMap;
+          
+        for ( const [ selector, value ] of Object.entries ( map ) ) {
+        
+          const callback = ( element ) => {
+          
+            let html = element.innerHTML;
+            
+            if ( isSearchRegex ) {
+            
+              const b = ! s.test ( html );
+              
+              if ( b ) return; // continue if text no match
+              
+              html = html
+              
+                .replace ( s, r );
+                
+              } else
+              
+                html = html
+                
+                  .replaceAll ( s, r );
+                  
+            element
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            };
+            
+          let isSearchRegex = false;
+          
+          let s = value.searchText;
+          
+          const m = s.match ( /\/(.+)\/(.*)/ );
+          
+          let r = value.replaceText;
+          
+          if ( m !== null ) { // m appears to be a regex pattern
+          
+            try {
+            
+              s = new RegExp ( m [ 1 ], m [ 2 ] );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } regular expression parse error : `;
+                
+                console.log ( s, error );
+                
+                continue; // continue on error
+                
+                }
+                
+            isSearchRegex = true;
+            
+            }
+            
+          if ( typeof r == 'function' )
+          
+            try {
+            
+              r = r ( );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } replace text function error : `;
+                
+                console.log ( s, error );
+                
+                continue; // continue on error
+                
+                }
+                
+          document
+          
+            .querySelectorAll ( selector )
+            
+            .forEach ( callback );
+            
+          }
+          
+        };
+        
+      addEventListener ( 'DOMContentLoaded', callback );
+      
+      } ) ( );
+      
+    </script>
+  
+  <!-- end element text change -->
