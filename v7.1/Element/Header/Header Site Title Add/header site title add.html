@@ -1,0 +1,127 @@
+<!--
+
+  begin header site title add
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.1.0
+  
+  SS Version  : 7.1
+  
+  Fluid
+  Engine
+  Compatible  : Not Applicable
+  
+  Copyright   : 2024 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .header-title {
+    
+      display : flex;
+      flex-direction : column;
+      gap : 1.2vw;
+      
+      }
+      
+    body.sqs-is-page-editing .header-title-logo ~ .header-title-text {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `
+      
+        Header Site Title Add v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const titleClassName = 'header-title-text';
+        
+        const element = document
+        
+          .querySelector ( `.${ titleClassName }` );
+          
+        if ( element !== null ) return; // bail if element exists
+        
+        const callback = ( element ) => {
+        
+          element
+          
+            .insertAdjacentHTML ( 'beforeend', html );
+            
+          };
+          
+        const codeKey = 'twc-hsta';
+        
+        const selector = '.header-title';
+        
+        let html = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .website
+          
+          .siteTitle
+          
+          .split ( ' ' )
+          
+          .map ( s => `<span>${ s }</span>` )
+          
+          .join ( ' ' );
+          
+        html = `
+        
+          <div class="${ titleClassName } ${ codeKey }">
+          
+            <a id="site-title" href="/" data-animation-role="header-element">
+            
+              ${ html }
+              
+              </a>
+              
+            </div>
+            
+          `;
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      addEventListener ( 'DOMContentLoaded', callback );
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end header site title add -->
