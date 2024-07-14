@@ -28,7 +28,8 @@ Auto click right arrow of Auto Layout section.
 
 ## Install
 
-* Add the following to Website > Website Tools > Code Injection > HEADER.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -52,7 +53,7 @@ Auto click right arrow of Auto Layout section.
       effect.
       
     * Add code from file **[section auto layout right arrow auto
-      click.html][5]** to Website > Website Tools > Code Injection > FOOTER.
+      click.html][5]** to Website > Pages > Website Tools > Code Injection > FOOTER(.+)
       Please see [Add code to code injection][7]. Read the code for any
       instructions within.
 
@@ -62,7 +63,7 @@ Auto click right arrow of Auto Layout section.
 
   * Global
     
-    For a global effect add the following to Website > Website Tools >
+    For a global effect add the following to Website > Pages > Website Tools >
     Code Injection > HEADER.
     
     ```html
