@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Hide afterpay when price is greater than or equal price.
+Return current year.
 
 ### Version
 
@@ -69,7 +69,8 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change#element-text-change
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change#element-text-change
 [6]: etc%20year.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
