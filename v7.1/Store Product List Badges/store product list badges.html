@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -137,14 +137,146 @@
   
     $( ( ) => {
     
+      const version = '0.1.1';
+      
+      const s = `
+      
+        Store Product List Badges v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2023-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
       if ( ! twcsl.page.store.list.is ) return; // bail if not list
       
-      const url = `${ twcsl.page.store.urlSlug }?format=json`;
-      
-      $.getJSON ( url, function ( data ) {
+      const callback = ( data ) => {
       
         const codeKey = 'twc-splb';
         
+        const eachCallback = function ( ) {
+          
+          const callback = function ( ) {
+          
+            const text = $( this )
+            
+              .text ( )
+              
+              .trim ( );
+              
+            const li = `<li>
+            
+              ${ text }
+              
+              </li>
+              
+              `;
+              
+            $ul.append ( li );
+            
+            }
+            
+          const forEachCallback = ( text ) => {
+            
+              const li = `<li>
+              
+                ${ text }
+                
+                </li>
+                
+                `;
+                
+              $ul.append ( li );
+              
+            };
+            
+          const selector = `.${ codeKey }-item`;
+          
+          const tagCallback = ( tag ) => {
+            
+            tag = tag
+            
+              .replace ( `tag-${ codeKey }-`, '' )
+              
+              .replaceAll ( '-', '[ -]' );
+              
+            tag = new RegExp ( tag, 'i' );
+            
+            tag = tags
+          
+            .filter ( t => t.match ( tag ) != null )
+            
+            [ 0 ];
+            
+            return tag;
+            
+            };
+            
+          const $this = $( this );
+          
+          let $ul = $( selector, $this);
+          
+          if ( $ul.length ) return true; // continue
+          
+          $ul = $( `<ul class="${ codeKey }-item">` );
+          
+          $( '.product-mark', $this )
+          
+            .each ( callback );
+            
+          // custom badges
+          
+          $this
+          
+            .attr ( 'class' )
+            
+            .split ( ' ' )
+            
+            .filter ( clss => clss.startsWith ( `tag-${ codeKey }-` ) )
+            
+            .map ( tagCallback )
+            
+            .forEach ( forEachCallback );
+            
+          const b = ! $ul
+          
+            .children ( )
+            
+            .length;
+            
+          if ( b ) return true; // continue
+          
+          $( '.grid-image', $this )
+          
+            .append ( $ul );
+            
+          }
+          
+        const mapCallback = function ( ) {
+          
+          const selector = '.products.collection-content-wrapper .grid-item';
+          
+          const $this = $( this );
+          
+          let $element = $this
+          
+            .parents ( selector );
+            
+          const b = ! $element.length;
+          
+          if ( b ) $element = $this;
+          
+          return $element;
+          
+          }
+          
         const tags = data
         
           .collection
@@ -392,112 +524,18 @@
           
         $( selector )
         
-          .map ( function ( ) {
+          .map ( mapCallback )
           
-            const selector = '.products.collection-content-wrapper .grid-item';
-            
-            const $this = $( this );
-            
-            let $element = $this
-            
-              .parents ( selector );
-              
-            const b = ! $element.length;
-            
-            if ( b ) $element = $this;
-            
-            return $element;
-            
-            } )
-            
-          .each ( function ( ) {
+          .uniqueSort ( )
           
-            const $this = $( this );
-            
-            const $ul = $( `<ul class="${ codeKey }-item">` );
-            
-            selector = '.product-mark';
-            
-            $( selector, $this ).each ( function ( ) {
-            
-              const text = $( this )
-              
-                .text ( )
-                
-                .trim ( );
-                
-              const li = `<li>
-              
-                ${ text }
-                
-                </li>
-                
-                `;
-                
-              $ul.append ( li );
-              
-              } );
-              
-            // custom badges
-            
-            $this
-            
-              .attr ( 'class' )
-              
-              .split ( ' ' )
-              
-              .filter ( clss => clss.startsWith ( `tag-${ codeKey }-` ) )
-              
-              .map ( tag => {
-              
-                tag = tag
-                
-                  .replace ( `tag-${ codeKey }-`, '' )
-                  
-                  .replaceAll ( '-', '[ -]' );
-                  
-                tag = new RegExp ( tag, 'i' );
-                
-                tag = tags
-              
-                .filter ( t => t.match ( tag ) != null )
-                
-                [ 0 ];
-                
-                return tag;
-                
-                } )
-                
-              .forEach ( text => {
-              
-                const li = `<li>
-                
-                  ${ text }
-                  
-                  </li>
-                  
-                  `;
-                  
-                $ul.append ( li );
-                
-              } );
-              
-            const b = $ul
-            
-              .children ( )
-              
-              .length;
-              
-            if ( ! b ) return true; // continue
-            
-            $( '.grid-image', $this )
-            
-              .append ( $ul );
-              
-            } );
-            
-        } );
+          .each ( eachCallback );
+          
+        };
         
+      const url = `${ twcsl.page.store.urlSlug }?format=json`;
+      
+      $.getJSON ( url, callback );
+      
       } );
       
     </script>

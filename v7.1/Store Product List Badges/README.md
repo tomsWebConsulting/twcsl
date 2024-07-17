@@ -7,30 +7,44 @@
 Replace Squarespace v7.1 native badge with an old style badge from some of the
 v7.0 templates.
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.1
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
+
+#### Dependencies
+
+  * [Squarespace plan][2] that supports [JavaScript][3].
+  
+  * [Tom's Web Consulting Squarespace Library][4]
 
 ---
 
 ## Install
 
-* Install [twcsl][2]. After you install twcsl be sure to continue on with the
+* Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Page Specific
+* Options
 
-  * Add code from file **[store product list badges.html][3]** to
-    Store Settings > Advanced > Page Header Code Injection for the store page.
-    Please see [per-page code injection][4].
-    
-* Site-wide
-
-  * Add code from file **[store product list badges.html][3]** to Website >
-    Pages > Website Tools > Code Injection > FOOTER.
-    
+  * Page Specific
+  
+    * Add code from file **[store product list badges.html][6]** to
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Please see [per-page code injection][7].
+      
+  * Site-wide
+  
+    * Add code from file **[store product list badges.html][6]** to Website >
+      Pages > Website Tools > Code Injection > FOOTER.
+      
 * Read the code for any instructions within.
 
 ## Custom Badges
@@ -42,20 +56,19 @@ You will now see a pre-order badge on the product list page.
 
 ## Demo
 
-You can see a [demo of this effect here][5].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2021-06-15**
+* **2024-07-17**
 
-  * change code to work on v7.1 and v7.0 (Brine)
-  * use twcsl
-  * bumped version to 0.1d2
-  -->
+  * fix for duplicate twc-splb-item elements per product
+  * bumped version to 0.1.1
+  
 * **2023-05-29**
 
   * initial version
@@ -63,8 +76,11 @@ Please consider [making a donation][6].
 **All trademarks are property of their respective owners.**
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl#install-options
-[3]: store%20product%20list%20badges.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[5]: https://toms-web-consulting-demos.squarespace.com/store-product-list-badges?password=twcdemos
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://github.com/tomsWebConsulting/twcsl
+[5]: https://github.com/tomsWebConsulting/twcsl#install-options
+[6]: store%20product%20list%20badges.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://toms-web-consulting-demos.squarespace.com/store-product-list-badges?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
