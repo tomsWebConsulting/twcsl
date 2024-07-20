@@ -109,6 +109,8 @@ Add page section toggle effect to pages.
       <x-twc-psst data-toggle-justify="center" />
       ```
       
+      Allowed value are from the CSS [justify-content][8] property.
+      
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
   
@@ -126,11 +128,11 @@ described previously.
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -199,5 +201,6 @@ Please consider [making a donation][9].
 [5]: page%20sections%20slide%20toggle.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+[9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
