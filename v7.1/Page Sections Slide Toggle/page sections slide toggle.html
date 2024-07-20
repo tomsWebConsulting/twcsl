@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.5.2
+  Version       : 0.6.0
   
   SS Version    : 7.1
   
@@ -16,11 +16,10 @@
   
   Notes         : the code is comprised of several tags. all are needed for the
                   full effect to work
-                  
-                  this effect is not active in SS Preview. to test it use
-                  private browsing < https://bit.ly/3f6lhq2 >
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
   
@@ -28,9 +27,13 @@
   
     html:not( .squarespace-damask ) #page {
     
-      --twc-psst-toggle-thickness : 3px; /* thickness of the toggle lines */
+      /* toggle justification ( alignment ) */
       
-      --twc-psst-toggle-size : 10px; /* size of the toggle */
+      --twc-psst-toggle-justify : flex-start;
+      
+      --twc-psst-toggle-thickness : 3px; /* toggle lines thickness */
+      
+      --twc-psst-toggle-size : 10px; /* toggle size */
       
       }
       
@@ -96,12 +99,16 @@
       
         {
         
-          display : block;
-          height : var( --twc-psst-toggle-size );
-          width : var( --twc-psst-toggle-size );
+          display : flex;
           
           }
           
+      html:not( .squarespace-damask ) x-twc-psst {
+        
+        justify-content : var( --twc-psst-toggle-justify );
+        
+        }
+        
       html:not( .squarespace-damask ) x-twc-psst-close {
       
         padding: 10px;
@@ -119,7 +126,7 @@
             border-bottom-width : var( --twc-psst-toggle-thickness );
             border-color : var( --twc-psst-toggle-color );
             border-right-width : var( --twc-psst-toggle-thickness );
-            height : 100%;
+            height : var( --twc-psst-toggle-size );
             
             -webkit-transform : rotate( 45deg );
             -ms-transform : rotate( 45deg );
@@ -127,7 +134,7 @@
             
             transition : transform 0.2s;
             
-            width : 100%;
+            width : var( --twc-psst-toggle-size );
             
             }
             
@@ -154,6 +161,11 @@
             background-color : var( --twc-psst-toggle-color );
             height : var( --twc-psst-toggle-thickness );
             position : absolute;
+            
+            -webkit-transform : translateY( var( --twc-psst-toggle-size ) );
+            -ms-transform : translateY( var( --twc-psst-toggle-size ) );
+            transform : translateY( var( --twc-psst-toggle-size ) );
+            
             transition : transform 0.2s;
             width : var( --twc-psst-toggle-size );
             
@@ -161,7 +173,10 @@
             
         html:not( .squarespace-damask ) x-twc-psst .plus.vertical-line {
         
-          transform : rotate( 90deg );
+          -webkit-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
+          -ms-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
+          transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
+          
           transition : transform 0.2s;
           
           }
@@ -171,7 +186,9 @@
         
           {
           
-            transform : unset;
+            -webkit-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
+            -ms-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
+            transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
             
             }
             
@@ -185,13 +202,21 @@
   
     $( ( ) => {
     
-      const version = '0.5.2';
+      const version = '0.6.0';
       
-      const s = `Page Sections Slide Toggle v${ version }, ` +
+      const s = `
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        Page Sections Slide Toggle v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        © 2021-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
         
       console.log ( s );
       
@@ -237,13 +262,15 @@
               
                 .slideToggle ( );
                 
-          window.dispatchEvent ( new Event ( 'resize' ) );
+          dispatchEvent ( new Event ( 'resize' ) );
           
           }
           
         const selector = '.page-section';
         
         const $this = $( this );
+        
+        const justify = $this.attr ( 'data-toggle-justify' );
         
         let color = $this.attr ( 'data-toggle-color' );
         
@@ -276,6 +303,10 @@
           .slice ( 0, count )
           
           .css ( 'display', 'none' );
+          
+        if ( justify !== undefined )
+        
+          $this.css ( '--twc-psst-toggle-justify', justify );
           
         }
         

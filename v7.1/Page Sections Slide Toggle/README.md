@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.5.2
+  * 0.6.0
 
 #### SS Version
 
@@ -66,36 +66,49 @@ Add page section toggle effect to pages.
     <x-twc-psst />
     ```
     
-    You can add a **data-toggle-color** attribute to the **&lt;x-twc-psst
-    /&gt;** tag to override the default color the code picks for the toggle
-    icon. An example.
-    
-    ```html
-    <x-twc-psst data-toggle-color="red" />
-    ```
-    
-    You can add a **data-section-count** attribute to the **&lt;x-twc-psst
-    /&gt;** tag to toggle multiple sections. The default value when this
-    attribute is not used is one. This effect does not check that you are using
-    resonable values in the context of what you are building. If the wrong
-    values are used it can cause unusual results. A tag example.
-    
-    ```html
-    <x-twc-psst data-section-count="2" />
-    ```
-    
-    You can add a **data-toggle-icon** attribute to the **&lt;x-twc-psst
-    &gt;&lt; /&gt;** tag to override the default toggle icon. An
-    example.
-    
-    ```html
-    <x-twc-psst data-toggle-icon="plus" />
-    ```
-    
     This code block will become the toggle icon. Generally you will want to
     place the code block in horizontal alignment with the previous mentioned
     text block.
     
+  * Optional Attributes
+  
+    Add attributes to the **&lt;x-twc-psst /&gt;** tag.
+    
+    * data-section-count
+    
+      Toggle multiple sections. The default value when this attribute is not
+      used is one. This effect does not check that you are using resonable
+      values in the context of what you are building. If the wrong values are
+      used it can cause unusual results. An example.
+      
+      ```html
+      <x-twc-psst data-section-count="2" />
+      ```
+      
+    * data-toggle-color
+    
+      Override the default color the code picks for the toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-color="red" />
+      ```
+      
+    * data-toggle-icon
+    
+      Override the default toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-icon="plus" />
+      ```
+      
+    * data-toggle-justify
+    
+      Override the default justification of the toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-justify="center" />
+      ```
+      
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
   
@@ -121,6 +134,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2024-07-20**
+
+  * adjust plus icon a bit for better alignment
+  * add toggle icon justification feature
+  * bumped version to 0.6.0
+  
 * **2024-06-12**
 
   * fix duration check
