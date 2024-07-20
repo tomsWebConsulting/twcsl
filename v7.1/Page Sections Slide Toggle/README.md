@@ -109,7 +109,7 @@ Add page section toggle effect to pages.
       <x-twc-psst data-toggle-justify="center" />
       ```
       
-      Allowed value are from the CSS [justify-content][8] property.
+      Values are from the CSS [justify-content][8] property.
       
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
