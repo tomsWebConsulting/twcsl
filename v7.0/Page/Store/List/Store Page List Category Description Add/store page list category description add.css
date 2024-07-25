@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.6.1
+  Version       : 0.6.2
   
   SS Version    : 7.0
   
@@ -34,7 +34,7 @@
   
     clear : both;
     margin-bottom : 25px;
-    width : calc( 100% + 15px );
+    width : calc( ~"100% + 15px" );
     
     }
     
@@ -54,7 +54,7 @@
         box-sizing : border-box;
         clear : none;
         float : left;
-        width : calc( 85% + 15px );
+        width : calc( ~"85% + 15px" );
         
         }
         
