@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.6.0
+  * 0.7.0
 
 #### SS Version
 
@@ -60,19 +60,46 @@ Add page section toggle effect to pages.
   
   * Add a text block with text to be used as a label for the section.
   
-  * Add a code block and add the following.
+  * Add a code block and add one of the following.
   
-    ```html
-    <x-twc-psst />
-    ```
+    * Arrow
     
-    This code block will become the toggle icon. Generally you will want to
-    place the code block in horizontal alignment with the previous mentioned
-    text block.
+      ```html
+      <x-twc-psst>
+      
+        <svg class="twc-psst-arrow">
+                
+          <use xlink:href="#twc-psst-arrow">
+                  
+            </use>
+            
+          </svg>
+          
+        </x-twc-psst>
+      ```
+      
+    * Plus
+    
+      ```html
+      <x-twc-psst>
+      
+        <svg class="twc-psst-plus">
+        
+          <use xlink:href="#twc-psst-plus-horizontal" />
+          
+          <use xlink:href="#twc-psst-plus-vertical" />
+          
+          </svg>
+          
+        </x-twc-psst>
+      ```
+      
+    Generally you will want to place the code block in horizontal alignment with
+    the previous mentioned text block.
     
   * Optional Attributes
   
-    Add attributes to the **&lt;x-twc-psst /&gt;** tag.
+    Add attributes to the **&lt;x-twc-psst&gt;** opening tag.
     
     * data-section-count
     
@@ -82,34 +109,8 @@ Add page section toggle effect to pages.
       used it can cause unusual results. An example.
       
       ```html
-      <x-twc-psst data-section-count="2" />
+      <x-twc-psst data-section-count="2">
       ```
-      
-    * data-toggle-color
-    
-      Override the default color the code picks for the toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-color="red" />
-      ```
-      
-    * data-toggle-icon
-    
-      Override the default toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-icon="plus" />
-      ```
-      
-    * data-toggle-justify
-    
-      Override the default justification of the toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-justify="center" />
-      ```
-      
-      Values are from the CSS [justify-content][8] property.
       
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
@@ -119,12 +120,41 @@ Add page section toggle effect to pages.
 
 ## x-twc-psst-close tag
 
-The **&lt;x-twc-psst-close /&gt;** tag can be added to a code block at the end
-of a section to close the section. This can be useful with long sections so you
+The **&lt;x-twc-psst-close&gt;** tag can be added to a code block at the end
+of a section to close the section. This can be useful for long sections so you
 don't have to scroll up to click and close the section.
 
-This tag understands the data-toggle-color and data-toggle-icon attributes
-described previously.
+* Arrow
+
+  ```html
+  <x-twc-psst-close>
+  
+    <svg class="twc-psst-arrow">
+            
+      <use xlink:href="#twc-psst-arrow">
+              
+        </use>
+        
+      </svg>
+      
+    </x-twc-psst-close>
+  ```
+  
+* Plus
+
+  ```html
+  <x-twc-psst-close>
+  
+    <svg class="twc-psst-plus">
+    
+      <use xlink:href="#twc-psst-plus-horizontal" />
+      
+      <use xlink:href="#twc-psst-plus-vertical" />
+      
+      </svg>
+      
+    </x-twc-psst-close>
+  ```
 
 ## Demo
 
@@ -136,6 +166,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-08-08**
+
+  * make code work in editor
+  * fix for summary blocks not laying out properly
+  * bumped version to 0.7.0
+  
 * **2024-07-20**
 
   * adjust plus icon a bit for better alignment
@@ -204,3 +240,32 @@ Please consider [making a donation][10].
 [8]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 [9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+
+--
+
+    * data-toggle-color
+    
+      Override the default color the code picks for the toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-color="red" />
+      ```
+      
+    * data-toggle-icon
+    
+      Override the default toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-icon="plus" />
+      ```
+      
+    * data-toggle-justify
+    
+      Override the default justification of the toggle icon. An example.
+      
+      ```html
+      <x-twc-psst data-toggle-justify="center" />
+      ```
+      
+      Values are from the CSS [justify-content][8] property.
+      

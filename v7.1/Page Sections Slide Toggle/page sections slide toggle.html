@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.6.0
+  Version       : 0.7.0
   
   SS Version    : 7.1
   
@@ -25,15 +25,15 @@
   
   <style>
   
-    html:not( .squarespace-damask ) #page {
+    #page {
     
+      --twc-psst-toggle-size : 1em; /* toggle size */
+      
+      --twc-psst-toggle-color : unset; /* toggle color */
+      
       /* toggle justification ( alignment ) */
       
       --twc-psst-toggle-justify : flex-start;
-      
-      --twc-psst-toggle-thickness : 3px; /* toggle lines thickness */
-      
-      --twc-psst-toggle-size : 10px; /* toggle size */
       
       }
       
@@ -59,25 +59,27 @@
   
   <style>
   
-    html:not( .squarespace-damask ) #page {
+    body:not( .sqs-is-page-editing ) #page {
     
-      --twc-psst-section-display-webkit-box : none;
-      --twc-psst-section-display-ms-flexbox : none;
-      --twc-psst-section-display : none;
+      --twc-psst-section-visibility : none;
       
       }
       
-    html:not( .squarespace-damask ) #page .page-section:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    body.sqs-is-page-editing #page .page-section {
     
-      display : var( --twc-psst-section-display-webkit-box );
-      display : var( --twc-psst-section-display-ms-flexbox );
-      display : var( --twc-psst-section-display );
+      display : flex !important;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) #page .page-section:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    
+      visibility : var( --twc-psst-section-visibility );
       
       }
       
     /* remove some vertical spacing */
     
-    html:not( .squarespace-damask ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    body:not( .sqs-is-page-editing ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
     
       min-height : unset;
       
@@ -85,8 +87,25 @@
       
     /* begin toggles */
     
-      html:not( .squarespace-damask ) x-twc-psst-close,
-      html:not( .squarespace-damask ) .twc-psst
+      body:not( .sqs-is-page-editing ) .twc-psst .sqs-block-code .sqs-block-content {
+      
+        height : 100%;
+        
+        }
+        
+      x-twc-psst svg,
+      x-twc-psst-close svg
+      
+        {
+        
+          fill : var( --twc-psst-toggle-color );
+          height : var( --twc-psst-toggle-size );
+          width : calc( var( --twc-psst-toggle-size ) * 1.66 );
+          
+          }
+          
+      body:not( .sqs-is-page-editing ) x-twc-psst-close,
+      body:not( .sqs-is-page-editing ) .twc-psst
       
         {
         
@@ -94,58 +113,26 @@
           
           }
           
-      html:not( .squarespace-damask ) x-twc-psst,
-      html:not( .squarespace-damask ) x-twc-psst-close
+      x-twc-psst,
+      x-twc-psst-close
       
         {
         
+          align-items : center;
           display : flex;
+          height : 100%;
+          justify-content : var( --twc-psst-toggle-justify );
           
           }
           
-      html:not( .squarespace-damask ) x-twc-psst {
-        
-        justify-content : var( --twc-psst-toggle-justify );
-        
-        }
-        
-      html:not( .squarespace-damask ) x-twc-psst-close {
-      
-        padding: 10px;
-        
-        }
-        
       /* begin arrow */
       
-        html:not( .squarespace-damask ) x-twc-psst .arrow,
-        html:not( .squarespace-damask ) x-twc-psst-close .arrow
+        body:not( .sqs-is-page-editing ) x-twc-psst-close .twc-psst-arrow,
+        body:not( .sqs-is-page-editing ) .twc-psst--open x-twc-psst .twc-psst-arrow
         
           {
           
-            border : 0 solid red;
-            border-bottom-width : var( --twc-psst-toggle-thickness );
-            border-color : var( --twc-psst-toggle-color );
-            border-right-width : var( --twc-psst-toggle-thickness );
-            height : var( --twc-psst-toggle-size );
-            
-            -webkit-transform : rotate( 45deg );
-            -ms-transform : rotate( 45deg );
-            transform : rotate( 45deg );
-            
-            transition : transform 0.2s;
-            
-            width : var( --twc-psst-toggle-size );
-            
-            }
-            
-        html:not( .squarespace-damask ) x-twc-psst-close .arrow,
-        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .arrow
-        
-          {
-          
-            -webkit-transform : rotate( -135deg );
-            -ms-transform : rotate( -135deg );
-            transform : rotate( -135deg );
+            transform : rotate( 180deg );
             
             }
             
@@ -153,42 +140,12 @@
         
       /* begin plus */
       
-        html:not( .squarespace-damask ) x-twc-psst .plus,
-        html:not( .squarespace-damask ) x-twc-psst-close .plus
+        body:not( .sqs-is-page-editing ) x-twc-psst-close .twc-psst-plus use:nth-child( 2 ),
+        body:not( .sqs-is-page-editing ) .twc-psst--open x-twc-psst .twc-psst-plus use:nth-child( 2 )
         
           {
           
-            background-color : var( --twc-psst-toggle-color );
-            height : var( --twc-psst-toggle-thickness );
-            position : absolute;
-            
-            -webkit-transform : translateY( var( --twc-psst-toggle-size ) );
-            -ms-transform : translateY( var( --twc-psst-toggle-size ) );
-            transform : translateY( var( --twc-psst-toggle-size ) );
-            
-            transition : transform 0.2s;
-            width : var( --twc-psst-toggle-size );
-            
-            }
-            
-        html:not( .squarespace-damask ) x-twc-psst .plus.vertical-line {
-        
-          -webkit-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
-          -ms-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
-          transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 90deg );
-          
-          transition : transform 0.2s;
-          
-          }
-          
-        html:not( .squarespace-damask ) x-twc-psst-close .plus.vertical-line,
-        html:not( .squarespace-damask ) .twc-psst--open x-twc-psst .plus.vertical-line
-        
-          {
-          
-            -webkit-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
-            -ms-transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
-            transform : translateY( var( --twc-psst-toggle-size ) ) rotate( 0deg );
+            display : none;
             
             }
             
@@ -198,11 +155,39 @@
       
     </style>
     
+  <svg id="twc-psst" display="none" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  
+    <!-- arrow -->
+    
+    <symbol id="twc-psst-arrow" viewBox="0 0 5.3222652 3.2226501">
+    
+      <path d="M 0.560547,0 0,0.56054 2.662109,3.22265 5.322265,0.56054 4.761718,0 2.660156,2.09961 Z" />
+      
+      </symbol>
+      
+    <!-- begin plus -->
+    
+      <symbol id="twc-psst-plus-horizontal" viewBox="0 0 3 3">
+      
+        <path d="m 0,1 v 1 h 3 v -1 z" />
+        
+        </symbol>
+        
+      <symbol id="twc-psst-plus-vertical" viewBox="0 0 3 3">
+      
+        <path d="m 1,0 v 3 h 1 v -3 z" />
+        
+        </symbol>
+        
+      <!-- end plus -->
+      
+    </svg>
+    
   <script>
   
     $( ( ) => {
     
-      const version = '0.6.0';
+      const version = '0.7.0';
       
       const s = `
       
@@ -220,32 +205,34 @@
         
       console.log ( s );
       
-      if ( window.frameElement !== null ) return; // bail if in preview
-      
       const codeKey = 'twc-psst';
       
-      const css = { };
+      const resizeCallback = function ( ) {
       
-      const iconHtml = {
-      
-        arrow : `<div class="arrow">
-      
-          </div>`,
-          
-        plus : `<div class="plus horizontal-line">
+        const $this = $( this );
         
-          </div>
-          
-        <div class="plus vertical-line">
+        const $element = $this
         
-          </div>`,
+          .parents ( '.sqs-row' );
           
-        };
+        if ( $element === undefined ) return; // bail if no element
+        
+        const h = $element.height ( );
+        
+        $this.height ( h );
+        
+        }
         
       let callback = function ( ) {
       
         const callback = function ( ) {
         
+          const isEditing = $( 'body' )
+          
+            .hasClass ( 'sqs-is-page-editing' );
+            
+          if ( isEditing ) return; // bail if is editing
+          
           $( this )
           
             .toggleClass ( `${ codeKey }--open` );
@@ -270,25 +257,11 @@
         
         const $this = $( this );
         
-        const justify = $this.attr ( 'data-toggle-justify' );
-        
-        let color = $this.attr ( 'data-toggle-color' );
-        
         let count = $this.attr ( 'data-section-count' );
-        
-        let icon = $this.attr ( 'data-toggle-icon' );
-        
-        color = color === undefined ? $this.css ( 'color' ) : color;
         
         count = count === undefined ? 1 : Number ( count );
         
-        icon = icon === undefined ? 'arrow' : icon;
-        
-        const html = iconHtml [ icon ];
-        
         const $sectionsNext = $this
-        
-          .append ( html )
         
           .parents ( selector )
           
@@ -296,34 +269,26 @@
           
           .click ( callback )
           
-          .css ( `--${ codeKey }-toggle-color`, color )
-          
           .nextAll ( selector )
           
           .slice ( 0, count )
           
           .css ( 'display', 'none' );
           
-        if ( justify !== undefined )
-        
-          $this.css ( '--twc-psst-toggle-justify', justify );
-          
         }
         
       let duration = twc.psst.duration;
       
       let selector = `#page .page-section x-${ codeKey }`;
+        
+      $( selector )
       
-      css [ `--${ codeKey }-section-display-webkit-box` ] = '-webkit-box';
+        .each ( callback )
       
-      css [ `--${ codeKey }-section-display-ms-flexbox` ] = '-ms-flexbox';
-      
-      css [ `--${ codeKey }-section-display` ] = 'flex';
-      
-      $( '#page' ).css ( css );
-      
-      $( selector ).each ( callback );
-      
+        .resize ( resizeCallback )
+        
+        .resize ( );
+        
       callback = function ( ) {
       
         const callback = function ( ) {
@@ -340,31 +305,13 @@
             
           }
           
-        const $this = $( this );
+        $( this ).click ( callback );
         
-        let color = $this.attr ( 'data-toggle-color' );
-        
-        let icon = $this.attr ( 'data-toggle-icon' );
-        
-        color = color === undefined ? $this.css ( 'color' ) : color;
-        
-        icon = icon === undefined ? 'arrow' : icon;
-        
-        const html = iconHtml [ icon ];
-        
-        $this
-        
-          .append ( html )
-        
-          .click ( callback )
-          
-          .css ( `--${ codeKey }-toggle-color`, color );
-          
         }
         
       selector = `#page .page-section x-${ codeKey }-close`;
       
-      $( selector ).each ( callback );
+      $( selector ).each ( callback )
       
       if ( isNaN ( duration ) ) {
       
@@ -376,6 +323,52 @@
         
           duration = Number ( duration );
           
+      const isEditor = $( 'html' )
+      
+        .hasClass ( 'squarespace-damask' );
+      
+      if ( ! isEditor ) return; // bail if not editor
+      
+      const config = {
+      
+        attributes : true
+        
+        };
+        
+      callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          console.log ( mutation );
+          
+          if ( mutation.type != 'attributes' ) return; // bail if not attribute
+          
+          // bail if not attribute class
+          
+          if ( mutation.attributeName != 'class' ) return;
+          
+          const isEditing = $( target )
+          
+            .hasClass ( 'sqs-is-page-editing' );
+            
+          // bail if has class name sqs-is-page-editing
+          
+          if ( ! isEditing ) return;
+          
+          dispatchEvent ( new Event ( 'resize' ) );
+          
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const observer = new MutationObserver ( callback );
+         
+      // start listening for changes in element
+      
+      observer.observe ( document.body, config );
+      
       } );
       
     </script>
