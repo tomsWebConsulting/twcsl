@@ -59,9 +59,9 @@
   
   <style>
   
-    body:not( .sqs-is-page-editing ) #page {
+    #page {
     
-      --twc-psst-section-visibility : none;
+      --twc-psst-section-visibility : hidden;
       
       }
       
@@ -207,22 +207,6 @@
       
       const codeKey = 'twc-psst';
       
-      const resizeCallback = function ( ) {
-      
-        const $this = $( this );
-        
-        const $element = $this
-        
-          .parents ( '.sqs-row' );
-          
-        if ( $element === undefined ) return; // bail if no element
-        
-        const h = $element.height ( );
-        
-        $this.height ( h );
-        
-        }
-        
       let callback = function ( ) {
       
         const callback = function ( ) {
@@ -263,6 +247,18 @@
         
         const $sectionsNext = $this
         
+          .parents ( '.col' )
+          
+          .first ( )
+          
+          .css ( 'display', 'flex' )
+          
+          .parents ( '.sqs-row' )
+          
+          .first ( )
+          
+          .css ( 'display', 'flex' )
+          
           .parents ( selector )
           
           .addClass ( `${ codeKey }` )
@@ -283,11 +279,7 @@
         
       $( selector )
       
-        .each ( callback )
-      
-        .resize ( resizeCallback )
-        
-        .resize ( );
+        .each ( callback );
         
       callback = function ( ) {
       
@@ -323,6 +315,8 @@
         
           duration = Number ( duration );
           
+      $( '#page' ).css ( '--twc-psst-section-visibility', 'visible' );
+      
       const isEditor = $( 'html' )
       
         .hasClass ( 'squarespace-damask' );
