@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.7.0
+  Version       : 0.7.1
   
   SS Version    : 7.1
   
@@ -82,6 +82,12 @@
     body:not( .sqs-is-page-editing ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
     
       min-height : unset;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) .twc-psst-display-flex {
+      
+      display : flex;
       
       }
       
@@ -187,22 +193,24 @@
   
     $( ( ) => {
     
-      const version = '0.7.0';
+      const
       
-      const s = `
+        version = '0.7.1',
       
-        Page Sections Slide Toggle v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        s = `
         
-        © 2021-2024 Thomas Creedon
+          Page Sections Slide Toggle v${ version }
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
-        
-        `
-        
-        .replace ( /^\s+/gm, '' );
-        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       const codeKey = 'twc-psst';
@@ -237,10 +245,14 @@
           
           }
           
-        const selector = '.page-section';
+        const
         
-        const $this = $( this );
+          selector = '.page-section',
         
+          $this = $( this ),
+        
+          className = 'twc-psst-display-flex';
+          
         let count = $this.attr ( 'data-section-count' );
         
         count = count === undefined ? 1 : Number ( count );
@@ -251,13 +263,13 @@
           
           .first ( )
           
-          .css ( 'display', 'flex' )
+          .addClass ( className )
           
           .parents ( '.sqs-row' )
           
           .first ( )
           
-          .css ( 'display', 'flex' )
+          .addClass ( className )
           
           .parents ( selector )
           
@@ -273,9 +285,11 @@
           
         }
         
-      let duration = twc.psst.duration;
+      let
       
-      let selector = `#page .page-section x-${ codeKey }`;
+        duration = twc.psst.duration,
+      
+        selector = `#page .page-section x-${ codeKey }`;
         
       $( selector )
       
@@ -333,8 +347,6 @@
       
         const callback = ( mutation ) => {
         
-          console.log ( mutation );
-          
           if ( mutation.type != 'attributes' ) return; // bail if not attribute
           
           // bail if not attribute class

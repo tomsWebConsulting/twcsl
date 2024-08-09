@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Version
 
@@ -166,6 +166,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-08-09**
+
+  * use classes on classic editor row and columns that need display flex
+  * bumped version to 0.7.1
+  
 * **2024-08-08**
 
   * make code work in editor
