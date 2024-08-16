@@ -32,7 +32,7 @@ pages.
 * Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[store product detail dimensions.html][6]** to
+* Add code from file **[store page detail product dimensions.html][6]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
    Please see [per-page code injection][7]. Read the code for any instructions
    within. **There are some caveats to using this effect.**
@@ -62,6 +62,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20product%20detail%20dimensions.html#L1
+[6]: store%20page%20detail%20product%20dimensions.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
