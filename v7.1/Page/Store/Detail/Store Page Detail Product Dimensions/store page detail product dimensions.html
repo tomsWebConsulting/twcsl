@@ -1,0 +1,294 @@
+<!--
+
+  begin store page detail product dimensions
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : twcsl
+  
+  Note          : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                    
+                  this effect only considers the first variants dimensions. in
+                  other words is doesn't work with products that have more than
+                  one variant
+                  
+                  the dimensions entered in the SS interface are shipping
+                  dimensions, not product dimensions. if you need product
+                  dimensions then this effect is not for your need. some
+                  folks don't need to use shipping dimensions for shipping
+                  and can therefor use this effect
+  
+  Copyright     : 2022-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.spdd = {
+    
+      /*
+      
+        format is a string used to replace [twc-spdd] in your page. following
+        are format tags for use in your format :
+        
+          centimeters
+          
+          %w2Cm   width
+          %l2Cm   length
+          %h2Cm   height
+          
+          inches
+          
+          %w2In   width
+          %l2In   length
+          %h2In   height
+          
+          millimeters
+          
+          %w2Mm   width
+          %l2Mm   length
+          %h2Mmm  height
+          
+          note : the number after the h, l, or w is the number of decimal places
+                 number
+                 
+        following is a full example of the format string. your format goes
+        between the backticks
+        
+          format : `
+          
+            %w0In"W %l1In"D %h2In"H
+            %w2Mm x %l2Mm x %h2Mm mm
+                      
+            `,
+        
+        */
+        
+      format : `
+      
+        %w0In"W %l1In"D %h2In"H
+        %w2Mm x %l2Mm x %h2Mm mm
+        
+        `,
+        
+      }
+      
+    </script>
+    
+  <!-- do not alter anything below, there be the borg here -->
+  
+  <style>
+  
+    /* layout simple */
+    
+    body:not( .sqs-is-page-editing ) .ProductItem-details .ProductItem-details-excerpt,
+    
+    /* layout full, half, wrap */
+    
+    body:not( .sqs-is-page-editing ) .pdp-layout .pdp-details .pdp-details-excerpt,
+    body:not( .sqs-is-page-editing ) .sqs-block-html .sqs-block-content
+    
+      {
+      
+        visibility : hidden;
+        
+        }
+        
+    /* layout simple */
+    
+    body:not( .sqs-is-page-editing ) .twc-spdd-show .ProductItem-details .ProductItem-details-excerpt,
+    
+   /* layout full, half, wrap */
+   
+    body:not( .sqs-is-page-editing ) .pdp-layout.twc-spdd-show .pdp-details .pdp-details-excerpt,
+    
+    body:not( .sqs-is-page-editing ) .twc-spdd-show .sqs-block-html .sqs-block-content
+    
+      {
+      
+        visibility : visible;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `
+      
+        Store Page Detail Product Dimensions v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const convertUnitCallbacks = {
+      
+        CENTIMETER : {
+        
+          Cm : ( cm ) => cm,
+          
+          In : ( cm ) => cm / 2.54,
+          
+          Mm : ( cm ) => cm * 10
+          
+          },
+          
+        INCH : {
+        
+          Cm : ( inches ) => inches * 2.54,
+          
+          In : ( inches ) => inches,
+          
+          Mm : ( inches ) => inches / 0.039370
+          
+          }
+          
+        };
+        
+      const hlwMap = {
+      
+        h : 'height',
+        
+        l : 'len',
+        
+        w : 'width'
+        
+        };
+        
+      const triggerText = '[twc-spdd]';
+      
+      const selectorSuffix = `:contains(${ triggerText })`;
+      
+      const selector = [
+      
+        '.ProductItem-details-excerpt', // layout simple
+        
+        '.pdp-details-excerpt', // layout full, half, wrap
+        
+        '.sqs-block-html .sqs-block-content',
+        
+        ]
+        
+        .join ( `${ selectorSuffix }, ` )
+        
+        +
+        
+        selectorSuffix;
+        
+      const shippingSize = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .product
+        
+        .variants [ 0 ]
+        
+        .shippingSize;
+        
+      let callback = ( i, m ) => {
+      
+        const decimalPlaces = m [ 2 ];
+        
+        const newUnit = m [ 3 ];
+        
+        let r = shippingSize [
+        
+          hlwMap [
+          
+            m [ 1 ]
+            
+            ]
+            
+          ];
+          
+        r = convertUnitCallbacks
+        
+          [ shippingSize.unit ]
+          
+          [ newUnit ]
+          
+          ( r )
+          
+          .toFixed ( decimalPlaces );
+          
+        format = format
+        
+          .replaceAll ( m [ 0 ], r );
+          
+        };
+        
+      let format = twc
+      
+        .spdd
+        
+        .format
+        
+        // trim whitespace from each line and replace \n with <br>
+        
+        .replace ( /^\s+|\s+$/mg, '' )
+        
+        .replaceAll ( '\n', '<br>' );
+        
+      const matches = [
+      
+        ...
+        
+        format
+        
+          .matchAll ( /%([hlw])(\d)(Cm|In|Mm)/g )
+          
+        ];
+        
+      $.each ( matches, callback );
+      
+      callback = function ( ) {
+      
+        const $this = $( this );
+        
+        const html = $this
+        
+          .get ( 0 )
+          
+          .outerHTML
+          
+          .replaceAll ( `${ triggerText }`, format );
+          
+        $this.replaceWith ( html );
+        
+        }
+        
+      $( selector ).each ( callback );
+        
+      $( '#pdp' ).addClass ( 'twc-spdd-show' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end store page detail product dimensions -->
