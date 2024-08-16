@@ -59,7 +59,7 @@ Please consider [making a donation][15].
 
 * **2024-08-16**
 
-  * fix for category no working for all category
+  * fix for category not working for all category
   * bumped version to 0.6.3
   
 * **2024-07-25**
