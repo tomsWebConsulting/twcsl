@@ -271,6 +271,8 @@ not necessarily designed to work together.
         
         * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
           
+        * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
+          
         * [Store Product Detail Variant Title Selected Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Title%20Selected%20Add)
           
         * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
@@ -520,8 +522,6 @@ not necessarily designed to work together.
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
     
   * [Auto Change Product Grid Image Opacity on Touch Screen Device](v7.1/Auto%20Change%20Product%20Grid%20Image%20Opacity%20on%20Touch%20Screen%20Device)
-    
-  * [Store Product Detail Dimensions](v7.1/Store%20Product%20Detail%20Dimensions)
     
   * [Event Detail Page Categories Attribute Add](v7.1/Event%20Detail%20Page%20Categories%20Attribute%20Add)
     
