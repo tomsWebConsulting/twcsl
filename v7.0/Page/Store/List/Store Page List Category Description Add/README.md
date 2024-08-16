@@ -8,7 +8,7 @@ Add a category description to Store category pages.
 
 ### Version
 
-  * 0.6.2
+  * 0.6.3
 
 #### SS Version
 
@@ -57,6 +57,11 @@ Please consider [making a donation][15].
 
 ## Changes
 
+* **2024-08-16**
+
+  * fix for category no working for all category
+  * bumped version to 0.6.3
+  
 * **2024-07-25**
 
   * fix for LESS calc error
