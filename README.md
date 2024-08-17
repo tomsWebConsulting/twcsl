@@ -337,6 +337,8 @@ not necessarily designed to work together.
     
     * [Blocks Tabbed](v7.1/Section/Blocks%20Tabbed)
       
+    * [Page Sections Slide Toggle](v7.1/Section/Page%20Sections%20Slide%20Toggle)
+      
     * [Gallery](v7.1/Section/Gallery)
       
       * [Gallery Section Image Order Random](v7.1/Section/Gallery/Gallery%20Section%20Image%20Order%20Random)
@@ -360,8 +362,6 @@ not necessarily designed to work together.
   * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
     
   * [Blog Post Categories and Tags Add](v7.1/Blog%20Post%20Categories%20and%20Tags%20Add)
-    
-  * [Page Sections Slide Toggle](v7.1/Page%20Sections%20Slide%20Toggle)
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
     
