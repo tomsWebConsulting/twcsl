@@ -1,0 +1,404 @@
+<!--
+
+  begin page sections slide toggle
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.8.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    #page {
+    
+      --twc-psst-toggle-size : 1em; /* toggle size */
+      
+      --twc-psst-toggle-color : unset; /* toggle color */
+      
+      /* toggle justification ( alignment ) */
+      
+      --twc-psst-toggle-justify : flex-start;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc global if needed
+    
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.psst = {
+    
+      // duration, a number (milliseconds) or the word slow or fast
+      
+      duration : '[enter duration between single quotes replacing square brackets]',
+      
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #page {
+    
+      --twc-psst-section-visibility : hidden;
+      
+      }
+      
+    body.sqs-is-page-editing #page .page-section {
+    
+      display : flex !important;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) #page .page-section:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    
+      visibility : var( --twc-psst-section-visibility );
+      
+      }
+      
+    /* remove some vertical spacing */
+    
+    body:not( .sqs-is-page-editing ) .twc-psst.section-height--small:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    
+      min-height : unset;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) .twc-psst-display-flex {
+      
+      display : flex;
+      
+      }
+      
+    /* begin toggles */
+    
+      body:not( .sqs-is-page-editing ) .twc-psst .sqs-block-code .sqs-block-content {
+      
+        height : 100%;
+        
+        }
+        
+      x-twc-psst svg,
+      x-twc-psst-close svg
+      
+        {
+        
+          fill : var( --twc-psst-toggle-color );
+          height : var( --twc-psst-toggle-size );
+          width : calc( var( --twc-psst-toggle-size ) * 1.66 );
+          
+          }
+          
+      body:not( .sqs-is-page-editing ) x-twc-psst-close,
+      body:not( .sqs-is-page-editing ) .twc-psst
+      
+        {
+        
+          cursor : pointer;
+          
+          }
+          
+      x-twc-psst,
+      x-twc-psst-close
+      
+        {
+        
+          align-items : center;
+          display : flex;
+          height : 100%;
+          justify-content : var( --twc-psst-toggle-justify );
+          
+          }
+          
+      /* begin arrow */
+      
+        body:not( .sqs-is-page-editing ) x-twc-psst-close .twc-psst-arrow,
+        body:not( .sqs-is-page-editing ) .twc-psst--open x-twc-psst .twc-psst-arrow
+        
+          {
+          
+            transform : rotate( 180deg );
+            
+            }
+            
+        /* end arrow */
+        
+      /* begin plus */
+      
+        body:not( .sqs-is-page-editing ) x-twc-psst-close .twc-psst-plus use:nth-child( 2 ),
+        body:not( .sqs-is-page-editing ) .twc-psst--open x-twc-psst .twc-psst-plus use:nth-child( 2 )
+        
+          {
+          
+            display : none;
+            
+            }
+            
+        /* end plus */
+        
+      /* end toggles */
+      
+    </style>
+    
+  <svg id="twc-psst" display="none" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  
+    <!-- arrow -->
+    
+    <symbol id="twc-psst-arrow" viewBox="0 0 5.3222652 3.2226501">
+    
+      <path d="M 0.560547,0 0,0.56054 2.662109,3.22265 5.322265,0.56054 4.761718,0 2.660156,2.09961 Z" />
+      
+      </symbol>
+      
+    <!-- begin plus -->
+    
+      <symbol id="twc-psst-plus-horizontal" viewBox="0 0 3 3">
+      
+        <path d="m 0,1 v 1 h 3 v -1 z" />
+        
+        </symbol>
+        
+      <symbol id="twc-psst-plus-vertical" viewBox="0 0 3 3">
+      
+        <path d="m 1,0 v 3 h 1 v -3 z" />
+        
+        </symbol>
+        
+      <!-- end plus -->
+      
+    </svg>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const
+      
+        version = '0.8.0',
+      
+        s = `
+        
+          Page Sections Slide Toggle v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-psst',
+        
+        isEditor = $( 'html' )
+        
+          .hasClass ( 'squarespace-damask' );
+          
+      let
+      
+        callback = function ( ) {
+        
+          const callback = function ( ) {
+          
+            const isEditing = $( 'body' )
+            
+              .hasClass ( 'sqs-is-page-editing' );
+              
+            if ( isEditing ) return; // bail if is editing
+            
+            $( this )
+            
+              .toggleClass ( `${ codeKey }--open` );
+              
+            if ( duration )
+            
+              $sectionsNext
+              
+                .slideToggle ( duration );
+                
+              else
+              
+                $sectionsNext
+                
+                  .slideToggle ( );
+                  
+            dispatchEvent ( new Event ( 'resize' ) );
+            
+            }
+            
+          const
+          
+            selector = '.page-section',
+          
+            $this = $( this ),
+          
+            className = 'twc-psst-display-flex';
+            
+          let count = $this.attr ( 'data-section-count' );
+          
+          count = count === undefined ? 1 : Number ( count );
+          
+          const $sectionsNext = $this
+          
+            .parents ( '.col' )
+            
+            .first ( )
+            
+            .addClass ( className )
+            
+            .parents ( '.sqs-row' )
+            
+            .first ( )
+            
+            .addClass ( className )
+            
+            .parents ( selector )
+            
+            .addClass ( `${ codeKey }` )
+            
+            .click ( callback )
+            
+            .nextAll ( selector )
+            
+            .slice ( 0, count )
+            
+            .css ( 'display', 'none' );
+            
+          },
+          
+        duration = twc.psst.duration,
+      
+        selector = `#page .page-section x-${ codeKey }`;
+        
+      $( selector )
+      
+        .each ( callback );
+        
+      callback = function ( ) {
+      
+        const callback = function ( ) {
+        
+          $( this )
+          
+            .parents ( '.page-section' )
+            
+            .prevAll ( `.${ codeKey }` )
+            
+            .first ( )
+            
+            .click ( );
+            
+          }
+          
+        $( this ).click ( callback );
+        
+        }
+        
+      selector = `#page .page-section x-${ codeKey }-close`;
+      
+      $( selector ).each ( callback )
+      
+      if ( isNaN ( duration ) ) {
+      
+        if ( duration [ 0 ] == '[' )
+        
+          duration = '';
+          
+        } else
+        
+          duration = Number ( duration );
+          
+      $( '#page' ).css ( '--twc-psst-section-visibility', 'visible' );
+      
+      // section open when URL hash changes
+      
+      callback = function ( ) {
+      
+        const selector = location.hash;
+        
+        $( selector )
+        
+          .parents ( '.page-section' )
+          
+          .prevAll ( `.${ codeKey }:not( .${ codeKey }--open )` )
+          
+          .first ( )
+          
+          .click ( );
+          
+        }
+        
+      $( window ).on ( 'hashchange', callback );
+        
+      if ( ! isEditor ) return; // bail if not editor
+      
+      const config = {
+      
+        attributes : true
+        
+        };
+        
+      callback = ( mutations ) => {
+      
+        const callback = ( mutation ) => {
+        
+          if ( mutation.type != 'attributes' ) return; // bail if not attribute
+          
+          // bail if not attribute class
+          
+          if ( mutation.attributeName != 'class' ) return;
+          
+          const isEditing = $( target )
+          
+            .hasClass ( 'sqs-is-page-editing' );
+            
+          // bail if has class name sqs-is-page-editing
+          
+          if ( ! isEditing ) return;
+          
+          dispatchEvent ( new Event ( 'resize' ) );
+          
+          };
+          
+        mutations.forEach ( callback );
+        
+        };
+        
+      const observer = new MutationObserver ( callback );
+         
+      // start listening for changes in element
+      
+      observer.observe ( document.body, config );
+      
+      } );
+      
+    </script>
+    
+  <!-- end page sections slide toggle -->
