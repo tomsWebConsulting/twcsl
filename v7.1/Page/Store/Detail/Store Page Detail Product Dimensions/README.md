@@ -37,9 +37,9 @@ pages.
    Please see [per-page code injection][7]. Read the code for any instructions
    within. **There are some caveats to using this effect.**
   
-* Add **[twc-spdpd]** to the product description and/or text blocks in additional
-  info. [twc-spdpd] will be replaced with the product dimensions. You can use
-  [twc-spdpd] in multiple places.
+* Add **[twc-spdpd]** to the product description and/or text blocks in
+  additional info. [twc-spdpd] will be replaced with the product dimensions. You
+  can use [twc-spdpd] in multiple places.
 
 ## Make a Donation
 
