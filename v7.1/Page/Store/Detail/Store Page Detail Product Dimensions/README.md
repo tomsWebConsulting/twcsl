@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -37,9 +37,9 @@ pages.
    Please see [per-page code injection][7]. Read the code for any instructions
    within. **There are some caveats to using this effect.**
   
-* Add **[twc-spdd]** to the product description and/or text blocks in additional
-  info. [twc-spdd] will be replaced with the product dimensions. You can use
-  [twc-spdd] in multiple places.
+* Add **[twc-spdpd]** to the product description and/or text blocks in additional
+  info. [twc-spdpd] will be replaced with the product dimensions. You can use
+  [twc-spdpd] in multiple places.
 
 ## Make a Donation
 
@@ -47,6 +47,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-19**
+
+  * fix for text block being hidden in footer
+  * bumped version to 0.2.1
+  
 * **2024-08-16**
 
   * control decimal places in format instead of a single setting

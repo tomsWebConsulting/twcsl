@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.0
+  Version       : 0.2.1
   
   SS Version    : 7.1
   
@@ -35,11 +35,11 @@
     
     if ( window.twc == undefined ) window.twc = { };
     
-    twc.spdd = {
+    twc.spdpd = {
     
       /*
       
-        format is a string used to replace [twc-spdd] in your page. following
+        format is a string used to replace [twc-spdpd] in your page. following
         are format tags for use in your format :
         
           centimeters
@@ -97,7 +97,7 @@
     /* layout full, half, wrap */
     
     body:not( .sqs-is-page-editing ) .pdp-layout .pdp-details .pdp-details-excerpt,
-    body:not( .sqs-is-page-editing ) .sqs-block-html .sqs-block-content
+    body:not( .sqs-is-page-editing ) #page .sqs-block-html .sqs-block-content
     
       {
       
@@ -107,13 +107,13 @@
         
     /* layout simple */
     
-    body:not( .sqs-is-page-editing ) .twc-spdd-show .ProductItem-details .ProductItem-details-excerpt,
+    body:not( .sqs-is-page-editing ) .twc-spdpd-show .ProductItem-details .ProductItem-details-excerpt,
     
    /* layout full, half, wrap */
    
-    body:not( .sqs-is-page-editing ) .pdp-layout.twc-spdd-show .pdp-details .pdp-details-excerpt,
+    body:not( .sqs-is-page-editing ) .pdp-layout.twc-spdpd-show .pdp-details .pdp-details-excerpt,
     
-    body:not( .sqs-is-page-editing ) .twc-spdd-show .sqs-block-html .sqs-block-content
+    body:not( .sqs-is-page-editing ) #page .twc-spdpd-show .sqs-block-html .sqs-block-content
     
       {
       
@@ -127,7 +127,7 @@
   
     $( ( ) => {
     
-      const version = '0.2.0';
+      const version = '0.2.1';
       
       const s = `
       
@@ -146,6 +146,10 @@
       console.log ( s );
       
       if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const codeKey = 'twc-spdpd';
+      
+      const codeKeyOld = 'twc-spdd';
       
       const convertUnitCallbacks = {
       
@@ -181,26 +185,10 @@
         
         };
         
-      const triggerText = '[twc-spdd]';
+      const triggerText = `[${ codeKey }]`;
       
       const selectorSuffix = `:contains(${ triggerText })`;
       
-      const selector = [
-      
-        '.ProductItem-details-excerpt', // layout simple
-        
-        '.pdp-details-excerpt', // layout full, half, wrap
-        
-        '.sqs-block-html .sqs-block-content',
-        
-        ]
-        
-        .join ( `${ selectorSuffix }, ` )
-        
-        +
-        
-        selectorSuffix;
-        
       const shippingSize = Static
       
         .SQUARESPACE_CONTEXT
@@ -211,50 +199,68 @@
         
         .shippingSize;
         
-      let callback = ( i, m ) => {
+      let
       
-        const decimalPlaces = m [ 2 ];
+        callback = ( i, m ) => {
         
-        const newUnit = m [ 3 ];
-        
-        let r = shippingSize [
-        
-          hlwMap [
+          const decimalPlaces = m [ 2 ];
           
-            m [ 1 ]
+          const newUnit = m [ 3 ];
+          
+          let r = shippingSize [
+          
+            hlwMap [
             
-            ]
+              m [ 1 ]
+              
+              ]
+              
+            ];
             
-          ];
+          r = convertUnitCallbacks
           
-        r = convertUnitCallbacks
-        
-          [ shippingSize.unit ]
+            [ shippingSize.unit ]
+            
+            [ newUnit ]
+            
+            ( r )
+            
+            .toFixed ( decimalPlaces );
+            
+          format = format
           
-          [ newUnit ]
+            .replaceAll ( m [ 0 ], r );
+            
+          },
           
-          ( r )
+        format = twc
+        
+          .spdpd
           
-          .toFixed ( decimalPlaces );
+          .format
           
-        format = format
-        
-          .replaceAll ( m [ 0 ], r );
+          // trim whitespace from each line and replace \n with <br>
           
-        };
+          .replace ( /^\s+|\s+$/mg, '' )
+          
+          .replaceAll ( '\n', '<br>' ),
+          
+        selector = [
         
-      let format = twc
-      
-        .spdd
-        
-        .format
-        
-        // trim whitespace from each line and replace \n with <br>
-        
-        .replace ( /^\s+|\s+$/mg, '' )
-        
-        .replaceAll ( '\n', '<br>' );
-        
+          '.ProductItem-details-excerpt', // layout simple
+          
+          '.pdp-details-excerpt', // layout full, half, wrap
+          
+          '.sqs-block-html .sqs-block-content',
+          
+          ]
+          
+          .join ( `${ selectorSuffix }, ` )
+          
+          +
+          
+          selectorSuffix;
+          
       const matches = [
       
         ...
@@ -264,6 +270,10 @@
           .matchAll ( /%([hlw])(\d)(Cm|In|Mm)/g )
           
         ];
+        
+      selector =
+      
+        `${ selector }, ${ selector.replaceAll ( codeKey, codeKeyOld ) }`;
         
       $.each ( matches, callback );
       
@@ -277,15 +287,17 @@
           
           .outerHTML
           
-          .replaceAll ( `${ triggerText }`, format );
+          .replaceAll ( `${ triggerText }`, format )
+          
+          .replaceAll ( `[${ codeKeyOld }]`, format ); // previous code key
           
         $this.replaceWith ( html );
         
         }
         
       $( selector ).each ( callback );
-        
-      $( '#pdp' ).addClass ( 'twc-spdd-show' );
+      
+      $( '#pdp' ).addClass ( `${ codeKey }-show` );
       
       } );
       
