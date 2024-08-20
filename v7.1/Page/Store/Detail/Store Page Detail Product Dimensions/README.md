@@ -49,7 +49,7 @@ Please consider [making a donation][8].
 
 * **2024-08-19**
 
-  * fix for text block being hidden in footer
+  * fix for text blocks being hidden in footer
   * bumped version to 0.2.1
   
 * **2024-08-16**
