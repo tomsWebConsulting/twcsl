@@ -1,24 +1,37 @@
 # Payment Processor Icons
 
-### [License][99]
+### [License][1]
 
-### Version 0.3.0
+### Synopsis
 
-#### SS Versions 7.1, 7.0
+Add some payment processor icons to site footer.
 
-#### v7.1 Fluid Engine Compatible : Yes
+### Version
+
+  * 0.4.0
+
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Yes
 
 ---
 
 ## Quick Install
 
-* Add code from file **[payment processor icons.less][1]** to Design > Custom
-  CSS.
+* Add code from file **[payment processor icons.less][2]** to Website > Pages >
+  Website Tools > Custom CSS. Read the code for any instructions within.
   
-* Add code from file **[payment processor icons svg symbol.html][2]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER.
+* Add code from file **[payment processor icons svg symbol.html][3]** to
+  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
+  code to code injection][4].
   
-* Add code from file **[payment processor icons.html][3]** to a code block in
+* Add code from file **[payment processor icons.html][5]** to a code block in
   the footer of your site.
 
 ## Configuration
@@ -42,7 +55,7 @@ since you are only keeping one icon you'd continue down the lines repeating the
 above process until you get to icon index 39.
 
 Let's say you want to keep the first afterpay and American Express, and Apple
-Pay icons. Their icon index numbers are 1, 8, and 20. Note these number down.
+Pay icons. Their icon index numbers are 1, 8, and 20. Note these numbers down.
 Now repeat the the same process as before but you set icon index numbers 1, 8,
 and 20 to **unset** and all others to *none*.
 
@@ -70,22 +83,31 @@ section of the code.
 
 ## Demo
 
-You can see a [demo of this effect here][4].
+You can see a [demo of this effect here][6].
 
-## Note
+## Notes
+
+Not all the payment methods supported trough Squarespace are supported as icons
+in this effect. This can be because appropriate official icons aren't available
+or other technical issues.
 
 This code is designed to be a site-wide effect. For example you'd want the icons
 to show up in the footer for a site. However with some minor tweaks the code
 could be restricted to a single page. It is also possible to have different sets
 of icons shown on different pages, with some tweaks. If you need custom
-installation help, [contact me for paid consulting][5].
+installation help, [contact me for paid consulting][7].
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-20**
+
+  * add support for Diners Club, Discover, JCB, link by stripe, and UnionPay
+  * bumped version to 0.4.0
+  
 * **2022-10-08**
 
   * convert a large chunk of the CSS code to LESS
@@ -116,10 +138,11 @@ Please consider [making a donation][6].
 
   * initial version
 
-[1]: payment%20processor%20icons.less#L1
-[2]: payment%20processor%20icons%20svg%20symbol.html#L1
-[3]: payment%20processor%20icons.html#L1
-[4]: https://toms-web-consulting-demos.squarespace.com/payment-processor-icons?password=twcdemos
-[5]: http://www.tomsWeb.consulting/contact.html
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: payment%20processor%20icons.less#L1
+[3]: payment%20processor%20icons%20svg%20symbol.html#L1
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: payment%20processor%20icons.html#L1
+[6]: https://toms-web-consulting-demos.squarespace.com/payment-processor-icons?password=twcdemos
+[7]: http://www.tomsWeb.consulting/contact.html
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
