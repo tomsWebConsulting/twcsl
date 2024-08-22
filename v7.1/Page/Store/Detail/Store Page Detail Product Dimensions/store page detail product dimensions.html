@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.1
+  Version       : 0.2.2
   
   SS Version    : 7.1
   
@@ -97,7 +97,7 @@
     /* layout full, half, wrap */
     
     body:not( .sqs-is-page-editing ) .pdp-layout .pdp-details .pdp-details-excerpt,
-    body:not( .sqs-is-page-editing ) #page .sqs-block-html .sqs-block-content
+    body.collection-type-products.view-item:not( .sqs-is-page-editing ) #page .sqs-block-html .sqs-block-content
     
       {
       
@@ -113,7 +113,7 @@
    
     body:not( .sqs-is-page-editing ) .pdp-layout.twc-spdpd-show .pdp-details .pdp-details-excerpt,
     
-    body:not( .sqs-is-page-editing ) #page .twc-spdpd-show .sqs-block-html .sqs-block-content
+    body.collection-type-products.view-item:not( .sqs-is-page-editing ) #page .twc-spdpd-show .sqs-block-html .sqs-block-content
     
       {
       
@@ -127,7 +127,7 @@
   
     $( ( ) => {
     
-      const version = '0.2.1';
+      const version = '0.2.2';
       
       const s = `
       
