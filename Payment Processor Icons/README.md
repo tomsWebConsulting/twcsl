@@ -8,7 +8,7 @@ Add some payment processor icons to site footer.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Versions
 
@@ -39,28 +39,27 @@ Add some payment processor icons to site footer.
 Upon initial install you will see all the icons available over a gray
 background. The gray background can be turned off later. Initially it is there
 to help you see all the icons. Each icon will also have an index number
-proceeding it.
+near it.
 
 ### Hiding Icons
 
 You will need to decide which icons you do not want to be shown. Let's keep the
 first Afterpay icon as that is the one AP prefers you use and hide the rest.
 
-The first Afterpay icon has an index number of 1 proceeding it. Note the index
+The first Afterpay icon has an index number of 1. Note the index
 number. In the **payment processor icons** code installed in the first step,
 near the top of the code, you will find the line **// display order**. From
-there scan down the lines looking for **// index 2**. Under that you will see
-the line **display : unset;**. Change **unset** to **none**. In this example
-since you are only keeping one icon you'd continue down the lines repeating the
-above process until you get to icon index 39.
+there scan down the lines looking for **// index 1**. Under that you will see
+the line **// display : none;**. Remove the double forward slash space from the
+line. In this example since you are only keeping one icon you'd continue down
+the lines repeating the above process until you get to icon index 46.
 
-Let's say you want to keep the first afterpay and American Express, and Apple
-Pay icons. Their icon index numbers are 1, 8, and 20. Note these numbers down.
-Now repeat the the same process as before but you set icon index numbers 1, 8,
-and 20 to **unset** and all others to *none*.
+Let's say you want to keep the first afterpay, American Express, and Apple Pay
+icons. Their icon index numbers are 1, 8, and 20. Note these numbers down.
+Now repeat the the same process as before, remove the double forward
+slash space from icon index numbers 1, 8, and 20.
 
-The value **none** means do not display the icon and **unset** means use the
-default, which shows the icon.
+The removing the double forward slash space means do not display an icon.
 
 Be very careful editing the lines. Computers don't like it when things are not
 just so.
@@ -103,6 +102,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-21**
+
+  * keep index number and icons together
+  * restructuring much of the code for ease of maintenance
+  * bumped version to 0.5.0
+  
 * **2024-08-20**
 
   * add support for Diners Club, Discover, JCB, link by stripe, and UnionPay
