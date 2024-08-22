@@ -47,7 +47,7 @@ Please consider [making a donation][8].
 
 ## Changes
 
-* **2024-08-19**
+* **2024-08-21**
 
   * fix for text blocks being hidden on category pages ( all and etc. )
   * bumped version to 0.2.2
