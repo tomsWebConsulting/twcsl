@@ -148,9 +148,33 @@ append, prepend, or replace.
       * This template only has one footer so you need to create your own CSS to
         hide the common elements.
 
+## Callbacks
+
+You can optionally add [callback][10] functions to further customize the
+processing of the source element.
+
+Your callbacks must accept a jQuery object.
+
+Following is example code. Place your callbacks before the element manipulate
+code. Note the use of var.
+
+```html
+<script>
+
+  var twcEmLog = ( $element ) => {
+  
+    console.log ( 'twcEmLog $element', $element );
+    
+    return $element;
+    
+    };
+    
+  </script>
+```
+
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -198,4 +222,5 @@ Please consider [making a donation][10].
 [7]: elements%20manipulate.less#L1
 [9]: elements%20manipulate.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
