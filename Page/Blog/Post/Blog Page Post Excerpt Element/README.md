@@ -8,7 +8,7 @@ Create a blog page post excerpt element.
 
 ### Version
 
-  * 0.1.0-development.0
+  * 0.1.0
 
 #### SS Versions
 
