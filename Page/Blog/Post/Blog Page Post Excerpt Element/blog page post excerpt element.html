@@ -1,0 +1,110 @@
+<!--
+
+  begin blog page post excerpt element
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0-development.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-blog-item-excerpt {
+    
+      order : 3;
+      
+      }
+      
+    @media screen and ( max-width : 767px ) {
+    
+      .blog-item-title {
+      
+        margin-bottom : calc( 1.2rem / 2 );
+        
+        }
+        
+      }
+  
+    @media screen and ( min-width : 768px ) {
+    
+      .blog-item-title {
+      
+        margin-bottom : calc( 2rem / 2 );
+        
+        }
+        
+      }
+  
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0-development.0';
+      
+      const s = `
+      
+        Blog Page Post Excerpt Element v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    var twcBlogPagePostExcerptElement = ( $element ) => {
+    
+      const selector = 'body[ class*="collection-type-blog-" ].view-item';
+      
+      if ( ! $( selector ).length ) return $( ); // bail if no element
+      
+      const html = `
+      
+        <div class="twc-blog-item-excerpt">
+        
+          ${
+          
+            $element
+            
+              .attr ( 'content' )
+              
+            }
+            
+          </div>
+          
+          `;
+          
+      $element = $( html );
+      
+      return $element;
+      
+      };
+      
+    </script>
+    
+  <!-- end blog page post excerpt element -->
