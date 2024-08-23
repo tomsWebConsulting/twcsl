@@ -36,7 +36,7 @@ Create a blog page post excerpt element.
 * In the **elements manipulate** code add the following data structure per that
   codes instructions.
   
-  ```json
+  ```text
       "head meta[ name=\"description\" ]" : {
       
         "selectorDestination" : ".blog-item-top-wrapper",
