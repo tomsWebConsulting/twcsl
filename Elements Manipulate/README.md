@@ -153,7 +153,7 @@ append, prepend, or replace.
 You can optionally add [callback][10] functions to further customize the
 processing of the source element.
 
-Your callbacks must accept a jQuery object.
+Your callbacks must accept and return a jQuery object.
 
 Following is example code. Place your callbacks before the element manipulate
 code. Note the use of var.
