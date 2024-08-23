@@ -8,7 +8,7 @@ Add some payment processor icons to site footer.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Versions
 
@@ -48,7 +48,7 @@ first Afterpay icon as that is the one AP prefers you use and hide the rest.
 
 The first Afterpay icon has an index number of 1. Note the index
 number. In the **payment processor icons** code installed in the first step,
-near the top of the code, you will find the line **// display order**. From
+near the top of the code, you will find the line **#display-order {**. From
 there scan down the lines looking for **// index 1**. Under that you will see
 the line **// display : none;**. Remove the double forward slash space from the
 line. In this example since you are only keeping one icon you'd continue down
@@ -102,6 +102,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-23**
+
+  * fix for not being able to hide unionpay
+  * bumped version to 0.5.1
+  
 * **2024-08-21**
 
   * keep index number and icons together
