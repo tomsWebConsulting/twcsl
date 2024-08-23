@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.5.0
+  Version         : 0.6.0
   
   SS Versions     : 7.1, 7.0
   
@@ -39,13 +39,13 @@
   
   // custom selector, optional
   
-  .custom-selector ( ~'[enter selector here between single quotes replacing square brackets]' );
+  .custom-selector ( ~'[ enter selector here between single quotes replacing square brackets ]' );
   
   // do not change anything below, there be the borg here
   
   .v7-1( @boolean ) when ( @boolean = true ) {
   
-    html:not( .squarespace-damask ) {
+    body:not( .sqs-is-page-editing ) {
     
       #footer-sections .page-section:last-child {
       
@@ -59,7 +59,7 @@
     
   .v7-0-brine( @boolean ) when ( @boolean = true ) {
   
-    html:not( .squarespace-damask ) {
+    body:not( .sqs-is-page-editing ) {
     
       .Footer-blocks--bottom {
       
@@ -71,9 +71,9 @@
       
     }
     
-  .custom-selector( @selector ) when not ( @selector = ~'[enter selector here between single quotes replacing square brackets]' ) {
+  .custom-selector( @selector ) when not ( @selector = ~'[ enter selector here between single quotes replacing square brackets ]' ) {
   
-    html:not( .squarespace-damask ) {
+    body:not( .sqs-is-page-editing ) {
     
       @{selector} {
       

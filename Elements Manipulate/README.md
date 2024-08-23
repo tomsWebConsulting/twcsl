@@ -9,13 +9,13 @@ append, prepend, or replace.
 
 ### Version
 
-  * 0.5.0
+  * 0.6.0-development
 
 #### SS Versions
 
   * 7.1
   
-  * 7.0 ([Brine template family][2], [Bedford template family][12])
+  * 7.0 ([Brine template family][2], [Bedford template family][3])
 
 #### v7.1 Fluid Engine Compatible
 
@@ -23,25 +23,105 @@ append, prepend, or replace.
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4].
+  * [Squarespace plan][4] that supports [JavaScript][5].
   
-  * [jQuery][5]
+  * [jQuery][6]
 
 ---
 
 ## Install
 
-* Add code from file **[elements manipulate.less][6]** to Website > Pages >
+* Add code from file **[elements manipulate.less][7]** to Website > Pages >
   Website Tools > Custom CSS. Read the code for any instructions within.
   
 * Add the following to Website > Pages > Website Tools > Code Injection >
-  HEADER.
+  HEADER. Please see [Add code to code injection][8]. Read the code for any
+  instructions within.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <script data-twc-em type="application/json">
+  
+    {
+    
+      /*
+      
+        the format of each data structure is a selector source and destination,
+        an action, and optional callback
+        
+        following is an example data structure. copy the example data structure
+        below and paste after the example data structure. remove the forward
+        slash asterisk and asterisk forward slash lines from before and after
+        the example data structure. repeat for as many as many elements as you
+        need to manipulate. this has been done once initially
+        
+        */
+        
+      /* "[ enter selector source here between double quotes replacing square brackets ]" : {
+      
+        "selectorDestination" : "[ enter selector destination here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // selectorParentDestination is optional, use when you want to first
+        // find a selector destination but then work up the ancestor hierarchy
+        // to manipulate it
+        
+        "selectorParentDestination" : "[ enter selector parent destination here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        // callback is optional, use when you want to manipulate the structure
+        // of the source element. replace undefined with the name of your custom
+        // function
+        //
+        // your callback must accept and return a JavaScript object
+        
+        "callback" : "[ enter callback name here between double quotes replacing square brackets ]"
+        
+        }, */
+        
+      "[ enter selector source here between double quotes replacing square brackets ]" : {
+      
+        "selectorDestination" : "[ enter selector destination here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // selectorParentDestination is optional, use when you want to first
+        // find a selector destination but then work up the ancestor hierarchy
+        // to manipulate it
+        
+        "selectorParentDestination" : "[ enter selector parent destination here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        // callback is optional, use when you want to manipulate the structure
+        // of the source element. replace undefined with the name of your custom
+        // function
+        //
+        // your callback must accept and return a JavaScript object
+        
+        "callback" : "[ enter callback name here between double quotes replacing square brackets ]"
+        
+        },
+        
+      }
+      
+    </script>
   ```
   
-* Add code from file **[elements manipulate.html][7]** to Website > Pages >
+* Add code from file **[elements manipulate.html][9]** to Website > Pages >
   Website Tools > Code Injection > FOOTER. Please see [Add code to code
   injection][8]. Read the code for any instructions within.
   
@@ -70,10 +150,15 @@ append, prepend, or replace.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-08-22**
+
+  * support for callbacks
+  * bumped version to 0.6.0
+  
 * **2024-05-10**
 
   * add after and before options
@@ -106,11 +191,11 @@ Please consider [making a donation][9].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[12]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[3]: https://www.squarespace.com/pricing
-[4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://jquery.com/
-[6]: elements%20manipulate.less#L1
-[7]: elements%20manipulate.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[4]: https://www.squarespace.com/pricing
+[5]: https://en.wikipedia.org/wiki/JavaScript
+[6]: https://jquery.com/
+[7]: elements%20manipulate.less#L1
+[9]: elements%20manipulate.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
