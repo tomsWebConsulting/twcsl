@@ -9,7 +9,7 @@ append, prepend, or replace.
 
 ### Version
 
-  * 0.6.0
+  * 0.6.1
 
 #### SS Versions
 
@@ -41,7 +41,7 @@ append, prepend, or replace.
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   
-  <script data-twc-em type="application/json">
+  <script type="application/vnd.twc.em">
   
     {
     
@@ -178,6 +178,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-08-22**
+
+  * use a custom mime type for script tag type attribute
+  * bumped version to 0.6.1
+  
 * **2024-08-22**
 
   * support for callbacks
