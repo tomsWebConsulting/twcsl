@@ -44,15 +44,18 @@ near it.
 ### Hiding Icons
 
 You will need to decide which icons you do not want to be shown. Let's keep the
-first Afterpay icon as that is the one AP prefers you use and hide the rest.
+first Afterpay icon as that is the one AP prefers we use and hide the rest.
 
 The first Afterpay icon has an index number of 1. Note the index
 number. In the **payment processor icons** code installed in the first step,
-near the top of the code, you will find the line **#display-order {**. From
-there scan down the lines looking for **// index 1**. Under that you will see
-the line **// display : none;**. Remove the double forward slash space from the
-line. In this example since you are only keeping one icon you'd continue down
-the lines repeating the above process until you get to icon index 46.
+near the top of the code, find the line **#display-order {**. From
+there scan down the lines looking for **// index 1** near the end of a line.
+Under that we see the line **// display : none;**. This line, for icon index 1,
+controls hiding this icon. We want to keep the first icon so we do not make a
+change to this line. We do want to hide the rest of the icons. Following the
+same previous scan the lines process for icons 2 through 46, when we find the
+**// display : none;** line, remove the double forward slash space from the
+line. 
 
 Let's say you want to keep the first afterpay, American Express, and Apple Pay
 icons. Their icon index numbers are 1, 8, and 20. Note these numbers down.
@@ -65,7 +68,8 @@ Be very careful editing the lines. Computers don't like it when things are not
 just so.
 
 You can of course change your mind later on which icons you want to hide or
-show.
+show. Remove or restore the double forward slash space from the appropriate
+lines as needed.
 
 ### Order Icons
 
