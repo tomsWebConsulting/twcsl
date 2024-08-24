@@ -8,7 +8,7 @@ Add some payment processor icons to site footer.
 
 ### Version
 
-  * 0.5.1
+  * 0.5.2
 
 #### SS Versions
 
@@ -106,6 +106,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-23**
+
+  * general tweaks to spacing of icons
+  * fix for spacing issues on Safari
+  * bumped version to 0.5.2
+  
 * **2024-08-23**
 
   * fix for not being able to hide unionpay

@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.5.1
+  Version       : 0.5.2
   
   SS Versions   : 7.1, 7.0
   
@@ -24,7 +24,9 @@
   // justify-content values see < https://mzl.la/32Lkas4 >
   
   @justify-content : center;
-  @max-height-width : 75px;
+  
+  @height-width : 75px;
+  
   @spacing : 20px;
   
   #display-order {
@@ -468,9 +470,8 @@
     
     svg {
     
-      max-height : @max-height-width;
-      max-width : @max-height-width;
-      min-width : 50px;
+      height : @height-width;
+      width : @height-width;
       
       }
       
@@ -499,8 +500,8 @@
     
       #svg ( ) {
       
-        max-width : @max-height-width * 1.66666667;
         min-width : 75px; // ap and cp allow down to 64px
+        width : @height-width * 1.66666667;
         
         }
         
@@ -579,8 +580,7 @@
       
         svg {
         
-          max-width : @max-height-width * 1.25;
-          min-width : 175px;
+          width : @height-width * 2.3333333;
           
           }
           
@@ -614,8 +614,7 @@
       
         svg {
         
-          max-width : @max-height-width * 1.5;
-          min-width : 100px;
+          width : @height-width * 1.26666666;
           
           }
           
@@ -649,22 +648,6 @@
       
     } // end american express
     
-  // discover
-  
-    // secondary
-    
-    .discover.secondary svg {
-    
-      max-width : 75px / 2;
-      
-      }
-      
-  #jcb-icon svg {
-  
-    max-width : 63px;
-    
-    }
-    
   .link-by-stripe {
   
     &.dark,
@@ -674,8 +657,7 @@
       
         svg {
         
-          max-width : @max-height-width * 2;
-          min-width : 125px;
+          width : @height-width * 1.8333333;
           
           }
           
@@ -692,8 +674,7 @@
       
         svg {
         
-          max-width : @max-height-width * 2.33333333;
-          min-width : 125px;
+          width : @height-width * 1.5333333;
           
           }
           
@@ -705,7 +686,7 @@
   
   #paypal-logo-icon svg {
     
-    min-width : 125px;
+    width : @height-width * 1.66666667;
     
     }
     
