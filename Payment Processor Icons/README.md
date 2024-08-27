@@ -8,7 +8,7 @@ Add some payment processor icons to site footer.
 
 ### Version
 
-  * 0.5.2
+  * 0.5.3
 
 #### SS Versions
 
@@ -106,6 +106,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-08-27**
+
+  * fix Discover icon spacing issue, crop gradient effect paths
+  * bumped version to 0.5.3
+  
 * **2024-08-23**
 
   * general tweaks to spacing of icons
