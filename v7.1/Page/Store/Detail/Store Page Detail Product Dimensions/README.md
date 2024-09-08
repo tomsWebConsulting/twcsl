@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.2.2
+  * 0.3.0
 
 #### SS Version
 
@@ -34,19 +34,65 @@ pages.
   
 * Add code from file **[store page detail product dimensions.html][6]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-   Please see [per-page code injection][7]. Read the code for any instructions
-   within. **There are some caveats to using this effect.**
+  Please see [per-page code injection][7]. Read the code for any instructions
+  within. **There are some caveats to using this effect.**
   
 * Add **[twc-spdpd]** to the product description and/or text blocks in
   additional info. [twc-spdpd] will be replaced with the product dimensions. You
   can use [twc-spdpd] in multiple places.
 
+## Notes
+
+This effect only considers the first variants dimensions. In other words it
+doesn't work with products that have more than one variant.
+
+The dimensions entered in the squarespace editor are shipping dimensions, not
+product dimensions. If you don't need to use shipping dimensions for shipping
+you can use it for product dimensions. If you need product dimensions as well as
+shipping then add the following to a code block in Additional Info.
+
+```html
+<script type="application/vnd.twc.spdpd">
+
+  {
+  
+    "dimensions" : {
+    
+      "length" : 1,
+      
+      "width" : 2,
+      
+      "height" : 3,
+      
+      "weight" : 4
+      
+      }
+      
+    }
+    
+  </script>
+```
+
+## Demo
+
+You can see a [demo of this effect here][8].
+
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2024-09-07**
+
+  * support being able to use shipping dimension for shipping and product
+    dimensions
+  * add weight to format
+  * remove trigger text from meta description and
+    script[type="application/ld+json"] elements
+  * use TreeWalker in search for trigger text and replace
+  * bumped version to 0.3.0
+  
 * **2024-08-21**
 
   * fix for text blocks being hidden on category pages ( all and etc. )
@@ -74,4 +120,5 @@ Please consider [making a donation][8].
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: store%20page%20detail%20product%20dimensions.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

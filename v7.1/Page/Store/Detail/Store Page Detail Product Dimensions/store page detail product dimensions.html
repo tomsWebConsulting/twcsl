@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.2
+  Version       : 0.3.0
   
   SS Version    : 7.1
   
@@ -12,23 +12,24 @@
   
   Note          : the code is comprised of several tags. all are needed for the
                   full effect to work
-                    
+                  
                   this effect only considers the first variants dimensions. in
-                  other words is doesn't work with products that have more than
+                  other words it doesn't work with products that have more than
                   one variant
                   
-                  the dimensions entered in the SS interface are shipping
-                  dimensions, not product dimensions. if you need product
-                  dimensions then this effect is not for your need. some
-                  folks don't need to use shipping dimensions for shipping
-                  and can therefor use this effect
+                  the dimensions entered in the squarespace editor are shipping
+                  dimensions, not product dimensions. if you don't need to use
+                  shipping dimensions for shipping you can use it for product
+                  dimensions. if you need product dimensions as well as shipping
+                  then use the <script type="application/vnd.twc.spdpd"> tag
+                  referenced in the read me
   
   Copyright     : 2022-2024 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
-
+  
   <script>
   
     // initialize twc global if needed
@@ -54,22 +55,30 @@
           %l2In   length
           %h2In   height
           
+          kilograms
+          
+          %k2Kg
+          
           millimeters
           
           %w2Mm   width
           %l2Mm   length
-          %h2Mmm  height
+          %h2Mm   height
           
-          note : the number after the h, l, or w is the number of decimal places
-                 number
+          pounds
+          
+          %p2Lb
+          
+          note : the number after the h, k, l, p or w is the number of decimal
+                 places number
                  
         following is a full example of the format string. your format goes
         between the backticks
         
           format : `
           
-            %w0In"W %l1In"D %h2In"H
-            %w2Mm x %l2Mm x %h2Mm mm
+            %w0In"W %l1In"D %h2In"H - %p2Lb lb
+            %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
                       
             `,
         
@@ -77,12 +86,12 @@
         
       format : `
       
-        %w0In"W %l1In"D %h2In"H
-        %w2Mm x %l2Mm x %h2Mm mm
+        %w0In"W %l1In"D %h2In"H - %p2Lb lb
+        %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
         
         `,
         
-      }
+      };
       
     </script>
     
@@ -127,7 +136,7 @@
   
     $( ( ) => {
     
-      const version = '0.2.2';
+      const version = '0.3.0';
       
       const s = `
       
@@ -147,79 +156,194 @@
       
       if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
       
-      const codeKey = 'twc-spdpd';
+      const
       
-      const codeKeyOld = 'twc-spdd';
-      
-      const convertUnitCallbacks = {
-      
-        CENTIMETER : {
+        codeKeys = [
         
-          Cm : ( cm ) => cm,
+          'twc-spdpd',
           
-          In : ( cm ) => cm / 2.54,
+          'twc-spdd' // code key old
           
-          Mm : ( cm ) => cm * 10
+          ],
+          
+        convertUnitCallbacks = {
+        
+          CENTIMETER : {
+          
+            Cm : ( cm ) => cm,
+            
+            In : ( cm ) => cm / 2.54,
+            
+            Mm : ( cm ) => cm * 10
+            
+            },
+            
+          INCH : {
+          
+            Cm : ( inch ) => inch * 2.54,
+            
+            In : ( inch ) => inch,
+            
+            Mm : ( inch ) => inch / 0.039370
+            
+            },
+            
+          KILOGRAM : {
+          
+            Kg : ( kg ) => kg,
+            
+            Lb : ( lb ) => lb * 0.453592
+            
+            },
+            
+          POUND : {
+          
+            Kg : ( kg ) => kg * 2.20462,
+            
+            Lb : ( lb ) => lb
+            
+            }
+            
+          },
+          
+        hlwMap = {
+        
+          h : 'height',
+          
+          l : 'length',
+          
+          w : 'width'
           
           },
           
-        INCH : {
-        
-          Cm : ( inches ) => inches * 2.54,
-          
-          In : ( inches ) => inches,
-          
-          Mm : ( inches ) => inches / 0.039370
-          
-          }
-          
-        };
-        
-      const hlwMap = {
+        nodeHtmlMap = [ ],
       
-        h : 'height',
+        shippingSize = Static
         
-        l : 'len',
+          .SQUARESPACE_CONTEXT
+          
+          .product
+          
+          .variants [ 0 ]
+          
+          .shippingSize;
+          
+        shippingWeight = Static
         
-        w : 'width'
+          .SQUARESPACE_CONTEXT
+          
+          .product
+          
+          .variants [ 0 ]
+          
+          .shippingWeight,
+          
+        dimensions = ( ( ) => {
         
-        };
-        
-      const triggerText = `[${ codeKey }]`;
-      
-      const selectorSuffix = `:contains(${ triggerText })`;
-      
-      const shippingSize = Static
-      
-        .SQUARESPACE_CONTEXT
-        
-        .product
-        
-        .variants [ 0 ]
-        
-        .shippingSize;
-        
+          const
+          
+            callback = ( codeKey ) => {
+            
+              const selector = 'script[ type="application/vnd.' +
+              
+                `${ codeKey.replace ( '-', '.' ) }" ]`;
+                
+              return selector;
+              
+              },
+              
+            dimensions = {
+            
+              height : shippingSize.height,
+              
+              length : shippingSize.len,
+              
+              weight : shippingWeight.value,
+              
+              width : shippingSize.width
+              
+              },
+              
+            selector = $.map ( codeKeys, callback )
+            
+              .join ( ', ' ),
+              
+            $element = $( selector );
+            
+          if ( $element.length )
+          
+            Object
+            
+              .assign (
+              
+                dimensions,
+                
+                JSON
+                
+                  .parse (
+                  
+                    $element
+                    
+                      .text ( )
+                      
+                    )
+                    
+                  .dimensions
+                    
+                );
+            
+          return dimensions;
+          
+          } ) ( );
+          
       let
       
         callback = ( i, m ) => {
         
-          const decimalPlaces = m [ 2 ];
+          const
           
-          const newUnit = m [ 3 ];
-          
-          let r = shippingSize [
-          
-            hlwMap [
+            decimalPlaces = m [ 2 ],
             
-              m [ 1 ]
+            newUnit = m [ 3 ];
+            
+          let r,
+          
+            unit;
+          
+          switch ( m [ 1 ] ) {
+          
+            case 'h' :
+            case 'l' :
+            case 'w' :
+            
+              r = dimensions [
               
-              ]
+                hlwMap [
+                
+                  m [ 1 ]
+                  
+                  ]
+                  
+                ];
+                
+              unit = shippingSize.unit;
+                
+              break;
               
-            ];
+            case 'k' :
+            case 'p' :
+            
+              r = dimensions.weight
+                
+              unit = shippingWeight.unit;
+              
+              break;
+              
+            }
             
           r = convertUnitCallbacks
           
-            [ shippingSize.unit ]
+            [ unit ]
             
             [ newUnit ]
             
@@ -245,6 +369,18 @@
           
           .replaceAll ( '\n', '<br>' ),
           
+        re = '\\['
+        
+          +
+          
+          codeKeys
+          
+            .join ( '\\]|\\[' )
+            
+          +
+          
+          '\\]',
+          
         selector = [
         
           '.ProductItem-details-excerpt', // layout simple
@@ -253,13 +389,7 @@
           
           '.sqs-block-html .sqs-block-content',
           
-          ]
-          
-          .join ( `${ selectorSuffix }, ` )
-          
-          +
-          
-          selectorSuffix;
+          ];
           
       const matches = [
       
@@ -267,37 +397,159 @@
         
         format
         
-          .matchAll ( /%([hlw])(\d)(Cm|In|Mm)/g )
+          .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
           
         ];
         
-      selector =
+      re = new RegExp ( re, 'gm' );
       
-        `${ selector }, ${ selector.replaceAll ( codeKey, codeKeyOld ) }`;
-        
       $.each ( matches, callback );
+      
+      callback = ( selector ) => {
+      
+        const callback = ( key ) => {
+        
+          const s = `${ selector }:contains(${ key })`;
+          
+          return s;
+          
+          };
+          
+        const s = $.map ( codeKeys, callback );
+        
+        return s;
+        
+        };
+      
+      selector = $.map ( selector, callback )
+      
+        .join ( ', ' );
       
       callback = function ( ) {
       
-        const $this = $( this );
+        const walker =
         
-        const html = $this
+          document.createTreeWalker ( this, NodeFilter.SHOW_TEXT );
+          
+        while ( walker.nextNode ( ) ) {
         
-          .get ( 0 )
+          const node = walker.currentNode;
           
-          .outerHTML
+          const html = node
           
-          .replaceAll ( `${ triggerText }`, format )
+            .data
+            
+            .replace ( re, format );
+            
+          if ( html == node.data ) continue;
           
-          .replaceAll ( `[${ codeKeyOld }]`, format ); // previous code key
+          nodeHtmlMap.push ( [ node, html ] );
           
-        $this.replaceWith ( html );
-        
+          }
+          
         }
         
       $( selector ).each ( callback );
       
-      $( '#pdp' ).addClass ( `${ codeKey }-show` );
+      callback = ( i, [ node, html ] ) => {
+      
+        $( node ).replaceWith ( html );
+        
+        };
+        
+      $.each ( nodeHtmlMap, callback );
+      
+      // begin meta elements clean
+      
+        callback = ( selector ) => {
+        
+          selector = `head meta${ selector }`;
+          
+          return selector;
+          
+          };
+          
+        selector = [
+        
+          '[ property="og:description" ]',
+          
+          '[ itemprop="description" ]',
+          
+          '[ name="twitter:description" ]',
+          
+          '[ name="description" ]'
+          
+          ];
+          
+        selector = $.map ( selector, callback )
+        
+          .join ( ', ' );
+          
+        callback = function ( ) {
+        
+          const $this = $( this );
+          
+          const c = $this
+          
+            .attr ( 'content' )
+            
+            .replace ( re, '' );
+            
+          $this
+          
+            .attr ( 'content', c );
+            
+          }
+          
+        $( selector )
+        
+          .each ( callback );
+          
+        // end meta elements clean
+        
+      // begin script element clean
+      
+        callback = ( codeKey ) => {
+        
+          const selector =
+          
+            'head script[ type="application/ld+json" ]'
+            
+            +
+            
+            `:contains([${ codeKey }])`;
+            
+          return selector;
+          
+          };
+          
+        selector = $.map ( codeKeys, callback )
+        
+          .join ( ', ' );
+          
+        callback = function ( ) {
+        
+          const $this = $( this );
+          
+          const j = $this
+          
+            .html ( )
+            
+            .replace ( re, '' );
+            
+          $this
+          
+            .html ( j );
+            
+          }
+          
+        $( selector )
+        
+          .each ( callback );
+          
+        // end script element clean
+        
+      $( '#pdp' ).addClass ( `${ codeKeys [ 0 ] }-show` );
       
       } );
       
