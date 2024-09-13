@@ -149,6 +149,8 @@ not necessarily designed to work together.
       
     * [Member Area Log In Dialog Change](Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change)
       
+    * [MALIDC Join Quote](Element/Member%20Area/MALIDC%20Join%20Quote)
+      
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
@@ -421,8 +423,6 @@ not necessarily designed to work together.
       
     * [Member Area](v7.1/Element/Member%20Area)
       
-      * [MALIDC Join Quote](v7.1/Element/Member%20Area/MALIDC%20Join%20Quote)
-        
     * [Element Border](v7.1/Element/Element%20Border)
       
     * [Image](v7.1/Element/Image)
