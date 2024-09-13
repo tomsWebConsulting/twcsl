@@ -1,0 +1,98 @@
+<script>
+
+  /*
+  
+    begin malidc join quote
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.1
+    
+    SS Versions   : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : Member Area Log In Dialog Change
+                    < https://tinyurl.com/mwvvusdu >
+    
+    Copyright     : 2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.1',
+        
+        s = `MALIDC Join Quote v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
+    
+      return self;
+      
+      } ) ( twc.malidc || { } );
+      
+    // initialize twc malidc callbacks sub-module
+    
+    twc.malidc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, logInType ) => {
+      
+        let b = logInType != 'sign-up-join';
+        
+        if ( b ) return; // bail if no join
+        
+        const
+        
+          element = dcmnt
+          
+            .querySelector ( 'h1' ),
+            
+          joinText = 'Join ';
+          
+        let text = element
+        
+          .textContent
+          
+          .slice ( joinText.length );
+          
+        text = `${ joinText }"${ text }"`;
+        
+        element
+        
+          .textContent
+          
+          =
+          
+          text;
+          
+        }
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.malidc.callbacks || [ ] );
+      
+  // end malidc join quote
+  
+  </script>
