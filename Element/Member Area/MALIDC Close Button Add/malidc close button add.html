@@ -43,12 +43,10 @@
       
       } ) ( );
       
-    twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
+    // initialize twc malidc sub-module
     
-      return self;
-      
-      } ) ( twc.malidc || { } );
-      
+    twc.malidc = ( ( self ) => self ) ( twc.malidc || { } );
+    
     // initialize twc malidc callbacks sub-module
     
     twc.malidc.callbacks = ( ( self ) => {

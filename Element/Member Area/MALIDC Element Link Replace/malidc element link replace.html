@@ -23,12 +23,10 @@
   
   <script>
   
-    var twc = ( ( self ) => { // initialize twc module
+    // initialize twc module
     
-      return self;
-      
-      } ) ( twc || { } );
-      
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
     twc.melr = ( ( ) => { // initialize twc melr sub-module
     
       const options = {

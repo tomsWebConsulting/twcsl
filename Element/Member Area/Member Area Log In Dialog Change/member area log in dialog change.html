@@ -29,12 +29,10 @@
     
   <script>
   
-    var twc = ( ( self ) => { // initialize twc module
+    // initialize twc module
     
-      return self;
-      
-      } ) ( twc || { } );
-      
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
     twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
     
       self
@@ -79,11 +77,9 @@
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      twc.malidc.callbacks = ( ( self ) => {
+      twc.malidc.callbacks =
       
-        return self;
-        
-        } ) ( twc.malidc.callbacks || [ ] );
+        ( ( self ) => self ) ( twc.malidc.callbacks || [ ] );
         
       const callback = ( ) => {
       
