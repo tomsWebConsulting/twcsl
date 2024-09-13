@@ -8,11 +8,13 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
-#### SS Version
+#### SS Versions
 
   * 7.1
+  
+  * 7.0
 
 #### Dependencies
 
@@ -60,41 +62,57 @@ break at a slower rate. Also be aware that SS is doing some dynamic class
 add/remove behaviors based on elements being active/inactive. I know of no easy
 way to provide more semantic classes for these cases.
 
-## accountFrameCallback Example
+## Callback Example
 
 You can optionally create a [callback][7] function to further customize the
 processing of the sign in dialog.
 
-Following is example code. Place your callback before the member area log in
-dialog change code.```html
+Following is example code.
+
+```html
 <script>
 
-  const twcMalidcLog = ( dcmnt, logInType ) => {
+  var twc = ( ( self ) => { // initialize twc module
   
-    console.log ( dcmnt );
+    return self;
     
-    console.log ( logInType );
+    } ) ( twc || { } );
     
-    }
+  twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
+  
+    return self;
+    
+    } ) ( twc.malidc || { } );
+    
+  // initialize twc malidc callbacks sub-module
+  
+  twc.malidc.callbacks = ( ( self ) => {
+  
+    const callback = ( dcmnt, logInType ) => {
+    
+      console.log ( dcmnt );
+      
+      console.log ( logInType );
+      
+      };
+      
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.malidc.callbacks || [ ] );
     
   </script>
 
 ```
 
-Then in the member area log in dialog change code set accountFrameCallback to
-the following.
-
-```html
-      accountFrameCallback : twcMalidcLog
-```
-
 The logInType parameter value will be one of the following.
 
-  * sign in
+  * sign-in
   
-  * sign up
+  * sign-up
   
-  * sign up join
+  * sign-up-join
 
 ## Make a Donation
 
@@ -102,6 +120,14 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-09-12**
+
+  * rework code to use JavaScript Module Patterns for twc, twc.malidc, and
+    twc.malidc.callbacks. makes the initialization code a bit more dense but
+    removes the need for the user to dive into this code to set callbacks. they
+    just need to add a callback per that codes instructions
+  * bumped version to 0.3.0
+  
 * **2024-06-26**
 
   * wrap code in IIFE to keep code out of global space
