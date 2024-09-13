@@ -6,9 +6,11 @@
 
   * 0.1.1
 
-#### SS Version
+#### SS Versions
 
   * 7.1
+  
+  * 7.0
 
 #### Dependencies
 
