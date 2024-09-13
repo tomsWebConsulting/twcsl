@@ -1,7 +1,7 @@
 # MALIDC Element Link Replace
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Replace link text and URL of member area login dialog elements.

@@ -1,7 +1,7 @@
 # Member Area Log In Dialog Change
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Alter member area sign up and in dialogs.
