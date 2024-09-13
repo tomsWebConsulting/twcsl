@@ -147,6 +147,8 @@ not necessarily designed to work together.
     
     * [MALIDC Element Link Replace](Element/Member%20Area/MALIDC%20Element%20Link%20Replace)
       
+    * [MALIDC Close Button Add](Element/Member%20Area/MALIDC%20Close%20Button%20Add)
+      
     * [Member Area Log In Dialog Change](Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change)
       
     * [MALIDC Join Quote](Element/Member%20Area/MALIDC%20Join%20Quote)
@@ -592,8 +594,6 @@ not necessarily designed to work together.
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
   * [Store Product List Out of Stock Badge](v7.1/Store%20Product%20List%20Out%20of%20Stock%20Badge)
-    
-  * [Member Area Log In Close Button Add](v7.1/Member%20Area%20Log%20In%20Close%20Button%20Add)
     
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
   
