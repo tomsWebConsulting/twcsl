@@ -1,7 +1,7 @@
 # Header Branding And Navigation Center Actions Left Add
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Move right actions of header layout branding and navigation center to left.

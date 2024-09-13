@@ -1,7 +1,7 @@
 # Announcement Bar Observe Changes
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Observe announcement bar changes.

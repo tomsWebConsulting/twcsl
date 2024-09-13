@@ -1,7 +1,7 @@
 # Section Info
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Add section editor info.

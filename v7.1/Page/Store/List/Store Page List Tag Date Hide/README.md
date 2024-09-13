@@ -1,7 +1,7 @@
 # Store Page List Tag Date Hide
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Hide products on product list pages using tags with dates.

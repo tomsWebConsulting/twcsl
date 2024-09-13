@@ -1,7 +1,7 @@
 # Blog Post Date Past Go To
 
 ### [License][1]
-    
+
 ### Version 0.2.0
 
 #### SS Version 7.1

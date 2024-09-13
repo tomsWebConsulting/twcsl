@@ -1,7 +1,7 @@
 # Store Price Change
 
 ### [License][1]
-    
+
 ### Version 0.5.0
 
 #### SS Versions 7.1, 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])

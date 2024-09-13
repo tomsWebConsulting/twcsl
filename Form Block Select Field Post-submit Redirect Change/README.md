@@ -10,7 +10,7 @@ that existed in the prevoius version of the form block before the update.*
 *I hope to make this code function again in the future.*
 
 ### [License][2]
-    
+
 ### Version 0.2.2
 
 #### SS Versions 7.1, 7.0

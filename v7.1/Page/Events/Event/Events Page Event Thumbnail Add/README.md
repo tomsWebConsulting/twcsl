@@ -1,7 +1,7 @@
 # Events Page Event Thumbnail Add
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Use settings thumbnail as thumbnail for Event.

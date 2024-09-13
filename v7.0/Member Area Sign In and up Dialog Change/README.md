@@ -1,7 +1,7 @@
 # Member Area Sign In and up Dialog Change
 
 ### [License][1]
-    
+
 ### Version 0.1.0
 
 #### SS Version 7.0

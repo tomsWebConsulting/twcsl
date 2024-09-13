@@ -1,7 +1,7 @@
 # Image Blocks Random
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Randomize the images of image blocks.

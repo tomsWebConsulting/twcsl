@@ -1,7 +1,7 @@
 # Customer Account Panel Change
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Make changes to the Customer Account panel that can't be achieved through the
