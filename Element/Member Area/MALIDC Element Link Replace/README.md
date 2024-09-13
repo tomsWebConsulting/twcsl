@@ -10,9 +10,11 @@ Replace element link text and URL.
 
   * 0.1.0
 
-#### SS Version
+#### SS Versions
 
   * 7.1
+  
+  * 7.0
 
 #### Dependencies
 
@@ -54,8 +56,8 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Member%20Area%20Log%20In%20Dialog%20Change
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Member%20Area%20Log%20In%20Dialog%20Change#member-area-log-in-dialog-change
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change#member-area-log-in-dialog-change
 [6]: malidc%20element%20link%20replace.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
