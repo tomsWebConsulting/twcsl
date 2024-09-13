@@ -1,0 +1,176 @@
+<!--
+
+  begin malidc element link replace
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : Member Area Log In Dialog Change
+                  < https://tinyurl.com/mwvvusdu >
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    var twc = ( ( self ) => { // initialize twc module
+    
+      return self;
+      
+      } ) ( twc || { } );
+      
+    twc.melr = ( ( ) => { // initialize twc melr sub-module
+    
+      const options = {
+      
+        selectorLinkMap : {
+        
+          /*
+          
+            following is an example data structure
+            
+            copy the example data structure below and paste after the example data
+            structure. remove the forward slash asterisk and asterisk forward
+            slash lines from before and after the example data structure. repeat
+            for as many elements where you want to replace the link. this has
+            been done once initially
+            
+            */
+            
+          /*
+          
+          '[ enter selector here between single quotes replacing square brackets ]' : {
+          
+            text : '[ optional, enter link text here between single quotes replacing square brackets ]',
+            
+            url : '[ optional, enter url here between single quotes replacing square brackets ]'
+            
+            },
+            
+          */
+          
+          '[ enter selector here between single quotes replacing square brackets ]' : {
+          
+            text : '[ optional, enter link text here between single quotes replacing square brackets ]',
+            
+            url : '[ optional, enter url here between single quotes replacing square brackets ]'
+            
+            },
+            
+          }
+          
+        };
+        
+      return options;
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `MALIDC Element Link Replace v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
+    
+      return self;
+      
+      } ) ( twc.malidc || { } );
+      
+    // initialize twc malidc callbacks sub-module
+    
+    twc.malidc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, logInType ) => {
+      
+        const selectorLinkMap = Object
+        
+          .entries (
+          
+            twc
+            
+              .melr
+              
+              .selectorLinkMap
+              
+            );
+            
+        for ( const [ selector, link ] of selectorLinkMap ) {
+        
+          const element = dcmnt
+          
+            .querySelector ( selector );
+            
+          if ( element === null ) continue;
+          
+          const
+          
+            p = new RegExp ( '^\\[.+\\]$' ),
+            
+            text = link.text,
+            
+            url = link.url;
+            
+          let b = ! p.test ( text );
+          
+          if ( b )
+          
+            element
+            
+              .textContent
+              
+              =
+              
+              text;
+              
+          b = ! p.test ( url );
+          
+          if ( b )
+          
+            element
+            
+              .setAttribute ( 'href', url );
+              
+          }
+
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.malidc.callbacks || [ ] );
+      
+    </script>
+  
+  <!-- end malidc element link replace -->
