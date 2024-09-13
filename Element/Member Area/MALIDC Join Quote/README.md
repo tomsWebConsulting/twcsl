@@ -2,6 +2,10 @@
 
 ### [License][1]
 
+### Synopsis
+
+Quote the title member area member sites join dialog.
+
 ### Version
 
   * 0.1.1
