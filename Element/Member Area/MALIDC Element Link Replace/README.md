@@ -4,7 +4,7 @@
     
 ### Synopsis
 
-Replace element link text and URL.
+Replace link text and URL of member area login dialog elements.
 
 ### Version
 
