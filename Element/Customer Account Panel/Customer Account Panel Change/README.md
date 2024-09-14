@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.4.0
+### Version 0.5.0
 
 #### SS Versions
 
@@ -52,33 +52,49 @@ If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
 not immune to breakage but I think my method will break at a slower rate.
 
-## Callbacks
+## Callback Example
 
-You can optionally add [callback][6] functions to further customize the
-processing of the account panel.
+You can optionally create a [callback][7] function to further customize the
+processing of customer account panel.
 
-Your callbacks must accept a document element and string parameter.
-
-Following is example code. Place your callbacks before the customer account
-panel change code. Note the use of var.
+Following is example code.
 
 ```html
 <script>
 
-  var twcCapcLog = ( dcmnt, panelType ) => {
+  var twc = ( ( self ) => { // initialize twc module
   
-    console.log ( 'twcCapc dcmnt : ', dcmnt );
+    return self;
     
-    console.log ( 'twcCapc panelType : ', panelType );
+    } ) ( twc || { } );
     
-    }
+  twc.capc = ( ( self ) => { // initialize twc capc sub-module
+  
+    return self;
+    
+    } ) ( twc.capc || { } );
+    
+  // initialize twc capc callbacks sub-module
+  
+  twc.capc.callbacks = ( ( self ) => {
+  
+    const callback = ( dcmnt, logInType ) => {
+    
+      console.log ( dcmnt );
+      
+      console.log ( logInType );
+      
+      };
+      
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.capc.callbacks || [ ] );
     
   </script>
 
 ```
-
-Then in the customer account panel change code set callbacks per the
-instructions in the code.
 
 ## Make a Donation
 
@@ -86,6 +102,14 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2024-09-13**
+
+  * rework code to use JavaScript Module Patterns for twc, twc.capc, and
+    twc.capc.callbacks. makes the initialization code a bit more dense but
+    removes the need for the user to dive into this code to set callbacks. they
+    just need to add a callback per that codes instructions
+  * bumped version to 0.5.0
+  
 * **2024-07-08**
 
   * support multiple callbacks

@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.4.0
+  Version      : 0.5.0
   
   SS Versions  : 7.1, 7.0
   
@@ -26,44 +26,23 @@
     
   <script>
   
-    if ( window.twc == undefined ) window.twc = { };
+    var twc = ( ( self ) => self ) ( twc || { } );
     
-    twc.capc = {
+    twc.capc = ( ( self ) => { // initialize twc capc sub-module
     
-      panelTitles : {
+      self
       
-        account : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
+        .panelTitles = {
         
-        digitalProducts : '[ optional, enter digital products panel title text here between single quotes replacing square brackets ]'
-        
-        },
-        
-      callbacks : [
+          account : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
+          
+          digitalProducts : '[ optional, enter digital products panel title text here between single quotes replacing square brackets ]'
+          
+          };
+          
+      return self;
       
-        /*
-        
-          callbacks are optional custom functions that can be used for further
-          customization of the customer account panel
-          
-          your callback must accept a document object and panel type ( string )
-          parameter. i suggest using dcmnt as the first parameter to remind you
-          that you are working with a document object but not the usual document
-          you may be familiar with. otherwise in most cases you can use dcmnt in
-          place of document. they both pretty much have the same behaviour. for
-          the panel type parameter i suggest using panelType
-          
-          following is an example line. copy and paste it after the example
-          line. remove the double forward slash space of the new line. enter
-          your callback where indicated. you can repeat this for as many
-          callbacks as you want to add
-          
-          */
-          
-        // '[ enter your callback name here replacing square brackets ]',
-        
-        ]
-        
-      };
+      } ) ( twc.capc || { } );
       
     </script>
     
@@ -73,518 +52,552 @@
   
     ( ( ) => {
     
-      const version = '0.4.0';
+      const
       
-      const s = `Customer Account Panel Change v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        version = '0.5.0',
         
-        © 2023-2024 Thomas Creedon
+        s = `Customer Account Panel Change v${ version }
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
-        
-        .replace ( /^\s+/gm, '' );
-        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
+      twc.capc.callbacks =
+      
+        ( ( self ) => self ) ( twc.capc.callbacks || [ ] );
+        
       const callback = ( ) => {
       
-        const accountFrameIdValue = 'accountFrame';
+        const
         
-        const callback = ( mutations ) => {
+          accountFrameIdValue = 'accountFrame',
         
-          const callback = ( mutation ) => {
+          callback = ( mutations ) => {
           
-            // bail if no nodes added
+            const callback = ( mutation ) => {
             
-            if ( ! mutation.addedNodes.length ) return;
-            
-            const element = mutation.addedNodes [ 0 ];
-            
-            const id = element
-            
-              .getAttribute ( 'id' );
+              // bail if no nodes added
               
-            // bail if not account frame
-            
-            if ( id != `${ accountFrameIdValue }` ) return;
-            
-            load ( element );
-            
-            };
-            
-          mutations.forEach ( callback );
-          
-          }; // end callback
-          
-        const codeKey = 'twc-capc';
-        
-        const config = {
-        
-          childList : true
-          
-          };
-          
-        const load = ( accountFrameElement ) => {
-        
-          const callback = ( event ) => {
-          
-            const dcmnt = accountFrameElement
-            
-              .contentDocument;
+              if ( ! mutation.addedNodes.length ) return;
               
-            const pathname = dcmnt
-            
-              .location
+              const
               
-              .pathname;
+                element = mutation.addedNodes [ 0 ],
+                
+                id = element
+                
+                  .getAttribute ( 'id' );
+                  
+              // bail if not account frame
               
-            const isAccountFrame = pathname
-            
-              .startsWith ( '/account/frame' );
+              if ( id != `${ accountFrameIdValue }` ) return;
               
-            if ( ! isAccountFrame ) return; // bail if not customer panel
-            
-            const callback = ( mutations ) => {
-            
-              const callback = ( mutation ) => {
-              
-                let b = mutation
-                
-                  .addedNodes
-                  
-                  .length;
-                  
-                if ( ! b ) return; // bail if no added nodes
-                
-                let node = mutation.addedNodes [ 0 ];
-                
-                if ( node.nodeType != 1 ) return; // bail if node not element
-                
-                const xpathEvaluate = ( xpath ) => {
-                
-                  const value = dcmnt
-                  
-                    .evaluate ( xpath, userProfilePageRootElement, null,
-                    
-                      XPathResult.FIRST_ORDERED_NODE_TYPE, null )
-                      
-                    .singleNodeValue;
-                    
-                  return value;
-                  
-                  };
-                  
-                let xpath = `.//div[ . = 'Account' or . = 'Digital Products' ]`;
-                
-                const titleElement = xpathEvaluate ( xpath );
-                
-                // bail if no title of interest
-                
-                if ( titleElement === null ) return;
-                
-                b = titleElement
-                
-                  .nextElementSibling
-                  
-                  .tagName
-                  
-                  !=
-                  
-                  'BUTTON';
-                  
-                if ( b ) return; // bail if no button with title
-                
-                const callback = ( callback ) => {
-                
-                  try {
-                  
-                    callback = window [ callback ];
-                    
-                    callback ( dcmnt, panelType );
-                    
-                    } catch ( error ) {
-                    
-                      const s =
-                      
-                        `${ codeKey } callback '${ callback }' error : `;
-                        
-                      console.error ( s, error );
-                      
-                      }
-                      
-                  };
-                  
-                const closeClassAdd = ( ) => {
-                
-                  const element = titleElement
-                  
-                    .nextElementSibling
-                    
-                    .querySelector ( 'span' );
-                    
-                  if ( element === null ) return; // bail if no element
-                  
-                  element
-                  
-                    .classList
-                    
-                    .add ( `${ codeKey }-close` );
-                    
-                  };
-                  
-                const headerClassAdd = ( ) => {
-                
-                  titleElement
-                  
-                    .parentElement
-                    
-                    .classList
-                    
-                    .add ( `${ codeKey }-header` );
-                    
-                  };
-                  
-                const options = twc.capc;
-                
-                const setPanelType = ( ) => {
-                
-                  const isAccount = titleElement
-                  
-                    .textContent
-                    
-                    ==
-                    
-                    'Account';
-                    
-                  const isDigitalProducts = titleElement
-                  
-                    .textContent
-                    
-                    ==
-                    
-                    'Digital Products';
-                    
-                  switch ( true ) {
-                  
-                    case isAccount :
-                    
-                      panelType = 'account';
-                      
-                      break;
-                      
-                    case isDigitalProducts :
-                    
-                      panelType = 'digital products';
-                      
-                      break;
-                      
-                    }
-                    
-                  };
-                  
-                const title = ( ) => {
-                
-                  titleElement // class add
-                  
-                    .classList
-                    
-                    .add ( `${ codeKey }-title` );
-                    
-                  // begin title change
-                  
-                    const p = new RegExp ( '^\\[.+\\]$' );
-                    
-                    let s;
-                    
-                    switch ( panelType ) {
-                    
-                      case 'account' :
-                      
-                        s = options
-                        
-                          .panelTitles
-                          
-                          .account;
-                          
-                        break;
-                        
-                      case 'digital products' :
-                      
-                        s = options
-                        
-                          .panelTitles
-                          
-                          .digitalProducts;
-                          
-                        break;
-                        
-                      }
-                      
-                    const isChangeTitle = ! p.test ( s );
-                    
-                    if ( ! isChangeTitle ) return; // bail if not title change
-                    
-                    titleElement.textContent = s;
-                    
-                    // end title change
-                    
-                  };
-                  
-                let panelType;
-                
-                setPanelType ( );
-                
-                headerClassAdd ( );
-                
-                title ( );
-                
-                closeClassAdd ( );
-                
-                switch ( panelType ) {
-                
-                  case 'account' :
-                  
-                    const classAdd = ( key ) => {
-                    
-                      const selector = `[ href="/account/${ key }" ]`;
-                      
-                      const element = userProfilePageRootElement
-                      
-                        .querySelector ( selector );
-                        
-                      if ( element === null ) return; // bail if no element
-                      
-                      element
-                      
-                        .classList
-                        
-                        .add ( `${ codeKey }-${ key }` );
-                        
-                      };
-                      
-                    const greetingClassAdd = ( ) => {
-                    
-                      const xpath = `.//span[ starts-with( ., 'Hi, ' ) ]`;
-                      
-                      const element = xpathEvaluate ( xpath );
-                      
-                      if ( element === null ) return; // bail if no element
-                      
-                      element
-                      
-                        .parentElement
-                        
-                        .classList
-                        
-                        .add ( `${ codeKey }-greeting` );
-                        
-                      element // greeting sign out class add
-                      
-                        .parentElement
-                      
-                        .parentElement
-                      
-                        .classList
-                        
-                        .add ( `${ codeKey }-greeting-sign-out` );
-                        
-                      };
-                      
-                    const signOutClassAdd = ( ) => {
-                    
-                      const xpath = `.//span[ . = 'Sign out' ]`;
-                      
-                      const element = xpathEvaluate ( xpath );
-                      
-                      if ( element === null ) return; // bail if no element
-                    
-                      element
-                      
-                        .parentElement
-                        
-                        .classList
-                        
-                        .add ( `${ codeKey }-sign-out` );
-                        
-                      };
-                      
-                    greetingClassAdd ( );
-                    
-                    signOutClassAdd ( );
-                    
-                    classAdd ( 'addresses' );
-                    
-                    classAdd ( 'digital-products' );
-                    
-                    classAdd ( 'orders' );
-                    
-                    classAdd ( 'payment' );
-                    
-                    classAdd ( 'profile' );
-                    
-                    break;
-                    
-                  case 'digital products' :
-                  
-                    const accountSettings = ( ) => {
-                    
-                      const selector = `[ href="/account" ]`;
-                      
-                      const element = userProfilePageRootElement
-                      
-                        .querySelector ( selector );
-                        
-                      if ( element === null ) return; // bail if no element
-                      
-                      element
-                      
-                        .parentElement
-                      
-                        .classList
-                        
-                        .add ( `${ codeKey }-account-settings` );
-                        
-                      };
-                      
-                    const search = ( ) => {
-                    
-                      const xpath = `.//input[ @placeholder = 'Search' ]`;
-                      
-                      const element = xpathEvaluate ( xpath );
-                      
-                      if ( element === null ) return; // bail if no element
-                    
-                      element
-                      
-                        .parentElement
-                        
-                        .parentElement
-                        
-                        .classList
-                        
-                        .add ( `${ codeKey }-search` );
-                        
-                      };
-                      
-                    search ( );
-                    
-                    accountSettings ( );
-                    
-                    break;
-                    
-                  }
-                  
-                options
-                
-                  .callbacks
-                  
-                  .forEach ( callback );
-                  
-                };
-                
-              mutations.forEach ( callback );
-                
-              };
-              
-            const config = {
-            
-              childList : true,
-              
-              subtree : true
+              load ( element );
               
               };
               
-            const observer = new MutationObserver ( callback );
+            mutations.forEach ( callback );
             
-            const selector = '#user-profile-page-root';
+            }, // end callback
             
-            const userProfilePageRootElement = dcmnt
-            
-              .querySelector ( selector );
-              
-            // bail if no element
-            
-            if ( userProfilePageRootElement === null ) return;
-            
-            const userCssAdd = ( ) => {
-            
-              const attrribute = `data-${ codeKey }`;
-              
-              const p = new RegExp ( '^\s+\[.+\]\s+$' );
-              
-              const isAdd = dcmnt
-              
-                .head
-                
-                .querySelector ( `style[ ${ attrribute }` )
-                
-                === null
-                
-                &&
-                
-                ! p.test ( css );
-                
-              if ( ! isAdd ) return; // bail if no add
-              
-              const style = dcmnt
-              
-                .createElement ( 'style' );
-                
-              style
-              
-                .setAttribute ( `${ attrribute }`, '' );
-                
-              style.innerHTML = css;
-              
-              dcmnt
-              
-                .head
-                
-                .append ( style );
-                
-              };
-              
-            userCssAdd ( );
-            
-            userProfilePageRootElement // code class add
-            
-              .classList
-              
-              .add ( `${ codeKey }` );
-              
-            // start listening for changes in specified node
-            
-            observer.observe ( userProfilePageRootElement, config );
-            
-            };
-            
-          const css = document
+          codeKey = 'twc-capc',
           
-            .getElementsByTagName ( `x-${ codeKey }-style` )
+          config = {
+          
+            childList : true
             
-            [ 0 ]
+            },
             
-            .textContent;
+          load = ( accountFrameElement ) => {
+          
+            const
             
-          accountFrameElement
+              callback = ( event ) => {
+              
+                const
+                
+                  dcmnt = accountFrameElement
+                  
+                    .contentDocument,
+                    
+                  pathname = dcmnt
+                  
+                    .location
+                    
+                    .pathname,
+                    
+                  isAccountFrame = pathname
+                  
+                    .startsWith ( '/account/frame' );
+                    
+                if ( ! isAccountFrame ) return; // bail if not customer panel
+                
+                const
+                
+                  callback = ( mutations ) => {
+                  
+                    const callback = ( mutation ) => {
+                    
+                      let b = mutation
+                      
+                        .addedNodes
+                        
+                        .length;
+                        
+                      if ( ! b ) return; // bail if no added nodes
+                      
+                      let node = mutation.addedNodes [ 0 ];
+                      
+                      if ( node.nodeType != 1 ) return; // bail if node not element
+                      
+                      const xpathEvaluate = ( xpath ) => {
+                      
+                        const value = dcmnt
+                        
+                          .evaluate ( xpath, userProfilePageRootElement, null,
+                          
+                            XPathResult.FIRST_ORDERED_NODE_TYPE, null )
+                            
+                          .singleNodeValue;
+                          
+                        return value;
+                        
+                        };
+                        
+                      let xpath =
+                      
+                        `.//div[ . = 'Account' or . = 'Digital Products' ]`;
+                        
+                      const titleElement = xpathEvaluate ( xpath );
+                      
+                      // bail if no title of interest
+                      
+                      if ( titleElement === null ) return;
+                      
+                      b = titleElement
+                      
+                        .nextElementSibling
+                        
+                        .tagName
+                        
+                        !=
+                        
+                        'BUTTON';
+                        
+                      if ( b ) return; // bail if no button with title
+                      
+                      const
+                      
+                        callback = ( callback ) => {
+                        
+                          try {
+                          
+                            callback ( dcmnt, panelType );
+                            
+                            } catch ( error ) {
+                            
+                              const s =
+                              
+                                `${ codeKey } callback '${ callback }' error : `;
+                                
+                              console.error ( s, error );
+                              
+                              }
+                              
+                          },
+                          
+                        closeClassAdd = ( ) => {
+                        
+                          const element = titleElement
+                          
+                            .nextElementSibling
+                            
+                            .querySelector ( 'span' );
+                            
+                          if ( element === null ) return; // bail if no element
+                          
+                          element
+                          
+                            .classList
+                            
+                            .add ( `${ codeKey }-close` );
+                            
+                          },
+                          
+                        headerClassAdd = ( ) => {
+                        
+                          titleElement
+                          
+                            .parentElement
+                            
+                            .classList
+                            
+                            .add ( `${ codeKey }-header` );
+                            
+                          },
+                          
+                        options = twc.capc,
+                        
+                        setPanelType = ( ) => {
+                        
+                          const
+                          
+                            isAccount = titleElement
+                            
+                              .textContent
+                              
+                              ==
+                              
+                              'Account',
+                              
+                            isDigitalProducts = titleElement
+                            
+                              .textContent
+                              
+                              ==
+                              
+                              'Digital Products';
+                              
+                          switch ( true ) {
+                          
+                            case isAccount :
+                            
+                              panelType = 'account';
+                              
+                              break;
+                              
+                            case isDigitalProducts :
+                            
+                              panelType = 'digital products';
+                              
+                              break;
+                              
+                            }
+                            
+                          },
+                          
+                        title = ( ) => {
+                        
+                          titleElement // class add
+                          
+                            .classList
+                            
+                            .add ( `${ codeKey }-title` );
+                            
+                          // begin title change
+                          
+                            const p = new RegExp ( '^\\[.+\\]$' );
+                            
+                            let s;
+                            
+                            switch ( panelType ) {
+                            
+                              case 'account' :
+                              
+                                s = options
+                                
+                                  .panelTitles
+                                  
+                                  .account;
+                                  
+                                break;
+                                
+                              case 'digital products' :
+                              
+                                s = options
+                                
+                                  .panelTitles
+                                  
+                                  .digitalProducts;
+                                  
+                                break;
+                                
+                              }
+                              
+                            const isChangeTitle = ! p.test ( s );
+                            
+                            if ( ! isChangeTitle ) return; // bail if not title change
+                            
+                            titleElement.textContent = s;
+                            
+                            // end title change
+                            
+                          };
+                          
+                      let panelType;
+                      
+                      setPanelType ( );
+                      
+                      headerClassAdd ( );
+                      
+                      title ( );
+                      
+                      closeClassAdd ( );
+                      
+                      switch ( panelType ) {
+                      
+                        case 'account' :
+                        
+                          const classAdd = ( key ) => {
+                          
+                            const
+                            
+                              selector = `[ href="/account/${ key }" ]`,
+                              
+                              element = userProfilePageRootElement
+                              
+                                .querySelector ( selector );
+                                
+                            if ( element === null ) return; // bail if no element
+                            
+                            element
+                            
+                              .classList
+                              
+                              .add ( `${ codeKey }-${ key }` );
+                              
+                            };
+                            
+                          const greetingClassAdd = ( ) => {
+                          
+                            const
+                            
+                              xpath = `.//span[ starts-with( ., 'Hi, ' ) ]`,
+                            
+                              element = xpathEvaluate ( xpath );
+                              
+                            if ( element === null ) return; // bail if no element
+                            
+                            element
+                            
+                              .parentElement
+                              
+                              .classList
+                              
+                              .add ( `${ codeKey }-greeting` );
+                              
+                            element // greeting sign out class add
+                            
+                              .parentElement
+                            
+                              .parentElement
+                            
+                              .classList
+                              
+                              .add ( `${ codeKey }-greeting-sign-out` );
+                              
+                            };
+                            
+                          const signOutClassAdd = ( ) => {
+                          
+                            const
+                            
+                              xpath = `.//span[ . = 'Sign out' ]`,
+                              
+                              element = xpathEvaluate ( xpath );
+                              
+                            if ( element === null ) return; // bail if no element
+                          
+                            element
+                            
+                              .parentElement
+                              
+                              .classList
+                              
+                              .add ( `${ codeKey }-sign-out` );
+                              
+                            };
+                            
+                          greetingClassAdd ( );
+                          
+                          signOutClassAdd ( );
+                          
+                          classAdd ( 'addresses' );
+                          
+                          classAdd ( 'digital-products' );
+                          
+                          classAdd ( 'orders' );
+                          
+                          classAdd ( 'payment' );
+                          
+                          classAdd ( 'profile' );
+                          
+                          break;
+                          
+                        case 'digital products' :
+                        
+                          const accountSettings = ( ) => {
+                          
+                            const
+                            
+                              selector = `[ href="/account" ]`,
+                              
+                              element = userProfilePageRootElement
+                              
+                                .querySelector ( selector );
+                                
+                            if ( element === null ) return; // bail if no element
+                            
+                            element
+                            
+                              .parentElement
+                            
+                              .classList
+                              
+                              .add ( `${ codeKey }-account-settings` );
+                              
+                            };
+                            
+                          const search = ( ) => {
+                          
+                            const
+                            
+                              xpath = `.//input[ @placeholder = 'Search' ]`,
+                              
+                              element = xpathEvaluate ( xpath );
+                              
+                            if ( element === null ) return; // bail if no element
+                          
+                            element
+                            
+                              .parentElement
+                              
+                              .parentElement
+                              
+                              .classList
+                              
+                              .add ( `${ codeKey }-search` );
+                              
+                            };
+                            
+                          search ( );
+                          
+                          accountSettings ( );
+                          
+                          break;
+                          
+                        }
+                        
+                      options
+                      
+                        .callbacks
+                        
+                        .forEach ( callback );
+                        
+                      };
+                      
+                    mutations.forEach ( callback );
+                      
+                    },
+                    
+                  config = {
+                  
+                    childList : true,
+                    
+                    subtree : true
+                    
+                    },
+                    
+                  observer = new MutationObserver ( callback ),
+                  
+                  selector = '#user-profile-page-root',
+                  
+                  userProfilePageRootElement = dcmnt
+                  
+                    .querySelector ( selector );
+                    
+                // bail if no element
+                
+                if ( userProfilePageRootElement === null ) return;
+                
+                const userCssAdd = ( ) => {
+                
+                  const
+                  
+                    attrribute = `data-${ codeKey }`,
+                    
+                    p = new RegExp ( '^\s+\[.+\]\s+$' ),
+                    
+                    isAdd = dcmnt
+                    
+                      .head
+                      
+                      .querySelector ( `style[ ${ attrribute }` )
+                      
+                      ===
+                      
+                      null
+                      
+                      &&
+                      
+                      ! p.test ( css );
+                      
+                  if ( ! isAdd ) return; // bail if no add
+                  
+                  const style = dcmnt
+                  
+                    .createElement ( 'style' );
+                    
+                  style
+                  
+                    .setAttribute ( `${ attrribute }`, '' );
+                    
+                  style.innerHTML = css;
+                  
+                  dcmnt
+                  
+                    .head
+                    
+                    .append ( style );
+                    
+                  };
+                  
+                userCssAdd ( );
+                
+                userProfilePageRootElement // code class add
+                
+                  .classList
+                  
+                  .add ( `${ codeKey }` );
+                  
+                // start listening for changes in specified node
+                
+                observer.observe ( userProfilePageRootElement, config );
+                
+                },
+                
+              css = document
+              
+                .getElementsByTagName ( `x-${ codeKey }-style` )
+                
+                [ 0 ]
+                
+                .textContent;
+                
+            accountFrameElement
+            
+              .addEventListener ( 'load', callback );
+            
+            }, // end load
+            
+          observer = new MutationObserver ( callback ),
           
-            .addEventListener ( 'load', callback );
+          selector = `#${ accountFrameIdValue }`,
           
-          }; // end load
+          element = document
           
-        const observer = new MutationObserver ( callback );
-        
-        const selector = `#${ accountFrameIdValue }`;
-        
-        const element = document
-        
-          .querySelector ( selector );
-          
+            .querySelector ( selector );
+            
         /*
         
           if the account frame is already on the DOM, load. watch for it to
