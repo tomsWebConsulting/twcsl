@@ -65,7 +65,7 @@ way to provide more semantic classes for these cases.
 ## Callback Example
 
 You can optionally create a [callback][7] function to further customize the
-processing of the sign in dialog.
+processing of the member area log in dialog.
 
 Following is example code.
 
