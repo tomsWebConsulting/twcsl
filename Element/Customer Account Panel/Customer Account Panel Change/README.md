@@ -54,7 +54,7 @@ not immune to breakage but I think my method will break at a slower rate.
 
 ## Callback Example
 
-You can optionally create a [callback][7] function to further customize the
+You can optionally create a [callback][6] function to further customize the
 processing of customer account panel.
 
 Following is example code.
