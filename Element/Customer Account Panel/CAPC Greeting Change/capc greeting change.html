@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.1
+  Version       : 0.1.2
   
   SS Versions   : 7.1, 7.0
   
@@ -12,7 +12,7 @@
   Engine
   Compatible    : Not Applicable
   
-  Dependencies  : customer account panel change
+  Dependencies  : customer account panel change < https://tinyurl.com/2mhtu4wm >
   
   Copyright     : 2024 Thomas Creedon
                   
@@ -22,10 +22,10 @@
   
   <script>
   
-    if ( window.twc === undefined ) // initialize twc global if needed
+    // initialize twc module
     
-      window.twc = { };
-      
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
     twc.cgc = {
     
       searchText : '[ enter search text here between single quotes replacing square brakets ]',
@@ -42,53 +42,71 @@
   
     ( ( ) => {
     
-      const version = '0.1.1';
+      const
       
-      const s = `CAPC Greeting Change v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        version = '0.1.2',
         
-        © 2024 Thomas Creedon
+        s = `CAPC Greeting Change v${ version }
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
-        
-        .replace ( /^\s+/gm, '' );
-        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       } ) ( );
       
-    var twcCapcGreetingChange = ( dcmnt, panelType ) => {
+    // initialize twc capc sub-module
     
-      // bail if not account
+    twc.capc = ( ( self ) => self ) ( twc.capc || { } );
+    
+    // initialize twc capc callbacks sub-module
+    
+    twc.capc.callbacks = ( ( self ) => {
+    
+      callback = ( dcmnt, panelType ) => {
       
-      if ( panelType != 'account' ) return;
-      
-      const selector = '.twc-capc-greeting span';
-      
-      const element = dcmnt
-      
-        .querySelector ( selector );
+        if ( panelType != 'account' ) return; // bail if not account
         
-      if ( element === null ) return; // bail if no element
-      
-      const options = twc.cgc;
-      
-      const text = element
-      
-        .textContent
+        const
         
-        .replaceAll (
-        
-          options.searchText,
+          selector = '.twc-capc-greeting span',
           
-          options.replaceText
+          element = dcmnt
           
-          );
+            .querySelector ( selector );
+            
+        if ( element === null ) return; // bail if no element
+        
+        const
+        
+          options = twc.cgc,
+          
+          text = element
+          
+            .textContent
+            
+            .replaceAll (
+            
+              options.searchText,
+              
+              options.replaceText
+              
+              );
+              
+        element.textContent = text;
+        
+        };
+        
+      self.push ( callback );
       
-      element.textContent = text;
+      return self;
       
-      }
+      } ) ( twc.capc.callbacks || [ ] );
       
     </script>
     

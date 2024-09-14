@@ -6,7 +6,7 @@
 
 Change the Customer Account Panel greeting.
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Versions
 
@@ -31,19 +31,9 @@ Change the Customer Account Panel greeting.
 * Install [Customer Account Panel Change][5]. After you install the code be
   sure to continue on with the rest of the steps.
   
-* In the **customer account panel change** add twcCapcGreetingChange to
-  callbacks.
-
-  ```javascript
-        // '[ enter your callback name here replacing square brackets ]',
-        
-        'twcCapcGreetingChange',
-  ```
-  
 * Add the code from file **[capc greeting change.html][6]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER **before** the **customer account
-  panel change** code. Please see [Add code to code injection][7]. Read the code
-  for instructions within.
+  Website Tools > Code Injection > FOOTER. Please see [Add code to code
+  injection][7]. Read the code for instructions within.
 
 ## Make a Donation
 
@@ -51,6 +41,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-09-13**
+
+  * make compatible with customer account panel change v0.5.0
+  * bumped version to 0.1.2
+  
 * **2024-07-09**
 
   * adjust install instructions for capc v0.4.0, no functional change to the
