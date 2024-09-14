@@ -6,7 +6,7 @@
 
 Change the Customer Account Panel Account Settings link URL.
 
-### Version 0.1.1
+### Version 0.1.2
 
 #### SS Versions
 
@@ -31,13 +31,6 @@ Change the Customer Account Panel Account Settings link URL.
 * Install [Customer Account Panel Change][5]. After you install the code be
   sure to continue on with the rest of the steps.
   
-* In the **customer account panel change** code set accountFrameCallback to
-  twcCapcAccountSettingsLink.
-  
-  ```javascript
-      accountFrameCallback : twcCapcAccountSettingsLink
-  ```
-  
 * Add the code from file **[capc account settings link.html][6]** to Website >
   Pages > Website Tools > Code Injection > FOOTER **before** the **customer
   account panel change** code. Please see [Add code to code injection][7]. Read
@@ -49,6 +42,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-09-13**
+
+  * make compatible with customer account panel change v0.5.0
+  * bumped version to 0.1.2
+  
 * **2024-07-08**
 
   * replace const with var for twcCapcAccountSettingsLink for v0.4.0 capc

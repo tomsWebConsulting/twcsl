@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.1
+  Version       : 0.1.2
   
   SS Versions   : 7.1, 7.0
   
@@ -12,7 +12,7 @@
   Engine
   Compatible    : Not Applicable
   
-  Dependencies  : customer account panel change
+  Dependencies  : customer account panel change < https://tinyurl.com/2mhtu4wm >
   
   Copyright     : 2024 Thomas Creedon
                   
@@ -22,14 +22,14 @@
   
   <script>
   
-    if ( window.twc === undefined ) // initialize twc global if needed
+    // initialize twc module
     
-      window.twc = { };
-      
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
     twc.casl = {
     
       url : '[ enter url here between single quotes replacing square brakets ]'
-      
+        
       };
       
     </script>
@@ -40,39 +40,57 @@
   
     ( ( ) => {
     
-      const version = '0.1.1';
+      const
       
-      const s = `CAPC Account Settings Link v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        version = '0.1.2',
         
-        © 2024 Thomas Creedon
+        s = `CAPC Account Settings Link v${ version }
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
-        
-        .replace ( /^\s+/gm, '' );
-        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       } ) ( );
       
-    var twcCapcAccountSettingsLink = ( dcmnt, panelType ) => {
+    // initialize twc capc sub-module
     
-      // bail if not digital products
+    twc.capc = ( ( self ) => self ) ( twc.capc || { } );
+    
+    // initialize twc capc callbacks sub-module
+    
+    twc.capc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, panelType ) => {
       
-      if ( panelType != 'digital products' ) return;
-      
-      const url = twc.casl.url;
-      
-      const selector = '.twc-capc-account-settings a';
-      
-      dcmnt
-      
-        .querySelector ( selector )
+        // bail if not digital products
         
-        .setAttribute ( 'href', url );
+        if ( panelType != 'digital products' ) return;
         
-      }
+        const
+        
+          url = twc.casl.url,
+          
+          selector = '.twc-capc-account-settings a';
+          
+        dcmnt
+        
+          .querySelector ( selector )
+          
+          .setAttribute ( 'href', url );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.capc.callbacks || [ ] );
       
     </script>
     
