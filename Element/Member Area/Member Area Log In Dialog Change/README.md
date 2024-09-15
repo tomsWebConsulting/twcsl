@@ -84,18 +84,14 @@ Your callback must accept 2 parameters :
 ```html
 <script>
 
-  var twc = ( ( self ) => { // initialize twc module
+  // initialize twc module
   
-    return self;
-    
-    } ) ( twc || { } );
-    
-  twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
+  window.twc = ( ( self ) => self ) ( window.twc || { } );
   
-    return self;
-    
-    } ) ( twc.malidc || { } );
-    
+  // initialize twc malidc sub-module
+  
+  twc.malidc = ( ( self ) => self ) ( twc.malidc || { } );
+  
   // initialize twc malidc callbacks sub-module
   
   twc.malidc.callbacks = ( ( self ) => {
