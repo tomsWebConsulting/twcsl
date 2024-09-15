@@ -64,11 +64,23 @@ way to provide more semantic classes for these cases.
 
 ## Callback Example
 
-You can optionally create a [callback][7] function to further customize the
-processing of the member area log in dialog.
+You can create a [callback][7] function to customize the processing of the
+member area log in dialog.
 
-Following is example code.
+Your callback must accept 2 parameters :
 
+  * dcmnt ( document )
+  
+  * logInType ( string )
+  
+    The parameter value will be one of the following.
+    
+    * sign-in
+    
+    * sign-up
+    
+    * sign-up-join
+    
 ```html
 <script>
 
@@ -105,14 +117,6 @@ Following is example code.
   </script>
 
 ```
-
-The logInType parameter value will be one of the following.
-
-  * sign-in
-  
-  * sign-up
-  
-  * sign-up-join
 
 ## Make a Donation
 
