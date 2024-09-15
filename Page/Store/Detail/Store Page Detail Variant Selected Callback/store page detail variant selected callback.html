@@ -1,141 +1,184 @@
-<!-- 
+<script>
 
-  begin store page detail variant selected callback
+  /*
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.2.0
-  
-  SS Versions   : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : twcsl < https://tinyurl.com/27bpnu6f >
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-  
-    if ( window.twc == undefined ) window.twc = { };
+    store page detail variant selected callback
     
-    twc.spdvsc = {
+    License       : < https://tinyurl.com/s872fb68 >
     
-      /*
-      
-        following is an example line. copy the example line below and paste
-        after the example line. remove '// ' at beginning of pasted line
-        
-        your callback must accept three parameters :
-        
-          sku ( string )
-          
-          selectedVariant ( JavaScript object, the selected variant data )
-          
-          $element ( JQuery object, the product variants element )
-          
-        */
-        
-      // callback : [enter function name here replacing square brackets]
-      
-      };
-      
-    </script>
+    Version       : 0.3.0
     
-  <!-- do not change anything below, there be the borg here -->
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : twcsl < https://tinyurl.com/27bpnu6f >
+    
+    Copyright     : 2023-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  ( ( ) => {
   
-  <script>
-  
-    $( ( ) => {
+    const
     
-      const title = 'Store Product Detail Variant Selected Callback';
+      title = 'Store Product Detail Variant Selected Callback',
       
-      const version = '0.2.0';
+      version = '0.3.0',
       
-      const s = `${ title } v${ version }, ` +
+      s = `${ title } v${ version }
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        License < https://tinyurl.com/s872fb68 >
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        © 2023-2024 Thomas Creedon
         
-      console.log ( s );
-      
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    const callback = ( event ) => {
+    
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const debugFlag = false;
+      const
       
-      const initialize = ( ) => {
-      
-        if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+        debugFlag = false,
         
-        const options = twc.spdvsc;
+        initialize = ( ) => {
         
-        if ( options.callback == undefined ) return; // bail if no callback
-        
-        const callback = options.callback;
-        
-        const observer = new MutationObserver ( function ( mutations ) {
-        
-          if ( debugFlag )
+          if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
           
-            console.log ( 'mutations : ', mutations );
-            
-          $.each ( mutations, function ( ) {
+          const codeKey = 'twc-spdvsc';
           
-            if ( debugFlag ) {
+          // initialize twc module
+          
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc spdvsc sub-module
+          
+          twc.spdvsc = ( ( self ) => self ) ( twc.spdvsc || { } );
+          
+          // initialize twc spdvsc callbacks sub-module
+          
+          twc.spdvsc.callbacks =
+          
+            ( ( self ) => self ) ( twc.spdvsc.callbacks || [ ] );
             
-              console.log ( 'this : ', this );
-              
-              console.log ( 'this.target : ', this.target );
-              
-              }
-              
-            const $element = $( this.target );
+          let callback = ( mutations ) => {
             
-            let selectedVariant = $element.attr ( 'data-selected-variant' );
-            
-            const b = selectedVariant !== undefined;
-            
-            if ( b )
-            
-              selectedVariant = JSON.parse ( selectedVariant );
-              
             if ( debugFlag )
             
-              console.log ( 'selectedVariant : ', selectedVariant );
+              console.log ( `${ codeKey } mutations : `, mutations );
               
-            const sku = b ? selectedVariant.sku : '';
+            const callback = ( mutation ) => {
             
-            callback ( sku, selectedVariant, $element );
+              if ( debugFlag ) {
+              
+                console.log ( `${ codeKey } mutation : `, mutation );
+                
+                console
+                
+                  .log ( `${ codeKey } mutation.target : `, mutation.target );
+                  
+                }
+                
+              const element = mutation.target;
+              
+              let selectedVariant = element
+              
+                .getAttribute ( 'data-selected-variant' );
+                
+              const b = selectedVariant !== null;
+              
+              if ( b )
+              
+                selectedVariant = JSON.parse ( selectedVariant );
+                
+              if ( debugFlag )
+              
+                console
+                
+                  .log ( `${ codeKey } selectedVariant : `, selectedVariant );
+                  
+              const
+              
+                callback = ( callback ) => {
+                
+                  try {
+                  
+                    callback ( sku, selectedVariant, element );
+                    
+                    } catch ( error ) {
+                    
+                      const s = `${ codeKey } callback error`;
+                      
+                      console.error ( s, error );
+                      
+                      }
+                      
+                  },
+                  
+                sku = b ? selectedVariant.sku : '';
+                
+                if ( debugFlag )
+                
+                  console
+                  
+                    .log ( `${ codeKey } sku : `, sku );
+                    
+              twc
+              
+                .spdvsc
+                
+                .callbacks
+                
+                .forEach ( callback );
+                
+              };
+              
+            mutations.forEach ( callback );
             
-            } );
+            };
             
-          } );
+          const observer = new MutationObserver ( callback );
+            
+          // start listening for changes in elements
           
-        // start listening for changes in elements
-        
-        $( '.product-variants' ).each ( function ( ) {
-        
-          observer.observe ( this, {
+          callback = ( element ) => {
           
-            attributes : true,
+            const options = {
             
-            attributeFilter : [ 'data-selected-variant' ],
+              attributes : true,
+              
+              attributeFilter : [ 'data-selected-variant' ],
+              
+              attributeOldValue : true,
+              
+              };
+              
+            observer.observe ( element, options );
             
-            attributeOldValue : true,
+            };
             
-            } );
-            
-          } );
+          document
           
-        };
-        
+            .querySelectorAll ( '.product-variants' )
+            
+            .forEach ( callback );
+            
+          };
+          
       switch ( true ) {
       
         case twcsl.ss.is71 :
@@ -152,8 +195,10 @@
           
         }
         
-      } );
+      };
       
-    </script>
+    addEventListener ( 'DOMContentLoaded', callback );
     
-  <!-- end store page detail variant selected callback -->
+    } ) ( );
+
+  </script>
