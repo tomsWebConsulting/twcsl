@@ -43,6 +43,10 @@
       
       } ) ( );
       
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
     // initialize twc malidc sub-module
     
     twc.malidc = ( ( self ) => self ) ( twc.malidc || { } );
@@ -51,7 +55,7 @@
     
     twc.malidc.callbacks = ( ( self ) => {
     
-      callback = ( dcmnt, logInType ) => {
+      const callback = ( dcmnt, logInType ) => {
       
         const
         

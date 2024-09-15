@@ -31,7 +31,7 @@
   
     // initialize twc module
     
-    var twc = ( ( self ) => self ) ( twc || { } );
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
     twc.malidc = ( ( self ) => { // initialize twc malidc sub-module
     
@@ -76,6 +76,8 @@
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      // initialize twc malidc callbacks sub-module
       
       twc.malidc.callbacks =
       

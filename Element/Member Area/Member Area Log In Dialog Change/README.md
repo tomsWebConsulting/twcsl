@@ -90,9 +90,9 @@ Following is example code.
   
     const callback = ( dcmnt, logInType ) => {
     
-      console.log ( dcmnt );
+      console.log ( 'malidc log dcmnt : ', dcmnt );
       
-      console.log ( logInType );
+      console.log ( 'malidc log logInType : ', logInType );
       
       };
       
