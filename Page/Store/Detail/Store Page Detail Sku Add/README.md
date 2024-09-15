@@ -8,7 +8,7 @@ Add sku to the description of store detail pages.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -34,16 +34,8 @@ Add sku to the description of store detail pages.
   the code be sure to continue on with the rest of the steps.
   
 * Add code from file **[store page detail sku add.html][6]** to Store Settings >
-  Advanced > Page Header Code Injection for the store page before the
-  **store page detail variant selected callback** code. Please see [per-page
+  Advanced > Page Header Code Injection for the store page. Please see [per-page
   code injection][7]. Read the code for any instructions within.
-  
-* In the **store page detail variant selected callback** code add the
-  **twcSpdsa** callback to the code. For example.
-  
-  ```javaScript
-      callback : twcSpdsa
-  ```
   
 * In each of your product descriptions add the following text where you want the
   sku to appear.
@@ -58,11 +50,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2023-10-20**
+* **2024-09-15**
 
-  * set sku to empty string when no variant is selected
-  * bumped version to 0.2.0
-  -->
+  * make compatible with page detail variant selected callback v0.3.0
+  * bumped version to 0.2.1
+  
 * **2024-05-11**
 
   * initial version

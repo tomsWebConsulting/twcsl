@@ -4,13 +4,15 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.0
+  Version       : 0.2.1
   
   SS Versions   : 7.1, 7.0
   
   Dependencies  : store page detail variant selected callback
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
   
@@ -45,15 +47,21 @@
     
   <script>
   
-    // initialize twc global if needed
+    // initialize twc module
     
-    if ( window.twc == undefined ) window.twc = { };
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    twc.spdsa = {
+    twc.spdsa = ( ( ) => { // initialize twc spdsa sub-module
     
-      noVariantSelectedText : 'select a variant',
+      const options = {
       
-      };
+        noVariantSelectedText : 'select a variant'
+        
+        };
+        
+      return options;
+      
+      } ) ( );
       
     </script>
     
@@ -80,125 +88,181 @@
     
   <script>
   
-    twc
+    ( ( ) => {
     
-      .spdsa
+      const version = '0.2.1',
       
-      .codeKey
-      
-      =
-      
-      'twc-spdsa';
-      
-    $( ( ) => {
-    
-      const version = '0.2.0';
-      
-      const s = `Store Page Detail Sku Add v${ version }, ` +
-      
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
+        s = `Store Page Detail Sku Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      const callback = function ( ) {
+      const callback = ( event ) => {
       
-        const $this = $( this );
+        const
         
-        const html = $this
-        
-          .html ( )
+          callback = ( element ) => {
           
-          .replaceAll ( `[${ codeKey }]`, span )
+            const html = element
+            
+              .innerHTML
+              
+              .replaceAll ( `[${ codeKey }]`, span )
+              
+              .replace ( /\s+/g, ' ' );
+              
+            element
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            },
+            
+          options = twc.spdsa,
           
-          .replace ( /\s+/g, ' ' );
+          variants = Static
           
-        $this.html ( html );
-        
-        }
-        
-      const options = twc.spdsa;
-      
-      const codeKey = options.codeKey;
-      
-      const variants = Static
-      
-        .SQUARESPACE_CONTEXT
-        
-        .product
-        
-        .variants;
-        
-      let selector = [
-      
-        '.ProductItem-details .ProductItem-details-excerpt', // simple
-        
-        '.pdp-layout .pdp-details .pdp-details-excerpt' // full, half, wrap
-        
-        ]
-        
-        .join ( ', ' );
-      
-      let sku;
-      
-      if ( variants.length == 1 )
-      
-        sku = variants [ 0 ].sku;
-        
-        else
-        
-          sku = options.noVariantSelectedText;
+            .SQUARESPACE_CONTEXT
+            
+            .product
+            
+            .variants,
+            
+          codeKey = options
           
-      const span = `
-      
-        <span class="${ codeKey }-sku">
+            .codeKey;
+            
+        let
         
-          ${ sku }
+          selector = [
           
-          </span>
+            '.ProductItem-details .ProductItem-details-excerpt', // simple
+            
+            '.pdp-layout .pdp-details .pdp-details-excerpt' // full, half, wrap
+            
+            ]
+            
+            .join ( ', ' ),
+            
+          sku;
           
-        `;
+        if ( variants.length == 1 )
         
-      $( selector ).each ( callback );
-      
-      selector = '#pdp';
-    
-      $( selector ).css ( '--twc-spdsa-excerpt-visibility', 'visible' );
-      
-      } );
-      
-    const twcSpdsa = ( sku, selectedVariant, $element ) => {
-    
-      const options = twc.spdsa;
-      
-      const codeKey = options.codeKey;
-      
-      const callback = function ( ) {
-      
-        $this = $( this );
-        
-        if ( sku )
-        
-          $this.removeClass ( 'no-variant' );
+          sku = variants [ 0 ].sku;
           
-          else {
+          else
           
             sku = options.noVariantSelectedText;
             
-            $this.addClass ( 'no-variant' );
-            
-            }
-            
-        $this.text ( sku );
+        const span = `
         
-        }
+          <span class="${ codeKey }-sku">
+          
+            ${ sku }
+            
+            </span>
+            
+          `;
+          
+        document
         
-      const selector = `.${ codeKey }-sku`;
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+        
+        selector = '#pdp';
+        
+        document
+        
+          .querySelector ( selector )
+          
+          .style
+          
+          .setProperty ( '--twc-spdsa-excerpt-visibility',  'hidden' );
+          
+        };
+        
+      twc
       
-      $( selector ).each ( callback );
+        .spdsa
+        
+        .codeKey
+        
+        =
+        
+        'twc-spdsa';
+        
+      addEventListener ( 'DOMContentLoaded', callback );
       
-      };
+      } ) ( );
+  
+    // initialize twc spdvsc sub-module
+    
+    twc.spdvsc = ( ( self ) => self ) ( twc.spdvsc || { } );
+    
+    // initialize twc spdvsc callbacks sub-module
+    
+    twc.spdvsc.callbacks = ( ( self ) => {
+    
+      const callback = ( sku, selectedVariant, element ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            if ( sku )
+            
+              element
+              
+                .classList
+                
+                .remove ( 'no-variant' );
+                
+              else {
+              
+                sku = options.noVariantSelectedText;
+                
+                element
+                
+                  .classList
+                  
+                  .add ( 'no-variant' );
+                  
+                }
+                
+            element.textContent = sku;
+            
+            },
+            
+          options = twc.spdsa,
+          
+          codeKey = options.codeKey,
+          
+          selector = `.${ codeKey }-sku`;
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.spdsa.callbacks || [ ] );
       
     </script>
     
