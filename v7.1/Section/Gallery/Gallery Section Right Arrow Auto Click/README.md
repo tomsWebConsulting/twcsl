@@ -61,7 +61,8 @@ Auto click right arrow of Gallery sections.
     
   * Edit the section.
     
-  * Select a GALLERY TYPE of Simple, Slideshow: Full, or Slideshow: Reel.
+  * Select a GALLERY TYPE of Slideshow: Simple, Slideshow: Full, or Slideshow:
+    Reel.
     
   * For OPTIONS enable Captions and disable Autoplay (GALLERY TYPE Reel doesn't
     have this option).
