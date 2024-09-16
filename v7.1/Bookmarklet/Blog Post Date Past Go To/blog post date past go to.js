@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.2.0
+    Version     : 0.2.1
     
     SS Version  : 7.1
     
@@ -16,9 +16,9 @@
     
     Note        : this effect is only active in SS Preview
     
-    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    License     : < https://bit.ly/3Ob7JsO >
+    Copyright   : 2022-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -66,12 +66,36 @@
       
       .value;
       
-    const monthDiff = ( dateFrom, dateTo ) => {
+    var monthDiff = ( dateFrom, dateTo ) => {
     
-      dateFrom = new Date ( dateFrom );
+      dateFrom = new Date (
       
-      dateTo = new Date ( dateTo );
+        Date
+        
+          .parse (
+          
+            dateFrom
+            
+              .replace ( ' ', ' 1 ' )
+              
+            )
+            
+        );
+        
+      dateTo = new Date (
       
+        Date
+        
+          .parse (
+          
+            dateTo
+            
+              .replace ( ' ', ' 1 ' )
+              
+            )
+            
+        );
+        
       const m = dateTo.getMonth ( )
       
         -
@@ -162,7 +186,7 @@
     
     if ( months < 0 ) {
     
-      alert ( 'Blog Post Date Past Go To only goes to a past month year.' );
+      alert ( 'Blog Post Date Past Go To only goes to a past date.' );
       
       return; // bail if date target is in future
       

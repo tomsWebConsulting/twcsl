@@ -35,6 +35,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2024-09-16**
+
+  * fix for Safari not parsing dates
+  * bumped version to 0.2.1
+  
 * **2023-08-06**
 
   * try to use the structure of options instead of dynamic CSS names
