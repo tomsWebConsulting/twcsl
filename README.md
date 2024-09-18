@@ -205,11 +205,11 @@ not necessarily designed to work together.
   
 * [Page Edit Keys](Page%20Edit%20Keys)
   
-* [Responsive Image Map Template](Responsive%20Image%20Map%20Template)
-  
 * [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
   
 * [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
+  
+* [Image Map Responsive Template](Image%20Map%20Responsive%20Template)
   
 * [Change Search Page Input Placeholder Text](Change%20Search%20Page%20Input%20Placeholder%20Text)
   
