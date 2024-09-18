@@ -1,4 +1,4 @@
-# Responsive Image Map Template
+# Image Map Responsive Template
 
 ### [License][1]
 
