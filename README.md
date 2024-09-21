@@ -365,6 +365,8 @@ not necessarily designed to work together.
       
       * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
         
+    * [Page Section First Blank Hide](v7.1/Section/Page%20Section%20First%20Blank%20Hide)
+      
     * [Section Info](v7.1/Section/Section%20Info)
       
     * [Auto Layout](v7.1/Section/Auto%20Layout)
@@ -502,8 +504,6 @@ not necessarily designed to work together.
   * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
     
   * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
-    
-  * [Page Section First Blank Hide](v7.1/Page%20Section%20First%20Blank%20Hide)
     
   * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
     
