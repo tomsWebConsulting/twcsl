@@ -2,80 +2,36 @@
 
   begin section date hide
   
-  License       : < https://tinyurl.com/s872fb68 >
+  License      : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.0
+  Version      : 0.3.0
   
-  SS Version    : 7.1
+  SS Version   : 7.1
   
   Fluid
   Engine
-  Compatible    : Yes
+  Compatible  : Yes
   
-  Dependencies  : jQuery
+  Note        : the code is comprised of several tags. all are needed for the
+                full effect to work
   
-  Note          : the code is comprised of several tags. all are needed for the
-                  full effect to work
-                  
-                  this effect is not active in SS Preview to test it use
-                  private browsing < https://tinyurl.com/ynessvsf >
+  Copyright   : 2021-2024 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  no user serviceable parts below
   
   -->
   
-  <script>
-  
-    if ( window.twc == undefined ) window.twc = { };
-    
-    twc.sdh = {
-    
-      dataSectionIdDateMap : {
-      
-        /*
-        
-          the format of each data structure is a page section id, start date,
-          and optional stop date
-          
-          following is an example data structure. copy the example data
-          structure below and paste after the example data structure. remove the
-          forward slash asterisk and asterisk forward slash lines from before
-          and after the example data structure. repeat for as many page sections
-          as you need to manipulate
-          
-          the format of dates are YYYY-MM-DD
-          
-          */
-          
-        /*
-        
-        '[ enter data section id here between single quotes replacing square brackets ]' : [
-        
-          '[ enter start date here between single quotes replacing square brackets ]',
-          
-          '[ optional, enter stop date here between single quotes replacing square brackets ]'
-          
-          ],
-          
-        */
-        
-        }
-        
-      };
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <style>
   
-    #siteWrapper {
+    body:not( .sqs-edit-mode-active ) #siteWrapper {
     
       --twc-sdh-page-section-display : none;
       
       }
       
-    .page-section {
+    body:not( .sqs-edit-mode-active ) .page-section {
     
       display : var( --twc-sdh-page-section-display );
       
@@ -85,141 +41,283 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const version = '0.2.0';
+      const
       
-      const s = `Section Date Hide v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.3.0',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `Section Date Hide v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      if ( window.frameElement !== null ) return; // bail if in preview
+      const callback = ( event ) => {
       
-      const callback = function ( ) {
-      
-        const $this = $( this );
+        const isEditing = document
         
-        const dataSectionId = $this
+          .body
+          
+          .classList
+          
+          .contains ( 'sqs-edit-mode-active' );
+          
+        if ( isEditing ) return; // bail if not editing
         
-          .parents ( '.page-section' )
-          
-          .attr ( 'data-section-id' );
-          
-        dataSectionIdDateMap [ dataSectionId ] = [
+        const
         
-          $this.attr ( 'data-date-start' ),
+          codeKey = 'twc-sdh',
           
-          $this.attr ( 'data-date-stop' )
+          d = new Date ( ),
           
-          ];
+          dYear = d.getFullYear ( ),
           
-        $this
+          sectionIdDateMap = { };
+          
+        let
         
-          .parents ( '.fe-block, .sqs-block-code' )
+          callback = ( element ) => {
           
-          .last ( )
+            let
+            
+              map = element
+                
+                .textContent
+                
+                .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                
+                .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                
+                .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
+                
+                .replaceAll ( '\n', '' );
+                
+            map = JSON.parse ( map );
+            
+            const entries = Object.entries ( map ) ;
+            
+            for ( const [ sectionId, object ] of entries ) {
+            
+              const
+              
+                re = new RegExp ( '^\\[.+\\]$' ),
+                
+                dateStop =
+                
+                  ! re.test ( object.dateStop ) ? object.dateStop : undefined;
+                  
+              sectionIdDateMap [ sectionId ] = [
+              
+                object.dateStart,
+                
+                dateStop
+                
+                ];
+              
+              }
+              
+            },
+            
+          selector = 'head script[ type="application/vnd.' +
           
-          .remove ( );
-          
-        }
+            `${ codeKey.replaceAll ( '-', '.' ) }" ]`;
+            
+        document
         
-      const codeKey = 'twc-sdh';
-      
-      const d = new Date ( );
-      
-      const dataSectionIdDateMap = twc.sdh.dataSectionIdDateMap;
-      
-      const dYear = d.getFullYear ( );
-      
-      let selector = `x-${ codeKey }`;
-      
-      $( selector ).each ( callback );
-      
-      const entries = Object.entries ( dataSectionIdDateMap );
-      
-      for ( const [ dataSectionId, value ] of entries ) {
-      
-        const inRange = ( x, min, max ) => {
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        callback = ( element ) => {
         
-          const b = ( x - min ) * ( x - max ) <= 0;
+          const sectionId = element
           
-          return b;
+            .closest ( '.page-section' )
+            
+            .getAttribute ( 'data-section-id' );
+            
+          sectionIdDateMap [ sectionId ] = [
           
+            element.getAttribute ( 'data-date-start' ),
+            
+            element.getAttribute ( 'data-date-stop' )
+            
+            ];
+            
+          try {
+          
+            element
+            
+              .closest ( '.fe-block' )
+              
+              .remove ( );
+              
+            } catch ( error ) {
+            
+              element
+              
+                .closest ( '.sqs-block-code' )
+                
+                .remove ( );
+                
+              }
+              
           };
           
-        let d1 = value [ 0 ];
+        selector = `x-${ codeKey }`;
         
-        if ( d1 === undefined ) continue;
+        document
         
-        let re = '\\d{4}-\\d{2}-\\d{2}';
+          .querySelectorAll ( selector )
           
-        re = new RegExp ( re );
-        
-        let b = ! re.test ( d1 );
-        
-        if ( b ) continue;
-        
-        let d2 = value [ 1 ];
-        
-        // d1
-        
-          d1 += ' 00:00:00';
+          .forEach ( callback );
           
-          d1 = new Date ( d1 );
+        const
+        
+          entries = Object.entries ( sectionIdDateMap ),
           
-          b = isNaN ( d1 );
+          timeZone = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .website
+            
+            .timeZone,
+            
+          longOffsetFormatter = new Intl
+          
+            .DateTimeFormat (
+            
+              'en-US',
+              
+              {
+              
+                timeZone : timeZone, 
+                
+                timeZoneName : 'longOffset'
+                
+                }
+                
+              );
+              
+        for ( const [ sectionId, dates ] of entries ) {
+        
+          const inRange = ( x, min, max ) => {
+          
+            const b = ( x - min ) * ( x - max ) <= 0;
+            
+            return b;
+            
+            };
+            
+          let d1 = dates [ 0 ];
+          
+          if ( d1 === undefined ) continue;
+          
+          let re = '\\d{4}-\\d{2}-\\d{2}';
+            
+          re = new RegExp ( re );
+          
+          let b = ! re.test ( d1 );
           
           if ( b ) continue;
           
-          let year = d1.getFullYear ( );
+          const
           
-          if ( year == 1970 )
-          
-            d1.setYear ( dYear );
+            longOffsetString = longOffsetFormatter
             
-        // d2
-        
-          b = d2 === undefined || isNaN ( d2 [ 0 ] );
-          
-          if ( b )
-          
-            d2 = '275760-09-12';
+              .format (
+              
+                new Date ( `${ dates [ 0 ] }T00:00:00.000` )
+                
+                ),
+                
+            gmtOffset = longOffsetString
             
-          d2 += ' 00:00:00';
+              .split ( 'GMT' )
+              
+              [ 1 ];
+              
+          let d2 = dates [ 1 ];
           
-          d2 = new Date ( d2 );
+          // d1
           
-          b = isNaN ( d2 );
-          
-          if ( b ) continue;
-          
-          year = d2.getYear ( );
-          
-          if ( year == 1970 )
-          
-            d2.setYear ( dYear );
+            d1 += `T00:00:00${ gmtOffset }`;
             
-        b = inRange ( d, d1, d2 );
-        
-        if ( b ) {
-        
-          const selector = `[ data-section-id = "${ dataSectionId }" ]`;
+            d1 = new Date ( d1 );
+            
+            b = isNaN ( d1 );
+            
+            if ( b ) continue;
+            
+            let year = d1.getFullYear ( );
+            
+            if ( year == 1970 )
+            
+              d1.setYear ( dYear );
+              
+          // d2
           
-          $( selector ).remove ( );
+            b = d2 === undefined || ! re.test ( d2 );
+            
+            if ( b )
+            
+              d2 = '275760-09-12';
+              
+              else
+              
+                d2 += `T00:00:00${ gmtOffset }`;
+                
+            d2 = new Date ( d2 );
+            
+            b = isNaN ( d2 );
+            
+            if ( b ) continue;
+            
+            year = d2.getFullYear ( );
+            
+            if ( year == 1970 )
+            
+              d2.setYear ( dYear );
+              
+          b = inRange ( d, d1, d2 );
+          
+          if ( b ) {
+          
+            const selector = `[ data-section-id = "${ sectionId }" ]`;
+            
+            document
+            
+              .querySelector ( selector )
+              
+              .remove ( );
+              
+            }
             
           }
           
-        }
+        selector = '#siteWrapper';
         
-      selector = '#siteWrapper';
+        document
+        
+          .querySelector ( selector )
+          
+          .style
+          
+          .setProperty ( `--${ codeKey }-page-section-display`, 'flex' );
+          
+        };
+        
+      addEventListener ( 'DOMContentLoaded', callback );
       
-      $( selector ).css ( `--${ codeKey }-page-section-display`, 'flex' );
-      
-      } );
+      } ) ( );
       
     </script>
     
