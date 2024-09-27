@@ -18,15 +18,11 @@ Add go to date to Published and Scheduled calendars.
 
   * Not Applicable
 
-#### Dependencies
-
-  * [Squarespace plan][2] that supports [JavaScript][3].
-
 ---
 
 ## Quick Install
 
-* Add code from file **[blog post date go to.bookmarklet][4]** as the URL for a
+* Add code from file **[blog post date go to.bookmarklet][2]** as the URL for a
   bookmark in your browser named **Blog Post Date To**.
   
 * For a blog post go to Settings > Options > Status. Use the bookmarklet which
@@ -35,7 +31,7 @@ Add go to date to Published and Scheduled calendars.
 
 ## What is a bookmarket?
 
-Wikipedia has a nice entry on [bookmarklet][5].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Note
 
@@ -45,7 +41,7 @@ lurking so be careful when entering your target dates.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -75,8 +71,6 @@ Please consider [making a donation][6].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: blog%20post%20date%20go%20to.bookmarklet#L1
-[5]: https://en.wikipedia.org/wiki/Bookmarklet
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: blog%20post%20date%20go%20to.bookmarklet#L1
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
