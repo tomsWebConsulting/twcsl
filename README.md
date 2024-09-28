@@ -269,6 +269,8 @@ not necessarily designed to work together.
         
         * [Blog Page List Post Image URL to Source URL](v7.1/Page/Blog/List/Blog%20Page%20List%20Post%20Image%20URL%20to%20Source%20URL)
           
+      * [Blog Page Post Date Go To Add](v7.1/Page/Blog/Blog%20Page%20Post%20Date%20Go%20To%20Add)
+        
     * [Events](v7.1/Page/Events)
       
       * [Events Page Event Settings Time Slider Replace](v7.1/Page/Events/Events%20Page%20Event%20Settings%20Time%20Slider%20Replace)
@@ -396,8 +398,6 @@ not necessarily designed to work together.
   * [Bookmarklet](v7.1/Bookmarklet)
     
     * [Gallery Sections Image URLs](v7.1/Bookmarklet/Gallery%20Sections%20Image%20URLs)
-      
-    * [Blog Post Date Go To](v7.1/Bookmarklet/Blog%20Post%20Date%20Go%20To)
       
   * [Header Branding And Navigation Center Actions Left Add](v7.1/Header%20Branding%20And%20Navigation%20Center%20Actions%20Left%20Add)
     
