@@ -60,7 +60,6 @@ Please consider [making a donation][7].
 
 * **2024-09-26**
 
-  * lift past only date restriction
   * convert from bookmarlet to site installed code
   * bumped version to 0.4.0
   
