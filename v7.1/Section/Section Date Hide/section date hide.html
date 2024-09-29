@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.3.0
+  Version      : 0.3.1
   
   SS Version   : 7.1
   
@@ -25,13 +25,13 @@
   
   <style>
   
-    body:not( .sqs-edit-mode-active ) #siteWrapper {
+    body:not( .sqs-edit-mode-active ) > #siteWrapper {
     
       --twc-sdh-page-section-display : none;
       
       }
       
-    body:not( .sqs-edit-mode-active ) .page-section {
+    body:not( .sqs-edit-mode-active ) > #siteWrapper .page-section {
     
       display : var( --twc-sdh-page-section-display );
       
@@ -45,7 +45,7 @@
     
       const
       
-        version = '0.3.0',
+        version = '0.3.1',
         
         s = `Section Date Hide v${ version }
         

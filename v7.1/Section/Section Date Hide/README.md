@@ -8,7 +8,7 @@ Hide page sections using dates.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
@@ -198,6 +198,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2024-09-29**
+
+  * workaround for SS page picker hiding issue
+  * bumped version to 0.3.1
+  
 * **2024-09-25**
 
   * remove jQuery dependency
