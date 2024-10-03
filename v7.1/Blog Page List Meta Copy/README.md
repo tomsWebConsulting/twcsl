@@ -35,7 +35,7 @@ Copy blog page list meta after blog title.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[blog page list meta copy.html][5]** to Block Settings >
+* Add code from file **[blog page list meta copy.html][5]** to Blog Settings >
   Advanced > Page Header Code Injection for the blog page. Please see [Per-page
   code injection][6]. Read the code for any instructions within.
   
