@@ -66,7 +66,7 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: blog%20page%post%20meta%20copy.html#L1
+[4]: blog%20page%20post%20meta%20copy.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
