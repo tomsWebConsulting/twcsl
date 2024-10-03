@@ -1,0 +1,122 @@
+<!--
+
+  begin blog page post meta copy
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Notes         : the code is comprised of a style and script tags. both are
+                  needed for the full effect to work
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    body.sqs-edit-mode-active .twc-bppmc {
+    
+      display : none;
+      
+      }
+      
+    .tweak-blog-item-meta-position-below-title .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc {
+    
+      order : -1;
+      
+      }
+      
+    @media screen and (min-width : 768px ) {
+    
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-categories .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-date .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-author-name .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc
+      
+        {
+        
+          margin-bottom : 2rem;
+          
+          }
+          
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0',
+      
+        s = `Blog Page Post Meta Copy v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( event ) => {
+      
+        const metaSelector = '.tweak-blog-item-meta-position-below-title '
+        
+          +
+          
+          '.blog-item-wrapper .blog-item-meta-wrapper';
+          
+        let element = document
+        
+          .querySelector ( metaSelector );
+          
+        if ( element === null ) return; // bail if no element
+        
+        const
+        
+          codeKey = 'twc-bppmc',
+          
+          metaClone = element
+          
+            .cloneNode ( true );
+            
+        selector = '.tweak-blog-item-meta-position-below-title '
+        
+          +
+          
+          '.blog-item-wrapper .blog-item-title';
+          
+        metaClone
+        
+          .classList
+          
+          .add ( codeKey );
+          
+        element = document
+        
+          .querySelector ( selector );
+          
+        element
+        
+          .parentElement
+          
+          .insertBefore ( metaClone, element );
+          
+        };
+        
+      addEventListener ( 'DOMContentLoaded', callback );
+      
+      } ) ( );
+  
+    </script>
+    
+  <!-- end blog page post meta copy -->
