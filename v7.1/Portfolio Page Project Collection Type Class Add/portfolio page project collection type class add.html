@@ -1,41 +1,73 @@
 <script>
 
-  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  ( ( ) => {
   
     /*
     
       portfolio page project collection type class add
       
-      License         : < https://tinyurl.com/s872fb68 >
+      License     : < https://tinyurl.com/s872fb68 >
       
-      Version         : 1.0
+      Version     : 1.1.0
       
-      SS Version     : 7.1
+      SS Version  : 7.1
       
-      Dependencies    : jQuery
+      Fluid
+      Engine
+      Compatible  : Yes
       
-      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Copyright   : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       */
       
-    const selector = '.item-pagination[data-collection-type^="portfolio"]';
+    const version = '1.1.0',
     
-    const portfolioPagination = document.querySelector ( selector );
+      s = `Portfolio Page Project Collection Type Class Add v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
     
-    // bail if no portfolio navigation
+    const callback = ( event ) => {
     
-    if ( portfolioPagination == null ) return;
-    
+      const
+      
+        selector = '.item-pagination[ data-collection-type ^= "portfolio" ]',
+        
+        element = document
+        
+          .querySelector ( selector );
+          
+      // bail if no element
+      
+      if ( element === null ) return;
+      
+      const codeKey = 'twc-pppctca';
+      
+      document
+      
+        .getElementsByTagName ( 'body' )
+        
+        [ 0 ]
+        
+        .classList
+        
+        .add ( `${ codeKey }-collection-type-portfolio-project` );
+        
+      };
+      
     document
     
-      .getElementsByTagName ( 'body' )
+      .addEventListener ( 'DOMContentLoaded',  callback );
       
-      [ 0 ]
-      
-      .classList
-      
-      .add ( 'twc-collection-type-portfolio' );
-      
-    } );
+    } ) ( );
     
   </script>
