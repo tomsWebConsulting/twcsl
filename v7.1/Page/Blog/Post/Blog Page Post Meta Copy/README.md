@@ -8,7 +8,7 @@ Copy blog page post meta before blog title.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -38,12 +38,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2021-05-19**
+* **2024-10-02**
 
-  * added a choice of paragraph styles
-  * user can set store url slug
-  * bumped version to 0.2d0
-  -->
+  * fix for mobile spacing issue
+  * bumped version to 0.1.1
+  
 * **2024-10-02**
 
   * initial version

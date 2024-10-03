@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -33,7 +33,7 @@
       
       }
       
-    @media screen and (min-width : 768px ) {
+    @media screen and ( min-width : 768px ) {
     
       .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-categories .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
       .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-date .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
@@ -47,13 +47,27 @@
           
       }
       
+    @media screen and ( max-width : 767px ) {
+    
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-categories .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-date .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc,
+      .tweak-blog-item-meta-position-below-title.tweak-blog-item-show-author-name .blog-item-wrapper .blog-item-meta-wrapper.twc-bppmc
+      
+        {
+        
+          margin-bottom : 1.2rem;
+          
+          }
+          
+      }
+      
     </style>
     
   <script>
   
     ( ( ) => {
     
-      const version = '0.1.0',
+      const version = '0.1.1',
       
         s = `Blog Page Post Meta Copy v${ version }
         
