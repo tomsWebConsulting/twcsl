@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.2.0
+  Version         : 0.3.0
   
   SS Versions     : 7.1, 7.0
   
@@ -29,7 +29,7 @@
                     your template is not listed? then it is not currently
                     supported
   
-  Dependencies    : store price change
+  Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
   
   Copyright       : 2022-2024 Thomas Creedon
                     
@@ -87,7 +87,7 @@
   
     ( ( ) => {
     
-      const version = '0.2.0';
+      const version = '0.3.0';
       
       const s = `Store Page Price Hide When From v${ version }
       
@@ -103,36 +103,50 @@
       
       } ) ( );
       
-    </script>
-    
-  <script>
+  // initialize twc module
   
-    const twcSpphwf = ( node, isDetail, text, searchText ) => {
+  var twc = ( ( self ) => self ) ( window.twc || { } );
+  
+  // initialize twc sppc sub-module
+  
+  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+  
+  // initialize twc sppc callbacks sub-module
+  
+  twc.sppc.callbacks = ( ( self ) => {
+  
+    self
     
-      const codeKey = 'twc-spphwf';
+      .twcSpphwf = ( node, isDetail, text, searchText ) => {
       
-      const classList = node
-      
-        .parentElement
-      
-        .classList;
+        const codeKey = 'twc-spphwf';
         
-      if ( ! text.includes ( 'from' ) ) {
-      
-        classList
+        const classList = node
         
-          .remove ( codeKey );
+          .parentElement
+        
+          .classList;
           
-        return true;
+        if ( ! text.includes ( 'from' ) ) {
         
-        }
+          classList
+          
+            .remove ( codeKey );
+            
+          return true;
+          
+          }
+          
+        classList.add ( codeKey );
         
-      classList.add ( codeKey );
-      
-      return false;
-      
-      };
-      
+        return false;
+        
+        };
+        
+    return self;
+    
+    } ) ( twc.sppc.callbacks || { } );
+    
     </script>
-
+    
   <!-- end store page price hide when from -->
