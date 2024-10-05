@@ -95,6 +95,8 @@ not necessarily designed to work together.
         
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
         
+    * [Store Page Price Swap Sale Original](Page/Store/Store%20Page%20Price%20Swap%20Sale%20Original)
+      
     * [List](Page/Store/List)
       
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
@@ -132,8 +134,6 @@ not necessarily designed to work together.
   * [Asset Library Selected Image URLs](Bookmarklet/Asset%20Library%20Selected%20Image%20URLs)
     
 * [Payment Processor Icons](Payment%20Processor%20Icons)
-  
-* [Store Product Price Swap Sale Original](Store%20Product%20Price%20Swap%20Sale%20Original)
   
 * [Image Block Image Spinner](Image%20Block%20Image%20Spinner)
   
@@ -292,6 +292,8 @@ not necessarily designed to work together.
       * [Detail](v7.1/Page/Store/Detail)
         
         * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
+          
+        * [Store Page Detail Price Total](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Total)
           
         * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
           
@@ -512,8 +514,6 @@ not necessarily designed to work together.
   * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
     
   * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
-    
-  * [Store Product Detail Price Total](v7.1/Store%20Product%20Detail%20Price%20Total)
     
   * [Store Product Details Natural Order Desktop](v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop)
     
