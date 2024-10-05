@@ -33,7 +33,7 @@ Return current year.
 * Install **[Element Text Change][5]**. After you install the code be sure to
   continue on with the rest of the steps.
   
-* In the store price change code after the selectorTextSearchReplaceMap example
+* In the element text change code after the selectorTextSearchReplaceMap example
   data structures add the following example code.
   
   ```javascript
