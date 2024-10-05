@@ -83,6 +83,8 @@ not necessarily designed to work together.
       
     * [Detail](Page/Store/Detail)
       
+      * [Store Page Detail Price Variant Add](Page/Store/Detail/Store%20Page%20Detail%20Price%20Variant%20Add)
+        
       * [Store Page Detail Price Gte Afterpay Hide](Page/Store/Detail/Store%20Page%20Detail%20Price%20Gte%20Afterpay%20Hide)
         
       * [Store Product Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
@@ -244,8 +246,6 @@ not necessarily designed to work together.
 * [Change Cart Title](Change%20Cart%20Title)
   
 * [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
-  
-* [Store Product Detail Price Variant Add](Store%20Product%20Detail%20Price%20Variant%20Add)
   
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
