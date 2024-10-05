@@ -1,0 +1,87 @@
+<script>
+
+  /*
+  
+    begin store page price swap sale original
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Copyright     : 2022-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    ( ( ) => {
+    
+      const version = '0.2.0';
+      
+      const s = `Store Page Price Swap Sale Original v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSppsso = ( node, isDetail, text, searchText ) => {
+        
+          let $nodes = $( node )
+          
+            .parents ( '.original-price' );
+            
+          const l = $nodes.length;
+          
+          if ( ! l ) return true; // continue
+          
+          const $parent = $nodes.parent ( );
+          
+          $nodes = $.merge ( $nodes, $nodes.prev ( ) )
+          
+            .get ( )
+            
+            .reverse ( );
+            
+          $( $nodes )
+          
+            .prependTo ( $parent );
+            
+          return false;
+          
+          };
+             
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    /* end store page price swap sale original */
+    
+  </script>
