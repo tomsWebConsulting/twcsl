@@ -68,10 +68,14 @@ Change store page prices.
   ```
 
 ```json
-        /* remove decimal from price, using regular expression, backslash must
-           be escaped with \, the replacement text uses special replacement
-           patterns */
+        /*
         
+          remove decimal from price, using regular expression, backslash must
+          be escaped with \, the replacement text uses special replacement
+          patterns
+          
+          */
+          
         "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
   ```
 
