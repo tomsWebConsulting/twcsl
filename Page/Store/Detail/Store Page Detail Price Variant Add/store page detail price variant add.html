@@ -1,0 +1,120 @@
+<script>
+
+  /*
+  
+    store page detail price variant add
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      Five
+                      
+                      Montauk ( Julia, Kent, Om )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Note            : this code only works for one variant
+    
+    Copyright       : 2022-2024 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  ( ( ) => {
+  
+    const version = '0.2.0';
+    
+    const s = `Store Page Price Hide When From v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2024 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+    console.log ( s );
+    
+    } ) ( );
+    
+  // initialize twc module
+  
+  var twc = ( ( self ) => self ) ( window.twc || { } );
+  
+  // initialize twc sppc sub-module
+  
+  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+  
+  // initialize twc sppc callbacks sub-module
+  
+  twc.sppc.callbacks = ( ( self ) => {
+  
+    self
+    
+      .twcSpdpva = ( node, isDetail, text, searchText ) => {
+      
+        const variantOption = '[enter variant option name here between single quotes replacing square brackets]';
+        
+        // do not change anything below, there be the borg here
+        
+        if ( ! isDetail ) return true; // continue if not detail
+        
+        const $selectedVariant = $( node )
+        
+          .parents ( '.ProductItem-product-price, .pdp-details-price' )
+          
+          .siblings ( '.product-variants' );
+          
+        if ( ! $selectedVariant.length ) return true; // continue if no variants
+        
+        let selectVariantAttributes = $selectedVariant
+        
+          .attr ( 'data-selected-variant' );
+          
+        // continue if no variant selected
+        
+        if ( selectVariantAttributes == undefined ) return true;
+        
+        selectVariantAttributes = JSON.parse ( selectVariantAttributes );
+        
+        const textAdd = selectVariantAttributes.attributes [ variantOption ];
+        
+        // continue if no variant option
+        
+        if ( textAdd == undefined ) return true;
+        
+        if ( searchText instanceof RegExp )
+        
+          searchText = text.match ( searchText ) [ 0 ];
+        
+        const r = `${ searchText } ${ textAdd }`;
+        
+        return r;
+        
+        };
+        
+    return self;
+    
+    } ) ( twc.sppc.callbacks || { } );
+    
+  </script>
