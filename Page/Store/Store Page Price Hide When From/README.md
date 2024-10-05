@@ -22,7 +22,7 @@ Hide price when it contains from on Store page.
 
 #### Dependencies
 
-  * [Store Price Change][6]
+  * [Store Price Change][16]
 
 ---
 
@@ -81,7 +81,8 @@ Please consider [making a donation][10].
 [3]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
 [4]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [5]: https://support.squarespace.com/hc/en-us/articles/206545347
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Price%20Change#store-price-change
+[16]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store$20Page%20Price%20Change
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store$20Page%20Price%20Change#store-page-price-change
 [7]: store%20page%20price%20hide%20when%20from.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
