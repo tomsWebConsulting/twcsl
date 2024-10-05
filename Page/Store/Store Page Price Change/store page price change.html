@@ -1,0 +1,410 @@
+<!--
+
+  begin store page price change
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.6.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    Five
+                    
+                    Montauk ( Julia, Kent, Om )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : twcsl < https://tinyurl.com/4kux8h24 >
+  
+  Notes           : the code is comprised of several tags all of which must be
+                    present for the effect to work
+                    
+                    the code adds a data-twc-sppc-mo attribute with value of
+                    false on elements with class name product-price. by changing
+                    the attribute value to true you will cause a mutation which
+                    will cause the search replace text to run. the attribute
+                    value will be set to false after the search replace text run
+                    
+                    the code fails silently. poorly formed regular expressions
+                    will stop the processing of search/replace text pairs
+  
+  Copyright       : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    #pdp {
+    
+      --twc-sppc-visibility : hidden;
+      
+      }
+      
+    /* full, half, wrap */
+    
+    .pdp-layout .pdp-details .afterpayString,
+    .pdp-layout .pdp-details .product-price,
+    
+    /* simple */
+    
+    .ProductItem .ProductItem-details .afterpayString, 
+    .ProductItem .ProductItem-details .product-price
+    
+      {
+      
+        visibility : var( --twc-sppc-visibility );
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.6.0',
+      
+        s = `Store Page Price Change v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks =
+    
+      ( ( self ) => self ) ( twc.sppc.callbacks || { } );
+      
+    ( ( ) => {
+    
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const
+      
+        codeKey = 'twc-sppc',
+        
+        selector = 'script[ type="application/vnd.' +
+        
+          `${ codeKey.replace ( '-', '.' ) }" ]`,
+          
+        $scriptElement = $( selector );
+        
+      if ( ! $scriptElement.length ) return; // bail if no tag
+      
+      const initialize = ( ) => {
+      
+        Object
+        
+          .assign (
+          
+            twc
+            
+              .sppc,
+              
+            JSON
+            
+              .parse (
+              
+                $scriptElement
+                
+                  .text ( )
+                  
+                  .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                  
+                  .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                  
+                  .replace ( /,\s*}\s*/, '}' ) // remove last item comma
+                  
+                  .replaceAll ( '\n', '' )
+                  
+                )
+                
+            );
+            
+        let
+        
+          callback = function ( ) {
+            
+            changeText ( this );
+            
+            };
+            
+        const
+        
+          attribute = 'data-twc-sppc-mo',
+          
+          changeText = ( node ) => {
+          
+            const walker =
+            
+              document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
+              
+            while ( walker.nextNode ( ) ) {
+            
+              const
+              
+                callback =  ( i, s ) => {
+                
+                  const m = s.match ( /\/(.+)\/(.*)/ );
+                  
+                  let r = options.searchReplaceText [ s ];
+                  
+                  if ( m !== null ) { // m appears to be a regex pattern
+                  
+                    try {
+                    
+                      s = new RegExp ( m [ 1 ], m [ 2 ] );
+                      
+                      } catch {
+                      
+                        return; // bail on error
+                        
+                        }
+                        
+                    // continue if text no match
+                    
+                    if ( ! s.test ( t ) ) return true;
+                    
+                    }
+                    
+                  const b = typeof options.callbacks [ r ] == 'function';
+                  
+                  if ( b ) {
+                  
+                    r = options
+                    
+                      .callbacks
+                      
+                      [ r ]
+                      
+                      ( node, isDetail, t, s );
+                      
+                    if ( typeof r == 'boolean' ) return r;
+                    
+                    }
+                    
+                  t = t.replace ( s, r );
+                  
+                  },
+                  
+                node = walker.currentNode;
+                
+              let t = node.data;
+              
+              $.each ( keys, callback );
+                
+              node.data = t;
+              
+              }
+              
+            },
+            
+          isDetail = twcsl
+          
+            .page
+            
+            .store
+            
+            .detail
+            
+            .is,
+            
+          options = twc.sppc,
+            
+          keys = Object.keys ( options.searchReplaceText ),
+          
+          $productPriceElements = $( '.product-price' )
+          
+            .attr ( attribute, 'false' )
+            
+            .each ( callback ),
+              
+          $afterpayPriceElements = $( '.afterpayString' );
+          
+        if ( options.afterpay )
+        
+          $afterpayPriceElements.each ( callback );
+          
+        if ( ! isDetail ) return; // bail if not detail
+        
+        callback = ( mutations ) => {
+        
+          const callback = function ( ) {
+          
+            const
+            
+              hasAttribute = this
+              
+                .attributeName
+                
+                ==
+                
+                attribute,
+                
+              b = ! this
+              
+                .addedNodes
+                
+                .length
+                
+                &&
+                
+                ! hasAttribute;
+                
+            if ( b ) return true; // bail if no element an no attribute
+            
+            const target = this.target;
+            
+            // previous change was forced
+            
+            if ( hasAttribute ) {
+            
+              const b = $( target )
+              
+                .attr ( attribute )
+                
+                ==
+                
+                'true';
+                
+              if ( b )
+              
+                $( target )
+                
+                  .attr ( attribute, 'false' );
+                  
+                else if ( this.oldValue == 'true' )
+                
+                  return true;
+                  
+              }
+              
+            observer.disconnect ( );
+            
+            changeText ( target );
+            
+            pricesObserve ( );
+            
+            }
+            
+          $.each ( mutations, callback );
+            
+          };
+          
+        const
+        
+          observer = new MutationObserver ( callback ),
+          
+          pricesObserve = ( ) => {
+          
+            let callback = function ( ) {
+            
+              const config = {
+              
+                attributeFilter : [ attribute ],
+                
+                attributeOldValue : true,
+                
+                childList : true
+                
+                };
+                
+              observer.observe ( this, config );
+                
+              }
+              
+            // listen for changes in product prices
+            
+            $productPriceElements.each ( callback );
+              
+            // listen for changes in afterpay prices
+            
+            callback = function ( ) {
+            
+              const config = {
+              
+                attributeFilter : [ attribute ],
+                
+                attributeOldValue : true,
+                
+                childList : true,
+                
+                subtree : true
+                
+                };
+                
+              observer.observe ( this, config );
+                
+              }
+              
+            if ( options.afterpay )
+            
+              $afterpayPriceElements.each ( callback );
+              
+            };
+            
+        pricesObserve ( );
+        
+        $( '#pdp' )
+        
+          .css ( '--twc-sppc-visibility', 'visible' );
+          
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.ss.is71 :
+        
+          $( initialize );
+          
+          break;
+          
+        case twcsl.ss.is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end store page price change -->
