@@ -22,13 +22,13 @@ Add prices to Store page detail variant.
 
 #### Dependencies
 
-  * [Store Price Change][5]
+  * [Store Page Price Change][5]
 
 ---
 
 ## Install
 
-* Install **[Store Price Change][6]**. After you install the code be sure to
+* Install **[Store Page Price Change][6]**. After you install the code be sure to
   continue on with the rest of the steps.
   
 * Options
@@ -85,9 +85,9 @@ Please consider [making a donation][10].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
 [4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Page%20Price%20Change
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Store%20Page%20Price%20Change#store-page-price-change
-[7]: store%page%20detail%20price%20variant%20add.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store-page-price-change
+[7]: store%20page%20detail%20price%20variant%20add.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
