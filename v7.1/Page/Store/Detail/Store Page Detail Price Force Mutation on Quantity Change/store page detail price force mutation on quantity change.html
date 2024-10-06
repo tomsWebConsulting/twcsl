@@ -1,0 +1,119 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      store page detail price force mutation on quantity change
+      
+      License     : < https://tinyurl.com/s872fb68 >
+      
+      Version     : 0.2.0
+      
+      SS Version  : 7.1
+      
+      Copyright   : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const callback = ( ) => {
+    
+      const
+      
+        callback = ( element ) => {
+        
+          const
+          
+            callback = ( event ) => {
+            
+              const
+              
+                callback = ( element ) => {
+                
+                  element
+                  
+                    .setAttribute ( 'data-twc-sppc-mo', 'true' );
+                    
+                  },
+                  
+                selector = [
+              
+                  '.ProductItem .ProductItem-details .product-price', // simple
+                  
+                  '.pdp-layout .pdp-details .product-price' // full, half, wrap
+                  
+                  ]
+                  
+                  .join ( ', ' );
+                  
+              document
+              
+                .querySelectorAll ( selector )
+                
+                .forEach ( callback );
+                
+              },
+              
+            selector = [
+            
+              '.product-quantity-input', // simple
+              
+              // full, half, wrap
+              
+              '.pdp-layout .pdp-details .product-quantity-input'
+              
+              ]
+              
+              .join ( ', ' );
+              
+          element
+          
+            .addEventListener ( 'change', callback );
+            
+          },
+          
+        title = 'Store Page Detail Price Force Mutation on Quantity Change',
+        
+        selector = [
+        
+          '.ProductItem .ProductItem-details .product-quantity-input', // simple
+          
+          '.pdp-layout .pdp-details .product-quantity-input' // full, half, wrap
+          
+          ]
+          
+          .join ( ', ' ),
+          
+        version = '0.2.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      document
+      
+        .querySelectorAll ( selector )
+        
+        .forEach ( callback );
+        
+      };
+      
+    addEventListener ( 'DOMContentLoaded', callback );
+     
+    } ) ( );
+    
+    /* end store page detail price force mutation on quantity change */
+    
+  </script>
