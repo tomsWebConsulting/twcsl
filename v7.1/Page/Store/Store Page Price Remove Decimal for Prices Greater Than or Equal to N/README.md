@@ -48,8 +48,13 @@ Remove decimal for prices greater than equal to n on Store page.
   that codes instructions.
   
   ```json
-          // store page detail price total
+          /*
           
+            store product price remove decimal for prices greater than or equal
+            to n
+            
+            */
+            
           "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "twcSpprdfpgtoetn",
     ```
 
