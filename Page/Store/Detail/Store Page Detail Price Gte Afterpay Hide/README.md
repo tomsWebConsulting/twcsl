@@ -28,18 +28,18 @@ Hide afterpay when price is greater than or equal price.
 
 ## Install
 
-* Install **[Store Page Price Change][6]**. After you install it be sure to
-  continue on with the rest of the steps.
+* Install **[Store Page Price Change][6]**. After you install the code be sure
+  to continue on with the rest of the steps.
   
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          // store page detail price gte afterpay hide
-          
-          "/$.+/" : "twcSpdpgah",
+  ```
+      // store page detail price gte afterpay hide
+      
+      "/$.+/" : "twcSpdpgah",
     ```
-
+    
 * Options
 
   * Page Specific

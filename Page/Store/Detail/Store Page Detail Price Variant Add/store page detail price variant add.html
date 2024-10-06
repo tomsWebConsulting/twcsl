@@ -2,7 +2,7 @@
 
   /*
   
-    store page detail price variant add
+    begin store page detail price variant add
     
     License         : < https://tinyurl.com/s872fb68 >
     
@@ -39,82 +39,96 @@
     
     */
     
-  ( ( ) => {
-  
-    const version = '0.2.0';
+    // initialize twc module
     
-    const s = `Store Page Price Hide When From v${ version }
+    var twc = ( ( self ) => self ) ( window.twc || { } );
     
-      License < https://tinyurl.com/s872fb68 >
-      
-      © 2022-2024 Thomas Creedon
-      
-      Tom's Web Consulting < http://www.tomsWeb.consulting >`
-      
-      .replace ( /^\s+/gm, '' );
-      
-    console.log ( s );
+    // initialize twc spdpva sub-module
     
-    } ) ( );
+    twc.spdpva = ( ( self ) => {
     
-  // initialize twc module
-  
-  var twc = ( ( self ) => self ) ( window.twc || { } );
-  
-  // initialize twc sppc sub-module
-  
-  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-  
-  // initialize twc sppc callbacks sub-module
-  
-  twc.sppc.callbacks = ( ( self ) => {
-  
-    self
-    
-      .twcSpdpva = ( node, isDetail, text, searchText ) => {
+      self.variantOption =
       
-        const variantOption = '[enter variant option name here between single quotes replacing square brackets]';
+        '[enter variant option name here between single quotes replacing square brackets]';
         
-        // do not change anything below, there be the borg here
+      return self;
+      
+      } ) ( twc.spdpva || { } );
+      
+    // do not change anything below, there be the borg here
+    
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
         
-        if ( ! isDetail ) return true; // continue if not detail
+        s = `Store Page Price Hide When From v${ version }
         
-        const $selectedVariant = $( node )
-        
-          .parents ( '.ProductItem-product-price, .pdp-details-price' )
+          License < https://tinyurl.com/s872fb68 >
           
-          .siblings ( '.product-variants' );
+          © 2022-2024 Thomas Creedon
           
-        if ( ! $selectedVariant.length ) return true; // continue if no variants
-        
-        let selectVariantAttributes = $selectedVariant
-        
-          .attr ( 'data-selected-variant' );
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
-        // continue if no variant selected
-        
-        if ( selectVariantAttributes == undefined ) return true;
-        
-        selectVariantAttributes = JSON.parse ( selectVariantAttributes );
-        
-        const textAdd = selectVariantAttributes.attributes [ variantOption ];
-        
-        // continue if no variant option
-        
-        if ( textAdd == undefined ) return true;
-        
-        if ( searchText instanceof RegExp )
-        
-          searchText = text.match ( searchText ) [ 0 ];
-        
-        const r = `${ searchText } ${ textAdd }`;
-        
-        return r;
-        
-        };
-        
-    return self;
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc sppc sub-module
     
-    } ) ( twc.sppc.callbacks || { } );
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSpdpva = ( node, isDetail, text, searchText ) => {
+        
+          if ( ! isDetail ) return true; // continue if not detail
+          
+          const $selectedVariant = $( node )
+          
+            .parents ( '.ProductItem-product-price, .pdp-details-price' )
+            
+            .siblings ( '.product-variants' );
+            
+          if ( ! $selectedVariant.length ) return true; // continue if no variants
+          
+          let selectVariantAttributes = $selectedVariant
+          
+            .attr ( 'data-selected-variant' );
+            
+          // continue if no variant selected
+          
+          if ( selectVariantAttributes == undefined ) return true;
+          
+          selectVariantAttributes = JSON.parse ( selectVariantAttributes );
+          
+          const textAdd = selectVariantAttributes.attributes [ variantOption ];
+          
+          // continue if no variant option
+          
+          if ( textAdd == undefined ) return true;
+          
+          if ( searchText instanceof RegExp )
+          
+            searchText = text.match ( searchText ) [ 0 ];
+          
+          const r = `${ searchText } ${ textAdd }`;
+          
+          return r;
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    // end store page detail price variant add
     
   </script>

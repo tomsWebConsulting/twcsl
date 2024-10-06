@@ -28,8 +28,8 @@ Add prices to Store page detail variant.
 
 ## Install
 
-* Install **[Store Page Price Change][6]**. After you install the code be sure to
-  continue on with the rest of the steps.
+* Install **[Store Page Price Change][6]**. After you install the code be sure
+  to continue on with the rest of the steps.
   
 * Options
 
@@ -37,22 +37,23 @@ Add prices to Store page detail variant.
   
     * Add code from file **[store page detail price variant add.html][7]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [per-page code injection][8]. Read the code for any
-      instructions within.
+      Please see [per-page code injection][8].
       
   * Site-wide
   
     * Add code from file **[store page detail price variant add.html][7]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][9]. Read the code for any instructions within.
+      code to code injection][9].
       
+  Read the code for any instructions within.
+  
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          // store page detail price variant add
-          
-          "[enter search text here between single quotes replacing square brackets]" : "twcSpphwf",
+  ```
+      // store page detail price variant add
+      
+      "[enter search text here between single quotes replacing square brackets]" : "twcSpdpva",
     ```
     
   The search text you enter needs to target the end of the price. For prices
