@@ -1,0 +1,97 @@
+<script>
+
+  /*
+  
+    begin store page price remove decimal for prices greater than or equal to n
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Copyright     : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spprdfpgtoetn sub-module
+    
+    twc.spprdfpgtoetn = ( ( self ) => {
+    
+      self.n =
+      
+        '[ enter number here between single quotes replacing square brackets ]';
+        
+      return self;
+      
+      } ) ( twc.spprdfpgtoetn || { } );
+      
+    // do not change anything below, there be the borg here
+    
+    ( ( ) => {
+    
+      const
+      
+        title = 'Store Page Price Remove Decimal for Prices Greater Than or ' +
+        
+          'Equal to N',
+          
+        version = '0.2.0';
+      
+      const s = `${ title } v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2021-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSpprdfpgtoetn = ( node, isDetail, text, searchText ) => {
+  
+          const
+          
+            n = twc.spprdfpgtoetn.n,
+            
+            replaceText = text.match ( searchText );
+            
+          // continue if replaceText is null or replaceText <= n
+          
+          if ( replaceText == null || Number ( replaceText [ 0 ] ) < n )
+          
+            return true;
+            
+          return replaceText [ 1 ];
+          
+          };
+                   
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    /*
+    
+      end store page price remove decimal for prices greater than or equal to n
+      
+      */
+      
+  </script>
