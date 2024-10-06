@@ -1,0 +1,117 @@
+<script>
+
+  /*
+  
+    begin store page detail price total
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Version    : 7.1
+    
+    Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Copyright     : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+    ( ( ) => {
+    
+      const version = '0.3.0';
+      
+      const s = `Store Page Detail Price Total v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2021-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSpdpt = ( node, isDetail, text, searchText ) => {
+        
+          if ( ! isDetail ) return true; // continue if not detail
+          
+          const isOriginalPrice = Boolean ( $( node )
+          
+            .parents ( '.original-price' )
+            
+            .length );
+            
+          const quantity = Number ( $( '.product-quantity-input input' ).val ( ) );
+          
+          let selectedVariant = $( '.product-variants' )
+          
+            .attr ( 'data-selected-variant' );
+            
+          if ( selectedVariant === undefined ) {
+          
+            selectedVariant = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ];
+            
+              price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
+              
+                isOriginalPrice ) ? selectedVariant.price.value :
+                
+                selectedVariant.salePrice.value;
+                
+              price = price / 100;
+              
+            } else {
+            
+              selectedVariant = JSON.parse ( selectedVariant );
+              
+              const b = selectedVariant.unlimited == false &&
+              
+                selectedVariant.qtyInStock == 0;
+                
+              if ( b ) return true; // bail if sold out
+              
+              price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
+              
+                isOriginalPrice ) ? selectedVariant.priceMoney.value :
+                
+                selectedVariant.salePriceMoney.value;
+                
+                price = Number ( price );
+                
+              }
+              
+          price = price * quantity;
+          
+          price = price.toFixed ( 2 );
+          
+          return price;
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    // end store page detail price total
+    
+  </script>
