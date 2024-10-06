@@ -291,6 +291,8 @@ not necessarily designed to work together.
       
       * [Detail](v7.1/Page/Store/Detail)
         
+        * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
+          
         * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
           
         * [Store Page Detail Price Total](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Total)
@@ -498,8 +500,6 @@ not necessarily designed to work together.
   * [Page Section First Blocks Full Bleed](v7.1/Page%20Section%20First%20Blocks%20Full%20Bleed)
     
   * [Blog Page List Item Background Color](v7.1/Blog%20Page%20List%20Item%20Background%20Color)
-    
-  * [Store Product Detail Price Force Mutation on Quantity Change](v7.1/Store%20Product%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
