@@ -33,15 +33,15 @@ Remove decimal for prices greater than equal to n on Store page.
 
   * Page Specific
   
-    * Add code from file **[store product price remove decimal for prices
-      greater than or equal to n.html][4]** to Store Settings > Advanced >
+    * Add code from file **[store page price remove decimal for prices greater
+      than or equal to n.html][4]** to Store Settings > Advanced >
       Page Header Code Injection for the store page. Please see [per-page code
       injection][5].
       
   * Site-wide
   
-    * Add code from file **[store product price remove decimal for prices
-      greater than or equal to n.html][4]** to Website > Pages > Website Tools >
+    * Add code from file **[store page price remove decimal for prices greater
+      than or equal to n.html][4]** to Website > Pages > Website Tools >
       Code Injection > FOOTER. Please see [Add code to code injection][6].
       
 * Add the following to searchReplaceText in the store page price change code per
@@ -75,9 +75,9 @@ Please consider [making a donation][7].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store%20price%20change
-[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store%20price%20change#store-page-price-change
-[4]: store%page%20price%20remove%20decimal%20for%20prices%20greater%20than%20or%20equal%20to%20n.html#L1
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change
+[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store-page-price-change
+[4]: store%20page%20price%20remove%20decimal%20for%20prices%20greater%20than%20or%20equal%20to%20n.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
