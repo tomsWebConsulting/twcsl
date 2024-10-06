@@ -333,6 +333,8 @@ not necessarily designed to work together.
           
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
+      * [Store Page Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Page/Store/Store%20Page%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
+        
       * [Store Page Product Element Hide](v7.1/Page/Store/Store%20Page%20Product%20Element%20Hide)
         
   * [Remove Product Detail Quantity Field Outer Outline When Focused](v7.1/Remove%20Product%20Detail%20Quantity%20Field%20Outer%20Outline%20When%20Focused)
@@ -414,8 +416,6 @@ not necessarily designed to work together.
   * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
     
   * [Gallery Section Item Description Key Class Add](v7.1/Gallery%20Section%20Item%20Description%20Key%20Class%20Add)
-    
-  * [Store Product Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Store%20Product%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
     
   * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
     
