@@ -48,11 +48,12 @@ Remove zero prices from Store page.
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          // store page price zero remove
-          
-          "$0.00" : "twcSppzr",
+  ```
+      // store page price zero remove
+      
+      "$0.00" : "twcSppzr",
     ```
+    
   If your currency symbol is not dollar sign then use the one set for your site.
 
 ## Make a Donation

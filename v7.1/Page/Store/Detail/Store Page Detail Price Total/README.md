@@ -53,11 +53,11 @@ Total price times quantity on Store detail page.
   that codes instructions.
   
   ```
-          // store page detail price total
-          
-          "/\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSpdpt",
-          
-          "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
+      // store page detail price total
+      
+      "/\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSpdpt",
+      
+      "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
     ```
 
 ## Demo

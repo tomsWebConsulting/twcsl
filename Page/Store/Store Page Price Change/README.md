@@ -51,45 +51,45 @@ Change store page prices.
 ## searchReplaceText Example Lines
 
 ```
-        // remove word from
-        
-        "from" : "",
+      // remove word from
+      
+      "from" : "",
   ```
 
 ```
-        // change language of word from, from english to swedish
-        
-        "from" : "fra",
+      // change language of word from, from english to swedish
+      
+      "from" : "fra",
   ```
 
 ```
-        // remove zero decimal from price
-        
-        ".00" : "",
+      // remove zero decimal from price
+      
+      ".00" : "",
   ```
 
 ```
-        /*
+      /*
+      
+        remove decimal from price, using regular expression, backslash must
+        be escaped with \, the replacement text uses special replacement
+        patterns
         
-          remove decimal from price, using regular expression, backslash must
-          be escaped with \, the replacement text uses special replacement
-          patterns
-          
-          */
-          
-        "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
+        */
+        
+      "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
   ```
 
 ```
-        // add thousands separator
-        
-        "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
+      // add thousands separator
+      
+      "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
   ```
 
 ```
-        // replacement text callback name
-        
-        "/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSppcl",
+      // replacement text callback name
+      
+      "/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSppcl",
   ```
 
 ## Callback Example

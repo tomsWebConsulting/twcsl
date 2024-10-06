@@ -48,10 +48,10 @@ Swap sale and original price on Store page.
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          // store page price swap sale original
-          
-          "" : "twcSppsso",
+  ```
+      // store page price swap sale original
+      
+      "" : "twcSppsso",
     ```
 
 ## Make a Donation

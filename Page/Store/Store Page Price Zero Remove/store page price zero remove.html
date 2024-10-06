@@ -2,7 +2,7 @@
 
   /*
   
-    store page price zero remove
+    begin store page price zero remove
     
     License         : < https://tinyurl.com/s872fb68 >
     
@@ -39,54 +39,56 @@
     
     */
     
-  ( ( ) => {
-  
-    const version = '0.2.0';
+    ( ( ) => {
     
-    const s = `Store Page Price Zero Remove v${ version }
-    
-      License < https://tinyurl.com/s872fb68 >
+      const version = '0.2.0';
       
-      © 2022-2024 Thomas Creedon
+      const s = `Store Page Price Zero Remove v${ version }
       
-      Tom's Web Consulting < http://www.tomsWeb.consulting >`
-      
-      .replace ( /^\s+/gm, '' );
-      
-    console.log ( s );
-    
-    } ) ( );
-    
-  // initialize twc module
-  
-  var twc = ( ( self ) => self ) ( window.twc || { } );
-  
-  // initialize twc sppc sub-module
-  
-  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-  
-  // initialize twc sppc callbacks sub-module
-  
-  twc.sppc.callbacks = ( ( self ) => {
-  
-    self
-    
-      .twcSppzr = ( node, isDetail, text, searchText ) => {
-      
-        if ( text.includes ( searchText ) )
+        License < https://tinyurl.com/s872fb68 >
         
-          $( node )
-          
-            .parents ( '.product-price' )
-            
-            .remove ( );
-            
-        return true;
+        © 2022-2024 Thomas Creedon
         
-        };
-          
-    return self;
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
     
-    } ) ( twc.sppc.callbacks || { } );
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSppzr = ( node, isDetail, text, searchText ) => {
+        
+          if ( text.includes ( searchText ) )
+          
+            $( node )
+            
+              .parents ( '.product-price' )
+              
+              .remove ( );
+              
+          return true;
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    // end store page price zero remove
     
   </script>

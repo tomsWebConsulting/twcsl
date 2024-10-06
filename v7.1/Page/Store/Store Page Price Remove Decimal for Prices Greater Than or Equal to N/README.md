@@ -47,15 +47,15 @@ Remove decimal for prices greater than equal to n on Store page.
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          /*
-          
-            store product price remove decimal for prices greater than or equal
-            to n
-            
-            */
-            
-          "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "twcSpprdfpgtoetn",
+  ```
+      /*
+      
+        store product price remove decimal for prices greater than or equal
+        to n
+        
+        */
+        
+      "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "twcSpprdfpgtoetn",
     ```
 
 ## Make a Donation

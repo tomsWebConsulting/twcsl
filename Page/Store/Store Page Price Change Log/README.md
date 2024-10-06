@@ -45,9 +45,9 @@ Log store page price changes.
   that codes instructions.
   
   ```
-          // log store page price changes
-          
-          "log" : "twcSppcl",
+      // log store page price changes
+      
+      "log" : "twcSppcl",
     ```
 
 ## Note
