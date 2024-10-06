@@ -16,19 +16,19 @@ Hide price when it contains from on Store page.
   
   * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
 
-#### Fluid Engine Compatible
+#### 7.1 Fluid Engine Compatible
 
   * Not Applicable
 
 #### Dependencies
 
-  * [Store Price Change][6]
+  * [Store Page Price Change][6]
 
 ---
 
 ## Install
 
-* Install [Store Price Change][7]. After you install the code be sure to
+* Install [Store Page Price Change][7]. After you install the code be sure to
   continue on with the rest of the steps.
   
 * Options
@@ -48,10 +48,10 @@ Hide price when it contains from on Store page.
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
-          // store page price hide when from
-          
-          "from" : "twcSpphwf",
+  ```
+      // store page price hide when from
+      
+      "from" : "twcSpphwf",
     ```
 
 ## Make a Donation

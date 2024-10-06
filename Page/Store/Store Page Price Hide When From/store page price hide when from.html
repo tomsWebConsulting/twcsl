@@ -103,50 +103,50 @@
       
       } ) ( );
       
-  // initialize twc module
-  
-  var twc = ( ( self ) => self ) ( window.twc || { } );
-  
-  // initialize twc sppc sub-module
-  
-  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-  
-  // initialize twc sppc callbacks sub-module
-  
-  twc.sppc.callbacks = ( ( self ) => {
-  
-    self
+    // initialize twc module
     
-      .twcSpphwf = ( node, isDetail, text, searchText ) => {
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
       
-        const codeKey = 'twc-spphwf';
+        .twcSpphwf = ( node, isDetail, text, searchText ) => {
         
-        const classList = node
-        
-          .parentElement
-        
-          .classList;
+          const codeKey = 'twc-spphwf';
           
-        if ( ! text.includes ( 'from' ) ) {
-        
-          classList
+          const classList = node
           
-            .remove ( codeKey );
+            .parentElement
+          
+            .classList;
             
-          return true;
+          if ( ! text.includes ( 'from' ) ) {
           
-          }
+            classList
+            
+              .remove ( codeKey );
+              
+            return true;
+            
+            }
+            
+          classList.add ( codeKey );
           
-        classList.add ( codeKey );
-        
-        return false;
-        
-        };
-        
-    return self;
-    
-    } ) ( twc.sppc.callbacks || { } );
-    
+          return false;
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
     </script>
     
   <!-- end store page price hide when from -->
