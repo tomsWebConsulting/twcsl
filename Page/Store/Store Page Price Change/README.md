@@ -24,23 +24,24 @@ Change store page prices.
 
 ## Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
+* Install [twcsl][5]. After you install the code be sure to continue on with the
   rest of the steps.
   
 * Options
 
   * Page Specific
   
-    * Add, in order, code from files **[store page price change.json][6]** and
-      **[store page price change.html][7]** to Store Settings > Advanced >
-      Page Header Code Injection for the store page. Please see [per-page code
-      injection][8]. Read the code files for any instructions within.
+    * Add, in order, code from files **[store page price change
+      script.html][6]** and **[store page price change.html][7]** to
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Please see [per-page code injection][8]. Read the code files for any
+      instructions within.
       
   * Site-wide
   
-    * Add code from file **[store page price change.json][6]** to Website >
-      Pages > Website Tools > Code Injection > HEADER.
-  
+    * Add code from file **[store page price change script.html][6]** to
+      Website > Pages > Website Tools > Code Injection > HEADER.
+      
     * Add code from file **[store page price change.html][7]** to Website >
       Pages > Website Tools > Code Injection > FOOTER.
       
@@ -49,25 +50,25 @@ Change store page prices.
 
 ## searchReplaceText Example Lines
 
-```json
+```
         // remove word from
         
         "from" : "",
   ```
 
-```json
+```
         // change language of word from, from english to swedish
         
         "from" : "fra",
   ```
 
-```json
+```
         // remove zero decimal from price
         
         ".00" : "",
   ```
 
-```json
+```
         /*
         
           remove decimal from price, using regular expression, backslash must
@@ -79,13 +80,13 @@ Change store page prices.
         "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
   ```
 
-```json
+```
         // add thousands separator
         
         "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
   ```
 
-```json
+```
         // replacement text callback name
         
         "/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSppcl",
@@ -175,8 +176,8 @@ Please consider [making a donation][11].
   
 * **2021-08-29**
 
-  * changed name from \*Change Store Product Detail Price Text\* to \*Store Price
-    Change\*, previous name was a misnomer
+  * changed name from Change Store Product Detail Price Text to Store Price
+    Change, previous name was a misnomer
   * bumped version to 0.3d2
   
 * **2021-08-20**
@@ -187,8 +188,8 @@ Please consider [making a donation][11].
   
 * **2021-08-19**
 
-  * changed name from *Change Text of Prices on Store Pages* to *Change Store
-    Product Detail Price Text*
+  * changed name from Change Text of Prices on Store Pages to Change Store
+    Product Detail Price Text
   * added ability to call replacment text function
   * use twcsl
   * bumped version to 0.3d0
@@ -200,8 +201,8 @@ Please consider [making a donation][11].
   
 * **2021-05-15**
 
-  * changed name from *Remove Word From, from Prices on Store Pages* to *Change
-    Text of Prices on Store Pages*
+  * changed name from Remove Word From, from Prices on Store Pages to Change
+    Text of Prices on Store Pages
   * changed code to be a text changer instead of simply removing the word from
   * bumped version to 0.2d0
   
@@ -229,7 +230,7 @@ Please consider [making a donation][11].
 [3]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
 [4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20page%20price%20change.json#L1
+[6]: store%20page%20price%20change%20script.html#L1
 [7]: store%20page%20price%20change.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
