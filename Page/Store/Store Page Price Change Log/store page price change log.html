@@ -1,93 +1,96 @@
 <script>
 
-  ( ( ) => {
+  /*
   
-    /*
+    begin store page price change log
     
-      store page price change log
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.1.0
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Not Applicable
-      
-      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                        Stella, Thorne, Vow, Wav, West )
-                        
-                        Five
-                        
-                        Montauk ( Julia, Kent, Om )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
-      
-      Copyright       : 2024 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      */
-      
-    const
+    License         : < https://tinyurl.com/s872fb68 >
     
-      version = '0.1.0',
+    Version         : 0.1.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      Five
+                      
+                      Montauk ( Julia, Kent, Om )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Copyright       : 2024 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    ( ( ) => {
+    
+      const
       
-      s = `Store Page Price Change Log v${ version }
+        version = '0.1.0',
+        
+        s = `Store Page Price Change Log v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-        License < https://tinyurl.com/s872fb68 >
-        
-        © 2024 Thomas Creedon
-        
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
-        
-        .replace ( /^\s+/gm, '' );
-        
-    console.log ( s );
-    
-    } ) ( );
-    
-  // initialize twc module
-  
-  var twc = ( ( self ) => self ) ( window.twc || { } );
-  
-  // initialize twc sppc sub-module
-  
-  twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-  
-  // initialize twc sppc callbacks sub-module
-  
-  twc.sppc.callbacks = ( ( self ) => {
-  
-    self
-    
-      .twcSppcl = ( node, isDetail, text, searchText ) => {
+      } ) ( );
       
-        const codeKey = 'twc-sppcl';
-        
-        console.log ( `${ codeKey } node : `, node );
-        
-        console.log ( `${ codeKey } isDetail : `, isDetail );
-        
-        console.log ( `${ codeKey } text : `, text );
-        
-        console.log ( `${ codeKey } searchText : `, searchText );
-        
-        return true; // continue
-        
-        };
-        
-    return self;
+    // initialize twc module
     
-    } ) ( twc.sppc.callbacks || { } );
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSppcl = ( node, isDetail, text, searchText ) => {
+        
+          const codeKey = 'twc-sppcl';
+          
+          console.log ( `${ codeKey } node : `, node );
+          
+          console.log ( `${ codeKey } isDetail : `, isDetail );
+          
+          console.log ( `${ codeKey } text : `, text );
+          
+          console.log ( `${ codeKey } searchText : `, searchText );
+          
+          return true; // continue
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    // end store page price change log
     
   </script>

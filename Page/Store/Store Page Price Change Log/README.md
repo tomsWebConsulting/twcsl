@@ -44,7 +44,7 @@ Log store page price changes.
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.
   
-  ```json
+  ```
           // log store page price changes
           
           "log" : "twcSppcl",
