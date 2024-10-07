@@ -30,13 +30,13 @@ Store category page custom headers.
 
 ## Install
 
-* Install [twcsl][6]. After you install twcsl be sure to continue on with the
+* Install [twcsl][6]. After you install the code be sure to continue on with the
   rest of the steps.
   
-* Install [Page Section First Blank Hide][5]. After you install Page Section
+* Install [Page Section First Blank Hide][7]. After you install Page Section
   First Blank Hide be sure to continue on with the rest of the steps.
   
-* Add code from file **[store page list category section reveal.html][7]** to
+* Add code from file **[store page list category section reveal.html][8]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
   
 * In the store page add a page section. Set the section up as desired. Add a 
@@ -113,7 +113,7 @@ displayed.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -140,7 +140,8 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page%20Section%20First%20Blank%20Hide#quick-install
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide
+[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide#page-section-first-blank-hide
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
-[7]: store%20page%20list%20category%20section%20reveal.html#L1
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: store%20page%20list%20category%20section%20reveal.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
