@@ -1,0 +1,385 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      store page detail add to cart button text change
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.4.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      v7.0
+      Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+      
+      Dependencies  : twcsl
+      
+      Note          : this code depends on languages. only a few languages are
+                      currently supported. the code attempts to find the site
+                      language based on the site settings. if the code doesn't
+                      have a language for the language your site is set to then
+                      the code won't work properly. if you need a language not
+                      supported by the code add a post to the SS forum thread
+                      for this code < https://tinyurl.com/mvpd3nxe > and make a
+                      request. no promises that i can add languages but it
+                      doesn't hurt to ask. i need to know two things. the
+                      language set in site settings and the language you want to
+                      change to. the change to language must be listed is the
+                      site settings if you want the code to do it all for you.
+                      if you want to customize the change to language then only
+                      the site language setting is needed. please see Language
+                      and region settings < https://tinyurl.com/24fwyw2d >
+      
+      Copyright      : 2021-2024 Thomas Creedon
+                       
+                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /*
+    
+      for language use one of...
+      
+        English (Canada)
+        
+        English (United Kingdom)
+        
+        English (United States)
+        
+        French (Canada)
+        
+        French (France)
+        
+        German (Germany)
+        
+        Spanish (Argentina)
+        
+        Spanish (Bolivia)
+        
+        Spanish (Chile)
+        
+        Spanish (Mexico)
+        
+      if you leave language empty ( '' ) then the values for addToCart, adding,
+      and added can be used
+      
+      */
+
+    let language = 'English (United States)';
+    
+    let addToCart = '[ enter replacement add to cart text here between single quotes replacing square brackets ]';
+    
+    // if you leave adding empty ( '' ) then the default value will be used
+    
+    const adding = '[ enter replacement adding text here between single quotes replacing square brackets ]';
+    
+    // if you leave added empty ( '' ) then the default value will be used
+    
+    const added = '[ enter replacement added text here between single quotes replacing square brackets ]';
+    
+    /*
+    
+      postAddedText is a special feature. for the default SS behaviour, which is
+      to restore the button's original text, leave it empty ( '' ). otherwise
+      enter your text between single quotes
+      
+      */
+      
+    let postAddedText = '';
+    
+    /*
+    
+      guard callback for other conditions which prevent the code from running.
+      replace undefined with the name of your custom function. your function
+      must return a boolean. false means exit the code and true means run
+      the code
+      
+      */
+      
+    const guardCallback = undefined;
+    
+    // do not change anything below, there be the borg here
+    
+    const
+    
+      title = 'Store Page Detail Add to Cart Button Text Change',
+      
+      version = '0.4.0',
+      
+      s = `${ title } v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2021-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    const initialize = ( ) => {
+    
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      if ( guardCallback !== undefined ) { // guard callback
+      
+        const b = ! guardCallback ( );
+        
+        if ( b ) return;
+        
+        }
+        
+      const
+      
+        buttonInnerSelector = '.sqs-add-to-cart-button-wrapper' +
+        
+          ':not( .add-on-add-to-cart-wrapper ) .sqs-add-to-cart-button-inner',
+          
+        getLanguage = ( language ) => {
+        
+          language = languages [ language ];
+          
+          if ( typeof language == 'string' )
+          
+            language = languagesRoot [ language ];
+            
+          return language;
+          
+          },
+          
+        languages = {
+        
+          'English (Canada)' : 'English',
+          
+          'English (United Kingdom)' : 'English',
+          
+          'English (United States)' : 'English',
+          
+          'French (Canada)' : 'French',
+          
+          'French (France)' : 'French',
+          
+          'German (Germany)' : {
+          
+            addToCart : 'Zum Warenkorb hinzufügen',
+            
+            adding : 'Hinzufügen ...',
+            
+            added : 'Hinzugefügt!',
+            
+            },
+            
+          'Spanish (Argentina)' : 'Spanish',
+          
+          'Spanish (Bolivia)' : 'Spanish',
+          
+          'Spanish (Chile)' : 'Spanish',
+          
+          'Spanish (Mexico)' : 'Spanish',
+          
+          '' : {
+          
+            addToCart : addToCart,
+            
+            adding : adding,
+            
+            added : added,
+            
+            },
+            
+          },
+          
+        languagesRoot = {
+        
+          'English' : {
+          
+            addToCart : 'Add To Cart',
+            
+            adding : 'Adding…',
+            
+            added : 'Added!',
+            
+            },
+            
+          'French' : {
+          
+            addToCart : 'Ajouter au panier',
+            
+            adding : 'Ajout en cours...',
+            
+            added : 'Ajout effectué&nbsp;!',
+            
+            },
+            
+          'Spanish' : {
+          
+            addToCart : 'Añadir al carrito',
+            
+            adding : 'Añadiendo...',
+            
+            added : 'Añadido',
+            
+            },
+            
+          },
+          
+        selector = '.sqs-add-to-cart-button-wrapper' +
+        
+          ':not( .add-on-add-to-cart-wrapper ) .sqs-add-to-cart-button',
+          
+        websiteLanguage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .website
+          
+          .language,
+          
+        websiteLanguageMap = {
+        
+          'de-DE' : 'German (Germany)',
+          
+          'en-GB' : 'English (United Kingdom)',
+          
+          'en-US' : 'English (United States)',
+          
+          'es-AR' : 'Spanish (Argentina)',
+          
+          'es-BO' : 'Spanish (Bolivia)',
+          
+          'es-CL' : 'Spanish (Chile)',
+          
+          'es-MX' : 'Spanish (Mexico)',
+          
+          'fr-CA' : 'French (Canada)',
+          
+          'fr-FR' : 'French (France)',
+          
+          };
+          
+      let
+      
+        siteLanguage = websiteLanguageMap [ websiteLanguage ];
+      
+      siteLanguage = getLanguage ( siteLanguage );
+      
+      language = getLanguage ( language );
+      
+      if ( language.adding )
+      
+        language [ siteLanguage.adding ] = language.adding;
+        
+      if ( language.added )
+      
+        language [ siteLanguage.added ] = language.added;
+        
+      addToCart = language.addToCart;
+      
+      if ( ! postAddedText )
+      
+        postAddedText = addToCart;
+        
+      $( selector )
+      
+        .attr ( 'data-original-label', postAddedText );
+        
+      $( buttonInnerSelector ).html ( addToCart );
+      
+      const b = ! language.adding && ! language.added;
+      
+      if ( b ) return; // bail if not adding or added changes
+      
+      let callback = ( mutations ) => {
+        
+        const callback = ( mutation ) => {
+        
+          let b = ! mutation.addedNodes.length;
+          
+          if ( b ) return; // bail if no added nodes
+          
+          let $element = $( mutation.addedNodes [ 0 ] );
+          
+          b = ! $element
+          
+            .hasClass ( 'status-text' );
+            
+          if ( b ) return; // bail if no status text
+          
+          const html = $element.html ( );
+          
+          b = ! language
+          
+            .hasOwnProperty ( html );
+            
+          if ( b ) return; // bail if no language
+          
+          $element.html ( language [ html ] );
+          
+          };
+          
+        mutations.forEach ( callback );
+          
+        };
+        
+      const
+      
+        config = { childList : true },
+        
+        observer = new MutationObserver ( callback );
+        
+      // start listening for changes in specified element
+      
+      callback = ( element ) => {
+      
+        observer.observe ( element, config );
+        
+        };
+        
+      document
+      
+        .querySelectorAll ( buttonInnerSelector )
+        
+        .forEach ( callback );
+        
+      }; // end initialize
+      
+    switch ( true ) {
+    
+      case twcsl.ss.is71 :
+      
+        $( initialize );
+        
+        break;
+        
+      case twcsl.ss.is70 :
+      
+        Squarespace.onInitialize ( Y, initialize );
+        
+        break;
+        
+      }
+      
+    } );
+    
+  </script>
