@@ -87,7 +87,7 @@ not necessarily designed to work together.
         
       * [Store Page Detail Price Gte Afterpay Hide](Page/Store/Detail/Store%20Page%20Detail%20Price%20Gte%20Afterpay%20Hide)
         
-      * [Store Product Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
+      * [Store Page Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
