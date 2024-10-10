@@ -76,6 +76,6 @@ Please consider [making a donation][7].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://github.com/tomsWebConsulting/twcsl
 [4]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%page%20detail%20add%20to%20cart%20button%20text%20change.html#L1
+[5]: store%20page%20detail%20add%20to%20cart%20button%20text%20change.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
