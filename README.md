@@ -325,6 +325,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Out of Stock Badge](v7.1/Page/Store/List/Store%20Page%20List%20Out%20of%20Stock%20Badge)
+          
         * [Store Page List All Category Redirect](v7.1/Page/Store/List/Store%20Page%20List%20All%20Category%20Redirect)
           
         * [Store Page List Category Section Reveal](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Section%20Reveal)
@@ -600,8 +602,6 @@ not necessarily designed to work together.
         * [Summary Block Events Date Text Change](v7.1/Block/Summary/Events/Summary%20Block%20Events%20Date%20Text%20Change)
           
   * [Add Store Description](v7.1/Add%20Store%20Description)
-    
-  * [Store Product List Out of Stock Badge](v7.1/Store%20Product%20List%20Out%20of%20Stock%20Badge)
     
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
   
