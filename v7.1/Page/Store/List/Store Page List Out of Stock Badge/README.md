@@ -124,7 +124,7 @@ Please consider [making a donation][20].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: store%page%20list%20out%20of%20stock%20badge.less#L1
+[2]: store%20page%20list%20out%20of%20stock%20badge.less#L1
 [3]: read%20me%20assets/style%20rectangle.png
 [4]: read%20me%20assets/style%20square.png
 [5]: read%20me%20assets/style%20circle.png
