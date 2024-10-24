@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.2.3
+  * 0.3.0
 
 #### SS Version
 
@@ -16,7 +16,7 @@ Add section editor info.
 
 #### Fluid Engine Compatible
 
-  * Not Applicable
+  * Yes
 
 #### Dependencies
 
@@ -35,7 +35,13 @@ Please consider [making a donation][5].
 
 ## Changes
 
-* **2024-05-5**
+* **2024-10-24**
+
+  * reworked the structure of the code
+  * fix for only first section showing info after apparent SS changes
+  * bumped version to 0.3.0
+  
+* **2024-05-15**
 
   * fix console error generated when editing the header
   * bumped version to 0.2.3

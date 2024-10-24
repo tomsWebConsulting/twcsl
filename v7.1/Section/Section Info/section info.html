@@ -1,561 +1,669 @@
 <script>
 
-  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  ( ( ) => {
   
-    /*
+    const callback = ( ) => {
     
-      section info
+      /*
       
-      License     : < https://tinyurl.com/s872fb68 >
-      
-      Version     : 0.2.3
-      
-      SS Version  : 7.1
-      
-      Fluid
-      Engine
-      Compatible  : Not Applicable
-      
-      Note        : this effect is only active in SS Preview
-      
-      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const version = '0.2.3';
-    
-    const s = `Section Info v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' + 
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    // bail if no mutation observer available
-    
-    if ( ! ( 'MutationObserver' in window ) ) return;
-    
-    if ( window.frameElement == null ) return; // bail if not in preview
-    
-    const callback = ( mutations ) => {
-    
-      mutations.forEach ( mutation => {
-      
-        if ( ! mutation.addedNodes.length ) return false;
+        section info
         
-        let element = mutation.addedNodes [ 0 ];
+        License     : < https://tinyurl.com/s872fb68 >
         
-        let b = element.nodeName != 'DIV';
+        Version     : 0.3.0
         
-        if ( b ) return true; // continue if not DIV node
+        SS Version  : 7.1
         
-        let selector = '.js-section-editor-ui-container';
+        Fluid
+        Engine
+        Compatible  : Not Applicable
         
-        element = element.querySelector ( selector );
+        Note        : this effect is only active in SS Preview
         
-        if ( ! element ) return; // bail if no section editor ui
+        Copyright   : 2022-2024 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
         
-        const dataSectionId = element
-        
-          .getAttribute ( 'data-section-id' );
-          
-        selector =
-        
-          `[data-section-id="${ dataSectionId }"]`;
-          
-        let bodyClasses = document
-        
-          .body
-          
-          .classList;
-          
-        bodyClasses = [ ...bodyClasses ];
-        
-        let sectionClasses = document
-        
-          .querySelector ( selector )
-          
-          .classList;
-          
-        sectionClasses = [ ...sectionClasses ];
-        
-        /*
-        
-        b =
-        
-          sectionClasses.contains ( 'collection-type-products' ) ||
-          
-          sectionClasses.contains ( 'gallery-section' ) ||
-          
-          sectionClasses.contains ( 'user-items-list-section' ) ||
-          
-          sectionClasses.some ( clss =>
-          
-            clss.startsWith ( 'collection-type-events-' ) ||
-            
-            clss.startsWith ( 'collection-type-portfolio-' ) /* || (
-            
-              clss.startsWith ( 'collection-type-blog-' ) &&
-              
-              bodyClasses.contains ( 'view-list' )
-              
-              )
-              
-            );
-            
-        if ( b ) return true; // continue if section not of interest
+        no user serviceable parts below
         
         */
         
-        const attribute = 'class';
+      const
+      
+        version = '0.3.0',
+      
+        s = `
         
-        const callback = mutations => {
+          Section Info v${ version }
         
-          const callback = mutation => {
+          License < https://tinyurl.com/s872fb68 >
           
-            // bail if not attribute
+          © 2022-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const isPreview = window.frameElement !== null;
+      
+      if ( ! isPreview ) return; // bail if not in preview
+      
+      const
+      
+        attribute = 'class',
+        
+        callback = ( mutations ) => {
+        
+          for ( const mutation of mutations ) {
+          
+            const isAttribute =
             
-            if ( mutation.attributeName != attribute ) return;
-            
-            const target = mutation.target;
-            
-            let b = target
-            
-              .classList
+              mutation.attributeName == attribute;
               
-              .contains ( 'show-toolbar' );
-              
-            if ( ! b ) return; // bail if not toolbar
+            if ( ! isAttribute ) continue; // continue if not attribute
             
-            const dataSectionId = target
+            const
             
-              .closest ( '.js-section-editor-ui-container' )
+              className = 'show-toolbar',
               
-              .getAttribute ( 'data-section-id' );
+              target = mutation.target,
               
-            let selector = `[data-section-id="${ dataSectionId }"]`;
-            
-            const pageSection = document
-            
-              .querySelector ( selector );
+              showToolbar = target
               
-            // begin editor
-            
-              selector = `.${ codeKey }-data-editor`;
-              
-              let element = toolbar
-              
-                .querySelector ( selector );
+                .classList
                 
-              const isClassicEditor = sectionClasses
+                .contains ( className );
+                
+            if ( ! showToolbar ) continue; // continue if no toolbar
+            
+            const infoAdd = ( ) => {
+            
+              let
               
-                .contains ( 'layout-engine-section' )
+                template =
                 
-                ||
-                
-                (
-                
-                  sectionClasses.some ( clss =>
+                  `
                   
-                    clss.startsWith ( 'collection-type-blog-' )
+                    <div class="${ codeKey }-info">
                     
-                    )
+                      <div class="${ codeKey }-title">
+                      
+                        Info
+                        
+                        </div>
+                        
+                      <table class="${ codeKey }-data">
+                      
+                        <tbody>
+                        
+                          <tr class="item ${ codeKey }-data-editor">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Editor
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          <tr class="item ${ codeKey }-data-type">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Type
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          <tr class="item ${ codeKey }-data-blocks-number">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Blocks
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          </tbody>
+                          
+                        </table>
+                        
+                      </div>
+                      
+                      `,
+                      
+                selector = '.js-section-toolbar';
+                
+              const
+              
+                dataAdd = ( ) => {
+                
+                  let selector = `[ data-section-id="${ dataSectionId }" ]`;
+                  
+                  const
+                  
+                    blockCount = ( ) => {
                     
-                  &&
-                  
-                  bodyClasses.contains ( 'view-item' )
-                  
-                  )
-                  
-                ||
-                
-                (
-                
-                  sectionClasses.some ( clss =>
-                  
-                    clss.startsWith ( 'collection-type-events-' )
+                      let selector = '.sqs-block';
+                      
+                      const
+                      
+                        callback = ( element ) => {
+                        
+                          const b = element
+                          
+                            .closest ( '.sqs-block-remover' )
+                            
+                            ===
+                            
+                            null;
+                            
+                          return b;
+                          
+                          },
+                          
+                        blockCount = [
+                          
+                            ...
+                            
+                            pageSection
+                            
+                              .querySelectorAll ( selector )
+                              
+                            ]
+                            
+                            .filter ( callback )
+                            
+                            .length;
+                            
+                      selector = `.${ codeKey }-data-blocks-number`;
+                      
+                      const element = toolbarElement
+                      
+                        .querySelector ( selector );
+                        
+                      if ( blockCount ) {
+                      
+                        selector = `.${ codeKey }-data-data`;
+                        
+                        element
+                        
+                          .classList
+                          
+                          .remove ( 'hide' );
+                          
+                        element
+                        
+                          .querySelector ( selector )
+                          
+                          .innerText
+                          
+                          =
+                          
+                          blockCount;
+                          
+                        } else
+                        
+                          element
+                          
+                            .classList
+                            
+                            .add ( 'hide' );
+                            
+                      },
+                      
+                    pageSection = document
                     
-                    )
+                      .querySelector ( selector );
+                      
+                  // begin editor
+                  
+                    selector = `.${ codeKey }-data-editor`;
                     
-                  &&
-                  
-                  bodyClasses.contains ( 'view-item' )
-                  
-                  );
-                  
-              const isFluidEngine = pageSection
-              
-                .hasAttribute ( 'data-fluid-engine-section' );
-                
-              b = isFluidEngine || isClassicEditor;
-              
-              if ( b ) {
-              
-                let editor = isFluidEngine ? 'Fluid Engine' : 'Classic Editor';
-                
-                element
-                
-                  .classList
-                  
-                  .remove ( 'hide' );
-                  
-                selector = `.${ codeKey }-data-data`;
-                
-                element
-                
-                  .querySelector ( selector )
-                  
-                  .innerText = editor;
-                  
-                } else
-                
-                  element
-                  
-                    .classList
+                    let element = toolbarElement
                     
-                    .add ( 'hide' );
+                      .querySelector ( selector );
+                      
+                    const
                     
-              // end editor
+                      bodyClasses = [
+                      
+                        ...
+                        
+                        document
+                        
+                          .body
+                          
+                          .classList
+                          
+                        ],
+                        
+                      sectionClasses = [
+                      
+                        ...
+                        
+                        pageSection
+                        
+                          .classList
+                          
+                        ],
+                        
+                      isClassicEditor = sectionClasses
+                      
+                        .contains ( 'layout-engine-section' )
+                        
+                        ||
+                        
+                        (
+                        
+                          sectionClasses.some ( clss =>
+                          
+                            clss.startsWith ( 'collection-type-blog-' )
+                            
+                            )
+                            
+                          &&
+                          
+                          bodyClasses.contains ( 'view-item' )
+                          
+                          )
+                          
+                        ||
+                        
+                        (
+                        
+                          sectionClasses.some ( clss =>
+                          
+                            clss.startsWith ( 'collection-type-events-' )
+                            
+                            )
+                            
+                          &&
+                          
+                          bodyClasses.contains ( 'view-item' )
+                          
+                          ),
+                          
+                      isFluidEngine = pageSection
+                      
+                        .hasAttribute ( 'data-fluid-engine-section' );
+                        
+                    let b = isFluidEngine || isClassicEditor;
+                    
+                    if ( b ) {
+                    
+                      let editor =
+                      
+                        isFluidEngine ? 'Fluid Engine' : 'Classic Editor';
+                        
+                      element
+                      
+                        .classList
+                        
+                        .remove ( 'hide' );
+                        
+                      selector = `.${ codeKey }-data-data`;
+                      
+                      element
+                      
+                        .querySelector ( selector )
+                        
+                        .innerText = editor;
+                        
+                      } else
+                      
+                        element
+                        
+                          .classList
+                          
+                          .add ( 'hide' );
+                          
+                    // end editor
+                    
+                  // begin type
+                  
+                    const
+                    
+                      isAutoLayout = sectionClasses
+                      
+                        .contains ( 'user-items-list-section' ),
+                        
+                      isBlank = sectionClasses
+                      
+                        .contains ( 'layout-engine-section' ),
+                        
+                      isBlog = sectionClasses.some ( clss =>
+                      
+                        clss.startsWith ( 'collection-type-blog-' ) &&
+                        
+                        bodyClasses.contains ( 'view-list' )
+                        
+                        ),
+                        
+                      isBlogPost = sectionClasses.some ( clss =>
+                      
+                        clss.startsWith ( 'collection-type-blog-' ) &&
+                        
+                        bodyClasses.contains ( 'view-item' )
+                        
+                        ),
+                        
+                      isEvent = sectionClasses.some ( clss =>
+                      
+                        clss.startsWith ( 'collection-type-events-' ) &&
+                        
+                        bodyClasses.contains ( 'view-item' )
+                        
+                        ),
+                        
+                      isEvents = sectionClasses.some ( clss =>
+                      
+                        clss.startsWith ( 'collection-type-events-' ) &&
+                        
+                        bodyClasses.contains ( 'view-list' )
+                        
+                        ),
+                        
+                      isGallery = sectionClasses
+                      
+                        .contains ( 'gallery-section' );
+                        
+                      isPortfolio = sectionClasses.some ( clss =>
+                      
+                        clss.startsWith ( 'collection-type-portfolio-' )
+                        
+                        ),
+                        
+                      isStore = sectionClasses
+                      
+                        .contains ( 'collection-type-products' ),
+                        
+                      isVideo = sectionClasses
+                      
+                        .contains ( 'lessons-item-section' );
+                        
+                    selector = '#video-gallery-main-content';
+                    
+                    const isVideos = pageSection
+                    
+                      .querySelector ( selector )
+                      
+                      !==
+                      
+                      null;
+                      
+                    selector = `.${ codeKey }-data-type`;
+                    
+                    element = toolbarElement
+                    
+                      .querySelector ( selector );
+                      
+                    let type;
+                    
+                    switch ( true ) {
+                    
+                      case isAutoLayout :
+                      
+                        type = 'Auto Layout';
+                        
+                        break;
+                        
+                      case isBlank :
+                      
+                        type = 'Blank';
+                        
+                        break;
+                        
+                      case isBlog :
+                      
+                        type = 'Blog';
+                        
+                        break;
+                        
+                      case isBlogPost :
+                      
+                        type = 'Blog Post';
+                        
+                        break;
+                        
+                      case isEvent :
+                      
+                        type = 'Event';
+                        
+                        break;
+                        
+                      case isEvents :
+                      
+                        type = 'Events';
+                        
+                        break;
+                        
+                      case isGallery :
+                      
+                        type = 'Gallery';
+                        
+                        break;
+                        
+                      case isPortfolio :
+                      
+                        type = 'Portfolio';
+                        
+                        break;
+                        
+                      case isStore :
+                      
+                        type = 'Store';
+                        
+                        break;
+                        
+                      case isVideo :
+                      
+                        type = 'Video';
+                        
+                        break;
+                        
+                      case isVideos :
+                      
+                        type = 'Videos';
+                        
+                        break;
+                        
+                      }
+                      
+                    if ( type ) {
+                    
+                      selector = `.${ codeKey }-data-data`;
+                      
+                      element
+                      
+                        .classList
+                        
+                        .remove ( 'hide' );
+                        
+                      element
+                      
+                        .querySelector ( selector )
+                        
+                        .innerText = type;
+                        
+                      } else {
+                      
+                        element
+                        
+                          .classList
+                          
+                          .add ( 'hide' );
+                          
+                        }
+                        
+                    // end type
+                    
+                  blockCount ( );
+                  
+                  },
+                  
+                dataSectionId = target
+                
+                  .closest ( '.js-section-editor-ui-container' )
+                  
+                  .getAttribute ( 'data-section-id' ),
+                  
+                toolbarElement = target
+                
+                  .querySelector ( selector ),
+                  
+                isToolbar = toolbarElement !== null;
+                
+              if ( ! isToolbar ) return; // bail if no toolbar
               
-            // begin type
-            
-              const isAutoLayout = sectionClasses
+              selector = `.${ codeKey }-info`;
               
-                .contains ( 'user-items-list-section' );
-                
-              const isBlank = sectionClasses
+              const
               
-                .contains ( 'layout-engine-section' );
+                infoElement = toolbarElement
                 
-              const isBlog = sectionClasses.some ( clss =>
+                  .querySelector ( selector ),
+                  
+                hasInfo = infoElement !== null;
+                
+              if ( ! hasInfo ) {
               
-                clss.startsWith ( 'collection-type-blog-' ) &&
+                let template =
                 
-                bodyClasses.contains ( 'view-list' )
-                
-                );
-                
-              const isBlogPost = sectionClasses.some ( clss =>
-              
-                clss.startsWith ( 'collection-type-blog-' ) &&
-                
-                bodyClasses.contains ( 'view-item' )
-                
-                );
-                
-              const isEvent = sectionClasses.some ( clss =>
-              
-                clss.startsWith ( 'collection-type-events-' ) &&
-                
-                bodyClasses.contains ( 'view-item' )
-                
-                );
-                
-              const isEvents = sectionClasses.some ( clss =>
-              
-                clss.startsWith ( 'collection-type-events-' ) &&
-                
-                bodyClasses.contains ( 'view-list' )
-                
-                );
-                
-              const isGallery = sectionClasses
-              
-                .contains ( 'gallery-section' );
-                
-              const isPortfolio = sectionClasses.some ( clss =>
-              
-                clss.startsWith ( 'collection-type-portfolio-' )
-                
-                );
-                
-              const isStore = sectionClasses
-              
-                .contains ( 'collection-type-products' );
-                
-              const isVideo = sectionClasses
-              
-                .contains ( 'lessons-item-section' );
-                
-              selector = '#video-gallery-main-content';
-              
-              const isVideos = pageSection
-                
-                  .querySelector ( selector )
+                  `
                   
-                  !=
-                  
-                  null;
-                  
-              selector = `.${ codeKey }-data-type`;
-              
-              element = toolbar
-              
-                .querySelector ( selector );
+                    <div class="${ codeKey }-info">
+                    
+                      <div class="${ codeKey }-title">
+                      
+                        Info
+                        
+                        </div>
+                        
+                      <table class="${ codeKey }-data">
+                      
+                        <tbody>
+                        
+                          <tr class="item ${ codeKey }-data-editor">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Editor
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          <tr class="item ${ codeKey }-data-type">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Type
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          <tr class="item ${ codeKey }-data-blocks-number">
+                          
+                            <td class="${ codeKey }-data-title">
+                            
+                              Blocks
+                              
+                              </td>
+                              
+                            <td class="${ codeKey }-data-data">
+                            
+                              </td>
+                              
+                            </tr>
+                            
+                          </tbody>
+                          
+                        </table>
+                        
+                      </div>
+                      
+                      `;
+                      
+                template = new DOMParser ( )
                 
-              let type;
-              
-              switch ( true ) {
-              
-                case isAutoLayout :
+                  .parseFromString ( template, 'text/html' );
+                  
+                template = template
                 
-                  type = 'Auto Layout';
+                  .body
                   
-                  break;
+                  .firstChild;
                   
-                case isBlank :
+                toolbarElement.append ( template );
                 
-                  type = 'Blank';
-                  
-                  break;
-                  
-                case isBlog :
-                
-                  type = 'Blog';
-                  
-                  break;
-                  
-                case isBlogPost :
-                
-                  type = 'Blog Post';
-                  
-                  break;
-                  
-                case isEvent :
-                
-                  type = 'Event';
-                  
-                  break;
-                  
-                case isEvents :
-                
-                  type = 'Events';
-                  
-                  break;
-                  
-                case isGallery :
-                
-                  type = 'Gallery';
-                  
-                  break;
-                  
-                case isPortfolio :
-                
-                  type = 'Portfolio';
-                  
-                  break;
-                  
-                case isStore :
-                
-                  type = 'Store';
-                  
-                  break;
-                  
-                case isVideo :
-                
-                  type = 'Video';
-                  
-                  break;
-                  
-                case isVideos :
-                
-                  type = 'Videos';
-                  
-                  break;
-                  
                 }
                 
-              if ( type ) {
+              dataAdd ( );
               
-                selector = `.${ codeKey }-data-data`;
-                
-                element
-                
-                  .classList
-                  
-                  .remove ( 'hide' );
-                  
-                element
-                
-                  .querySelector ( selector )
-                  
-                  .innerText = type;
-                  
-                } else {
-                
-                  element
-                  
-                    .classList
-                    
-                    .add ( 'hide' );
-                    
-                  }
-                  
-              // end type
+              };
               
-            // begin block count
+            infoAdd ( );
             
-              selector = '.sqs-block';
-                
-              const blockCount = pageSection
-              
-                .querySelectorAll ( selector )
-                
-                .length;
-                
-              selector = `.${ codeKey }-data-blocks-number`;
-              
-              element = toolbar
-              
-                .querySelector ( selector );
-                
-              if ( blockCount ) {
-              
-                selector = `.${ codeKey }-data-data`;
-                
-                element
-                
-                  .classList
-                  
-                  .remove ( 'hide' );
-                  
-                element
-                
-                  .querySelector ( selector )
-                  
-                  .innerText = blockCount;
-                  
-                } else {
-                
-                  element
-                  
-                    .classList
-                    
-                    .add ( 'hide' );
-                    
-                  }
-                  
-              // end block count
-              
-            };
+            }
             
-          mutations.forEach ( callback );
-            
-          };
+          },
           
-        const codeKey = 'twc-psi';
+        codeKey = 'twc-si',
         
-        const config = {
+        config = {
         
           attributeFilter : [ attribute ],
           
           attributeOldValue : true,
           
-          childList : true
+          childList : true,
           
-          };
+          subtree : true
           
-        const observer = new MutationObserver ( callback );
+          },
+          
+        dcmnt = parent.document,
         
-        let template =
+        observer = new MutationObserver ( callback )
         
-          `
+        styleAdd = ( ) => {
+        
+          const
           
-            <div class="${ codeKey }-info">
+            selector = `style[ id="${ codeKey }" ]`;
             
-              <div class="${ codeKey }-title">
-              
-                Info
-                
-                </div>
-                
-              <table class="${ codeKey }-data">
-              
-                <tbody>
-                
-                  <tr class="item ${ codeKey }-data-editor">
-                  
-                    <td class="${ codeKey }-data-title">
-                    
-                      Editor
-                      
-                      </td>
-                      
-                    <td class="${ codeKey }-data-data">
-                    
-                      </td>
-                      
-                    </tr>
-                    
-                  <tr class="item ${ codeKey }-data-type">
-                  
-                    <td class="${ codeKey }-data-title">
-                    
-                      Type
-                      
-                      </td>
-                      
-                    <td class="${ codeKey }-data-data">
-                    
-                      </td>
-                      
-                    </tr>
-                    
-                  <tr class="item ${ codeKey }-data-blocks-number">
-                  
-                    <td class="${ codeKey }-data-title">
-                    
-                      Blocks
-                      
-                      </td>
-                      
-                    <td class="${ codeKey }-data-data">
-                    
-                      </td>
-                      
-                    </tr>
-                    
-                  </tbody>
-                  
-                </table>
-                
-              </div>
-              
-              `;
-              
-        template = new DOMParser ( )
-        
-          .parseFromString ( template, 'text/html' );
-        
-        template = template.body.firstChild
-        
-        selector = 'js-section-toolbar';
-        
-        const toolbar = element
-        
-          .getElementsByClassName ( selector )
-          
-          [ 0 ];
-          
-        if ( toolbar === undefined ) return; // bail if no toolbar
-        
-        selector = `.${ codeKey }-info`;
-        
-        const hasInfo = toolbar
-        
-          .querySelector ( selector )
-          
-          !=
-          
-          null;
-          
-        // begin style
-        
-          selector = `style[id="${ codeKey }"]`;
-          
           let style = dcmnt
           
             .querySelector ( selector );
@@ -645,44 +753,20 @@
             
             .appendChild ( style );
             
-          // end style
+          };
           
-        if ( ! hasInfo )
-        
-          toolbar.append ( template );
-          
-        selector = 'sqs-section-editing-ui';
-        
-        const editingUi = element
-        
-          .getElementsByClassName ( selector )
-          
-          [ 0 ];
-          
-        // start listening for changes in editor ui
-        
-        observer.observe ( editingUi, config );
-        
-        } );
-        
-      };
+      styleAdd ( );
       
-    const config = {
-    
-      childList : true,
+      // start listening for changes in parent document body
       
-      subtree : true
+      observer.observe ( dcmnt.body, config );
       
       };
       
-    const observer = new MutationObserver ( callback );
+    document
     
-    const dcmnt = parent.document;
-    
-    // start listening for changes in parent document body
-    
-    observer.observe ( dcmnt.body, config );
-    
-    } );
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
     
   </script>
