@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.8.0
+  * 0.8.1
 
 #### SS Version
 
@@ -166,6 +166,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-10-28**
+
+  * fix for effect not working with FE
+  * bumped version to 0.8.1
+  
 * **2024-08-17**
 
   * watch for hash change events and open appropiate section if it contains
