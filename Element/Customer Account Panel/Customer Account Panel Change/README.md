@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.5.0
+### Version 0.6.0
 
 #### SS Versions
 
@@ -43,6 +43,7 @@ panel element. This code attempts to add some useful classes.
   * twc-capc-greeting-sign-out
   * twc-capc-header
   * twc-capc-orders
+  * twc-capc-pages
   * twc-capc-profile
   * twc-capc-search
   * twc-capc-sign-out
@@ -102,6 +103,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2024-10-29**
+
+  * add twc-capc-pages class
+  * bumped version to 0.6.0
+  
 * **2024-09-13**
 
   * rework code to use JavaScript Module Patterns for twc, twc.capc, and

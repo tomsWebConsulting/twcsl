@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.5.0
+  Version      : 0.6.0-development.2
   
   SS Versions  : 7.1, 7.0
   
@@ -26,6 +26,8 @@
     
   <script>
   
+    // initialize twc module
+    
     var twc = ( ( self ) => self ) ( twc || { } );
     
     twc.capc = ( ( self ) => { // initialize twc capc sub-module
@@ -54,7 +56,7 @@
     
       const
       
-        version = '0.5.0',
+        version = '0.6.0-development.2',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -81,33 +83,37 @@
         const
         
           accountFrameIdValue = 'accountFrame',
-        
+          
           callback = ( mutations ) => {
           
-            const callback = ( mutation ) => {
+            for ( const mutation of mutations ) {
             
-              // bail if no nodes added
+              const b = ! mutation.addedNodes.length;
               
-              if ( ! mutation.addedNodes.length ) return;
+              if ( b ) continue; // continue if no nodes added
               
               const
               
-                element = mutation.addedNodes [ 0 ],
+                element = mutation
                 
-                id = element
-                
-                  .getAttribute ( 'id' );
+                  .addedNodes
                   
-              // bail if not account frame
-              
-              if ( id != `${ accountFrameIdValue }` ) return;
+                  [ 0 ],
+                  
+                isAccountFrame = element
+                
+                  .getAttribute ( 'id' )
+                  
+                  ==
+                  
+                  `${ accountFrameIdValue }`;
+                  
+              if ( ! isAccountFrame ) continue; // continue if not account frame
               
               load ( element );
               
-              };
+              }
               
-            mutations.forEach ( callback );
-            
             }, // end callback
             
           codeKey = 'twc-capc',
@@ -176,7 +182,7 @@
                         
                       let xpath =
                       
-                        `.//div[ . = 'Account' or . = 'Digital Products' ]`;
+                        './/div[ . = "Account" or . = "Digital Products" ]';
                         
                       const titleElement = xpathEvaluate ( xpath );
                       
@@ -348,76 +354,80 @@
                       
                         case 'account' :
                         
-                          const classAdd = ( key ) => {
+                          const
                           
-                            const
+                            classAdd = ( key ) => {
                             
-                              selector = `[ href="/account/${ key }" ]`,
+                              const
                               
-                              element = userProfilePageRootElement
-                              
-                                .querySelector ( selector );
+                                selector = `[ href="/account/${ key }" ]`,
                                 
-                            if ( element === null ) return; // bail if no element
-                            
-                            element
-                            
-                              .classList
+                                element = userProfilePageRootElement
+                                
+                                  .querySelector ( selector );
+                                  
+                              if ( element === null ) return; // bail if no element
                               
-                              .add ( `${ codeKey }-${ key }` );
+                              element
                               
-                            };
-                            
-                          const greetingClassAdd = ( ) => {
-                          
-                            const
-                            
-                              xpath = `.//span[ starts-with( ., 'Hi, ' ) ]`,
-                            
-                              element = xpathEvaluate ( xpath );
+                                .classList
+                                
+                                .add ( `${ codeKey }-${ key }` );
+                                
+                              },
                               
-                            if ( element === null ) return; // bail if no element
+                            greetingClassAdd = ( ) => {
                             
-                            element
+                              const
+                              
+                                xpath = './/span[ starts-with( ., "Hi, " ) ]',
+                              
+                                element = xpathEvaluate ( xpath );
+                                
+                              if ( element === null ) return; // bail if no element
+                              
+                              element
+                              
+                                .parentElement
+                                
+                                .classList
+                                
+                                .add ( `${ codeKey }-greeting` );
+                                
+                              element // greeting sign out class add
+                              
+                                .parentElement
+                              
+                                .parentElement
+                              
+                                .classList
+                                
+                                .add ( `${ codeKey }-greeting-sign-out` );
+                                
+                              },
+                              
+                            signOutClassAdd = ( ) => {
                             
-                              .parentElement
+                              const
                               
-                              .classList
+                                xpath = './/span[ . = "Sign out" ]',
+                                
+                                element = xpathEvaluate ( xpath );
+                                
+                              // bail if no element
                               
-                              .add ( `${ codeKey }-greeting` );
+                              if ( element === null ) return;
                               
-                            element // greeting sign out class add
-                            
-                              .parentElement
-                            
-                              .parentElement
-                            
-                              .classList
+                              element
                               
-                              .add ( `${ codeKey }-greeting-sign-out` );
+                                .parentElement
+                                
+                                .classList
+                                
+                                .add ( `${ codeKey }-sign-out` );
+                                
+                              };
                               
-                            };
-                            
-                          const signOutClassAdd = ( ) => {
-                          
-                            const
-                            
-                              xpath = `.//span[ . = 'Sign out' ]`,
-                              
-                              element = xpathEvaluate ( xpath );
-                              
-                            if ( element === null ) return; // bail if no element
-                          
-                            element
-                            
-                              .parentElement
-                              
-                              .classList
-                              
-                              .add ( `${ codeKey }-sign-out` );
-                              
-                            };
-                            
                           greetingClassAdd ( );
                           
                           signOutClassAdd ( );
@@ -436,53 +446,85 @@
                           
                         case 'digital products' :
                         
-                          const accountSettings = ( ) => {
+                          const
                           
-                            const
+                            accountSettings = ( ) => {
                             
-                              selector = `[ href="/account" ]`,
+                              const
                               
-                              element = userProfilePageRootElement
-                              
-                                .querySelector ( selector );
+                                selector = '[ href="/account" ]',
                                 
-                            if ( element === null ) return; // bail if no element
+                                element = userProfilePageRootElement
+                                
+                                  .querySelector ( selector );
+                                  
+                              // bail if no element
+                              
+                              if ( element === null ) return;
+                              
+                              element
+                              
+                                .parentElement
+                              
+                                .classList
+                                
+                                .add ( `${ codeKey }-account-settings` );
+                                
+                              },
+                              
+                            pagesClassAdd = ( ) => {
                             
-                            element
+                              const
+                              
+                                xpath = './/span[ . = "Pages" ]',
+                                
+                                element = xpathEvaluate ( xpath );
+                                
+                              // bail if no element
+                              
+                              if ( element === null ) return;
+                              
+                              element
+                              
+                                .closest ( 'button' )
+                                
+                                .parentElement
+                                
+                                .classList
+                                
+                                .add ( `${ codeKey }-pages` );
+                                
+                              },
+                              
+                            search = ( ) => {
                             
-                              .parentElement
+                              const
+                              
+                                xpath = './/input[ @placeholder = "Search" ]',
+                                
+                                element = xpathEvaluate ( xpath );
+                                
+                              // bail if no element
+                              
+                              if ( element === null ) return;
                             
-                              .classList
+                              element
                               
-                              .add ( `${ codeKey }-account-settings` );
+                                .parentElement
+                                
+                                .parentElement
+                                
+                                .classList
+                                
+                                .add ( `${ codeKey }-search` );
+                                
+                              };
                               
-                            };
-                            
-                          const search = ( ) => {
-                          
-                            const
-                            
-                              xpath = `.//input[ @placeholder = 'Search' ]`,
-                              
-                              element = xpathEvaluate ( xpath );
-                              
-                            if ( element === null ) return; // bail if no element
-                          
-                            element
-                            
-                              .parentElement
-                              
-                              .parentElement
-                              
-                              .classList
-                              
-                              .add ( `${ codeKey }-search` );
-                              
-                            };
-                            
-                          search ( );
-                          
                           accountSettings ( );
+                          
+                          pagesClassAdd ( );
+                          
+                          search ( );
                           
                           break;
                           
