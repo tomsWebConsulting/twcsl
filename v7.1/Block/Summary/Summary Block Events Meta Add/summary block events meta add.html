@@ -1,0 +1,985 @@
+<!--
+
+  begin summary block events meta add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of several tags. all are needed for the
+                  full effect to work
+                  
+                  the code makes calls to each event page in the summary block
+                  to get the JSON data for the event
+                  
+                  the code modifies all summary blocks on a page, currently
+                  there is no way to address specific blocks
+                  
+                  the code should format dates correctly for the following :
+                  
+                    English ( United Kingdom )
+                    
+                    English ( United Stats )
+                    
+                    Spanish ( Mexico )
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
+    // initialize twc sbema sub-module
+    
+    twc.sbema = {
+    
+      metaData : {
+      
+        // values are category, event date, event time, location, or tags
+        
+        tertiary : '[ add value here between single quotes replacing square brackets ]',
+        
+        quaternary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        quinary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        senary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        /*
+        
+        do not use the following, placeholders for future potential expansion
+        
+        septenary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        octonary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        nonary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        denary : '[ optional, add value here between single quotes replacing square brackets ]',
+        
+        */
+        
+        }
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #page {
+    
+      --twc-sbelr-opacity : 0;
+      
+      }
+      
+    .sqs-block-summary-v2 {
+    
+      opacity : var( --twc-sbelr-opacity );
+      
+      }
+      
+    /* tertiary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-date .summary-metadata--tertiary,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-event-time .summary-metadata--tertiary,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-cats .summary-item-has-cats .summary-metadata--tertiary,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-tags .summary-item-has-tags .summary-metadata--tertiary,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-location .summary-item-has-location .summary-metadata--tertiary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-date .summary-metadata--tertiary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-event-time .summary-metadata--tertiary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-cats .summary-item-has-cats .summary-metadata--tertiary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-tags .summary-item-has-tags .summary-metadata--tertiary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-location .summary-item-has-location .summary-metadata--tertiary .summary-metadata-item--location,
+    
+    /* quaternary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-date .summary-metadata--quaternary,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-event-time .summary-metadata--quaternary,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-cats .summary-item-has-cats .summary-metadata--quaternary,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-tags .summary-item-has-tags .summary-metadata--quaternary,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-location .summary-item-has-location .summary-metadata--quaternary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-date .summary-metadata--quaternary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-event-time .summary-metadata--quaternary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-cats .summary-item-has-cats .summary-metadata--quaternary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-tags .summary-item-has-tags .summary-metadata--quaternary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-location .summary-item-has-location .summary-metadata--quaternary .summary-metadata-item--location,
+    
+    /* quinary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-date .summary-metadata--quinary,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-event-time .summary-metadata--quinary,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-cats .summary-item-has-cats .summary-metadata--quinary,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-tags .summary-item-has-tags .summary-metadata--quinary,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-location .summary-item-has-location .summary-metadata--quinary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-date .summary-metadata--quinary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-event-time .summary-metadata--quinary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-cats .summary-item-has-cats .summary-metadata--quinary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-tags .summary-item-has-tags .summary-metadata--quinary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-location .summary-item-has-location .summary-metadata--quinary .summary-metadata-item--location,
+    
+    /* senary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-date .summary-metadata--senary,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-event-time .summary-metadata--senary,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-cats .summary-item-has-cats .summary-metadata--senary,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-tags .summary-item-has-tags .summary-metadata--senary,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-location .summary-item-has-location .summary-metadata--senary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-date .summary-metadata--senary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-event-time .summary-metadata--senary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-cats .summary-item-has-cats .summary-metadata--senary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-tags .summary-item-has-tags .summary-metadata--senary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-location .summary-item-has-location .summary-metadata--senary .summary-metadata-item--location,
+    
+    /* septenary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-date .summary-metadata--septenary,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-event-time .summary-metadata--septenary,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-cats .summary-item-has-cats .summary-metadata--septenary,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-tags .summary-item-has-tags .summary-metadata--septenary,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-location .summary-item-has-location .summary-metadata--septenary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-date .summary-metadata--septenary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-event-time .summary-metadata--septenary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-cats .summary-item-has-cats .summary-metadata--septenary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-tags .summary-item-has-tags .summary-metadata--septenary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-location .summary-item-has-location .summary-metadata--septenary .summary-metadata-item--location,
+    
+    /* octonary */
+        
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-date .summary-metadata--octonary,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-event-time .summary-metadata--octonary,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-cats .summary-item-has-cats .summary-metadata--octonary,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-tags .summary-item-has-tags .summary-metadata--octonary,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-location .summary-item-has-location .summary-metadata--octonary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-date .summary-metadata--octonary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-event-time .summary-metadata--octonary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-cats .summary-item-has-cats .summary-metadata--octonary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-tags .summary-item-has-tags .summary-metadata--octonary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-location .summary-item-has-location .summary-metadata--octonary .summary-metadata-item--location,
+    
+    /* nonary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-date .summary-metadata--nonary,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-event-time .summary-metadata--nonary,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-cats .summary-item-has-cats .summary-metadata--nonary,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-tags .summary-item-has-tags .summary-metadata--nonary,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-location .summary-item-has-location .summary-metadata--nonary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-date .summary-metadata--nonary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-event-time .summary-metadata--nonary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-cats .summary-item-has-cats .summary-metadata--nonary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-tags .summary-item-has-tags .summary-metadata--nonary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-location .summary-item-has-location .summary-metadata--nonary .summary-metadata-item--location,
+    
+    /* denary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-date .summary-metadata--denary,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-event-time .summary-metadata--denary,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-cats .summary-item-has-cats .summary-metadata--denary,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-tags .summary-item-has-tags .summary-metadata--denary,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-location .summary-item-has-location .summary-metadata--denary,
+    
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-date .summary-metadata--denary .summary-metadata-item--date,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-event-time .summary-metadata--denary .summary-metadata-item--event-time,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-cats .summary-item-has-cats .summary-metadata--denary .summary-metadata-item--cats,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-tags .summary-item-has-tags .summary-metadata--denary .summary-metadata-item--tags,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-location .summary-item-has-location .summary-metadata--denary .summary-metadata-item--location
+    
+      {
+      
+        display : inline-block;
+        
+        }
+        
+    /* tertiary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-date .summary-metadata--primary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-event-time .summary-metadata--primary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-cats .summary-item-has-cats .summary-metadata--primary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-tags .summary-item-has-tags .summary-metadata--primary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-location .summary-item-has-location .summary-metadata--primary .summary-metadata-item:after,
+    
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-date .summary-metadata--secondary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-event-time .summary-metadata--secondary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-cats .summary-item-has-cats .summary-metadata--secondary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-tags .summary-item-has-tags .summary-metadata--secondary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-tertiary-metadata-location .summary-item-has-location .summary-metadata--secondary .summary-metadata-item:after,
+    
+    /* quaternary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-date .summary-metadata--tertiary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-event-time .summary-metadata--tertiary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-cats .summary-item-has-cats .summary-metadata--tertiary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-tags .summary-item-has-tags .summary-metadata--tertiary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quaternary-metadata-location .summary-item-has-location .summary-metadata--tertiary .summary-metadata-item:after,
+    
+    /* quinary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-date .summary-metadata--quaternary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-event-time .summary-metadata--quaternary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-cats .summary-item-has-cats .summary-metadata--quaternary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-tags .summary-item-has-tags .summary-metadata--quaternary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-quinary-metadata-location .summary-item-has-location .summary-metadata--quaternary .summary-metadata-item:after,
+    
+    /* senary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-date .summary-metadata--quinary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-event-time .summary-metadata--quinary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-cats .summary-item-has-cats .summary-metadata--quinary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-tags .summary-item-has-tags .summary-metadata--quinary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-senary-metadata-location .summary-item-has-location .summary-metadata--quinary .summary-metadata-item:after,
+    
+    /* septenary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-date .summary-metadata--senary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-event-time .summary-metadata--senary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-cats .summary-item-has-cats .summary-metadata--senary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-tags .summary-item-has-tags .summary-metadata--senary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-septenary-metadata-location .summary-item-has-location .summary-metadata--senary .summary-metadata-item:after,
+    
+    /* octonary */
+        
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-date .summary-metadata--septenary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-event-time .summary-metadata--septenary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-cats .summary-item-has-cats .summary-metadata--septenary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-tags .summary-item-has-tags .summary-metadata--septenary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-octonary-metadata-location .summary-item-has-location .summary-metadata--septenary .summary-metadata-item:after,
+    
+    /* nonary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-date .summary-metadata--octonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-event-time .summary-metadata--octonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-cats .summary-item-has-cats .summary-metadata--octonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-tags .summary-item-has-tags .summary-metadata--octonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-nonary-metadata-location .summary-item-has-location .summary-metadata--octonary .summary-metadata-item:after,
+    
+    /* denary */
+    
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-date .summary-metadata--nonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-event-time .summary-metadata--nonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-cats .summary-item-has-cats .summary-metadata--nonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-tags .summary-item-has-tags .summary-metadata--nonary .summary-metadata-item:after,
+    .sqs-block-summary-v2 .summary-block-setting-denary-metadata-location .summary-item-has-location .summary-metadata--nonary .summary-metadata-item:after
+    
+      {
+      
+        content : ' ·';
+        margin : 0 0.3em;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+      
+        s = `
+        
+          Summary Block Events Meta Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        ajax = [ [ ] ],
+        
+        alwaysCallback = function ( ) {
+        
+          $( '#page' )
+          
+            .css ( '--twc-sbelr-opacity', '1' );
+            
+          },
+          
+        codeKey = 'twc-sbema';
+        
+        doneCallback = function ( ) {
+        
+          const
+          
+            callback = ( i, [ data, statusText, jqXHR ] ) => {
+            
+              if ( ! i ) return; // bail if zero
+              
+              const
+              
+                callback = ( key, value ) => {
+                
+                  const isEnabled = value [ 0 ] != '[';
+                  
+                  if ( ! isEnabled ) return true; // continue
+                  
+                  const
+                  
+                    isSameDay = ( d1, d2 ) => {
+                    
+                      const b =
+                      
+                        d1.getFullYear ( ) == d2.getFullYear ( )
+                        
+                        &&
+                        
+                        d1.getMonth ( ) == d2.getMonth ( )
+                        
+                        &&
+                        
+                        d1.getDate ( ) == d2.getDate ( );
+                        
+                      return b;
+                      
+                      },
+                      
+                    item = data.item,
+                    
+                    options = {
+                    
+                      timeZone : Static
+                      
+                        .SQUARESPACE_CONTEXT
+                        
+                        .website
+                        
+                        .timeZone
+                        
+                      },
+                      
+                    d1 = new Date ( item.startDate ),
+                    
+                    d2 = new Date ( item.endDate );
+                    
+                  let
+                  
+                    html = `
+                    
+                      <div class="summary-metadata summary-metadata--${ key }">
+                      
+                        </div>
+                        
+                        `,
+                        
+                    seperator = '';
+                    
+                  const
+                  
+                    b = isSameDay ( d1, d2 ),
+                    
+                    $element = $( html );
+                    
+                  switch ( value ) {
+                  
+                    case 'category' : {
+                    
+                      const
+                      
+                        callback = ( c ) => {
+                        
+                          const html = `
+                          
+                            <a href="${ categoryUrlSlugPrefix }${ c.replaceAll ( ' ', '+' ) }">
+                            
+                              ${ c }</a>,
+                              
+                            `;
+                            
+                          return html;
+                          
+                          };
+                          
+                        categoryUrlSlugPrefix = $summaryTitleLinkElelment
+                        
+                          .attr ( 'href' )
+                          
+                          .split ( '/' )
+                          
+                          .slice ( 0, -1 )
+                          
+                          .join ( '/' )
+                          
+                          +
+                          
+                          '?category=',
+                          
+                        categoriesHtml = item
+                        
+                          .categories
+                          
+                          .map ( callback )
+                          
+                          .join ( '' )
+                          
+                          .replace ( /,(\s+)$/, '$1' );
+                          
+                      html = `
+                      
+                        <!-- Categories -->
+                        
+                        <span class="summary-metadata-item summary-metadata-item--cats">
+                        
+                          </span>
+                          
+                        `;
+                        
+                      $summaryBlockWrapperElement
+                      
+                        .addClass (
+                        
+                          `summary-block-setting-${ key }-metadata-cats`
+                          
+                          );
+                          
+                      $element
+                      
+                        .append ( html )
+                        
+                        .find ( 'span' )
+                        
+                        .append ( categoriesHtml );
+                        
+                      break;
+                      
+                      }
+                      
+                    case 'event date' : {
+                    
+                      const
+                      
+                        dateFormatRootMap = {
+                        
+                          'dmy-nsn' : {
+                          
+                            month : 'short',
+                            
+                            day : 'numeric',
+                            
+                            year : 'numeric'
+                            
+                            }
+                            
+                          },
+                          
+                        dateFormatMap = {
+                        
+                          'en-GB' : dateFormatRootMap [ 'dmy-nsn' ],
+                          
+                          'es-MX' : dateFormatRootMap [ 'dmy-nsn' ],
+                          
+                          'en-US' : {
+                          
+                            month : 'short',
+                            
+                            day : 'numeric',
+                            
+                            year : 'numeric'
+                            
+                            },
+                            
+                          default : { }
+                          
+                          },
+                          
+                        l = language in dateFormatMap ? language : 'default';
+                        
+                      Object.assign (
+                      
+                        options,
+                        
+                        dateFormatMap [ l ]
+                        
+                        );
+                        
+                      const
+                      
+                        dl1 = d1
+                        
+                          .toLocaleDateString (
+                          
+                            language,
+                            
+                            options
+                            
+                            );
+                            
+                      let
+                      
+                        dl2 = d2
+                        
+                          .toLocaleDateString (
+                          
+                            language,
+                            
+                            options
+                            
+                            );
+                            
+                      if ( b )
+                      
+                        dl2 = '';
+                        
+                        else
+                        
+                          seperator = ' - ';
+                          
+                      html = `
+                      
+                        <!-- Events: Date -->
+                        
+                        <time class="summary-metadata-item summary-metadata-item--date">
+                        
+                          ${ dl1 }${ seperator }${ dl2 }
+                          
+                          </time>
+                          
+                        `;
+                        
+                      $summaryBlockWrapperElement
+                      
+                        .addClass (
+                        
+                          `summary-block-setting-${ key }-metadata-date`
+                          
+                          );
+                          
+                      $element
+                      
+                        .append ( html );
+                        
+                      break;
+                      
+                      }
+                      
+                    case 'event time' : {
+                    
+                      const
+                      
+                        t1 = d1
+                        
+                          .toLocaleTimeString (
+                          
+                            language,
+                            
+                            options
+                            
+                            )
+                            
+                            .replace ( /:\d+ /, ' ' ),
+                            
+                        t124 = d1
+                        
+                          .toLocaleTimeString (
+                          
+                            language,
+                            
+                            {
+                            
+                              hour : 'numeric',
+                              
+                              hour12 : false,
+                              
+                              minute : 'numeric'
+                              
+                              }
+                              
+                            );
+                            
+                      let
+                      
+                        t2 = d2
+                        
+                          .toLocaleTimeString (
+                          
+                            language,
+                            
+                            options
+                            
+                            )
+                            
+                            .replace ( /:\d+ /, ' ' ),
+                            
+                        t224 = d2
+                        
+                          .toLocaleTimeString (
+                          
+                            language,
+                            
+                            {
+                            
+                              hour : 'numeric',
+                              
+                              hour12 : false,
+                              
+                              minute : 'numeric'
+                              
+                              }
+                              
+                            );
+                            
+                      if ( b )
+                      
+                        seperator = ' - ';
+                        
+                        else
+                        
+                          t2 = '';
+                          
+                          t224 = '';
+                          
+                      html = `
+                      
+                        <!-- Events: Time -->
+                        
+                        <time class="summary-metadata-item summary-metadata-item--event-time">
+                        
+                          <span class="event-time-12hr">
+                          
+                            ${ t1 }${ seperator }${ t2 }
+                            
+                            </span>
+                            
+                          <span class="event-time-24hr">
+                          
+                            ${ t124 }${ seperator }${ t224 }
+                            
+                            </span>
+                            
+                          <span class="event-time-localized">
+                          
+                            ${ t1 }${ seperator }${ t2 }
+                            
+                            </span>
+                            
+                          </time>
+                          
+                        `;
+                        
+                      $summaryBlockWrapperElement
+                      
+                        .addClass (
+                        
+                          [
+                          
+                            `summary-block-setting-${ key }-metadata-date`,
+                            
+                            `summary-block-setting-${ key }-metadata-event-time`
+                            
+                            ]
+                            
+                            .join ( ' ' )
+                            
+                          );
+                          
+                      $element
+                      
+                        .append ( html );
+                        
+                      break;
+                      
+                      }
+                      
+                    case 'location' : {
+                    
+                      const
+                      
+                        location = item
+                          
+                          .location,
+                          
+                        address = [
+                        
+                          location.addressLine1,
+                          
+                          location.addressLine2,
+                          
+                          location.addressCountry
+                          
+                          ]
+                          
+                          .filter ( a => a != '' );
+                          
+                      if ( ! address.length ) break; // bail if no address
+                      
+                      html = `
+                      
+                        <!-- Events: Location -->
+                        
+                        <div class="summary-metadata-item summary-metadata-item--location">
+                        
+                          <a href="http://maps.google.com?q=${ address.join ( ' ' ) }" target="_blank">
+                          
+                            (map)
+                            
+                            </a>
+                            
+                          </div>
+                          
+                        `;
+                        
+                      $element
+                      
+                        .append ( html );
+                        
+                      html = '<span>'
+                      
+                        +
+                        
+                        address
+                        
+                          .join ( '</span>, <span>')
+                          
+                        +
+                        
+                        '</span>';
+                        
+                      $summaryContentElement
+                      
+                        .parents ( '.summary-item' )
+                        
+                        .addClass ( 'summary-item-has-location' );
+                        
+                      $summaryBlockWrapperElement
+                      
+                        .addClass (
+                        
+                          `summary-block-setting-${ key }-metadata-location`
+                          
+                          );
+                          
+                      $( 'a', $element )
+                      
+                        .before ( html );
+                        
+                      break;
+                      
+                      }
+                      
+                    case 'tags' : {
+                    
+                      const
+                      
+                        callback = ( t ) => {
+                        
+                          const html = `
+                          
+                            <a href="${ tagUrlSlugPrefix }${ t.replaceAll ( ' ', '+' ) }">
+                            
+                              ${ t }</a>,
+                              
+                            `;
+                            
+                          return html;
+                          
+                          };
+                          
+                        tagUrlSlugPrefix = $summaryTitleLinkElelment
+                        
+                          .attr ( 'href' )
+                          
+                          .split ( '/' )
+                          
+                          .slice ( 0, -1 )
+                          
+                          .join ( '/' )
+                          
+                          +
+                          
+                          '?tag=',
+                          
+                        tagsHtml = item
+                        
+                          .tags
+                          
+                          .map ( callback )
+                          
+                          .join ( '' )
+                          
+                          .replace ( /,(\s+)$/, '$1' );
+                          
+                      html = `
+                      
+                        <!-- Tags -->
+                        
+                        <span class="summary-metadata-item summary-metadata-item--tags">
+                        
+                          </span>
+                          
+                        `;
+                        
+                      $summaryBlockWrapperElement
+                      
+                        .addClass (
+                        
+                          `summary-block-setting-${ key }-metadata-tags`
+                          
+                          );
+                          
+                      $element
+                      
+                        .append ( html )
+                        
+                        .find ( 'span' )
+                        
+                        .append ( tagsHtml );
+                        
+                      break;
+                      
+                      }
+                      
+                    }
+                    
+                  $summaryMetadataContainerElement
+                  
+                    .append ( $element );
+                    
+                  },
+                  
+                language = Static
+                
+                  .SQUARESPACE_CONTEXT
+                  
+                  .website
+                  
+                  .language,
+                  
+                $summaryTitleLinkElelment = data
+                
+                  .twc
+                  
+                  .sbelr
+                  
+                  [ '$summaryTitleLinkElelment' ],
+                  
+                $summaryContentElement = $summaryTitleLinkElelment
+                
+                  .parents ( '.summary-content' ),
+                  
+                $summaryMetadataContainerElement =
+                
+                  $( '.summary-metadata-container', $summaryContentElement ),
+                  
+                $summaryBlockElement = $summaryContentElement
+                
+                  .parents ( '.sqs-block-summary-v2' ),
+                  
+                $summaryBlockWrapperElement = $summaryContentElement
+                
+                  .parents ( '.summary-block-wrapper' );
+                  
+              $.each ( options.metaData, callback );
+              
+              };
+              
+          $.each ( arguments, callback );
+          
+          },
+          
+        eachCallback = function ( ) {
+        
+          const
+          
+            callback = function ( ) {
+            
+              const
+              
+                callback = ( url ) => {
+                
+                  const
+                  
+                    callback = ( data ) => {
+                    
+                      data.twc = {
+                      
+                        sbelr : {
+                        
+                          '$summaryTitleLinkElelment' : $this
+                          
+                          }
+                          
+                        };
+                        
+                      },
+                      
+                    promise = $.getJSON ( url, callback );
+                    
+                  return promise;
+                  
+                  },
+                  
+                $this = $( this ),
+                
+                url = $this
+                
+                  .attr ( 'href' )
+                  
+                  +
+                  
+                  '?format=json';
+                  
+              ajax.push ( callback ( url ) );
+              
+              },
+              
+            selector = '.summary-title a',
+            
+            $this = $( this )
+            
+          $( selector, $this )
+          
+            .each ( callback );
+            
+          },
+          
+        options = twc.sbema,
+        
+        selector = '.sqs-block-summary-v2';
+        
+      $( selector ).each ( eachCallback );
+      
+      $
+      
+        .when ( ...ajax )
+        
+        .done ( doneCallback )
+        
+        .always ( alwaysCallback );
+        
+      } );
+      
+    </script>
+    
+  <!-- end summary block events meta add -->
