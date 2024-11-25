@@ -41,6 +41,8 @@ Animate elements that Squarespace hasn't.
     * Add code from file **[element animate.html][4]** to Website > Pages >
       Website Tools > Code Injection > FOOTER. Please see [Add code to code
       injection][6].
+      
+  * Read the code for any instructions within.
 
 ## Make a Donation
 
