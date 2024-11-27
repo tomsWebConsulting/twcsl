@@ -145,7 +145,8 @@ Add simple category descriptions to store category pages.
     </script>
   ```
   
-* Remove the default text block from the section.
+* If the section is new and Fluid Engine, remove the default text block from the
+  section, unless you need text block.
 
 * Save the section.
   
@@ -155,7 +156,7 @@ The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
 use the **Optional Attributes** to do so.
 
-The last page section is only visible while editing the site.
+The last page section is only visible while editing the Store page.
 
 ## Demo
 
@@ -167,6 +168,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-06-16**
+
+  * hide last page section while not in edit mode
+  * bumped version to 0.9.0
+  
 * **2024-06-16**
 
   * potential fix for script ld+json consumers syntax error

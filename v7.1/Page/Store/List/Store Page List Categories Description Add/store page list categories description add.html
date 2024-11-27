@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.8.0
+  Version       : 0.9.0
   
   SS Version    : 7.1
   
@@ -14,15 +14,12 @@
   
   Dependencies  : twcsl
   
-  Notes         : the code is comprised of two script tags. both are needed for
-                  the full effect to work
-                  
-                  the code contains default settings to place the description on
-                  the top of the page. If you want to place the description in
-                  another location you will need to create your own settings to
-                  do so
+  Note          : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   no user serviceable parts below
   
@@ -30,7 +27,7 @@
   
   <style>
   
-    html:not( .squarespace-damask ) .collection-type-products.view-list #page .page-section:last-child {
+    html.squarespace-damask body:not( .sqs-is-page-editing ).collection-type-products.view-list #page .page-section:nth-last-child( 2 ) {
     
       display : none;
       
@@ -98,24 +95,36 @@
   
     $( ( ) => {
     
-      const version = '0.8.0';
+      const
       
-      const s = `Store Page List Categories Description Add v${ version }, ` +
+        version = '0.9.0',
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        s = `
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+          Store Page List Categories Description Add v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
-  
+      
       if ( twcsl.page.store.detail.is ) return; // bail on detail
       
       if ( twcsl.page.store.list.hasTag ) return; // bail on tag
       
-      const codeKey = 'twc-splcda';
+      const
       
-      const selector = `#sections .page-section script[ data-${ codeKey } ]`;
-      
+        codeKey = 'twc-splcda',
+        
+        selector = `#sections .page-section script[ data-${ codeKey } ]`;
+        
       let $element = $( selector );
       
       if ( ! $element.length ) return; // bail if no tag
@@ -138,33 +147,37 @@
       
       if ( ! ( categories in map ) ) return; // bail if no category
       
-      const description = map [ categories ];
+      const
       
-      const paragraphStyles = {
-      
-        'Heading 1'   : '<h1>',
-        'Heading 2'   : '<h2>',
-        'Heading 3'   : '<h3>',
-        'Heading 4'   : '<h4>',
-        'Paragraph 1' : '<p class="sqsrte-large">',
-        'Paragraph 2' : '<p>',
-        'Paragraph 3' : '<p class="sqsrte-small">',
-        'Monospace'   : '<pre>' +
+        description = map [ categories ],
         
-          '<code>' +
+        paragraphStyles = {
+        
+          'Heading 1'   : '<h1>',
+          'Heading 2'   : '<h2>',
+          'Heading 3'   : '<h3>',
+          'Heading 4'   : '<h4>',
+          'Paragraph 1' : '<p class="sqsrte-large">',
+          'Paragraph 2' : '<p>',
+          'Paragraph 3' : '<p class="sqsrte-small">',
+          'Monospace'   : '<pre>' +
           
-            '</code>' +
+            '<code>' +
             
-          '</pre>',
+              '</code>' +
+              
+            '</pre>',
+            
+          };
           
-        };
+      let
+      
+        action = $element.attr ( 'data-action' ),
         
-      let action = $element.attr ( 'data-action' );
-      
-      let paragraphStyle = $element.attr ( 'data-paragraph-style' );
-      
-      let selectorDestination = $element.attr ( 'data-selector-destination' );
-      
+        paragraphStyle = $element.attr ( 'data-paragraph-style' ),
+        
+        selectorDestination = $element.attr ( 'data-selector-destination' );
+        
       if ( action === undefined ) action = 'after';
       
       if ( paragraphStyle === undefined ) paragraphStyle = 'Heading 3';
@@ -237,4 +250,4 @@
       
     </script>
     
-  <!-- end store category page description add -->
+  <!-- end store page list categories description add -->
