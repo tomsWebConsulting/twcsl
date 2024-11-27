@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.8.0
+  * 0.9.0
 
 #### SS Version
 
@@ -168,7 +168,7 @@ Please consider [making a donation][10].
 
 ## Changes
 
-* **2024-06-16**
+* **2024-11-27**
 
   * hide last page section while not in edit mode
   * bumped version to 0.9.0
