@@ -170,6 +170,11 @@ Please consider [making a donation][10].
 
 * **2024-11-27**
 
+  * fix for last page section not being hidden for site visitors
+  * bumped version to 0.9.1
+  
+* **2024-11-27**
+
   * hide last page section while not in edit mode
   * bumped version to 0.9.0
   

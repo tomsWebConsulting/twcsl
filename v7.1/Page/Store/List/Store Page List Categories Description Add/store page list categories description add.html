@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.9.0
+  Version       : 0.9.1
   
   SS Version    : 7.1
   
@@ -27,12 +27,15 @@
   
   <style>
   
-    html.squarespace-damask body:not( .sqs-is-page-editing ).collection-type-products.view-list #page .page-section:nth-last-child( 2 ) {
+    body:not( .sqs-edit-mode ).collection-type-products.view-list #page .page-section:last-child,
+    body.sqs-edit-mode:not( .sqs-is-page-editing ).collection-type-products.view-list #page .page-section:nth-last-child( 2 )
     
-      display : none;
+      {
       
-      }
-      
+        display : none;
+        
+        }
+        
     .tweak-products-category-title .products.collection-content-wrapper .nested-category-title.nested-category-title-padding {
     
       margin-bottom : calc( 37px / 2 ); /* default divided */
@@ -97,7 +100,7 @@
     
       const
       
-        version = '0.9.0',
+        version = '0.9.1',
       
         s = `
         
