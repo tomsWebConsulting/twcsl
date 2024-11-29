@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 336 effects. Each effect has it's own version number, code,
+twcsl contains 337 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -376,6 +376,8 @@ not necessarily designed to work together.
       * [Gallery Section Image Order Random](v7.1/Section/Gallery/Gallery%20Section%20Image%20Order%20Random)
         
       * [Gallery Section Right Arrow Auto Click](v7.1/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click)
+        
+      * [Gallery Section Horizontal Scroll](v7.1/Section/Gallery/Gallery%20Section%20Horizontal%20Scroll)
         
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
