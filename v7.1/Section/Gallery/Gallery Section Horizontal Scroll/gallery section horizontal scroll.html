@@ -1,0 +1,218 @@
+<!--
+
+  begin gallery section horizontal scroll
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : jQuery
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-gshs {
+    
+      --twc-gshs-height : unset;
+      
+      }
+      
+    .twc-gshs .gallery-grid-wrapper {
+    
+      display : flex;
+      height : var( --twc-gshs-height );
+      overflow-y : hidden;
+      
+      }
+      
+    .twc-gshs img {
+    
+      width : unset !important;
+      
+      }
+      
+    @media screen and ( max-width : 767px ) {
+    
+      .twc-gshs .gallery-grid-wrapper {
+      
+        flex-direction : column;
+        overflow-x : hidden;
+        overflow-y : unset;
+        
+        }
+        
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+      
+        s = `
+        
+          Gallery Section Horizontal Scroll v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-gshs',
+        
+        selector = '.gallery-section .gallery-grid--layout-grid ' +
+        
+          `.gallery-caption p.gallery-caption-content:contains(${ codeKey })`,
+          
+        $elements = $( selector );
+        
+      if ( ! $elements.length ) return; // bail if no $elements
+      
+      const $galleries = $elements
+      
+        .parents ( '.gallery-section' )
+        
+        .addClass ( codeKey );
+        
+      let callback = function ( ) {
+      
+        const
+        
+          re = new RegExp ( `${ codeKey }\\s*:\\s*(.*)` ),
+        
+          $this = $( this );
+          
+        let text = $this
+        
+          .text ( );
+          
+        const m = text
+        
+          .match ( re );
+          
+        if ( m === null ) return true; // continue
+        
+        const map = {
+        
+          large : '100vh',
+          
+          medium : '66vh',
+          
+          small : '33vh'
+          
+          };
+          
+        let height = m [ 1 ];
+        
+        text = text
+        
+          .replace ( m [ 0 ], '' )
+          
+          .trim ( );
+          
+        switch ( height ) {
+        
+          case 'large' :
+          
+            height = '100vh';
+            
+            break;
+            
+          case 'medium' :
+          
+            height = '66vh';
+            
+            break;
+            
+          case 'small' :
+          
+            height = '33vh';
+            
+            break;
+            
+          }
+          
+        $this
+        
+          .parents ( '.gallery-section' )
+          
+          .css ( `--${ codeKey }-height`, height );
+          
+        if ( text )
+        
+          $this
+          
+            .text ( text )
+            
+          else
+          
+            $this
+            
+              .parents ( 'figcaption' )
+              
+              .remove ( );
+              
+        }
+        
+      $elements.each ( callback );
+      
+      callback = function ( ) {
+      
+        const
+        
+          callback = function ( ) {
+          
+            const $this = $( this );
+            
+            $this
+            
+              .parents ( '.gallery-grid-item' )
+              
+              .replaceWith ( $this );
+              
+            },
+            
+          selector = '.gallery-grid-item img',
+          
+          $this = $( this );
+          
+        $( selector, $this ).each ( callback );
+        
+        }
+        
+      $galleries.each ( callback );
+      
+      } );
+      
+    </script>
+    
+  <!-- end gallery section horizontal scroll -->
