@@ -57,13 +57,16 @@ Gallery section horizontal scroll effect.
       
 * Add or edit a Gallery section.
 
+* Set the Gallery Type to Grid: Simple.
+
 * Turn Captions on.
 
 * Add **twc-gshs : medium** to the first Description field of the first image of
   the Gallery. This text will be removed from the description. If you want a
   normal description, you can add it below the twc-gshs line.
   
-  Optionally , you can change medium to small, large or a custom CSS height value.
+  Optionally, you can change medium to small, large or a custom CSS height
+  value.
 
 ## Note
 
