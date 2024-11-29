@@ -4,7 +4,7 @@
   
   License      : < https://tinyurl.com/s872fb68 >
   
-  Version      : 0.1.2
+  Version      : 0.1.3
   
   SS Version   : 7.1
   
@@ -33,7 +33,7 @@
        /* background color should match first page section color from
           sectionColors below */
           
-      background-color : [enter first page section color here between single quotes replacing square brackets];
+      background-color : [ enter first page section color here between single quotes replacing square brackets ];
       
       }
       
@@ -41,26 +41,38 @@
     
   <script>
   
-      var sectionColors = [
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.psbccos = ( ( self ) => { // initialize twc psbccos sub-module
+    
+      self
       
-        /*
+        .sectionColors = [
         
-          the format of each line is a color. add a color for each page section,
-          except for the sections in the footer
+          /*
           
-          following is an example line. copy the example line below and paste
-          after the example line. remove '// ' at beginning of pasted line.
-          repeat for as many sections there are on the page, except the footer.
-          this has been done once initially
+            the format of each line is a color. add a color for each page section,
+            except for the sections in the footer
+            
+            following is an example line. copy the example line below and paste
+            after the example line. remove '// ' at beginning of pasted line.
+            repeat for as many sections there are on the page, except the footer.
+            this has been done once initially
+            
+            */
+            
+          // '[ enter page section color here between single quotes replacing square brackets ]',
           
-          */
+          '[ enter page section color here between single quotes replacing square brackets ]',
           
-        // '[enter page section color here between single quotes replacing square brackets]',
-        
-        '[enter page section color here between single quotes replacing square brackets]',
-        
-        ];
-        
+          ];
+          
+      return self;
+      
+      } ) ( twc.psbccos || { } );
+      
     </script>
     
   <!-- do not change anything below, there be the borg here -->
@@ -86,17 +98,17 @@
       [data-header-style="dynamic"].header,
       [data-header-style="theme"].header,
       #page :not( .has-background ) .section-background,
-      #page .black:not( .has-background ) .section-background,
-      #page .black-bold:not( .has-background ) .section-background,
-      #page .bright:not( .has-background ) .section-background,
-      #page .bright-inverse:not( .has-background ) .section-background,
-      #page .dark:not( .has-background ) .section-background,
-      #page .dark-bold:not( .has-background ) .section-background,
-      #page .light:not( .has-background ) .section-background,
-      #page .light-bold:not( .has-background ) .section-background,
       #page .page-section,
-      #page .white:not( .has-background ) .section-background,
-      #page .white-bold:not( .has-background ) .section-background
+      #page [ data-section-theme="black-bold" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="black" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="bright-inverse" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="bright" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="dark-bold" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="dark" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="light-bold" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="light" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="white-bold" ]:not( .has-background ) .section-background,
+      #page [ data-section-theme="white" ]:not( .has-background ) .section-background
       
         {
         
@@ -112,20 +124,74 @@
   
     $( ( ) => {
     
-      $( window ).scroll ( function ( ) {
+      const
       
-        $( ':not( #footer-sections ) > .page-section' ).each ( function ( i ) {
+        title = 'Page Section Background Color Change on Scroll';
+      
+        version = '0.1.3',
+      
+        s = `
         
-          if ( ! ( $( this ).position ( ).top <= $( window ).scrollTop ( ) ) )
+          ${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = function ( ) {
+      
+        const callback = function ( i ) {
+        
+          const
+          
+            b = ! (
+            
+              $( this )
+              
+                .position ( )
+                
+                .top
+                
+              <=
+              
+              $( window )
+              
+                .scrollTop ( )
+                
+              ),
+              
+            sectionColors = twc
+            
+              .psbccos
+              
+              .sectionColors;
+              
+          if ( b )
           
             return true;
             
-          $( 'body' ).css ( 'background-color', sectionColors [ i ] );
+          $( 'body' )
           
-          } );
+            .css ( 'background-color', sectionColors [ i ] );
+            
+          };
           
-        } );
+        const selector = '#page .page-section';
         
+        $( selector ).each ( callback );
+        
+        }
+        
+      $( window ).scroll ( callback );
+      
       } );
       
     </script>
