@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.2.1
+  Version       : 0.3.0
   
   SS Version    : 7.1
   
@@ -68,178 +68,198 @@
   
     $( ( ) => {
     
-      const version = '0.2.1';
+      const
       
-      const s = `Blocks Tabbed v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.3.0',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `
         
+          Blocks Tabbed v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      const buttonBlockSelector = '.sqs-block-button';
+      const
       
-      const codeKey = 'twc-bt';
-      
-      const clickCallback = function ( event ) {
-      
-        const re = new RegExp ( `(\.+)-(#.+)` );
+        buttonBlockSelector = '.sqs-block-button',
         
-        const $this = $( this );
+        codeKey = 'twc-bt',
         
-        let group = $this
+        clickCallback = function ( event ) {
         
-          .attr ( dataAttribute );
+          const
           
-        group = group.match ( re );
-        
-        if ( group === null ) return; // bail no match
-        
-        const className = 'preFade';
-        
-        const selector = group [ 2 ];
-        
-        group = groups [ group [ 1 ] ];
-        
-        group
-        
-          .$tabElements
-          
-          .removeClass ( tabActiveClassName );
-          
-        $this
-        
-          .addClass ( tabActiveClassName );
-          
-        group
-        
-          .$contentElements
-          
-          .removeClass ( contentBlockShowClassName );
-          
-        $( selector )
-        
-          .find ( `.${ className }` )
-          
-          .removeClass ( className )
-          
-          .end ( )
-          
-          .addClass ( contentBlockShowClassName );
-          
-        }
-        
-      const contentBlockShowClassName = `${ codeKey }-content--show`;
-      
-      const dataAttribute = `data-${ codeKey }`;
-      
-      const groups = { };
-      
-      const groupCallback = ( value ) => {
-      
-        value
-        
-          .$tabElements
-          
-          .first ( )
-          
-          .addClass ( tabActiveClassName );
-          
-        value
-        
-          .$contentElements
-          
-          .first ( )
-          
-          .addClass ( `${ codeKey }-content--show` );
-          
-        };
-        
-      const tabActiveClassName = `${ codeKey }-tab--active`;
-      
-      const tabCallback = function ( ) {
-      
-        const re = new RegExp ( `#${ codeKey }-((.+)-(#.+))` );
-        
-        const $this = $( this );
-        
-        let data = $this
-        
-          .attr ( 'href' );
-          
-        data = data.match ( re );
-        
-        if ( data === null ) return; // bail no match
-        
-        const contentClassName = `${ codeKey }-content`;
-        
-        const group = data [ 2 ];
-        
-        const b = groups [ group ];
-        
-        const selector = data [ 3 ];
-        
-        const $contentElement = $( selector )
-        
-          .addClass ( contentClassName );
-          
-        const $tabElement = $this
-        
-          .parents ( buttonBlockSelector )
-          
-          .addClass ( `${ codeKey }-tab` )
-          
-          .attr ( dataAttribute, data [ 1 ] );
-          
-        $this
-        
-          .removeAttr ( 'href' );
-          
-        if ( b === undefined )
-        
-          groups
-          
-            [ group ]
+            $this = $( this );
             
-            =
+          let
+          
+            group = $this
             
-            {
-            
-              $tabElements : $( ),
+              .attr ( dataAttribute )
               
-              $contentElements : $( )
+              .match ( re );
               
-              };
+          if ( group === null ) return; // bail no match
+          
+          const
+          
+            className = 'preFade',
+            
+            selector = group [ 2 ];
+            
+          group = groups [ group [ 1 ] ];
+          
+          group
+          
+            .$tabElements
+            
+            .removeClass ( tabActiveClassName );
+            
+          $this
+          
+            .addClass ( tabActiveClassName );
+            
+          group
+          
+            .$contentElements
+            
+            .removeClass ( contentBlockShowClassName );
+            
+          $( selector )
+          
+            .find ( `.${ className }` )
+            
+            .removeClass ( className )
+            
+            .end ( )
+            
+            .addClass ( contentBlockShowClassName );
+            
+          },
+          
+        contentBlockShowClassName = `${ codeKey }-content--show`,
+        
+        dataAttribute = `data-${ codeKey }`,
+        
+        groups = { },
+        
+        groupCallback = ( value ) => {
+        
+          value
+          
+            .$tabElements
+            
+            .first ( )
+            
+            .addClass ( tabActiveClassName );
+            
+          value
+          
+            .$contentElements
+            
+            .first ( )
+            
+            .addClass ( `${ codeKey }-content--show` );
+            
+          },
+          
+        re = new RegExp ( `#${ codeKey }-(.+)-(#.+)` ),
+        
+        tabActiveClassName = `${ codeKey }-tab--active`,
+        
+        tabCallback = function ( ) {
+        
+          const
+          
+            $this = $( this ),
+            
+            data = $this
+            
+              .attr ( 'href' )
               
-        $.merge (
+              .match ( re );
+              
+          if ( data === null ) return; // bail no match
+          
+          const
+          
+            contentClassName = `${ codeKey }-content`,
+            
+            group = data [ 1 ],
+            
+            b = groups [ group ],
+            
+            selector = data [ 2 ],
+            
+            $tabElement = $this
+            
+              .parents ( buttonBlockSelector )
+              
+              .addClass ( `${ codeKey }-tab` )
+              
+              .attr ( dataAttribute, data [ 0 ] ),
+              
+            $contentElement = $( selector )
+            
+              .addClass ( contentClassName );
+              
+          $this
+          
+            .removeAttr ( 'href' );
+            
+          if ( b === undefined )
+          
+            groups
+            
+              [ group ]
+              
+              =
+              
+              {
+              
+                $tabElements : $( ),
+                
+                $contentElements : $( )
+                
+                };
+                
+          $.merge (
+          
+            groups
+            
+              [ group ]
+              
+              .$tabElements,
+              
+            $tabElement
+            
+            );
+            
+          $.merge (
+          
+            groups
+            
+              [ group ]
+              
+              .$contentElements,
+              
+            $contentElement
+            
+            );
+            
+          },
+          
+        selector = `${ buttonBlockSelector } a[ href^="#${ codeKey }-" ]`;
         
-          groups
-          
-            [ group ]
-            
-            .$tabElements,
-            
-          $tabElement
-          
-          );
-          
-        $.merge (
-        
-          groups
-          
-            [ group ]
-            
-            .$contentElements,
-            
-          $contentElement
-          
-          );
-          
-        }
-        
-      const selector = `.sqs-block-button a[href^="#${ codeKey }-"]`;
-      
       $( selector )
       
         .each ( tabCallback )

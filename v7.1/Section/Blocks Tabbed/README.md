@@ -4,11 +4,11 @@
 
 ### Synopsis
 
-Create rudimentary tabbed blocks with button blocks and other blocks.
+Create rudimentary tabbed effect with button and other blocks.
 
 ### Version
 
- * 0.2.1
+ * 0.3.0
 
 #### SS Version
 
@@ -151,6 +151,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2024-11-30**
+
+  * more efficient code, no functional changes
+  * bumped version to 0.3.0
+  
 * **2024-05-30**
 
   * remove href from tab button
