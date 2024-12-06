@@ -97,6 +97,10 @@ Create Social Links for entities outside your site.
   
   http://pinterest.com/twc-cbsle
   
+  https://reddit.com/user/twc-cbsle
+  
+  https://threads.net/@twc-cbsle
+  
   http://tiktok.com/@twc-cbsle
   
   http://tumblr.com/twc-cbsle
@@ -105,9 +109,11 @@ Create Social Links for entities outside your site.
   
   http://twitter.com/twc-cbsle
   
-  http://youtube.com/@twc-cbsle
+  https://vevo.com/profiles/twc-cbsle
   
   http://x.com/twc-cbsle
+  
+  http://youtube.com/@twc-cbsle
   
   http://default.com/twc-cbsle
   ```
@@ -149,9 +155,9 @@ Create Social Links for entities outside your site.
     
     https://vevo.com/profiles/twc-cbsle
     
-    https://youtube.com/twc-cbsle
-    
     https://x.com/twc-cbsle
+    
+    https://youtube.com/twc-cbsle
     
     https://default.com/twc-cbsle
     
