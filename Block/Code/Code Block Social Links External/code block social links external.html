@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.1.1
+  Version         : 0.2.0
   
   SS Versions     : 7.1, 7.0
   
@@ -55,94 +55,110 @@
   
     $( ( ) => {
     
-      const version = '0.1.1';
+      debugger;
       
-      const s = `Code Block Social Links External v${ version }, ` +
+      const
       
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
+        version = '0.2.0',
+        
+        s = `
+        
+          Code Block Social Links External v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       const initialize = ( ) => {
       
-        const codeKey = 'twc-cbsle';
+        const
         
-        const setTemplates = ( ) => {
-        
-          const callback = ( data ) => {
+          codeKey = 'twc-cbsle',
           
-            let selector = '.sqs-block-socialaccountlinks-v2';
+          setTemplates = ( ) => {
+          
+            const callback = ( data ) => {
             
-            $blockTemplate = $( selector, data )
-            
-              .first ( )
-            
-              .removeAttr ( 'id' );
+              let selector = '.sqs-block-socialaccountlinks-v2';
               
-            selector = 'style';
-            
-            $style = $( selector, $blockTemplate );
-            
-            const css = $style
-            
-              .text ( )
+              $blockTemplate = $( selector, data )
               
-              .replace ( /#block-[^ ]+ /, '' );
+                .first ( )
               
-            $style.text ( css );
-            
-            selector = '.sqs-svg-icon--wrapper:first-child';
-            
-            $listItemTemplate = $( selector, $blockTemplate )
-            
-              .attr ( 'href', '' )
+                .removeAttr ( 'id' );
+                
+              selector = 'style';
               
-              .removeAttr ( 'aria-label' )
+              $style = $( selector, $blockTemplate );
               
-              .removeAttr ( 'class' )
+              const css = $style
               
-              .addClass ( 'sqs-svg-icon--wrapper' )
+                .text ( )
+                
+                .replace ( /#block-[^ ]+ /, '' );
+                
+              $style.text ( css );
               
-              .find ( '[*|href]' )
+              selector = '.sqs-svg-icon--wrapper:first-child';
               
-              .attr ( 'xlink:href', '' )
+              $listItemTemplate = $( selector, $blockTemplate )
               
-              .end ( );
+                .attr ( 'href', '' )
+                
+                .removeAttr ( 'aria-label' )
+                
+                .removeAttr ( 'class' )
+                
+                .addClass ( 'sqs-svg-icon--wrapper' )
+                
+                .find ( '[*|href]' )
+                
+                .attr ( 'xlink:href', '' )
+                
+                .end ( );
+                
+              $blockTemplate
               
-            $blockTemplate
-            
-              .find ( '.sqs-svg-icon--list' )
+                .find ( '.sqs-svg-icon--list' )
+                
+                .empty ( );
+                
+              let templates = {
               
-              .empty ( );
+                block : $blockTemplate.prop ( 'outerHTML' ),
+                
+                listItem : $listItemTemplate.prop ( 'outerHTML' )
+                
+                };
+                
+              templates = JSON.stringify ( templates );
               
-            let templates = {
-            
-              block : $blockTemplate.prop ( 'outerHTML' ),
+              sessionStorage.setItem ( codeKey, templates );
               
-              listItem : $listItemTemplate.prop ( 'outerHTML' )
+              build ( );
               
               };
               
-            templates = JSON.stringify ( templates );
-            
-            sessionStorage.setItem ( codeKey, templates );
-            
-            build ( );
+            $.get ( `/${ codeKey }`, callback );
             
             };
             
-          $.get ( `/${ codeKey }`, callback );
+        let
+        
+          selector = `x-${ codeKey }`,
           
-          };
+          $blockTemplate,
           
-        let selector = `x-${ codeKey }`;
-        
-        let $blockTemplate;
-        
-        let $listItemTemplate;
-        
+          $listItemTemplate;
+          
         const $elements = $( selector );
         
         if ( ! $elements.length ) return; // bail if no elements
@@ -151,94 +167,104 @@
         
           const callback = function ( i ) {
           
-            const $this = $( this );
+            const
             
-            const blockId = `${ codeKey }-${ i }`;
-            
-            const callback = ( link, i ) => {
-            
-              const $listItem = $listItemTemplate
+              $this = $( this ),
+              
+              blockId = `${ codeKey }-${ i }`,
+              
+              callback = ( link, i ) => {
+              
+                const $listItem = $listItemTemplate
+                
+                  .clone ( )
+                  
+                  .attr ( 'href', link )
+                  
+                let
+                
+                  service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com\/|(reddit)\.com\/user\/|open\.(spotify)\.com\/artist\/|(vevo)\.com\/profiles\/|(discord)\.gg\/|(threads)\.net\/|(twitch)\.tv\/)/, // (snapchat)\.com\/add|
+                  
+                  xlinkHref = {
+                  
+                    discord : 'discord-unauth',
+                    
+                    facebook : 'facebook-unauth',
+                    
+                    instagram : 'instagram-unauth',
+                    
+                    linkedin : 'linkedin-unauth',
+                    
+                    pinterest : 'pinterest-unauth',
+                    
+                    reddit : 'reddit',
+                    
+                    // snapchat : 'snapchat',
+                    
+                    spotify : 'spotify-unauth',
+                    
+                    threads : 'threads-unauth',
+                    
+                    tiktok : 'tiktok-unauth',
+                    
+                    tumblr : 'tumblr-unauth',
+                    
+                    twitch : 'twitch',
+                    
+                    twitter : 'twitter-unauth',
+                    
+                    vevo : 'vevo',
+                    
+                    x : 'x-formerly-twitter-unauth',
+                    
+                    youtube : 'youtube-unauth',
+                    
+                    default : 'url',
+                    
+                    };
+                    
+                service = link.match ( service );
+                
+                if ( service === null )
+                
+                  service = 'default';
+                  
+                  else
+                  
+                    service = service
+                    
+                      .slice ( 1 )
+                      
+                      .join ( '' );
+                      
+                xlinkHref = xlinkHref [ service ];
+                
+                $listItem
+                
+                  .find ( '.sqs-use--icon' )
+                  
+                  .attr ( 'xlink:href', `#${ xlinkHref }-icon` )
+                  
+                  .end ( )
+                  
+                  .find ( '.sqs-use--mask' )
+                  
+                  .attr ( 'xlink:href', `#${ xlinkHref }-mask` );
+                  
+                let selector = '.sqs-svg-icon--list';
+                
+                $( selector, $block )
+                
+                  .append ( $listItem );
+                  
+                },
+                
+              $block = $blockTemplate
               
                 .clone ( )
                 
-                .attr ( 'href', link )
+                .attr ( 'id', blockId );
                 
-              let service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com|(discord)\.gg|open\.(spotify)\.com\/artist|(twitch)\.tv)\//; // (snapchat)\.com\/add|
-              
-              let xlinkHref = {
-              
-                discord : 'discord-unauth',
-                
-                facebook : 'facebook-unauth',
-                
-                instagram : 'instagram-unauth',
-                
-                linkedin : 'linkedin-unauth',
-                
-                pinterest : 'pinterest-unauth',
-                
-                // snapchat : 'snapchat',
-                
-                spotify : 'spotify-unauth',
-                
-                tiktok : 'tiktok-unauth',
-                
-                tumblr : 'tumblr-unauth',
-                
-                twitch : 'twitch',
-                
-                twitter : 'twitter-unauth',
-                
-                x : 'x-formerly-twitter-unauth',
-                
-                youtube : 'youtube-unauth',
-                
-                default : 'url',
-                
-                };
-                
-              service = link.match ( service );
-              
-              if ( service === null )
-              
-                service = 'default';
-                
-                else
-                
-                  service = service
-                  
-                    .slice ( 1 )
-                    
-                    .join ( '' );
-                    
-              xlinkHref = xlinkHref [ service ];
-              
-              $listItem
-              
-                .find ( '.sqs-use--icon' )
-                
-                .attr ( 'xlink:href', `#${ xlinkHref }-icon` )
-                
-                .end ( )
-                
-                .find ( '.sqs-use--mask' )
-                
-                .attr ( 'xlink:href', `#${ xlinkHref }-mask` );
-                
-              let selector = '.sqs-svg-icon--list';
-              
-              $( selector, $block )
-              
-                .append ( $listItem );
-                
-              };
-              
-            const $block = $blockTemplate
-            
-              .clone ( )
-              
-              .attr ( 'id', blockId );
-              
             let selector = 'style';
             
             $style = $( selector, $block );

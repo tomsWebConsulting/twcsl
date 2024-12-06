@@ -8,7 +8,7 @@ Create Social Links for entities outside your site.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Versions
 
@@ -35,7 +35,7 @@ Create Social Links for entities outside your site.
   
 * Options
 
-  * Page Specific
+  * Per-page
   
     * This option will be the one most will want to use if you have only a
       single page you want to have this effect.
@@ -181,6 +181,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-12-05**
+
+  * added support for reddit, threads, and vevo
+  * bumped version to 0.2.0
+  
 * **2024-05-16**
 
   * added support for spotify
