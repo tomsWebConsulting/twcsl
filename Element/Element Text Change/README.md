@@ -1,7 +1,7 @@
 # Element Text Change
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Search and replace text in elements.
