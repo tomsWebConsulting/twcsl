@@ -1,7 +1,7 @@
 # Cart Page Summary HTML Add
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Add HTML to the cart page summary.
