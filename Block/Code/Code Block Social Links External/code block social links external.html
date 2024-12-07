@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.2.0
+  Version         : 0.3.0
   
   SS Versions     : 7.1, 7.0
   
@@ -25,13 +25,14 @@
   
   Dependencies    : twcsl < https://tinyurl.com/27bpnu6f >
   
-  Note            : the has a cache for storing elements of the social links
-                    block on the twc-cbsle page. the cache is not used when in
-                    squarespace preview. the use of a cache means it is possible
-                    that the information will become stale. this effects the
-                    design of the social links, not links themselves. the
-                    design will update when the browser session is restared
-
+  Note            : this code has a cache for storing elements of the social
+                    links block on the twc-cbsle page. the cache is not used
+                    when in squarespace preview. the use of a cache means it is
+                    possible that the information will become stale. this
+                    effects the design of the social links, not links
+                    themselves. the design will update when the browser session
+                    is restared
+  
   By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
   
   no user serviceable parts below
@@ -40,8 +41,25 @@
   
   <style>
   
-    html:not( .squarespace-damask ) x-twc-cbsle,
-    .sqs-svg-icon--wrapper[ href*="twc-cbsle" ]
+    body:not( .sqs-edit-mode ) x-twc-cbsle,
+    
+    /* 7.1 */
+    
+    .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="tel:89222753" ],
+    .header-actions-action--social .icon[ href*="twc-cbsle" ],
+    .header-actions-action--social .icon[ href="mailto:89222753@cbsle.twc" ],
+    .header-actions-action--social .icon[ href="tel:89222753" ],
+    
+    /* 7.0 Brine */
+    
+    .social-account-links-v2-block .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="tel:89222753" ],
+    .SocialLinks-link[ href*="twc-cbsle" ],
+    .SocialLinks-link[ href="mailto:89222753@cbsle.twc" ],
+    .SocialLinks-link[ href="tel:89222753" ]
     
       {
       
@@ -55,11 +73,9 @@
   
     $( ( ) => {
     
-      debugger;
-      
       const
       
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `
         
@@ -183,46 +199,142 @@
                   
                 let
                 
-                  service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com\/|(reddit)\.com\/user\/|open\.(spotify)\.com\/artist\/|(vevo)\.com\/profiles\/|(discord)\.gg\/|(threads)\.net\/|(twitch)\.tv\/)/, // (snapchat)\.com\/add|
+                  map = {
                   
-                  xlinkHref = {
-                  
-                    discord : 'discord-unauth',
+                    discord : {
                     
-                    facebook : 'facebook-unauth',
+                      ariaLabel : 'Discord',
+                      
+                      classXlinkHref : 'discord-unauth'
+                      
+                      },
                     
-                    instagram : 'instagram-unauth',
+                    facebook : {
                     
-                    linkedin : 'linkedin-unauth',
+                      ariaLabel : 'Facebook',
+                      
+                      classXlinkHref : 'facebook-unauth'
+                      
+                      },
+                      
+                    instagram : {
                     
-                    pinterest : 'pinterest-unauth',
+                      ariaLabel : 'Instagram',
+                      
+                      classXlinkHref : 'instagram-unauth'
+                      
+                      },
+                      
+                    linkedin : {
                     
-                    reddit : 'reddit',
+                      ariaLabel : 'LinkedIn',
+                      
+                      classXlinkHref : 'linkedin-unauth'
+                      
+                      },
+                      
+                    pinterest : {
                     
+                      ariaLabel : 'Pinterest',
+                      
+                      classXlinkHref : 'pinterest-unauth'
+                      
+                      },
+                      
+                    reddit : {
+                    
+                      ariaLabel : 'Reddit',
+                      
+                      classXlinkHref : 'reddit'
+                      
+                      },
+                      
                     // snapchat : 'snapchat',
                     
-                    spotify : 'spotify-unauth',
+                    spotify : {
                     
-                    threads : 'threads-unauth',
+                      ariaLabel : 'Spotify',
+                      
+                      classXlinkHref : 'spotify-unauth'
+                      
+                      },
+                      
+                    threads : {
                     
-                    tiktok : 'tiktok-unauth',
+                      ariaLabel : 'Threads',
+                      
+                      classXlinkHref : 'threads-unauth'
+                      
+                      },
+                      
+                    tiktok : {
                     
-                    tumblr : 'tumblr-unauth',
+                      ariaLabel : 'TikTok',
+                      
+                      classXlinkHref : 'tiktok-unauth'
+                      
+                      },
+                      
+                    tumblr : {
                     
-                    twitch : 'twitch',
+                      ariaLabel : 'Tumblr',
+                      
+                      classXlinkHref : 'tumblr-unauth'
+                      
+                      },
+                      
+                    twitch : {
                     
-                    twitter : 'twitter-unauth',
+                      ariaLabel : 'Twitch',
+                      
+                      classXlinkHref : 'twitch'
+                      
+                      },
+                      
+                    twitter : {
                     
-                    vevo : 'vevo',
+                      ariaLabel : 'Twitter',
+                      
+                      classXlinkHref : 'twitter-unauth'
+                      
+                      },
+                      
+                    vevo : {
                     
-                    x : 'x-formerly-twitter-unauth',
+                      ariaLabel : 'Vevo',
+                      
+                      classXlinkHref : 'vevo'
+                      
+                      },
+                      
+                    x : {
                     
-                    youtube : 'youtube-unauth',
+                      ariaLabel : 'X',
+                      
+                      classXlinkHref : 'x-formerly-twitter-unauth'
+                      
+                      },
+                      
+                    youtube : {
                     
-                    default : 'url',
+                      ariaLabel : 'YouTube',
+                      
+                      classXlinkHref : 'youtube-unauth'
+                      
+                      },
+                      
+                    default : {
                     
-                    };
+                      ariaLabel : 'URL',
+                      
+                      classXlinkHref : 'url'
+                      
+                      }
+                      
+                    },
                     
+                  service = /http[s]?:\/\/(?:.*\.)?(?:(facebook|instagram|linkedin|pinterest|tiktok|tumblr|twitter|youtube|x|default)\.com\/|(reddit)\.com\/user\/|open\.(spotify)\.com\/artist\/|(vevo)\.com\/profiles\/|(discord)\.gg\/|(threads)\.net\/|(twitch)\.tv\/)/; // (snapchat)\.com\/add|
+                  
                 service = link.match ( service );
                 
                 if ( service === null )
@@ -237,19 +349,39 @@
                       
                       .join ( '' );
                       
-                xlinkHref = xlinkHref [ service ];
+                const
                 
+                  ariaLabel = map [
+                  
+                    service
+                    
+                    ]
+                    
+                    .ariaLabel,
+                    
+                  classXlinkHref = map [
+                  
+                    service
+                    
+                    ]
+                    
+                    .classXlinkHref;
+                    
                 $listItem
                 
+                  .addClass ( classXlinkHref )
+                  
+                  .attr ( 'aria-label', ariaLabel )
+                  
                   .find ( '.sqs-use--icon' )
                   
-                  .attr ( 'xlink:href', `#${ xlinkHref }-icon` )
+                  .attr ( 'xlink:href', `#${ classXlinkHref }-icon` )
                   
                   .end ( )
                   
                   .find ( '.sqs-use--mask' )
                   
-                  .attr ( 'xlink:href', `#${ xlinkHref }-mask` );
+                  .attr ( 'xlink:href', `#${ classXlinkHref }-mask` );
                   
                 let selector = '.sqs-svg-icon--list';
                 

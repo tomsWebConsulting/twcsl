@@ -8,7 +8,7 @@ Create Social Links for entities outside your site.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -33,26 +33,10 @@ Create Social Links for entities outside your site.
 * Install [twcsl][6]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Options
-
-  * Per-page
+* Add code from file **[code block social links external.html][7]** to Website >
+  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
+  injection][9].
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
-      
-    * Add code from file **[code block social links external.html][7]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Please see
-      [Per-page code injection][8].
-      
-  * Site-wide
-  
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
-      
-    * Add code from file **[code block social links external.html][7]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][9].
-      
 * Create a blank page in the Not Linked area and set the PAGE TITLE, NAVIGATION
   TITLE, AND URL SLUG to **twc-cbsle** and add the following to Page Settings >
   Advanced > Page Header Code Injection for the page. Please see [Per-page code
@@ -67,15 +51,27 @@ Create Social Links for entities outside your site.
   ```html
   <style>
   
-    #page .sqs-svg-icon--wrapper, /* 7.1 */
+    /* 7.1 */
     
-    /* 7.0 */
+    #page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    #page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    #page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="tel:89222753" ],
+    #page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    #page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    #page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="tel:89222753" ],
     
-    .Site .sqs-svg-icon--wrapper /* Brine */
+    /* 7.0 Brine */
+    
+    .Main--page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    .Main--page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    .Main--page .social-account-links-v2-block .sqs-svg-icon--wrapper[ href="tel:89222753" ],
+    .Main--page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href*="twc-cbsle" ],
+    .Main--page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="mailto:89222753@cbsle.twc" ],
+    .Main--page .sqs-block-socialaccountlinks-v2 .sqs-svg-icon--wrapper[ href="tel:89222753" ]
     
       {
       
-        display : inline-block !important;
+        display : inline-block;
         
         }
         
@@ -99,6 +95,8 @@ Create Social Links for entities outside your site.
   
   https://reddit.com/user/twc-cbsle
   
+  http://open.spotify.com/artist/twc-cbsle
+  
   https://threads.net/@twc-cbsle
   
   http://tiktok.com/@twc-cbsle
@@ -116,11 +114,16 @@ Create Social Links for entities outside your site.
   http://youtube.com/@twc-cbsle
   
   http://default.com/twc-cbsle
+  
+  mailto:89222753@cbsle.twc
+  
+  tel:89222753
   ```
   
   Your site visitors will not be able to see the links in the list.
   
-  Remove the default Text block added by Squarespace.
+  If the site is v7.1 and the section is a Classic Editor section remove the
+  default Text block added by Squarespace.
   
   Save the page.
   
@@ -143,6 +146,8 @@ Create Social Links for entities outside your site.
     
     https://reddit.com/user/twc-cbsle
     
+    http://open.spotify.com/artist/twc-cbsle
+    
     https://threads.net/@twc-cbsle
     
     https://tiktok.com/@twc-cbsle
@@ -160,6 +165,10 @@ Create Social Links for entities outside your site.
     https://youtube.com/twc-cbsle
     
     https://default.com/twc-cbsle
+    
+    mailto:89222753@cbsle.twc
+    
+    tel:89222753
     
     </x-twc-cbsle>
   ```
@@ -193,6 +202,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-12-06**
+
+  * refined the CSS for hiding/showing social links
+  * added class name and aria-label to Social Links block link elements
+  * bumped version to 0.3.0
+  
 * **2024-12-05**
 
   * added support for reddit, threads, and vevo
