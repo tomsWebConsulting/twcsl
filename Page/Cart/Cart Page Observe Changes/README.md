@@ -1,7 +1,7 @@
 # Cart Page Observe Changes
 
 ### [License][1]
-    
+
 ### Synopsis
 
 Observe cart page changes.
