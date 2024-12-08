@@ -469,8 +469,6 @@ not necessarily designed to work together.
     
   * [Hide Blog Post Tags](v7.1/Hide%20Blog%20Post%20Tags)
     
-  * [Blog Page Section Text Replace With Category or Tag, or Both](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Category%20or%20Tag,%20or%20Both)
-    
   * [Header Social Icon Whatsapp Generic Icon to Whatsapp Change](v7.1/Header%20Social%20Icon%20Whatsapp%20Generic%20Icon%20to%20Whatsapp%20Change)
     
   * [Calendar Block Event Multiday Class Add](v7.1/Calendar%20Block%20Event%20Multiday%20Class%20Add)
@@ -504,6 +502,8 @@ not necessarily designed to work together.
   * [Event Meta Data Make Sticky](v7.1/Event%20Meta%20Data%20Make%20Sticky)
     
   * [Page Section First Blocks Full Bleed](v7.1/Page%20Section%20First%20Blocks%20Full%20Bleed)
+    
+  * [Blog Page Section Text Replace With Author, Category, Tag, or Any](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Author,%20Category,%20Tag,%20or%20Any)
     
   * [Blog Page List Item Background Color](v7.1/Blog%20Page%20List%20Item%20Background%20Color)
     
