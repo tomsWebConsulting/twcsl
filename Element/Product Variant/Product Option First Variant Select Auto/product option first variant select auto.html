@@ -8,7 +8,7 @@
       
       License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.3.0
+      Version         : 0.4.0
       
       SS Versions     : 7.1, 7.0
       
@@ -32,137 +32,218 @@
       Notes           : the code is comprised of several tags. all are needed
                         for the full effect to work
       
-      By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Copyright       : 2023-2024 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
       
       */
       
-    const productOptions = [
+    const
     
-      /*
+      version = '0.4.0',
       
-        the format of each line is a product variant option as entered in the
-        product editor. following is an example line. copy the example line
-        below and paste after the example line. remove '// ' at beginning of]
-        pasted line. this has been done once initially
+      s = `
+      
+        Product Option First Variant Select Auto v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
         
-        */
-      
-      // '[enter option here between single quotes replacing square brackets]',
-      
-      '[enter option here between single quotes replacing square brackets]',
-      
-      ];
-      
-    // do not change anything below, there be the borg here
-    
-    const version = '0.3.0';
-    
-    const s = `Product Option First Variant Select Auto v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
+        © 2023-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
     console.log ( s );
     
     const initialize = ( ) => {
     
-      const selector = '.sqs-block-product';
-      
-      const hasProductBlocks = Boolean (
-      
-        $( selector )
+      let selector = '.sqs-block-product';
         
-          .length
+      const
+      
+        hasProductBlocks = Boolean (
+        
+          $( selector )
           
-        );
+            .length
+            
+          ),
+          
+        b = ! ( hasProductBlocks || twcsl.page.store.is );
         
-      const b = ! ( hasProductBlocks || twcsl.page.store.is );
-      
       if ( b ) return; // bail of no elements of interest
       
-      const callback = option => {
+      const codeKey = 'twc-pofvsa';
       
-        const selector = [
+      selector = 'script[ type="application/vnd.' +
+      
+        `${ codeKey.replace ( '-', '.' ) }" ]`;
         
-          // begin product block
-          
-            `.product-block .productDetails .product-variants .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
-            
-            `.product-block .productDetails .product-variants .variant-select-wrapper select[data-variant-option-name="${ option }"]`,
-            
-            // end product block
-            
-          // begin store page
-          
-            // begin 7.1
-            
-              // list
-              
-              `.tweak-products-add-to-cart-button.plp-add-to-cart .products.collection-content-wrapper .plp-grid-add-to-cart .variant-option select[data-variant-option-name="${ option }"]`,
-              
-              // begin detail
-              
-                // layouts
-                
-                // begin simple
-                
-                  `.ProductItem-details .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
-                  
-                  `.ProductItem-details .variant-select-wrapper[data-variant-option-name="${ option }"]`,
-                  
-                  // end simple
-                  
-                // begin full, half, wrap
-                
-                  `.pdp-layout .pdp-details .variant-radiobtn-wrapper[data-variant-option-name="${ option }"]`,
-                  
-                  `.pdp-layout .pdp-details .variant-select-wrapper[data-variant-option-name="${ option }"]`,
-                  
-                  // end full, half, wrap
-                  
-                // end detail
-                
-              // end 7.1
-              
-            // begin 7.0
-            
-              `.ProductItem-details .variant-select-wrapper select[data-variant-option-name="${ option }"]`,
-              
-              // end 7.0
-              
-            // end store page
-            
-          ]
-          
-          .join ( ', ' );
-          
-        function callback ( ) {
+      const $scriptElement = $( selector );
+      
+      if ( ! $scriptElement.length ) return; // bail if no tag
+      
+      const
+      
+        callback = ( option ) => {
         
-          const $this = $( this );
+          const
           
-          const value = $( 'option:eq( 1 )', $this )
-          
-            .val ( );
+            callback = function ( ) {
             
-          $this
-          
-            .val ( value )
+              const $this = $( this );
+              
+              let
+              
+                selector,
+                
+                value;
+                
+              switch ( true ) {
+              
+                case this.tagName == 'SELECT' :
+                
+                  selector = 'option';
+                  
+                  value = $( selector, $this )
+                  
+                    .eq ( 1 )
+                    
+                    .val ( );
+                    
+                  $this
+                  
+                    .val ( value );
+                    
+                if ( twcsl.ss.is71 )
+                
+                  $this
+                  
+                    .parents ( '.variant-select-wrapper' )
+                    
+                    .attr ( 'data-text', value );
+                    
+                  break;
+                  
+                case $this.hasClass ( 'variant-radiobtn-wrapper' ) :
+                
+                  selector = 'input[ type="radio" ]',
+                    
+                  $( selector, $this )
+                  
+                    .eq ( 0 )
+                    
+                    .prop ( 'checked', true );
+                    
+                  break;
+                  
+                }
+                
+              Y
+              
+                .one ( this )
+                
+                .simulate ( 'change' );
+                
+              },
+              
+            unique = ( value, index, array ) => {
             
-          const node = $this.get ( 0 );
-          
-          Y
-          
-            .one ( node )
+              const b = array
+              
+                .indexOf ( value )
+                
+                ===
+                
+                index;
+                
+              return b;
+              
+              },
+              
+            selector = [
             
-            .simulate ( 'change' );
-            
-          }
+              // begin product block
+              
+                `.product-block .productDetails .product-variants .variant-radiobtn-wrapper[ data-variant-option-name="${ option }" ]`,
+                
+                `.product-block .productDetails .product-variants .variant-select-wrapper select[ data-variant-option-name="${ option }" ]`,
+                
+                // end product block
+                
+              // begin store page
+              
+                // begin 7.1
+                
+                  // list
+                  
+                  `.tweak-products-add-to-cart-button .products.collection-content-wrapper .plp-grid-add-to-cart .variant-option select[ data-variant-option-name="${ option }" ]`,
+                  
+                  // begin detail
+                  
+                    // layouts
+                    
+                    // begin simple
+                    
+                      `.ProductItem-details .variant-radiobtn-wrapper[ data-variant-option-name="${ option }" ]`,
+                      
+                      `.ProductItem-details .variant-select-wrapper select[ data-variant-option-name="${ option }" ]`,
+                      
+                      // end simple
+                      
+                    // begin full, half, wrap
+                    
+                      `.pdp-layout .pdp-details .variant-radiobtn-wrapper[ data-variant-option-name="${ option }" ]`,
+                      
+                      `.pdp-layout .pdp-details .variant-select-wrapper select[ data-variant-option-name="${ option }" ]`,
+                      
+                      // end full, half, wrap
+                      
+                    // end detail
+                    
+                  // end 7.1
+                  
+                // begin 7.0
+                
+                  `.ProductItem-details .variant-select-wrapper select[ data-variant-option-name="${ option }" ]`,
+                  
+                  // end 7.0
+                  
+                // end store page
+                
+              ]
+              
+              .filter ( unique )
+              
+              .join ( ', ' );
+              
+          $( selector ).each ( callback );
           
-        $( selector ).each ( callback );
+          },
+          
+        productOptions = JSON
         
-        };
-        
+          .parse (
+          
+            $scriptElement
+            
+              .text ( )
+              
+              .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+              
+              .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+              
+              .replace ( /,\s*]\s*/, ']' ) // remove last item comma
+              
+              .replaceAll ( '\n', '' )
+              
+            )
+            
+          .productOptions;
+          
       productOptions.forEach ( callback );
       
       };
@@ -171,7 +252,7 @@
     
       case twcsl.ss.is71 :
       
-        $( initialize );
+        addEventListener ( 'load', initialize );
         
         break;
         
