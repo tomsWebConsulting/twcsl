@@ -1,0 +1,263 @@
+<!--
+
+  begin blog page section text replace with author, category, tag, or any
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.6.0
+  
+  SS Version    : 7.1
+  
+  Dependencies  : twcsl
+  
+  Notes         : this effect is not active in SS Preview to test it use private
+                  browsing < https://tinyurl.com/ynessvsf >
+                  
+                  the code is comprised of several tags. all are needed for the
+                  full effect to work
+  
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.bpstrwactoa = ( ( self ) => { // initialize twc bpstrwactoa sub-module
+    
+      self.author = {
+      
+        // set to false or true, if false then no author is added
+        
+        active : false,
+        
+        prefixText : '[ enter text here between single quotes replacing square brackets ]',
+        
+        suffixText : '[ enter text here between single quotes replacing square brackets ]'
+        
+        };
+        
+      self.category = {
+      
+        // set to false or true, if false then no category is added
+        
+        active : false,
+        
+        prefixText : '[ enter text here between single quotes replacing square brackets ]',
+        
+        suffixText : '[ enter text here between single quotes replacing square brackets ]'
+        
+        };
+        
+      self.tag = {
+      
+        // set to false or true, if false then no tag is added
+        
+        active : false,
+        
+        prefixText : '[ enter text here between single quotes replacing square brackets ]',
+        
+        suffixText : '[ enter text here between single quotes replacing square brackets ]'
+        
+        };
+        
+      return self;
+      
+      } ) ( twc.bpstrwactoa || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #page {
+    
+      --sqs-block-html-visibility : hidden;
+      --x-twc-bpstrwactoa-display : none;
+      
+      }
+      
+    body:not( .sqs-edit-mode-active ) :not( .view-item )[ class~="collection-type-blog" ] #page .sqs-block-html,
+    body:not( .sqs-edit-mode-active ) :not( .view-item )[ class*="collection-type-blog-" ] #page .sqs-block-html
+    
+      {
+      
+        visibility : var( --sqs-block-html-visibility );
+        
+        }
+        
+    x-twc-bpstrwactoa {
+    
+      display : var( --x-twc-bpstrwactoa-display );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      if ( ! twcsl.page.blog.is ) return; // bail if not blog page
+      
+      const
+      
+        codeKey = 'twc-bpstrwactoa',
+        
+        customElement = `x-${ codeKey }`,
+        
+        triggerText = `[ ${ codeKey } ]`,
+        
+        selector = '#page .sqs-block-html > .sqs-block-content > ' +
+        
+          `*:contains(${ triggerText })`,
+          
+        $page = $( '#page' );
+        
+      let callback = function ( ) {
+      
+        const
+        
+          $this = $( this ),
+          
+          html = $this
+          
+            .html ( )
+            
+            .replaceAll ( triggerText, `<${ customElement }>` );
+            
+        $this.html ( html );
+        
+        };
+        
+      // swap out the user entered trigger text for a hidden element
+      
+      $( selector ).each ( callback );
+        
+      // make text blocks visible
+      
+      $page.css ( '--sqs-block-html-visibility', 'visible' );
+      
+      const options = twc.bpstrwactoa;
+      
+      let b = options.author.active || options.category.active ||
+      
+        options.tag.active;
+        
+      if ( ! b ) return; // bail if author, category, and tag not active
+      
+      const
+      
+        authorId = new URLSearchParams ( location.search )
+        
+          .get ( 'author' ),
+          
+        hasAuthor = authorId !== null,
+        
+        hasCategory = twcsl.page.blog.list.hasCategory,
+        
+        hasTag = twcsl.page.blog.list.hasTag;
+        
+      b = hasAuthor || hasCategory || hasTag;
+      
+      if ( ! b ) return; // bail if not author, category, or tag page
+      
+      const $elements = $( customElement );
+      
+      if ( ! $elements.length ) return; // bail if no elements
+      
+      let prefixText = suffixText = text = '';
+      
+      switch ( true ) {
+      
+        case options.author.active && hasAuthor : {
+        
+          const
+          
+            callback = function ( ) {
+            
+              const b = this.nodeType === 3; // node type 3 is a text node
+              
+              return b;
+              
+              },
+              
+            selector = `.archive-group-name-link[ href$="${ authorId }" ]`;
+            
+          prefixText = options.author.prefixText;
+          
+          suffixText = options.author.suffixText;
+          
+          text = $( selector )
+          
+            .contents ( )
+            
+            .filter ( callback )
+            
+            .text ( )
+            
+            .trim ( )
+            
+            .replace ( /\s+/g, ' ' );
+            
+          break;
+          
+          }
+          
+        case options.category.active && hasCategory :
+        
+          prefixText = options.category.prefixText;
+          
+          suffixText = options.category.suffixText;
+          
+          text = twcsl.page.blog.list.category;
+          
+          break;
+          
+        case options.tag.active && hasTag :
+        
+          prefixText = options.tag.prefixText;
+          
+          suffixText = options.tag.suffixText;
+          
+          text = twcsl.page.blog.list.tag;
+          
+          break;
+          
+        default :
+        
+          // empty text
+          
+        }
+        
+      callback = function ( ) {
+      
+        $( this ).text ( text );
+        
+        };
+        
+      text = prefixText
+      
+        +
+        
+        text
+        
+        +
+        
+        suffixText;
+        
+      $elements.each ( callback );
+      
+      $page.css ( '--x-twc-bpstrwactoa-display', 'inherit' );
+      
+      } );
+      
+    </script>
+    
+  <!-- end blog page section text replace with author, category, tag, or any -->
