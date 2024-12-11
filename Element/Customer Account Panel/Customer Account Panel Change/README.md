@@ -7,7 +7,7 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.6.0
+### Version 0.6.1
 
 #### SS Versions
 
@@ -103,6 +103,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2024-12-10**
+
+  * fix for apparent change the prevented user CSS from working
+  * bumped version to 0.6.1
+  
 * **2024-10-29**
 
   * add twc-capc-pages class
