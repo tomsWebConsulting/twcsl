@@ -105,7 +105,7 @@ Please consider [making a donation][7].
 
 * **2024-12-10**
 
-  * fix for apparent change the prevented user CSS from working
+  * fix for apparent change that prevented user CSS from working
   * bumped version to 0.6.1
   
 * **2024-10-29**
