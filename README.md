@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 337 effects. Each effect has it's own version number, code,
+twcsl contains 336 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -564,8 +564,6 @@ not necessarily designed to work together.
   * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
     
   * [Fluid Engine Page Section Upgrade Button Hide](v7.1/Fluid%20Engine%20Page%20Section%20Upgrade%20Button%20Hide)
-    
-  * [Store Listing Add to Cart Buttons](v7.1/Store%20Listing%20Add%20to%20Cart%20Buttons)
     
   * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
     
