@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.1
+  Version       : 0.3.2
   
   SS Version    : 7.1
   
@@ -27,17 +27,31 @@
   
   -->
   
+  <style>
+  
+    .collection-type-products.view-list .products.collection-content-wrapper {
+    
+      --twc-splcm-spacing-left : 1em;
+      
+      }
+      
+    </style>
+    
   <script>
   
-    if ( window.twc == undefined ) window.twc = { };
+    // initialize twc module
     
-    twc.splcm = {
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splcm sub-module
+    
+    twc.splcm = ( ( self ) => self ) ( twc.splcm || {
     
       categoriesExpandedOnLoad : false, // value is false or true
       
       hideIcon : false // value is false or true
       
-      };
+      } );
       
     </script>
     
@@ -45,18 +59,6 @@
   
   <style>
   
-    #siteWrapper {
-    
-      --twc-products-collection-content-wrapper-visibility : hidden;
-      
-      }
-      
-    .collection-type-products.view-list .products.collection-content-wrapper {
-    
-      visibility : var( --twc-products-collection-content-wrapper-visibility );
-      
-      }
-      
     /* begin resets */
     
       .products.collection-content-wrapper .nested-category-children {
@@ -78,6 +80,18 @@
         }
         
       /* end resets */
+      
+    #siteWrapper {
+    
+      --twc-products-collection-content-wrapper-visibility : hidden;
+      
+      }
+      
+    .collection-type-products.view-list .products.collection-content-wrapper {
+    
+      visibility : var( --twc-products-collection-content-wrapper-visibility );
+      
+      }
       
     .tweak-products-breadcrumbs .products.collection-content-wrapper .nested-category-breadcrumb,
     .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
@@ -144,12 +158,6 @@
       
     /* begin top */
     
-      .collection-type-products.view-list .products.collection-content-wrapper {
-      
-        --spacing-left : unset;
-        
-        }
-        
       .products.collection-content-wrapper .nested-category-children .active {
       
         text-decoration : unset;
@@ -159,7 +167,7 @@
       .nested-category-children ul {
       
         gap : 0.5em;
-        padding-inline-start : var( --spacing-left );
+        padding-inline-start : var( --twc-splcm-spacing-left );
         
         }
         
@@ -177,19 +185,19 @@
         
       .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
 
-        margin-left : var( --spacing-left );
-        
-        }
-        
-      .nested-category-children .breadcrumb-separator {
-      
-        margin-left : var( --spacing-left );
+        margin-left : var( --twc-splcm-spacing-left );
         
         }
         
       .products.collection-content-wrapper .nested-category-children > .nested-category-breadcrumb-list-item > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
       
         display : unset;
+        
+        }
+        
+      .products.collection-content-wrapper .nested-category-breadcrumb-list-item details + .breadcrumb-separator {
+      
+        margin-left : 0.25em;
         
         }
         
@@ -212,44 +220,50 @@
   
     var twcSplcm = ( categories ) => {
     
-      const version = '0.3.1';
+      const
       
-      const s = `Store Page List Categories Mega v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.3.2',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `
         
+          Store Page List Categories Mega v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      const codeKey = 'twc-splcm';
+      const
       
-      const selectorKey = '.products.collection-content-wrapper';
-      
+        codeKey = 'twc-splcm',
+        
+        selectorKey = '.products.collection-content-wrapper';
+        
       // hide show register
       
       ( ( ) => {
       
-        if ( window.twc == undefined ) window.twc = { };
+        // initialize twc data sub-module
         
-        if ( twc.data == undefined ) twc.data = { };
+        twc.data = ( ( self ) => self ) ( twc.data || { } );
         
-        if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+        // initialize twc data hideShow sub-module
         
-        if ( twc.data.hideShow [ selectorKey ] == undefined )
+        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
         
-          twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            =
-            
-            [ ];
-            
+        // initialize twc data hideShow selector key sub-module
+        
+        twc.data.hideShow [ selectorKey ] =
+        
+          ( ( self ) => self ) ( twc.data.hideShow [ selectorKey ] || [ ] );
+        
         twc
         
           .data
@@ -264,78 +278,84 @@
         
       ( ( ) => {
       
-        const options = twc.splcm;
+        const
         
-        const windowWidth = $( window ).width ( );
-        
-        const traverse = ( categories, $ul ) => {
-        
-          $.each ( categories, function ( i, category ) {
+          options = twc.splcm,
           
-            const hasChildren = Boolean ( category.children.length );
+          windowWidth = $( window ).width ( ),
+          
+          traverse = ( categories, $ul ) => {
+          
+            $.each ( categories, function ( i, category ) {
             
-            const $li = $( `
-            
-              <li class="nested-category-breadcrumb-list-item">
+              const
               
-                <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
+                hasChildren = Boolean ( category.children.length ),
                 
-                  ${ category.displayName }
+                $li = $( `
+                
+                  <li class="nested-category-breadcrumb-list-item">
                   
-                  </a>
-                  
-                <span class="breadcrumb-separator" aria-hidden="true">
-                
-                  |
-                  
-                  </span>
-                  
-                </li>
-                
-              ` );
-              
-            let $element;
-            
-            if ( hasChildren ) {
-            
-              const openHtml = options.categoriesExpandedOnLoad ? ' open' : '';
-              
-              $element = $li
-              
-                .addClass ( 'children' )
-                
-                .find ( '.nested-category-breadcrumb-link' )
-                
-                .wrap ( `
-                
-                  <details${ openHtml }/>
-                  
-                    <summary/>
+                    <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
                     
-                  ` )
+                      ${ category.displayName }
+                      
+                      </a>
+                      
+                    <span class="breadcrumb-separator" aria-hidden="true">
+                    
+                      |
+                      
+                      </span>
+                      
+                    </li>
+                    
+                  ` );
                   
-                .parents ( 'details' );
-                
-              } else
+              let $element;
               
-                $element = $li;
-                
-            $ul.append ( $li );
-            
-            if ( ! hasChildren ) return true; // continue
-            
-            $childrenUl = $( '<ul/>' )
-            
-              .appendTo ( $element );
+              if ( hasChildren ) {
               
-            traverse ( category.children, $childrenUl );
+                const openHtml =
+                
+                  options.categoriesExpandedOnLoad ? ' open' : '';
+                  
+                $element = $li
+                
+                  .addClass ( 'children' )
+                  
+                  .find ( '.nested-category-breadcrumb-link' )
+                  
+                  .wrap ( `
+                  
+                    <details${ openHtml }/>
+                    
+                      <summary/>
+                      
+                    ` )
+                    
+                  .parents ( 'details' );
+                  
+                } else
+                
+                  $element = $li;
+                  
+              $ul.append ( $li );
+              
+              if ( ! hasChildren ) return true; // continue
+              
+              $childrenUl = $( '<ul/>' )
+              
+                .appendTo ( $element );
+                
+              traverse ( category.children, $childrenUl );
+              
+              } );
+              
+            },
             
-            } );
-            
-          };
+          $ul = $( '<ul/>' );
           
-        const $ul = $( '<ul/>' );
-        
         let selector = `[href="${ twcsl.page.store.urlSlug }` +
         
           `${ twcsl.page.store.list.categoryUrlSlug }"]`;
@@ -416,14 +436,16 @@
         
         selector = '.active';
         
-        const $active = $( selector, $element );
+        const
         
-        const activeLeft = $active
-        
-          .offset ( )
+          $active = $( selector, $element ),
           
-          .left;
+          activeLeft = $active
           
+            .offset ( )
+            
+            .left;
+            
         if ( activeLeft > windowWidth )
         
           $active

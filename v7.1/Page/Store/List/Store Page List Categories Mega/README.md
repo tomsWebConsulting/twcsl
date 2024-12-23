@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.2
 
 #### SS Version
 
@@ -85,6 +85,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2024-12-22**
+
+  * more minor tweaks to spacing
+  * bumped version to 0.3.2
+  
 * **2024-04-30**
 
   * fix for hide icons spacing issue
