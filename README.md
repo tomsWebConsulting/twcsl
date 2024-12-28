@@ -451,6 +451,8 @@ not necessarily designed to work together.
       
     * [Header](v7.1/Element/Header)
       
+      * [Header CTA Element Left Desktop](v7.1/Element/Header/Header%20CTA%20Element%20Left%20Desktop)
+        
       * [Header Site Title Add](v7.1/Element/Header/Header%20Site%20Title%20Add)
         
   * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
@@ -476,8 +478,6 @@ not necessarily designed to work together.
   * [Store Product List Badges](v7.1/Store%20Product%20List%20Badges)
     
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
-    
-  * [Move Header CTA Element to Left Side](v7.1/Move%20Header%20CTA%20Element%20to%20Left%20Side)
     
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
     
