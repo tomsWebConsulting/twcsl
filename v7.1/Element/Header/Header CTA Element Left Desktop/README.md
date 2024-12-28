@@ -11,12 +11,12 @@
 Add code from file **[header cta element left desktop.css][2]** to Website >
 Pages > Website Tools > Custom CSS.
 
-Add code from file **[header cta element left desktop.html[3]** to Website >
+Add code from file **[header cta element left desktop.html][3]** to Website >
 Pages > Website Tools > Code Injection > FOOTER.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
