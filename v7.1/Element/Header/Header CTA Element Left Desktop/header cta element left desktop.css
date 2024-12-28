@@ -1,0 +1,23 @@
+/*
+
+  header cta element left desktop
+  
+  License     : < https://tinyurl.com/s872fb68 >
+  
+  Version     : 0.2.0
+  
+  SS Version  : 7.1
+  
+  Copyright   : 2021-2024 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .header-display-desktop .header-actions-action--cta {
+  
+    margin-right : 1.2vw;
+    
+    }

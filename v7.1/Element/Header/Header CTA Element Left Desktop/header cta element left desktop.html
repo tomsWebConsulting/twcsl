@@ -1,0 +1,137 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      header cta element left desktop
+      
+      License     : < https://tinyurl.com/s872fb68 >
+      
+      Version     : 0.2.0
+      
+      SS Version  : 7.1
+      
+      Copyright   : 2021-2024 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const callback = ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+        
+        s = `
+        
+          Header CTA Element Left Desktop v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        className = 'header-actions--left',
+        
+        headerSelector = '.header-display-desktop',
+        
+        headerElement = document
+        
+          .querySelector ( headerSelector ),
+          
+        selector = '.header-actions-action--cta',
+        
+        ctaElement = headerElement
+        
+          .querySelector ( selector );
+          
+      let
+      
+        leftElement = headerElement
+        
+          .querySelector ( `.${ className }` );
+          
+      if ( leftElement === null ) {
+      
+        const
+        
+          divElement = document
+          
+            .createElement ( 'div' ),
+            
+          xpathExpression = '//comment()[ . = " Social " ]',
+          
+          xpathEvaluate = ( xpathExpression, contextNode ) => {
+          
+            const xPathResult = document
+            
+              .evaluate (
+              
+                xpathExpression,
+                
+                contextNode,
+                
+                null,
+              
+                XPathResult.FIRST_ORDERED_NODE_TYPE,
+                
+                null
+                
+                )
+                
+              .singleNodeValue;
+              
+            return xPathResult;
+            
+            };
+          
+        leftElement = xpathEvaluate ( xpathExpression, headerElement );
+        
+        divElement
+        
+          .classList
+          
+          .add (
+          
+            'header-actions',
+            
+            'header-actions--left'
+            
+            );
+            
+        leftElement
+        
+          .after ( divElement );
+          
+        leftElement = headerElement
+        
+          .querySelector ( `.${ className }` );
+          
+        }
+        
+      leftElement
+      
+        .prepend ( ctaElement );
+        
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
+    
+  </script>
