@@ -8,7 +8,7 @@
       
       License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.6.1
+      Version         : 0.7.0
       
       SS Versions     : 7.1, 7.0
       
@@ -44,124 +44,138 @@
       
       */
       
-    const version = '0.6.1';
+    const
     
-    const s = `
-    
-      Elements Manipulate v${ version }
-    
-      License < https://tinyurl.com/s872fb68 >
+      version = '0.7.0',
       
-      © 2022-2024 Thomas Creedon
+      s = `
       
-      Tom's Web Consulting < http://www.tomsWeb.consulting >
+        Elements Manipulate v${ version }
       
-      `
-      
-      .replace ( /^\s+/gm, '' );
-      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
     console.log ( s );
     
-    const callback = ( selectorSource, object ) => {
+    const
     
-      let $elementSource = $( selectorSource );
+      callback = ( sourceSelector, object ) => {
       
-      if ( ! $elementSource.length ) return true; // continue if no source
-      
-      if ( object.sourceCopy )
-      
-        $elementSource = $elementSource.clone ( );
+        let $sourceElement = $( sourceSelector );
         
-      const selectorDestination = object.selectorDestination;
-      
-      let $elementDestination = $( selectorDestination );
-      
-      // continue if no destination
-      
-      if ( ! $elementDestination.length ) return true;
-      
-      const action = object.action;
-      
-      const hasParentSelector = ! new RegExp ( '^\\[.+\\]$' )
-      
-        .test ( object.selectorParentDestination );
+        if ( ! $sourceElement.length ) return true; // continue if no source
         
-      let callback = object.callback;
-      
-      callback = callback [ 0 ] != '[' ? callback : '';
-      
-      if ( callback )
-      
-        try {
+        if ( object.sourceCopy )
         
-          callback = window [ callback ];
+          $sourceElement = $sourceElement.clone ( );
           
-          $elementSource = callback ( $elementSource );
+        let $destinationElement = $( object.destinationSelector );
+        
+        // continue if no destination
+        
+        if ( ! $destinationElement.length ) return true;
+        
+        const
+        
+          action = object.action,
           
-          if ( ! $elementSource.length ) return true; // bail if no element
+          callback = ( index, callback ) => {
           
-          } catch ( error ) {
-          
-            const s = `${ codeKey } callback error`;
+            try {
             
-            console.error ( s, error );
+              callback = window [ callback ];
+              
+              $sourceElement = callback ( $sourceElement );
+              
+              if ( ! $sourceElement.length ) return true; // bail if no element
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
+            },
             
-            }
+          hasDestinationAncestorSelector = ! new RegExp ( '^\\[.+\\]$' )
+          
+            .test ( object.destinationAncestorSelector ),
             
-      if ( hasParentSelector )
+          hasSourceAncestorSelector = ! new RegExp ( '^\\[.+\\]$' )
+          
+            .test ( object.sourceAncestorSelector );
+            
+        if ( hasDestinationAncestorSelector )
+        
+          $destinationElement = $destinationElement
+          
+            .parents ( object.destinationAncestorSelector );
+            
+        if ( hasSourceAncestorSelector )
+        
+          $sourceElement = $sourceElement
+          
+            .parents ( object.sourceAncestorSelector );
+            
+        $.each ( object.callbacks, callback );
+        
+        switch ( action ) {
+        
+          case 'after' :
+          
+            $destinationElement
+            
+              .after ( $sourceElement );
+              
+            break;
+            
+          case 'append' :
+          
+            $destinationElement
+            
+              .append ( $sourceElement );
+              
+            break;
+            
+          case 'before' :
+          
+            $destinationElement
+            
+              .before ( $sourceElement );
+              
+            break;
+            
+          case 'prepend' :
+          
+            $destinationElement
+            
+              .prepend ( $sourceElement );
+              
+            break;
+            
+          case 'replace' :
+          
+            $destinationElement
+            
+              .replaceWith ( $sourceElement );
+              
+            break;
+            
+          }
+          
+        },
+        
+      selector = `head script[ type="application/vnd.twc.em" ]`;
       
-        $elementDestination = $elementDestination
-        
-          .parents ( object.selectorParentDestination );
-          
-      switch ( action ) {
-      
-        case 'after' :
-        
-          $elementDestination
-          
-            .after ( $elementSource );
-            
-          break;
-          
-        case 'append' :
-        
-          $elementDestination
-          
-            .append ( $elementSource );
-            
-          break;
-          
-        case 'before' :
-        
-          $elementDestination
-          
-            .before ( $elementSource );
-            
-          break;
-          
-        case 'prepend' :
-        
-          $elementDestination
-          
-            .prepend ( $elementSource );
-            
-          break;
-          
-        case 'replace' :
-        
-          $elementDestination
-          
-            .replaceWith ( $elementSource );
-            
-          break;
-          
-        }
-        
-      };
-      
-    const selector = `head script[ type="application/vnd.twc.em" ]`;
-    
     let $element = $( selector );
     
     if ( ! $element.length ) return; // bail if no tag

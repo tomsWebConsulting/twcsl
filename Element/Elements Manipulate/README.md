@@ -4,12 +4,12 @@
 
 ### Synopsis
 
-Move or copy a selector source to a selector destination with the action of
-append, prepend, or replace.
+Move or copy a source element to a destination element with the action of after,
+append, before, prepend, or replace.
 
 ### Version
 
-  * 0.6.1
+  * 0.7.0
 
 #### SS Versions
 
@@ -47,8 +47,9 @@ append, prepend, or replace.
     
       /*
       
-        the format of each data structure is a selector source and destination,
-        an action, and optional callback
+        the format of each data structure is a source, source ancestor,
+        destination, and destination ancestor selectors, an action, and optional
+        callback
         
         following is an example data structure. copy the example data structure
         below and paste after the example data structure. remove the forward
@@ -58,61 +59,83 @@ append, prepend, or replace.
         
         */
         
-      /* "[ enter selector source here between double quotes replacing square brackets ]" : {
+      /* "[ enter source selector here between double quotes replacing square brackets ]" : {
       
-        "selectorDestination" : "[ enter selector destination here between double quotes replacing square brackets ]",
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
         
-        // action value is after, append, before, prepend or replace
-        
-        "action" : "append",
-        
-        // selectorParentDestination is optional, use when you want to first
-        // find a selector destination but then work up the ancestor hierarchy
-        // to manipulate it
-        
-        "selectorParentDestination" : "[ enter selector parent destination here between double quotes replacing square brackets ]",
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
         
         // sourceCopy when true will make a copy of the source element and use
         // it instead of the actual selectorSource. value is false or true
         
         "sourceCopy" : false,
         
-        // callback is optional, use when you want to manipulate the structure
-        // of the source element. replace undefined with the name of your custom
-        // function
-        //
-        // your callback must accept and return a JavaScript object
+        "destinationSelector" : "[ enter destination selector here between double quotes replacing square brackets ]",
         
-        "callback" : "[ enter callback name here between double quotes replacing square brackets ]"
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
         
         }, */
         
-      "[ enter selector source here between double quotes replacing square brackets ]" : {
+      "[ enter source selector here between double quotes replacing square brackets ]" : {
       
-        "selectorDestination" : "[ enter selector destination here between double quotes replacing square brackets ]",
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
         
-        // action value is after, append, before, prepend or replace
-        
-        "action" : "append",
-        
-        // selectorParentDestination is optional, use when you want to first
-        // find a selector destination but then work up the ancestor hierarchy
-        // to manipulate it
-        
-        "selectorParentDestination" : "[ enter selector parent destination here between double quotes replacing square brackets ]",
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
         
         // sourceCopy when true will make a copy of the source element and use
         // it instead of the actual selectorSource. value is false or true
         
         "sourceCopy" : false,
         
-        // callback is optional, use when you want to manipulate the structure
-        // of the source element. replace undefined with the name of your custom
-        // function
-        //
-        // your callback must accept and return a JavaScript object
+        "destinationSelector" : "[ enter destination selector here between double quotes replacing square brackets ]",
         
-        "callback" : "[ enter callback name here between double quotes replacing square brackets ]"
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
         
         },
         
@@ -151,26 +174,41 @@ append, prepend, or replace.
 ## Callbacks
 
 You can optionally add [callback][10] functions to further customize the
-processing of the source element.
+processing of the source element. Your callbacks must accept and return a jQuery
+object. Place your callbacks before the element manipulate code. Note the use of
+var. Following is example code. 
 
-Your callbacks must accept and return a jQuery object.
+* Log the source element.
 
-Following is example code. Place your callbacks before the element manipulate
-code. Note the use of var.
-
-```html
-<script>
-
-  var twcEmLog = ( $element ) => {
+  ```html
+  <script>
   
-    console.log ( 'twcEmLog $element', $element );
+    var twcEmLog = ( $element ) => {
     
-    return $element;
+      console.log ( 'twcEmLog $element', $element );
+      
+      return $element;
+      
+      };
+      
+    </script>
+  ```
+
+* Remove the id attribute from the element.
+
+  ```html
+  <script>
+  
+    var twcEmIdAttributeRemove = ( $element ) => {
     
-    };
-    
-  </script>
-```
+      $element.removeAttr ( 'id' );
+      
+      return $element;
+      
+      };
+      
+    </script>
+  ```
 
 ## Make a Donation
 
@@ -178,6 +216,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2024-10-28**
+
+  * support for multiple callbacks
+  * add source ancestor selector
+  * bumped version to 0.7.0
+  
 * **2024-08-22**
 
   * use a custom mime type for script tag type attribute
