@@ -164,12 +164,457 @@ append, before, prepend, or replace.
     * Brine template family
     
       * Put your blocks in the Footer Bottom Blocks and in the **elements
-        manipulate.less** file and set **.v7-0-brine** to **true**.
+        manipulate.less** code set **.v7-0-brine** to **true**.
         
     * Bedford template family
     
       * This template only has one footer so you need to create your own CSS to
         hide the common elements.
+        
+  This is not the only task the code can perform. I can move or copy anything
+  that you can express with a [jQuery selector][12].
+
+## Settings Examples
+
+* **Product Additional Info Specific Video Block Before Quantity**
+  
+  ```html
+  <script type="application/vnd.twc.em">
+  
+    {
+    
+      /*
+      
+        the format of each data structure is a source, source ancestor,
+        destination, and destination ancestor selectors, an action, and optional
+        callback
+        
+        following is an example data structure. copy the example data structure
+        below and paste after the example data structure. remove the forward
+        slash asterisk and asterisk forward slash lines from before and after
+        the example data structure. repeat for as many as many elements as you
+        need to manipulate. this has been done once initially
+        
+        */
+        
+      /* "[ enter source selector here between double quotes replacing square brackets ]" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : "[ enter destination selector here between double quotes replacing square brackets ]",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        }, */
+        
+      "#block-yui_3_17_2_1_1728593423043_10015" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".ProductItem-quantity-add-to-cart",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "before",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        },
+        
+      }
+      
+    </script>
+  ```
+
+* **Product Additional Info First Row Video Block Before Quantity**
+
+  ```html
+  <script type="application/vnd.twc.em">
+  
+    {
+    
+      /*
+      
+        the format of each data structure is a source, source ancestor,
+        destination, and destination ancestor selectors, an action, and optional
+        callback
+        
+        following is an example data structure. copy the example data structure
+        below and paste after the example data structure. remove the forward
+        slash asterisk and asterisk forward slash lines from before and after
+        the example data structure. repeat for as many as many elements as you
+        need to manipulate. this has been done once initially
+        
+        */
+        
+      /* "[ enter source selector here between double quotes replacing square brackets ]" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : "[ enter destination selector here between double quotes replacing square brackets ]",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        }, */
+        
+      ".ProductItem .ProductItem-additional .sqs-layout > .sqs-row:first-child > .sqs-col-12 > .sqs-block-video" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".ProductItem-quantity-add-to-cart",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "before",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        },
+        
+      }
+      
+    </script>
+  ```
+  
+* **Product Additional Info Button Block With Text "VIEW DEMO" Details Append**
+
+  Note the use of the twcEmIdRemove callback for some data structures.
+  
+  ```html
+  <script type="application/vnd.twc.em">
+  
+    {
+    
+      /*
+      
+        the format of each data structure is a source, source ancestor,
+        destination, and destination ancestor selectors, an action, and optional
+        callback
+        
+        following is an example data structure. copy the example data structure
+        below and paste after the example data structure. remove the forward
+        slash asterisk and asterisk forward slash lines from before and after
+        the example data structure. repeat for as many as many elements as you
+        need to manipulate. this has been done once initially
+        
+        */
+        
+      /* "[ enter source selector here between double quotes replacing square brackets ]" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : "[ enter source ancestor selector here between double quotes replacing square brackets ]",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : "[ enter destination selector here between double quotes replacing square brackets ]",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        }, */
+        
+      ".product-layout-side-by-side .ProductItem-additional .sqs-block-button a:contains('VIEW DEMO')" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : ".sqs-block-button",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".ProductItem-quantity-add-to-cart",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "after",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        },
+        
+      ".pdp-layout-full-width-carousel .ProductItem-additional .sqs-block-button a:contains('VIEW DEMO')" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : ".sqs-block-button",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".pdp-selection",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ ]
+        
+        },
+        
+      ".pdp-layout-full-bleed .ProductItem-additional .sqs-block-button a:contains(\"VIEW DEMO\")" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : ".sqs-block-button",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".pdp-details",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ "twcEmIdRemove" ]
+        
+        },
+        
+      ".pdp-layout-wrap-around .ProductItem-additional .sqs-block-button a:contains(\"VIEW DEMO\")" : {
+      
+        // sourceAncestorSelector is optional, use when you want to first find a
+        // source element but then work up the ancestor hierarchy to manipulate
+        // an ancestor element
+        
+        "sourceAncestorSelector" : ".sqs-block-button",
+        
+        // sourceCopy when true will make a copy of the source element and use
+        // it instead of the actual selectorSource. value is false or true
+        
+        "sourceCopy" : false,
+        
+        "destinationSelector" : ".pdp-details",
+        
+        // destinationAncestorSelector is optional, use when you want to first
+        // find a destination element but then work up the ancestor hierarchy to
+        // manipulate an ancestor element
+        
+        "destinationAncestorSelector" : "[ enter destination ancestor selector here between double quotes replacing square brackets ]",
+        
+        // action value is after, append, before, prepend or replace
+        
+        "action" : "append",
+        
+        // callbacks is optional, use when you want to manipulate the structure
+        // of the source element. the value is an array. you can add one or
+        // multiple callback names. when adding multiple callback names seperate
+        // the names with commas. some examples...
+        //
+        // [ "callback" ]
+        //
+        // [ "callback1", "callback2", "callback3" ]
+        //
+        // your callbacks must accept and return a JavaScript object
+        
+        "callbacks" : [ "twcEmIdRemove" ]
+        
+        },
+        
+      }
+      
+    </script>
+  ```
 
 ## Callbacks
 
@@ -271,5 +716,6 @@ Please consider [making a donation][11].
 [7]: elements%20manipulate.less#L1
 [9]: elements%20manipulate.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[12]: https://api.jquery.com/category/selectors/
 [10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
