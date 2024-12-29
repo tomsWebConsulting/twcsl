@@ -1,0 +1,187 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      elements manipulate
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.6.1
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible      : Yes
+      
+      v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+                        
+                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+      
+      Dependencies    : jQuery
+      
+      Note            : this code is a base for other effects. you will want to
+                        create CSS to hide and show elements. after an element
+                        is replaced the class twc-em-show will be added to it
+                        which can be used to show elements
+      
+      Copyright       : 2022-2024 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const version = '0.6.1';
+    
+    const s = `
+    
+      Elements Manipulate v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2024 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+    console.log ( s );
+    
+    const callback = ( selectorSource, object ) => {
+    
+      let $elementSource = $( selectorSource );
+      
+      if ( ! $elementSource.length ) return true; // continue if no source
+      
+      if ( object.sourceCopy )
+      
+        $elementSource = $elementSource.clone ( );
+        
+      const selectorDestination = object.selectorDestination;
+      
+      let $elementDestination = $( selectorDestination );
+      
+      // continue if no destination
+      
+      if ( ! $elementDestination.length ) return true;
+      
+      const action = object.action;
+      
+      const hasParentSelector = ! new RegExp ( '^\\[.+\\]$' )
+      
+        .test ( object.selectorParentDestination );
+        
+      let callback = object.callback;
+      
+      callback = callback [ 0 ] != '[' ? callback : '';
+      
+      if ( callback )
+      
+        try {
+        
+          callback = window [ callback ];
+          
+          $elementSource = callback ( $elementSource );
+          
+          if ( ! $elementSource.length ) return true; // bail if no element
+          
+          } catch ( error ) {
+          
+            const s = `${ codeKey } callback error`;
+            
+            console.error ( s, error );
+            
+            }
+            
+      if ( hasParentSelector )
+      
+        $elementDestination = $elementDestination
+        
+          .parents ( object.selectorParentDestination );
+          
+      switch ( action ) {
+      
+        case 'after' :
+        
+          $elementDestination
+          
+            .after ( $elementSource );
+            
+          break;
+          
+        case 'append' :
+        
+          $elementDestination
+          
+            .append ( $elementSource );
+            
+          break;
+          
+        case 'before' :
+        
+          $elementDestination
+          
+            .before ( $elementSource );
+            
+          break;
+          
+        case 'prepend' :
+        
+          $elementDestination
+          
+            .prepend ( $elementSource );
+            
+          break;
+          
+        case 'replace' :
+        
+          $elementDestination
+          
+            .replaceWith ( $elementSource );
+            
+          break;
+          
+        }
+        
+      };
+      
+    const selector = `head script[ type="application/vnd.twc.em" ]`;
+    
+    let $element = $( selector );
+    
+    if ( ! $element.length ) return; // bail if no tag
+    
+    let map = $element
+      
+      .text ( )
+      
+      .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+      
+      .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+      
+      .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
+      
+      .replaceAll ( '\n', '' );
+      
+    map = JSON.parse ( map );
+    
+    $.each ( map, callback );
+    
+    } );
+    
+  </script>
