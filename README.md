@@ -177,6 +177,8 @@ not necessarily designed to work together.
     
   * [Product Quick View Form Text Field Max Length](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length)
     
+  * [Elements Manipulate](Element/Elements%20Manipulate)
+    
   * [Element Text Change](Element/Element%20Text%20Change)
     
   * [Social Icon](Element/Social%20Icon)
@@ -218,8 +220,6 @@ not necessarily designed to work together.
 * [Image Map Responsive Template](Image%20Map%20Responsive%20Template)
   
 * [Change Search Page Input Placeholder Text](Change%20Search%20Page%20Input%20Placeholder%20Text)
-  
-* [Elements Manipulate](Elements%20Manipulate)
   
 * [Change Unable to Add Item to Cart Alert for Only N Available](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Only%20N%20Available)
   
