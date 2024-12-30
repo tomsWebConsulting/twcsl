@@ -8,7 +8,7 @@
       
       License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.7.0
+      Version         : 0.8.0
       
       SS Versions     : 7.1, 7.0
       
@@ -46,7 +46,7 @@
       
     const
     
-      version = '0.7.0',
+      version = '0.8.0',
       
       s = `
       
@@ -63,6 +63,18 @@
         .replace ( /^\s+/gm, '' );
         
     console.log ( s );
+    
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc em sub-module
+    
+    twc.em = ( ( self ) => self ) ( twc.em || { } );
+    
+    // initialize twc em callbacks sub-module
+    
+    twc.em.callbacks = ( ( self ) => self ) ( twc.em.callbacks || { } );
     
     const
     
@@ -86,19 +98,25 @@
         
           action = object.action,
           
-          callback = ( index, callback ) => {
+          callback = ( index, callbackName ) => {
           
             try {
             
-              callback = window [ callback ];
+              $sourceElement = twc
               
-              $sourceElement = callback ( $sourceElement );
-              
+                .em
+                
+                .callbacks
+                
+                [ callbackName ]
+                
+                ( $sourceElement );
+                
               if ( ! $sourceElement.length ) return true; // bail if no element
               
               } catch ( error ) {
               
-                const s = `${ codeKey } callback error`;
+                const s = `${ codeKey } ${ callbackName } callback error`;
                 
                 console.error ( s, error );
                 
@@ -106,6 +124,8 @@
                 
             },
             
+          codeKey = 'twc-em',
+          
           hasDestinationAncestorSelector = ! new RegExp ( '^\\[.+\\]$' )
           
             .test ( object.destinationAncestorSelector ),
@@ -178,7 +198,7 @@
       
     let $element = $( selector );
     
-    if ( ! $element.length ) return; // bail if no tag
+    if ( ! $element.length ) return; // bail if no element
     
     let map = $element
       

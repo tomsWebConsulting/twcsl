@@ -9,7 +9,7 @@ append, before, prepend, or replace.
 
 ### Version
 
-  * 0.7.0
+  * 0.8.0
 
 #### SS Versions
 
@@ -172,7 +172,7 @@ append, before, prepend, or replace.
         hide the common elements.
         
   This is not the only task the code can perform. I can move or copy anything
-  that you can express with a [jQuery selector][12].
+  that you can express with a [jQuery selector][10].
 
 ## Settings Examples
 
@@ -390,7 +390,7 @@ append, before, prepend, or replace.
   
 * **Product Additional Info Button Block With Text "VIEW DEMO" Details Append**
 
-  Note the use of the twcEmIdRemove callback for some data structures.
+  Note the use of the twcEmIdAttributeRemove callback for some data structures.
   
   ```html
   <script type="application/vnd.twc.em">
@@ -567,7 +567,7 @@ append, before, prepend, or replace.
         //
         // your callbacks must accept and return a JavaScript object
         
-        "callbacks" : [ "twcEmIdRemove" ]
+        "callbacks" : [ "twcEmIdAttributeRemove" ]
         
         },
         
@@ -618,23 +618,63 @@ append, before, prepend, or replace.
 
 ## Callbacks
 
-You can optionally add [callback][10] functions to further customize the
+You can optionally add [callback][11] functions to further customize the
 processing of the source element. Your callbacks must accept and return a jQuery
-object. Place your callbacks before the element manipulate code. Note the use of
-var. Following is example code. 
+object. Add you callbacks to Website > Pages > Website Tools > Code Injection >
+FOOTER. Please see [Add code to code injection][8]. Order is not important.
 
 * Log the source element.
 
   ```html
   <script>
   
-    var twcEmLog = ( $element ) => {
+    ( ( ) => {
     
-      console.log ( 'twcEmLog $element', $element );
+      const
       
-      return $element;
+        version = '0.1.0',
+        
+        s = `
+        
+          TWC EM Log v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-      };
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc em sub-module
+      
+      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      
+      // initialize twc em callbacks sub-module
+      
+      twc.em.callbacks = ( ( self ) => {
+      
+        self [ 'twcEmLog' ] = ( $element ) => {
+        
+          console.log ( 'twcEmLog $element', $element );
+          
+          return $element;
+          
+          };
+          
+        return self;
+        
+        } ) ( twc.em.callbacks || { } );
+        
+      } ) ( );
       
     </script>
   ```
@@ -644,23 +684,69 @@ var. Following is example code.
   ```html
   <script>
   
-    var twcEmIdAttributeRemove = ( $element ) => {
+    ( ( ) => {
     
-      $element.removeAttr ( 'id' );
+      const
       
-      return $element;
+        version = '0.1.0',
+        
+        s = `
+        
+          TWC EM Id Attribute Remove v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-      };
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc em sub-module
+      
+      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      
+      // initialize twc em callbacks sub-module
+      
+      twc.em.callbacks = ( ( self ) => {
+      
+        self [ 'twcEmIdAttributeRemove' ] = ( $element ) => {
+        
+          $element.removeAttr ( 'id' );
+          
+          return $element;
+          
+          };
+          
+        return self;
+        
+        } ) ( twc.em.callbacks || { } );
+        
+      } ) ( );
       
     </script>
   ```
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][12].
 
 ## Changes
 
+* **2024-10-29**
+
+  * use module pattern for adding callbacks
+  * fix for missing codeKey variable
+  * bumped version to 0.8.0
+  
 * **2024-10-28**
 
   * support for multiple callbacks
@@ -716,6 +802,6 @@ Please consider [making a donation][11].
 [7]: elements%20manipulate.less#L1
 [9]: elements%20manipulate.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[12]: https://api.jquery.com/category/selectors/
-[10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://api.jquery.com/category/selectors/
+[11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
