@@ -455,6 +455,8 @@ not necessarily designed to work together.
         
       * [Header Site Title Add](v7.1/Element/Header/Header%20Site%20Title%20Add)
         
+      * [Header Menu Mobile Outline](v7.1/Element/Header/Header%20Menu%20Mobile%20Outline)
+        
   * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
     
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
@@ -574,8 +576,6 @@ not necessarily designed to work together.
   * [Header](v7.1/Header)
     
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
-      
-    * [Header Menu Mobile Outline](v7.1/Header/Header%20Menu%20Mobile%20Outline)
       
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
       
