@@ -1,0 +1,317 @@
+<script>
+
+  $( ( ) => {
+  
+    /*
+    
+      header menu mobile outline
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.4.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : jQuery
+      
+      Copyright     : 2021-2024 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const
+    
+      version = '0.4.0',
+      
+      s = `
+      
+        Header Menu Mobile Outline v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2021-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    const
+    
+      build = ( ) => {
+      
+        const
+        
+          rootSelector = '[ data-folder="root" ]',
+          
+          $menu = $( '<ul />' );
+          
+        let
+        
+          callback = function ( ) {
+          
+            let $this = $( this );
+            
+            const
+            
+              dataFolderId = $this
+              
+                .attr ( 'data-folder-id' ),
+                
+              isFolder = dataFolderId === undefined ? false : true,
+              
+              isUserAccounts = $this
+              
+                .hasClass ( 'user-accounts-text-link' );
+                
+            if ( isUserAccounts )
+            
+              $this = $this.parent ( );
+              
+            const $li = $( '<li class="header-menu-nav-item" />' )
+            
+              .append ( $this );
+              
+            if ( isFolder ) {
+            
+              const
+              
+                callback = function ( ) {
+                
+                  $( '<li class="header-menu-nav-item" />' )
+                  
+                    .append ( this )
+                    
+                    .appendTo ( $ul );
+                    
+                  },
+                  
+                $ul = $( '<ul />' );
+                
+              selector = `[ data-folder="${ dataFolderId }" ] ` +
+              
+                '.header-menu-nav-item:not( .header-menu-controls ) a';
+                
+              $( selector, $navigation )
+              
+                .each ( callback );
+                
+              $li.append ( $ul );
+              
+              }
+              
+            $li.appendTo ( $menu );
+            
+            },
+            
+          selector = '.header-menu-nav-item a';
+        
+        $( selector, $folder ).each ( callback );
+          
+        $navigation
+        
+          .find ( `[ data-folder ]:not( ${ rootSelector } )` )
+          
+            .remove ( )
+            
+            .end ( )
+            
+          .find ( '.header-menu-nav-folder-content' )
+          
+            .replaceWith ( $menu );
+            
+        // begin is expandable
+        
+          let isExpandable = $navigation
+          
+            .css ( `--${ codeKey }-expandable` );
+            
+          isExpandable = isExpandable == 'true' ? true : false;
+          
+          if ( ! isExpandable ) return; // bail if not expandable
+          
+          // end is collapsable
+          
+        const
+        
+          chevronClassNamePrefix = 'chevron--',
+          
+          chevronDownClassName = `${ chevronClassNamePrefix }down`,
+          
+          chevronRightClassName = `${ chevronClassNamePrefix }right`,
+          
+          chevronUpClassName = `${ chevronClassNamePrefix }up`;
+          
+        // begin is icon active
+        
+          let isIconActive = $navigation
+          
+            .css ( `--${ codeKey }-icon-active` );
+            
+          isIconActive = isIconActive == 'true' ? true : false;
+          
+          if ( isIconActive ) {
+          
+            console.log ( $menu.get ( 0 ) );
+            
+            const selector = `.${ chevronRightClassName }`;
+            
+            $( selector, $menu )
+            
+              .removeClass ( chevronRightClassName )
+              
+              .addClass ( chevronUpClassName );
+              
+            }
+            
+          // end is icon active
+          
+        callback = function ( event ) {
+        
+          event.preventDefault ( );
+          
+          const
+          
+            className = `${ codeKey }-open`
+            
+            $this = $( this );
+            
+          let b = isExpandable && isIconActive;
+          
+          $this
+          
+            .toggleClass ( className );
+            
+          if ( b ) {
+          
+            const $element = $this.find ( '.chevron' );
+            
+            b = $this.hasClass ( className );
+            
+            if ( b )
+            
+              $element
+              
+                .removeClass ( chevronUpClassName )
+                
+                .addClass ( chevronDownClassName );
+                
+              else
+              
+                $element
+                
+                  .removeClass ( chevronDownClassName )
+                  
+                  .addClass ( chevronUpClassName );
+                  
+            }
+            
+          }
+          
+        selector = '[ data-folder-id ]';
+        
+        $navigation
+        
+          .attr ( `data-${ codeKey }-expandable`, '' );
+          
+        $( selector, $menu )
+        
+          .on ( 'click', callback );
+          
+        },
+        
+      codeKey = 'twc-hmmo';
+      
+    let selector = '.header-menu-nav-list';
+    
+    const
+    
+      activeClassName = 'header-menu-nav-folder--active';
+      
+      $navigation = $( selector )
+      
+        .addClass ( `${ codeKey }` );
+        
+    selector = '.header-menu-nav-folder[ data-folder="root" ]';
+    
+    const
+    
+      $folder = $( selector, $navigation ),
+      
+      isActive = $folder
+      
+        .hasClass ( activeClassName );
+        
+    if ( isActive )
+    
+      build ( );
+      
+      else {
+      
+        const
+        
+          callback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              // continue if not attribute class
+              
+              if ( mutation.attributeName != 'class' ) return true;
+              
+              const b = mutation
+              
+                .target
+                
+                .classList
+                
+                .contains ( activeClassName );
+                
+              if ( ! b ) return true; // continue if no active class
+              
+              observer.disconnect ( );
+              
+              build ( );
+              
+              return false;
+              
+              };
+              
+            for ( const mutation of mutations ) {
+            
+              const b = callback ( mutation );
+              
+              if ( ! b ) break; // bail if callback returns false
+              
+              }
+              
+            }, // end callback
+            
+          config = {
+          
+            attributes : true
+            
+            },
+            
+          observer = new MutationObserver ( callback );
+          
+          element = $folder.get ( 0 );
+          
+        // start listening for changes in element
+        
+        observer.observe ( element, config );
+        
+        }
+        
+    } );
+    
+  </script>

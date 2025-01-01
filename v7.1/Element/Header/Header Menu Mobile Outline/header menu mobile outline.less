@@ -1,0 +1,107 @@
+/*
+
+  begin header menu mobile outline
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.4.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : LESS
+  
+  Copyright     : 2021-2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .twc-hmmo {
+  
+    // values are false or true, toggle if outline is expandable or not
+    
+    --twc-hmmo-expandable : false;
+    
+    // values are false or true, toggle if icon is active or not, only applies
+    // if twc-hmmo-expandable is true
+    
+    --twc-hmmo-icon-active : true;
+    
+    }
+    
+  // do not change anything below, there be the borg here
+  
+  .twc-hmmo {
+  
+    ul {
+    
+      align-self : center;
+      padding-left : 1em;
+      padding-right : 1em;
+      text-align : left;
+      
+      }
+      
+    .chevron--down,
+    .chevron--up
+    
+      {
+      
+        margin-left : 0.25em;
+        
+        }
+        
+    .header-menu-nav-item {
+    
+      padding-left : unset;
+      padding-right : unset;
+      
+      .header-menu-nav-item:not( .user-accounts-link ) {
+      
+        padding-left : 2em;
+        
+        }
+        
+      }
+      
+    .header-menu-nav-folder--open {
+    
+      transform : unset !important;
+      
+      }
+      
+    &[ data-twc-hmmo-expandable ] {
+    
+      [ data-folder-id ] ~ ul {
+      
+        display : none;
+        
+        }
+        
+      .twc-hmmo-open ~ ul {
+      
+        display : unset;
+        
+        }
+        
+      }
+      
+    &:not( [ data-twc-hmmo-expandable ] ) [ data-folder-id ] {
+    
+      pointer-events : none;
+      
+      .chevron {
+      
+        display : none;
+        
+        }
+        
+      }
+      
+    }
+    
+  /* end header menu mobile outline */
