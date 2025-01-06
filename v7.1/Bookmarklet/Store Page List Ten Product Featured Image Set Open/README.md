@@ -5,7 +5,7 @@
 ### Synopsis
 
 Open ten product detail pages from a store page list for use with the **[Store
-Page Detail Featured Image Set[3]** bookmarklet.
+Page Detail Featured Image Set][3]** bookmarklet.
 
 ### Version
 
@@ -33,7 +33,7 @@ Page Detail Featured Image Set[3]** bookmarklet.
   pages in windows/tabs. If no windows/tabs open then there are no more products
   to process on that list page. After you use the bookmarklet it will take some
   time for the windows/tabs to load. After a product detail page is fully loaded
-  use the **Store Page Detail Featured Image Set]** bookmarklet. If you have
+  use the **Store Page Detail Featured Image Set** bookmarklet. If you have
   more than 200 products in a category then you'll want to use the list page
   Next navigation to continue on with processing products.
   
