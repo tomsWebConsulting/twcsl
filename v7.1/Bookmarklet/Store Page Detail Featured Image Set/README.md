@@ -14,7 +14,7 @@ Set the featured image for a product to the first image.
 
   * 7.1
 
-#### Fluid Engine Compatible :
+#### Fluid Engine Compatible
 
   * Not Applicable
 
@@ -28,7 +28,7 @@ Set the featured image for a product to the first image.
 
 ## How to Use
 
-* Go to a product detail page,
+* Go to a product detail page.
 
 * Use the bookmarklet.
 
