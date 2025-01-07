@@ -1,0 +1,242 @@
+<!--
+
+  begin text block tab stops
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Note          : the code is comprised of several tags all of which must be
+                  present for the effect to work
+  
+  Copyright     : 2024-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    #siteWrapper {
+    
+      --twc-tbts-td-padding-right : 1em;
+      --twc-tbts-td-first-padding-right : 1em;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .twc-tbts {
+    
+      border-collapse : collapse;
+      
+      }
+    
+    .twc-tbts td {
+    
+      padding : 0px;
+      padding-right : var( --twc-tbts-td-padding-right );
+      vertical-align : top;
+      
+      }
+    
+    .twc-tbts td:first-child {
+    
+      padding-right : var( --twc-tbts-td-first-padding-right );
+      white-space : nowrap;
+      
+      }
+      
+    .twc-tbts td:last-child {
+    
+      padding-right : 0px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Text Block Tab Stops v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isEditing = document
+        
+          .body
+          
+          .classList
+          
+          .contains ( 'sqs-is-page-editing' );
+          
+        if ( isEditing ) return; // bail if is editing
+        
+        const
+        
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+          xPathExpression = `
+          
+            .//div [
+            
+              contains (
+              
+                concat (
+                
+                  ' ',
+                  
+                  normalize-space ( @class ),
+                  
+                  ' '
+                  
+                  ),
+                  
+                ' sqs-block-html '
+                
+                )
+                
+              ]//p[
+              
+                contains ( ., '\\t' )
+                
+                ]
+                
+            `,
+            
+          xPathResults = xPathEvaluate ( xPathExpression, document.body );
+          
+        for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+        
+          const
+          
+            callback = ( s ) => {
+            
+              const
+              
+                callback = ( s ) => {
+                
+                  const html = `<td>
+                  
+                    ${ s }
+                    
+                    </td>`;
+                    
+                  trElement
+                  
+                    .insertAdjacentHTML ( 'beforeend', html );
+                    
+                  },
+                  
+                trElement = document
+                
+                  .createElement ( 'tr' );
+                  
+              s
+              
+                .split ( '\\t' )
+                
+                .forEach ( callback );
+                
+              tbodyElement
+              
+                .appendChild ( trElement );
+                
+              },
+              
+            element = xPathResults.snapshotItem ( i ),
+            
+            tableElement = document
+            
+              .createElement ( 'table' ),
+              
+            tbodyElement = document
+            
+              .createElement ( 'tbody' ),
+              
+            a = element
+            
+              .innerHTML
+              
+              .split ( '<br>' );
+              
+          tableElement
+          
+            .classList
+            
+            .add ( 'twc-tbts' );
+            
+          tableElement
+          
+            .append ( tbodyElement );
+            
+          element.innerHTML = '';
+          
+          element
+          
+            .style
+            
+            .removeProperty ( 'white-space' );
+            
+          element.append ( tableElement );
+          
+          a.forEach ( callback );
+          
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end text block tab stops -->
