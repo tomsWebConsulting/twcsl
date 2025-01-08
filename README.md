@@ -99,6 +99,8 @@ not necessarily designed to work together.
       
     * [List](Page/Store/List)
       
+    * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
+      
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
       
     * [Store Page Price and Sale Reverse](Page/Store/Store%20Page%20Price%20and%20Sale%20Reverse)
@@ -234,8 +236,6 @@ not necessarily designed to work together.
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
-  
-* [Store Page Commerce Elements Hide](Store%20Page%20Commerce%20Elements%20Hide)
   
 * [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
   
