@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.4.0
+      Version       : 0.5.0
       
       SS Versions   : 7.1, 7.0
       
@@ -46,63 +46,64 @@
                       the site language setting is needed. please see Language
                       and region settings < https://tinyurl.com/24fwyw2d >
       
-      Copyright      : 2021-2024 Thomas Creedon
+      Copyright      : 2021-2025 Thomas Creedon
                        
                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       */
       
-    /*
+    let
     
-      for language use one of...
+      /*
       
-        English (Canada)
+        for language use one of the following...
         
-        English (United Kingdom)
+          English (Canada)
+          
+          English (United Kingdom)
+          
+          English (United States)
+          
+          French (Canada)
+          
+          French (France)
+          
+          German (Germany)
+          
+          Spanish (Argentina)
+          
+          Spanish (Bolivia)
+          
+          Spanish (Chile)
+          
+          Spanish (Mexico)
+          
+        if you set language to empty ( '' ) then the values for add, adding,
+        and added will be used
         
-        English (United States)
-        
-        French (Canada)
-        
-        French (France)
-        
-        German (Germany)
-        
-        Spanish (Argentina)
-        
-        Spanish (Bolivia)
-        
-        Spanish (Chile)
-        
-        Spanish (Mexico)
-        
-      if you leave language empty ( '' ) then the values for addToCart, adding,
-      and added can be used
+        */
+  
+      language = 'English (United States)',
       
-      */
-
-    let language = 'English (United States)';
-    
-    let addToCart = '[ enter replacement add to cart text here between single quotes replacing square brackets ]';
-    
-    // if you leave adding empty ( '' ) then the default value will be used
-    
-    const adding = '[ enter replacement adding text here between single quotes replacing square brackets ]';
-    
-    // if you leave added empty ( '' ) then the default value will be used
-    
-    const added = '[ enter replacement added text here between single quotes replacing square brackets ]';
-    
-    /*
-    
-      postAddedText is a special feature. for the default SS behaviour, which is
-      to restore the button's original text, leave it empty ( '' ). otherwise
-      enter your text between single quotes
+      buttonStateText = {
       
-      */
-      
-    let postAddedText = '';
-    
+        add : '[ optional if language not empty, enter replacement add text here between single quotes replacing square brackets ]',
+        
+        adding : '[ optional if language not empty, enter replacement adding text here between single quotes replacing square brackets ]',
+        
+        added : '[ optional if language not empty, enter replacement added text here between single quotes replacing square brackets ]',
+        
+        /*
+        
+          addedPost is a special feature. the default SS behaviour is to restore
+          the button's original text
+          
+          */
+          
+        addedPost : '[ optional, enter added post text here between single quotes replacing square brackets ]'
+        
+        };
+        
     /*
     
       guard callback for other conditions which prevent the code from running.
@@ -120,13 +121,13 @@
     
       title = 'Store Page Detail Add to Cart Button Text Change',
       
-      version = '0.4.0',
+      version = '0.5.0',
       
       s = `${ title } v${ version }
       
         License < https://tinyurl.com/s872fb68 >
         
-        © 2021-2024 Thomas Creedon
+        © 2021-2025 Thomas Creedon
         
         Tom's Web Consulting < http://www.tomsWeb.consulting >`
         
@@ -152,9 +153,17 @@
         
       const
       
-        buttonInnerSelector = '.sqs-add-to-cart-button-wrapper' +
+        buttonWrapperSelector =
         
-          ':not( .add-on-add-to-cart-wrapper ) .sqs-add-to-cart-button-inner',
+          '.sqs-add-to-cart-button-wrapper:not( .add-on-add-to-cart-wrapper )',
+          
+        detailsSelectors = [
+        
+          '.ProductItem-details', // simple
+          
+          '.pdp-details' // full, half, wrap
+          
+          ],
           
         getLanguage = ( language ) => {
         
@@ -168,6 +177,8 @@
           
           },
           
+        isLanguage = language != '',
+        
         languages = {
         
           'English (Canada)' : 'English',
@@ -182,11 +193,11 @@
           
           'German (Germany)' : {
           
-            addToCart : 'Zum Warenkorb hinzufügen',
+            add : 'Zum Warenkorb hinzufügen',
             
             adding : 'Hinzufügen ...',
             
-            added : 'Hinzugefügt!',
+            added : 'Hinzugefügt!'
             
             },
             
@@ -200,11 +211,11 @@
           
           '' : {
           
-            addToCart : addToCart,
+            add : buttonStateText.add,
             
-            adding : adding,
+            adding : buttonStateText.adding,
             
-            added : added,
+            added : buttonStateText.added,
             
             },
             
@@ -214,39 +225,71 @@
         
           'English' : {
           
-            addToCart : 'Add To Cart',
+            add : 'Add To Cart',
             
             adding : 'Adding…',
             
-            added : 'Added!',
+            added : 'Added!'
             
             },
             
           'French' : {
           
-            addToCart : 'Ajouter au panier',
+            add : 'Ajouter au panier',
             
             adding : 'Ajout en cours...',
             
-            added : 'Ajout effectué&nbsp;!',
+            added : 'Ajout effectué&nbsp;!'
             
             },
             
           'Spanish' : {
           
-            addToCart : 'Añadir al carrito',
+            add : 'Añadir al carrito',
             
             adding : 'Añadiendo...',
             
-            added : 'Añadido',
+            added : 'Añadido'
             
             },
             
           },
           
-        selector = '.sqs-add-to-cart-button-wrapper' +
+        mergeObjects = ( obj1, obj2, shouldReplace ) => {
         
-          ':not( .add-on-add-to-cart-wrapper ) .sqs-add-to-cart-button',
+          const result = { ...obj1 };
+          
+          for ( const key in obj2 ) {
+          
+            if ( obj2.hasOwnProperty ( key ) ) {
+            
+              if ( result.hasOwnProperty ( key ) ) {
+              
+                result [ key ] =
+                
+                  shouldReplace ( result [ key ], obj2 [ key ] ) ?
+                  
+                  obj2 [ key ] : result [ key ];
+                  
+                } else
+                
+                  result [ key ] = obj2 [ key ];
+                  
+              }
+              
+            }
+            
+          return result;
+          
+          },
+          
+        shouldReplace = ( item1, item2 ) => {
+        
+          const b = item2 [ 0 ] != '[';
+          
+          return b;
+          
+          },
           
         websiteLanguage = Static
         
@@ -280,65 +323,133 @@
           
       let
       
+        b,
+        
+        buttonInnerSelector = '.sqs-add-to-cart-button-inner',
+        
+        buttonSelector = '.sqs-add-to-cart-button',
+        
         siteLanguage = websiteLanguageMap [ websiteLanguage ];
+        
+      language = getLanguage ( language );
       
       siteLanguage = getLanguage ( siteLanguage );
       
-      language = getLanguage ( language );
+      const
       
-      if ( language.adding )
-      
-        language [ siteLanguage.adding ] = language.adding;
+        isLanguagesSame = siteLanguage == language,
         
-      if ( language.added )
-      
-        language [ siteLanguage.added ] = language.added;
+        isAddingOrAddedChange = ! isLanguagesSame
         
-      addToCart = language.addToCart;
+          ||
+          
+          buttonStateText.adding [ 0 ] != '['
+          
+          ||
+          
+          buttonStateText.added [ 0 ] != '[';
+          
+      buttonInnerSelector = detailsSelectors
       
-      if ( ! postAddedText )
-      
-        postAddedText = addToCart;
+        .join ( ` ${ buttonWrapperSelector } ${ buttonInnerSelector }, ` )
         
-      $( selector )
-      
-        .attr ( 'data-original-label', postAddedText );
+        +
         
-      $( buttonInnerSelector ).html ( addToCart );
+        ` ${ buttonWrapperSelector } ${ buttonInnerSelector }`;
+        
+      buttonSelector = detailsSelectors
       
-      const b = ! language.adding && ! language.added;
+        .join ( ` ${ buttonWrapperSelector } ${ buttonSelector }, ` )
+        
+        +
+        
+        ` ${ buttonWrapperSelector } ${ buttonSelector }`;
+        
+      if ( isLanguage )
       
-      if ( b ) return; // bail if not adding or added changes
+        language =
+        
+          mergeObjects ( language, buttonStateText, shouldReplace );
+          
+      b = language.addedPost [ 0 ] == '[';
+      
+      if ( b )
+      
+        language.addedPost = language.add;
+        
+        else
+        
+          language.addedPost = buttonStateText.addedPost;
+          
+      $( buttonSelector )
+      
+        .attr ( 'data-original-label', language.addedPost );
+        
+      $( buttonInnerSelector )
+      
+        .html ( language.add );
+        
+      // bail if not adding or added changes
+      
+      if ( ! isAddingOrAddedChange ) return;
       
       let callback = ( mutations ) => {
-        
+      
         const callback = ( mutation ) => {
         
           let b = ! mutation.addedNodes.length;
           
-          if ( b ) return; // bail if no added nodes
+          if ( b ) return true; // bail if no added nodes
           
-          let $element = $( mutation.addedNodes [ 0 ] );
+          const $element = $( mutation.addedNodes [ 0 ] );
           
           b = ! $element
           
             .hasClass ( 'status-text' );
             
-          if ( b ) return; // bail if no status text
+          if ( b ) return true; // bail if no status text
           
-          const html = $element.html ( );
+          const
           
-          b = ! language
-          
-            .hasOwnProperty ( html );
+            findKeyByValue = ( obj, value ) => {
             
-          if ( b ) return; // bail if no language
+              const key = Object
+              
+                .keys ( obj )
+                
+                .find ( key => obj [ key ] === value );
+                
+              return key;
+              
+              },
+              
+            html = $element.html ( );
+            
+          $element.html (
           
-          $element.html ( language [ html ] );
-          
+            language [
+            
+              findKeyByValue (
+              
+                siteLanguage,
+                
+                html
+                
+                )
+                
+              ]
+              
+            );
+            
           };
           
-        mutations.forEach ( callback );
+        for ( const mutation of mutations ) {
+        
+          const b = callback ( mutation );
+          
+          if ( ! b ) break; // bail if callback returns false
+          
+          }
           
         };
         
@@ -368,7 +479,7 @@
     
       case twcsl.ss.is71 :
       
-        $( initialize );
+        initialize ( );
         
         break;
         

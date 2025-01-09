@@ -4,11 +4,12 @@
 
 ### Synopsis
 
-Change the text of the add to cart button.
+Change the add, adding, added, and added post status text of the add to cart
+button.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Versions
 
@@ -36,19 +37,28 @@ Change the text of the add to cart button.
   for the store page. Please see [Per-page code injection][6]. Read the code for
   any instructions within.
 
+## Demo
+
+You can see a [demo of this effect here][7].
+
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-01-09**
+
+  * fix with code not working as expected and a restructuring
+  * bumped version to 0.5.0
+  
 * **2024-10-09**
 
   * added several spanish languages
   * now works with layouts that more than one button
   * fix for new add on atc buttons getting munged
   * fix erroneous this references causing code not to work
-  * bumped version to 0.3.1
+  * bumped version to 0.4.0
   
 * **2023-09-21**
 
@@ -78,4 +88,5 @@ Please consider [making a donation][7].
 [4]: https://github.com/tomsWebConsulting/twcsl#install-options
 [5]: store%20page%20detail%20add%20to%20cart%20button%20text%20change.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-to-cart-button-text-change/p/earth-sky-planter?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
