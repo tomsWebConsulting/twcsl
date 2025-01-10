@@ -85,6 +85,8 @@ not necessarily designed to work together.
       
       * [Store Page Detail Price Variant Add](Page/Store/Detail/Store%20Page%20Detail%20Price%20Variant%20Add)
         
+      * [Store Page Detail Add Button After Add to Cart Button](Page/Store/Detail/Store%20Page%20Detail%20Add%20Button%20After%20Add%20to%20Cart%20Button)
+        
       * [Store Page Detail Price Gte Afterpay Hide](Page/Store/Detail/Store%20Page%20Detail%20Price%20Gte%20Afterpay%20Hide)
         
       * [Store Page Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
@@ -202,8 +204,6 @@ not necessarily designed to work together.
 * [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
   
 * [Cart Prices Change](Cart%20Prices%20Change)
-  
-* [Add Button After Add to Cart Button of Product Detail Page](Add%20Button%20After%20Add%20to%20Cart%20Button%20of%20Product%20Detail%20Page)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
