@@ -23,7 +23,9 @@ of your choice.
 
 #### Dependencies
 
-  * [jQuery][3]
+  * [Squarespace plan][3] that supports [JavaScript][4].
+  
+  * [jQuery][5]
 
 ---
 
@@ -44,8 +46,8 @@ of your choice.
       single store page you want to have this effect.
       
     * Add code from file **[store page detail add button after add to cart
-      button.html][4]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page. Please see [Per-page code injection][5].
+      button.html][6]** to Store Settings > Advanced > Page Header Code
+      Injection for the store page. Please see [Per-page code injection][7].
       Read the code for any instructions within.
       
   * Site-wide
@@ -54,8 +56,8 @@ of your choice.
       where you want to have this effect.
       
     * Add code from file **[store page detail add button after add to cart
-      button.html][4]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Please see [Add code to code injection][6]. Read the code for any
+      button.html][6]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Please see [Add code to code injection][8]. Read the code for any
       instructions within.
 
 ## How to Use
@@ -84,11 +86,11 @@ of your choice.
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -118,9 +120,11 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[3]: https://jquery.com/
-[4]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-button-after-add-to-cart-button/p/earth-sky-planter?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://www.squarespace.com/pricing
+[4]: https://en.wikipedia.org/wiki/JavaScript
+[5]: https://jquery.com/
+[6]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-button-after-add-to-cart-button/p/earth-sky-planter?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
