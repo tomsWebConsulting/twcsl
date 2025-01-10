@@ -1,0 +1,377 @@
+<!--
+
+  begin store page detail add button after add to cart button
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.4.0
+  
+  SS Versions     : 7.0, 7.1
+  
+  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                    Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                    Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                    Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                    Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                    Sonora, Stella, Thorne, Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+                    
+  Dependencies    : jQuery
+  
+  Notes           : the code is comprised of several tags all of which must be
+                    present for the effect to work
+  
+  Copyright       : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdabaatcb sub-module
+    
+    twc.spdabaatcb = ( ( self ) => self ) ( twc.spdabaatcb || {
+    
+      button : {
+      
+        text : '[ enter text here between the single quotes replacing square brackets ]',
+        
+        /*
+        
+          url is optional. if you want a single URL across all products then
+          enter a value. see How to Use in the README for other configuration
+          details. the URL can be any valid URL. it can be absolute ( external
+          to your site ) like < http://www.tomsWeb.consulting/ > or relative
+          ( internal to your site ) like '/contact'
+          
+          */
+          
+        url : '[ optional, enter url here between the single quotes replacing square brackets ]',
+        
+        /*
+        
+          target attribute value is optional. values are _self or _blank or
+          _parent or _top or framename. if you don't alter the provided default
+          value then _self will be used
+          
+          */
+          
+        targetAttributeValue : '[ optional, enter target attribute value here between the single quotes replacing square brackets ]',
+        
+        },
+        
+      /*
+      
+        guard processor for other conditions which prevent the code from
+        running. replace undefined with the name of your custom function. your
+        function must return a boolean. false means do not add the button and
+        true means add the button
+        
+        */
+        
+      guardProcessor : undefined
+      
+      } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    /* begin v7.1 */
+    
+      /* simple layout */
+      
+      .ProductItem-quantity-add-to-cart:has( .twc-spdabaatcb ) {
+      
+        gap : 2em;
+        
+        }
+        
+      /* full, half, wrap layouts */
+      
+      .pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper.twc-spdabaatcb {
+      
+        margin-left : 2em;
+        
+        }
+        
+      /* emd v7.1 */
+      
+    </style>
+    
+  <script>
+  
+    $( ( ) => {
+    
+      const
+      
+        title = 'Store Page Detail Add Button After Add to Cart Button',
+        
+        version = '0.4.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const options = twc.spdabaatcb;
+      
+      let b = options.guardProcessor !== undefined;
+      
+      if ( b ) // guard processor
+      
+        if ( ! guardProcessor ( ) ) return;
+        
+      const
+      
+        buttonWrapperSelector =
+        
+          '.sqs-add-to-cart-button-wrapper:not( .add-on-add-to-cart-wrapper )',
+          
+        codeKey = 'twc-spdabaatcb',
+        
+        config = {
+        
+          attributeFilter : [ 'class' ]
+          
+          },
+          
+        detailsSelectors = [
+        
+          '.ProductItem-details', // v7.1 simple layout, v7.0 ( Brine )
+          
+          '.pdp-details' // v7.1 full, half, or wrap
+          
+          ],
+          
+        hrefSelector = `[ href$="#${ codeKey }" ]`
+        
+        property = `${ codeKey }-element`;
+        
+      let
+      
+        callback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            // bail if attribute not class
+            
+            if ( mutation.attributeName !== 'class' ) return true;
+            
+            let $element = $( mutation.target );
+            
+            const
+            
+              className = 'fadeIn',
+              
+              b = ! $element
+              
+                .hasClass ( className );
+                
+            if ( b ) return true; // bail if no class name
+            
+            $element
+            
+              .prop ( property )
+              
+              .addClass ( className );
+              
+            };
+            
+          for ( const mutation of mutations ) {
+          
+            const b = callback ( mutation );
+            
+            if ( ! b ) break; // bail if callback returns false
+            
+            }
+            
+          },
+          
+        selector = detailsSelectors
+        
+          .join ( ` ${ hrefSelector }, ` )
+          
+          +
+          
+          ` ${ hrefSelector }`,
+          
+        targetAttributeValue = options
+        
+          .button
+          
+          .targetAttributeValue,
+          
+        url = options
+        
+          .button
+          
+          .url;
+          
+      const
+      
+        observer = new MutationObserver ( callback ),
+        
+        $elements = $( selector );
+        
+      if ( $elements.length ) {
+      
+        const
+        
+          $element = $elements
+          
+            .first ( ),
+            
+          tav = $element.attr ( 'target' );
+          
+        url = $element
+        
+          .attr ( 'href' )
+          
+          .split ( `#${ codeKey }` )
+          
+          [ 0 ];
+          
+        if ( tav !== undefined )
+        
+          targetAttributeValue = tav;
+          
+        $elements
+        
+          .parent ( )
+          
+          .remove ( );
+          
+        }
+        
+      b = url [ 0 ] === '[';
+      
+      if ( b ) return; // bail if no url
+      
+      callback = function ( ) {
+    
+        const
+        
+          attributes = [
+          
+            'id',
+            
+            'data-collection-id',
+            
+            'data-dynamic-strings',
+            
+            'data-form',
+            
+            'data-item-id',
+            
+            'data-original-label',
+            
+            'data-product-type',
+            
+            'data-use-custom-label'
+            
+            ]
+            
+            .join ( ' ' ),
+            
+          callback = function ( ) {
+          
+            $anchorTag.attr ( this.name, this.value );
+            
+            },
+            
+          $anchorTag = $( '<a />' ),
+          
+          $this = $( this ),
+          
+          $button = $this
+          
+            .clone ( )
+            
+            .addClass ( codeKey )
+            
+            .removeAttr ( 'data-form' )
+            
+            .removeAttr ( 'id' )
+            
+            .removeClass ( 'use-form' ),
+            
+          $element = $( '.sqs-add-to-cart-button', $button )
+          
+            .attr ( 'href', url )
+            
+            .removeAttr ( attributes )
+            
+            .find ( '.sqs-add-to-cart-button-inner' )
+            
+              .html (
+              
+                options
+                
+                  .button
+                  
+                  .text
+                  
+                )
+                
+              .end ( );
+              
+        if ( targetAttributeValue [ 0 ] !== '[' )
+        
+          $element.attr ( 'target', targetAttributeValue );
+          
+        $.each ( $element.prop ( 'attributes' ), callback );
+        
+        $element
+        
+          .children ( )
+          
+          .appendTo ( $anchorTag );
+          
+        $element.replaceWith ( $anchorTag );
+        
+        $button.insertAfter ( $this );
+        
+        let b = ! $button.is ( ':visible' );
+        
+        if ( b ) {
+        
+          $this.prop ( property, $button );
+          
+          observer.observe ( this, config );
+          
+          }
+          
+        };
+        
+      selector = detailsSelectors
+      
+        .join ( ` ${ buttonWrapperSelector }, ` )
+        
+        +
+        
+        ` ${ buttonWrapperSelector }`;
+        
+      $( selector ).each ( callback );
+      
+      } );
+      
+    </script>
+    
+  <!-- end store page detail add button after add to cart button -->
