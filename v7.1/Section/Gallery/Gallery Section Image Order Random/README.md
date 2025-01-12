@@ -16,7 +16,7 @@ Randomize the images of gallery sections.
 
 #### Fluid Engine Compatible
 
-  * Yes
+  * Not Applicable.
 
 #### Dependencies
 
