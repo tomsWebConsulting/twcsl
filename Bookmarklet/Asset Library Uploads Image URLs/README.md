@@ -28,7 +28,7 @@ List the URLs that are in Asset Library Uploads.
   the URL for a bookmark in your browser named **Asset Library Uploads Image
   URLs**.
 
-## What is a bookmarket?
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][3].
 

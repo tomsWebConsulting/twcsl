@@ -39,7 +39,7 @@ In the first page section we see the target layout as desired. The second page
 section does not meet our target layout. We have a row with two columns. The
 first row first column contains a row with two columns. Undesirable nesting!
 
-## What is a bookmarket?
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][2].
 

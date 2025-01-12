@@ -26,7 +26,7 @@
 This bookmarklet is useful for very specific situations, a text block where you
 want to enter a lot of lines of text that you want to be links.
 
-## What is a bookmarket?
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][3].
 

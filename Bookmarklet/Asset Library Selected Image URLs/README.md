@@ -37,7 +37,7 @@ List selected image URLs in the Asset Library.
 * Select the **Asset Library Selected Image URLs** bookmark. A new window/tab
   should appear with a list of selected image URLs.
 
-## What is a bookmarket?
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][3].
 
