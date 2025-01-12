@@ -8,143 +8,197 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.2.0
+      Version       : 0.3.0
       
       SS Version    : 7.1
       
       Dependencies  : jQuery
       
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       no user serviceable parts below
       
       */
       
-      const version = '0.2.0';
-      
-      const s = `Gallery Section Image Order Random v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
-        
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
-      console.log ( s );
-      
-    const codeKey = 'twc-gsior';
+    const
     
-    const selectorPrefix = '.gallery-section ';
+      version = '0.3.0',
+      
+      s = `Gallery Section Image Order Random v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2021-2025 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
     
-    const selectorSuffix = ' .gallery-caption ' +
+    const
     
-      `p.gallery-caption-content:contains(${ codeKey })`;
+      codeKey = 'twc-gsior',
       
-    let selector = selectorPrefix
+      selector = '.gallery-section .gallery-caption '
+      
+        +
+        
+        `p.gallery-caption-content:contains(${ codeKey })`,
+        
+      $captionElements = $( selector );
+      
+    if ( ! $captionElements.length ) return; // bail if no $captionElements
     
-      +
-      
-      [
-      
-        '.gallery-fullscreen-slideshow',
-        
-        '.gallery-grid--layout-grid',
-        
-        '.gallery-masonry',
-        
-        '.gallery-reel',
-        
-        '.gallery-slideshow',
-        
-        '.gallery-strips--layout-strips'
-        
-        ]
-        
-      .join ( `${ selectorSuffix }, ${ selectorPrefix }` )
-      
-      +
-      
-      selectorSuffix;
-      
-    const $elements = $( selector );
+    const
     
-    if ( ! $elements.length ) return; // bail if no $elements
-    
-    const $galleries = $elements
-    
-      .parents ( '.gallery-section' );
+      captionCallback = function ( ) {
       
-    let callback = function ( ) {
-    
-      const $this = $( this );
-      
-      let text = $this
-      
-        .text ( )
+        const $this = $( this );
         
-        .replace ( codeKey, '' )
+        let text = $this
         
-        .trim ( );
-        
-      if ( text )
-      
-        $this
-        
-          .text ( text )
+          .text ( )
           
-        else
+          .replace ( codeKey, '' )
+          
+          .trim ( );
+          
+        if ( text )
         
           $this
           
-            .parents ( 'figcaption' )
+            .text ( text )
             
-            .remove ( );
-            
-      }
-      
-    $elements.each ( callback );
-    
-    callback = function ( ) {
-    
-      const callback = function ( ) {
-      
-        const r = Math.floor ( Math.random ( ) * $images.length );
-        
-        const $image = $images.eq ( r );
-        
-        $( this )
-        
-          .append ( $image );
+          else
           
-        $images = $images.not ( $image );
+            $this
+            
+              .parents ( 'figcaption' )
+              
+              .remove ( );
+              
+        },
         
-        }
+      galleryCallback = function ( ) {
       
-      const selector = [
+        const
+        
+          $this = $( this ),
+          
+          galleryFigureSelector = [
+          
+            '.gallery-grid-wrapper',
+            
+            '.gallery-strips-wrapper',
+            
+            '.gallery-masonry-wrapper',
+            
+            '.gallery-slideshow-list',
+            
+            '.gallery-fullscreen-slideshow-list',
+            
+            '.gallery-reel-list'
+            
+            ]
+            
+            .join ( ' figure, ' )
+            
+            +
+            
+            ' figure',
+            
+          lightboxFigureSelector = '.gallery-lightbox-outer-wrapper figure',
+          
+          sectionId = $this
+          
+            .attr ( 'data-section-id' );
+            
+        let
+        
+          callback = function ( galleryFigureElement ) {
+          
+            const css = $( galleryFigureElement )
+            
+              .css ( 'transform' );
+              
+            return css;
+            
+            },
+            
+          $galleryFigureElements = $( galleryFigureSelector, $this )
+          
+            .removeAttr ( 'data-active' ),
+            
+          $lightboxFigureElements = $( lightboxFigureSelector, $this ),
+          
+          map = $.map ( $galleryFigureElements, callback );
+          
+        callback = function ( ) {
+        
+          const
+          
+            r = Math.floor ( Math.random ( ) * $galleryFigureElements.length ),
+            
+            selector = `[ data-lightbox-section-id="${ sectionId }" ] `
+            
+              +
+              
+              'figure',
+              
+            $galleryFigureElement = $galleryFigureElements.eq ( r ),
+            
+            $lightboxFigureElement = $lightboxFigureElements.eq ( r );
+            
+          /* begin append figure element */
+          
+            $galleryFigureElement
+            
+              .parent ( )
+              
+              .append ( $galleryFigureElement )
+              
+              .css ( map [ r ] );
+              
+            $galleryFigureElements = $galleryFigureElements
+            
+              .not ( $galleryFigureElement );
+              
+            map.splice ( r, 1 );
+            
+            /* end append figure element */
+            
+          /* begin append lightbox element */
+          
+            if ( ! $lightboxFigureElement.length ) return; // bail if no element
+            
+            $lightboxFigureElement
+            
+              .parent ( )
+              
+              .append ( $lightboxFigureElement );
+              
+            $lightboxFigureElements = $lightboxFigureElements
+            
+              .not ( $lightboxFigureElement );
+              
+            // end append lightbox element */
+            
+          }
+          
+        $galleryFigureElements.each ( callback );
+        
+        },
+        
+      $galleryElements = $captionElements
       
-        '.gallery-fullscreen-slideshow-item-img',
+        .parents ( '.gallery-section' );
         
-        '.gallery-grid-item-wrapper',
-        
-        '.gallery-masonry-item-wrapper',
-        
-        '.gallery-reel-item-src',
-        
-        '.gallery-slideshow-item-img',
-        
-        '.gallery-strips-item-wrapper'
-        
-        ]
-        
-        .join ( ', ' );
-        
-      const $elements = $( selector, this );
-      
-      let $images = $( 'img', $elements );
-      
-      $elements.each ( callback );
-      
-      }
-      
-    $galleries.each ( callback );
+    $captionElements.each ( captionCallback ); // clean up captions
+    
+    $galleryElements.each ( galleryCallback );
     
     } );
     

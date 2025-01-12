@@ -8,7 +8,7 @@ Randomize the images of gallery sections.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -73,6 +73,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-01-11**
+
+  * major restructuring
+  * support lightbox
+  * fix bug when Lightbox on gallery section images disappeared
+  * bumped version to 0.3.0
+  
 * **2024-06-05**
 
   * support all gallery types
