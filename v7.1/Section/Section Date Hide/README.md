@@ -91,7 +91,7 @@ Page Header Code Injection[[2][5]].
   
     /*
     
-      the format of each data structure is a section id start date, and
+      the format of each data structure is a section id, start date, and
       optional stop date
       
       following is an example data structure. copy the example data structure
