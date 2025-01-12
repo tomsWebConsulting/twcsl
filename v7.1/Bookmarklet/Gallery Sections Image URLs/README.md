@@ -28,7 +28,7 @@ Get a list of image URLs of gallery sections.
 * Go to a page in a site with gallery sections of type grid simple and use the
   bookmarklet to get the URLs of the images.
 
-## What is a bookmarket?
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][3].
 
