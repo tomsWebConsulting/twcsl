@@ -1,0 +1,149 @@
+<!--
+
+  begin gallery block slideshow auto play
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  Dependencies    : jQuery
+  
+  Notes           : the code is comprised of two script tags both which must be
+                    present for the effect to work
+  
+  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    if ( window.twc == undefined ) window.twc = { };
+    
+    twc.gbsap = {
+    
+      /*
+      
+        following is an example data structure
+        
+        interval and delay are numbers
+        
+        copy the example data structure below and paste after the example data
+        structure. remove the forward slash asterisk and asterisk forward
+        slash lines from before and after the example data structure. repeat
+        for as many gallery block slideshows as needed. this has been done once
+        initially
+        
+        */
+        
+      /*
+      
+      '[enter block id here between single quotes replacing square brackets]' : {
+      
+        interval : 5, // seconds
+        
+        delay : 0 // seconds to delay before autoplay start
+        
+        },
+        
+        */
+        
+      '[enter block id here between single quotes replacing square brackets]' : {
+      
+        interval : 5, // seconds
+        
+        delay : 0 // seconds to delay before autoplay start
+        
+        },
+        
+      };
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.1.0';
+      
+      const s = `Gallery Block Slideshow Auto Play v${ version }, ` +
+      
+        'License < https://tinyurl.com/s872fb68 >, ' +
+        
+        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const initialize = ( ) => {
+      
+        const callback = options => {
+        
+          const callback = ( ) => {
+          
+            const callback = function ( ) {
+            
+              $element.click ( );
+              
+              }
+              
+            setInterval ( callback, interval );
+            
+            };
+            
+          let selector = `${ options [ 0 ] } .sqs-gallery-design-stacked`;
+          
+          if ( selector [ 0 ] != '#' )
+          
+            selector = '#' + selector;
+            
+          const $element = $( selector );
+          
+          if ( ! $element.length ) return; // bail if no element
+          
+          const delay = options [ 1 ].delay * 1000;
+          
+          const interval = options [ 1 ].interval * 1000;
+          
+          setTimeout ( callback, delay );
+          
+          };
+          
+        Object
+        
+          .entries ( twc.gbsap )
+          
+          .forEach ( callback );
+          
+        };
+        
+      switch ( true ) {
+      
+        case twcsl.ss.is71 :
+        
+          $( initialize );
+          
+          break;
+          
+        case twcsl.ss.is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end gallery block slideshow auto play -->
