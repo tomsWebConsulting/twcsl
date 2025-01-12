@@ -35,9 +35,7 @@ Use settings thumbnail as thumbnail for Event.
   Settings > Advanced > Page Header Code Injection for the events page. Please
   see [Per-page code injection][7]. Read the code for any instructions within.
 
-## Bookmarklet
-
-**What is a bookmarket?**
+## What is a bookmarklet?
 
 Wikipedia has a nice entry on [bookmarklet][9].
 
