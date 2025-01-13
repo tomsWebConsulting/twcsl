@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 340 effects. Each effect has it's own version number, code,
+twcsl contains 344 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -704,6 +704,14 @@ not necessarily designed to work together.
     * [Form Block Multi-Column](Block/Form/Form%20Block%20Multi-Column)
       
     * [Form Block Text Field Max Length](Block/Form/Form%20Block%20Text%20Field%20Max%20Length)
+      
+  * [Gallery](Block/Gallery)
+    
+    * [Gallery Block Slideshow Auto Play](Block/Gallery/Gallery%20Block%20Slideshow%20Auto%20Play)
+      
+  * [Social Links](Block/Social%20Links)
+    
+    * [Social Links Block Dividers Add](Block/Social%20Links/Social%20Links%20Block%20Dividers%20Add)
       
   * [Code](Block/Code)
     
