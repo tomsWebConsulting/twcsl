@@ -1,0 +1,149 @@
+<!--
+
+  begin social links block dividers add
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+  
+  Copyright   :   2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    .twc-slbda--divider::after {
+    
+      border-right : solid 1px;
+      content : '';
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const callback = ( ) => {
+      
+        const
+        
+          version = '0.1.0',
+          
+          s = `Social Links Block Dividers Add v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        const
+        
+          initialize = ( ) => {
+          
+            const
+            
+              callback = ( element ) => {
+              
+                const
+                
+                  callback = ( element ) => {
+                  
+                    const html = `
+                    
+                      <span class="${ codeKey }--divider">
+                      
+                        </span>
+                        
+                        `;
+                        
+                    element
+                    
+                      .insertAdjacentHTML ( 'afterend', html );
+                      
+                    },
+                    
+                  selector = '.sqs-svg-icon--wrapper:not( :last-child )';
+                  
+                element
+                
+                  .classList
+                  
+                  .add ( `${ codeKey }` );
+                  
+                element
+                
+                  .querySelectorAll ( selector )
+                  
+                  .forEach ( callback );
+                  
+                },
+                
+              codeKey = 'twc-slbda',
+              
+              selector = [
+              
+                '.sqs-block-socialaccountlinks-v2', // v7.1
+                
+                '.social-account-links-v2-block' // v7.0
+                
+                ]
+                
+                .join ( ', ' );
+                
+            document
+            
+              .querySelectorAll ( selector )
+              
+              .forEach ( callback );
+              
+            },
+            
+          ssVersion = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .templateVersion;
+            
+        switch ( ssVersion ) {
+        
+          case '7.1' :
+          
+            initialize ( );
+            
+            break;
+            
+          case '7' :
+          
+            Squarespace.onInitialize ( Y, initialize );
+            
+            break;
+            
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
