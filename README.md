@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 344 effects. Each effect has it's own version number, code,
+twcsl contains 346 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -191,6 +191,10 @@ not necessarily designed to work together.
       
   * [ETC Year](Element/ETC%20Year)
     
+  * [Header](Element/Header)
+    
+    * [Header Account Link Text Replace With First Name](Element/Header/Header%20Account%20Link%20Text%20Replace%20With%20First%20Name)
+      
   * [Product Variant](Element/Product%20Variant)
     
     * [Product Option First Variant Select Auto](Element/Product%20Variant/Product%20Option%20First%20Variant%20Select%20Auto)
