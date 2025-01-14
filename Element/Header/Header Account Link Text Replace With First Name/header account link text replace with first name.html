@@ -1,0 +1,170 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      header account link text replace with first name
+      
+      Version       : 0.1.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Note          : the code pulls in data from a url and parses it each time
+                      a page is loaded
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const callback = ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Header Account Link Text Replace With First Name v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        initialize = async ( ) => {
+        
+          let selector = '.user-accounts-text-link span.auth';
+          
+          const elements = document
+          
+            .querySelectorAll  ( selector );
+            
+          if ( ! elements.length ) return; // bail if no elements
+          
+          const
+          
+            callback = ( element ) => {
+            
+              element
+              
+                .textContent
+                
+                =
+                
+                firstName;
+                
+              element
+              
+                .classList
+                
+                .add ( `${ codeKey }` );
+                
+              };
+              
+            codeKey = 'twc-haltrwfn',
+            
+            fetchPage = async ( url ) => {
+            
+              const
+              
+                response = await fetch ( url ),
+                
+                text = await response.text ( );
+                
+                return text;
+                
+              },
+              
+            parseHtmlString = ( html ) => {
+            
+              const
+              
+                parser = new DOMParser ( ),
+                
+                dcmnt = parser
+                
+                  .parseFromString ( html, 'text/html' );
+                  
+              return dcmnt;
+              
+              },
+              
+            url = '/account/frame',
+            
+            html = await fetchPage ( url ),
+            
+            dcmnt = parseHtmlString ( html );
+            
+          selector = 'head script#bootstrap-data';
+          
+          let
+          
+            firstName = JSON.parse (
+            
+              dcmnt
+              
+                .querySelector ( selector )
+                
+                .textContent
+                
+              )
+              
+              .userProfile;
+              
+          if ( firstName === undefined ) return; // bail if no user profile
+          
+          firstName = firstName
+          
+            .name
+            
+            .firstName;
+            
+          elements.forEach ( callback );
+          
+          },
+          
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion;
+          
+      switch ( ssVersion ) {
+      
+        case '7.1' :
+        
+          initialize ( );
+          
+          break;
+          
+        case '7' :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
+    
+  </script>
