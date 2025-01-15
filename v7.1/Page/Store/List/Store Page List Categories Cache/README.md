@@ -8,7 +8,7 @@ Cache store page categories in sessionStorage.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -91,6 +91,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-01-14**
+
+  * fix for JSON being returned for non-cached categories
+  * bumped version to 0.2.1
+  
 * **2025-01-14**
 
   * use module pattern for settings
