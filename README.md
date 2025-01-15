@@ -325,6 +325,8 @@ not necessarily designed to work together.
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
           
+        * [Store Page List Categories Cache](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache)
+          
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
@@ -496,8 +498,6 @@ not necessarily designed to work together.
   * [Site Title Each Word Span Tag Add](v7.1/Site%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Move Blog Listing Item Title Above Meta](v7.1/Move%20Blog%20Listing%20Item%20Title%20Above%20Meta)
-    
-  * [Store Categories Cache](v7.1/Store%20Categories%20Cache)
     
   * [Replace Variant Menu "select" Text](v7.1/Replace%20Variant%20Menu%20"select"%20Text)
     
