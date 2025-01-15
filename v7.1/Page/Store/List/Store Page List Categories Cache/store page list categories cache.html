@@ -1,0 +1,291 @@
+<!--
+
+  begin store page list categories cache
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Notes         : the code is comprised of two script tags. both are needed for
+                  the full effect to work
+                  
+                  the code makes a call to the json version of the store page
+                  for information that is not normally available
+                  
+  Copyright     : 2023-2025 Thomas Creedon
+                     
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splcc sub-module
+    
+    twc.splcc = ( ( self ) => {
+    
+      self
+      
+        .keepKeys = [ // keys to keep for a category
+        
+          'displayName',
+          
+          'fullUrl'
+          
+          ];
+          
+      return self;
+      
+      } ) ( twc.splcc || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+        
+        s = `
+        
+          Store Page List Categories Cache v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc splcc callbacks sub-module
+      
+      twc.splcc.callbacks = ( ( self ) => self ) ( twc.splcc.callbacks || [ ] );
+      
+      const
+      
+        codeKey = 'twc-splcc',
+        
+        options = twc.splcc,
+        
+        hasCallbacks = options
+        
+          .callbacks
+          
+          .length;
+          
+      // bail if no callbacks
+      
+      if ( ! hasCallbacks ) {
+      
+        const s = `${ codeKey } no callbacks`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      const userCallbacks = ( categories ) => {
+      
+        const callback = ( callback ) => {
+        
+          try {
+          
+            callback ( categories );
+            
+            } catch ( error ) {
+            
+              const s = `${ codeKey } callback error`;
+              
+              console.error ( s, error );
+              
+              }
+              
+          };
+        
+        options
+        
+          .callbacks
+          
+          .forEach ( callback );
+          
+        };
+        
+      let categories = sessionStorage
+      
+        .getItem ( codeKey );
+        
+      // bail if categories
+      
+      if ( categories !== null ) {
+      
+        categories = JSON.parse ( categories );
+        
+        userCallbacks ( categories );
+        
+        return;
+        
+        }
+        
+      const
+      
+        callback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            let b = ! mutation.addedNodes.length;
+            
+            if ( b ) return true; // continue
+            
+            const node = mutation.addedNodes [ 0 ];
+            
+            b = node.nodeName !== 'BODY';
+            
+            if ( b ) return true; // continue if not BODY node
+            
+            observer.disconnect ( );
+            
+            const
+            
+              selector = 'body.collection-type-products[ id^="collection-" ]',
+              
+              isStorePageList = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+            if ( ! isStorePageList ) return true; // bail if not list
+            
+            const setCategories = ( ) => {
+            
+              const callback = ( data ) => {
+              
+                const traverse = ( categories ) => {
+                
+                  const callback = ( category, i ) => {
+                  
+                    const callback = ( key ) => {
+                    
+                      const b = keepKeys.includes ( key );
+                      
+                      if ( b ) return true; // continue
+                      
+                      delete category [ key ];
+                      
+                      };
+                      
+                    Object
+                    
+                      .keys ( category )
+                      
+                      .forEach ( callback );
+                      
+                    traverse ( category.children );
+                    
+                    };
+                    
+                  categories.forEach ( callback );
+                  
+                  };
+                  
+                let categories = data.nestedCategories.all
+                
+                if ( categories !== undefined ) {
+                
+                  categories.children = data.nestedCategories.categories;
+                  
+                  categories = [ categories ];
+                  
+                  } else
+                  
+                    categories = data.nestedCategories.categories;
+                    
+                traverse ( categories );
+                
+                categories = JSON.stringify ( categories );
+                
+                sessionStorage.setItem ( codeKey, categories );
+                
+                userCallbacks ( categories );
+                
+                };
+                
+              const url =
+              
+                `${ Static.SQUARESPACE_CONTEXT.collection.fullUrl }?format=json`;
+                
+              fetch ( url )
+              
+                .then ( response => response.json ( ) )
+                
+                .then ( callback );
+                  
+              };
+              
+            const unique = ( value, index, array ) => {
+            
+              const b = array.indexOf ( value ) === index;
+              
+              return b;
+              
+              };
+              
+            let keepKeys = options.keepKeys;
+            
+            keepKeys.push ( 'children' );
+            
+            keepKeys = keepKeys.filter ( unique );
+            
+            setCategories ( );
+            
+            };
+            
+          for ( const mutation of mutations ) {
+          
+            const b = callback ( mutation );
+            
+            if ( ! b ) break; // bail if callback returns false
+            
+            }
+            
+          },
+          
+        config = {
+        
+          childList : true
+          
+          },
+          
+        observer = new MutationObserver ( callback );
+          
+      // start listening for changes in html
+      
+      observer.observe ( document.documentElement, config );
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end store page list categories cache -->
