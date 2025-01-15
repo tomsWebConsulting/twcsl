@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.3.2
+  * 0.4.0
 
 #### SS Version
 
@@ -22,14 +22,19 @@ Store page list categories mega menu.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Store Categories Cache][4]
+  * [Store Page List Categories Cache][4]
+  
+  * [Tom's Web Consulting Squarespace Library][5]
 
 ---
 
 ## Install
 
-* Install [Store Categories Cache][4]. After you install Store Categories Cache
-  be sure to continue on with the rest of the steps.
+* Install [twcsl][6]. After you install twcsl be sure to continue on with the
+  rest of the steps.
+  
+* Install [Store Page List Categories Cache][4]. After you install Store
+  Categories Cache be sure to continue on with the rest of the steps.
   
 * Options
 
@@ -38,36 +43,22 @@ Store page list categories mega menu.
     * This option will be the one most will want to use if you have only a
       single store page you want to have this effect.
       
-    * Add code from file **[store page list categories mega.html][5]** to Store
+    * Add code from file **[store page list categories mega.html][7]** to Store
       Settings > Advanced > Page Header Code Injection for the store page
-      **before** the **store categories cache** code. Please see [Per-page code
-      injection][6].
+      **before** the **store page list categories cache** code. Please see
+      [Per-page code injection][8].
       
   * Site-wide
   
     * This option is the one you want to use if you have multiple store pages
       where you want to have this effect.
       
-    * Add code from file **[store page list categories mega.html][5]** to
+    * Add code from file **[store page list categories mega.html][7]** to
       Website > Pages > Website Tools > Code Injection > FOOTER **before** the
-      **store categories cache** code. Please see [Add code to code
-      injection][7].
+      **store page list categories cache** code. Please see [Add code to code
+      injection][9].
       
 * Read the code for any instructions or options within.
-
-* In the **store categories cache** code set the callback.
-  
-  Change the following line...
-  
-  ```text
-      callback : undefined
-  ```
-  
-  ...to...
-  
-  ```text
-      callback : twcSplcm
-  ```
 
 ## Note
 
@@ -77,14 +68,19 @@ reason the categories don't update after saving the page, refresh the page.
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-01-14**
+
+  * update to work with Store Page List Categories Cache v0.2.0
+  * bumped version to 0.4.0
+  
 * **2024-12-22**
 
   * more minor tweaks to spacing
@@ -127,9 +123,11 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Store%20Categories%20Cache#store-categories-cache
-[5]: store%20page%20list%20categories%20mega.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
+[5]: https://github.com/tomsWebConsulting/twcsl
+[6]: https://github.com/tomsWebConsulting/twcsl#install-options
+[7]: store%20page%20list%20categories%20mega.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[10]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.2
+  Version       : 0.4.0
   
   SS Version    : 7.1
   
@@ -13,6 +13,8 @@
   Compatible    : Not Applicable
   
   Dependencies  : store categories cache < https://tinyurl.com/285tkudd >
+  
+                  twcsl < https://tinyurl.com/27bpnu6f >
   
   Notes         : the code is comprised of several tags. all are needed for the
                   full effect to work
@@ -23,7 +25,9 @@
                   categories don't update after saving the page, refresh the
                   page
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2023-2025 Thomas Creedon
+                     
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
   
@@ -218,289 +222,327 @@
     
   <script>
   
-    var twcSplcm = ( categories ) => {
+    const
     
-      const
+      version = '0.4.0',
       
-        version = '0.3.2',
-        
-        s = `
-        
-          Store Page List Categories Mega v${ version }
-          
-          License < https://tinyurl.com/s872fb68 >
-          
-          © 2023-2024 Thomas Creedon
-          
-          Tom's Web Consulting < http://www.tomsWeb.consulting >
-          
-          `
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
+      s = `
       
-      const
+        Store Page List Categories Mega v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2023-2024 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    // initialize twc splcc sub-module
+    
+    twc.splcc = ( ( self ) => self ) ( twc.splcc || { } );
+    
+    // initialize twc splcc callbacks sub-module
+    
+    twc.splcc.callbacks = ( ( self ) => {
+    
+      const callback = ( categories ) => {
       
-        codeKey = 'twc-splcm',
+        $( ( ) => {
         
-        selectorKey = '.products.collection-content-wrapper';
-        
-      // hide show register
-      
-      ( ( ) => {
-      
-        // initialize twc data sub-module
-        
-        twc.data = ( ( self ) => self ) ( twc.data || { } );
-        
-        // initialize twc data hideShow sub-module
-        
-        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
-        
-        // initialize twc data hideShow selector key sub-module
-        
-        twc.data.hideShow [ selectorKey ] =
-        
-          ( ( self ) => self ) ( twc.data.hideShow [ selectorKey ] || [ ] );
-        
-        twc
-        
-          .data
+          const
           
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .push ( `--${ codeKey }` );
-          
-        } ) ( );
-        
-      ( ( ) => {
-      
-        const
-        
-          options = twc.splcm,
-          
-          windowWidth = $( window ).width ( ),
-          
-          traverse = ( categories, $ul ) => {
-          
-            $.each ( categories, function ( i, category ) {
+            codeKey = 'twc-splcm',
             
-              const
+            selectorKey = '.products.collection-content-wrapper';
+            
+          // hide show register
+          
+          ( ( ) => {
+          
+            // initialize twc data sub-module
+            
+            twc.data = ( ( self ) => self ) ( twc.data || { } );
+            
+            // initialize twc data hideShow sub-module
+            
+            twc.data.hideShow =
+            
+              ( ( self ) => self ) ( twc.data.hideShow || { } );
               
-                hasChildren = Boolean ( category.children.length ),
+            if ( twc.data.hideShow [ selectorKey ] === undefined )
+            
+              twc
+              
+                .data
                 
-                $li = $( `
+                .hideShow
                 
-                  <li class="nested-category-breadcrumb-list-item">
+                [ selectorKey ]
+                
+                =
+                
+                [ ];
+                
+            twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .push ( `--${ codeKey }` );
+              
+            } ) ( );
+            
+          ( ( ) => {
+          
+            const
+            
+              options = twc.splcm,
+              
+              windowWidth = $( window ).width ( ),
+              
+              traverse = ( categories, $ul ) => {
+              
+                $.each ( categories, function ( i, category ) {
+                
+                  const
                   
-                    <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
+                    hasChildren = Boolean ( category.children.length ),
                     
-                      ${ category.displayName }
-                      
-                      </a>
-                      
-                    <span class="breadcrumb-separator" aria-hidden="true">
+                    $li = $( `
                     
-                      |
+                      <li class="nested-category-breadcrumb-list-item">
                       
-                      </span>
+                        <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
+                        
+                          ${ category.displayName }
+                          
+                          </a>
+                          
+                        <span class="breadcrumb-separator" aria-hidden="true">
+                        
+                          |
+                          
+                          </span>
+                          
+                        </li>
+                        
+                      ` );
                       
-                    </li>
+                  let $element;
+                  
+                  if ( hasChildren ) {
+                  
+                    const openHtml =
                     
-                  ` );
-                  
-              let $element;
-              
-              if ( hasChildren ) {
-              
-                const openHtml =
-                
-                  options.categoriesExpandedOnLoad ? ' open' : '';
-                  
-                $element = $li
-                
-                  .addClass ( 'children' )
-                  
-                  .find ( '.nested-category-breadcrumb-link' )
-                  
-                  .wrap ( `
-                  
-                    <details${ openHtml }/>
-                    
-                      <summary/>
+                      options.categoriesExpandedOnLoad ? ' open' : '';
                       
-                    ` )
+                    $element = $li
                     
-                  .parents ( 'details' );
+                      .addClass ( 'children' )
+                      
+                      .find ( '.nested-category-breadcrumb-link' )
+                      
+                      .wrap ( `
+                      
+                        <details${ openHtml }/>
+                        
+                          <summary/>
+                          
+                        ` )
+                        
+                      .parents ( 'details' );
+                      
+                    } else
+                    
+                      $element = $li;
+                      
+                  $ul.append ( $li );
                   
-                } else
-                
-                  $element = $li;
+                  if ( ! hasChildren ) return true; // continue
                   
-              $ul.append ( $li );
-              
-              if ( ! hasChildren ) return true; // continue
-              
-              $childrenUl = $( '<ul/>' )
-              
-                .appendTo ( $element );
+                  $childrenUl = $( '<ul />' )
+                  
+                    .appendTo ( $element );
+                    
+                  traverse ( category.children, $childrenUl );
+                  
+                  } );
+                  
+                };
                 
-              traverse ( category.children, $childrenUl );
+              const $ul = $( '<ul />' );
               
-              } );
+            let selector = `[ href="${ twcsl.page.store.urlSlug }` +
+            
+              `${ twcsl.page.store.list.categoryUrlSlug }" ]`;
               
-            },
+            if ( options.hideIcon ) {
             
-          $ul = $( '<ul/>' );
-          
-        let selector = `[href="${ twcsl.page.store.urlSlug }` +
-        
-          `${ twcsl.page.store.list.categoryUrlSlug }"]`;
-          
-        if ( options.hideIcon ) {
-        
-          const selector = '.products.collection-content-wrapper';
-          
-          $( selector ).attr ( 'data-twc-splcm-hide-icon', '' );
-          
-          }
-          
-        traverse ( categories, $ul )
-        
-        $( selector, $ul )
-        
-          .addClass ( 'active' )
-          
-          .removeAttr ( 'href' )
-          
-          .parents ( 'details' )
-          
-          .attr ( 'open', '' );
-          
-        const $element = $ul
-        
-          .clone ( )
-          
-          .addClass ( 'nested-category-children' );
-          
-        selector =
-        
-          '.products.collection-content-wrapper .nested-category-children';
-          
-        const $destination = $( selector );
-        
-        if ( $destination.length ) {
-        
-          $destination.replaceWith ( $element );
-          
-          } else {
-          
-            selector = '.nested-category-breadcrumb';
+              const selector = '.products.collection-content-wrapper';
+              
+              $( selector ).attr ( `data-${ codeKey }-hide-icon`, '' );
+              
+              }
+              
+            traverse ( categories, $ul )
             
-            $( selector ).after ( $element );
+            $( selector, $ul )
             
-            }
+              .addClass ( 'active' )
+              
+              .removeAttr ( 'href' )
+              
+              .parents ( 'details' )
+              
+              .attr ( 'open', '' );
+              
+            const $element = $ul
             
-        selector = '.nested-category-breadcrumb-list-item';
-        
-        const left1 = $( selector, $element )
-        
-          .first ( )
-          
-          .offset ( )
-          
-          .left;
-          
-        selector = '.nested-category-breadcrumb-list-item .nested-category-breadcrumb-link';
-        
-        let left = $( selector, $element )
-        
-          .first ( )
-          
-          .offset ( )
-          
-          .left;
-          
-        left -= left1;
-        
-        left = `${ left }px`;
-        
-        selector = '.collection-type-products.view-list .products.collection-' +
-        
-          'content-wrapper';
-          
-        $( selector ).css ( '--spacing-left', left );
-        
-        selector = '.active';
-        
-        const
-        
-          $active = $( selector, $element ),
-          
-          activeLeft = $active
-          
-            .offset ( )
+              .clone ( )
+              
+              .addClass ( 'nested-category-children' );
+              
+            selector =
             
-            .left;
+              '.products.collection-content-wrapper .nested-category-children';
+              
+            const $destination = $( selector );
             
-        if ( activeLeft > windowWidth )
-        
-          $active
+            if ( $destination.length )
+            
+              $destination.replaceWith ( $element );
+              
+              else {
+              
+                selector = '.nested-category-breadcrumb';
+                
+                $( selector ).after ( $element );
+                
+                }
+                
+            selector = '.nested-category-breadcrumb-list-item';
+            
+            const left1 = $( selector, $element )
+            
+              .first ( )
+              
+              .offset ( )
+              
+              .left;
+              
+            selector = '.nested-category-breadcrumb-list-item '
+            
+              +
+              
+              '.nested-category-breadcrumb-link';
+              
+            let left = $( selector, $element )
+            
+              .first ( )
+              
+              .offset ( )
+              
+              .left;
+              
+            left -= left1;
+            
+            left = `${ left }px`;
+            
+            selector =
+            
+              '.collection-type-products.view-list .products.collection-'
+              
+              +
+              
+              'content-wrapper';
+              
+            $( selector ).css ( '--spacing-left', left );
+            
+            selector = '.active';
+            
+            const
+            
+              $active = $( selector, $element ),
+              
+              activeLeft = $active
+              
+                .offset ( )
+                
+                .left;
+                
+            if ( activeLeft > windowWidth )
+            
+              $active
+              
+                .parents ( '.nested-category-breadcrumb-list-item' )
+                
+                .first ( )
+                
+                .get ( 0 )
+                
+                .scrollIntoViewIfNeeded ( activeLeft );
+                
+            selector = '.products.collection-content-wrapper '
+            
+              +
+              
+              '.nested-category-tree-wrapper ul';
+              
+            $( selector ).replaceWith ( $ul );
+            
+            } ) ( );
+            
+          // hide show unregister
           
-            .parents ( '.nested-category-breadcrumb-list-item' )
-            
-            .first ( )
-            
-            .get ( 0 )
-            
-            .scrollIntoViewIfNeeded ( activeLeft );
-            
-        selector = '.products.collection-content-wrapper ' +
-        
-          '.nested-category-tree-wrapper ul';
+          ( ( ) => {
           
-        $( selector ).replaceWith ( $ul );
+            twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .pop ( `--${ codeKey }` );
+              
+            const l = twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length;
+              
+            if ( ! l )
+            
+              $( '#siteWrapper' )
+              
+                .css ( '--twc-products-collection-content-wrapper-visibility',
+                
+                  'unset' );
+                  
+            } ) ( );
+            
+          } );
+          
+        };
         
-        } ) ( );
-        
-      // hide show unregister
+      self.push ( callback );
       
-      ( ( ) => {
+      return self;
       
-        twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .pop ( `--${ codeKey }` );
-          
-        const l = twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .length;
-          
-        if ( ! l )
-        
-          $( '#siteWrapper' )
-          
-            .css ( '--twc-products-collection-content-wrapper-visibility',
-            
-              'unset' );
-              
-        } ) ( );
-        
-      };
+      } ) ( twc.splcc.callbacks || [ ] );
       
     </script>
     
