@@ -8,7 +8,7 @@ Gallery section horizontal scroll effect.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -61,9 +61,8 @@ Gallery section horizontal scroll effect.
 
 * Turn Captions on.
 
-* Add **twc-gshs : medium** to the first Description field of the first image of
-  the Gallery. This text will be removed from the description. If you want a
-  normal description, you can add it below the twc-gshs line.
+* Add **#twc-gshs-medium** to the end of the Link field of the first image of
+  the Gallery. This text will be removed from the link.
   
   Optionally, you can change medium to small, large or a custom CSS height
   value.
@@ -83,11 +82,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2024-06-05**
+* **2024-12-09**
 
-  * support all gallery types
-  * bumped version to 0.2.0
-  -->
+  * fix for trigger text showing briefly
+  * fix for images being cropped on mobile devices
+  * bumped version to 0.1.1
+  
 * **2024-11-19**
 
   * initial version

@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.1.1
   
   SS Version    : 7.1
   
@@ -27,6 +27,18 @@
   
   <style>
   
+    .gallery-section .gallery-grid--layout-grid  {
+    
+      --twc-gshs-visibility : hidden;
+      
+      }
+      
+    .gallery-section .gallery-grid--layout-grid .gallery-caption {
+    
+      visibility : var( --twc-gshs-visibility );
+      
+      }
+      
     .twc-gshs {
     
       --twc-gshs-height : unset;
@@ -43,7 +55,7 @@
       
     .twc-gshs img {
     
-      width : unset !important;
+      object-fit : contain !important;
       
       }
       
@@ -67,7 +79,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.1.1',
       
         s = `
         
@@ -181,6 +193,8 @@
               
               .remove ( );
               
+        $this.css ( '--twc-gshs-visibility', 'visible' );
+        
         }
         
       $elements.each ( callback );
