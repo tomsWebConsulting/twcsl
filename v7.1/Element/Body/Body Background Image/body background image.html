@@ -1,0 +1,67 @@
+<script>
+
+  ( ( ) => {
+  
+    /*
+    
+      body background image
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 1.1.0
+      
+      SS Version    : 7.1
+      
+      Note          : this code is a base for other effects. the code alone
+                      should not produce any visible change on an uncustomized
+                      SS site
+      
+      Copyright     : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    const
+    
+      version = '1.1.0',
+      
+      s = `Body Background Image v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2025 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    const callback = ( ) => {
+    
+      const html = `
+      
+        <div id="twc-bbi">
+        
+          </div>
+          
+          `;
+          
+      document
+      
+        .body
+        
+        .insertAdjacentHTML ( 'beforeend', html );
+        
+      };
+      
+    document
+    
+      .addEventListener ( 'DOMContentLoaded', callback );
+      
+    } ) ( );
+    
+  </script>
