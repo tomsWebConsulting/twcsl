@@ -611,8 +611,8 @@ not necessarily designed to work together.
         
         * [Summary Block Events Date Text Change](v7.1/Block/Summary/Events/Summary%20Block%20Events%20Date%20Text%20Change)
           
-      * [Summary Block Events Meta Add](v7.1/Block/Summary/Summary%20Block%20Events%20Meta%20Add)
-        
+        * [Summary Block Events Meta Add](v7.1/Block/Summary/Events/Summary%20Block%20Events%20Meta%20Add)
+          
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
