@@ -6,16 +6,13 @@
     
       header account link text replace with first name
       
-      Version       : 0.1.0
+      Version       : 0.2.0
       
       SS Versions   : 7.1, 7.0
       
       Fluid
       Engine
       Compatible    : Not Applicable
-      
-      Note          : the code pulls in data from a url and parses it each time
-                      a page is loaded
       
       Copyright     : 2025 Thomas Creedon
                       
@@ -29,7 +26,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.2.0',
         
         s = `Header Account Link Text Replace With First Name v${ version }
         
@@ -45,7 +42,7 @@
       
       const
       
-        initialize = async ( ) => {
+        initialize = ( ) => {
         
           let selector = '.user-accounts-text-link span.auth';
           
@@ -77,59 +74,29 @@
               
             codeKey = 'twc-haltrwfn',
             
-            fetchPage = async ( url ) => {
+            re = /^.*SiteUserInfo=/;
             
-              const
-              
-                response = await fetch ( url ),
-                
-                text = await response.text ( );
-                
-                return text;
-                
-              },
-              
-            parseHtmlString = ( html ) => {
-            
-              const
-              
-                parser = new DOMParser ( ),
-                
-                dcmnt = parser
-                
-                  .parseFromString ( html, 'text/html' );
-                  
-              return dcmnt;
-              
-              },
-              
-            url = '/account/frame',
-            
-            html = await fetchPage ( url ),
-            
-            dcmnt = parseHtmlString ( html );
-            
-          selector = 'head script#bootstrap-data';
-          
           let
           
-            firstName = JSON.parse (
+            firstName = document
             
-              dcmnt
+              .cookie
               
-                .querySelector ( selector )
-                
-                .textContent
-                
-              )
+              .split ( ';' )
               
-              .userProfile;
+              .find ( e => re.test ( e ) )
               
-          if ( firstName === undefined ) return; // bail if no user profile
+              ?.split ( '=' )
+              
+              [ 1 ];
+              
+          firstName = decodeURIComponent ( firstName );
           
-          firstName = firstName
+          if ( firstName === 'undefined' ) return; // bail if no first name
           
-            .name
+          firstName = JSON
+          
+            .parse ( firstName )
             
             .firstName;
             

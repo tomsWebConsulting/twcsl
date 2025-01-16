@@ -8,7 +8,7 @@ Replace the header account link with the members' first name.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -42,8 +42,6 @@ The code does not change Squarespace's default behaviour of having the Account
 link text appear, even though you have been automatically signed out of the
 member account and need to click the link to sign in again.
 
-The code pulls in data from a url and parses it each time a page is loaded.
-
 ## Demo
 
 You can see a [demo of this effect here][6].
@@ -54,11 +52,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2022-04-11**
+* **2025-01-15**
 
-  * fix for product detail layouts that have two detail areas
-  * bumped version to 0.3.0
-  -->
+  * get the first name, when available, from memory instead of a call to URL
+  * bumped version to 0.2.0
+  
 * **2025-01-13**
 
   * initial version
