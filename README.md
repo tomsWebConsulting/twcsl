@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 346 effects. Each effect has it's own version number, code,
+twcsl contains 348 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -457,6 +457,10 @@ not necessarily designed to work together.
       
     * [Element Border](v7.1/Element/Element%20Border)
       
+    * [Body](v7.1/Element/Body)
+      
+      * [Body Background Image](v7.1/Element/Body/Body%20Background%20Image)
+        
     * [Image](v7.1/Element/Image)
       
     * [Header](v7.1/Element/Header)
