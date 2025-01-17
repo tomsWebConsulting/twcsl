@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.1.0-development.2
+    Version     : 0.1.0
     
     Copyright   : 2025 Thomas Creedon
                   
@@ -18,7 +18,7 @@
     
   const
   
-    version = '0.1.0-development.2',
+    version = '0.1.0',
   
     s = `Block Edit Form Field Dropdown Options Add v${ version }
     
