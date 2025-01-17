@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 348 effects. Each effect has it's own version number, code,
+twcsl contains 349 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -130,6 +130,8 @@ not necessarily designed to work together.
   * [Row Column Finder](Bookmarklet/Row%20Column%20Finder)
     
   * [Asset Library Uploads Image URLs](Bookmarklet/Asset%20Library%20Uploads%20Image%20URLs)
+    
+  * [Form Block Edit Form Field Dropdown Options Add](Bookmarklet/Form%20Block%20Edit%20Form%20Field%20Dropdown%20Options%20Add)
     
   * [Dropbox Files Download URLs](Bookmarklet/Dropbox%20Files%20Download%20URLs)
     
