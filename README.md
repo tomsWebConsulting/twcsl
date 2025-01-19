@@ -333,6 +333,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Columns Desktop](v7.1/Page/Store/List/Store%20Page%20List%20Columns%20Desktop)
+          
         * [Store Page List Out of Stock Badge](v7.1/Page/Store/List/Store%20Page%20List%20Out%20of%20Stock%20Badge)
           
         * [Store Page List Category All Products Hide](v7.1/Page/Store/List/Store%20Page%20List%20Category%20All%20Products%20Hide)
@@ -473,8 +475,6 @@ not necessarily designed to work together.
         
       * [Header Menu Mobile Outline](v7.1/Element/Header/Header%20Menu%20Mobile%20Outline)
         
-  * [Change Store Product Grid Column Number](v7.1/Change%20Store%20Product%20Grid%20Column%20Number)
-    
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
     
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
