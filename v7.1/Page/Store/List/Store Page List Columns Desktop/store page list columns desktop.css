@@ -1,0 +1,21 @@
+/*
+
+  store page list columns desktop
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.0
+  
+  SS Version    : 7.1
+  
+  Copyright     : 2021-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+  .page-section.collection-type-products {
+  
+    --tweak-products-columns : [ enter number of columns here replacing square brackets ];
+    
+    }
