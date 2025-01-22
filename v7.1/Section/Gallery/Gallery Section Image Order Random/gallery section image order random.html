@@ -1,205 +1,349 @@
-<script>
+<!--
 
-  $( ( ) => {
+  begin gallery section image order random
   
-    /*
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.4.0
+  
+  SS Version    : 7.1
+  
+  Copyright     : 2021-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    #page {
     
-      gallery section image order random
+      --twc-gsior-visibility : hidden;
       
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.3.0
-      
-      SS Version    : 7.1
-      
-      Dependencies  : jQuery
-      
-      Copyright     : 2021-2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const
+      }
     
-      version = '0.3.0',
-      
-      s = `Gallery Section Image Order Random v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
-        
-        © 2021-2025 Thomas Creedon
-        
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
-        
-        .replace ( /^\s+/gm, '' );
-        
-    console.log ( s );
+    #page .gallery-section .gallery-caption p.gallery-caption-content {
     
-    const
+      visibility : var( --twc-gsior-visibility );
+      
+      }
+      
+    </style>
     
-      codeKey = 'twc-gsior',
-      
-      selector = '.gallery-section .gallery-caption '
-      
-        +
-        
-        `p.gallery-caption-content:contains(${ codeKey })`,
-        
-      $captionElements = $( selector );
-      
-    if ( ! $captionElements.length ) return; // bail if no $captionElements
+  <script>
+  
+    ( ( ) => {
     
-    const
-    
-      captionCallback = function ( ) {
+      const
       
-        const $this = $( this );
+        version = '0.4.0',
         
-        let text = $this
+        s = `Gallery Section Image Order Random v${ version }
         
-          .text ( )
+          License < https://tinyurl.com/s872fb68 >
           
-          .replace ( codeKey, '' )
+          © 2021-2025 Thomas Creedon
           
-          .trim ( );
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
-        if ( text )
-        
-          $this
+          .replace ( /^\s+/gm, '' );
           
-            .text ( text )
-            
-          else
-          
-            $this
-            
-              .parents ( 'figcaption' )
-              
-              .remove ( );
-              
-        },
-        
-      galleryCallback = function ( ) {
+      console.log ( s );
+      
+      const callback = ( ) => {
       
         const
         
-          $this = $( this ),
+          codeKey = 'twc-gsior',
           
-          galleryFigureSelector = [
+          hideShowUnregister = ( ) => {
           
-            '.gallery-grid-wrapper',
+            twc
             
-            '.gallery-strips-wrapper',
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .pop ( `--${ codeKey }` );
+              
+            const l = twc
             
-            '.gallery-masonry-wrapper',
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length;
+              
+            if ( ! l )
             
-            '.gallery-slideshow-list',
+              document
+              
+                .querySelector ( '#page' )
+                
+                .style
+                
+                .setProperty (
+                
+                  `--${ codeKey }-visibility`,
+                  
+                  'visible'
+                  
+                  );
+                  
+            },
             
-            '.gallery-fullscreen-slideshow-list',
+          selector = '.gallery-section .gallery-caption '
+          
+            +
             
-            '.gallery-reel-list'
+            `p.gallery-caption-content`,
+            
+          selectorKey = '.gallery-caption p.gallery-caption-content',
+          
+          captionElements = [
+          
+            ...
+            
+            document
+          
+            .querySelectorAll ( selector )
             
             ]
             
-            .join ( ' figure, ' )
+            .filter ( e => e.textContent.includes ( `${ codeKey }` ) );
             
-            +
-            
-            ' figure',
-            
-          lightboxFigureSelector = '.gallery-lightbox-outer-wrapper figure',
+        // hide show register
           
-          sectionId = $this
-          
-            .attr ( 'data-section-id' );
-            
-        let
+        ( ( ) => {
         
-          callback = function ( galleryFigureElement ) {
+          // initialize twc module
           
-            const css = $( galleryFigureElement )
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc data sub-module
+          
+          twc.data = ( ( self ) => self ) ( twc.data || { } );
+          
+          // initialize twc data hideShow sub-module
+          
+          twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+          
+          if ( twc.data.hideShow [ selectorKey ] === undefined )
+          
+            twc
             
-              .css ( 'transform' );
+              .data
               
-            return css;
+              .hideShow
+              
+              [ selectorKey ]
+              
+              =
+              
+              [ ];
+              
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .push ( `--${ codeKey }` );
+            
+          } ) ( );
+          
+        if ( ! captionElements.length ) {
+        
+          hideShowUnregister ( );
+          
+          return; // bail if no captionElements
+          
+          }
+          
+        const
+        
+          captionCallback = ( element ) => {
+          
+            let text = element
+            
+              .textContent
+              
+              .replace ( codeKey, '' )
+              
+              .trim ( );
+              
+            if ( text )
+            
+              element.textContent = text;
+              
+              else
+              
+                element
+                
+                  .closest ( 'figcaption' )
+                  
+                  .remove ( );
+                  
+            },
+            
+          galleryCallback = ( element ) => {
+          
+            const
+            
+              galleryFigureSelector = [
+              
+                '.gallery-grid-wrapper',
+                
+                '.gallery-strips-wrapper',
+                
+                '.gallery-masonry-wrapper',
+                
+                '.gallery-slideshow-list',
+                
+                '.gallery-fullscreen-slideshow-list',
+                
+                '.gallery-reel-list'
+                
+                ]
+                
+                .join ( ' figure, ' )
+                
+                +
+                
+                ' figure',
+                
+              lightboxFigureSelector = '.gallery-lightbox-outer-wrapper figure',
+              
+              sectionId = element
+              
+                .getAttribute ( 'data-section-id' );
+                
+            let
+            
+              callback = ( element ) => {
+              
+                element
+                
+                .removeAttribute ( 'data-active' );
+                
+                },
+                
+              galleryFigureElements = [
+              
+                ...
+                
+                element
+              
+                .querySelectorAll ( galleryFigureSelector )
+                
+                ],
+                
+              lightboxFigureElements = element
+              
+                .querySelectorAll ( lightboxFigureSelector ),
+                
+              map = galleryFigureElements
+              
+                .map ( ( e ) => e.style.transform );
+                
+            galleryFigureElements
+            
+              .forEach( callback );
+              
+            callback = ( ) => {
+            
+              const
+              
+                r = Math
+                
+                  .floor ( Math.random ( ) * galleryFigureElements.length ),
+                  
+                selector = `[ data-lightbox-section-id="${ sectionId }" ] `
+                
+                  +
+                  
+                  'figure',
+                  
+                galleryFigureElement = galleryFigureElements [ r ],
+                
+                lightboxFigureElement = lightboxFigureElements [ r ];
+                
+              /* begin append figure element */
+              
+                galleryFigureElement
+                
+                  .parentElement
+                  
+                  .appendChild ( galleryFigureElement )
+                  
+                  .style
+                  
+                  .transform = map [ r ];
+                  
+                galleryFigureElements = [ ... galleryFigureElements ]
+                
+                  .filter ( e => e !== galleryFigureElement );
+                  
+                map.splice ( r, 1 );
+                
+                /* end append figure element */
+                
+              /* begin append lightbox element */
+              
+               // bail if no element
+               
+                if ( lightboxFigureElement === undefined ) return;
+                
+                lightboxFigureElement
+                
+                  .parentElement
+                  
+                  .appendChild ( lightboxFigureElement );
+                  
+                lightboxFigureElements = [ ... lightboxFigureElements ]
+                
+                  .filter ( e => e !== lightboxFigureElement );
+                  
+                // end append lightbox element */
+                
+              };
+              
+            galleryFigureElements.forEach ( callback );
             
             },
             
-          $galleryFigureElements = $( galleryFigureSelector, $this )
+          galleryElements = [
           
-            .removeAttr ( 'data-active' ),
+            ...
             
-          $lightboxFigureElements = $( lightboxFigureSelector, $this ),
-          
-          map = $.map ( $galleryFigureElements, callback );
-          
-        callback = function ( ) {
+            new Set ( [ ... captionElements ] )
+            
+            ]
+            
+            .map ( e => e.closest ( '.gallery-section' ) );
+            
+        captionElements.forEach ( captionCallback ); // clean up captions
         
-          const
-          
-            r = Math.floor ( Math.random ( ) * $galleryFigureElements.length ),
-            
-            selector = `[ data-lightbox-section-id="${ sectionId }" ] `
-            
-              +
-              
-              'figure',
-              
-            $galleryFigureElement = $galleryFigureElements.eq ( r ),
-            
-            $lightboxFigureElement = $lightboxFigureElements.eq ( r );
-            
-          /* begin append figure element */
-          
-            $galleryFigureElement
-            
-              .parent ( )
-              
-              .append ( $galleryFigureElement )
-              
-              .css ( map [ r ] );
-              
-            $galleryFigureElements = $galleryFigureElements
-            
-              .not ( $galleryFigureElement );
-              
-            map.splice ( r, 1 );
-            
-            /* end append figure element */
-            
-          /* begin append lightbox element */
-          
-            if ( ! $lightboxFigureElement.length ) return; // bail if no element
-            
-            $lightboxFigureElement
-            
-              .parent ( )
-              
-              .append ( $lightboxFigureElement );
-              
-            $lightboxFigureElements = $lightboxFigureElements
-            
-              .not ( $lightboxFigureElement );
-              
-            // end append lightbox element */
-            
-          }
-          
-        $galleryFigureElements.each ( callback );
+        galleryElements.forEach ( galleryCallback );
         
-        },
+        hideShowUnregister ( );
         
-      $galleryElements = $captionElements
+        };
+        
+      window
       
-        .parents ( '.gallery-section' );
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-    $captionElements.each ( captionCallback ); // clean up captions
+      } ) ( );
+      
+    </script>
     
-    $galleryElements.each ( galleryCallback );
-    
-    } );
-    
-  </script>
+  <!-- end gallery section image order random -->
