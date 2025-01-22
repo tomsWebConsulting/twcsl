@@ -67,7 +67,7 @@ Please consider [making a donation][8].
 * **2025-01-21**
 
   * remove dependency on jQuery
-  * fix for twc-gsior trigger text showing when load a larger number of images
+  * fix for twc-gsior trigger text showing when loading a larger number of images
   * bumped version to 0.4.0
   
 * **2025-01-11**
