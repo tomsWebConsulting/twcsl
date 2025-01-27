@@ -4,7 +4,7 @@
   
   License     : < https://tinyurl.com/s872fb68 >
   
-  Version     : 0.2.0
+  Version     : 0.3.0
   
   SS Version  : 7.1
   
@@ -15,22 +15,49 @@
   Note        : the code is comprised of two script tags. both are needed for
                 the effect to work
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright   : 2024-2025 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   -->
   
   <script>
   
-    // initialize twc global if needed
+    // initialize twc module
     
-    if ( window.twc == undefined ) window.twc = { };
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    twc.ea = {
+    // initialize twc ea sub-module
+    
+    twc.ea = ( ( self ) => self ) ( twc.ea || {
     
       selectors : [
       
         /*
         
+          optional, following are pre-defined selectors you can use. the format
+          of the lines is a comment line which describes the selector followed
+          by a line with a commented out ( inactive ) selector. remove '//' at
+          the beginning of any selector line you want to use
+          
+          */
+          
+        /* blog list author */
+        
+        // 'body[ class*=" collection-type-blog-" ] .blog-author',
+        
+        /* blog post */
+        
+        // 'body[ class*=" collection-type-blog-" ] .blog-meta-item--author',
+        
+        /* video block */
+        
+        // '.sqs-block-video',
+        
+        /*
+        
+          optional custom selector(s)
+          
           the format of each line is a CSS selector
           
           following is an example line. copy the example line below and paste
@@ -42,11 +69,11 @@
           
         // '[ enter css selector here between single quotes replacing square brackets ]',
         
-        '[ enter css selector here between single quotes replacing square brackets ]',
+        '[ optional, enter css selector here between single quotes replacing square brackets ]',
         
         ]
-        
-      };
+      
+      } );
       
     </script>
     
@@ -54,68 +81,278 @@
   
   <script>
   
-    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    ( ( ) => {
     
-      const version = '0.2.0';
+      const
       
-      const s = `Element Animate v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' + 
+        version = '0.3.0',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `Element Animate v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      let selector = 'body.tweak-global-animations-enabled';
-      
-      const isAnimate = document
-      
-        .querySelector ( selector )
-        
-        !==
-        
-        null;
-        
-      if ( ! isAnimate ) return; // bail if no animation
-      
-      const callback = ( selector ) => {
-      
-        const callback = ( element ) => {
-        
-          const b = element
-          
-            .getAttribute ( 'data-animation-role' )
-            
-            !==
-            
-            null;
-            
-          if ( b ) return; // bail if animate
-          
-          element
-          
-            .setAttribute ( 'data-animation-role', 'content' );
-            
-          };
-          
-        document
-         
-          .querySelectorAll ( selector )
-          
-          .forEach ( callback );
-          
-        };
-        
-      twc
+      const isSelectorsLastRemove = twc
       
         .ea
         
         .selectors
         
-        .forEach ( callback );
+        .slice ( -1 )
         
-      } );
+        [ 0 ]
+        
+        .startsWith ( '[ optional, ' );
+        
+      if ( isSelectorsLastRemove )
+      
+        twc
+        
+          .ea
+          
+          .selectors
+          
+          =
+          
+          twc
+            
+            .ea
+            
+            .selectors
+            
+            .slice ( 0, -1 )
+            
+      const isSelectors = twc
+      
+        .ea
+        
+        .selectors
+        
+        .length;
+        
+      if ( ! isSelectors ) return; // bail if no selectors
+      
+      const
+      
+        bodyCallback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            const isNodesAdded = mutation
+            
+              .addedNodes
+              
+              .length;
+              
+            if ( ! isNodesAdded ) return true; // continue
+            
+            const
+            
+              node = mutation.addedNodes [ 0 ],
+              
+              isSiteWrapperId = node.id === 'siteWrapper';
+              
+            // continue if not site wrapper id
+            
+            if ( ! isSiteWrapperId ) return true;
+            
+            bodyObserver.disconnect ( );
+            
+            // start listening for changes in site wrapper element
+            
+            siteWrapperObserver
+            
+              .observe ( node, bodyObserverOptions );
+              
+            return true;
+            
+            };
+            
+          for ( const mutation of mutations ) {
+          
+            const b = callback ( mutation );
+            
+            if ( ! b ) break; // bail if callback returns false
+            
+            }
+            
+          },
+          
+        bodyObserver = new MutationObserver ( bodyCallback ),
+        
+        bodyObserverOptions = {
+        
+          childList : true
+          
+          },
+          
+        documentCallback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            const isNodesAdded = mutation
+            
+              .addedNodes
+              
+              .length;
+              
+            if ( ! isNodesAdded ) return true; // continue
+            
+            const
+            
+              node = mutation.addedNodes [ 0 ],
+              
+              isNodeBody = node.nodeName === 'BODY';
+              
+            if ( ! isNodeBody ) return true; // continue if not BODY node
+            
+            documentObserver.disconnect ( );
+            
+            // start listening for changes in html element
+            
+            bodyObserver
+            
+              .observe ( node, bodyObserverOptions );
+              
+            return true;
+            
+            };
+            
+          for ( const mutation of mutations ) {
+          
+            const b = callback ( mutation );
+            
+            if ( ! b ) break; // bail if callback returns false
+            
+            }
+            
+          },
+          
+        documentObserverOptions = {
+        
+          childList : true
+          
+          },
+          
+        documentObserver = new MutationObserver ( documentCallback ),
+        
+        selectorsCallback = ( siteWrapperElement ) => {
+        
+          const callback = ( selector ) => {
+          
+            const callback = ( element ) => {
+            
+              const b = element
+              
+                .getAttribute ( 'data-animation-role' )
+                
+                !==
+                
+                null;
+                
+              if ( b ) return; // bail if animate
+              
+              element
+              
+                .setAttribute ( 'data-animation-role', 'content' );
+                
+              };
+              
+            siteWrapperElement
+            
+              .querySelectorAll ( selector )
+              
+              .forEach ( callback );
+              
+            };
+            
+          return callback;
+          
+          },
+          
+        siteWrapperCallback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            const isNodesAdded = mutation
+            
+              .addedNodes
+              
+              .length;
+              
+            if ( ! isNodesAdded ) return true; // continue
+            
+            const
+            
+              node = mutation.addedNodes [ 0 ],
+              
+              nodeNames = [
+              
+                '#comment',
+                
+                '#text',
+                
+                'SCRIPT'
+                
+                ],
+                
+              isNodeName = nodeNames
+              
+                .includes ( node.nodeName );
+                
+            if ( isNodeName ) return true; // continue
+            
+            if ( node.id !== 'footer-sections' ) return true; // continue
+            
+            siteWrapperObserver.disconnect ( );
+            
+            twc
+            
+              .ea
+              
+              .selectors
+              
+              .forEach ( ( selectorsCallback ) ( mutation.target ) );
+              
+            return true;
+            
+            };
+            
+          for ( const mutation of mutations ) {
+          
+            const b = callback ( mutation );
+            
+            if ( ! b ) break; // bail if callback returns false
+            
+            }
+            
+          },
+          
+        siteWrapperOptions = {
+        
+          childList : true,
+          
+          subtree : true
+          
+          },
+          
+        siteWrapperObserver = new MutationObserver ( siteWrapperCallback );
+        
+      // start listening for changes in html
+      
+      documentObserver
+      
+        .observe ( document.documentElement, documentObserverOptions );
+        
+      } ) ( );
       
     </script>
-
+    
   <!-- end element animate -->

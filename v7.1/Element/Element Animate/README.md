@@ -8,7 +8,7 @@ Animate elements that Squarespace hasn't.
 
 ### Version
 
- * 0.2.0
+ * 0.3.0
 
 #### SS Version
 
@@ -50,6 +50,12 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-01-27**
+
+  * reworked code to animate elements that are loading after DOMContentLoaded
+    and load
+  * bumped version to 0.3.0
+  
 * **2024-06-14**
 
   * make code more generalized
