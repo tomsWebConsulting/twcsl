@@ -52,6 +52,11 @@ Please consider [making a donation][7].
 
 * **2025-01-27**
 
+  * fix for #page element being not being processed
+  * bumped version to 0.3.1
+  
+* **2025-01-27**
+
   * reworked code to animate elements that are loading after DOMContentLoaded
     and load
   * bumped version to 0.3.0
