@@ -5,7 +5,7 @@
 ### Synopsis
 
 Generate reroute code for [Brad Good's Multi-language URL Mapping
-Technique][2] Step 3.
+Technique Step 3][2].
 
 ### Version
 
@@ -39,7 +39,7 @@ Technique][2] Step 3.
 * Click the **Generate Code** button.
 
 * Click the **Copy Code** button and paste the code into your site per [Brad
-  Good's Step 3 of his tutorial][2].
+  Good's Multi-language URL Mapping Technique Step 3][2] of his tutorial.
 
 * Click the **Copy JSON** button and paste somewhere on your computer for future
   use with this bookmarklet, when you need to update your Main Navigation.
