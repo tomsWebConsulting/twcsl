@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 350 effects. Each effect has it's own version number, code,
+twcsl contains 351 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -476,6 +476,8 @@ not necessarily designed to work together.
       * [Header Site Title Add](v7.1/Element/Header/Header%20Site%20Title%20Add)
         
       * [Header Menu Mobile Outline](v7.1/Element/Header/Header%20Menu%20Mobile%20Outline)
+        
+      * [CTA Button Text Language Change](v7.1/Element/Header/CTA%20Button%20Text%20Language%20Change)
         
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
     
