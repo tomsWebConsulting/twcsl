@@ -5,7 +5,7 @@
 ### Synopsis
 
 Generate reroute code for [Brad Good's Multi-language URL Mapping
-Technique][11] Step 3.
+Technique][2] Step 3.
 
 ### Version
 
@@ -26,7 +26,7 @@ Technique][11] Step 3.
 ## Quick Install
 
 * Add code from file **[url reroute code generator for brad good's
-  multi-language technique.bookmarklet][2]** as the URL for a bookmark in your
+  multi-language technique.bookmarklet][3]** as the URL for a bookmark in your
   browser named **TWC URL Reroute Code Generator for Brad Good's Multi-language
   Technique**.
 
@@ -38,8 +38,8 @@ Technique][11] Step 3.
 
 * Click the **Generate Code** button.
 
-* Click the **Copy Code** button and paste to code into your site per [Brad
-  Good's Step 3 of his tutorial][11].
+* Click the **Copy Code** button and paste the code into your site per [Brad
+  Good's Step 3 of his tutorial][2].
 
 * Click the **Copy JSON** button and paste somewhere on your computer for future
   use with this bookmarklet, when you need to update your Main Navigation.
@@ -49,11 +49,11 @@ Technique][11] Step 3.
   
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][3].
+Wikipedia has a nice entry on [bookmarklet][4].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -67,7 +67,7 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[11]: https://www.bradgood.net/articles/multi-language-squarespace-site-with-url-mapping
-[2]: url%20reroute%20code%20generator%20for%20brad%20good%27s%20multi-language%20technique.bookmarklet#L1
-[3]: https://en.wikipedia.org/wiki/Bookmarklet
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.bradgood.net/articles/multi-language-squarespace-site-with-url-mapping#:~:text=Step%203
+[3]: url%20reroute%20code%20generator%20for%20brad%20good%27s%20multi-language%20technique.bookmarklet#L1
+[4]: https://en.wikipedia.org/wiki/Bookmarklet
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
