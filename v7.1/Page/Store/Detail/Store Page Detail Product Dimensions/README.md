@@ -50,7 +50,7 @@ pages.
 This effect only considers the first variants dimensions. In other words it
 doesn't work with products that have more than one variant.
 
-The dimensions entered in the squarespace editor are shipping dimensions, not
+The dimensions entered in the Squarespace editor are shipping dimensions, not
 product dimensions. If you don't need to use shipping dimensions for shipping
 you can use it for product dimensions. If you need product dimensions as well as
 shipping then add the following to a code block in Additional Info.
