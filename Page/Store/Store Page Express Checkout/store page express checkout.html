@@ -1,0 +1,55 @@
+<script>
+
+  /*
+  
+    store page express checkout
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  ( ( ) => {
+  
+    const
+    
+      version = '0.1.0',
+    
+      s = `Store Page Express Checkout v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2025 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .websiteSettings
+      
+      .storeSettings
+      
+      .expressCheckout
+      
+      =
+      
+      true;
+      
+    } ) ( );
+    
+  </script>
