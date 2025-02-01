@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
@@ -23,18 +23,22 @@ pages.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Tom's Web Consulting Squarespace Library][4]
+  * [jQuery][4]
 
 ---
 
-## Install
+## Quick Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
-  rest of the steps.
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
   
-* Add code from file **[store page detail product dimensions.html][6]** to
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  ```
+  
+* Add code from file **[store page detail product dimensions.html][5]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-  Please see [per-page code injection][7]. Read the code for any instructions
+  Please see [per-page code injection][6]. Read the code for any instructions
   within. **There are some caveats to using this effect.**
   
 * Add **[twc-spdpd]** to the product description and/or text blocks in
@@ -75,14 +79,20 @@ shipping then add the following to a code block in Additional Info.
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][7].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-02-01**
+
+  * less processing on format string for better support of entering HTML
+  * remove dependency on twcsl
+  * bumped version to 0.4.0
+  
 * **2024-09-07**
 
   * support being able to use shipping dimension for shipping and product
@@ -116,9 +126,8 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20page%20detail%20product%20dimensions.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://jquery.com/
+[5]: store%20page%20detail%20product%20dimensions.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

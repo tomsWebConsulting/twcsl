@@ -4,13 +4,13 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.0
+  Version       : 0.4.0
   
   SS Version    : 7.1
   
-  Dependencies  : twcsl
+  Dependencies  : jQuery
   
-  Note          : the code is comprised of several tags. all are needed for the
+  Notes         : the code is comprised of several tags. all are needed for the
                   full effect to work
                   
                   this effect only considers the first variants dimensions. in
@@ -24,7 +24,7 @@
                   then use the <script type="application/vnd.twc.spdpd"> tag
                   referenced in the read me
   
-  Copyright     : 2022-2024 Thomas Creedon
+  Copyright     : 2022-2025 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
@@ -32,11 +32,13 @@
   
   <script>
   
-    // initialize twc global if needed
+    // initialize twc module
     
-    if ( window.twc == undefined ) window.twc = { };
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    twc.spdpd = {
+    // initialize twc spdpd sub-module
+    
+    twc.spdpd = ( ( self ) => self ) ( twc.spdpd || {
     
       /*
       
@@ -69,8 +71,8 @@
           
           %p2Lb
           
-          note : the number after the h, k, l, p or w is the number of decimal
-                 places number
+          note : the number after the h, k, l, p, or w indicates the number of
+                 decimal places
                  
         following is a full example of the format string. your format goes
         between the backticks
@@ -78,6 +80,7 @@
           format : `
           
             %w0In"W %l1In"D %h2In"H - %p2Lb lb
+            <br />
             %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
                       
             `,
@@ -87,11 +90,12 @@
       format : `
       
         %w0In"W %l1In"D %h2In"H - %p2Lb lb
+        <br />
         %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
         
-        `,
+        `
         
-      };
+      } );
       
     </script>
     
@@ -99,6 +103,27 @@
   
   <style>
   
+    body:not( .sqs-is-page-editing ) p.twc-spdpd {
+    
+      white-space : unset !important;
+      
+      }
+    
+    body:not( .sqs-is-page-editing ) p:has( em.twc-spdpd ),
+    body:not( .sqs-is-page-editing ) p:has( u.twc-spdpd )
+    
+      {
+      
+        white-space : unset !important;
+        
+        }
+        
+    body:not( .sqs-is-page-editing ) strong.twc-spdpd {
+    
+      white-space-collapse : collapse;
+      
+      }
+      
     /* layout simple */
     
     body:not( .sqs-is-page-editing ) .ProductItem-details .ProductItem-details-excerpt,
@@ -136,7 +161,7 @@
   
     $( ( ) => {
     
-      const version = '0.3.0';
+      const version = '0.4.0';
       
       const s = `
       
@@ -144,7 +169,7 @@
         
         License < https://tinyurl.com/s872fb68 >
         
-        © 2022-2024 Thomas Creedon
+        © 2022-2025 Thomas Creedon
         
         Tom's Web Consulting < http://www.tomsWeb.consulting >
         
@@ -154,7 +179,15 @@
         
       console.log ( s );
       
-      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      const isStorePageDetail = document
+      
+        .querySelector ( 'body.collection-type-products.view-item' )
+        
+        !==
+        
+        null;
+        
+      if ( ! isStorePageDetail ) return; // bail if not detail
       
       const
       
@@ -361,13 +394,7 @@
         
           .spdpd
           
-          .format
-          
-          // trim whitespace from each line and replace \n with <br>
-          
-          .replace ( /^\s+|\s+$/mg, '' )
-          
-          .replaceAll ( '\n', '<br>' ),
+          .format,
           
         re = '\\['
         
@@ -441,7 +468,7 @@
             
             .replace ( re, format );
             
-          if ( html == node.data ) continue;
+          if ( html === node.data ) continue;
           
           nodeHtmlMap.push ( [ node, html ] );
           
@@ -453,8 +480,16 @@
       
       callback = ( i, [ node, html ] ) => {
       
-        $( node ).replaceWith ( html );
+        $( node )
         
+          .parent ( )
+          
+            .addClass ( codeKeys [ 0 ] )
+            
+            .end ( )
+            
+          .replaceWith ( html );
+          
         };
         
       $.each ( nodeHtmlMap, callback );
