@@ -8,7 +8,7 @@ Change store page prices.
 
 ### Version
 
-  * 0.6.0
+  * 0.7.0
 
 #### SS Versions
 
@@ -20,32 +20,39 @@ Change store page prices.
 
   * Not Applicable
 
+#### Dependencies
+
+  * [Squarespace plan][5] that supports [JavaScript][6].
+  
 ---
 
 ## Install
 
-* Install [twcsl][5]. After you install the code be sure to continue on with the
-  rest of the steps.
-  
 * Options
 
-  * Page Specific
+  * Store Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add, in order, code from files **[store page price change
-      script.html][6]** and **[store page price change.html][7]** to
+      script.html][7]** and **[store page price change.html][8]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [per-page code injection][8]. Read the code files for any
+      Refer to [per-page code injection][9] for details. Read the code for any
       instructions within.
       
   * Site-wide
   
-    * Add code from file **[store page price change script.html][6]** to
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[store page price change script.html][7]** to
       Website > Pages > Website Tools > Code Injection > HEADER.
       
-    * Add code from file **[store page price change.html][7]** to Website >
+    * Add code from file **[store page price change.html][8]** to Website >
       Pages > Website Tools > Code Injection > FOOTER.
       
-    Please see [Add code to code injection][9]. Read the codes for any
+    Refer to [Add code to code injection][10] for details. Read the code for any
     instructions within.
 
 ## searchReplaceText Example Lines
@@ -95,20 +102,28 @@ Change store page prices.
 ## Callback Example
 
 For an example of how to write a callback please see [Store Page Price Change
-Log][10].
+Log][11].
 
 ## Note
 
-Changing prices on a Store page does not effect the cart, checkout, or other SS
+Changing prices on a Store page does not affect the cart, checkout, or other SS
 pages/backend storage. This is purely a cosmetic change. No code can change the
-checkout page or SS backend. It is a SS security feature.
+checkout page or SS backend. It is an SS security feature.
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-02-07**
+
+  * support add to cart buttons feature on list page
+  * restructure code
+  * remove dependency on jQuery
+  * remove dependency on twcsl
+  * bumped version to 0.7.0
+  
 * **2024-10-04**
 
   * rework code to use JSON for settings via a script tag
@@ -229,10 +244,11 @@ Please consider [making a donation][11].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
 [4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20page%20price%20change%20script.html#L1
-[7]: store%20page%20price%20change.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change%20Log#store-page-price-change-log
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://www.squarespace.com/pricing
+[6]: https://en.wikipedia.org/wiki/JavaScript
+[7]: store%20page%20price%20change%20script.html#L1
+[8]: store%20page%20price%20change.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[11]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change%20Log#store-page-price-change-log
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
