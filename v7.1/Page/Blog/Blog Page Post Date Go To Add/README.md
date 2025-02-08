@@ -10,17 +10,17 @@ Add date go to feature to Publish and Scheduled calendars.
 
   * 0.4.0
 
-#### SS Versions
+#### SS Version
 
   * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
