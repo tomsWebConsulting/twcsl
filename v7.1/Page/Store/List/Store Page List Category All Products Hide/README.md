@@ -8,7 +8,7 @@ Hide products on the all category store page list.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -49,12 +49,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2024-10-05**
+* **2025-02-12**
 
-  * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
-    twc.sppc.callbacks
-  * bumped version to 0.2.0
-  -->
+  * hide pagination links
+  * bumped version to 0.3.0
+  
 * **2024-11-05**
 
   * add to this repository

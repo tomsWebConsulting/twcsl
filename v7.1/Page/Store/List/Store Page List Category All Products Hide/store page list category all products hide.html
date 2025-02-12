@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.3.0
     
     SS Version    : 7.1
     
@@ -17,16 +17,19 @@
     Dependencies  : Add Category Attribute to a Store Category Page
                     < https://tinyurl.com/3yz72kw5 >
     
-    Copyright     : 2021-2024 Thomas Creedon
+    Copyright     : 2021-2025 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     */
     
-  body:not( .sqs-is-page-editing ):not( [ data-store-category ] ) .products.collection-content-wrapper .list-grid {
+  body:not( .sqs-is-page-editing ):not( [ data-store-category ] ) .products.collection-content-wrapper .list-grid,
+  body:not( .sqs-is-page-editing ):not( [ data-store-category ] ) .products.collection-content-wrapper .list-pagination
   
-    display : none;
+    {
     
-    }
-    
+      display : none;
+      
+      }
+      
   </style>
