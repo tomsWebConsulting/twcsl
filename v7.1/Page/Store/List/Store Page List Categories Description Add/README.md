@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.9.0
+  * 0.9.1
 
 #### SS Version
 
