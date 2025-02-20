@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 353 effects. Each effect has it's own version number, code,
+twcsl contains 354 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -354,6 +354,8 @@ not necessarily designed to work together.
         * [Store Page List Columns Mobile](v7.1/Page/Store/List/Store%20Page%20List%20Columns%20Mobile)
           
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
+        
+      * [Store Page Category All Reorder](v7.1/Page/Store/Store%20Page%20Category%20All%20Reorder)
         
       * [Store Page Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Page/Store/Store%20Page%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
         
