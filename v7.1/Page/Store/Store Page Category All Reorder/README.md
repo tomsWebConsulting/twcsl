@@ -32,7 +32,7 @@ Reorder products of All category of Store page.
 
 * Follow the directions provided.
 
-<a href="https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcar/twc+spcar+demo.mp4" target="_blank">Watch a video preview of how the bookmarlet works.</a>
+  Watch a [video][3].
 
 ## Notes
 
@@ -49,11 +49,11 @@ Products with multiple variants do not show an SKU.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][3].
+Wikipedia has a nice entry on [bookmarklet][4].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -68,5 +68,6 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20category%20all%20reorder.bookmarklet#L1
-[3]: https://en.wikipedia.org/wiki/Bookmarklet
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcar/twc+spcar+demo.mp4
+[4]: https://en.wikipedia.org/wiki/Bookmarklet
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
