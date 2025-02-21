@@ -31,12 +31,8 @@ Reorder products of All category of Store page.
 * Use the bookmarklet.
 
 * Follow the directions provided.
-  
-  <a href="https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcar/twc+spcar+demo.mp4" target="_blank">
-  
-    Watch a video preview of how the bookmarlet works.
-    
-    </a>
+
+<a href="https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcar/twc+spcar+demo.mp4" target="_blank">Watch a video preview of how the bookmarlet works.</a>
 
 ## Notes
 
