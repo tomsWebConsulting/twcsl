@@ -31,6 +31,8 @@ Reorder products of All category of Store page.
 * Use the bookmarklet.
 
 * Follow the directions provided.
+  
+  <video autoplay src="https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcar/twc+spcar+demo.mp4" width="600"></video>
 
 ## Notes
 
