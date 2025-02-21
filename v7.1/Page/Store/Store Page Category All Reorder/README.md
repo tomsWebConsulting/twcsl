@@ -22,7 +22,7 @@ Reorder products of All category of Store page.
 
 ## Quick Install
 
-* Add code from file **[store page category all reorder.bookmarklet][3]** as the
+* Add code from file **[store page category all reorder.bookmarklet][2]** as the
   URL for a bookmark in your browser named **TWC Store Page Category All
   Reorder**.
 
@@ -47,11 +47,11 @@ Products with multiple variants do not show an SKU.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][4].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -65,10 +65,6 @@ Please consider [making a donation][8].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[3]: store%20page%20category%20all%20reorder.bookmarklet#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[9]: https://github.com/tomsWebConsulting/twcsl
-[10]: https://github.com/tomsWebConsulting/twcsl#install-options
+[2]: store%20page%20category%20all%20reorder.bookmarklet#L1
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
