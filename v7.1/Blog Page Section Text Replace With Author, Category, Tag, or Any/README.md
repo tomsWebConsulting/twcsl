@@ -4,7 +4,7 @@
 
 ### Version
 
-  * 0.6.0
+  * 0.6.1
 
 #### SS Version
 
@@ -43,6 +43,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-03-02**
+
+  * fix for fadeIn class not being added to elements that wrap trigger text
+  * bumped version to 0.6.1
+  
 * **2024-12-07**
 
   * add support for author

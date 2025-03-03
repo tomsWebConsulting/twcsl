@@ -4,16 +4,13 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.6.0
+  Version       : 0.6.1
   
   SS Version    : 7.1
   
   Dependencies  : twcsl
   
-  Notes         : this effect is not active in SS Preview to test it use private
-                  browsing < https://tinyurl.com/ynessvsf >
-                  
-                  the code is comprised of several tags. all are needed for the
+  Note          : the code is comprised of several tags. all are needed for the
                   full effect to work
   
   Copyright     : 2021-2024 Thomas Creedon
@@ -28,44 +25,54 @@
     
     window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    twc.bpstrwactoa = ( ( self ) => { // initialize twc bpstrwactoa sub-module
+    // initialize twc bpstrwactoa sub-module
     
-      self.author = {
+    twc.bpstrwactoa = ( ( self ) => {
+    
+      const
       
-        // set to false or true, if false then no author is added
+        author = {
         
-        active : false,
+          // set to false or true, if false then no author is added
+          
+          active : false,
+          
+          prefixText : '[ enter text here between single quotes replacing square brackets ]',
+          
+          suffixText : '[ enter text here between single quotes replacing square brackets ]'
+          
+          };
+          
+        category = {
         
-        prefixText : '[ enter text here between single quotes replacing square brackets ]',
+          // set to false or true, if false then no category is added
+          
+          active : true,
+          
+          prefixText : '[ enter text here between single quotes replacing square brackets ]',
+          
+          suffixText : '[ enter text here between single quotes replacing square brackets ]'
+          
+          };
+          
+        tag = {
         
-        suffixText : '[ enter text here between single quotes replacing square brackets ]'
-        
-        };
-        
-      self.category = {
+          // set to false or true, if false then no tag is added
+          
+          active : false,
+          
+          prefixText : '[ enter text here between single quotes replacing square brackets ]',
+          
+          suffixText : '[ enter text here between single quotes replacing square brackets ]'
+          
+          };
+          
+      self.author = author;
       
-        // set to false or true, if false then no category is added
-        
-        active : false,
-        
-        prefixText : '[ enter text here between single quotes replacing square brackets ]',
-        
-        suffixText : '[ enter text here between single quotes replacing square brackets ]'
-        
-        };
-        
-      self.tag = {
+      self.category = category;
       
-        // set to false or true, if false then no tag is added
-        
-        active : false,
-        
-        prefixText : '[ enter text here between single quotes replacing square brackets ]',
-        
-        suffixText : '[ enter text here between single quotes replacing square brackets ]'
-        
-        };
-        
+      self.tag = tag;
+      
       return self;
       
       } ) ( twc.bpstrwactoa || { } );
@@ -78,8 +85,8 @@
   
     #page {
     
-      --sqs-block-html-visibility : hidden;
-      --x-twc-bpstrwactoa-display : none;
+      --twc-bpstrwactoa-sqs-block-html-visibility : hidden;
+      --twc-bpstrwactoa-display : none;
       
       }
       
@@ -88,13 +95,13 @@
     
       {
       
-        visibility : var( --sqs-block-html-visibility );
+        visibility : var( --twc-bpstrwactoa-sqs-block-html-visibility );
         
         }
         
-    x-twc-bpstrwactoa {
+    span.twc-bpstrwactoa {
     
-      display : var( --x-twc-bpstrwactoa-display );
+      display : var( --twc-bpstrwactoa-display );
       
       }
       
@@ -104,46 +111,98 @@
   
     $( ( ) => {
     
+      const
+      
+        title = 'Blog Page Section Text Replace With Author, Category, Tag, ' +
+        
+          'or Any',
+          
+        version = '0.6.1',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
       if ( ! twcsl.page.blog.is ) return; // bail if not blog page
       
       const
       
         codeKey = 'twc-bpstrwactoa',
         
-        customElement = `x-${ codeKey }`,
-        
         triggerText = `[ ${ codeKey } ]`,
         
+        $pageElement = $( '#page' );
+        
+      let
+      
+        callback = function ( ) {
+        
+          const walker = document
+          
+            .createTreeWalker ( this, NodeFilter.SHOW_TEXT );
+            
+          while ( walker.nextNode ( ) ) {
+          
+            const node = walker.currentNode;
+            
+            let html = node.data;
+            
+            const hasTriggerText = html
+            
+              .includes ( triggerText );
+              
+            if ( ! hasTriggerText ) continue;
+            
+            html = html
+            
+              .replaceAll (
+              
+                triggerText,
+                
+                `
+                
+                <span class="${ codeKey }">
+                
+                  </span>
+                  
+                  `
+                  
+                  .trim ( )
+                  
+                );
+                
+            $( node ).replaceWith ( html );
+            
+            }
+            
+          }
+          
         selector = '#page .sqs-block-html > .sqs-block-content > ' +
         
-          `*:contains(${ triggerText })`,
+          `*:contains(${ triggerText })`;
           
-        $page = $( '#page' );
-        
-      let callback = function ( ) {
-      
-        const
-        
-          $this = $( this ),
-          
-          html = $this
-          
-            .html ( )
-            
-            .replaceAll ( triggerText, `<${ customElement }>` );
-            
-        $this.html ( html );
-        
-        };
-        
       // swap out the user entered trigger text for a hidden element
       
       $( selector ).each ( callback );
-        
+      
       // make text blocks visible
       
-      $page.css ( '--sqs-block-html-visibility', 'visible' );
+      $pageElement
       
+        .css ( '--twc-bpstrwactoa-sqs-block-html-visibility', 'visible' );
+        
       const options = twc.bpstrwactoa;
       
       let b = options.author.active || options.category.active ||
@@ -168,7 +227,9 @@
       
       if ( ! b ) return; // bail if not author, category, or tag page
       
-      const $elements = $( customElement );
+      selector = `span.${ codeKey }`;
+      
+      const $elements = $( selector );
       
       if ( ! $elements.length ) return; // bail if no elements
       
@@ -254,8 +315,10 @@
         
       $elements.each ( callback );
       
-      $page.css ( '--x-twc-bpstrwactoa-display', 'inherit' );
+      $pageElement
       
+        .css ( '--twc-bpstrwactoa-display', 'inherit' );
+        
       } );
       
     </script>
