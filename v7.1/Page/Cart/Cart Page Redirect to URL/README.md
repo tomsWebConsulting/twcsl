@@ -8,14 +8,12 @@ Redirect cart page to a URL.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
-#### SS Versions
+#### SS Version
 
   * 7.1
-  
-  * 7.0
-  
+
 #### v7.1 Fluid Engine Compatible
 
   * Not Applicable
@@ -42,11 +40,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2023-07-28**
+* **2025-03-05**
 
-  * support calling multiple callbacks
+  * support Weglot URL translation
   * bumped version to 0.2.0
-  -->
+  
 * **2022-07-22**
 
   * initial version

@@ -6,21 +6,104 @@
     
       cart page redirect to url
       
-      Version     : 0.1.0
+      License       : < https://tinyurl.com/s872fb68 >
       
-      SS Versions : 7.1, 7.0
+      Version       : 0.2.0
       
-      By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Copyright     : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       */
       
-    const url = '[enter url here between single quotes replacing square brackets]';
+    const languagecodeUrlMap = {
     
+      default : '[ enter url here between single quotes replacing square brackets ]',
+      
+      /*
+      
+        optional, when using Weglot for translation you can redirect each Weglot
+        created cart URL
+        
+        the format of each line is a two letter language code and a URL. See
+        ISO 639 language codes Set 1 < https://tinyurl.com/37xhpbav >
+        
+        following is an example line. copy the example line below and paste
+        after the example line. remove '// ' at beginning of pasted line. repeat
+        for as many language code URL pairs as are needed
+        
+      */
+      
+      // '[ enter two letter language code here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
+      
+      };
+      
     // do not change anything below, there be the borg here
     
-    if ( location.pathname != '/cart' ) return; // bail if not cart page
+    const
     
-    location.href = url;
+      version = '0.2.0',
+      
+      s = `
+      
+        Cart Page Redirect to URL v${ version }
+        
+        License < https://tinyurl.com/s872fb68 >
+        
+        © 2022-2025 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
+    
+    const
+    
+      siteLanguageCode = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .website
+        
+        .language
+        
+        .split ( '-' )
+        
+        [ 0 ],
+        
+      translationLanguageCode = document
+      
+        .documentElement
+        
+        .getAttribute ( 'lang' )
+        
+        .split ( '-' )
+        
+        [ 0 ],
+        
+      languageCode = siteLanguageCode === translationLanguageCode ? 'default' :
+      
+        translationLanguageCode,
+        
+      languageUrl = siteLanguageCode === translationLanguageCode ? '' :
+      
+        `/${ translationLanguageCode }`,
+        
+      b = location.pathname !== `${ languageUrl }/cart`;
+      
+    if ( b ) return; // bail if not cart page
+    
+    location = languagecodeUrlMap [ languageCode ];
     
     } ) ( );
     
