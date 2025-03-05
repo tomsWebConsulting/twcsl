@@ -1,0 +1,233 @@
+<!--
+
+  begin text wrap with span
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Note          : the code is comprised of two script tags. both are needed for
+                  the full effect to work
+  
+  Copyright     : 2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc twws sub-module
+    
+    twc.twws = ( ( self ) => self ) ( twc.twws || {
+    
+      texts : [
+      
+        /*
+        
+          the format of each line is text
+          
+          copy and repeat the line below for each text you want to wrap in a
+          span tag. remove the "// " at the beginning of the line and enter
+          your text. this has been done once initially
+          
+          */
+          
+        // '[ enter text here between single quotes replacing square brackets ]',
+        
+        '[ enter text here between single quotes replacing square brackets ]',
+        
+        ]
+        
+      } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Text Wrap With Span v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          codeKey = 'twc-twws',
+          
+          texts = twc
+          
+            .twws
+            
+            .texts,
+            
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+          xPathExpression = `
+          
+            .//text ( ) [
+            
+              ${
+              
+                texts
+                
+                  .map (
+                  
+                    t => `
+                    
+                      contains (
+                      
+                        .,
+                        
+                        '${ t }'
+                        
+                        )
+                        
+                      `
+                      
+                    )
+                    
+                    .join ( ' or ' )
+                    
+                }
+                
+              ]
+              
+            `,
+            
+          xPathResults = xPathEvaluate ( xPathExpression, document.body );
+          
+        let re = `(${ texts.join ( '|' ) })`;
+          
+        re = new RegExp ( re, 'g' );
+        
+        for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+        
+          const
+          
+            callback = ( text ) => {
+            
+              const hasText = re.test ( text );
+                
+              if ( hasText ) {
+              
+                const spanElement = document
+                
+                  .createElement ( 'span' );
+                  
+                spanElement
+                
+                  .className = codeKey;
+                  
+                spanElement
+                
+                  .setAttribute ( `data-${ codeKey }-text`, text );
+                  
+                spanElement
+                
+                  .textContent = text;
+                  
+                fragment
+                
+                  .appendChild ( spanElement );
+                  
+                } else {
+                
+                  const textNode = document
+                  
+                    .createTextNode ( text )
+                    
+                  fragment
+                  
+                    .appendChild ( textNode );
+                    
+                  }
+                  
+              },
+              
+            fragment = document
+            
+              .createDocumentFragment ( );
+              
+            node = xPathResults
+            
+              .snapshotItem ( i );
+              
+          node
+          
+            .data
+            
+            .split ( re )
+            
+            .forEach ( callback );
+            
+          node
+          
+            .parentNode
+            
+            .replaceChild ( fragment, node );
+            
+          }
+          
+        };
+        
+      window
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end text wrap with span -->
