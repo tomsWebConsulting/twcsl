@@ -22,7 +22,7 @@ Find and replace text with the text wrapped in a span tag.
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
@@ -35,9 +35,9 @@ Find and replace text with the text wrapped in a span tag.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[text wrap with span.html][5]** to
+    * Add code from file **[text wrap with span.html][4]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Refer
-      to [per-page code injection][6] for details. Read the code for any
+      to [per-page code injection][5] for details. Read the code for any
       instructions within.
       
   * Site-wide
@@ -45,14 +45,14 @@ Find and replace text with the text wrapped in a span tag.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[text wrap with span.html][5]** to
+    * Add code from file **[text wrap with span.html][4]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7]. Read the code for any instructions within.
+      code to code injection][6]. Read the code for any instructions within.
 
 ## Notes
 
-This code is a base for other effects. On it own there is not much in the way of
-on page visual changes.
+This code is a base for other effects. On its own there is not much in the way
+of on page visual change.
 
 The code will wrap your text in a span tag, add a **twc-twws** class name, and
 add a **data-twc-twws-text** attribute. With those additions it should provide
@@ -60,7 +60,7 @@ some opportunities to style the span tags with your own custom CSS.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -74,10 +74,9 @@ Please consider [making a donation][8].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
-[3]: https://www.squarespace.com/pricing
-[4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: text%20wrap%20with%20span.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: text%20wrap%20with%20span.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
