@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 354 effects. Each effect has it's own version number, code,
+twcsl contains 355 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -186,6 +186,8 @@ not necessarily designed to work together.
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
     
   * [Product Quick View Form Text Field Max Length](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length)
+    
+  * [Text Wrap With Span](Element/Text%20Wrap%20With%20Span)
     
   * [Elements Manipulate](Element/Elements%20Manipulate)
     
