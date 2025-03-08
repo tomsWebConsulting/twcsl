@@ -1,0 +1,166 @@
+<!--
+
+  begin store page list category title element to h1
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Version    : 7.1
+  
+  Copyright     : 2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splcteth sub-module
+    
+    twc.splcteth = ( ( self ) => self ) ( twc.splcteth || {
+    
+      preserveH2Style : true // value is false or true
+      
+      } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    @media
+    
+      screen and ( min-width : 768px ),
+      screen and ( max-width : calc ( 1295px ) ) and ( orientation : landscape )
+      
+        {
+        
+          h1.twc-splcteth--preserve-h2-style {
+          
+            font-size : calc( ( var( --heading-2-size-value ) - 1 ) * 1.2vw + 1rem );
+            
+            }
+            
+          }
+          
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const callback = ( ) => {
+      
+        const
+        
+          version = '0.1.0',
+          
+          s = `
+          
+            Store Page List Category Title Element to H1 v${ version }
+            
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >
+            
+            `
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        let selector = 'body.collection-type-products[ id^="collection-" ]';
+        
+        const
+        
+          isStorePageList = document
+          
+            .querySelector ( selector )
+            
+            !==
+            
+            null;
+            
+        if ( ! isStorePageList ) return true; // bail if not list
+        
+        selector =
+        
+          '.products.collection-content-wrapper .nested-category-title';
+          
+        const
+        
+          codeKey = 'twc-splcteth',
+          
+          element = document
+          
+            .querySelector ( selector ),
+            
+          h1Element = document
+          
+            .createElement ( 'h1' ),
+            
+          preserveH2Style = twc
+          
+            [
+            
+              codeKey
+              
+                .split ( '-' )
+                
+                [ 1 ]
+                
+              ]
+              
+            .preserveH2Style;
+            
+        [
+        
+          ...
+          
+          element
+          
+            .attributes
+            
+          ]
+          
+          .forEach ( a => h1Element.setAttribute ( a.name, a.value ) );
+          
+        h1Element
+        
+          .classList
+          
+          .add ( `${ codeKey }` );
+          
+        h1Element.innerHTML = element.innerHTML;
+        
+        if ( preserveH2Style )
+        
+          h1Element
+          
+            .classList
+            
+            .add ( `${ codeKey }--preserve-h2-style` );
+            
+        element
+        
+          .parentNode
+          
+          .replaceChild ( h1Element, element );
+          
+        };
+        
+      window
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
