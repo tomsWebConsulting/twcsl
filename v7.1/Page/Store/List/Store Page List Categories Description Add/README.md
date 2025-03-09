@@ -39,7 +39,7 @@ Add simple category descriptions to store category pages.
       effect.
       
     * Add code from file **[store page list categories description
-      add.html][4]** to Page Settings > Advanced > Page Header Code Injection
+      add.html][6]** to Page Settings > Advanced > Page Header Code Injection
       for the page. Refer to [per-page code injection][7] for details.
       
   * Site-wide
@@ -48,7 +48,7 @@ Add simple category descriptions to store category pages.
       this effect.
       
     * Add code from file **[store page list categories description
-      add.html][4]** to Website > Pages > Website Tools > Code Injection >
+      add.html][6]** to Website > Pages > Website Tools > Code Injection >
       FOOTER. Refer to [Add code to code injection][8].
       
 * Add a section to the store page list as the last section.
