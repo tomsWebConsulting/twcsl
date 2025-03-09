@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.9.1
+  * 0.10.0
 
 #### SS Version
 
@@ -35,21 +35,21 @@ Add simple category descriptions to store category pages.
 
   * Store Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single store page you want to have this
+      effect.
       
     * Add code from file **[store page list categories description
-      add.html][6]** to Store Settings > Advanced > Page Header Code Injection
-      for the store page. Please see [Per-page code injection][7].
+      add.html][4]** to Page Settings > Advanced > Page Header Code Injection
+      for the page. Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple store pages where you want to have
+      this effect.
       
     * Add code from file **[store page list categories description
-      add.html][6]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Please see [Add code to code injection][8].
+      add.html][4]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Refer to [Add code to code injection][8].
       
 * Add a section to the store page list as the last section.
 
@@ -89,15 +89,15 @@ Add simple category descriptions to store category pages.
       
     {
     
-      // "[enter category list here replacing square brackets]" : "
+      // "[ enter category list here between double quotes replacing square brackets ]" : "
       
-      //   [enter category description here replacing square brackets]
+      //   [ enter category description here between double quotes replacing square brackets ]
         
       //   ",
         
-      "[enter category list here replacing square brackets]" : "
+      "[ enter category list here between double quotes replacing square brackets ]" : "
       
-        [enter category description here replacing square brackets]
+        [ enter category description here between double quotes replacing square brackets ]
         
         ",
         
@@ -109,9 +109,10 @@ Add simple category descriptions to store category pages.
       
       there are three optional attributes that can be added to the script tag
       
-        data-paragraph-style
+        data-format
         
-          value is one of the following. the default is Heading 3
+          value is one of the following. the default is Heading 3. HTML is for
+          when you want total control over the description
           
             Heading 1
             Heading 2
@@ -121,6 +122,7 @@ Add simple category descriptions to store category pages.
             Paragraph 2
             Paragraph 3
             Monospace
+            HTML
             
         data-selector-destination
         
@@ -138,15 +140,15 @@ Add simple category descriptions to store category pages.
             
       Example of Adding an Attribute
       
-        <script data-twc-splcda data-paragraph-style="Heading 1" type="application/ld+json">
+        <script data-twc-splcda data-format="Heading 1" type="application/ld+json">
         
       */
       
     </script>
   ```
   
-* If the section is new and Fluid Engine, remove the default text block from the
-  section, unless you need text block.
+* If the section is new and Classic Editor, remove the default text block from
+  the section, unless you need text text block.
 
 * Save the section.
   
@@ -155,6 +157,8 @@ Add simple category descriptions to store category pages.
 The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
 use the **Optional Attributes** to do so.
+
+If you use the format HTML you will need to create your own CSS to style it.
 
 The last page section is only visible while editing the Store page.
 
@@ -168,6 +172,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-03-09**
+
+  * add HTML format option
+  * bumped version to 0.10.0
+  
 * **2024-11-27**
 
   * fix for last page section not being hidden for site visitors

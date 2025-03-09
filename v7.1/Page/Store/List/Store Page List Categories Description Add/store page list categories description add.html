@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.9.1
+  Version       : 0.10.0
   
   SS Version    : 7.1
   
@@ -17,7 +17,7 @@
   Note          : the code is comprised of a style and script tag. both are
                   needed for the full effect to work
   
-  Copyright     : 2021-2024 Thomas Creedon
+  Copyright     : 2021-2025 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
@@ -100,7 +100,7 @@
     
       const
       
-        version = '0.9.1',
+        version = '0.10.0',
       
         s = `
         
@@ -108,7 +108,7 @@
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2021-2024 Thomas Creedon
+          © 2021-2025 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -130,7 +130,7 @@
         
       let $element = $( selector );
       
-      if ( ! $element.length ) return; // bail if no tag
+      if ( ! $element.length ) return; // bail if no element
       
       const categories = twcsl.page.store.list.categories;
       
@@ -154,70 +154,84 @@
       
         description = map [ categories ],
         
-        paragraphStyles = {
+        formatHtmlMap = {
         
-          'Heading 1'   : '<h1>',
-          'Heading 2'   : '<h2>',
-          'Heading 3'   : '<h3>',
-          'Heading 4'   : '<h4>',
-          'Paragraph 1' : '<p class="sqsrte-large">',
-          'Paragraph 2' : '<p>',
-          'Paragraph 3' : '<p class="sqsrte-small">',
-          'Monospace'   : '<pre>' +
+          'Heading 1'       : '<h1 />',
+          'Heading 2'       : '<h2 />',
+          'Heading 3'       : '<h3 />',
+          'Heading 4'       : '<h4 />',
+          'Paragraph 1'     : '<p class="sqsrte-large" />',
+          'Paragraph 2'     : '<p />',
+          'Paragraph 3'     : '<p class="sqsrte-small" />',
+          'Monospace'       : '<pre>' +
           
             '<code>' +
             
-              '</code>' +
+              '</code>' +   
               
             '</pre>',
             
+          'HTML'            : description
+          
           };
           
       let
       
         action = $element.attr ( 'data-action' ),
         
-        paragraphStyle = $element.attr ( 'data-paragraph-style' ),
+        html = $element.attr ( 'data-format' ),
         
-        selectorDestination = $element.attr ( 'data-selector-destination' );
+        isHtml = html === 'HTML',
+        
+        destinationSelector = $element.attr ( 'data-selector-destination' );
         
       if ( action === undefined ) action = 'after';
       
-      if ( paragraphStyle === undefined ) paragraphStyle = 'Heading 3';
+      if ( html === undefined ) html = 'Heading 3';
       
-      paragraphStyle = paragraphStyles [
+      html = formatHtmlMap [
       
-        paragraphStyle
+        html
         
         ];
         
-      if ( selectorDestination === undefined )
+      if ( destinationSelector === undefined )
       
-        selectorDestination = '.nested-category-title';
+        destinationSelector = '.nested-category-title';
         
+      const $destinationElement = $( destinationSelector );
+      
       $element
       
         .parents ( '.sqs-block-code' )
         
         .remove ( );
         
-      $element = $( '<div class="twc-splcda-description"/>' )
-        
-        .append ( paragraphStyle )
-        
-        .find ( ':last' )
-        
-          .html ( description )
-          
-          .end ( );
-          
-      const $elementDestination = $( selectorDestination );
+      if ( ! isHtml )
       
+        $element = $( '<div />' )
+        
+          .append ( html )
+          
+          .find ( ':last' )
+          
+            .html ( description )
+            
+            .end ( )
+            
+          .children ( )
+          
+            .addClass ( `${ codeKey }-description` );
+            
+        else
+        
+          $element = $( html );
+          
       switch ( action ) {
       
         case 'after' :
         
-          $elementDestination
+          $destinationElement
           
             .after ( $element );
             
@@ -225,7 +239,7 @@
           
         case 'append' :
         
-          $elementDestination
+          $destinationElement
           
             .append ( $element );
             
@@ -233,7 +247,7 @@
           
         case 'before' :
         
-          $elementDestination
+          $destinationElement
           
             .before ( $element );
             
@@ -241,7 +255,7 @@
           
         case 'prepend' :
         
-          $elementDestination
+          $destinationElement
           
             .prepend ( $element );
             
