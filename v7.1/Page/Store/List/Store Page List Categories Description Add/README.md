@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.10.0
+  * 0.10.1
 
 #### SS Version
 
@@ -172,6 +172,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-03-10**
+
+  * fix for flexbox issue, remove from twc-splcda-description element
+  * bumped version to 0.10.1
+  
 * **2025-03-09**
 
   * add HTML format option

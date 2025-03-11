@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.10.0
+  Version       : 0.10.1
   
   SS Version    : 7.1
   
@@ -51,15 +51,6 @@
       
     .tweak-products-category-title .products.collection-content-wrapper .twc-splcda-description {
     
-      display : -webkit-box;
-      display : -ms-flexbox;
-      display : flex;
-      
-      -webkit-box-orient : horizontal;
-      -webkit-box-direction : normal;
-      -ms-flex-direction : row;
-      flex-direction : row;
-      
       margin-bottom : 37px;
       padding-bottom : 54px;
       position : relative;
@@ -78,14 +69,26 @@
       
       }
       
+    @media screen and ( max-width : 575px ) {
+    
+      .products.collection-content-wrapper .twc-splcda-description {
+      
+        text-align : left;
+        
+        }
+        
+      }
+      
     @media screen and ( min-width : 576px ) {
     
+      .tweak-products-header-text-alignment-left .products.collection-content-wrapper .twc-splcda-description {
+      
+        text-align : left;
+        
+        }
+        
       .tweak-products-header-text-alignment-middle .products.collection-content-wrapper .twc-splcda-description {
       
-        -webkit-box-pack : center;
-        -ms-flex-pack : center;
-        justify-content : center;
-        
         text-align : center;
         
         }
@@ -100,7 +103,7 @@
     
       const
       
-        version = '0.10.0',
+        version = '0.10.1',
       
         s = `
         
