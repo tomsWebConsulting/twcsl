@@ -256,32 +256,3 @@ Please consider [making a donation][10].
 [8]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 [9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-
---
-
-    * data-toggle-color
-    
-      Override the default color the code picks for the toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-color="red" />
-      ```
-      
-    * data-toggle-icon
-    
-      Override the default toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-icon="plus" />
-      ```
-      
-    * data-toggle-justify
-    
-      Override the default justification of the toggle icon. An example.
-      
-      ```html
-      <x-twc-psst data-toggle-justify="center" />
-      ```
-      
-      Values are from the CSS [justify-content][8] property.
-      
