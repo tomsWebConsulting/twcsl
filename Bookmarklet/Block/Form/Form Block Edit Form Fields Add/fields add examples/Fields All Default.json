@@ -1,0 +1,269 @@
+{
+
+  "fields" : [
+  
+    {
+    
+      "type" : "Name",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Email",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Phone",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "countryDropdown" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text Area",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Dropdown",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null,
+      
+      "options" : null
+      
+      },
+      
+    {
+    
+      "type" : "Checkbox",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null,
+      
+      "options" : null
+      
+      },
+      
+    {
+    
+      "type" : "Radio",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null,
+      
+      "options" : null
+      
+      },
+      
+    {
+    
+      "type" : "Survey",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null,
+      
+      "options" : null
+      
+      },
+      
+    {
+    
+      "type" : "Address",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Line",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "underline" : null
+      
+      },
+      
+    {
+    
+      "type" : "Website",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Date",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Number",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Time",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Currency",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "currencySymbol" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Hidden",
+      
+      "label" : null,
+      
+      "value" : null
+      
+      },
+      
+    {
+    
+      "type" : "X",
+      
+      "label" : null,
+      
+      "description" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "File Upload",
+      
+      "label" : null,
+      
+      "required" : null,
+      
+      "allowOnlySpecificFileTypes" : null,
+      
+      "image" : null,
+      
+      "document" : null,
+      
+      "presentation" : null,
+      
+      "video" : null,
+      
+      "audio" : null,
+      
+      "maxNumberOfFiles" : null
+      
+      }
+      
+    ]
+    
+  }

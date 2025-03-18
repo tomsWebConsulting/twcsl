@@ -1,0 +1,521 @@
+{
+
+  "fields" : [
+  
+    {
+    
+      "type" : "Hidden",
+      
+      "label" : "New lead activity notification",
+      
+      "value" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "First Name",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Last Name",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Email",
+      
+      "label" : "Email",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Phone",
+      
+      "label" : "Phone",
+      
+      "description" : null,
+      
+      "countryDropdown" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Source",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Website",
+      
+      "label" : "Source URL",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Contacted",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Event Type",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Lead Type",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Lead Stage",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Tags",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Message",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Description",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Background",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Street",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property City",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property State",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Postal Code",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property MLS Number",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Price",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Website",
+      
+      "label" : "Property URL",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Type",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Bedrooms",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Bathrooms",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Area",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Property Lot",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Address Street",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Address City",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Address State",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Address Postal Code",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Campaign Source",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Campaign Medium",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Campaign Term",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Campaign Content",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Campaign Campaign",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      },
+      
+    {
+    
+      "type" : "Text",
+      
+      "label" : "Notes",
+      
+      "description" : null,
+      
+      "placeholder" : null,
+      
+      "required" : null
+      
+      }
+      
+    ]
+    
+  }

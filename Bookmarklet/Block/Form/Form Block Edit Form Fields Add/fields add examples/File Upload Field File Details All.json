@@ -1,0 +1,31 @@
+{
+
+  "fields" : [
+  
+    {
+    
+      "type" : "File Upload",
+      
+      "label" : "File Upload",
+      
+      "required" : null,
+      
+      "allowOnlySpecificFileTypes" : true,
+      
+      "image" : true,
+      
+      "document" : true,
+      
+      "presentation" : true,
+      
+      "video" : true,
+      
+      "audio" : true,
+      
+      "maxNumberOfFiles" : 5
+      
+      }
+      
+    ]
+    
+  }
