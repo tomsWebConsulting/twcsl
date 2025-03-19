@@ -21,7 +21,7 @@ scroll to the top of the store page section.
 
 #### Dependencies
 
-  * [Squarespace plan][4] that supports [JavaScript][5].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
@@ -34,22 +34,22 @@ scroll to the top of the store page section.
     * Use this option if you have only a single store page you want to have this
       effect.
       
-    * Add code from file **[store page list categories url fragment.html][7]**
+    * Add code from file **[store page list categories url fragment.html][4]**
       to Page Settings > Advanced > Page Header Code Injection for the page.
-      Refer to [per-page code injection][15] for details.
+      Refer to [per-page code injection][5] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page list categories url fragment.html][7]**
+    * Add code from file **[store page list categories url fragment.html][4]**
       to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
-      [Add code to code injection][8].
+      [Add code to code injection][6].
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -63,10 +63,9 @@ Please consider [making a donation][12].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[4]: https://www.squarespace.com/pricing
-[5]: https://en.wikipedia.org/wiki/JavaScript
-[7]: store%20page%20list%20categories%20url%20fragment.html#L1
-[15]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://api.jquery.com/category/selectors/
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: store%20page%20list%20categories%20url%20fragment%20add.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
