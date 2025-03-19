@@ -34,18 +34,18 @@ scroll to the top of the store page section.
     * Use this option if you have only a single store page you want to have this
       effect.
       
-    * Add code from file **[store page list categories url fragment.html][4]**
-      to Page Settings > Advanced > Page Header Code Injection for the page.
-      Refer to [per-page code injection][5] for details.
+    * Add code from file **[store page list categories url fragment
+      add.html][4]** to Page Settings > Advanced > Page Header Code Injection
+      for the page. Refer to [per-page code injection][5] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page list categories url fragment.html][4]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
-      [Add code to code injection][6].
+    * Add code from file **[store page list categories url fragment
+      add.html][4]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Refer to [Add code to code injection][6].
 
 ## Make a Donation
 
