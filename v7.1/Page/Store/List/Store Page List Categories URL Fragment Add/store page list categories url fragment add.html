@@ -1,0 +1,109 @@
+<!-- begin TWC Store Page List Categories URL Fragment Add -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page list categories url fragment add
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.1.0
+        
+        SS Version    : 7.1
+        
+        Fluid
+        Engine
+        Compatible    : Not Applicable
+        
+        Copyright     : 2025 Thomas Creedon
+                           
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Store Page List Categories URL Fragment Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        let selector = 'body.collection-type-products[ id^="collection-" ]';
+        
+        const isStorePageList = document
+        
+          .querySelector ( selector )
+          
+          !==
+          
+          null;
+          
+        if ( ! isStorePageList ) return; // bail if not list
+        
+        selector = '.page-section.collection-type-products';
+        
+        const
+        
+          callback = ( element ) => {
+          
+            const href = element
+            
+              .getAttribute ( 'href' )
+              
+              +
+              
+              `#${ codeKey }`;
+              
+            element
+            
+              .setAttribute ( 'href', href );
+              
+            },
+            
+          codeKey = 'twc-splcufa',
+          
+          sectionElement = document
+          
+            .querySelector ( selector );
+            
+        sectionElement
+        
+          .setAttribute ( 'id', codeKey );
+          
+        selector = '.category-link, .nested-category-breadcrumb-link';
+        
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+    <!-- end TWC Store Page List Categories URL Fragment Add -->
