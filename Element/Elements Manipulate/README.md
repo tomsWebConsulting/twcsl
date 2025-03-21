@@ -157,13 +157,14 @@ append, before, prepend, or replace.
   * v7.1
   
     * Add a section to the site footer as the last section. Add your source
-      blocks there.
+      blocks there. In the **elements manipulate.less** code set **.v7-1** to
+      **true**.
       
   * v7.0
   
     * Brine template family
     
-      * Put your blocks in the Footer Bottom Blocks and in the **elements
+      * Add your source blocks to the Footer Bottom Blocks. In the **elements
         manipulate.less** code set **.v7-0-brine** to **true**.
         
     * Bedford template family
@@ -171,7 +172,7 @@ append, before, prepend, or replace.
       * This template only has one footer so you need to create your own CSS to
         hide the common elements.
         
-  This is not the only task the code can perform. I can move or copy anything
+  This is not the only task the code can perform. It can move or copy anything
   that you can express with a [jQuery selector][10].
 
 ## Settings Examples
