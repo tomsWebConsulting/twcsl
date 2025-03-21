@@ -49,7 +49,7 @@ Edit Form Field Dropdown Options Add**.
 ## Note
 
 You can include the comma character in your options by using typing **\,**
-(backslash comma),
+(backslash comma).
 
 ## What is a bookmarklet?
 
