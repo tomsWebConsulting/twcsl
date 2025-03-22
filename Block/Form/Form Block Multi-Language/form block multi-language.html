@@ -1,0 +1,85 @@
+<style>
+
+  /*
+  
+    begin form block multi-language
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Dependencies  : a manually translated site
+    
+    Note          : this code allows you to translate the Squarespace
+                    auto-generated text of a form block such as required, first
+                    name, last name, Sign up for news and updates, and etc
+                    
+                    this is not automatic language translation code
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    #siteWrapper {
+    
+      --twc-fbml-email-signup : var( --twc-fbml-l-email-signup );
+      --twc-fbml-first-name : var( --twc-fbml-l-first-name);
+      --twc-fbml-last-name : var( --twc-fbml-l-last-name );
+      --twc-fbml-required : '('var( --twc-fbml-l-required )')';
+      
+      }
+      
+    .form-wrapper .react-form-contents .field-list .email .option span,
+    .form-wrapper .react-form-contents .field-list .form-item .description.required,
+    .form-wrapper .react-form-contents .field-list .name .caption-text
+    
+      {
+      
+        visibility : hidden;
+        
+        }
+        
+    .form-wrapper .react-form-contents .field-list .form-item .description.required::before {
+    
+      content : var( --twc-fbml-required );
+      visibility : visible;
+      
+      }
+      
+    .form-wrapper .react-form-contents .field-list .name .first-name .caption-text::before {
+    
+      content : var( --twc-fbml-first-name );
+      visibility : visible;
+      
+      }
+      
+    .form-wrapper .react-form-contents .field-list .name .last-name .caption-text::before {
+    
+      content : var( --twc-fbml-last-name );
+      visibility : visible;
+      
+      }
+      
+    .form-wrapper .react-form-contents .field-list .email .option span {
+    
+      font-size : 0;
+      height : 0;
+      line-height : 0;
+      
+      }
+      
+    .form-wrapper .react-form-contents .field-list .email .option span::before {
+    
+      content : var( --twc-fbml-email-signup );
+      font-size : calc( ( var( --form-block-option-text-font-font-size-value ) - 1 ) * 1.2vw + 1rem );
+      visibility : visible;
+      
+      }
+      
+    /* end form block multi-language */
+    
+  </style>
