@@ -56,12 +56,13 @@ This code attempts to add some useful classes.
   * twc-malidc-password
   * twc-malidc-password-reset
 
-If you use SS dynamically generated class names, the ones that look like a
-string of gibberish, your code will most likely break pretty quickly. My code is
-not immune to breakage, becuase of future SS changes, but I think my method will
-break at a slower rate. Also be aware that SS is doing some dynamic class
-add/remove behaviors based on elements being active/inactive. I know of no easy
-way to provide more semantic classes for these cases.
+If you use Squarespace dynamically generated class names, the ones that look
+like a string of gibberish, your code will most likely break pretty quickly. My
+code is not immune to breakage, becuase of future Squarespace changes, but I
+think my method will break at a slower rate. Also be aware that Squarespace is
+doing some dynamic class add/remove behaviors based on elements being
+active/inactive. I know of no easy way to provide more semantic classes for
+these cases.
 
 ## Callback Example
 
@@ -163,8 +164,6 @@ Please consider [making a donation][8].
 * **2023-04-18**
 
   * initial version
-
-**All trademarks are property of their respective owners.**
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
