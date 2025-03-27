@@ -126,6 +126,7 @@ Please consider [making a donation][8].
 
 * **2025-03-27**
 
+  * add sign up join title change setting for member site plan names
   * removed dependency on english language text to determine dialog type
   * added twc-malidc-password-reset class
   * added password reset dialog type
