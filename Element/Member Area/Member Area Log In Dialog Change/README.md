@@ -8,7 +8,7 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -47,13 +47,14 @@ This code attempts to add some useful classes.
   * twc-malidc-sign-in-password
   * twc-malidc-sign-up
   * twc-malidc-sign-up-join
+  * twc-malidc-sign-up-join-text
   * twc-malidc-sign-up-password
   * twc-malidc-sign-up-password-confirm
   * twc-malidc
   * twc-malidc-create
   * twc-malidc-email
   * twc-malidc-password
-  * twc-malidc-request-reset
+  * twc-malidc-password-reset
 
 If you use SS dynamically generated class names, the ones that look like a
 string of gibberish, your code will most likely break pretty quickly. My code is
@@ -71,9 +72,11 @@ Your callback must accept 2 parameters :
 
   * dcmnt ( document )
   
-  * logInType ( string )
+  * dialogType ( string )
   
     The parameter value will be one of the following.
+    
+    * password-reset
     
     * sign-in
     
@@ -96,11 +99,11 @@ Your callback must accept 2 parameters :
   
   twc.malidc.callbacks = ( ( self ) => {
   
-    const callback = ( dcmnt, logInType ) => {
+    const callback = ( dcmnt, dialogType ) => {
     
       console.log ( 'malidc log dcmnt : ', dcmnt );
       
-      console.log ( 'malidc log logInType : ', logInType );
+      console.log ( 'malidc log dialogType : ', dialogType );
       
       };
       
@@ -120,6 +123,13 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-03-27**
+
+  * removed dependency on english language text to determine dialog type
+  * added twc-malidc-password-reset class
+  * added password reset dialog type
+  * bumped version to 0.4.0
+  
 * **2024-09-12**
 
   * rework code to use JavaScript Module Patterns for twc, twc.malidc, and

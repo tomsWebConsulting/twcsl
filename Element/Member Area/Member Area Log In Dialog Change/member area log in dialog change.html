@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.0
+  Version       : 0.4.0
   
   SS Versions   : 7.1, 7.0
   
@@ -15,7 +15,7 @@
   Note          : the signUp setting does not apply to the join dialog of a
                   member site
   
-  Copyright     : 2023-2024 Thomas Creedon
+  Copyright     : 2023-2025 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
@@ -43,6 +43,29 @@
           
           signUp : '[ optional, enter sign up title text here between single quotes replacing square brackets ]',
           
+          // member site
+          
+          signUpJoin : {
+          
+            /*
+            
+              the format of each line is a member site pricing plan name and a
+              title.
+              
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many plan names you want to
+              change. if you want the same title for all pricing plans, leave
+              the plan name blank
+              
+              
+              */
+              
+            // '[ enter pricing plan name here between single quotes replacing square brackets ]' : '[ enter name text here between single quotes replacing square brackets ]',
+            
+            }
+            
           };
           
       return self;
@@ -59,13 +82,13 @@
     
       const
       
-        version = '0.3.0',
-      
+        version = '0.4.0',
+        
         s = `Member Area Log In Dialog Change v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2023-2024 Thomas Creedon
+          © 2023-2025 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -105,7 +128,7 @@
                 
               // bail if not account frame
               
-              if ( id != `${ accountFrameIdValue }` ) return;
+              if ( id !== `${ accountFrameIdValue }` ) return;
               
               const baseUrl = `${ location.protocol }//${ location.host }`
               
@@ -163,8 +186,10 @@
                 
                 const
                 
-                  dcmnt = element.contentDocument,
+                  dcmnt = element
                   
+                    .contentDocument,
+                    
                   id = 'user-account-login-root',
                   
                   callback = ( mutations ) => {
@@ -185,12 +210,6 @@
                     
                     },
                     
-                  node = dcmnt
-                  
-                    .getElementById ( `${ id }` )
-                    
-                    .lastChild,
-                    
                   observer = new MutationObserver ( callback ),
                   
                   processMutationRecord = ( mutation ) => {
@@ -199,24 +218,122 @@
                     
                     if ( ! mutation.addedNodes.length ) return;
                     
-                    const node = mutation.addedNodes [ 0 ];
+                    const
                     
-                    let selector = 'button[type="submit"]' +
-                    
-                      '[data-test="login-button"]';
+                      node = mutation
                       
-                    const isSignIn = node.querySelector ( selector ) !== null;
+                        .addedNodes
+                        
+                        [ 0 ],
+                        
+                      formElement = node
+                      
+                        .querySelector ( 'form' );
+                        
+                    if ( ! formElement ) return; // bail if no form element
                     
+                    const isPasswordReset = formElement
+                    
+                      .children
+                      
+                      .length
+                      
+                      ===
+                      
+                      2;
+                      
+                    let
+                    
+                      selector = 'button[type="submit"]' +
+                      
+                        '[data-test="login-button"]',
+                        
+                      isSignIn = formElement
+                      
+                        .querySelector ( selector )
+                        
+                        !==
+                        
+                        null;
+                        
                     selector = 'button[type="submit"]' +
                     
                       '[data-test="create-account-create-button"]';
                       
-                    const isSignUp = node.querySelector ( selector ) !== null;
+                    let isSignUp = formElement
                     
-                    // bail if not sign in or up
+                      .querySelector ( selector )
+                      
+                      !==
+                      
+                      null;
+                      
+                    // bail if not password reset or sign in or up
                     
-                    if ( ! ( isSignIn || isSignUp ) ) return;
+                    if ( ! ( isPasswordReset || isSignIn || isSignUp ) ) return;
                     
+                    let
+                    
+                      callback = ( mutations ) => {
+                      
+                        const callback = ( mutation ) => {
+                        
+                          // bail if attribute not class
+                          
+                          if ( mutation.attributeName !== 'class' ) return;
+                          
+                          const
+                          
+                            element = mutation.target
+                            
+                            className = element
+                              
+                              .getAttribute ( attributeNameClass );
+                              
+                          // bail data class attribute is null
+                          
+                          if ( className === null ) return;
+                          
+                          const classNames = className
+                          
+                            .split ( ' ' );
+                            
+                          for ( const className of classNames ) {
+                          
+                            const
+                            
+                              classList = element.classList,
+                              
+                              b = classList
+                              
+                                .contains ( className );
+                                
+                            if ( b ) break; // bail if class already added
+                            
+                            classList
+                            
+                              .add ( className );
+                              
+                            }
+                            
+                          };
+                          
+                        mutations.forEach ( callback );
+                          
+                        }, // end callback
+                        
+                      dialogType,
+                      
+                      element,
+                      
+                      parentElement,
+                      
+                      s,
+                      
+                      value,
+                      
+                      valuePrefix;
+                      
                     const
                     
                       anchorClassAdd = ( key ) => {
@@ -225,14 +342,18 @@
                         
                           selector = `[ href="/account/login/${ key }" ]`,
                           
-                          element = dcmnt.querySelector ( selector );
+                          element = node
                           
+                            .querySelector ( selector );
+                            
                         if ( element !== null )
                         
-                          element.classList.add ( `${ codeKey }-${ key }` );
+                          element
                           
-                        return element;
-                        
+                            .classList
+                            
+                            .add ( `${ codeKey }-${ key }` );
+                            
                         },
                         
                       attributeNameClass = `data-${ codeKey }-class`,
@@ -267,7 +388,7 @@
                           
                             clss.startsWith ( `${ codeKey }-` );
                             
-                          if ( ! isCodeClass ) continue; // continue
+                          if ( ! isCodeClass ) continue;
                           
                           classList.remove ( clss );
                           
@@ -283,76 +404,26 @@
                         
                         },
                         
-                      isSignUpJoin = dcmnt
-                        
-                        .querySelector ( 'h1' )
-                        
-                        .textContent
-                        
-                        .startsWith ( 'Join ' ),
-                        
+                      observer = new MutationObserver ( callback ),
+                      
                       options = twc.malidc,
                       
-                      callbacks = options.callbacks;
+                      callbacks = options.callbacks,
                       
-                    let callback = ( mutations ) => {
-                    
-                      const callback = ( mutation ) => {
+                      isSignUpJoin = isSignUp
                       
-                        // bail if attribute not class
+                        &&
                         
-                        if ( mutation.attributeName != 'class' ) return;
+                        formElement
                         
-                        const
-                        
-                          element = mutation.target
+                          .children
                           
-                          className = element
-                            
-                            .getAttribute ( attributeNameClass );
-                            
-                        // bail data class attribute is null
-                        
-                        if ( className === null ) return;
-                        
-                        const classNames = className
-                        
-                          .split ( ' ' );
+                          .length
                           
-                        for ( const className of classNames ) {
-                        
-                          const
+                          ===
                           
-                            classList = element.classList,
-                            
-                            b = classList
-                            
-                              .contains ( className );
-                              
-                          if ( b ) break; // bail if class already added
+                          7;
                           
-                          classList
-                          
-                            .add ( className );
-                            
-                          }
-                          
-                        };
-                        
-                      mutations.forEach ( callback );
-                        
-                      }; // end callback
-                      
-                    let
-                    
-                      dialogType,
-                      
-                      element,
-                      
-                      s;
-                      
-                    const observer = new MutationObserver ( callback );
-                    
                     callback = ( element ) => {
                         
                       const dataTest = element
@@ -361,19 +432,19 @@
                         
                       switch ( dataTest ) {
                       
-                        case 'create-account-password' :
-                        
-                          value = `${ valuePrefix }` +
-                          
-                            `${ codeKey }-sign-up-password`;
-                            
-                          break;
-                          
                         case 'create-account-confirm-password' :
                         
                           value = `${ valuePrefix }` +
                           
                             `${ codeKey }-sign-up-password-confirm`;
+                            
+                          break;
+                          
+                        case 'create-account-password' :
+                        
+                          value = `${ valuePrefix }` +
+                          
+                            `${ codeKey }-sign-up-password`;
                             
                           break;
                           
@@ -387,7 +458,7 @@
                           
                         }
                         
-                      const parentElement = element
+                      parentElement = element
                       
                         .parentElement
                         
@@ -405,56 +476,68 @@
                       
                     // set dialog type
                     
-                    switch ( true ) {
+                    {
                     
-                      case isSignUpJoin :
+                      switch ( true ) {
+                      
+                        case isPasswordReset :
+                        
+                          dialogType = 'password-reset';
+                          
+                          break;
+                          
+                        case isSignIn :
+                        
+                          dialogType = 'sign-in';
+                          
+                          break;
+                          
+                        case isSignUp :
+                        
+                          dialogType = 'sign-up';
+                          
+                          break;
+                          
+                        }
+                        
+                      if ( isSignUpJoin )
                       
                         dialogType = 'sign-up-join';
                         
-                        break;
-                        
-                      case isSignIn :
-                      
-                        dialogType = 'sign-in';
-                        
-                        break;
-                        
-                      case isSignUp :
-                      
-                        dialogType = 'sign-up';
-                        
-                        break;
-                        
                       }
                       
-                    // begin code and login type class add
+                    // code and login type class add
                     
-                      element = dcmnt
-                      
-                        .getElementById ( `${ id }` );
-                        
+                    {
+                    
                       const
                       
-                        classList = element.classList,
+                        classList = rootElement.classList,
                         
                         className2 = `${ codeKey }-${ dialogType }`;
                         
                       let className = `${ codeKey }`;
                       
-                      classRemove ( element );
+                      classRemove ( rootElement );
                       
                       classList
                       
                         .add ( className, className2 );
                         
-                      // end code and login type class add
+                      }
                       
                     const title = ( ) => {
                     
-                      if ( isSignUpJoin ) return; // bail if join
+                      if ( isPasswordReset ) return; // bail if password reset
                       
-                      const p = new RegExp ( '^\\[.+\\]$' );
+                      const
                       
+                        p = new RegExp ( '^\\[.+\\]$' ),
+                        
+                        titleElement = node
+                        
+                          .querySelector ( 'h1' );
+                          
                       switch ( true ) {
                       
                         case isSignIn :
@@ -479,16 +562,74 @@
                           
                         }
                         
+                      if ( isSignUpJoin ) {
+                      
+                        let language = Static
+                        
+                          .SQUARESPACE_CONTEXT
+                          
+                          .website
+                          
+                          .language,
+                          
+                          re = {
+                          
+                            'de-DE' : / ^\w+$/,
+                            
+                            'fi-FI' : /^[^:]+: /,
+                            
+                            default : /^\w+ /
+                            
+                            };
+                            
+                        language = Object
+                        
+                          .hasOwn ( re, language )
+                          
+                          ? language : 'default';
+                          
+                        re = re
+                        
+                          [ language ]
+                          
+                        s = titleElement
+                        
+                          .textContent
+                          
+                          .replace ( re, '' );
+                          
+                        s = Object
+                        
+                          .hasOwn (
+                          
+                            options
+                          
+                              .title
+                              
+                              .signUpJoin,
+                              
+                            s
+                            
+                            )
+                            
+                            ? s : '';
+                            
+                        s = options
+                        
+                          .title
+                          
+                          .signUpJoin
+                          
+                          [ s ];
+                          
+                        }
+                        
                       const change = ! p.test ( s );
                       
                       if ( change )
                       
-                        dcmnt
+                        titleElement
                         
-                          .getElementsByTagName ( 'h1' )
-                          
-                          [ 0 ]
-                          
                           .textContent
                           
                           =
@@ -499,13 +640,17 @@
                       
                     title ( );
                     
-                    // begin email class add
+                    // email class add
                     
-                      let value = `${ codeKey }-email`;
+                    {
+                    
+                      value = `${ codeKey }-email`;
                       
-                      selector = 'form input[ type="email" ]';
+                      selector = 'input[ type="email" ]';
                       
-                      element = dcmnt.querySelector ( selector );
+                      element = formElement
+                      
+                        .querySelector ( selector );
                         
                       if ( element !== null )
                       
@@ -517,109 +662,137 @@
                           
                           .setAttribute ( attributeNameClass, value );
                           
-                      // end email class add
+                      }
                       
-                    // begin password class add
+                    // password class add
                     
-                      selector = 'form input[ type="password" ]';
+                    {
+                    
+                      valuePrefix = `${ codeKey }-password `;
                       
-                      const valuePrefix = `${ codeKey }-password `;
+                      selector = 'input[ type="password" ]';
                       
-                      dcmnt
+                      formElement
                       
                         .querySelectorAll ( selector )
                         
                         .forEach ( callback );
-                          
-                      // end password class add
+                        
+                      }
                       
                     switch ( true ) {
                     
-                      case isSignIn :
+                      case isSignIn : {
                       
-                        // begin sign in again class add
+                        const isSignInAgain = node
                         
-                          element = dcmnt
+                          .querySelector ( 'footer' )
                           
-                            .getElementsByTagName ( 'h3' )
-                            
-                            [ 0 ];
-                            
-                          if ( element !== undefined )
+                          .children
                           
-                            element
-                            
-                              .classList
-                              
-                              .add ( `${ codeKey }-sign-in-again-text` );
-                              
-                          // end sign in again class add
+                          .length
                           
-                        // begin sign in email text class add
+                          ===
+                          
+                          1;
+                          
+                        if ( ! isSignInAgain ) {
                         
-                          let text = 'Sign in with';
+                          anchorClassAdd ( 'request-reset' );
                           
-                          element = dcmnt.querySelectorAll ( 'form span' );
+                          anchorClassAdd ( 'create' );
                           
-                          element = [ ...element ]
+                          } else {
                           
-                            .filter ( n => n.textContent.startsWith ( text ) )
+                            // sign in again class add
                             
-                            [ 0 ];
+                            {
                             
-                          if ( element !== undefined ) {
-                          
-                            s = `${ codeKey }-sign-in-email-text`;
-                            
-                            element
-                            
-                              .parentElement
+                              element = node
                               
-                              .classList
+                                .querySelector ( 'h3' );
+                                
+                              if ( element !== undefined )
                               
-                              .add ( s );
+                                element
+                                
+                                  .classList
+                                  
+                                  .add ( `${ codeKey }-sign-in-again-text` );
+                                  
+                              }
+                              
+                            // sign in email text class add
+                            
+                            {
+                            
+                              element = formElement
+                              
+                                .querySelectorAll ( 'span' )
+                                
+                                [ 1 ];
+                                
+                              if ( element !== undefined ) {
+                              
+                                s = `${ codeKey }-sign-in-email-text`;
+                                
+                                element
+                                
+                                  .parentElement
+                                  
+                                  .classList
+                                  
+                                  .add ( s );
+                                  
+                                }
+                                
+                              }
+                              
+                            // not you class add
+                            
+                            {
+                            
+                              selector = 'footer [ href="#" ]';
+                              
+                              element = node
+                              
+                                .querySelector ( selector );
+                                
+                              if ( element !== null ) {
+                              
+                                s = `${ codeKey }-not-you`;
+                                
+                                element
+                                
+                                  .classList
+                                  
+                                  .add ( s );
+                                  
+                                }
+                                
+                              }
                               
                             }
                             
-                          // end sign in email text class add
-                          
-                        element = anchorClassAdd ( 'request-reset' );
-                        
-                        element = anchorClassAdd ( 'create' );
-                        
-                        // begin not you class add
-                        
-                          selector = 'footer [ href="#" ]';
-                          
-                          element = dcmnt.querySelector ( selector );
-                          
-                          if ( element !== null ) {
-                          
-                            s = `${ codeKey }-not-you`;
-                            
-                            element
-                            
-                              .classList
-                              
-                              .add ( s );
-                              
-                            }
-                            
-                          // end not you class add
-                          
                         break;
+                        
+                        }
                         
                       case isSignUp :
                       
-                        // begin first name class add
+                        // first name class add
+                        
+                        {
                         
                           value = `${ codeKey }-name-first`;
                           
-                          selector = 'form input[ type="text" ]' +
+                          selector = 'input[ type="text" ]' +
                           
                             '[ data-test="create-account-first-name" ]';
                             
-                          element = dcmnt.querySelector ( selector );
+                          element = formElement
+                          
+                            .querySelector ( selector );
                           
                           if ( element !== null )
                           
@@ -631,20 +804,22 @@
                               
                               .setAttribute ( attributeNameClass, value );
                               
-                          // end first name class add
+                          }
                           
-                        let parentElement;
+                        // last name class add
                         
-                        // begin last name class add
+                        {
                         
                           value = `${ codeKey }-name-last`;
                           
-                          selector = 'form input[ type="text" ]' +
+                          selector = 'input[ type="text" ]' +
                           
                             '[ data-test="create-account-last-name" ]';
                             
-                          element = dcmnt.querySelector ( selector );
+                          element = formElement
                           
+                            .querySelector ( selector );
+                            
                           if ( element !== null ) {
                           
                             parentElement = element
@@ -665,29 +840,55 @@
                               
                             }
                             
-                          // end last name class add
+                          }
                           
-                        // begin name class add
+                        // name class add
                         
-                            value = `${ codeKey }-name`;
+                        {
+                        
+                          value = `${ codeKey }-name`;
+                          
+                          parentElement = parentElement
+                          
+                            .parentElement;
                             
-                            parentElement = parentElement
+                          parentElement
+                          
+                            .classList
                             
-                              .parentElement;
-                              
-                            parentElement
+                            .add ( value );
                             
-                              .classList
-                              
-                              .add ( value );
-                              
-                            parentElement
+                          parentElement
+                          
+                            .setAttribute ( attributeNameClass, value );
                             
-                              .setAttribute ( attributeNameClass, value );
-                              
-                          // end name class add
+                          }
                           
                         break;
+                        
+                      }
+                      
+                    if ( isSignUpJoin ) {
+                    
+                      isSignUp = false;
+                      
+                      // sign up join text class add
+                      
+                      {
+                      
+                        element = node
+                        
+                          .querySelector ( 'h3' );
+                          
+                        if ( element !== undefined )
+                        
+                          element
+                          
+                            .classList
+                            
+                            .add ( `${ codeKey }-sign-up-join-text` );
+                            
+                        }
                         
                       }
                       
@@ -715,13 +916,21 @@
                       
                     // start listening for changes in element
                     
-                    element = dcmnt.querySelector ( 'form' );
+                    observer.observe ( formElement, config );
                     
-                    observer.observe ( element, config );
+                    },
                     
-                    };
+                  rootElement = dcmnt
+                  
+                    .querySelector ( `#${ id }` ),
                     
-                // begin css add
+                  wrapperElement = rootElement
+                  
+                    .lastChild;
+                    
+                // css add
+                
+                {
                 
                   const
                   
@@ -731,23 +940,31 @@
                     
                   if ( isAdd ) {
                   
-                    const style = dcmnt.createElement ( 'style' );
+                    const style = dcmnt
                     
+                      .createElement ( 'style' );
+                      
                     style.innerHTML = css;
                     
-                    dcmnt.body.append ( style );
+                    dcmnt
                     
+                      .body
+                      
+                      .append ( style );
+                      
                     }
                     
-                  // end css add
+                  }
                   
-                // begin make a pass over the panel already on the DOM
+                // make a pass over the panel already on the DOM
+                
+                {
                 
                   const mutation = {
                   
                     addedNodes : [
                     
-                      node
+                      wrapperElement
                       
                       ]
                       
@@ -755,11 +972,11 @@
                     
                   processMutationRecord ( mutation );
                   
-                  // end make a pass over the panel already on the DOM
+                  }
                   
                 // start listening for changes in specified element
                 
-                observer.observe ( node, config );
+                observer.observe ( wrapperElement, config );
                 
                 },
                 
@@ -787,8 +1004,8 @@
             
         /*
         
-          if the account frame is already on the DOM, load. if not, then watch for
-          it to appear on DOM and load
+          if the account frame is already on the DOM, load. if not, then watch
+          for it to appear on DOM and load
           
           */
           
