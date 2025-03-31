@@ -4,11 +4,9 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.1.0
+  Version       : 0.2.0
   
   SS Version    : 7.1
-  
-  Dependencies  : jQuery
   
   Notes         : the code is comprised of a style and script tag. both are
                   needed for the full effect to work
@@ -16,7 +14,9 @@
                   this effect is not active in SS Preview to test it use
                   private browsing < https://tinyurl.com/ynessvsf >
   
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright     : 2024-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   no user serviceable parts below
   
@@ -40,48 +40,58 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const version = '0.1.0';
+      const
       
-      const s = `Gallery Section Right Arrow Auto Click v${ version }, ` +
+        version = '0.2.0',
         
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        s = `
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
+          Gallery Section Right Arrow Auto Click v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       if ( window.frameElement !== null ) return; // bail if in preview
       
-      const codeKey = 'twc-gsraac';
+      const
       
-      const selectorKey = '.gallery-section';
-      
+        codeKey = 'twc-gsraac',
+        
+        selectorKey = '.gallery-section';
+        
       // hide show register
       
-      ( ( selectorKey ) => {
+      {
       
-        if ( window.twc == undefined ) window.twc = { };
+        // initialize twc module
         
-        if ( twc.data == undefined ) twc.data = { };
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
         
-        if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
+        // initialize twc data sub-module
         
-        if ( twc.data.hideShow [ selectorKey ] == undefined )
+        twc.data = ( ( self ) => self ) ( twc.data || { } );
         
-          twc
+        // initialize twc data hideShow sub-module
+        
+        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+        
+        // initialize twc data hideShow selector key sub-module
+        
+        twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
+        
+          twc.data.hideShow [ selectorKey ] || [ ] );
           
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            =
-            
-            [ ];
-            
         twc
         
           .data
@@ -92,211 +102,451 @@
           
           .push ( `--${ codeKey }` );
           
-        } ) ( selectorKey );
+        }
         
-      ( ( ) => {
+      const
       
-        const callback = function ( ) {
+        callback = ( ) => {
         
-          const $this = $( this );
+          const
           
-          const re = new RegExp ( `^${ codeKey }\\s*:\\s*(.+)\$`, 'm' );
-          
-          let text = $this.text ( );
-          
-          let options = text.match ( re );
-          
-          if ( options === null ) return true; // continue
-          
-          const $section = $this
-          
-            .parents ( '.gallery-section' );
+            callback = ( element ) => {
             
-          const section = $section.get ( 0 );
-          
-          text = text
-          
-            .replace ( options [ 0 ], '' )
-            
-            .trim ( );
-            
-          options = JSON.parse ( options [ 1 ] );
-          
-          if ( text )
-          
-            $this.text ( text );
-            
-            else
-            
-              $this
+              const re = new RegExp ( `^${ codeKey }\\s*:\\s*(.+)\$`, 'm' );
               
-                .parents ( '.gallery-caption' )
-                
-                .remove ( );
-                
-          const b = options.intersectionObserver;
-          
-          const slideshow = ( ) => {
-          
-            const click = ( ) => {
-            
-              const selector = [
+              let
               
-                '.gallery-fullscreen-slideshow-control-btn[ data-next ]',
+                text = element.textContent,
+              
+                options = text.match ( re );
                 
-                '.gallery-reel-control-btn[ data-next ]',
+              if ( options === null ) return; // continue
+              
+              const
+              
+                sectionElement = element
                 
-                '.gallery-slideshow-control-next ' +
-                
-                  '.gallery-slideshow-control-btn'
+                  .closest ( '.gallery-section' ),
                   
-                ]
+                slideshow = ( ) => {
                 
-                .join ( ', ' );
+                  const
+                  
+                    inactivityDelay = options
+                    
+                      .inactivityDelay,
+                      
+                    intervalCallback = ( ) => {
+                    
+                      isAutoClick = true;
+                      
+                      nextElement.click ( );
+                      
+                      isAutoClick = false;
+                      
+                      },
+                      
+                    nextSelector = [
+                    
+                      '.gallery-fullscreen-slideshow-control-btn[ ' +
+                      
+                        'data-next ]',
+                        
+                      '.gallery-reel-control-btn[ data-next ]',
+                      
+                      '.gallery-slideshow-control-next ' +
+                      
+                        '.gallery-slideshow-control-btn'
+                        
+                      ]
+                      
+                      .join ( ', ' ),
+                      
+                    resetInactivityTimer = ( ) => {
+                    
+                      const milliseconds = inactivityDelay
+                        
+                        *
+                        
+                        1000;
+                        
+                      if ( inactivityId )
+                      
+                        clearTimeout ( inactivityId );
+                        
+                      inactivityId = setTimeout (
+                      
+                        start,
+                        
+                        milliseconds
+                        
+                        );
+                        
+                      },
+                      
+                    start = ( ) => {
+                    
+                      if ( intervalId ) return; // prevent multiple intervals
+                      
+                      const
+                      
+                        milliseconds = options
+                        
+                          .slideDuration
+                          
+                          *
+                          
+                          1000;
+                          
+                      intervalId = setInterval (
+                      
+                        intervalCallback,
+                        
+                        milliseconds
+                        
+                        );
+                        
+                      },
+                      
+                    stop = ( ) => {
+                    
+                      if ( ! intervalId ) return;
+                      
+                      clearInterval ( intervalId );
+                      
+                      intervalId = null;
+                      
+                      },
+                      
+                    wrapperCallback = ( ) => {
+                    
+                      if ( isAutoClick ) return; // bail if auto click
+                                        
+                      stop ( );
+                      
+                      const b = inactivityDelay === -1;
+                      
+                      if ( b ) {  // bail if -1
+                      
+                        wrapperElement
+                        
+                          .removeEventListener ( 'click', callback );
+                          
+                        wrapperElement
+                        
+                          .removeEventListener ( 'touchstart', callback );
+                          
+                        return;
+                        
+                        }
+                        
+                      resetInactivityTimer ( );
+                      
+                      },
+                      
+                    wrapperSelector = [
+                    
+                      '.gallery-fullscreen-slideshow-wrapper',
+                      
+                      '.gallery-reel-wrapper',
+                      
+                      '.gallery-slideshow-wrapper'
+                      
+                      ]
+                      
+                      .join ( ', ' ),
+                      
+                    wrapperElement = sectionElement
+                    
+                      .querySelector ( wrapperSelector ),
+                      
+                    nextElement = wrapperElement
+                    
+                      .querySelector ( nextSelector );
+                      
+                  let
+                  
+                    isAutoClick = false,
+                    
+                    inactivityId,
+                    
+                    intervalId;
+                    
+                  wrapperElement
+                  
+                    .addEventListener ( 'click', wrapperCallback );
+                    
+                  wrapperElement
+                  
+                    .addEventListener ( 'touchstart', wrapperCallback );
+                    
+                  start ( );
+                  
+                  };
+                  
+              sectionElement
+              
+                .classList
                 
-              $( selector, $section ).click ( );
-              
-              };
-              
-            const milliseconds = options.slideDuration * 1000;
-            
-            const id =
-            
-              setInterval ( click, milliseconds );
-              
-            /*
-            
-            // continue if no kill on user interaction
-            
-            if ( ! options.killUponUserAction ) return true;
-            
-            const callback = function ( event ) {
-            
-              console.log ( event );
-              
-              clearInterval ( id );
-              
-              $( this )
-              
-                .off ( 'mousedown touchstart' );
+                .add ( codeKey );
                 
-              }
+              text = text
               
-            const selector = [
-            
-              '.gallery-fullscreen-slideshow-wrapper',
-              
-              '.gallery-reel-wrapper',
-              
-              '.gallery-slideshow-wrapper'
-              
-              ]
-              
-              .join ( ', ' );
-              
-            $( selector, $section )
-            
-            $section
-            
-              .on ( 'mousedown touchstart', callback );
-              
-            */
-            
-            };
-            
-          if ( b ) {
-          
-            const callback = ( entries, observer ) => {
-            
-              const callback = ( entry ) => {
-              
-                const b = ! entry.isIntersecting;
+                .replace ( options [ 0 ], '' )
                 
-                if ( b ) return true; // bail if not intersecting
+                .trim ( );
                 
-                observer.disconnect ( );
+              options = JSON
+              
+                .parse ( options [ 1 ] );
                 
-                slideshow ( );
+              const b = options.intersectionObserver;
+              
+              if ( text )
+              
+                element.textContent = text;
                 
-                };
+                else
                 
-              entries.forEach ( callback );
+                  element
+                  
+                    .closest ( '.gallery-caption' )
+                    
+                    .remove ( );
+                    
+              if ( b ) {
               
-              };
+                const
+                
+                  callback = ( entries, observer ) => {
+                  
+                    const callback = ( entry ) => {
+                    
+                      const b = ! entry.isIntersecting;
+                      
+                      if ( b ) return; // bail if not intersecting
+                      
+                      observer.disconnect ( );
+                      
+                      slideshow ( );
+                      
+                      };
+                      
+                    entries.forEach ( callback );
+                    
+                    },
+                    
+                  options = {
+                  
+                    // root : document.querySelector ( '' ),
+                    
+                    rootMargin : '0px',
+                    
+                    threshold : 0.75
+                    
+                    },
+                  
+                  observer = new IntersectionObserver (
+                  
+                    callback,
+                    
+                    options
+                    
+                    );
+                    
+                observer.observe ( sectionElement );
+                
+                } else
+                
+                  slideshow ( );
+                  
+              },
               
-            const options = {
+            xPathExpression = `
             
-              // root : document.querySelector ( '' ),
+              .//section [
               
-              rootMargin : '0px',
-              
-              threshold : 0.75
-              
-              };
-            
-            const observer = new IntersectionObserver ( callback, options );
-            
-            observer.observe ( section );
-            
-            } else
-            
-              slideshow ( );
-              
-          }
-          
-        const selector = '.gallery-section .gallery-caption ' +
-        
-          `p.gallery-caption-content:contains(${ codeKey })`;
-          
-        $( selector ).each ( callback );
-        
-        } ) ( );
-        
-      // hide show unregister
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-section '
+                  
+                  )
+                  
+                ]//div [
+                
+                  @data-test = 'gallery-slideshow-full'
+                  
+                  or
+                    
+                  @data-test = 'gallery-slideshow-reel'
+                  
+                  or
+                    
+                  @data-test = 'gallery-slideshow-simple'
+                  
+                  ]//figcaption [
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-caption '
+                      
+                      )
+                      
+                    ]//p [
+                    
+                      contains (
+                      
+                        concat (
+                        
+                          ' ',
+                          
+                          normalize-space ( @class ),
+                          
+                          ' '
+                          
+                          ),
+                        
+                        ' gallery-caption-content '
+                        
+                        )
+                        
+                      ]
+                      
+                      [
+                      
+                        contains (
+                        
+                          .,
+                          
+                          '${ codeKey }'
+                          
+                          )
+                          
+                        ]
       
-      ( ( selectorKey ) => {
+              `,
+              
+            xPathResults = xPathEvaluate (
+            
+              xPathExpression,
+              
+              document
+              
+                .body
+                
+              );
+              
+          for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+          
+            callback (
+            
+              xPathResults
+              
+                .snapshotItem ( i )
+                
+              );
+              
+            }
+            
+          // hide show unregister
+          
+          {
+          
+            const sectionsElement = document
+            
+              .querySelector ( '#sections' );
+              
+            sectionsElement
+            
+              .style
+              
+              .setProperty ( `--${ codeKey }`, 'visible' );
+              
+            twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .pop ( `--${ codeKey }` );
+              
+            const l = twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length;
+              
+            if ( ! l )
+            
+              sectionsElement
+              
+                .style
+                
+                .setProperty ( '--twc-gallery-section-visibility', 'flex' );
+                
+            }
+            
+          },
+          
+        xPathEvaluate = ( xPathExpression, contextNode ) => {
+        
+          const xPathResults = document
+          
+            .evaluate (
+            
+              xPathExpression,
+              
+              contextNode,
+              
+              null,
+              
+              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+              
+              null
+              
+              );
+              
+          return xPathResults;
+          
+          };
+        
+      document
       
-        let i = twc
+        .addEventListener (
         
-          .data
+          'DOMContentLoaded',
           
-          .hideShow
+          callback
           
-          [ selectorKey ]
+          );
           
-          .indexOf ( `--${ codeKey }` )
-          
-        if ( i != -1 )
-        
-          twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            .splice ( i, 1 );
-            
-        i = twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .length;
-          
-        if ( ! i )
-        
-          $( '#sections' )
-          
-            .css ( '--twc-gallery-section-visibility', 'visible' );
-            
-        } ) ( selectorKey );
-        
-      } );
+      } ) ( );
       
     </script>
   

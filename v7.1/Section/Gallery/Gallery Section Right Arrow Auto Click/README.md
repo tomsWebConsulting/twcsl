@@ -8,7 +8,7 @@ Auto click right arrow of Gallery sections.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -21,20 +21,11 @@ Auto click right arrow of Gallery sections.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [jQuery][4]
 
 ---
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
-  HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
 * Options
 
   * Page Specific
@@ -71,10 +62,10 @@ Auto click right arrow of Gallery sections.
   
   * Edit the Gallery.
   
-  * Set the first line of the first image DESCRIPTION to the following.
+  * In the DESCRIPTION of the first image, on a new line, add the following.
   
     ```text
-    twc-gsraac : { "slideDuration" : 5, "intersectionObserver" : true }
+    twc-gsraac : { "slideDuration" : 5, "inactivityDelay" : 30, "intersectionObserver" : true }
     ```
     
     * Keys
@@ -82,6 +73,11 @@ Auto click right arrow of Gallery sections.
       * slideDuration
         
         The number of seconds a slide is visible or the current slide.
+        
+      * inactivityDelay
+      
+        The number of seconds after a user interacts with the gallery the auto
+        click will resume. If you set the value to -1 the auto click will stop.
         
       * intersectionObserver
         
@@ -92,7 +88,8 @@ Auto click right arrow of Gallery sections.
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][8].
+This effect is not active in Sqparespace Preview to test it use [private
+browsing][8].
 
 ## Make a Donation
 
@@ -100,11 +97,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2021-08-15**
+* **2025-03-30**
   
-  * added kill upon user action
-  * bumped version to 0.2d0
-  -->
+  * added pause/cancel feature
+  * bumped version to 0.2.0
+  
 * **2024-04-14**
   
   * initial version
