@@ -100,6 +100,7 @@ Please consider [making a donation][9].
 * **2025-03-30**
   
   * added pause/cancel feature
+  * remove jQuery dependency
   * bumped version to 0.2.0
   
 * **2024-04-14**
