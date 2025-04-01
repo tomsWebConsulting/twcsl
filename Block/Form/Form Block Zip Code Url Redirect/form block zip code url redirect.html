@@ -1,0 +1,229 @@
+<!--
+
+  begin form block zip code url redirect
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : form block wrapper observe changes
+                  < https://tinyurl.com/ub8akb85 >
+  
+  Copyright     : 2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc fbzcur sub-module
+    
+    twc.fbzcur = ( ( self ) => {
+    
+      const
+      
+        errorUrl = '[ enter error url here between single quotes replacing square brackets ]',
+        
+        urlZipcodeMap = {
+        
+          /*
+          
+            the format of each data structure is a url and an array of zip codes
+            mapped to it
+            
+            following is an example data structure. copy the example data
+            structure below and paste after the example data structure. remove
+            the forward slash asterisk and asterisk forward slash lines from
+            before and after the example data structure. repeat for as many urls
+            and zip codes array as you want to map. this has been done once
+            initially
+            
+            */
+            
+          /*
+          
+          '[ enter url here between single quotes replacing square brackets ]' : [
+          
+            // repeat the following line for as many zip codes as you want
+            
+            '[ enter zip code here between single quotes replacing square brackets ]',
+            
+            ],
+            
+            */
+            
+          '[ enter url here between single quotes replacing square brackets ]' : [
+          
+            // repeat the following line for as many zip codes as you want
+            
+            '[ enter zip code here between single quotes replacing square brackets ]',
+            
+            ],
+            
+          };
+          
+      self
+      
+        .errorUrl
+        
+        =
+        
+        errorUrl;
+        
+      self
+      
+        .urlZipcodeMap
+        
+        =
+        
+        urlZipcodeMap;
+        
+      return self;
+      
+      } ) ( twc.fbzcur || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+      
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Form Block Zip Code Url Redirect v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      // initialize twc fbwoc callbacks sub-module
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbzcur' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains ( 'react-form-contents' );
+            
+            if ( ! hasClass ) return; // bail if not react form
+            
+            console.log ( element );
+            
+            const
+            
+              callback = ( event ) => {
+              
+                const
+                
+                  codeKey = 'twc-fbzcur',
+                  
+                  entries = Object
+                  
+                    .entries (
+                    
+                      twc
+                      
+                        [
+                        
+                          codeKey
+                          
+                            .split ( '-' )
+                            
+                            [ 1 ]
+                            
+                          ]
+                          
+                          .urlZipcodeMap
+                          
+                          ),
+                          
+                  zipcodeUrlMap = { },
+                  
+                  zipCode = element
+                  
+                    .querySelector ( 'input[ type="text" ]')
+                    
+                    .value
+                    
+                    .trim ( );
+                    
+              event.preventDefault ( );
+              
+              for ( const [ url, zipCodes ] of entries ) {
+              
+                for ( const zipCode of zipCodes ) {
+                
+                  zipcodeUrlMap [ zipCode ] = url;
+                  
+                  }
+                  
+                }
+                
+              let url = zipcodeUrlMap [ zipCode ];
+              
+              url !== undefined ? url : errorUrl;
+              
+              window.location = url;
+              
+              };
+              
+            element
+            
+              .querySelector ( 'button[ type="submit" ]' )
+              
+              .addEventListener ( 'click', callback );
+              
+            };
+            
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end form block zip code url redirect -->
