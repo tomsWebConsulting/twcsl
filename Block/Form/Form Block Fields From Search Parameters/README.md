@@ -6,7 +6,7 @@
 
 Fill form fields from search query parameters of the page URL.
 
-### Version 0.2.0
+### Version 0.3.0
 
 #### SS Versions
 
@@ -35,23 +35,21 @@ Fill form fields from search query parameters of the page URL.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[form block fields from search parameters.html][5]**
-      to Page Settings > Advanced > Page Header Code Injection for the page
-      **before** the **Form Block Wrapper Observe Changes** code. Please see
-      [per-page code injection][6].
+      to Page Settings > Advanced > Page Header Code Injection for the page.
+      Refer to [per-page code injection][6] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[form block fields from search parameters.html][5]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER **before**
-      the **Form Block Wrapper Observe Changes** code. Please see [Add code to
-      code injection][7].
+      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      [Add code to code injection][7].
 
 * Add or edit a form block.
 
@@ -86,10 +84,7 @@ Fill form fields from search query parameters of the page URL.
   http://your-site.squarespace.com?first=John&last=Doe
   ```
 
-## Notes
-
-This effect is not active in Squarespace Preview to test it use [private
-browsing][8].
+## Note
 
 This effect does not work with checkbox, radio, or survey fields.
 
@@ -103,6 +98,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-03-03**
+
+  * update to work with Form Block Wrapper Observe Changes v0.4.0
+  * bumped version to 0.3.0
+ 
 * **2024-04-28**
 
   * remove line field to trigger effect, adding the callback is the trigger

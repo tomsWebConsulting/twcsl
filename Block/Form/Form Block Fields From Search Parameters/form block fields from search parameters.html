@@ -1,221 +1,471 @@
-<script>
+<!--
 
-  /*
+  begin form block fields from search parameters
   
-    begin form block fields from search parameters
-    
-    License       : < https://tinyurl.com/s872fb68 >
-    
-    Version       : 0.2.0
-    
-    SS Versions   : 7.1, 7.0
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible    : Yes
-    
-    Dependencies  : form block wrapper observe changes
-                    < https://tinyurl.com/ub8akb85 >
-    
-    Note          : this effect is not active in SS Preview to test it use
-                    private browsing < https://tinyurl.com/ynessvsf >
-                    
-                    this effect does not work with checkbox, radio, or
-                    survey fields
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
-  ( ( ) => {
+  License       : < https://tinyurl.com/s872fb68 >
   
-    const version = '0.2.0';
-    
-    const s = `Form Block Fields From Search Parameters v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    } ) ( );
-    
-  var twcFbffsp = ( $node ) => {
+  Version       : 0.3.0
   
-    const b = ! $node.hasClass ( 'react-form-contents' );
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : form block wrapper observe changes
+                  < https://tinyurl.com/ub8akb85 >
+  
+  Note          : this effect does not work with checkbox, radio, or
+                  survey fields
+  
+  Copyright     : 2022-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    body:not( .sqs-is-page-editing ) #siteWrapper {
     
-    if ( b ) return; // bail if not react form
-    
-    const callback = function ( ) {
-    
-      const $this = $( this );
+      --twc-sqs-block-form-description-display : none;
       
-      let text = $this.text ( );
-      
-      const m = text.match ( /twc-fbffsp : (.+)[\n]?/ );
-      
-      if ( m == null ) return true; // continue
-      
-      $formItem = $this
-      
-        .parents ( '.form-item' );
-        
-      const searchParameterKeyLabelMap = m [ 1 ]
-      
-        .split ( ', ' )
-        
-        .map ( s => s.split ( '=' ) );
-        
-      const skipFields = [
-      
-        'checkbox',
-        
-        'radio',
-        
-        'survey',
-        
-        ];
-      
-      text = text
-      
-        .replace ( m [ 0 ], '' )
-        
-        .trim ( );
-        
-      if ( text ) // set description or remove
-      
-        $this.text ( text );
-        
-        else
-        
-          $this.remove ( );
-          
-      const isSkipField = [
-      
-        ... $formItem
-        
-          .get ( 0 )
-          
-          .classList
-          
-        ]
-      
-        .some ( c => skipFields.indexOf ( c ) >= 0 );
-      
-      if ( isSkipField ) return true; // continue
-      
-      const searchParams =
-      
-        new URLSearchParams ( location.search );
-        
-      for ( const [ key, caption ] of searchParameterKeyLabelMap ) {
-      
-        const b = ! searchParams.has ( key );
-        
-        if ( b ) continue; // continue if no key
-        
-        const inputChangeTrigger = ( node, value = '' ) => {
-        
-          /*
-          
-            based on code by Dan G < https://tinyurl.com/4hes79u8 > and
-            others
-            
-            */
-            
-          const inputTypes = [
-          
-            window.HTMLInputElement,
-            
-            window.HTMLSelectElement,
-            
-            window.HTMLTextAreaElement,
-            
-            ];
-            
-          /*
-          
-            only process the change on elements we know have a value setter in their
-            constructor
-            
-            */
-            
-          const isInputType = inputTypes
-          
-            .indexOf (
-            
-              node.__proto__.constructor
-              
-              )
-              
-            >
-            
-            -1;
-            
-          if ( ! isInputType ) return; // bail if not input type
-          
-          const event = new Event ( 'input', { bubbles : true } );
-          
-          const setValue = Object
-          
-            .getOwnPropertyDescriptor ( node.__proto__, 'value' )
-            
-            .set;
-            
-          setValue.call ( node, value );
-          
-          node.dispatchEvent ( event );
-          
-          };
-          
-        const selector = 'input, select, textarea';
-        
-        let input;
-        
-        let value = searchParams.get ( key );
-        
-        if ( caption == undefined )
-        
-          input = $formItem;
-          
-          else {
-          
-            const captionSelector = `.caption:contains('${ caption }')`;
-            
-            input = $( captionSelector, $formItem )
-            
-              .parents ( '.field' );
-              
-            if ( ! input.length ) return true; // continue
-            
-            }
-            
-        input = $( selector, input )
-        
-          .get ( 0 );
-          
-        value = decodeURIComponent ( value );
-        
-        inputChangeTrigger ( input, value );
-        
-        }
-        
       }
       
-    const codeKey = 'twc-fbffsp';
+    body:not( .sqs-is-page-editing ) .form-wrapper .field-list .description {
     
-    let selector = '.field-list';
-    
-    const $fieldList = $( selector, $node );
-    
-    selector = `.description:contains(\'${ codeKey } : \')`;
+      display : var( --twc-sqs-block-form-description-display );
       
-    $( selector, $fieldList ).each ( callback );
+      }
+      
+    </style>
     
-    };
+  <script>
+  
+    ( ( ) => {
     
-  </script>
+      const
+      
+        version = '0.3.0',
+        
+        s = `
+        
+          Form Block Fields From Search Parameters v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      // initialize twc fbwoc callbacks sub-module
+      
+      const
+      
+        codeKey = 'twc-fbffsp',
+        
+        selectorKey = '.form-wrapper .field-list .description';
+        
+      // hide show register
+      
+      {
+      
+        // initialize twc data sub-module
+        
+        twc.data = ( ( self ) => self ) ( twc.data || { } );
+        
+        // initialize twc data hideShow sub-module
+        
+        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+        
+        // initialize twc data hideShow selector key sub-module
+        
+        twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
+        
+          twc.data.hideShow [ selectorKey ] || [ ] );
+          
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .push ( `--${ codeKey }` );
+          
+        }
+        
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbffsp' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains ( 'react-form-contents' );
+            
+            if ( ! hasClass ) return; // bail if not react form
+            
+            const
+            
+              callback = ( element ) => {
+              
+                let text = element.textContent;
+                
+                const
+                
+                  re = new RegExp ( `${ codeKey } : (.+)[\n]?`, 's' ),
+                  
+                  m = text.match ( re );
+                  
+                if ( m === null ) return; // continue
+                
+                const
+                
+                  formItemElement = element
+                  
+                    .closest ( '.form-item' ),
+                      
+                  searchParameterKeyLabelMap = m [ 1 ]
+                  
+                    .split ( ', ' )
+                    
+                    .map ( s => s.split ( '=' ) ),
+                    
+                  skipFields = [
+                  
+                    'checkbox',
+                    
+                    'radio',
+                    
+                    'survey',
+                    
+                    ];
+                  
+                text = text
+                
+                  .replace ( m [ 0 ], '' )
+                  
+                  .trim ( );
+                  
+                if ( text ) // set description or remove
+                
+                  element.textContent = text;
+                  
+                  else
+                  
+                    element.remove ( );
+                    
+                const isSkipField = [
+                
+                  ...
+                  
+                  formItemElement
+                  
+                    .classList
+                    
+                  ]
+                
+                  .some ( c => skipFields.indexOf ( c ) >= 0 );
+                
+                if ( isSkipField ) return; // continue
+                
+                const searchParams =
+                
+                  new URLSearchParams ( location.search );
+                  
+                for ( const [ key, caption ] of searchParameterKeyLabelMap ) {
+                
+                  const b = ! searchParams.has ( key );
+                  
+                  if ( b ) continue; // continue if no key
+                  
+                  const
+                  
+                    inputChangeTrigger = ( node, value = '' ) => {
+                    
+                      /*
+                      
+                        based on code by Dan G < https://tinyurl.com/4hes79u8 >
+                        and others
+                        
+                        */
+                        
+                      const
+                      
+                        inputTypes = [
+                        
+                          window.HTMLInputElement,
+                          
+                          window.HTMLSelectElement,
+                          
+                          window.HTMLTextAreaElement,
+                          
+                          ],
+                          
+                        /*
+                        
+                          only process the change on elements we know have a
+                          value setter in their constructor
+                          
+                          */
+                          
+                        isInputType = inputTypes
+                        
+                          .indexOf (
+                          
+                            node.__proto__.constructor
+                            
+                            )
+                            
+                          >
+                          
+                          -1;
+                          
+                      if ( ! isInputType ) return; // bail if not input type
+                      
+                      const
+                      
+                        event = new Event ( 'input', { bubbles : true } ),
+                        
+                        setValue = Object
+                        
+                          .getOwnPropertyDescriptor ( node.__proto__, 'value' )
+                          
+                          .set;
+                          
+                      setValue.call ( node, value );
+                      
+                      node.dispatchEvent ( event );
+                      
+                      },
+                      
+                    selector = 'input, select, textarea';
+                    
+                  let
+                  
+                    input,
+                    
+                    value = searchParams.get ( key );
+                    
+                  if ( caption === undefined )
+                  
+                    input = formItemElement;
+                    
+                    else {
+                    
+                      const
+                      
+                        xPathExpression = `
+                        
+                          .//div [
+                          
+                            contains (
+                            
+                              concat (
+                              
+                                ' ',
+                                
+                                normalize-space ( @class ),
+                                
+                                ' '
+                                
+                                ),
+                                
+                              ' caption-text '
+                              
+                              )
+                              
+                              and
+                              
+                              contains (
+                              
+                                .,
+                                
+                                
+                                '${ caption }'
+                                
+                                )
+                                
+                              ]
+                              
+                          `,
+                          
+                        xPathResults =
+                        
+                          xPathEvaluate ( xPathExpression, formItemElement );
+                          
+                      if ( ! xPathResults.snapshotLength ) return; // continue
+                      
+                      input = xPathResults
+                      
+                        .snapshotItem ( 0 )
+                        
+                        .closest ( '.field' )
+                        
+                      }
+                      
+                  input = input
+                  
+                    .querySelector ( selector );
+                    
+                  value = decodeURIComponent ( value );
+                  
+                  inputChangeTrigger ( input, value );
+                  
+                  }
+                  
+                },
+                
+              fieldListElement = element
+              
+                .querySelector ( '.field-list' ),
+                
+              xPathEvaluate = ( xPathExpression, contextNode ) => {
+              
+                const xPathResults = document
+                
+                  .evaluate (
+                  
+                    xPathExpression,
+                    
+                    contextNode,
+                    
+                    null,
+                    
+                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                    null
+                    
+                    );
+                    
+                return xPathResults;
+                
+                },
+                
+              xPathExpression = `
+              
+                .//p[
+                
+                  contains (
+                  
+                    concat (
+                    
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
+                      
+                    ' description '
+                    
+                    )
+                    
+                    and
+                    
+                    contains (
+                    
+                      .,
+                      
+                      '${ codeKey } : '
+                      
+                      )
+                      
+                    ]
+                    
+                `,
+                
+              xPathResults = xPathEvaluate ( xPathExpression, element );
+              
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              const element = xPathResults.snapshotItem ( i );
+              
+              callback ( element );
+              
+              }
+              
+            // hide show unregister
+            
+            {
+            
+              const siteWrapperElement = document
+              
+                .querySelector ( '#siteWrapper' );
+                
+              siteWrapperElement
+              
+                .style
+                
+                .setProperty ( `--${ codeKey }`, 'visible' );
+                
+              twc
+              
+                .data
+                
+                .hideShow
+                
+                [ selectorKey ]
+                
+                .pop ( `--${ codeKey }` );
+                
+              const l = twc
+              
+                .data
+                
+                .hideShow
+                
+                [ selectorKey ]
+                
+                .length;
+                
+              if ( ! l )
+              
+                siteWrapperElement
+                
+                  .style
+                  
+                  .setProperty ( '--twc-sqs-block-form-description-display',
+                  
+                    'unset' );
+                    
+              }
+              
+            };
+            
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end form block fields from search parameters -->
