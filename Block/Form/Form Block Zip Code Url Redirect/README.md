@@ -28,7 +28,7 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
 
 ## Install
 
-* Install **[Form Block Wrapper Observe Changes][4]**. After you install the
+* Install **[Form Block Wrapper Observe Changes][5]**. After you install the
   code be sure to continue on with the rest of the steps.
   
 * Options
@@ -38,9 +38,9 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[form block zip code url redirect.html][5]** to Page
+    * Add code from file **[form block zip code url redirect.html][6]** to Page
       Settings > Advanced > Page Header Code Injection for the page. Refer to
-      [per-page code injection][6] for details. Read the code for any
+      [per-page code injection][7] for details. Read the code for any
       instructions within.
       
   * Site-wide
@@ -48,9 +48,9 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[form block zip code url redirect.html][5]** to
+    * Add code from file **[form block zip code url redirect.html][6]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7]. Read the code for any instructions within.
+      code to code injection][8]. Read the code for any instructions within.
       
 * Add or edit a form block.
 
@@ -62,7 +62,7 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -78,8 +78,9 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
-[5]: form%20block%20zip%20code%20url%20redirect.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[6]: form%20block%20zip%20code%20url%20redirect.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
