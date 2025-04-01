@@ -1,0 +1,883 @@
+<!--
+
+  begin form block fields previous next
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : form block wrapper observe changes
+                  < https://tinyurl.com/ub8akb85 >
+  
+  Copyright     : 2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    .page-section.twc-fbfpn {
+    
+      --twc-fbfpn-button-gap : 20px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc fbfpn sub-module
+    
+    twc.fbfpn = ( ( self ) => {
+    
+      /*
+      
+        use [ step ] and [ total ] to replace those texts with the step and
+        total numbers. For example : Step [ step ] of [ total ]
+        
+        */
+        
+      const stepText = 'Step [ step ] of [ total ]';
+      
+      self
+      
+        .stepText
+        
+        =
+        
+        stepText;
+        
+      return self;
+      
+      } ) ( twc.fbfpn || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+      
+  <style>
+  
+    .twc-fbfpn-item {
+    
+      display : none;
+      margin-bottom : var( --form-field-spacing-bottom );
+      
+      }
+      
+    .twc-fbfpn-item--show {
+    
+      display : block;
+      
+      }
+      
+    .twc-fbfpn-step:last-child {
+    
+      padding-bottom : 0.5em;
+      
+      }
+      
+    .page-section.twc-fbfpn .form-button-wrapper {
+    
+      display : none;
+      
+      }
+      
+    .twc-fbfpn-buttons,
+    .page-section.twc-fbfpn .form-button-wrapper.twc-fbfpn-form-button-wrapper--show
+    
+      {
+      
+        display : flex;
+        gap : var( --twc-fbfpn-button-gap );
+        
+        }
+        
+    .twc-fbfpn-buttons .sqs-block-button {
+
+      padding : 0;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) div:not( .twc-fbfpn-buttons ) > .sqs-block-button:nth-last-child( -n+4 ) {
+    
+      display : none;
+      
+      }
+      
+    .sqs-layout:not( .sqs-editing ) .sqs-row + .sqs-row .twc-fbfpn-buttons .sqs-block:not( .float ):first-child {
+    
+      padding-top : 0;
+      
+      }
+      
+    /* begin error style */
+    
+      .twc-fbfpn-error {
+      
+        background-color : #ce2c30;
+        color : white;
+        position : absolute;
+        margin-left : 25px;
+        
+        }
+        
+      .twc-fbfpn-error a {
+      
+        color : white;
+        text-decoration : underline;
+        
+        }
+        
+      /* end error style */
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Form Block Fields Previous Next v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      // initialize twc fbwoc callbacks sub-module
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbfpn' ]
+          
+          =
+          
+          ( element ) => {
+    
+            const
+            
+              $node = $( element ),
+              
+              hasClass = $node
+              
+                .hasClass ( 'react-form-contents' );
+                
+            if ( ! hasClass ) return; // bail if not react form
+            
+            const codeKey = 'twc-fbfpn';
+            
+            let
+            
+              selector =
+              
+                `.field-list .section .title:contains('${ codeKey }')`,
+              
+              $sectionElements = $( selector, $node );
+              
+            if ( ! $sectionElements.length ) return; // bail if no elements
+            
+            const
+            
+              buildButtonsTemplate = ( ) => {
+              
+                const callback = ( direction ) => {
+                
+                  const
+                  
+                    callback = ( event ) => {
+                    
+                      const direction = event.data.direction;
+                      
+                      let $element = $( event.currentTarget )
+                      
+                        .parents ( itemSelector )
+                        
+                        .removeClass ( itemShowClassName );
+                        
+                      switch ( direction ) {
+                      
+                        case 'first' :
+                        
+                          $element = $element
+                          
+                            .prevAll ( itemSelector )
+                            
+                            .last ( );
+                            
+                          break;
+                          
+                        case 'last' :
+                        
+                          $element = $element
+                          
+                            .nextAll ( itemSelector )
+                            
+                            .last ( );
+                            
+                          break;
+                          
+                        case 'next' :
+                        
+                          $element = $element
+                          
+                            .next ( itemSelector );
+                            
+                          break;
+                          
+                        case 'previous' :
+                        
+                          $element = $element
+                          
+                            .prev ( itemSelector );
+                            
+                          break;
+                          
+                        }
+                        
+                      $element.addClass ( itemShowClassName );
+                      
+                      formButtonWrapperHideShow ( $element );
+                      
+                      },
+                      
+                    selector =
+                    
+                      `[ href="#${ classNamePrefix }${ direction }" ]`;
+                      
+                  $( selector )
+                  
+                    .parents ( '.sqs-block-button' )
+                    
+                    .clone ( )
+                    
+                    .removeAttr ( 'id' )
+                    
+                    .find ( '[ id ]' )
+                    
+                    .removeAttr ( 'id' )
+                    
+                    .end ( )
+                    
+                    .find ( '[ href ]' )
+                    
+                    .removeAttr ( 'href' )
+                    
+                    .end ( )
+                    
+                    .click (
+                    
+                      { direction : direction },
+                      
+                      callback
+                      
+                      )
+                      
+                    .appendTo ( $buttonsTemplate );
+                    
+                  };
+                  
+                [
+                
+                  'previous',
+                  
+                  'next',
+                  
+                  'first',
+                  
+                  'last'
+                  
+                  ]
+                  
+                  .forEach ( callback );
+                  
+                },
+                
+              classNamePrefix = `${ codeKey }-`,
+              
+              errorClassName = `${ classNamePrefix }error`,
+              
+              itemClassName = `${ classNamePrefix }item`,
+              
+              formButtonWrapperHideShow = ( $element ) => {
+              
+                const b = $element.is ( ':last-child' );
+                
+                if ( b )
+                
+                  $formButtonWrapper
+                  
+                    .addClass ( formButtonWrapperShowClassName );
+                    
+                  else
+                  
+                    $formButtonWrapper
+                    
+                      .removeClass ( formButtonWrapperShowClassName );
+                      
+                },
+                
+              formButtonWrapperShowClassName =
+              
+                `${ classNamePrefix }form-button-wrapper--show`,
+                
+              itemSelector = `.${ itemClassName }`,
+              
+              itemShowClassName = `${ itemClassName }--show`,
+              
+              itemShowSelector = `.${ itemShowClassName }`,
+              
+              options = twc.fbfpn,
+              
+              watchError = ( ) => {
+              
+                const buildErrorHtml = ( ) => {
+                
+                  const $elements = $( '.form-field-error', $node )
+                  
+                    .slice ( 1 );
+                    
+                  if ( ! $elements.length ) return; // bail if no field errors
+                  
+                  let html = $errorElement
+                  
+                    .text ( )
+                    
+                    .trim ( )
+                    
+                    .split ( ': ' );
+                    
+                  html [ 1 ] = html [ 1 ]
+                  
+                    .split ( /[,. ]/ )
+                    
+                    .filter ( s => s != '' && s != 'and' )
+                    
+                    .map ( s => `<a>${ s }</a>` );
+                    
+                  const last = html [ 1 ].pop ( );
+                  
+                  switch ( html [ 1 ].length ) {
+                  
+                    case 0 :
+                    
+                      html [ 1 ] = `${ last }.`;
+                      
+                      break;
+                      
+                    case 1 :
+                    
+                      html [ 1 ]
+                      
+                        .push ( `${ last }.` );
+                        
+                      html [ 1 ]
+                      
+                        =
+                        
+                        html [ 1 ]
+                        
+                        .join ( ' and ' );
+                        
+                      break;
+                      
+                    default :
+                    
+                      html [ 1 ]
+                      
+                        =
+                        
+                        html [ 1 ]
+                        
+                        .join ( ', ' )
+                        
+                        +
+                        
+                        `, and ${ last }.`;
+                        
+                      break;
+                      
+                    }
+                    
+                  html = html.join ( ': ' );
+                  
+                  $errorElement
+                  
+                    .html ( html )
+                    
+                    .find ( 'a' )
+                    
+                    .click ( errorClickCallback );
+                    
+                  };
+                  
+                const
+                
+                  element =
+                  
+                    $( 'div', $node )
+                    
+                      .first ( )
+                      
+                      .get ( 0 ),
+                      
+                  errorClickCallback = function ( event ) {
+                  
+                    const selector = `.${ itemShowClassName }`;
+                    
+                    $( selector, $node )
+                    
+                      .removeClass ( itemShowClassName );
+                      
+                    const
+                    
+                      $this = $( this ),
+                      
+                      i = $this.index ( ),
+                      
+                      $element =
+                      
+                        $( '.form-field-error', $node )
+                          
+                          .slice ( 1 )
+                          
+                          .eq ( i )
+                          
+                          .parents ( itemSelector )
+                          
+                          .addClass ( itemShowClassName );
+                          
+                    formButtonWrapperHideShow ( $element );
+                    
+                    },
+                    
+                  errorSummaryCallback = ( mutations ) => {
+                  
+                    const callback = ( mutation ) => {
+                    
+                      const b = ! mutation.addedNodes.length;
+                      
+                      if ( b ) return; // continue
+                      
+                      errorSummaryObserver.disconnect ( );
+                      
+                      const
+                      
+                        selector = '.form-field-error',
+                        
+                        callback = function ( ) {
+                        
+                          const b = this.nodeType === Node.TEXT_NODE;
+                          
+                          return b;
+                          
+                          },
+                          
+                        $element = $(
+                        
+                          selector,
+                          
+                          mutation.addedNodes [ 0 ]
+                          
+                          )
+                          
+                          .contents ( )
+                          
+                          .filter ( callback );
+                          
+                      $errorElement = $(
+                      
+                        `
+                        
+                          <span class="${ errorClassName }">
+                          
+                            ${ $element.text ( ) }
+                            
+                            </span>
+                            
+                          `
+                          
+                        );
+                        
+                      buildErrorHtml ( );
+                      
+                      $element.after ( $errorElement );
+                      
+                      // start listening for changes in element
+                      
+                      errorTextObserver.observe (
+                      
+                        $element.get ( 0 ),
+                        
+                        errorTextConfig
+                        
+                        );
+                        
+                      };
+                      
+                    mutations.forEach ( callback );
+                    
+                    },
+                    
+                  errorSummaryConfig = {
+                  
+                    childList : true
+                    
+                    },
+                    
+                  errorSummaryObserver =
+                  
+                    new MutationObserver ( errorSummaryCallback ),
+                    
+                  errorTextCallback = ( mutations ) => {
+                  
+                    const callback = ( mutation ) => {
+                    
+                      $errorElement.text (
+                      
+                        mutation
+                        
+                          .target
+                          
+                          .textContent
+                          
+                        );
+                        
+                      buildErrorHtml ( );
+                      
+                      };
+                      
+                    mutations.forEach ( callback );
+                    
+                    },
+                    
+                  errorTextConfig = {
+                  
+                    characterData : true,
+                    
+                    childList : true
+                    
+                    },
+                    
+                  errorTextObserver =
+                  
+                    new MutationObserver ( errorTextCallback );
+                  
+                let $errorElement;
+                
+                // start listening for changes in element
+                
+                errorSummaryObserver
+                
+                  .observe ( element, errorSummaryConfig );
+                  
+                },
+                
+              $buttonsTemplate =
+              
+                $( `<div class="${ classNamePrefix }buttons" />`);
+                
+            // add class to page section
+            
+            $node
+            
+              .parents ( '.page-section' )
+              
+              .addClass ( `${ codeKey }` );
+              
+            // begin define form button wrapper element
+            
+              selector = '.form-button-wrapper';
+              
+              const $formButtonWrapper = $( selector, $node );
+              
+              // end define form button wrapper element and add class
+              
+            // add steps
+            
+            {
+            
+              const
+              
+                callback = ( i, element ) => {
+                
+                  const
+                  
+                    text = options
+                    
+                      .stepText
+                      
+                      .replaceAll ( '[ step ]', ++i )
+                      
+                      .replaceAll ( '[ total ]', l );
+                      
+                    html = `
+                    
+                      <div class="${codeKey }-step">
+                      
+                        ${ text }
+                        
+                        </div>
+                        
+                      `;
+                      
+                  $( element )
+                  
+                    .after ( html );
+                    
+                  },
+                  
+                l = $sectionElements.length;
+                
+              $sectionElements.each ( callback );
+              
+              }
+              
+            buildButtonsTemplate ( );
+            
+            $sectionElements = $sectionElements
+            
+              .parents ( '.form-item' )
+              
+              .addClass ( `${ codeKey }` );
+              
+            const re = new RegExp ( `^(${ codeKey }(?: *: *)?)(.*)` );
+            
+            let
+            
+              $element = $sectionElements
+              
+                .last ( ),
+                
+              $elements = $element;
+              
+            while ( $element.length ) {
+            
+              const
+              
+                $descriptionElement = $( '.description', $element ),
+                
+                $titleElement = $( '.title', $element );
+                
+              let title = $titleElement
+              
+                .text ( );
+                
+              const m = title.match ( re );
+              
+              title = title
+              
+                .replace ( m [ 1 ], '' );
+                
+              $titleElement
+              
+                .text ( title );
+                
+              $elements = $element
+              
+                .nextUntil ( `.${ codeKey }` )
+                
+                .add ( $element );
+                
+              $element = $elements
+              
+                .wrapAll ( `<section class="${ itemClassName }" />` )
+                
+                .parents ( itemSelector )
+                
+                .next ( );
+                
+              }
+              
+            const $itemElements = $( itemSelector, $node )
+            
+              .first ( )
+              
+              .addClass ( itemShowClassName )
+              
+              .end ( )
+              
+              .slice ( 0, -1 )
+              
+              .append ( $buttonsTemplate )
+              
+              .end ( );
+              
+            selector = `.${ classNamePrefix }buttons .sqs-block-button`;
+            
+            $( selector )
+            
+              .first ( )
+              
+              .remove ( )
+              
+              .end ( )
+              
+              .eq ( 2 )
+              
+              .remove ( )
+              
+              .end ( )
+              
+              .find ( '.sqs-block-button-container' )
+              
+              .addClass ( 'fadeIn' );
+              
+            // add buttons to form button wrapper
+            
+            {
+            
+              const
+              
+                createHtml = ( label ) => {
+                
+                  const html = `
+                  
+                    <button class="${ codeKey } sqs-button-element--primary">
+                    
+                      <span>
+                      
+                        ${ label }
+                        
+                        </span>
+                        
+                      </button>
+                    
+                    `;
+                    
+                  return html;
+                  
+                  };
+                  
+              $formButtonWrapper
+              
+                .append (
+                
+                  createHtml ( 'Previous' )
+                  
+                  )
+                  
+                .append (
+                
+                  createHtml ( 'First' )
+                  
+                  );
+                  
+              const $buttonElements = $formButtonWrapper
+              
+                .children ( );
+                
+              let callback;
+              
+              // previous
+              
+              {
+              
+                callback = ( event ) => {
+                
+                  event.preventDefault ( );
+                  
+                  $itemElements
+                  
+                    .removeClass ( itemShowClassName );
+                    
+                  $formButtonWrapper
+                  
+                    .removeClass ( formButtonWrapperShowClassName );
+                    
+                  $itemElements
+                  
+                    .eq ( -2 )
+                    
+                    .addClass ( itemShowClassName );
+                    
+                  };
+                  
+                $buttonElements
+                
+                  .eq ( 1 )
+                  
+                  .click ( callback );
+                  
+                }
+                
+              // first
+              
+              {
+              
+                callback = ( event ) => {
+                
+                  event.preventDefault ( );
+                  
+                  $itemElements
+                  
+                    .removeClass ( itemShowClassName );
+                    
+                  $formButtonWrapper
+                  
+                    .removeClass ( formButtonWrapperShowClassName );
+                    
+                  $itemElements
+                  
+                    .first ( )
+                    
+                    .addClass ( itemShowClassName );
+                    
+                  };
+                  
+                $buttonElements
+                
+                  .last ( )
+                  
+                  .click ( callback );
+                  
+                }
+                
+              }
+              
+            watchError ( );
+            
+            };
+                        
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end form block fields previous next -->
