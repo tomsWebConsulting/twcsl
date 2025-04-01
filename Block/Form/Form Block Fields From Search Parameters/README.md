@@ -28,7 +28,7 @@ Fill form fields from search query parameters of the page URL.
 
 ## Install
 
-* Install **[Form Block Wrapper Observe Changes][4]**. After you install the
+* Install **[Form Block Wrapper Observe Changes][14]**. After you install the
   code be sure to continue on with the rest of the steps.
   
 * Options
@@ -120,7 +120,8 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
+[14]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [5]: form%20block%20fields%20from%20search%20parameters.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
