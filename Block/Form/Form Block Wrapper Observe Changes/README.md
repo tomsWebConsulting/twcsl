@@ -152,7 +152,7 @@ Please consider [making a donation][8].
 * **2025-03-01**
 
   * restructure how user callbacks are added
-  * code is ative in Preview
+  * code is active in Preview
   * remove jQuery dependency
   * bumped version to 0.4.0
   
