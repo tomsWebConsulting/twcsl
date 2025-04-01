@@ -9,7 +9,7 @@ nodes are added or removed from the [DOM][2].
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -24,40 +24,31 @@ nodes are added or removed from the [DOM][2].
 #### Dependencies
 
   * [Squarespace plan][3] that supports [JavaScript][4].
-  
-  * [jQuery][5]
 
 ---
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
-  HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
 * Options
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
-    * Add code from file **[form block wrapper observe changes.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [Per-page code injection][7]. Read the code for any instructions
-      within.
+    * Add code from file **[form block wrapper observe changes.html][5]** to
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [per-page code injection][6] for details. Read the code for any
+      instructions within.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
-    * Add code from file **[form block wrapper observe changes.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][8]. Read the code for any instructions within.
+    * Add code from file **[form block wrapper observe changes.html][5]** to
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7]. Read the code for any instructions within.
       
 * Add or edit a form block.
 
@@ -67,49 +58,104 @@ nodes are added or removed from the [DOM][2].
   ```
   "callbacks" : {
   
-    "added" : "[optional, enter callback names here replacing square brackets]",
+    "added" : [
     
-    "removed" : "[optional, enter callback names here replacing square brackets]"
+      /*
+      
+        the format of each line is the name of a function. following is an
+        example line. copy the example line below and paste after the example
+        line. remove '// ' at the beginning of the pasted line. this has been
+        done once initially
+        
+        */
+        
+      // "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      ],
+      
+    "removed" : [
     
-    }
+      /*
+      
+        the format of each line is the name of a function. following is an
+        example line. copy the example line below and paste after the example
+        line. remove '// ' at the beginning of the pasted line. this has been
+        done once initially
+        
+        */
+        
+      // "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      ]
+      
+    }    
   ```
-  
-  Where indicated add the name(s) of your callback(s). Added and removed are
-  optional. You can supply one callback or a list of callbacks seperated by
-  comma space for example **callback1, callback2**.
 
 ## Callbacks
 
-Your callbacks must accept a jQuery object as a parameter.
+Your callbacks must accept an element as a parameter.
 
-Following is a very generalized example of a callback. The callback(s) must be
-defined before the code of this effect. Note the use of var.
+Following is a very generalized example of a callback.
 
 ```html
 <script>
 
-  var myNamedFunction = ( $node ) => {
+  ( ( ) => {
   
-    console.log ( 'myNamedFunction : ', $node );
+    // initialize twc module
     
-    };
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc fbwoc sub-module
+    
+    twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+    
+    // initialize twc fbwoc callbacks sub-module
+    
+    twc.fbwoc.callbacks = ( ( self ) => {
+    
+      self
+      
+        [ 'twcFbwocLog' ]
+        
+        =
+        
+        ( element ) => {
+        
+          console.log ( 'twcFbwocLog : ', element );
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.fbwoc.callbacks || { } );
+      
+    } ) ( );
     
   </script>
 ```
 
-## Notes
+## Note
 
 This code is a base for other effects.
 
-This effect is not active in Squarespace Preview to test it use [private
-browsing][9].
-
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-03-01**
+
+  * restructure how user callbacks are added
+  * code is ative in Preview
+  * remove jQuery dependency
+  * bumped version to 0.4.0
+  
 * **2024-04-27**
 
   * restructured the code
@@ -134,9 +180,7 @@ Please consider [making a donation][10].
 [2]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://jquery.com/
-[6]: form%20block%20wrapper%20observe%20changes.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: form%20block%20wrapper%20observe%20changes.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
