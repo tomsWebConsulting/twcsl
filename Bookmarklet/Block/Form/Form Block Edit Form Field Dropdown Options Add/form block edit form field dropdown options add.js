@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.1.1
+    Version     : 0.1.2
     
     Copyright   : 2025 Thomas Creedon
                   
@@ -20,7 +20,7 @@
   
     title = 'Form Block Edit Form Field Dropdown Options Add',
     
-    version = '0.1.1',
+    version = '0.1.2',
   
     s = `${ title } v${ version }
     
@@ -110,14 +110,14 @@
       
     processOptions = async ( options, optionsElement, addElement ) => {
     
+      const inputElements = optionsElement
+      
+        .querySelectorAll ( 'input' );
+        
       for ( let i = 0; i < options.length; i++ ) {
       
-        let element = optionsElement
+        let element = inputElements [ i ];
         
-          .querySelectorAll ( 'input' )
-          
-          [ i ];
-          
         if ( element === undefined ) {
         
           addElement.click ( );
@@ -144,7 +144,7 @@
         
         }
         
-      };
+      },
       
     xPathEvaluate = ( xPathExpression, contextNode ) => {
     

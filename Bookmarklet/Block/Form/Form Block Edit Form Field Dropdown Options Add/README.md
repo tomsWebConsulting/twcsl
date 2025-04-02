@@ -8,7 +8,7 @@ More easily add options to a Form block Dropdown field.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### SS Versions
 
@@ -36,8 +36,7 @@ Block Edit Form Field Dropdown Options Add**.
 
 * Click on Options.
 
-* Replace the Option 1 text with a comma separated list of your own options.
-  Type tab to save the option field.
+* Set the Option 1 text to a comma separated list of your own options.
   
 * Use the bookmarklet.
 
@@ -59,6 +58,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2025-04-01**
+
+  * move querySelectorAll input outside of for loop
+  * bumped version to 0.1.2
+  
 * **2025-03-25**
 
   * fix for apparent changes that Squarespace made that broke the code
