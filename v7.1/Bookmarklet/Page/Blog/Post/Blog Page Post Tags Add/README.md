@@ -29,7 +29,7 @@ bookmark in your browser named **TWC Blog Page Post Tags Add**.
 
 * Prepare a comma separated string of tags and get it into your clipboard.
 
-* Edit a blog post settings brining up the **Tags** option.
+* Edit a blog post settings bringing up the **Tags** option.
 
 * Paste the clipboard contents into the **Add tag here** field.
 
