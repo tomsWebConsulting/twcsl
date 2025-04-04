@@ -35,7 +35,7 @@ Form Block Edit Form Field Dropdown Options Pre-sort**.
 * Use the bookmarklet.
 
 * The OPTIONS will be sorted alphabetically and entered into the Option 1 field
-  as a comma separated list. Commas in option fields will be encoded to **\,**
+  as a comma separated list. Commas in option fields will be encoded to **\\,**
   (backslash comma). The remaining option fields will be filled with random four
   character strings. This reduces the likelihood that Squarespace UI will
   complain about duplicate values later.
