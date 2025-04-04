@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add a comma separated string as tags to a blog post.
+Add a comma separated string as tags in the product editor.
 
 ### Version
 
