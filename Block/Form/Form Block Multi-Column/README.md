@@ -2,7 +2,7 @@
 
 ### [License][1]
 
-### Version 0.2.1
+### Version 0.3.0
 
 #### SS Versions
 
@@ -53,14 +53,14 @@
   **twcFormBlockMultiColumn** to **added** per the **Form Block Wrapper Observe
   Changes** code install steps.
 
-* For the second field add a line field with a label of **twc-fbmc** and a
+* For the second field add a line field with a label of **twc-fbm** and a
   description of **columns : n**. Replace **n** with the number of columns you
   want for the form.
   
 * For groups of fields that you want to have a column effect add a line field
-  with a label of **twc-fbmc-begin** before the first field of the column group.
+  with a label of **twc-fbm-begin** before the first field of the column group.
   To end the column effect, after the last field of the column group add a line
-  field with a title of **twc-fbmc-end**.
+  field with a title of **twc-fbm-end**.
 
 ## Notes
 
@@ -80,6 +80,13 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-04-03**
+
+  * update to work with followup questions
+  * update to work with Form Block Wrapper Observe Changes v0.4.0
+  * remove dependency on jQuery
+  * bumped version to 0.3.0
+  
 * **2024-04-27**
 
   * update to work with Form Block Wrapper Observe Changes v0.3.0

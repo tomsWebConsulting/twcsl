@@ -1,12 +1,12 @@
-<script>
+<!-- begin TWC Form Block Multi-Column -->
 
-  /*
+  <!--
   
-    begin form block multi-column
+    form block multi-column
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.1
+    Version       : 0.3.0
     
     SS Versions   : 7.1, 7.0
     
@@ -16,151 +16,433 @@
     Compatible    : Yes
     
     Dependencies  : form block wrapper observe changes
+                    < https://tinyurl.com/ub8akb85 >
     
-    Notes         : this effect is not active in SS Preview to test it use
-                    private browsing < https://tinyurl.com/ynessvsf >
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    Copyright     : 2022-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
-    */
+    -->
     
-  ( ( ) => {
+  <script>
   
-    const version = '0.2.1';
+    ( ( ) => {
     
-    const s = `Form Block Multi-Column v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
+      const
       
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    } ) ( );
-    
-  var twcFormBlockMultiColumn = ( $node ) => {
-  
-    const b = ! $node.hasClass ( 'react-form-contents' );
-    
-    if ( b ) return; // bail if not react form
-    
-    const codeKey = 'twc-fbmc';
-    
-    const selector = `.title:contains('${ codeKey }') ~ ` +
-    
-      '.description:contains(\'columns\')';
-      
-    let $element = $( selector );
-    
-    if ( ! $element.length ) return; // bail if no trigger
-    
-    const blockId = $node
-    
-      .parents ( '.sqs-block-form' )
-      
-      .attr ( 'id' );
-      
-    let column = 1;
-    
-    let columns = $element
-    
-      .text ( )
-      
-      .match ( /\d+/ )
-      
-      [ 0 ];
-      
-    let mode = 'end';
-    
-    let row = 1;
-    
-    let rulesets = '';
-    
-    columns = Number ( columns );
-    
-    $element
-    
-      .parents ( '.field-list' )
-      
-      .children ( )
-      
-      .each ( function ( ) {
-      
-        const $this = $( this );
+        version = '0.3.0',
         
-        const selector = '.title:contains(\'twc-fbmc\')';
+        s = `
         
-        const $element = $( selector, $this );
-        
-        if ( $element.length ) {
-        
-          mode = $element
+          Form Block Multi-Column v${ version }
           
-            .text ( )
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbm' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
             
-            .trim ( )
+              .classList
+              
+              .contains ( 'react-form-contents' );
             
-            .slice ( 9 );
+            if ( ! hasClass ) return; // bail if not react form
             
-          mode = mode ? mode : 'end';
-          
-          $( this ).remove ( );
-          
-          return true; // continue
-          
-          }
-          
-        if ( mode == 'end' ) {
+            const
+            
+              codeKey = 'twc-fbm',
+              
+              xPathEvaluate = ( xPathExpression, contextNode ) => {
+              
+                const xPathResults = document
+                
+                  .evaluate (
+                  
+                    xPathExpression,
+                    
+                    contextNode,
+                    
+                    null,
+                    
+                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                    null
+                    
+                    );
+                    
+                return xPathResults;
+                
+                };
+                
+            let
+            
+              xPathExpression = `
+              
+                .//div [
+                
+                  contains (
+                  
+                    concat (
+                    
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
+                    
+                    ' title '
+                    
+                    )
+                    
+                  and
+                  
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey }'
+                    
+                    )
+                    
+                  ]/following-sibling::* [
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                      
+                      ' description '
+                      
+                      )
+                      
+                    and
+                    
+                    contains (
+                    
+                      .,
+                      
+                      'columns'
+                      
+                      )
+                      
+                    ]
+                
+                `,
+                
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                element
+                
+                );
+                
+            // bail if no trigger text
+            
+            if ( ! xPathResults.snapshotLength ) return;
+            
+            const
+            
+              blockId = element
+              
+                .closest ( '.sqs-block-form' )
+                
+                .getAttribute ( 'id' ),
+                
+              listClassName = `${ codeKey }-list`,
+              
+              triggerElement = xPathResults
+              
+                .snapshotItem ( 0 ),
+                
+              columns = Number (
+              
+                triggerElement
+                  
+                  .textContent
+                  
+                  .match ( /\d+/ )
+                  
+                  [ 0 ]
+                  
+                  ),
+                  
+              fieldListElement = triggerElement
+              
+                .closest ( '.field-list' ),
+                
+              gridCallback = ( element ) => {
+              
+                xPathResults = xPathEvaluate (
+                
+                  xPathExpression,
+                  
+                  element
+                  
+                  );
+                  
+                if ( xPathResults.snapshotLength ) {
+                
+                  mode = xPathResults
+                  
+                    .snapshotItem ( 0 )
+                    
+                    .textContent
+                    
+                    .trim ( )
+                    
+                    .slice ( 9 );
+                    
+                  mode = mode ? mode : 'end';
+                  
+                  element
+                  
+                    .remove ( );
+                    
+                  return; // continue
+                  
+                  }
+                  
+                if ( mode === 'end' ) {
+                
+                  index++;
+                  
+                  row++;
+                  
+                  return; // continue
+                  
+                  }
+                  
+                let marginRightValue = 'unset';
+                
+                if ( column !== columns )
+                
+                  marginRightValue = 'var( --form-field-column-gap )';
+                  
+                const ruleset = `
+                
+                  body:not( .sqs-is-page-editing ) #${ blockId } .${ itemClassName }:nth-child( ${ index } ) {
+                  
+                    margin-right : ${ marginRightValue };
+                    
+                    grid-area : ${ row } / ${ column++ } / ${ row } / ${ column };
+                    
+                    }
+                    
+                  body:not( .sqs-is-page-editing ) #${ blockId } .form-wrapper .${ itemClassName }:nth-child( ${ index } )  .followup-question-container {
+                  
+                    margin-left : 0;
+                    
+                    }
+                    
+                  `;
+                  
+                index++;
+                
+                rulesets += ruleset;
+                
+                if ( column > columns ) {
+                
+                  column = 1;
+                  
+                  row++;
+                  
+                  }
+                  
+                },
+                
+              itemClassName = `${ listClassName }__item`,
+              
+              wrapCallback = ( element ) => {
+              
+                const wrapperElement = document
+                
+                  .createElement ( 'div' );
+                  
+                wrapperElement
+                
+                  .classList
+                  
+                  .add ( itemClassName );
+                  
+                fieldListElement
+                
+                  .insertAdjacentElement ( 'beforeend', wrapperElement );
+                  
+                wrapperElement
+                
+                  .append (
+                  
+                    element
+                    
+                      .previousElementSibling
+                      
+                    );
+                    
+                wrapperElement
+                
+                  .append ( element );
+                  
+                };
+                
+            let
+            
+              column = 1,
+              
+              index = 1,
+              
+              mode = 'end',
+              
+              row = 1,
+              
+              rulesets = '';
+              
+            fieldListElement
+            
+              .classList
+              
+              .add ( `${ listClassName }` );
+              
+            fieldListElement
+            
+              .querySelectorAll ( '.followup-question-container' )
+              
+              .forEach ( wrapCallback );
+              
+            triggerElement
+            
+              .closest ( `.${ itemClassName }` )
+              
+              .remove ( );
+              
+            xPathExpression = `
+            
+              .//div [
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                  
+                  ' title '
+                  
+                  )
+                  
+                and
+                
+                contains (
+                
+                  .,
+                  
+                  '${ codeKey }'
+                  
+                  )
+                  
+                ]
+                
+              `;
+              
+            [
+            
+              ...
+              
+              fieldListElement
+              
+                .children
+                
+              ]
+              
+              .forEach ( gridCallback );
+              
+            rulesets = rulesets
+            
+              .split ( '\n' )
+              
+              .slice ( 0, -2 )
+              
+              .join ( '\n' );
+              
+            const html = `
+            
+              <style>
+              
+                body:not( .sqs-is-page-editing ) #${ blockId } .${ listClassName } {
+                
+                  display : grid;
+                  grid-template-columns : repeat( ${ columns }, 1fr );
+                  
+                  }
+                  
+                body:not( .sqs-is-page-editing ) #${ blockId } .${ itemClassName } {
+                
+                  grid-column : 1 / -1;
+                  
+                  }
+                  
+                ${ rulesets }
+                
+                </style>
+                
+              `;
+              
+            document
+            
+              .head
+              
+              .insertAdjacentHTML ( 'beforeend', html );
+              
+            };
+            
+        return self;
         
-          row++;
-          
-          return true; // continue
-          
-          }
-          
-        const id = $( this ).attr ( 'id' );
+        } ) ( twc.fbwoc.callbacks || { } );
         
-        const ruleset = `.form-item#${ id } {
-        
-          grid-area : ${ row } / ${ column++ } / ${ row } / ${ column };
-          
-          }
-          
-        `;
-        
-        rulesets += ruleset;
-        
-        if ( column > columns ) {
-        
-          column = 1;
-          
-          row++;
-          
-          }
-          
-        } );
-        
-    $( 'head' ).append ( `<style>
+      } ) ( );
+      
+    </script>
     
-      #${ blockId } .field-list {
-      
-        display : grid;
-        gap : 1.5em;
-        grid-template-columns : repeat( ${ columns }, 1fr );
-        
-        }
-        
-      #${ blockId } .form-item {
-      
-        grid-column : 1 / -1;
-        
-        }
-        
-      ${ rulesets }
-      </style>` );
-      
-    };
-    
-  </script>
+  <!-- end TWC Form Block Multi-Column -->
