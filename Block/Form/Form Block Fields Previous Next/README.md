@@ -22,6 +22,8 @@ to move through sections.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Form Block Wrapper Observe Changes][4]
+  
+  * [jQuery][5]
 
 #### v7.1 Fluid Engine Compatible
 
@@ -31,9 +33,16 @@ to move through sections.
 
 ## Install
 
-* Install **[Form Block Wrapper Observe Changes][5]**. After you install the
+* Install **[Form Block Wrapper Observe Changes][6]**. After you install the
   code be sure to continue on with the rest of the steps.
   
+* Add the following to Website > Pages > Website Tools > Code Injection >
+  HEADER.
+  
+  ```html
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  ```
+
 * Options
 
   * Page Specific
@@ -41,9 +50,9 @@ to move through sections.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[form block fields previous next.html][6]** to
+    * Add code from file **[form block fields previous next.html][7]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Refer
-      to [per-page code injection][7] for details. Read the code for any
+      to [per-page code injection][8] for details. Read the code for any
       instructions within.
       
   * Site-wide
@@ -51,9 +60,9 @@ to move through sections.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[form block fields previous next.html][6]** to
+    * Add code from file **[form block fields previous next.html][7]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
-      code to code injection][8]. Read the code for any instructions within.
+      code to code injection][9]. Read the code for any instructions within.
       
 * Add or edit a Form block on your page and set up as desired.
   
@@ -98,11 +107,11 @@ to move through sections.
 
 ## Demo
 
-You can see a [demo of this effect here][9].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -119,9 +128,10 @@ Please consider [making a donation][10].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
-[6]: form%20block%20fields%20previous%20next.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-previous-next?password=twcdemos
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://jquery.com/
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[7]: form%20block%20fields%20previous%20next.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[10]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-previous-next?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
