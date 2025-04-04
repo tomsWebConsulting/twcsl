@@ -39,7 +39,7 @@ bookmark in your browser named **TWC Product Editor Tags Add**.
 
 ## Note
 
-You can include the comma character in your tags by using typing **\,**
+You can include the comma character in your tags by using typing **\\,**
 (backslash comma).
 
 ## What is a bookmarklet?
