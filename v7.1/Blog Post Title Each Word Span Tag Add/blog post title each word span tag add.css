@@ -4,26 +4,28 @@
   
   License     : < https://tinyurl.com/s872fb68 >
   
-  Version     : 0.1.0
+  Version     : 0.2.0
   
   SS Version  : 7.1
   
   Note        : this effect is not active in SS Preview to test it use private
                 browsing < https://bit.ly/3f6lhq2 >
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright   : 2022-2025 Thomas Creedon
+                
+                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   no user serviceable parts below
   
   */
   
-  html:not( .squarespace-damask ) .blog-item-wrapper .blog-item-title h1.entry-title {
+  .blog-item-wrapper .blog-item-title h1.entry-title {
   
     visibility : hidden;
     
     }
     
-  html:not( .squarespace-damask ) .twc-bptewsta-show .blog-item-wrapper .blog-item-title h1.entry-title {
+  .twc-bptewsta-show .blog-item-wrapper .blog-item-title h1.entry-title {
   
     visibility : visible;
     

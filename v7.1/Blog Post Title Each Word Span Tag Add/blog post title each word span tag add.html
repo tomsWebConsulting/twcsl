@@ -1,77 +1,162 @@
-<script>
+<!-- begin TWC Blog Post Title Each Word Span Tag Add -->
 
-  /*
+  <script>
   
-    blog post title each word span tag add
+    /*
     
-    License       : < https://tinyurl.com/s872fb68 >
-    
-    Version       : 0.1.0
-    
-    SS Version    : 7.1
-    
-    Dependencies  : jQuery
-                    
-                    twcsl
-    
-    Note          : this effect is not active in SS Preview to test it use
-                    private browsing < https://bit.ly/3f6lhq2 >
-                    
-                    this is a base effect meant as a base for other effects.
-                    this code alone should produce little visible change
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
-  $( ( ) => {
-  
-    if ( window.frameElement !== null ) return; // bail if in preview
-    
-    if ( ! twcsl.page.blog.is ) return; // bail if not blog page
-    
-    const selector = '.blog-title a, ' +
-    
-      '.blog-item-wrapper .blog-item-title h1.entry-title';
+      blog post title each word span tag add
       
-    const wordsSpanWrap = text => {
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Version    : 7.1
+      
+      Note          : this is a base effect meant as a base for other effects.
+                      this code alone should produce little visible change
+      
+      Copyright     : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    ( ( ) => {
     
-      text = text.trim ( );
+      const
       
-      const html = '<span>'
-      
-        +
+        version = '0.2.0',
         
-        text
+        s = `
         
-        .split ( ' ' )
+          Blog Post Title Each Word Span Tag Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
         
-        .join ( '</span> <span>' )
+          blogPageCheck = ( ) => {
+          
+            const
+            
+              selector = [
+                  
+                'body[ class~="collection-type-blog" ]',
+                
+                'body[ class*="collection-type-blog-" ]',
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              isBlogPage = Boolean (
+              
+                document
+                
+                  .querySelectorAll ( selector )
+                  
+                  .length
+                  
+                );
+                
+            return isBlogPage;
+            
+            },
+            
+          isBlogPage = blogPageCheck ( );
+          
+        if ( ! isBlogPage ) return; // bail if not blog page
         
-        +
+        const
         
-        '</span>';
+          callback = ( element ) => {
+          
+            const html = wordsSpanWrap (
+            
+              element
+              
+                .textContent
+                
+              );
+              
+            element
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            },
+            
+          codeKey = 'twc-bptewsta',
+          
+          selector = [
+          
+            '.blog-item-wrapper .blog-item-title h1.entry-title',
+          
+            '.blog-title a'
+            
+            ]
+            
+            .join ( ', ' ),
+            
+          wordsSpanWrap = ( text ) => {
+          
+            text = text.trim ( );
+            
+            const html = `<span>${
+            
+              text
+              
+                .split ( ' ' )
+                
+                .join ( '</span> <span>' )
+                
+              }</span>`;
+              
+            return html;
+            
+            };
+            
+        document
         
-      return html;
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        document
+        
+          .body
+          
+          .classList
+          
+          .add ( `${ codeKey }-show` );
+          
+        };
+        
+      document
       
-      };
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
       
-    $( selector ).each ( function ( ) {
-    
-      const $this = $( this );
-      
-      let html = $this.text ( );
-      
-      html = wordsSpanWrap ( html );
-      
-      $this.html ( html );
-      
-      } );
-      
-    $( 'body' ).addClass ( 'twc-bptewsta-show' );
-    
-    } );
-    
-  </script>
+    </script>
+
+  <!-- end TWC Blog Post Title Each Word Span Tag Add -->
