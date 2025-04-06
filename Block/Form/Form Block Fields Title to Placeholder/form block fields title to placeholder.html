@@ -1,0 +1,331 @@
+<!-- begin TWC Form Block Fields Title to Placeholder -->
+
+  <!--
+  
+    form form block fields title to placeholder
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : form block wrapper observe changes
+                    < https://tinyurl.com/ub8akb85 >
+    
+    Copyright     : 2024-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Form Block Fields Title to Placeholder v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      // initialize twc fbwoc callbacks sub-module
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbfttp' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains ( 'react-form-contents' );
+            
+            if ( ! hasClass ) return; // bail if not react form
+            
+            const
+            
+              callback = ( inputElement ) => {
+              
+                const
+                
+                  id = inputElement
+                  
+                    .getAttribute ( 'id' ),
+                    
+                  isName = id.startsWith ( 'name-' ),
+                  
+                  isPhone = id.startsWith ( 'phone-' );
+                  
+                switch ( true ) {
+                
+                  case isName : {
+                  
+                    const
+                    
+                      element = findPreviousMatchingSibling (
+                      
+                        inputElement,
+                        
+                        'label'
+                        
+                        );
+                        
+                      text = element
+                      
+                        .textContent
+                        
+                        .replace ( '(required)', ' (required)' );
+                        
+                    element
+                    
+                      .remove ( );
+                      
+                    element
+                    
+                      .setAttribute ( 'placeholder', text );
+                      
+                    break;
+                    
+                    }
+                    
+                  case isPhone : {
+                  
+                    const hasCountryCode = findNextMatchingSibling (
+                    
+                      inputElement,
+                    
+                      '.form-input-prefix'
+                      
+                      )
+                      
+                      !==
+                      
+                      null;
+                      
+                    let
+                    
+                      element,
+                      
+                      selector;
+                      
+                    if ( ! hasCountryCode ) {
+                    
+                      element = inputElement
+                      
+                        .closest ( '.form-item' )
+                        
+                        .querySelector ( 'legend' );
+                        
+                      selector = '.title div';
+                      
+                      } else {
+                      
+                        element = findPreviousMatchingSibling (
+                        
+                          inputElement,
+                        
+                          'label'
+                          
+                          );
+                          
+                        selector = 'div > div';
+                        
+                        }
+                        
+                    const text = element
+                    
+                      .textContent
+                      
+                      .replace ( '(required)', ' (required)' );
+                      
+                    element = element
+                    
+                      .querySelector ( selector );
+                      
+                    if ( ! hasCountryCode )
+                    
+                      element
+                      
+                        .remove ( );
+                        
+                      else
+                      
+                        element
+                        
+                          .innerHTML
+                          
+                          =
+                          
+                          '&nbsp;';
+                          
+                    inputElement
+                    
+                      .setAttribute ( 'placeholder', text );
+                      
+                    break;
+                    
+                    }
+                    
+                  default : {
+                  
+                    const
+                    
+                      element = findPreviousMatchingSibling (
+                      
+                        inputElement,
+                      
+                        'label'
+                        
+                        ),
+                        
+                      selector = 'div div',
+                      
+                      text = element
+                      
+                        .textContent
+                        
+                        .replace ( '(required)', ' (required)' );
+                        
+                    element
+                    
+                      .querySelector ( selector )
+                      
+                      .remove ( );
+                      
+                    inputElement
+                    
+                      .setAttribute ( 'placeholder', text );
+                      
+                    break;
+                    
+                    }
+                    
+                  }
+                  
+                },
+                
+              findNextMatchingSibling = ( element, selector ) => {
+              
+                let
+                
+                  b,
+                  
+                  nextSiblingElement = element
+                  
+                    ?.nextElementSibling;
+                    
+                while ( nextSiblingElement ) {
+                
+                  b = nextSiblingElement
+                  
+                    .matches ( selector );
+                    
+                  if ( b )
+                  
+                    return nextSiblingElement;
+                    
+                  nextSiblingElement = nextSiblingElement
+                  
+                    .nextElementSibling;
+                    
+                  }
+                  
+                return null;
+                
+                },
+              
+              findPreviousMatchingSibling = ( element, selector ) => {
+              
+                let
+                
+                  b,
+                  
+                  previousSiblingElement = element
+                  
+                    ?.previousElementSibling;
+                    
+                while ( previousSiblingElement ) {
+                
+                  b = previousSiblingElement
+                  
+                    .matches ( selector );
+                    
+                  if ( b )
+                  
+                    return previousSiblingElement;
+                    
+                  previousSiblingElement = previousSiblingElement
+                  
+                    .previousElementSibling;
+                    
+                  }
+                  
+                return null;
+                
+                },
+                
+              selector = [
+              
+                'input[ type="email" ]',
+                
+                'input[ type="text" ]',
+                
+                'textarea'
+                
+                ]
+                
+                .join ( ', ' );
+                
+            element
+            
+              .querySelectorAll ( selector )
+            
+              .forEach ( callback );
+              
+            };
+            
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Form Block Fields Title to Placeholder -->
