@@ -1,0 +1,320 @@
+<!-- begin TWC Blog Page Post Title Each Word Style -->
+
+  <script>
+  
+    /*
+    
+      blog page post title each word style
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Dependencies  : blog post title each word span tag add
+                      < https://tinyurl.com/aar7tz3n >
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Blog Page Post Title Each Word Style v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          blogPageCheck = ( ) => {
+          
+            const
+            
+              selector = [
+                  
+                'body[ class~="collection-type-blog" ]',
+                
+                'body[ class*="collection-type-blog-" ]',
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              is = Boolean (
+              
+                document
+                
+                  .querySelectorAll ( selector )
+                  
+                  .length
+                  
+                );
+                
+            return is;
+            
+            },
+            
+          isBlogPage = blogPageCheck ( );
+          
+        if ( ! isBlogPage ) return; // bail if not blog page
+        
+        const
+        
+          codeKey = 'twc-bpptews',
+          
+          isPageType = ( type ) => {
+          
+            switch ( type ) {
+            
+              case 'post' :
+              
+                type = 'item';
+                
+                break;
+                
+              case 'list' :
+              
+                type = 'collection';
+                
+                break;
+                
+              }
+              
+            type += '-';
+            
+            const is = document
+            
+              .body
+              
+              .id
+              
+              .startsWith ( type );
+              
+            return is;
+            
+            },
+            
+          isDetail = isPageType ( 'post' ),
+          
+          isList = isPageType ( 'list' ),
+          
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            };
+            
+        let
+        
+          rulesets = '',
+          
+          selector;
+          
+        switch ( true ) {
+        
+          case isDetail : {
+          
+            const
+            
+              xPathExpression = `
+              
+                .//a [
+                
+                  starts-with (
+                  
+                    .,
+                    
+                    '${ codeKey } '
+                    
+                    )
+                    
+                  ]
+                  
+                `,
+                
+              xPathResults = xPathEvaluate ( xPathExpression, document.body );
+              
+            // bail if no trigger text
+            
+            if ( ! xPathResults.snapshotLength ) return;
+            
+            const
+            
+              element = xPathResults
+              
+                .snapshotItem ( 0 ),
+                
+              options = element
+                
+                .textContent
+                
+                .replace ( `${ codeKey } `, '' )
+                
+                .replace ( '-', ' ' )
+                
+                .split ( ' ' ),
+                
+              fontStyle = options [ 0 ],
+              
+              x = options [ 1 ],
+              
+              y = options [ 2 ],
+              
+              ruleset = `
+              
+                .entry-title span:nth-child( n+${ x } ):nth-child( -n+${ y } ) {
+                
+                  font-style : ${ fontStyle };
+                  
+                  }
+                  
+                `;
+                
+            rulesets += ruleset;
+            
+            element
+            
+              .parentElement
+              
+              .remove ( );
+              
+            break;
+            
+            }
+            
+          case isList : {
+          
+            const
+            
+              callback = ( element ) => {
+              
+                const
+                
+                  classNames = element
+                  
+                    .classList
+                    
+                    .toString ( )
+                    
+                    .split ( ' ' ),
+                    
+                  indexClassName = classNames
+                  
+                    .filter ( t => t.startsWith ( 'article-index-' ) )
+                    
+                    [ 0 ],
+                    
+                  options = classNames
+                  
+                    .filter ( t => t.startsWith ( tagPrefix ) )
+                    
+                    [ 0 ]
+                    
+                    .replace ( tagPrefix, '' )
+                    
+                    .split ( '-' ),
+                    
+                  fontStyle = options [ 0 ],
+                  
+                  x = options [ 1 ],
+                  
+                  y = options [ 2 ],
+                  
+                  ruleset = `
+                  
+                    .${ indexClassName } .blog-title span:nth-child( n+${ x } ):nth-child( -n+${ y } ) {
+                    
+                      font-style : ${ fontStyle };
+                      
+                      }
+                      
+                    `;
+                    
+                rulesets += ruleset;
+                
+                }
+                
+              selector = `[ class*="${ tagPrefix }" ]`,
+              
+              tagPrefix = `tag-${ codeKey }-`;
+              
+            document
+            
+              .body
+              
+              .querySelectorAll ( selector )
+              
+              .forEach ( callback );
+              
+            break;
+            
+            }
+            
+          }
+          
+        const html = `
+        
+          <style>
+          
+            ${ rulesets }
+            
+            </style>
+            
+          `;
+          
+        document
+        
+          .head
+          
+          .insertAdjacentHTML ( 'beforeend', html );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Blog Page Post Title Each Word Style -->
