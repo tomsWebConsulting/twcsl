@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.1.0
+      Version       : 0.2.0
       
       SS Version    : 7.1
       
@@ -27,7 +27,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.2.0',
         
         s = `
         
@@ -85,6 +85,18 @@
         
           codeKey = 'twc-bpptews',
           
+          decodeClassNameUnderscore = ( className ) => {
+          
+            const encodedUnderscore = '--underscore--';
+            
+            className = className
+            
+              .replaceAll ( encodedUnderscore, '_' );
+              
+            return className;
+            
+            },
+            
           isPageType = ( type ) => {
           
             switch ( type ) {
@@ -143,12 +155,6 @@
             
             };
             
-        let
-        
-          rulesets = '',
-          
-          selector;
-          
         switch ( true ) {
         
           case isDetail : {
@@ -179,44 +185,54 @@
             
             const
             
-              element = xPathResults
+              callback = ( className ) => {
               
-                .snapshotItem ( 0 ),
+                className = className
                 
-              options = element
-                
-                .textContent
-                
-                .replace ( `${ codeKey } `, '' )
-                
-                .replace ( '-', ' ' )
-                
-                .split ( ' ' ),
-                
-              fontStyle = options [ 0 ],
-              
-              x = options [ 1 ],
-              
-              y = options [ 2 ],
-              
-              ruleset = `
-              
-                .entry-title span:nth-child( n+${ x } ):nth-child( -n+${ y } ) {
-                
-                  font-style : ${ fontStyle };
+                  .replace ( classNameItemPrefix, 'tag-' );
                   
-                  }
-                  
-                `;
+                className = decodeClassNameUnderscore ( className );
                 
-            rulesets += ruleset;
-            
-            element
-            
-              .parentElement
+                element
+                
+                  .closest ( 'section' )
+                  
+                  .classList
+                  
+                  .add ( className );
+                  
+                },
+                
+              classNameItemPrefix = 'blog-item-tag--',
               
-              .remove ( );
+              classNamePrefix = `${ classNameItemPrefix }${ codeKey }-`;
               
+              let element;
+              
+              for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+              
+                element = xPathResults
+                
+                  .snapshotItem ( i );
+                  
+                element
+                
+                  .classList
+                  
+                  .values ( )
+                  
+                  .filter ( t => t.startsWith ( `${ classNamePrefix }` ) )
+                  
+                  .forEach ( callback );
+                  
+                element
+                
+                  .parentElement
+                  
+                  .remove ( );
+                  
+                }
+                
             break;
             
             }
@@ -229,53 +245,51 @@
               
                 const
                 
-                  classNames = element
+                  classList = element
                   
-                    .classList
+                    .classList,
                     
-                    .toString ( )
-                    
-                    .split ( ' ' ),
-                    
-                  indexClassName = classNames
+                  underscoreCallback = ( className ) => {
                   
-                    .filter ( t => t.startsWith ( 'article-index-' ) )
+                    const isTag = className
                     
-                    [ 0 ],
-                    
-                  options = classNames
-                  
-                    .filter ( t => t.startsWith ( tagPrefix ) )
-                    
-                    [ 0 ]
-                    
-                    .replace ( tagPrefix, '' )
-                    
-                    .split ( '-' ),
-                    
-                  fontStyle = options [ 0 ],
-                  
-                  x = options [ 1 ],
-                  
-                  y = options [ 2 ],
-                  
-                  ruleset = `
-                  
-                    .${ indexClassName } .blog-title span:nth-child( n+${ x } ):nth-child( -n+${ y } ) {
-                    
-                      font-style : ${ fontStyle };
+                      .startsWith ( tagPrefix );
                       
-                      }
-                      
-                    `;
+                    if ( ! isTag ) return; // bail if not tag
                     
-                rulesets += ruleset;
+                    const
+                    
+                      encodedUnderscore = '--underscore--',
+                      
+                      isEncodedUnderscore = className
+                      
+                        .includes ( encodedUnderscore );
+                        
+                    // bail if no encoded underscore
+                    
+                    if ( ! isEncodedUnderscore ) return;
+                    
+                    const classNameNew =
+                    
+                      decodeClassNameUnderscore ( className );
+                      
+                    classList
+                    
+                      .replace ( className, classNameNew );
+                      
+                    };
+                    
+                classList
                 
+                  .values ( )
+                  
+                  .forEach ( underscoreCallback );
+                  
                 }
                 
-              selector = `[ class*="${ tagPrefix }" ]`,
+              tagPrefix = `tag-${ codeKey }-`,
               
-              tagPrefix = `tag-${ codeKey }-`;
+              selector = `[ class*="${ tagPrefix }" ]`;
               
             document
             
@@ -290,22 +304,6 @@
             }
             
           }
-          
-        const html = `
-        
-          <style>
-          
-            ${ rulesets }
-            
-            </style>
-            
-          `;
-          
-        document
-        
-          .head
-          
-          .insertAdjacentHTML ( 'beforeend', html );
           
         };
         

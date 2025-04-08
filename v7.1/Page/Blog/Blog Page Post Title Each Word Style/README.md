@@ -8,7 +8,7 @@ Style each word of a blog post title wrapped in a span tag.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -53,26 +53,41 @@ Style each word of a blog post title wrapped in a span tag.
       **blog post title each word span tag add** code. Refer to [Add code to
       code injection][8].
       
-* Add a tag to each post where you want to style the words of the title. The
-  format of the tag is...
-  
-  ```text
-  twc-bpptews [ enter style here replacing square brackets ] [ enter first word number here replacing square brackets ]-[ enter last word number here replacing square brackets ]
-  ```
-  
-  The value for style can be normal or italic.
-  
-  **Examples**
-  
-    Lets say you have a blog post title of **Blog Post 001**.
-  
-    * twc-bpptews italic 2-2
+## How To Use
+
+  * Add a tag to a post starting with **twc-bpptews** space, then text that can
+    be used in a CSS class name.
     
-      The title would be Blog *Post* 001.
+  * Example
+  
+    Lets say you have a blog post title of **Blog Post 001** and want words 2
+    and 3 to be italic.
+  
+    * Add the tag **twc-bpptews words 2-3 italic** to the post.
+    
+    * Add the following to Website > Pages > Website Tools > Custom CSS.
+    
+      ```css
+      /* blog post title words 2-3 italicize */
       
-    * twc-bpptews italic 2-3
+      .tag-twc-bpptews-words-2-3-italic .blog-title span:nth-child( n+2 ):nth-child( -n+3 ),
+      .tag-twc-bpptews-words-2-3-italic .blog-item-wrapper .blog-item-title h1.entry-title span:nth-child( n+2 ):nth-child( -n+3 )
+      
+        {
+        
+          font-style : italic;
+          
+          }
+          
+      ```
+      
+    Notes
     
-      The title would be Blog *Post 001*.
+    The Squarespace UI can diplay lots of characters for tags. Those characters
+    can't be represented with CSS restrictions for class names. In addition SS
+    also strips some characters like _ (underscore), even though CSS class names
+    support that character. If you want to produce an underscore character
+    you can enter **--UNDERSCORE--** in your tags.
 
 ## Make a Donation
 
@@ -80,12 +95,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2025-04-06**
+* **2025-04-07**
 
-  * remove dependency on twcsl
-  * remove dependency on jQuery
+  * change directions on styling. instead of trying to encode styling in a tag,
+    use tags to let the user create their own CSS rule-sets
   * bumped version to 0.2.0
-  -->
+  
 * **2025-04-06**
 
   * initial version
