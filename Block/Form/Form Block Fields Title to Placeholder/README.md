@@ -28,7 +28,7 @@ Change form block field titles to placeholders.
 
 ## Install
 
-* Install **[Form Block Wrapper Observe Changes][14]**. After you install the
+* Install **[Form Block Wrapper Observe Changes][5]**. After you install the
   code be sure to continue on with the rest of the steps.
   
 * Options
@@ -38,18 +38,18 @@ Change form block field titles to placeholders.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[form block fields title to placeholder.html][5]** to
+    * Add code from file **[form block fields title to placeholder.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Refer
-      to [per-page code injection][6] for details.
+      to [per-page code injection][7] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[form block fields title to placeholder.html][5]** to
+    * Add code from file **[form block fields title to placeholder.html][6]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7].
+      code to code injection][8].
       
 * In the **Form Block Wrapper Observe Changes** code add **twcFbfttp** to
 	**added** per the **Form Block Wrapper Observe Changes** code install steps.
@@ -82,9 +82,9 @@ Please consider [making a donation][10].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
-[14]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
-[5]: form%20block%20fields%20title%20to%20placeholder.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[6]: form%20block%20fields%20title%20to%20placeholder.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-title-to-placeholder?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
