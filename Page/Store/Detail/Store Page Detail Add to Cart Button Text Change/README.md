@@ -31,15 +31,15 @@ button.
 
 * Options
 
-  * Page Specific
+  * Store Page Specific
   
     * Use this option if you have only a single page you want to have this
       effect.
       
     * Add code from file **[store page detail add to cart button text
       change.html][5]** to Page Settings > Advanced > Page Header Code Injection
-      for the page. Please see [per-page code injection][6]. Read the code for
-      any instructions within.
+      for the store page. Please see [per-page code injection][6]. Read the code
+      for any instructions within.
       
   * Site-wide
   
