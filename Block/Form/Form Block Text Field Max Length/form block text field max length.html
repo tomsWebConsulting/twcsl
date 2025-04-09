@@ -1,101 +1,281 @@
-<script>
+<!-- begin TWC Form Block Text Field Max Length -->
 
-  /*
+  <!--
   
-    begin form block text field max length
+    form block text field max length
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.3.0
+    Version       : 0.4.0
     
     SS Versions   : 7.1, 7.0
     
-    Dependencies  : form block wrapper observe changes
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
     
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    Dependencies  : form block wrapper observe changes
+                    < https://tinyurl.com/ub8akb85 >
+    
+    Copyright     : 2022-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
-    */
+    -->
     
+  <script>
+  
     ( ( ) => {
     
-      const version = '0.3.0';
+      const
       
-      const s = `Form Block Text Field Max Length v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.4.0',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `
         
+          Form Block Text Field Max Length v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbtfml' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains ( 'react-form-contents' );
+            
+            if ( ! hasClass ) return; // bail if not react form
+            
+            const
+            
+              callback = ( element ) => {
+              
+                const
+                
+                  re = new RegExp ( `${ codeKey }\\s*:\\s*(\\d+)\n*` ),
+                
+                  selector = [
+                  
+                    'input',
+                    
+                    'textarea',
+                    
+                    ]
+                    
+                    .join ( ', ' );
+                    
+                let
+                
+                  text = element
+                  
+                    .textContent,
+                    
+                  maxLength = text
+                  
+                    .match ( re );
+                    
+                text = text
+                
+                  .replace ( maxLength [ 0 ], '' )
+                  
+                  .trim ( );
+                  
+                maxLength = maxLength [ 1 ];
+                
+                findNextMatchingSibling (
+                
+                  element,
+                  
+                  selector
+                  
+                  )
+                  
+                  .setAttribute ( 'maxlength', maxLength );
+                  
+                if ( text ) {
+                
+                  element
+                  
+                    .setAttribute ( 'aria-label', text );
+                    
+                  element
+                  
+                    .textContent
+                    
+                    =
+                    
+                    text;
+                    
+                  } else
+                  
+                    element.remove ( );
+                    
+                },
+                
+              codeKey = 'twc-fbtfml',
+              
+              findNextMatchingSibling = ( element, selector ) => {
+              
+                let
+                
+                  b,
+                  
+                  nextSiblingElement = element
+                  
+                    ?.nextElementSibling;
+                    
+                while ( nextSiblingElement ) {
+                
+                  b = nextSiblingElement
+                  
+                    .matches ( selector );
+                    
+                  if ( b )
+                  
+                    return nextSiblingElement;
+                    
+                  nextSiblingElement = nextSiblingElement
+                  
+                    .nextElementSibling;
+                    
+                  }
+                  
+                return null;
+                
+                },
+              
+              xPathEvaluate = ( xPathExpression, contextNode ) => {
+              
+                const xPathResults = document
+                
+                  .evaluate (
+                  
+                    xPathExpression,
+                    
+                    contextNode,
+                    
+                    null,
+                    
+                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                    null
+                    
+                    );
+                    
+                return xPathResults;
+                
+                };
+                
+            let
+            
+              xPathExpression = `
+              
+                .//div [
+                
+                  contains (
+                  
+                    concat (
+                    
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
+                    
+                    ' form-item '
+                    
+                    )
+                    
+                  ]//p [
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                      
+                      ' description '
+                      
+                      )
+                      
+                    and
+                    
+                    contains (
+                    
+                      .,
+                      
+                      '${ codeKey }'
+                      
+                      )
+                      
+                    ]
+                
+                `,
+                
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                element
+                
+                );
+                
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              const element = xPathResults
+              
+                .snapshotItem ( i );
+                
+              callback ( element );
+              
+              }
+              
+            };
+            
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
       } ) ( );
       
-    var twcFbtfml = ( $node ) => {
+    </script>
     
-      const b = ! $node.hasClass ( 'react-form-contents' );
-      
-      if ( b ) return; // bail if not react form
-      
-      const callback = function ( ) {
-      
-        const selector = [
-        
-          'input',
-          
-          'textarea',
-          
-          ]
-          
-          .join ( ', ' );
-          
-        const $this = $( this );
-        
-        const re = new RegExp ( `${ codeKey }\\s*:\\s*(\\d+)\n*` );
-        
-        let text = $this.text ( )
-        
-        let maxLength = text
-        
-          .match ( re );
-          
-        text = text
-        
-          .replace ( maxLength [ 0 ], '' )
-          
-          .trim ( );
-          
-        maxLength = maxLength [ 1 ];
-        
-        $this
-        
-          .siblings ( selector )
-          
-          .attr ( 'maxlength', maxLength );
-          
-        if ( text )
-        
-          $this
-          
-            .attr ( 'aria-label', text )
-            
-            .text ( text );
-            
-          else
-          
-            $this.remove ( );
-            
-        };
-        
-      const codeKey = 'twc-fbtfml';
-      
-      const selector = `.form-item .description:contains('${ codeKey }')`;
-      
-      $( selector, $node ).each ( callback );
-      
-      };
-      
-    /* end form block text field max length */
-    
-  </script>
+  <!-- end TWC Form Block Text Field Max Length -->

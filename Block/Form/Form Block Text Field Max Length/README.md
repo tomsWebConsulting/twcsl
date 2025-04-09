@@ -4,9 +4,9 @@
 
 ### Synopsis
 
-Limit the number of characters allowed in form block fields.
+Limit the number of characters allowed in some form block fields.
 
-### Version 0.3.0
+### Version 0.4.0
 
 #### SS Versions
 
@@ -35,8 +35,8 @@ Limit the number of characters allowed in form block fields.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[form block text field max length.html][5]** to Page
       Settings > Advanced > Page Header Code Injection for the page. Please see
@@ -44,8 +44,8 @@ Limit the number of characters allowed in form block fields.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[form block text field max length.html][5]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
@@ -73,10 +73,7 @@ Limit the number of characters allowed in form block fields.
     My description text that helps the user.
     ```
 
-## Notes
-
-This effect is not active in Squarespace Preview to test it use [private
-browsing][8].
+## Note
 
 This code is client side and making use of an HTML form feature. Since this code
 is client side it is possible to bypass the max length limit this code is
@@ -94,9 +91,15 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-04-09**
+
+  * updated to work with Form Block Wrapper Observe Changes v0.4.0
+  * remove dependency on jQuery
+  * bumped version to 0.4.0
+  
 * **2024-04-28**
 
-  * update to work with Form Block Wrapper Observe Changes v0.3.0
+  * updated to work with Form Block Wrapper Observe Changes v0.3.0
   * bumped version to 0.3.0
   
 * **2023-05-11**
