@@ -108,6 +108,7 @@ Please consider [making a donation][9].
 
 * **2025-04-08**
 
+  * added slovak language
   * added support for multiple guard callbacks
   * remove dependency on twcsl
   * remove dependency on jQuery
