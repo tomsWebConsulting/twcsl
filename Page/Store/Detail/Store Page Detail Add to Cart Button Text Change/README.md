@@ -51,7 +51,7 @@ button.
       FOOTER. Please see [Add code to code injection][7]. Read the code for any
       instructions within.
 
-## Guard Callbacks
+## Guard Callbacks (Optional)
 
 A guard callback is code the will stop the effect from being applied. Following
 is a very generalized example of a callback.
