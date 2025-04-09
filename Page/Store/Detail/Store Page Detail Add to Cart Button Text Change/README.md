@@ -9,7 +9,7 @@ button.
 
 ### Version
 
-  * 0.5.0
+  * 0.6.0
 
 #### SS Versions
 
@@ -23,30 +23,96 @@ button.
 
 #### Dependencies
 
-  * [Tom's Web Consulting Squarespace Library][3]
+  * [Squarespace plan][3] that supports [JavaScript][4].
 
 ---
 
-## Install
+## Quick Install
 
-* Install [twcsl][4]. After you install the code be sure to continue on with the
-  rest of the steps.
+* Options
+
+  * Page Specific
   
-* Add code from file **[store page detail add to cart button text
-  change.html][5]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page. Please see [Per-page code injection][6]. Read the code for
-  any instructions within.
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
+    * Add code from file **[store page detail add to cart button text
+      change.html][5]** to Page Settings > Advanced > Page Header Code Injection
+      for the page. Please see [per-page code injection][6]. Read the code for
+      any instructions within.
+      
+  * Site-wide
+  
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[store page detail add to cart button text
+      change.html][5]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Please see [Add code to code injection][7]. Read the code for any
+      instructions within.
+
+## Guard Callbacks
+
+A guard callback is code the will stop the effect from being applied. Following
+is a very generalized example of a callback.
+
+```html
+<script>
+
+  ( ( ) => {
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdatcbtc sub-module
+    
+    twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+    
+    // initialize twc spdatcbtc callbacks sub-module
+    
+    twc.spdatcbtc.callbacks = ( ( self ) => {
+    
+      self
+      
+        [ 'twcSpdatcbtcLog' ]
+        
+        =
+        
+        ( ) => {
+        
+          console.log ( 'twcSpdatcbtcLog' );
+          
+          return false; // stops callbacks from running
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.spdatcbtc.callbacks || { } );
+      
+    } ) ( );
+    
+  </script>
+```
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-04-08**
+
+  * added support for multiple guard callbacks
+  * remove dependency on twcsl
+  * remove dependency on jQuery
+  * bumped version to 0.6.0
+  
 * **2025-01-09**
 
   * fix with code not working as expected and a restructuring
@@ -84,9 +150,10 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[3]: https://github.com/tomsWebConsulting/twcsl
-[4]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: https://www.squarespace.com/pricing
+[4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: store%20page%20detail%20add%20to%20cart%20button%20text%20change.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-to-cart-button-text-change/p/earth-sky-planter?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-to-cart-button-text-change/p/earth-sky-planter?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

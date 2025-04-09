@@ -1,496 +1,605 @@
-<script>
+<!-- begin TWC Store Page Detail Add to Cart Button Text Change -->
 
-  $( ( ) => {
+  <!--
   
-    /*
+    store page detail add to cart button text change
     
-      store page detail add to cart button text change
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.5.0
-      
-      SS Versions   : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible    : Not Applicable
-      
-      v7.0
-      Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                      Stella, Thorne, Vow, Wav, West )
-                      
-                      your template is not listed? then it is not currently
-                      supported
-      
-      Dependencies  : twcsl
-      
-      Note          : this code depends on languages. only a few languages are
-                      currently supported. the code attempts to find the site
-                      language based on the site settings. if the code doesn't
-                      have a language for the language your site is set to then
-                      the code won't work properly. if you need a language not
-                      supported by the code add a post to the SS forum thread
-                      for this code < https://tinyurl.com/mvpd3nxe > and make a
-                      request. no promises that i can add languages but it
-                      doesn't hurt to ask. i need to know two things. the
-                      language set in site settings and the language you want to
-                      change to. the change to language must be listed is the
-                      site settings if you want the code to do it all for you.
-                      if you want to customize the change to language then only
-                      the site language setting is needed. please see Language
-                      and region settings < https://tinyurl.com/24fwyw2d >
-      
-      Copyright      : 2021-2025 Thomas Creedon
-                       
-                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    let
+    License       : < https://tinyurl.com/s872fb68 >
     
-      /*
-      
-        for language use one of the following...
-        
-          English (Canada)
-          
-          English (United Kingdom)
-          
-          English (United States)
-          
-          French (Canada)
-          
-          French (France)
-          
-          German (Germany)
-          
-          Spanish (Argentina)
-          
-          Spanish (Bolivia)
-          
-          Spanish (Chile)
-          
-          Spanish (Mexico)
-          
-        if you set language to empty ( '' ) then the values for add, adding,
-        and added will be used
-        
-        */
+    Version       : 0.6.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    v7.0
+    Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+    
+    Note          : this code depends on languages. only a few languages are
+                    currently supported. the code attempts to find the site
+                    language based on the site settings. if the code doesn't
+                    have a language for the language your site is set to then
+                    the code won't work properly. if you need a language not
+                    supported by the code add a post to the SS forum thread for
+                    this code < https://tinyurl.com/mvpd3nxe > and make a
+                    request. no promises that i can add languages but it doesn't
+                    hurt to ask. i need to know two things. the language set in
+                    site settings and the language you want to change to. the
+                    change to language must be listed is the site settings if
+                    you want the code to do it all for you. if you want to
+                    customize the change to language then only the site language
+                    setting is needed. please see Language and region settings
+                    < https://tinyurl.com/24fwyw2d >
+    
+    Copyright      : 2021-2025 Thomas Creedon
+                     
+                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
   
-      language = 'English (United States)',
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdatcbtc sub-module
+    
+    twc.spdatcbtc = ( ( self ) => {
+    
+      let
       
-      buttonStateText = {
-      
-        add : '[ optional if language not empty, enter replacement add text here between single quotes replacing square brackets ]',
-        
-        adding : '[ optional if language not empty, enter replacement adding text here between single quotes replacing square brackets ]',
-        
-        added : '[ optional if language not empty, enter replacement added text here between single quotes replacing square brackets ]',
-        
         /*
         
-          addedPost is a special feature. the default SS behaviour is to restore
-          the button's original text
+          for language use one of the following...
+          
+            English (Canada)
+            
+            English (United Kingdom)
+            
+            English (United States)
+            
+            French (Canada)
+            
+            French (France)
+            
+            German (Germany)
+            
+            Spanish (Argentina)
+            
+            Spanish (Bolivia)
+            
+            Spanish (Chile)
+            
+            Spanish (Mexico)
+            
+          if you set language to empty ( '' ) then the values for add, adding,
+          and added will be used
           
           */
+    
+        language = 'English (United States)',
+        
+        buttonStateText = {
+        
+          add : '[ optional if language not empty, enter replacement add text here between single quotes replacing square brackets ]',
           
-        addedPost : '[ optional, enter added post text here between single quotes replacing square brackets ]'
-        
-        };
-        
-    /*
-    
-      guard callback for other conditions which prevent the code from running.
-      replace undefined with the name of your custom function. your function
-      must return a boolean. false means exit the code and true means run
-      the code
+          adding : '[ optional if language not empty, enter replacement adding text here between single quotes replacing square brackets ]',
+          
+          added : '[ optional if language not empty, enter replacement added text here between single quotes replacing square brackets ]',
+          
+          /*
+          
+            addedPost is a special feature. the default SS behaviour is to
+            restore the button's original text
+            
+            */
+            
+          addedPost : '[ optional, enter added post text here between single quotes replacing square brackets ]'
+          
+          };
+          
+      self
       
-      */
-      
-    const guardCallback = undefined;
-    
-    // do not change anything below, there be the borg here
-    
-    const
-    
-      title = 'Store Page Detail Add to Cart Button Text Change',
-      
-      version = '0.5.0',
-      
-      s = `${ title } v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        .language
         
-        © 2021-2025 Thomas Creedon
+        =
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        language;
         
-        .replace ( /^\s+/gm, '' );
+      self
+      
+        .buttonStateText
         
-    console.log ( s );
+        =
+        
+        buttonStateText;
+        
+      return self;
+      
+      } ) ( twc.spdatcbtc || { } );
+      
+    </script>
     
-    const initialize = ( ) => {
+  <!-- do not change anything below, there be the borg here -->
+      
+  <script>
+  
+    ( ( ) => {
     
+      const
+      
+        title = 'Store Page Detail Add to Cart Button Text Change',
+        
+        version = '0.6.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
       // bail if no mutation observer available
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
-      
-      if ( guardCallback !== undefined ) { // guard callback
-      
-        const b = ! guardCallback ( );
-        
-        if ( b ) return;
-        
-        }
-        
       const
       
-        buttonWrapperSelector =
+        callback = ( ) => {
         
-          '.sqs-add-to-cart-button-wrapper:not( .add-on-add-to-cart-wrapper )',
+          const isStorePage = document
           
-        detailsSelectors = [
-        
-          '.ProductItem-details', // simple
-          
-          '.pdp-details' // full, half, wrap
-          
-          ],
-          
-        getLanguage = ( language ) => {
-        
-          language = languages [ language ];
-          
-          if ( typeof language == 'string' )
-          
-            language = languagesRoot [ language ];
+            .body
             
-          return language;
+            .classList
+            
+            .contains ( 'collection-type-products' );
+            
+          if ( ! isStorePage ) return; // bail if not store page
           
-          },
+          const isDetail = ( ( ) => {
           
-        isLanguage = language != '',
-        
-        languages = {
-        
-          'English (Canada)' : 'English',
-          
-          'English (United Kingdom)' : 'English',
-          
-          'English (United States)' : 'English',
-          
-          'French (Canada)' : 'French',
-          
-          'French (France)' : 'French',
-          
-          'German (Germany)' : {
-          
-            add : 'Zum Warenkorb hinzufügen',
+            const selector = 'body[ id^="item-" ]';
             
-            adding : 'Hinzufügen ...',
+            const is = document
             
-            added : 'Hinzugefügt!'
-            
-            },
-            
-          'Spanish (Argentina)' : 'Spanish',
-          
-          'Spanish (Bolivia)' : 'Spanish',
-          
-          'Spanish (Chile)' : 'Spanish',
-          
-          'Spanish (Mexico)' : 'Spanish',
-          
-          '' : {
-          
-            add : buttonStateText.add,
-            
-            adding : buttonStateText.adding,
-            
-            added : buttonStateText.added,
-            
-            },
-            
-          },
-          
-        languagesRoot = {
-        
-          'English' : {
-          
-            add : 'Add To Cart',
-            
-            adding : 'Adding…',
-            
-            added : 'Added!'
-            
-            },
-            
-          'French' : {
-          
-            add : 'Ajouter au panier',
-            
-            adding : 'Ajout en cours...',
-            
-            added : 'Ajout effectué&nbsp;!'
-            
-            },
-            
-          'Spanish' : {
-          
-            add : 'Añadir al carrito',
-            
-            adding : 'Añadiendo...',
-            
-            added : 'Añadido'
-            
-            },
-            
-          },
-          
-        mergeObjects = ( obj1, obj2, shouldReplace ) => {
-        
-          const result = { ...obj1 };
-          
-          for ( const key in obj2 ) {
-          
-            if ( obj2.hasOwnProperty ( key ) ) {
-            
-              if ( result.hasOwnProperty ( key ) ) {
+              .querySelector ( selector )
               
-                result [ key ] =
-                
-                  shouldReplace ( result [ key ], obj2 [ key ] ) ?
-                  
-                  obj2 [ key ] : result [ key ];
-                  
-                } else
-                
-                  result [ key ] = obj2 [ key ];
-                  
-              }
+              !==
               
+              null;
+              
+            return is;
+            
+            } ) ( );
+            
+          if ( ! isDetail ) return; // bail if not detail
+          
+          // initialize twc spdatcbtc callbacks sub-module
+          
+          twc.spdatcbtc.callbacks =
+          
+            ( ( self ) => self ) ( twc.spdatcbtc.callbacks || { } );
+            
+          const callbacks = twc
+          
+            .spdatcbtc
+            
+            .callbacks;
+            
+          for ( const callback of Object.keys ( callbacks ) ) {
+          
+            const b = callback ( );
+            
+            if ( ! b ) return; // bail if callback returns false
+            
             }
             
-          return result;
+          let language = twc
           
-          },
-          
-        shouldReplace = ( item1, item2 ) => {
-        
-          const b = item2 [ 0 ] != '[';
-          
-          return b;
-          
-          },
-          
-        websiteLanguage = Static
-        
-          .SQUARESPACE_CONTEXT
-          
-          .website
-          
-          .language,
-          
-        websiteLanguageMap = {
-        
-          'de-DE' : 'German (Germany)',
-          
-          'en-GB' : 'English (United Kingdom)',
-          
-          'en-US' : 'English (United States)',
-          
-          'es-AR' : 'Spanish (Argentina)',
-          
-          'es-BO' : 'Spanish (Bolivia)',
-          
-          'es-CL' : 'Spanish (Chile)',
-          
-          'es-MX' : 'Spanish (Mexico)',
-          
-          'fr-CA' : 'French (Canada)',
-          
-          'fr-FR' : 'French (France)',
-          
-          };
-          
-      let
-      
-        b,
-        
-        buttonInnerSelector = '.sqs-add-to-cart-button-inner',
-        
-        buttonSelector = '.sqs-add-to-cart-button',
-        
-        siteLanguage = websiteLanguageMap [ websiteLanguage ];
-        
-      language = getLanguage ( language );
-      
-      siteLanguage = getLanguage ( siteLanguage );
-      
-      const
-      
-        isLanguagesSame = siteLanguage == language,
-        
-        isAddingOrAddedChange = ! isLanguagesSame
-        
-          ||
-          
-          buttonStateText.adding [ 0 ] != '['
-          
-          ||
-          
-          buttonStateText.added [ 0 ] != '[';
-          
-      buttonInnerSelector = detailsSelectors
-      
-        .join ( ` ${ buttonWrapperSelector } ${ buttonInnerSelector }, ` )
-        
-        +
-        
-        ` ${ buttonWrapperSelector } ${ buttonInnerSelector }`;
-        
-      buttonSelector = detailsSelectors
-      
-        .join ( ` ${ buttonWrapperSelector } ${ buttonSelector }, ` )
-        
-        +
-        
-        ` ${ buttonWrapperSelector } ${ buttonSelector }`;
-        
-      if ( isLanguage )
-      
-        language =
-        
-          mergeObjects ( language, buttonStateText, shouldReplace );
-          
-      b = language.addedPost [ 0 ] == '[';
-      
-      if ( b )
-      
-        language.addedPost = language.add;
-        
-        else
-        
-          language.addedPost = buttonStateText.addedPost;
-          
-      $( buttonSelector )
-      
-        .attr ( 'data-original-label', language.addedPost );
-        
-      $( buttonInnerSelector )
-      
-        .html ( language.add );
-        
-      // bail if not adding or added changes
-      
-      if ( ! isAddingOrAddedChange ) return;
-      
-      let callback = ( mutations ) => {
-      
-        const callback = ( mutation ) => {
-        
-          let b = ! mutation.addedNodes.length;
-          
-          if ( b ) return true; // bail if no added nodes
-          
-          const $element = $( mutation.addedNodes [ 0 ] );
-          
-          b = ! $element
-          
-            .hasClass ( 'status-text' );
+            .spdatcbtc
             
-          if ( b ) return true; // bail if no status text
-          
+            .language;
+            
           const
           
-            findKeyByValue = ( obj, value ) => {
+            buttonStateText = twc
             
-              const key = Object
+              .spdatcbtc
               
-                .keys ( obj )
+              .buttonStateText,
+              
+            buttonWrapperSelector =
+            
+              '.sqs-add-to-cart-button-wrapper'
+              
+              +
+              
+              ':not( .add-on-add-to-cart-wrapper )',
+              
+            detailsSelectors = [
+            
+              '.ProductItem-details', // simple
+              
+              '.pdp-details' // full, half, wrap
+              
+              ],
+              
+            getLanguage = ( language ) => {
+            
+              language = languages [ language ];
+              
+              if ( typeof language === 'string' )
+              
+                language = languagesRoot [ language ];
                 
-                .find ( key => obj [ key ] === value );
-                
-              return key;
+              return language;
               
               },
               
-            html = $element.html ( );
+            languages = {
             
-          $element.html (
-          
-            language [
-            
-              findKeyByValue (
+              'English (Canada)' : 'English',
               
-                siteLanguage,
-                
-                html
-                
-                )
-                
-              ]
+              'English (United Kingdom)' : 'English',
               
-            );
+              'English (United States)' : 'English',
+              
+              'French (Canada)' : 'French',
+              
+              'French (France)' : 'French',
+              
+              'German (Germany)' : {
+              
+                add : 'Zum Warenkorb hinzufügen',
+                
+                adding : 'Hinzufügen ...',
+                
+                added : 'Hinzugefügt!'
+                
+                },
+                
+              'Spanish (Argentina)' : 'Spanish',
+              
+              'Spanish (Bolivia)' : 'Spanish',
+              
+              'Spanish (Chile)' : 'Spanish',
+              
+              'Spanish (Mexico)' : 'Spanish',
+              
+              '' : {
+              
+                add : buttonStateText.add,
+                
+                adding : buttonStateText.adding,
+                
+                added : buttonStateText.added,
+                
+                },
+                
+              },
+              
+            languagesRoot = {
             
-          };
+              'English' : {
+              
+                add : 'Add To Cart',
+                
+                adding : 'Adding…',
+                
+                added : 'Added!'
+                
+                },
+                
+              'French' : {
+              
+                add : 'Ajouter au panier',
+                
+                adding : 'Ajout en cours...',
+                
+                added : 'Ajout effectué&nbsp;!'
+                
+                },
+                
+              'Spanish' : {
+              
+                add : 'Añadir al carrito',
+                
+                adding : 'Añadiendo...',
+                
+                added : 'Añadido'
+                
+                },
+                
+              },
+              
+            mergeObjects = ( obj1, obj2, shouldReplace ) => {
+            
+              const result = { ...obj1 };
+              
+              for ( const key in obj2 ) {
+              
+                if ( obj2.hasOwnProperty ( key ) ) {
+                
+                  if ( result.hasOwnProperty ( key ) ) {
+                  
+                    result [ key ] =
+                    
+                      shouldReplace ( result [ key ], obj2 [ key ] ) ?
+                      
+                      obj2 [ key ] : result [ key ];
+                      
+                    } else
+                    
+                      result [ key ] = obj2 [ key ];
+                      
+                  }
+                  
+                }
+                
+              return result;
+              
+              },
+              
+            shouldReplace = ( item1, item2 ) => {
+            
+              const b = item2 [ 0 ] !== '[';
+              
+              return b;
+              
+              },
+              
+            websiteLanguage = Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .website
+              
+              .language,
+              
+            websiteLanguageMap = {
+            
+              'de-DE' : 'German (Germany)',
+              
+              'en-GB' : 'English (United Kingdom)',
+              
+              'en-US' : 'English (United States)',
+              
+              'es-AR' : 'Spanish (Argentina)',
+              
+              'es-BO' : 'Spanish (Bolivia)',
+              
+              'es-CL' : 'Spanish (Chile)',
+              
+              'es-MX' : 'Spanish (Mexico)',
+              
+              'fr-CA' : 'French (Canada)',
+              
+              'fr-FR' : 'French (France)',
+              
+              },
+              
+            isLanguage = language !== '';
+            
+          let
           
-        for ( const mutation of mutations ) {
-        
-          const b = callback ( mutation );
+            b,
+            
+            buttonInnerSelector = '.sqs-add-to-cart-button-inner',
+            
+            buttonSelector = '.sqs-add-to-cart-button',
+            
+            siteLanguage = websiteLanguageMap [ websiteLanguage ];
+            
+          language = getLanguage ( language );
           
-          if ( ! b ) break; // bail if callback returns false
+          siteLanguage = getLanguage ( siteLanguage );
           
-          }
+          const
           
-        };
+            isLanguagesSame = siteLanguage === language,
+            
+            isAddingOrAddedChange = ! isLanguagesSame
+            
+              ||
+              
+              buttonStateText.adding [ 0 ] !== '['
+              
+              ||
+              
+              buttonStateText.added [ 0 ] !== '[';
+              
+          buttonInnerSelector = detailsSelectors
+          
+            .join ( ` ${ buttonWrapperSelector } ${ buttonInnerSelector }, ` )
+            
+            +
+            
+            ` ${ buttonWrapperSelector } ${ buttonInnerSelector }`;
+            
+          buttonSelector = detailsSelectors
+          
+            .join ( ` ${ buttonWrapperSelector } ${ buttonSelector }, ` )
+            
+            +
+            
+            ` ${ buttonWrapperSelector } ${ buttonSelector }`;
+            
+          if ( isLanguage )
+          
+            language =
+            
+              mergeObjects ( language, buttonStateText, shouldReplace );
+              
+          b = language.addedPost [ 0 ] === '[';
+          
+          if ( b )
+          
+            language.addedPost = language.add;
+            
+            else
+            
+              language.addedPost = buttonStateText.addedPost;
+              
+          document
+          
+            .body
+            
+            .querySelectorAll ( buttonSelector )
+            
+            .forEach ( e => e.setAttribute (
+            
+              'data-original-label',
+              
+              language.addedPost
+              
+              ) )
+              
+          document
+          
+            .body
+            
+            .querySelectorAll ( buttonInnerSelector )
+            
+            .forEach ( e => e.innerHTML = language.add )
+            
+          // bail if not adding or added changes
+          
+          if ( ! isAddingOrAddedChange ) return;
+          
+          let callback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              let b = ! mutation.addedNodes.length;
+              
+              if ( b ) return true; // bail if no added nodes
+              
+              const element = mutation.addedNodes [ 0 ];
+              
+              b = ! element
+              
+                .classList
+                
+                .contains ( 'status-text' );
+                
+              if ( b ) return true; // bail if no status text
+              
+              const
+              
+                findKeyByValue = ( obj, value ) => {
+                
+                  const key = Object
+                  
+                    .keys ( obj )
+                    
+                    .find ( key => obj [ key ] === value );
+                    
+                  return key;
+                  
+                  },
+                  
+                html = element.innerHTML;
+                
+              element
+              
+                .innerHTML
+                
+                =
+              
+                language [
+                
+                  findKeyByValue (
+                  
+                    siteLanguage,
+                    
+                    html
+                    
+                    )
+                    
+                  ];
+                  
+              };
+              
+            for ( const mutation of mutations ) {
+            
+              const b = callback ( mutation );
+              
+              if ( ! b ) break; // bail if callback returns false
+              
+              }
+              
+            };
+            
+          const
+          
+            config = { childList : true },
+            
+            observer = new MutationObserver ( callback );
+            
+          // start listening for changes in specified element
+          
+          callback = ( element ) => {
+          
+            observer.observe ( element, config );
+            
+            };
+            
+          document
+          
+            .querySelectorAll ( buttonInnerSelector )
+            
+            .forEach ( callback );
+            
+          },
+          
+        ssVersion = Static
         
-      const
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion,
+          
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1';
+        
+      switch ( true ) {
       
-        config = { childList : true },
+        case is71 :
         
-        observer = new MutationObserver ( callback );
+          document
+           
+            .addEventListener ( 'DOMContentLoaded', callback );
+            
+          break;
+          
+        case is70 :
         
-      // start listening for changes in specified element
+          Squarespace.onInitialize ( Y, callback );
+          
+          break;
+          
+        }
+        
+      } ) ( );
       
-      callback = ( element ) => {
-      
-        observer.observe ( element, config );
-        
-        };
-        
-      document
-      
-        .querySelectorAll ( buttonInnerSelector )
-        
-        .forEach ( callback );
-        
-      }; // end initialize
-      
-    switch ( true ) {
+    </script>
     
-      case twcsl.ss.is71 :
-      
-        initialize ( );
-        
-        break;
-        
-      case twcsl.ss.is70 :
-      
-        Squarespace.onInitialize ( Y, initialize );
-        
-        break;
-        
-      }
-      
-    } );
-    
-  </script>
+  <!-- end TWC Store Page Detail Add to Cart Button Text Change -->
