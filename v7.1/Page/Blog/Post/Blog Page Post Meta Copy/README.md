@@ -30,21 +30,21 @@ Copy blog page post meta before blog title.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[blog page post meta copy.html][4]** to Blog
-      Settings > Advanced > Page Header Code Injection for the blog page. Please
-      see [per-page code injection][5].
+      Settings > Advanced > Page Header Code Injection for the blog page. Refer
+      to [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[blog page post meta copy.html][4]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
-      code injection][6].
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][6] for details.
       
 * Edit the blog post section and **Set Meta Position** to **Below Title**.
   

@@ -26,23 +26,23 @@ Animate elements that Squarespace hasn't.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[element animate.html][4]** to Page Settings >
-      Advanced > Page Header Code Injection. Please see [per-page code
-      injection][5].
+      Advanced > Page Header Code Injection. Refer to [Per-page code
+      injection][5] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[element animate.html][4]** to Website > Pages >
-      Website Tools > Code Injection > HEADER. Please see [Add code to code
-      injection][6].
+      Website Tools > Code Injection > HEADER. Refer to [Add code to code
+      injection][6] for details.
       
-  * Read the code for any instructions within.
+* Read the code for any instructions within.
 
 ## Make a Donation
 

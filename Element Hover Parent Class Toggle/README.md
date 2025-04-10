@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.1d0
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -21,8 +29,9 @@
   
 * Add code from file
   **[element hover parent class toggle.html](element%20hover%20parent%20class%20toggle.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+  to Page Settings > Advanced > Page Header Code Injection for the page.
+  
+* Read the code for any instructions within.
 
 ## Note
 

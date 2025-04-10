@@ -29,9 +29,9 @@ scroll to the top of the store page section.
 
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
+    * Use this option if you have only a single page you want to have this
       effect.
       
     * Add code from file **[store page list categories url fragment
@@ -45,7 +45,7 @@ scroll to the top of the store page section.
       
     * Add code from file **[store page list categories url fragment
       add.html][4]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Refer to [Add code to code injection][6].
+      FOOTER. Refer to [Add code to code injection][6] for details.
 
 ## Make a Donation
 

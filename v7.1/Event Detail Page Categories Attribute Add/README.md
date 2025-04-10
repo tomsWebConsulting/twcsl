@@ -2,11 +2,17 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -17,7 +23,7 @@
   
 * Add code from file **[event detail page categories attribute add.html][3]**
   to Event Settings > Advanced > Page Header Code Injection for the event page.
-  Please see [per-page code injection][4].
+  Refer to [Per-page code injection][4] for details.
 
 ## Make a Donation
 

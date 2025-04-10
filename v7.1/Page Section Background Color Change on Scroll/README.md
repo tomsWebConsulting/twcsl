@@ -31,8 +31,9 @@
   
 * Add code from file **[page section background color change on
   scroll.html][4]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Please see [per-page code injection][5]. Read the code for any
-  instructions within.
+  the page. Refer to [Per-page code injection][5] for details.
+  
+* Read the code for any instructions within.
 
 ## Demo
 

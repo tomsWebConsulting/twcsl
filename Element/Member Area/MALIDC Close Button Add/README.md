@@ -40,8 +40,8 @@ Add a close button to the member area login dialog.
   ...and replace it with the code from file [malidc close button add.css][5].
   
 * Add the code from file **[malidc close button add.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7].
+  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][7] for details.
 
 ## Make a Donation
 

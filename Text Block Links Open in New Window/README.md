@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.1.0
 
-#### v7.1 Fluid Engine Compatible : Yes
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Yes
 
 ---
 
@@ -20,8 +28,9 @@
   ```
   
 * Add code from file **[text block links open in new window.html][2]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Read
-  the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

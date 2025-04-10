@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.0 ([Bedford template family][1])
+  * 0.1d0
+
+#### SS Version
+
+  * 7.0 ([Bedford template family][1])
 
 ---
 

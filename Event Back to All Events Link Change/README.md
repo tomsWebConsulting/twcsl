@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.2.0
+### Version
 
-#### SS Versions 7.1, 7.0 ([Brine template family][2])
+  * 0.2.0
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Versions
+
+  * 7.1
+
+  * 7.0 ([Brine template family][2])
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -17,7 +25,8 @@
   
 * Add code from file **[event back to all events link change.html][4]** to
   Events Settings > Advanced > Page Header Code Injection for the events page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
   
 ## Make a Donation
 

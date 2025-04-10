@@ -37,8 +37,9 @@ Display blog page list masonry design dates as a badge.
   
 * Add code from file **[blog page list masonry design date badge.html][5]** to
   Block Settings > Advanced > Page Header Code Injection for the blog page.
-  Please see [Per-page code injection][6]. Read the code for any instructions
-  within.
+  Refer to [Per-page code injection][6] for details.
+  
+* Read the code for any instructions within.
   
 * Set the blog section Primary Meta Content setting to Date.
 

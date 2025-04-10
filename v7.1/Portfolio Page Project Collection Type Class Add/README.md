@@ -30,22 +30,22 @@ Add a class to portfolio pages projects.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[portfolio page project collection type class
       add.html][4]** to Project Settings > Advanced > Page Header Code Injection
-      for the portfolio page. Please see [per-page code injection][5].
+      for the portfolio page. Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[portfolio page project collection type class
       add.html][4]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Please see [Add code to code injection][6].
-      
+      FOOTER. Refer to [Add code to code injection][6] for details.
+
 ## Class Name
 
 The code adds the **twc-pppctca-collection-type-portfolio-project** class name

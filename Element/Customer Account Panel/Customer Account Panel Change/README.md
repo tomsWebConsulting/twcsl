@@ -7,12 +7,14 @@
 Make changes to the Customer Account panel that can't be achieved through the
 Squarespace editor.
 
-### Version 0.6.1
+### Version
+
+  * 0.6.1
 
 #### SS Versions
 
   * 7.1
-
+  
   * 7.0
 
 #### Dependencies
@@ -28,8 +30,10 @@ Squarespace editor.
 ## Quick Install
 
 * Add code from file **[customer account panel change.html][4]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][5]. Read the code for any instructions within.
+  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][5] for details.
+  
+* Read the code for any instructions within.
 
 ## Classes
 

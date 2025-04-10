@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.0 ([Montauk][1])
+  * 0.1d0
+
+#### SS Version
+
+  * 7.0 ([Montauk][1])
 
 ---
 
@@ -18,7 +22,8 @@
   to Store Settings > Advanced > Page Header Code Injection for the store page.
   Please see
   [per-page code injection](https://support.squarespace.com/hc/en-us/articles/205815908-Using-Code-Injection#toc-per-page-code-injection).
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

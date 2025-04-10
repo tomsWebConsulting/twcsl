@@ -38,23 +38,23 @@ callbacks as nodes are added to the [DOM][2].
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[product quick view observe changes.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the page,
-      **before** the modal lightbox observe changes code. Please see
-      [Per-page code injection][7].
+      **before** the modal lightbox observe changes code. Refer to
+      [Per-page code injection][7] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple elements such
-      as a store page and product blocks where you want to have this effect.
+    * Use this option if you have multiple elements such as a store page and
+      product blocks where you want to have this effect.
       
-    * Add code from file **[product quick view observe changes.html][6]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER, **before**
-      the modal lightbox observe changes code. Please see [Add code to code
-      injection][8].
+    * Add code from file **[product quick view observe changes.html][6]** to
+      Website > Pages > Website Tools > Code Injection > FOOTER, **before** the
+      modal lightbox observe changes code. Refer to [Add code to code
+      injection][8] for details.
       
 * Add the **twcPqvoc** callback name to the modal lightbox observe changes code
   code per that codes install instructions.

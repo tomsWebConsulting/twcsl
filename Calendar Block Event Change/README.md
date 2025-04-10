@@ -31,18 +31,27 @@ Monitor changes to calendar block and call custom callbacks.
 * Install [twcsl][3]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[calendar block event change.html][4]** to one of the
-  following locations. Read the code for any instructions within.
-  
-  * Page Specific Effect
-  
-    * Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [per-page code injection][5].
+* Options
 
-  * Site-wide Effect
+  * Page Specific
   
-    * Website > Pages > Website Tools > Code Injection > FOOTER.
-      Please see [Add code to code injection][6].
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
+    * Add code from file **[calendar block event change.html][4]** to
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][5] for details.
+      
+  * Site-wide
+  
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[calendar block event change.html][4]** to Website >
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][6] for details.
+
+* Read the code for any instructions within.
 
 ## Note
 

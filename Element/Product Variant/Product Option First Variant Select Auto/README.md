@@ -34,19 +34,19 @@ Auto select the first variant of product options.
   rest of the steps.
   
 * Add code from file **[product option first variant select auto.html][7]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][8]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][8] for details.
   
 * Options
 
-  * Store Per-page
+  * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single Store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add the following code to Store Settings > Advanced > Page Header Code
-      Injection for the store page. Please see [Per-page code injection][9].
-      Read the code for any instructions within.
+      Injection for the store page. Refer to [Per-page code injection][9] for
+      details.
       
       ```html
       <script type="application/vnd.twc.pofvsa">
@@ -108,12 +108,12 @@ Auto select the first variant of product options.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add the following code to Website > Pages > Website Tools >
-      Code Injection > FOOTER. Please see [Add code to code injection][8]. Read
-      the code for any instructions within.
+      Code Injection > FOOTER. Refer to [Add code to code injection][8] for
+      details.
       
       ```html
       <script type="application/vnd.twc.pofvsa">
@@ -172,6 +172,8 @@ Auto select the first variant of product options.
           
         </script>
       ```
+      
+* Read the code for any instructions within.
 
 ## Note
 

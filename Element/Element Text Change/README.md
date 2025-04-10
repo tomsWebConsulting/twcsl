@@ -29,8 +29,10 @@ Search and replace text in elements.
 ## Install
 
 * Add code from file **[element text change.html][4]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][5]. Read the code for any instructions within.
+  Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][5] for details.
+  
+* Read the code for any instructions within.
 
 ## selectorTextSearchReplaceMap Example Data Structures
 

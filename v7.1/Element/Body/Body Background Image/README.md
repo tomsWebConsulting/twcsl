@@ -26,8 +26,8 @@ Add a background image for the body element.
   Website Tools > Custom CSS. Read the code for any instructions within.
   
 * Add code from file **[body background image.html][3]** to Website > Pages >
-  Website Tools > Code Injection > HEADER. Please see [Add code to code
-  injection][4].
+  Website Tools > Code Injection > HEADER. Refer to [Per-page code injection][4]
+  for details.
   
 * Create custom CSS to allow the image to be seen. It is beyond the scope of
   these steps to cover CSS and where in your site to install it. However

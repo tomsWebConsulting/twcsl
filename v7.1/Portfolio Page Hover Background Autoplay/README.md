@@ -6,7 +6,9 @@
 
 Add an autoplay effect to a portfolio page using layout hover background.
 
-### Version 0.1.0
+### Version
+
+  * 0.1.0
 
 #### SS Version
 
@@ -33,16 +35,25 @@ Add an autoplay effect to a portfolio page using layout hover background.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Site-wide
+* Options
 
-  * Add code from file **[portfolio page hover background autoplay.html][5]**
-    to Website > Pages > Website Tools > Code Injection > FOOTER.
-    
-* Page Specific
+  * Site-wide
+  
+    * Use this option if you have multiple pages where you want to have this
+      effect.
 
-  * Add code from file **[portfolio page hover background autoplay.html][5]** to
-    Portfolio Settings > Advanced > Page Header Code Injection for the portfolio
-    page. Please see [per-page code injection][6].
+    * Add code from file **[portfolio page hover background autoplay.html][5]**
+      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      [Add code to code injection][17] for details.
+      
+  * Page Specific
+  
+    * Use this option if you have only a single page you want to have this
+      effect.
+
+    * Add code from file **[portfolio page hover background autoplay.html][5]**
+      to Portfolio Settings > Advanced > Page Header Code Injection for the
+      portfolio page. Refer to [Per-page code injection][6] for details.
 
 * Read the code for any instructions within.
 
@@ -71,6 +82,7 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: portfolio%20page%20hover%20background%20autoplay.html#L1
+[18]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://toms-web-consulting-demos.squarespace.com/portfolio-page-hover-background-autoplay?password=twcdemos
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

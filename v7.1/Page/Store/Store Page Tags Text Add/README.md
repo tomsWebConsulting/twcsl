@@ -33,33 +33,33 @@ Add text to products.
   
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[store page tags text add.html][6]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Per-page code injection][7]. Read the code for any
-      instructions within.
+      Refer to [Per-page code injection][7] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[store page tags text add.html][6]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
-      code injection][8]. Read the code for any instructions within.
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][8] for details.
+      
+* Read the code for any instructions within.
 
 ## How To Use
 
-Lets say you have site that sells products. You want to display tags on each
-product that show the value alignments of those products so your customers can
-choose the products that best align with their own values. For example,
-women owned, carbon neutral, plastic free, and etc. Of course value alignments
-isn't the only use of these tags. You can use them for anything of which you can
-think.
+Lets say your site sells products. You want to display tags on each product that
+show the value alignments of those products so your customers can choose the
+products that best align with their own values. For example, women owned, carbon
+neutral, plastic free, and etc. Of course value alignments isn't the only use of
+these tags. You can use them for anything of which you can think.
 
 Edit the product and add the following tags. **twc-sptta Women Owned ld**,
 **twc-sptta Carbon Neutral ld**, and **twc-sptta Plastic Free ld**. The

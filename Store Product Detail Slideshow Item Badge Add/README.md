@@ -2,7 +2,9 @@
 
 ### [License][1]
 
-### Version 0.2.0
+### Version
+
+  * 0.2.0
 
 #### SS Versions
 
@@ -27,9 +29,9 @@
 * Install [twcsl][5]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[store product detail slideshow item badge
-  add.html][6]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page. Please see [per-page code injection][7].
+* Add code from file **[store product detail slideshow item badge add.html][6]**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  Refer to [Per-page code injection][7] for details.
 
 ## Make a Donation
 

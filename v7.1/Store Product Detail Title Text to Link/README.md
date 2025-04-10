@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatibility : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatibility
+
+  * Not Applicable
 
 ---
 
@@ -17,7 +23,8 @@
   
 * Add code from file **[store product detail title text to link.html][2]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

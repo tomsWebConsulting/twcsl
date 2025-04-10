@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.1
+  * 0.1d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -21,8 +27,9 @@
   
 * Add code from file
   **[header navigation link text replace with image.html](header%20navigation%20link%20text%20replace%20with%20image.html#L1)**
-  to Website > Pages > Website Tools > Code Injection > FOOTER. Read the code
-  for any instructions within.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

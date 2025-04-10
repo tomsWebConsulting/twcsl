@@ -32,12 +32,14 @@ Add footer boilerplate section elements to product detail additional info.
   rest of the steps.
   
 * Add code from file **[store page detail additional info add footer
-  boilerplate.css][6]** to Website > Pages > Website Tools > Custom CSS. Read
-  the code for any instructions within.
+  boilerplate.css][6]** to Website > Pages > Website Tools > Custom CSS.
+  
+* Read the code for any instructions within.
   
 * Add code from file **[store page detail additional info add footer
   boilerplate.html][7]** to Store Settings > Advanced > Page Header Code
-  Injection for the store page. Please see [per-page code injection][8].
+  Injection for the store page. Refer to [Per-page code injection][8] for
+  details.
   
 * Add a [Classic Editor][9] section to the footer.
 

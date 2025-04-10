@@ -31,16 +31,21 @@ Add descriptions to product category pages.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[store page list category description add.html][7]**
       to Store Settings > Advanced > Page Header Code Injection for the store
-      page. Please see per-page code injection. Please see [Add code to code
-      injection][8].
+      page. Refer to [Per-page code injection][8] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple elements such as a store page and
+      product blocks where you want to have this effect.
+      
     * Add code from file **[store page list category description add.html][7]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Please see
-      [Add code to code injection][9].
+      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      [Add code to code injection][9] for details.
       
 * Create a Dropdown page in Pages with the following settings.
 

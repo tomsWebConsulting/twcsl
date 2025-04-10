@@ -6,7 +6,9 @@
 
 Redirect a form block with a single Text field labeled Zip Code to a URL.
 
-### Version 0.1.0
+### Version
+
+  * 0.1.0
 
 #### SS Versions
 

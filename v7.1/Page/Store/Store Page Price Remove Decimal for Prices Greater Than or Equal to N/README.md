@@ -33,16 +33,23 @@ Remove decimal for prices greater than equal to n on Store page.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[store page price remove decimal for prices greater
       than or equal to n.html][4]** to Store Settings > Advanced >
-      Page Header Code Injection for the store page. Please see [per-page code
-      injection][5].
+      Page Header Code Injection for the store page. Refer to [Per-page code
+      injection][5] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[store page price remove decimal for prices greater
       than or equal to n.html][4]** to Website > Pages > Website Tools >
-      Code Injection > FOOTER. Please see [Add code to code injection][6].
+      Code Injection > FOOTER. Refer to [Add code to code injection][6] for
+      details.
       
 * Add the following to searchReplaceText in the store page price change code per
   that codes instructions.

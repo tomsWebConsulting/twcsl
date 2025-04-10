@@ -35,29 +35,29 @@ Create rudimentary tabbed effect with button and other blocks.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[blocks tabbed.html][5]** to Page Settings >
-      Advanced > Page Header Code Injection for the page. Please see [per-page
-      code injection][6].
+      Advanced > Page Header Code Injection for the page. Refer to [Per-page
+      code injection][6] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[blocks tabbed.html][5]** to Website > Pages >
-      Website Tools > Code Injection > FOOTER. Please see [Add code to code
-      injection][7].
-
+      Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+      injection][7] for details.
+      
 * In a section add at least two button blocks. I suggest a horizontal
   orientation for the buttons as that is the easiest layout. You can do other
   layouts but this effects default CSS isn't designed to accomodate all designs.
   You would need to add your own custom CSS.
   
   Hence forth I will refer to these blocks as tab blocks.
-
+  
 * Add a corresponding number of blocks to match the number of tab blocks. I
   suggest stacking the blocks vertically for the Classic Editor and overlay them
   for Fluid Engine. Other layouts are possbile but this effects default CSS
@@ -77,45 +77,52 @@ Create rudimentary tabbed effect with button and other blocks.
   
     * Page Specific
     
-      Add the following to Page Settings > Advanced > Page Header Code Injection
-      for the page. Please see [per-page code injection][6].
+      * Use this option if you have only a single page you want to have this
+        effect.
+        
+      * Add the following to Page Settings > Advanced >
+        Page Header Code Injection for the page. Refer to [Per-page code
+        injection][6] for details.
+        
+        ```html
+        <style>
+        
+          /* twc-bt line block hide */
+          
+          body:not( .sqs-edit-mode-active ) #block-123456789012345678901234,
+          body:not( .sqs-edit-mode-active ) #block-098765432109876543210987,
+          x-twc-bt-selector /* dummy selector so that each selector line above can end
+                               with a comma */
+            {
+            
+              display : none;
+              
+              }
+              
+          </style>
+        ```
+        
+    * Site-wide
     
-      ```html
-      <style>
+      * Use this option if you have multiple pages where you want to have this
+        effect.
+        
+      * Add the following to Website > Pages > Website Tools > Custom CSS.
       
+        ```css
         /* twc-bt line block hide */
         
         body:not( .sqs-edit-mode-active ) #block-123456789012345678901234,
         body:not( .sqs-edit-mode-active ) #block-098765432109876543210987,
-        x-twc-bt-selector /* dummy selector so that each selector line above can end
-                             with a comma */
+        x-twc-bt-selector /* dummy selector so that each selector line above can
+                             end with a comma */
           {
           
             display : none;
             
             }
-            
-        </style>
-      ```
-      
-    * Site-wide
-    
-      Add the following to Website > Pages > Website Tools > Custom CSS.
-      
-      ```css
-      /* twc-bt line block hide */
-      
-      body:not( .sqs-edit-mode-active ) #block-123456789012345678901234,
-      body:not( .sqs-edit-mode-active ) #block-098765432109876543210987,
-      x-twc-bt-selector /* dummy selector so that each selector line above can
-                           end with a comma */
-        {
+        ```
         
-          display : none;
-          
-          }
-      ```
-
 * For each content block you will want to note its block id. You can find block
   ids by using Heather Tovey's [Squarespace ID Finder][8].
   

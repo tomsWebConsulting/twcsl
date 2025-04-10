@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.1.2
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.1.2
 
-#### v7.1 Fluid Engine Compatibility : Not Applicable
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatibility
+
+  * Not Applicable
 
 ---
 
@@ -17,7 +25,9 @@
   
 * Add code from file **[store product detail add to cart button after added
   callback.html][3]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page. Read the code for any instructions within.
+  for the store page.
+  
+* Read the code for any instructions within.
 
 ## Note
 

@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.1d2
+### Version
 
-#### SS Version 7.0 ([Brine template family][1])
+  * 0.1d2
+
+#### SS Version
+
+  * 7.0 ([Brine template family][1])
 
 ---
 

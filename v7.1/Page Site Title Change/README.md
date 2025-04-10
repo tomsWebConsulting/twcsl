@@ -2,19 +2,27 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
 ## Quick Install
 
 * Add code from file **[page site title change.html][1]** to Page Settings >
-  Advanced > Page Header Code Injection for the page. Please see
-  [per-page code injection][2]. Read the code for any instructions within.
+  Advanced > Page Header Code Injection for the page. Please see [per-page code
+  injection][2].
+  
+* Read the code for any instructions within.
   
 ## Make a Donation
 

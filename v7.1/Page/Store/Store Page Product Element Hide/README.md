@@ -30,14 +30,20 @@ Hide elements of store products.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[store page product element hide.html][2]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [per-page code injection][6].
+      Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[store page product element hide.html][2]** to
-      Website > Pages > Website Tools > Code Injection > HEADER. Please see [Add
+      Website > Pages > Website Tools > Code Injection > HEADER. Refer to [Add
       code to code injection][7].
       
 * Read the code for any instructions within.

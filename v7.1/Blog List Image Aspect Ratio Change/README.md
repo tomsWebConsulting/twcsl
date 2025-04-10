@@ -37,8 +37,9 @@ Change image aspect ratio for blog list.
   
 * Add code from file **[blog list image aspect ratio change.html][5]** to
   Blog Settings > Advanced > Page Header Code Injection for the blog page.
-  Please see [Per-page code injection][6]. Read the code for any instructions
-  within.
+  Refer to [Per-page code injection][6] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.2d1
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.2d1
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -23,24 +31,24 @@
 
 ### v7.0
 
-​In the store page Intro area add a code block with the following code.
-
-```html
-<div category="[enter category here between double quotes]"></div>
-```
-
-After the code block add an image and text block. Repeat this pattern for all
-categories. The category must match the category text as entered in the SS
-interface.
+  * In the store page Intro area add a code block with the following code.
+  
+    ```html
+    <div category="[enter category here between double quotes]"></div>
+    ```
+    
+  * After the code block add an image and text block. Repeat this pattern for
+    all categories. The category must match the category text as entered in the
+    Squarespace interface.
 
 ### v7.1
 
-​In the store page add a page section before the store page section. Add a code
-block with the following code.
-
-```html
-<div category="[enter category here between double quotes]"></div>
-```
+* In the store page add a page section before the store page section. Add a code
+  block with the following code.
+  
+  ```html
+  <div category="[enter category here between double quotes]"></div>
+  ```
 
 After the code block add an image and text block. Repeat this pattern for all
 categories. The category must match the category text as entered in the SS

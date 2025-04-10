@@ -34,8 +34,7 @@ use it in the page code.
   
 * Add code from file **[project page image clickthrough add.html][6]** to
   Project Settings > Advanced > Page Header Code Injection for the project page.
-  Please see per-page code injection. Please see [Add code to code
-  injection][7].
+  Refer to [Per-page code injection][7] for details.
 
 ## Make a Donation
 

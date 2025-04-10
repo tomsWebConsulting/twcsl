@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 1.0
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 1.0
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -14,15 +22,22 @@
 
   * Site-wide
 
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[accordion block top bottom border hide.css][1]** to
       Website > Pages > Website Tools > Custom CSS.
       
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[accordion block top bottom border hide.html][2]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [per-page code injection][3]. Read the code for any instructions
-      within.
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][3] for details.
+      
+* Read the code for any instructions within.
 
 ## Make a Donation
 

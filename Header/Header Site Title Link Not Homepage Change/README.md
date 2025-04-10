@@ -29,8 +29,10 @@ Change the header site title link on pages except for the homepage.
 ## Quick Install
 
 * Add code from file **[header site title link not homepage change.html][6]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][7]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][7] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

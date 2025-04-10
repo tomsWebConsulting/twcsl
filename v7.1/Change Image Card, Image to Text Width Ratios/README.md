@@ -2,7 +2,9 @@
 
 ### [License][99]
 
-### Version 0.2d0
+### Version
+
+  * 0.2d0
 
 ---
 

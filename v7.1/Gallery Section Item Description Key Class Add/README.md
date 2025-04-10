@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatibility : Yes
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatibility
+
+  * Yes
 
 ---
 
@@ -23,16 +29,23 @@
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[gallery section item description key class
       add.html][1]** to Page Settings > Advanced > Page Header Code Injection
-      for the page. Please see [per-page code injection][2]. Read the code for
-      any instructions within.
+      for the page. Refer to [Per-page code injection][2] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[gallery section item description key class
       add.html][1]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Read the code for any instructions within.
+      FOOTER. Refer to [Add code to code injection][9] for details.
+      
+* Read the code for any instructions within.
 
 ## Note
 
@@ -57,5 +70,6 @@ Please consider [making a donation][3].
 
 [1]: gallery%20section%20item%20description%20key%20class%20add.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

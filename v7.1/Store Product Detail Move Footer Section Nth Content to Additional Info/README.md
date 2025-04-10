@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.1
+  * 0.1d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -18,7 +24,8 @@
 * Add code from file
   **[store product detail move footer section nth content to additional info.html](store%20product%20detail%20move%20footer%20section%20nth%20content%20to%20additional%20info.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

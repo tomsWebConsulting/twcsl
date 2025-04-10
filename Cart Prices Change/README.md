@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.3.1
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.3.1
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -23,7 +31,8 @@
   
 * Add code from file **[cart prices change.html][3]** to Website > Website
   Tools > Code Injection > FOOTER **before** the Cart Page Observe Changes code.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## searchReplaceText Example Lines
 

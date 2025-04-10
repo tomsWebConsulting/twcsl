@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.1
+  * 0.1d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -21,8 +27,9 @@
   
 * Add code from file
   **[header social icon whatsapp generic icon to whatsapp change.html](header%20social%20icon%20whatsapp%20generic%20icon%20to%20whatsapp%20change.html#L1)**
-  to Website > Pages > Website Tools > Code Injection > FOOTER. Read the code
-  for any instructions within.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

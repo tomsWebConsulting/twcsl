@@ -36,11 +36,13 @@ Add buttons to the site header.
   ```
   
 * Add code from file **[header buttons add.less][5]** to Website > Pages >
-  Website Tools > Custom CSS. Read the code for any instructions within.
+  Website Tools > Custom CSS.
   
 * Add code from file **[header buttons add.html][6]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7]. Read the code for any instructions within.
+  Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][7] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

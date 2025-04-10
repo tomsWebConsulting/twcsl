@@ -2,20 +2,25 @@
 
 ### [License][99]
 
-### Version 1.0
+### Version
+
+  * 1.0
 
 #### SS Versions 7.0, 7.1
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### v7.1 Fluid Engine Compatibility
+
+  * Unknown
 
 ---
 
 ## Quick Install
 
-Add code from file
-**[change cart continue shopping text.css](change%20cart%20continue%20shopping%20text.css#L1)**
-to Website > Pages > Website Tools > Custom CSS. Read the code for any
-instructions within.
+* Add code from file
+  **[change cart continue shopping text.css](change%20cart%20continue%20shopping%20text.css#L1)**
+  to Website > Pages > Website Tools > Custom CSS.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

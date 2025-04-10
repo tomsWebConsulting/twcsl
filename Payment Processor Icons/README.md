@@ -28,8 +28,8 @@ Add some payment processor icons to site footer.
   Website Tools > Custom CSS. Read the code for any instructions within.
   
 * Add code from file **[payment processor icons svg symbol.html][3]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][4].
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][4] for details.
   
 * Add code from file **[payment processor icons.html][5]** to a code block in
   the footer of your site.

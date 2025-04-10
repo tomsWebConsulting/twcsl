@@ -42,23 +42,23 @@ Limit custom form text and text area field lengths.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[product custom form text field max length.html][7]**
       to Page Settings > Advanced > Page Header Code Injection for the page,
-      **before** the product quick view observe changes code. Please see
-      [Per-page code injection][8].
+      **before** the product quick view observe changes code. Refer to [Per-page
+      code injection][8] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple elements such
-      as a store page and product blocks where you want to have this effect.
+    * Use this option if you have multiple elements such as a store page and
+      product blocks where you want to have this effect.
       
     * Add code from file **[product custom form text field max length.html][7]**
       to Website > Pages > Website Tools > Code Injection > FOOTER, **before**
-      the product quick view observe changes code. Please see [Add code to code
-      injection][9].
+      the product quick view observe changes code. Refer to [Add code to code
+      injection][9] for details.
       
 * Add the **twcPcftfml** callback name to the modal lightbox observe changes
   code per that codes install instructions.

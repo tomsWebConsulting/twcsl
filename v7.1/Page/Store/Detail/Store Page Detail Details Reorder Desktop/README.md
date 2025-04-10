@@ -35,10 +35,10 @@ Reorder store page product detail elements.
   
   * **[store page detail details reorder desktop.html][6]** 
   
-    Read the code for any instructions within.
-    
-  Please see [Per-page code injection][7]. 
+  Refer to [Per-page code injection][7] for details.
   
+* Read the code for any instructions within.
+
 ## Example Reorderings
 
   * Add to Cart button after Price

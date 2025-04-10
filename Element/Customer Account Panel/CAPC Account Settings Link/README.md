@@ -6,7 +6,9 @@
 
 Change the Customer Account Panel Account Settings link URL.
 
-### Version 0.1.2
+### Version
+
+  * 0.1.2
 
 #### SS Versions
 
@@ -33,8 +35,10 @@ Change the Customer Account Panel Account Settings link URL.
   
 * Add the code from file **[capc account settings link.html][6]** to Website >
   Pages > Website Tools > Code Injection > FOOTER **before** the **customer
-  account panel change** code. Please see [Add code to code injection][7]. Read
-  the code for any instructions within.
+  account panel change** code. Refer to [Add code to code injection][7] for
+  details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

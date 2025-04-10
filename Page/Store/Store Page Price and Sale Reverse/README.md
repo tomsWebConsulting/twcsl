@@ -33,17 +33,25 @@ Reverse price and sale price on a store page.
 * Install [twcsl][6]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Page Specific
+* Options
 
-  * Add code from file **[store page price and sale reverse.html][7]** to
-    Page Settings > Advanced > Page Header Code Injection for the page. Please
-    see [per-page code injection][8].
-    
-* Site-wide
-
-  * Add code from file **[store page price and sale reverse.html][7]** to
-    Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-    code to code injection][9].
+  * Page Specific
+  
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
+    * Add code from file **[store page price and sale reverse.html][7]** to
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][8] for details.
+      
+  * Site-wide
+  
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[store page price and sale reverse.html][7]** to
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][9] for details.
 
 ## Make a Donation
 

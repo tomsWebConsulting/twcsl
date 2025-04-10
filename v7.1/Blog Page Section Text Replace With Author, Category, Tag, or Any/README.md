@@ -29,8 +29,10 @@
   
 * Add code from file **[blog page section text replace with author, category,
   tag, or any.html][5]** to Blog Settings > Advanced > Page Header Code
-  Injection for the blog page. Please see [Per-page code injection][6]. Read the
-  code for any instructions within.
+  Injection for the blog page. Refer to [Per-page code injection][6] for
+  details.
+  
+* Read the code for any instructions within.
   
 * Add a section above or below the blog section of your blog page, if you don't
   already have one. Add a text block if there isn't one. In the text block

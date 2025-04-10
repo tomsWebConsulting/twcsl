@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.2d0
+### Version
 
-#### SS Version 7.1
+  * 0.2d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -15,6 +21,7 @@
 * Install Brad Good's [multi-language code](https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template).
   
 * In the multi-laguage code near the end find the following text.
+
   ```javascript
     });
   </script>
@@ -22,10 +29,11 @@
   
 * Just above the lines in the previous step add code from file
   **[cta button text and url change based on language.js](cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1)**.
-  Read the code for any instructions within.
   
-  Be very careful inserting the code. You don't want to change any of the lines
-  in the existing code, just add in this new code.
+* Read the code for any instructions within.
+  
+Be very careful inserting the code. You don't want to change any of the lines
+in the existing code, just add in this new code.
 
 ## Make a Donation
 

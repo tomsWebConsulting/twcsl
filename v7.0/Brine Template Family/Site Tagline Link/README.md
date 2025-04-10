@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.2.0
+### Version
 
-#### SS Version 7.0 ([Brine template family][1])
+  * 0.2.0
+
+#### SS Version
+
+  * 7.0 ([Brine template family][1])
 
 ---
 
@@ -18,8 +22,9 @@
   ```
   
 * Add code from file **[site header tagline link.html][2]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Read the code for any
-  instructions within.
+  Pages > Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

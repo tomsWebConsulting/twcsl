@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1])
+  * 0.1d0
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### SS Versions
+
+  * 7.1
+
+  * 7.0 ([Brine template family][1])
+
+#### v7.1 Fluid Engine Compatibility
+
+  * Unknown
 
 ---
 
@@ -18,7 +26,8 @@
 * Add code from file
   **[blog category page category attribute add.html](blog%20category%20page%20category%20attribute%20add.html#L1)**
   to Blog Settings > Advanced > Page Header Code Injection for the blog page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

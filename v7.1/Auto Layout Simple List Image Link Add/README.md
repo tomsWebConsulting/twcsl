@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.1
+  * 0.1d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -21,8 +27,9 @@
   
 * Add code from file
   **[auto layout simple list image link add.html](auto%20layout%20simple%20list%20image%20link%20add.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+  to Page Settings > Advanced > Page Header Code Injection for the page.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

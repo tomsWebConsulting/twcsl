@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.2.0
+### Version
 
-#### SS Version 7.1
+  * 0.2.0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -17,7 +23,9 @@
   
 * Add code from file **[blog post categories and tags add.html][2]** to Blog
   Settings > Advanced > Page Header Code Injection for the blog page. Please see
-  [per-page code injection][3]. Read the code for any instructions within.
+  [per-page code injection][3].
+  
+* Read the code for any instructions within.
 
 ## How to Use
 

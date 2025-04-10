@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Versions 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -16,8 +22,9 @@
   Website Tools > Custom CSS.
   
 * Add code from file **[blocks boilerplate.html][2]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Read the code for any instructions
-  within.
+  Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
   
 * Add a section to the site footer as the last section. Add your boilerplate
   blocks to the section.

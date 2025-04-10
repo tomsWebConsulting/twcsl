@@ -35,8 +35,9 @@ Create effects when a variant is selected.
   
 * Add code from file **[store page detail variant selected callback.html][6]**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
-  Please see [per-page code injection][7]. Read the code for any instructions
-  within.
+  Refer to [Per-page code injection][7] for details.
+  
+* Read the code for any instructions within.
 
 ## Callback Example
 

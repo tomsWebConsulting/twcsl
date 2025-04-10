@@ -35,15 +35,21 @@ Change blog post image URL to source URL.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+
     * Add code from file **[blog page list post image url to source
       url.html][6]** to Blog Settings > Advanced > Page Header Code Injection
-      for the blog page. Please see [per-page code injection][7].
+      for the blog page. Refer to [Per-page code injection][7] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[blog page list post image url to source
       url.html][6]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Please see [Add code to code injection][8].
+      FOOTER. Refer to [Add code to code injection][8] for details.
 
 * Read the code for any instructions within.
 

@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.3d1
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.3d1
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -26,7 +34,8 @@
 * Add code from file
   **[social icon discord generic icon to discord change.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change.html#L1)**
   to Website > Pages > Website Tools > Code Injection > FOOTER.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
   
 * Add code from file
   **[social icon discord generic icon to discord change svg symbol.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change%20svg%20symbol.html#L1)**

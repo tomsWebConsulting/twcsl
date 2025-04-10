@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.2.0
+### Version
 
-#### SS Version 7.1
+  * 0.2.0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -19,17 +25,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Page Specific Effect
+* Options
 
-  * Add code from file **[text block text class add.html][1]** to
-    Page Settings > Advanced > Page Header Code Injection for the page. Please
-    see [per-page code injection][2]. Read the code for any instructions
-    within.
-    
-* Site-wide Effect
+  * Page Specific
+  
+    * Use this option if you have only a single page you want to have this
+      effect.
 
-  * Add code from file **[text block text class add.html][1]** to Website >
-    Pages > Website Tools > Code Injection > FOOTER.
+    * Add code from file **[text block text class add.html][1]** to
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][2] for details.
+      
+  * Site-wide
+  
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[text block text class add.html][1]** to Website >
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][7] for details.
+      
+* Read the code for any instructions within.
 
 ## How To Use
 
@@ -151,8 +167,9 @@ Please consider [making a donation][4].
 
   * initial version
 
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [1]: text%20block%20text%20class%20add.html#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [3]: https://toms-web-consulting-demos.squarespace.com/text-block-text-class-add?password=twcdemos
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -39,22 +39,24 @@ Add page section toggle effect to pages.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[page sections slide toggle.html][5]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Please see
-      [Per-page code injection][6]. Read the code for any instructions within.
+      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      [Per-page code injection][6] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[page sections slide toggle.html][5]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to
-      code injection][7]. Read the code for any instructions within.
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][7] for details.
       
+* Read the code for any instructions within.
+
 * Add a section and set it's height to small. This whole section will become a
   clickable zone for the toggle effect.
   

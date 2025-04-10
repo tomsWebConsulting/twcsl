@@ -2,11 +2,17 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -17,8 +23,9 @@
   
 * Add code from file **[store product detail add to cart show after date
   time.html][3]** to Store Settings > Advanced > Page Header Code Injection for
-  the page. Please see [per-page code injection][4]. Read the code for any
-  instructions within.
+  the page. Refer to [Per-page code injection][4] for details.
+  
+* Read the code for any instructions within.
 
 * Add the following to a code block in [Additional Info][5].
   

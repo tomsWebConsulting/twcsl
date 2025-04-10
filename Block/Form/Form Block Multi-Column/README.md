@@ -2,7 +2,9 @@
 
 ### [License][1]
 
-### Version 0.3.0
+### Version
+
+  * 0.3.0
 
 #### SS Versions
 
@@ -29,23 +31,23 @@
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[form block multi-column.html][3]** to Page
       Settings > Advanced > Page Header Code Injection for the page **before**
-      the **Form Block Wrapper Observe Changes code**. Please see [per-page code
-      injection][4].
+      the **Form Block Wrapper Observe Changes code**. Refer to [Per-page code
+      injection][4] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[form block multi-column.html][3]** to Website >
       Pages > Website Tools > Code Injection > FOOTER **before** the **Form
-      Block Wrapper Observe Changes code**. Please see [Add code to code
-      injection][5].
+      Block Wrapper Observe Changes code**. Refer to [Add code to code
+      injection][5] for details.
       
 * Add or edit a form block.
 

@@ -32,8 +32,10 @@ Use settings thumbnail as thumbnail for Event.
   rest of the steps.
   
 * Add code from file **[events page event thumbnail add.html][6]** to Events
-  Settings > Advanced > Page Header Code Injection for the events page. Please
-  see [Per-page code injection][7]. Read the code for any instructions within.
+  Settings > Advanced > Page Header Code Injection for the events page. Refer to
+  [Per-page code injection][7] for details.
+  
+* Read the code for any instructions within.
 
 ## What is a bookmarklet?
 

@@ -28,15 +28,14 @@ Change Store page list Category Title to a H1 element.
 
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
+    * Use this option if you have only a single page you want to have this
       effect.
       
     * Add code from file **[store page list category title element to
       h1.html][4]** to Page Settings > Advanced > Page Header Code Injection for
-      the page. Refer to [per-page code injection][5] for details. Read the code
-      for any instructions within.
+      the page. Refer to [per-page code injection][5] for details.
       
   * Site-wide
   
@@ -45,8 +44,9 @@ Change Store page list Category Title to a H1 element.
       
     * Add code from file **[store page list category title element to
       h1.html][4]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Refer to [Add code to code injection][6]. Read the code for any
-      instructions within.
+      FOOTER. Refer to [Add code to code injection][6] for details.
+      
+* Read the code for any instructions within.
 
 ## Make a Donation
 

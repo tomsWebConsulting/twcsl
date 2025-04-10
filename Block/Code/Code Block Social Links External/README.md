@@ -34,13 +34,13 @@ Create Social Links for entities outside your site.
   rest of the steps.
   
 * Add code from file **[code block social links external.html][7]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][9].
+  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][9] for details.
   
 * Create a blank page in the Not Linked area and set the PAGE TITLE, NAVIGATION
   TITLE, AND URL SLUG to **twc-cbsle** and add the following to Page Settings >
-  Advanced > Page Header Code Injection for the page. Please see [Per-page code
-  injection][8].
+  Advanced > Page Header Code Injection for the page. Refer to [Per-page code
+  injection][8] for details.
   
   ```html
   <meta name="robots" content="noindex" />

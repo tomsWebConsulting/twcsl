@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1])
+  * 0.1.0
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### SS Versions
+
+  * 7.1
+
+  * 7.0 ([Brine template family][1])
+
+#### v7.1 Fluid Engine Compatibility
+
+  * Unknown
 
 ---
 
@@ -18,7 +26,8 @@
 * Add code from file
   **[store product detail related product sold out price zero remove.html][3]**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Note
 

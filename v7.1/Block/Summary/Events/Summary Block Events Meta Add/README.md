@@ -39,11 +39,12 @@ Add more than two meta items to a Summary block Events page type.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add the following code to Website > Pages > Website Tools >
-      Code Injection > HEADER. Please see [Add code to code injection][5].
+      Code Injection > HEADER. Refer to [Add code to code injection][5] for
+      details.
       
       ```html
       <script type="application/vnd.twc.sbema">
@@ -127,16 +128,17 @@ Add more than two meta items to a Summary block Events page type.
       ```
       
     * Add code from file **[summary block events meta add.html][6]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Please see
-      [Per-page code injection][5].
+      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple pages where
-      you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add the following code to Website > Pages > Website Tools >
-      Code Injection > HEADER. Please see [Add code to code injection][7].
+      Code Injection > HEADER. Refer to [Add code to code injection][7] for
+      details.
       
       ```html
       <script type="application/vnd.twc.sbema">
@@ -220,10 +222,10 @@ Add more than two meta items to a Summary block Events page type.
       ```
       
     * Add code from file **[summary block events meta add.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][7].
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7] for details.
       
-  * Read the code for any instructions within.
+* Read the code for any instructions within.
 
 ## Note
 

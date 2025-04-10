@@ -6,7 +6,9 @@
 
 Track tagged form block field block ids for later use in other code.
 
-### Version 0.1.2
+### Version
+
+  * 0.1.2
 
 #### SS Versions
 
@@ -35,17 +37,19 @@ Track tagged form block field block ids for later use in other code.
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Page Specific
+* Options
 
-  * Add code from file **[form block track field block ids.html][5]** to Page
-    Settings > Advanced > Page Header Code Injection for the page. Please see
-    [per-page code injection][6].
-    
-* Site-wide
-
-  * Add code from file **[form block track field block ids.html][5]** to
-    Website > Pages > Website Tools > Code Injection > FOOTER.
-
+  * Page Specific
+  
+    * Add code from file **[form block track field block ids.html][5]** to Page
+      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      [Per-page code injection][6] for details.
+      
+  * Site-wide
+  
+    * Add code from file **[form block track field block ids.html][5]** to
+      Website > Pages > Website Tools > Code Injection > FOOTER.
+      
 * Read the code for any instructions within.
 
 * Add or edit a form block. For the first field add a line field with a label of

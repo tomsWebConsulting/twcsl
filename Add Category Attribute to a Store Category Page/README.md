@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.1d2
+### Version
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1])
+  * 0.1d2
 
-#### v7.1 Fluid Engine Compatible : Not Applicable
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0 ([Brine template family][1])
+
+#### v7.1 Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -17,8 +25,9 @@
   
 * Add code from file **[add category attribute to a store category
   page.html][3]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page. Please see [per-page code injection][4]. Read the code for any
-  instructions within.
+  the store page. Refer to [Per-page code injection][4] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

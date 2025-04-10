@@ -29,15 +29,22 @@ Force a mutation on quantity change on Store detail page.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[store page detail price force mutation on quantity
       change.html][3]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page. Please see [per-page code injection][4].
+      Injection for the store page. Refer to [Per-page code injection][4] for
+      details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[store page detail price force mutation on quantity
       change.html][3]** to  Website > Pages > Website Tools > Code Injection >
-      FOOTER. Please see [Add code to code injection][5].
+      FOOTER. Refer to [Add code to code injection][5] for details.
 
 ## Make a Donation
 

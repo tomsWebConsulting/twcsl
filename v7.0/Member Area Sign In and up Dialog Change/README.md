@@ -2,9 +2,13 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.0
+  * 0.1.0
+
+#### SS Version
+
+  * 7.0
 
 ---
 
@@ -18,8 +22,10 @@
   ```
   
 * Add code from file **[member area sign in and up dialog change.html][2]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][4]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][4] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

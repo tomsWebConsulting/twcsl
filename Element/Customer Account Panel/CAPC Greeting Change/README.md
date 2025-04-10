@@ -6,7 +6,9 @@
 
 Change the Customer Account Panel greeting.
 
-### Version 0.1.2
+### Version
+
+  * 0.1.2
 
 #### SS Versions
 
@@ -32,8 +34,10 @@ Change the Customer Account Panel greeting.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[capc greeting change.html][6]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7]. Read the code for instructions within.
+  Website Tools > Code Injection > FOOTER. Refer to [Per-page code injection][7]
+  for details.
+  
+* Read the code for instructions within.
 
 ## Make a Donation
 

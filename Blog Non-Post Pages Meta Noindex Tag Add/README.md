@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.2.0
+### Version
 
-#### SS Versions 7.1, 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3], [Five][4], [Montauk][5])
+  * 0.2.0
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### SS Versions
+
+  * 7.1
+
+  * 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3], [Five][4], [Montauk][5])
+
+#### v7.1 Fluid Engine Compatibility
+
+  * Unknown
 
 ---
 
@@ -15,17 +23,25 @@
 * Install [twcsl][6]. After you install twcsl be sure to continue on with the
   rest of the steps.
   
-* Add code from file **[blog non-post pages meta noindex tag add.html][7]**
-  to...
+* Options
+
+  * Page Specific
   
-  * Page Specific Effect
-  
-    * Blog Settings > Advanced > Page Header Code Injection for the page. Please
-      see [per-page code injection][8].
+    * Use this option if you have only a single page you want to have this
+      effect.
       
-  * Site-wide Effect
+    * Add code from file **[blog non-post pages meta noindex tag add.html][7]**
+      to Blog Settings > Advanced > Page Header Code Injection for the page.
+      Refer to [Per-page code injection][8] for details.
+      
+  * Site-wide
   
-    * Website > Pages > Website Tools > Code Injection > FOOTER.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[blog non-post pages meta noindex tag add.html][7]**
+      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      [Add code to code injection][17] for details.
 
 ## Make a Donation
 
@@ -50,5 +66,6 @@ Please consider [making a donation][9].
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
 [7]: blog%20non-post%20pages%20meta%20noindex%20tag%20add.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[17]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -24,8 +24,10 @@ Change store page detail simple layout gallery thumbnails from scroll to grid.
 
 * Add code from file **[store page detail simple layout gallery thumbnail below
   scroll to grid.html][2]** to Store Settings > Advanced > Page Header Code
-  Injection for the store page. Please see [Per-page code injection][3]. Read
-  the code for any insptructions within.
+  Injection for the store page. Refer to [Per-page code injection][3] for
+  details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

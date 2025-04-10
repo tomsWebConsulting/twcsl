@@ -2,11 +2,17 @@
 
 ### [License][1]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -17,8 +23,9 @@
   
 * Add code from **[calendar event block event past class add.html][3]** to Page
   Settings > Advanced > Page Header Code Injection for the page **before** the
-  **calendar block event change** code. Read the code for any instructions
-  within.
+  **calendar block event change** code.
+  
+* Read the code for any instructions within.
   
 * In the **calendar block event change** code set item to **cbepca**.
   

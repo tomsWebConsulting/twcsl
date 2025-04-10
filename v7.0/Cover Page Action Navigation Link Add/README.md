@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.0 ([Bedford template family][1], [Brine template family][2])
+  * 0.1d0
+
+#### SS Version
+
+  * 7.0 ([Bedford template family][1], [Brine template family][2])
 
 ---
 
@@ -19,8 +23,9 @@
   
 * Add code from file
   **[cover page action navigation link add.html](cover%20page%20action%20navigation%20link%20add.html#L1)**
-  to Cover Page Settings > Advanced > Page Header Code Injection for the page. Read
-  the code for any instructions within.
+  to Cover Page Settings > Advanced > Page Header Code Injection for the page.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

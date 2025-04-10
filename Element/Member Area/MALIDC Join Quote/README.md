@@ -34,8 +34,8 @@ Quote the title member area member sites join dialog.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[malidc join quote.html][6]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7].
+  Website Tools > Code Injection > FOOTER. Refer to [Per-page code injection][7]
+  for details.
 
 ## Make a Donation
 

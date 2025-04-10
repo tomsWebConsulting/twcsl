@@ -2,20 +2,27 @@
 
 ### [License][99]
 
-### Version 0.4d0
+### Version
 
-#### SS Version 7.1
+  * 0.4d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
 ## Quick Install
 
-Add code from file
+* Add code from file
 **[mobile menu flyout.less](mobile%20menu%20flyout.less#L1)**
-to Website > Pages > Website Tools > Custom CSS. Read the code for any
-instructions within.
+to Website > Pages > Website Tools > Custom CSS.
+
+* Read the code for any instructions within.
 
 ## Make a Donation
 

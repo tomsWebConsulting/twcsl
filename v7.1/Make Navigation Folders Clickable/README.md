@@ -2,7 +2,9 @@
 
 ### [License][1]
 
-### Version 0.5d2
+### Version
+
+  * 0.5d2
 
 #### SS Version
 
@@ -30,8 +32,10 @@
   ```
   
 * Add code from file **[make navigation folders clickable.html][5]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER.  Please see [Add
-  code to code injection][6]. Read the code for any instructions within.
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][6] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

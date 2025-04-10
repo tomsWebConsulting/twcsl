@@ -39,8 +39,8 @@ Add span tags around the words of CTA buttons in the header.
   ```
   
 * Add code from file **[header cta buttons each word span tag add.html][6]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-  code to code injection][7].
+  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  to code injection][7] for details.
 
 ## How to Use
 

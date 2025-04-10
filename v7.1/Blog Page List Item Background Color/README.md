@@ -23,8 +23,10 @@ Copy blog page list meta after blog title.
 ## Quick Install
 
 * Add code from file **[blog page list item background color.html][2]** to Blog
-  Settings > Advanced > Page Header Code Injection for the blog page. Please
-  see [Per-page code injection][3]. Read the code for any instructions within.
+  Settings > Advanced > Page Header Code Injection for the blog page. Refer to
+  [Per-page code injection][3] for details.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

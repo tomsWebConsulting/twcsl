@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1.0
+### Version
 
-#### SS Version 7.1
+  * 0.1.0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -19,16 +25,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[header height add as css variable.html][1]** to...
+* Options
 
   * Page Specific
   
-    * Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [per-page code injection][2].
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
+    * Add code from file **[header height add as css variable.html][1]** to Page
+      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      [Per-page code injection][7] for details.
       
   * Site-wide
   
-    * Website > Pages > Website Tools > Code Injection > FOOTER.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
+    * Add code from file **[header height add as css variable.html][1]** to
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][8] for details.
 
 * Read the code for any instructions within.
 
@@ -48,7 +63,9 @@ Please consider [making a donation][3].
 
   * initial version
 
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [1]: header%20height%20add%20as%20css%20variable.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -11,11 +11,19 @@ that existed in the prevoius version of the form block before the update.*
 
 ### [License][2]
 
-### Version 0.1d1
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.1d1
 
-#### v7.1 Fluid Engine Compatible : Unknown
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Unknown
 
 ---
 

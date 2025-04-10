@@ -39,21 +39,21 @@ Gallery section horizontal scroll effect.
 
   * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[gallery section horizontal scroll.html][5]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [Per-page code injection][6].
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][6] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[gallery section horizontal scroll.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][7].
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7] for details.
       
 * Add or edit a Gallery section.
 

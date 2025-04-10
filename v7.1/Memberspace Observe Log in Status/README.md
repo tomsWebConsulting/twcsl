@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d
+### Version
 
-#### SS Version 7.1
+  * 0.1d
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -14,8 +20,9 @@
 
 * Add code from file
   **[memberspace observe log in status.html](memberspace%20observe%20log%20in%20status.html#L1)**
-  to Website > Pages > Website Tools > Code Injection > FOOTER. Read the code
-  for any instructions within.
+  to Website > Pages > Website Tools > Code Injection > FOOTER.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

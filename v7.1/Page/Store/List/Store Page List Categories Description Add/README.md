@@ -33,9 +33,9 @@ Add simple category descriptions to store category pages.
   
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
+    * Use this option if you have only a single page you want to have this
       effect.
       
     * Add code from file **[store page list categories description
@@ -44,12 +44,12 @@ Add simple category descriptions to store category pages.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[store page list categories description
       add.html][6]** to Website > Pages > Website Tools > Code Injection >
-      FOOTER. Refer to [Add code to code injection][8].
+      FOOTER. Refer to [Add code to code injection][8] for details.
       
 * Add a section to the store page list as the last section.
 

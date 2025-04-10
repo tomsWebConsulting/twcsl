@@ -2,11 +2,19 @@
 
 ### [License][1]
 
-### Version 0.2.0
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.2.0
 
-#### v7.1 Fluid Engine Compatible : Not Applicable
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -23,7 +31,9 @@
   
 * Add code from file **[cart item links redirect.html][3]** to Website >
   Pages > Website Tools > Code Injection > FOOTER before the cart page observe
-  changes code. Read the code for any instructions within.
+  changes code.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

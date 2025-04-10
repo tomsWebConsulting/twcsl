@@ -2,11 +2,19 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Versions 7.1, 7.0 ([Brine template family][1])
+  * 0.1d0
 
-#### v7.1 Fluid Engine Compatibility Unknown
+#### SS Versions
+
+  * 7.1
+
+  * 7.0 ([Brine template family][1])
+
+#### v7.1 Fluid Engine Compatibility
+
+  * Unknown
 
 ---
 

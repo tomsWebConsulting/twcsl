@@ -30,15 +30,21 @@ Hide elements of store products that are tagged.
 
   * Page Specific
   
+    * Use this option if you have only a single page you want to have this
+      effect.
+      
     * Add code from file **[store page elements tagged hide.html][4]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [per-page code injection][5].
+      Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
+    * Use this option if you have multiple pages where you want to have this
+      effect.
+      
     * Add code from file **[store page elements tagged hide.html][4]** to
-      Website > Pages > Website Tools > Code Injection > HEADER. Please see [Add
-      code to code injection][6].
+      Website > Pages > Website Tools > Code Injection > HEADER. Refer to [Add
+      code to code injection][6] for details.
 
 ## Tags
 

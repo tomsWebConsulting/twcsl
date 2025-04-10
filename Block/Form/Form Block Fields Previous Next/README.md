@@ -52,8 +52,7 @@ to move through sections.
       
     * Add code from file **[form block fields previous next.html][7]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Refer
-      to [per-page code injection][8] for details. Read the code for any
-      instructions within.
+      to [per-page code injection][8] for details.
       
   * Site-wide
   
@@ -62,8 +61,10 @@ to move through sections.
       
     * Add code from file **[form block fields previous next.html][7]** to
       Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
-      code to code injection][9]. Read the code for any instructions within.
+      code to code injection][9].
       
+* Read the code for any instructions within.
+
 * Add or edit a Form block on your page and set up as desired.
   
 * In the **Form Block Wrapper Observe Changes** code add **twcFbfpn** to

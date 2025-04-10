@@ -34,8 +34,8 @@ Auto click right arrow of Gallery sections.
       effect.
       
     * Add code from file **[gallery section right arrow auto click.html][5]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Please
-      see [Per-page code injection][6].
+      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      to [Per-page code injection][6] for details.
       
   * Site-wide
   
@@ -43,8 +43,8 @@ Auto click right arrow of Gallery sections.
       effect.
       
     * Add code from file **[gallery section right arrow auto click.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][7].
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7] for details.
 
 ## How to Use
 

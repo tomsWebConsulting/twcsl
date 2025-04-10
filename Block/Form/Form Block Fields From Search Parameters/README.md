@@ -6,7 +6,9 @@
 
 Fill form fields from search query parameters of the page URL.
 
-### Version 0.3.0
+### Version
+
+  * 0.3.0
 
 #### SS Versions
 
@@ -49,8 +51,8 @@ Fill form fields from search query parameters of the page URL.
       
     * Add code from file **[form block fields from search parameters.html][5]**
       to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
-      [Add code to code injection][7].
-
+      [Add code to code injection][7] for details.
+      
 * Add or edit a form block.
 
 * In the **Form Block Wrapper Observe Changes** code add **twcFbffsp** to

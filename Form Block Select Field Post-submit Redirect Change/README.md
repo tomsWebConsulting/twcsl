@@ -11,11 +11,19 @@ that existed in the prevoius version of the form block before the update.*
 
 ### [License][2]
 
-### Version 0.2.2
+### Version
 
-#### SS Versions 7.1, 7.0
+  * 0.2.2
 
-#### v7.1 Fluid Engine Compatible : Yes
+#### SS Versions
+
+  * 7.1
+  
+  * 7.0
+
+#### v7.1 Fluid Engine Compatible
+
+  * Yes
 
 ---
 
@@ -30,8 +38,9 @@ that existed in the prevoius version of the form block before the update.*
   
 * Add code from file **[form block select field post-submit redirect
   change.html][3]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Please see [per-page code injection][4]. Read the code for any
-  instructions within.
+  the page. Refer to [Per-page code injection][4] for details.
+  
+* Read the code for any instructions within.
   
 * Add a form block to your page and set up as desired.
   

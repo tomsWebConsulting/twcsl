@@ -2,9 +2,13 @@
 
 ### [License][99]
 
-### Version 0.1.2
+### Version
 
-#### Fluid Engine Compatible : Not Applicable
+  * 0.1.2
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
@@ -17,8 +21,8 @@
   Website > Pages > Website Tools > Custom CSS.
 
 * Add code from file **[move page last footer section to first.html][3]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Please
-  see [per-page code injection][4].
+  Page Settings > Advanced > Page Header Code Injection for the page. Refer to
+  [Per-page code injection][4] for details.
 
 ## Make a Donation
 

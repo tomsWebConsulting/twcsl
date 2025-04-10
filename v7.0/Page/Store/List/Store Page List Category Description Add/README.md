@@ -32,24 +32,25 @@ Add a category description to Store category pages.
   
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single Store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[store page list category description add.html][12]**
       to Store Settings > Advanced > Page Header Code Injection for the store
-      page. Please see [Per-page code injection][13]. Read the code for any
-      instructions within.
+      page. Refer to [Per-page code injection][13] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[store page list category description add.html][12]**
-      to Settings > Developer Tools > FOOTER. Please see [Add code to code
-      injection][14]. Read the code for any instructions within.
+      to Settings > Developer Tools > FOOTER. Refer to [Add code to code
+      injection][14] for details.
+      
+* Read the code for any instructions within.
 
 ## Make a Donation
 

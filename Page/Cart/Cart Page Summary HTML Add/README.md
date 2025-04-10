@@ -35,10 +35,11 @@ Add HTML to the cart page summary.
   
 * Add code from file **[cart page summary html add.html][5]** to Website >
   Pages > Website Tools > Code Injection > FOOTER **before** the **cart page
-  observe changes** code. Please see [Add code to code injection][6]. Read the
-  code for any instructions within.
+  observe changes** code. Refer to [Add code to code injection][6] for details.
   
-  In the **cart page observe changes** code add **twcCartPageSummaryHtmlAdd** to
+* Read the code for any instructions within.
+  
+* In the **cart page observe changes** code add **twcCartPageSummaryHtmlAdd** to
   callbacks added.
 
 ## Make a Donation

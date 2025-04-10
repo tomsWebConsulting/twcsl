@@ -28,24 +28,25 @@ Cache store page categories in sessionStorage.
 
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[store page list categories cache.html][4]** to
       Store Settings > Advanced > Page Header Code Injection for the store
-      page. Please see [Per-page code injection][5]. Read the code for any
-      instructions within.
+      page. Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[store page list categories cache.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][6]. Read the code for any instructions within.
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][6] for details.
+      
+* Read the code for any instructions within.
 
 ## Callback Example
 

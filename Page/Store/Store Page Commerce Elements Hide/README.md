@@ -26,24 +26,24 @@ Hide all commerce elements on a Store page.
 
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * This option will be the one most will want to use if you have only a
-      single store page you want to have this effect.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from file **[store page commerce elements hide.html][5]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
-      Please see [Per-page code injection][6]. Read the code for any
-      instructions within.
+      Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
-    * This option is the one you want to use if you have multiple store pages
-      where you want to have this effect.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
     * Add code from file **[store page commerce elements hide.css][7]** to
-      Website > Pages > Website Tools > Custom CSS. Read the code for any
-      instructions within.
+      Website > Pages > Website Tools > Custom CSS.
+      
+* Read the code for any instructions within.
 
 ## Make a Donation
 

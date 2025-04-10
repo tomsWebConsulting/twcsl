@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1d0
+### Version
 
-#### SS Version 7.1
+  * 0.1d0
 
-#### Fluid Engine Compatible : Unknown
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Unknown
 
 ---
 
@@ -15,7 +21,8 @@
 * Add code from file
   **[store product detail gallery thumbnails pill segmented.html](store%20product%20detail%20gallery%20thumbnails%20pill%20segmented.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
-  Read the code for any instructions within.
+  
+* Read the code for any instructions within.
 
 ## Make a Donation
 

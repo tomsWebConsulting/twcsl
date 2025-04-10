@@ -38,8 +38,11 @@ pages.
   
 * Add code from file **[store page detail product dimensions.html][5]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-  Please see [per-page code injection][6]. Read the code for any instructions
-  within. **There are some caveats to using this effect.**
+  Refer to [Per-page code injection][6] for details.
+  
+  **There are some caveats to using this effect.**
+  
+* Read the code for any instructions within.
   
 * Add **[twc-spdpd]** to the product description and/or text blocks in
   additional info. [twc-spdpd] will be replaced with the product dimensions. You

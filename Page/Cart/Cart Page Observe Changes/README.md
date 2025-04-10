@@ -29,8 +29,10 @@ Observe cart page changes.
 ## Quick Install
 
 * Add code from file **[cart page observe changes.html][4]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][5]. Read the code for any instructions within.
+  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][5] for details.
+  
+* Read the code for any instructions within.
   
 * Add your custom callback names to the code. Your callbacks must be installed
   before the code.

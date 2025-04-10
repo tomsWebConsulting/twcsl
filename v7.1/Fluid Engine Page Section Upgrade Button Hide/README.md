@@ -2,11 +2,17 @@
 
 ### [License][99]
 
-### Version 0.1.2
+### Version
 
-#### SS Version 7.1
+  * 0.1.2
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 

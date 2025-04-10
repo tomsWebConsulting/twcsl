@@ -6,7 +6,9 @@
 
 Limit the number of characters allowed in some form block fields.
 
-### Version 0.4.0
+### Version
+
+  * 0.4.0
 
 #### SS Versions
 
@@ -39,8 +41,8 @@ Limit the number of characters allowed in some form block fields.
       effect.
       
     * Add code from file **[form block text field max length.html][5]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Please see
-      [per-page code injection][6].
+      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      [Per-page code injection][6] for details.
       
   * Site-wide
   
@@ -48,8 +50,8 @@ Limit the number of characters allowed in some form block fields.
       effect.
       
     * Add code from file **[form block text field max length.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Please see [Add
-      code to code injection][7].
+      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7]
       
 * Add or edit a form block on your page and set up as desired.
   

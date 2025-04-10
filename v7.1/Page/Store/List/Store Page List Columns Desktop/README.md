@@ -24,9 +24,10 @@ Set the number of list page columns to five or more.
 
 * Options
 
-  * Store Page Specific
+  * Page Specific
   
-    * If you have just one store page, use this option.
+    * Use this option if you have only a single page you want to have this
+      effect.
       
     * Add code from **[store page list columns desktop.html][2]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
@@ -34,11 +35,12 @@ Set the number of list page columns to five or more.
       
   * Site-wide
   
-    * If you have multiple store pages, use this option.
+    * Use this option if you have multiple pages where you want to have this
+      effect.
       
-    * Add code from **[store page list columns desktop.css][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER.
-      Refer to [Add code to code injection][5] for details.
+    * Add code from **[store page list columns desktop.css][4]** to Website >
+      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      code injection][5] for details.
       
 * Read the code for any instructions within.
 

@@ -44,8 +44,7 @@ Auto click right arrow of Auto Layout section.
       
     * Add code from file **[section auto layout right arrow auto
       click.html][5]** to Page Settings > Advanced > Page Header Code Injection
-      for the page. Please see [Per-page code injection][6]. Read the code for
-      any instructions within.
+      for the page. Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
@@ -53,10 +52,11 @@ Auto click right arrow of Auto Layout section.
       effect.
       
     * Add code from file **[section auto layout right arrow auto
-      click.html][5]** to Website > Pages > Website Tools > Code Injection > FOOTER(.+)
-      Please see [Add code to code injection][7]. Read the code for any
-      instructions within.
-
+      click.html][5]** to Website > Pages > Website Tools > Code Injection >
+      FOOTER. Refer to [Add code to code injection][7] for details.
+      
+* Read the code for any instructions within.
+  
 * Settings
   
   There are global and Auto Layout section settings. You can use both or either.

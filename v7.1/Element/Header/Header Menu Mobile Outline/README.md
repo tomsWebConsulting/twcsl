@@ -39,8 +39,8 @@ Format mobile menu as an outline.
   ```
   
 * Add code from file **[header menu mobile outline.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Please see [Add code to code
-  injection][7].
+  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  injection][7] for details.
 
 ## Demos
 

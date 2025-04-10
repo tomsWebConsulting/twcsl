@@ -2,11 +2,17 @@
 
 ### [License][1]
 
-### Version 0.1.1
+### Version
 
-#### SS Version 7.1
+  * 0.1.1
 
-#### Fluid Engine Compatible : Yes
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Yes
 
 ---
 
@@ -17,8 +23,9 @@
   
 * Add code from file **[calendar block multi day event first day class
   add.html][3]** to Page Settings > Advanced > Page Header Code Injection for
-  the page **before** the **calendar block event change** code. Read the code
-  for any instructions within.
+  the page **before** the **calendar block event change** code.
+  
+* Read the code for any instructions within.
   
 * In the **calendar block event change** code set flyOutItem to **cbmdefdca**.
   

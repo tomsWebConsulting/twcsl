@@ -2,18 +2,26 @@
 
 ### [License][1]
 
-### Version 0.3.0
+### Version
 
-#### SS Version 7.1
+  * 0.3.0
 
-#### Fluid Engine Compatible : Not Applicable
+#### SS Version
+
+  * 7.1
+
+#### Fluid Engine Compatible
+
+  * Not Applicable
 
 ---
 
 ## Quick Install
 
 Add code from file **[store product list sale badge.less][2]** to Website >
-Pages > Website Tools > Custom CSS. Read the code for any instructions within.
+Pages > Website Tools > Custom CSS.
+
+* Read the code for any instructions within.
 
 ## Badge Options
 
