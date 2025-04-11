@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 376 effects. Each effect has it's own version number, code,
+twcsl contains 374 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -299,8 +299,6 @@ not necessarily designed to work together.
         
         * [Blog Page Post Meta Copy](v7.1/Page/Blog/Post/Blog%20Page%20Post%20Meta%20Copy)
           
-      * [Blog Page Blog Post Settings Time Slider Replace](v7.1/Page/Blog/Blog%20Page%20Blog%20Post%20Settings%20Time%20Slider%20Replace)
-        
       * [List](v7.1/Page/Blog/List)
         
         * [Blog Page List Post Image URL to Source URL](v7.1/Page/Blog/List/Blog%20Page%20List%20Post%20Image%20URL%20to%20Source%20URL)
@@ -315,8 +313,6 @@ not necessarily designed to work together.
         
     * [Events](v7.1/Page/Events)
       
-      * [Events Page Event Settings Time Slider Replace](v7.1/Page/Events/Events%20Page%20Event%20Settings%20Time%20Slider%20Replace)
-        
       * [Event](v7.1/Page/Events/Event)
         
         * [Events Page Event Thumbnail Add](v7.1/Page/Events/Event/Events%20Page%20Event%20Thumbnail%20Add)
