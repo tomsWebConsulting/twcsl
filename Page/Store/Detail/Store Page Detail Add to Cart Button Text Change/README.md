@@ -53,7 +53,7 @@ button.
 
 ## Guard Callbacks (Optional)
 
-A guard callback is code the will stop the effect from being applied. Following
+A guard callback is code that will stop the effect from being applied. Following
 is a very generalized example of a callback.
 
 ```html
