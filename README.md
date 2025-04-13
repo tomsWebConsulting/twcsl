@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 374 effects. Each effect has it's own version number, code,
+twcsl contains 375 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -184,6 +184,8 @@ not necessarily designed to work together.
     * [Member Area Log In Dialog Change](Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change)
       
     * [MALIDC Join Quote](Element/Member%20Area/MALIDC%20Join%20Quote)
+      
+    * [MALIDC Language Translate](Element/Member%20Area/MALIDC%20Language%20Translate)
       
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
