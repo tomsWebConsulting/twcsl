@@ -1,0 +1,380 @@
+<!-- begin TWC MALIDC Language Translate -->
+
+  <script>
+  
+    /*
+    
+      malidc language translate
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : Member Area Log In Dialog Change
+                      < https://tinyurl.com/mwvvusdu >
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `MALIDC Language Translate v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc malidc sub-module
+    
+    twc.malidc = ( ( self ) => self ) ( twc.malidc || { } );
+    
+    // initialize twc malidc callbacks sub-module
+    
+    twc.malidc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, dialogType ) => {
+      
+        const codeKey = 'twc-mlt';
+        
+        let selector = 'script[ type="application/vnd.' +
+        
+          `${ codeKey.replace ( '-', '.' ) }" ]`;
+          
+        const
+        
+          scriptElement = document
+          
+            .head
+            
+            .querySelector ( selector );
+            
+        if ( scriptElement === null ) return; // bail if no tag
+        
+        const
+        
+          placeHolderChange = ( element, placeholder ) => {
+          
+            element
+            
+              .setAttribute ( 'placeholder', placeholder );
+              
+            },
+            
+          textChange = ( element, text ) => {
+          
+            element
+            
+              .textContent
+              
+              =
+              
+              text;
+              
+            },
+            
+          translateMap = JSON
+          
+            .parse (
+            
+              scriptElement
+              
+                .textContent
+                
+                .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                
+                .replaceAll ( '\n', '' )
+                
+              );
+              
+        switch ( dialogType ) {
+        
+          case 'sign-in' : 
+          
+            // password
+            
+            {
+            
+              selector = '.twc-malidc-sign-in-password input',
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  .Password
+                  
+                );
+                
+              }
+              
+            // sign in
+            
+            {
+            
+              selector = 'button[ data-test="login-button" ] span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Sign In' ]
+                  
+                );
+                
+              }
+              
+            // forget password
+            
+            {
+            
+              selector = '.twc-malidc-request-reset span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Reset Password' ]
+                  
+                );
+                
+              }
+              
+            // create account
+            
+            {
+            
+              selector = '.twc-malidc-create span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Create account' ]
+                  
+                );
+                
+              }
+              
+            break;
+            
+          case 'sign-up' : 
+          
+            // first name
+            
+            {
+            
+              selector = '.twc-malidc-name-first input',
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'First Name' ]
+                  
+                );
+                
+              }
+              
+            // last name
+            
+            {
+            
+              selector = '.twc-malidc-name-last input',
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Last Name' ]
+                  
+                );
+                
+              }
+              
+            // create password
+            
+            {
+            
+              selector = '.twc-malidc-sign-up-password input',
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Create Password' ]
+                  
+                );
+                
+              }
+              
+            // re-type password
+            
+            {
+            
+              selector = '.twc-malidc-sign-up-password-confirm input',
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Re-type Password' ]
+                  
+                );
+                
+              }
+              
+            // create account
+            
+            {
+            
+              selector = 'button[ data-test="create-account-create-button" ] span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Create account' ]
+                  
+                );
+                
+              }
+              
+            // already have an account sign in
+            
+            {
+            
+              selector = 'a[ href="/account/login" ] span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Already have an account? Sign in' ]
+                  
+                );
+                
+              }
+              
+             break;
+            
+          case 'password-reset' : 
+          
+            // send reset likk
+            
+            {
+            
+              selector = '.twc-malidc-password-reset button[ data-test="submit-button" ] span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Send Reset Link' ]
+                  
+                );
+                
+              }
+              
+            // send reset likk
+            
+            {
+            
+              selector = '.twc-malidc-password-reset a[ href="/account/login" ] span',
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Back to sign in' ]
+                  
+                );
+                
+              }
+              
+            break;
+            
+          }
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.malidc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end TWC MALIDC Language Translate -->
