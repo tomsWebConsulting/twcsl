@@ -8,7 +8,7 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Versions
 
@@ -126,9 +126,16 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-04-13**
+
+  * added password reset title
+  * fixed some missing , and ;
+  * fixed bug where twc-malidc-email wasn't being applied sometimes
+  * bumped version to 0.5.0
+  
 * **2025-03-27**
 
-  * add sign up join title change setting for member site plan names
+  * added sign up join title change setting for member site plan names
   * removed dependency on english language text to determine dialog type
   * added twc-malidc-password-reset class
   * added password reset dialog type
@@ -136,7 +143,7 @@ Please consider [making a donation][8].
   
 * **2024-09-12**
 
-  * rework code to use JavaScript Module Patterns for twc, twc.malidc, and
+  * reworked code to use JavaScript Module Patterns for twc, twc.malidc, and
     twc.malidc.callbacks. makes the initialization code a bit more dense but
     removes the need for the user to dive into this code to set callbacks. they
     just need to add a callback per that codes instructions
@@ -144,7 +151,7 @@ Please consider [making a donation][8].
   
 * **2024-06-26**
 
-  * wrap code in IIFE to keep code out of global space
+  * wrapped code in IIFE to keep code out of global space
   * bumped version to 0.2.1
   
 * **2024-06-26**

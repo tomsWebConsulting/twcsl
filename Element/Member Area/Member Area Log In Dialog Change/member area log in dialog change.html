@@ -1,26 +1,28 @@
-<!--
+<!-- begin TWC Member Area Log In Dialog Change -->
 
-  begin member area log in dialog change
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.4.0
-  
-  SS Versions   : 7.1, 7.0
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Note          : the signUp setting does not apply to the join dialog of a
-                  member site
-  
-  Copyright     : 2023-2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    member area log in dialog change
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.5.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Note          : the signUp setting does not apply to the join dialog of a
+                    member site
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
   <x-twc-malidc-style style="display : none;">
   
     [optional, enter css here replacing square brackets]
@@ -64,8 +66,10 @@
               
             // '[ enter pricing plan name here between single quotes replacing square brackets ]' : '[ enter name text here between single quotes replacing square brackets ]',
             
-            }
+            },
             
+          passwordReset : '[ optional, enter password reset title text here between single quotes replacing square brackets ]'
+          
           };
           
       return self;
@@ -82,7 +86,7 @@
     
       const
       
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `Member Area Log In Dialog Change v${ version }
         
@@ -130,7 +134,7 @@
               
               if ( id !== `${ accountFrameIdValue }` ) return;
               
-              const baseUrl = `${ location.protocol }//${ location.host }`
+              const baseUrl = `${ location.protocol }//${ location.host }`;
               
               let url = element
               
@@ -284,7 +288,7 @@
                           
                           const
                           
-                            element = mutation.target
+                            element = mutation.target,
                             
                             className = element
                               
@@ -326,7 +330,7 @@
                       
                       element,
                       
-                      parentElement,
+                      ancestorElement,
                       
                       s,
                       
@@ -380,7 +384,7 @@
                         
                       classRemove = ( element ) => {
                       
-                        const classList = element.classList
+                        const classList = element.classList;
                         
                         for ( const clss of classList ) {
                         
@@ -458,17 +462,17 @@
                           
                         }
                         
-                      parentElement = element
+                      ancestorElement = element
                       
                         .parentElement
                         
                         .parentElement;
                         
-                      classRemove ( parentElement );
+                      classRemove ( ancestorElement );
                       
-                      classAdd ( parentElement, value );
+                      classAdd ( ancestorElement, value );
                       
-                      parentElement
+                      ancestorElement
                       
                         .setAttribute ( attributeNameClass, value );
                         
@@ -528,8 +532,6 @@
                       
                     const title = ( ) => {
                     
-                      if ( isPasswordReset ) return; // bail if password reset
-                      
                       const
                       
                         p = new RegExp ( '^\\[.+\\]$' ),
@@ -540,6 +542,16 @@
                           
                       switch ( true ) {
                       
+                        case isPasswordReset :
+                        
+                          s = options
+                          
+                            .title
+                            
+                            .passwordReset;
+                            
+                          break;
+                          
                         case isSignIn :
                         
                           s = options
@@ -590,7 +602,7 @@
                           
                         re = re
                         
-                          [ language ]
+                          [ language ];
                           
                         s = titleElement
                         
@@ -652,16 +664,26 @@
                       
                         .querySelector ( selector );
                         
-                      if ( element !== null )
+                      if ( element !== null ) {
                       
-                        element
+                        ancestorElement = element
                         
                           .parentElement
                           
-                          .parentElement
+                          .parentElement;
                           
+                        ancestorElement
+                        
+                          .classList
+                          
+                          .add ( value );
+                          
+                        ancestorElement
+                        
                           .setAttribute ( attributeNameClass, value );
                           
+                        }
+                        
                       }
                       
                     // password class add
@@ -794,16 +816,26 @@
                           
                             .querySelector ( selector );
                           
-                          if ( element !== null )
+                          if ( element !== null ) {
                           
-                            element
+                            ancestorElement = element
                             
                               .parentElement
                               
-                              .parentElement
+                              .parentElement;
                               
+                            ancestorElement
+                            
+                              .classList
+                              
+                              .add ( value );
+                              
+                            ancestorElement
+                            
                               .setAttribute ( attributeNameClass, value );
                               
+                            }
+                            
                           }
                           
                         // last name class add
@@ -822,19 +854,19 @@
                             
                           if ( element !== null ) {
                           
-                            parentElement = element
+                            ancestorElement = element
                             
                               .parentElement
                               
                               .parentElement;
                               
-                            parentElement
+                            ancestorElement
                             
                               .classList
                               
                               .add ( value );
                               
-                            parentElement
+                            ancestorElement
                             
                               .setAttribute ( attributeNameClass, value );
                               
@@ -848,17 +880,17 @@
                         
                           value = `${ codeKey }-name`;
                           
-                          parentElement = parentElement
+                          ancestorElement = ancestorElement
                           
                             .parentElement;
                             
-                          parentElement
+                          ancestorElement
                           
                             .classList
                             
                             .add ( value );
                             
-                          parentElement
+                          ancestorElement
                           
                             .setAttribute ( attributeNameClass, value );
                             
@@ -1043,4 +1075,4 @@
       
     </script>
     
-  <!-- end member area log in dialog change -->
+  <!-- end TWC Member Area Log In Dialog Change -->
