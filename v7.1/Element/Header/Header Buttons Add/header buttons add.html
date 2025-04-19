@@ -1,0 +1,304 @@
+<!-- begin TWC Header Buttons Add -->
+
+  <!--
+  
+    header buttons add
+    
+    License     : < https://tinyurl.com/s872fb68 >
+    
+    Version     : 0.9.0
+    
+    SS Version  : 7.1
+    
+    Fluid
+    Engine
+    Compatible  : Not Appllicable
+    
+    Copyright   : 2021-2025 Thomas Creedon
+                   
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc hba sub-module
+    
+    twc.hba = ( ( self ) => {
+    
+      const options = {
+      
+        buttons : [
+        
+          /*
+          
+            following is an example of a new button data structure. copy the
+            example new button data structure and paste after the example new
+            button data structure. remove the forward slash asterisk and
+            asterisk forward slash lines from before and after the copied
+            example. repeat for as many new buttons you want to create. this has
+            been done once initially
+            
+            */
+            
+          /*
+          
+          {
+          
+            text : '[ enter button text here between single quotes replacing square brackets ]',
+            
+            url : '[ enter url here between single quotes replacing square brackets ]',
+            
+            // type is is optional. values are secondary, or tertiary
+            
+            type : '[ optional, enter type here between single quotes replacing square brackets ]'
+            
+            },
+            
+          */
+          
+          {
+          
+            text : '[ enter button text here between single quotes replacing square brackets ]',
+            
+            url : '[ enter url here between single quotes replacing square brackets ]',
+            
+            // type is is optional. values are secondary or tertiary
+            
+            type : '[ optional, enter type here between single quotes replacing square brackets ]'
+            
+            },
+            
+          ],
+          
+        /*
+        
+          targetAtttributeValue is an optional setting. enter _self, _blank,
+          _parent, _top, or framename see < https://mzl.la/2Q0JROF > between
+          single quotes
+          
+          */
+          
+        targetAttributeValue : '',
+        
+        /*
+        
+          buttonOriginalTargetAttributeAdd is an optional setting. use false or
+          true. when true the target attribute will be added to Squarespace's
+          built-in cta button
+          
+          */
+          
+        buttonOriginalTargetAttributeAdd : false
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.hba || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+      
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.9.0',
+        
+        s = `Header Buttons Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          addButton = (
+          
+            data,
+            
+            index,
+            
+            ctaElement,
+            
+            buttonOriginalElement
+            
+            ) => {
+            
+              const buttonElement = buttonOriginalElement
+              
+                .cloneNode ( );
+                
+              buttonElement
+              
+                .setAttribute ( 'href', data.url );
+                
+              buttonElement
+              
+                .textContent
+                
+                =
+                
+                data.text;
+                
+              buttonElement
+              
+                .classList
+                
+                .add ( codeKey );
+                
+              ctaElement
+              
+                .append ( buttonElement );
+                
+              if ( targetAtttributeValue )
+              
+                buttonElement
+                
+                  .setAttribute (
+                  
+                    'target',
+                    
+                    targetAtttributeValue
+                    
+                    );
+                    
+              const className = typeClassMap [ data.type ];
+              
+              if ( className == undefined ) return; // continue
+              
+              buttonElement
+              
+                .classList
+                
+                .remove ( 'sqs-button-element--primary' );
+                
+              buttonElement
+              
+                .classList
+                
+                .add ( className );
+                
+              },
+              
+          ctaCallback = ( ctaElement ) => {
+        
+            const buttonOriginalElement = ctaElement
+            
+              .firstElementChild;
+              
+            options
+            
+              .buttons
+              
+              .forEach (
+              
+                ( data, index ) =>
+                
+                addButton (
+                
+                  data,
+                  
+                  index,
+                  
+                  ctaElement,
+                  
+                  buttonOriginalElement
+                  
+                  )
+                  
+                );
+                
+            },
+            
+          codeKey = 'twc-hba',
+          
+          options = twc [
+          
+            codeKey
+            
+            .split ( '-' )
+            
+            [ 1 ]
+            
+            ],
+            
+          selector = '.header-actions-action--cta, .header-menu-cta',
+          
+          targetAtttributeValue = options
+          
+            .targetAttributeValue,
+            
+          typeClassMap = {
+          
+            secondary : 'sqs-button-element--secondary',
+            
+            tertiary : 'sqs-button-element--tertiary'
+            
+            },
+            
+          buttonOriginalTargetAttributeAdd =
+          
+            options
+            
+            .buttonOriginalTargetAttributeAdd,
+            
+          addTargetAttribute =
+          
+            buttonOriginalTargetAttributeAdd
+            
+            &&
+            
+            targetAtttributeValue;
+            
+        document
+        
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( ctaCallback );
+          
+        if ( addTargetAttribute )
+        
+          buttonOriginalElement
+          
+            .setAttribute ( 'target', targetAtttributeValue );
+            
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Header Buttons Add -->
