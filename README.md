@@ -519,6 +519,8 @@ not necessarily designed to work together.
         
       * [CTA Button Text Language Change](v7.1/Element/Header/CTA%20Button%20Text%20Language%20Change)
         
+      * [Header Buttons Add](v7.1/Element/Header/Header%20Buttons%20Add)
+        
   * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
     
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
@@ -636,8 +638,6 @@ not necessarily designed to work together.
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
       
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
-      
-    * [Header Buttons Add](v7.1/Header/Header%20Buttons%20Add)
       
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
     
