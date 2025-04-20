@@ -26,18 +26,18 @@ Add buttons to the site header.
 
 ## Quick Install
 
-* Add code from file **[header buttons add.less][5]** to Website > Pages >
+* Add code from file **[header buttons add.less][4]** to Website > Pages >
   Website Tools > Custom CSS.
   
-* Add code from file **[header buttons add.html][6]** to Website > Pages >
+* Add code from file **[header buttons add.html][5]** to Website > Pages >
   Website Tools > Code Injection > FOOTER. Refer to [Per-page code
-  injection][7] for details.
+  injection][6] for details.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -79,8 +79,7 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: header%20buttons%20add.less#L1
-[6]: header%20buttons%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: header%20buttons%20add.less#L1
+[5]: header%20buttons%20add.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
