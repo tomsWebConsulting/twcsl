@@ -8,7 +8,7 @@ Alter member area sign up and in dialogs.
 
 ### Version
 
-  * 0.5.0
+  * 0.6.0
 
 #### SS Versions
 
@@ -49,7 +49,8 @@ This code attempts to add some useful classes.
   * twc-malidc-sign-in-password
   * twc-malidc-sign-up
   * twc-malidc-sign-up-join
-  * twc-malidc-sign-up-join-text
+  * twc-malidc-sign-up-join-unlock-exclusive-content
+  * twc-malidc-sign-up-join-emails-updates-text
   * twc-malidc-sign-up-password
   * twc-malidc-sign-up-password-confirm
   * twc-malidc
@@ -126,6 +127,17 @@ Please consider [making a donation][8].
 
 ## Changes
 
+twc-malidc-sign-up-join-text
+
+* **2025-04-23**
+
+  * made sign up join price plan names easier to use
+  * added support for Japanese language
+  * change class name twc-malidc-sign-up-join-text to
+    twc-malidc-sign-up-join-unlock-exclusive-content
+  * added class name twc-malidc-sign-up-join-emails-updates-text
+  * bumped version to 0.6.0
+  
 * **2025-04-13**
 
   * added password reset title

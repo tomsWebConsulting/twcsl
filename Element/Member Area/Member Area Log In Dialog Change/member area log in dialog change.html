@@ -6,16 +6,13 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.5.0
+    Version       : 0.6.0
     
     SS Versions   : 7.1, 7.0
     
     Fluid
     Engine
     Compatible    : Not Applicable
-    
-    Note          : the signUp setting does not apply to the join dialog of a
-                    member site
     
     Copyright     : 2023-2025 Thomas Creedon
                     
@@ -61,7 +58,6 @@
               change. if you want the same title for all pricing plans, leave
               the plan name blank
               
-              
               */
               
             // '[ enter pricing plan name here between single quotes replacing square brackets ]' : '[ enter name text here between single quotes replacing square brackets ]',
@@ -86,7 +82,7 @@
     
       const
       
-        version = '0.5.0',
+        version = '0.6.0',
         
         s = `Member Area Log In Dialog Change v${ version }
         
@@ -576,6 +572,14 @@
                         
                       if ( isSignUpJoin ) {
                       
+                        const wordJoinerCharacter8288
+                        
+                          =
+                          
+                          String
+                          
+                            .fromCharCode ( 8288 );
+                            
                         let language = Static
                         
                           .SQUARESPACE_CONTEXT
@@ -590,6 +594,18 @@
                             
                             'fi-FI' : /^[^:]+: /,
                             
+                            'ja-JP' : new RegExp (
+                            
+                              `「${ wordJoinerCharacter8288 }|`
+                              
+                              +
+                              
+                              `${ wordJoinerCharacter8288 }」.+`,
+                              
+                              'g'
+                              
+                              ),
+                            
                             default : /^\w+ /
                             
                             };
@@ -600,17 +616,15 @@
                           
                           ? language : 'default';
                           
-                        re = re
+                        re = re [ language ];
                         
-                          [ language ];
-                          
                         s = titleElement
                         
                           .textContent
                           
                           .replace ( re, '' );
                           
-                        s = Object
+                        const hasPricingPlanName = Object
                         
                           .hasOwn (
                           
@@ -622,10 +636,12 @@
                               
                             s
                             
-                            )
+                            );
                             
-                            ? s : '';
-                            
+                        // bail no pricing plan name
+                        
+                        if ( ! hasPricingPlanName ) return;
+                        
                         s = options
                         
                           .title
@@ -918,7 +934,39 @@
                           
                             .classList
                             
-                            .add ( `${ codeKey }-sign-up-join-text` );
+                            .add (
+                            
+                              `${ codeKey }-sign-up-join-unlock-exclusive-` +
+                              
+                                'content-text'
+                                
+                                );
+                                
+                        }
+                        
+                      // sign up join emails updates text class add
+                      
+                      {
+                      
+                        selector =
+                        
+                          'button[ data-test="create-account-create-button" ]';
+                          
+                        node
+                        
+                          .querySelector ( selector )
+                          
+                          .previousElementSibling
+                          
+                          .previousElementSibling
+                          
+                          .classList
+                          
+                          .add (
+                          
+                            `${ codeKey }-sign-up-join-emails-updates-text`
+                            
+                            );
                             
                         }
                         
