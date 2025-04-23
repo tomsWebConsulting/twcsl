@@ -49,7 +49,7 @@ This code attempts to add some useful classes.
   * twc-malidc-sign-in-password
   * twc-malidc-sign-up
   * twc-malidc-sign-up-join
-  * twc-malidc-sign-up-join-unlock-exclusive-content
+  * twc-malidc-sign-up-join-unlock-exclusive-content-text
   * twc-malidc-sign-up-join-emails-updates-text
   * twc-malidc-sign-up-password
   * twc-malidc-sign-up-password-confirm
@@ -134,7 +134,7 @@ twc-malidc-sign-up-join-text
   * made sign up join price plan names easier to use
   * added support for Japanese language
   * change class name twc-malidc-sign-up-join-text to
-    twc-malidc-sign-up-join-unlock-exclusive-content
+    twc-malidc-sign-up-join-unlock-exclusive-content-text
   * added class name twc-malidc-sign-up-join-emails-updates-text
   * bumped version to 0.6.0
   
