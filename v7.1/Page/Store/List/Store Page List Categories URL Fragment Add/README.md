@@ -9,7 +9,7 @@ scroll to the top of the store page section.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -53,11 +53,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2023-05-31**
+* **2025-04-28**
 
-  * add ability to append and prepend to selector destination
-  * bumped version to 0.2.0
-  -->
+  * fix for recent Squarespace changes to plp class names
+  * bumped version to 0.1.1
+  
 * **2025-03-18**
 
   * initial version
