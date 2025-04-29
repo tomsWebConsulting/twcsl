@@ -45,8 +45,6 @@ not necessarily designed to work together.
   
 * [Image Block Image Caption Second Add](Image%20Block%20Image%20Caption%20Second%20Add)
   
-* [Redirect to Url After Add to Cart Button Has Been Clicked and SS Indicates Item Has Been Added to Cart](Redirect%20to%20Url%20After%20Add%20to%20Cart%20Button%20Has%20Been%20Clicked%20and%20SS%20Indicates%20Item%20Has%20Been%20Added%20to%20Cart)
-  
 * [Change Cart Continue Shopping Text](Change%20Cart%20Continue%20Shopping%20Text)
   
 * [Element Hover Parent Class Toggle](Element%20Hover%20Parent%20Class%20Toggle)
@@ -78,6 +76,8 @@ not necessarily designed to work together.
     * [Store Page Form Text Field Max Length](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length)
       
     * [Store Page Price Change Log](Page/Store/Store%20Page%20Price%20Change%20Log)
+      
+    * [Store Page Product Add to Cart Button URL Redirect After Added to Cart](Page/Store/Store%20Page%20Product%20Add%20to%20Cart%20Button%20URL%20Redirect%20After%20Added%20to%20Cart)
       
     * [Store Page Price Change](Page/Store/Store%20Page%20Price%20Change)
       
