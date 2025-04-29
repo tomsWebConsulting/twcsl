@@ -1,0 +1,217 @@
+<!-- begin TWC Store Page Product Add to Cart Button URL Redirect After Added to Cart -->
+
+  <!--
+  
+    store page product add to cart button url redirect after added to cart
+    
+    License      : < https://tinyurl.com/s872fb68 >
+    
+    Version      : 0.2.0
+    
+    SS Versions  : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible   : Not Applicable
+    
+    Copyright    : 2021-2025 Thomas Creedon
+                   
+                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.spatcbrtuapa = ( ( self ) => { // initialize twc spatcbrtuapa sub-module
+    
+      const options = {
+      
+        url : '[ enter url here between single quotes replacing square brackets ]',
+        
+        // values are false or true
+        
+        productDetailAutoClick : false
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spatcbrtuapa || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        title =
+        
+          'Store Page Add to Cart Button Redirect to URL After Product Added',
+          
+        version = '0.2.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const
+      
+        callback = ( ) => {
+        
+          const isStorePage = document
+          
+            .body
+            
+            .classList
+            
+            .contains ( 'collection-type-products' );
+            
+          if ( ! isStorePage ) return; // bail if not store page
+          
+          const
+          
+            callback = ( mutations ) => {
+            
+              const callback = ( mutation ) => {
+              
+                const hasAttribute = mutation
+                
+                  .attributeName === 'class';
+                  
+                if ( ! hasAttribute ) return; // continue
+                
+                const
+                
+                  element = mutation.target,
+                  
+                  hasClass = element
+                  
+                    .classList
+                    
+                    .contains ( 'cart-added' );
+                    
+                if ( ! hasClass ) return; // continue
+                
+                location = options.url;
+                
+                };
+                
+              mutations.forEach ( callback );
+              
+              },
+              
+            config = {
+            
+              attributes : true
+              
+              },
+                     
+            forEachCallback = ( element ) => {
+            
+              observer.observe ( element, config );
+              
+              },
+              
+            isDetail = ( ( ) => {
+            
+              const selector = 'body[ id^="item-" ]';
+              
+              const is = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+              return is;
+              
+              } ) ( ),
+              
+            observer = new MutationObserver ( callback ),
+            
+            options = twc
+            
+              .spatcbrtuapa,
+              
+            selector = '.sqs-add-to-cart-button',
+            
+            addToCartButtonElements
+            
+              =
+              
+              document
+              
+                .querySelectorAll ( selector );
+                
+          addToCartButtonElements
+          
+            .forEach ( forEachCallback );
+            
+          // detail auto click add to cart button
+          
+          {
+          
+            const doAutoClick
+            
+              =
+              
+              isDetail
+              
+              &&
+              
+              options
+              
+                .productDetailAutoClick;
+                
+            if ( ! doAutoClick ) return; // bail if no detail auto click
+            
+            addToCartButtonElements
+            
+              [ 0 ]
+              
+              ?.click ( );
+              
+            }
+            
+          };
+          
+      window
+      
+        .addEventListener ( 'load', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Product Add to Cart Button URL Redirect After Added to Cart -->
