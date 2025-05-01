@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Change placeholder text.
+Change placeholder text of member area member sites join dialog.
 
 ### Version
 
