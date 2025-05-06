@@ -1,23 +1,25 @@
-<!--
+<!-- begin TWC Customer Account Panel Change -->
 
-  begin customer account panel change
+  <!--
   
-  License      : < https://tinyurl.com/s872fb68 >
-  
-  Version      : 0.6.1
-  
-  SS Versions  : 7.1, 7.0
-  
-  Fluid
-  Engine
-  Compatible   : Not Applicable
-  
-  Copyright    : 2023-2024 Thomas Creedon
-                 
-                 Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    customer account panel change
+    
+    License      : < https://tinyurl.com/s872fb68 >
+    
+    Version      : 0.7.0
+    
+    SS Versions  : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible   : Not Applicable
+    
+    Copyright    : 2023-2025 Thomas Creedon
+                   
+                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
   <x-twc-capc-style style="display : none;">
   
     [ optional, enter css here replacing square brackets ]
@@ -28,7 +30,7 @@
   
     // initialize twc module
     
-    var twc = ( ( self ) => self ) ( twc || { } );
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
     twc.capc = ( ( self ) => { // initialize twc capc sub-module
     
@@ -38,7 +40,29 @@
         
           account : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
           
-          digitalProducts : '[ optional, enter digital products panel title text here between single quotes replacing square brackets ]'
+          addressNew : '[ optional, enter address new panel title text here between single quotes replacing square brackets ]',
+          
+          addresses : '[ optional, enter addresses panel title text here between single quotes replacing square brackets ]',
+          
+          addressNewElement : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
+          
+          digitalProducts : '[ optional, enter digital products panel title text here between single quotes replacing square brackets ]',
+          
+          email : '[ optional, enter email panel title text here between single quotes replacing square brackets ]',
+          
+          order : '[ optional, enter order panel title text here between single quotes replacing square brackets ]',
+          
+          orders : '[ optional, enter orders panel title text here between single quotes replacing square brackets ]',
+          
+          passwordUpdate : '[ optional, enter password update panel title text here between single quotes replacing square brackets ]',
+          
+          payment : '[ optional, enter payment panel title text here between single quotes replacing square brackets ]',
+          
+          paymentMethodNew : '[ optional, enter payment new method panel title text here between single quotes replacing square brackets ]',
+          
+          profile : '[ optional, enter profile panel title text here between single quotes replacing square brackets ]',
+          
+          shipping : '[ optional, enter shipping panel title text here between single quotes replacing square brackets ]',
           
           };
           
@@ -56,13 +80,13 @@
     
       const
       
-        version = '0.6.1',
+        version = '0.7.0',
         
         s = `Customer Account Panel Change v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2023-2024 Thomas Creedon
+          © 2023-2025 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -82,9 +106,11 @@
       
         const
         
+          flDebug = false,
+          
           accountFrameIdValue = 'accountFrame',
           
-          callback = ( mutations ) => {
+          bodyCallback = ( mutations ) => {
           
             for ( const mutation of mutations ) {
             
@@ -114,13 +140,47 @@
               
               }
               
-            }, // end callback
+            }, // end body callback
+            
+          bodyObserver = new MutationObserver ( bodyCallback ),
+          
+          bodyConfig = {
+          
+            childList : true
+            
+            },
             
           codeKey = 'twc-capc',
           
-          config = {
+          dataPanelTypeAttributeName = 'data-panel-type',
           
-            childList : true
+          getAncestor = ( element, levels ) => {
+          
+            if ( ! element ) return null; // bail if no element
+            
+            while ( element && levels > 0 ) {
+            
+              element = element
+              
+                .parentElement;
+                
+              levels--;
+              
+              }
+              
+            return element;
+            
+            },
+            
+          languages = {
+          
+            'en-CA' : 'en',
+            
+            'en-GB' : 'en',
+            
+            'en-US' : 'en',
+            
+            'es-MX' : 'es',
             
             },
             
@@ -148,416 +208,12 @@
                     
                 if ( ! isAccountFrame ) return; // bail if not customer panel
                 
-                const
+                const selector = '#user-profile-page-root';
                 
-                  callback = ( mutations ) => {
+                userProfilePageRootElement = dcmnt
+                
+                  .querySelector ( selector );
                   
-                    const callback = ( mutation ) => {
-                    
-                      let b = mutation
-                      
-                        .addedNodes
-                        
-                        .length;
-                        
-                      if ( ! b ) return; // bail if no added nodes
-                      
-                      let node = mutation.addedNodes [ 0 ];
-                      
-                      if ( node.nodeType != 1 ) return; // bail if node not element
-                      
-                      const xpathEvaluate = ( xpath ) => {
-                      
-                        const value = dcmnt
-                        
-                          .evaluate ( xpath, userProfilePageRootElement, null,
-                          
-                            XPathResult.FIRST_ORDERED_NODE_TYPE, null )
-                            
-                          .singleNodeValue;
-                          
-                        return value;
-                        
-                        };
-                        
-                      let xpath =
-                      
-                        './/div[ . = "Account" or . = "Digital Products" ]';
-                        
-                      const titleElement = xpathEvaluate ( xpath );
-                      
-                      // bail if no title of interest
-                      
-                      if ( titleElement === null ) return;
-                      
-                      b = titleElement
-                      
-                        .nextElementSibling
-                        
-                        .tagName
-                        
-                        !=
-                        
-                        'BUTTON';
-                        
-                      if ( b ) return; // bail if no button with title
-                      
-                      const
-                      
-                        callback = ( callback ) => {
-                        
-                          try {
-                          
-                            callback ( dcmnt, panelType );
-                            
-                            } catch ( error ) {
-                            
-                              const s =
-                              
-                                `${ codeKey } callback error : `;
-                                
-                              console.error ( s, error );
-                              
-                              }
-                              
-                          },
-                          
-                        closeClassAdd = ( ) => {
-                        
-                          const element = titleElement
-                          
-                            .nextElementSibling
-                            
-                            .querySelector ( 'span' );
-                            
-                          if ( element === null ) return; // bail if no element
-                          
-                          element
-                          
-                            .classList
-                            
-                            .add ( `${ codeKey }-close` );
-                            
-                          },
-                          
-                        headerClassAdd = ( ) => {
-                        
-                          titleElement
-                          
-                            .parentElement
-                            
-                            .classList
-                            
-                            .add ( `${ codeKey }-header` );
-                            
-                          },
-                          
-                        options = twc.capc,
-                        
-                        setPanelType = ( ) => {
-                        
-                          const
-                          
-                            isAccount = titleElement
-                            
-                              .textContent
-                              
-                              ==
-                              
-                              'Account',
-                              
-                            isDigitalProducts = titleElement
-                            
-                              .textContent
-                              
-                              ==
-                              
-                              'Digital Products';
-                              
-                          switch ( true ) {
-                          
-                            case isAccount :
-                            
-                              panelType = 'account';
-                              
-                              break;
-                              
-                            case isDigitalProducts :
-                            
-                              panelType = 'digital products';
-                              
-                              break;
-                              
-                            }
-                            
-                          },
-                          
-                        title = ( ) => {
-                        
-                          titleElement // class add
-                          
-                            .classList
-                            
-                            .add ( `${ codeKey }-title` );
-                            
-                          // begin title change
-                          
-                            const p = new RegExp ( '^\\[.+\\]$' );
-                            
-                            let s;
-                            
-                            switch ( panelType ) {
-                            
-                              case 'account' :
-                              
-                                s = options
-                                
-                                  .panelTitles
-                                  
-                                  .account;
-                                  
-                                break;
-                                
-                              case 'digital products' :
-                              
-                                s = options
-                                
-                                  .panelTitles
-                                  
-                                  .digitalProducts;
-                                  
-                                break;
-                                
-                              }
-                              
-                            const isChangeTitle = ! p.test ( s );
-                            
-                            if ( ! isChangeTitle ) return; // bail if not title change
-                            
-                            titleElement.textContent = s;
-                            
-                            // end title change
-                            
-                          };
-                          
-                      let panelType;
-                      
-                      setPanelType ( );
-                      
-                      headerClassAdd ( );
-                      
-                      title ( );
-                      
-                      closeClassAdd ( );
-                      
-                      switch ( panelType ) {
-                      
-                        case 'account' :
-                        
-                          const
-                          
-                            classAdd = ( key ) => {
-                            
-                              const
-                              
-                                selector = `[ href="/account/${ key }" ]`,
-                                
-                                element = userProfilePageRootElement
-                                
-                                  .querySelector ( selector );
-                                  
-                              if ( element === null ) return; // bail if no element
-                              
-                              element
-                              
-                                .classList
-                                
-                                .add ( `${ codeKey }-${ key }` );
-                                
-                              },
-                              
-                            greetingClassAdd = ( ) => {
-                            
-                              const
-                              
-                                xpath = './/span[ starts-with( ., "Hi, " ) ]',
-                              
-                                element = xpathEvaluate ( xpath );
-                                
-                              if ( element === null ) return; // bail if no element
-                              
-                              element
-                              
-                                .parentElement
-                                
-                                .classList
-                                
-                                .add ( `${ codeKey }-greeting` );
-                                
-                              element // greeting sign out class add
-                              
-                                .parentElement
-                              
-                                .parentElement
-                              
-                                .classList
-                                
-                                .add ( `${ codeKey }-greeting-sign-out` );
-                                
-                              },
-                              
-                            signOutClassAdd = ( ) => {
-                            
-                              const
-                              
-                                xpath = './/span[ . = "Sign out" ]',
-                                
-                                element = xpathEvaluate ( xpath );
-                                
-                              // bail if no element
-                              
-                              if ( element === null ) return;
-                              
-                              element
-                              
-                                .parentElement
-                                
-                                .classList
-                                
-                                .add ( `${ codeKey }-sign-out` );
-                                
-                              };
-                              
-                          greetingClassAdd ( );
-                          
-                          signOutClassAdd ( );
-                          
-                          classAdd ( 'addresses' );
-                          
-                          classAdd ( 'digital-products' );
-                          
-                          classAdd ( 'orders' );
-                          
-                          classAdd ( 'payment' );
-                          
-                          classAdd ( 'profile' );
-                          
-                          break;
-                          
-                        case 'digital products' :
-                        
-                          const
-                          
-                            accountSettings = ( ) => {
-                            
-                              const
-                              
-                                selector = '[ href="/account" ]',
-                                
-                                element = userProfilePageRootElement
-                                
-                                  .querySelector ( selector );
-                                  
-                              // bail if no element
-                              
-                              if ( element === null ) return;
-                              
-                              element
-                              
-                                .parentElement
-                              
-                                .classList
-                                
-                                .add ( `${ codeKey }-account-settings` );
-                                
-                              },
-                              
-                            pagesClassAdd = ( ) => {
-                            
-                              const
-                              
-                                xpath = './/span[ . = "Pages" ]',
-                                
-                                element = xpathEvaluate ( xpath );
-                                
-                              // bail if no element
-                              
-                              if ( element === null ) return;
-                              
-                              element
-                              
-                                .closest ( 'button' )
-                                
-                                .parentElement
-                                
-                                .classList
-                                
-                                .add ( `${ codeKey }-pages` );
-                                
-                              },
-                              
-                            search = ( ) => {
-                            
-                              const
-                              
-                                xpath = './/input[ @placeholder = "Search" ]',
-                                
-                                element = xpathEvaluate ( xpath );
-                                
-                              // bail if no element
-                              
-                              if ( element === null ) return;
-                            
-                              element
-                              
-                                .parentElement
-                                
-                                .parentElement
-                                
-                                .classList
-                                
-                                .add ( `${ codeKey }-search` );
-                                
-                              };
-                              
-                          accountSettings ( );
-                          
-                          pagesClassAdd ( );
-                          
-                          search ( );
-                          
-                          break;
-                          
-                        }
-                        
-                      options
-                      
-                        .callbacks
-                        
-                        .forEach ( callback );
-                        
-                      };
-                      
-                    mutations.forEach ( callback );
-                      
-                    },
-                    
-                  config = {
-                  
-                    childList : true,
-                    
-                    subtree : true
-                    
-                    },
-                    
-                  observer = new MutationObserver ( callback ),
-                  
-                  selector = '#user-profile-page-root',
-                  
-                  userProfilePageRootElement = dcmnt
-                  
-                    .querySelector ( selector );
-                    
                 // bail if no element
                 
                 if ( userProfilePageRootElement === null ) return;
@@ -614,8 +270,14 @@
                   
                 // start listening for changes in specified node
                 
-                observer.observe ( userProfilePageRootElement, config );
+                rootObserver.observe (
                 
+                  userProfilePageRootElement,
+                  
+                  rootConfig
+                  
+                  );
+                  
                 },
                 
               css = document
@@ -632,14 +294,3324 @@
             
             }, // end load
             
-          observer = new MutationObserver ( callback ),
+          processPanel = ( element ) => {
           
+            const
+            
+              options = twc.capc,
+              
+              p = new RegExp ( '^\\[.+\\]$' );
+              
+              titleSelector = [
+              
+                'button ~ div',
+                
+                'div[ data-testid="hidden-left-button" ] ~ div'
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              titleElement
+              
+                =
+                
+                element
+                
+                  .querySelector ( titleSelector )
+                  
+                ||
+                
+                element
+                
+                  .parentElement
+                  
+                  .parentElement
+                  
+                  .previousElementSibling
+                  
+                  .querySelector ( titleSelector ),
+                  
+              callbacks = options.callbacks,
+              
+              panelClassAdd = ( classNameSuffix ) => {
+              
+                removeElementClassesByPrefix (
+                
+                  panelElement,
+                  
+                  `${ codeKey }--`
+                  
+                  )
+                  
+                panelElement
+                
+                  .classList
+                  
+                  .add ( `${ codeKey }--${ classNameSuffix }` );
+                  
+                },
+                
+              panelElement = titleElement
+              
+                .closest ( '.CSSTG-group' ),
+                
+              title = titleElement
+              
+                .textContent;
+                
+            let
+            
+              panelType,
+              
+              selector,
+              
+              titleNew = '';
+              
+            const
+            
+              isAccountPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .account
+                  
+                  .Title,
+                  
+              isAddressNewPanel
+              
+                =
+              
+                userProfilePageRootElement
+                
+                  .getAttribute ( dataPanelTypeAttributeName )
+                  
+                ===
+                
+                languagesRoot
+                 
+                  .en
+                  
+                  .panels
+                  
+                  .addressNew
+                  
+                  .panelType,
+                  
+              isAddressPanel
+              
+                =
+              
+                userProfilePageRootElement
+                
+                  .getAttribute ( dataPanelTypeAttributeName )
+                  
+                ===
+                
+                languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .address
+                  
+                  .panelType,
+                  
+              isAddressesPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .addresses
+                  
+                  .Title,
+                  
+              isDigitalProductsPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .digitalProducts
+                  
+                  .Title,
+                  
+              isEmailPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .email
+                  
+                  .Title,
+                  
+              isOrderPanel
+              
+                =
+                
+                userProfilePageRootElement
+                
+                  .getAttribute ( dataPanelTypeAttributeName )
+              
+                ===
+                
+                languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .order
+                  
+                  .panelType,
+                  
+              isOrderPaymentMethodPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .orderPaymentMethod
+                  
+                  .Title,
+                  
+              isOrderShippingPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .orderShipping
+                  
+                  .Title,
+                  
+              isOrdersPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .orders
+                  
+                  .Title,
+                  
+              isPasswordUpdatePanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .passwordUpdate
+                  
+                  .Title,
+                  
+              isPaymentMethodNewPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .paymentMethodNew
+                  
+                  .Title,
+                  
+              isPaymentMethodPanel
+              
+                =
+                
+                userProfilePageRootElement
+                
+                  .getAttribute ( dataPanelTypeAttributeName )
+              
+                ===
+                
+                languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .paymentMethod
+                  
+                  .panelType,
+                  
+              isPaymentPanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .payment
+                  
+                  .Title,
+                  
+              isProfilePanel
+              
+                =
+                
+                title
+                
+                ===
+                
+                language
+                
+                  .panels
+                  
+                  .profile
+                  
+                  .Title;
+                  
+            userProfilePageRootElement
+            
+              .removeAttribute ( dataPanelTypeAttributeName );
+              
+            switch ( true ) {
+            
+              case isAccountPanel :
+              
+                panelType = 'account';
+                
+                panelClassAdd ( 'account-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .account;
+                  
+                const classAdd = ( key ) => {
+                
+                  titleNew = options
+                  
+                    .panelTitles
+                    
+                    .account;
+                    
+                  const selector = `[ href="/account/${ key }" ]`;
+                  
+                  element
+                  
+                    ?.querySelector ( selector )
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--account--${ key }` );
+                    
+                  };
+                  
+                // greeting classes add
+                
+                {
+                
+                  const selector = 'button[ data-test="sign-out" ]';
+                  
+                  let buttonElement = element
+                  
+                    .querySelector ( selector )
+                    
+                    .previousElementSibling;
+                    
+                  buttonElement
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }--account--greeting--name` );
+                    
+                  buttonElement
+                  
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--account--greeting` );
+                    
+                  }
+                  
+                classAdd ( 'digital-products' );
+                
+                classAdd ( 'orders' );
+                
+                classAdd ( 'payment' );
+                
+                classAdd ( 'addresses' );
+                
+                classAdd ( 'profile' );
+                
+                break;
+                
+              case isAddressesPanel : {
+              
+                panelType = 'addresses';
+                
+                panelClassAdd ( 'addresses-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .addresses;
+                  
+                const callback = ( element ) => {
+                
+                  const isAddNewAddress = element
+                  
+                    .getAttribute ( 'href' )
+                    
+                    .endsWith ( '/new' );
+                    
+                  if ( isAddNewAddress ) {
+                  
+                    getAncestor (
+                    
+                      element,
+                      
+                      3
+                      
+                      )
+                      
+                      .classList
+                      
+                      .add ( `${ codeKey }--addresses--add-new-address` );
+                      
+                    return; // continue
+                    
+                    }
+                    
+                  const selector = 'div > div > div > div > label';
+                  
+                  element
+                  
+                    .parentElement
+                    
+                    .previousElementSibling
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--addresses--address--tag` );
+                    
+                  element
+                  
+                    .parentElement
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--addresses--address` );
+                    
+                  element = element
+                  
+                    .querySelector ( selector );
+                    
+                  element
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }--addresses--address--name` );
+                    
+                  element
+                  
+                    .nextElementSibling
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--addresses--address--address-1`
+                      
+                      );
+                      
+                  };
+                  
+                selector = 'a[ href^="/account/addresses/" ]';
+                
+                element
+                
+                  .querySelectorAll ( selector )
+                  
+                  .forEach ( callback );
+                  
+                break;
+                
+                }
+                
+              case isAddressNewPanel :
+              
+                panelType = languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .addressNew
+                  
+                  .panelType;
+                  
+                panelClassAdd ( 'addresses--address-new-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .addressNew;
+                  
+                break;
+                
+              case isAddressPanel :
+              
+                panelType = 'address';
+                
+                panelClassAdd ( 'addresses--address-panel' );
+                
+                // delete address
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//span [
+                      
+                        text ( ) = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .address
+                            
+                            .deleteAddress
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    5
+                    
+                    )
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--addresses--address--delete-address` );
+                    
+                  }
+                  
+                break;
+                
+              case isDigitalProductsPanel :
+              
+                panelType = 'digital products';
+                
+                panelClassAdd ( 'digital-products-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .digitalProducts;
+                  
+                const addClass = ( element, key ) => {
+                
+                  const s = `${ codeKey }--digital-products--${ key }`;
+                  
+                  element
+                  
+                    .classList
+                    
+                    .add ( s );
+                    
+                  };
+                  
+                // search
+                
+                addClass (
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `
+                      
+                        .//input [
+                        
+                          @placeholder = '${
+                          
+                            language
+                            
+                              .panels
+                              
+                              .digitalProducts
+                              
+                              .search
+                              
+                            }'
+                               
+                          ]
+                          
+                        `,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                      
+                    ),
+                    
+                  'search'
+                  
+                  );
+                  
+                // videos
+                
+                {
+                
+                  const callback = ( element ) => {
+                  
+                    element = element
+                    
+                      .parentElement
+                      
+                      .parentElement;
+                      
+                    addClass (
+                    
+                      element
+                      
+                        .nextElementSibling,
+                        
+                      'videos--name'
+                      
+                      );
+                      
+                    addClass (
+                    
+                      getAncestor (
+                      
+                        element,
+                        
+                        4
+                        
+                        ),
+                        
+                      'videos'
+                      
+                      );
+                      
+                    };
+                    
+                  selector =
+                  
+                    'path[ d="M7 6v6l5-3-5-3z" ]';
+                    
+                  element
+                  
+                    .querySelectorAll ( selector )
+                    
+                    .forEach ( callback );
+                    
+                  }
+                  
+                // member site
+                
+                {
+                
+                  const callback = ( element ) => {
+                  
+                    element = element
+                    
+                      .parentElement
+                      
+                      .parentElement;
+                      
+                    addClass (
+                    
+                      element
+                      
+                        .nextElementSibling,
+                        
+                      'member-site--name'
+                      
+                      );
+                      
+                    addClass (
+                    
+                      getAncestor (
+                      
+                        element,
+                        
+                        4
+                        
+                        ),
+                        
+                      'member-site'
+                      
+                      );
+                      
+                    };
+                    
+                  selector = 'path[ d="M10 11H6v4h4v-4zM12 12h4v2h-4v-2z" ]';
+                  
+                  element
+                  
+                    .querySelectorAll ( selector )
+                    
+                    .forEach ( callback );
+                    
+                  }
+                  
+                // course
+                
+                {
+                
+                  const callback = ( element ) => {
+                  
+                    element = element
+                    
+                      .parentElement
+                      
+                      .parentElement;
+                      
+                    addClass (
+                    
+                      element
+                      
+                        .nextElementSibling,
+                        
+                      'course--name'
+                      
+                      );
+                      
+                    addClass (
+                    
+                      getAncestor (
+                      
+                        element,
+                        
+                        4
+                        
+                        ),
+                        
+                      'course'
+                      
+                      );
+                      
+                    };
+                    
+                  selector = 'path[ d="M12 4V0h-2v4h2z" ]';
+                  
+                  element
+                  
+                    .querySelectorAll ( selector )
+                    
+                    .forEach ( callback );
+                    
+                  }
+                  
+                // account settings
+                
+                {
+                
+                  selector = '[ href="/account" ]';
+                  
+                  addClass (
+                  
+                    getAncestor (
+                    
+                      element
+                      
+                        .querySelector ( selector ),
+                        
+                      2
+                      
+                      ),
+                      
+                    'account-settings'
+                    
+                    );
+                    
+                  }
+                  
+                break;
+                
+              case isEmailPanel :
+              
+                panelType = 'email';
+                
+                panelClassAdd ( 'profile--email-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .email;
+                  
+                // current
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .current
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--email--current` );
+                    
+                  }
+                  
+                // new
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .new
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--email--new` );
+                    
+                  }
+                  
+                // confirm new
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .confirmNew
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--email--confirm-new` );
+                    
+                  }
+                  
+                // password
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .password
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--email--password` );
+                    
+                  }
+                  
+                break;
+                
+              case isOrderPanel : {
+              
+                panelType = languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .order
+                  
+                  .panelType;
+                  
+                panelClassAdd ( 'orders--order-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .order;
+                  
+                let summaryElement;
+                
+                // order date
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .orderDate
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--date` );
+                    
+                  }
+                  
+                // status
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .status
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--status` );
+                    
+                  }
+                  
+                // items
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      text ( ) = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .order
+                          
+                          .items
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--items` );
+                    
+                  }
+                  
+                // summary
+                
+                {
+                
+                  summaryElement
+                  
+                    =
+                    
+                    xPathEvaluate (
+                    
+                      `.//div [
+                      
+                        text ( ) = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .summary
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 )
+                      
+                      .parentElement;
+                      
+                  summaryElement
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--summary` );
+                    
+                  }
+                  
+                // subtotal
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .subtotal
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      summaryElement
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                      
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--summary--subtotal` );
+                    
+                  }
+                  
+                // shipping
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .shipping
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      summaryElement
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                      
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--summary--shipping` );
+                    
+                  }
+                  
+                // tax
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .tax
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      summaryElement
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                      
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--summary--tax` );
+                    
+                  }
+                  
+                // total
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .order
+                            
+                            .total
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      summaryElement
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    4
+                    
+                    )
+                      
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--summary--total` );
+                    
+                  }
+                  
+                // payment method
+                
+                {
+                
+                  selector = 'a[ href^="/account/orders/" ]' +
+                  
+                    '[ href$="/payment" ]';
+                    
+                  element
+                  
+                    .querySelector ( selector )
+                    
+                    ?.classList
+                    
+                    .add ( `${ codeKey }--orders--order--payment-method` );
+                    
+                  }
+                  
+                // shipping
+                
+                {
+                
+                  selector = 'a[ href^="/account/orders/" ]' +
+                  
+                    '[ href$="/shipping" ]';
+                    
+                  element
+                  
+                    .querySelector ( selector )
+                    
+                    ?.classList
+                    
+                    .add ( `${ codeKey }--orders--order--shipping` );
+                    
+                  }
+                  
+                break;
+                
+                }
+                
+              case isOrderPaymentMethodPanel :
+              
+                panelType = languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .orderPaymentMethod
+                  
+                  .panelType;
+                  
+                panelClassAdd ( 'orders--order--payment-method-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .paymentMethod;
+                  
+                break;
+                
+              case isOrderShippingPanel :
+              
+                panelType = 'order shipping';
+                
+                panelClassAdd ( 'orders--order--shipping-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .shipping;
+                  
+                // shipping option
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .orderShipping
+                          
+                          .shippingOption
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--shipping--option` );
+                    
+                  }
+                  
+                // shipping address
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .orderShipping
+                          
+                          .shippingAddress
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--shipping--address` );
+                    
+                  }
+                  
+                break;
+                
+              case isOrdersPanel :
+              
+                panelType = 'orders';
+                
+                panelClassAdd ( 'orders-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .orders;
+                  
+                const callback = ( element ) => {
+                
+                  const selector = 'div > div > div > div';
+                  
+                  element
+                  
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order` );
+                    
+                  element = element
+                  
+                    .querySelector ( selector );
+                    
+                  element
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--number` );
+                    
+                  element
+                  
+                    .nextElementSibling
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--orders--order--date` );
+                    
+                  };
+                
+                selector = 'a[ href^="/account/orders/" ]';
+                
+                element
+                
+                  .querySelectorAll ( selector )
+                  
+                  .forEach ( callback );
+                  
+                break;
+                
+              case isPasswordUpdatePanel :
+              
+                panelType = 'password update';
+                
+                panelClassAdd ( 'profile--password-update-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .passwordUpdate;
+                  
+                // current
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .passwordUpdate
+                          
+                          .current
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--profile--update-password--current`
+                      
+                      );
+                      
+                  }
+                  
+                // new
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .passwordUpdate
+                          
+                          .new
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--profile--update-password--new`
+                      
+                      );
+                      
+                  }
+                  
+                break;
+                
+              case isPaymentMethodNewPanel :
+              
+                panelType = languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .paymentMethodNew
+                  
+                  .panelType;
+                  
+                panelClassAdd ( 'payment--payment-method-new-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .paymentMethodNew;
+                  
+                // card details
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .cardDetails
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--payment--payment-method-new--card-details`
+                      
+                      );
+                      
+                  }
+                  
+                // billing address
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .billingAddress
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--payment--payment-method-new--` +
+                      
+                        'billing-address'
+                      
+                      );
+                      
+                  }
+                  
+                break;
+                
+              case isPaymentMethodPanel :
+              
+                panelType = languagesRoot
+                
+                  .en
+                  
+                  .panels
+                  
+                  .paymentMethod
+                  
+                  .panelType;
+                  
+                panelClassAdd ( 'payment--payment-method-panel' );
+                
+                // card details
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .cardDetails
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--payment--payment-method--card-details`
+                      
+                      );
+                      
+                  }
+                  
+                // billing address
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .billingAddress
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--payment--payment-method--billing-address`
+                      
+                      );
+                      
+                  }
+                  
+                // delete payment method
+                
+                {
+                
+                  getAncestor (
+                  
+                    xPathEvaluate (
+                    
+                      `.//span [
+                      
+                        text ( ) = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .paymentMethod
+                            
+                            .deletePaymentMethod
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    7
+                    
+                    )
+                    
+                    .classList
+                    
+                    .add (
+                    
+                      `${ codeKey }--payment--payment-method--` +
+                      
+                        'delete-payment-method'
+                        
+                      );
+                      
+                  }
+                  
+                break;
+                
+              case isPaymentPanel : {
+              
+                panelType = 'payment';
+                
+                panelClassAdd ( 'payment-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .payment;
+                  
+                const
+                
+                  callback = ( element ) => {
+                  
+                    element
+                    
+                      .parentElement
+                      
+                      .classList
+                      
+                      .add ( `${ codeKey }--payment--payment-method` );
+                      
+                    };
+                    
+                // default
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .payment
+                          
+                          .default
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--payment--default` );
+                    
+                  }
+                  
+                selector = 'a[ href^="/account/payment/" ]' +
+                
+                  ':not( [ href$="/add" ] )';
+                  
+                element
+                
+                  .querySelectorAll ( selector )
+                  
+                  .forEach ( callback );
+                  
+                // other
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .payment
+                          
+                          .other
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--payment--other` );
+                    
+                  }
+                  
+                // add
+                
+                {
+                
+                  selector = 'a[ href^="/account/payment/add" ]';
+                  
+                  getAncestor (
+                  
+                    element
+                    
+                      .querySelector ( selector ),
+                      
+                    3
+                    
+                    )
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--payment--add-new-method` );
+                    
+                  }
+                  
+                break;
+                
+                }
+                
+              case isProfilePanel :
+              
+                panelType = 'profile';
+                
+                panelClassAdd ( 'profile-panel' );
+                
+                titleNew = options
+                
+                  .panelTitles
+                  
+                  .profile;
+                  
+                // name
+                
+                {
+                
+                  selector = 'input[ data-test="first-name-input" ]';
+                  
+                  const firstNameElement
+                  
+                    =
+                    
+                    getAncestor (
+                    
+                      element
+                      
+                        .querySelector ( selector ),
+                        
+                      5
+                      
+                      );
+                      
+                  firstNameElement
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--name--first` );
+                    
+                  firstNameElement
+                  
+                    .nextElementSibling
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--name--last` );
+                    
+                  getAncestor (
+                  
+                    firstNameElement,
+                    
+                    3
+                    
+                    )
+                    
+                  .classList
+                  
+                  .add ( `${ codeKey }--profile--name` );
+                  
+                  }
+                  
+                // email
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .Title
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--email` );
+                    
+                  }
+                  
+                // password
+                
+                {
+                
+                  xPathEvaluate (
+                  
+                    `.//div [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .profile
+                          
+                          .password
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--password` );
+                    
+                  }
+                  
+                // update password
+                
+                {
+                
+                  selector = 'a[ href="/account/profile/password/change" ]';
+                  
+                  element
+                  
+                    .querySelector ( selector )
+                    
+                    .parentElement
+                    
+                    .classList
+                    
+                    .add ( `${ codeKey }--profile--update-password` );
+                    
+                  }
+                  
+                break;
+                
+              }
+              
+            // header
+            
+            {
+            
+              // header class add
+              
+              titleElement
+                
+                .parentElement
+                
+                .parentElement
+                
+                .classList
+                
+                .add ( `${ codeKey }--header` );
+                
+              // back class add
+              
+              titleElement
+              
+                .previousElementSibling
+                
+                .classList
+                
+                .add ( `${ codeKey }--header--back` );
+                
+               // title class add
+               
+              titleElement
+              
+                .classList
+                
+                .add ( `${ codeKey }--header--title` );
+                
+              // close class add
+              
+              titleElement
+              
+                .nextElementSibling
+                
+                .classList
+                
+                .add ( `${ codeKey }--header--close` );
+                
+              }
+              
+            // title change
+            
+            {
+            
+              const isTitleChange
+              
+                =
+                
+                titleNew
+                
+                &&
+                
+                ! p.test ( titleNew );
+                
+              if ( isTitleChange ) {
+              
+                switch ( true ) {
+                
+                  case isOrderPanel :
+                  
+                    titleNew
+                    
+                    +=
+                    
+                    ' '
+                    
+                    +
+                    
+                    title
+                    
+                      .split ( ' ' )
+                      
+                      [ 1 ];
+                      
+                    break;
+                    
+                  }
+                  
+                titleElement
+                
+                  .textContent
+                  
+                  =
+                  
+                  titleNew;
+                  
+                }
+                
+              }
+              
+            if ( callbacks.length ) {
+            
+              callback = ( callback ) => {
+              
+                try {
+                
+                  callback ( dcmnt, panelElement, panelType );
+                  
+                  } catch ( error ) {
+                  
+                    const s = `${ codeKey } callback error`;
+                    
+                    console.error ( s, error );
+                    
+                    }
+                    
+                };
+                
+              callbacks.forEach ( callback );
+              
+              }
+              
+            },
+            
+          removeElementClassesByPrefix = ( element, prefix ) => {
+          
+            if ( ! element ) return; // bail if no element
+            
+            const
+            
+              callback = ( className ) => {
+              
+                const b = className
+                
+                  .startsWith ( prefix );
+                  
+                if ( ! b ) return; // bail if no prefix
+                
+                classList
+                
+                  .remove ( className );
+                  
+                }
+                
+              classList = element
+              
+                .classList;
+                
+            classList
+            
+              .forEach ( callback );
+              
+            },
+          
+          rootCallback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              const isNodesAdded = mutation
+              
+                .addedNodes
+                
+                .length;
+                
+              if ( ! isNodesAdded ) return; // bail if no nodes added
+              
+              if ( flDebug ) {
+              
+                console.log ( 'begin mutation' );
+                
+                console.log ( 'root : ', mutation );
+                
+                }
+                
+              let
+              
+                element = mutation
+                
+                  .addedNodes [ 0 ];
+                  
+              if ( flDebug )
+              
+                console.log ( 'node : ', element );
+                
+              const isElement = element
+              
+                .nodeType === 1;
+                
+              if ( ! isElement ) return; // bail if element type not element
+              
+              if ( flDebug ) {
+              
+                console.log ( 'element : ', element );
+                
+                console.log (
+                
+                  'class attribute : ',
+                  
+                  element.getAttribute ( 'class' )
+                  
+                  );
+                  
+                }
+                
+              const
+              
+                firstNameElement = element
+                
+                  .querySelector ( '#first-name' ),
+                  
+                addressKeyElement
+                
+                  =
+                  
+                  element
+                  
+                    .querySelector ( '[ data-test="region-select" ]' ),
+                    
+                addressNewKeyElement
+                
+                  =
+                  
+                  element
+                  
+                    .querySelector ( '[ data-test="region-input" ]' ),
+                    
+                firstPanelWrapperSelector
+                
+                  = 
+                  
+                  '.CSSTG-group > div > div',
+                  
+                firstPanelWrapperElement
+                
+                  =
+                  
+                  userProfilePageRootElement
+                  
+                    .querySelector ( firstPanelWrapperSelector ),
+                    
+                isAddressKeyElement = !! addressKeyElement,
+                
+                isAddressNewKeyElement
+                
+                  =
+                  
+                  !! 
+                  
+                  (
+                  
+                    addressNewKeyElement
+                    
+                    &&
+                    
+                    !
+                    
+                    xPathEvaluate (
+                    
+                    `
+                    
+                      ancestor::div [
+                      
+                        preceding-sibling::div [
+                        
+                          . = '${
+                          
+                            language
+                            
+                              .panels
+                              
+                              .paymentMethodNew
+                              
+                              .billingAddress
+                              
+                            }'
+                            
+                          ]
+                          
+                        ]
+                        
+                      `,
+                      
+                      addressNewKeyElement
+                      
+                      )
+                      
+                      .snapshotItem ( 0 )
+                      
+                    ),
+                    
+                isFirstPanelWrapperElement
+                
+                  =
+                  
+                  element
+                  
+                  ===
+                  
+                  firstPanelWrapperElement,
+                  
+                orderKeyElement = xPathEvaluate (
+                
+                  `
+                  
+                    .//label [
+                    
+                      . = '${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .Title
+                          
+                        }'
+                        
+                      ]
+                      
+                    `,
+                    
+                  element
+                  
+                  )
+                  
+                  .snapshotItem ( 0 ),
+                  
+                pannelContentSelector =
+                
+                  '.CSSTG-group .CSSTG-group > .CSSTG-child:first-child',
+                  
+                panelContentElement
+                
+                  =
+                  
+                  userProfilePageRootElement
+                  
+                  .querySelector ( pannelContentSelector ),
+                  
+                paymentMethodKeyElement = xPathEvaluate (
+                
+                  `
+                  
+                    .//span [
+                    
+                      . = '${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .paymentMethod
+                          
+                          .deletePaymentMethod
+                          
+                        }'
+                        
+                      ]
+                      
+                    `,
+                    
+                  element
+                  
+                  )
+                  
+                  .snapshotItem ( 0 ),
+                  
+                paymentMethodNewKeyElement
+                
+                  =
+                  
+                  firstNameElement
+                  
+                  &&
+                  
+                  xPathEvaluate (
+                  
+                  `
+                  
+                    ancestor::div [
+                    
+                      preceding-sibling::div [
+                      
+                        . = '${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .paymentMethodNew
+                            
+                            .cardDetails
+                            
+                          }'
+                          
+                        ]
+                        
+                      ]
+                      
+                    `,
+                    
+                    firstNameElement
+                    
+                    )
+                    
+                    .snapshotItem ( 0 ),
+                    
+                isOrderKeyElement = !! orderKeyElement,
+                
+                isPanelContentElement
+                
+                  =
+                  
+                  element
+                  
+                  ===
+                  
+                  panelContentElement
+                  
+                  &&
+                  
+                  element
+                  
+                    .children
+                    
+                    .length,
+                    
+                isPaymentMethodKeyElement
+                
+                  =
+                  
+                  !!
+                  
+                  paymentMethodKeyElement,
+                  
+                isPaymentMethodNewKeyElement
+                
+                  =
+                  
+                  !!
+                  
+                  paymentMethodNewKeyElement;
+                  
+              if ( flDebug ) {
+              
+                console.log ( 'addressKeyElement : ', addressKeyElement );
+                
+                console.log ( 'addressNewKeyElement : ', addressNewKeyElement );
+                
+                console.log ( 'firstNameElement : ', firstNameElement );
+                
+                console.log (
+                
+                  'firstPanelWrapperElement : ',
+                  
+                  firstPanelWrapperElement
+                  
+                  );
+                  
+                console.log ( 'orderKeyElement : ', orderKeyElement );
+                
+                console.log ( 'panelContentElement : ', panelContentElement );
+                
+                console.log (
+                
+                  'paymentMethodKeyElement : ',
+                  
+                  paymentMethodKeyElement
+                  
+                  );
+                  
+                console.log (
+                
+                  'paymentMethodNewKeyElement : ',
+                  
+                  paymentMethodNewKeyElement
+                  
+                  );
+                  
+                console.log ( 'isAddressKeyElement : ', isAddressKeyElement );
+                
+                console.log (
+                
+                  'isAddressNewKeyElement : ',
+                  
+                  isAddressNewKeyElement
+                  
+                  );
+                  
+                console.log (
+                
+                  'isFirstPanelWrapperElement : ',
+                  
+                  isFirstPanelWrapperElement
+                  
+                  );
+                  
+                console.log ( 'isOrderKeyElement : ', isOrderKeyElement );
+                
+                console.log (
+                
+                  'isPanelContentElement : ',
+                  
+                  isPanelContentElement
+                  
+                  );
+                  
+                console.log (
+                
+                  'isPaymentMethodKeyElement : ',
+                  
+                  isPaymentMethodKeyElement
+                  
+                  );
+                  
+                console.log (
+                
+                  'isPaymentMethodNewKeyElement : ',
+                  
+                  isPaymentMethodNewKeyElement
+                  
+                  );
+                  
+                }
+                
+              const isContinue = [
+              
+                isAddressKeyElement,
+                
+                isAddressNewKeyElement,
+                
+                isFirstPanelWrapperElement,
+                
+                isOrderKeyElement,
+                
+                isPanelContentElement,
+                
+                isPaymentMethodKeyElement,
+                
+                isPaymentMethodNewKeyElement
+                
+                ]
+                
+                .every ( v => ! v );
+                
+              if ( flDebug )
+              
+                console.log ( 'isContinue : ', isContinue );
+                
+              if ( isContinue ) return; // continue
+              
+              if ( flDebug ) {
+              
+                const isPanel
+                
+                  =
+                  
+                  (
+                  
+                    isFirstPanelWrapperElement
+                    
+                    ||
+                    
+                    isPanelContentElement
+                    
+                    )
+                    
+                  &&
+                  
+                  [
+                  
+                    isAddressKeyElement,
+                    
+                    isAddressNewKeyElement,
+                    
+                    isPaymentMethodKeyElement,
+                    
+                    isPaymentMethodNewKeyElement
+                    
+                    ]
+                    
+                    .every ( v => ! v );
+                    
+                console.log ( 'isPanel : ', isPanel );
+                
+                }
+                
+              if ( isAddressKeyElement ) {
+              
+                element = addressKeyElement
+                
+                  .closest ( 'form' )
+                  
+                  .parentElement;
+                
+                userProfilePageRootElement
+                
+                  .setAttribute (
+                  
+                    dataPanelTypeAttributeName,
+                    
+                    languagesRoot
+                    
+                      .en
+                      
+                      .panels
+                      
+                      .address
+                      
+                      .panelType
+                      
+                    );
+                    
+                }
+                
+              if ( isAddressNewKeyElement ) {
+              
+                element = addressNewKeyElement
+                
+                  .closest ( 'form' )
+                  
+                  .parentElement;
+                
+                userProfilePageRootElement
+                
+                  .setAttribute (
+                  
+                    dataPanelTypeAttributeName,
+                    
+                    languagesRoot
+                    
+                      .en
+                      
+                      .panels
+                      
+                      .addressNew
+                      
+                      .panelType
+                      
+                    );
+                    
+                }
+                
+              if ( isOrderKeyElement ) {
+              
+                element = orderKeyElement
+                
+                  .closest ( '.CSSTG-group' )
+                  
+                  .firstChild;
+                  
+                userProfilePageRootElement
+                
+                  .setAttribute (
+                  
+                    dataPanelTypeAttributeName,
+                    
+                    languagesRoot
+                    
+                      .en
+                      
+                      .panels
+                      
+                      .order
+                      
+                      .panelType
+                      
+                    );
+                    
+                }
+                
+              if ( isPaymentMethodKeyElement ) {
+              
+                element = paymentMethodKeyElement
+                
+                  .closest ( '.CSSTG-child' );
+                  
+                userProfilePageRootElement
+                
+                  .setAttribute (
+                  
+                    dataPanelTypeAttributeName,
+                    
+                    languagesRoot
+                    
+                      .en
+                      
+                      .panels
+                      
+                      .paymentMethod
+                      
+                      .panelType
+                      
+                    );
+                    
+                }
+                
+              if ( isPaymentMethodNewKeyElement ) {
+              
+                element = paymentMethodNewKeyElement
+                
+                  .closest ( 'form' )
+                  
+                  .parentElement;
+                  
+                userProfilePageRootElement
+                
+                  .setAttribute (
+                  
+                    dataPanelTypeAttributeName,
+                    
+                    languagesRoot
+                    
+                      .en
+                      
+                      .panels
+                      
+                      .paymentMethodNew
+                      
+                      .panelType
+                      
+                    );
+                    
+                }
+                
+              if ( flDebug ) {
+              
+                console.log ( 'element : ', element );
+                
+                console.log ( 'end mutation' );
+                
+                }
+                
+              processPanel ( element );
+              
+              }; // end callback
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          rootConfig = {
+          
+            childList : true,
+            
+            subtree : true
+            
+            },
+            
+          rootObserver = new MutationObserver ( rootCallback ),
+          
+          scriptLanguageSelector = 'script[ type^="application/vnd.' +
+          
+            `${ codeKey.replaceAll ( '-', '.' ) }+json; lang=" ]`,
+            
           selector = `#${ accountFrameIdValue }`,
           
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+              
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+              
+            return xPathResults;
+            
+            },
+            
           element = document
           
-            .querySelector ( selector );
+            .querySelector ( selector ),
             
+          getLanguage = ( language ) => {
+          
+            language = languages [ language ];
+            
+            if ( typeof language === 'string' )
+            
+              language = languagesRoot [ language ];
+              
+            return language;
+            
+            },
+            
+          languagesRoot = {
+          
+            en : {
+            
+              panels : {
+              
+                account : {
+                
+                  Title : 'Account',
+                  
+                  },
+                  
+                address : {
+                
+                  deleteAddress : 'Delete Address',
+                  
+                  panelType : 'address',
+                  
+                  },
+                  
+                addresses : {
+                
+                  Title : 'Addresses',
+                  
+                  },
+                  
+                addressNew : {
+                
+                  panelType : 'address new',
+                  
+                  Title : 'New Address',
+                  
+                  },
+                  
+                digitalProducts : {
+                
+                  search : 'Search',
+                  
+                  Title : 'Digital Products',
+                  
+                  },
+                  
+                email : {
+                
+                  confirmNew : 'Confirm New',
+                  
+                  current : 'Current',
+                  
+                  'new' : 'New',
+                  
+                  password : 'Password',
+                  
+                  Title : 'Email',
+                  
+                  },
+                  
+                order : {
+                
+                  items : 'Items',
+                  
+                  orderDate : 'Order Date',
+                  
+                  panelType : 'order',
+                  
+                  shipping : 'Shipping',
+                  
+                  status : 'Status',
+                  
+                  subtotal : 'Subtotal',
+                  
+                  summary : 'Summary',
+                  
+                  Title : 'Order ',
+                  
+                  tax : 'Tax',
+                  
+                  total : 'Total',
+                  
+                  },
+                  
+                orderPaymentMethod : {
+                
+                  panelType : 'order payment method',
+                  
+                  Title : 'Payment Method',
+                  
+                  },
+                  
+                orderShipping : {
+                
+                  shippingAddress : 'Shipping Address',
+                  
+                  shippingOption : 'Shipping Option',
+                  
+                  Title : 'Shipping',
+                  
+                  },
+                  
+                orders : {
+                
+                  Title : 'Orders',
+                  
+                  },
+                  
+                passwordUpdate : {
+                
+                  current : 'Current',
+                  
+                  'new' : 'New',
+                  
+                  Title : 'Update Password',
+                  
+                  },
+                  
+                payment : {
+                
+                  'default' : 'Default',
+                  
+                  other : 'Other',
+                  
+                  Title : 'Payment',
+                  
+                  },
+                  
+                paymentMethod : {
+                
+                  billingAddress : 'Billing Address',
+                  
+                  cardDetails : 'Card Details',
+                  
+                  deletePaymentMethod : 'Delete Payment Method',
+                  
+                  panelType : 'payment method',
+                  
+                  Title : 'Payment Method',
+                  
+                  },
+                  
+                paymentMethodNew : {
+                
+                  billingAddress : 'Billing Address',
+                  
+                  cardDetails : 'Card Details',
+                  
+                  panelType : 'payment method new',
+                  
+                  Title : 'New Payment Method',
+                  
+                  },
+                  
+                profile : {
+                
+                  password : 'Password',
+                  
+                  Title : 'Profile',
+                  
+                  },
+                  
+                }
+                
+              },
+              
+            es : {
+            
+              panels : {
+              
+                account : {
+                
+                  Title : 'Cuenta',
+                  
+                  },
+                  
+                address : {
+                
+                  deleteAddress : 'Borrar dirección',
+                  
+                  panelType : 'address',
+                  
+                  },
+                  
+                addresses : {
+                
+                  Title : 'Direcciones',
+                  
+                  },
+                  
+                addressNew : {
+                
+                  panelType : 'address new',
+                  
+                  Title : 'Nueva dirección',
+                  
+                  },
+                  
+                digitalProducts : {
+                
+                  search : 'Buscar',
+                  
+                  Title : 'Productos digitales',
+                  
+                  },
+                  
+                email : {
+                
+                  confirmNew : 'Confirmar el nuevo',
+                  
+                  current : 'Actual',
+                  
+                  'new' : 'Nuevo',
+                  
+                  password : 'Contraseña',
+                  
+                  Title : 'Correo electrónico',
+                  
+                  },
+                  
+                order : {
+                
+                  items : 'Elementos',
+                  
+                  orderDate : 'Fecha de pedido',
+                  
+                  panelType : 'order',
+                  
+                  shipping : 'Envío',
+                  
+                  status : 'Estado',
+                  
+                  subtotal : 'Subtotal',
+                  
+                  summary : 'Resumen',
+                  
+                  Title : 'Order ',
+                  
+                  tax : 'Impuestos',
+                  
+                  total : 'Total',
+                  
+                  },
+                  
+                orderPaymentMethod : {
+                
+                  panelType : 'order payment method',
+                  
+                  Title : 'Método de pago',
+                  
+                  },
+                  
+                orderShipping : {
+                
+                  shippingAddress : 'Dirección de envío',
+                  
+                  shippingOption : 'Opción de envío',
+                  
+                  Title : 'Envío',
+                  
+                  },
+                  
+                orders : {
+                
+                  Title : 'Pedidos',
+                  
+                  },
+                  
+                passwordUpdate : {
+                
+                  current : 'Actual',
+                  
+                  'new' : 'Nuevo',
+                  
+                  Title : 'Actualizar contraseña',
+                  
+                  },
+                  
+                payment : {
+                
+                  'default' : 'Predeterminado',
+                  
+                  other : 'Otros',
+                  
+                  Title : 'Pago',
+                  
+                  },
+                  
+                paymentMethod : {
+                
+                  billingAddress : 'Dirección de facturación',
+                  
+                  cardDetails : 'Datos de la tarjeta',
+                  
+                  deletePaymentMethod : 'Eliminar método de pago',
+                  
+                  panelType : 'payment method',
+                  
+                  Title : 'Método de pago',
+                  
+                  },
+                  
+                paymentMethodNew : {
+                
+                  billingAddress : 'Dirección de facturación',
+                  
+                  cardDetails : 'Datos de la tarjeta',
+                  
+                  panelType : 'payment method new',
+                  
+                  Title : 'Nuevo método de pago',
+                  
+                  },
+                  
+                profile : {
+                
+                  password : 'Contraseña',
+                  
+                  Title : 'Perfil',
+                  
+                  },
+                  
+                }
+                
+              },
+              
+            },
+            
+          scriptLanguageElement = document
+          
+            .head
+            
+            .querySelector ( scriptLanguageSelector );
+            
+        let userProfilePageRootElement;
+        
+        if ( scriptLanguageElement !== null ) {
+        
+          const languageCode
+          
+            =
+            
+            scriptLanguageElement
+            
+              .getAttribute ( 'type' )
+              
+              .split ( '; ' )
+              
+              [ 1 ]
+              
+              .split ( '=' )
+              
+              [ 1 ];
+              
+          let map
+          
+            =
+            
+            scriptLanguageElement
+            
+              .textContent
+              
+              .replace ( /\/\*[^]*?\*\//g, '' ); // remove * comments
+              
+          map = JSON.parse ( map );
+          
+          languages
+          
+            [ languageCode ]
+            
+            =
+            
+            map;
+            
+          }
+          
+        const language = getLanguage (
+        
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .website
+            
+            .language
+            
+          );
+        
         /*
         
           if the account frame is already on the DOM, load. watch for it to
@@ -653,7 +3625,7 @@
           
         // start listening for changes in specified element
         
-        observer.observe ( document.body, config );
+        bodyObserver.observe ( document.body, bodyConfig );
         
         };
         
@@ -665,4 +3637,4 @@
       
     </script>
     
-  <!-- end customer account panel change -->
+  <!-- end TWC Customer Account Panel Change -->
