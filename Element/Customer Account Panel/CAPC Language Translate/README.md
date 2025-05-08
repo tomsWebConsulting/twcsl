@@ -76,7 +76,7 @@ Please consider [making a donation][11].
   * make compatible with member area log in dialog change v0.3.0
   * bumped version to 0.1.1
   -->
-* **2025-05-06**
+* **2025-05-07**
 
   * initial version
 
@@ -84,7 +84,7 @@ Please consider [making a donation][11].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change#customer%20account%20panel%20change
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change#customer-account-panel-change
 [6]: capc%20language%20translate.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: capc%20language%20translate%20en.html#L1
