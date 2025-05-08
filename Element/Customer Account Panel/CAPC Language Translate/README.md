@@ -34,10 +34,13 @@ supported by Squarespace.
 * Install [Customer Account Panel Change][5]. After you install the code be sure
   to continue on with the rest of the steps.
   
+* Go to Settings > Website > Regional Settings. Select the closest location
+  Time Zone to your actual location.
+  
 * Add the code from file **[capc language translate.html][6]** to Website >
   Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
   injection][7] for details.
-
+  
 * Add code from one of the following language files Website >
   Pages > Custom Code > Code Injection > HEADER.
   
