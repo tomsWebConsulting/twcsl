@@ -57,9 +57,9 @@
     
     twc.malidc.callbacks = ( ( self ) => {
     
-      const callback = ( dcmnt, logInType ) => {
+      const callback = ( dcmnt, dialogType ) => {
       
-        let b = logInType != 'sign-up-join';
+        let b = dialogType != 'sign-up-join';
         
         if ( b ) return; // bail if no join
         
@@ -87,7 +87,7 @@
           
           text;
           
-        }
+        };
         
       self.push ( callback );
       
