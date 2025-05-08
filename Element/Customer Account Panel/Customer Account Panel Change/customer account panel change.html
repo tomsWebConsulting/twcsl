@@ -6,7 +6,7 @@
     
     License      : < https://tinyurl.com/s872fb68 >
     
-    Version      : 0.7.0
+    Version      : 0.7.1
     
     SS Versions  : 7.1, 7.0
     
@@ -80,7 +80,7 @@
     
       const
       
-        version = '0.7.0',
+        version = '0.7.1',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -190,12 +190,12 @@
             
               callback = ( event ) => {
               
+                dcmnt = accountFrameElement
+                
+                  .contentDocument;
+                  
                 const
                 
-                  dcmnt = accountFrameElement
-                  
-                    .contentDocument,
-                    
                   pathname = dcmnt
                   
                     .location
@@ -2534,7 +2534,7 @@
               
             if ( callbacks.length ) {
             
-              callback = ( callback ) => {
+              const callback = ( callback ) => {
               
                 try {
                 
@@ -3201,13 +3201,13 @@
                 contextNode,
                 
                 null,
-              
+                
                 XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
                 
                 null
                 
                 );
-              
+                
             return xPathResults;
             
             },
@@ -3558,7 +3558,11 @@
             
             .querySelector ( scriptLanguageSelector );
             
-        let userProfilePageRootElement;
+        let
+        
+          dcmnt,
+          
+          userProfilePageRootElement;
         
         if ( scriptLanguageElement !== null ) {
         

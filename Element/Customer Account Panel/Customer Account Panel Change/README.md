@@ -9,7 +9,7 @@ Squarespace editor.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Versions
 
@@ -357,9 +357,9 @@ the following added to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 To make this code work for a particular language, you need to set lang to the
-value of Static.SQUARESPACE_CONTEXT.website.language. Then you
-need to go through the data structure replacing the English language values with
-the values Squarespace shows for those elements in the User Interface.
+value of Static.SQUARESPACE_CONTEXT.website.language. Then you need to go
+through the data structure replacing the English language values with the values
+Squarespace shows for those elements in the User Interface.
 
 If you do create a new language, feel free to [share][7] it with me. I'll
 gladly consider incorporating it in future updates.
@@ -370,6 +370,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-05-07**
+
+  * fixed broken callback code
+  * bumped version to 0.7.1
+  
 * **2025-05-05**
 
   * support many new classes and panel titles
