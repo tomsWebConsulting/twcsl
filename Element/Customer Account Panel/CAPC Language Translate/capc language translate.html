@@ -1,0 +1,669 @@
+<!-- begin TWC CAPC Language Translate -->
+
+  <script>
+  
+    /*
+    
+      capc language translate
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : Customer Account Panel Change
+                      < https://tinyurl.com/4ub629pw >
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `CAPC Language Translate v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc capc sub-module
+    
+    twc.capc = ( ( self ) => self ) ( twc.capc || { } );
+    
+    // initialize twc capc callbacks sub-module
+    
+    twc.capc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, panelElement, panelType ) => {
+      
+        const codeKey = 'twc-clt';
+        
+        let selector = 'script[ type^="application/vnd.' +
+        
+          `${ codeKey.replace ( '-', '.' ) }+json; lang=" ]`;
+          
+        const
+        
+          scriptElement = document
+          
+            .head
+            
+            .querySelector ( selector );
+            
+        if ( scriptElement === null ) return; // bail if no tag
+        
+        const
+        
+          callback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              const element = mutation.addedNodes [ 0 ];
+              
+              if ( element === undefined ) return; // bail if no element
+              
+              console.log ( 'element : ', element );
+              
+              text = element
+              
+                .textContent;
+                
+              // text
+              
+              {
+              
+                entries = Object.entries ( translateMap.textMap );
+                
+                for ( const [ key, value ] of entries ) {
+                
+                  if ( text !== key ) continue;
+                  
+                  text = value;
+                  
+                  break;
+                  
+                  }
+                  
+                }
+                
+              // text ends with
+              
+              {
+              
+                entries = Object.entries ( translateMap.textEndsWithMap );
+                
+                for ( const [ key, value ] of entries ) {
+                
+                  re = new RegExp ( `${ key }$` );
+                  
+                  const isMatch
+                  
+                    = 
+                    
+                    re.test ( text );
+                    
+                  if ( ! isMatch ) continue;
+                  
+                  text = text
+                  
+                    .replace ( re, value );
+                    
+                  break;
+                  
+                  }
+                  
+                }
+                
+              // text starts with
+              
+              {
+              
+                entries = Object.entries ( translateMap.textStartsWithMap );
+                
+                for ( const [ key, value ] of entries ) {
+                
+                  re = new RegExp ( `^${ key }` );
+                  
+                  const isMatch
+                  
+                    = 
+                    
+                    re.test ( text );
+                    
+                  if ( ! isMatch ) continue;
+                  
+                  text = text
+                  
+                    .replace ( re, value );
+                    
+                  break;
+                  
+                  }
+                  
+                }
+                
+              element
+              
+                .textContent
+                
+                =
+                
+                text;
+                
+              observer.disconnect ( );
+              
+              };
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          getDateFormatted = ( d, options ) => {
+          
+            d = new Date ( d );
+            
+            d = `${
+            
+              d.getFullYear ( )
+              
+              }-${
+              
+                String (
+                
+                  d
+                  
+                    .getMonth ( )
+                    
+                    + 1
+                    
+                  )
+                  
+                  .padStart ( 2, '0' )
+                  
+                }-${
+                
+                  String (
+                  
+                    d
+                    
+                    .getDate ( )
+                    
+                    )
+                    
+                    .padStart ( 2, '0' )
+                    
+                  }T00:00:00`;
+                  
+            const
+            
+              timeZone = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .timeZone,
+                
+              dateTimeFormatOptions = {
+              
+                timeZone : timeZone
+                
+                },
+                
+              longOffsetFormatter = new Intl
+              
+                .DateTimeFormat (
+                
+                  languageCode,
+                  
+                  {
+                  
+                    timeZone : timeZone, 
+                    
+                    timeZoneName : 'longOffset'
+                    
+                    }
+                    
+                  ),
+                  
+              longOffsetString = longOffsetFormatter
+              
+                .format (
+                
+                  new Date ( d )
+                  
+                  ),
+                  
+              gmtOffset = longOffsetString
+              
+                .split ( 'GMT' )
+                
+                [ 1 ];
+                
+            Object.assign (
+            
+              dateTimeFormatOptions,
+              
+              options
+              
+              );
+              
+            d = new Date (
+            
+              `${ d }${ gmtOffset }`
+              
+              );
+              
+            d = d
+            
+              .toLocaleDateString (
+              
+                languageCode,
+                
+                dateTimeFormatOptions
+                
+                );
+                
+            return d;
+            
+            },
+            
+          languageCode
+          
+            =
+            
+            scriptElement
+            
+              .getAttribute ( 'type' )
+              
+              .split ( '; ' )
+              
+              [ 1 ]
+              
+              .split ( '=' )
+              
+              [ 1 ];
+              
+          observer = new MutationObserver ( callback ),
+          
+          options = {
+          
+            childList : true,
+            
+            subtree : true
+            
+            },
+            
+          translateMap = JSON
+          
+            .parse (
+            
+              scriptElement
+              
+                .textContent
+                
+                .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                
+                .replaceAll ( '\n', '' )
+                
+              ),
+              
+          walker = document
+          
+            .createTreeWalker ( panelElement, NodeFilter.SHOW_TEXT ),
+            
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            };
+            
+        let
+        
+          entries,
+          
+          element,
+          
+          re,
+          
+          text,
+          
+          xPathResults;
+        
+        // placeholders
+        
+        {
+        
+          const attribute = 'placeholder';
+          
+          entries = Object.entries ( translateMap.placeholderMap );
+          
+          for ( const [ key, value ] of entries ) {
+          
+            const selector = `[ ${ attribute }="${ key }" ]`;
+            
+            panelElement
+            
+              .querySelectorAll ( selector )
+              
+              .forEach ( e => e.setAttribute ( attribute, value ) );
+              
+            }
+            
+          }
+          
+        // text
+        
+        while ( walker.nextNode ( ) ) {
+        
+          const
+          
+            node = walker.currentNode,
+            
+            text = translateMap.textMap [
+            
+              node.textContent
+              
+              ];
+              
+          if ( text === undefined ) continue;
+          
+          node.textContent = text;
+          
+          }
+        
+        // text ends with
+        
+        {
+        
+          entries = Object.entries ( translateMap.textEndsWithMap );
+          
+          for ( const [ key, value ] of entries ) {
+          
+            xPathResults = xPathEvaluate (
+            
+              `
+                .//* [
+                
+                  substring (
+                  
+                    text ( ),
+                    
+                    string-length (
+                    
+                      text ( )
+                      
+                      )
+                      
+                    -
+                    
+                    string-length (
+                    
+                      '${ key }'
+                      
+                      )
+                      
+                    +
+                    
+                    1
+                    
+                    )
+                    
+                  =
+                  
+                  '${ key }'
+                  
+                ]`,
+                
+              panelElement
+              
+              );
+              
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              element = xPathResults
+              
+                .snapshotItem ( i );
+                
+              re = new RegExp ( `${ key }$` );
+              
+              element
+              
+                .textContent
+                
+                =
+                
+                element
+                
+                  .textContent
+                  
+                  .replace ( re, value );
+                  
+              }
+              
+            }
+          
+          }
+          
+        // text starts with
+        
+        {
+        
+          entries = Object.entries ( translateMap.textStartsWithMap );
+          
+          for ( const [ key, value ] of entries ) {
+          
+            xPathResults = xPathEvaluate (
+            
+              `
+              
+                //* [
+                
+                  starts-with (
+                  
+                    normalize-space (
+                    
+                      string ( . )
+                      
+                      ),
+                      
+                    '${ key }'
+                    
+                    )
+                    
+                  and
+                  
+                  not (
+                  
+                    * [
+                    
+                      starts-with (
+                      
+                        normalize-space (
+                        
+                          string ( . )
+                          
+                          ),
+                          
+                        '${ key }'
+                        
+                        )
+                        
+                      ]
+                      
+                    )
+                    
+                  ]
+                  
+                `,
+                
+              panelElement
+              
+              );
+              
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              element = xPathResults
+              
+                .snapshotItem ( i );
+                
+              re = new RegExp ( `^${ key }` );
+              
+              element
+              
+                .textContent
+                
+                =
+                
+                element
+                
+                  .textContent
+                  
+                  .replace ( re, value );
+                  
+              }
+              
+            }
+          
+          }
+          
+        // dates
+        
+        {
+        
+          const callback = ( element ) => {
+          
+            element
+            
+              .textContent
+              
+              =
+              
+              getDateFormatted (
+              
+                element
+                
+                  .textContent,
+                  
+                {
+                
+                  day : 'numeric',
+                  
+                  month : 'short'
+                  
+                  }
+                  
+                );
+                
+            };
+            
+          selector = '.twc-capc--orders-panel .CSSTG-child:first-child ' +
+          
+            '.twc-capc--orders--order--date span:first-child';
+            
+          panelElement
+          
+            .querySelectorAll ( selector )
+            
+            .forEach ( callback );
+            
+          selector = '.twc-capc--orders--order-panel ' +
+          
+            '.CSSTG-child:first-child .twc-capc--orders--order--date span';
+            
+          element = panelElement
+          
+            .querySelector ( selector );
+            
+          if ( element !== null ) {
+          
+            element
+            
+              .textContent
+              
+              =
+              
+              getDateFormatted (
+              
+                element
+                
+                  .textContent,
+                  
+                {
+                
+                  day : 'numeric',
+                  
+                  month : 'short',
+                  
+                  year : 'numeric'
+                  
+                  }
+                  
+                );
+                
+            }
+            
+          }
+          
+        switch ( panelType ) {
+        
+          case 'account' :
+          case 'payment method new' :
+          
+            observer.observe ( panelElement, options );
+            
+            break;
+            
+          }
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.capc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end TWC CAPC Language Translate -->
