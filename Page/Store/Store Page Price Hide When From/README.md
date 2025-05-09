@@ -48,7 +48,7 @@ Hide price when it contains from on Store page.
       effect.
       
     * Add code from file **[store page price hide when from.html][8]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][10] for details.
       
 * Add the following to searchReplaceText in the store page price change code per

@@ -24,7 +24,7 @@ Create rudimentary tabbed effect with button and other blocks.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -48,7 +48,7 @@ Create rudimentary tabbed effect with button and other blocks.
       effect.
       
     * Add code from file **[blocks tabbed.html][5]** to Website > Pages >
-      Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][7] for details.
       
 * In a section add at least two button blocks. I suggest a horizontal
@@ -107,7 +107,7 @@ Create rudimentary tabbed effect with button and other blocks.
       * Use this option if you have multiple pages where you want to have this
         effect.
         
-      * Add the following to Website > Pages > Website Tools > Custom CSS.
+      * Add the following to Website > Pages > Custom Code > Custom CSS.
       
         ```css
         /* twc-bt line block hide */

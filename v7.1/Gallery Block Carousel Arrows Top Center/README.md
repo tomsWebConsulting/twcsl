@@ -20,7 +20,7 @@
 
 * Add code from file
   **[gallery block carousel arrows top center.less](gallery%20block%20carousel%20arrows%20top%20center.less#L1)**
-  to Website > Pages > Website Tools > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS.
 
 ## Make a Donation
 

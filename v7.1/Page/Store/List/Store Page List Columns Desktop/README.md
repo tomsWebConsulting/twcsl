@@ -39,7 +39,7 @@ Set the number of list page columns to five or more.
       effect.
       
     * Add code from **[store page list columns desktop.css][4]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][5] for details.
       
 * Read the code for any instructions within.

@@ -43,7 +43,7 @@ Copy blog page post meta before blog title.
       effect.
       
     * Add code from file **[blog page post meta copy.html][4]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][6] for details.
       
 * Edit the blog post section and **Set Meta Position** to **Below Title**.

@@ -47,7 +47,7 @@ Return current year.
           
   ```
   
-* Add code from **[etc year.html][6]** to Website > Pages > Website Tools >
+* Add code from **[etc year.html][6]** to Website > Pages > Custom Code >
   Code Injection > FOOTER **before** the **ELEMENT TEXT CHANGE** code. Please
   see [Add code to code injection][7].
 

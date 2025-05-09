@@ -41,7 +41,7 @@ Hide all commerce elements on a Store page.
       effect.
       
     * Add code from file **[store page commerce elements hide.css][7]** to
-      Website > Pages > Website Tools > Custom CSS.
+      Website > Pages > Custom Code > Custom CSS.
       
 * Read the code for any instructions within.
 

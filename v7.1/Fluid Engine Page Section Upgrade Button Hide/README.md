@@ -19,7 +19,7 @@
 ## Quick Install
 
 * Add code from file **[fluid engine page section upgrade button hide.html][1]**
-  to Website > Pages > Website Tools > Code Injection > HEADER.
+  to Website > Pages > Custom Code > Code Injection > HEADER.
 
 ## Make a Donation
 

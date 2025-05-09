@@ -43,7 +43,7 @@ Hide elements of store products.
       effect.
       
     * Add code from file **[store page product element hide.html][2]** to
-      Website > Pages > Website Tools > Code Injection > HEADER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
       code to code injection][7].
       
 * Read the code for any instructions within.

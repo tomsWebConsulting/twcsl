@@ -50,7 +50,7 @@ Limit store page form text and text area field lengths.
       effect.
       
     * Add code from file **[store page form text field max length.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][8] for details.
       
 * Edit a Store page product and add a Custom Form.

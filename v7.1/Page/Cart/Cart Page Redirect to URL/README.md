@@ -27,7 +27,7 @@ Redirect cart page to a URL.
 ## Quick Install
 
 * Add code from file **[cart page redirect to url.html][4]** to Website >
-  Pages > Website Tools > Code Injection > HEADER. Refer to [Add code to code
+  Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to code
   injection][5]. Read the code for any instructions within.
       
 ## Note

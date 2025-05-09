@@ -14,7 +14,7 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -22,7 +22,7 @@
   ```
   
 * Add code from file **[site header tagline link.html][2]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER.
+  Pages > Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
 

@@ -23,7 +23,7 @@ Store page list out of stock badge.
 ## Quick Install
 
 Add code from file **[store page list out of stock badge.less][2]** to
-Website > Pages > Website Tools > Custom CSS. Read the code for any instructions
+Website > Pages > Custom Code > Custom CSS. Read the code for any instructions
 within.
 
 ## Badge Options

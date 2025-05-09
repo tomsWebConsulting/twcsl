@@ -47,7 +47,7 @@ cart.
       effect.
       
     * Add code from file **[store page product add to cart button url redirect
-      after added to cart.html][1]** to Website > Pages > Website Tools >
+      after added to cart.html][1]** to Website > Pages > Custom Code >
       Code Injection > FOOTER. Refer to [Add code to code injection][7] for
       details.
 

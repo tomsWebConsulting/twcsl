@@ -28,7 +28,7 @@ Add more than two meta items to a Summary block Events page type.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -42,7 +42,7 @@ Add more than two meta items to a Summary block Events page type.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add the following code to Website > Pages > Website Tools >
+    * Add the following code to Website > Pages > Custom Code >
       Code Injection > HEADER. Refer to [Add code to code injection][5] for
       details.
       
@@ -136,7 +136,7 @@ Add more than two meta items to a Summary block Events page type.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add the following code to Website > Pages > Website Tools >
+    * Add the following code to Website > Pages > Custom Code >
       Code Injection > HEADER. Refer to [Add code to code injection][7] for
       details.
       
@@ -222,7 +222,7 @@ Add more than two meta items to a Summary block Events page type.
       ```
       
     * Add code from file **[summary block events meta add.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7] for details.
       
 * Read the code for any instructions within.

@@ -48,7 +48,7 @@ Change blog post image URL to source URL.
       effect.
       
     * Add code from file **[blog page list post image url to source
-      url.html][6]** to Website > Pages > Website Tools > Code Injection >
+      url.html][6]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][8] for details.
 
 * Read the code for any instructions within.

@@ -16,7 +16,7 @@
 
 Add code from file
 **[blog header after title.css](blog%20header%20after%20title.css#L1)**
-to Website > Pages > Website Tools > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS.
 
 ## Make a Donation
 

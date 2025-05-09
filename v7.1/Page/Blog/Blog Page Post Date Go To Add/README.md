@@ -43,7 +43,7 @@ Add date go to feature to Publish and Scheduled calendars.
       effect.
       
     * Add code from file **[blog page post date go to add.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.
 
 ## Note

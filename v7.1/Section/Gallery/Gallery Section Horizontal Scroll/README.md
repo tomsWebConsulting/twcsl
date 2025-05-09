@@ -28,7 +28,7 @@ Gallery section horizontal scroll effect.
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -52,7 +52,7 @@ Gallery section horizontal scroll effect.
       effect.
       
     * Add code from file **[gallery section horizontal scroll.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7] for details.
       
 * Add or edit a Gallery section.

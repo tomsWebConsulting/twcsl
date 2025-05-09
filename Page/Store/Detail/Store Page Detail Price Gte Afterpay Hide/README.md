@@ -57,7 +57,7 @@ Hide afterpay when price is greater than or equal price.
       effect.
       
     * Add code from file **[store page detail price gte afterpay hide.html][7]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
       [Add code to code injection][9] for details.
 
 ## Note

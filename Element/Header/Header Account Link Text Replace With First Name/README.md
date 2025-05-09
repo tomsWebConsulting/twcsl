@@ -29,7 +29,7 @@ Replace the header account link with the members' first name.
 ## Quick Install
 
 * Add code from file **[header account link text replace with first
-  name.html][4]** to Website > Pages > Website Tools > Code Injection > FOOTER.
+  name.html][4]** to Website > Pages > Custom Code > Code Injection > FOOTER.
   Refer to [Add code to code injection][5] for details.
   
 * Read the code for any instructions within.

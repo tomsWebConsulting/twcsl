@@ -34,7 +34,7 @@ Replace link text and URL of member area login dialog elements.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[malidc element link replace.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][7] for details.
   
 * Read the code for any instructions within.

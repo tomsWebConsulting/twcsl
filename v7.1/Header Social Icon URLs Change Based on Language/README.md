@@ -18,13 +18,13 @@
 
 ## Quick Install
 
-Add the following to Website > Pages > Website Tools > Code Injection > HEADER.
+Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`
 
 Add code from file
 **[header social icon urls change based on language.html](header%20social%20icon%20urls%20change%20based%20on%20language.html#L1)**
-to Website > Pages > Website Tools > Code Injection > FOOTER.
+to Website > Pages > Custom Code > Code Injection > FOOTER.
 
 Add the following code to the end of the language initialization code.
 

@@ -18,7 +18,7 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -27,7 +27,7 @@
   
 Add code from file
 **[product block quick view after anchor tag.html](product%20block%20quick%20view%20after%20anchor%20tag.html#L1)**
-to Website > Pages > Website Tools > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS.
 
 ## Make a Donation
 

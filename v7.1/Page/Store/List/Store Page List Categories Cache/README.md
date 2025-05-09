@@ -43,7 +43,7 @@ Cache store page categories in sessionStorage.
       effect.
       
     * Add code from file **[store page list categories cache.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.
       
 * Read the code for any instructions within.

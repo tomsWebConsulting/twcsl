@@ -47,7 +47,7 @@ Remove decimal for prices greater than equal to n on Store page.
       effect.
       
     * Add code from file **[store page price remove decimal for prices greater
-      than or equal to n.html][4]** to Website > Pages > Website Tools >
+      than or equal to n.html][4]** to Website > Pages > Custom Code >
       Code Injection > FOOTER. Refer to [Add code to code injection][6] for
       details.
       

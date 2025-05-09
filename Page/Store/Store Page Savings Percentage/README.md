@@ -48,7 +48,7 @@ Add savings percent to products on sale.
       effect.
       
     * Add code from file **[store page savings percentage.html][6]** to
-      Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+      Website > Pages > Custom Code > Custom Code > Code Injection > FOOTER.
       Refer to [Add code to code injection][8] for details.
       
 * Read the code for any instructions within.

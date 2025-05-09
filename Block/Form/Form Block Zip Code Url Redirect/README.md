@@ -51,7 +51,7 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
       effect.
       
     * Add code from file **[form block zip code url redirect.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][8]. Read the code for any instructions within.
       
 * Add or edit a form block.

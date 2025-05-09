@@ -22,7 +22,7 @@
   install the code be sure to continue on with the rest of the steps.
   
 * Add code from file **[footer sections move to page.html][2]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER.
+  Pages > Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
   

@@ -56,7 +56,7 @@ Limit custom form text and text area field lengths.
       product blocks where you want to have this effect.
       
     * Add code from file **[product custom form text field max length.html][7]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER, **before**
+      to Website > Pages > Custom Code > Code Injection > FOOTER, **before**
       the product quick view observe changes code. Refer to [Add code to code
       injection][9] for details.
       

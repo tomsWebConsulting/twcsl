@@ -32,9 +32,9 @@ append, before, prepend, or replace.
 ## Install
 
 * Add code from file **[elements manipulate.less][7]** to Website > Pages >
-  Website Tools > Custom CSS.
+  Custom Code > Custom CSS.
   
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER. Refer to [Add code to code injection][8] for details.
   
   ```html
@@ -144,7 +144,7 @@ append, before, prepend, or replace.
   ```
   
 * Add code from file **[elements manipulate.html][9]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Refer to [Per-page code injection][8]
+  Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][8]
   for details.
   
 * Read the code for any instructions within.
@@ -622,7 +622,7 @@ append, before, prepend, or replace.
 
 You can optionally add [callback][11] functions to further customize the
 processing of the source element. Your callbacks must accept and return a jQuery
-object. Add you callbacks to Website > Pages > Website Tools > Code Injection >
+object. Add you callbacks to Website > Pages > Custom Code > Code Injection >
 FOOTER. Refer to [Add code to code injection][8] Order is not important.
 
 * Log the source element.

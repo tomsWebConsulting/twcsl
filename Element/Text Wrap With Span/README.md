@@ -46,7 +46,7 @@ Find and replace text with the text wrapped in a span tag.
       effect.
       
     * Add code from file **[text wrap with span.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6]. Read the code for any instructions within.
 
 ## Notes

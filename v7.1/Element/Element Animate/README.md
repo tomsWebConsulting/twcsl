@@ -39,7 +39,7 @@ Animate elements that Squarespace hasn't.
       effect.
       
     * Add code from file **[element animate.html][4]** to Website > Pages >
-      Website Tools > Code Injection > HEADER. Refer to [Add code to code
+      Custom Code > Code Injection > HEADER. Refer to [Add code to code
       injection][6] for details.
       
 * Read the code for any instructions within.

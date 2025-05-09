@@ -47,7 +47,7 @@ nodes are added or removed from the [DOM][2].
       effect.
       
     * Add code from file **[form block wrapper observe changes.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7]. Read the code for any instructions within.
       
 * Add or edit a form block.

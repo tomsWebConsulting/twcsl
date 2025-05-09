@@ -50,7 +50,7 @@ Fill form fields from search query parameters of the page URL.
       effect.
       
     * Add code from file **[form block fields from search parameters.html][5]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
       [Add code to code injection][7] for details.
       
 * Add or edit a form block.

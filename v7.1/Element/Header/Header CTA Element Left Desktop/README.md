@@ -11,10 +11,10 @@
 ## Quick Install
 
 Add code from file **[header cta element left desktop.css][2]** to Website >
-Pages > Website Tools > Custom CSS.
+Pages > Custom Code > Custom CSS.
 
 Add code from file **[header cta element left desktop.html][3]** to Website >
-Pages > Website Tools > Code Injection > FOOTER.
+Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 

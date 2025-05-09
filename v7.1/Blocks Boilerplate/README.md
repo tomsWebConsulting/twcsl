@@ -19,10 +19,10 @@
 ## Install
 
 * Add code from file **[blocks boilerplate.css][1]** to Website > Pages >
-  Website Tools > Custom CSS.
+  Custom Code > Custom CSS.
   
 * Add code from file **[blocks boilerplate.html][2]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER.
+  Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
   

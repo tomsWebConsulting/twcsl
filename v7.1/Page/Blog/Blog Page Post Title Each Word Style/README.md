@@ -49,7 +49,7 @@ Style each word of a blog post title wrapped in a span tag.
       this effect.
       
     * Add code from file **[blog page post title each word style.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER, after the
+      Website > Pages > Custom Code > Code Injection > FOOTER, after the
       **blog post title each word span tag add** code. Refer to [Add code to
       code injection][8].
       
@@ -65,7 +65,7 @@ Style each word of a blog post title wrapped in a span tag.
   
     * Add the tag **twc-bpptews words 2-3 italic** to the post.
     
-    * Add the following to Website > Pages > Website Tools > Custom CSS.
+    * Add the following to Website > Pages > Custom Code > Custom CSS.
     
       ```css
       /* blog post title words 2-3 italicize */

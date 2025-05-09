@@ -34,7 +34,7 @@ Change the Customer Account Panel Account Settings link URL.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[capc account settings link.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER **before** the **customer
+  Pages > Custom Code > Code Injection > FOOTER **before** the **customer
   account panel change** code. Refer to [Add code to code injection][7] for
   details.
   

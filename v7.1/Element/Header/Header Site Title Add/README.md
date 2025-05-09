@@ -27,7 +27,7 @@ Add site title to header.
 ## Quick Install
 
 * Add code from file **[header site title add.html][4]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER.
+  Custom Code > Code Injection > FOOTER.
   
 * Add a logo to the header. The code will add a site title to the header.
 

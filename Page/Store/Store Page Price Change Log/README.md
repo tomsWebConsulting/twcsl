@@ -44,7 +44,7 @@ Log store page price changes.
       effect.
       
     * Add code from file **[store page price change log.html][6]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][8] for details.
       
 * Add the following to searchReplaceText in the store page price change code per

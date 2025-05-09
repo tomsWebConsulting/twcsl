@@ -35,7 +35,7 @@ by Squarespace.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[malidc language translate.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
   injection][7] for details.
 
 * Add code from one of the following language files **before** the **malidc

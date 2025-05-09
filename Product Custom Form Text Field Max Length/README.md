@@ -29,7 +29,7 @@ Limit product custom form text and text area field lengths.
 ## Quick Install
 
 * Add code from file **[product custom form text field max length.html][5]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER.
+  Website > Pages > Custom Code > Code Injection > FOOTER.
   
 * Edit a Store page product and add a Custom Form.
   

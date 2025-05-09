@@ -12,7 +12,7 @@
 
 Add code from file
 **[change cart title.css](change%20cart%20title.css#L1)**
-to Website > Pages > Website Tools > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS.
 
 ## Make a Donation
 

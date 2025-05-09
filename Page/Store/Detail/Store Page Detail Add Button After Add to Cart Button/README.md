@@ -31,7 +31,7 @@ of your choice.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -56,7 +56,7 @@ of your choice.
       effect.
       
     * Add code from file **[store page detail add button after add to cart
-      button.html][6]** to Website > Pages > Website Tools > Code Injection >
+      button.html][6]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][8] for details.
       
 * Read the code for any instructions within.

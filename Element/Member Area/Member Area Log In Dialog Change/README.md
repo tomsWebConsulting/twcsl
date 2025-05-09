@@ -29,7 +29,7 @@ Alter member area sign up and in dialogs.
 ## Quick Install
 
 * Add code from file **[member area log in dialog change.html][5]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
   injection][6] for details.
   
 * Read the code for any instructions within.

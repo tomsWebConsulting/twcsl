@@ -48,7 +48,7 @@ Add text to products.
       effect.
       
     * Add code from file **[store page tags text add.html][6]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][8] for details.
       
 * Read the code for any instructions within.

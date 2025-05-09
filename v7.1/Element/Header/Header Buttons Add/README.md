@@ -27,10 +27,10 @@ Add buttons to the site header.
 ## Quick Install
 
 * Add code from file **[header buttons add.less][4]** to Website > Pages >
-  Website Tools > Custom CSS.
+  Custom Code > Custom CSS.
   
 * Add code from file **[header buttons add.html][5]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][6] for details.
   
 * Read the code for any instructions within.

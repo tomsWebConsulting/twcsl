@@ -29,7 +29,7 @@ Activate Squarespace editor using a key sequence.
 ## Quick Install
 
 Add code from file **[page edit keys.html][4]** to Website > Pages >
-Website Tools > Code Injection > FOOTER. Please see [Add code to code
+Custom Code > Code Injection > FOOTER. Please see [Add code to code
 injection][5]. Read the code for any instructions within.
 
 ## Make a Donation

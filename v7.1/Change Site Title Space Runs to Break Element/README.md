@@ -10,14 +10,14 @@
 
 ## Quick Install
 
-Add the following to Website > Pages > Website Tools > Code Injection > HEADER.
+Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 ```
 
 Add code from file **change site title space runs to break element.html** to
-Website > Pages > Website Tools > Code Injection > FOOTER.
+Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 

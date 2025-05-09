@@ -30,7 +30,7 @@ Randomize the images of image blocks.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -54,7 +54,7 @@ Randomize the images of image blocks.
       effect.
       
     * Add code from file **[image blocks random.html][6]** to Website > Pages >
-      Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][8] for details.
 
 * Create a Fluid Engine page section.

@@ -43,7 +43,7 @@ Redirect store page list all category to a URL.
       effect.
       
     * Add code from file **[store page list all category redirect.html][4]** to
-      Website > Pages > Website Tools > Code Injection > HEADER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
       code to code injection][6].
       
 * Read the code for any instructions within.

@@ -46,7 +46,7 @@ Hide products on the all category store page list.
       effect.
       
     * Add code from file **[store page list category all products
-      hide.html][4]** to Website > Pages > Website Tools > Code Injection >
+      hide.html][4]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][6] for details.
 
 ## Make a Donation

@@ -50,7 +50,7 @@ Limit the number of characters allowed in some form block fields.
       effect.
       
     * Add code from file **[form block text field max length.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7]
       
 * Add or edit a form block on your page and set up as desired.

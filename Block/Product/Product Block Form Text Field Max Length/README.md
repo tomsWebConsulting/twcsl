@@ -55,7 +55,7 @@ Limit product block form text and text area field lengths.
       effect.
       
     * Add code from file **[product block form text field max length.html][7]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to code injection][9] for details.
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code injection][9] for details.
       
 * Edit a Store page product and add a Custom Form.
 

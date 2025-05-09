@@ -28,7 +28,7 @@ Add a category description to Store category pages.
   rest of the steps.
   
 * Add code from file **[store page list category description add.css][11]** to
-  Website > Pages > Website Tools > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS.
   
 * Options
 

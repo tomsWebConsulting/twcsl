@@ -45,7 +45,7 @@
       effect.
       
     * Add code from file **[form block multi-column.html][3]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER **before** the **Form
+      Pages > Custom Code > Code Injection > FOOTER **before** the **Form
       Block Wrapper Observe Changes code**. Refer to [Add code to code
       injection][5] for details.
       

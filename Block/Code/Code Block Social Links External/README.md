@@ -34,7 +34,7 @@ Create Social Links for entities outside your site.
   rest of the steps.
   
 * Add code from file **[code block social links external.html][7]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][9] for details.
   
 * Create a blank page in the Not Linked area and set the PAGE TITLE, NAVIGATION

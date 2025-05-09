@@ -48,7 +48,7 @@ Add prices to Store page detail variant.
       effect.
       
     * Add code from file **[store page detail price variant add.html][7]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][9] for details.
       
 * Read the code for any instructions within.

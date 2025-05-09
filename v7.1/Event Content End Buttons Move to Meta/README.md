@@ -31,7 +31,7 @@
   
   ![one buttons layout example](read%20me%20assets/one%20button%20layout.png)
   
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html

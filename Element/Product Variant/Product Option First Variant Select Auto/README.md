@@ -34,7 +34,7 @@ Auto select the first variant of product options.
   rest of the steps.
   
 * Add code from file **[product option first variant select auto.html][7]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code
+  Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
   to code injection][8] for details.
   
 * Options
@@ -111,7 +111,7 @@ Auto select the first variant of product options.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add the following code to Website > Pages > Website Tools >
+    * Add the following code to Website > Pages > Custom Code >
       Code Injection > FOOTER. Refer to [Add code to code injection][8] for
       details.
       

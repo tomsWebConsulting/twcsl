@@ -48,7 +48,7 @@ Remove zero prices from Store page.
       effect.
       
     * Add code from file **[store page price zero remove.html][7]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][9] for details.
       
 * Add the following to searchReplaceText in the store page price change code per

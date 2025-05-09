@@ -18,7 +18,7 @@
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -42,7 +42,7 @@
       effect.
       
     * Add code from file **[text block text class add.html][1]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][7] for details.
       
 * Read the code for any instructions within.

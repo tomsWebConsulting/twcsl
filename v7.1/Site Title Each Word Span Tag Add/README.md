@@ -19,9 +19,9 @@
 ## Quick Install
 
 * Add code from file **[site title each word span tag add.css][1]** to Website >
-  Pages > Website Tools > Custom CSS.
+  Pages > Custom Code > Custom CSS.
   
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -29,7 +29,7 @@
   ```
   
 * Add code from file **[site title each word span tag add.html][2]** to
-  Website > Pages > Website Tools > Code Injection > FOOTER.
+  Website > Pages > Custom Code > Code Injection > FOOTER.
   
 ## Notes
 

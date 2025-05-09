@@ -54,7 +54,7 @@ Store page list categories mega menu.
       effect.
       
     * Add code from file **[store page list categories mega.html][7]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER **before** the
+      Website > Pages > Custom Code > Code Injection > FOOTER **before** the
       **store page list categories cache** code. Refer to [Add code to code
       injection][9] for details.
       

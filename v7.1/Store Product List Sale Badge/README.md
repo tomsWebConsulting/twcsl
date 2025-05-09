@@ -19,7 +19,7 @@
 ## Quick Install
 
 Add code from file **[store product list sale badge.less][2]** to Website >
-Pages > Website Tools > Custom CSS.
+Pages > Custom Code > Custom CSS.
 
 * Read the code for any instructions within.
 

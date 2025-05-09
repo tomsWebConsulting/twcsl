@@ -20,9 +20,8 @@
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code
-  Injection > HEADER.
-  
+* Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
+
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
@@ -36,7 +35,7 @@
 * Site-wide
 
   * Add code from file **[text block formats phrase filter.html][1]** to
-    Website > Pages > Website Tools > Code Injection > FOOTER.
+    Website > Pages > Custom Code > Code Injection > FOOTER.
     
 * Add a Classic Editor blank page section.
 

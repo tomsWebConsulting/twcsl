@@ -20,7 +20,7 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -44,7 +44,7 @@
       effect.
       
     * Add code from file **[image block image caption second add.html][2]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6].
 
 ## Note

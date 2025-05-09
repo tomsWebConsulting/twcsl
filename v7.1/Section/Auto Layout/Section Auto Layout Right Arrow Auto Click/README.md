@@ -28,7 +28,7 @@ Auto click right arrow of Auto Layout section.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -52,7 +52,7 @@ Auto click right arrow of Auto Layout section.
       effect.
       
     * Add code from file **[section auto layout right arrow auto
-      click.html][5]** to Website > Pages > Website Tools > Code Injection >
+      click.html][5]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][7] for details.
       
 * Read the code for any instructions within.
@@ -63,7 +63,7 @@ Auto click right arrow of Auto Layout section.
 
   * Global
     
-    For a global effect add the following to Website > Pages > Website Tools >
+    For a global effect add the following to Website > Pages > Custom Code >
     Code Injection > HEADER.
     
     ```html

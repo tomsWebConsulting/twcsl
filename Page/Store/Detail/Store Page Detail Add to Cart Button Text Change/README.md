@@ -46,7 +46,7 @@ button.
       effect.
       
     * Add code from file **[store page detail add to cart button text
-      change.html][5]** to Website > Pages > Website Tools > Code Injection >
+      change.html][5]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][7] for details.
       
 * Read the code for any instructions within.

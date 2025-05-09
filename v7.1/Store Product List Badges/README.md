@@ -49,7 +49,7 @@ v7.0 templates.
       effect.
       
     * Add code from file **[store product list badges.html][6]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][17] for details.
       
 * Read the code for any instructions within.

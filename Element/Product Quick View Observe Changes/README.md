@@ -52,7 +52,7 @@ callbacks as nodes are added to the [DOM][2].
       product blocks where you want to have this effect.
       
     * Add code from file **[product quick view observe changes.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER, **before** the
+      Website > Pages > Custom Code > Code Injection > FOOTER, **before** the
       modal lightbox observe changes code. Refer to [Add code to code
       injection][8] for details.
       

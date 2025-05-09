@@ -22,7 +22,7 @@ Add Mindbody login or register links to header navigation.
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -30,7 +30,7 @@ Add Mindbody login or register links to header navigation.
   ```
   
 * Add code from file **[header navigation mindbody login or register links
-  add.html][4]** to Website > Pages > Website Tools > Code Injection > FOOTER.
+  add.html][4]** to Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Notes
 

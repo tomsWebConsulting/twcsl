@@ -30,7 +30,7 @@ Auto play gallery blocks with design slideshow.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -54,7 +54,7 @@ Auto play gallery blocks with design slideshow.
       effect.
       
     * Add code from file **[gallery block slideshow auto play.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7] for details.
       
 * Read the code for any instructions within.

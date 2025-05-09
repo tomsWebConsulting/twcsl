@@ -25,7 +25,7 @@
   
 * Add code from file
   **[replace form submit button submitting text.html](replace%20form%20submit%20button%20submitting%20text.html#L1)**
-  to Website > Pages > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 

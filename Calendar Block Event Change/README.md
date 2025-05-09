@@ -48,7 +48,7 @@ Monitor changes to calendar block and call custom callbacks.
       effect.
       
     * Add code from file **[calendar block event change.html][4]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER. Refer to [Add code to
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][6] for details.
 
 * Read the code for any instructions within.

@@ -18,7 +18,7 @@
 
 * Add code from file
   **[change cart continue shopping text.css](change%20cart%20continue%20shopping%20text.css#L1)**
-  to Website > Pages > Website Tools > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS.
   
 * Read the code for any instructions within.
 

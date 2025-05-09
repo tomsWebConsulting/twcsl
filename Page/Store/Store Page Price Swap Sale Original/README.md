@@ -48,7 +48,7 @@ Swap sale and original price on Store page.
       effect.
       
     * Add code from file **[store page price swap sale original.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.
       
 * Add the following to searchReplaceText in the store page price change code per

@@ -49,7 +49,7 @@ property.
       effect.
       
     * Add code from file **[page section first css variable padding-top
-      add.html][6]** to Website > Pages > Website Tools > Code Injection >
+      add.html][6]** to Website > Pages > Custom Code > Code Injection >
       HEADER after twcsl. Refer to [Add code to code injection][8] for details.
 
 ## Note

@@ -22,7 +22,7 @@
 
   * Add code from file
     **[hide blog post tags.css](hide%20blog%20post%20tags.css#L1)**
-    to Website > Pages > Website Tools > Custom CSS.
+    to Website > Pages > Custom Code > Custom CSS.
     
 * Blog Only Effect
 

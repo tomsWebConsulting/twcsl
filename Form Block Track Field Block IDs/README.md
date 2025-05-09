@@ -30,7 +30,7 @@ Track tagged form block field block ids for later use in other code.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -48,7 +48,7 @@ Track tagged form block field block ids for later use in other code.
   * Site-wide
   
     * Add code from file **[form block track field block ids.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER.
+      Website > Pages > Custom Code > Code Injection > FOOTER.
       
 * Read the code for any instructions within.
 

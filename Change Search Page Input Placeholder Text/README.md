@@ -10,7 +10,7 @@
 
 ## Quick Install
 
-Add the following to Website > Pages > Website Tools > Code
+Add the following to Website > Pages > Custom Code > Code
 Injection > HEADER.
 
 ```html
@@ -18,7 +18,7 @@ Injection > HEADER.
 ```
 
 Add code from file **change search page input placeholder text.html** to
-Website > Pages > Website Tools > Code Injection > FOOTER.
+Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 

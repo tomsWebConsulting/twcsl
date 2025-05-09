@@ -32,7 +32,7 @@ Add footer boilerplate sections after product detail section.
   rest of the steps.
   
 * Add code from file **[store page detail footer sections move.css][6]** to
-  Website > Pages > Website Tools > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS.
   
 * Read the code for any instructions within.
   

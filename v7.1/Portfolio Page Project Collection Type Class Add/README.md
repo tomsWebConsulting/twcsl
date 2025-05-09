@@ -43,7 +43,7 @@ Add a class to portfolio pages projects.
       effect.
       
     * Add code from file **[portfolio page project collection type class
-      add.html][4]** to Website > Pages > Website Tools > Code Injection >
+      add.html][4]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][6] for details.
 
 ## Class Name

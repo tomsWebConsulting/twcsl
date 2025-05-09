@@ -50,7 +50,7 @@ Change form block field titles to placeholders.
       effect.
       
     * Add code from file **[form block fields title to placeholder.html][6]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][8] for details.
       
 * In the **Form Block Wrapper Observe Changes** code add **twcFbfttp** to

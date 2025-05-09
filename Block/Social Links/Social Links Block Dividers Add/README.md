@@ -29,7 +29,7 @@ Add dividers between links.
 ## Quick Install
 
 * Add code from file **[social links block dividers add.html][4]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][5] for details.
   
 * Read the code for any instructions within.

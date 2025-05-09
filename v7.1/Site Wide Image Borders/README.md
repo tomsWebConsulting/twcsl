@@ -23,7 +23,7 @@ Add border images around image elements of a site.
 ## Quick Install
 
 * Add code from file **[site wide image borders.less][2]** to Website > Pages >
-  Website Tools > Custom CSS. Read the code for any instructions within. Please
+  Custom Code > Custom CSS. Read the code for any instructions within. Please
   see [Using the CSS Editor][4].
 
 ## Make a Donation

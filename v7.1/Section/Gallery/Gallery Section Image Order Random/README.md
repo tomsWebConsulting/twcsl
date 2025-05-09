@@ -43,7 +43,7 @@ Randomize the images of gallery sections.
       effect.
       
     * Add code from file **[gallery section image order random.html][4]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.
       
 * Add or edit a Gallery section.

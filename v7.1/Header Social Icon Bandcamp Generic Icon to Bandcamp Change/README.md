@@ -18,7 +18,7 @@
 
 ## Quick Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -27,7 +27,7 @@
   
 * Add code from file
   **[header social icon bandcamp generic icon to bandcamp change.html](header%20social%20icon%20bandcamp%20generic%20icon%20to%20bandcamp%20change.html#L1)**
-  to Website > Pages > Website Tools > Code Injection > FOOTER.
+  to Website > Pages > Custom Code > Code Injection > FOOTER.
   
 ## Make a Donation
 

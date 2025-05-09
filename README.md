@@ -838,7 +838,7 @@ building effects in Squarespace sites.
         
       * **Step 3**
       
-        Add the following to Website > Pages > Website Tools > Code Injection >
+        Add the following to Website > Pages > Custom Code > Code Injection >
         HEADER.
         
         ```html
@@ -854,7 +854,7 @@ building effects in Squarespace sites.
     
       * **Step 1**
       
-        Add the following to Website > Pages > Website Tools > Code Injection >
+        Add the following to Website > Pages > Custom Code > Code Injection >
         HEADER.
         
         ```html
@@ -875,7 +875,7 @@ building effects in Squarespace sites.
       * **Step 3**
       
         Copy the entire contents of the page and add it to Website > Pages >
-        Website Tools > Code Injection > HEADER after the previously installed
+        Custom Code > Code Injection > HEADER after the previously installed
         code. jQuery must be before the twcsl code.
         
       * The trial period install steps are finished.

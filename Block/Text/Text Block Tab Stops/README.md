@@ -45,7 +45,7 @@ Simulate tab stops in a text block.
       effect.
       
     * Add code from file **[text block tab stops.html][6]** to Website > Pages >
-      Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][6] for details.
       
 * Read the code for any instructions within.

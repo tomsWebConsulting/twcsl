@@ -43,7 +43,7 @@ Hide elements of store products that are tagged.
       effect.
       
     * Add code from file **[store page elements tagged hide.html][4]** to
-      Website > Pages > Website Tools > Code Injection > HEADER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
       code to code injection][6] for details.
 
 ## Tags

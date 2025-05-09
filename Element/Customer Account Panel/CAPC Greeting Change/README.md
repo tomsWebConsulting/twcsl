@@ -34,7 +34,7 @@ Change the Customer Account Panel greeting.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[capc greeting change.html][6]** to Website > Pages >
-  Website Tools > Code Injection > FOOTER. Refer to [Per-page code injection][7]
+  Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][7]
   for details.
   
 * Read the code for instructions within.

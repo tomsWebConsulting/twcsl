@@ -29,9 +29,9 @@ Format mobile menu as an outline.
 ## Quick Install
 
 * Add code from file **[header menu mobile outline.less][5]** to Website >
-  Pages > Website Tools > Custom CSS. Read the code for any instructions within.
+  Pages > Custom Code > Custom CSS. Read the code for any instructions within.
   
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -39,7 +39,7 @@ Format mobile menu as an outline.
   ```
   
 * Add code from file **[header menu mobile outline.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][7] for details.
 
 ## Demos

@@ -18,7 +18,7 @@
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -42,7 +42,7 @@
       effect.
       
     * Add code from file **[gallery section item description key class
-      add.html][1]** to Website > Pages > Website Tools > Code Injection >
+      add.html][1]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][9] for details.
       
 * Read the code for any instructions within.

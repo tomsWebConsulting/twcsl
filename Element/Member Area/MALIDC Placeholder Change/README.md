@@ -34,7 +34,7 @@ Change placeholder text of member area member sites join dialog.
   sure to continue on with the rest of the steps.
   
 * Add the code from file **[malidc placeholder change.html][6]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][7] for details.
 
 ## Make a Donation

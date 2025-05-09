@@ -29,7 +29,7 @@ Observe announcement bar changes.
 ## Quick Install
 
 * Add code from file **[announcement bar observe changes.html][4]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][5] for details.
   
 * Read the code for any instructions within.

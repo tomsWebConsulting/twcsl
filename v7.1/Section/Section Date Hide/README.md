@@ -43,7 +43,7 @@ Hide page sections using dates.
       effect.
       
     * Add code from file **[section date hide.html][4]** to Website > Pages >
-      Website Tools > Code Injection > FOOTER. Refer to [Add code to code
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][6] for details.
       
 * Read the code for any instructions within.
@@ -80,7 +80,7 @@ the quotes to use in the code.
 
 ![squarespace id finder example](read%20me%20assets/data%20section%20id.png)
 
-Add the following script tag to Website > Pages > Website Tools >
+Add the following script tag to Website > Pages > Custom Code >
 Code Injection > HEADER[[1][6]] and/or Page Settings > Advanced >
 Page Header Code Injection[[2][5]].
 

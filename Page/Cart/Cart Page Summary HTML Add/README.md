@@ -34,7 +34,7 @@ Add HTML to the cart page summary.
   Changes be sure to continue on with the rest of the steps.
   
 * Add code from file **[cart page summary html add.html][5]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER **before** the **cart page
+  Pages > Custom Code > Code Injection > FOOTER **before** the **cart page
   observe changes** code. Refer to [Add code to code injection][6] for details.
   
 * Read the code for any instructions within.

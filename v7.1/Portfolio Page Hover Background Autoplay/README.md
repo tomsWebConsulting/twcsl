@@ -28,7 +28,7 @@ Add an autoplay effect to a portfolio page using layout hover background.
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -43,7 +43,7 @@ Add an autoplay effect to a portfolio page using layout hover background.
       effect.
 
     * Add code from file **[portfolio page hover background autoplay.html][5]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
       [Add code to code injection][17] for details.
       
   * Page Specific

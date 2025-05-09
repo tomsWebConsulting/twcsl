@@ -26,7 +26,7 @@
       effect.
       
     * Add code from file **[accordion block top bottom border hide.css][1]** to
-      Website > Pages > Website Tools > Custom CSS.
+      Website > Pages > Custom Code > Custom CSS.
       
   * Page Specific
   

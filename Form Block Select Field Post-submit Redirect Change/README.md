@@ -29,7 +29,7 @@ that existed in the prevoius version of the form block before the update.*
 
 ## Install
 
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html

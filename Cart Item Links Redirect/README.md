@@ -30,7 +30,7 @@
   Change **undefined** to **cartItemLinksRedirect**.
   
 * Add code from file **[cart item links redirect.html][3]** to Website >
-  Pages > Website Tools > Code Injection > FOOTER before the cart page observe
+  Pages > Custom Code > Code Injection > FOOTER before the cart page observe
   changes code.
   
 * Read the code for any instructions within.

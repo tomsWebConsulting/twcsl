@@ -27,7 +27,7 @@ Wrap each word of a blog post title in span tags.
 ## Install
 
 * Add code from file **[blog post title each word span tag add.css][4]** to
-  Website > Pages > Website Tools > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS.
   
 * Options
 
@@ -46,7 +46,7 @@ Wrap each word of a blog post title in span tags.
       this effect.
       
     * Add code from file **[blog post title each word span tag add.html][5]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7].
 
 ## Note

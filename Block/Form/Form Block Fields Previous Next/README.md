@@ -36,7 +36,7 @@ to move through sections.
 * Install **[Form Block Wrapper Observe Changes][6]**. After you install the
   code be sure to continue on with the rest of the steps.
   
-* Add the following to Website > Pages > Website Tools > Code Injection >
+* Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
   
   ```html
@@ -60,7 +60,7 @@ to move through sections.
       effect.
       
     * Add code from file **[form block fields previous next.html][7]** to
-      Website > Pages > Website Tools > Code Injection > FOOTER. Refer to [Add
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][9].
       
 * Read the code for any instructions within.

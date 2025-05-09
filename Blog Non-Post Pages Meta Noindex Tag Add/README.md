@@ -40,7 +40,7 @@
       effect.
       
     * Add code from file **[blog non-post pages meta noindex tag add.html][7]**
-      to Website > Pages > Website Tools > Code Injection > FOOTER. Refer to
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
       [Add code to code injection][17] for details.
 
 ## Make a Donation

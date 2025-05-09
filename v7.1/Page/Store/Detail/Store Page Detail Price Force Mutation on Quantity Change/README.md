@@ -43,7 +43,7 @@ Force a mutation on quantity change on Store detail page.
       effect.
       
     * Add code from file **[store page detail price force mutation on quantity
-      change.html][3]** to  Website > Pages > Website Tools > Code Injection >
+      change.html][3]** to  Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][5] for details.
 
 ## Make a Donation
