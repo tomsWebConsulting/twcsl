@@ -8,7 +8,7 @@ Change store page prices.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Versions
 
@@ -46,10 +46,10 @@ Change store page prices.
       effect.
       
     * Add code from file **[store page price change script.html][7]** to
-      Website > Pages > Website Tools > Code Injection > HEADER.
+      Website > Pages > Custom Code > Code Injection > HEADER.
       
     * Add code from file **[store page price change.html][8]** to Website >
-      Pages > Website Tools > Code Injection > FOOTER.
+      Pages > Custom Code > Code Injection > FOOTER.
       
     Refer to [Add code to code injection][10] for details.
     
@@ -96,19 +96,19 @@ Change store page prices.
 ```
       // replacement text callback name
       
-      "/.*?\\d+(?:,\\d{3})*(?:\\.\\d{2})?/" : "twcSppcl",
+      "log" : "twcSppcl",
   ```
 
-## Callback Example
+## Callbacks
 
 For an example of how to write a callback please see [Store Page Price Change
-Log][11].
+Log][11]. If a callback returns false the rest of the callbacks won't be called.
 
 ## Note
 
-Changing prices on a Store page does not affect the cart, checkout, or other SS
-pages/backend storage. This is purely a cosmetic change. No code can change the
-checkout page or SS backend. It is an SS security feature.
+Changing prices on a Store page does not affect the cart, checkout, or other
+Squarespace pages/backend storage. This is purely a cosmetic change. No code can
+change the checkout page or SS backend. It is an SS security feature.
 
 ## Make a Donation
 
@@ -116,6 +116,12 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-05-09**
+
+  * fixed check for tweak-products-add-to-cart-button class name after
+    Squarespace made changes
+  * bumped version to 0.7.1
+  
 * **2025-02-07**
 
   * support add to cart buttons feature on list page

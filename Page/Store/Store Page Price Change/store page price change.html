@@ -1,358 +1,430 @@
-<script>
+<!-- begin TWC Store Page Price Change -->
 
-  ( ( ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      store page price change
+      /*
       
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.7.0
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Not Applicable
-      
-      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
-                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
-                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
-                        Sonora, Stella, Thorne, Vow, Wav, West )
-                        
-                        Five
-                        
-                        Montauk ( Julia, Kent, Om )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Notes           : the code adds a data-twc-sppc-mo attribute with value of
-                        false on elements with class name product-price. by
-                        changing the attribute value to true you will cause a
-                        mutation which will cause the search replace text to
-                        run. the attribute value will be set to false after the
-                        search replace text run
-                        
-                        the code fails silently. poorly formed regular
-                        expressions will stop the processing of search/replace
-                        text pairs
-      
-      Copyright       : 2021-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const
-    
-      version = '0.7.0',
-      
-      s = `Store Page Price Change v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        store page price change
         
-        © 2021-2025 Thomas Creedon
+        License         : < https://tinyurl.com/s872fb68 >
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >`
+        Version         : 0.7.1
         
-        .replace ( /^\s+/gm, '' );
+        SS Versions     : 7.1, 7.0
         
-    console.log ( s );
-    
-    // bail if no mutation observer available
-    
-    if ( ! ( 'MutationObserver' in window ) ) return;
-    
-    const
-    
-      callback = ( ) => {
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
+                          Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
+                          Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
+                          Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
+                          
+                          Five
+                          
+                          Montauk ( Julia, Kent, Om )
+                          
+                          your template is not listed? then it is not currently
+                          supported
+        
+        Notes           : the code adds a data-twc-sppc-mo attribute with value
+                          of false on elements with class name product-price. by
+                          changing the attribute value to true you will cause a
+                          mutation which will cause the search replace text to
+                          run. the attribute value will be set to false after
+                          the search replace text run
+                          
+                          the code fails silently. poorly formed regular
+                          expressions will stop the processing of search/replace
+                          text pairs
+        
+        Copyright       : 2021-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
       
-        const isStorePage = document
+        version = '0.7.1',
         
-          .body
+        s = `Store Page Price Change v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
           
-          .classList
+          © 2021-2025 Thomas Creedon
           
-          .contains ( 'collection-type-products' );
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
-        if ( ! isStorePage ) return; // bail if not store page
-        
-        // initialize twc module
-        
-        window.twc = ( ( self ) => self ) ( window.twc || { } );
-        
-        // initialize twc sppc sub-module
-        
-        twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-        
-        // initialize twc sppc callbacks sub-module
-        
-        twc.sppc.callbacks =
-        
-          ( ( self ) => self ) ( twc.sppc.callbacks || { } );
+          .replace ( /^\s+/gm, '' );
           
-        const
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const
+      
+        callback = ( ) => {
         
-          codeKey = 'twc-sppc',
-          
-          selector = 'script[ type="application/vnd.' +
-          
-            `${ codeKey.replace ( '-', '.' ) }" ]`,
-            
-          scriptElement = document
-          
-            .head
-            
-            .querySelector ( selector );
-            
-        if ( scriptElement === null ) return; // bail if no tag
-        
-        Object
-        
-          .assign (
-          
-            twc
-            
-              .sppc,
-              
-            JSON
-            
-              .parse (
-              
-                scriptElement
-                
-                  .textContent
-                  
-                  .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
-                  
-                  .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
-                  
-                  .replace ( /,\s*}\s*/, '}' ) // remove last item comma
-                  
-                  .replaceAll ( '\n', '' )
-                  
-                )
-                
-            );
-            
-        const
-        
-          attribute = 'data-twc-sppc-mo',
-          
-          changeText = ( node ) => {
-          
-            const walker =
-            
-              document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
-              
-            while ( walker.nextNode ( ) ) {
-            
-              const
-              
-                callback =  ( s, i ) => {
-                
-                  const m = s.match ( /\/(.+)\/(.*)/ );
-                  
-                  let r = options.searchReplaceText [ s ];
-                  
-                  if ( m !== null ) { // m appears to be a regex pattern
-                  
-                    try {
-                    
-                      s = new RegExp ( m [ 1 ], m [ 2 ] );
-                      
-                      } catch {
-                      
-                        return; // bail on error
-                        
-                        }
-                        
-                    // continue if text no match
-                    
-                    if ( ! s.test ( t ) ) return true;
-                    
-                    }
-                    
-                  const b = typeof options.callbacks [ r ] === 'function';
-                  
-                  if ( b ) {
-                  
-                    r = options
-                    
-                      .callbacks
-                      
-                      [ r ]
-                      
-                      ( node, isDetail, t, s );
-                      
-                    if ( typeof r === 'boolean' ) return r;
-                    
-                    }
-                    
-                  t = t.replace ( s, r );
-                  
-                  },
-                  
-                node = walker.currentNode;
-                
-              let t = node.data;
-              
-              searchData.forEach ( callback );
-                
-              node.data = t;
-              
-              }
-              
-            },
-            
-          isDetail = document
-          
-            .querySelector ( 'body.collection-type-products.view-item' )
-            
-            !==
-            
-            null,
-            
-          isList = document
-          
-            .querySelector ( 'body.collection-type-products.view-list' )
-            
-            !==
-            
-            null,
-            
-          isListAddToCartButtons = document
+          const isStorePage = document
           
             .body
             
             .classList
             
-            .contains ( 'tweak-products-add-to-cart-button' ),
+            .contains ( 'collection-type-products' );
             
-          options = twc.sppc,
+          if ( ! isStorePage ) return; // bail if not store page
           
-          searchData = Object.keys ( options.searchReplaceText );
+          // initialize twc module
           
-        let productPriceElements = [
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc sppc sub-module
+          
+          twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+          
+          // initialize twc sppc callbacks sub-module
+          
+          twc.sppc.callbacks =
+          
+            ( ( self ) => self ) ( twc.sppc.callbacks || { } );
             
-              ...
+          const
+          
+            codeKey = 'twc-sppc',
+            
+            selector = 'script[ type="application/vnd.' +
+            
+              `${ codeKey.replace ( '-', '.' ) }" ]`,
               
-              document
+            scriptElement = document
+            
+              .head
               
-                .body
+              .querySelector ( selector );
+              
+          if ( scriptElement === null ) return; // bail if no tag
+          
+          const
+          
+            attribute = 'data-twc-sppc-mo',
+            
+            changeText = ( node ) => {
+            
+              const walker =
+              
+                document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
                 
-                .querySelectorAll ( '.product-price' )
-                
-              ]
-          
-          .map ( ( element ) => {
-          
-            element
-            
-              .setAttribute ( attribute, 'false' );
+              let b;
               
-            return element;
-            
-            } )
-            
-          .map ( ( element ) => {
-          
-            changeText ( element );
-            
-            return element;
-            
-            } );
-            
-        // bail if list and no atc
-        
-        if ( isList && ! isListAddToCartButtons ) return;
-        
-        if ( isList )
-        
-          productPriceElements = productPriceElements
-          
-            .filter ( e => ! [ null, undefined ]
-            
-              .contains (
-              
-                e
-                
-                  ?.closest ( '.grid-item-link' )
-                  
-                  ?.nextElementSibling
-                  
-                  ?.querySelector ( '.product-variants' )
-                  
-                )
-                
-              );
-              
-        if ( isDetail ) {
-        
-          productPriceElements = productPriceElements
-          
-            .filter ( e => ! [ null, undefined ]
-            
-              .contains (
-              
-                e
-                
-                  ?.closest (
-                  
-                    [
-                    
-                      // 7.1
-                      
-                      '.ProductItem-details-checkout',
-                      
-                      '.pdp-details',
-                      
-                      // 7.0
-                      
-                      '.ProductItem-details', // Brine
-                      
-                      '#productDetails', // Five, Montauk
-                      
-                      ]
-                      
-                      .join ( ', ' )
-                      
-                    )
-                    
-                    ?.querySelector ( '.product-variants' )
-                    
-                )
-                
-              );
-              
-          }
-          
-        const pricesObserve = ( ) => {
-        
-          let
-          
-            callback = ( mutations ) => {
-            
-              const callback = ( mutation ) => {
+              while ( walker.nextNode ( ) ) {
               
                 const
                 
-                  hasAttribute = mutation
+                  callback =  ( s, r ) => {
+                  
+                    const m = s.match ( /\/(.+)\/(.*)/ );
+                    
+                    if ( m !== null ) { // m appears to be a regex pattern
+                    
+                      try {
+                      
+                        s = new RegExp ( m [ 1 ], m [ 2 ] );
+                        
+                        } catch {
+                        
+                          return false; // bail on error
+                          
+                          }
+                          
+                      // continue if text no match
+                      
+                      if ( ! s.test ( t ) ) return true;
+                      
+                      }
+                      
+                    b
+                    
+                      =
+                      
+                      typeof
+                      
+                      options
+                      
+                        .callbacks
+                        
+                        [ r ]
+                        
+                        ===
+                        
+                        'function';
+                        
+                    if ( b ) {
+                    
+                      r = options
+                      
+                        .callbacks
+                        
+                        [ r ]
+                        
+                        ( node, isDetail, t, s );
+                        
+                      if ( typeof r === 'boolean' ) return r;
+                      
+                      }
+                      
+                    t = t.replace ( s, r );
+                    
+                    },
+                    
+                  entries = Object
+                  
+                    .entries (
+                    
+                      options
+                      
+                        .searchReplaceText
+                        
+                      );
+                      
+                  node = walker.currentNode;
+                  
+                let t = node.data;
+                
+                for ( const [ key, value ] of entries ) {
+                
+                  b
+                  
+                    =
+                    
+                    callback ( key, value )
+                    
+                    ===
+                    
+                    false;
+                    
+                  if ( b ) break; // bail if callback returns false
+                  
+                  }
+                  
+                node.data = t;
+                
+                }
+                
+              },
+              
+            isDetail = ( ( ) => {
+            
+              const selector = 'body[ id^="item-" ]';
+              
+              const is = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+              return is;
+              
+              } ) ( ),
+              
+            isList = ( ( ) => {
+            
+              const selector = 'body[ id^="collection-" ]';
+              
+              const is = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+              return is;
+              
+              } ) ( ),
+              
+            isListAddToCartButtons = document
+            
+              .body
+              
+              .querySelector ( '.tweak-products-add-to-cart-button' )
+              
+              !==
+              
+              null,
+              
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window );
+              
+          Object
+          
+            .assign (
+            
+              options,
+              
+              JSON
+              
+                .parse (
+                
+                  scriptElement
+                  
+                    .textContent
+                    
+                    .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                    
+                    .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                    
+                    .replace ( /,\s*}\s*/, '}' ) // remove last item comma
+                    
+                    .replaceAll ( '\n', '' )
+                    
+                  )
+                  
+              );
+              
+          let productPriceElements = [
+          
+            ...
+            
+            document
+            
+              .body
+              
+              .querySelectorAll ( '.product-price' )
+              
+            ];
+            
+          productPriceElements
+          
+            .forEach ( e => e.setAttribute ( attribute, 'false' ) );
+            
+          productPriceElements
+          
+            .forEach ( e => changeText ( e ) );
+            
+          // bail if list and no atc
+          
+          if ( isList && ! isListAddToCartButtons ) return;
+          
+          switch ( true ) {
+          
+            case isDetail :
+            
+              productPriceElements
+              
+                =
+                
+                productPriceElements
+                
+                  .filter (
+                  
+                    e =>
+                    
+                      !
+                      
+                      [ null, undefined ]
+                    
+                      .contains (
+                      
+                        e
+                        
+                          ?.closest (
+                          
+                            [
+                            
+                              // 7.1
+                              
+                              '.ProductItem-details-checkout',
+                              
+                              '.pdp-details',
+                              
+                              // 7.0
+                              
+                              '.ProductItem-details', // Brine
+                              
+                              '#productDetails', // Five, Montauk
+                              
+                              ]
+                              
+                              .join ( ', ' )
+                              
+                            )
+                            
+                            ?.querySelector ( '.product-variants' )
+                            
+                        )
+                        
+                    );
+                    
+              break;
+              
+            case isList :
+            
+              productPriceElements
+              
+                =
+                
+                productPriceElements
+              
+                  .filter (
+                  
+                    e =>
+                    
+                      !
+                      
+                      [ null, undefined ]
+                    
+                      .contains (
+                      
+                        e
+                        
+                          ?.closest ( '.grid-item-link' )
+                          
+                          ?.nextElementSibling
+                          
+                          ?.querySelector ( '.product-variants' )
+                          
+                        )
+                        
+                  );
+                  
+              break;
+              
+            }
+            
+          const pricesObserve = ( ) => {
+          
+            let
+            
+              callback = ( mutations ) => {
+              
+                const callback = ( mutation ) => {
+                
+                  const hasAttribute = mutation
                   
                     .attributeName
                     
                     ===
                     
-                    attribute,
+                    attribute;
                     
-                  b = ! mutation
+                  let b = ! mutation
                   
                     .addedNodes
                     
@@ -362,146 +434,160 @@
                     
                     ! hasAttribute;
                     
-                if ( b ) return true; // continue if no element and no attribute
-                
-                const target = mutation.target;
-                
-                // previous change was forced
-                
-                if ( hasAttribute ) {
-                
-                  const b = target
+                  // continue if no element and no attribute
                   
-                    .getAttribute ( attribute )
+                  if ( b ) return true;
+                  
+                  const target = mutation.target;
+                  
+                  // previous change was forced
+                  
+                  if ( hasAttribute ) {
+                  
+                    b = target
+                    
+                      .getAttribute ( attribute )
+                      
+                      ===
+                      
+                      'true';
+                      
+                    if ( b )
+                    
+                      target
+                      
+                        .setAttribute ( attribute, 'false' );
+                        
+                      else if ( mutation.oldValue === 'true' )
+                      
+                        return true; // continue
+                        
+                    }
+                    
+                  observer.disconnect ( );
+                  
+                  b
+                  
+                    =
+                    
+                    changeText ( target )
                     
                     ===
                     
-                    'true';
+                    false;
                     
-                  if ( b )
+                  if ( b ) return false; // bail
                   
-                    target
-                    
-                      .setAttribute ( attribute, 'false' );
-                      
-                    else if ( mutation.oldValue === 'true' )
-                    
-                      return true; // continue
-                      
+                  pricesObserve ( );
+                  
+                  return true;
+                  
+                  };
+                  
+                for ( const mutation of mutations ) {
+                
+                  const b = callback ( mutation );
+                  
+                  if ( ! b ) break; // bail if callback returns false
+                  
                   }
                   
-                observer.disconnect ( );
+                },
                 
-                changeText ( target );
+              config = {
+              
+                attributeFilter : [ attribute ],
                 
-                pricesObserve ( );
+                attributeOldValue : true,
                 
-                return true;
+                childList : true
                 
                 };
                 
-              for ( const mutation of mutations ) {
+            const
+            
+              isAfterPay = isDetail && options.afterpay,
               
-                const b = callback ( mutation );
-                
-                if ( ! b ) break; // bail if callback returns false
-                
-                }
-                
-              },
+              observer = new MutationObserver ( callback );
               
+            callback = ( element ) => {
+            
+              // start listening for changes in element
+              
+              observer.observe ( element, config );
+              
+              };
+              
+            productPriceElements
+            
+              .forEach ( callback );
+              
+            if ( ! isAfterPay ) return; // bail if not afterpay
+            
             config = {
             
               attributeFilter : [ attribute ],
               
               attributeOldValue : true,
               
-              childList : true
+              childList : true,
+              
+              subtree : true
               
               };
               
-          const
-          
-            isAfterPay = isDetail && options.afterpay,
+            callback = ( element ) => {
             
-            observer = new MutationObserver ( callback );
+              // start listening for changes in element
+              
+              observer.observe ( element, config );
+              
+              };
+              
+            document
             
-          callback = ( element ) => {
-          
-            // start listening for changes in element
-            
-            observer.observe ( element, config );
-            
+              .body
+              
+              .querySelectorAll ( 'div[ data-afterpay="true" ]' )
+              
+              .forEach ( callback );
+              
             };
             
-          productPriceElements
+          pricesObserve ( );
           
-            .forEach ( callback );
-            
-          if ( ! isAfterPay ) return; // bail if not afterpay
+        },
+        
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
           
-          config = {
+          .templateVersion,
           
-            attributeFilter : [ attribute ],
-            
-            attributeOldValue : true,
-            
-            childList : true,
-            
-            subtree : true
-            
-            };
-            
-          callback = ( element ) => {
-          
-            // start listening for changes in element
-            
-            observer.observe ( element, config );
-            
-            };
-            
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1';
+        
+      switch ( true ) {
+      
+        case is71 :
+        
           document
+           
+            .addEventListener ( 'DOMContentLoaded', callback );
+            
+          break;
           
-            .body
-            
-            .querySelectorAll ( 'div[ data-afterpay="true" ]' )
-            
-            .forEach ( callback );
-            
-          };
+        case is70 :
+        
+          Squarespace.onInitialize ( Y, callback );
           
-        pricesObserve ( );
+          break;
+          
+        }
         
-      },
+      } ) ( );
       
-      ssVersion = Static
-      
-        .SQUARESPACE_CONTEXT
-        
-        .templateVersion,
-        
-      is70 = ssVersion === '7',
-      
-      is71 = ssVersion === '7.1';
-      
-    switch ( true ) {
+    </script>
     
-      case is71 :
-      
-        document
-         
-          .addEventListener ( 'DOMContentLoaded', callback );
-          
-        break;
-        
-      case is70 :
-      
-        Squarespace.onInitialize ( Y, callback );
-        
-        break;
-        
-      }
-      
-    } ) ( );
-    
-  </script>
+  <!-- end TWC Store Page Price Change -->
