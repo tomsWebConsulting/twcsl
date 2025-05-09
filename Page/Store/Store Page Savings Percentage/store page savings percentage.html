@@ -1,0 +1,248 @@
+<!-- begin TWC Store Page Savings Percentage -->
+
+  <!--
+  
+    store page savings percentage
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0-development.2
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      Five
+                      
+                      Montauk ( Julia, Kent, Om )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Copyright       : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.spsp = ( ( self ) => { // initialize twc spsp sub-module
+    
+      const options = {
+      
+        // [ percent ] will be replaced with the percent number
+        
+        text : '[ percent ]% Off!'
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spsp || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0-development.2',
+        
+        s = `Store Page Price Change Log v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc sppc sub-module
+    
+    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+    
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks = ( ( self ) => {
+    
+      self
+      
+        .twcSpsp = ( node, isDetail, text, searchText ) => {
+        
+          debugger;
+          
+          const isPriceOriginal
+          
+            =
+            
+            node
+            
+              .parentElement
+              
+              .classList
+              
+              .contains ( 'original-price' );
+              
+          if ( ! isPriceOriginal ) return true; // continue
+          
+          node = node
+          
+            .parentElement;
+            
+          const
+          
+            codeKey = 'twc-spsp',
+            
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            re = /[^\d.]/g,
+            
+            priceOriginal
+            
+              =
+              
+              parseFloat (
+              
+                text
+                
+                  .replace ( re, '' )
+                  
+                ),
+                
+            priceSale
+            
+              =
+              
+              parseFloat (
+              
+                node
+                
+                  .previousSibling
+                  
+                  .previousSibling
+                  
+                  .textContent
+                  
+                  .replace ( re, '' )
+                  
+                ),
+                
+            percent
+            
+              =
+              
+              Math
+              
+                .ceil (
+                
+                  (
+                  
+                    (
+                    
+                      priceOriginal
+                      
+                      -
+                      
+                      priceSale
+                      
+                      )
+                      
+                    /
+                    
+                    priceOriginal
+                    
+                    *
+                    
+                    100
+                    
+                  )
+                  
+                *
+                
+                10
+                
+                )
+                
+                /
+                
+                10,
+                
+            html = `
+            
+              <span class="${ codeKey }">
+              
+                ${
+                
+                  options
+                  
+                    .text
+                    
+                    .replaceAll ( '[ percent ]', percent )
+                    
+                  }
+                  
+                </span>
+                
+              `;
+              
+          node
+          
+            .closest ( '.product-price' )
+            
+            .insertAdjacentHTML ( 'beforeend', html );
+            
+          return true; // continue
+          
+          };
+          
+      return self;
+      
+      } ) ( twc.sppc.callbacks || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Savings Percentage -->
