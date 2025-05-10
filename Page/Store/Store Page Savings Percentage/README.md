@@ -60,9 +60,13 @@ following to searchReplaceText, per that code instructions.
         "savings percentage" : "twcSpsp",
 ```
 
+## Demo
+
+You can see a [demo of this effect here][9].
+
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -83,4 +87,5 @@ Please consider [making a donation][9].
 [6]: store%20page%20savings%20percentage.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-savings-percentage?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
