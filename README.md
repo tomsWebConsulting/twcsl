@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 381 effects. Each effect has it's own version number, code,
+twcsl contains 382 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -73,6 +73,8 @@ not necessarily designed to work together.
     
     * [List](Page/Events/List)
       
+      * [Events Page List Event Tag Class Name Add](Page/Events/List/Events%20Page%20List%20Event%20Tag%20Class%20Name%20Add)
+        
       * [Events Page List Tags Cache](Page/Events/List/Events%20Page%20List%20Tags%20Cache)
         
   * [Store](Page/Store)
