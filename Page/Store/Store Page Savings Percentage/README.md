@@ -28,8 +28,8 @@ Add savings percent to products on sale.
 
 ## Install
 
-* Install [Store Page Price Change][5]. After you install Store Page Price
-  Change be sure to continue on with the rest of the steps.
+* Install [Store Page Price Change][5]. After you install the code be sure to
+  continue on with the rest of the steps.
   
 * Options
 
@@ -52,6 +52,13 @@ Add savings percent to products on sale.
       Refer to [Add code to code injection][8] for details.
       
 * Read the code for any instructions within.
+
+* In the **store page price change script** code, installed earlier, add the
+following to searchReplaceText, per that code instructions.
+
+```json
+        "savings percentage" : "twcSpsp",
+```
 
 ## Make a Donation
 
