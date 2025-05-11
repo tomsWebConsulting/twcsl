@@ -1,0 +1,481 @@
+<!-- begin TWC Events Page List Day Wrapper -->
+
+  <!--
+  
+    events page list day wrapper
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc epldw sub-module
+    
+    twc.epldw = ( ( self ) => {
+    
+      const options = {
+      
+        dateOptions : {
+        
+          /*
+          
+            see < https://tinyurl.com/93k89zkt > for date options values you can
+            use
+            
+            */
+            
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.epldw || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    body.sqs-is-page-editing .twc-epldw--title-wrapper {
+
+      display : none;
+      
+      }
+      
+    .twc-epldw {
+    
+      margin : 68px 0 0 0;
+      
+      }
+      
+    .twc-epldw:first-of-type {
+    
+      margin : 0;
+      
+      }
+      
+    .twc-epldw--title-wrapper {
+    
+      border-bottom : 1px solid black;
+      margin-bottom : 34px;
+      padding-bottom : 17px;
+      
+      }
+      
+    .twc-epldw--title {
+    
+      display : flex;
+      font-size : 32px;
+      font-weight : 600;
+      gap : 0.25em;
+      
+      }
+      
+    body.tweak-events-stacked-date-style-side-tag .twc-epldw--title {
+    
+      align-items : center;
+      flex-direction : column;
+      justify-content : flex-start;
+      width : fit-content;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Events Page List Day Wrapper v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isEventsPage = ( ( ) => {
+        
+          const
+          
+            selector = [
+          
+              'body[ class~="collection-type-events" ]',
+              
+              'body[ class*="collection-type-events-" ]'
+              
+              ]
+              
+              .join ( ', ' ),
+              
+            is = Boolean (
+            
+              document
+              
+                .querySelectorAll ( selector )
+                
+                .length
+                
+              );
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isEventsPage ) return; // bail if not events page
+        
+        const isList = ( ( ) => {
+        
+          const selector = 'body[ id^="collection-" ]';
+          
+          const is = document
+          
+            .querySelector ( selector )
+            
+            !==
+            
+            null;
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list page
+        
+        const
+        
+          callback = ( element ) => {
+          
+            const dateTime = element
+            
+              .getAttribute ( 'datetime' );
+              
+            let entry = map [ dateTime ];
+            
+            if ( entry === undefined )
+            
+              entry = map [ dateTime ] = [ ];
+              
+            entry
+            
+              .push (
+              
+                element
+                
+                  .closest ( 'article' )
+                  
+                );
+            
+            },
+            
+          classList = document
+          
+            .body
+            
+            .classList,
+            
+          codeKey = 'twc-epldw',
+          
+          isDateStyleNone = classList
+            
+            .contains ( 'tweak-events-stacked-date-style-none' ),
+            
+          isDateStyleTag = classList
+            
+            .contains ( 'tweak-events-stacked-date-style-side-tag' ),
+            
+          isDateStyleText = classList
+            
+            .contains ( 'tweak-events-stacked-date-style-with-text' ),
+            
+          map = { },
+          
+          mapCallback = ( [ dateTime, elements ] ) => {
+          
+            let
+            
+              d = dateTime + 'T00:00:00',
+              
+              dateOptions;
+              
+            const
+            
+              attribute
+              
+                =
+                
+                ! is70
+                
+                ?
+                
+                ' data-animation-role="date"'
+                
+                :
+                
+                '',
+              
+              language = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .language,
+                
+              timeZone = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .timeZone,
+                
+              dateTimeFormatOptions = {
+              
+                timeZone : timeZone
+                
+                },
+                
+              longOffsetFormatter = new Intl
+              
+                .DateTimeFormat (
+                
+                  language,
+                  
+                  {
+                  
+                    timeZone : timeZone, 
+                    
+                    timeZoneName : 'longOffset'
+                    
+                    }
+                    
+                  ),
+                  
+              longOffsetString = longOffsetFormatter
+              
+                .format (
+                
+                  new Date ( d )
+                  
+                  ),
+                  
+              gmtOffset = longOffsetString
+              
+                .split ( 'GMT' )
+                
+                [ 1 ];
+                
+            d = new Date (
+            
+              `${ d }${ gmtOffset }`
+              
+              );
+              
+            switch ( true ) {
+            
+              case isDateStyleTag :
+              
+                dateOptions = {
+                
+                  day : 'numeric',
+                  
+                  month : 'short',
+                  
+                  };
+                  
+                break;
+                
+              case isDateStyleNone :
+              case isDateStyleText :
+              case is70 :
+              
+                dateOptions = {
+                
+                  day : 'numeric',
+                  
+                  month : 'long',
+                  
+                  weekday : 'long',
+                  
+                  year : 'numeric'
+                  
+                  };
+                  
+                break;
+                
+              }
+              
+            if ( isDateOptions )
+            
+              dateOptions = options
+              
+                .dateOptions;
+                
+            Object.assign (
+            
+              dateTimeFormatOptions,
+              
+              dateOptions
+              
+              );
+              
+            d
+            
+              = 
+              
+              '<span>'
+              
+              +
+              
+              d
+              
+                .toLocaleDateString (
+                
+                  language,
+                  
+                  dateTimeFormatOptions
+                  
+                  )
+                  
+                  .split ( ' ' )
+                  
+                  .join ( '</span><span>')
+                  
+              +
+              
+              '</span>';
+              
+            const
+            
+              html = `
+              
+                <section class="${ codeKey }" id="${ codeKey }-${ dateTime }">
+                
+                  <div class="${ codeKey }--title-wrapper"${ attribute }>
+                  
+                    <div class="${ codeKey }--title">
+                    
+                      ${ d }
+                      
+                      </div>
+                      
+                    </div>
+                    
+                  </section>
+                  
+                `;
+                
+            let wrapperElement = elements
+            
+              [ 0 ];
+              
+            wrapperElement
+            
+              .insertAdjacentHTML ( 'beforebegin', html );
+              
+            wrapperElement = wrapperElement
+            
+              .previousElementSibling;
+              
+            elements
+            
+              .forEach ( e => wrapperElement.appendChild ( e ) );
+              
+            },
+            
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          selector = '.eventlist-meta-date .event-date[ datetime ]:first-child',
+          
+          ssVersion = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .templateVersion,
+            
+          is70 = ssVersion === '7',
+          
+          isDateOptions = Object
+          
+            .keys (
+            
+              options
+              
+                .dateOptions
+                
+              )
+              
+              .length
+              
+              !==
+              
+              0;
+              
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+        
+        Object
+        
+          .entries ( map )
+          
+          .forEach ( mapCallback );
+        
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Events Page List Day Wrapper -->
