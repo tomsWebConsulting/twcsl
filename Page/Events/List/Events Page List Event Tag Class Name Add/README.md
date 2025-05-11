@@ -8,7 +8,7 @@ Add class names to each event on an events list page.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -56,11 +56,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2025-05-09**
+* **2025-05-10**
 
-  * added some missing code
+  * wrap console credit code in IIFE so as not to pollute global space
   * bumped version to 0.1.1
-  -->
+  
 * **2025-05-10**
 
   * initial version
