@@ -1,0 +1,223 @@
+<!-- begin TWC Events Page List Event Row -->
+
+  <!--
+  
+    events page list event row
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    .eventlist-event {
+    
+      align-items : center;
+      
+      }
+      
+    .eventlist-title {
+    
+      margin-bottom : unset !important;
+      
+      }
+      
+    .eventlist-column-info {
+    
+      align-items : center;
+      display : flex;
+      gap : 17px;
+      justify-content : space-between;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Events Page List Event Row v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isEventsPage = ( ( ) => {
+        
+          const
+          
+            selector = [
+            
+              'body[ class~="collection-type-events" ]',
+              
+              'body[ class*="collection-type-events-" ]'
+              
+              ]
+              
+              .join ( ', ' ),
+              
+            is = Boolean (
+            
+              document
+              
+                .querySelectorAll ( selector )
+                
+                .length
+                
+              );
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isEventsPage ) return; // bail if not events page
+        
+        const isList = ( ( ) => {
+        
+          const selector = 'body[ id^="collection-" ]';
+          
+          const is = document
+          
+            .querySelector ( selector )
+            
+            !==
+            
+            null;
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list page
+        
+        const
+        
+          codeKey = 'twc-epler',
+          
+          changeTag = ( element, tag ) => {
+          
+            const newElement = document
+            
+              .createElement ( tag );
+              
+            [
+            
+              ...
+              
+              element
+              
+              .attributes
+              
+              ]
+              
+              .forEach ( a => newElement.setAttribute ( a.name, a.value ) );
+              
+            while ( element.firstChild ) {
+            
+                newElement
+                
+                  .appendChild ( element.firstChild );
+                  
+              }
+              
+            element
+            
+              .parentNode
+              
+              .replaceChild ( newElement, element );
+              
+            return newElement;
+            
+            };
+            
+          unwrapElement = ( element ) => {
+          
+            const parent = element.parentNode;
+            
+            while ( element.firstChild ) {
+            
+              parent
+              
+                .insertBefore ( element.firstChild, element );
+                
+              }
+              
+            parent.removeChild ( element );
+            
+            };
+            
+        let
+        
+          selector = '.eventlist-meta-item',
+          
+          elements = document
+          
+            .querySelectorAll ( selector );
+            
+        // change meta elements
+        
+        {
+        
+          elements
+          
+            .forEach ( e => e.setAttribute ( 'data-animation-role',
+            
+              'content' ) );
+              
+          elements
+          
+            .forEach ( e => changeTag ( e, 'div' ) );
+            
+          }
+          
+        // unwrap meta elements
+        
+        {
+        
+          selector = '.eventlist-meta';
+          
+          document
+          
+            .querySelectorAll ( selector )
+            
+            .forEach ( unwrapElement );
+            
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Events Page List Event Row -->
