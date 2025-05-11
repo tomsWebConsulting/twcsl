@@ -1,0 +1,426 @@
+<!-- begin TWC Events Page List Day Index -->
+
+  <!--
+  
+    events page list day index
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : events page list day wrapper
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    body:not( .sqs-is-page-editing ) .twc-epldi [ class*=sqs-col ]:nth-child( n+2 ) .sqs-block-button {
+    
+      padding-left : 0;
+      
+      }
+      
+    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row + .sqs-row .sqs-block:not( .float ):first-child {
+    
+      padding-top : 0;
+      
+      }
+      
+    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row .sqs-block:not( .float ):not( .sqs-feature-gated-wrapper ):first-child:last-child {
+    
+      padding-bottom : 17px;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) .twc-epldi a {
+    
+      display : flex;
+      gap : 0.25em;
+      justify-content : center;
+      width : 100%;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Events Page List Day Index v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isEventsPage = ( ( ) => {
+        
+          const
+          
+            selector = [
+          
+              'body[ class~="collection-type-events" ]',
+              
+              'body[ class*="collection-type-events-" ]'
+              
+              ]
+              
+              .join ( ', ' ),
+              
+            is = Boolean (
+            
+              document
+              
+                .querySelectorAll ( selector )
+                
+                .length
+                
+              );
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isEventsPage ) return; // bail if not events page
+        
+        const isList = ( ( ) => {
+        
+          const selector = 'body[ id^="collection-" ]';
+          
+          const is = document
+          
+            .querySelector ( selector )
+            
+            !==
+            
+            null;
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list page
+        
+        const codeKey = 'twc-epldi';
+        
+        let
+        
+          selector = `.sqs-block-button a[ href^="#${ codeKey } "] `,
+          
+          element = document
+          
+            .querySelector ( selector );
+            
+        const hasTrigger = element !== null;
+        
+        if ( ! hasTrigger ) return; // bail if no trigger element
+        
+        const
+        
+          elements = document
+          
+            .querySelectorAll ( '.twc-epldw' ),
+            
+          days = elements.length;
+            
+        if ( ! days ) return; // bail if no day wrappers
+        
+        const
+        
+          dateOptions = JSON
+          
+            .parse (
+            
+              element
+            
+              .getAttribute ( 'href' )
+              
+              .split ( `#${ codeKey } ` )
+              
+              [ 1 ]
+              
+              .replace ( /\s*,\s*}$/, '}' )
+              
+              .replace ( /\s*([\w]+)\s*:\s*([\w]+)\s*/g, '"$1":"$2"' )
+              
+              );
+            
+        let html = '';
+        
+        element = element
+        
+          .closest ( '.sqs-block-button' );
+          
+        const
+        
+          buttonColumns = Number (
+          
+            element
+            
+              .parentElement
+              
+              .getAttribute ( 'class' )
+              
+              .match ( /sqs-col-(\d+)/ )
+              
+              [ 1 ]
+              
+            ),
+            
+          buttonElement = element
+          
+            .cloneNode ( true ),
+            
+          buttonsPerRow = 12 / buttonColumns,
+          
+          callback = ( element, index ) => {
+          
+            let d = element
+            
+              .querySelector (
+              
+                '.eventlist-meta-date .event-date[ datetime ]'
+                
+                )
+                
+                .getAttribute ( 'datetime' )
+                
+                +
+                
+                'T00:00:00';
+                
+            const
+            
+              anchorElement
+              
+                =
+                
+                buttonElement
+                
+                  .querySelector ( 'a' ),
+                  
+              language = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .language,
+                
+              timeZone = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .timeZone,
+                
+              dateTimeFormatOptions = {
+              
+                timeZone : timeZone
+                
+                },
+                
+              longOffsetFormatter = new Intl
+              
+                .DateTimeFormat (
+                
+                  language,
+                  
+                  {
+                  
+                    timeZone : timeZone, 
+                    
+                    timeZoneName : 'longOffset'
+                    
+                    }
+                    
+                  ),
+                  
+              longOffsetString = longOffsetFormatter
+              
+                .format (
+                
+                  new Date ( d )
+                  
+                  ),
+                  
+              gmtOffset = longOffsetString
+              
+                .split ( 'GMT' )
+                
+                [ 1 ];
+                
+            Object.assign (
+            
+              dateTimeFormatOptions,
+              
+              dateOptions
+              
+              );
+              
+            // date html
+            
+            {
+            
+              d = new Date (
+              
+                `${ d }${ gmtOffset }`
+                
+                );
+                
+              d
+              
+                = 
+                
+                '<span>'
+                
+                +
+                
+                d
+                
+                  .toLocaleDateString (
+                  
+                    language,
+                    
+                    dateTimeFormatOptions
+                    
+                    )
+                    
+                    .split ( ' ' )
+                    
+                    .join ( '</span><span>')
+                    
+                +
+                
+                '</span>';
+                
+              }
+              
+            anchorElement
+            
+              .setAttribute (
+              
+                'href',
+                
+                `#${
+                
+                  element
+                  
+                    .getAttribute ( 'id' )
+                    
+                  }`
+                  
+                );
+                
+            anchorElement
+            
+              .innerHTML
+              
+              =
+              
+              d;
+              
+            if ( index % buttonsPerRow === 0 ) {
+            
+              if ( index !== 0 ) html += '</div>'; // row close
+              
+              html += '<div class="row sqs-row">'; // row open
+              
+              }
+              
+            html += `
+            
+              <div class="col sqs-col-${ buttonColumns } span-${ buttonColumns }">
+              
+                ${
+                
+                  buttonElement
+                
+                  .outerHTML
+                  
+                  }
+                  
+                </div>
+                
+              `;
+              
+            };
+            
+        element = element
+        
+          .closest ( '.sqs-col-12' );
+          
+        element
+        
+          .closest ( '.page-section' )
+          
+          .classList
+          
+          .add ( codeKey );
+          
+        // set up button element for use as template
+        
+        {
+        
+          const attribute = 'id';
+          
+          buttonElement
+          
+            .removeAttribute ( `${ attribute }` );
+            
+          buttonElement
+          
+            .querySelectorAll ( `[ ${ attribute } ]` )
+            
+            .forEach ( e => e.removeAttribute ( `${ attribute }` ) );
+            
+          }
+          
+        elements
+        
+          .forEach ( callback );
+          
+        element
+        
+          .innerHTML
+          
+          =
+          
+          `${ html }</div>`;
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Events Page List Day Index -->
