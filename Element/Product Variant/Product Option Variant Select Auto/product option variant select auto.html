@@ -1,0 +1,352 @@
+<!-- begin TWC Product Option Variant Select Auto -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        product option variant select auto
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.5.0
+        
+        SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Yes
+        
+        v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
+                          Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
+                          Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
+                          Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
+                          
+                          your template is not listed? then it is not currently
+                          supported
+        
+        Copyright       : 2023-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.5.0',
+        
+        s = `
+        
+          Product Option Variant Select Auto v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        initialize = ( ) => {
+        
+          let selector = '.sqs-block-product';
+            
+          const
+          
+            hasProductBlocks = Boolean (
+            
+              document
+              
+                .body
+                
+                .querySelector ( selector )
+                
+              ),
+              
+            isStorePage = Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .collection
+              
+              .type
+              
+              ===
+              
+              13,
+              
+            hasElements = hasProductBlocks || isStorePage;
+            
+          if ( ! hasElements ) return; // bail of no elements of interest
+          
+          const codeKey = 'twc-povsa';
+          
+          selector = 'script[ type="application/vnd.' +
+          
+            `${ codeKey.replace ( '-', '.' ) }" ]`;
+            
+          const scriptElement = document
+          
+            .head
+            
+            .querySelector ( selector );
+            
+          if ( scriptElement === null ) return; // bail if no script element
+          
+          const
+          
+            callback = ( [ option, variant ] ) => {
+            
+              const
+              
+                callback = ( element ) => {
+                
+                  const
+                  
+                    isRadio
+                    
+                      =
+                      
+                      element
+                      
+                        .classList
+                        
+                        .contains ( 'variant-radiobtn-wrapper' ),
+                        
+                    isSelectElement
+                    
+                      =
+                      
+                      element
+                      
+                        .tagName
+                        
+                      ===
+                      
+                      'SELECT';
+                      
+                  let
+                  
+                    selector,
+                    
+                    value;
+                    
+                  switch ( true ) {
+                  
+                    case isSelectElement :
+                    
+                      selector = `option[ value="${ variant }" ]`;
+                      
+                      value = element
+                      
+                        .querySelector ( selector )
+                        
+                        .value;
+                        
+                      element.value = value;
+                      
+                      break;
+                      
+                    case isRadio :
+                    
+                      selector =
+                      
+                        `input[id="variant-option-${ option }-${ variant }" ]` +
+                        
+                        `[ type="radio" ]`,
+                        
+                      element
+                      
+                        .querySelector ( selector )
+                      
+                        .checked
+                        
+                        =
+                        
+                        true;
+                        
+                      break;
+                      
+                    }
+                    
+                  Y
+                  
+                    .one ( element )
+                    
+                    .simulate ( 'change' );
+                    
+                  },
+                  
+                unique = ( value, index, array ) => {
+                
+                  const b = array
+                  
+                    .indexOf ( value )
+                    
+                    ===
+                    
+                    index;
+                    
+                  return b;
+                  
+                  },
+                  
+                selector = [
+                
+                  // begin product block
+                  
+                    '.product-block .productDetails .product-variants ' +
+                    
+                      `.variant-option select[ name="${ option }" ]`,
+                      
+                    // end product block
+                    
+                  // begin store page
+                  
+                    // begin 7.1
+                    
+                      // list
+                      
+                      '.tweak-products-add-to-cart-button ' +
+                      
+                        '.products.collection-content-wrapper ' +
+                        
+                        '.plp-grid-add-to-cart .variant-option select[ ' +
+                        
+                        `data-variant-option-name="${ option }" ]`,
+                        
+                      // begin detail
+                      
+                        // layouts
+                        
+                        // begin simple
+                        
+                          '.ProductItem-details .variant-radiobtn-wrapper[ ' +
+                          
+                            `data-variant-option-name="${ option }" ]`,
+                            
+                          '.ProductItem-details .variant-select-wrapper ' +
+                          
+                            `select[ data-variant-option-name="${ option }" ]`,
+                            
+                          // end simple
+                          
+                        // begin full, half, wrap
+                        
+                          '.pdp-layout .pdp-details ' +
+                          
+                            '.variant-radiobtn-wrapper[ ' +
+                          
+                            `data-variant-option-name="${ option }" ]`,
+                            
+                          '.pdp-layout .pdp-details .variant-select-wrapper ' +
+                          
+                            `select[ data-variant-option-name="${ option }" ]`,
+                            
+                          // end full, half, wrap
+                          
+                        // end detail
+                        
+                      // end 7.1
+                      
+                    // begin 7.0
+                    
+                      '.ProductItem-details .variant-select-wrapper select[ ' +
+                      
+                        `data-variant-option-name="${ option }" ]`,
+                        
+                      // end 7.0
+                      
+                    // end store page
+                    
+                  ]
+                  
+                  .filter ( unique )
+                  
+                  .join ( ', ' );
+                  
+              document
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                .forEach ( callback );
+                
+              },
+              
+            productOptions = JSON
+            
+              .parse (
+              
+                scriptElement
+                
+                  .textContent
+                  
+                  .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                  
+                  .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                  
+                  .replace ( /,\s*}\s*/, '}' ) // remove last item comma
+                  
+                  .replaceAll ( '\n', '' )
+                  
+                )
+                
+              .productOptions;
+              
+          Object
+          
+            .entries (
+            
+              productOptions
+              
+              )
+              
+            .forEach ( callback );
+            
+          },
+          
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion,
+          
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1';
+        
+      switch ( true ) {
+      
+        case is71 :
+        
+          addEventListener ( 'load', initialize );
+          
+          break;
+          
+        case is70 :
+        
+          Squarespace.onInitialize ( Y, initialize );
+          
+          break;
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Product Option Variant Select Auto -->
