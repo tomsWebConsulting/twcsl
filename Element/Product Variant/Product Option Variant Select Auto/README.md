@@ -8,7 +8,7 @@ Auto select a variant of a product option.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Versions
 
@@ -55,9 +55,16 @@ Auto select a variant of a product option.
       
 * Read the code for any instructions within.
 
-## Note
+## Notes
 
 This code currently does not support Product block Quick View.
+
+If you have Size options defined for two products and they don't have the same
+variants, and you set the code to select a variant that doesn't exist in one of
+the products, nothing will happen. In other words the code is global in nature.
+It doesn't understand all the options and variants for each product. The code is
+useful for say a clothing seller where the Size menu is always the same. For
+example. Small, Medium, and Large which would be the same across all products.
 
 ## Make a Donation
 
@@ -65,6 +72,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-05-12**
+
+  * check for certain error conditions and do nothing
+  * fixed syntax error
+  * bumped version to 0.5.1
+  
 * **2025-05-12**
 
   * support for user selecting which variant is selected

@@ -10,7 +10,7 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.5.0
+        Version         : 0.5.1
         
         SS Versions     : 7.1, 7.0
         
@@ -41,7 +41,7 @@
         
       const
       
-        version = '0.5.0',
+        version = '0.5.1',
         
         s = `
         
@@ -153,31 +153,39 @@
                       
                         .querySelector ( selector )
                         
-                        .value;
+                        ?.value;
                         
-                      element.value = value;
+                      if ( value )
                       
+                        element.value = value;
+                        
                       break;
                       
-                    case isRadio :
+                    case isRadio : {
                     
+                      const inputElement = element
+                      
+                        .querySelector ( selector );
+                      
                       selector =
                       
                         `input[id="variant-option-${ option }-${ variant }" ]` +
                         
-                        `[ type="radio" ]`,
+                        `[ type="radio" ]`;
                         
-                      element
+                      if ( inputElement )
                       
-                        .querySelector ( selector )
-                      
-                        .checked
+                        inputElement
                         
-                        =
-                        
-                        true;
-                        
+                          .checked
+                          
+                          =
+                          
+                          true;
+                          
                       break;
+                      
+                      }
                       
                     }
                     
