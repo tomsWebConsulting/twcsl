@@ -88,13 +88,17 @@
       
         callback = ( ) => {
         
-          const isStorePage = document
+          const isStorePage = Static
           
-            .body
+            .SQUARESPACE_CONTEXT
             
-            .classList
+            .collection
             
-            .contains ( 'collection-type-products' );
+            .type
+            
+            ===
+            
+            13;
             
           if ( ! isStorePage ) return; // bail if not store page
           

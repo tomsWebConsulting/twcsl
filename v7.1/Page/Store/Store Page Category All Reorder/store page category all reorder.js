@@ -80,13 +80,17 @@
     
     }
     
-  const isStorePage = dcmnt
-  
-    .querySelector ( 'body.collection-type-products' )
+  const isStorePage = Static
+       
+    .SQUARESPACE_CONTEXT
     
-    !==
+    .collection
     
-    null;
+    .type
+    
+    ===
+    
+    13;
     
   if ( ! isStorePage ) {
   
