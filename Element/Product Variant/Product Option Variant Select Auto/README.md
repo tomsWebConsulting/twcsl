@@ -49,13 +49,9 @@ Auto select a variant of a product option.
       script.html][5]** to Website > Pages > Custom Code > Code Injection >
       HEADER. Refer to [Add code to code injection][8] for details.
       
-    * Add code from file **[product option variant select auto script.html][6]**
-      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+    * Add code from file **[product option variant select auto.html][6]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][8] for details.
-      
-    * Add the following code to Website > Pages > Custom Code >
-      Code Injection > FOOTER. Refer to [Add code to code injection][8] for
-      details.
       
 * Read the code for any instructions within.
 
