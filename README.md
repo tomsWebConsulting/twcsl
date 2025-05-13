@@ -241,7 +241,7 @@ not necessarily designed to work together.
       
   * [Product Variant](Element/Product%20Variant)
     
-    * [Product Option First Variant Select Auto](Element/Product%20Variant/Product%20Option%20First%20Variant%20Select%20Auto)
+    * [Product Option Variant Select Auto](Element/Product%20Variant/Product%20Option%20Variant%20Select%20Auto)
       
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
