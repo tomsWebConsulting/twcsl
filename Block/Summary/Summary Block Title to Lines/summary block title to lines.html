@@ -1,0 +1,130 @@
+<!-- begin TWC Summary Block Title to Lines -->
+
+  <!--
+  
+    summary block title to lines
+    
+    License      : < https://tinyurl.com/s872fb68 >
+    
+    Version      : 0.1.0-development.0
+    
+    SS Versions  : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible   : Not Applicable
+    
+    Copyright    : 2025 Thomas Creedon
+                   
+                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.sbttl = ( ( self ) => { // initialize twc sbttl sub-module
+    
+      const options = {
+      
+        separator : '[ enter separator text here between single quotes replacing square brackets ]'
+         
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.sbttl || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0-development.0',
+        
+        s = `Summary Block Title to Lines v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            const html = element
+            
+              .textContent
+              
+              .replaceAll (
+              
+                twc
+                
+                  [
+                  
+                    codeKey
+                    
+                    .split ( '-' )
+                    
+                    [ 1 ]
+                    
+                    ]
+                    
+                  .separator,
+                  
+                '<br />'
+                
+              );
+              
+            element.innerHTML = html;
+            
+            },
+            
+          codeKey = 'twc-sbttl',
+          
+          selector = '.summary-title-link';
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Summary Block Title to Lines -->
