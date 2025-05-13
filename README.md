@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 386 effects. Each effect has it's own version number, code,
+twcsl contains 389 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -59,6 +59,8 @@ not necessarily designed to work together.
       
       * [Blog Page Post Excerpt Element](Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element)
         
+    * [Blog Page Title to Lines](Page/Blog/Blog%20Page%20Title%20to%20Lines)
+      
   * [Page Collection Main Page Robots No Index](Page/Page%20Collection%20Main%20Page%20Robots%20No%20Index)
     
   * [Cart](Page/Cart)
@@ -71,6 +73,8 @@ not necessarily designed to work together.
       
   * [Events](Page/Events)
     
+    * [Events Page Title to Lines](Page/Events/Events%20Page%20Title%20to%20Lines)
+      
     * [List](Page/Events/List)
       
       * [Events Page List Event Tag Class Name Add](Page/Events/List/Events%20Page%20List%20Event%20Tag%20Class%20Name%20Add)
@@ -811,6 +815,8 @@ not necessarily designed to work together.
       
   * [Summary](Block/Summary)
     
+    * [Summary Block Title to Lines](Block/Summary/Summary%20Block%20Title%20to%20Lines)
+      
     * [Events](Block/Summary/Events)
       
       * [Summary Block Events End Time Remove](Block/Summary/Events/Summary%20Block%20Events%20End%20Time%20Remove)
