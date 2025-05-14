@@ -8,7 +8,7 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -68,11 +68,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2024-04-27**
+* **2025-05-14**
 
-  * update to work with Form Block Wrapper Observe Changes v0.3.0
+  * fixed url undefined error
   * bumped version to 0.1.1
-  -->
+  
 * **2025-03-17**
 
   * initial version

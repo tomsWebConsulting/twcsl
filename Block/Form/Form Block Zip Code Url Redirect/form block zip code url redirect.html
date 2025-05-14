@@ -1,27 +1,29 @@
-<!--
-
-  begin form block zip code url redirect
+<!-- begin TWC Form Block Zip Code Url Redirect -->
   
-  License       : < https://tinyurl.com/s872fb68 >
+  <!--
   
-  Version       : 0.1.0
-  
-  SS Versions   : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible    : Yes
-  
-  Dependencies  : form block wrapper observe changes
-                  < https://tinyurl.com/ub8akb85 >
-  
-  Copyright     : 2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    form block zip code url redirect
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.1
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : form block wrapper observe changes
+                    < https://tinyurl.com/ub8akb85 >
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
   <script>
   
     // initialize twc module
@@ -32,11 +34,11 @@
     
     twc.fbzcur = ( ( self ) => {
     
-      const
+      const options = {
       
-        errorUrl = '[ enter error url here between single quotes replacing square brackets ]',
+        errorUrl : '[ enter error url here between single quotes replacing square brackets ]',
         
-        urlZipcodeMap = {
+        urlZipcodeMap : {
         
           /*
           
@@ -72,24 +74,20 @@
             
             ],
             
-          };
+          }
           
-      self
+        };
+        
+      Object
       
-        .errorUrl
+        .assign (
         
-        =
-        
-        errorUrl;
-        
-      self
-      
-        .urlZipcodeMap
-        
-        =
-        
-        urlZipcodeMap;
-        
+          self,
+          
+          options
+          
+          );
+          
       return self;
       
       } ) ( twc.fbzcur || { } );
@@ -104,7 +102,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.1.1',
         
         s = `
         
@@ -136,7 +134,7 @@
       
         self
         
-          [ 'twcFbzcur' ]
+          .twcFbzcur
           
           =
           
@@ -150,8 +148,6 @@
             
             if ( ! hasClass ) return; // bail if not react form
             
-            console.log ( element );
-            
             const
             
               callback = ( event ) => {
@@ -160,39 +156,35 @@
                 
                   codeKey = 'twc-fbzcur',
                   
-                  entries = Object
+                  options = codeKey
+                  
+                    .split ( '-' )
+                    
+                    .reduce ( ( obj, key ) => obj?.[ key ], window ),
+                    
+                  urlZipCodeEntries = Object
                   
                     .entries (
                     
-                      twc
-                      
-                        [
+                      options
                         
-                          codeKey
-                          
-                            .split ( '-' )
-                            
-                            [ 1 ]
-                            
-                          ]
-                          
-                          .urlZipcodeMap
-                          
-                          ),
-                          
-                  zipcodeUrlMap = { },
-                  
+                        .urlZipcodeMap
+                        
+                        ),
+                        
                   zipCode = element
                   
                     .querySelector ( 'input[ type="text" ]')
                     
                     .value
                     
-                    .trim ( );
+                    .trim ( ),
                     
+                  zipcodeUrlMap = { };
+                  
               event.preventDefault ( );
               
-              for ( const [ url, zipCodes ] of entries ) {
+              for ( const [ url, zipCodes ] of urlZipCodeEntries ) {
               
                 for ( const zipCode of zipCodes ) {
                 
@@ -204,7 +196,7 @@
                 
               let url = zipcodeUrlMap [ zipCode ];
               
-              url !== undefined ? url : errorUrl;
+              url = url !== undefined ? url : options.errorUrl;
               
               window.location = url;
               
@@ -226,4 +218,4 @@
       
     </script>
     
-  <!-- end form block zip code url redirect -->
+  <!-- end TWC Form Block Zip Code Url Redirect -->
