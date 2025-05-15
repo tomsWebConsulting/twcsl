@@ -58,6 +58,12 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-05-15**
+
+  * fixed error when site time zone is not pacific time and go to date is
+    1970 01 01 begin report as less than 1970 01 01
+  * bumped version to 0.4.1
+  
 * **2024-09-26**
 
   * convert from bookmarlet to site installed code
