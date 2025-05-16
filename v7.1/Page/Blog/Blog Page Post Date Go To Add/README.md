@@ -8,7 +8,7 @@ Add date go to feature to Publish and Scheduled calendars.
 
 ### Version
 
-  * 0.4.0
+  * 0.4.2
 
 #### SS Version
 
@@ -58,6 +58,13 @@ Please consider [making a donation][7].
 
 ## Changes
 
+
+* **2025-05-15**
+
+  * fixed Firefox Uncaught DOMException: Node cannot be used in a document other
+    than the one in which it was created
+  * bumped version to 0.4.2
+  
 * **2025-05-15**
 
   * fixed error when site time zone is not pacific time and go to date is
