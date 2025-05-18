@@ -9,7 +9,7 @@ Squarespace editor.
 
 ### Version
 
-  * 0.7.1
+  * 0.7.2
 
 #### SS Versions
 
@@ -370,6 +370,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-05-07**
+
+  * fixed classes being applied incorrectly when going from Account via the BACK
+    button to Digital Products
+  * bumped version to 0.7.2
+  
 * **2025-05-07**
 
   * fixed broken callback code

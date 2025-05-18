@@ -6,7 +6,7 @@
     
     License      : < https://tinyurl.com/s872fb68 >
     
-    Version      : 0.7.1
+    Version      : 0.7.2
     
     SS Versions  : 7.1, 7.0
     
@@ -80,7 +80,7 @@
     
       const
       
-        version = '0.7.1',
+        version = '0.7.2',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -300,7 +300,7 @@
             
               options = twc.capc,
               
-              p = new RegExp ( '^\\[.+\\]$' );
+              p = new RegExp ( '^\\[.+\\]$' ),
               
               titleSelector = [
               
@@ -315,12 +315,6 @@
               titleElement
               
                 =
-                
-                element
-                
-                  .querySelector ( titleSelector )
-                  
-                ||
                 
                 element
                 
@@ -3020,142 +3014,154 @@
                 
                 }
                 
-              if ( isAddressKeyElement ) {
+              switch ( true ) {
               
-                element = addressKeyElement
+                case isAddressKeyElement :
                 
-                  .closest ( 'form' )
+                  element = addressKeyElement
                   
-                  .parentElement;
-                
-                userProfilePageRootElement
-                
-                  .setAttribute (
+                    .closest ( 'form' )
+                    
+                    .parentElement;
                   
-                    dataPanelTypeAttributeName,
-                    
-                    languagesRoot
-                    
-                      .en
-                      
-                      .panels
-                      
-                      .address
-                      
-                      .panelType
-                      
-                    );
-                    
-                }
-                
-              if ( isAddressNewKeyElement ) {
-              
-                element = addressNewKeyElement
-                
-                  .closest ( 'form' )
+                  userProfilePageRootElement
                   
-                  .parentElement;
-                
-                userProfilePageRootElement
-                
-                  .setAttribute (
+                    .setAttribute (
+                    
+                      dataPanelTypeAttributeName,
+                      
+                      languagesRoot
+                      
+                        .en
+                        
+                        .panels
+                        
+                        .address
+                        
+                        .panelType
+                        
+                      );
+                      
+                  break;
                   
-                    dataPanelTypeAttributeName,
-                    
-                    languagesRoot
-                    
-                      .en
-                      
-                      .panels
-                      
-                      .addressNew
-                      
-                      .panelType
-                      
-                    );
-                    
-                }
+                case isAddressNewKeyElement :
                 
-              if ( isOrderKeyElement ) {
-              
-                element = orderKeyElement
-                
-                  .closest ( '.CSSTG-group' )
+                  element = addressNewKeyElement
                   
-                  .firstChild;
+                    .closest ( 'form' )
+                    
+                    .parentElement;
                   
-                userProfilePageRootElement
-                
-                  .setAttribute (
+                  userProfilePageRootElement
                   
-                    dataPanelTypeAttributeName,
+                    .setAttribute (
                     
-                    languagesRoot
-                    
-                      .en
+                      dataPanelTypeAttributeName,
                       
-                      .panels
+                      languagesRoot
                       
-                      .order
+                        .en
+                        
+                        .panels
+                        
+                        .addressNew
+                        
+                        .panelType
+                        
+                      );
                       
-                      .panelType
-                      
-                    );
-                    
-                }
-                
-              if ( isPaymentMethodKeyElement ) {
-              
-                element = paymentMethodKeyElement
-                
-                  .closest ( '.CSSTG-child' );
+                  break;
                   
-                userProfilePageRootElement
+                case isFirstPanelWrapperElement :
                 
-                  .setAttribute (
+                  element = firstPanelWrapperElement
                   
-                    dataPanelTypeAttributeName,
+                    .querySelector ( '.CSSTG-child' );
                     
-                    languagesRoot
-                    
-                      .en
-                      
-                      .panels
-                      
-                      .paymentMethod
-                      
-                      .panelType
-                      
-                    );
-                    
-                }
+                  break;
+                  
+                case isOrderKeyElement :
                 
-              if ( isPaymentMethodNewKeyElement ) {
-              
-                element = paymentMethodNewKeyElement
+                  element = orderKeyElement
+                  
+                    .closest ( '.CSSTG-group' )
+                    
+                    .firstChild;
+                    
+                  userProfilePageRootElement
+                  
+                    .setAttribute (
+                    
+                      dataPanelTypeAttributeName,
+                      
+                      languagesRoot
+                      
+                        .en
+                        
+                        .panels
+                        
+                        .order
+                        
+                        .panelType
+                        
+                      );
+                      
+                  break;
+                  
+                case isPaymentMethodKeyElement :
                 
-                  .closest ( 'form' )
+                  element = paymentMethodKeyElement
                   
-                  .parentElement;
+                    .closest ( '.CSSTG-child' );
+                    
+                  userProfilePageRootElement
                   
-                userProfilePageRootElement
+                    .setAttribute (
+                    
+                      dataPanelTypeAttributeName,
+                      
+                      languagesRoot
+                      
+                        .en
+                        
+                        .panels
+                        
+                        .paymentMethod
+                        
+                        .panelType
+                        
+                      );
+                      
+                  break;
+                  
+                case isPaymentMethodNewKeyElement :
                 
-                  .setAttribute (
+                  element = paymentMethodNewKeyElement
                   
-                    dataPanelTypeAttributeName,
+                    .closest ( 'form' )
                     
-                    languagesRoot
+                    .parentElement;
                     
-                      .en
-                      
-                      .panels
-                      
-                      .paymentMethodNew
-                      
-                      .panelType
-                      
-                    );
+                  userProfilePageRootElement
+                  
+                    .setAttribute (
                     
+                      dataPanelTypeAttributeName,
+                      
+                      languagesRoot
+                      
+                        .en
+                        
+                        .panels
+                        
+                        .paymentMethodNew
+                        
+                        .panelType
+                        
+                      );
+                      
+                  break;
+                  
                 }
                 
               if ( flDebug ) {
