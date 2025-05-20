@@ -10,7 +10,7 @@
         
         License     : < https://tinyurl.com/s872fb68 >
         
-        Version     : 0.1.0
+        Version     : 0.1.1
         
         SS Version  : 7.1
         
@@ -28,7 +28,7 @@
         
       const
       
-        version = '0.1.0',
+        version = '0.1.1',
         
         s = `Blog Page Post Settings Tags Add v${ version }
         
@@ -58,27 +58,29 @@
             
             if ( ! mutation.addedNodes.length ) return false;
             
-            const xPathExpression = './/p [ . = "Blog Post Settings" ]';
+            const
             
-            let element = mutation.addedNodes [ 0 ];
+              xPathExpression = './/p [ . = "Blog Post Settings" ]',
             
-            element = dcmnt
-            
-              .evaluate ( xPathExpression, element, null,
+              element = xPathEvaluate (
               
-                XPathResult.FIRST_ORDERED_NODE_TYPE, null )
+                xPathExpression,
                 
-              .singleNodeValue;
-              
-            if ( element === null ) return; // bail if no element of interest
-            
-            element = element
-            
-              .closest ( '[ role="dialog" ]' )
-              
-              .querySelector ( '[ class^="Transition-container-" ]' );
-              
-            if ( element === null ) return false; // bail if no container
+                mutation
+                
+                  .addedNodes
+                  
+                  [ 0 ]
+                  
+                )
+                
+                .snapshotItem ( 0 )
+                
+                ?.closest ( '[ role="dialog" ]' )
+                
+                ?.querySelector ( '[ class^="Transition-container-" ]' );
+                
+            if ( ! element ) return; // bail if no container element
             
             // start listening for changes in element
             
@@ -226,13 +228,13 @@
         
           <style id="${ codeKey }" type="text/css">
           
-            .twc-bppstra {
+            .${ codeKey } {
             
               margin : 11px 16px 0;
               
               }
               
-            .twc-bppstra label {
+            .${ codeKey } label {
             
               box-sizing : border-box;
               color : rgb( 102, 102, 102 );
@@ -253,14 +255,14 @@
               
               }
               
-            .twc-bppstra-tags {
+            .${ codeKey }-tags {
             
               display : flex;
               flex-wrap : wrap;
               
               }
               
-            .twc-bppstra-tags span {
+            .${ codeKey }-tags span {
             
               align-items : center;
               box-sizing : border-box;
@@ -372,6 +374,28 @@
           .collection
           
           .id,
+          
+        xPathEvaluate = ( xPathExpression, contextNode ) => {
+        
+          const xPathResults = document
+          
+            .evaluate (
+            
+              xPathExpression,
+              
+              contextNode,
+              
+              null,
+            
+              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+              
+              null
+              
+              );
+            
+          return xPathResults;
+          
+          },
           
         hasStyleElement = dcmnt
         

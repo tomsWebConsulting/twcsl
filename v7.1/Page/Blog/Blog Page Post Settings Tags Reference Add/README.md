@@ -8,7 +8,7 @@ Add a tags reference to Blog Post Settings dialog.
 
 ### Version
 
-  * 0.4.2
+  * 0.1.1
 
 #### SS Version
 
@@ -52,11 +52,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2023-07-09**
+* **2025-05-20**
 
-  * update dynamic calendar class
+  * incorporate improvements from similar code, no functional change
   * bumped version to 0.1.1
-  -->
+  
 * **2025-05-20**
 
   * initial version
