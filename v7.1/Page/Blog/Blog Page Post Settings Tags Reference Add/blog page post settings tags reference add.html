@@ -1,0 +1,420 @@
+<!-- begin TWC Blog Page Post Settings Tags Reference Add -->
+
+  <!--
+  
+    blog page post settings tags reference add
+    
+    License     : < https://tinyurl.com/s872fb68 >
+    
+    Version     : 0.1.0
+    
+    SS Version  : 7.1
+    
+    Fluid
+    Engine
+    Compatible  : Not Applicable
+    
+    Note        : this effect is only active in SS Preview
+    
+    Copyright   : 2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Blog Page Post Settings Tags Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      if ( window.frameElement === null ) return; // bail if not in preview
+      
+      const
+      
+        bodyCallback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            // bail if no added node
+            
+            if ( ! mutation.addedNodes.length ) return false;
+            
+            const xPathExpression = './/p [ . = "Blog Post Settings" ]';
+            
+            let element = mutation.addedNodes [ 0 ];
+            
+            element = dcmnt
+            
+              .evaluate ( xPathExpression, element, null,
+              
+                XPathResult.FIRST_ORDERED_NODE_TYPE, null )
+                
+              .singleNodeValue;
+              
+            if ( element === null ) return; // bail if no element of interest
+            
+            element = element
+            
+              .closest ( '[ role="dialog" ]' )
+              
+              .querySelector ( '[ class^="Transition-container-" ]' );
+              
+            if ( element === null ) return false; // bail if no container
+            
+            // start listening for changes in element
+            
+            containerObserver.observe ( element, containerConfig );
+            
+            };
+            
+          mutations.forEach ( callback );
+          
+          },
+          
+        bodyConfig = {
+        
+          childList : true,
+          
+          subtree : true
+          
+          },
+          
+        bodyObserver = new MutationObserver ( bodyCallback ),
+        
+        codeKey = 'twc-bppstra',
+        
+        containerCallback = ( mutations ) => {
+        
+          const callback = ( mutation ) => {
+          
+            // bail if no added node
+            
+            if ( ! mutation.addedNodes.length ) return false;
+            
+            tagsWrapperElement = mutation
+            
+              .addedNodes [ 0 ];
+              
+            // bail if node not element
+            
+            if ( tagsWrapperElement.nodeType !== 1 ) return;
+            
+            const
+            
+              isAddTagInput
+              
+                =
+                
+                tagsWrapperElement
+                
+                  .getAttribute ( 'placeholder' )
+                  
+                ===
+                
+                'Add tags here';
+                
+            if ( ! isAddTagInput ) return; // bail if no element of interest
+            
+            tagsWrapperElement = getAncestor (
+            
+              tagsWrapperElement,
+              
+              4
+              
+              );
+              
+            getJson ( url )
+            
+              .then ( json => JSON.parse ( json ) )
+              
+              .then ( ( tags ) => {
+              
+                const
+                
+                  callback = ( tag ) => {
+                  
+                    const html = `
+                    
+                      <span>
+                      
+                        ${ tag.name }
+                        
+                        </span>
+                        
+                      `;
+                      
+                    return html;
+                    
+                    },
+                    
+                  html = tags
+                  
+                    .map ( callback )
+                    
+                    .join ( '' );
+                    
+                return html;
+                
+                } )
+                
+              .then ( ( html ) => {
+              
+                html = `
+                
+                  <div class="${ codeKey }">
+                  
+                    <label>
+                    
+                      Tags Reference
+                      
+                      </label>
+                      
+                    <div class="${ codeKey }-tags">
+                    
+                      ${ html }
+                      
+                      </div>
+                      
+                    </div>
+                    
+                  `;
+                  
+                tagsWrapperElement
+                
+                  .insertAdjacentHTML ( 'beforeend', html );
+                  
+                } );
+                
+            };
+            
+          mutations.forEach ( callback );
+          
+          },
+          
+        containerConfig = {
+        
+          childList : true,
+          
+          subtree : true
+          
+          },
+          
+        containerObserver = new MutationObserver ( containerCallback ),
+        
+        dcmnt = parent.document,
+        
+        html = `
+        
+          <style id="${ codeKey }" type="text/css">
+          
+            .twc-bppstra {
+            
+              margin : 11px 16px 0;
+              
+              }
+              
+            .twc-bppstra label {
+            
+              box-sizing : border-box;
+              color : rgb( 102, 102, 102 );
+              display : block;
+              font-family : Clarkson, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+              font-size : 9.75px;
+              font-weight : 500;
+              letter-spacing : 0.75px;
+              line-height : 16px;
+              margin-bottom : 11px;
+              margin-top : 22px;
+              overflow : hidden;
+              text-overflow : ellipsis;
+              text-transform : uppercase;
+              
+              text-rendering : optimizelegibility;
+              -webkit-font-smoothing : antialiased;
+              
+              }
+              
+            .twc-bppstra-tags {
+            
+              display : flex;
+              flex-wrap : wrap;
+              
+              }
+              
+            .twc-bppstra-tags span {
+            
+              align-items : center;
+              box-sizing : border-box;
+              background : #e7e7e7;
+              border-radius : 20px;
+              color : #313131;
+              display : flex;
+              max-width: 100%;
+              margin-bottom : 6px;
+              margin-right : 6px;
+              padding : 3px 16px;
+              position : relative;
+              transition : background 0.2s, color 0.2s;
+              
+              }
+              
+            </style>
+            
+          `,
+          
+        getAncestor = ( element, levels ) => {
+        
+          if ( ! element ) return null; // bail if no element
+          
+          while ( element && levels > 0 ) {
+          
+            element = element
+            
+              .parentElement;
+              
+            levels--;
+            
+            }
+            
+          return element;
+          
+          },
+          
+        getJson = async ( url ) => {
+        
+          const options = {
+          
+            headers : {
+            
+              Accept: 'application/json, text/plain, */*'
+              
+              }
+              
+            };
+            
+          try {
+          
+            const response = await fetch ( url, options );
+            
+            if ( ! response.ok ) {
+            
+              const s = `
+              
+                ${ codeKey } network response was not ok ${ response.statusText }
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
+              
+              }
+              
+            const json = await response.text ( );
+            
+            return json;
+            
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${ codeKey } there has been a problem with your fetch get operation,
+                
+                ${ error }.
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              }
+              
+          },
+          
+        selector = `#${ codeKey }`,
+        
+        url
+        
+          =
+          
+          '/api/commondata/GetCollectionTags?collectionId='
+          
+          +
+          
+          Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .id,
+          
+        hasStyleElement = dcmnt
+        
+          .head
+          
+          .querySelector ( selector )
+          
+          !==
+          
+          null;
+          
+      let tagsWrapperElement;
+      
+      if ( ! hasStyleElement )
+      
+        dcmnt
+        
+          .head
+          
+          .insertAdjacentHTML ( 'beforeend', html );
+          
+      document
+      
+        .addEventListener (
+        
+          'DOMContentLoaded',
+          
+          bodyObserver
+          
+            .observe (
+            
+              dcmnt.body,
+              
+              bodyConfig
+              
+              )
+              
+          );
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Blog Page Post Settings Tags Reference Add -->
