@@ -1,75 +1,219 @@
-<script>
+<!-- begin TWC Blog Page List Post Image URL to Source Url -->
 
-  $( ( ) => {
+  <!--
   
-    /*
+    blog page list post image url to source url
     
-      blog page list post image url to source url
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.1.1
-      
-      SS Version    : 7.1
-      
-      Fluid
-      Engine
-      Compatible    : Not Applicable
-      
-      Dependencies  : twcsl
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    let targetAtttributeValue = ''; /* use _self | _blank | _parent | _top |
-                                       framename see
-                                       < https://mzl.la/2Q0JROF > */
+    License       : < https://tinyurl.com/s872fb68 >
     
-    // do not change anything below, there be the borg here
+    Version       : 0.2.0
     
-    if ( ! twcsl.page.blog.list.is ) return; // bail if not blog listing
+    SS Version    : 7.1
     
-    $( '.blog-title .passthrough-link' )
+    Fluid
+    Engine
+    Compatible    : Not Applicable
     
-      .filter ( function ( ) {
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc bplpiutsu sub-module
+    
+    twc.bplpiutsu = ( ( self ) => {
+    
+      const options = {
       
-        const b = $( this ).attr ( 'target' ) !== undefined;
+        targetAtttributeValue : '' // use _self | _blank | _parent | _top |
+                                   // framename see < https://mzl.la/2Q0JROF >
+        };
         
-        return b;
-        
-        } )
-        
-      .each ( function ( ) {
+      Object
       
-        const $this = $( this );
+        .assign (
         
-        const url = $this.attr ( 'href' );
-        
-        const $imageLink = $this
-        
-          .parents ( '.blog-item' )
+          self,
           
-          .find ( '.image-wrapper' )
+          options
           
-            .attr ( 'href', url );
+          );
+          
+      return self;
+      
+      } ) ( twc.bplpiutsu || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      debugger;
+      
+      const
+      
+        version = '0.2.0',
+        
+        s = `Blog Page List Post Image URL to Source Url v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isBlogPage = ( ( ) => {
+        
+          const
+          
+            selector = [
+                
+              'body[ class~="collection-type-blog" ]',
+              
+              'body[ class*="collection-type-blog-" ]',
+              
+              ]
+              
+              .join ( ', ' ),
+              
+            isBlogPage = Boolean (
             
-        if ( ! targetAtttributeValue ) {
+              document
+              
+                .querySelectorAll ( selector )
+                
+                .length
+                
+              );
+              
+          return isBlogPage;
+          
+          } ) ( );
+          
+        if ( ! isBlogPage ) return; // bail if not blog page
         
-          const value = $this.attr ( 'target' );
+        const isList = ( ( ) => {
+        
+          const selector = 'body[ id^="collection-" ]';
           
-          if ( value !== undefined )
+          const is = document
           
-            targetAtttributeValue = value;
+            .querySelector ( selector )
             
-          }
+            !==
+            
+            null;
+            
+          return is;
           
-        if ( targetAtttributeValue )
-        
-          $imageLink.attr ( 'target', targetAtttributeValue );
+          } ) ( );
           
-        } );
+        if ( ! isList ) return; // bail if not list page
         
-    } );
+        const
+        
+          callback = ( element ) => {
+          
+            const
+            
+              imageLinkElement = element
+              
+                .closest ( '.blog-item' )
+                
+                .querySelector ( '.image-wrapper' );
+                
+              url = element
+              
+                .getAttribute ( 'href' );
+                
+            let targetAtttributeValue
+            
+              =
+              
+              options
+              
+                .targetAtttributeValue;
+                
+            imageLinkElement
+            
+              .setAttribute ( 'href', url );
+              
+            if ( ! targetAtttributeValue ) {
+            
+              const value = element
+              
+                .getAttribute ( 'target' );
+                
+              if ( value !== null )
+              
+                targetAtttributeValue = value;
+                
+              }
+              
+            if ( targetAtttributeValue )
+            
+              imageLinkElement
+              
+                .setAttribute (
+                
+                  'target',
+                  
+                  targetAtttributeValue
+                  
+                  );
+                  
+            },
+            
+          codeKey = 'twc-bplpiutsu',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          selector = '.blog-title .passthrough-link';
+          
+        [
+        
+          ...
+          
+          document
+          
+            .body
+            
+            .querySelectorAll ( selector )
+            
+          ]
+          
+          .filter ( e => e.getAttribute ( 'target' ) !== null )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+       
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
     
-  </script>
+  <!-- end TWC Blog Page List Post Image URL to Source Url -->
