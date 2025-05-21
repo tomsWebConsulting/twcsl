@@ -6,7 +6,7 @@
     
     License      : < https://tinyurl.com/s872fb68 >
     
-    Version      : 0.7.2
+    Version      : 0.8.0
     
     SS Versions  : 7.1, 7.0
     
@@ -80,7 +80,7 @@
     
       const
       
-        version = '0.7.2',
+        version = '0.8.0',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -181,6 +181,8 @@
             'en-US' : 'en',
             
             'es-MX' : 'es',
+            
+            'ja-JP' : 'jp',
             
             },
             
@@ -1604,15 +1606,37 @@
                 
                 {
                 
-                  selector = 'a[ href^="/account/orders/" ]' +
+                  getAncestor (
                   
-                    '[ href$="/payment" ]';
+                    xPathEvaluate (
                     
-                  element
-                  
-                    .querySelector ( selector )
+                      `.//label [
+                      
+                        . = "${
+                        
+                          language
+                          
+                            .panels
+                            
+                            .paymentMethod
+                            
+                            .Title
+                            
+                          }"
+                          
+                        ]`,
+                        
+                      element
+                      
+                      )
+                      
+                      .snapshotItem ( 0 ),
+                      
+                    5
                     
-                    ?.classList
+                    )
+                      
+                    .classList
                     
                     .add ( `${ codeKey }--orders--order--payment-method` );
                     
@@ -3549,6 +3573,166 @@
                   password : 'Contraseña',
                   
                   Title : 'Perfil',
+                  
+                  },
+                  
+                }
+                
+              },
+              
+            jp : {
+            
+              panels : {
+              
+                account : {
+                
+                  Title : 'アカウント',
+                  
+                  },
+                  
+                address : {
+                
+                  deleteAddress : '住所を削除',
+                  
+                  panelType : 'address',
+                  
+                  },
+                  
+                addresses : {
+                
+                  Title : '住所',
+                  
+                  },
+                  
+                addressNew : {
+                
+                  panelType : 'address new',
+                  
+                  Title : '新しい住所',
+                  
+                  },
+                  
+                digitalProducts : {
+                
+                  search : '検索',
+                  
+                  Title : 'デジタル商品',
+                  
+                  },
+                  
+                email : {
+                
+                  confirmNew : '新規メ⁠ールアドレスの確認',
+                  
+                  current : '現在',
+                  
+                  'new' : '新規',
+                  
+                  password : 'パスワ⁠ード',
+                  
+                  Title : 'メ⁠ールアドレス',
+                  
+                  },
+                  
+                order : {
+                
+                  items : 'アイテム',
+                  
+                  orderDate : '注文日',
+                  
+                  panelType : 'order',
+                  
+                  shipping : '配送料',
+                  
+                  status : 'ステ⁠ータス',
+                  
+                  subtotal : '小計',
+                  
+                  summary : '概要',
+                  
+                  Title : '注文 ',
+                  
+                  tax : '税金',
+                  
+                  total : '合計',
+                  
+                  },
+                  
+                orderPaymentMethod : {
+                
+                  panelType : 'order payment method',
+                  
+                  Title : '支払い方法',
+                  
+                  },
+                  
+                orderShipping : {
+                
+                  shippingAddress : '配送先の住所',
+                  
+                  shippingOption : '配送オプシ⁠ョン',
+                  
+                  Title : '配送料',
+                  
+                  },
+                  
+                orders : {
+                
+                  Title : '注文',
+                  
+                  },
+                  
+                passwordUpdate : {
+                
+                  current : '現在',
+                  
+                  'new' : '新規',
+                  
+                  Title : 'パスワ⁠ードを更新',
+                  
+                  },
+                  
+                payment : {
+                
+                  'default' : '既定',
+                  
+                  other : 'その他',
+                  
+                  Title : 'お支払い',
+                  
+                  },
+                  
+                paymentMethod : {
+                
+                  billingAddress : '請求先住所',
+                  
+                  cardDetails : 'カ⁠ード詳細',
+                  
+                  deletePaymentMethod : '支払い方法を削除',
+                  
+                  panelType : 'payment method',
+                  
+                  Title : '支払い方法',
+                  
+                  },
+                  
+                paymentMethodNew : {
+                
+                  billingAddress : '請求先住所',
+                  
+                  cardDetails : 'カ⁠ード詳細',
+                  
+                  panelType : 'payment method new',
+                  
+                  Title : '新しい支払い方法',
+                  
+                  },
+                  
+                profile : {
+                
+                  password : 'パスワ⁠ード',
+                  
+                  Title : 'プロフ⁠ィ⁠ール',
                   
                   },
                   
