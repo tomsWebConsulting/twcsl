@@ -8,7 +8,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
 ### Version
 
- * 0.1.1
+ * 0.2.0
 
 #### SS Version
 
@@ -75,7 +75,12 @@ Please consider [making a donation][11].
 
 * **2025-05-24**
 
-  * fixed left padding on some button on mobile
+  * added CSS to handle mobile styling buttons 2 column
+  * bumped version to 0.2.0
+  
+* **2025-05-24**
+
+  * fixed left padding on some buttons on mobile
   * bumped version to 0.1.1
   
 * **2025-05-11**

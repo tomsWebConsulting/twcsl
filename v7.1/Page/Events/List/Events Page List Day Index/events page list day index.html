@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.1
+    Version       : 0.2.0
     
     SS Version    : 7.1
     
@@ -47,6 +47,27 @@
       
       }
       
+    @media screen and ( max-width : 767px ) {
+    
+      .twc-epldi .sqs-layout > .sqs-row > .sqs-col-12 .sqs-row {
+    
+        display : grid;
+        grid-template-columns : 1fr 1fr;
+        
+        }
+    
+      .sqs-row:after,
+      .sqs-row:before
+      
+        {
+        
+          content : unset;
+          display : unset;
+          
+          }
+          
+      }
+      
     </style>
     
   <script>
@@ -55,7 +76,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.2.0',
         
         s = `Events Page List Day Index v${ version }
         
