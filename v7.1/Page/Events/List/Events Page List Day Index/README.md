@@ -8,7 +8,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
 ### Version
 
- * 0.1.0
+ * 0.1.1
 
 #### SS Version
 
@@ -73,11 +73,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2024-04-28**
+* **2025-05-24**
 
-  * update to work with Form Block Wrapper Observe Changes v0.3.0
-  * bumped version to 0.3.0
-  -->
+  * fixed left padding on some button on mobile
+  * bumped version to 0.1.1
+  
 * **2025-05-11**
 
   * initial version
