@@ -54,7 +54,7 @@ Squarespace editor.
 
 * Find the Language / Region setting of the site below. Add code from one of the
   language files to Website > Pages > Custom Code > Code Injection > FOOTER.
-  Refer to [Per-page code injection][5] for details.
+  Refer to [Add code to code injection][5] for details.
   
   For example if the Language / Region setting is set to **English (United
   States)** you would install the code from the **customer account panel change
@@ -88,16 +88,16 @@ Squarespace editor.
     
 * Optional. If you want to style elements of the customer account panel add code
   from file **[customer account panel change style.html][9]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
   injection][5] for details. Read the code for any instructions within.
   
 * Optional. If you want to change options of the code add code from file
   **[customer account panel change options.html][10]** to Website > Pages >
-  Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][5]
-  for details. Read the code for any instructions within.
+  Custom Code > Code Injection > FOOTER. Refer to [Add code to code
+  injection][5] for details. Read the code for any instructions within.
   
 * Add code from file **[customer account panel change.html][11]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
   injection][5] for details. Read the code for any instructions within.
 
 ## Class Names
