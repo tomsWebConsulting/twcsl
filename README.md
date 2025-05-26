@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 393 effects. Each effect has it's own version number, code,
+twcsl contains 394 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -219,6 +219,8 @@ not necessarily designed to work together.
     
     * [Customer Account Panel Change](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change)
       
+      * [assets](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change/assets)
+        
     * [CAPC Language Translate](Element/Customer%20Account%20Panel/CAPC%20Language%20Translate)
       
     * [CAPC Account Settings Link](Element/Customer%20Account%20Panel/CAPC%20Account%20Settings%20Link)
