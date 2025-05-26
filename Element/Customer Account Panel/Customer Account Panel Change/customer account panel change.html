@@ -6,10 +6,11 @@
     
     License      : < https://tinyurl.com/s872fb68 >
     
-    Version      : 0.8.0
+    Version      : 0.9.0
     
     SS Versions  : 7.1, 7.0
     
+    v7.1
     Fluid
     Engine
     Compatible   : Not Applicable
@@ -18,69 +19,17 @@
                    
                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
+    no user serviceable parts below
+    
     -->
     
-  <x-twc-capc-style style="display : none;">
-  
-    [ optional, enter css here replacing square brackets ]
-    
-    </x-twc-capc-style>
-    
-  <script>
-  
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    twc.capc = ( ( self ) => { // initialize twc capc sub-module
-    
-      self
-      
-        .panelTitles = {
-        
-          account : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
-          
-          addressNew : '[ optional, enter address new panel title text here between single quotes replacing square brackets ]',
-          
-          addresses : '[ optional, enter addresses panel title text here between single quotes replacing square brackets ]',
-          
-          addressNewElement : '[ optional, enter account panel title text here between single quotes replacing square brackets ]',
-          
-          digitalProducts : '[ optional, enter digital products panel title text here between single quotes replacing square brackets ]',
-          
-          email : '[ optional, enter email panel title text here between single quotes replacing square brackets ]',
-          
-          order : '[ optional, enter order panel title text here between single quotes replacing square brackets ]',
-          
-          orders : '[ optional, enter orders panel title text here between single quotes replacing square brackets ]',
-          
-          passwordUpdate : '[ optional, enter password update panel title text here between single quotes replacing square brackets ]',
-          
-          payment : '[ optional, enter payment panel title text here between single quotes replacing square brackets ]',
-          
-          paymentMethodNew : '[ optional, enter payment new method panel title text here between single quotes replacing square brackets ]',
-          
-          profile : '[ optional, enter profile panel title text here between single quotes replacing square brackets ]',
-          
-          shipping : '[ optional, enter shipping panel title text here between single quotes replacing square brackets ]',
-          
-          };
-          
-      return self;
-      
-      } ) ( twc.capc || { } );
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <script>
   
     ( ( ) => {
     
       const
       
-        version = '0.8.0',
+        version = '0.9.0',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -98,6 +47,14 @@
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc capc sub-module
+      
+      twc.capc = ( ( self ) => self  ) ( twc.capc || { } );
+        
       twc.capc.callbacks =
       
         ( ( self ) => self ) ( twc.capc.callbacks || [ ] );
@@ -108,6 +65,70 @@
         
           flDebug = false,
           
+          codeKey = 'twc-capc';
+          
+        let
+        
+          selector
+          
+            =
+            
+            'script[ type^="application/vnd.'
+            
+            +
+            
+            `${ codeKey.replaceAll ( '-', '.' ) }+json; lang=" ]`,
+            
+          element = document
+          
+            .body
+            
+            .querySelector ( selector );
+            
+        // bail if no json
+        
+        if ( element === null ) {
+        
+          const s = `${ codeKey } no embedded JSON script tag`;
+          
+          console.error ( s );
+          
+          return;
+          
+          }
+          
+        let language;
+        
+        try {
+        
+          language
+          
+            =
+            
+            JSON
+            
+              .parse (
+            
+                element
+                
+                  .textContent
+                  
+                  .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                  
+                );
+                
+          } catch ( error ) {
+          
+            const s = `${ codeKey } error : `;
+            
+            console.error ( s, error );
+            
+            return;
+            
+            }
+            
+        const
+        
           accountFrameIdValue = 'accountFrame',
           
           bodyCallback = ( mutations ) => {
@@ -150,8 +171,6 @@
             
             },
             
-          codeKey = 'twc-capc',
-          
           dataPanelTypeAttributeName = 'data-panel-type',
           
           getAncestor = ( element, levels ) => {
@@ -169,20 +188,6 @@
               }
               
             return element;
-            
-            },
-            
-          languages = {
-          
-            'en-CA' : 'en',
-            
-            'en-GB' : 'en',
-            
-            'en-US' : 'en',
-            
-            'es-MX' : 'es',
-            
-            'ja-JP' : 'jp',
             
             },
             
@@ -226,22 +231,28 @@
                   
                     attrribute = `data-${ codeKey }`,
                     
-                    p = new RegExp ( '^\s+\[.+\]\s+$' ),
+                    isAdd
                     
-                    isAdd = dcmnt
-                    
-                      .head
+                      =
                       
-                      .querySelector ( `style[ ${ attrribute }` )
+                      css
                       
-                      ===
+                      !==
                       
-                      null
+                      undefined
                       
                       &&
                       
-                      ! p.test ( css );
+                      dcmnt
                       
+                        .head
+                        
+                        .querySelector ( `style[ ${ attrribute }` )
+                        
+                        ===
+                        
+                        null;
+                        
                   if ( ! isAdd ) return; // bail if no add
                   
                   const style = dcmnt
@@ -284,11 +295,9 @@
                 
               css = document
               
-                .getElementsByTagName ( `x-${ codeKey }-style` )
+                .querySelector ( `x-${ codeKey }-style` )
                 
-                [ 0 ]
-                
-                .textContent;
+                ?.textContent;
                 
             accountFrameElement
             
@@ -392,10 +401,8 @@
                   
                 ===
                 
-                languagesRoot
+                language
                  
-                  .en
-                  
                   .panels
                   
                   .addressNew
@@ -412,10 +419,8 @@
                   
                 ===
                 
-                languagesRoot
+                language
                 
-                  .en
-                  
                   .panels
                   
                   .address
@@ -480,10 +485,8 @@
               
                 ===
                 
-                languagesRoot
+                language
                 
-                  .en
-                  
                   .panels
                   
                   .order
@@ -580,10 +583,8 @@
               
                 ===
                 
-                languagesRoot
+                language
                 
-                  .en
-                  
                   .panels
                   
                   .paymentMethod
@@ -638,16 +639,10 @@
                 
                   .panelTitles
                   
-                  .account;
+                  ?.account;
                   
                 const classAdd = ( key ) => {
                 
-                  titleNew = options
-                  
-                    .panelTitles
-                    
-                    .account;
-                    
                   const selector = `[ href="/account/${ key }" ]`;
                   
                   element
@@ -710,7 +705,7 @@
                 
                   .panelTitles
                   
-                  .addresses;
+                  ?.addresses;
                   
                 const callback = ( element ) => {
                 
@@ -798,10 +793,8 @@
                 
               case isAddressNewPanel :
               
-                panelType = languagesRoot
+                panelType = language
                 
-                  .en
-                  
                   .panels
                   
                   .addressNew
@@ -814,7 +807,7 @@
                 
                   .panelTitles
                   
-                  .addressNew;
+                  ?.addressNew;
                   
                 break;
                 
@@ -876,7 +869,7 @@
                 
                   .panelTitles
                   
-                  .digitalProducts;
+                  ?.digitalProducts;
                   
                 const addClass = ( element, key ) => {
                 
@@ -1114,7 +1107,7 @@
                 
                   .panelTitles
                   
-                  .email;
+                  ?.email;
                   
                 // current
                 
@@ -1264,10 +1257,8 @@
                 
               case isOrderPanel : {
               
-                panelType = languagesRoot
+                panelType = language
                 
-                  .en
-                  
                   .panels
                   
                   .order
@@ -1280,7 +1271,7 @@
                 
                   .panelTitles
                   
-                  .order;
+                  ?.order;
                   
                 let summaryElement;
                 
@@ -1666,10 +1657,8 @@
                 
               case isOrderPaymentMethodPanel :
               
-                panelType = languagesRoot
+                panelType = language
                 
-                  .en
-                  
                   .panels
                   
                   .orderPaymentMethod
@@ -1682,7 +1671,7 @@
                 
                   .panelTitles
                   
-                  .paymentMethod;
+                  ?.paymentMethod;
                   
                 break;
                 
@@ -1696,7 +1685,7 @@
                 
                   .panelTitles
                   
-                  .shipping;
+                  ?.shipping;
                   
                 // shipping option
                 
@@ -1782,7 +1771,7 @@
                 
                   .panelTitles
                   
-                  .orders;
+                  ?.orders;
                   
                 const callback = ( element ) => {
                 
@@ -1836,7 +1825,7 @@
                 
                   .panelTitles
                   
-                  .passwordUpdate;
+                  ?.passwordUpdate;
                   
                 // current
                 
@@ -1922,10 +1911,8 @@
                 
               case isPaymentMethodNewPanel :
               
-                panelType = languagesRoot
+                panelType = language
                 
-                  .en
-                  
                   .panels
                   
                   .paymentMethodNew
@@ -1938,7 +1925,7 @@
                 
                   .panelTitles
                   
-                  .paymentMethodNew;
+                  ?.paymentMethodNew;
                   
                 // card details
                 
@@ -2026,10 +2013,8 @@
                 
               case isPaymentMethodPanel :
               
-                panelType = languagesRoot
+                panelType = language
                 
-                  .en
-                  
                   .panels
                   
                   .paymentMethod
@@ -2176,7 +2161,7 @@
                 
                   .panelTitles
                   
-                  .payment;
+                  ?.payment;
                   
                 const
                 
@@ -2310,7 +2295,7 @@
                 
                   .panelTitles
                   
-                  .profile;
+                  ?.profile;
                   
                 // name
                 
@@ -2512,7 +2497,11 @@
                 
                 &&
                 
-                ! p.test ( titleNew );
+                !
+                
+                p
+                
+                  .test ( titleNew );
                 
               if ( isTitleChange ) {
               
@@ -3054,10 +3043,8 @@
                     
                       dataPanelTypeAttributeName,
                       
-                      languagesRoot
+                      language
                       
-                        .en
-                        
                         .panels
                         
                         .address
@@ -3082,10 +3069,8 @@
                     
                       dataPanelTypeAttributeName,
                       
-                      languagesRoot
+                      language
                       
-                        .en
-                        
                         .panels
                         
                         .addressNew
@@ -3118,10 +3103,8 @@
                     
                       dataPanelTypeAttributeName,
                       
-                      languagesRoot
+                      language
                       
-                        .en
-                        
                         .panels
                         
                         .order
@@ -3144,10 +3127,8 @@
                     
                       dataPanelTypeAttributeName,
                       
-                      languagesRoot
+                      language
                       
-                        .en
-                        
                         .panels
                         
                         .paymentMethod
@@ -3172,10 +3153,8 @@
                     
                       dataPanelTypeAttributeName,
                       
-                      languagesRoot
+                      language
                       
-                        .en
-                        
                         .panels
                         
                         .paymentMethodNew
@@ -3214,12 +3193,6 @@
             
           rootObserver = new MutationObserver ( rootCallback ),
           
-          scriptLanguageSelector = 'script[ type^="application/vnd.' +
-          
-            `${ codeKey.replaceAll ( '-', '.' ) }+json; lang=" ]`,
-            
-          selector = `#${ accountFrameIdValue }`,
-          
           xPathEvaluate = ( xPathExpression, contextNode ) => {
           
             const xPathResults = document
@@ -3240,572 +3213,22 @@
                 
             return xPathResults;
             
-            },
-            
-          element = document
-          
-            .querySelector ( selector ),
-            
-          getLanguage = ( language ) => {
-          
-            language = languages [ language ];
-            
-            if ( typeof language === 'string' )
-            
-              language = languagesRoot [ language ];
-              
-            return language;
-            
-            },
-            
-          languagesRoot = {
-          
-            en : {
-            
-              panels : {
-              
-                account : {
-                
-                  Title : 'Account',
-                  
-                  },
-                  
-                address : {
-                
-                  deleteAddress : 'Delete Address',
-                  
-                  panelType : 'address',
-                  
-                  },
-                  
-                addresses : {
-                
-                  Title : 'Addresses',
-                  
-                  },
-                  
-                addressNew : {
-                
-                  panelType : 'address new',
-                  
-                  Title : 'New Address',
-                  
-                  },
-                  
-                digitalProducts : {
-                
-                  search : 'Search',
-                  
-                  Title : 'Digital Products',
-                  
-                  },
-                  
-                email : {
-                
-                  confirmNew : 'Confirm New',
-                  
-                  current : 'Current',
-                  
-                  'new' : 'New',
-                  
-                  password : 'Password',
-                  
-                  Title : 'Email',
-                  
-                  },
-                  
-                order : {
-                
-                  items : 'Items',
-                  
-                  orderDate : 'Order Date',
-                  
-                  panelType : 'order',
-                  
-                  shipping : 'Shipping',
-                  
-                  status : 'Status',
-                  
-                  subtotal : 'Subtotal',
-                  
-                  summary : 'Summary',
-                  
-                  Title : 'Order ',
-                  
-                  tax : 'Tax',
-                  
-                  total : 'Total',
-                  
-                  },
-                  
-                orderPaymentMethod : {
-                
-                  panelType : 'order payment method',
-                  
-                  Title : 'Payment Method',
-                  
-                  },
-                  
-                orderShipping : {
-                
-                  shippingAddress : 'Shipping Address',
-                  
-                  shippingOption : 'Shipping Option',
-                  
-                  Title : 'Shipping',
-                  
-                  },
-                  
-                orders : {
-                
-                  Title : 'Orders',
-                  
-                  },
-                  
-                passwordUpdate : {
-                
-                  current : 'Current',
-                  
-                  'new' : 'New',
-                  
-                  Title : 'Update Password',
-                  
-                  },
-                  
-                payment : {
-                
-                  'default' : 'Default',
-                  
-                  other : 'Other',
-                  
-                  Title : 'Payment',
-                  
-                  },
-                  
-                paymentMethod : {
-                
-                  billingAddress : 'Billing Address',
-                  
-                  cardDetails : 'Card Details',
-                  
-                  deletePaymentMethod : 'Delete Payment Method',
-                  
-                  panelType : 'payment method',
-                  
-                  Title : 'Payment Method',
-                  
-                  },
-                  
-                paymentMethodNew : {
-                
-                  billingAddress : 'Billing Address',
-                  
-                  cardDetails : 'Card Details',
-                  
-                  panelType : 'payment method new',
-                  
-                  Title : 'New Payment Method',
-                  
-                  },
-                  
-                profile : {
-                
-                  password : 'Password',
-                  
-                  Title : 'Profile',
-                  
-                  },
-                  
-                }
-                
-              },
-              
-            es : {
-            
-              panels : {
-              
-                account : {
-                
-                  Title : 'Cuenta',
-                  
-                  },
-                  
-                address : {
-                
-                  deleteAddress : 'Borrar dirección',
-                  
-                  panelType : 'address',
-                  
-                  },
-                  
-                addresses : {
-                
-                  Title : 'Direcciones',
-                  
-                  },
-                  
-                addressNew : {
-                
-                  panelType : 'address new',
-                  
-                  Title : 'Nueva dirección',
-                  
-                  },
-                  
-                digitalProducts : {
-                
-                  search : 'Buscar',
-                  
-                  Title : 'Productos digitales',
-                  
-                  },
-                  
-                email : {
-                
-                  confirmNew : 'Confirmar el nuevo',
-                  
-                  current : 'Actual',
-                  
-                  'new' : 'Nuevo',
-                  
-                  password : 'Contraseña',
-                  
-                  Title : 'Correo electrónico',
-                  
-                  },
-                  
-                order : {
-                
-                  items : 'Elementos',
-                  
-                  orderDate : 'Fecha de pedido',
-                  
-                  panelType : 'order',
-                  
-                  shipping : 'Envío',
-                  
-                  status : 'Estado',
-                  
-                  subtotal : 'Subtotal',
-                  
-                  summary : 'Resumen',
-                  
-                  Title : 'Order ',
-                  
-                  tax : 'Impuestos',
-                  
-                  total : 'Total',
-                  
-                  },
-                  
-                orderPaymentMethod : {
-                
-                  panelType : 'order payment method',
-                  
-                  Title : 'Método de pago',
-                  
-                  },
-                  
-                orderShipping : {
-                
-                  shippingAddress : 'Dirección de envío',
-                  
-                  shippingOption : 'Opción de envío',
-                  
-                  Title : 'Envío',
-                  
-                  },
-                  
-                orders : {
-                
-                  Title : 'Pedidos',
-                  
-                  },
-                  
-                passwordUpdate : {
-                
-                  current : 'Actual',
-                  
-                  'new' : 'Nuevo',
-                  
-                  Title : 'Actualizar contraseña',
-                  
-                  },
-                  
-                payment : {
-                
-                  'default' : 'Predeterminado',
-                  
-                  other : 'Otros',
-                  
-                  Title : 'Pago',
-                  
-                  },
-                  
-                paymentMethod : {
-                
-                  billingAddress : 'Dirección de facturación',
-                  
-                  cardDetails : 'Datos de la tarjeta',
-                  
-                  deletePaymentMethod : 'Eliminar método de pago',
-                  
-                  panelType : 'payment method',
-                  
-                  Title : 'Método de pago',
-                  
-                  },
-                  
-                paymentMethodNew : {
-                
-                  billingAddress : 'Dirección de facturación',
-                  
-                  cardDetails : 'Datos de la tarjeta',
-                  
-                  panelType : 'payment method new',
-                  
-                  Title : 'Nuevo método de pago',
-                  
-                  },
-                  
-                profile : {
-                
-                  password : 'Contraseña',
-                  
-                  Title : 'Perfil',
-                  
-                  },
-                  
-                }
-                
-              },
-              
-            jp : {
-            
-              panels : {
-              
-                account : {
-                
-                  Title : 'アカウント',
-                  
-                  },
-                  
-                address : {
-                
-                  deleteAddress : '住所を削除',
-                  
-                  panelType : 'address',
-                  
-                  },
-                  
-                addresses : {
-                
-                  Title : '住所',
-                  
-                  },
-                  
-                addressNew : {
-                
-                  panelType : 'address new',
-                  
-                  Title : '新しい住所',
-                  
-                  },
-                  
-                digitalProducts : {
-                
-                  search : '検索',
-                  
-                  Title : 'デジタル商品',
-                  
-                  },
-                  
-                email : {
-                
-                  confirmNew : '新規メ⁠ールアドレスの確認',
-                  
-                  current : '現在',
-                  
-                  'new' : '新規',
-                  
-                  password : 'パスワ⁠ード',
-                  
-                  Title : 'メ⁠ールアドレス',
-                  
-                  },
-                  
-                order : {
-                
-                  items : 'アイテム',
-                  
-                  orderDate : '注文日',
-                  
-                  panelType : 'order',
-                  
-                  shipping : '配送料',
-                  
-                  status : 'ステ⁠ータス',
-                  
-                  subtotal : '小計',
-                  
-                  summary : '概要',
-                  
-                  Title : '注文 ',
-                  
-                  tax : '税金',
-                  
-                  total : '合計',
-                  
-                  },
-                  
-                orderPaymentMethod : {
-                
-                  panelType : 'order payment method',
-                  
-                  Title : '支払い方法',
-                  
-                  },
-                  
-                orderShipping : {
-                
-                  shippingAddress : '配送先の住所',
-                  
-                  shippingOption : '配送オプシ⁠ョン',
-                  
-                  Title : '配送料',
-                  
-                  },
-                  
-                orders : {
-                
-                  Title : '注文',
-                  
-                  },
-                  
-                passwordUpdate : {
-                
-                  current : '現在',
-                  
-                  'new' : '新規',
-                  
-                  Title : 'パスワ⁠ードを更新',
-                  
-                  },
-                  
-                payment : {
-                
-                  'default' : '既定',
-                  
-                  other : 'その他',
-                  
-                  Title : 'お支払い',
-                  
-                  },
-                  
-                paymentMethod : {
-                
-                  billingAddress : '請求先住所',
-                  
-                  cardDetails : 'カ⁠ード詳細',
-                  
-                  deletePaymentMethod : '支払い方法を削除',
-                  
-                  panelType : 'payment method',
-                  
-                  Title : '支払い方法',
-                  
-                  },
-                  
-                paymentMethodNew : {
-                
-                  billingAddress : '請求先住所',
-                  
-                  cardDetails : 'カ⁠ード詳細',
-                  
-                  panelType : 'payment method new',
-                  
-                  Title : '新しい支払い方法',
-                  
-                  },
-                  
-                profile : {
-                
-                  password : 'パスワ⁠ード',
-                  
-                  Title : 'プロフ⁠ィ⁠ール',
-                  
-                  },
-                  
-                }
-                
-              },
-              
-            },
-            
-          scriptLanguageElement = document
-          
-            .head
-            
-            .querySelector ( scriptLanguageSelector );
+            };
             
         let
         
           dcmnt,
           
           userProfilePageRootElement;
+          
+        selector = `#${ accountFrameIdValue }`;
         
-        if ( scriptLanguageElement !== null ) {
+        element = document
         
-          const languageCode
+          .body
           
-            =
-            
-            scriptLanguageElement
-            
-              .getAttribute ( 'type' )
-              
-              .split ( '; ' )
-              
-              [ 1 ]
-              
-              .split ( '=' )
-              
-              [ 1 ];
-              
-          let map
+          .querySelector ( selector );
           
-            =
-            
-            scriptLanguageElement
-            
-              .textContent
-              
-              .replace ( /\/\*[^]*?\*\//g, '' ); // remove * comments
-              
-          map = JSON.parse ( map );
-          
-          languages
-          
-            [ languageCode ]
-            
-            =
-            
-            map;
-            
-          }
-          
-        const language = getLanguage (
-        
-          Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .website
-            
-            .language
-            
-          );
-        
         /*
         
           if the account frame is already on the DOM, load. watch for it to
