@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 394 effects. Each effect has it's own version number, code,
+twcsl contains 395 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -547,6 +547,8 @@ not necessarily designed to work together.
       
     * [Header](v7.1/Element/Header)
       
+      * [Header Proportional Space Change Desktop](v7.1/Element/Header/Header%20Proportional%20Space%20Change%20Desktop)
+        
       * [Header CTA Element Left Desktop](v7.1/Element/Header/Header%20CTA%20Element%20Left%20Desktop)
         
       * [Header Site Title Add](v7.1/Element/Header/Header%20Site%20Title%20Add)
