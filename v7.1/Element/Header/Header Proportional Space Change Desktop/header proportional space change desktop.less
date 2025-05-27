@@ -1,0 +1,57 @@
+/* begin TWC Header Proportional Space Change Desktop */
+
+  /*
+  
+    header proportional space change desktop
+    
+    License      : < https://tinyurl.com/s872fb68 >
+    
+    Version      : 0.1.0
+    
+    SS Version   : 7.1
+    
+    Fluid
+    Engine
+    Compatible   : Not Applicable
+    
+    Copyright    : 2025 Thomas Creedon
+                   
+                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  #header {
+  
+    --twc-hpsc-width : 20%; // value will depend on the content of the header
+    
+    }
+    
+  // do not change anything below, there be the borg here
+  
+  .header-title-nav-wrapper {
+  
+    flex : 1 0 ~"calc( 100% - var( --twc-hpsc-width ) )";
+    
+    }
+  
+  .header-layout-nav-center .header-title {
+    
+    flex : 1 1 var( --twc-hpsc-width );
+    width : var( --twc-hpsc-width );
+    
+    }
+  
+  .header-layout-nav-center .header-actions {
+  
+    width : var( --twc-hpsc-width );
+    
+    }
+  
+  .header-layout-nav-center .header-nav {
+  
+    flex : 1 1 ~"calc( 100% - ( var( --twc-hpsc-width ) * 2 ) )";
+    width : ~"calc( 100% - ( var( --twc-hpsc-width ) * 2 ) )";
+    
+    }
+    
+  /* end TWC Header Proportional Space Change Desktop */
