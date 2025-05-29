@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Reorder products of All category of Store page.
+Open link in a popup window.
 
 ### Version
 
