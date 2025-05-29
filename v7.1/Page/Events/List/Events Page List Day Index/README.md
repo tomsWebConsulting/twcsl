@@ -8,7 +8,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
 ### Version
 
- * 0.2.0
+ * 0.2.1
 
 #### SS Version
 
@@ -73,6 +73,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-05-29**
+
+  * added CSS to handle mobile styling buttons below 496px, 1 column
+  * bumped version to 0.2.1
+  
 * **2025-05-24**
 
   * added CSS to handle mobile styling buttons 2 column
