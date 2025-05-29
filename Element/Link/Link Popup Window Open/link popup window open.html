@@ -1,0 +1,220 @@
+<!-- begin TWC Link Popup Window Open -->
+
+  <!--
+  
+    link popup window open
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Appllicable
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Link Popup Window Open v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            const callback = ( event ) => {
+            
+              const
+              
+                element
+                
+                  =
+                  
+                  event
+                  
+                    .currentTarget,
+                    
+                popupWindow
+                
+                  =
+                  
+                  window
+                 
+                   .open (
+                   
+                     element
+                     
+                       .getAttribute ( 'href' ),
+                       
+                     element
+                     
+                       .href,
+                       
+                     element [ codeKey ]
+                     
+                     );
+                     
+              if ( popupWindow )
+              
+                event.preventDefault ( );
+                
+              };
+              
+            let href = element [ codeKey ];
+            
+            const value = href
+            
+              [ 1 ]
+              
+              .get ( codeKey );
+              
+            if ( ! value ) return; // bail if no key
+            
+            element [ codeKey ] = value;
+            
+            // update href
+            
+            {
+            
+              href
+              
+                [ 1 ]
+                
+                .delete ( codeKey );
+                
+              href
+              
+                [ 1 ]
+                
+                =
+                
+                href
+                
+                  [ 1 ]
+                  
+                  .toString ( );
+                  
+              if ( href [ 1 ] )
+              
+                href = href.join ( '#' );
+                
+                else
+                
+                  href = href [ 0 ];
+                  
+              element
+              
+                .setAttribute ( 'href', href );
+                
+              }
+              
+            element
+            
+              .addEventListener ( 'click', callback );
+              
+            },
+            
+          codeKey = 'twc-lpwo',
+          
+          hasFragementCallback = ( element ) => {
+          
+            let href = element
+            
+              .getAttribute ( 'href' )
+              
+              .split ( '#' );
+              
+            // bail if no fragment
+            
+            if ( href [ 1 ] === undefined ) return false;
+            
+            element [ codeKey ] = href;
+            
+            return true;
+            
+            },
+            
+          hasFragementDirectiveCallback = ( element ) => {
+          
+            const p = new URLSearchParams (
+            
+              element [ codeKey ] [ 1 ]
+              
+              );
+              
+            // bail if no fragment directive
+            
+            if ( ! p.has ( codeKey ) ) {
+            
+              delete element [ codeKey ];
+              
+              return false;
+              
+              }
+              
+            element [ codeKey ] [ 1 ] = p;
+            
+            return true;
+            
+            },
+            
+          selector = `a[ href*="${ codeKey }=" ]`;
+          
+          [
+          
+            ...
+            
+            document
+            
+              .body
+              
+              .querySelectorAll ( selector )
+              
+            ]
+            
+            .filter ( e => e.href.includes ( '#' ) ) // has hash character
+            
+            .filter ( hasFragementCallback )
+            
+            .filter ( hasFragementDirectiveCallback )
+            
+            .forEach ( callback );
+            
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Link Popup Window Open -->
