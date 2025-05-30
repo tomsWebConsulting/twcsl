@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.1
+    Version       : 0.2.2
     
     SS Version    : 7.1
     
@@ -26,15 +26,9 @@
     
   <style>
   
-    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row + .sqs-row .sqs-block:not( .float ):first-child {
+    body:not( .sqs-is-page-editing ).primary-button-shape-oval #siteWrapper.site-wrapper .twc-epldi .sqs-button-element--primary {
     
-      padding-top : 0;
-      
-      }
-      
-    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row .sqs-block:not( .float ):not( .sqs-feature-gated-wrapper ):first-child:last-child {
-    
-      padding-bottom : 17px;
+      --primary-button-padding-x : 0;
       
       }
       
@@ -44,6 +38,18 @@
       gap : 0.25em;
       justify-content : center;
       width : 100%;
+      
+      }
+      
+    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row + .sqs-row .sqs-block:not( .float ):first-child {
+    
+      padding-top : 0;
+      
+      }
+      
+    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row .sqs-block:not( .float ):not( .sqs-feature-gated-wrapper ):first-child:last-child {
+    
+      padding-bottom : 17px;
       
       }
       
@@ -76,7 +82,7 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.2.2',
         
         s = `Events Page List Day Index v${ version }
         
