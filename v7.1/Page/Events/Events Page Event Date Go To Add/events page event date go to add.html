@@ -1,0 +1,570 @@
+<!-- begin TWC Events Page Event Date Go To Add -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        events page event date go to add
+        
+        License     : < https://tinyurl.com/s872fb68 >
+        
+        Version     : 0.1.0
+        
+        SS Version  : 7.1
+        
+        Fluid
+        Engine
+        Compatible  : Not Applicable
+        
+        Note        : this effect is only active in SS Preview
+        
+        Copyright   : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Events Page Event Date Go To Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      if ( window.frameElement === null ) return; // bail if not in preview
+      
+      const callback = ( event ) => {
+      
+        const
+        
+          addUi = ( element ) => {
+          
+            const
+            
+              html = `
+              
+                <div class="${ codeKey }">
+                
+                  <form>
+                  
+                    <p class="${ codeKey }_error">
+                    
+                      <svg class="twc-${ codeKey }_error-icon" height="15" width="15.000004" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                      
+                        <g>
+                        
+                          <ellipse cx="6.7762651" cy="7.1964674" rx="6.2363238" ry="6.2375913" style="fill : none; stroke : #ffffff; stroke-width : 1.52601; stroke-linecap : round; stroke-dasharray : none;" transform="matrix( 0.99959472, -0.02846755, 0.03147117, 0.99950466, 0,0 )">
+                          
+                            </ellipse>
+                            
+                          <path d="M 7,2.7928552 V 8.839314 8.8595222" style="fill : #ffffff; stroke : #ffffff; stroke-width:1.58667; stroke-linecap : butt; stroke-linejoin : miter; stroke-dasharray : none; stroke-opacity :1;">
+                          
+                            </path>
+                            
+                          <path d="m 7,9.8 v 1.48832 0.005" style="fill : #ffffff; stroke : #ffffff; stroke-width : 1.58667; stroke-linecap:butt; stroke-linejoin : miter; stroke-dasharray : none; stroke-opacity : 1;">
+                          
+                            </path>
+                            
+                          </g>
+                          
+                        </svg>
+                        
+                      Error.
+                      
+                      </p>
+                      
+                    <fieldset class="${ codeKey }_inputs">
+                    
+                     <div>
+                      
+                        <input class="year" min="1970" name="year" placeholder="YYYY" type="number" />
+                        
+                        <label class="label" for="year">
+                        
+                          YYYY
+                          
+                          </label>
+                          
+                        </div>
+                        
+                      <div>
+                      
+                        <input class="month" min="1" max="12" placeholder="MM" name="month" type="number" />
+                        
+                        <label class="label" for="month">
+                        
+                          MM
+                          
+                          </label>
+                          
+                        </div>
+                        
+                      <div>
+                      
+                        <input class="day" min="1" max="31" placeholder="DD" name="day" type="number" />
+                        
+                        <label class="label" for="day">
+                        
+                          DD
+                          
+                          </label>
+                          
+                        </div>
+                        
+                      <div>
+                      
+                        <input type="submit" value="Go To" />
+                        
+                        <div>
+                        
+                          </div>
+                          
+                        </div>
+                          
+                       </fieldset>
+                      
+                    </form>
+                    
+                  </div>
+                  
+                `,
+                
+              style = `
+              
+                <style id="${ codeKey }" type="text/css">
+                
+                  .${ codeKey } {
+            
+                    margin-top : 11px; 
+                    
+                    }
+                    
+                  .${ codeKey }_error {
+                  
+                    align-items : flex-start;
+                    background-color : #ce2c30;
+                    color : #fff;
+                    column-gap : 10px;
+                    display : none;
+                    font-size : 14px;
+                    font-weight : 400;
+                    padding : 6px 10px;
+                    
+                    }
+                    
+                  .${ codeKey }_error--show {
+                  
+                    display : flex;
+                    
+                    }
+                    
+                  .${ codeKey }_error-icon {
+                  
+                    display : block;
+                    flex-shrink : 0;
+                    margin : auto 0;
+                    
+                    }
+                    
+                  .${ codeKey }_inputs {
+                  
+                    border : none;
+                    display : flex;
+                    gap : 1em;
+                    justify-content : center;
+                    padding-block : unset;
+                    padding-inline : unset;
+                    
+                    }
+                    
+                  .${ codeKey }_inputs input {
+                  
+                    background-color : #f5f5f5;
+                    padding : 5px 10px;
+                    width : 3em;
+                    
+                    }
+                    
+                  .${ codeKey }_inputs label {
+            
+                    display : block;
+                    padding-left : 10px;
+                    
+                    }
+                    
+                  .${ codeKey }_inputs input:first-child {
+                  
+                    width : 4em;
+                    
+                    }
+                    
+                  .${ codeKey }_inputs input[ type = "submit" ] {
+            
+                    border : 1px solid;
+                    border-radius : 10px;
+                    width : 5em;
+                    
+                    }
+                    
+                  </style>
+                  
+                `;
+                
+            let selector = `style[ id = "${ codeKey }" ]`;
+            
+            // style
+            
+            {
+            
+              const styleElement = dcmnt
+                
+                  .querySelector ( selector );
+                  
+              if ( styleElement !== null )
+              
+                styleElement.remove ( );
+                
+              dcmnt
+              
+                .head
+                
+                .insertAdjacentHTML ( 'beforeend', style );
+                
+              }
+              
+            // html
+            
+            element
+            
+              .insertAdjacentHTML ( 'afterend', html );
+              
+            selector =
+            
+              `.${ codeKey }_inputs input[ type = "submit" ]`;
+              
+            dcmnt
+            
+              .body
+              
+              .querySelector ( selector )
+              
+              .addEventListener ( 'click', goTo );
+              
+            },
+            
+          bodyCallback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              // bail if no added node
+              
+              if ( ! mutation.addedNodes.length ) return false;
+              
+              const xpath = `.//p [ . = 'Event Settings' ]`;
+              
+              let element = mutation.addedNodes [ 0 ];
+              
+              element = dcmnt
+              
+                .evaluate ( xpath, element, null,
+                
+                  XPathResult.FIRST_ORDERED_NODE_TYPE, null )
+                  
+                .singleNodeValue;
+                
+              if ( element === null ) return; // bail if no element of interest
+              
+              element = element
+              
+                .closest ( '[ role="dialog" ]' )
+                
+                .querySelector ( '[ class^="Transition-container-" ]' );
+                
+              if ( element === null ) return false; // bail if no container
+              
+              // start listening for changes in element
+              
+              containerObserver.observe ( element, containerConfig );
+              
+              };
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          bodyConfig = {
+          
+            childList : true,
+            
+            subtree : true
+            
+            },
+            
+          bodyObserver = new MutationObserver ( bodyCallback ),
+          
+          codeKey = 'twc-epedgta',
+          
+          containerCallback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              // bail if no added node
+              
+              if ( ! mutation.addedNodes.length ) return false;
+              
+              let element = mutation.addedNodes [ 0 ];
+              
+              if ( element.nodeType != 1 ) return; // bail if not element
+              
+              const
+              
+                xpath = `.//span [ . = 'Date and Time' ]`,
+                
+                panelElement
+                
+                  =
+                  
+                  element
+                  
+                    .closest ( '[ class^="Transition-panel-" ]' ),
+                    
+                isCalendar
+                
+                  =
+                  
+                  !!
+                  
+                  dcmnt
+                  
+                    .evaluate (
+                    
+                      xpath,
+                      
+                      panelElement,
+                      
+                      null,
+                      
+                      XPathResult.FIRST_ORDERED_NODE_TYPE,
+                      
+                      null
+                      
+                      )
+                      
+                    .singleNodeValue;
+                    
+              if ( ! isCalendar ) return; // bail if no calendar
+              
+              element = element
+              
+                .querySelector ( '[ role = "group" ]' )
+                
+              if ( ! element ) return; // bail if no element
+              
+              addUi ( element );
+              
+              };
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          containerConfig = {
+          
+            childList : true,
+            
+            subtree : true
+            
+            },
+            
+          containerObserver = new MutationObserver ( containerCallback ),
+          
+          dcmnt = parent.document
+          
+          goTo = ( event ) => {
+          
+            event.preventDefault ( );
+            
+            const
+            
+              errorClassName = `${ codeKey }_error`,
+            
+              errowShowClassName = `${ errorClassName }--show`,
+              
+              showError = ( message ) => {
+              
+                errorElement
+                
+                  .childNodes [ 2 ]
+                  
+                  .textContent = message;
+                  
+                errorElement
+                
+                  .classList
+                  
+                  .add ( errowShowClassName );
+                  
+                };
+                
+            let
+            
+              b,
+              
+              d = [
+              
+                ...
+                
+                event
+                
+                  .target
+                  
+                  .closest ( `.${ codeKey }_inputs` )
+                  
+                  .querySelectorAll ( 'input[ type = "number" ]' )
+                  
+                ]
+                
+                .map (
+                
+                  e => e.value.padStart ( 2, '0' )
+                  
+                  )
+                  
+                .join ( '-' )
+                
+                +
+                
+                'T00:00:00-08:00',
+                
+              s,
+              
+              selector = `.${ errorClassName }`;
+              
+            const errorElement = dcmnt
+            
+              .querySelector ( selector );
+              
+            try {
+            
+              d = new Date ( d );
+              
+              const isInvalidDate = isNaN (
+              
+                d.getTime ( )
+                
+                );
+                
+              if ( isInvalidDate ) throw null;
+              
+              } catch ( error ) {
+              
+                s = 'The date go to is not valid.';
+                
+                showError ( s );
+                
+                return; // bail not valid date
+                
+                }
+                
+            b = d
+            
+              <
+              
+              new Date ( '1970-01-01T00:00:00-08:00' );
+              
+            if ( b ) {
+            
+              s = 'The date go to is less than 1970 01 01.';
+              
+              showError ( s );
+              
+              return; // bail not valid date
+              
+              }
+              
+            d = d
+            
+              .valueOf ( );
+              
+            selector = '[ data-value ][ role = "button" ]';
+            
+            const
+            
+              element = [
+              
+                ...
+                
+                dcmnt
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                ]
+                
+                .slice ( -1 )
+                
+                [ 0 ],
+                
+              dataValue = element
+              
+                .getAttribute ( 'data-value' );
+                
+            element
+            
+              .setAttribute ( 'data-value', d );
+              
+            element
+            
+              .click ( );
+              
+            element
+            
+              .setAttribute ( 'data-value', dataValue );
+              
+            errorElement
+            
+              .classList
+              
+              .remove ( errowShowClassName );
+              
+            };
+            
+        // start listening for changes in parent document body
+        
+        bodyObserver.observe ( dcmnt.body, bodyConfig );
+        
+        };
+        
+      // callback ( );
+      
+      //
+      
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end Events Page Event Date Go To Add -->
