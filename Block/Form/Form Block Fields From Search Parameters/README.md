@@ -8,7 +8,7 @@ Fill form fields from search query parameters of the page URL.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Versions
 
@@ -100,6 +100,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-06-02**
+
+  * fixed select fields not storing values, inputChangeTrigger
+  * bumped version to 0.3.1
+ 
 * **2025-03-03**
 
   * update to work with Form Block Wrapper Observe Changes v0.4.0

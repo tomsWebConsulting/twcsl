@@ -4,7 +4,7 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.3.0
+  Version       : 0.3.1
   
   SS Versions   : 7.1, 7.0
   
@@ -49,7 +49,7 @@
     
       const
       
-        version = '0.3.0',
+        version = '0.3.1',
         
         s = `
         
@@ -115,351 +115,357 @@
         
       twc.fbwoc.callbacks = ( ( self ) => {
       
+        const callback = ( element ) => {
+        
+          const hasClass = element
+          
+            .classList
+            
+            .contains ( 'react-form-contents' );
+          
+          if ( ! hasClass ) return; // bail if not react form
+          
+          const
+          
+            callback = ( element ) => {
+            
+              let text = element.textContent;
+              
+              const
+              
+                re = new RegExp ( `${ codeKey } : (.+)[\n]?`, 's' ),
+                
+                m = text.match ( re );
+                
+              if ( m === null ) return; // continue
+              
+              const
+              
+                formItemElement = element
+                
+                  .closest ( '.form-item' ),
+                    
+                searchParameterKeyLabelMap = m [ 1 ]
+                
+                  .split ( ', ' )
+                  
+                  .map ( s => s.split ( '=' ) ),
+                  
+                skipFields = [
+                
+                  'checkbox',
+                  
+                  'radio',
+                  
+                  'survey',
+                  
+                  ];
+                
+              text = text
+              
+                .replace ( m [ 0 ], '' )
+                
+                .trim ( );
+                
+              if ( text ) // set description or remove
+              
+                element.textContent = text;
+                
+                else
+                
+                  element.remove ( );
+                  
+              const isSkipField = [
+              
+                ...
+                
+                formItemElement
+                
+                  .classList
+                  
+                ]
+              
+                .some ( c => skipFields.indexOf ( c ) >= 0 );
+              
+              if ( isSkipField ) return; // continue
+              
+              const searchParams =
+              
+                new URLSearchParams ( location.search );
+                
+              for ( const [ key, caption ] of searchParameterKeyLabelMap ) {
+              
+                const b = ! searchParams.has ( key );
+                
+                if ( b ) continue; // continue if no key
+                
+                const selector = 'input, select, textarea';
+                
+                let
+                
+                  input,
+                  
+                  value = searchParams.get ( key );
+                  
+                if ( caption === undefined )
+                
+                  input = formItemElement;
+                  
+                  else {
+                  
+                    const
+                    
+                      xPathExpression = `
+                      
+                        .//div [
+                        
+                          contains (
+                          
+                            concat (
+                            
+                              ' ',
+                              
+                              normalize-space ( @class ),
+                              
+                              ' '
+                              
+                              ),
+                              
+                            ' caption-text '
+                            
+                            )
+                            
+                            and
+                            
+                            contains (
+                            
+                              .,
+                              
+                              
+                              '${ caption }'
+                              
+                              )
+                              
+                            ]
+                            
+                        `,
+                        
+                      xPathResults =
+                      
+                        xPathEvaluate ( xPathExpression, formItemElement );
+                        
+                    if ( ! xPathResults.snapshotLength ) return; // continue
+                    
+                    input = xPathResults
+                    
+                      .snapshotItem ( 0 )
+                      
+                      .closest ( '.field' )
+                      
+                    }
+                    
+                input = input
+                
+                  .querySelector ( selector );
+                  
+                value = decodeURIComponent ( value );
+                
+                inputChangeTrigger ( input, value );
+                
+                }
+                
+              },
+              
+            fieldListElement = element
+            
+              .querySelector ( '.field-list' ),
+              
+            inputChangeTrigger = ( node, value = '' ) => {
+            
+              /*
+              
+                based on code by Dan G < https://tinyurl.com/4hes79u8 > and
+                others
+                
+                */
+                
+              const
+              
+                inputTypes = [
+                
+                  HTMLInputElement,
+                  
+                  HTMLSelectElement,
+                  
+                  HTMLTextAreaElement
+                  
+                  ],
+                  
+                isInputType = inputTypes
+                
+                  .some ( type => node instanceof type );
+                  
+              /*
+              
+                only process the change on elements we know have a value setter in their
+                constructor
+                
+                */
+                
+              if ( ! isInputType ) return; // bail if not input type
+              
+              const
+              
+                isSelect = node instanceof inputTypes [ 1 ],
+                
+                eventType = isSelect ? 'change' : 'input',
+                
+                event = new Event ( eventType, { bubbles : true } ),
+                
+                setValue = Object
+                
+                  .getOwnPropertyDescriptor ( node.__proto__, 'value' )
+                  
+                  ?.set;
+                  
+              if ( isSelect )
+              
+                node.value = value;
+                
+                else {
+                
+                  if ( ! setValue ) return; // bail if no setValue
+                  
+                  setValue.call ( node, value );
+                  
+                  }
+                  
+              node.dispatchEvent ( event );
+              
+              },
+              
+            xPathEvaluate = ( xPathExpression, contextNode ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              },
+              
+            xPathExpression = `
+            
+              .//p[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' description '
+                  
+                  )
+                  
+                  and
+                  
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey } : '
+                    
+                    )
+                    
+                  ]
+                  
+              `,
+              
+            xPathResults = xPathEvaluate ( xPathExpression, element );
+            
+          for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+          
+            const element = xPathResults.snapshotItem ( i );
+            
+            callback ( element );
+            
+            }
+            
+          // hide show unregister
+          
+          {
+          
+            const siteWrapperElement = document
+            
+              .querySelector ( '#siteWrapper' );
+              
+            siteWrapperElement
+            
+              .style
+              
+              .setProperty ( `--${ codeKey }`, 'visible' );
+              
+            twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .pop ( `--${ codeKey }` );
+              
+            const l = twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length;
+              
+            if ( ! l )
+            
+              siteWrapperElement
+              
+                .style
+                
+                .setProperty ( '--twc-sqs-block-form-description-display',
+                
+                  'unset' );
+                  
+            }
+            
+          };
+          
         self
         
           [ 'twcFbffsp' ]
           
           =
           
-          ( element ) => {
+          callback;
           
-            const hasClass = element
-            
-              .classList
-              
-              .contains ( 'react-form-contents' );
-            
-            if ( ! hasClass ) return; // bail if not react form
-            
-            const
-            
-              callback = ( element ) => {
-              
-                let text = element.textContent;
-                
-                const
-                
-                  re = new RegExp ( `${ codeKey } : (.+)[\n]?`, 's' ),
-                  
-                  m = text.match ( re );
-                  
-                if ( m === null ) return; // continue
-                
-                const
-                
-                  formItemElement = element
-                  
-                    .closest ( '.form-item' ),
-                      
-                  searchParameterKeyLabelMap = m [ 1 ]
-                  
-                    .split ( ', ' )
-                    
-                    .map ( s => s.split ( '=' ) ),
-                    
-                  skipFields = [
-                  
-                    'checkbox',
-                    
-                    'radio',
-                    
-                    'survey',
-                    
-                    ];
-                  
-                text = text
-                
-                  .replace ( m [ 0 ], '' )
-                  
-                  .trim ( );
-                  
-                if ( text ) // set description or remove
-                
-                  element.textContent = text;
-                  
-                  else
-                  
-                    element.remove ( );
-                    
-                const isSkipField = [
-                
-                  ...
-                  
-                  formItemElement
-                  
-                    .classList
-                    
-                  ]
-                
-                  .some ( c => skipFields.indexOf ( c ) >= 0 );
-                
-                if ( isSkipField ) return; // continue
-                
-                const searchParams =
-                
-                  new URLSearchParams ( location.search );
-                  
-                for ( const [ key, caption ] of searchParameterKeyLabelMap ) {
-                
-                  const b = ! searchParams.has ( key );
-                  
-                  if ( b ) continue; // continue if no key
-                  
-                  const
-                  
-                    inputChangeTrigger = ( node, value = '' ) => {
-                    
-                      /*
-                      
-                        based on code by Dan G < https://tinyurl.com/4hes79u8 >
-                        and others
-                        
-                        */
-                        
-                      const
-                      
-                        inputTypes = [
-                        
-                          window.HTMLInputElement,
-                          
-                          window.HTMLSelectElement,
-                          
-                          window.HTMLTextAreaElement,
-                          
-                          ],
-                          
-                        /*
-                        
-                          only process the change on elements we know have a
-                          value setter in their constructor
-                          
-                          */
-                          
-                        isInputType = inputTypes
-                        
-                          .indexOf (
-                          
-                            node.__proto__.constructor
-                            
-                            )
-                            
-                          >
-                          
-                          -1;
-                          
-                      if ( ! isInputType ) return; // bail if not input type
-                      
-                      const
-                      
-                        event = new Event ( 'input', { bubbles : true } ),
-                        
-                        setValue = Object
-                        
-                          .getOwnPropertyDescriptor ( node.__proto__, 'value' )
-                          
-                          .set;
-                          
-                      setValue.call ( node, value );
-                      
-                      node.dispatchEvent ( event );
-                      
-                      },
-                      
-                    selector = 'input, select, textarea';
-                    
-                  let
-                  
-                    input,
-                    
-                    value = searchParams.get ( key );
-                    
-                  if ( caption === undefined )
-                  
-                    input = formItemElement;
-                    
-                    else {
-                    
-                      const
-                      
-                        xPathExpression = `
-                        
-                          .//div [
-                          
-                            contains (
-                            
-                              concat (
-                              
-                                ' ',
-                                
-                                normalize-space ( @class ),
-                                
-                                ' '
-                                
-                                ),
-                                
-                              ' caption-text '
-                              
-                              )
-                              
-                              and
-                              
-                              contains (
-                              
-                                .,
-                                
-                                
-                                '${ caption }'
-                                
-                                )
-                                
-                              ]
-                              
-                          `,
-                          
-                        xPathResults =
-                        
-                          xPathEvaluate ( xPathExpression, formItemElement );
-                          
-                      if ( ! xPathResults.snapshotLength ) return; // continue
-                      
-                      input = xPathResults
-                      
-                        .snapshotItem ( 0 )
-                        
-                        .closest ( '.field' )
-                        
-                      }
-                      
-                  input = input
-                  
-                    .querySelector ( selector );
-                    
-                  value = decodeURIComponent ( value );
-                  
-                  inputChangeTrigger ( input, value );
-                  
-                  }
-                  
-                },
-                
-              fieldListElement = element
-              
-                .querySelector ( '.field-list' ),
-                
-              xPathEvaluate = ( xPathExpression, contextNode ) => {
-              
-                const xPathResults = document
-                
-                  .evaluate (
-                  
-                    xPathExpression,
-                    
-                    contextNode,
-                    
-                    null,
-                    
-                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-                    
-                    null
-                    
-                    );
-                    
-                return xPathResults;
-                
-                },
-                
-              xPathExpression = `
-              
-                .//p[
-                
-                  contains (
-                  
-                    concat (
-                    
-                      ' ',
-                      
-                      normalize-space ( @class ),
-                      
-                      ' '
-                      
-                      ),
-                      
-                    ' description '
-                    
-                    )
-                    
-                    and
-                    
-                    contains (
-                    
-                      .,
-                      
-                      '${ codeKey } : '
-                      
-                      )
-                      
-                    ]
-                    
-                `,
-                
-              xPathResults = xPathEvaluate ( xPathExpression, element );
-              
-            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
-            
-              const element = xPathResults.snapshotItem ( i );
-              
-              callback ( element );
-              
-              }
-              
-            // hide show unregister
-            
-            {
-            
-              const siteWrapperElement = document
-              
-                .querySelector ( '#siteWrapper' );
-                
-              siteWrapperElement
-              
-                .style
-                
-                .setProperty ( `--${ codeKey }`, 'visible' );
-                
-              twc
-              
-                .data
-                
-                .hideShow
-                
-                [ selectorKey ]
-                
-                .pop ( `--${ codeKey }` );
-                
-              const l = twc
-              
-                .data
-                
-                .hideShow
-                
-                [ selectorKey ]
-                
-                .length;
-                
-              if ( ! l )
-              
-                siteWrapperElement
-                
-                  .style
-                  
-                  .setProperty ( '--twc-sqs-block-form-description-display',
-                  
-                    'unset' );
-                    
-              }
-              
-            };
-            
         return self;
         
         } ) ( twc.fbwoc.callbacks || { } );
