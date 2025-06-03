@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version       : 0.2.0
     
     SS Versions   : 7.1, 7.0
     
@@ -29,7 +29,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.2.0',
         
         s = `Link Popup Window Open v${ version }
         
@@ -61,42 +61,92 @@
                   
                     .currentTarget,
                     
-                popupWindow
+                hasUrl = element
+                
+                  [ codeKey ]
+                  
+                  .url
+                     
+                  [ 0 ]
+                  
+                  !==
+                  
+                  '[',
+                  
+                url
                 
                   =
                   
-                  window
-                 
-                   .open (
-                   
-                     element
-                     
-                       .getAttribute ( 'href' ),
-                       
-                     element
-                     
-                       .href,
-                       
-                     element [ codeKey ]
-                     
-                     );
-                     
-              if ( popupWindow )
+                  hasUrl
+                  
+                  ?
+                  
+                  element
+                  
+                    [ codeKey ]
+                    
+                    .url
+                    
+                  :
+                  
+                  element
+                  
+                    .getAttribute ( 'href' ),
+                    
+                popupWindow = window
+                
+                  .open (
+                  
+                    url,
+                    
+                    element
+                    
+                      .href,
+                      
+                    element
+                    
+                      [ codeKey ]
+                      
+                      .windowFeatures
+                      
+                    );
+                    
+              if ( ! hasUrl && popupWindow )
               
                 event.preventDefault ( );
                 
               };
               
-            let href = element [ codeKey ];
+            let
             
-            const value = href
-            
-              [ 1 ]
+              href = element [ codeKey ],
               
-              .get ( codeKey );
-              
-            if ( ! value ) return; // bail if no key
+              value;
             
+            try {
+            
+              value = JSON
+              
+                .parse (
+                
+                  href
+                  
+                    [ 1 ]
+                    
+                    .get ( codeKey )
+                    
+                  );
+                  
+              } catch ( error ) {
+              
+                console.log ( `${ codeKey } : `, error );
+                
+                delete element [ codeKey ];
+                
+                return;
+                
+                }
+                
             element [ codeKey ] = value;
             
             // update href

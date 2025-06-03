@@ -8,7 +8,7 @@ Open link in a popup window.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -44,9 +44,28 @@ Open link in a popup window.
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][4] for details.
 
-* Edit a link and add **#twc-lpwo=left=500, top=200, height=480, width=640** to
-  end of your URL. You can optionally use [windowFeatures][5] options to control
-  the appearance of the popup window.
+* Edit a link and add the following to the end of your URL.
+
+  ```url
+  #twc-lpwo={ "windowFeatures" : "left=500, top=200, height=480, width=640", "url" : "[ optional, enter encoded URL here between double quotes replacing square brackets ]" }
+  ```
+  
+  You can optionally use the following features.
+  
+    * [windowFeatures][5] : options to control the appearance of the popup
+      window.
+    
+    * url : the popup window will open this URL and your browser window/tab will
+      open the URL minus the text you previously added. Be sure to [encode][6]
+      the URL. An example.
+      
+      ```url
+      /abc#twc-lpwo={ "windowFeatures" : "left=500, top=200, height=480, width=640", "url" : "https%3A%2F%2Fwww.example.com%2F%3Fparam%3Dvalue%26param2%3Dvalue2%23twc-x" }
+      ```
+      
+      The popup window will open the URL
+      < https://www.example.com/?param=value&param2=value2#twc-x > and the
+      browser window/tab will open the URL < /abc >.
 
 ## Note
 
@@ -56,19 +75,19 @@ example would be an ad blocker. You should design your site accordingly.
 
 ## Demo
 
-You can see a [demo of this effect here][6].
+You can see a [demo of this effect here][7].
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2025-05-17**
+* **2025-06-03**
 
-  * added randomize products button
+  * added url for popup window can be different than the url clicked
   * bumped version to 0.2.0
-  -->
+  
 * **2025-05-29**
 
   * initial version
@@ -78,5 +97,6 @@ Please consider [making a donation][7].
 [3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#windowfeatures
-[6]: https://toms-web-consulting-demos.squarespace.com/link-popup-window-open?password=twcdemos
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://www.urlencoder.org/
+[7]: https://toms-web-consulting-demos.squarespace.com/link-popup-window-open?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
