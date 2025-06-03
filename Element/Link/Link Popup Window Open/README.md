@@ -64,8 +64,8 @@ Open link in a popup window.
       ```
       
       The popup window will open the URL
-      &lt; https://www.example.com/?param=value&param2=value2#twc-x &gt; and the
-      browser window/tab will open the URL < /abc >.
+      < <span>https://www.example.com/?param=value&param2=value2#twc-x</span> >
+      and the browser window/tab will open the URL < /abc >.
 
 ## Note
 
