@@ -1,50 +1,68 @@
-<!--
+<!-- begin TWC Store Page Tags Text Add -->
 
-  begin store page tags text add
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.2
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : twcsl
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-                  
-                  the code makes a call to the JSON version of the store page
-                  for information that is not normally avaiable on the page
-                  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    begin store page tags text add
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Notes         : the code is comprised of several tags. all are needed for
+                    the full effect to work
+                    
+                    the code makes a call to the JSON version of the store page
+                    for information that is not normally avaiable on the page
+                    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
   <script>
   
-    // initialize twc global if needed
+    // initialize twc module
     
-    if ( window.twc == undefined ) window.twc = { };
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    twc.sptta = {
+    twc.sptta = ( ( self ) => { // initialize twc sptta sub-module
     
-      productDetailSelector : [
+      const options = {
       
-        '.ProductItem-details .ProductItem-details-checkout', // simple layout
+        productDetailSelector : [
         
-        '.pdp-layout-full-width-carousel .pdp-details .pdp-selection', // full
+          '.ProductItem-details .ProductItem-details-checkout', // simple layout
           
-        '.pdp-layout-full-bleed .pdp-details', // half
+          '.pdp-layout-full-width-carousel .pdp-details .pdp-selection', // full
+            
+          '.pdp-layout-full-bleed .pdp-details', // half
+          
+          '.pdp-layout-wrap-around .pdp-details' // wrap
+          
+          ]
         
-        '.pdp-layout-wrap-around .pdp-details' // wrap
+        };
         
-        ]
+      Object
+      
+        .assign (
         
-      };
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.sptta || { } );
       
     </script>
     
@@ -55,16 +73,18 @@
     .twc-sptta {
 
       display : flex;
-      gap : 2em;
+      flex-wrap : wrap;
+      column-gap : 2em;
       list-style-position : inside;
       padding : 0;
+      row-gap : 0;      
+      white-space : nowrap;
       
       }
       
     .products.collection-content-wrapper .grid-item .twc-sptta {
 
       flex-direction : column;
-      gap : 0.25em;
       
       }
       
@@ -72,170 +92,362 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const version = '0.1.2';
+      const
       
-      const s = `Store Page Tags Text Add v${ version }, ` +
+        version = '0.2.0',
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        s = `
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
+          Store Page Tags Text Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      if ( ! twcsl.page.store.is ) return; // bail if not store
+      const isStorePage = Static
       
-      const callback = tags => {
-      
-        const callback = ( i, tag ) => {
+        .SQUARESPACE_CONTEXT
         
-          const re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` );
+        .collection
+        
+        .type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const callback = ( ) => {
+      
+        const
+        
+          codeKey = 'twc-sptta',
           
-          const m = tag.match ( re );
+          fullUrl = Static
           
-          // continue if tag doesn't match format
+            .SQUARESPACE_CONTEXT
+            
+            .collection
+            
+            .fullUrl,
+            
+          getJson = async ( url ) => {
           
-          if ( m == null ) return true;
-          
-          function callback ( ) {
-          
-            let selector = '';
+            const options = {
             
-            let url = `http://twc.sptta${ twcsl.page.store.urlSlug }`
-            
-            url = new URL ( url );
-            
-            url = new URLSearchParams ( url.search );
-            
-            url.append ( 'tag', tag );
-            
-            url = `${ twcsl.page.store.urlSlug }?${ url }`;
-            
-            const li = `
-            
-              <li data-tag-text="${ text }">
+              headers : {
               
-                <a href="${ url }">
+                Accept: 'application/json, text/plain, */*'
                 
-                  ${ text }
+                }
+                
+              };
+              
+            try {
+            
+              const response = await fetch ( url, options );
+              
+              if ( ! response.ok ) {
+              
+                const s = `
+                
+                  ${ codeKey } network response was not ok ${
                   
-                  </a>
+                    response
+                    
+                      .statusText
+                      
+                      }
+                      
+                  `
                   
-                </li>
-                
-              `;
-              
-            const $this = $( this );
-            
-            const isGridItem = $this
-            
-              .hasClass ( 'grid-item' );
-              
-            if ( isGridItem )
-            
-              selector = '.grid-main-meta';
-              
-              else
-              
-                selector = options
-                
-                  .productDetailSelector
+                  .trim ( )
                   
-                  .join ( ', ' );
+                  .replace ( /\s+/gm, ' ' );
                   
-            let $ul = $( selector, $this );
-            
-            selector = `.${ codeKey }`;
-            
-            $ul = $( selector, $ul );
-            
-            if ( ! $ul.length ) {
-            
-              const html = `
-              
-                <ul class="${ codeKey }">
+                throw new Error ( s );
                 
-                  </ul>
+                }
+                
+              const json = await response.text ( );
+              
+              return json;
+              
+              } catch ( error ) {
+              
+                const s = `
+                
+                  ${ codeKey } there has been a problem with your fetch get operation,
                   
-                `;
+                  ${ error }.
+                  
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                console.error ( s );
                 
-              $ul = $ul
+                }
+                
+            },
+            
+          options = twc.sptta,
+          
+          url = `${ fullUrl }?format=json`;
+            
+        getJson ( url )
+        
+          .then ( json => JSON.parse ( json ) )
+          
+          .then ( ( tags ) => {
+          
+            const callback = ( tag, index ) => {
+            
+              const
               
-                .end ( )
-                
-                .append ( html )
-                
-                .find ( `.${ codeKey }` );
-                
-              }
+                re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` ),
               
-            $ul.append ( li );
-            
-            };
-            
-          const isDetail = twcsl.page.store.detail.is;
-          
-          const isList = twcsl.page.store.list.is;
-          
-          const tagNameToCssClassName = name => {
-          
-            const className = 'tag-'
-            
-              +
+                m = tag.match ( re );
+                
+              // continue if tag doesn't match format
               
-              name
+              if ( m == null ) return;
               
-                .replaceAll ( ' ', '-' )
+              const
+              
+                isDetail = ( ( ) => {
                 
-                .toLowerCase ( )
+                  const
+                  
+                    selector = 'body[ id^="item-" ]',
+                    
+                    is = document
+                    
+                      .querySelector ( selector )
+                      
+                      !==
+                      
+                      null;
+                      
+                  return is;
+                  
+                  } ) ( ),
+                  
+                isList = ( ( ) => {
                 
-                .replace ( /[^\w-]+/g, '' )
+                  const
+                  
+                    selector = 'body[ id^="collection-" ]',
+                    
+                    is = document
+                    
+                      .querySelector ( selector )
+                      
+                      !==
+                      
+                      null;
+                      
+                  return is;
+                  
+                  } ) ( ),
+                  
+                pageShow = m [ 2 ],
                 
-                .replaceAll ( '--', '-' );
+                b
                 
-            return className;
+                  =
+                  
+                  isList && pageShow === 'd'
+                  
+                  ||
+                  
+                  isDetail && pageShow === 'l';
+                  
+              if ( b ) return; // continue
+              
+              const
+              
+                callback = ( element ) => {
+                
+                  let
+                  
+                    selector,
+                    
+                    url = new URLSearchParams (
+                    
+                      new URL (
+                      
+                        `http://twc.sptta${
+                        
+                          fullUrl
+                          
+                          }`
+                          
+                        )
+                        
+                        .search
+                        
+                      );
+                      
+                  switch ( true ) {
+                  
+                    case isDetail :
+                    
+                      selector = options
+                      
+                        .productDetailSelector
+                        
+                        .join ( ', ' );
+                        
+                      break;
+                      
+                    case isList :
+                    
+                      selector = '.grid-main-meta';
+                      
+                      break;
+                      
+                    }
+                    
+                  url
+                  
+                    .append ( 'tag', tag );
+                    
+                  url = `${ fullUrl }?${ url }`;
+                  
+                  const
+                  
+                    liHtml = `
+                    
+                      <li data-tag-text="${ text }">
+                      
+                        <a href="${ url }">
+                        
+                          ${ text }
+                          
+                          </a>
+                          
+                        </li>
+                        
+                      `,
+                      
+                    wrapperElement = element
+                    
+                      .querySelector ( selector );
+                      
+                  let ulElement = wrapperElement
+                  
+                    .querySelector ( `.${ codeKey }` );
+                    
+                  if ( ! ulElement ) {
+                  
+                    ulElement = document
+                    
+                      .createElement ( 'div' );
+                      
+                    ulElement
+                    
+                      .innerHTML
+                      
+                      =
+                      
+                      `
+                      
+                        <ul class="${ codeKey }">
+                        
+                          </ul>
+                          
+                        `;
+                        
+                    ulElement = ulElement
+                    
+                      .firstElementChild;
+                      
+                    wrapperElement
+                    
+                      .append ( ulElement );
+                      
+                    }
+                    
+                  ulElement
+                  
+                    .insertAdjacentHTML ( 'beforeend', liHtml );
+                    
+                  },
+                  
+                tagNameToCssClassName = ( name ) => {
+                
+                  const className = 'tag-'
+                  
+                    +
+                    
+                    name
+                    
+                      .replaceAll ( ' ', '-' )
+                      
+                      .toLowerCase ( )
+                      
+                      .replace ( /[^\w-]+/g, '' )
+                      
+                      .replaceAll ( '--', '-' );
+                      
+                  return className;
+                  
+                  },
+                  
+                text = m [ 1 ],
+                
+                className =
+                
+                  tagNameToCssClassName ( m [ 0 ] ),
+                  
+                selector = `.${ className }`;
+                
+              document
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                .forEach ( callback );
+                
+              };
+              
+            tags = tags
             
-            };
+              .collection
+              
+              .tags
             
-          const text = m [ 1 ];
-          
-          const pageShow = m [ 2 ];
-          
-          const b = isList && pageShow == 'd' || isDetail && pageShow == 'l';
-          
-          if ( b ) return true; // continue
-          
-          const className =
-          
-            tagNameToCssClassName ( m [ 0 ] );
+              .filter ( x => x.startsWith ( `${ codeKey } ` ) );
+              
+            if ( ! tags.length ) return; // bail if no tags of interest
             
-          const selector = `.${ className }`;
-          
-          $( selector ).each ( callback );
-          
+            tags.forEach ( callback );
+            
+            } );
+            
           };
           
-        const codeKey = 'twc-sptta';
-        
-        tags = tags.collection.tags;
-        
-        tags = tags.filter ( x => x.startsWith ( `${ codeKey } ` ) );
-        
-        if ( ! tags.length ) return; // bail if no tags of interest
-        
-        const options = twc.sptta;
-        
-        $.each ( tags, callback ) // run through the tags
-        
-        };
-        
-      const url = `${ twcsl.page.store.urlSlug }?format=json`;
+      document
       
-      $.getJSON ( url, callback );
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-      } );
+      } ) ( );
       
     </script>
     
-  <!-- end store page tags text add -->
+  <!-- end TWC Store Page Tags Text Add -->

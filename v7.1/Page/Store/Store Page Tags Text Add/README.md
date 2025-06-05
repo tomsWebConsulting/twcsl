@@ -8,7 +8,7 @@ Add text to products.
 
 ### Version
 
-  * 0.1.2
+  * 0.2.0
 
 #### SS Version
 
@@ -21,16 +21,11 @@ Add text to products.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [Tom's Web Consulting Squarespace Library][4]
 
 ---
 
-## Install
+## Quick Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Options
 
   * Page Specific
@@ -38,18 +33,18 @@ Add text to products.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page tags text add.html][6]** to Store
+    * Add code from file **[store page tags text add.html][4]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Refer to [Per-page code injection][7] for details.
+      Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page tags text add.html][6]** to Website >
+    * Add code from file **[store page tags text add.html][4]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][8] for details.
+      code injection][6] for details.
       
 * Read the code for any instructions within.
 
@@ -85,14 +80,20 @@ The tags are a simple unordered list displayed with flexbox. There is a
 
 ## Demo
 
-You can see a [demo of this effect here][9].
+You can see a [demo of this effect here][7].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-06-05**
+
+  * removed twcsl dependency
+  * removed jQuery dependency
+  * bumped version to 0.2.0
+  
 * **2024-01-25**
 
   * fix for tags being misapplied
@@ -110,10 +111,8 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20page%20tags%20text%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: store%20page%20tags%20text%20add.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
