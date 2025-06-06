@@ -1,0 +1,839 @@
+<!-- begin TWC Store Page List Badges -->
+
+  <!--
+  
+    begin store page list badges
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Notes         : the code is comprised of a several tags. all are needed for
+                    the full effect to work
+                    
+                    the code makes a call to the JSON version of the store page
+                    to grab the tags as entered in the Sqaurespace UI
+                    
+                    the size of the badge for circle and square are not
+                    automatically calculated you need to adjust the size to fit
+                    the text you use
+                    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    .products.collection-content-wrapper .list-grid {
+    
+      --twc-splb-background-color : black;
+      --twc-splb-color : white;
+      --twc-splb-font-family : unset;
+      --twc-splb-font-size : 10px;
+      --twc-splb-font-style : normal; /* values are italic and normal */
+      --twc-splb-font-weight : 400;
+
+      /* values are dock-horizontally, dock-vertically, floating, and flush */
+      
+      --twc-splb-inset : floating;
+      
+      --twc-splb-inset-space : 1em;
+      --twc-splb-letter-spacing : 0.06em;
+      --twc-splb-padding : 0.5em 1em;
+      
+      /*
+      
+        values are bottom-center, bottom-left, bottom-right, center,
+        center-left, center-right, top-center, top-left, top-right
+        
+        */
+        
+      --twc-splb-position : top-right;
+      
+      /* values are circle, rectangle, and square */
+      
+      --twc-splb-shape : rectangle;
+      
+      --twc-splb-shape-size : unset; /* used for circle and square shapes
+      
+      /*  values are capitalize, lowercase, and uppercase */
+      
+      --twc-splb-text-transform : uppercase;
+      
+      }
+      
+    </style>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    .products.collection-content-wrapper .product-mark.sale,
+    .products.collection-content-wrapper .product-mark.sold-out
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    .products.collection-content-wrapper .list-grid {
+    
+      --twc-splb-border-radius : unset;
+      --twc-splb-bottom : unset;
+      --twc-splb-left : unset;
+      --twc-splb-right : unset;
+      --twc-splb-top : unset;
+      --twc-splb-x : 0;
+      --twc-splb-y : 0;
+      
+      }
+      
+    .twc-splb-item {
+    
+      bottom : var( --twc-splb-bottom );
+      display : flex;
+      flex-direction : column;
+      font-family : var( --twc-splb-font-family );
+      font-size : var( --twc-splb-font-size );
+      font-style : var( --twc-splb-font-style );
+      font-weight : var( --twc-splb-font-weight );
+      gap : 0.5em;
+      left : var( --twc-splb-left );
+      letter-spacing : var( --twc-splb-letter-spacing );
+      line-height : 1em;
+      list-style-type : none;
+      margin : 0;
+      padding : 0;
+      position : absolute;
+      right : var( --twc-splb-right );
+      text-transform : var( --twc-splb-text-transform );
+      top : var( --twc-splb-top );
+      transform : translate( var( --twc-splb-x ), var( --twc-splb-y ) );
+      
+      }
+      
+    .twc-splb-item li {
+    
+      background-color : var( --twc-splb-background-color );
+      border-radius : var( --twc-splb-border-radius );
+      color : var( --twc-splb-color );
+      height : var( --twc-splb-shape-size );
+      padding : var( --twc-splb-padding );
+      text-align : center;
+      width : var( --twc-splb-shape-size );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+      
+        s = `
+        
+          Store Page List Badges v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        .type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const callback = ( ) => {
+      
+        const isList = ( ( ) => {
+        
+          const
+          
+            selector = 'body[ id^="collection-" ]',
+            
+            is = document
+            
+              .querySelector ( selector )
+              
+              !==
+              
+              null;
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list
+        
+        const
+        
+          codeKey = 'twc-splb',
+          
+          fullUrl = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .collection
+            
+            .fullUrl,
+            
+          getCSSVariable = ( element, variableName ) => {
+          
+            const value
+            
+              =
+              
+              getComputedStyle ( element )
+              
+                .getPropertyValue ( variableName );
+                
+            return value;
+            
+            },
+            
+          getJson = async ( url ) => {
+          
+            const options = {
+            
+              headers : {
+              
+                Accept: 'application/json, text/plain, */*'
+                
+                }
+                
+              };
+              
+            try {
+            
+              const response = await fetch ( url, options );
+              
+              if ( ! response.ok ) {
+              
+                const s = `
+                
+                  ${ codeKey } network response was not ok ${
+                  
+                    response
+                    
+                      .statusText
+                      
+                      }
+                      
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                throw new Error ( s );
+                
+                }
+                
+              const json = await response.text ( );
+              
+              return json;
+              
+              } catch ( error ) {
+              
+                const s = `
+                
+                  ${ codeKey } there has been a problem with your fetch get operation,
+                  
+                  ${ error }.
+                  
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                console.error ( s );
+                
+                }
+                
+            },
+            
+          setProperties = ( elementStyle, map ) => {
+          
+            Object
+            
+              .entries ( map )
+              
+              .forEach (
+              
+                ( [ key, value ] ) => elementStyle.setProperty ( key, value )
+                
+                );
+                
+            },
+            
+          uniqueSort = ( elements ) => {
+          
+            elements = [
+            
+              ...
+              
+              new Set ( elements )
+              
+              ]
+              
+              .sort (
+              
+                ( a, b ) => a.compareDocumentPosition ( b ) & 2 ? 1 : -1
+                
+                );
+                
+            return elements;
+            
+            },
+            
+          url = `${ fullUrl }?format=json`;
+            
+        getJson ( url )
+        
+          .then ( json => JSON.parse ( json ) )
+          
+          .then ( ( tags ) => {
+          
+            const
+            
+              forEachCallback = ( element ) => {
+                
+                const
+                
+                  callback = ( element ) => {
+                  
+                    const
+                    
+                      text = element
+                      
+                        .textContent
+                        
+                        .trim ( ),
+                        
+                      li = `<li>
+                      
+                        ${ text }
+                        
+                        </li>
+                        
+                        `;
+                        
+                    ulElement
+                    
+                      .insertAdjacentHTML ( 'beforeend', li );
+                      
+                    },
+                    
+                  forEachCallback = ( text ) => {
+                    
+                    const li = `<li>
+                    
+                      ${ text }
+                      
+                      </li>
+                      
+                      `;
+                      
+                    ulElement
+                    
+                      .insertAdjacentHTML ( 'beforeend', li );
+                      
+                    },
+                    
+                  selector = `.${ codeKey }-item`,
+                  
+                  tagCallback = ( tag ) => {
+                    
+                    tag = tag
+                    
+                      .replace ( `tag-${ codeKey }-`, '' )
+                      
+                      .replaceAll ( '-', '[ -]' );
+                      
+                    tag = new RegExp ( tag, 'i' );
+                    
+                    tag = tags
+                  
+                      .filter ( t => t.match ( tag ) !== null )
+                      
+                      [ 0 ];
+                      
+                    return tag;
+                    
+                    };
+                  
+                let ulElement = element
+                  
+                  .querySelector ( selector );
+                
+                if ( ulElement ) return; // continue
+                
+                ulElement = document
+                
+                  .createElement ( 'div' );
+                  
+                ulElement
+                
+                  .innerHTML
+                  
+                  =
+                  
+                  `
+                  
+                    <ul class="${ codeKey }-item">
+                    
+                      </ul>
+                      
+                    `;
+                  
+                ulElement = ulElement
+                
+                  .firstElementChild;
+                  
+                element
+                
+                  .querySelectorAll ( '.product-mark' )
+                  
+                  .forEach ( callback );
+                  
+                // custom badges
+                
+                [
+                
+                  ...
+                  
+                  element
+                  
+                    .classList
+                    
+                  ]
+                  
+                  .filter ( c => c.startsWith ( `tag-${ codeKey }-` ) )
+                  
+                  .map ( tagCallback )
+                  
+                  .forEach ( forEachCallback );
+                  
+                const hasChildren = ulElement
+                
+                  .childElementCount;
+                  
+                if ( ! hasChildren ) return; // continue
+                
+                element
+                  
+                  .querySelector ( '.grid-image' )
+                  
+                    .append ( ulElement );
+                    
+                },
+                  
+              mapCallback = ( element ) => {
+                
+                const
+                
+                  selector = '.products.collection-content-wrapper .grid-item',
+                  
+                  gridItemElement = element
+                  
+                    .closest ( selector );
+                    
+                if ( gridItemElement )
+                
+                  element = gridItemElement;
+                  
+                return element;
+                
+                },
+                
+              re = new RegExp (
+              
+                `^${
+                
+                  codeKey.replace ( '-', ' ' )
+                  
+                  } ` );
+                  
+            tags = tags
+            
+              .collection
+              
+              .tags
+              
+              .map ( t => t.replace ( re, '' ) );
+              
+            let selector = '.products.collection-content-wrapper .list-grid';
+            
+            const
+            
+              gridElement = document
+              
+                .body
+                
+                .querySelector ( selector ),
+                
+              gridElementStyle = gridElement
+              
+                .style;
+                
+            // design
+            
+            {
+            
+              const
+              
+                prefix = `--${ codeKey }-`,
+                
+                position = getCSSVariable (
+                
+                  gridElement,
+                  
+                  `${ prefix }position`,
+                  
+                  ),
+                  
+                shape = getCSSVariable (
+                
+                  gridElement,
+                  
+                  `${ prefix }shape`,
+                  
+                  ),
+                  
+                shapeSize = getCSSVariable (
+                
+                  gridElement,
+                  
+                  `${ prefix }shape-size`,
+                  
+                  ),
+                  
+                inset = getCSSVariable (
+                
+                  gridElement,
+                  
+                  `${ prefix }inset`,
+                  
+                  ),
+                  
+                insetSpace = getCSSVariable (
+                
+                  gridElement,
+                  
+                  `${ prefix }inset-space`,
+                  
+                  );
+                  
+              let [
+              
+                bottom,
+                
+                left,
+                
+                right,
+                
+                top
+                
+                ]
+                
+                =
+                
+                Array ( 4 )
+                
+                  .fill ( 0 );
+                  
+              switch ( inset ) {
+              
+                case 'dock-horizontally' :
+                
+                  bottom = top = insetSpace;
+                  
+                  break;
+                  
+                case 'dock-vertically' :
+                
+                  left = right = insetSpace;
+                    
+                  break;
+                  
+                case 'floating' :
+                
+                  bottom = left = right = top = insetSpace;
+                  
+                  break;
+                  
+                }
+                
+              switch ( position ) {
+              
+                case 'bottom-center' :
+                case 'bottom-left' :
+                case 'bottom-right' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }bottom`, bottom );
+                    
+                  break;
+                  
+                case 'center-left' :
+                case 'center-right' :
+                
+                  setProperties (
+                  
+                    gridElementStyle,
+                    
+                    {
+                    
+                      [ `${ prefix }top` ] : '50%',
+                      
+                      [ `${ prefix }y` ] : '-50%'
+                      
+                      }
+                      
+                    );
+                  
+                  break;
+                  
+                case 'top-center' :
+                case 'top-left' :
+                case 'top-right' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }top`, top );
+                    
+                  break;
+                  
+                }
+                
+              switch ( position ) {
+              
+                case 'bottom-center' :
+                
+                  setProperties (
+                  
+                    gridElementStyle,
+                    
+                    {
+                    
+                      [ `${ prefix }left` ] : '50%',
+                      
+                      [ `${ prefix }x` ] : '-50%'
+                      
+                      }
+                      
+                    );
+                  
+                  break;
+                  
+                case 'bottom-left' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }left`, left );
+                    
+                  break;
+                  
+                case 'bottom-right' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }right`, right );
+                    
+                  break;
+                  
+                case 'center' :
+                
+                  setProperties (
+                  
+                    gridElementStyle,
+                    
+                    {
+                    
+                      [ `${ prefix }left` ] : '50%',
+                      
+                      [ `${ prefix }top` ] : '50%',
+                      
+                      [ `${ prefix }x` ] : '-50%',
+                      
+                      [ `${ prefix }y` ] : '-50%'
+                      
+                      }
+                      
+                    );
+                  
+                  break;
+                  
+                case 'center-left' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }left`, left );
+                    
+                  break;
+                  
+                case 'center-right' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }right`, right );
+                    
+                  break;
+                  
+                case 'top-center' :
+                
+                  setProperties (
+                  
+                    gridElementStyle,
+                    
+                    {
+                    
+                      [ `${ prefix }left` ] : '50%',
+                      
+                      [ `${ prefix }top` ] : 0,
+                      
+                      [ `${ prefix }x` ] : '-50%',
+                      
+                      [ `${ prefix }y` ] : 0
+                      
+                      }
+                      
+                    );
+                  
+                case 'top-left' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }left`, left );
+                      
+                  break;
+                  
+                case 'top-right' :
+                
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }right`, right );
+                    
+                  break;
+                  
+                }
+                
+              // shape
+              
+              {
+              
+                let hasShape = [
+                
+                  'circle',
+                  
+                  'square'
+                  
+                  ]
+                  
+                  .includes ( shape );
+                  
+                if ( hasShape ) {
+                
+                  setProperties (
+                  
+                    gridElementStyle,
+                    
+                    {
+                    
+                      [ `${ prefix }height` ] : shapeSize,
+                      
+                      [ `${ prefix }width` ] : shapeSize
+                      
+                      }
+                      
+                    );
+                    
+                  gridElementStyle
+                  
+                    .setProperty ( `${ prefix }border-radius`, '100%' );
+                    
+                  }
+                  
+                }
+                
+              }
+              
+            selector = [
+            
+              '.products.collection-content-wrapper .product-mark',
+              
+              '.products.collection-content-wrapper '
+              
+                +
+                
+                '.grid-item[ class*="tag-twc-splb-" ]'
+                
+              ]
+              
+              .join ( ', ' );
+              
+            uniqueSort (
+            
+              [
+              
+                ...
+                
+                document
+                
+                  .body
+                  
+                  .querySelectorAll ( selector )
+                  
+                ]
+                
+                .map ( mapCallback )
+                
+              )
+              
+              .forEach ( forEachCallback );
+              
+            } );
+            
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Badges -->
