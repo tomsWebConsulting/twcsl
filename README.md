@@ -393,6 +393,8 @@ not necessarily designed to work together.
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
           
+        * [Store Page List Badges](v7.1/Page/Store/List/Store%20Page%20List%20Badges)
+          
         * [Store Page List Categories Cache](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache)
           
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
@@ -582,8 +584,6 @@ not necessarily designed to work together.
   * [Header Social Icon Whatsapp Generic Icon to Whatsapp Change](v7.1/Header%20Social%20Icon%20Whatsapp%20Generic%20Icon%20to%20Whatsapp%20Change)
     
   * [Calendar Block Event Multiday Class Add](v7.1/Calendar%20Block%20Event%20Multiday%20Class%20Add)
-    
-  * [Store Product List Badges](v7.1/Store%20Product%20List%20Badges)
     
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
