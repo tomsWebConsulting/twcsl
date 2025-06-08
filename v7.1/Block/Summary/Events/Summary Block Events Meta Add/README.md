@@ -72,15 +72,11 @@ Add more than two meta items to a Summary block Events page type.
           
             "metaData" : {
             
-              /*
+              // values are category, event date, event date dow, event time,
+              // location or tags
+              //
+              // event date dow : shows the day of week name
               
-                values are category, event date, event date dow, event time,
-                location or tags
-                
-                event date dow : shows the day of week name
-                
-                */
-                
               "tertiary" : "[ add value here between single quotes replacing square brackets ]",
               
               "quaternary" : "[ optional, add value here between single quotes replacing square brackets ]",
@@ -99,15 +95,11 @@ Add more than two meta items to a Summary block Events page type.
           
             "metaData" : {
             
-              /*
+              // values are category, event date, event date dow, event time,
+              // location or tags
+              //
+              // event date dow : shows the day of week name
               
-                values are category, event date, event date dow, event time,
-                location or tags
-                
-                event date dow : shows the day of week name
-                
-                */
-                
               "tertiary" : "[ add value here between single quotes replacing square brackets ]",
               
               "quaternary" : "[ optional, add value here between single quotes replacing square brackets ]",
