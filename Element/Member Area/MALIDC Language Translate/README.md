@@ -9,7 +9,7 @@ by Squarespace.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -57,11 +57,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2024-09-12**
+* **2025-06-17**
 
-  * make compatible with member area log in dialog change v0.3.0
+  * fixed code to get json from body instead of head
   * bumped version to 0.1.1
-  -->
+  
 * **2025-04-13**
 
   * initial version
