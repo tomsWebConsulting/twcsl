@@ -1,0 +1,715 @@
+<!-- begin TWC CALIDC Language Translate -->
+
+  <script>
+  
+    /*
+    
+      calidc language translate
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : Customer Account Log In Dialog Change
+                      < https://tinyurl.com/vs5n4tpd >
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+        
+        s = `CALIDC Language Translate v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc calidc sub-module
+    
+    twc.calidc = ( ( self ) => self ) ( twc.calidc || { } );
+    
+    // initialize twc calidc callbacks sub-module
+    
+    twc.calidc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, dialogType ) => {
+      
+        const
+        
+          codeKey = 'twc-clt',
+          
+          calidcCodeKey = 'twc-calidc',
+          
+          classPrefix = `.${ calidcCodeKey }-`;
+          
+        let selector
+        
+          =
+          
+          'script[ type="application/vnd.'
+          
+          +
+          
+          `${ codeKey.replace ( '-', '.' ) }" ]`;
+          
+        const
+        
+          scriptElement = document
+          
+            .body
+            
+            .querySelector ( selector );
+            
+        if ( ! scriptElement ) return; // bail if no tag
+        
+        const
+        
+          placeHolderChange = ( element, placeholder ) => {
+          
+            element
+            
+              .setAttribute ( 'placeholder', placeholder );
+              
+            },
+            
+          textChange = ( element, text ) => {
+          
+            if ( element === null ) return; // bail if no element
+            
+            element
+            
+              .textContent
+              
+              =
+              
+              text;
+              
+            },
+            
+          translateMap = JSON
+          
+            .parse (
+            
+              scriptElement
+              
+                .textContent
+                
+                .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                
+                .replaceAll ( '\n', '' )
+                
+              );
+              
+        let
+        
+          element,
+          
+          text;
+        
+        switch ( dialogType ) {
+        
+          case 'password-reset' : 
+          
+            // send reset link
+            
+            {
+            
+              selector
+              
+                =
+                
+                `${ classPrefix }password-reset button[ `
+                
+                +
+                
+                'data-test="submit-button" ] span';
+                
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Send Reset Link' ]
+                  
+                );
+                
+              }
+              
+            /// reset link status
+            
+            {
+            
+              selector =
+              
+                `${ classPrefix }password-reset button[ disabled ]`;
+                
+              element = dcmnt
+                
+                .querySelector ( selector );
+                
+              if ( element ) {
+              
+                text = element
+                
+                  .textContent;
+                  
+                text = translateMap
+                
+                  [ text ];
+                  
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  text;
+                  
+                }
+                
+              }
+              
+            // reset link sent
+            
+            {
+            
+              selector =
+              
+                `${ classPrefix }password-reset button[ disabled ]`;
+                
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Reset Link Sent' ]
+                  
+                );
+                
+              }
+              
+            // back to sign in link
+            
+            {
+            
+              selector
+              
+                =
+                
+                `${ classPrefix }password-reset a[ href="/account/login" ] `
+                
+                +
+                
+                'span';
+                
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Back to sign in' ]
+                  
+                );
+                
+              }
+              
+            break;
+            
+          case 'sign-in' : 
+          case 'sign-in-member-site' : 
+          
+            // verified
+            
+            {
+            
+              selector = `${ classPrefix }account-verify-text`;
+              
+              element = dcmnt
+                
+                .querySelector ( selector );
+                
+              if ( element )
+              
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  translateMap
+                  
+                    [ 'Your account has been verified successfully.' ];
+                    
+              }
+              
+            // sign in again
+            
+            {
+            
+              selector = `${ classPrefix }again-text`;
+              
+              element = dcmnt
+                
+                .querySelector ( selector );
+                
+              if ( element )
+              
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  translateMap
+                  
+                    [
+                    
+                      'Please sign in again to access your account '
+                      
+                      +
+                      
+                      'information. Your session has expired.'
+                      
+                      ];
+                    
+              }
+              
+            // exclusive content text
+            
+            {
+            
+              selector = `${ classPrefix }exclusive-context-text`;
+              
+              element = dcmnt
+                
+                .querySelector ( selector );
+                
+              if ( element )
+              
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  translateMap
+                  
+                    [ 'Sign in to unlock exclusive content.' ];
+                    
+              }
+              
+            // sign in with
+            
+            {
+            
+              selector = `${ classPrefix }with-email-text span`;
+              
+              element = dcmnt
+              
+                .querySelector ( selector );
+                
+              if ( element ) {
+              
+                const key = 'Sign in with ';
+                
+                text = element
+                
+                  .textContent
+                  
+                  .replace (
+                  
+                    key,
+                    
+                    translateMap
+                    
+                      [ key ]
+                      
+                    );
+                    
+                element.textContent = text;
+                
+                }
+                
+              }
+              
+            // password
+            
+            {
+            
+              selector = `${ classPrefix }password input`;
+              
+              placeHolderChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  .Password
+                  
+                );
+                
+              }
+              
+            // sign in error
+            
+            {
+            
+              selector = `${ classPrefix }error-text`;
+              
+              element = dcmnt
+              
+                .querySelector ( selector );
+                
+              text = element.textContent
+              
+              if ( text )
+              
+                textChange (
+                
+                  element,
+                    
+                  translateMap
+                  
+                    [
+                    
+                    'You entered an invalid email or password. Please try again.'
+                    
+                    ]
+                    
+                  );
+                  
+              }
+              
+            // sign in
+            
+            {
+            
+              selector = 'button[ data-test="login-button" ] span';
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Sign In' ]
+                  
+                );
+                
+              }
+              
+            // not you
+            
+            {
+            
+              selector = `${ classPrefix }not-you span`;
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Not you? Sign out' ]
+                  
+                );
+                
+              }
+              
+            // forget password
+            
+            {
+            
+              selector = `${ classPrefix }request-reset-link span`;
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Reset Password' ]
+                  
+                );
+                
+              }
+              
+            // create account
+            
+            {
+            
+              selector = `${ classPrefix }create-link span`;
+              
+              textChange (
+              
+                dcmnt
+                
+                  .querySelector ( selector ),
+                  
+                translateMap
+                
+                  [ 'Create account' ]
+                  
+                );
+                
+              }
+              
+            break;
+            
+          case 'sign-up' : 
+          case 'sign-up-member-site' : 
+          
+            {
+            
+              const isSignUpJoin
+              
+                =
+                
+                dialogType
+                
+                ===
+                
+                'sign-up-member-site';
+                
+              // first name
+              
+              {
+              
+                selector = `${ classPrefix }name-first input`;
+                
+                placeHolderChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'First Name' ]
+                    
+                  );
+                  
+                }
+                
+              // last name
+              
+              {
+              
+                selector = `${ classPrefix }name-last input`;
+                
+                placeHolderChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Last Name' ]
+                    
+                  );
+                  
+                }
+                
+              // create password
+              
+              {
+              
+                selector = `${ classPrefix }password input`;
+                
+                placeHolderChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Create Password' ]
+                    
+                  );
+                  
+                }
+                
+              // re-type password
+              
+              {
+              
+                selector = `${ classPrefix }password-confirm input`;
+                
+                placeHolderChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Re-type Password' ]
+                    
+                  );
+                  
+                }
+                
+              // password no match
+              
+              {
+              
+                selector = `${ classPrefix }passwords-error-text`;
+                
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Passwords do not match' ]
+                    
+                  );
+                  
+                }
+                
+              // create account
+              
+              {
+              
+                selector =
+                
+                  'button[ data-test="create-account-create-button" ] span';
+                  
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Create account' ]
+                    
+                  );
+                  
+                }
+                
+              // already have an account sign in
+              
+              {
+              
+                selector = 'a[ href="/account/login" ] span';
+                
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Already have an account? Sign in' ]
+                    
+                  );
+                  
+                }
+                
+              if ( isSignUpJoin ) {
+              
+                selector =
+                
+                  `${ classPrefix }unlock-exclusive-content-text`;
+                  
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Create an account to unlock exclusive content.' ]
+                    
+                  );
+                  
+                selector = `${ classPrefix }emails-updates-text`;
+                  
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap [
+                  
+                    'By joining, you may receive emails and updates related '
+                    
+                    +
+                    
+                    'to your account. You can unsubscribe at anytime.'
+                    
+                    ]
+                    
+                  );
+                  
+                
+                }
+                
+              break;
+              
+              }
+              
+          }
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.calidc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end TWC CALIDC Language Translate -->
