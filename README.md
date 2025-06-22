@@ -205,8 +205,6 @@ not necessarily designed to work together.
       
     * [MALIDC Join Quote](Element/Member%20Area/MALIDC%20Join%20Quote)
       
-    * [MALIDC Language Translate](Element/Member%20Area/MALIDC%20Language%20Translate)
-      
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
@@ -248,6 +246,8 @@ not necessarily designed to work together.
     * [Log In Dialog](Element/Customer%20Account/Log%20In%20Dialog)
       
       * [Customer Account Log In Dialog Change](Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change)
+        
+      * [CALIDC Language Translate](Element/Customer%20Account/Log%20In%20Dialog/CALIDC%20Language%20Translate)
         
   * [ETC Year](Element/ETC%20Year)
     
