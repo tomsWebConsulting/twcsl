@@ -82,8 +82,8 @@ Please consider [making a donation][11].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Member%20Area/Member%20Area%20Log%20In%20Dialog%20Change#member-area-log-in-dialog-change
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change#customer-account-log-in-dialog-change
 [6]: calidc%20language%20translate.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: calidc%20language%20translate%20english.html#L1
