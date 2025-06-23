@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.7.0
+    Version       : 0.8.0
     
     SS Versions   : 7.1, 7.0
     
@@ -42,15 +42,16 @@
           
           signUp : '[ optional, enter sign up title text here between single quotes replacing square brackets ]',
           
-          // member site
-          
-          memberSites : {
+          pricingPlanNames : {
           
             /*
             
-              the format of each line is a member site pricing plan name and a
-              title.
+              the format of each line is a pricing plan name and a title. you
+              can use the following tag in your title to have the pricing plan
+              name replace it to save some typing
               
+                [ ppn ]
+                
               following is an example line. copy and paste it after the example
               line. remove the double forward slash space from each new line
               
@@ -82,7 +83,7 @@
     
       const
       
-        version = '0.7.0',
+        version = '0.8.0',
         
         s = `Customer Account Log In Dialog Change v${ version }
         
@@ -756,7 +757,7 @@
                           
                         re = re [ language ];
                         
-                        s = titleElement
+                        const pricingPlanName = titleElement
                         
                           .textContent
                           
@@ -770,9 +771,9 @@
                           
                               .title
                               
-                              .memberSites,
+                              .pricingPlanNames,
                               
-                            s
+                            pricingPlanName
                             
                             );
                             
@@ -784,10 +785,16 @@
                         
                           .title
                           
-                          .memberSites
+                          .pricingPlanNames
                           
-                          [ s ];
+                          [ pricingPlanName ];
                           
+                        const hasTag = s.includes ( '[ ppn ]' );
+                        
+                        if ( ! hasTag ) return; // bail it no tag
+                        
+                        s = s.replace ( '[ ppn ]', pricingPlanName );
+                        
                         }
                         
                       const change = ! p.test ( s );

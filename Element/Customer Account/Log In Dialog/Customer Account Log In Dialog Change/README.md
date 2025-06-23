@@ -8,7 +8,7 @@ Alter customer account sign up and in dialogs.
 
 ### Version
 
-  * 0.7.0
+  * 0.8.0
 
 #### SS Versions
 
@@ -130,6 +130,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-06-23**
+
+  * added [ ppn ] tag feature
+  * bumped version to 0.8.0
+  
 * **2025-06-22**
 
   * reworked class names to reduce some of the repeated information like sign-in
