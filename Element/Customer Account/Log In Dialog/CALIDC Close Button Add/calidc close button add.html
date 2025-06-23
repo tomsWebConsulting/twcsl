@@ -1,0 +1,130 @@
+<!-- begin TWC CALIDC Close Button Add -->
+
+  <script>
+  
+    /*
+    
+      calidc close button add
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.1
+      
+      SS Versions   : 7.1, 7.0
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : Customer Account Log In Dialog Change
+                      < https://tinyurl.com/vs5n4tpd >
+      
+      Copyright     : 2023-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+      ( ( ) => {
+      
+        const
+        
+          version = '0.1.1',
+          
+          s = `CALIDC Close Button Add v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2023-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        } ) ( );
+        
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc calidc sub-module
+      
+      twc.calidc = ( ( self ) => self ) ( twc.calidc || { } );
+      
+      // initialize twc calidc callbacks sub-module
+      
+      twc.calidc.callbacks = ( ( self ) => {
+      
+        const callback = ( dcmnt, dialogType ) => {
+        
+          const
+          
+            callback = ( event ) => {
+          
+              const selector = '.twc-calidc > *:first-child';
+              
+              dcmnt
+              
+                .querySelector ( selector )
+                
+                .click ( );
+                
+              },
+              
+            html = `
+            
+              <button class="close-btn" aria-label="Close">
+              
+                <div class="close-btn-icon">
+                
+                  <svg viewBox="0 0 40 40">
+                  
+                    <path d="M4.3,35.7L35.7,4.3"></path>
+                    
+                    <path d="M4.3,4.3l31.4,31.4"></path>
+                    
+                    </svg>
+                    
+                  </div>
+                  
+                </button>
+                
+              `,
+              
+            id = 'user-account-login-root',
+            
+            element = dcmnt
+            
+              .getElementsByTagName ( 'h1' )
+              
+              [ 0 ];
+              
+          let button = dcmnt.createElement ( 'div' );
+          
+          button.innerHTML = html;
+          
+          button = button.children [ 0 ];
+          
+          button.addEventListener ( 'click', callback );
+          
+          element
+          
+            .parentElement
+            
+            .insertBefore ( button, element );
+            
+          };
+          
+        self.push ( callback );
+        
+        return self;
+        
+        } ) ( twc.calidc.callbacks || [ ] );
+        
+      // end calidc close button add
+      
+    </script>
+    
+  <!-- end TWC CALIDC Close Button Add -->
