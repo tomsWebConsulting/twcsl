@@ -197,8 +197,6 @@ not necessarily designed to work together.
   
   * [Member Area](Element/Member%20Area)
     
-    * [MALIDC Close Button Add](Element/Member%20Area/MALIDC%20Close%20Button%20Add)
-      
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
@@ -244,6 +242,8 @@ not necessarily designed to work together.
       * [CALIDC Language Translate](Element/Customer%20Account/Log%20In%20Dialog/CALIDC%20Language%20Translate)
         
       * [CALIDC Element Link Replace](Element/Customer%20Account/Log%20In%20Dialog/CALIDC%20Element%20Link%20Replace)
+        
+      * [CALIDC Close Button Add](Element/Customer%20Account/Log%20In%20Dialog/CALIDC%20Close%20Button%20Add)
         
   * [ETC Year](Element/ETC%20Year)
     
