@@ -9,7 +9,7 @@ language to other language not supported by Squarespace.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -54,9 +54,14 @@ You can easily create your own translations using the English language template
 above. If you do, feel free to [share][10] them with me and let me know which
 language they are in. I'll gladly consider incorporating them in future updates.
 
-## Note
+## Notes
 
-The code only supports one translation at a time. It is not Weglot nor other
+This code can be used to make input field placeholder value changes only.
+Install the English template and change the desired corresponding english
+placeholder key's value. The site Language / Region doesn't have to be set to
+English (United States) for this to work.
+
+This code only supports one translation at a time. It is not Weglot nor other
 translation techniques aware.
 
 ## Make a Donation
@@ -65,6 +70,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-06-23**
+
+  * altered to optionally change placeholder attributes
+  * bumped version to 0.3.0
+  
 * **2025-06-22**
 
   * translated more english phrases

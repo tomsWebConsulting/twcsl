@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.2.0
+      Version       : 0.3.0
       
       SS Versions   : 7.1, 7.0
       
@@ -31,7 +31,7 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `CALIDC Language Translate v${ version }
         
@@ -61,6 +61,8 @@
     
       const callback = ( dcmnt, dialogType ) => {
       
+        debugger;
+        
         const
         
           codeKey = 'twc-clt',
@@ -93,6 +95,10 @@
         
           placeHolderChange = ( element, placeholder ) => {
           
+            if ( ! element ) return; // bail if no element
+            
+            if ( placeholder [ 0 ] === '[' ) return; // bail if no translation
+            
             element
             
               .setAttribute ( 'placeholder', placeholder );
@@ -101,7 +107,9 @@
             
           textChange = ( element, text ) => {
           
-            if ( element === null ) return; // bail if no element
+            if ( ! element ) return; // bail if no element
+            
+            if ( text [ 0 ] === '[' ) return; // bail if no translation
             
             element
             
@@ -133,6 +141,26 @@
           
           text;
         
+        // email
+        
+        {
+        
+          selector = `${ classPrefix }email input`;
+          
+          placeHolderChange (
+          
+            dcmnt
+            
+              .querySelector ( selector ),
+              
+            translateMap
+            
+              .Email
+              
+            );
+            
+          }
+          
         switch ( dialogType ) {
         
           case 'password-reset' : 
