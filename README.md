@@ -203,8 +203,6 @@ not necessarily designed to work together.
     
   * [Customer Account Panel](Element/Customer%20Account%20Panel)
     
-    * [CAPC Language Translate](Element/Customer%20Account%20Panel/CAPC%20Language%20Translate)
-      
     * [CAPC Account Settings Link](Element/Customer%20Account%20Panel/CAPC%20Account%20Settings%20Link)
       
     * [CAPC Greeting Change](Element/Customer%20Account%20Panel/CAPC%20Greeting%20Change)
@@ -235,6 +233,8 @@ not necessarily designed to work together.
         
         * [assets](Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change/assets)
           
+      * [CAPC Language Translate](Element/Customer%20Account/Panel/CAPC%20Language%20Translate)
+        
     * [Log In Dialog](Element/Customer%20Account/Log%20In%20Dialog)
       
       * [Customer Account Log In Dialog Change](Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change)
