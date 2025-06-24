@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.2.0
+      Version       : 0.3.0
       
       SS Versions   : 7.1, 7.0
       
@@ -30,7 +30,7 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `CAPC Language Translate v${ version }
         
@@ -86,6 +86,8 @@
               
               if ( ! element ) return; // bail if no element
               
+              let isTextMatch = false;
+              
               text = element
               
                 .textContent;
@@ -98,52 +100,28 @@
                 
                 for ( const [ key, value ] of entries ) {
                 
-                  if ( text !== key ) continue;
+                  if ( value [ 0 ] === '[' || text !== key ) continue;
                   
                   text = value;
                   
+                  isTextMatch = true;
+                  
                   break;
                   
                   }
                   
                 }
                 
-              // text ends with
+              // text begins with
               
-              {
+              if ( ! isTextMatch ) {
               
-                entries = Object.entries ( translateMap.textEndsWithMap );
+                entries = Object.entries ( translateMap.textBeginsWithMap );
                 
                 for ( const [ key, value ] of entries ) {
                 
-                  re = new RegExp ( `${ key }$` );
+                  if ( value [ 0 ] === '[' ) continue;
                   
-                  const isMatch
-                  
-                    = 
-                    
-                    re.test ( text );
-                    
-                  if ( ! isMatch ) continue;
-                  
-                  text = text
-                  
-                    .replace ( re, value );
-                    
-                  break;
-                  
-                  }
-                  
-                }
-                
-              // text starts with
-              
-              {
-              
-                entries = Object.entries ( translateMap.textStartsWithMap );
-                
-                for ( const [ key, value ] of entries ) {
-                
                   re = new RegExp ( `^${ key }` );
                   
                   const isMatch
@@ -158,20 +136,56 @@
                   
                     .replace ( re, value );
                     
+                  isTextMatch = true;
+                  
                   break;
                   
                   }
                   
                 }
                 
-              element
+              // text ends with
               
-                .textContent
+              if ( ! isTextMatch ) {
+              
+                entries = Object.entries ( translateMap.textEndsWithMap );
                 
-                =
+                for ( const [ key, value ] of entries ) {
                 
-                text;
+                  if ( value [ 0 ] === '[' ) continue;
+                  
+                  re = new RegExp ( `${ key }$` );
+                  
+                  const isMatch
+                  
+                    = 
+                    
+                    re.test ( text );
+                    
+                  if ( ! isMatch ) continue;
+                  
+                  text = text
+                  
+                    .replace ( re, value );
+                    
+                  isTextMatch = true;
+                  
+                  break;
+                  
+                  }
+                  
+                }
                 
+              if ( isTextMatch )
+              
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  text;
+                  
               observer.disconnect ( );
               
               };
@@ -378,6 +392,8 @@
           
           for ( const [ key, value ] of entries ) {
           
+            if ( value [ 0 ] === '[' ) continue;
+            
             const selector = `[ ${ attribute }="${ key }" ]`;
             
             panelElement
@@ -404,93 +420,22 @@
               
               ];
               
-          if ( ! text ) continue;
+          if ( ! text || text [ 0 ] === '[' ) continue;
           
           node.textContent = text;
           
           }
         
-        // text ends with
+        // text begins with
         
         {
         
-          entries = Object.entries ( translateMap.textEndsWithMap );
+          entries = Object.entries ( translateMap.textBeginsWithMap );
           
           for ( const [ key, value ] of entries ) {
           
-            xPathResults = xPathEvaluate (
+            if ( value [ 0 ] === '[' ) continue;
             
-              `
-                .//* [
-                
-                  substring (
-                  
-                    text ( ),
-                    
-                    string-length (
-                    
-                      text ( )
-                      
-                      )
-                      
-                    -
-                    
-                    string-length (
-                    
-                      '${ key }'
-                      
-                      )
-                      
-                    +
-                    
-                    1
-                    
-                    )
-                    
-                  =
-                  
-                  '${ key }'
-                  
-                ]`,
-                
-              panelElement
-              
-              );
-              
-            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
-            
-              element = xPathResults
-              
-                .snapshotItem ( i );
-                
-              re = new RegExp ( `${ key }$` );
-              
-              element
-              
-                .textContent
-                
-                =
-                
-                element
-                
-                  .textContent
-                  
-                  .replace ( re, value );
-                  
-              }
-              
-            }
-          
-          }
-          
-        // text starts with
-        
-        {
-        
-          entries = Object.entries ( translateMap.textStartsWithMap );
-          
-          for ( const [ key, value ] of entries ) {
-          
             xPathResults = xPathEvaluate (
             
               `
@@ -565,6 +510,81 @@
           
           }
           
+        // text ends with
+        
+        {
+        
+          entries = Object.entries ( translateMap.textEndsWithMap );
+          
+          for ( const [ key, value ] of entries ) {
+          
+            if ( value [ 0 ] === '[' ) continue;
+            
+            xPathResults = xPathEvaluate (
+            
+              `
+                .//* [
+                
+                  substring (
+                  
+                    text ( ),
+                    
+                    string-length (
+                    
+                      text ( )
+                      
+                      )
+                      
+                    -
+                    
+                    string-length (
+                    
+                      '${ key }'
+                      
+                      )
+                      
+                    +
+                    
+                    1
+                    
+                    )
+                    
+                  =
+                  
+                  '${ key }'
+                  
+                ]`,
+                
+              panelElement
+              
+              );
+              
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              element = xPathResults
+              
+                .snapshotItem ( i );
+                
+              re = new RegExp ( `${ key }$` );
+              
+              element
+              
+                .textContent
+                
+                =
+                
+                element
+                
+                  .textContent
+                  
+                  .replace ( re, value );
+                  
+              }
+              
+            }
+          
+          }
+          
         // dates
         
         {
@@ -613,7 +633,7 @@
           
             .querySelector ( selector );
             
-          if ( element !== null ) {
+          if ( element ) {
           
             element
             
