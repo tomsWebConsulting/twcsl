@@ -195,8 +195,6 @@ not necessarily designed to work together.
   
 * [Element](Element)
   
-  * [Member Area](Element/Member%20Area)
-    
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
@@ -205,10 +203,6 @@ not necessarily designed to work together.
     
   * [Customer Account Panel](Element/Customer%20Account%20Panel)
     
-    * [Customer Account Panel Change](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change)
-      
-      * [assets](Element/Customer%20Account%20Panel/Customer%20Account%20Panel%20Change/assets)
-        
     * [CAPC Language Translate](Element/Customer%20Account%20Panel/CAPC%20Language%20Translate)
       
     * [CAPC Account Settings Link](Element/Customer%20Account%20Panel/CAPC%20Account%20Settings%20Link)
@@ -235,6 +229,12 @@ not necessarily designed to work together.
       
   * [Customer Account](Element/Customer%20Account)
     
+    * [Panel](Element/Customer%20Account/Panel)
+      
+      * [Customer Account Panel Change](Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change)
+        
+        * [assets](Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change/assets)
+          
     * [Log In Dialog](Element/Customer%20Account/Log%20In%20Dialog)
       
       * [Customer Account Log In Dialog Change](Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change)
