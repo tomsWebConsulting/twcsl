@@ -1,0 +1,117 @@
+<!--
+
+  begin capc account settings link
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.1.3
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Dependencies  : Customer Account Panel Change
+                  < https://tinyurl.com/mu8jpf3v >
+  
+  Copyright     : 2024-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <script>
+  
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( twc || { } );
+    
+    // initialize twc casl sub-module
+    
+    twc.hba = ( ( self ) => {
+    
+      const options = {
+      
+        url : '[ enter url here between single quotes replacing square brakets ]'
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.casl || { } );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.3',
+        
+        s = `CAPC Account Settings Link v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc capc sub-module
+    
+    twc.capc = ( ( self ) => self ) ( twc.capc || { } );
+    
+    // initialize twc capc callbacks sub-module
+    
+    twc.capc.callbacks = ( ( self ) => {
+    
+      const callback = ( dcmnt, panelType ) => {
+      
+        // bail if not digital products
+        
+        if ( panelType !== 'digital products' ) return;
+        
+        const
+        
+          url = twc.casl.url,
+          
+          selector = '.twc-capc-account-settings a';
+          
+        dcmnt
+        
+          .querySelector ( selector )
+          
+          .setAttribute ( 'href', url );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.capc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end capc account settings link -->
