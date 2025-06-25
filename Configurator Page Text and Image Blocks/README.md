@@ -16,7 +16,7 @@ Create a simple product configurator.
   
   * 7.0 ([Bedford template family][2], [Brine template family][3])
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Yes
 

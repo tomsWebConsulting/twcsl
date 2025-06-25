@@ -16,7 +16,7 @@ Hide all commerce elements on a Store page.
   
   * 7.0 ([Adirondack template][2], [Supply template][3], [Wexley template][4])
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

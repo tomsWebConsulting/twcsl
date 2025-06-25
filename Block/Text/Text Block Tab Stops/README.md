@@ -16,7 +16,7 @@ Simulate tab stops in a text block.
   
   * 7.0
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Yes
 

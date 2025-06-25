@@ -16,7 +16,7 @@ Activate Squarespace editor using a key sequence.
   
   * 7.0
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

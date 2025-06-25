@@ -16,7 +16,7 @@ Auto select a variant of a product option.
   
   * 7.0 ([Brine template family][2])
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

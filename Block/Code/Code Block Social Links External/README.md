@@ -16,7 +16,7 @@ Create Social Links for entities outside your site.
   
   * 7.0 ([Brine template family][2])
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Yes
 

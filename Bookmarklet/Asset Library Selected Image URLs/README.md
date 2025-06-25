@@ -16,7 +16,7 @@ List selected image URLs in the Asset Library.
   
   * 7.0
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

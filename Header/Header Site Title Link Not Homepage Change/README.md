@@ -16,7 +16,7 @@ Change the header site title link on pages except for the homepage.
   
   * 7.0 ([Brine template family][2], [Tremont template family][3])
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 
