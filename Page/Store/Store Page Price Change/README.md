@@ -16,7 +16,11 @@ Change store page prices.
   
   * 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Products V2 Compatible
+
+  * Yes
+
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 
@@ -116,7 +120,7 @@ Please consider [making a donation][12].
 
 ## Changes
 
-* **2025-05-09**
+* **2025-06-26**
 
   * updated to work with v7.1 Products V2
   * bumped version to 0.7.2
