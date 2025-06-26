@@ -9,7 +9,7 @@ language to other language not supported by Squarespace.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -23,7 +23,7 @@ language to other language not supported by Squarespace.
   
   * [Customer Account Log In Dialog Change][4]
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 
@@ -70,6 +70,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-06-26**
+
+  * translated more english phrases
+  * bumped version to 0.4.0
+  
 * **2025-06-23**
 
   * altered to optionally change placeholder attributes

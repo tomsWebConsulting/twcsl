@@ -8,10 +8,11 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.3.0
+      Version       : 0.4.0
       
       SS Versions   : 7.1, 7.0
       
+      v7.1
       Fluid
       Engine
       Compatible    : Not Applicable
@@ -31,7 +32,7 @@
     
       const
       
-        version = '0.3.0',
+        version = '0.4.0',
         
         s = `CALIDC Language Translate v${ version }
         
@@ -61,11 +62,9 @@
     
       const callback = ( dcmnt, dialogType ) => {
       
-        debugger;
-        
         const
         
-          codeKey = 'twc-clt',
+          codeKey = 'twc-calidclt',
           
           calidcCodeKey = 'twc-calidc',
           
@@ -583,6 +582,26 @@
                   
                 }
                 
+              // account exists
+              
+              {
+              
+                selector = `${ classPrefix }account-exists-error-text`;
+                
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'An account already exists for this email' ]
+                    
+                  );
+                  
+                }
+                
               // create password
               
               {
@@ -623,11 +642,31 @@
                   
                 }
                 
-              // password no match
+              // password length
               
               {
               
-                selector = `${ classPrefix }passwords-error-text`;
+                selector = `${ classPrefix }password-length-error-text`;
+                
+                textChange (
+                
+                  dcmnt
+                  
+                    .querySelector ( selector ),
+                    
+                  translateMap
+                  
+                    [ 'Password must be at least 10 characters.' ]
+                    
+                  );
+                  
+                }
+                
+              // passwords no match
+              
+              {
+              
+                selector = `${ classPrefix }passwords-not-match-error-text`;
                 
                 textChange (
                 
