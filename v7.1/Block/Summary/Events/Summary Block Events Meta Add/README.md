@@ -14,7 +14,7 @@ Add more than two meta items to a Summary block Events page type.
 
   * 7.1
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Yes
 

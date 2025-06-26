@@ -16,7 +16,7 @@ Add HTML to the cart page summary.
   
   * 7.0
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

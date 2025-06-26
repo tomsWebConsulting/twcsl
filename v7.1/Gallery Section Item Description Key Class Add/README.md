@@ -10,7 +10,7 @@
 
   * 7.1
 
-#### Fluid Engine Compatibility
+#### Fluid Engine Compatible
 
   * Yes
 

@@ -16,7 +16,7 @@ Search and replace text in elements.
   
   * 7.0
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   Yes
 

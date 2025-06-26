@@ -12,7 +12,7 @@
 
   * 7.0 ([Avenue][1], [Bedford template family][2], [Brine template family][3], [Five][4], [Montauk][5])
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Unknown
 

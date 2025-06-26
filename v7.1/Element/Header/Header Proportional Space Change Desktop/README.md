@@ -14,7 +14,7 @@ Change how space is allocated to the major elements of the header on desktop.
 
   * 7.1
 
-#### Fluid Engine Compatibility
+#### Fluid Engine Compatible
 
   * Not Applicable
 

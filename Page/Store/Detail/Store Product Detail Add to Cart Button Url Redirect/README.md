@@ -16,7 +16,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
   * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

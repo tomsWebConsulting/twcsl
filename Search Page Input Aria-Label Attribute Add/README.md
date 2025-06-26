@@ -12,7 +12,7 @@
 
   * 7.0 ([Brine template family][1])
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Unknown
 

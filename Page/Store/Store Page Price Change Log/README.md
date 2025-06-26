@@ -16,7 +16,7 @@ Log store page price changes.
   
   * 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 

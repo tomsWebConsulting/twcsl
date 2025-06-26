@@ -14,7 +14,7 @@ Randomize the images of image blocks.
 
   * 7.1
 
-#### v7.1 Fluid Engine Compatibility
+#### v7.1 Fluid Engine Compatible
 
   * Yes
 
