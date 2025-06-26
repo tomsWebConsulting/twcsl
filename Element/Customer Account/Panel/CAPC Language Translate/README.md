@@ -9,7 +9,7 @@ supported by Squarespace.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -23,7 +23,7 @@ supported by Squarespace.
   
   * [Customer Account Panel Change][4]
 
-#### Fluid Engine Compatible
+#### v7.1 Fluid Engine Compatible
 
   * Not Applicable
 
@@ -79,12 +79,17 @@ Please consider [making a donation][12].
 
 ## Changes
 
-* **2024-06-24**
+* **2025-06-25**
+
+  * added additional translation phrases
+  * bumped version to 0.4.0
+  
+* **2025-06-24**
 
   * made translations optional
   * bumped version to 0.3.0
   
-* **2024-06-24**
+* **2025-06-24**
 
   * added additional translation phrases
   * bumped version to 0.2.0
