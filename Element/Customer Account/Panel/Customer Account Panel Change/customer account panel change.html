@@ -6,7 +6,7 @@
     
     License      : < https://tinyurl.com/s872fb68 >
     
-    Version      : 0.9.3
+    Version      : 0.9.4
     
     SS Versions  : 7.1, 7.0
     
@@ -29,7 +29,7 @@
     
       const
       
-        version = '0.9.3',
+        version = '0.9.4',
         
         s = `Customer Account Panel Change v${ version }
         
@@ -1193,7 +1193,7 @@
                     
                     .snapshotItem ( 0 )
                     
-                    .parentElement,
+                    ?.parentElement,
                     
                   'profile--email--new'
                   
@@ -1227,7 +1227,7 @@
                     
                     .snapshotItem ( 0 )
                     
-                    .parentElement,
+                    ?.parentElement,
                     
                   'profile--email--confirm-new'
                   
@@ -1261,9 +1261,79 @@
                     
                     .snapshotItem ( 0 )
                     
-                    .parentElement,
+                    ?.parentElement,
                     
                   'profile--email--password'
+                  
+                  );
+                  
+                // not verified
+                
+                classAdd (
+                
+                  xPathEvaluate (
+                  
+                    `.//span [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .notVerified
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    ?.parentElement,
+                    
+                  'profile--email--not-verified'
+                  
+                  );
+                  
+                // resend verification
+                
+                classAdd (
+                
+                  xPathEvaluate (
+                  
+                    `.//span [
+                    
+                      . = "${
+                      
+                        language
+                        
+                          .panels
+                          
+                          .email
+                          
+                          .resendVerification
+                          
+                        }"
+                        
+                      ]`,
+                      
+                    element
+                    
+                    )
+                    
+                    .snapshotItem ( 0 )
+                    
+                    ?.parentElement
+                    
+                    ?.parentElement,
+                    
+                  'profile--email--resend-verification'
                   
                   );
                   

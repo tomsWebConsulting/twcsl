@@ -9,7 +9,7 @@ Squarespace editor.
 
 ### Version
 
-  * 0.9.3
+  * 0.9.4
 
 #### SS Versions
 
@@ -137,6 +137,7 @@ panel element. This code attempts to add some useful classes.
     * twc-capc--header--back
     * twc-capc--header--close
     * twc-capc--header--title
+    * twc-capc--not-verified
     * twc-capc--orders--order
     * twc-capc--orders--order--date
     * twc-capc--orders--order--items
@@ -171,7 +172,9 @@ panel element. This code attempts to add some useful classes.
     * twc-capc--profile--email--confirm-new
     * twc-capc--profile--email--current
     * twc-capc--profile--email--new
+    * twc-capc--profile--email--not-verified
     * twc-capc--profile--email--password
+    * twc-capc--profile--email--resend-verification
     * twc-capc--profile--email-panel
     * twc-capc--profile--name
     * twc-capc--profile--name--first
@@ -200,28 +203,30 @@ panel element. This code attempts to add some useful classes.
       * twc-capc--digital-products--account-settings
     * Account
       * twc-capc
+      * twc-capc--account--addresses
+      * twc-capc--account--digital-products
+      * twc-capc--account--greeting
+      * twc-capc--account--greeting--name
+      * twc-capc--account--orders
+      * twc-capc--account--payment
+      * twc-capc--account--profile
       * twc-capc--account-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
-      * twc-capc--account--greeting
-      * twc-capc--account--greeting--name
-      * twc-capc--account--digital-products
-      * twc-capc--account--orders
-      * twc-capc--account--payment
-      * twc-capc--account--addresses
-      * twc-capc--account--profile
+      * twc-capc--header--title
+      * twc-capc--not-verified
     * Orders
       * twc-capc
-      * twc-capc--orders-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
+      * twc-capc--header--title
+      * twc-capc--not-verified
       * twc-capc--orders--order
-      * twc-capc--orders--order--number
       * twc-capc--orders--order--date
+      * twc-capc--orders--order--number
+      * twc-capc--orders-panel
     * Orders > Order
       * twc-capc
       * twc-capc--header
@@ -285,16 +290,17 @@ panel element. This code attempts to add some useful classes.
       * twc-capc--payment--payment-method-new--billing-address
     * Addresses
       * twc-capc
+      * twc-capc--addresses--add-new-address
+      * twc-capc--addresses--address
+      * twc-capc--addresses--address--address-1
+      * twc-capc--addresses--address--name
+      * twc-capc--addresses--address--tag
       * twc-capc--addresses-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
-      * twc-capc--addresses--address
-      * twc-capc--addresses--address--tag
-      * twc-capc--addresses--address--name
-      * twc-capc--addresses--address--address-1
-      * twc-capc--addresses--add-new-address
+      * twc-capc--header--title
+      * twc-capc--not-verified
     * Addresses > Address
       * twc-capc
       * twc-capc--addresses--address-panel
@@ -308,39 +314,44 @@ panel element. This code attempts to add some useful classes.
       * twc-capc--addresses--address-new-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
+      * twc-capc--header--title
+      * twc-capc--not-verified
     * Profile
       * twc-capc
-      * twc-capc--profile-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
+      * twc-capc--header--title
+      * twc-capc--not-verified
+      * twc-capc--profile--email
       * twc-capc--profile--name
       * twc-capc--profile--name--first
       * twc-capc--profile--name--last
-      * twc-capc--profile--email
       * twc-capc--profile--password
       * twc-capc--profile--update-password
+      * twc-capc--profile-panel
     * Profile > Email
       * twc-capc
-      * twc-capc--profile--email-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
+      * twc-capc--header--title
+      * twc-capc--profile--email--confirm-new
       * twc-capc--profile--email--current
       * twc-capc--profile--email--new
-      * twc-capc--profile--email--confirm-new
+      * twc-capc--profile--email--not-verified
       * twc-capc--profile--email--password
+      * twc-capc--profile--email--resend-verification
+      * twc-capc--profile--email-panel
     * Profile > Update Password
       * twc-capc
-      * twc-capc--profile--password-update-panel
       * twc-capc--header
       * twc-capc--header--back
-      * twc-capc--header--title
       * twc-capc--header--close
+      * twc-capc--header--title
+      * twc-capc--not-verified
+      * twc-capc--profile--password-update-panel
       * twc-capc--profile--update-password--current
       * twc-capc--profile--update-password--new
 
@@ -401,22 +412,29 @@ support all languages Squarespace supports. It supports the languages listed in
 the Dependencies section.[*][13]
 
 You can add a language that Squarespace supports but the code doesn't. Add code
-from file **[customer account panel change language template.html][23]** to
+from file **[customer account panel change language template.html][14]** to
 Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
 code injection][5] for details.
 
 You need to go through the data structure replacing the English language values
 with the values Squarespace shows for those elements in the User Interface.
 
-If you do create a new language, feel free to [share][14] it with me. I'll
+If you do create a new language, feel free to [share][15] it with me. I'll
 gladly consider incorporating it in future updates.
 
 ## Make a Donation
 
-Please consider [making a donation][15].
+Please consider [making a donation][16].
 
 ## Changes
 
+* **2025-06-26**
+
+  * added class names twc-capc--profile--email--not-verified and
+    twc-capc--profile--email--resend-verification
+  * fixed email panel errors for unverified account 
+  * bumped version to 0.9.4
+  
 * **2025-06-25**
 
   * fixed not verified element causing issue
@@ -542,6 +560,6 @@ Please consider [making a donation][15].
 [11]: customer%20account%20panel%20change.html#L1
 [12]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [13]: #dependencies
-[23]: customer%20account%20panel%20change%20language%20template.html#L1
-[14]: mailto:tomsWebConsulting@gmail.com?subject=CAPC%20Language%20JSON&body=%3C!--%20begin%20TWC%20Customer%20Account%20Panel%20Change%20Language%20English%20--%3E%0A%0A%20%20%3C!--%0A%20%20%0A%20%20%20%20customer%20account%20panel%20change%20language%20english%0A%20%20%20%20%0A%20%20%20%20License%20%20%20%20%20%20%3A%20%3C%20https%3A%2F%2Ftinyurl.com%2Fs872fb68%20%3E%0A%20%20%20%20%0A%20%20%20%20Version%20%20%20%20%20%20%3A%200.9.3%0A%20%20%20%20%0A%20%20%20%20SS%20Versions%20%20%3A%207.1%2C%207.0%0A%20%20%20%20%0A%20%20%20%20v7.1%0A%20%20%20%20Fluid%0A%20%20%20%20Engine%0A%20%20%20%20Compatible%20%20%20%3A%20Not%20Applicable%0A%20%20%20%20%0A%20%20%20%20Copyright%20%20%20%20%3A%202023-2025%20Thomas%20Creedon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Tom's%20Web%20Consulting%20%3C%20http%3A%2F%2Fwww.tomsWeb.consulting%2F%20%3E%0A%20%20%20%20%0A%20%20%20%20--%3E%0A%20%20%20%20%0A%20%20%3Cscript%20type%3D%22application%2Fvnd.twc.capc%2Bjson%3B%20lang%3Den%22%3E%0A%20%20%0A%20%20%20%20%7B%0A%20%20%20%20%0A%20%20%20%20%20%20%22panels%22%20%3A%20%7B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22account%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Account%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22address%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22deleteAddress%22%20%3A%20%22Delete%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22address%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22addresses%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Addresses%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22addressNew%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22address%20new%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22New%20Address%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22digitalProducts%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22search%22%20%3A%20%22Search%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Digital%20Products%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22email%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22confirmNew%22%20%3A%20%22Confirm%20New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22current%22%20%3A%20%22Current%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22new%22%20%3A%20%22New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22password%22%20%3A%20%22Password%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Email%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22order%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22items%22%20%3A%20%22Items%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22orderDate%22%20%3A%20%22Order%20Date%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22order%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shipping%22%20%3A%20%22Shipping%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22status%22%20%3A%20%22Status%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22subtotal%22%20%3A%20%22Subtotal%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22summary%22%20%3A%20%22Summary%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Order%20%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22tax%22%20%3A%20%22Tax%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22total%22%20%3A%20%22Total%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orderPaymentMethod%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22order%20payment%20method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orderShipping%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shippingAddress%22%20%3A%20%22Shipping%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shippingOption%22%20%3A%20%22Shipping%20Option%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Shipping%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orders%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Orders%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22passwordUpdate%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22current%22%20%3A%20%22Current%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22new%22%20%3A%20%22New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Update%20Password%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22payment%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22default%22%20%3A%20%22Default%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22other%22%20%3A%20%22Other%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22paymentMethod%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22billingAddress%22%20%3A%20%22Billing%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22cardDetails%22%20%3A%20%22Card%20Details%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22deletePaymentMethod%22%20%3A%20%22Delete%20Payment%20Method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22payment%20method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22paymentMethodNew%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22billingAddress%22%20%3A%20%22Billing%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22cardDetails%22%20%3A%20%22Card%20Details%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22payment%20method%20new%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22New%20Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22profile%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22password%22%20%3A%20%22Password%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Profile%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%0A%20%20%20%20%3C%2Fscript%3E%0A%20%20%20%20%0A%20%20%3C!--%20end%20TWC%20Customer%20Account%20Panel%20Change%20Language%20English%20--%3E%0A
-[15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[14]: customer%20account%20panel%20change%20language%20template.html#L1
+[15]: mailto:tomsWebConsulting@gmail.com?subject=CAPC%20Language%20JSON&body=%3C!--%20begin%20TWC%20Customer%20Account%20Panel%20Change%20Language%20English%20--%3E%0A%0A%20%20%3C!--%0A%20%20%0A%20%20%20%20customer%20account%20panel%20change%20language%20english%0A%20%20%20%20%0A%20%20%20%20License%20%20%20%20%20%20%3A%20%3C%20https%3A%2F%2Ftinyurl.com%2Fs872fb68%20%3E%0A%20%20%20%20%0A%20%20%20%20Version%20%20%20%20%20%20%3A%200.9.3%0A%20%20%20%20%0A%20%20%20%20SS%20Versions%20%20%3A%207.1%2C%207.0%0A%20%20%20%20%0A%20%20%20%20v7.1%0A%20%20%20%20Fluid%0A%20%20%20%20Engine%0A%20%20%20%20Compatible%20%20%20%3A%20Not%20Applicable%0A%20%20%20%20%0A%20%20%20%20Copyright%20%20%20%20%3A%202023-2025%20Thomas%20Creedon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Tom's%20Web%20Consulting%20%3C%20http%3A%2F%2Fwww.tomsWeb.consulting%2F%20%3E%0A%20%20%20%20%0A%20%20%20%20--%3E%0A%20%20%20%20%0A%20%20%3Cscript%20type%3D%22application%2Fvnd.twc.capc%2Bjson%3B%20lang%3Den%22%3E%0A%20%20%0A%20%20%20%20%7B%0A%20%20%20%20%0A%20%20%20%20%20%20%22panels%22%20%3A%20%7B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22account%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Account%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22address%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22deleteAddress%22%20%3A%20%22Delete%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22address%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22addresses%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Addresses%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22addressNew%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22address%20new%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22New%20Address%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22digitalProducts%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22search%22%20%3A%20%22Search%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Digital%20Products%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22email%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22confirmNew%22%20%3A%20%22Confirm%20New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22current%22%20%3A%20%22Current%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22new%22%20%3A%20%22New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22password%22%20%3A%20%22Password%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Email%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22order%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22items%22%20%3A%20%22Items%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22orderDate%22%20%3A%20%22Order%20Date%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22order%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shipping%22%20%3A%20%22Shipping%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22status%22%20%3A%20%22Status%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22subtotal%22%20%3A%20%22Subtotal%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22summary%22%20%3A%20%22Summary%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Order%20%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22tax%22%20%3A%20%22Tax%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22total%22%20%3A%20%22Total%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orderPaymentMethod%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22order%20payment%20method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orderShipping%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shippingAddress%22%20%3A%20%22Shipping%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22shippingOption%22%20%3A%20%22Shipping%20Option%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Shipping%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22orders%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Orders%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22passwordUpdate%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22current%22%20%3A%20%22Current%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22new%22%20%3A%20%22New%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Update%20Password%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22payment%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22default%22%20%3A%20%22Default%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22other%22%20%3A%20%22Other%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22paymentMethod%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22billingAddress%22%20%3A%20%22Billing%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22cardDetails%22%20%3A%20%22Card%20Details%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22deletePaymentMethod%22%20%3A%20%22Delete%20Payment%20Method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22payment%20method%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22paymentMethodNew%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22billingAddress%22%20%3A%20%22Billing%20Address%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22cardDetails%22%20%3A%20%22Card%20Details%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22panelType%22%20%3A%20%22payment%20method%20new%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22New%20Payment%20Method%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%22profile%22%20%3A%20%7B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22password%22%20%3A%20%22Password%22%2C%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%22Title%22%20%3A%20%22Profile%22%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%0A%20%20%20%20%3C%2Fscript%3E%0A%20%20%20%20%0A%20%20%3C!--%20end%20TWC%20Customer%20Account%20Panel%20Change%20Language%20English%20--%3E%0A
+[16]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
