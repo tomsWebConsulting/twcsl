@@ -10,7 +10,7 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.7.1
+        Version         : 0.7.2
         
         SS Versions     : 7.1, 7.0
         
@@ -54,7 +54,7 @@
         
       const
       
-        version = '0.7.1',
+        version = '0.7.2',
         
         s = `Store Page Price Change v${ version }
         
@@ -76,6 +76,8 @@
       
         callback = ( ) => {
         
+          debugger;
+          
           const isStorePage = Static
           
             .SQUARESPACE_CONTEXT
@@ -118,7 +120,7 @@
               
               .querySelector ( selector );
               
-          if ( scriptElement === null ) return; // bail if no tag
+          if ( ! scriptElement ) return; // bail if no tag
           
           const
           
@@ -140,7 +142,7 @@
                   
                     const m = s.match ( /\/(.+)\/(.*)/ );
                     
-                    if ( m !== null ) { // m appears to be a regex pattern
+                    if ( m ) { // m appears to be a regex pattern
                     
                       try {
                       
@@ -264,7 +266,7 @@
             
               .body
               
-              .querySelector ( '.tweak-products-add-to-cart-button' )
+              .querySelector ( '.product-list-item-add-to-cart' )
               
               !==
               
@@ -310,8 +312,20 @@
             
               .body
               
-              .querySelectorAll ( '.product-price' )
+              .querySelectorAll (
               
+                [
+                
+                  '.product-list-item-price', // 7.1
+                  
+                  '.product-price' // 7.0
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
             ];
             
           productPriceElements
@@ -390,19 +404,25 @@
                   
                     e =>
                     
-                      !
-                      
-                      [ null, undefined ]
-                    
-                      .contains (
+                      Boolean (
                       
                         e
                         
-                          ?.closest ( '.grid-item-link' )
+                          .closest (
                           
+                            [
+                            
+                              '.product-list-item-link', // 7.1
+                              
+                              '.grid-item-link' // 7.0
+                              
+                              ]
+                              
+                            )
+                            
                           ?.nextElementSibling
                           
-                          ?.querySelector ( '.product-variants' )
+                          .querySelector ( '.product-variants' )
                           
                         )
                         
@@ -514,17 +534,15 @@
               
               observer = new MutationObserver ( callback );
               
-            callback = ( element ) => {
+            if ( is70 ) {
             
               // start listening for changes in element
               
-              observer.observe ( element, config );
+              productPriceElements
               
-              };
-              
-            productPriceElements
-            
-              .forEach ( callback );
+                .forEach ( e => observer.observe ( e, config ) );
+                
+              }
               
             if ( ! isAfterPay ) return; // bail if not afterpay
             
@@ -540,21 +558,27 @@
               
               };
               
-            callback = ( element ) => {
+            // start listening for changes in element
             
-              // start listening for changes in element
-              
-              observer.observe ( element, config );
-              
-              };
-              
             document
             
               .body
               
-              .querySelectorAll ( 'div[ data-afterpay="true" ]' )
+              .querySelectorAll (
               
-              .forEach ( callback );
+                [
+                
+                  '.product-payment-method-messaging', // 7.1
+                  
+                  'div[ data-afterpay="true" ]' // 7.0
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+              
+              .forEach ( e => observer.observe ( e, config ) );
               
             };
             

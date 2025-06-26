@@ -8,7 +8,7 @@ Change store page prices.
 
 ### Version
 
-  * 0.7.1
+  * 0.7.2
 
 #### SS Versions
 
@@ -36,7 +36,7 @@ Change store page prices.
       effect.
       
     * Add, in order, code from files **[store page price change
-      script.html][7]** and **[store page price change.html][8]** to
+      options.html][7]** and **[store page price change.html][8]** to
       Store Settings > Advanced > Page Header Code Injection for the store page.
       Refer to [per-page code injection][9] for details.
       
@@ -45,7 +45,7 @@ Change store page prices.
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page price change script.html][7]** to
+    * Add code from file **[store page price change options.html][7]** to
       Website > Pages > Custom Code > Code Injection > HEADER.
       
     * Add code from file **[store page price change.html][8]** to Website >
@@ -58,45 +58,45 @@ Change store page prices.
 ## searchReplaceText Example Lines
 
 ```
-      // remove word from
-      
-      "from" : "",
-  ```
-
-```
-      // change language of word from, from english to swedish
-      
-      "from" : "fra",
-  ```
-
-```
-      // remove zero decimal from price
-      
-      ".00" : "",
-  ```
-
-```
-      /*
-      
-        remove decimal from price, using regular expression, backslash must
-        be escaped with \, the replacement text uses special replacement
-        patterns
+        // remove word from
         
-        */
+        "from" : "",
+  ```
+
+```
+        // change language of word from, from english to swedish
         
-      "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
+        "from" : "fra",
   ```
 
 ```
-      // add thousands separator
-      
-      "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
+        // remove zero decimal from price
+        
+        ".00" : "",
   ```
 
 ```
-      // replacement text callback name
-      
-      "log" : "twcSppcl",
+        /*
+        
+          remove decimal from price, using regular expression, backslash must
+          be escaped with \, the replacement text uses special replacement
+          patterns
+          
+          */
+          
+        "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
+  ```
+
+```
+        // add thousands separator
+        
+        "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
+  ```
+
+```
+        // replacement text callback name
+        
+        "log" : "twcSppcl",
   ```
 
 ## Callbacks
@@ -116,6 +116,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-05-09**
+
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.7.2
+  
 * **2025-05-09**
 
   * fixed check for tweak-products-add-to-cart-button class name after
@@ -252,7 +257,7 @@ Please consider [making a donation][12].
 [4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
 [5]: https://www.squarespace.com/pricing
 [6]: https://en.wikipedia.org/wiki/JavaScript
-[7]: store%20page%20price%20change%20script.html#L1
+[7]: store%20page%20price%20change%20options.html#L1
 [8]: store%20page%20price%20change.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
