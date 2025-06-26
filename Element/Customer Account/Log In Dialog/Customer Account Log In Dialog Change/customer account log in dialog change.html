@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.8.0
+    Version       : 0.9.0
     
     SS Versions   : 7.1, 7.0
     
@@ -83,7 +83,7 @@
     
       const
       
-        version = '0.8.0',
+        version = '0.9.0',
         
         s = `Customer Account Log In Dialog Change v${ version }
         
@@ -1082,8 +1082,16 @@
                         
                         }
                         
-                      case isSignUp :
+                      case isSignUp : {
                       
+                        const nodeOriginal = mutation
+                        
+                          .addedNodes
+                          
+                          [ 0 ];
+                          
+                        let isError;
+                          
                         // first name class add
                         
                         {
@@ -1166,41 +1174,87 @@
                             
                           }
                           
-                        // passwords no match
+                        // account exists
                         
                         {
                         
-                          const
+                          isError = nodeOriginal
                           
-                            nodeOriginal = mutation
+                            .previousElementSibling
                             
-                              .addedNodes
-                              
-                              [ 0 ],
-                              
-                            isPasswordsNotSame = nodeOriginal
+                            ?.getAttribute ( 'data-test' )
                             
-                              .previousElementSibling
-                              
-                              ?.getAttribute ( 'data-test' )
-                              
-                              ===
-                              
-                              'create-account-confirm-password';
-                              
-                          if ( isPasswordsNotSame )
+                            ===
+                            
+                            'create-account-email';
+                            
+                          if ( isError )
                           
                             classAdd (
                             
                               nodeOriginal,
                               
-                              `${ classPrefix }passwords-error-text`
+                              `${ classPrefix }account-exists-error-text`
+                              
+                              );
+                              
+                          }
+                          
+                        // password length
+                        
+                        {
+                        
+                          isError = nodeOriginal
+                          
+                            .previousElementSibling
+                            
+                            ?.getAttribute ( 'data-test' )
+                            
+                            ===
+                            
+                            'create-account-password';
+                            
+                          if ( isError )
+                          
+                            classAdd (
+                            
+                              nodeOriginal,
+                              
+                              `${ classPrefix }password-length-error-text`
+                              
+                              );
+                              
+                          }
+                          
+                        // passwords no match
+                        
+                        {
+                        
+                          isError = nodeOriginal
+                          
+                            .previousElementSibling
+                            
+                            ?.getAttribute ( 'data-test' )
+                            
+                            ===
+                            
+                            'create-account-confirm-password';
+                            
+                          if ( isError )
+                          
+                            classAdd (
+                            
+                              nodeOriginal,
+                              
+                              `${ classPrefix }passwords-not-match-error-text`
                               
                               );
                               
                           }
                           
                         break;
+                        
+                        }
                         
                       }
                       

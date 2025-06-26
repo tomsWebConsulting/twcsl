@@ -8,7 +8,7 @@ Alter customer account sign up and in dialogs.
 
 ### Version
 
-  * 0.8.0
+  * 0.9.0
 
 #### SS Versions
 
@@ -40,6 +40,7 @@ Squarespace includes virtually no semantic class names for the log in dialog.
 This code attempts to add some useful classes.
 
   * twc-calidc
+  * twc-calidc-account-exists-error-text
   * twc-calidc-account-verify-text
   * twc-calidc-email
   * twc-calidc-emails-updates-text
@@ -51,7 +52,9 @@ This code attempts to add some useful classes.
   * twc-calidc-not-you
   * twc-calidc-password
   * twc-calidc-password-confirm
+  * twc-calidc-password-length-error-text
   * twc-calidc-password-reset
+  * twc-calidc-passwords-not-match-error-text
   * twc-calidc-sign-in
   * twc-calidc-sign-in-link
   * twc-calidc-sign-in-member-site
@@ -130,6 +133,13 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-06-25**
+
+  * added class names twc-calidc-password-length-error-text and
+    twc-calidc-account-exists-error-text
+  * added missing class name twc-calidc-passwords-not-match-error-text
+  * bumped version to 0.9.0
+  
 * **2025-06-23**
 
   * added [ ppn ] tag feature
