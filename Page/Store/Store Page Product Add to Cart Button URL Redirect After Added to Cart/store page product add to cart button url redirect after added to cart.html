@@ -1,72 +1,43 @@
 <!-- begin TWC Store Page Product Add to Cart Button URL Redirect After Added to Cart -->
 
-  <!--
-  
-    store page product add to cart button url redirect after added to cart
-    
-    License      : < https://tinyurl.com/s872fb68 >
-    
-    Version      : 0.2.0
-    
-    SS Versions  : 7.1, 7.0
-    
-    Fluid
-    Engine
-    Compatible   : Not Applicable
-    
-    Copyright    : 2021-2025 Thomas Creedon
-                   
-                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    -->
-    
-  <script>
-  
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    twc.spatcbrtuapa = ( ( self ) => { // initialize twc spatcbrtuapa sub-module
-    
-      const options = {
-      
-        url : '[ enter url here between single quotes replacing square brackets ]',
-        
-        // values are false or true
-        
-        productDetailAutoClick : false
-        
-        };
-        
-      Object
-      
-        .assign (
-        
-          self,
-          
-          options
-          
-          );
-          
-      return self;
-      
-      } ) ( twc.spatcbrtuapa || { } );
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <script>
   
     ( ( ) => {
     
+      /*
+      
+        store page product add to cart button url redirect after added to cart
+        
+        License      : < https://tinyurl.com/s872fb68 >
+        
+        Version      : 0.3.0
+        
+        SS Versions  : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible   : Yes
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible   : Not Applicable
+        
+        Copyright    : 2021-2025 Thomas Creedon
+                       
+                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+       */
+        
       const
       
         title =
         
           'Store Page Add to Cart Button Redirect to URL After Product Added',
           
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `${ title } v${ version }
         
@@ -84,132 +55,174 @@
       
       if ( ! ( 'MutationObserver' in window ) ) return;
       
-      const
+      const callback = ( ) => {
       
-        callback = ( ) => {
+        const isStorePage = Static
         
-          const isStorePage = Static
+          .SQUARESPACE_CONTEXT
           
-            .SQUARESPACE_CONTEXT
-            
-            .collection
-            
-            .type
-            
-            ===
-            
-            13;
-            
-          if ( ! isStorePage ) return; // bail if not store page
+          .collection
           
-          const
+          .type
           
-            callback = ( mutations ) => {
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const codeKey = 'twc-spatcbrtuapa';
+        
+        let selector = 'script[ type="application/vnd.' +
+        
+          `${ codeKey.replace ( '-', '.' ) }" ]`;
+          
+        const scriptElement = [
+        
+          ...
+          
+          document
+          
+            .querySelectorAll ( selector )
             
-              const callback = ( mutation ) => {
+          ]
+          
+          .slice ( -1 )
+          
+          [ 0 ];
+          
+        if ( ! scriptElement ) return; // bail if no element
+        
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc spatcbrtuapa sub-module
+        
+        twc.spatcbrtuapa = ( ( self ) => self ) ( twc.spatcbrtuapa || { } );
+        
+        selector = '.sqs-add-to-cart-button';
+        
+        const
+        
+          callback = ( mutations ) => {
+          
+            const callback = ( mutation ) => {
+            
+              const hasAttribute = mutation
               
-                const hasAttribute = mutation
+                .attributeName === 'class';
                 
-                  .attributeName === 'class';
+              if ( ! hasAttribute ) return; // continue
+              
+              const
+              
+                element = mutation.target,
+                
+                hasClass = element
+                
+                  .classList
                   
-                if ( ! hasAttribute ) return; // continue
-                
-                const
-                
-                  element = mutation.target,
+                  .contains ( 'cart-added' );
                   
-                  hasClass = element
+              if ( ! hasClass ) return; // continue
+              
+              location = options.url;
+              
+              };
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          config = {
+          
+            attributes : true
+            
+            },
+                   
+          elements = document
+          
+            .querySelectorAll ( selector ),
+            
+          isDetail = ( ( ) => {
+          
+            const selector = 'body[ id^="item-" ]';
+            
+            const is = document
+            
+              .querySelector ( selector )
+              
+              !==
+              
+              null;
+              
+            return is;
+            
+            } ) ( ),
+            
+          observer = new MutationObserver ( callback ),
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window );
+            
+        Object
+        
+          .assign (
+          
+            options,
+            
+            JSON
+            
+              .parse (
+              
+                scriptElement
+                
+                  .textContent
                   
-                    .classList
-                    
-                    .contains ( 'cart-added' );
-                    
-                if ( ! hasClass ) return; // continue
+                  .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                  
+                  .replaceAll ( '\n', '' )
+                  
+                )
                 
-                location = options.url;
-                
-                };
-                
-              mutations.forEach ( callback );
-              
-              },
-              
-            config = {
+            );
             
-              attributes : true
-              
-              },
-                     
-            forEachCallback = ( element ) => {
-            
-              observer.observe ( element, config );
-              
-              },
-              
-            isDetail = ( ( ) => {
-            
-              const selector = 'body[ id^="item-" ]';
-              
-              const is = document
-              
-                .querySelector ( selector )
-                
-                !==
-                
-                null;
-                
-              return is;
-              
-              } ) ( ),
-              
-            observer = new MutationObserver ( callback ),
-            
-            options = twc
-            
-              .spatcbrtuapa,
-              
-            selector = '.sqs-add-to-cart-button',
-            
-            addToCartButtonElements
-            
-              =
-              
-              document
-              
-                .querySelectorAll ( selector );
-                
-          addToCartButtonElements
+        elements
+        
+          .forEach ( e => observer.observe ( e, config ) );
           
-            .forEach ( forEachCallback );
-            
-          // detail auto click add to cart button
+        // detail add to cart button auto click 
+        
+        {
+        
+          const isAutoClick
           
-          {
+            =
+            
+            isDetail
+            
+            &&
+            
+            options
+            
+              .detailAutoClick;
+              
+          if ( ! isAutoClick ) return; // bail if no auto click
           
-            const doAutoClick
-            
-              =
-              
-              isDetail
-              
-              &&
-              
-              options
-              
-                .productDetailAutoClick;
-                
-            if ( ! doAutoClick ) return; // bail if no detail auto click
-            
-            addToCartButtonElements
-            
-              [ 0 ]
-              
-              ?.click ( );
-              
-            }
-            
-          };
+          elements
           
+            [ 0 ]
+            
+            ?.click ( );
+            
+          }
+          
+        };
+        
       window
       
         .addEventListener ( 'load', callback );

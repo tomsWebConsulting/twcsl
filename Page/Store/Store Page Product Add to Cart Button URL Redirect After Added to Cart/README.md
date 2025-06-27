@@ -9,13 +9,17 @@ cart.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
+
+#### v7.1 Products V2 Compatible
+
+  * Yes
 
 #### v7.1 Fluid Engine Compatible
 
@@ -36,20 +40,22 @@ cart.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page product add to cart button url redirect
-      after added to cart.html][1]** to Page Settings > Advanced > Page Header
-      Code Injection for the store page. Refer to [Per-page code injection][6]
-      for details.
+    * Add code from files **[store page product add to cart button url redirect
+      after added to cart options.html][11]** and **[store page product add to
+      cart button url redirect after added to cart.html][1]** to Page Settings >
+      Advanced > Page Header Code Injection for the store page. Refer to
+      [Per-page code injection][6] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page product add to cart button url redirect
-      after added to cart.html][1]** to Website > Pages > Custom Code >
-      Code Injection > FOOTER. Refer to [Add code to code injection][7] for
-      details.
+    * Add code from files **[store page product add to cart button url redirect
+      after added to cart options.html][11]** and **[store page product add to
+      cart button url redirect after added to cart.html][1]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
+      injection][7] for details.
 
 ## Make a Donation
 
@@ -57,6 +63,12 @@ Please consider [making a donation][2].
 
 ## Changes
 
+* **2025-06-26**
+
+  * checked v7.1 Products V2 compatibility
+  * moved options out of main code into embedded JSON script tag
+  * bumped version to 0.3.0
+  
 * **2025-04-28**
 
   * added support for v7.1 list add to cart buttons
@@ -78,6 +90,7 @@ Please consider [making a donation][2].
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
+[11]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart%20options.html#L1
 [1]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
