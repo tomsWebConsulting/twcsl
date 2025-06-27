@@ -1,6 +1,6 @@
 # Store Page Product Add to Cart Button URL Redirect After Added to Cart
 
-### [License][99]
+### [License][1]
 
 ### Synopsis
 
@@ -27,7 +27,7 @@ cart.
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
@@ -41,8 +41,8 @@ cart.
       effect.
       
     * Add code from files **[store page product add to cart button url redirect
-      after added to cart options.html][11]** and **[store page product add to
-      cart button url redirect after added to cart.html][1]** to Page Settings >
+      after added to cart options.html][4]** and **[store page product add to
+      cart button url redirect after added to cart.html][5]** to Page Settings >
       Advanced > Page Header Code Injection for the store page. Refer to
       [Per-page code injection][6] for details.
       
@@ -52,14 +52,14 @@ cart.
       effect.
       
     * Add code from files **[store page product add to cart button url redirect
-      after added to cart options.html][11]** and **[store page product add to
-      cart button url redirect after added to cart.html][1]** to Website >
+      after added to cart options.html][4]** and **[store page product add to
+      cart button url redirect after added to cart.html][5]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][7] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][2].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -87,11 +87,11 @@ Please consider [making a donation][2].
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[3]: https://www.squarespace.com/pricing
-[4]: https://en.wikipedia.org/wiki/JavaScript
-[11]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart%20options.html#L1
-[1]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart.html#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart%20options.html#L1
+[5]: store%20page%20product%20add%20to%20cart%20button%20url%20redirect%20after%20added%20to%20cart.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
