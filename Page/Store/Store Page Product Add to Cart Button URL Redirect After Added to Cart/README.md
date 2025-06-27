@@ -40,22 +40,30 @@ cart.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from files **[store page product add to cart button url redirect
-      after added to cart options.html][4]** and **[store page product add to
-      cart button url redirect after added to cart.html][5]** to Page Settings >
-      Advanced > Page Header Code Injection for the store page. Refer to
-      [Per-page code injection][6] for details.
+    * Add code from file **[store page product add to cart button url redirect
+      after added to cart options.html][4]** to Page Settings > Advanced > Page
+      Header Code Injection for the store page. Refer to [Per-page code
+      injection][6] for details. Read the code for any instructions within.
+      
+    * Add code from file **[store page product add to cart button url redirect
+      after added to cart.html][5]** to Page Settings > Advanced > Page Header
+      Code Injection for the store page. Refer to [Per-page code injection][6]
+      for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from files **[store page product add to cart button url redirect
-      after added to cart options.html][4]** and **[store page product add to
-      cart button url redirect after added to cart.html][5]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][7] for details.
+    * Add code from file **[store page product add to cart button url redirect
+      after added to cart options.html][4]**  to Website > Pages > Custom Code >
+      Code Injection > FOOTER. Refer to [Add code to code injection][7] for
+      details. Read the code for any instructions within.
+      
+    * Add code from file **[store page product add to cart button url redirect
+      after added to cart.html][5]** to Website > Pages > Custom Code >
+      Code Injection > FOOTER. Refer to [Add code to code injection][7] for
+      details.
 
 ## Make a Donation
 
