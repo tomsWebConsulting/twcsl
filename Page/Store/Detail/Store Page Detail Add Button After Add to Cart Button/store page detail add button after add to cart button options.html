@@ -1,0 +1,88 @@
+<!-- begin TWC Store Page Detail Add Button After Add to Cart Button Options -->
+
+  <script>
+  
+    /*
+    
+      begin store page detail add button after add to cart button options
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.5.0
+      
+      SS Versions     : 7.0, 7.1
+      
+      Copyright       : 2021-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc psst sub-module
+    
+    twc.spdabaatcb = ( ( self ) => {
+    
+      const options = {
+      
+        button : {
+        
+          text : '[ enter text here between the single quotes replacing square brackets ]',
+          
+          /*
+          
+            url is optional. if you want a single URL across all products then
+            enter a value. see How to Use in the README for other configuration
+            details. the URL can be any valid URL. it can be absolute ( external
+            to your site ) like < http://www.tomsWeb.consulting/ > or relative
+            ( internal to your site ) like '/contact'
+            
+            */
+            
+          url : '[ optional, enter url here between the single quotes replacing square brackets ]',
+          
+          /*
+          
+            target attribute value is optional. values are _self or _blank or
+            _parent or _top or framename. if you don't alter the provided
+            default value then _self will be used
+            
+            */
+            
+          targetAttributeValue : '[ optional, enter target attribute value here between the single quotes replacing square brackets ]',
+          
+          },
+          
+        /*
+        
+          do not add button is an optional function for conditions which
+          prevents the code from running. replace undefined with the name of
+          your custom function. your function must return a boolean. false means
+          add the button and true means do not add the button
+          
+          */
+          
+        doNotAddButton : undefined
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdabaatcb || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Add Button After Add to Cart Button Options -->

@@ -1,122 +1,64 @@
-<!--
+<!-- begin TWC Store Page Detail Add Button After Add to Cart Button -->
 
-  begin store page detail add button after add to cart button
+  <!--
   
-  License         : < https://tinyurl.com/s872fb68 >
-  
-  Version         : 0.4.0
-  
-  SS Versions     : 7.0, 7.1
-  
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                    Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                    Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
-                    Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
-                    Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
-                    Sonora, Stella, Thorne, Vow, Wav, West )
-                    
-                    your template is not listed? then it is not currently
-                    supported
-                    
-  Dependencies    : jQuery
-  
-  Notes           : the code is comprised of several tags all of which must be
-                    present for the effect to work
-  
-  Copyright       : 2021-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-  
-    // initialize twc module
+    store page detail add button after add to cart button options
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    License         : < https://tinyurl.com/s872fb68 >
     
-    // initialize twc spdabaatcb sub-module
+    Version         : 0.5.0
     
-    twc.spdabaatcb = ( ( self ) => self ) ( twc.spdabaatcb || {
+    SS Versions     : 7.0, 7.1
     
-      button : {
-      
-        text : '[ enter text here between the single quotes replacing square brackets ]',
-        
-        /*
-        
-          url is optional. if you want a single URL across all products then
-          enter a value. see How to Use in the README for other configuration
-          details. the URL can be any valid URL. it can be absolute ( external
-          to your site ) like < http://www.tomsWeb.consulting/ > or relative
-          ( internal to your site ) like '/contact'
-          
-          */
-          
-        url : '[ optional, enter url here between the single quotes replacing square brackets ]',
-        
-        /*
-        
-          target attribute value is optional. values are _self or _blank or
-          _parent or _top or framename. if you don't alter the provided default
-          value then _self will be used
-          
-          */
-          
-        targetAttributeValue : '[ optional, enter target attribute value here between the single quotes replacing square brackets ]',
-        
-        },
-        
-      /*
-      
-        guard processor for other conditions which prevent the code from
-        running. replace undefined with the name of your custom function. your
-        function must return a boolean. false means do not add the button and
-        true means add the button
-        
-        */
-        
-      guardProcessor : undefined
-      
-      } );
-      
-    </script>
+    v7.1
+    Products V2
+    Compatible      : Yes
     
-  <!-- do not change anything below, there be the borg here -->
-  
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                      Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                      Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
+                      Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
+                      Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
+                      Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+                      
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+    
+    Copyright       : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    /* begin v7.1 */
+    .product-detail .product-meta .product-description p:has( [ href$="#twc-spdabaatcb" ] ) {
     
-      /* simple layout */
+      display : none;
       
-      .ProductItem-quantity-add-to-cart:has( .twc-spdabaatcb ) {
-      
-        gap : 2em;
-        
-        }
-        
-      /* full, half, wrap layouts */
-      
-      .pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper.twc-spdabaatcb {
-      
-        margin-left : 2em;
-        
-        }
-        
-      /* emd v7.1 */
+      }
       
     </style>
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
       const
       
         title = 'Store Page Detail Add Button After Add to Cart Button',
         
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `${ title } v${ version }
         
@@ -130,248 +72,480 @@
           
       console.log ( s );
       
-      const options = twc.spdabaatcb;
+      const callback = ( ) => {
       
-      let b = options.guardProcessor !== undefined;
-      
-      if ( b ) // guard processor
-      
-        if ( ! guardProcessor ( ) ) return;
+        const isStorePage = Static
         
-      const
-      
-        buttonWrapperSelector =
-        
-          '.sqs-add-to-cart-button-wrapper:not( .add-on-add-to-cart-wrapper )',
+          .SQUARESPACE_CONTEXT
           
-        codeKey = 'twc-spdabaatcb',
-        
-        config = {
-        
-          attributeFilter : [ 'class' ]
+          .collection
           
-          },
+          .type
           
-        detailsSelectors = [
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
         
-          '.ProductItem-details', // v7.1 simple layout, v7.0 ( Brine )
-          
-          '.pdp-details' // v7.1 full, half, or wrap
-          
-          ],
-          
-        hrefSelector = `[ href$="#${ codeKey }" ]`
+        const isDetail = ( ( ) => {
         
-        property = `${ codeKey }-element`;
-        
-      let
-      
-        callback = ( mutations ) => {
-        
-          const callback = ( mutation ) => {
+          const selector = 'body[ id^="item-" ]';
           
-            // bail if attribute not class
+          const is = document
+          
+            .querySelector ( selector )
             
-            if ( mutation.attributeName !== 'class' ) return true;
+            !==
             
-            let $element = $( mutation.target );
+            null;
             
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isDetail ) return; // bail if not detail
+        
+        const
+        
+          codeKey = 'twc-spdabaatcb',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          doNotAddButton
+          
+            =
+            
+            options
+            
+              .doNotAddButton
+              
+            &&
+            
+            doNotAddButton ( );
+            
+        if ( doNotAddButton ) return;
+        
+        let selector = '.sqs-add-to-cart-button-wrapper';
+        
+        const
+        
+          buttonElement = document
+          
+            .body
+            
+            .querySelector ( selector ),
+            
+          createAnchorElement = ( element, attributeWhitelist = [ ] ) => {
+          
+            const isElement
+            
+              =
+              
+              element instanceof Element;
+              
+            if ( ! isElement ) return null; // bail if not element
+          
             const
             
-              className = 'fadeIn',
+              allowed = new Set(
               
-              b = ! $element
-              
-                .hasClass ( className );
+                attributeWhitelist
                 
-            if ( b ) return true; // bail if no class name
-            
-            $element
-            
-              .prop ( property )
+                  .map ( a => a.toLowerCase ( ) )
+                  
+                ),
+                
+              cloneWithFilter = ( node ) => {
               
-              .addClass ( className );
+                const
+                
+                  isCommentNode
+                  
+                    =
+                    
+                    node
+                    
+                      .nodeType
+                      
+                    ===
+                    
+                    Node
+                    
+                      .COMMENT_NODE,
+                      
+                  isElementNode
+                  
+                    =
+                    
+                    node
+                    
+                      .nodeType
+                      
+                    ===
+                    
+                    Node
+                    
+                      .ELEMENT_NODE,
+                      
+                  isTextNode
+                  
+                    =
+                    
+                    node
+                    
+                      .nodeType
+                      
+                    ===
+                    
+                      Node
+                      
+                        .TEXT_NODE;
+                        
+                let n;
+                
+                switch ( true ) {
+                
+                  case isElementNode : {
+                  
+                    n = document
+                    
+                      .createElement (
+                      
+                        node
+                        
+                          .tagName
+                          
+                          .toLowerCase ( )
+                          
+                        );
+                        
+                    for ( const { name, value } of node.attributes ) {
+                    
+                      const hasAttribute = allowed
+                      
+                        .has (
+                        
+                          name.toLowerCase ( )
+                          
+                          );
+                          
+                      if ( hasAttribute )
+                      
+                        n.setAttribute ( name, value );
+                        
+                      };
+                      
+                    for ( const childNode of node.childNodes ) {
+                    
+                      const cloneNode = cloneWithFilter ( childNode );
+                      
+                      if ( cloneNode )
+                      
+                        n
+                        
+                          .appendChild ( cloneNode );
+                          
+                      }
+                      
+                    break;
+                    
+                    }
+                    
+                  case isTextNode :
+                  
+                    n = document
+                    
+                      .createTextNode ( node.textContent );
+                      
+                    break;
+                    
+                  case isCommentNode :
+                  
+                    n = document
+                    
+                      .createComment ( node.textContent );
+                      
+                    break;
+                    
+                  default :
+                  
+                    n = null;
+                    
+                  }
+                  
+                return n;
+                
+                },
+                
+              anchorElement = document
               
-            };
+                .createElement ( 'a' );
             
-          for ( const mutation of mutations ) {
+            for ( const { name, value } of element.attributes ) {
+            
+              const hasAttribute = allowed
+              
+                .has ( name.toLowerCase ( ) );
+              
+              if ( hasAttribute )
+              
+                anchorElement.setAttribute ( name, value );
+                
+              }
           
-            const b = callback ( mutation );
+            for ( const childNode of element.childNodes ) {
             
-            if ( ! b ) break; // bail if callback returns false
+              const cloneNode = cloneWithFilter ( childNode );
+              
+              if ( cloneNode )
+              
+                anchorElement
+                
+                  .appendChild ( cloneNode );
+                  
+              }
+              
+            return anchorElement;
             
-            }
+            },
             
-          },
+          detailsSelectors = [
           
+            '.product-detail .product-meta .product-description', // 7.1
+            
+            '.ProductItem-details-excerpt', // 7.0 ( Brine )
+            
+            ],
+            
+          hrefSelector = `[ href$="#${ codeKey }" ]`,
+          
+          ssVersion = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .templateVersion,
+            
+          // is70 = ssVersion === '7',
+          
+          is71 = ssVersion === '7.1',
+          
+          anchorElement
+          
+            =
+            
+            createAnchorElement (
+            
+              buttonElement,
+          
+              [
+              
+                'class',
+                
+                'data-animation-role',
+                
+                'style',
+                
+                'tabindex'
+                
+                ]
+                
+              );
+              
         selector = detailsSelectors
         
           .join ( ` ${ hrefSelector }, ` )
           
           +
           
-          ` ${ hrefSelector }`,
+          ` ${ hrefSelector }`;
           
-        targetAttributeValue = options
+        let
         
-          .button
+          element = document
           
-          .targetAttributeValue,
-          
-        url = options
-        
-          .button
-          
-          .url;
-          
-      const
-      
-        observer = new MutationObserver ( callback ),
-        
-        $elements = $( selector );
-        
-      if ( $elements.length ) {
-      
-        const
-        
-          $element = $elements
-          
-            .first ( ),
+            .body
             
-          tav = $element.attr ( 'target' );
+            .querySelectorAll ( selector ),
+            
+          text = options
           
-        url = $element
+            .button
+            
+            .text,
+            
+          targetAttributeValue = options
+          
+            .button
+            
+            .targetAttributeValue,
+            
+          url = options
+          
+            .button
+            
+            .url;
+            
+        // anchor element tweaks
         
-          .attr ( 'href' )
-          
-          .split ( `#${ codeKey }` )
-          
-          [ 0 ];
-          
-        if ( tav !== undefined )
+        {
         
-          targetAttributeValue = tav;
+          anchorElement
           
-        $elements
+            .classList
+            
+            .add ( codeKey );
+            
+          // has link override
+          
+          if ( element.length ) {
+          
+            const fragment = document
+            
+              .createDocumentFragment ( );
+              
+            [
+            
+              ...
+              
+              element
+              
+              ]
+              
+              .map ( e => e.parentElement )
+              
+              .forEach ( e => fragment.appendChild ( e ) );
+              
+            element = fragment
+            
+              .firstChild
+              
+              .firstChild;
+              
+            const tav = element
+            
+              .getAttribute ( 'target' );
+              
+            url = element
+            
+              .getAttribute ( 'href' )
+              
+              .split ( `#${ codeKey }` )
+              
+              [ 0 ];
+              
+            // text
+            
+            {
+            
+              const changeText = element
+              
+                .textContent
+                
+                !==
+                
+                url;
+                
+              if ( changeText )
+              
+                text = element
+                
+                  .textContent;
+                  
+              }
+              
+            if ( tav )
+            
+              targetAttributeValue = tav;
+              
+            };
+            
+          if ( is71 ) {
+          
+            // clean up anchor element
+            
+            {
+            
+              anchorElement
+              
+                .querySelector ( '.cart-loader' )
+                
+                .remove ( );
+                
+              anchorElement
+              
+                .querySelector ( '.cart-added-text' )
+                
+                .remove ( );
+                
+              }
+              
+            }
+            
+          }
+          
+        const isUrl = url [ 0 ] !== '[';
         
-          .parent ( )
-          
-          .remove ( );
-          
-        }
+        if ( ! isUrl ) return; // bail if no url
         
-      b = url [ 0 ] === '[';
-      
-      if ( b ) return; // bail if no url
-      
-      callback = function ( ) {
-    
-        const
+        // anchor element tweaks
         
-          attributes = [
+        {
+        
+          selector = [
           
-            'id',
+            '.add-to-cart-text', // 7.1
             
-            'data-collection-id',
-            
-            'data-dynamic-strings',
-            
-            'data-form',
-            
-            'data-item-id',
-            
-            'data-original-label',
-            
-            'data-product-type',
-            
-            'data-use-custom-label'
+            '.sqs-add-to-cart-button-inner' // 7.0
             
             ]
             
-            .join ( ' ' ),
+            .join ( ', ' );
             
-          callback = function ( ) {
+          anchorElement
           
-            $anchorTag.attr ( this.name, this.value );
-            
-            },
-            
-          $anchorTag = $( '<a />' ),
+            .querySelector ( selector )
           
-          $this = $( this ),
+            .textContent
+            
+            =
+            
+            text;
+            
+          anchorElement
           
-          $button = $this
+            .setAttribute ( 'href', url );
+            
+          if ( targetAttributeValue [ 0 ] !== '[' )
           
-            .clone ( )
+            anchorElement
             
-            .addClass ( codeKey )
-            
-            .removeAttr ( 'data-form' )
-            
-            .removeAttr ( 'id' )
-            
-            .removeClass ( 'use-form' ),
-            
-          $element = $( '.sqs-add-to-cart-button', $button )
-          
-            .attr ( 'href', url )
-            
-            .removeAttr ( attributes )
-            
-            .find ( '.sqs-add-to-cart-button-inner' )
-            
-              .html (
+              .setAttribute ( 'target', targetAttributeValue );
               
-                options
-                
-                  .button
-                  
-                  .text
-                  
-                )
-                
-              .end ( );
-              
-        if ( targetAttributeValue [ 0 ] !== '[' )
-        
-          $element.attr ( 'target', targetAttributeValue );
-          
-        $.each ( $element.prop ( 'attributes' ), callback );
-        
-        $element
-        
-          .children ( )
-          
-          .appendTo ( $anchorTag );
-          
-        $element.replaceWith ( $anchorTag );
-        
-        $button.insertAfter ( $this );
-        
-        let b = ! $button.is ( ':visible' );
-        
-        if ( b ) {
-        
-          $this.prop ( property, $button );
-          
-          observer.observe ( this, config );
-          
           }
           
+        buttonElement
+        
+          .insertAdjacentElement (
+          
+            'afterend',
+            
+            anchorElement
+            
+            );
+            
         };
         
-      selector = detailsSelectors
+      document
       
-        .join ( ` ${ buttonWrapperSelector }, ` )
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-        +
-        
-        ` ${ buttonWrapperSelector }`;
-        
-      $( selector ).each ( callback );
-      
-      } );
-      
+      } ) ( );
+  
     </script>
     
-  <!-- end store page detail add button after add to cart button -->
+  <!-- end TWC Store Page Detail Add Button After Add to Cart Button -->
