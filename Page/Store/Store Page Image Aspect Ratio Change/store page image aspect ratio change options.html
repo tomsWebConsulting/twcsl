@@ -1,0 +1,64 @@
+<!-- begin TWC Store Page Image Aspect Ratio Change Options -->
+
+  <script>
+  
+    /*
+    
+      store page image aspect ratio change options
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.3.0
+      
+      SS Versions     : 7.1, 7.0
+      
+      Copyright       : 2021-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spiarc sub-module
+    
+    twc.spiarc = ( ( self ) => {
+    
+      const options = {
+      
+        /*
+        
+          aspect ratios are 1:1, 3:2, 2:3, 4:3, 3:4, 16:9, 240aw ( v7.0 only ),
+          or uw ( v7.1 only )
+          
+          */
+          
+        aspectRatios : {
+        
+          list : '[ enter aspect ratio here between single quotes replacing square brackets ]',
+          
+          detail : '[ enter aspect ratio here between single quotes replacing square brackets ]'
+          
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spiarc || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Image Aspect Ratio Change Options -->
