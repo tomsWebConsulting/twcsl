@@ -17,6 +17,10 @@ of your choice.
   
   * 7.0 ([Brine template family][2])
 
+#### v7.1 Products V2 Compatible
+
+  * Yes
+
 #### v7.1 Fluid Engine Compatible
 
   * Not Applicable
