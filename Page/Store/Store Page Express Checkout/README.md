@@ -16,6 +16,10 @@ Trigger Express Checkout feature for a Store page.
   
   * 7.0
   
+#### v7.1 Products V2 Compatible
+
+  * Yes
+
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
