@@ -8,12 +8,16 @@ Store page list out of stock badge.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Version
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -89,6 +93,11 @@ You can see a [demo of this effect here][19].
 Please consider [making a donation][20].
 
 ## Changes
+
+* **2025-07-03**
+
+  * updated to work with Products V2
+  * bumped version to 0.5.1
 
 * **2024-10-19**
 

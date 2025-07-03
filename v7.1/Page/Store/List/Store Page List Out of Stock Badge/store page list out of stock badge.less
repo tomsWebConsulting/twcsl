@@ -4,9 +4,12 @@
   
   License       : < https://tinyurl.com/s872fb68 >
   
-  Version       : 0.5.0
+  Version       : 0.5.1
   
   SS Version    : 7.1
+  
+  Products V2
+  Compatible    : Yes
   
   Fluid
   Engine
@@ -14,19 +17,19 @@
   
   Dependancies  : LESS
   
-  Copyright     : 2023-2024 Thomas Creedon
+  Copyright     : 2023-2025 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   */
   
-  .view-list .products.collection-content-wrapper .grid-item.sold-out {
+  .product-list {
   
     @text : Sold Out;
     @style : rectangle; // values are circle, rectangle, and square
     @background-color : black;
     
-    // color : values are css-variable or a CSS color value. css-variable means
+    // color : values are a css-variable or CSS color value. css-variable means
     // use the default system color
     
     @color : css-variable;
@@ -50,7 +53,7 @@
     
     @inset-size : 1em;
     
-    /* do not change anything below, there be the borg here */
+    // do not change anything below, there be the borg here
     
     @align-items : unset;
     @bottom : unset;
@@ -251,7 +254,7 @@
         
       .style( );
       
-    .grid-image::before {
+    .product-list-item:has( .product-mark.sold-out )::before {
     
       align-items : @align-items;
       background-color : @background-color;
@@ -282,7 +285,7 @@
       
     }
     
-  .view-list .products.collection-content-wrapper .product-mark.sold-out {
+  .product-list .product-list-item .product-mark.sold-out {
   
     display : none;
     
