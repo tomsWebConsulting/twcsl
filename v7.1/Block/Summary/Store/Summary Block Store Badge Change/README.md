@@ -1,4 +1,4 @@
-# Summary Block Page Badge Change
+# Summary Block Store Badge Change
 
 ### [License][1]
 
@@ -22,7 +22,7 @@ Change Summary block store badges.
 
 ## Quick Install
 
-Add code from file **[summary block page badge change.less][2]** to Website >
+Add code from file **[summary block store badge change.less][2]** to Website >
 Pages > Custom Code > Custom CSS. Read the code for any instructions within.
 
 ## Badge Options
@@ -48,7 +48,7 @@ Pages > Custom Code > Custom CSS. Read the code for any instructions within.
 * Font : family, weight, style (italic and normal), size, letter spacing, and
   text transform (capitalize, lowercase, uppercase)
   
-* Padding (around the out of stock text)
+* Padding (around the badge text)
 
 * Position
 
