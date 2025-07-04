@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 396 effects. Each effect has it's own version number, code,
+twcsl contains 398 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -702,6 +702,10 @@ not necessarily designed to work together.
         * [Summary Block Events Date Text Change](v7.1/Block/Summary/Events/Summary%20Block%20Events%20Date%20Text%20Change)
           
         * [Summary Block Events Meta Add](v7.1/Block/Summary/Events/Summary%20Block%20Events%20Meta%20Add)
+          
+      * [Store](v7.1/Block/Summary/Store)
+        
+        * [Summary Block Store Badge Change](v7.1/Block/Summary/Store/Summary%20Block%20Store%20Badge%20Change)
           
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
