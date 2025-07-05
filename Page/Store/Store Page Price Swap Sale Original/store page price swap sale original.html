@@ -1,89 +1,126 @@
-<script>
+<!-- begin TWC Store Page Price Swap Sale Original -->
 
-  /*
+  <!--
   
-    begin store page price swap sale original
+    store page price swap sale original
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.3.0
     
-    SS Version    : 7.1
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible    : Yes
     
     Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
     
-    Copyright     : 2022-2024 Thomas Creedon
+    Note          : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+    
+    Copyright     : 2022-2025 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
-    */
+    -->
     
-    ( ( ) => {
+  <style>
+  
+    /* 7.1 */
     
-      const
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price .original-price {
+    
+      display : inline-block;
       
-        version = '0.2.0',
+      }
+      
+    </style>
+    
+  <script>
+  
+      ( ( ) => {
+      
+        const
         
-        s = `Store Page Price Swap Sale Original v${ version }
+          version = '0.3.0',
+          
+          s = `Store Page Price Swap Sale Original v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2022-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
         
-          License < https://tinyurl.com/s872fb68 >
-          
-          © 2022-2024 Thomas Creedon
-          
-          Tom's Web Consulting < http://www.tomsWeb.consulting >`
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
-      
-      } ) ( );
-      
-    // initialize twc module
-    
-    var twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc sppc sub-module
-    
-    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-    
-    // initialize twc sppc callbacks sub-module
-    
-    twc.sppc.callbacks = ( ( self ) => {
-    
-      self
-      
-        .twcSppsso = ( node, isDetail, text, searchText ) => {
+        } ) ( );
         
-          let $nodes = $( node )
-          
-            .parents ( '.original-price' );
-            
-          const l = $nodes.length;
-          
-          if ( ! l ) return true; // continue
-          
-          const $parent = $nodes.parent ( );
-          
-          $nodes = $.merge ( $nodes, $nodes.prev ( ) )
-          
-            .get ( )
-            
-            .reverse ( );
-            
-          $( $nodes )
-          
-            .prependTo ( $parent );
-            
-          return false;
-          
-          };
-           
-      return self;
+      // initialize twc module
       
-      } ) ( twc.sppc.callbacks || { } );
+      var twc = ( ( self ) => self ) ( window.twc || { } );
       
-    // end store page price swap sale original
+      // initialize twc sppc sub-module
+      
+      twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+      
+      // initialize twc sppc callbacks sub-module
+      
+      twc.sppc.callbacks = ( ( self ) => {
+      
+        self
+        
+          .twcSppsso = ( node, isDetail, text, searchText ) => {
+          
+            const element = node
+            
+              .parentNode
+              
+              .closest ( '.original-price' );
+              
+            if ( ! element ) return true; // continue
+            
+            const parentElement = element
+            
+              .parentElement;
+              
+            [ element ]
+            
+              .concat (
+              
+                element
+                
+                  .previousElementSibling
+                  
+                  )
+                  
+              .forEach (
+              
+                e => parentElement
+                
+                  .insertAdjacentElement (
+                  
+                    'afterbegin',
+                    
+                    e
+                    
+                    )
+                    
+                );
+                
+            return true;
+            
+            };
+            
+        return self;
+        
+        } ) ( twc.sppc.callbacks || { } );
+        
+    </script>
     
-  </script>
+  <!-- end TWC Store Page Price Swap Sale Original -->

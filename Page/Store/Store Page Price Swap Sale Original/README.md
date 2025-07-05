@@ -8,13 +8,17 @@ Swap sale and original price on Store page.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
+
+#### v7.1 Products V2 Compatible
+
+  * Yes
 
 #### v7.1 Fluid Engine Compatible
 
@@ -57,7 +61,7 @@ Swap sale and original price on Store page.
   ```
       // store page price swap sale original
       
-      "" : "twcSppsso",
+      "twcSppsso" : "twcSppsso",
     ```
 
 ## Make a Donation
@@ -66,6 +70,12 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-07-04**
+
+  * updated to work with v7.1 Products V2
+  * removed jQuery dependency
+  * bumped version to 0.3.0
+  
 * **2024-10-05**
 
   * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
