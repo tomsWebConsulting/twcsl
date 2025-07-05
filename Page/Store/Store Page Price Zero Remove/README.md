@@ -16,6 +16,10 @@ Remove zero prices from Store page.
   
   * 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
 
+#### v7.1 Products V2 Compatible
+
+  * Yes
+
 #### v7.1 Fluid Engine Compatible
 
   * Not Applicable
