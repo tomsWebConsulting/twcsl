@@ -6,36 +6,44 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible      : Yes
     
     v7.1
     Fluid
     Engine
     Compatible      : Not Applicable
     
-    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                      Stella, Thorne, Vow, Wav, West )
-                      
-                      Five
-                      
-                      Montauk ( Julia, Kent, Om )
-                      
-                      your template is not listed? then it is not currently
-                      supported
-    
     Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
+    
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
     
     Copyright       : 2025 Thomas Creedon
                       
                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     -->
+    
+  <style>
+  
+    /* 7.1 */
+    
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price .original-price, /* list */
+    .product-detail .product-meta .product-price .original-price /* detail */
+    
+      {
+      
+        display : inline-block;
+        
+        }
+        
+    </style>
     
   <script>
   
@@ -77,7 +85,7 @@
     
       const
       
-        version = '0.1.0',
+        version = '0.1.1',
         
         s = `Store Page Price Change Log v${ version }
         
@@ -109,24 +117,16 @@
       
         .twcSpsp = ( node, isDetail, text, searchText ) => {
         
-          const isPriceOriginal
-          
-            =
-            
-            node
-            
-              .parentElement
-              
-              .classList
-              
-              .contains ( 'original-price' );
-              
-          if ( ! isPriceOriginal ) return true; // continue
+          debugger;
           
           node = node
           
-            .parentElement;
+            .parentNode
             
+            .closest ( '.original-price' );
+            
+          if ( ! node ) return true; // continue
+          
           const
           
             codeKey = 'twc-spsp',
@@ -136,6 +136,22 @@
               .split ( '-' )
               
               .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            selector = [
+            
+              // begin 7.1
+              
+                '.product-list-item-price', // list
+                
+                '.product-price-value',
+                
+                // end 7.1
+                
+              '.product-price' // 7.0
+              
+              ]
+              
+              .join ( ', ' ),
               
             re = /[^\d.]/g,
             
@@ -159,9 +175,9 @@
               
                 node
                 
-                  .previousSibling
+                  .previousElementSibling
                   
-                  .previousSibling
+                  .previousElementSibling
                   
                   .textContent
                   
@@ -229,7 +245,7 @@
               
           node
           
-            .closest ( '.product-price' )
+            .closest ( selector )
             
             .insertAdjacentHTML ( 'beforeend', html );
             

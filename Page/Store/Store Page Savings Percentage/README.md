@@ -8,11 +8,19 @@ Add savings percent to products on sale.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
   * 7.1, 7.0
+
+#### v7.1 Products V2 Compatible
+
+  * Yes
+
+#### v7.1 Fluid Engine Compatible
+
+  * Not Applicable
 
 #### Dependencies
 
@@ -70,11 +78,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2023-04-22**
+* **2025-07-04**
 
-  * restructured the code to reduce some nesting
-  * bumped version to 0.2.0
-  -->
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.1.1
+  
 * **2025-05-09**
 
   * initial version
