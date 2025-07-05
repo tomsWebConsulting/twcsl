@@ -1,55 +1,65 @@
-<script>
+<!-- begin TWC Store Page Price Zero Remove -->
 
-  /*
+  <script>
   
-    begin store page price zero remove
-    
-    License         : < https://tinyurl.com/s872fb68 >
-    
-    Version         : 0.2.0
-    
-    SS Versions     : 7.1, 7.0
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Not Applicable
-    
-    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                      Stella, Thorne, Vow, Wav, West )
-                      
-                      Five
-                      
-                      Montauk ( Julia, Kent, Om )
-                      
-                      your template is not listed? then it is not currently
-                      supported
-    
-    Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
-    
-    Copyright       : 2022-2024 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
     ( ( ) => {
     
+      /*
+      
+        store page price zero remove
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.3.0
+        
+        SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible      : Yes
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                          Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                          Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                          Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                          Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                          Stella, Thorne, Vow, Wav, West )
+                          
+                          Five
+                          
+                          Montauk ( Julia, Kent, Om )
+                          
+                          your template is not listed? then it is not currently
+                          supported
+        
+        Dependencies    : store page price change < https://tinyurl.com/5az53zbz >
+        
+        Note            : this effect isn't designed to work with store pages
+                          that have products with variants or price and sale
+                          price
+        
+        Copyright       : 2022-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
       const
       
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `Store Page Price Zero Remove v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2022-2024 Thomas Creedon
+          © 2022-2025 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -75,15 +85,37 @@
       
         .twcSppzr = ( node, isDetail, text, searchText ) => {
         
-          if ( text.includes ( searchText ) )
+          const hasText = text
           
-            $( node )
+            .includes ( searchText );
             
-              .parents ( '.product-price' )
+          if ( ! hasText ) return true; // continue
+          
+          const selector = [
+          
+            // begin 7.1
+            
+              '.product-list-item-price', // list
               
-              .remove ( );
+              '.product-price-value', // detail
               
-          return true;
+              // end 7.1
+              
+            '.product-price' // 7.0
+            
+            ]
+            
+            .join ( ', ' );
+            
+          style = node
+          
+            .parentNode
+            
+            .closest ( selector )
+            
+            .remove ( );
+            
+          return true; // continue
           
           };
           
@@ -91,6 +123,6 @@
       
       } ) ( twc.sppc.callbacks || { } );
       
-    // end store page price zero remove
+    </script>
     
-  </script>
+  <!-- end TWC Store Page Price Zero Remove -->

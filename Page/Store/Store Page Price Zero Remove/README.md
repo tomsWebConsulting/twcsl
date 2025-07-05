@@ -8,7 +8,7 @@ Remove zero prices from Store page.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -62,12 +62,23 @@ Remove zero prices from Store page.
     
   If your currency symbol is not dollar sign then use the one set for your site.
 
+## Note
+
+This effect isn't designed to work with Store pages that have products with
+variants or price and sale price.
+
 ## Make a Donation
 
 Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-07-04**
+
+  * updated to work with v7.1 Products V2
+  * removed jQuery dependency
+  * bumped version to 0.3.0
+  
 * **2024-10-05**
 
   * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
