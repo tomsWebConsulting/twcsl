@@ -30,7 +30,7 @@ Limit the number of characters allowed in some form block fields.
 
 ## Install
 
-* Install **[Form Block Wrapper Observe Changes][4]**. After you install the
+* Install **[Form Block Wrapper Observe Changes][5]**. After you install the
   code be sure to continue on with the rest of the steps.
   
 * Options
@@ -41,8 +41,8 @@ Limit the number of characters allowed in some form block fields.
       effect.
       
     * Add code from file **[form block date field years past
-      threshold.html][5]** to Page Settings > Advanced > Page Header Code
-      Injection for the page. Refer to [Per-page code injection][6] for details.
+      threshold.html][6]** to Page Settings > Advanced > Page Header Code
+      Injection for the page. Refer to [Per-page code injection][7] for details.
       
   * Site-wide
   
@@ -50,8 +50,8 @@ Limit the number of characters allowed in some form block fields.
       effect.
       
     * Add code from file **[form block date field years past
-      threshold.html][5]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Refer to [Add code to code injection][7]
+      threshold.html][6]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER. Refer to [Add code to code injection][8]
       
 * Add or edit a form block on your page and set up as desired.
   
@@ -108,10 +108,10 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
-[5]: form%20block%20date%20field%20years%20past%20threshold.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
+[6]: form%20block%20date%20field%20years%20past%20threshold.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [9]: https://toms-web-consulting-demos.squarespace.com/form-block-date-field-years-past-threshold?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
