@@ -1,0 +1,354 @@
+<!-- begin TWC Form Block Date Field Years Past Threshold -->
+
+  <!--
+  
+    form block date field years past threshold
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : form block wrapper observe changes
+                    < https://tinyurl.com/ub8akb85 >
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    .twc-fbdfypt button[ type="submit" ][ disabled ] {
+    
+      opacity : 0.5;
+      pointer-events : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Form Block Date Field Years Past Threshold v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        self
+        
+          [ 'twcFbdfypt' ]
+          
+          =
+          
+          ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains ( 'react-form-contents' );
+            
+            if ( ! hasClass ) return; // bail if not react form
+            
+            const
+            
+              buttonElement = element
+              
+                .querySelector ( 'button[ type="submit" ]' ),
+                
+              codeKey = 'twc-fbdfypt',
+              
+              inputElements = [ ],
+              
+              xPathEvaluate = ( xPathExpression, contextNode ) => {
+              
+                const xPathResults = document
+                
+                  .evaluate (
+                  
+                    xPathExpression,
+                    
+                    contextNode,
+                    
+                    null,
+                    
+                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                    null
+                    
+                    );
+                    
+                return xPathResults;
+                
+                },
+                
+              xPathExpression = `
+              
+                .//div [
+                
+                  contains (
+                  
+                    concat (
+                    
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
+                    
+                    ' form-item '
+                    
+                    )
+                    
+                  ]//p [
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                      
+                      ' description '
+                      
+                      )
+                      
+                    and
+                    
+                    contains (
+                    
+                      .,
+                      
+                      '${ codeKey }'
+                      
+                      )
+                      
+                    ]
+                
+                `,
+                
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                element
+                
+                ),
+                
+              attribute = `${ codeKey }-years`;
+              
+            let callback = ( element ) => {
+            
+              const
+              
+                callback = ( ) => {
+                
+                  const
+                  
+                    callback = ( element ) => {
+                    
+                      const
+                      
+                        d = new Date ( ),
+                        
+                        years = element
+                        
+                          .getAttribute ( attribute ),
+                          
+                        threshold = new Date (
+                        
+                          d
+                          
+                            .setFullYear (
+                              
+                              d.getFullYear ( )
+                              
+                              -
+                              
+                              years
+                              
+                              )
+                              
+                          );
+                          
+                      let date = element
+                      
+                        .value
+                        
+                        .split ( '-' );
+                        
+                      date = new Date (
+                      
+                        date [ 0 ],
+                        
+                        date [ 1 ] - 1,
+                        
+                        date [ 2 ]
+                        
+                        );
+                        
+                      const isThreshold = date <= threshold;
+                      
+                      return isThreshold;
+                      
+                      },
+                      
+                    isThreshold
+                    
+                      =
+                      
+                      inputElements
+                      
+                        .filter ( e => callback ( e ) )
+                        
+                        .length
+                        
+                      ===
+                      
+                      inputElements
+                      
+                        .length;
+                        
+                  buttonElement.disabled = false;
+                  
+                  if ( isThreshold ) return; // bail if threshold
+                  
+                  buttonElement.disabled = true;
+                  
+                  },
+                  
+                inputElement = element
+                
+                  .nextElementSibling
+                  
+                  .firstChild,
+                  
+                re = new RegExp (
+                
+                  `${ codeKey }\\s*:\\s*(\\d+)\n*`
+                  
+                  );
+                  
+              let
+              
+                text = element
+                
+                  .textContent,
+                  
+                years = text
+                
+                  .match ( re );
+                  
+              text = text
+              
+                .replace ( years [ 0 ], '' )
+                
+                .trim ( );
+                
+              years = years [ 1 ];
+              
+              inputElement
+              
+                .setAttribute ( attribute, years );
+                
+              if ( text ) {
+              
+                element
+                
+                  .setAttribute ( 'aria-label', text );
+                  
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  text;
+                  
+                } else
+                
+                  element.remove ( );
+                  
+              inputElement
+              
+                .addEventListener ( 'change', callback );
+                
+              inputElements.push ( inputElement );
+              
+              };
+              
+            element
+            
+              .closest ( '.sqs-block-form')
+              
+              .classList
+              
+              .add ( codeKey );
+              
+            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+            
+              callback (
+              
+                xPathResults
+                
+                  .snapshotItem ( i )
+                  
+                );
+                
+              }
+              
+            };
+            
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Form Block Date Field Years Past Threshold -->
