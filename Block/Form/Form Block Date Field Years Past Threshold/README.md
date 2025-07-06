@@ -83,7 +83,7 @@ Add a years past threshold to Form block Date fields.
 This code is client side and it is possible to bypass it. In other words you
 still need to be checking manually the forms data to verify it. Consider this
 code more of an aid not a solid gate. This is a limitation of Squarespace. They
-don't allow access to the back to alter form validation routines. 
+don't allow access to the back end to alter form validation routines. 
 
 ## Demo
 
