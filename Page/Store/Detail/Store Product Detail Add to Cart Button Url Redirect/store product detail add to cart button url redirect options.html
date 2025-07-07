@@ -1,0 +1,69 @@
+<!-- begin TWC Store Product Detail Add to Cart Button Url Redirect Options -->
+
+  <script>
+  
+    /*
+    
+      store product detail add to cart button url redirect options
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.8.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    var twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdatcbur sub-module
+    
+    twc.spdatcbur = ( ( self ) => {
+    
+      const options = {
+      
+        /*
+        
+          when true and idUrlMap does not contain a mapped id then bail, in
+          other words does not replace add to cart button
+          
+          */
+          
+        bailIfNoIdsInMap : true, // use false or true
+        
+        /*
+        
+          url is used when bailIfNoIdsInMap is false and a mapping is not
+          defined for a product
+          
+          */
+           
+        url : '[ enter url here between single quotes replacing square brackets ]',
+        
+        targetAtttributeValue : '' /* use _self (default, if left empty) |
+                                      _blank | _parent | _top | framename */
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdatcbur || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Product Detail Add to Cart Button Url Redirect Options -->

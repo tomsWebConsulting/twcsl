@@ -8,13 +8,17 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 ### Version
 
-  * 0.7.0
+  * 0.8.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
+
+#### v7.1 Products V2 Compatible
+
+  * Yes
 
 #### v7.1 Fluid Engine Compatible
 
@@ -23,18 +27,13 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 #### Dependencies
 
   * [Squarespace plan][6] that supports [JavaScript][7].
-  
-  * [Tom's Web Consulting Squarespace Library][8]
 
 ---
 
 ## Install
 
-* Install [twcsl][8]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Add code from file **[store product detail add to cart button url
-  redirect.html][9]** to Store Settings > Advanced > Page Header Code Injection
+  redirect.html][8]** to Store Settings > Advanced > Page Header Code Injection
   for the store page. Read the code for any instructions within.
   
 * Options
@@ -43,7 +42,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][10].
+    * Add the following to a code block in [Additional Info][9].
       
       ```html
       <script>
@@ -54,15 +53,15 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
           
             the format of each line is a product id or sku and a URL
             
-            copy and repeat the line below for each product id or sku, remove the
-            "// " at the beginning of the line and enter the appropriate data. this
-            has been done once initially
+            copy and repeat the line below for each product id or sku, remove
+            the "// " at the beginning of the line and enter the appropriate
+            data. this has been done once initially
             
             */
             
-          // '[enter product id or sku here between single quotes replacing square brackets]' : '[enter url here between single quotes replacing square brackets]',
+          // '[ enter product id or sku here between single quotes replacing square brackets ]' : '[enter url here between single quotes replacing square brackets ]',
           
-          '[enter product id or sku here between single quotes replacing square brackets]' : '[enter url here between single quotes replacing square brackets]',
+          '[ enter product id or sku here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
           
           };
           
@@ -77,10 +76,18 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
     
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-07-07**
+
+  * broke options out into its own file
+  * updated to work with v7.1 Products V2
+  * removed twcsl dependency
+  * removed jQuery dependency
+  * bumped version to 0.8.0
+  
 * **2024-03-26**
 
   * checked for v7.0 Avenue template compatibility
@@ -155,7 +162,6 @@ Please consider [making a donation][11].
 [5]: https://support.squarespace.com/hc/en-us/articles/206545347
 [6]: https://www.squarespace.com/pricing
 [7]: https://en.wikipedia.org/wiki/JavaScript
-[8]: https://github.com/tomsWebConsulting/twcsl#install-options
-[9]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
