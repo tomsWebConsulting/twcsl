@@ -8,11 +8,15 @@ Redirect store page all to a URL based on date.
 
 ### Version
 
- * 0.1.0
+ * 0.1.1
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible 
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -42,11 +46,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2024-06-14**
+* **2025-07-07**
 
-  * make code more generalized
-  * bumped version to 0.2.0
-  -->
+  * checked v7.1 Products V2 compatibility
+  * bumped version to 0.1.1
+  
 * **2024-06-15**
 
   * initial version
