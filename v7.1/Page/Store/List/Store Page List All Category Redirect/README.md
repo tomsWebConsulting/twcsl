@@ -8,11 +8,15 @@ Redirect store page list all category to a URL.
 
 ### Version
 
- * 0.3.0
+ * 0.3.1
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible 
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -81,6 +85,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-07-07**
+
+  * checked v7.1 Products V2 compatibility
+  * bumped version to 0.3.1
+  
 * **2024-06-15**
 
   * use callback to return redirect URL
