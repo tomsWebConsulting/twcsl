@@ -22,12 +22,12 @@ Collapse form block post-submit message empty space.
 
 ## Quick Install
 
-Add code from file **[form block post-submit message collapse space.less][6]**
+Add code from file **[form block post-submit message collapse space.less][2]**
 to Website > Pages > Custom Code > Custom CSS.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -41,5 +41,5 @@ Please consider [making a donation][10].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[6]: form%20block%20post-submit%20message%20collapse%20space.less#L1
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: form%20block%20post-submit%20message%20collapse%20space.less#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
