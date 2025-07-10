@@ -1,273 +1,436 @@
-<!--
+<!-- begin TWC Store Page List Categories Description Add -->
 
-  begin store page list categories description add
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.10.1
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : twcsl
-  
-  Note          : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-  
-  Copyright     : 2021-2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <style>
-  
-    body:not( .sqs-edit-mode ).collection-type-products.view-list #page .page-section:last-child,
-    body.sqs-edit-mode:not( .sqs-is-page-editing ).collection-type-products.view-list #page .page-section:nth-last-child( 2 )
+    store page list categories description add
     
-      {
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.11.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Note          : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+    
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+    <style>
+    
+      @media screen and ( max-width : 575px ) {
       
-        display : none;
+        .twc-splcda-description {
         
+          margin-bottom : 0;
+          margin-top : 0;
+          padding-bottom : 30px;
+          padding-top : 44px;
+          
+          }
+          
         }
         
-    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title.nested-category-title-padding {
-    
-      margin-bottom : calc( 37px / 2 ); /* default divided */
-      padding-bottom : 10px;
+      @media screen and ( min-width : 576px ) {
       
-      }
-      
-    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title.nested-category-title-padding::after {
-    
-      all : unset;
-      
-      }
-      
-    .tweak-products-category-title .products.collection-content-wrapper .twc-splcda-description {
-    
-      margin-bottom : 37px;
-      padding-bottom : 54px;
-      position : relative;
-      
-      }
-      
-    .tweak-products-category-title .products.collection-content-wrapper .twc-splcda-description::after {
-    
-      border-bottom : 1px solid;
-      bottom : 0;
-      content : '';
-      left : 0;
-      opacity : 0.2;
-      position : absolute;
-      width : 100%;
-      
-      }
-      
-    @media screen and ( max-width : 575px ) {
-    
-      .products.collection-content-wrapper .twc-splcda-description {
-      
-        text-align : left;
+        .product-list [ data-product-list-layout="grid" ][ data-header-text-alignment="left" ] .twc-splcda-description {
         
+          text-align : left;
+          
+          }
+          
+        .product-list [ data-product-list-layout="grid" ][ data-header-text-alignment="center" ] .twc-splcda-description {
+        
+          justify-content : center;
+          text-align : center;
+          
+          }
+          
+        .twc-splcda-description {
+        
+          margin-bottom : 37px;
+          padding-bottom : calc( 54px / 2 ); /* default divided */
+          position : relative;
+          
+          }
+          
+        .twc-splcda-description::after {
+        
+          border-bottom : 1px solid;
+          bottom : 0;
+          content : '';
+          left : 0;
+          opacity : 0.2;
+          position : absolute;
+          width : 100%;
+          
+          }
+          
         }
         
-      }
+      </style>
       
-    @media screen and ( min-width : 576px ) {
+    <script>
     
-      .tweak-products-header-text-alignment-left .products.collection-content-wrapper .twc-splcda-description {
+      ( ( ) => {
       
-        text-align : left;
+        const
         
-        }
+          version = '0.11.0',
         
-      .tweak-products-header-text-alignment-middle .products.collection-content-wrapper .twc-splcda-description {
-      
-        text-align : center;
-        
-        }
-        
-      }
-      
-    </style>
-    
-  <script>
-  
-    $( ( ) => {
-    
-      const
-      
-        version = '0.10.1',
-      
-        s = `
-        
-          Store Page List Categories Description Add v${ version }
-        
-          License < https://tinyurl.com/s872fb68 >
+          s = `
           
-          © 2021-2025 Thomas Creedon
+            Store Page List Categories Description Add v${ version }
           
-          Tom's Web Consulting < http://www.tomsWeb.consulting >
-          
-          `
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
-      
-      if ( twcsl.page.store.detail.is ) return; // bail on detail
-      
-      if ( twcsl.page.store.list.hasTag ) return; // bail on tag
-      
-      const
-      
-        codeKey = 'twc-splcda',
-        
-        selector = `#sections .page-section script[ data-${ codeKey } ]`;
-        
-      let $element = $( selector );
-      
-      if ( ! $element.length ) return; // bail if no element
-      
-      const categories = twcsl.page.store.list.categories;
-      
-      let map = $element
-        
-        .text ( )
-        
-        .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
-        
-        .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
-        
-        .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
-        
-        .replaceAll ( '\n', '' );
-        
-      map = JSON.parse ( map );
-      
-      if ( ! ( categories in map ) ) return; // bail if no category
-      
-      const
-      
-        description = map [ categories ],
-        
-        formatHtmlMap = {
-        
-          'Heading 1'       : '<h1 />',
-          'Heading 2'       : '<h2 />',
-          'Heading 3'       : '<h3 />',
-          'Heading 4'       : '<h4 />',
-          'Paragraph 1'     : '<p class="sqsrte-large" />',
-          'Paragraph 2'     : '<p />',
-          'Paragraph 3'     : '<p class="sqsrte-small" />',
-          'Monospace'       : '<pre>' +
-          
-            '<code>' +
+            License < https://tinyurl.com/s872fb68 >
             
-              '</code>' +   
+            © 2021-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >
+            
+            `
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+      const callback = ( ) => {
+      
+        const isStorePage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const isList = ( ( ) => {
+        
+          const
+          
+            selector = 'body[ id^="collection-" ]',
+            
+            is = document
+            
+              .querySelector ( selector )
               
-            '</pre>',
+              !==
+              
+              null;
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list
+        
+        const category = ( ( ) => {
+        
+          const
+          
+            selector = '.nested-category-title',
             
-          'HTML'            : description
-          
-          };
-          
-      let
-      
-        action = $element.attr ( 'data-action' ),
-        
-        html = $element.attr ( 'data-format' ),
-        
-        isHtml = html === 'HTML',
-        
-        destinationSelector = $element.attr ( 'data-selector-destination' );
-        
-      if ( action === undefined ) action = 'after';
-      
-      if ( html === undefined ) html = 'Heading 3';
-      
-      html = formatHtmlMap [
-      
-        html
-        
-        ];
-        
-      if ( destinationSelector === undefined )
-      
-        destinationSelector = '.nested-category-title';
-        
-      const $destinationElement = $( destinationSelector );
-      
-      $element
-      
-        .parents ( '.sqs-block-code' )
-        
-        .remove ( );
-        
-      if ( ! isHtml )
-      
-        $element = $( '<div />' )
-        
-          .append ( html )
-          
-          .find ( ':last' )
-          
-            .html ( description )
+            category = document
             
-            .end ( )
-            
-          .children ( )
+              .body
+              
+              .querySelector ( selector )
+              
+              ?.textContent
+              
+              .trim ( );
+              
+          return category;
           
-            .addClass ( `${ codeKey }-description` );
-            
-        else
+          } ) ( );
+          
+        if ( ! category ) return; // bail if no category
         
-          $element = $( html );
+        // globals
+        
+        {
+        
+          // initialize twc module
           
-      switch ( action ) {
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc splcda sub-module
+          
+          twc.splcda = ( ( self ) => self ) ( twc.splcda || { } );
+          
+          }
+          
+        const
+        
+          categories = ( ( ) => {
+          
+            const
+            
+              selector = [
+              
+                '.nested-category-breadcrumb > '
+                
+                  +
+                  
+                  '.nested-category-breadcrumb-link:not( [href="'
+                  
+                  +
+                  
+                  Static
+                  
+                    .SQUARESPACE_CONTEXT
+                    
+                    .collection
+                    
+                    .fullUrl
+                    
+                  +
+                  
+                  '" ] )',
+                  
+                '.nested-category-title'
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              categories = [
+              
+                ...
+                
+                document
+                
+                  .body
+                  
+                  .querySelectorAll ( selector )
+                  
+                ]
+                
+                .map ( e => e.textContent.trim ( ) )
+                
+                .join ( ' > ' );
+                
+            return categories;
+            
+            } ) ( ),
+            
+          codeKey = 'twc-splcda',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          description = options
+          
+            .categoryListDescriptionMap
+            
+            [ categories ];
+            
+        if ( ! description ) return; // bail if no description
+        
+        const
+        
+          destinationAction
+          
+            =
+            
+            options.destinationAction [ 0 ] !== '['
+            
+            ?
+            
+            options.destinationAction
+            
+            :
+            
+            'after',
+            
+          destinationSelector
+          
+            =
+            
+            options.destinationSelector [ 0 ] !== '['
+            
+            ?
+            
+            options.destinationSelector
+            
+            :
+            
+            '.nested-category-title',
+            
+          formatHtmlMap = {
+          
+            'Heading 1'       : '<h1 />',
+            'Heading 2'       : '<h2 />',
+            'Heading 3'       : '<h3 />',
+            'Heading 4'       : '<h4 />',
+            'Paragraph 1'     : '<p class="sqsrte-large" />',
+            'Paragraph 2'     : '<p />',
+            'Paragraph 3'     : '<p class="sqsrte-small" />',
+            'Monospace'       : '<pre>' +
+            
+              '<code>' +
+              
+                '</code>' +   
+                
+              '</pre>',
+              
+            'HTML'            : description
+            
+            },
+            
+          wrapperElement = document
+          
+            .createElement ( 'div' ),
+            
+          destinationElement = document
+          
+            .body
+            
+            .querySelector ( destinationSelector );
+            
+        let
+        
+          elements,
+          
+          html
+          
+            =
+            
+            options.paragraphStyle [ 0 ] !== '['
+            
+            ?
+            
+            options
+            
+              .paragraphStyle
+              
+            :
+            
+            'Heading 3',
+            
+          position,
+          
+          isReverse = false;
+          
+        const isHtml = html === 'HTML';
+        
+        html = formatHtmlMap [
+        
+          html
+          
+          ];
+          
+        if ( ! isHtml ) {
+        
+          wrapperElement.innerHTML = html;
+          
+          let element = wrapperElement
+          
+            .querySelectorAll ( '*' );
+            
+          element = element [
+          
+            element.length - 1
+            
+            ];
+            
+          element.innerHTML = description;
+          
+          wrapperElement
+          
+            .firstChild
+            
+            .classList
+            
+            .add (`${ codeKey }-description` );
+            
+          } else
+          
+            wrapperElement.innerHTML = html;
+            
+        switch ( destinationAction ) {
+        
+          case 'after' :
+          
+            isReverse = true;
+            
+            position = 'afterend';
+            
+            break;
+            
+          case 'append' :
+          
+            position = 'beforeend';
+            
+            break;
+            
+          case 'before' :
+          
+            position = 'beforebegin';
+            
+            break;
+            
+          case 'prepend' :
+          
+            isReverse = true;
+            
+            position = 'afterbegin';
+            
+            break;
+            
+          }
+          
+        elements = [
+        
+          ...
+          
+          wrapperElement
+          
+            .children
+            
+          ];
+          
+        if ( isHtml && isReverse )
+        
+          elements = elements.reverse ( );
+          
+        elements.forEach (
+        
+          e => destinationElement
+          
+            .insertAdjacentElement ( position, e )
+            
+          );
+          
+      };
       
-        case 'after' :
-        
-          $destinationElement
-          
-            .after ( $element );
-            
-          break;
-          
-        case 'append' :
-        
-          $destinationElement
-          
-            .append ( $element );
-            
-          break;
-          
-        case 'before' :
-        
-          $destinationElement
-          
-            .before ( $element );
-            
-          break;
-          
-        case 'prepend' :
-        
-          $destinationElement
-          
-            .prepend ( $element );
-            
-          break;
-          
-        }
-        
-      } );
+      document
       
-    </script>
-    
-  <!-- end store page list categories description add -->
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+      </script>
+      
+  <!-- end TWC Store Page List Categories Description Add -->

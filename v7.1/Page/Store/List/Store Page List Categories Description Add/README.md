@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.10.1
+  * 0.11.0
 
 #### SS Version
 
@@ -21,16 +21,11 @@ Add simple category descriptions to store category pages.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [Tom's Web Consulting Squarespace Library][4]
 
 ---
 
 ## Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Options
 
   * Page Specific
@@ -38,140 +33,56 @@ Add simple category descriptions to store category pages.
     * Use this option if you have only a single page you want to have this
       effect.
       
+    * Add code from file **[store page list categories description add
+      options.html][4]** to Page Settings > Advanced > Page Header Code
+      Injection for the page. Read the code for any instructions within.
+      
     * Add code from file **[store page list categories description
-      add.html][6]** to Page Settings > Advanced > Page Header Code Injection
-      for the page. Refer to [per-page code injection][7] for details.
+      add.html][5]** to Page Settings > Advanced > Page Header Code Injection
+      for the page.
+      
+    * Refer to [per-page code injection][6] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
+    * Add code from file **[store page list categories description add
+      options.html][4]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER. Read the code for any instructions within.
+      
     * Add code from file **[store page list categories description
-      add.html][6]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Refer to [Add code to code injection][8] for details.
+      add.html][5]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER.
       
-* Add a section to the store page list as the last section.
-
-* Add a code block to the section and set the content to the following. Read the
-  code for any instructions within.
-  
-  ```html
-  <script data-twc-splcda type="application/json">
-  
-    /*
-    
-      the format of each entry is a category list and a description for the
-      category list
+    * Refer to [Add code to code injection][7] for details.
       
-      for category list use values from Store Settings > Categories >
-      [category name] > Edit > NAME field for the store page. you need all
-      the text from the field. if you want to add a description to the
-      main store page use All for the category list
-      
-      for a top level category you would enter something like...
-      
-        Top Category
-        
-      For a nested category you enter something like...
-      
-        Top Category > Sub Category
-        
-      following is an example entry. copy the example entry below and paste
-      after the example entry, removing the double forward slash space lines
-      from the beginning of each line. repeat for as many categories as you want
-      to add a description. this has been done once initially
-      
-      if your description contains double quote characters they will need to be
-      escaped. " becomes \"
-      
-      */
-      
-    {
-    
-      // "[ enter category list here between double quotes replacing square brackets ]" : "
-      
-      //   [ enter category description here between double quotes replacing square brackets ]
-        
-      //   ",
-        
-      "[ enter category list here between double quotes replacing square brackets ]" : "
-      
-        [ enter category description here between double quotes replacing square brackets ]
-        
-        ",
-        
-      }
-      
-    /*
-    
-      Optional Attribtues
-      
-      there are three optional attributes that can be added to the script tag
-      
-        data-format
-        
-          value is one of the following. the default is Heading 3. HTML is for
-          when you want total control over the description
-          
-            Heading 1
-            Heading 2
-            Heading 3
-            Heading 4
-            Paragraph 1
-            Paragraph 2
-            Paragraph 3
-            Monospace
-            HTML
-            
-        data-selector-destination
-        
-          value is any valid selector value. the default is
-          .nested-category-title
-          
-        data-action
-        
-          value is one of the following. the default is after
-          
-            after
-            append
-            before
-            prepend
-            
-      Example of Adding an Attribute
-      
-        <script data-twc-splcda data-format="Heading 1" type="application/ld+json">
-        
-      */
-      
-    </script>
-  ```
-  
-* If the section is new and Classic Editor, remove the default text block from
-  the section, unless you need text text block.
-
-* Save the section.
-  
 ## Notes
 
 The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
-use the **Optional Attributes** to do so.
+use the optional destination selector to do so.
 
-If you use the format HTML you will need to create your own CSS to style it.
-
-The last page section is only visible while editing the Store page.
+If you use the page style HTML you will need to create your own CSS to style it.
 
 ## Demo
 
-You can see a [demo of this effect here][9].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-07-10**
+
+  * updated to work with Products V2
+  * removed twcsl dependency
+  * removed jQuery dependency
+  * bumped version to 0.11.0
+  
 * **2025-03-10**
 
   * fix for flexbox issue, remove from twc-splcda-description element
@@ -282,10 +193,9 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
-[6]: store%20page%20list%20categories%20description%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: store%20page%20list%20categories%20description%20add%20options.html#L1
+[5]: store%20page%20list%20categories%20description%20add.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
