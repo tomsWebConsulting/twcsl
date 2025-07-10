@@ -121,6 +121,8 @@ not necessarily designed to work together.
       
     * [List](Page/Store/List)
       
+      * [Store Page List Category Attribute Add](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
+        
     * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
       
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
@@ -284,8 +286,6 @@ not necessarily designed to work together.
 * [Cart Item Links Redirect](Cart%20Item%20Links%20Redirect)
   
 * [Social Icon Discord Generic Icon to Discord Change](Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
-  
-* [Add Category Attribute to a Store Category Page](Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page)
   
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
