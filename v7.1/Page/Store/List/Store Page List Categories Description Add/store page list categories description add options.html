@@ -1,0 +1,136 @@
+<!-- begin TWC Store Page List Categories Description Add Options -->
+
+  <!--
+  
+    store page list categories description add options
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.11.0
+    
+    SS Version    : 7.1
+    
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splcda sub-module
+    
+    twc.splcda = ( ( self ) => {
+    
+      const options = {
+      
+        categoryListDescriptionMap : {
+        
+          /*
+          
+            the format of each entry is a category list and a description for
+            the category list
+            
+            for category list use values from Store Settings > Categories >
+            [ category name ] > Edit > NAME field for the store page. you need
+            all the text from the field. if you want to add a description to the
+            main store page use All for the category list
+            
+            for a top level category you would enter something like...
+            
+              Top Category
+              
+            For a nested category you enter something like...
+            
+              Top Category > Sub Category
+              
+            following is an example entry. copy the example entry below and
+            paste after the example entry, removing the double forward slash
+            space lines from the beginning of each line. repeat for as many
+            categories as you want to add a description. this has been done once
+            initially
+            
+            if your description contains double quote characters they will need
+            to be escaped. " becomes \"
+            
+            */
+            
+          // '[ enter category list here between single quotes replacing square brackets ]' : `
+          
+          //   [ enter category description here between backticks replacing square brackets ]
+            
+          //   `,
+            
+          '[ enter category list here between single quotes replacing square brackets ]' : `
+          
+            [ enter category description here between backticks replacing square brackets ]
+            
+            `,
+            
+          },
+          
+        /*
+        
+          paragraph style is optional. value is one of the following. the
+          default is Heading 3
+          
+            Heading 1
+            Heading 2
+            Heading 3
+            Heading 4
+            Paragraph 1
+            Paragraph 2
+            Paragraph 3
+            Monospace
+            HTML
+            
+          */
+          
+        paragraphStyle : '[ enter paragraph style here between single quotes replacing square brackets ]',
+        
+        /*
+        
+          destination selector is optional. value is any valid selector value.
+          the default is .nested-category-title
+          
+          */
+          
+        destinationSelector : '[ enter destination selector here between single quotes replacing square brackets ]',
+        
+        /*
+        
+          destination action is optional. value is one of the following. the
+          default is after
+          
+          after
+          append
+          before
+          prepend
+          
+          */
+          
+        destinationAction  : '[ enter destination action here between single quotes replacing square brackets ]'
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.splcda || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Categories Description Add Options -->
