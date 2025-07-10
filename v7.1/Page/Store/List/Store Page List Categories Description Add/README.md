@@ -14,6 +14,10 @@ Add simple category descriptions to store category pages.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+
 #### Fluid Engine Compatible
 
   * Not Applicable
