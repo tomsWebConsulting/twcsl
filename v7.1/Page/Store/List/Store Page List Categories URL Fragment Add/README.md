@@ -9,11 +9,15 @@ scroll to the top of the store page section.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -53,6 +57,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-07-10**
+
+  * checked v7.1 Products V2 compatibility
+  * bumped version to 0.1.2
+  
 * **2025-04-28**
 
   * fix for recent Squarespace changes to plp class names

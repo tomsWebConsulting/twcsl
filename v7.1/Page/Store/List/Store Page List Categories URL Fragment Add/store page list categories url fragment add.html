@@ -10,9 +10,12 @@
         
         License       : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.1.1
+        Version       : 0.1.2
         
         SS Version    : 7.1
+        
+        Products V2
+        Compatible    : Yes
         
         Fluid
         Engine
@@ -26,7 +29,7 @@
         
       const
       
-        version = '0.1.1',
+        version = '0.1.2',
         
         s = `
         
@@ -46,19 +49,41 @@
       
       const callback = ( ) => {
       
-        let selector = 'body.collection-type-products[ id^="collection-" ]';
+        const isStorePage = Static
         
-        const isStorePageList = document
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
         
-          .querySelector ( selector )
-          
-          !==
-          
-          null;
-          
-        if ( ! isStorePageList ) return; // bail if not list
+        const isList = ( ( ) => {
         
-        selector = '.page-section.product-list-section';
+          const
+          
+            selector = 'body[ id^="collection-" ]',
+            
+            is = document
+            
+              .querySelector ( selector )
+              
+              !==
+              
+              null;
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list
+        
+        let selector = '.page-section.product-list-section';
         
         const
         
@@ -82,6 +107,8 @@
           
           sectionElement = document
           
+            .body
+            
             .querySelector ( selector );
             
         sectionElement
@@ -106,4 +133,4 @@
       
     </script>
     
-    <!-- end TWC Store Page List Categories URL Fragment Add -->
+  <!-- end TWC Store Page List Categories URL Fragment Add -->
