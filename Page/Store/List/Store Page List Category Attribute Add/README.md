@@ -1,6 +1,6 @@
-# Add Category Attribute to a Store Category Page
+# Store Page List Category Attribute Add
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -10,7 +10,7 @@
 
   * 7.1
   
-  * 7.0 ([Avenue][11], [Bedford template family][12], [Brine template family][1])
+  * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4])
 
 #### v7.1 Products V2 Compatible
 
@@ -31,22 +31,22 @@
     * Use this option if you have only a single store page you want to have this
       effect.
       
-    * Add code from file **[store page list category attribute add.html][3]**
+    * Add code from file **[store page list category attribute add.html][5]**
       to Store Settings > Advanced > Page Header Code Injection for the page.
-      Refer to [Per-page code injection][8] for details.
+      Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
     * Use this option if you have multiple store pages where you want to have
       this effect.
       
-    * Add code from file **[store page list category attribute add.html][3]**
+    * Add code from file **[store page list category attribute add.html][5]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
-      [Add code to code injection][17] for details.
+      [Add code to code injection][7] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -68,12 +68,11 @@ Please consider [making a donation][5].
   * changed user warning
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[11]: https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template
-[12]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[2]: https://github.com/tomsWebConsulting/twcsl#install-options
-[3]: store%20page%20list%20category%20attribute%20add.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[17]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/205815498-Avenue-template
+[3]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[4]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[5]: store%20page%20list%20category%20attribute%20add.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
