@@ -4,7 +4,7 @@
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -50,6 +50,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-07-10**
+
+  * fixed bug where all category was getting the attribute
+  * bumped version to 0.2.1
+  
 * **2025-07-10**
 
   * updated to work with v7.1 Products V2
