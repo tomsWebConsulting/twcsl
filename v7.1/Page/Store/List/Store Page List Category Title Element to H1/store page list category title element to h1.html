@@ -1,37 +1,33 @@
-<!--
+<!-- begin TWC Store Page List Category Title Element to H1 -->
 
-  begin store page list category title element to h1
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.0
-  
-  SS Version    : 7.1
-  
-  Copyright     : 2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-  
-    // initialize twc module
+    store page list category title element to h1
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    License       : < https://tinyurl.com/s872fb68 >
     
-    // initialize twc splcteth sub-module
+    Version       : 0.2.0
     
-    twc.splcteth = ( ( self ) => self ) ( twc.splcteth || {
+    SS Version    : 7.1
     
-      preserveH2Style : true // value is false or true
-      
-      } );
-      
-    </script>
+    Products V2
+    Compatible    : Yes
     
-  <!-- do not change anything below, there be the borg here -->
-  
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Note          : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
     @media
@@ -59,7 +55,7 @@
       
         const
         
-          version = '0.1.0',
+          version = '0.2.0',
           
           s = `
           
@@ -77,49 +73,57 @@
             
         console.log ( s );
         
-        let selector = 'body.collection-type-products[ id^="collection-" ]';
+        const isStorePage = Static
         
-        const
-        
-          isStorePageList = document
+          .SQUARESPACE_CONTEXT
           
-            .querySelector ( selector )
-            
-            !==
-            
-            null;
-            
-        if ( ! isStorePageList ) return true; // bail if not list
-        
-        selector =
-        
-          '.products.collection-content-wrapper .nested-category-title';
+          .collection
           
+          .type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const isList = ( ( ) => {
+        
+          const selector = 'body[ id^="collection-" ]';
+          
+          const is = document
+          
+            .querySelector ( selector );
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isList ) return; // bail if not list
+        
         const
         
           codeKey = 'twc-splcteth',
           
-          element = document
-          
-            .querySelector ( selector ),
-            
           h1Element = document
           
             .createElement ( 'h1' ),
             
-          preserveH2Style = twc
+          options = codeKey
           
-            [
+            .split ( '-' )
             
-              codeKey
-              
-                .split ( '-' )
-                
-                [ 1 ]
-                
-              ]
-              
-            .preserveH2Style;
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          selector = '.product-list .nested-category-title',
+          
+          element = document
+          
+            .body
+            
+            .querySelector ( selector ),
+            
+          preserveH2Style = options.preserveH2Style;
             
         [
         
@@ -131,8 +135,14 @@
             
           ]
           
-          .forEach ( a => h1Element.setAttribute ( a.name, a.value ) );
+          .forEach (
           
+            a => h1Element
+            
+              .setAttribute ( a.name, a.value )
+              
+            );
+            
         h1Element
         
           .classList
@@ -164,3 +174,5 @@
       } ) ( );
       
     </script>
+    
+  <!-- end TWC Store Page List Category Title Element to H1 -->
