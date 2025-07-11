@@ -391,11 +391,11 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Cache](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache)
           
+        * [Store Page List Columns](v7.1/Page/Store/List/Store%20Page%20List%20Columns)
+          
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
-          
-        * [Store Page List Columns Desktop](v7.1/Page/Store/List/Store%20Page%20List%20Columns%20Desktop)
           
         * [Store Page List Out of Stock Badge](v7.1/Page/Store/List/Store%20Page%20List%20Out%20of%20Stock%20Badge)
           
