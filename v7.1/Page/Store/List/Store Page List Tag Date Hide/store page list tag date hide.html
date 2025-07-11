@@ -1,34 +1,36 @@
-<!--
+<!-- begin TWC Store Page Tag Date Hide -->
 
-  begin store page list tag date hide
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.1
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : twcsl
-  
-  Note          : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-                  
-                  this effect is not active in SS Preview to test it use
-                  private browsing < https://tinyurl.com/ynessvsf >
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    store page list tag date hide
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Note          : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    this effect is not active in SS Preview to test it use
+                    private browsing < https://tinyurl.com/ynessvsf >
+    
+    Copyright     : 2024-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    .products.collection-content-wrapper .grid-item.twc-spltdh {
+    .product-list .product-list-item.twc-spltdh {
     
       display : none;
       
@@ -38,130 +40,198 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const version = '0.1.1';
+      const
       
-      const s = `Store Page Tag Date Hide v${ version }, ` +
+        version = '0.2.0',
         
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        s = `Store Page Tag Date Hide v${ version }
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
       if ( window.frameElement !== null ) return; // bail if in preview
       
-      if ( ! twcsl.page.store.list.is ) return; // bail if not list
+      const isStorePage = Static
       
-      const callback = function ( ) {
-      
-        const callback = ( i, className ) => {
+        .SQUARESPACE_CONTEXT
         
-          const inRange = ( x, min, max ) => {
+        .collection
+        
+        .type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const callback = ( ) => {
+      
+        const isList = ( ( ) => {
+        
+          const
           
-            const b = ( x - min ) * ( x - max ) <= 0;
+            selector = 'body[ id^="collection-" ]',
             
-            return b;
+            is = document
             
-            };
-            
-          let re = `tag-${ codeKey }-(\\d{4}-\\d{2}-\\d{2})` +
-          
-            '(?:-(\\d{4}-\\d{2}-\\d{2}))?';
-            
-          re = new RegExp ( re );
-          
-          const data = className
-          
-            .match ( re );
-            
-          // continue if tag doesn't match format
-          
-          if ( data == null ) return true;
-          
-          let d1 = data [ 1 ] + ' 00:00:00';
-          
-          let d2 = data [ 2 ];
-          
-          // d1
-          
-            d1 = new Date ( d1 );
-            
-            let b = isNaN ( d1 );
-            
-            if ( b ) return true; // continue
-            
-            let year = d1.getFullYear ( );
-            
-            b = year == 1970;
-            
-            if ( b )
-            
-              d1.setYear ( dYear );
+              .querySelector ( selector )
               
-          // d2
-          
-            if ( d2 === undefined )
-            
-              d2 = '275760-09-12';
+              !==
               
-            d2 += ' 00:00:00';
-            
-            d2 = new Date ( d2 );
-            
-            b = isNaN ( d2 );
-            
-            if ( b ) return true; // continue
-            
-            year = d2.getYear ( );
-            
-            b = year == 1970;
-            
-            if ( b )
-            
-              d2.setYear ( dYear );
+              null;
               
-          hide ||= inRange ( d, d1, d2 );
+          return is;
           
-          };
+          } ) ( );
           
-        const $this = $( this );
+        if ( ! isList ) return; // bail if not list
         
-        const tags = $this
+        const
         
-          .attr ( 'class' )
+          callback = ( element ) => {
           
-          .split ( ' ' )
+            const
+            
+              callback = ( className ) => {
+              
+                const inRange = ( x, min, max ) => {
+                
+                  const b = ( x - min ) * ( x - max ) <= 0;
+                  
+                  return b;
+                  
+                  };
+                  
+                let re = `tag-${ codeKey }-(\\d{4}-\\d{2}-\\d{2})` +
+                
+                  '(?:-(\\d{4}-\\d{2}-\\d{2}))?';
+                  
+                re = new RegExp ( re );
+                
+                const data = className
+                
+                  .match ( re );
+                  
+                // continue if tag doesn't match format
+                
+                if ( ! data ) return;
+                
+                let
+                
+                  d1 = data [ 1 ] + ' 00:00:00',
+                  
+                  d2 = data [ 2 ];
+                  
+                // d1
+                
+                {
+                
+                  d1 = new Date ( d1 );
+                  
+                  let b = isNaN ( d1 );
+                  
+                  if ( b ) return; // continue
+                  
+                  let year = d1.getFullYear ( );
+                  
+                  b = year === 1970;
+                  
+                  if ( b )
+                  
+                    d1.setYear ( dYear );
+                    
+                  }
+                  
+                // d2
+                
+                {
+                
+                  if ( ! d2 )
+                  
+                    d2 = '275760-09-12';
+                    
+                  d2 += ' 00:00:00';
+                  
+                  d2 = new Date ( d2 );
+                  
+                  b = isNaN ( d2 );
+                  
+                  if ( b ) return; // continue
+                  
+                  year = d2.getYear ( );
+                  
+                  b = year === 1970;
+                  
+                  if ( b )
+                  
+                    d2.setYear ( dYear );
+                    
+                  }
+                  
+                hide ||= inRange ( d, d1, d2 );
+                
+                },
+                
+              tags = element
+              
+                .getAttribute ( 'class' )
+                
+                .split ( ' ' )
+                
+                .filter ( t => t.startsWith ( `tag-${ codeKey }-` ) )
+                
+                .sort ( );
+                
+            let hide = false;
+            
+            tags.forEach ( callback ); // run through the tags
+            
+            if ( hide )
+            
+              element
+              
+                .classList
+                
+                .add ( codeKey );
+                
+            },
+            
+          codeKey = 'twc-spltdh',
           
-          .filter ( t => t.startsWith ( `tag-${ codeKey }-` ) )
+          d = new Date ( ),
           
-          .sort ( );
+          dYear = d.getFullYear ( ),
           
-        let hide = false;
+          selector = '.product-list .product-list-item[ ' +
         
-        $.each ( tags, callback ) // run through the tags
-        
-        if ( hide )
-        
-          $this.addClass ( codeKey );
+          `class*="tag-${ codeKey }-" ]`;
           
-        }
+        document
         
-      const codeKey = 'twc-spltdh';
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
       
-      const d = new Date ( );
-      
-      const dYear = d.getFullYear ( );
-      
-      const selector = '.products.collection-content-wrapper .grid-item[ ' +
-      
-        `class*="tag-${ codeKey }-" ]`;
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-      $( selector ).each ( callback );
-      
-      } );
+      } ) ( );
       
     </script>
     
-  <!-- end store page list tag date hide -->
+  <!-- end TWC Store Page Tag Date Hide -->

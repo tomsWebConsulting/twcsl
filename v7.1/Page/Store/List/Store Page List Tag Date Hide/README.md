@@ -8,11 +8,15 @@ Hide products on product list pages using tags with dates.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -22,15 +26,10 @@ Hide products on product list pages using tags with dates.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Tom's Web Consulting Squarespace Library][4]
-  
 ---
 
-## Install
+## Quick Install
 
-* Install [twcsl][4]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Options
 
   * Page Specific
@@ -106,6 +105,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-07-11**
+
+  * updated to work with v7.1 Products V2
+  * removed twcsl dependency
+  * removed jQuery dependency
+  * bumped version to 0.2.0
+  
 * **2024-04-11**
 
   * fix for 1970 date check
