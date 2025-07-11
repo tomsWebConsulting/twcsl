@@ -63,7 +63,7 @@ Please consider [making a donation][7].
 
   * brought mobile back into code
   * updated to work with v7.1 Products V2
-  * bumped version to 0.2.1
+  * bumped version to 0.3.0
   
 * **2025-01-18**
 
