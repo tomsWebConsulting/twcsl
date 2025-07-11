@@ -8,26 +8,30 @@ Hide products on the all category store page list.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
   * 7.1
 
-#### v7.1 Fluid Engine Compatible
+#### Products V2 Compatible
+
+  * Yes
+
+#### Fluid Engine Compatible
 
   * Not Applicable
 
 #### Dependencies
 
-  * [Add Category Attribute to a Store Category Page][2]
+  * [Store Page List Category Attribute Add][2]
 
 ---
 
 ## Install
 
-* Install **[Add Category Attribute to a Store Category Page][3]**. After you
-  install the code be sure to continue on with the rest of the steps.
+* Install **[Store Page List Category Attribute Add][3]**. After you install the
+  code be sure to continue on with the rest of the steps.
   
 * Options
 
@@ -46,8 +50,8 @@ Hide products on the all category store page list.
       effect.
       
     * Add code from file **[store page list category all products
-      hide.html][4]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Refer to [Add code to code injection][6] for details.
+      hide.less][6]** to Website > Pages > Custom Code > Code Injection >
+      Custom CSS.
 
 ## Make a Donation
 
@@ -55,6 +59,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-07-10**
+
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.3.1
+  
 * **2025-02-12**
 
   * hide pagination links
@@ -70,9 +79,10 @@ Please consider [making a donation][7].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page
-[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Add%20Category%20Attribute%20to%20a%20Store%20Category%20Page#add-category-attribute-to-a-store-category-page
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add
+[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add#store-page-list-category-attribute-add
 [4]: store%20page%20list%20category%20all%20products%20hide.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: store%20page%20list%20category%20all%20products%20hide.less#L1
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
