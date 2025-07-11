@@ -37,18 +37,18 @@ Hide products on product list pages using tags with dates.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page list tag date hide.html][5]** to Store
+    * Add code from file **[store page list tag date hide.html][4]** to Store
       Settings > Advanced > Page Header Code Injection for the store page.
-      Refer to [Per-page code injection][6] for details.
+      Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page list tag date hide.html][5]** to
+    * Add code from file **[store page list tag date hide.html][4]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7] for details.
+      code to code injection][6] for details.
 
 ## How To Use
 
@@ -97,11 +97,11 @@ to be hidden.**
 
 ## Note
 
-This effect is not active in SS Preview to test it use [private browsing][8].
+This effect is not active in SS Preview to test it use [private browsing][7].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -124,9 +124,8 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%20page%20list%20tag%20date%20hide.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: store%20page%20list%20tag%20date%20hide.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
