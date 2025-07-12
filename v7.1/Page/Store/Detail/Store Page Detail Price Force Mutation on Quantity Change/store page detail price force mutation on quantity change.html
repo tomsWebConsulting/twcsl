@@ -1,119 +1,127 @@
-<script>
+<!-- begin TWC Store Page Detail Price Force Mutation on Quantity Change -->
 
-  ( ( ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      store page detail price force mutation on quantity change
+      /*
       
-      License     : < https://tinyurl.com/s872fb68 >
-      
-      Version     : 0.2.0
-      
-      SS Version  : 7.1
-      
-      Copyright   : 2021-2024 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const callback = ( ) => {
-    
-      const
-      
-        callback = ( element ) => {
+        store page detail price force mutation on quantity change
         
-          const
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.3.0
+        
+        SS Version    : 7.1
+        
+        Products V2
+        Compatible    : Yes
+        
+        Fluid
+        Engine
+        Compatible    : Not Applicable
+        
+        Dependencies  : store page price change
+                        < https://tinyurl.com/5az53zbz >
+        
+        Copyright     : 2021-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const callback = ( ) => {
+      
+        const
+        
+          title = 'Store Page Detail Price Force Mutation on Quantity Change',
           
-            callback = ( event ) => {
+          version = '0.3.0',
+          
+          s = `${ title } v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
             
-              const
-              
-                callback = ( element ) => {
-                
-                  element
-                  
-                    .setAttribute ( 'data-twc-sppc-mo', 'true' );
-                    
-                  },
-                  
-                selector = [
-              
-                  '.ProductItem .ProductItem-details .product-price', // simple
-                  
-                  '.pdp-layout .pdp-details .product-price' // full, half, wrap
-                  
-                  ]
-                  
-                  .join ( ', ' );
-                  
-              document
-              
-                .querySelectorAll ( selector )
-                
-                .forEach ( callback );
-                
-              },
-              
-            selector = [
+            © 2021-2025 Thomas Creedon
             
-              '.product-quantity-input', // simple
-              
-              // full, half, wrap
-              
-              '.pdp-layout .pdp-details .product-quantity-input'
-              
-              ]
-              
-              .join ( ', ' );
-              
-          element
-          
-            .addEventListener ( 'change', callback );
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
             
-          },
-          
-        title = 'Store Page Detail Price Force Mutation on Quantity Change',
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
         
-        selector = [
+        const isStorePage = Static
         
-          '.ProductItem .ProductItem-details .product-quantity-input', // simple
+          .SQUARESPACE_CONTEXT
           
-          '.pdp-layout .pdp-details .product-quantity-input' // full, half, wrap
+          .collection
           
-          ]
+          .type
           
-          .join ( ', ' ),
+          ===
           
-        version = '0.2.0',
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
         
-        s = `${ title } v${ version }
+        const isDetail = ( ( ) => {
         
-          License < https://tinyurl.com/s872fb68 >
+          const selector = 'body[ id^="item-" ]';
           
-          © 2021-2024 Thomas Creedon
+          const is = document
           
-          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            .querySelector ( selector )
+            
+            !==
+            
+            null;
+            
+          return is;
           
-          .replace ( /^\s+/gm, '' );
+          } ) ( );
           
-      console.log ( s );
-      
+        if ( ! isDetail ) return; // bail if not detail
+        
+        const callback = ( event ) => {
+        
+          const selector = '.product-detail .product-meta .product-price';
+          
+          document
+          
+            .body
+            
+            .querySelectorAll ( selector )
+            
+            .forEach (
+            
+              e => e.setAttribute ( 'data-twc-sppc-mo', 'true' )
+              
+              );
+              
+          };
+          
+        document
+        
+          .body
+          
+          .querySelectorAll ( '.product-quantity-input' )
+          
+          .forEach (
+          
+            e => e.addEventListener ( 'change', callback )
+            
+            );
+            
+        };
+        
       document
       
-        .querySelectorAll ( selector )
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-        .forEach ( callback );
-        
-      };
+      } ) ( );
       
-    addEventListener ( 'DOMContentLoaded', callback );
-     
-    } ) ( );
+    </script>
     
-    /* end store page detail price force mutation on quantity change */
-    
-  </script>
+  <!-- end TWC Store Page Detail Price Force Mutation on Quantity Change -->
