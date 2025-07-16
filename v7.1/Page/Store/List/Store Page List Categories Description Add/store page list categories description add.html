@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.11.0
+    Version       : 0.11.1
     
     SS Version    : 7.1
     
@@ -88,7 +88,7 @@
       
         const
         
-          version = '0.11.0',
+          version = '0.11.1',
         
           s = `
           
@@ -184,6 +184,30 @@
           
             const
             
+              fullUrl = Static
+                    
+                .SQUARESPACE_CONTEXT
+                
+                .collection
+                
+                .fullUrl,
+                
+              isAllCategory
+              
+                =
+                
+                location
+                
+                  .pathname
+                  
+                ===
+                
+                fullUrl;
+                
+            if ( isAllCategory ) return '';
+            
+            const
+            
               selector = [
               
                 '.nested-category-breadcrumb > '
@@ -194,14 +218,8 @@
                   
                   +
                   
-                  Static
+                  fullUrl
                   
-                    .SQUARESPACE_CONTEXT
-                    
-                    .collection
-                    
-                    .fullUrl
-                    
                   +
                   
                   '" ] )',

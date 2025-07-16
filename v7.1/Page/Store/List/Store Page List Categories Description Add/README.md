@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.11.0
+  * 0.11.1
 
 #### SS Version
 
@@ -80,6 +80,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-07-16**
+
+  * fixed all category not showing
+  * bumped version to 0.11.1
+  
 * **2025-07-10**
 
   * updated to work with Products V2
