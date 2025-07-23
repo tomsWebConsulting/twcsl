@@ -1,0 +1,49 @@
+<!-- begin TWC Store Page List Categories Cache Options -->
+
+  <!--
+  
+    store page list categories cache options
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Version    : 7.1
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+    <script>
+    
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc splcc sub-module
+      
+      twc.splcc = ( ( self ) => {
+      
+        self
+        
+          .keepKeys = [ // keys to keep for a category
+          
+            'displayName',
+            
+            'fullUrl'
+            
+            ];
+            
+        return self;
+        
+        } ) ( twc.splcc || { } );
+        
+      // initialize twc splcc callbacks sub-module
+      
+      twc.splcc.callbacks = ( ( self ) => self ) ( twc.splcc.callbacks || [ ] );
+      
+      </script>
+      
+  <!-- end TWC Store Page List Categories Cache Options -->

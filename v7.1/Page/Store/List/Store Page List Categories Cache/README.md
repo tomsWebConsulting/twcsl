@@ -8,12 +8,16 @@ Cache store page categories in sessionStorage.
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
 #### SS Version
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -33,24 +37,26 @@ Cache store page categories in sessionStorage.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page list categories cache.html][4]** to
-      Store Settings > Advanced > Page Header Code Injection for the store
-      page. Refer to [Per-page code injection][5] for details.
+    * Add, in order, code from files **[store page list categories cache
+      options.html][4]** and **[store page list categories cache.html][5]** to
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page list categories cache.html][4]** to
+    * Add, in order, code from files **[store page list categories cache
+      options.html][4]** and **[store page list categories cache.html][5]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][6] for details.
+      code to code injection][7] for details.
       
 * Read the code for any instructions within.
 
 ## Callback Example
 
-You can create [callback][7] functions to customize the processing of the
+You can create [callback][8] functions to customize the processing of the
 categories or use them.
 
 Your callback must accept an object parameter.
@@ -88,10 +94,16 @@ Your callback must accept an object parameter.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-07-22**
+
+  * moved options out of main code
+  * checked v7.1 Products V2 compatibility
+  * bumped version to 0.3.0
+  
 * **2025-01-14**
 
   * fix for JSON being returned for non-cached categories
@@ -109,10 +121,11 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: store%20page%20list%20categories%20cache.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[9]: https://github.com/tomsWebConsulting/twcsl
-[10]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: store%20page%20list%20categories%20cache%20options.html#L1
+[5]: store%20page%20list%20categories%20cache.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[10]: https://github.com/tomsWebConsulting/twcsl
+[11]: https://github.com/tomsWebConsulting/twcsl#install-options

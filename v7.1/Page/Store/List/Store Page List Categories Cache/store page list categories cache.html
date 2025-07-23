@@ -1,64 +1,43 @@
-<!--
+<!-- begin TWC Store Page List Categories Cache -->
 
-  begin store page list categories cache
-  
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.2.1
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Notes         : the code is comprised of two script tags. both are needed for
-                  the full effect to work
-                  
-                  the code makes a call to the json version of the store page
-                  for information that is not normally available
-                  
-  Copyright     : 2023-2025 Thomas Creedon
-                     
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-  
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc splcc sub-module
-    
-    twc.splcc = ( ( self ) => {
-    
-      self
-      
-        .keepKeys = [ // keys to keep for a category
-        
-          'displayName',
-          
-          'fullUrl'
-          
-          ];
-          
-      return self;
-      
-      } ) ( twc.splcc || { } );
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <script>
   
     ( ( ) => {
     
+      /*
+      
+        store page list categories cache
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.3.0
+        
+        SS Version    : 7.1
+        
+        Products V2
+        Compatible    : Yes
+        
+        Fluid
+        Engine
+        Compatible    : Not Applicable
+        
+        Notes         : the code is comprised of two script tags. both are needed for
+                        the full effect to work
+                        
+                        the code makes a call to the json version of the store page
+                        for information that is not normally available
+        
+        Copyright     : 2023-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
       const
       
-        version = '0.2.1',
+        version = '0.3.0',
         
         s = `
         
@@ -66,7 +45,7 @@
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2023-2024 Thomas Creedon
+          © 2023-2025 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -76,16 +55,16 @@
           
       console.log ( s );
       
-      // initialize twc splcc callbacks sub-module
-      
-      twc.splcc.callbacks = ( ( self ) => self ) ( twc.splcc.callbacks || [ ] );
-      
       const
       
         codeKey = 'twc-splcc',
         
-        options = twc.splcc,
+        options = codeKey
         
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
         hasCallbacks = options
         
           .callbacks
@@ -294,4 +273,4 @@
       
     </script>
     
-  <!-- end store page list categories cache -->
+  <!-- end TWC Store Page List Categories Cache -->
