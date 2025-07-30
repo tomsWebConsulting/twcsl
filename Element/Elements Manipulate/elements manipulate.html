@@ -1,221 +1,393 @@
-<script>
+<!-- begin TWC Elements Manipulate -->
 
-  $( ( ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      elements manipulate
+      /*
       
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.8.0
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Yes
-      
-      v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
-                        
-                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
-                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
-                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
-                        Sonora, Stella, Thorne, Vow, Wav, West )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Dependencies    : jQuery
-      
-      Note            : this code is a base for other effects. you will want to
-                        create CSS to hide and show elements. after an element
-                        is replaced the class twc-em-show will be added to it
-                        which can be used to show elements
-      
-      Copyright       : 2022-2024 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const
-    
-      version = '0.8.0',
-      
-      s = `
-      
-        Elements Manipulate v${ version }
-      
-        License < https://tinyurl.com/s872fb68 >
+        elements manipulate
         
-        © 2022-2024 Thomas Creedon
+        License         : < https://tinyurl.com/s872fb68 >
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        Version         : 0.9.0
         
-        `
+        SS Versions     : 7.1, 7.0
         
-        .replace ( /^\s+/gm, '' );
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Yes
         
-    console.log ( s );
-    
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc em sub-module
-    
-    twc.em = ( ( self ) => self ) ( twc.em || { } );
-    
-    // initialize twc em callbacks sub-module
-    
-    twc.em.callbacks = ( ( self ) => self ) ( twc.em.callbacks || { } );
-    
-    const
-    
-      callback = ( sourceSelector, object ) => {
+        v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
+                          
+                          Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                          Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                          Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                          Sonora, Stella, Thorne, Vow, Wav, West )
+                          
+                          your template is not listed? then it is not currently
+                          supported
+        
+        Note            : this code is a base for other effects. you will want to
+                          create CSS to hide and show elements. after an element
+                          is replaced the class twc-em-show will be added to it
+                          which can be used to show elements
+        
+        Copyright       : 2022-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
       
-        let $sourceElement = $( sourceSelector );
+        version = '0.9.0',
         
-        if ( ! $sourceElement.length ) return true; // continue if no source
+        s = `
         
-        if ( object.sourceCopy )
+          Elements Manipulate v${ version }
         
-          $sourceElement = $sourceElement.clone ( );
+          License < https://tinyurl.com/s872fb68 >
           
-        let $destinationElement = $( object.destinationSelector );
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        // globals
         
-        // continue if no destination
+        {
         
-        if ( ! $destinationElement.length ) return true;
+          // initialize twc module
+          
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc em sub-module
+          
+          twc.em = ( ( self ) => self ) ( twc.em || { } );
+          
+          // initialize twc em callbacks sub-module
+          
+          twc.em.callbacks = ( ( self ) => self ) ( twc.em.callbacks || { } );
+          
+          // initialize twc em maps sub-module
+          
+          twc.em.maps = ( ( self ) => self ) ( twc.em.maps || [ ] );
+          
+          }
+          
+        const maps = twc.em.maps;
+        
+        if ( ! maps.length ) return; // bail if no maps
         
         const
         
-          action = object.action,
+          actionCallback = ( sourceElement, object ) => {
           
-          callback = ( index, callbackName ) => {
-          
-            try {
+            const
             
-              $sourceElement = twc
+              hasDestinationAncestorSelector
               
-                .em
+                =
                 
+                !
+                
+                new RegExp ( '^\\[.+\\]$' )
+                
+                  .test ( object.destinationAncestorSelector ),
+                  
+              hasSourceAncestorSelector
+              
+                =
+                
+                !
+                
+                new RegExp ( '^\\[.+\\]$' )
+                
+                  .test ( object.sourceAncestorSelector ),
+                  
+              isDestinationSource
+              
+                =
+                
+                object
+                    
+                  .destinationSelector
+                  
+                ===
+                
+                `x-${ codeKey }-source`;
+                
+            let
+            
+              destinationElement,
+              
+              isSourceCopy = object.sourceCopy,
+              
+              rootElement = document.body,
+              
+              sourceCopyElement;
+              
+            if ( hasDestinationAncestorSelector )
+            
+              destinationElement
+              
+                =
+                
+                destinationElement
+                
+                  .closest (
+                  
+                    object
+                    
+                      .destinationAncestorSelector
+                      
+                    );
+                    
+            if ( hasSourceAncestorSelector )
+            
+              sourceElement
+              
+                =
+                
+                sourceElement
+                
+                  .closest (
+                  
+                    object
+                    
+                      .sourceAncestorSelector
+                      
+                    );
+                    
+            if ( isSourceCopy )
+            
+              sourceCopyElement = sourceElement
+              
+                .cloneNode ( true );
+                
+            if ( ! isDestinationSource ) {
+            
+              const hasRootSelector
+              
+                =
+                
+                !
+                
+                new RegExp ( '^\\[.+\\]$' )
+                
+                  .test ( object.rootSelector );
+                  
+              if ( hasRootSelector )
+              
+                rootElement = sourceElement
+                
+                  .closest ( object.rootSelector );
+                  
+              destinationElement
+              
+                =
+                
+                rootElement
+                
+                  .querySelector (
+                  
+                    object
+                    
+                      .destinationSelector
+                      
+                    );
+                    
+              // continue if no destination
+              
+              if ( destinationElement === null ) return;
+              
+              } else
+              
+                destinationElement = sourceElement;
+                
+            const
+            
+              action = object.action,
+              
+              callback = ( callbackName ) => {
+              
+                try {
+                
+                  sourceElement = codeKey
+                  
+                    .split ( '-' )
+                    
+                    .reduce ( ( obj, key ) => obj?.[ key ], window )
+                    
+                    .callbacks
+                    
+                    [ callbackName ]
+                    
+                    ( sourceElement, sourceCopyElement );
+                    
+                  if ( ! sourceElement === null ) return; // bail if no element
+                  
+                  } catch ( error ) {
+                  
+                    const s =
+                    
+                      `${ codeKey } ${ callbackName } callback error`;
+                      
+                    console.error ( s, error );
+                    
+                    }
+                    
+                },
+                
+              hasCallbacks = object
+            
                 .callbacks
                 
-                [ callbackName ]
+                .length;
                 
-                ( $sourceElement );
-                
-              if ( ! $sourceElement.length ) return true; // bail if no element
+            if ( isSourceCopy && ! hasCallbacks )
+            
+              sourceElement = sourceCopyElement;
               
-              } catch ( error ) {
+              else
               
-                const s = `${ codeKey } ${ callbackName } callback error`;
+                object
                 
-                console.error ( s, error );
+                  .callbacks
+                  
+                  .forEach ( callback );
+                  
+            switch ( action ) {
+            
+              case 'after' :
+              
+                destinationElement
                 
-                }
+                  .insertAdjacentElement (
+                  
+                    'afterend',
+                    
+                    sourceElement
+                    
+                    );
+                    
+                break;
                 
+              case 'append' :
+              
+                destinationElement
+                
+                  .insertAdjacentElement (
+                  
+                    'beforeend',
+                    
+                    sourceElement
+                    
+                    );
+                    
+                break;
+                
+              case 'before' :
+              
+                destinationElement
+                
+                  .insertAdjacentElement (
+                  
+                    'beforebegin',
+                    
+                    sourceElement
+                    
+                    );
+                    
+                break;
+                
+              case 'prepend' :
+              
+                destinationElement
+                
+                  .insertAdjacentElement (
+                  
+                    'afterbegin',
+                    
+                    sourceElement
+                    
+                    );
+                    
+                break;
+                
+              case 'replace' :
+              
+                replaceNode ( destinationElement, sourceElement );
+                
+                break;
+                
+              }
+              
             },
             
           codeKey = 'twc-em',
           
-          hasDestinationAncestorSelector = ! new RegExp ( '^\\[.+\\]$' )
+          mapsCallback = ( object ) => {
           
-            .test ( object.destinationAncestorSelector ),
+            for ( const [ key, value ] of Object.entries ( object ) ) {
             
-          hasSourceAncestorSelector = ! new RegExp ( '^\\[.+\\]$' )
-          
-            .test ( object.sourceAncestorSelector );
-            
-        if ( hasDestinationAncestorSelector )
-        
-          $destinationElement = $destinationElement
-          
-            .parents ( object.destinationAncestorSelector );
-            
-        if ( hasSourceAncestorSelector )
-        
-          $sourceElement = $sourceElement
-          
-            .parents ( object.sourceAncestorSelector );
-            
-        $.each ( object.callbacks, callback );
-        
-        switch ( action ) {
-        
-          case 'after' :
-          
-            $destinationElement
-            
-              .after ( $sourceElement );
+              selectorObjectCallback ( key, value );
               
-            break;
-            
-          case 'append' :
-          
-            $destinationElement
-            
-              .append ( $sourceElement );
+              }
               
-            break;
+            },
             
-          case 'before' :
+          replaceNode = ( node, newNode ) => {
           
-            $destinationElement
+            node
             
-              .before ( $sourceElement );
+              .insertAdjacentElement (
               
-            break;
+                'beforebegin',
+                
+                newNode
+                
+                );
+                
+            node.remove ( );
             
-          case 'prepend' :
+            },
+            
+          selectorObjectCallback = ( selector, object ) => {
           
-            $destinationElement
+            const elements = document
             
-              .prepend ( $sourceElement );
+              .body
               
-            break;
-            
-          case 'replace' :
-          
-            $destinationElement
-            
-              .replaceWith ( $sourceElement );
+              .querySelectorAll ( selector );
               
-            break;
+            elements.forEach ( e => actionCallback ( e, object ) );
             
-          }
-          
-        },
+            };
+            
+        maps.forEach ( mapsCallback );
         
-      selector = `head script[ type="application/vnd.twc.em" ]`;
+        };
+        
+      document
       
-    let $element = $( selector );
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
     
-    if ( ! $element.length ) return; // bail if no element
-    
-    let map = $element
-      
-      .text ( )
-      
-      .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
-      
-      .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
-      
-      .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
-      
-      .replaceAll ( '\n', '' );
-      
-    map = JSON.parse ( map );
-    
-    $.each ( map, callback );
-    
-    } );
-    
-  </script>
+  <!-- end TWC Elements Manipulate -->
