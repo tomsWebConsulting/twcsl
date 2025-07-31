@@ -132,6 +132,7 @@ Please consider [making a donation][8].
 * **2025-07-31**
 
   * broke options out into its own file
+  * updated to work with Products V2
   * remove dependency on jQuery
   * bumped version to 0.5.0
   
