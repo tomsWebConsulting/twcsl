@@ -9,12 +9,16 @@ pages.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Version
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -22,25 +26,18 @@ pages.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [jQuery][4]
 
 ---
 
 ## Quick Install
 
-* Add the following to Website > Pages > Custom Code > Code Injection >
-  HEADER.
+* Add code from file **[store page detail product dimensions options.html][4]**
+  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  Refer to [Per-page code injection][5] for details.
   
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
-* Add code from file **[store page detail product dimensions.html][5]** to
+* Add code from file **[store page detail product dimensions.html][6]** to
   Store Settings > Advanced > Page Header Code Injection for the store page.
-  Refer to [Per-page code injection][6] for details.
-  
-  **There are some caveats to using this effect.**
+  Refer to [Per-page code injection][5] for details.
   
 * Read the code for any instructions within.
   
@@ -59,25 +56,67 @@ you can use it for product dimensions. If you need product dimensions as well as
 shipping then add the following to a code block in Additional Info.
 
 ```html
-<script type="application/vnd.twc.spdpd">
+<!-- begin TWC Store Page Detail Product Dimensions Options -->
 
-  {
+  <script>
   
-    "dimensions" : {
+    /*
     
-      "length" : 1,
+      store page detail product dimensions options
       
-      "width" : 2,
+      License       : < https://tinyurl.com/s872fb68 >
       
-      "height" : 3,
+      Version       : 0.5.0
       
-      "weight" : 4
+      SS Version    : 7.1
       
-      }
+      Copyright     : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
-    }
+      */
+      
+    // initialize twc module
     
-  </script>
+    window.twc = ( ( self ) => self ) ( window.twc || [ ] );
+    
+    // initialize twc spdpd sub-module
+    
+    twc.spdpd = ( ( self ) => {
+    
+      const options = {
+      
+        dimensions : {
+        
+          length : 1,
+          
+          width : 2,
+          
+          height : 3,
+          
+          weight : 4
+          
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdpd || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Product Dimensions Options -->
 ```
 
 ## Demo
@@ -90,6 +129,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-07-31**
+
+  * broke options out into its own file
+  * remove dependency on jQuery
+  * bumped version to 0.5.0
+  
 * **2025-02-01**
 
   * less processing on format string for better support of entering HTML
@@ -129,8 +174,8 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: store%20page%20detail%20product%20dimensions.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: store%20page%20detail%20product%20dimensions%20options.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: store%20page%20detail%20product%20dimensions.html#L1
 [7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

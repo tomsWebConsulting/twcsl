@@ -1,137 +1,41 @@
-<!--
+<!-- begin TWC Store Page Detail Product Dimensions -->
 
-  begin store page detail product dimensions
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.4.0
-  
-  SS Version    : 7.1
-  
-  Dependencies  : jQuery
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-                  
-                  this effect only considers the first variants dimensions. in
-                  other words it doesn't work with products that have more than
-                  one variant
-                  
-                  the dimensions entered in the squarespace editor are shipping
-                  dimensions, not product dimensions. if you don't need to use
-                  shipping dimensions for shipping you can use it for product
-                  dimensions. if you need product dimensions as well as shipping
-                  then use the <script type="application/vnd.twc.spdpd"> tag
-                  referenced in the read me
-  
-  Copyright     : 2022-2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-  
-    // initialize twc module
+    store page detail product dimensions
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    License       : < https://tinyurl.com/s872fb68 >
     
-    // initialize twc spdpd sub-module
+    Version       : 0.5.0
     
-    twc.spdpd = ( ( self ) => self ) ( twc.spdpd || {
+    SS Version    : 7.1
     
-      /*
-      
-        format is a string used to replace [twc-spdpd] in your page. following
-        are format tags for use in your format :
-        
-          centimeters
-          
-          %w2Cm   width
-          %l2Cm   length
-          %h2Cm   height
-          
-          inches
-          
-          %w2In   width
-          %l2In   length
-          %h2In   height
-          
-          kilograms
-          
-          %k2Kg
-          
-          millimeters
-          
-          %w2Mm   width
-          %l2Mm   length
-          %h2Mm   height
-          
-          pounds
-          
-          %p2Lb
-          
-          note : the number after the h, k, l, p, or w indicates the number of
-                 decimal places
-                 
-        following is a full example of the format string. your format goes
-        between the backticks
-        
-          format : `
-          
-            %w0In"W %l1In"D %h2In"H - %p2Lb lb
-            <br />
-            %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
-                      
-            `,
-        
-        */
-        
-      format : `
-      
-        %w0In"W %l1In"D %h2In"H - %p2Lb lb
-        <br />
-        %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
-        
-        `
-        
-      } );
-      
-    </script>
+    Notes         : the code is comprised of several tags. all are needed for the
+                    full effect to work
+                    
+                    this effect only considers the first variants dimensions. in
+                    other words it doesn't work with products that have more than
+                    one variant
+                    
+                    the dimensions entered in the squarespace editor are shipping
+                    dimensions, not product dimensions. if you don't need to use
+                    shipping dimensions for shipping you can use it for product
+                    dimensions. if you need product dimensions as well as shipping
+                    then use the <script type="application/vnd.twc.spdpd"> tag
+                    referenced in the read me
     
-  <!-- do not alter anything below, there be the borg here -->
-  
+    Copyright     : 2022-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    body:not( .sqs-is-page-editing ) p.twc-spdpd {
-    
-      white-space : unset !important;
-      
-      }
-    
-    body:not( .sqs-is-page-editing ) p:has( em.twc-spdpd ),
-    body:not( .sqs-is-page-editing ) p:has( u.twc-spdpd )
-    
-      {
-      
-        white-space : unset !important;
-        
-        }
-        
-    body:not( .sqs-is-page-editing ) strong.twc-spdpd {
-    
-      white-space-collapse : collapse;
-      
-      }
-      
-    /* layout simple */
-    
-    body:not( .sqs-is-page-editing ) .ProductItem-details .ProductItem-details-excerpt,
-    
-    /* layout full, half, wrap */
-    
-    body:not( .sqs-is-page-editing ) .pdp-layout .pdp-details .pdp-details-excerpt,
-    body.collection-type-products.view-item:not( .sqs-is-page-editing ) #page .sqs-block-html .sqs-block-content
+    body:not( .sqs-is-page-editing ) .product-description,
+    body:not( .sqs-is-page-editing ) .sqs-html-content
     
       {
       
@@ -139,15 +43,8 @@
         
         }
         
-    /* layout simple */
-    
-    body:not( .sqs-is-page-editing ) .twc-spdpd-show .ProductItem-details .ProductItem-details-excerpt,
-    
-   /* layout full, half, wrap */
-   
-    body:not( .sqs-is-page-editing ) .pdp-layout.twc-spdpd-show .pdp-details .pdp-details-excerpt,
-    
-    body.collection-type-products.view-item:not( .sqs-is-page-editing ) #page .twc-spdpd-show .sqs-block-html .sqs-block-content
+    body:not( .sqs-is-page-editing ) .twc-spdpd-show .product-description,
+    body:not( .sqs-is-page-editing ) .sqs-html-content
     
       {
       
@@ -155,15 +52,31 @@
         
         }
         
+    body:not( .sqs-is-page-editing ) em.twc-spdpd,
+    body:not( .sqs-is-page-editing ) strong.twc-spdpd,
+    body:not( .sqs-is-page-editing ) u.twc-spdpd
+    
+      {
+      
+        white-space-collapse : collapse;
+        
+        }
+        
+    body:not( .sqs-is-page-editing ) p.twc-spdpd {
+    
+      white-space-collapse : collapse !important;
+      
+      }
+      
     </style>
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
       const
       
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `
         
@@ -181,113 +94,161 @@
           
       console.log ( s );
       
-      const isStorePageDetail = document
+      const callback = ( ) => {
       
-        .querySelector ( 'body.collection-type-products.view-item' )
-        
-        !==
-        
-        null;
-        
-      if ( ! isStorePageDetail ) return; // bail if not detail
-      
-      const
-      
-        codeKeys = [
-        
-          'twc-spdpd',
-          
-          'twc-spdd' // code key old
-          
-          ],
-          
-        convertUnitCallbacks = {
-        
-          CENTIMETER : {
-          
-            Cm : ( cm ) => cm,
-            
-            In : ( cm ) => cm / 2.54,
-            
-            Mm : ( cm ) => cm * 10
-            
-            },
-            
-          INCH : {
-          
-            Cm : ( inch ) => inch * 2.54,
-            
-            In : ( inch ) => inch,
-            
-            Mm : ( inch ) => inch / 0.039370
-            
-            },
-            
-          KILOGRAM : {
-          
-            Kg : ( kg ) => kg,
-            
-            Lb : ( lb ) => lb * 0.453592
-            
-            },
-            
-          POUND : {
-          
-            Kg : ( kg ) => kg * 2.20462,
-            
-            Lb : ( lb ) => lb
-            
-            }
-            
-          },
-          
-        hlwMap = {
-        
-          h : 'height',
-          
-          l : 'length',
-          
-          w : 'width'
-          
-          },
-          
-        nodeHtmlMap = [ ],
-      
-        shippingSize = Static
+        const isStorePage = Static
         
           .SQUARESPACE_CONTEXT
           
-          .product
+          .collection
           
-          .variants [ 0 ]
+          .type
           
-          .shippingSize;
+          ===
           
-        shippingWeight = Static
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
         
-          .SQUARESPACE_CONTEXT
-          
-          .product
-          
-          .variants [ 0 ]
-          
-          .shippingWeight,
-          
-        dimensions = ( ( ) => {
+        const isDetail = ( ( ) => {
         
-          const
+          const selector = 'body[ id^="item-" ]';
           
-            callback = ( codeKey ) => {
+          const is = document
+          
+            .querySelector ( selector )
             
-              const selector = 'script[ type="application/vnd.' +
+            !==
+            
+            null;
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isDetail ) return; // bail if not detail
+        
+        const
+        
+          codeKey = 'twc-spdpd',
+          
+          convertUnitCallbacks = {
+          
+            CENTIMETER : {
+            
+              Cm : ( cm ) => cm,
               
-                `${ codeKey.replace ( '-', '.' ) }" ]`;
-                
-              return selector;
+              In : ( cm ) => cm / 2.54,
+              
+              Mm : ( cm ) => cm * 10
               
               },
               
-            dimensions = {
+            INCH : {
+            
+              Cm : ( inch ) => inch * 2.54,
+              
+              In : ( inch ) => inch,
+              
+              Mm : ( inch ) => inch / 0.039370
+              
+              },
+              
+            KILOGRAM : {
+            
+              Kg : ( kg ) => kg,
+              
+              Lb : ( lb ) => lb * 0.453592
+              
+              },
+              
+            POUND : {
+            
+              Kg : ( kg ) => kg * 2.20462,
+              
+              Lb : ( lb ) => lb
+              
+              }
+              
+            },
+            
+          hlwMap = {
+          
+            h : 'height',
+            
+            l : 'length',
+            
+            w : 'width'
+            
+            },
+            
+          nodeHtmlMap = [ ],
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          re = new RegExp ( `\\[${ codeKey }\\]`, 'gm' ),
+          
+          replaceTextNodeWithHTML = ( node, html ) => {
+          
+            const
+            
+              element = document
+              
+                .createElement ( 'div' ),
+                
+              fragment = document
+              
+                .createDocumentFragment ( );
+                
+            element.innerHTML = html;
+            
+            while ( element.firstChild )
+            
+              fragment
+              
+                .appendChild ( element.firstChild );
+                
+            node
+            
+              .parentNode
+              
+              .replaceChild ( fragment, node );
+              
+            },
+            
+          shippingSize = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .product
+            
+            .variants [ 0 ]
+            
+            .shippingSize,
+            
+          shippingWeight = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .product
+            
+            .variants [ 0 ]
+            
+            .shippingWeight,
+            
+          dimensions
+          
+            =
+          
+            options.dimensions
+            
+            ||
+            
+            {
             
               height : shippingSize.height,
               
@@ -297,299 +258,285 @@
               
               width : shippingSize.width
               
-              },
+              };
               
-            selector = $.map ( codeKeys, callback )
-            
-              .join ( ', ' ),
-              
-            $element = $( selector );
-            
-          if ( $element.length )
-          
-            Object
-            
-              .assign (
-              
-                dimensions,
-                
-                JSON
-                
-                  .parse (
-                  
-                    $element
-                    
-                      .text ( )
-                      
-                    )
-                    
-                  .dimensions
-                    
-                );
-            
-          return dimensions;
-          
-          } ) ( );
-          
-      let
-      
-        callback = ( i, m ) => {
+        let
         
-          const
+          callback = ( m ) => {
           
-            decimalPlaces = m [ 2 ],
+            const
             
-            newUnit = m [ 3 ];
-            
-          let r,
-          
-            unit;
-          
-          switch ( m [ 1 ] ) {
-          
-            case 'h' :
-            case 'l' :
-            case 'w' :
-            
-              r = dimensions [
+              decimalPlaces = m [ 2 ],
               
-                hlwMap [
+              newUnit = m [ 3 ];
+              
+            let r,
+            
+              unit;
+            
+            switch ( m [ 1 ] ) {
+            
+              case 'h' :
+              case 'l' :
+              case 'w' :
+              
+                r = dimensions [
                 
-                  m [ 1 ]
+                  hlwMap [
                   
-                  ]
+                    m [ 1 ]
+                    
+                    ]
+                    
+                  ];
                   
-                ];
+                unit = shippingSize.unit;
+                  
+                break;
                 
-              unit = shippingSize.unit;
-                
-              break;
+              case 'k' :
+              case 'p' :
               
-            case 'k' :
-            case 'p' :
+                r = dimensions.weight
+                  
+                unit = shippingWeight.unit;
+                
+                break;
+                
+              }
+              
+            r = convertUnitCallbacks
             
-              r = dimensions.weight
+              [ unit ]
+              
+              [ newUnit ]
+              
+              ( r )
+              
+              .toFixed ( decimalPlaces );
+              
+            format = format
+            
+              .replaceAll ( m [ 0 ], r );
+              
+            },
+            
+          format = options.format,
+          
+          selector = [
+          
+            '.product-description',
+            
+            '.sqs-block-html .sqs-block-content'
+            
+            ]
+            
+            .join ( ', ' );
+            
+        const matches = [
+        
+          ...
+          
+          format
+          
+            .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
+            
+          ];
+          
+        matches.forEach ( callback );
+        
+        callback = ( element ) => {
+        
+          const walker =
+          
+            document.createTreeWalker ( element, NodeFilter.SHOW_TEXT );
+            
+          while ( walker.nextNode ( ) ) {
+          
+            const
+            
+              node = walker.currentNode,
+              
+              html = node
+              
+                .data
                 
-              unit = shippingWeight.unit;
-              
-              break;
-              
+                .replace ( re, format );
+                
+            if ( html === node.data ) continue;
+            
+            nodeHtmlMap.push ( [ node, html ] );
+            
             }
             
-          r = convertUnitCallbacks
-          
-            [ unit ]
-            
-            [ newUnit ]
-            
-            ( r )
-            
-            .toFixed ( decimalPlaces );
-            
-          format = format
-          
-            .replaceAll ( m [ 0 ], r );
-            
-          },
-          
-        format = twc
-        
-          .spdpd
-          
-          .format,
-          
-        re = '\\['
-        
-          +
-          
-          codeKeys
-          
-            .join ( '\\]|\\[' )
-            
-          +
-          
-          '\\]',
-          
-        selector = [
-        
-          '.ProductItem-details-excerpt', // layout simple
-          
-          '.pdp-details-excerpt', // layout full, half, wrap
-          
-          '.sqs-block-html .sqs-block-content',
-          
-          ];
-          
-      const matches = [
-      
-        ...
-        
-        format
-        
-          .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
-          
-        ];
-        
-      re = new RegExp ( re, 'gm' );
-      
-      $.each ( matches, callback );
-      
-      callback = ( selector ) => {
-      
-        const callback = ( key ) => {
-        
-          const s = `${ selector }:contains(${ key })`;
-          
-          return s;
-          
           };
           
-        const s = $.map ( codeKeys, callback );
+        [
         
-        return s;
-        
-        };
-      
-      selector = $.map ( selector, callback )
-      
-        .join ( ', ' );
-      
-      callback = function ( ) {
-      
-        const walker =
-        
-          document.createTreeWalker ( this, NodeFilter.SHOW_TEXT );
+          ...
           
-        while ( walker.nextNode ( ) ) {
-        
-          const node = walker.currentNode;
+          document
           
-          const html = node
-          
-            .data
+            .body
             
-            .replace ( re, format );
+            .querySelectorAll ( selector )
             
-          if ( html === node.data ) continue;
+          ]
           
-          nodeHtmlMap.push ( [ node, html ] );
+          .filter (
           
-          }
-          
-        }
-        
-      $( selector ).each ( callback );
-      
-      callback = ( i, [ node, html ] ) => {
-      
-        $( node )
-        
-          .parent ( )
-          
-            .addClass ( codeKeys [ 0 ] )
+            e => e
             
-            .end ( )
+              .textContent
+              
+              .includes ( `[${ codeKey }]` )
+              
+            )
             
-          .replaceWith ( html );
+          .forEach ( callback );
           
-        };
+        callback = ( [ node, html ] ) => {
         
-      $.each ( nodeHtmlMap, callback );
-      
-      // begin meta elements clean
-      
-        callback = ( selector ) => {
-        
-          selector = `head meta${ selector }`;
+          node
           
-          return selector;
+            .parentElement
+            
+            .classList
+            
+            .add ( codeKey );
+            
+          replaceTextNodeWithHTML (
           
+            node,
+          
+            html
+            
+            );
+            
           };
           
-        selector = [
+        nodeHtmlMap.forEach ( callback );
         
-          '[ property="og:description" ]',
-          
-          '[ itemprop="description" ]',
-          
-          '[ name="twitter:description" ]',
-          
-          '[ name="description" ]'
-          
-          ];
-          
-        selector = $.map ( selector, callback )
+        // meta elements clean
         
-          .join ( ', ' );
-          
-        callback = function ( ) {
+        {
         
-          const $this = $( this );
+          const attribute= 'content';
           
-          const c = $this
+          callback = ( element ) => {
           
-            .attr ( 'content' )
+            const content = element
             
-            .replace ( re, '' );
+              .getAttribute ( attribute )
+              
+              .replace ( re, '' );
+              
+            element
             
-          $this
-          
-            .attr ( 'content', c );
+              .setAttribute ( attribute, content );
+              
+            };
             
-          }
+          selector
           
-        $( selector )
-        
-          .each ( callback );
-          
-        // end meta elements clean
-        
-      // begin script element clean
-      
-        callback = ( codeKey ) => {
-        
-          const selector =
-          
-            'head script[ type="application/ld+json" ]'
+            =
+            
+            'meta'
             
             +
             
-            `:contains([${ codeKey }])`;
+            [
             
-          return selector;
+              '[ property="og:description" ]',
+              
+              '[ itemprop="description" ]',
+              
+              '[ name="twitter:description" ]',
+              
+              '[ name="description" ]'
+              
+              ]
+              
+              .join ( ', meta' );
+              
+          document
           
-          };
-          
-        selector = $.map ( codeKeys, callback )
-        
-          .join ( ', ' );
-          
-        callback = function ( ) {
-        
-          const $this = $( this );
-          
-          const j = $this
-          
-            .html ( )
+            .head
             
-            .replace ( re, '' );
-            
-          $this
+            .querySelectorAll ( selector )
           
-            .html ( j );
+            .forEach ( callback );
             
           }
           
-        $( selector )
+        // script element clean
         
-          .each ( callback );
+        {
+        
+          callback = ( element ) => {
           
-        // end script element clean
+            const html = element
+            
+              .innerHTML
+              
+              .replace ( re, '' );
+              
+            element
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            };
+            
+          selector
+          
+            =
+            
+            'script[ type="application/ld+json" ]';
+            
+          [
+          
+            ...
+            
+            document
+            
+              .head
+              
+              .querySelectorAll ( selector )
+              
+            ]
+            
+            .filter (
+            
+              e => e.textContent.includes ( `[${ codeKey }]` )
+              
+              )
+              
+            .forEach ( callback );
+            
+          }
+          
+        document
         
-      $( '#pdp' ).addClass ( `${ codeKeys [ 0 ] }-show` );
+          .body
+          
+          .querySelector ( '.product-detail' )
+          
+          .classList
+          
+          .add ( `${ codeKey }-show` );
+          
+        };
+        
+      document
       
-      } );
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
       
     </script>
     
-  <!-- end store page detail product dimensions -->
+  <!-- end TWC Store Page Detail Product Dimensions -->
