@@ -8,11 +8,15 @@ Total price times quantity on Store detail page.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -76,11 +80,17 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-07-31**
+
+  * updated to work with v7.1 Products V2
+  * removed jQuery dependency
+  * bumped version to 0.3.0
+  
 * **2024-10-05**
 
   * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
     twc.sppc.callbacks
-  * bumped version to 0.3.0
+  * bumped version to 0.3.1
   
 * **2022-01-31**
 

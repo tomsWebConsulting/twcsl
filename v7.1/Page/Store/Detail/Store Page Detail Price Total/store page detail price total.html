@@ -1,119 +1,304 @@
-<script>
+<!-- begin TWC Store Page Detail Price Total -->
 
-  /*
+  <script>
   
-    begin store page detail price total
+    /*
     
-    License       : < https://tinyurl.com/s872fb68 >
-    
-    Version       : 0.3.0
-    
-    SS Version    : 7.1
-    
-    Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
-    
-    Copyright     : 2021-2024 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
-    ( ( ) => {
-    
-      const
+      store page detail price total
       
-        version = '0.3.0',
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.3.1
+      
+      SS Version    : 7.1
+      
+      Products V2
+      Compatible    : Yes
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : store page price change < https://tinyurl.com/5az53zbz >
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      ( ( ) => {
+      
+        const
         
-        s = `Store Page Detail Price Total v${ version }
+          version = '0.3.1',
+          
+          s = `Store Page Detail Price Total v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2021-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
         
-          License < https://tinyurl.com/s872fb68 >
-          
-          © 2021-2024 Thomas Creedon
-          
-          Tom's Web Consulting < http://www.tomsWeb.consulting >`
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
-      
-      } ) ( );
-      
-    // initialize twc module
-    
-    var twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc sppc sub-module
-    
-    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-    
-    // initialize twc sppc callbacks sub-module
-    
-    twc.sppc.callbacks = ( ( self ) => {
-    
-      self
-      
-        .twcSpdpt = ( node, isDetail, text, searchText ) => {
+        } ) ( );
         
-          if ( ! isDetail ) return true; // continue if not detail
-          
-          const isOriginalPrice = Boolean ( $( node )
-          
-            .parents ( '.original-price' )
-            
-            .length );
-            
-          const quantity = Number ( $( '.product-quantity-input input' ).val ( ) );
-          
-          let selectedVariant = $( '.product-variants' )
-          
-            .attr ( 'data-selected-variant' );
-            
-          if ( selectedVariant === undefined ) {
-          
-            selectedVariant = Static.SQUARESPACE_CONTEXT.product.variants [ 0 ];
-            
-              price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
-              
-                isOriginalPrice ) ? selectedVariant.price.value :
-                
-                selectedVariant.salePrice.value;
-                
-              price = price / 100;
-              
-            } else {
-            
-              selectedVariant = JSON.parse ( selectedVariant );
-              
-              const b = selectedVariant.unlimited == false &&
-              
-                selectedVariant.qtyInStock == 0;
-                
-              if ( b ) return true; // bail if sold out
-              
-              price = ! selectedVariant.onSale || ( selectedVariant.onSale &&
-              
-                isOriginalPrice ) ? selectedVariant.priceMoney.value :
-                
-                selectedVariant.salePriceMoney.value;
-                
-                price = Number ( price );
-                
-              }
-              
-          price = price * quantity;
-          
-          price = price.toFixed ( 2 );
-          
-          return price;
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc spdpt sub-module
+      
+      twc.spdpt = ( ( self ) => {
+      
+        const options = {
+        
+          map : { }
           
           };
           
-      return self;
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.spdpt || { } );
+        
+      // initialize twc sppc sub-module
       
-      } ) ( twc.sppc.callbacks || { } );
+      twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
       
-    // end store page detail price total
+      // initialize twc sppc callbacks sub-module
+      
+      twc.sppc.callbacks = ( ( self ) => {
+      
+        self
+        
+          .twcSpdpt = ( node, isDetail, text, searchText ) => {
+          
+            if ( ! isDetail ) return true; // continue if not detail
+            
+            node = node.parentNode;
+            
+            const isProductPrice = node
+            
+              .closest ( '.product-price' );
+              
+            if ( ! isProductPrice ) return true; // continue
+            
+            const m = text.match ( searchText );
+            
+            if ( ! m ) return true; // continue
+            
+            const
+            
+              codeKey = 'twc-spdpt',
+              
+              isFrom = text.includes ( 'from ' ),
+              
+              options = codeKey
+              
+                .split ( '-' )
+                
+                .reduce ( ( obj, key ) => obj?.[ key ], window ),
+                
+              map = options.map;
+              
+            m [ 0 ] = parseFloat ( m [ 0 ] );
+            
+            if ( ! map.from && isFrom ) {
+            
+              map.from = m [ 0 ];
+              
+              return true;
+              
+              }
+              
+            const
+            
+              classList = node
+              
+                .classList,
+                
+              variantSelectWrapperElements = document
+              
+                .body
+                
+                .querySelectorAll ( '.variant-select-wrapper' ),
+                
+              isOriginal = classList
+              
+                .contains ( 'original-price' ),
+                
+              isPrice = classList
+              
+                .contains ( 'product-price-value' ),
+                
+              isSale = classList
+              
+                .contains ( 'sale-price' ),
+                
+              isVariant = variantSelectWrapperElements.length,
+              
+              quantity
+              
+                =
+                
+                Number (
+                
+                  document
+                  
+                    .body
+                    
+                    .querySelector (
+                    
+                      '.product-detail .product-meta .product-add-to-cart '
+                      
+                      +
+                      
+                      '.product-quantity-input-wrapper input'
+                      
+                      )
+                      
+                    .value
+                    
+                  );
+                  
+            let
+            
+              attributes = { },
+              
+              key;
+              
+            if ( isVariant ) {
+            
+              const
+              
+                isVariantSelected
+                
+                  =
+                  
+                  !
+                  
+                  [
+                  
+                    ...
+                    
+                    variantSelectWrapperElements
+                      
+                    ]
+                  
+                    .filter (
+                    
+                      e => e
+                      
+                        .getAttribute ( 'data-selected-value' )
+                        
+                        .startsWith ( 'Select ' )
+                        
+                      )
+                      
+                    .length;
+                    
+              if ( isVariantSelected ) {
+              
+                const callback = ( element ) => {
+                
+                  attributes
+                  
+                    [
+                    
+                      element
+                      
+                        .closest ( '.variant-option' )
+                        
+                        .getAttribute ( 'data-variant-option-name' )
+                        
+                      ]
+                      
+                    =
+                    
+                    element
+                    
+                      .getAttribute ( 'data-selected-value' );
+                      
+                  };
+                  
+                variantSelectWrapperElements
+                
+                  .forEach ( callback );
+                  
+                }
+                
+              }
+              
+            attributes = JSON.stringify ( attributes );
+            
+            if ( ! map [ attributes ] )
+            
+              map [ attributes ] = { };
+              
+            switch ( true ) {
+            
+              case isOriginal :
+              
+                key = 'original';
+                
+                break;
+                
+              case isPrice :
+              
+                key = 'price';
+                
+                break;
+                
+              case isSale :
+              
+                key = 'sale';
+                
+                break;
+                
+              }
+              
+            const value = map [ attributes ];
+            
+            if ( ! value [ key ] )
+            
+              value [ key ] = m [ 0 ];
+              
+            const total = (
+            
+              value [ key ]
+              
+              *
+              
+              quantity
+              
+              )
+              
+              .toFixed ( 2 );
+              
+            return total;
+            
+            };
+            
+        return self;
+        
+        } ) ( twc.sppc.callbacks || { } );
+        
+    </script>
     
-  </script>
+  <!-- end TWC Store Page Detail Price Total -->
