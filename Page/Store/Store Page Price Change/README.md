@@ -8,7 +8,7 @@ Change store page prices.
 
 ### Version
 
-  * 0.7.2
+  * 0.8.0
 
 #### SS Versions
 
@@ -120,6 +120,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-07-12**
+
+  * fixed bug were MutationObserver was not watching prices
+  * bumped version to 0.8.0
+  
 * **2025-06-26**
 
   * updated to work with v7.1 Products V2

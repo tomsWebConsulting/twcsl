@@ -10,7 +10,7 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.7.2
+        Version         : 0.8.0
         
         SS Versions     : 7.1, 7.0
         
@@ -58,7 +58,7 @@
         
       const
       
-        version = '0.7.2',
+        version = '0.8.0',
         
         s = `Store Page Price Change v${ version }
         
@@ -80,8 +80,6 @@
       
         callback = ( ) => {
         
-          debugger;
-          
           const isStorePage = Static
           
             .SQUARESPACE_CONTEXT
@@ -96,45 +94,119 @@
             
           if ( ! isStorePage ) return; // bail if not store page
           
-          // initialize twc module
+          // globals
           
-          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          {
           
-          // initialize twc sppc sub-module
-          
-          twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-          
-          // initialize twc sppc callbacks sub-module
-          
-          twc.sppc.callbacks =
-          
-            ( ( self ) => self ) ( twc.sppc.callbacks || { } );
+            // initialize twc module
+            
+            window.twc = ( ( self ) => self ) ( window.twc || { } );
+            
+            // initialize twc sppc sub-module
+            
+            twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+            
+            // initialize twc sppc callbacks sub-module
+            
+            twc.sppc.callbacks =
+            
+              ( ( self ) => self ) ( twc.sppc.callbacks || { } );
+              
+            }
             
           const
           
             codeKey = 'twc-sppc',
             
-            selector = 'script[ type="application/vnd.' +
+            attribute = `data-${ codeKey }-mo`,
             
-              `${ codeKey.replace ( '-', '.' ) }" ]`,
-              
-            scriptElement = document
+            callback = ( mutations ) => {
             
-              .head
+              const callback = ( mutation ) => {
               
-              .querySelector ( selector );
+                const hasAttribute = mutation
+                
+                  .attributeName
+                  
+                  ===
+                  
+                  attribute;
+                  
+                let b = ! mutation
+                
+                  .addedNodes
+                  
+                  .length
+                  
+                  &&
+                  
+                  ! hasAttribute;
+                  
+                // continue if no element and no attribute
+                
+                if ( b ) return true;
+                
+                const target = mutation.target;
+                
+                // previous change was forced
+                
+                if ( hasAttribute ) {
+                
+                  b = target
+                  
+                    .getAttribute ( attribute )
+                    
+                    ===
+                    
+                    'true';
+                    
+                  if ( b )
+                  
+                    target
+                    
+                      .setAttribute ( attribute, 'false' );
+                      
+                    else if ( mutation.oldValue === 'true' )
+                    
+                      return true; // continue
+                      
+                  }
+                  
+                observer.disconnect ( );
+                
+                b
+                
+                  =
+                  
+                  changeText ( target )
+                  
+                  ===
+                  
+                  false;
+                  
+                if ( b ) return false; // bail
+                
+                pricesObserve ( );
+                
+                return true;
+                
+                };
+                
+              for ( const mutation of mutations ) {
               
-          if ( ! scriptElement ) return; // bail if no tag
-          
-          const
-          
-            attribute = 'data-twc-sppc-mo',
-            
+                const b = callback ( mutation );
+                
+                if ( ! b ) break; // bail if callback returns false
+                
+                }
+                
+              },
+              
             changeText = ( node ) => {
             
-              const walker =
+              const walker = document
               
-                document.createTreeWalker ( node, NodeFilter.SHOW_TEXT );
+                .createTreeWalker ( node, NodeFilter.SHOW_TEXT );
                 
               let b;
               
@@ -234,6 +306,18 @@
                 
               },
               
+            config = {
+            
+              attributeFilter : [ attribute ],
+              
+              attributeOldValue : true,
+              
+              childList : true,
+              
+              subtree : true
+              
+              },
+              
             isDetail = ( ( ) => {
             
               const selector = 'body[ id^="item-" ]';
@@ -276,62 +360,42 @@
               
               null,
               
+            observer = new MutationObserver ( callback ),
+            
             options = codeKey
             
               .split ( '-' )
               
               .reduce ( ( obj, key ) => obj?.[ key ], window );
               
-          Object
+          let productPriceElements
           
-            .assign (
+            =
             
-              options,
+            [
+            
+              ...
               
-              JSON
+              document
               
-                .parse (
+                .body
                 
-                  scriptElement
+                .querySelectorAll (
+                
+                  [
                   
-                    .textContent
+                    '.product-list-item-price', // 7.1
                     
-                    .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                    '.product-price' // 7.1, 7.0
                     
-                    .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                    ]
                     
-                    .replace ( /,\s*}\s*/, '}' ) // remove last item comma
-                    
-                    .replaceAll ( '\n', '' )
+                    .join ( ', ' )
                     
                   )
                   
-              );
+              ];
               
-          let productPriceElements = [
-          
-            ...
-            
-            document
-            
-              .body
-              
-              .querySelectorAll (
-              
-                [
-                
-                  '.product-list-item-price', // 7.1
-                  
-                  '.product-price' // 7.0
-                  
-                  ]
-                  
-                  .join ( ', ' )
-                  
-                )
-                
-            ];
-            
           productPriceElements
           
             .forEach ( e => e.setAttribute ( attribute, 'false' ) );
@@ -340,10 +404,6 @@
           
             .forEach ( e => changeText ( e ) );
             
-          // bail if list and no atc
-          
-          if ( isList && ! isListAddToCartButtons ) return;
-          
           switch ( true ) {
           
             case isDetail :
@@ -361,7 +421,7 @@
                       !
                       
                       [ null, undefined ]
-                    
+                      
                       .contains (
                       
                         e
@@ -370,25 +430,21 @@
                           
                             [
                             
-                              // 7.1
+                              '.product-content-wrapper', // 7.1
                               
-                              '.ProductItem-details-checkout',
+                              // begin 7.0
                               
-                              '.pdp-details',
-                              
-                              // 7.0
-                              
-                              '.ProductItem-details', // Brine
-                              
-                              '#productDetails', // Five, Montauk
-                              
+                                '.ProductItem-details', // Brine
+                                
+                                '#productDetails', // Five, Montauk
+                                
+                                // end 7.0
+                                
                               ]
                               
                               .join ( ', ' )
                               
                             )
-                            
-                            ?.querySelector ( '.product-variants' )
                             
                         )
                         
@@ -398,6 +454,8 @@
               
             case isList :
             
+              if ( ! isListAddToCartButtons ) return; // bail if no atc
+              
               productPriceElements
               
                 =
@@ -412,156 +470,40 @@
                       
                         e
                         
-                          .closest (
-                          
-                            [
-                            
-                              '.product-list-item-link', // 7.1
-                              
-                              '.grid-item-link' // 7.0
-                              
-                              ]
-                              
-                            )
-                            
-                          ?.nextElementSibling
+                          .closest ( '.product-list-item' )
                           
                           .querySelector ( '.product-variants' )
                           
                         )
                         
-                  );
-                  
+                    );
+                    
               break;
               
             }
             
           const pricesObserve = ( ) => {
           
-            let
+            const isAfterPay
             
-              callback = ( mutations ) => {
+              =
               
-                const callback = ( mutation ) => {
-                
-                  const hasAttribute = mutation
-                  
-                    .attributeName
-                    
-                    ===
-                    
-                    attribute;
-                    
-                  let b = ! mutation
-                  
-                    .addedNodes
-                    
-                    .length
-                    
-                    &&
-                    
-                    ! hasAttribute;
-                    
-                  // continue if no element and no attribute
-                  
-                  if ( b ) return true;
-                  
-                  const target = mutation.target;
-                  
-                  // previous change was forced
-                  
-                  if ( hasAttribute ) {
-                  
-                    b = target
-                    
-                      .getAttribute ( attribute )
-                      
-                      ===
-                      
-                      'true';
-                      
-                    if ( b )
-                    
-                      target
-                      
-                        .setAttribute ( attribute, 'false' );
-                        
-                      else if ( mutation.oldValue === 'true' )
-                      
-                        return true; // continue
-                        
-                    }
-                    
-                  observer.disconnect ( );
-                  
-                  b
-                  
-                    =
-                    
-                    changeText ( target )
-                    
-                    ===
-                    
-                    false;
-                    
-                  if ( b ) return false; // bail
-                  
-                  pricesObserve ( );
-                  
-                  return true;
-                  
-                  };
-                  
-                for ( const mutation of mutations ) {
-                
-                  const b = callback ( mutation );
-                  
-                  if ( ! b ) break; // bail if callback returns false
-                  
-                  }
-                  
-                },
-                
-              config = {
+              isDetail
               
-                attributeFilter : [ attribute ],
+              &&
+              
+              options
+              
+                .afterpay;
                 
-                attributeOldValue : true,
-                
-                childList : true
-                
-                };
-                
-            const
+            // start listening for changes in element
             
-              isAfterPay = isDetail && options.afterpay,
-              
-              observer = new MutationObserver ( callback );
-              
-            if ( is70 ) {
+            productPriceElements
             
-              // start listening for changes in element
-              
-              productPriceElements
-              
-                .forEach ( e => observer.observe ( e, config ) );
-                
-              }
+              .forEach ( e => observer.observe ( e, config ) );
               
             if ( ! isAfterPay ) return; // bail if not afterpay
             
-            config = {
-            
-              attributeFilter : [ attribute ],
-              
-              attributeOldValue : true,
-              
-              childList : true,
-              
-              subtree : true
-              
-              };
-              
             // start listening for changes in element
             
             document
@@ -588,8 +530,8 @@
             
           pricesObserve ( );
           
-        },
-        
+          },
+          
         ssVersion = Static
         
           .SQUARESPACE_CONTEXT
