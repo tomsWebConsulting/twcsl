@@ -9,11 +9,15 @@ v7.0 templates.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -66,6 +70,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-08-01**
+
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.2.1
+  
 * **2025-06-06**
 
   * removed twcsl dependency

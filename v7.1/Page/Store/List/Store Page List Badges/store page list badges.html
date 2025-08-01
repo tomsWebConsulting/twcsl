@@ -6,9 +6,12 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.2.1
     
     SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
     
     Fluid
     Engine
@@ -32,7 +35,7 @@
     
   <style>
   
-    .products.collection-content-wrapper .list-grid {
+    .product-list .product-list-container {
     
       --twc-splb-background-color : black;
       --twc-splb-color : white;
@@ -76,8 +79,8 @@
   
   <style>
   
-    .products.collection-content-wrapper .product-mark.sale,
-    .products.collection-content-wrapper .product-mark.sold-out
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status .product-mark.sale,
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status .product-mark.sold-out
     
       {
       
@@ -85,7 +88,7 @@
         
         }
         
-    .products.collection-content-wrapper .list-grid {
+    .product-list .product-list-container {
     
       --twc-splb-border-radius : unset;
       --twc-splb-bottom : unset;
@@ -141,8 +144,8 @@
     
       const
       
-        version = '0.2.0',
-      
+        version = '0.2.1',
+        
         s = `
         
           Store Page List Badges v${ version }
@@ -267,9 +270,9 @@
               
                 const s = `
                 
-                  ${ codeKey } there has been a problem with your fetch get operation,
+                  ${ codeKey } there has been a problem with your fetch get
                   
-                  ${ error }.
+                  operation, ${ error }.
                   
                   `
                   
@@ -453,7 +456,7 @@
                 
                 element
                   
-                  .querySelector ( '.grid-image' )
+                  .querySelector ( '.product-list-image-wrapper' )
                   
                     .append ( ulElement );
                     
@@ -463,7 +466,7 @@
                 
                 const
                 
-                  selector = '.products.collection-content-wrapper .grid-item',
+                  selector = '.product-list .product-list-item',
                   
                   gridItemElement = element
                   
@@ -493,7 +496,7 @@
               
               .map ( t => t.replace ( re, '' ) );
               
-            let selector = '.products.collection-content-wrapper .list-grid';
+            let selector = '.product-list .product-list-container';
             
             const
             
@@ -792,13 +795,9 @@
               
             selector = [
             
-              '.products.collection-content-wrapper .product-mark',
+              '.product-list .product-list-item .product-mark',
               
-              '.products.collection-content-wrapper '
-              
-                +
-                
-                '.grid-item[ class*="tag-twc-splb-" ]'
+              '.product-list .product-list-item[ class*="tag-twc-splb-" ]'
                 
               ]
               
