@@ -8,7 +8,7 @@ Remove decimal for prices greater than equal to n on Store page.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -55,14 +55,14 @@ Remove decimal for prices greater than equal to n on Store page.
   that codes instructions.
   
   ```
-      /*
-      
-        store product price remove decimal for prices greater than or equal
-        to n
-        
-        */
-        
-      "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "twcSpprdfpgtoetn",
+          /*
+          
+            store product price remove decimal for prices greater than or equal
+            to n
+            
+            */
+            
+          "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "twcSpprdfpgtoetn",
     ```
 
 ## Make a Donation
@@ -71,6 +71,12 @@ Please consider [making a donation][7].
 
 ## Changes
 
+* **2025-08-01**
+
+  * checked v7.1 Products V2 compatibility
+  * moved options out of main code
+  * bumped version to 0.3.0
+  
 * **2024-10-05**
 
   * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
