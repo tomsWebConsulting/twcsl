@@ -8,7 +8,7 @@ Total price times quantity on Store detail page.
 
 ### Version
 
-  * 0.3.1
+  * 0.4.0
 
 #### SS Version
 
@@ -84,13 +84,13 @@ Please consider [making a donation][10].
 
   * updated to work with v7.1 Products V2
   * removed jQuery dependency
-  * bumped version to 0.3.0
+  * bumped version to 0.4.0
   
 * **2024-10-05**
 
   * rework code to use JavaScript Module Patterns for twc, twc.sppc, and
     twc.sppc.callbacks
-  * bumped version to 0.3.1
+  * bumped version to 0.3.0
   
 * **2022-01-31**
 
