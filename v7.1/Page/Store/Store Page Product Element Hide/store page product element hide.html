@@ -1,23 +1,30 @@
-<style>
+<!-- begin TWC Store Page Product Element Hide -->
 
-  /*
+  <style>
   
-    begin store page product element hide
+    /*
     
-    License     : < https://tinyurl.com/s872fb68 >
-    
-    Version     : 0.4.0
-    
-    SS Version  : 7.1
-    
-    Fluid
-    Engine
-    Compatible  : Yes
-    
-    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
+      store page product element hide
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.4.1
+      
+      SS Version    : 7.1
+      
+      Products V2
+      Compatible    : Yes
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
     /*
     
       to negate the effect for a particular element add a forward slash asterisk
@@ -28,88 +35,54 @@
       
     /* begin list */
     
-      /* price */
-      
-      .products.collection-content-wrapper .list-grid .grid-main-meta .grid-prices,
-      
       /* add to cart */
       
-      .tweak-products-add-to-cart-button.plp-add-to-cart .products.collection-content-wrapper .plp-grid-add-to-cart,
+      .product-list .product-list-item .sqs-add-to-cart-button-wrapper,
       
-      /* mark */
+      /* price */
       
-      .products.collection-content-wrapper .list-grid .product-mark,
+      .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price,
+      
+      /* status */
+      
+      .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status,
       
       /* end list */
       
     /* begin detail */
     
-      /* begin full, half, simple, and wrap layout */
+      /* add to cart */
       
-        /* mark */
-        
-        .product-details .product-mark,
-        
-        /* full, half, and wrap layout */
-        
-        /* excerpt */
-        
-        .pdp-layout .pdp-details .pdp-details-excerpt,
-        
-        /* price */
-        
-        .pdp-layout .pdp-details .pdp-details-price,
-        
-        /* title */
-        
-        .pdp-layout .pdp-details .pdp-details-title,
-        
-        /* quantity */
-        
-        .pdp-layout .pdp-details .product-quantity-input,
-        
-        /* variants */
-        
-        .pdp-layout .pdp-details .product-variants,
-        
-        /* add to cart */
-        
-        .pdp-layout .pdp-details .sqs-add-to-cart-button-wrapper,
-        
-        /* end full, half, simple, and wrap layout */
-        
-      /* begin simple layout */
+      .product-detail .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
       
-        /* quantity */
-        
-        .ProductItem .ProductItem-details .product-quantity-input,
-        
-        /* variants */
-        
-        .ProductItem .ProductItem-details .product-variants,
-        
-        /* excerpt */
-        
-        .ProductItem .ProductItem-details .ProductItem-details-excerpt,
-        
-        /* price */
-        
-        .ProductItem .ProductItem-details .ProductItem-product-price,
-        
-        /* reviews */
-        
-        .ProductItem .ProductItem-details .reviewSummary,
-        
-        /* add to cart */
-        
-        .ProductItem .ProductItem-details .sqs-add-to-cart-button-wrapper,
-        
-        /* title */
-        
-        .ProductItem .ProductItem-details h1.ProductItem-details-title,
-        
-        /* end simple layout */
-        
+      /* description */
+      
+      .product-detail .product-meta .product-description,
+      
+      /* price */
+      
+      .product-detail .product-meta .product-price,
+      
+      /* quantity */
+      
+      .product-detail .product-meta .product-add-to-cart .product-quantity-input-wrapper,
+      
+      /* review summary */
+      
+      .product-detail .product-meta .product-review-summary
+      
+      /* status */
+      
+      .product-detail .product-meta .product-status,
+      
+      /* title */
+      
+      .product-detail .product-meta .product-title,
+      
+      /* variants */
+      
+      .product-detail .product-meta .product-variants,
+      
       /* end detail */
       
     x-twc-selector /* dummy selector so that each selector line above can end
@@ -120,6 +93,6 @@
         
         }
         
-    /* end store page product element hide */
+    </style>
     
-  </style>
+  <!-- end TWC Store Page Product Element Hide -->
