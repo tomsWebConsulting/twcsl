@@ -8,7 +8,7 @@ Hide elements of store products that are tagged.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -58,19 +58,11 @@ The following tags are available for your use.
   
   * twc-detail-atc-hide
   
-* Excerpt
+* Description
 
-  * twc-excerpt-hide
+  * twc-description-hide
   
-  * twc-detail-excerpt-hide
-  
-* Mark
-
-  * twc-mark-hide
-  
-  * twc-list-mark-hide
-  
-  * twc-detail-mark-hide
+  * twc-detail-description-hide
   
 * Price
 
@@ -86,11 +78,19 @@ The following tags are available for your use.
   
   * twc-detail-quantity-hide
   
-* Reviews
+* Review Summary
 
-  * twc-reviews-hide
+  * twc-review-summary-hide
   
-  * twc-detail-reviews-hide
+  * twc-detail-review-summary-hide
+  
+* Status
+
+  * twc-status-hide
+  
+  * twc-list-status-hide
+  
+  * twc-detail-status-hide
   
 * Title
 
@@ -110,12 +110,11 @@ Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2022-06-14**
+* **2025-08-02**
 
-  * add selectors for full, half, and wrap layouts
-  * add selector for product mark
-  * bumped version to 0.2.0
-  -->
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.1.1
+  
 * **2024-07-10**
 
   * initial version

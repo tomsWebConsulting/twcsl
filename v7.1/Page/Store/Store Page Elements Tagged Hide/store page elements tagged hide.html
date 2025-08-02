@@ -1,135 +1,98 @@
-<style>
+<!-- begin TWC Store Page Elements Tagged Hide -->
 
-  /*
+  <style>
   
-    begin store page elements tagged hide
-    
-    License     : < https://tinyurl.com/s872fb68 >
-    
-    Version     : 0.1.0
-    
-    SS Version  : 7.1
-    
-    Fluid
-    Engine
-    Compatible  : Yes
-    
-    By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
     /*
     
-      to negate the effect for a particular element add a forward slash asterisk
-      space to the beginning of a line and a space asterisk forward slash to the
-      end
+      store page elements tagged hide
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.1
+      
+      SS Version    : 7.1
+      
+      Products V2
+      Compatible    : Yes
+      
+      Fluid
+      Engine
+      Compatible    : Yes
+      
+      Copyright     : 2024-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
       */
       
     /* begin list */
     
-      /* price */
-      
-      .products.collection-content-wrapper .list-grid .tag-twc-list-price-hide .grid-main-meta .grid-prices,
-      .products.collection-content-wrapper .list-grid .tag-twc-price-hide .grid-main-meta .grid-prices,
-      
       /* add to cart */
       
-      .tweak-products-add-to-cart-button.plp-add-to-cart .products.collection-content-wrapper .tag-twc-atc-hide .plp-grid-add-to-cart,
-      .tweak-products-add-to-cart-button.plp-add-to-cart .products.collection-content-wrapper .tag-twc-list-atc-hide .plp-grid-add-to-cart,
+      .product-list .product-list-item.tag-twc-atc-hide .sqs-add-to-cart-button-wrapper,
+      .product-list .product-list-item.tag-twc-list-atc-hide .sqs-add-to-cart-button-wrapper,
       
-      /* mark */
+      /* price */
       
-      .products.collection-content-wrapper .list-grid .tag-twc-list-mark-hide .product-mark,
-      .products.collection-content-wrapper .list-grid .tag-twc-mark-hide .product-mark,
+      .product-list .product-list-item.tag-twc-price-hide .product-list-item-link .product-list-item-meta .product-list-item-price,
+      .product-list .product-list-item.tag-twc-list-price-hide .product-list-item-link .product-list-item-meta .product-list-item-price,
+      
+      /* status */
+      
+      .product-list .product-list-item.tag-twc-status-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+      .product-list .product-list-item.tag-twc-list-status-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+      .product-list .product-list-item.tag-twc-mark-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+      .product-list .product-list-item.tag-twc-list-mark-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
       
       /* end list */
       
     /* begin detail */
     
-      /* begin full, half, simple, and wrap layout */
+      /* add to cart */
+
+      .product-detail.tag-twc-atc-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
+      .product-detail.tag-twc-detail-atc-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
       
-        /* mark */
-        
-        .tag-twc-detail-mark-hide .product-details .product-mark,
-        .tag-twc-mark-hide .product-details .product-mark,
-        
-        /* begin full, half, and wrap layout */
-        
-          /* excerpt */
+      /* description */
+
+      .product-detail.tag-twc-description-hide .product-meta .product-description,
+      .product-detail.tag-twc-detail-description-hide .product-meta .product-description,
+      .product-detail.tag-twc-excerpt-hide .product-meta .product-description,
+      .product-detail.tag-twc-detail-excerpt-hide .product-meta .product-description,
           
-          .pdp-layout.tag-twc-detail-excerpt-hide .pdp-details .pdp-details-excerpt,
-          .pdp-layout.tag-twc-excerpt-hide .pdp-details .pdp-details-excerpt,
-          
-          /* price */
-          
-          .pdp-layout.tag-twc-detail-price-hide .pdp-details .pdp-details-price,
-          .pdp-layout.tag-twc-price-hide .pdp-details .pdp-details-price,
-          
-          /* title */
-          
-          .pdp-layout.tag-twc-detail-title-hide .pdp-details .pdp-details-title,
-          .pdp-layout.tag-twc-title-hide .pdp-details .pdp-details-title,
-          
-          /* quantity */
-          
-          .pdp-layout.tag-twc-detail-quantity-hide .pdp-details .product-quantity-input,
-          .pdp-layout.tag-twc-quantity-hide .pdp-details .product-quantity-input,
-          
-          /* variants */
-          
-          .pdp-layout.tag-twc-detail-variants-hide .pdp-details .product-variants,
-          .pdp-layout.tag-twc-variants-hide .pdp-details .product-variants,
-          
-          /* add to cart */
-          
-          .pdp-layout.tag-twc-detail-atc-hide .pdp-details .sqs-add-to-cart-button-wrapper,
-          .pdp-layout.tag-twc-atc-hide .pdp-details .sqs-add-to-cart-button-wrapper,
-          
-          /* end full, half, and wrap layout */
-          
-        /* end full, half, simple, and wrap layout */
-        
-      /* begin simple layout */
+      /* price */
       
-        /* quantity */
-        
-        .ProductItem.tag-twc-detail-quantity-hide .ProductItem-details .product-quantity-input,
-        .ProductItem.tag-twc-quantity-hide .ProductItem-details .product-quantity-input,
-        
-        /* variants */
-        
-        .ProductItem.tag-twc-detail-variants-hide .ProductItem-details .product-variants,
-        .ProductItem.tag-twc-variants-hide .ProductItem-details .product-variants,
-        
-        /* excerpt */
-        
-        .ProductItem.tag-twc-detail-excerpt-hide .ProductItem-details .ProductItem-details-excerpt,
-        .ProductItem.tag-twc-excerpt-hide .ProductItem-details .ProductItem-details-excerpt,
-        
-        /* price */
-        
-        .ProductItem.tag-twc-detail-price-hide .ProductItem-details .ProductItem-product-price,
-        .ProductItem.tag-twc-price-hide .ProductItem-details .ProductItem-product-price,
-        
-        /* reviews */
-        
-        .ProductItem.tag-twc-detail-reviews-hide .ProductItem-details .reviewSummary,
-        .ProductItem.tag-twc-reviews-hide .ProductItem-details .reviewSummary,
-        
-        /* add to cart */
-        
-        .ProductItem.tag-twc-detail-atc-hide .ProductItem-details .sqs-add-to-cart-button-wrapper,
-        .ProductItem.tag-twc-atc-hide .ProductItem-details .sqs-add-to-cart-button-wrapper,
-        
-        /* title */
-        
-        .ProductItem.tag-twc-detail-title-hide .ProductItem-details h1.ProductItem-details-title,
-        .ProductItem.tag-twc-title-hide .ProductItem-details h1.ProductItem-details-title,
-        
-        /* end simple layout */
-        
-      /* end detail */
+      .product-detail.tag-twc-price-hide .product-meta .product-price,
+      .product-detail.tag-twc-detail-price-hide .product-meta .product-price,
+      
+      /* quantity */
+      
+      .product-detail.tag-twc-quantity-hide .product-meta .product-add-to-cart .product-quantity-input-wrapper,
+      .product-detail.tag-twc-detail-quantity-hide .product-meta .product-add-to-cart .product-quantity-input-wrapper,
+      
+      /* review summary */
+      
+      .product-detail.tag-twc-review-summary-hide .product-meta .product-review-summary
+      .product-detail.tag-twc-detail-review-summary-hide .product-meta .product-review-summary
+      .product-detail.tag-twc-reviews-hide .product-meta .product-review-summary
+      .product-detail.tag-twc-detail-reviews-hide .product-meta .product-review-summary
+      
+      /* status */
+      
+      .product-detail.tag-twc-status-hide .product-meta .product-status,
+      .product-detail.tag-twc-detail-status-hide .product-meta .product-status,
+      .product-detail.tag-twc-mark-hide .product-meta .product-status,
+      .product-detail.tag-twc-detail-mark-hide .product-meta .product-status,
+      
+      /* title */
+      
+      .product-detail.tag-twc-title-hide .product-meta .product-title,
+      .product-detail.tag-twc-detail-title-hide .product-meta .product-title,
+      
+      /* variants */
+      
+      .product-detail.tag-twc-variants-hide .product-meta .product-variants,
+      .product-detail.tag-twc-detail-variants-hide .product-meta .product-variants,
       
     x-twc-selector /* dummy selector so that each selector line above can end
                       with a comma */
@@ -139,6 +102,6 @@
         
         }
         
-    /* end store page product element hide */
+    </style>
     
-  </style>
+  <!-- end TWC Store Page Elements Tagged Hide -->
