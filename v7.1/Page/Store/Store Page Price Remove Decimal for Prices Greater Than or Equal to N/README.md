@@ -14,6 +14,10 @@ Remove decimal for prices greater than equal to n on Store page.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+
 #### Fluid Engine Compatible
 
   * Not Applicable
