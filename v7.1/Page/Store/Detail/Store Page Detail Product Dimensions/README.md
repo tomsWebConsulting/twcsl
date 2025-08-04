@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Version
 
@@ -66,7 +66,7 @@ shipping then add the following to a code block in Additional Info.
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.5.0
+      Version       : 0.5.1
       
       SS Version    : 7.1
       
@@ -78,7 +78,7 @@ shipping then add the following to a code block in Additional Info.
       
     // initialize twc module
     
-    window.twc = ( ( self ) => self ) ( window.twc || [ ] );
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
     
     // initialize twc spdpd sub-module
     
@@ -129,6 +129,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-08-03**
+
+  * fixed issue with twc.spdpd dimensions and format not merging
+  * bumped version to 0.5.1
+  
 * **2025-07-31**
 
   * broke options out into its own file
