@@ -1,538 +1,802 @@
-<!--
+<!-- begin TWC Store Page Tag Rating -->
 
-  begin store page tag rating
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.3.1
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : twcsl
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-                  
-                  this is not an site visitor rating system
-                  
-                  the code makes a call to the json version of the store page to
-                  grab the tags as entered in the UI
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <style>
-  
-    .twc-sptr {
+    store page tag rating
     
-      --twc-sptr-list-margin-top        : 8px;
-      --twc-sptr-detail-margin-bottom   : 25px;
-      --twc-sptr-scale-display          : none; /* values are none or unset */
-      --twc-sptr-symbols-false-display  : none; /* values are none or unset */
-      
-      }
-      
-    </style>
+    License       : < https://tinyurl.com/s872fb68 >
     
-  <script>
-  
-    // initialize twc global if needed
+    Version       : 0.4.0
     
-    if ( window.twc == undefined ) window.twc = { };
+    SS Version    : 7.1
     
-    twc.sptr = {
+    Products V2
+    Compatible    : Yes
     
-      trueSymbol : '★',
-      
-      falseSymbol : '☆'
-      
-      };
-      
-    </script>
+    Fluid
+    Engine
+    Compatible    : Not Applicable
     
-  <!-- do not change anything below, there be the borg here -->
-  
-  <style>
-  
-    .products.collection-content-wrapper .grid-main-meta .twc-sptr {
+    Notes         : the code is comprised of several tags. all are needed for
+                    the full effect to work
+                    
+                    this is not an site visitor rating system
+                    
+                    the code makes a call to the json version of the store page
+                    to grab the tags as entered in the UI
     
-      margin-top : var( --twc-sptr-list-margin-top );
-      
-      }
-      
-    .ProductItem-details .twc-sptr, /* simple layout */
-    .pdp-layout .pdp-details .twc-sptr /* full, half, and wrap layouts */
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
-      {
+    no user serviceable parts below
+    
+    -->
+    
+    <style>
+    
+      .product-list .product-list-item .product-list-item-link .product-list-item-meta .twc-sptr {
       
-        margin-bottom : var( --twc-sptr-detail-margin-bottom );
+        margin-top : var( --twc-sptr-list-margin-top );
+        
+        }
+        
+      .product-detail .product-meta .twc-sptr {
+      
         margin-right : auto;
         
         }
         
-    .ProductItem-details .twc-sptr {
-    
-      order : 4;
+      .product-detail .product-meta .twc-sptr {
       
-      }
-      
-    .pdp-layout-full-bleed .twc-sptr,
-    .pdp-layout-full-width-carousel .twc-sptr,
-    .pdp-layout-wrap-around .twc-sptr
-    
-      {
-      
-        margin-top : 2rem;
+        order : 4;
         
         }
         
-    .twc-sptr .label {
-    
-      padding-left : 0.5em;
+      .twc-sptr .rating {
       
-      }
-      
-    .twc-sptr .overlay {
-    
-      bottom : 0;
-      left : 0;
-      position : absolute;
-      right : 0;
-      top : 0;
-      
-      }
-      
-    .twc-sptr .points {
-    
-      text-align : right;
-      
-      }
-      
-    .twc-sptr .point:not( .scale ),
-    .twc-sptr .words
-    
-      {
-      
-        font-weight : bold;
+        vertical-align : top;
         
         }
         
-    .twc-sptr .point.scale {
-    
-      display : var( --twc-sptr-scale-display );
+      .twc-sptr .label {
       
-      }
+        padding-left : 0.5em;
+        
+        }
+        
+      .twc-sptr .overlay {
       
-    .twc-sptr .point.scale::before {
-    
-      content : '/';
-      font-weight : normal;
+        bottom : 0;
+        left : 0;
+        position : absolute;
+        right : 0;
+        top : 0;
+        
+        }
+        
+      .twc-sptr .points {
       
-      }
+        text-align : right;
+        
+        }
+        
+      .twc-sptr .point:not( .scale ),
+      .twc-sptr .words
       
-    .twc-sptr .symbol {
-
-      display : inline-block;
-      position : relative;
+        {
+        
+          font-weight : bold;
+          
+          }
+          
+      .twc-sptr .point.scale {
       
-      }
+        display : var( --twc-sptr-scale-display );
+        
+        }
+        
+      .twc-sptr .point.scale::before {
       
-    .twc-sptr .symbol.false {
-
-      display : var( --twc-sptr-symbols-false-display );
-      
-      }
-      
-    .twc-sptr .symbols {
-    
-      text-align : right;
-      white-space : nowrap;
-      
-      }
-      
-    </style>
-    
-  <script>
+        content : '/';
+        font-weight : normal;
+        
+        }
+        
+      .twc-sptr .symbol {
   
-    $( ( ) => {
+        display : inline-block;
+        position : relative;
+        
+        }
+        
+      .twc-sptr .symbol.false {
+  
+        display : var( --twc-sptr-symbols-false-display );
+        
+        }
+        
+      .twc-sptr .symbols {
+      
+        text-align : right;
+        white-space : nowrap;
+        
+        }
+        
+      </style>
+      
+    <script>
     
-      const codeKey = 'twc-sptr';
+      ( ( ) => {
       
-      const version = '0.3.1';
-      
-      const s = `Store Page Tag Rating v${ version }, ` +
+        const callback = async ( ) => {
         
-        'License < https://tinyurl.com/s872fb68 >, ' +
-        
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
-      console.log ( s );
-      
-      if ( ! twcsl.page.store.is ) return; // bail if not store
-      
-      const url = `${ twcsl.page.store.urlSlug }?format=json`;
-      
-      $.getJSON ( url, function ( data ) {
-      
-        const options = twc.sptr;
-        
-        const ratingSymbolFalse = options
-        
-          .falseSymbol;
+          const
           
-        const ratingSymbolTrue = options
-        
-          .trueSymbol;
+            version = '0.4.0',
           
-        const tags = data
-        
-          .collection
-          
-          .tags
-          
-          .filter ( t => t.startsWith ( `${ codeKey } ` ) )
-          
-          .sort ( );
-          
-        $.each ( tags, function ( i, tag ) { // run through the tags
-        
-          const re = new RegExp ( `${ codeKey } (.+) ([spw]) (.+)` );
-          
-          const data = tag
-          
-            .match ( re );
+            s = `
             
-          // continue if tag doesn't match format
+              Store Page Tag Rating v${ version }
+              
+              License < https://tinyurl.com/s872fb68 >
+              
+              © 2023-2025 Thomas Creedon
+              
+              Tom's Web Consulting < http://www.tomsWeb.consulting >
+              
+              `
+              
+              .replace ( /^\s+/gm, '' );
+              
+          console.log ( s );
           
-          if ( data == null ) return true;
+          const isStorePage = Static
           
-          const label = data [ 1 ];
+            .SQUARESPACE_CONTEXT
+            
+            .collection
+            
+            .type
+            
+            ===
+            
+            13;
+            
+          if ( ! isStorePage ) return; // bail if not store page
           
-          const rating = data [ 3 ];
+          // globals
           
-          const type = data [ 2 ];
+          {
           
-          const isPointsScale = [ 
-          
-            'p',
+            // initialize twc module
             
-            's'
+            window.twc = ( ( self ) => self ) ( window.twc || { } );
             
-            ]
+            // initialize twc sptr sub-module
             
-            .includes ( type );
-            
-          let points;
-          
-          let scale;
-          
-          tag = tag.toLowerCase ( )
-            
-            .replaceAll ( ' ', '-' )
-            
-            .replace ( /[^\w-]+/g, '' )
-            
-            .replaceAll ( '--', '-' );
-            
-          const suffix = `.tag-${ tag }`;
-          
-          const selector = [
-          
-            '.products.collection-content-wrapper .grid-item',
-            
-            '.ProductItem', // simple layout
-            
-            '.pdp-layout' // full, half, and wrap layouts
-            
-            ]
-            
-            .join ( `${ suffix }, ` )
-            
-            +
-            
-            suffix;
-            
-          if ( isPointsScale ) { // points and scale
-          
-            points = rating.split ( '/' );
-            
-            scale = Number ( points [ 1 ] );
-            
-            points = Number ( points [ 0 ] );
+            twc.sptr = ( ( self ) => self ) ( twc.sptr || { } );
             
             }
             
-          // begin run through elements that match tag
+          const
           
-            function callback ( ) {
+            callback = ( tag ) => {
             
-              let html = `
+              const
               
-                <tr class="rating">
+                re
                 
-                  <td class="points symbols words">
+                  =
                   
-                    </td>
+                  new RegExp ( `${ codeKey } (.+) ([spw]) (.+)` ),
+                  
+                data = tag
+                
+                  .match ( re );
+                  
+              if ( ! data ) return true; // continue if tag doesn't match format
+              
+              tag = tag
+              
+                .toLowerCase ( )
+                
+                .replaceAll ( ' ', '-' )
+                
+                .replace ( /[^\w-]+/g, '' )
+                
+                .replaceAll ( '--', '-' );
+                
+              const
+              
+                callback = ( element ) => {
+                
+                  const
+                  
+                    classList = element
                     
-                  <td class="label">
-                  
-                    </td>
-                    
-                  </tr>
-                  
-                `;
-                
-              const $rating = $( html );
-              
-              let $this = $( this );
-              
-              const isDetailClass = $this
-              
-                .hasClass ( 'ProductItem' ) // simple layout
-                
-                ||
-                
-                $this
-                
-                  .hasClass ( 'pdp-layout' ); // full, half, and wrap layouts
-                  
-              const isGridItem = $this
-              
-                .hasClass ( 'grid-item' );
-                
-              let selector;
-              
-              switch ( true ) {
-              
-                case isDetailClass :
-                
-                  selector = [
-                  
-                    // simple layout
-                    
-                    '.ProductItem-details .ProductItem-details-checkout',
-                    
-                     // full
-                    
-                    '.pdp-layout-full-width-carousel .pdp-details .pdp-selection',
-                    
-                    '.pdp-details' // half, wrap
-                    
-                    ]
-                    
-                  .join ( ', ' );
-                  
-                  break;
-                  
-                case isGridItem :
-                
-                  selector = '.grid-main-meta';
-                  
-                  break;
-                  
-                }
-                
-              let $sptr = $( selector, $this );
-              
-              selector = `.${ codeKey }`;
-              
-              $sptr = $( selector, $sptr );
-              
-              if ( ! $sptr.length ) {
-              
-                const html = `
-                
-                  <table class="twc-sptr">
-                  
-                    <tbody>
-                    
-                      </tbody>
+                      .classList,
                       
-                    </table>
+                    isDetailClass = classList
                     
-                  `;
-                  
-                $sptr = $sptr
-                
-                  .prevObject
-                  
-                  .append ( html )
-                  
-                  .find ( `.${ codeKey }` );
-                  
-                }
-                
-              selector = '.label';
-              
-              $( selector, $rating )
-              
-                .text ( label );
-                
-              switch ( true ) {
-              
-                case type == 'p' :
-                
-                  html = `
-                  
-                    <span class="point">
-                    
-                      ${ points }
+                      .contains ( 'product-detail' ),
                       
-                      </span>
+                    isListItem = classList
+                    
+                      .contains ( 'product-list-item' );
                       
-                    <span class="point scale">
+                  let
+                  
+                    html,
                     
-                      ${ scale }
+                    ratingElement = document
+                    
+                      .createElement ( 'template' ),
                       
-                      </span>
+                    selector;
+                    
+                  // rating element
+                  
+                  {
+                  
+                    ratingElement
+                    
+                      .innerHTML
                       
-                    `;
-                    
-                  selector = '.points';
-                  
-                  $( selector, $rating )
-                  
-                    .removeClass ( 'symbols words' )
-                    
-                    .append ( html );
-                    
-                  break;
-                  
-                case type == 's' :
-                
-                  let i;
-                  
-                  html = `
-                  
-                    <span class="false symbol true">
-                    
-                      <span class="overlay">
+                      =
                       
-                        </span>
+                      `
+                      
+                        <tr class="rating">
                         
-                      </span>
-                      
-                    `;
-                    
-                  selector = '.symbols';
-                  
-                  const $element = $( selector, $rating )
-                  
-                    .removeClass ( 'points words' );
-                    
-                  // begin true symbols
-                  
-                    for ( i = 0; i < points; i++ ) {
-                    
-                      const textNode = document
-                      
-                        .createTextNode ( ratingSymbolTrue );
-                        
-                      $( html )
-                      
-                        .removeClass ( 'false' )
-                        
-                        .prepend ( textNode )
-                        
-                        .appendTo ( $element );
-                        
-                      }
-                      
-                    selector = '.symbol';
-                    
-                    if ( i != points ) {
-                    
-                      const width = points % 1 * 100;
-                      
-                      const value = 'linear-gradient( to right, transparent ' +
-                      
-                        `${ width }%, var( --siteBackgroundColor ) ${ width }% )`;
-                        
-                      $( selector, $element )
-                      
-                        .last ( )
-                        
-                        .find ( '.overlay' )
-                        
-                          .css ( 'background', value );
+                          <td class="points symbols words">
                           
+                            </td>
+                            
+                          <td class="label">
+                          
+                            </td>
+                            
+                          </tr>
+                          
+                        `
+                        
+                        .trim ( );
+                        
+                    ratingElement = ratingElement
+                    
+                      .content
+                      
+                      .firstElementChild;
+                      
+                    }
+                    
+                  switch ( true ) {
+                  
+                    case isDetailClass : {
+                    
+                      const isLayoutFull = document
+                      
+                        .body
+                        
+                        .querySelector (
+                        
+                          '[ data-product-detail-layout="full" ]'
+                          
+                          );
+                          
+                      if ( ! isLayoutFull )
+                      
+                        selector = '.product-detail .product-meta';
+                        
+                        else
+                        
+                          selector
+                          
+                            =
+                            
+                            '.product-detail '
+                            
+                            +
+                            
+                            '[ data-product-detail-layout="full" ] '
+                            
+                            +
+                            
+                            '.product-meta-section:last-child';
+                            
+                      break;
+                      
                       }
                       
-                    // end true symbols
+                    case isListItem :
                     
-                  // false symbols
+                      selector = '.product-list-item-meta';
+                      
+                      break;
+                      
+                    }
+                    
+                  const wrapperElement = element
                   
-                    points = scale - i;
+                    .querySelector ( selector );
                     
-                    for ( let i = 0; i < points; i++ ) {
+                  let sptrElement = wrapperElement
+                  
+                    .querySelector ( `.${ codeKey }` );
                     
-                      const textNode = document
+                  if ( ! sptrElement ) {
+                  
+                    wrapperElement
+                    
+                      .insertAdjacentHTML (
                       
-                        .createTextNode ( ratingSymbolFalse );
+                        'beforeend',
                         
-                      $( html )
+                        `
+                        
+                          <table class="twc-sptr">
+                          
+                            <tbody>
+                            
+                              </tbody>
+                              
+                            </table>
+                            
+                          `
+                          
+                        );
+                        
+                    sptrElement = wrapperElement
+                    
+                      .querySelector ( `.${ codeKey }` );
                       
-                        .removeClass ( 'true' )
+                    }
+                    
+                  ratingElement
+                  
+                    .querySelector ( '.label' )
+                    
+                    .textContent
+                    
+                    =
+                    
+                    label;
+                    
+                  switch ( type ) {
+                  
+                    case 'p' : {
+                    
+                      const tdElement = ratingElement
+                      
+                        .querySelector ( '.points' );
                         
-                        .prepend ( textNode )
+                      tdElement
+                      
+                        .classList
                         
-                        .appendTo ( $element );
+                        .remove ( 'symbols', 'words' );
                         
+                      tdElement
+                      
+                        .insertAdjacentHTML (
+                        
+                          'beforeend',
+                          
+                          `
+                          
+                            <span class="point">
+                            
+                              ${ points }
+                              
+                              </span>
+                              
+                            <span class="point scale">
+                            
+                              ${ scale }
+                              
+                              </span>
+                              
+                            `
+                            
+                          );
+                          
+                      break;
+                      
                       }
                       
-                    // end false symbols
+                    case 's' : {
                     
-                  selector = '.overlay:not( [ style ] )';
-                  
-                  $( selector, $element )
-                  
-                    .remove ( );
+                      const tdElement = ratingElement
+                      
+                        .querySelector ( '.symbols' );
+                        
+                      let
+                      
+                        i,
+                        
+                        textNode;
+                        
+                      html = `
+                      
+                        <span class="false symbol true">
+                        
+                          <span class="overlay">
+                          
+                            </span>
+                            
+                          </span>
+                          
+                        `;
+                        
+                      tdElement
+                      
+                        .classList
+                        
+                        .remove ( 'points', 'words' );
+                        
+                      // true symbols
+                      
+                      {
+                      
+                        for ( i = 0; i < points; i++ ) {
+                        
+                          let spanElement = document
+                          
+                            .createElement ( 'template' );
+                            
+                          textNode = document
+                          
+                            .createTextNode (
+                            
+                              options
+                              
+                                .trueSymbol
+                                
+                              );
+                              
+                          // span element
+                          
+                          {
+                          
+                            spanElement
+                            
+                              .innerHTML
+                              
+                              =
+                              
+                              html;
+                              
+                            spanElement = spanElement
+                            
+                              .content
+                              
+                              .firstElementChild;
+                              
+                            spanElement
+                            
+                              .classList
+                              
+                              .remove ( 'false' );
+                              
+                            spanElement
+                            
+                              .prepend ( textNode );
+                              
+                            }
+                            
+                          tdElement
+                          
+                            .append ( spanElement );
+                            
+                          }
+                          
+                        if ( i !== points ) {
+                        
+                          const
+                          
+                            width = points % 1 * 100,
+                            
+                            value
+                            
+                              =
+                              
+                              'linear-gradient( to right, transparent '
+                              
+                              +
+                              
+                              `${ width }%, var( --siteBackgroundColor ) `
+                              
+                              +
+                              
+                              `${ width }% )`;
+                              
+                          [
+                          
+                            ...
+                            
+                            document
+                            
+                              .body
+                              
+                              .querySelectorAll ( '.symbol' )
+                              
+                            ]
+                            
+                            .slice ( -1 )
+                            
+                            [ 0 ]
+                          
+                            .querySelector ( '.overlay' )
+                            
+                            .style
+                            
+                            .setProperty ( 'background', value );
+                            
+                          }
+                          
+                        }
+                        
+                      // false symbols
+                      
+                      {
+                      
+                        points = scale - i;
+                        
+                        for ( let i = 0; i < points; i++ ) {
+                        
+                          let spanElement = document
+                          
+                            .createElement ( 'template' );
+                            
+                          textNode = document
+                          
+                            .createTextNode (
+                            
+                              options
+                              
+                                .falseSymbol
+                                
+                              );
+                              
+                          // span element
+                          
+                          {
+                          
+                            spanElement
+                            
+                              .innerHTML
+                              
+                              =
+                              
+                              html;
+                              
+                            spanElement = spanElement
+                            
+                              .content
+                              
+                              .firstElementChild;
+                              
+                            spanElement
+                            
+                              .classList
+                              
+                              .remove ( 'true' );
+                              
+                            spanElement
+                            
+                              .prepend ( textNode );
+                              
+                            }
+                            
+                          tdElement
+                          
+                            .append ( spanElement );
+                            
+                          }
+                          
+                        }
+                        
+                      selector = '.overlay:not( [ style ] )';
+                      
+                      tdElement
+                      
+                        .querySelector ( selector )
+                        
+                        .remove ( );
+                        
+                      break;
+                      
+                      }
+                      
+                    case 'w' : {
                     
-                  break;
+                      const tdElement = ratingElement
+                      
+                        .querySelector ( '.words' );
+                      
+                      tdElement
+                      
+                        .classList
+                      
+                        .remove ( 'points', 'symbols' );
+                        
+                      tdElement
+                      
+                        .insertAdjacentHTML (
+                        
+                          'beforeend',
+                          
+                          `
+                          
+                            <span>
+                            
+                              ${ rating }
+                              
+                              </span>
+                              
+                            `
+                            
+                          );
+                          
+                      break;
+                      
+                      }
+                      
+                    }
+                    
+                  sptrElement
                   
-                case type == 'w' :
+                    .querySelector ( 'tbody' )
+                    
+                    .append ( ratingElement );
+                    
+                  },
+                  
+                label = data [ 1 ],
                 
-                  html = `
+                rating = data [ 3 ],
+                
+                suffix = `.tag-${ tag }`,
+                
+                type = data [ 2 ],
+                
+                isPointsScale = [ 
+                
+                  'p',
                   
-                    <span>
-                    
-                      ${ rating }
-                      
-                      </span>
-                      
-                    `;
-                    
-                  selector = '.words';
+                  's'
                   
-                  $( selector, $rating )
+                  ]
                   
-                    .removeClass ( 'points symbols' )
-                    
-                    .append ( html );
-                    
-                  break;
+                  .includes ( type ),
                   
+                selector = [
+                
+                  '.product-list .product-list-item',
+                  
+                  '.product-detail'
+                  
+                  ]
+                  
+                  .join ( `${ suffix }, ` )
+                  
+                  +
+                  
+                  suffix;
+                  
+              let
+              
+                points,
+                
+                scale;
+                
+              if ( isPointsScale ) { // points and scale
+              
+                points = rating.split ( '/' );
+                
+                scale = Number ( points [ 1 ] );
+                
+                points = Number ( points [ 0 ] );
+                
                 }
                 
-              $sptr.append ( $rating );
+              document
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                .forEach ( callback );
+                
+              },
+              
+            codeKey = 'twc-sptr',
+            
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            url = Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .collection
+              
+              .fullUrl
+              
+              +
+              
+              '?format=json';
+              
+          try {
+          
+            const response = await fetch ( url );
+            
+            if ( ! response.ok ) {
+            
+              const s = `
+              
+                ${ codeKey } network response was not ok ${
+                
+                  response
+                  
+                    .statusText
+                    
+                    }
+                    
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
               
               }
               
-            $( selector ).each ( callback );
+            const obj = await response.json ( );
             
-            // end run through elements that match tag
+            obj
             
-          } );
+              .collection
+              
+              .tags
+              
+              .filter ( t => t.startsWith ( `${ codeKey } ` ) )
+              
+              .sort ( )
+              
+              .forEach ( callback );
+              
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${ codeKey } there has been a problem with your fetch get operation,
+                
+                ${ error }.
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              }
+              
+          };
           
-        } );
+        document
         
-      } );
+          .addEventListener ( 'DOMContentLoaded', callback );
+          
+        } ) ( );
+        
+      </script>
       
-    </script>
-    
-  <!-- end store tag rating -->
+  <!-- end TWC Store Page Tag Rating -->

@@ -8,11 +8,15 @@ Add ratings to Store page products.
 
 ### Version
 
-  * 0.3.1
+  * 0.4.0
 
 #### SS Version
 
   * 7.1
+
+#### Products V2 Compatible
+
+  * Yes
 
 #### Fluid Engine Compatible
 
@@ -21,16 +25,11 @@ Add ratings to Store page products.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [Tom's Web Consulting Squarespace Library][4]
 
 ---
 
 ## Install
 
-* Install [twcsl][4]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Options
 
   * Page Specific
@@ -38,20 +37,26 @@ Add ratings to Store page products.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page tag rating.html][5]** to Store Settings >
-      Advanced > Page Header Code Injection for the store page. Refer to
-      [Per-page code injection][6] for details.
+    * Add code from file **[store page tag rating options.html][4]** to
+      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Refer to [Per-page code injection][5] for details. Read the code for any
+      instructions within.
+      
+    * Add code from file **[store page tag rating.html][6]** to Store Settings >
+      Advanced > Page Header Code Injection for the store page.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page tag rating.html][5]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][7] for details.
+    * Add code from file **[store page tag rating options.html][4]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+      code to code injection][7] for details. Read the code for any instructions
+      within.
       
-* Read the code for any instructions within.
+    * Add code from file **[store page tag rating.html][6]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER.
 
 ## How To Use
 
@@ -62,8 +67,8 @@ your site visitors to encourage sales.
 
 Edit the product and add a tag of **twc-sptr Wine Spectator s 4/5**. The
 twc-sptr indicates to the code that this is a rating. The entity text is the
-rating entity. The **s** tells the code you want to use the symbols set in the
-code. The numbers at the end are the rating and the scale.
+rating entity. The s tells the code you want to use the symbols set in the code.
+The numbers at the end are the rating and the scale.
 
 ## Tag Syntax
 
@@ -122,7 +127,7 @@ Some classes are provided for styling.
 
 ## Notes
 
-This is not a site visitor rating system.
+This code is not a site visitor rating system.
 
 The rating type words can not represent symbols such as ★. Use the symbols
 rating type for symbols. For best result use number and letter characters.
@@ -137,6 +142,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-08-03**
+
+  * updated to work with v7.1 Products V2
+  * removed jQuery dependency
+  * removed twcsl dependency
+  * bumped version to 0.4.0
+  
 * **2023-12-01**
 
   * fix for ratings jumble when product detail page when related products is
@@ -161,9 +173,9 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%20page%20tag%20rating.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: store%20page%20tag%20rating%20options.html#L1
+[6]: store%20page%20tag%20rating.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [8]: https://toms-web-consulting-demos.squarespace.com/store-page-tag-rating?password=twcdemos
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
