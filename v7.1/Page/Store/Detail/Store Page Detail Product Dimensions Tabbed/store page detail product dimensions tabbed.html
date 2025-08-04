@@ -1,0 +1,199 @@
+<!-- begin TWC Store Page Detail Product Dimensions Tabbed -->
+
+  <!--
+  
+    store page detail product dimensions tabbed
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : store page detail product dimensions
+                    
+                    < https://tinyurl.com/3sxwuyxw >
+    
+    Note          : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    .twc-spdpdt-tabs {
+    
+      display : flex;
+      flex-direction : column;
+      
+      }
+      
+    .twc-spdpdt-tab-labels {
+    
+      display : flex;
+      
+      }
+      
+    .twc-spdpdt-tab-label {
+    
+      background : #f1f1f1;
+      border-bottom : none;
+      border : 1px solid #ccc;
+      cursor : pointer;
+      padding : 10px 20px;
+      transition : background 0.3s;
+      
+      }
+      
+    .twc-spdpdt-tab-label:hover {
+    
+      background : #ddd;
+      
+      }
+      
+    .twc-spdpdt-tab-content {
+    
+      border-top : none;
+      border : 1px solid #ccc;
+      display : none;
+      padding : 20px;
+      
+      }
+      
+    .twc-spdpdt-tab-label.active {
+    
+      background : #fff;
+      border-bottom : 1px solid #fff;
+      
+      }
+      
+    .twc-spdpdt-tab-content.active {
+    
+      display : block;
+      
+      }
+      
+    </style>
+
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+        
+        s = `
+        
+          Store Page Detail Product Dimensions Tabbed v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( dimensionTab ) => {
+          
+            const callback = ( ) => {
+            
+              const
+              
+                callback = ( element ) => {
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( 'active' );
+                    
+                  },
+                  
+                className = dimensionTab
+                
+                  .getAttribute ( 'data-dimension-tab' );
+                  
+              dimensionTabs
+              
+                .forEach (
+                
+                  t => t.classList.remove ( 'active' )
+                  
+                  );
+                  
+              dimensionContents
+              
+                .forEach (
+                
+                  content => content.classList.remove ( 'active' )
+                  
+                  );
+                  
+              document
+              
+                .querySelectorAll ( `[ data-dimension-tab="${ className }"` )
+                
+                .forEach ( callback );
+                
+              document
+              
+                .querySelectorAll ( `.${ className }` )
+                
+                .forEach ( callback );
+                
+              };
+              
+            dimensionTab
+            
+              .addEventListener ( 'click', callback );
+              
+            },
+            
+          codeKey = 'twc-spdpdt',
+          
+          dimensionTabs = document
+          
+            .querySelectorAll ( `.${ codeKey }-tab-label` ),
+          
+          dimensionContents = document
+          
+            .querySelectorAll ( `.${ codeKey }-tab-content` );
+            
+        dimensionTabs
+        
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Product Dimensions Tabbed -->
