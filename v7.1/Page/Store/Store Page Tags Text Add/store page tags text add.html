@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.2.1
     
     SS Version    : 7.1
     
@@ -14,60 +14,20 @@
     Engine
     Compatible    : Not Applicable
     
-    Notes         : the code is comprised of several tags. all are needed for
-                    the full effect to work
+    Notes         : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
                     
                     the code makes a call to the JSON version of the store page
                     for information that is not normally avaiable on the page
-                    
+    
     Copyright     : 2023-2025 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
+    no user serviceable parts below
+    
     -->
     
-  <script>
-  
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    twc.sptta = ( ( self ) => { // initialize twc sptta sub-module
-    
-      const options = {
-      
-        productDetailSelector : [
-        
-          '.ProductItem-details .ProductItem-details-checkout', // simple layout
-          
-          '.pdp-layout-full-width-carousel .pdp-details .pdp-selection', // full
-            
-          '.pdp-layout-full-bleed .pdp-details', // half
-          
-          '.pdp-layout-wrap-around .pdp-details' // wrap
-          
-          ]
-        
-        };
-        
-      Object
-      
-        .assign (
-        
-          self,
-          
-          options
-          
-          );
-          
-      return self;
-      
-      } ) ( twc.sptta || { } );
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <style>
   
     .twc-sptta {
@@ -82,7 +42,7 @@
       
       }
       
-    .products.collection-content-wrapper .grid-item .twc-sptta {
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .twc-sptta {
 
       flex-direction : column;
       
@@ -96,7 +56,7 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.2.1',
       
         s = `
         
@@ -128,209 +88,137 @@
         
       if ( ! isStorePage ) return; // bail if not store page
       
-      const callback = ( ) => {
+      const callback = async ( ) => {
       
         const
         
-          codeKey = 'twc-sptta',
+          callback = ( tag ) => {
           
-          fullUrl = Static
-          
-            .SQUARESPACE_CONTEXT
+            const
             
-            .collection
+              re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` ),
             
-            .fullUrl,
-            
-          getJson = async ( url ) => {
-          
-            const options = {
-            
-              headers : {
+              m = tag.match ( re );
               
-                Accept: 'application/json, text/plain, */*'
+            if ( ! m ) return; // continue if tag doesn't match format
+            
+            const
+            
+              pageShow = m [ 2 ],
+              
+              b
+              
+                =
                 
-                }
+                isList && pageShow === 'd'
                 
-              };
-              
-            try {
+                ||
+                
+                isDetail && pageShow === 'l';
+                
+            if ( b ) return; // continue
             
-              const response = await fetch ( url, options );
+            const
+            
+              callback = ( element ) => {
               
-              if ( ! response.ok ) {
-              
-                const s = `
+                let
                 
-                  ${ codeKey } network response was not ok ${
+                  selector,
                   
-                    response
+                  url = new URLSearchParams (
+                  
+                    new URL (
                     
-                      .statusText
+                      `http://twc.sptta${
                       
-                      }
-                      
-                  `
-                  
-                  .trim ( )
-                  
-                  .replace ( /\s+/gm, ' ' );
-                  
-                throw new Error ( s );
-                
-                }
-                
-              const json = await response.text ( );
-              
-              return json;
-              
-              } catch ( error ) {
-              
-                const s = `
-                
-                  ${ codeKey } there has been a problem with your fetch get operation,
-                  
-                  ${ error }.
-                  
-                  `
-                  
-                  .trim ( )
-                  
-                  .replace ( /\s+/gm, ' ' );
-                  
-                console.error ( s );
-                
-                }
-                
-            },
-            
-          options = twc.sptta,
-          
-          url = `${ fullUrl }?format=json`;
-            
-        getJson ( url )
-        
-          .then ( json => JSON.parse ( json ) )
-          
-          .then ( ( tags ) => {
-          
-            const callback = ( tag, index ) => {
-            
-              const
-              
-                re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` ),
-              
-                m = tag.match ( re );
-                
-              // continue if tag doesn't match format
-              
-              if ( m == null ) return;
-              
-              const
-              
-                isDetail = ( ( ) => {
-                
-                  const
-                  
-                    selector = 'body[ id^="item-" ]',
-                    
-                    is = document
-                    
-                      .querySelector ( selector )
-                      
-                      !==
-                      
-                      null;
-                      
-                  return is;
-                  
-                  } ) ( ),
-                  
-                isList = ( ( ) => {
-                
-                  const
-                  
-                    selector = 'body[ id^="collection-" ]',
-                    
-                    is = document
-                    
-                      .querySelector ( selector )
-                      
-                      !==
-                      
-                      null;
-                      
-                  return is;
-                  
-                  } ) ( ),
-                  
-                pageShow = m [ 2 ],
-                
-                b
-                
-                  =
-                  
-                  isList && pageShow === 'd'
-                  
-                  ||
-                  
-                  isDetail && pageShow === 'l';
-                  
-              if ( b ) return; // continue
-              
-              const
-              
-                callback = ( element ) => {
-                
-                  let
-                  
-                    selector,
-                    
-                    url = new URLSearchParams (
-                    
-                      new URL (
-                      
-                        `http://twc.sptta${
+                        fullUrl
                         
-                          fullUrl
-                          
-                          }`
-                          
-                        )
+                        }`
                         
-                        .search
+                      )
+                      
+                      .search
+                      
+                    );
+                    
+                switch ( true ) {
+                
+                  case isDetail :
+                  
+                    selector = '.product-detail .product-meta';
+                      
+                    break;
+                    
+                  case isList :
+                  
+                    selector
+                    
+                      =
+                      
+                      '.product-list .product-list-item '
+                      
+                      +
+                      
+                      '.product-list-item-link .product-list-item-meta';
+                      
+                    break;
+                    
+                  }
+                  
+                url
+                
+                  .append ( 'tag', tag );
+                  
+                url = `${ fullUrl }?${ url }`;
+                
+                const wrapperElement = element
+                
+                  .querySelector ( selector );
+                  
+                let ulElement = wrapperElement
+                
+                  .querySelector ( `.${ codeKey }` );
+                  
+                if ( ! ulElement ) {
+                
+                  ulElement = document
+                  
+                    .createElement ( 'template' );
+                    
+                  ulElement
+                  
+                    .innerHTML
+                    
+                    =
+                    
+                    `
+                    
+                      <ul class="${ codeKey }">
+                      
+                        </ul>
                         
-                      );
+                      `;
                       
-                  switch ( true ) {
+                  ulElement = ulElement
                   
-                    case isDetail :
+                    .content
                     
-                      selector = options
-                      
-                        .productDetailSelector
-                        
-                        .join ( ', ' );
-                        
-                      break;
-                      
-                    case isList :
+                    .firstElementChild;
                     
-                      selector = '.grid-main-meta';
-                      
-                      break;
-                      
-                    }
-                    
-                  url
+                  wrapperElement
                   
-                    .append ( 'tag', tag );
+                    .append ( ulElement );
                     
-                  url = `${ fullUrl }?${ url }`;
+                  }
                   
-                  const
+                ulElement
+                
+                  .insertAdjacentHTML (
                   
-                    liHtml = `
+                    'beforeend',
+                    
+                    `
                     
                       <li data-tag-text="${ text }">
                       
@@ -342,106 +230,156 @@
                           
                         </li>
                         
-                      `,
-                      
-                    wrapperElement = element
-                    
-                      .querySelector ( selector );
-                      
-                  let ulElement = wrapperElement
-                  
-                    .querySelector ( `.${ codeKey }` );
-                    
-                  if ( ! ulElement ) {
-                  
-                    ulElement = document
-                    
-                      .createElement ( 'div' );
-                      
-                    ulElement
-                    
-                      .innerHTML
-                      
-                      =
-                      
                       `
                       
-                        <ul class="${ codeKey }">
-                        
-                          </ul>
-                          
-                        `;
-                        
-                    ulElement = ulElement
+                    );
                     
-                      .firstElementChild;
-                      
-                    wrapperElement
-                    
-                      .append ( ulElement );
-                      
-                    }
-                    
-                  ulElement
-                  
-                    .insertAdjacentHTML ( 'beforeend', liHtml );
-                    
-                  },
-                  
-                tagNameToCssClassName = ( name ) => {
+                },
                 
-                  const className = 'tag-'
-                  
-                    +
-                    
-                    name
-                    
-                      .replaceAll ( ' ', '-' )
-                      
-                      .toLowerCase ( )
-                      
-                      .replace ( /[^\w-]+/g, '' )
-                      
-                      .replaceAll ( '--', '-' );
-                      
-                  return className;
-                  
-                  },
-                  
-                text = m [ 1 ],
-                
-                className =
-                
-                  tagNameToCssClassName ( m [ 0 ] ),
-                  
-                selector = `.${ className }`;
-                
-              document
+              text = m [ 1 ],
               
-                .body
-                
-                .querySelectorAll ( selector )
-                
-                .forEach ( callback );
-                
-              };
+              className =
               
-            tags = tags
-            
-              .collection
+                tagNameToCssClassName ( m [ 0 ] ),
+                
+              selector = `.${ className }`;
               
-              .tags
+            document
             
-              .filter ( x => x.startsWith ( `${ codeKey } ` ) );
+              .body
               
-            if ( ! tags.length ) return; // bail if no tags of interest
+              .querySelectorAll ( selector )
+              
+              .forEach ( callback );
+              
+            },
             
-            tags.forEach ( callback );
-            
-            } );
-            
-          };
+          codeKey = 'twc-sptta',
           
+          isDetail = ( ( ) => {
+          
+            const
+            
+              selector = 'body[ id^="item-" ]',
+              
+              is = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+            return is;
+            
+            } ) ( ),
+            
+          isList = ( ( ) => {
+          
+            const
+            
+              selector = 'body[ id^="collection-" ]',
+              
+              is = document
+              
+                .querySelector ( selector )
+                
+                !==
+                
+                null;
+                
+            return is;
+            
+            } ) ( ),
+            
+          fullUrl = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .collection
+            
+            .fullUrl,
+            
+          tagNameToCssClassName = ( name ) => {
+          
+            const className = 'tag-'
+            
+              +
+              
+              name
+              
+                .replaceAll ( ' ', '-' )
+                
+                .toLowerCase ( )
+                
+                .replace ( /[^\w-]+/g, '' )
+                
+                .replaceAll ( '--', '-' );
+                
+            return className;
+            
+            },
+            
+          url = `${ fullUrl }?format=json`;
+            
+        try {
+        
+          const response = await fetch ( url );
+          
+          if ( ! response.ok ) {
+          
+            const s = `
+            
+              ${ codeKey } network response was not ok ${
+              
+                response
+                
+                  .statusText
+                  
+                  }
+                  
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+            throw new Error ( s );
+            
+            }
+            
+          const obj = await response.json ( );
+          
+          obj
+          
+            .collection
+            
+            .tags
+            
+            .filter ( t => t.startsWith ( `${ codeKey } ` ) )
+            
+            .forEach ( callback );
+            
+          } catch ( error ) {
+          
+            const s = `
+            
+              ${ codeKey } there has been a problem with your fetch get operation,
+              
+              ${ error }.
+              
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+            console.error ( s );
+            
+            }
+            
+        };
+        
       document
       
         .addEventListener ( 'DOMContentLoaded', callback );
