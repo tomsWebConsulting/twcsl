@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Version
 
@@ -23,16 +23,11 @@ Store page list categories mega menu.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Store Page List Categories Cache][4]
-  
-  * [Tom's Web Consulting Squarespace Library][5]
 
 ---
 
 ## Install
 
-* Install [twcsl][6]. After you install twcsl be sure to continue on with the
-  rest of the steps.
-  
 * Install [Store Page List Categories Cache][4]. After you install Store
   Categories Cache be sure to continue on with the rest of the steps.
   
@@ -43,22 +38,24 @@ Store page list categories mega menu.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page list categories mega.html][7]** to Store
-      Settings > Advanced > Page Header Code Injection for the store page
-      **before** the **store page list categories cache** code. Refer to
-      [Per-page code injection][8] for details.
+    * Add code from files **[store page list categories mega options.html][17]**
+      and **[store page list categories mega.html][7]** to Store Settings >
+      Advanced > Page Header Code Injection for the store page **before** the
+      **store page list categories cache** code. Refer to [Per-page code
+      injection][8] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from file **[store page list categories mega.html][7]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER **before** the
-      **store page list categories cache** code. Refer to [Add code to code
-      injection][9] for details.
+    * Add code from files **[store page list categories mega options.html][17]**
+      and **[store page list categories mega.html][7]** to Website > Pages >
+      Custom Code > Code Injection > FOOTER **before** the **store page list
+      categories cache** code. Refer to [Add code to code injection][9] for
+      details.
       
-* Read the code for any instructions or options within.
+* Read the code files for any instructions, notes or options within.
 
 ## Note
 
@@ -76,6 +73,16 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-08-11**
+
+  * made code less heavy handed when removing Squarespace UI elements, user
+    decides with settings
+  * broke options out into its own file
+  * updated to work with Products V2
+  * removed twcsl dependency
+  * removed jQuery dependency
+  * bumped version to 0.5.0
+  
 * **2025-01-14**
 
   * update to work with Store Page List Categories Cache v0.2.0
@@ -126,6 +133,7 @@ Please consider [making a donation][11].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
 [5]: https://github.com/tomsWebConsulting/twcsl
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
+[17]: store%20page%20list%20categories%20mega%20options.html#L1
 [7]: store%20page%20list%20categories%20mega.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection

@@ -1,281 +1,266 @@
-<!--
+<!-- begin TWC Store Page List Categories Mega -->
 
-  begin store page list categories mega
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.4.0
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : store categories cache < https://tinyurl.com/285tkudd >
-  
-                  twcsl < https://tinyurl.com/27bpnu6f >
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-                  
-                  in the editor when you change the CATEGORIES TYPE
-                  (Sidebar/Top) you will see Squarespace's default style of
-                  categories until you save the page. If for some reason the
-                  categories don't update after saving the page, refresh the
-                  page
-  
-  Copyright     : 2023-2025 Thomas Creedon
-                     
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <style>
-  
-    .collection-type-products.view-list .products.collection-content-wrapper {
+    begin store page list categories mega
     
-      --twc-splcm-spacing-left : 1em;
-      
-      }
-      
-    </style>
+    License       : < https://tinyurl.com/s872fb68 >
     
-  <script>
-  
-    // initialize twc module
+    Version       : 0.5.0
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    SS Version    : 7.1
     
-    // initialize twc splcm sub-module
+    Fluid
+    Engine
+    Compatible    : Not Applicable
     
-    twc.splcm = ( ( self ) => self ) ( twc.splcm || {
+    Dependencies  : store categories cache < https://tinyurl.com/285tkudd >
     
-      categoriesExpandedOnLoad : false, // value is false or true
-      
-      hideIcon : false // value is false or true
-      
-      } );
-      
-    </script>
+    Notes         : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    in the editor when you change the CATEGORIES TYPE
+                    (Sidebar/Top) you will see Squarespace's default style of
+                    categories until you save the page. If for some reason the
+                    categories don't update after saving the page, refresh the
+                    page
     
-  <!-- do not change anything below, there be the borg here -->
-  
+    Copyright     : 2023-2025 Thomas Creedon
+                       
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
     /* begin resets */
     
-      .products.collection-content-wrapper .nested-category-children {
-      
-        text-align : left;
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-breadcrumb-list-item {
+      .twc-splcm .nested-category-breadcrumb-list-item {
       
         display : unset;
         
         }
         
-      .products.collection-content-wrapper .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
+      .twc-splcm .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
       
-        margin : unset;
+        margin : unset !important;
         
         }
         
       /* end resets */
       
-    #siteWrapper {
+    /* begin hide */
     
-      --twc-products-collection-content-wrapper-visibility : hidden;
+      /* begin category */
       
-      }
-      
-    .collection-type-products.view-list .products.collection-content-wrapper {
-    
-      visibility : var( --twc-products-collection-content-wrapper-visibility );
-      
-      }
-      
-    .tweak-products-breadcrumbs .products.collection-content-wrapper .nested-category-breadcrumb,
-    .tweak-products-nested-category-type-sidebar.tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
-    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title,
-    .tweak-products-category-title .products.collection-content-wrapper .nested-category-title.nested-category-title-padding
-    
+        /* side */
+        
+        body:not( .sqs-is-page-editing ) .nested-category-tree-wrapper,
+        body:not( .sqs-is-page-editing ) .nested-category-children /* top */
+        
+        /* end category */
+        
       {
       
         display : none;
         
         }
         
-    .nested-category-children .active,
-    .nested-category-tree-wrapper .active
+      /* end hide */
+      
+    /* begin overrides */
     
-      {
+      .twc-splcm {
       
-        cursor : default;
+        margin-block-end : unset;
+        margin-block-start : unset;
+        padding-inline-start : unset;
         
         }
         
-    .nested-category-children ul,
-    .products.collection-content-wrapper .nested-category-tree-wrapper ul
-    
-      {
+      .twc-splcm ul {
       
-        display: flex;
-        
-        }
-        
-    .nested-category-children summary,
-    .nested-category-tree-wrapper summary
-    
-      {
-      
-        display : list-item;
-        
-        }
-        
-    .nested-category-children summary::marker,
-    .nested-category-tree-wrapper summary::marker
-    
-      {
-      
-        font-size : larger;
-        
-        }
-        
-    /* begin sidebar */
-    
-      .nested-category-tree-wrapper .active {
-      
-        font-weight : 700;
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-tree-wrapper ul {
-      
-        flex-direction : column;
-        
-        }
-        
-      /* end sidebar */
-      
-    /* begin top */
-    
-      .products.collection-content-wrapper .nested-category-children .active {
-      
-        text-decoration : unset;
-        
-        }
-        
-      .nested-category-children ul {
-      
-        gap : 0.5em;
         padding-inline-start : var( --twc-splcm-spacing-left );
         
         }
         
-      .nested-category-children ul ul {
+      /* end overrides */
       
-        flex-direction : column;
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item.children {
-      
-        display : flex;
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item.children .nested-category-breadcrumb-list-item:not( .children ) .nested-category-breadcrumb-link {
-
-        margin-left : var( --twc-splcm-spacing-left );
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-children > .nested-category-breadcrumb-list-item > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
-      
-        display : unset;
-        
-        }
-        
-      .products.collection-content-wrapper .nested-category-breadcrumb-list-item details + .breadcrumb-separator {
-      
-        margin-left : 0.25em;
-        
-        }
-        
-      /* end top */
-      
-    /* list style/marker hide */
+    .product-list {
     
-    .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-children details > summary::marker, /* Chrome, Edge, Firefox */ 
-    .products.collection-content-wrapper[ data-twc-splcm-hide-icon ] .nested-category-tree-wrapper details > summary::-webkit-details-marker /* Safari */
+      --twc-product-list-visibility : hidden;
+      
+      visibility : var( --twc-product-list-visibility );
+      
+      }
+      
+    div[ data-category-display-type="sidebar" ] .twc-splcm {
+    
+      float : left;
+      margin-right : 40px;
+      max-width : 300px;
+      min-width : 220px;
+      
+      }
+      
+    div[ data-category-display-type="top" ] .twc-splcm {
+    
+      border-bottom: 1px solid rgba( 0, 0, 0, 0.2 );
+      margin-bottom : 37px;
+      padding : 54px 0;
+      
+      }
+      
+    div[ data-category-display-type="top" ] .twc-splcm {
+    
+      display : flex;
+      
+      }
+      
+    div[ data-category-display-type="top" ] .twc-splcm {
+    
+      display : flex;
+      
+      }
+      
+    div[ data-header-text-alignment="center" ] .twc-splcm {
+    
+      justify-content : center;
+      
+      }
+      
+    body.sqs-is-page-editing .twc-splcm {
+    
+      display : none;
+      
+      }
+      
+    .twc-splcm ul:not( :has( details ) ) {
+    
+      padding-inline-start : calc( var( --twc-splcm-spacing-left ) * 1.5 );
+      
+      }
+      
+    div[ data-category-display-type="top" ] .twc-splcm ul {
+    
+      display : flex;
+      gap : 0.75em;
+      
+      }
+      
+    .twc-splcm .breadcrumb-separator {
+    
+      display : unset !important;
+      margin-left : 0.6em
+      
+      }
+      
+    .twc-splcm .nested-category-breadcrumb-link.active {
+    
+      cursor : default;
+      font-weight : 700;
+      
+      }
+      
+    div[ data-category-display-type="sidebar" ] .twc-splcm .breadcrumb-separator,
+    div[ data-category-display-type="top" ] .twc-splcm .nested-category-breadcrumb-list-item:last-child > .breadcrumb-separator
     
       {
       
-        color : transparent;
+        display : none !important;
         
         }
         
+    .twc-splcm summary {
+    
+      display : list-item;
+      
+      }
+      
+    .twc-splcm summary::marker {
+    
+      font-size : larger;
+      
+      }
+      
     </style>
     
   <script>
   
-    const
+    ( ( ) => {
     
-      version = '0.4.0',
+      const
       
-      s = `
+        version = '0.5.0',
+        
+        s = `
+        
+          Store Page List Categories Mega v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-        Store Page List Categories Mega v${ version }
-        
-        License < https://tinyurl.com/s872fb68 >
-        
-        © 2023-2024 Thomas Creedon
-        
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
-        
-        `
-        
-        .replace ( /^\s+/gm, '' );
-        
-    console.log ( s );
-    
-    // initialize twc splcc sub-module
-    
-    twc.splcc = ( ( self ) => self ) ( twc.splcc || { } );
-    
-    // initialize twc splcc callbacks sub-module
-    
-    twc.splcc.callbacks = ( ( self ) => {
-    
-      const callback = ( categories ) => {
+      // initialize twc module
       
-        $( ( ) => {
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc splcc sub-module
+      
+      twc.splcc = ( ( self ) => self ) ( twc.splcc || { } );
+      
+      // initialize twc splcc callbacks sub-module
+      
+      twc.splcc.callbacks = ( ( self ) => {
+      
+        const callback = ( categories ) => {
         
-          const
-          
-            codeKey = 'twc-splcm',
+          const callback = ( ) => {
             
-            selectorKey = '.products.collection-content-wrapper';
+            const
             
-          // hide show register
-          
-          ( ( ) => {
-          
-            // initialize twc data sub-module
-            
-            twc.data = ( ( self ) => self ) ( twc.data || { } );
-            
-            // initialize twc data hideShow sub-module
-            
-            twc.data.hideShow =
-            
-              ( ( self ) => self ) ( twc.data.hideShow || { } );
+              codeKey = 'twc-splcm',
               
-            if ( twc.data.hideShow [ selectorKey ] === undefined )
+              selectorKey = '.product-list';
+              
+            // hide show register
             
+            {
+            
+              // initialize twc data sub-module
+              
+              twc.data = ( ( self ) => self ) ( twc.data || { } );
+              
+              // initialize twc data hideShow sub-module
+              
+              twc.data.hideShow =
+              
+                ( ( self ) => self ) ( twc.data.hideShow || { } );
+                
+              if ( twc.data.hideShow [ selectorKey ] === undefined )
+              
+                twc
+                
+                  .data
+                  
+                  .hideShow
+                  
+                  [ selectorKey ]
+                  
+                  =
+                  
+                  [ ];
+                  
               twc
               
                 .data
@@ -284,41 +269,89 @@
                 
                 [ selectorKey ]
                 
-                =
+                .push ( `--${ codeKey }` );
                 
-                [ ];
+              }
+              
+            {
+            
+              const
+              
+                getCategoryUrlSlug = ( ) => {
                 
-            twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .push ( `--${ codeKey }` );
-              
-            } ) ( );
-            
-          ( ( ) => {
-          
-            const
-            
-              options = twc.splcm,
-              
-              windowWidth = $( window ).width ( ),
-              
-              traverse = ( categories, $ul ) => {
-              
-                $.each ( categories, function ( i, category ) {
-                
-                  const
+                  const pathname = location
                   
-                    hasChildren = Boolean ( category.children.length ),
+                    .pathname;
                     
-                    $li = $( `
+                  let slug = pathname
+                  
+                    .slice (
                     
-                      <li class="nested-category-breadcrumb-list-item">
+                      url
+                      
+                        .length
+                        
+                        +
+                        
+                        1
+                        
+                      );
+                      
+                  if ( ! slug ) return ''; // bail if no slug
+                  
+                  slug = pathname
+                  
+                    .replace ( url, '' );
+                    
+                  return slug;
+                  
+                  },
+                  
+                getParents = ( element, selector ) => {
+                
+                  const parents = [ ];
+                  
+                  let current = element
+                  
+                    .parentElement;
+                    
+                  while ( current ) {
+                  
+                    if ( ! selector || current.matches ( selector ) )
+                    
+                      parents.push ( current );
+                      
+                    current = current.parentElement;
+                    
+                    }
+                    
+                  return parents;
+                  
+                  },
+                  
+                options = codeKey
+                
+                  .split ( '-' )
+                  
+                  .reduce ( ( obj, key ) => obj?.[ key ], window ),
+                  
+                traverse = ( categories, ulElement ) => {
+                
+                  const callback = ( category ) => {
+                  
+                    const hasChildren = category
+                    
+                      .children
+                      
+                      .length;
+                    
+                    let liElement = document
+                    
+                      .createElement ( 'template' );
+                      
+                    liElement.innerHTML = `
+                    
+                      <li class="children nested-category-breadcrumb-list-item">
                       
                         <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
                         
@@ -334,216 +367,380 @@
                           
                         </li>
                         
-                      ` );
+                      `;
                       
-                  let $element;
-                  
-                  if ( hasChildren ) {
-                  
-                    const openHtml =
+                    liElement = liElement
                     
-                      options.categoriesExpandedOnLoad ? ' open' : '';
+                      .content
                       
-                    $element = $li
+                      .firstElementChild;
+                      
+                    let element;
                     
-                      .addClass ( 'children' )
+                    if ( hasChildren ) {
+                    
+                      element = wrap (
                       
-                      .find ( '.nested-category-breadcrumb-link' )
-                      
-                      .wrap ( `
-                      
-                        <details${ openHtml }/>
+                        liElement
                         
-                          <summary/>
+                          .querySelector (
                           
-                        ` )
+                            '.nested-category-breadcrumb-link'
+                            
+                            ),
+                            
+                        `
                         
-                      .parents ( 'details' );
+                          <details open>
+                          
+                            <summary>
+                            
+                              </summary>
+                              
+                              </details>
+                              
+                          `
+                          
+                        );
+                        
+                      if ( ! options.categoriesExpandedOnLoad )
                       
-                    } else
-                    
-                      $element = $li;
+                        element
+                        
+                          .removeAttribute ( 'open' );
+                          
+                      } else {
                       
-                  $ul.append ( $li );
-                  
-                  if ( ! hasChildren ) return true; // continue
-                  
-                  $childrenUl = $( '<ul />' )
-                  
-                    .appendTo ( $element );
+                        liElement
+                        
+                          .classList
+                          
+                          .remove ( 'children' );
+                          
+                        element = liElement;
+                        
+                        }
+                        
+                    ulElement
                     
-                  traverse ( category.children, $childrenUl );
+                      .append ( liElement );
+                      
+                    if ( ! hasChildren ) return; // continue
+                    
+                    const childrenUlElement = document
+                    
+                      .createElement ( 'ul' )
+                      
+                    element.append ( childrenUlElement );
+                    
+                    traverse ( category.children, childrenUlElement );
+                    
+                    }
+                    
+                  categories
                   
-                  } );
+                    .forEach ( callback );
+                    
+                  },
                   
-                };
+                ulElement = document
                 
-              const $ul = $( '<ul />' );
-              
-            let selector = `[ href="${ twcsl.page.store.urlSlug }` +
-            
-              `${ twcsl.page.store.list.categoryUrlSlug }" ]`;
-              
-            if ( options.hideIcon ) {
-            
-              const selector = '.products.collection-content-wrapper';
-              
-              $( selector ).attr ( `data-${ codeKey }-hide-icon`, '' );
-              
-              }
-              
-            traverse ( categories, $ul )
-            
-            $( selector, $ul )
-            
-              .addClass ( 'active' )
-              
-              .removeAttr ( 'href' )
-              
-              .parents ( 'details' )
-              
-              .attr ( 'open', '' );
-              
-            const $element = $ul
-            
-              .clone ( )
-              
-              .addClass ( 'nested-category-children' );
-              
-            selector =
-            
-              '.products.collection-content-wrapper .nested-category-children';
-              
-            const $destination = $( selector );
-            
-            if ( $destination.length )
-            
-              $destination.replaceWith ( $element );
-              
-              else {
-              
-                selector = '.nested-category-breadcrumb';
+                  .createElement ( 'ul' ),
+                  
+                url = Static
+                   
+                  .SQUARESPACE_CONTEXT
+                  
+                  .collection
+                  
+                  .fullUrl,
+                  
+                windowWidth = document
                 
-                $( selector ).after ( $element );
+                  .documentElement
+                  
+                  .clientWidth,
+                  
+                wrap = ( target, wrapper = '<div>' ) => {
                 
+                  const
+                  
+                    callback = ( element ) => {
+                    
+                      let
+                      
+                        deepestElement,
+                  
+                        outerWrapperElement;
+                        
+                      if ( typeof wrapper === 'string' ) {
+                      
+                        // parse html string into dom
+                        
+                        {
+                        
+                          const element = document
+                          
+                            .createElement ( 'template' );
+                            
+                          element.innerHTML = wrapper
+                          
+                            .trim ( );
+                            
+                          outerWrapperElement = element
+                          
+                            .content
+                            
+                            .firstElementChild;
+                            
+                          // bail if no outer wrapper element
+                          
+                          if ( ! outerWrapperElement ) return;
+                          
+                          }
+                          
+                        // deepest element
+                        
+                        {
+                        
+                          deepestElement = outerWrapperElement;
+                          
+                          while ( deepestElement.firstElementChild )
+                          
+                            deepestElement = deepestElement.firstElementChild;
+                            
+                          }
+                          
+                        } else if ( wrapper instanceof Element ) {
+                        
+                          // clone dom element to avoid reuse
+                          
+                          outerWrapperElement = wrapper
+                          
+                            .cloneNode ( false );
+                            
+                          deepestElement = outerWrapperElement;
+                          
+                          } else {
+                          
+                            const s = 'Invalid wrapper type: must be HTML '
+                            
+                              +
+                              
+                              'string or DOM element';
+                              
+                            throw new Error ( s );
+                            
+                            }
+                            
+                      // insert and wrap
+                      
+                      {
+                      
+                        if ( element.parentNode )
+                        
+                          element
+                          
+                            .parentNode
+                            
+                            .insertBefore (
+                            
+                              outerWrapperElement,
+                              
+                              element
+                              
+                              );
+                              
+                        deepestElement
+                        
+                          .appendChild ( element );
+                          
+                        }
+                        
+                      wrappers
+                      
+                        .push ( outerWrapperElement );
+                        
+                      },
+                      
+                    elements
+                    
+                      =
+                      
+                      typeof target === 'string'
+                      
+                      ?
+                      
+                      document
+                      
+                        .querySelectorAll ( target )
+                        
+                      :
+                      
+                      target instanceof NodeList
+                      
+                      ?
+                      
+                      target
+                      
+                      :
+                      
+                      [ target ];
+                      
+                  let wrappers = [ ];
+                    
+                  elements.forEach ( callback );
+                  
+                  wrappers = wrappers
+                  
+                    .length
+                    
+                    ===
+                    
+                    1
+                    
+                    ?
+                    
+                    wrappers [ 0 ]
+                    
+                    :
+                    
+                    wrappers;
+                    
+                  return wrappers;
+                  
+                  },
+                  
+                categoryUrlSlug = getCategoryUrlSlug ( );
+                
+              let
+              
+                element,
+                
+                selector;
+                
+              ulElement
+              
+                .classList
+                
+                .add ( codeKey );
+                
+              if ( options.hideIcon )
+              
+                ulElement
+                
+                  .setAttribute ( `data-${ codeKey }-hide-icon`, '' );
+                  
+              traverse ( categories, ulElement );
+              
+              // set initial active and open
+              
+              {
+              
+                selector = `[ href="${ url }${ categoryUrlSlug }" ]`;
+                
+                element = ulElement
+                
+                  .querySelector ( selector );
+                  
+                element
+                
+                  .classList
+                  
+                  .add ( 'active' );
+                  
+                element
+                
+                  .removeAttribute ( 'href' );
+                  
+                getParents ( element, 'details' )
+                
+                  .forEach ( e => e.setAttribute ( 'open', '' ) );
+                  
                 }
                 
-            selector = '.nested-category-breadcrumb-list-item';
-            
-            const left1 = $( selector, $element )
-            
-              .first ( )
+              // add categories mega
               
-              .offset ( )
+              {
               
-              .left;
-              
-            selector = '.nested-category-breadcrumb-list-item '
-            
-              +
-              
-              '.nested-category-breadcrumb-link';
-              
-            let left = $( selector, $element )
-            
-              .first ( )
-              
-              .offset ( )
-              
-              .left;
-              
-            left -= left1;
-            
-            left = `${ left }px`;
-            
-            selector =
-            
-              '.collection-type-products.view-list .products.collection-'
-              
-              +
-              
-              'content-wrapper';
-              
-            $( selector ).css ( '--spacing-left', left );
-            
-            selector = '.active';
-            
-            const
-            
-              $active = $( selector, $element ),
-              
-              activeLeft = $active
-              
-                .offset ( )
+                element = document
                 
-                .left;
-                
-            if ( activeLeft > windowWidth )
-            
-              $active
-              
-                .parents ( '.nested-category-breadcrumb-list-item' )
-                
-                .first ( )
-                
-                .get ( 0 )
-                
-                .scrollIntoViewIfNeeded ( activeLeft );
-                
-            selector = '.products.collection-content-wrapper '
-            
-              +
-              
-              '.nested-category-tree-wrapper ul';
-              
-            $( selector ).replaceWith ( $ul );
-            
-            } ) ( );
-            
-          // hide show unregister
-          
-          ( ( ) => {
-          
-            twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .pop ( `--${ codeKey }` );
-              
-            const l = twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .length;
-              
-            if ( ! l )
-            
-              $( '#siteWrapper' )
-              
-                .css ( '--twc-products-collection-content-wrapper-visibility',
-                
-                  'unset' );
+                  .body
                   
-            } ) ( );
+                  .querySelector ( '.product-list-container' );
+                  
+                element
+                
+                  .parentNode
+                  
+                  .insertBefore (
+                  
+                    ulElement,
+                    
+                    element
+                    
+                    );
+                    
+                }
+                
+              }
+              
+            // hide show unregister
             
-          } );
+            {
+            
+              twc
+              
+                .data
+                
+                .hideShow
+                
+                [ selectorKey ]
+                
+                .pop ( `--${ codeKey }` );
+                
+              const
+              
+                l = twc
+                
+                  .data
+                  
+                  .hideShow
+                  
+                  [ selectorKey ]
+                  
+                  .length,
+                  
+                productListElement = document
+                
+                  .querySelector ( '.product-list' );
+                  
+              if ( ! l )
+              
+                productListElement
+                
+                  .style
+                  
+                  .setProperty ( '--twc-product-list-visibility', 'visible' );
+                  
+              }
+              
+            };
+            
+          document
+           
+            .addEventListener ( 'DOMContentLoaded', callback );
+            
+          };
           
-        };
+        self.push ( callback );
         
-      self.push ( callback );
-      
-      return self;
-      
-      } ) ( twc.splcc.callbacks || [ ] );
+        return self;
+        
+        } ) ( twc.splcc.callbacks || [ ] );
+        
+      } ) ( );
       
     </script>
     
-  <!-- end store page list categories mega -->
+  <!-- end TWC Store Page List Categories Mega -->
