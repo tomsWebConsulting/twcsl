@@ -44,7 +44,6 @@ Reveal Store page list sections based on category.
   format.
   
   ```
-  text
   twc-splcsr-[ enter a dash seperated list of category url slugs here replacing square brackets ]
   ```
   
