@@ -14,13 +14,17 @@ Hide elements of store products.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
+#### Fluid Engine Compatible
+
+  * Not Applicable
+
 #### Dependencies
 
   * [Squarespace plan][2] that supports [code injection][3].
-  
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
