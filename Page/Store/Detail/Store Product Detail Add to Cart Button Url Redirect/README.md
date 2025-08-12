@@ -59,7 +59,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
             
             */
             
-          // '[ enter product id or sku here between single quotes replacing square brackets ]' : '[enter url here between single quotes replacing square brackets ]',
+          // '[ enter product id or sku here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
           
           '[ enter product id or sku here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
           
