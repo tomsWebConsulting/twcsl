@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.5.1
+  * 0.5.2
 
 #### SS Version
 
@@ -77,6 +77,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-08-12**
+
+  * added checks for is store and list page
+  * bumped version to 0.5.2
+  
 * **2025-08-11**
 
   * fixed some issues with desktop vs mobile layouts
