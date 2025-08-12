@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.5.0
+  * 0.5.1
 
 #### SS Version
 
@@ -73,6 +73,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-08-11**
+
+  * fixed some issues with desktop vs mobile layouts
+  * bumped version to 0.5.1
+  
 * **2025-08-11**
 
   * made code less heavy handed when removing Squarespace UI elements, user
