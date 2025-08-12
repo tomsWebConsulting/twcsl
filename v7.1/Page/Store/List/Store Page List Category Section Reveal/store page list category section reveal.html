@@ -1,44 +1,49 @@
-<!--
+<!-- begin TWC Store Page List Category Section Reveal -->
 
-  begin store page list category section reveal
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.3.0
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Yes
-  
-  Dependencies  : twcsl
-                  
-                  page section first blank hide
-  
-  Note          : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-                  
-                  this effect is not active in SS Preview to test it use
-                  private browsing < https://bit.ly/3f6lhq2 >.
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    store page list category section reveal
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.4.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : page section first blank hide
+    
+    Notes         : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    the code has a downside in that it is loading page sections
+                    that will not be displayed
+    
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    html:not( .squarespace-damask ) #siteWrapper {
+    body:not( .sqs-is-page-editing ) #page .page-section[ id^="twc-splcsr-" ] {
     
-      --twc-page-section-display : none;
+      display : none;
       
       }
       
-    html:not( .squarespace-damask ) #page .page-section:not( .collection-type-products ) {
+    body:not( .sqs-is-page-editing ) #page .page-section.twc-splcsr {
     
-      display : var( --twc-page-section-display );
+      display : flex;
       
       }
       
@@ -46,144 +51,152 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const version = '0.3.0';
+      const
       
-      const s = `Store Page List Category Section Reveal v${ version }, ` +
+        version = '0.4.0',
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        s = `
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
+          Store Page List Category Section Reveal v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      if ( window.frameElement !== null ) return; // bail if in preview
-    
-      const codeKey = 'twc-splcsr';
+      const callback = ( ) => {
       
-      const selectorKey = '.page-section';
-    
-      if ( window.twc == undefined ) window.twc = { };
-    
-      if ( twc.data == undefined ) twc.data = { };
-    
-      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
-    
-      if ( twc.data.hideShow [ selectorKey ] == undefined )
-    
-        twc
-      
-          .data
+        const isStorePage = Static
         
-          .hideShow
-        
-          [ selectorKey ]
-        
-          =
-        
-          [ ];
-        
-      twc
-    
-        .data
-      
-        .hideShow
-      
-        [ selectorKey ]
-      
-        .push ( `--${ codeKey }` );
-      
-      ( ( ) => {
-      
-        const b = ! twcsl.page.store.list.is;
-        
-        if ( b ) return; // bail if not list
-        
-        const selector = `x-${ codeKey }`;
-        
-        const $elements = $( selector );
-        
-        let categories = twcsl.page.store.list.categories;
-        
-        categories = categories &&
-        
-          $elements
+          .SQUARESPACE_CONTEXT
           
-            .text ( )
-            
-            .includes ( `${ categories }\n` )
-            
-          ? categories : 'default';
+          .collection
           
-        $elements
+          .type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
         
-          .filter ( function ( ) {
+        const isList = ( ( ) => {
+        
+          const
           
-            const b = ! this
+            selector = 'body[ id^="collection-" ]',
             
-              .textContent
+            is = document
+            
+              .querySelector ( selector )
               
-              .includes ( `${ categories }\n` );
+              !==
               
-            return b;
-            
-            } )
-            
-          .parents ( '.page-section' )
+              null;
+              
+          return is;
           
-          .remove ( )
+          } ) ( );
           
-          .end ( )
-          
-          .end ( )
-          
-          .parents ( '.fe-block, .sqs-block-code' )
-          
-          .remove ( );
-          
-        } ) ( );
+        if ( ! isList ) return; // bail if not list
         
-      let i = twc
+        const
         
-        .data
+          codeKey = 'twc-splcsr',
           
-        .hideShow
+          getCategorUrlSlugArray = ( ) => {
           
-        [ selectorKey ]
-          
-        .indexOf ( `--${ codeKey }` )
-          
-      if ( i != -1 )
-        
-        twc
-          
-          .data
+            const
             
-          .hideShow
+              fullUrl = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .collection
+                
+                .fullUrl,
+                
+              pathname = location
+              
+                .pathname,
+                
+              isAllCategory
+              
+                =
+                
+                pathname
+                
+                ===
+                
+                fullUrl;
+                
+            if ( isAllCategory ) return [ ];
             
-          [ selectorKey ]
+            const array = pathname
             
-          .splice ( i, 1 );
+              .replace ( fullUrl, '' )
+              
+              .split ( '/' )
+              
+              .slice ( 1 );
+              
+            return array;
             
-      i = twc
+            },
+            
+          fragment
+          
+            = 
+          
+            getCategorUrlSlugArray ( )
+            
+              .join ( '-' )
+              
+            ||
+            
+            'default',
+            
+          selector
+          
+            =
+            
+            `#page .page-section[ id="${
+            
+              codeKey
+              
+              }-${
+              
+                fragment
+                
+                }" ]`;
+                
+        document
         
-        .data
+          .body
           
-        .hideShow
+          .querySelector ( selector )
           
-        [ selectorKey ]
+          .classList
           
-        .length;
+          .add ( codeKey );
           
-      if ( ! i )
+        };
         
-        $( '#sections' )
-          
-          .css ( '--twc-page-section-display', 'flex' );
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
         
-      } );
+      } ) ( );
       
     </script>
     
-  <!-- end store category section reveal -->
+  <!-- end TWC Store Page List Category Section Reveal -->
