@@ -42,21 +42,21 @@ Store page list categories mega menu.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from files **[store page list categories mega options.html][17]**
-      and **[store page list categories mega.html][7]** to Store Settings >
+    * Add code from files **[store page list categories mega options.html][5]**
+      and **[store page list categories mega.html][6]** to Store Settings >
       Advanced > Page Header Code Injection for the store page **before** the
       **store page list categories cache** code. Refer to [Per-page code
-      injection][8] for details.
+      injection][7] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from files **[store page list categories mega options.html][17]**
-      and **[store page list categories mega.html][7]** to Website > Pages >
+    * Add code from files **[store page list categories mega options.html][5]**
+      and **[store page list categories mega.html][6]** to Website > Pages >
       Custom Code > Code Injection > FOOTER **before** the **store page list
-      categories cache** code. Refer to [Add code to code injection][9] for
+      categories cache** code. Refer to [Add code to code injection][8] for
       details.
       
 * Read the code files for any instructions, notes or options within.
@@ -69,11 +69,11 @@ reason the categories don't update after saving the page, refresh the page.
 
 ## Demo
 
-You can see a [demo of this effect here][10].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -140,11 +140,9 @@ Please consider [making a donation][11].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
-[5]: https://github.com/tomsWebConsulting/twcsl
-[6]: https://github.com/tomsWebConsulting/twcsl#install-options
-[17]: store%20page%20list%20categories%20mega%20options.html#L1
-[7]: store%20page%20list%20categories%20mega.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: store%20page%20list%20categories%20mega%20options.html#L1
+[6]: store%20page%20list%20categories%20mega.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
