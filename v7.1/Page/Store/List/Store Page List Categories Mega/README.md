@@ -86,7 +86,7 @@ Please consider [making a donation][10].
 
   * made code less heavy handed when removing Squarespace UI elements, user
     decides with settings
-  * broke options out into its own file
+  * moved options out of main code
   * updated to work with Products V2
   * removed twcsl dependency
   * removed jQuery dependency

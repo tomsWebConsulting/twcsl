@@ -82,7 +82,7 @@ Please consider [making a donation][10].
 
 * **2025-07-07**
 
-  * broke options out into its own file
+  * moved options out of main code
   * updated to work with v7.1 Products V2
   * removed twcsl dependency
   * removed jQuery dependency

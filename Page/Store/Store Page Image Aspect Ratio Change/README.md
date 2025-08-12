@@ -49,7 +49,7 @@ Please consider [making a donation][8].
 
 * **2025-06-29**
 
-  * broke options out into its own file
+  * moved options out of main code
   * updated to work with v7.1 Products V2
   * remove dependency on twcsl
   * remove dependency on jQuery
