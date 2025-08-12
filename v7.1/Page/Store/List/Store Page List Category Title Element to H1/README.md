@@ -14,6 +14,10 @@ Change Store page list Category Title to a H1 element.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -66,7 +70,7 @@ Please consider [making a donation][8].
 
 * **2025-07-10**
 
-  * broke options out into its own file
+  * moved options out of main code
   * updated to work with v7.1 Products V2
   * bumped version to 0.2.0
   
