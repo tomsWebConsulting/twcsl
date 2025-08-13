@@ -15,6 +15,10 @@ detail pages to use tabs.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
