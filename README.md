@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 401 effects. Each effect has it's own version number, code,
+twcsl contains 400 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -361,9 +361,9 @@ not necessarily designed to work together.
         
         * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
           
-        * [Store Page Detail Details Reorder Desktop](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Details%20Reorder%20Desktop)
-          
         * [Store Page Detail Price Total](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Total)
+          
+        * [Store Page Detail Meta Reorder](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Meta%20Reorder)
           
         * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
           
@@ -584,8 +584,6 @@ not necessarily designed to work together.
   * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
-    
-  * [Store Product Details Display Flex Desktop](v7.1/Store%20Product%20Details%20Display%20Flex%20Desktop)
     
   * [Site Title Each Word Span Tag Add](v7.1/Site%20Title%20Each%20Word%20Span%20Tag%20Add)
     
