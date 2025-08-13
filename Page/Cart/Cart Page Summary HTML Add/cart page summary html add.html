@@ -1,88 +1,134 @@
-<script>
+<!-- begin TWC Cart Page Summary HTML Add -->
 
-  /*
+  <script>
   
-    begin cart page summary html add
+    /*
     
-    License       : < https://tinyurl.com/s872fb68 >
-    
-    Version       : 0.2.1
-    
-    SS Versions   : 7.1, 7.0
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible    : Not Applicable
-    
-    Dependencies  : cart page observe changes
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-    // initialize twc global if needed
-    
-    if ( window.twc == undefined ) window.twc = { };
-    
-    twc.cpsha = {
-    
-      html : `
+      cart page summary html add
       
-        [ enter html here replacing square brackets ]
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.3.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      v7.1
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Dependencies  : cart page observe changes < https://tinyurl.com/323xeep5 >
+      
+      Copyright     : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+      ( ( ) => {
+      
+        const
         
-        `
-        
-      };
-      
-    // do not change anything below, there be the borg here
-    
-    ( ( ) => {
-    
-      const version = '0.2.1';
-      
-      const s = `Cart Page Summary HTML Add v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
-        
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
-      console.log ( s );
-      
-      } ) ( );
-      
-    var twcCartPageSummaryHtmlAdd = ( node ) => {
-    
-      const selector = '.cart-summary-container';
-      
-      let b = node.querySelector === undefined;
-      
-      if ( b ) return; // bail if no querySelector
-      
-      node = node
-      
-        .querySelector ( selector );
-        
-      b = node === null;
-      
-      if ( b ) return; // bail if no cart summary container
-      
-      html = `
-      
-        <div class="twc-csha">
-        
-          ${ twc.cpsha.html }
+          version = '0.3.0',
           
-          </div>
+          s = `
           
-        `;
+            Cart Page Summary HTML Add v${ version }
+            
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2022-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >
+            
+            `
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
         
-      node
-      
-        .insertAdjacentHTML ( 'beforeend', html );
+        // globals
         
-      };
-      
-    // end cart page summary html add
+        {
+        
+          // initialize twc module
+          
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc cpsha sub-module
+          
+          twc.cpsha = ( ( self ) => self ) ( twc.cpsha || { } );
+          
+          }
+          
+        window
+        
+          .twcCartPageSummaryHtmlAdd
+          
+          =
+          
+          ( node ) => {
+          
+            if ( ! node.querySelector ) return; // bail if no querySelector
+            
+            const
+            
+              codeKey = 'twc-cpsha',
+              
+              hasElement = node
+              
+                .classList
+                
+                .contains ( codeKey )
+                
+                ||
+                
+                node
+              
+                  .querySelector ( `.${ codeKey }` );
+                  
+            if ( hasElement ) return; // bail if element already added
+            
+            const selector = [
+            
+              '.cart-summary-container', // 7.1
+              
+              '.cart-summary' // 7.0
+              
+              ]
+              
+              .join ( ', ' );
+              
+            node = node
+            
+              .querySelector ( selector );
+              
+            if ( ! node ) return; // bail if no cart summary element
+            
+            node
+            
+              .insertAdjacentHTML (
+              
+                'beforeend',
+                
+                `
+                
+                  <div class="${ codeKey }">
+                  
+                    ${ twc.cpsha.html }
+                    
+                    </div>
+                    
+                  `
+                  
+                );
+                
+            };
+            
+        } ) ( );
+        
+    </script>
     
-  </script>
+  <!-- end TWC Cart Page Summary HTML Add -->

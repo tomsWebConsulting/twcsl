@@ -8,7 +8,7 @@ Add HTML to the cart page summary.
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
 #### SS Versions
 
@@ -30,24 +30,34 @@ Add HTML to the cart page summary.
 
 ## Install
 
-* Install [Cart Page Observe Changes][4]. After you install Cart Page Observe
+* Install [Cart Page Observe Changes][5]. After you install Cart Page Observe
   Changes be sure to continue on with the rest of the steps.
   
-* Add code from file **[cart page summary html add.html][5]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER **before** the **cart page
-  observe changes** code. Refer to [Add code to code injection][6] for details.
+* Add code from file **[cart page summary html add options.html][6]** to
+  Website > Pages > Custom Code > Code Injection > FOOTER **before** the **cart
+  page observe changes** code. Refer to [Add code to code injection][7] for
+  details. Read the code for any instructions within.
   
-* Read the code for any instructions within.
+* Add code from file **[cart page summary html add.html][8]** to Website >
+  Pages > Custom Code > Code Injection > FOOTER **before** the **cart page
+  observe changes** code.
   
 * In the **cart page observe changes** code add **twcCartPageSummaryHtmlAdd** to
   callbacks added.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-08-13**
+
+  * moved options out of main code
+  * added check to not add the html multiple times
+  * added missing class for v7.0 summary element
+  * bumped version to 0.3.0
+  
 * **2024-04-29**
 
   * make code running message appear once in console
@@ -66,7 +76,9 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
-[5]: https://github.com/tomsWebConsulting/twcsl/blob/main/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.html
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
+[6]: cart%20page%20summary%20html%20add%20options.html
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: cart%20page%20summary%20html%20add.html
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
