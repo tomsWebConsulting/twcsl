@@ -82,6 +82,7 @@ Please consider [making a donation][9].
 
 * **2025-08-13**
 
+  * moved options out of main code
   * fixed issue with categories not displaying when title or breadcrumbs are
     off, make json call to get the categories
   * bumped version to 0.12.0
