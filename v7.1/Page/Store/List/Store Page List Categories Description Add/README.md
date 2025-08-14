@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.11.1
+  * 0.12.0
 
 #### SS Version
 
@@ -80,6 +80,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-08-13**
+
+  * fixed issue with categories not displaying when title or breadcrumbs are
+    off, make json call to get the categories
+  * bumped version to 0.12.0
+  
 * **2025-07-16**
 
   * fixed all category not showing
