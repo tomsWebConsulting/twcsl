@@ -8,7 +8,7 @@ Display store detail variant buttons vertically.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -36,11 +36,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
-<!-- * **2023-08-27**
+* **2025-08-14**
 
-  * add support for all Gallery Types
-  * bumped version to 0.2.0
-  -->
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.1.1
+  
 * **2023-09-15**
 
   * initial version
