@@ -1,92 +1,48 @@
-<!--
+<!-- begin TWC Store Product Detail Variant Color Swatch Add -->
 
-  begin store product detail variant color swatch add
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.0
-  
-  SS Version    : 7.1
-  
-  Dependencies  : twcsl
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    store product detail variant color swatch add
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    .twc-spdvcsa {
-    
-      --twc-spdvcsa-border-color : black;
-      
-      }
-      
-    </style>
-    
-  <script>
-  
-    if ( window.twc == undefined ) window.twc = { };
-    
-    twc.spdvcsa = {
-    
-      option : 'Color',
-      
-      colorMap : {
-      
-        /*
-        
-          the format of each line is a color word and a css color. there are
-          some special "colors" you can use...
-          
-            slash
-            
-              no color is added but a slash is added to the color swatch box
-          
-          following is an example line. copy the example line below and paste
-          after the example line. remove '// ' at beginning of pasted line.
-          repeat for as many variant options where you want the effect applied.
-          this has been done once for your initially
-          
-          */
-          
-        // '[enter color word here between single quotes replacing square brackets]' : '[enter css color here between single quotes replacing square brackets]',
-        
-        '[enter color word here between single quotes replacing square brackets]' : '[enter css color here between single quotes replacing square brackets]',
-        
-        }
-        
-      };
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
-  <style>
-  
-    #siteWrapper {
+    .product-detail .product-meta .product-variants {
     
       --twc-product-variants : hidden;
       
-      }
-      
-    #siteWrapper {
-    
       visibility : var( --twc-product-variants );
       
       }
       
-    .ProductItem-details .twc-spdvcsa .variant-radiobtn-wrapper label {
+    .product-detail .product-meta .product-variants .variant-radiobtn-wrapper label {
     
       display : flex;
       gap : 1em;
       
       }
       
-    .ProductItem-details .twc-spdvcsa .variant-radiobtn-wrapper label span:first-child {
+    .product-detail .product-meta .product-variants .variant-radiobtn-wrapper label span:first-child {
     
       border : 1px solid var( --twc-spdvcsa-border-color );
       width : 50px;
@@ -97,152 +53,444 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const title = 'Store Product Detail Variant Color Swatch Add';
+      const callback = ( ) => {
       
-      const version = '0.1.0';
-      
-      const s = `${ title } v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        const
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
-      console.log ( s );
-      
-      const codeKey = 'twc-spdvcsa';
-      
-      const selectorKey = '.ProductItem-details .product-variants';
-      
-      if ( window.twc == undefined ) window.twc = { };
-      
-      if ( twc.data == undefined ) twc.data = { };
-      
-      if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
-      
-      if ( twc.data.hideShow [ selectorKey ] == undefined )
-      
-        twc
-        
-          .data
+          version = '0.2.0',
           
-          .hideShow
+          s = `
           
-          [ selectorKey ]
-          
-          =
-          
-          [ ];
-          
-      twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .push ( `--${ codeKey }` );
-        
-      ( ( ) => {
-      
-        if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
-        
-        const options = twc.spdvcsa;
-        
-        const colorMap = options.colorMap;
-        
-        const selector =
-        
-          `.variant-option-title:contains(${ options.option }: )`;
-          
-        const $option = $( selector )
-        
-          .parent ( )
-          
-          .addClass ( codeKey );
-          
-        for ( let [ key, value ] of Object.entries ( colorMap ) ) {
-        
-          const selector =
-          
-            `[for="variant-option-${ options.option }-${ key }"]`;
-          
-          const $element = $( selector, $option );
-          
-          const $span = $( '<span/>' );
-          
-          let property;
-          
-          switch ( value ) {
-          
-            case 'slash' :
+            Store Product Detail Variant Color Swatch Add v${ version }
             
-              property = 'background';
-              
-              value = 'linear-gradient( to top right, rgba( 0, 0, 0, 0 ) 0%, ' +
-              
-                'rgba( 0, 0, 0, 0 ) calc( 50% - 1px ), ' +
-                
-                'rgba( 191, 191, 191, 1 ) 50%, rgba( 0, 0, 0, 0 ) '+
-                
-                'calc( 50% + 1px ), rgba( 0, 0, 0, 0 ) 100% )';
-                
-              break;
-              
-            default :
+            License < https://tinyurl.com/s872fb68 >
             
-              property = 'background-color';
+            © 2023-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >
+            
+            `
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        const isStorePage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const isDetail = ( ( ) => {
+        
+          const is = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isDetail ) return; // bail if not detail
+        
+        const
+        
+          codeKey = 'twc-spdvcsa',
+          
+          selectorKey = '.product-detail .product-meta .product-variants';
+          
+        // hide show register
+        
+        {
+        
+          // initialize twc data sub-module
+          
+          twc.data = ( ( self ) => self ) ( twc.data || { } );
+          
+          // initialize twc data hideShow sub-module
+          
+          twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+          
+          // initialize twc data hideShow selector key sub-module
+          
+          twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
+          
+            twc.data.hideShow [ selectorKey ] || [ ] );
+            
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .push ( `--${ codeKey }` );
+            
+          }
+          
+        {
+        
+          let optionElement = document
+          
+            .body
+            
+            .querySelector ( selectorKey );
+            
+          const
+          
+            options = codeKey
+            
+              .split ( '-' )
               
-              break;
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            xPathEvaluate = ( xPathExpression, contextNode ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              },
+              
+            xPathExpression = `
+            
+              .//div [
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                  
+                  ' variant-option-title '
+                  
+                  )
+                  
+                and
+                
+                contains (
+                
+                  .,
+                  
+                  '${ options.option }:'
+                  
+                  )
+                  
+                ]
+                              
+              `,
+              
+            xPathResults = xPathEvaluate (
+            
+              xPathExpression,
+              
+              optionElement
+              
+              );
+              
+          // bail if no element
+          
+          if ( ! xPathResults.snapshotLength ) return;
+          
+          const
+          
+            wrapInner = ( element, tag ) => {
+            
+              const innerWrapperElement = document
+              
+                .createElement ( tag );
+                
+              while ( element.firstChild ) {
+              
+                innerWrapperElement
+                
+                  .appendChild ( element.firstChild );
+                  
+                }
+                
+              element
+              
+                .appendChild ( innerWrapperElement );
+                
+              },
+              
+            colorMap = options.colorMap,
+            
+            option = options.option;
+            
+          optionElement
+          
+            =
+            
+            xPathResults
+            
+              .snapshotItem ( 0 )
+              
+              .parentElement;
+              
+          optionElement
+          
+            .classList
+            
+            .add ( codeKey );
+            
+          const selectElement = optionElement
+          
+            .querySelector ( '.variant-select-wrapper' );
+            
+          if ( selectElement ) {
+          
+            const callback = ( element ) => {
+            
+              const
+              
+                optionElement = document
+                
+                  .createElement ( 'template' ),
+                  
+                value = element
+                
+                  .textContent
+                  
+                  .trim ( );
+                  
+              optionElement
+              
+                .innerHTML
+                
+                =
+                
+                `
+                
+                  <input type="radio" class="variant-radiobtn" value="${ value }" name="variant-option-${ option }" id="variant-option-${ option }-${ value }">
+                  
+                  <label class="sqs-button-element--secondary" role="button" tabindex="0" for="variant-option-${ option }-${ value }">
+                  
+                    ${ value }
+                    
+                    </label>
+                    
+                  `;
+                  
+              wrapperElement
+              
+                .appendChild (
+                
+                  optionElement
+                  
+                    .content
+                    
+                  );
+                  
+              };
+              
+            let wrapperElement = document
+            
+              .createElement ( 'template' );
+              
+            // wrapper element
+            
+            {
+            
+              wrapperElement
+              
+                .innerHTML
+                
+                =
+                
+                `
+                
+                  <div class="variant-radiobtn-wrapper">
+                    
+                    </div>
+                  
+                  `;
+                  
+              wrapperElement = wrapperElement
+              
+                .content
+                
+                .firstElementChild;
+                
+              }
+              
+            [
+            
+              ...
+              
+              selectElement
+              
+                .querySelectorAll ( 'option' )
+                
+              ]
+              
+              .slice ( 1 )
+              
+              .forEach ( callback );
+               
+            selectElement
+            
+              .after ( wrapperElement );
+              
+            selectElement
+            
+              .remove ( );
               
             }
             
-          $span.css ( property, value );
+          for ( let [ key, value ] of Object.entries ( colorMap ) ) {
           
-          const $e = $element
-          
-            .wrapInner ( '<span/>' )
+            const
             
-            .prepend ( $span );
+              selector =
+              
+                `[ for="variant-option-${ option }-${ key }" ]`,
+                
+              element = optionElement
+              
+                .querySelector ( selector ),
+                
+              spanElement = document
+              
+                .createElement ( 'span' );
+                
+            let property;
+            
+            switch ( value ) {
+            
+              case 'slash' :
+              
+                property = 'background';
+                
+                value = 'linear-gradient( to top right, '
+                
+                  +
+                
+                  'rgba( 0, 0, 0, 0 ) 0%, '
+                  
+                  +
+                
+                  'rgba( 0, 0, 0, 0 ) calc( 50% - 1px ), '
+                  
+                  +
+                  
+                  'rgba( 191, 191, 191, 1 ) 50%, rgba( 0, 0, 0, 0 ) '
+                  
+                  +
+                  
+                  'calc( 50% + 1px ), rgba( 0, 0, 0, 0 ) 100% )';
+                  
+                break;
+                
+              default :
+              
+                property = 'background-color';
+                
+                break;
+                
+              }
+              
+            spanElement
+            
+              .style
+              
+              .setProperty ( property, value );
+              
+            wrapInner ( element, 'span' );
+            
+            element
+            
+              .insertBefore (
+              
+                spanElement,
+                
+                element
+                
+                  .firstChild
+                  
+                );
+                
+            }
             
           }
-        
-        } ) ( );
-        
-      twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .pop ( `--${ codeKey }` );
-        
-      const l = twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .length;
-        
-      if ( ! l )
-      
-        document
-        
-          .getElementById ( 'siteWrapper' )
           
-          .style
+        // hide show unregister
+        
+        {
+        
+          twc
           
-          .setProperty ( '--twc-product-variants', 'visible' );
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .pop ( `--${ codeKey }` );
+            
+          const l = twc
           
-      } );
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .length;
+            
+          if ( ! l )
+          
+            document
+            
+              .querySelector ( selectorKey )
+              
+              .style
+              
+              .setProperty ( '--twc-product-variants', 'unset' );
+              
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
       
     </script>
     
-  <!-- end store product detail variant color swatch add -->
+  <!-- end TWC Store Product Detail Variant Color Swatch Add -->
