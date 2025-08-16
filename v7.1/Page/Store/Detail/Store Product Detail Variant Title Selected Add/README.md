@@ -14,6 +14,10 @@ Add selected variant to option title.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -21,34 +25,34 @@ Add selected variant to option title.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [Tom's Web Consulting Squarespace Library][4]
 
 ---
 
 ## Install
 
-* Install [twcsl][5]. After you install twcsl be sure to continue on with the
-  rest of the steps.
+* Add code from file **[store product detail variant title selected
+  add options.html][4]** to Store Settings > Advanced > Page Header Code
+  Injection for the store page. Refer to [Per-page code injection][5] for
+  details. Read the code for any instructions within.
   
 * Add code from file **[store product detail variant title selected
   add.html][6]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page. Refer to [Per-page code injection][7] for details.
-  
-* Read the code for any instructions within.
+  the store page.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][7].
 
 ## Changes
 
-<!-- * **2021-07-22**
+* **2025-08-16**
 
-  * fix issue with orientation on mobile, force column at 575px and below
-  * use a less heavy hand manipulating margins, keeping closer to SS settings
-  * bumped version to 0.6d1
-  -->
+  * moved options out of main code
+  * updated to work with v7.1 Products V2
+  * removed jQuery dependency
+  * removed twcsl dependency
+  * bumped version to 0.2.0
+  
 * **2023-09-20**
 
   * initial version
@@ -56,8 +60,7 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: store%20product%20detail%20variant%20title%20selected%20add%20options.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
 [6]: store%20product%20detail%20variant%20title%20selected%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
