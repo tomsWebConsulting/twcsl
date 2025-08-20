@@ -30,6 +30,9 @@ Menu Sort**.
 
 ## How to Use
 
+* Add a BASIC AUTHOR with a DISPLAY NAME of **TWC Blog Post Settings Author Menu
+  Sort**
+
 * Edit a blog post's settings.
 
 * Select the AUTHOR menu. Be sure to select it but not select an item and move
