@@ -1,0 +1,173 @@
+<!-- begin TWC Store Page Detail Commerce Elements Hide -->
+
+  <style>
+  
+    /*
+    
+      store page detail commerce elements hide
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 1.1.1
+      
+      SS Versions     : 7.1, 7.0
+      
+      v7.1
+      Products V2
+      Compatible      : Yes
+      
+      v7.0 Templates  : Adirondack
+                        
+                        Wexley
+                        
+                        your template is not listed? then it is not currently
+                        supported or it doesn't need code to turn off the
+                        commerce elements
+      
+      Notes           : v7.0 Design > Site Styles tweaks
+                        
+                          Brine, York template families
+                          
+                            turn off the commerce elements of a store page
+                            
+                          Adirondack, Wexley templates
+                          
+                            turn off the list price, this code overrides
+                            
+                          Supply template
+                          
+                            set Product List Price to 0em, this code overrides
+      
+      Copyright       : 2023-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting  < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    /* begin 7.1 */
+    
+      /* begin list */
+      
+        /* price */
+        
+        .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price,
+        
+        /* end list */
+        
+      /* begin detail */
+      
+        /* begin price */
+        
+          .product-detail .product-meta .product-price,
+          
+          .product-detail .product-related-products .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price,
+          
+          /* end price */
+          
+        /* end detail */
+        
+      /* end 7.1 */
+        
+    /* begin 7.0 */
+    
+      /* begin Adirondack, Wexley */
+      
+        /*
+        
+          there is a tweak for the following element but we override it so the
+          user only needs to install this code and not have to fiddle in the ui
+          
+          */
+          
+        .show-product-price #productList .product .product-price,
+        
+        #productDetails .product-mark,
+        
+        #productDetails .product-price,
+        
+        #productDetails .product-quantity-input,
+        
+        #productDetails .product-variants,
+        
+        #productDetails .sqs-add-to-cart-button-wrapper,
+        
+        #productList .product .product-mark,
+        
+        /* end Adirondack, Wexley */
+        
+      /* begin Supply */
+      
+        /*
+        
+          there is a tweak for the following element but we override it so the
+          user only needs to install this code and not have to fiddle in the ui
+          
+          */
+          
+        #productList .product-price-container,
+        
+        .collection-type-products.view-item .product-mark,
+        
+        .collection-type-products.view-item .product-price,
+        
+        .collection-type-products.view-item .product-quantity-input,
+        
+        .collection-type-products.view-item .product-variants,
+        
+        .collection-type-products.view-item .sqs-add-to-cart-button-wrapper,
+        
+        #productList .product .product-mark
+        
+        /* end Supply */
+        
+      /* end 7.0 */
+      
+      {
+      
+        display : none;
+        
+        }
+        
+    /* important */
+    
+      /* 7.1 */
+      
+        /* list */
+        
+          /* status */
+          
+          .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status,
+          
+        /* begin detail */
+        
+          /* add ons */
+          
+          .product-detail .product-meta .product-add-ons,
+          
+          /* add to cart and quantity */
+          
+          .product-detail .product-meta .product-add-to-cart,
+          
+          /* begin status */
+          
+            .product-detail .product-meta .product-status,
+            
+            .product-detail .product-related-products .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status,
+            
+            /* end status */
+            
+          /* variants */
+          
+          .product-detail .product-meta .product-variants
+          
+          /* end detail */
+          
+      {
+      
+        display : none !important;
+        
+        }
+        
+    </style>
+    
+  <!-- end TWC Store Page Detail Commerce Elements Hide -->
