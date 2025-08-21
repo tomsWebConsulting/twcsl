@@ -113,8 +113,6 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
-      * [Store Page Detail Commerce Elements Hide](Page/Store/Detail/Store%20Page%20Detail%20Commerce%20Elements%20Hide)
-        
       * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
         
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
@@ -125,6 +123,8 @@ not necessarily designed to work together.
       
       * [Store Page List Category Attribute Add](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
         
+    * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
+      
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
       
     * [Store Page Express Checkout](Page/Store/Store%20Page%20Express%20Checkout)
