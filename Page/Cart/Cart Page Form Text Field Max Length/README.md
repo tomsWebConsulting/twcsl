@@ -8,7 +8,7 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
