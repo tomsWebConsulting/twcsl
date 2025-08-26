@@ -14,6 +14,14 @@ Display store detail variant buttons in a more readable manner.
 
   * 7.1
 
+#### Products V2 Compatible
+
+  * No
+    
+    *I'm not sure Products V2 exhibits the issue that this code attempted to
+     address for Products V1. If you notice readability issues let me know and I
+     may resurrect this effect for Products V2.*
+  
 #### Fluid Engine Compatible
 
   * Not Applicable
