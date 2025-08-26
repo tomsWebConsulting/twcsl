@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.12.1
+  * 0.12.2
 
 #### SS Version
 
@@ -80,6 +80,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-08-26**
+
+  * fixed layout issue with recent changes Squarespace made to category HTML
+  * bumped version to 0.12.2
+  
 * **2025-08-14**
 
   * fixed issue with descriptions not displaying when Top Category Name Filter
