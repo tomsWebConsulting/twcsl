@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.12.2
+  * 0.12.3
 
 #### SS Version
 
@@ -80,6 +80,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-08-26**
+
+  * added CSS to hide description when editing section, less user confusion
+  * bumped version to 0.12.3
+  
 * **2025-08-26**
 
   * fixed layout issue with recent changes Squarespace made to category HTML
