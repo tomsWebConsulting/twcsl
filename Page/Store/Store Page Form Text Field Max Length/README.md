@@ -8,7 +8,7 @@ Limit store page form text and text area field lengths.
 
 ### Version
 
-  * 0.3.2
+  * 0.3.3
 
 #### SS Versions
 
@@ -16,6 +16,10 @@ Limit store page form text and text area field lengths.
   
   * 7.0 ([Brine template family][2])
 
+#### Products V2 Compatible
+
+  * Yes
+  
 #### v7.1 Fluid Engine Compatible
 
   * Not Applicable
@@ -124,6 +128,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-09-03**
+
+  * updated for Products V2
+  * bumped version to 0.3.3
+  
 * **2024-05-26**
 
   * fix for store page check

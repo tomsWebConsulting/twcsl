@@ -1,402 +1,818 @@
-<!--
+<!-- begin TWC Store Page Form Text Field Max Length -->
 
-  begin store page form text field max length
+  <!--
   
-  License         : < https://tinyurl.com/s872fb68 >
-  
-  Version         : 0.3.2
-  
-  SS Versions     : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible      : Not Applicable
-  
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
-                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
-                    Vow, Wav, West )
-                    
-                    your template is not listed? then it is not currently
-                    supported
-  
-  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <script>
-  
-    ( ( ) => {
+    store page form text field max length
     
-      const version = '0.3.2';
-      
-      const s = `Store Page Form Text Field Max Length v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
-        
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-        
-      console.log ( s );
-      
-      } ) ( );
-      
-    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    License         : < https://tinyurl.com/s872fb68 >
     
-      const selector = 'body';
+    Version         : 0.3.3
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible      : Yes
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : product custom form text field max length
+    
+    Notes           : this code does not work on the checkout page. it is a
+                      Squarespace security feature that no code can alter the
+                      checkout page
+                      
+                      this code is client side and making use of an HTML form
+                      feature. Since this code is client side it is possible to
+                      bypass the max length limit this code is setting. in other
+                      words you still need to be checking manually when forms or
+                      orders come in to make sure your limits are not being
+                      exceeded. consider this code more of an aid to help users
+                      not exceed your field max length limits
+    
+    Copyright       : 2024-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+    <script>
+    
+      ( ( ) => {
       
-      const b = ! document
-      
-        .querySelector ( selector )
+        const
         
-        .classList
-        
-        .contains ( 'collection-type-products' );
-        
-      if ( b ) return; // bail if not store page
-      
-      const codeKey = `twc-spftfml`;
-      
-      const detail = ( ) => {
-      
-        const callback = ( element ) => {
-        
-          const callback = function ( ) {
+          version = '0.3.3',
           
-            const data = twc.ftfml;
+          s = `Store Page Form Text Field Max Length v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
             
-            const context = Static
+            © 2024-2025 Thomas Creedon
             
-              .SQUARESPACE_CONTEXT;
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        const callback = ( ) => {
+        
+          const isStorePage = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .collection
+            
+            ?.type
+            
+            ===
+            
+            13;
+            
+          if ( ! isStorePage ) return; // bail if not store page
+          
+          // globals
+          
+          {
+          
+            // initialize twc module
+            
+            window.twc = ( ( self ) => self ) ( window.twc || { } );
+            
+            // initialize twc ftfml sub-module
+            
+            twc.ftfml = ( ( self ) => {
+            
+              const options = {
               
-            data.ids = [
-            
-              context
-              
-                .itemId
+                ids : undefined,
                 
-              ];
-              
-            const variants = context
-            
-              .product
-              
-              .variants;
-              
-            if ( variants === undefined ) { // bail if no variants
-            
-              data.response = Promise.resolve ( );
-              
-              return;
-              
-              }
-              
-            if ( variants.length == 1 ) {
-            
-              data
-              
-                .ids
+                response : undefined
                 
-                .push ( variants [ 0 ].sku )
+                };
                 
-              data.response = Promise.resolve ( );
+              Object
               
-              } else {
-              
-                let dataSelectedVariant = this
+                .assign (
                 
-                  .closest (
+                  self,
                   
-                    [
+                  options
+                  
+                  );
+                  
+              return self;
+              
+              } ) ( twc.ftfml || { } );
+              
+            }
+            
+          const
+          
+            codeKey = `twc-spftfml`,
+            
+            detail = ( ) => {
+            
+              const
+              
+                callback = ( element ) => {
+                
+                  const callback = async ( event ) => {
+                  
+                    const
                     
-                      // begin 7.1
+                      addOnClassName = 'add-on-card',
                       
-                        '.ProductItem-details-checkout', // simple layout
+                      data = twc.ftfml,
+                      
+                      element = event
+                      
+                        .target
                         
-                        '.product-details', // full, half, wrap layout
+                        .closest (
                         
-                        // end 7.1
+                          [
+                          
+                            `.${ addOnClassName }`,
+                            
+                            '.product-detail'
+                            
+                            ]
+                            
+                            .join ( ', ' )
+                            
+                          ),
+                          
+                      isAddOn = element
+                      
+                        .classList
                         
-                      '.ProductItem-details' // 7.0 Brine
+                        .contains ( addOnClassName );
+                        
+                    let
+                    
+                      context,
                       
-                      ]
+                      variants;
                       
-                      .join ( ', ' )
+                    if ( ! isAddOn ) {
+                    
+                      context = Static.SQUARESPACE_CONTEXT,
                       
-                    )
+                      variants = context
+                      
+                        .product
+                        
+                        .variants;
+                        
+                      } else {
+                      
+                        try {
+                        
+                          const
+                          
+                            url = element
+                            
+                              .querySelector ( '.add-on-title-link' )
+                              
+                              .getAttribute ( 'href' )
+                              
+                              +
+                              
+                              '?format=json',
+                              
+                            response = await fetch ( url );
+                            
+                          if ( ! response.ok ) {
+                          
+                            const s = `
+                            
+                              ${ codeKey } network response was not ok ${
+                              
+                                response
+                                
+                                  .statusText
+                                  
+                                  }
+                                  
+                              `
+                              
+                              .trim ( )
+                              
+                              .replace ( /\s+/gm, ' ' );
+                              
+                            throw new Error ( s );
+                            
+                            }
+                            
+                          context = await response.json ( );
+                          
+                          variants = context.item.variants;
+                          
+                          } catch ( error ) {
+                          
+                            const s = `
+                            
+                              ${ codeKey } there has been a problem with your fetch get operation,
+                              
+                              ${ error }.
+                              
+                              `
+                              
+                              .trim ( )
+                              
+                              .replace ( /\s+/gm, ' ' );
+                              
+                            console.error ( s );
+                            
+                            }
+                            
+                        }
+                        
+                    data.ids = [ context.itemId ];
+                    
+                    if ( ! variants ) { // bail if no variants
+                    
+                      data.response = Promise.resolve ( );
+                      
+                      return;
+                      
+                      }
+                      
+                    let sku;
+                    
+                    if ( variants.length === 1 )
+                    
+                      sku = variants [ 0 ].sku;
+                      
+                      else {
+                      
+                        const variantsElement = element
+                          
+                          .querySelector ( '.product-variants' );
+                          
+                        switch ( true ) {
+                        
+                          case is71 : {
+                          
+                            const
+                            
+                              elements = variantsElement
+                              
+                                .querySelectorAll (
+                                
+                                  '.variant-select-wrapper'
+                                  
+                                  ),
+                                  
+                              isVariantSelected
+                              
+                                =
+                                
+                                !
+                                
+                                [
+                                
+                                  ...
+                                  
+                                  elements
+                                  
+                                  ]
+                                
+                                  .filter (
+                                  
+                                    e => e
+                                    
+                                      .getAttribute ( 'data-selected-value' )
+                                      
+                                      .startsWith ( 'Select ' )
+                                      
+                                    )
+                                    
+                                    .length;
+                                
+                            // bail if no variant selected
+                            
+                            if ( ! isVariantSelected ) return;
+                            
+                            const
+                            
+                              attributes = { },
+                              
+                              callback = ( element ) => {
+                              
+                                attributes
+                                
+                                  [
+                                  
+                                    element
+                                    
+                                      .closest ( '.variant-option' )
+                                      
+                                      .getAttribute (
+                                      
+                                        'data-variant-option-name'
+                                        
+                                        )
+                                        
+                                    ]
+                                    
+                                  =
+                                  
+                                  value = element
+                                  
+                                    .getAttribute ( 'data-selected-value' );
+                                    
+                                };
+                                
+                            elements
+                            
+                              .forEach ( callback );
+                              
+                            sku = variants
+                            
+                              .filter (
+                              
+                                v =>
+                                
+                                  objectsShallowEqual (
+                                  
+                                    v.attributes,
+                                    
+                                    attributes
+                                    
+                                    )
+                                    
+                                )
+                                
+                              [ 0 ]
+                              
+                              .sku;
+                              
+                            break;
+                            
+                            }
+                            
+                          case is70 : {
+                          
+                            sku = variantsElement
+                            
+                              .getAttribute ( 'data-selected-variant' );
+                              
+                            if ( ! sku ) return; // bail if no sku
+                            
+                            sku = JSON
+                            
+                              .parse ( sku )
+                              
+                              .sku;
+                              
+                            break;
+                            
+                            }
+                            
+                          }
+                          
+                        }
+                        
+                    data.ids.push ( sku );
+                    
+                    data.response = Promise.resolve ( );
+                    
+                    };
+                    
+                  element
                   
-                  .querySelector ( '.product-variants' );
-                
-                // bail if no variants
-                
-                if ( dataSelectedVariant === null ) return;
-                
-                dataSelectedVariant = dataSelectedVariant
-                
-                  .getAttribute ( 'data-selected-variant' );
+                    .addEventListener ( 'click', callback );
+                    
+                  },
                   
-                // bail if no variant selected
+                selector = [
                 
-                if ( dataSelectedVariant === undefined ) return;
-                
-                const sku = JSON
-                
-                  .parse ( dataSelectedVariant )
+                  // 7.1
                   
-                  .sku;
+                  '.product-detail:not( .product-related-products )'
+                  
+                    +
+                    
+                    ':has( :not( .product-mark.sold-out ) ) '
+                    
+                    +
+                    
+                    '.sqs-add-to-cart-button-wrapper',
+                    
+                  // 7.0
+                  
+                  '.ProductItem:not( .sold-out ) '
+                  
+                    +
+                    
+                    '.sqs-add-to-cart-button-wrapper '
+                    
+                    +
+                    
+                    '.sqs-add-to-cart-button.use-form'
+                    
+                  ]
+                  
+                  .join ( ', ' );
+                  
+              document
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                .forEach ( callback );
+                
+              },
+              
+            isDetail = ( ( ) => {
+            
+              const
+              
+                selector = 'body[ id^="item-" ]',
+                
+                is = document
+                
+                  .querySelector ( selector )
+                  
+                  !==
+                  
+                  null;
+                  
+              return is;
+              
+              } ) ( ),
+              
+            isList = ( ( ) => {
+            
+              const
+              
+                selector = 'body[ id^="collection-" ]',
+                
+                is = document
+                
+                  .querySelector ( selector )
+                  
+                  !==
+                  
+                  null;
+                  
+              return is;
+              
+              } ) ( ),
+              
+            list = ( ) => {
+            
+              const callback = ( data ) => {
+                
+                const callback = ( item ) => {
+                
+                  const hasForm = item
+                  
+                    .additionalFieldsFormId;
+                    
+                  if ( ! hasForm ) return; // bail if no form
+                  
+                  const variantOptionsLength = item
+                  
+                    .variantOptionOrdering
+                    
+                    .length;
+                    
+                  // bail if more than one option
+                  
+                  if ( variantOptionsLength > 1 ) return;
+                  
+                  const
+                  
+                    selector = '.product-list-item:has( '
+                    
+                      +
+                      
+                      `.product-list-item-link[ href="${ item.fullUrl }" ] ) `
+                      
+                      +
+                      
+                      '.sqs-add-to-cart-button-wrapper',
+                      
+                    element = document
+                    
+                      .body
+                      
+                      .querySelector ( selector );
+                      
+                  if ( ! element ) return; // bail if no element
+                  
+                  element
+                  
+                    .setAttribute ( 'data-item-id', item.id );
+                    
+                  const
+                  
+                    callback = ( event ) => {
+                    
+                      const
+                      
+                        data = twc.ftfml,
+                        
+                        element = event
+                        
+                          .currentTarget,
+                          
+                        itemId = element
+                        
+                          .getAttribute ( 'data-item-id' ),
+                          
+                        noSku = element
+                        
+                          .getAttribute ( noSkuAttribute );
+                          
+                      data.ids = [ itemId ];
+                      
+                      if ( noSku ) { // bail if no sku
+                      
+                        data.response = Promise.resolve ( );
+                        
+                        return;
+                        
+                        }
+                        
+                      let sku = element
+                      
+                        .getAttribute ( `data-${ codeKey }-sku` );
+                        
+                      if ( sku ) { // bail if sku
+                      
+                        data.ids.push ( sku );
+                        
+                        data.response = Promise.resolve ( );
+                        
+                        return;
+                        
+                        }
+                        
+                      const variantsElement = element
+                        
+                        .closest ( '.product-list-item' )
+                        
+                        .querySelector ( '.product-variants' );
+                        
+                      if ( ! variantsElement ) return; // bail if no variants
+                      
+                      const
+                      
+                        elements = variantsElement
+                        
+                          .querySelectorAll (
+                          
+                            '.variant-select-wrapper'
+                            
+                            ),
+                            
+                        isVariantSelected
+                        
+                          =
+                          
+                          !
+                          
+                          [
+                          
+                            ...
+                            
+                            elements
+                            
+                            ]
+                          
+                            .filter (
+                            
+                              e => e
+                              
+                                .getAttribute ( 'data-selected-value' )
+                                
+                                .startsWith ( 'Select ' )
+                                
+                              )
+                              
+                              .length;
+                              
+                      // bail if no variant selected
+                      
+                      if ( ! isVariantSelected ) return;
+                      
+                      const
+                      
+                        attributes = { },
+                        
+                        callback = ( element ) => {
+                        
+                          attributes
+                          
+                            [
+                            
+                              element
+                              
+                                .closest ( '.variant-option' )
+                                
+                                .getAttribute (
+                                
+                                  'data-variant-option-name'
+                                  
+                                  )
+                                  
+                              ]
+                              
+                            =
+                            
+                            value = element
+                            
+                              .getAttribute ( 'data-selected-value' );
+                              
+                          };
+                          
+                      elements
+                      
+                        .forEach ( callback );
+                        
+                      sku = variants
+                      
+                        .filter (
+                        
+                          v =>
+                          
+                            objectsShallowEqual (
+                            
+                              v.attributes,
+                              
+                              attributes
+                              
+                              )
+                              
+                          )
+                          
+                        [ 0 ]
+                        
+                        .sku;
+                        
+                      data.ids.push ( sku );
+                      
+                      data.response = Promise.resolve ( );
+                      
+                      },
+                      
+                    noSkuAttribute = `data-${ codeKey }-no-sku`,
+                    
+                    variants = item.variants,
+                    
+                    variantsLength = variants.length;
+                    
+                  if ( ! variantsLength )
+                  
+                    element
+                    
+                      .setAttribute ( noSkuAttribute, '' );
+                      
+                    else if ( variantsLength === 1 ) {
+                    
+                      const
+                      
+                        variant = variants [ 0 ],
+                        
+                        isNoStock =
+                        
+                          !
+                          
+                          variant.unlimited
+                          
+                          &&
+                          
+                          !
+                          
+                          variant.qtyInStock;
+                          
+                      if ( isNoStock ) return; // bail no stock
+                      
+                      element
+                      
+                        .setAttribute (
+                        
+                          `data-${ codeKey }-sku`,
+                          
+                          variant.sku
+                          
+                          );
+                          
+                      }
+                      
+                  element
+                  
+                    .addEventListener ( 'click', callback );
+                    
+                  };
                   
                 data
                 
-                  .ids
+                  .items
                   
-                  .push ( sku );
+                  .forEach ( callback );
                   
-                data.response = Promise.resolve ( );
+                };
+                
+              const url = location
+              
+                .pathname
+                
+                +
+                
+                '?format=json';
+                
+              fetch ( url )
+              
+                .then ( response => response.json ( ) )
+                
+                .then ( callback );
+                  
+              },
+              
+            objectsShallowEqual = ( obj1, obj2 ) => {
+            
+              const
+              
+                keys1 = Object.keys ( obj1 ),
+                
+                keys2 = Object.keys ( obj2 );
+                
+              let isEqual = keys1.length === keys2.length;
+              
+              // bail id keys lengths not equal
+              
+              if ( ! isEqual ) return false;
+              
+              for ( let key of keys1 ) {
+              
+                isEqual = obj1 [ key ] === obj2 [ key ];
+                
+                // bail if key/value pair not equal
+                
+                if ( ! isEqual ) return false;
                 
                 }
                 
+              return true;
+              
+              },
+              
+            ssVersion = Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .templateVersion,
+              
+            is70 = ssVersion === '7',
+            
+            is71 = ssVersion === '7.1';
+            
+          switch ( true ) {
+          
+            case isDetail:
+            
+              detail ( );
+              
+              break;
+              
+            case isList:
+            
+              if ( ! is71 ) return; // bail if not 7.1
+              
+              list ( );
+              
+              break;
+              
             }
             
-          element
-          
-            .addEventListener ( 'click', callback );
-            
           };
           
-        const selector = [
-        
-          '.ProductItem', // simple layout
-          
-          '.pdp-layout' // full, half, wrap layout
-          
-          ]
-          
-          .map ( l => `${ l }:not( .sold-out ) ` +
-          
-            '.sqs-add-to-cart-button-wrapper ' +
-            
-            '.sqs-add-to-cart-button.use-form' )
-            
-          .join ( ', ' );
-          
-        document
-        
-          .querySelectorAll ( selector )
-          
-          .forEach ( callback );
-        
-        };
-        
-      const list = ( ) => {
-      
-        const callback = ( data ) => {
-          
-          const callback = ( item ) => {
-          
-            let b = item.additionalFieldsFormId === undefined;
-            
-            if ( b ) return; // bail if no form
-            
-            const selector = '.sqs-add-to-cart-button[ ' +
-            
-              `data-item-id="${ item.id }"]`;
-              
-            const element = document
-            
-              .querySelector ( selector );
-              
-            if ( element === null ) return; // bail if no element
-            
-            const callback = function ( ) {
-            
-              const data = twc.ftfml;
-              
-              const itemId = this
-              
-                .getAttribute ( 'data-item-id' )
-                
-              const noSku = this
-              
-                .getAttribute ( noSkuAttribute )
-                
-                !==
-                
-                null;
-                
-              data.ids = [ itemId ];
-              
-              if ( noSku ) { // bail if no sku
-              
-                data.response = Promise.resolve ( );
-                
-                return;
-                
-                }
-                
-              let sku = this
-              
-                .getAttribute ( `data-${ codeKey }-sku` );
-                
-              if ( sku !== null ) { // bail if sku
-              
-                data.ids.push ( sku );
-                
-                data.response = Promise.resolve ( );
-                
-                return;
-                
-                }
-                
-              let variant = this
-              
-                .closest ( '.plp-grid-add-to-cart' )
-                
-                .querySelector ( '.product-variants' )
-                
-                .getAttribute ( 'data-selected-variant' );
-                
-              if ( variant === null ) return; // bail if no selected variants
-              
-              variant = JSON.parse ( variant );
-              
-              data
-              
-                .ids
-                
-                .push ( variant.sku );
-                
-              data.response = Promise.resolve ( );
-              
-              }
-              
-            const noSkuAttribute = `data-${ codeKey }-no-sku`;
-            
-            const variants = item.variants;
-            
-            const l = variants.length;
-            
-            if ( ! l )
-            
-              element
-              
-                .setAttribute ( noSkuAttribute, '' );
-                
-              else if ( l == 1 ) {
-              
-                const variant = variants [ 0 ];
-                
-                const b = ! variant.unlimited && ! variant.qtyInStock;
-                
-                if ( b ) return; // bail no stock
-                
-                const sku = variant.sku;
-                
-                element
-                
-                  .setAttribute ( `data-${ codeKey }-sku`, sku );
-                  
-                }
-                
-            element
-            
-              .addEventListener ( 'click', callback );
-              
-            };
-            
-          data
-          
-            .items
-            
-            .forEach ( callback );
-            
-          };
-          
-        const url = location
-        
-          .pathname
-          
-          +
-          
-          '?format=json';
-          
-        fetch ( url )
-        
-          .then ( response => response.json ( ) )
-          
-          .then ( callback );
-            
-        };
-        
-      if ( window.twc === undefined ) // initialize twc global if needed
-      
-        window.twc = { };
-        
-      if ( twc.ftfml === undefined ) // initialize ftfml if needed
-      
-        twc.ftfml = {
-        
-          ids : undefined,
-          
-          productIdSkuMap : { },
-          
-          response : undefined
-          
-          };
-          
-      const isDetail = ( ( ) => {
-      
-        const selector = 'body[ id^="item-" ]';
-        
-        const is = document
-        
-          .querySelector ( selector )
-          
-          !==
-          
-          null;
-          
-        return is;
+        document.addEventListener ( 'DOMContentLoaded', callback );
         
         } ) ( );
         
-      const isList = ( ( ) => {
+      </script>
       
-        const selector = 'body[ id^="collection-" ]';
-        
-        const is = document
-        
-          .querySelector ( selector )
-          
-          !==
-          
-          null;
-          
-        return is;
-        
-        } ) ( );
-        
-      switch ( true ) {
-      
-        case isDetail:
-        
-          detail ( );
-          
-          break;
-          
-        case isList:
-        
-          list ( );
-          
-          break;
-          
-        }
-        
-      } );
-      
-    </script>
-    
-  <!-- end store page form text field max length -->
+  <!-- end TWC Store Page Form Text Field Max Length -->
