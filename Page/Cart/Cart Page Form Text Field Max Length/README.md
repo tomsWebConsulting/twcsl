@@ -90,8 +90,6 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][8].
-
 This code does not work on the checkout page. It is a Squarespace security
 feature that no code can alter the checkout page.
 
