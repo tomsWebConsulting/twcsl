@@ -8,7 +8,7 @@ Limit custom form text and text area field lengths.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -32,10 +32,10 @@ Limit custom form text and text area field lengths.
 
 ## Install
 
-* Install [Modal Lightbox Observe Changes][5]. After you install the code be
+* Install [Modal Lightbox Observe Changes][7]. After you install the code be
   sure to continue on with the rest of the steps.
   
-* Install [Product Quick View Form Text Field Max Length][6]. After you install
+* Install [Product Quick View Form Text Field Max Length][8]. After you install
   the code be sure to continue on with the rest of the steps.
   
 * Options
@@ -45,20 +45,20 @@ Limit custom form text and text area field lengths.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[product custom form text field max length.html][7]**
+    * Add code from file **[product custom form text field max length.html][9]**
       to Page Settings > Advanced > Page Header Code Injection for the page,
       **before** the product quick view observe changes code. Refer to [Per-page
-      code injection][8] for details.
+      code injection][10] for details.
       
   * Site-wide
   
     * Use this option if you have multiple elements such as a store page and
       product blocks where you want to have this effect.
       
-    * Add code from file **[product custom form text field max length.html][7]**
+    * Add code from file **[product custom form text field max length.html][9]**
       to Website > Pages > Custom Code > Code Injection > FOOTER, **before**
       the product quick view observe changes code. Refer to [Add code to code
-      injection][9] for details.
+      injection][11] for details.
       
 * Add the **twcPcftfml** callback name to the modal lightbox observe changes
   code per that codes install instructions.
@@ -104,7 +104,7 @@ Limit custom form text and text area field lengths.
     format id colon number comma for each id/number pair.
     
     You can find a product with no variants id by using Heather Tovey's
-    [Squarespace ID Finder][10]. Alternately you can export your inventory and
+    [Squarespace ID Finder][12]. Alternately you can export your inventory and
     grab the id from the CSV file.
     
     To use SIF go to your product detail page and use SIF. You will see
@@ -115,7 +115,7 @@ Limit custom form text and text area field lengths.
     You only need the number after **#item-**.
     
 * If you need installation help or customization please [contact me for paid
-  consulting][11].
+  consulting][13].
 
 ## Notes
 
@@ -130,15 +130,16 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][14].
 
 ## Changes
 
-<!-- * **2024-05-18**
+* **2025-09-03**
 
-  * support quick view
-  * bumped version to 0.2.0
-  -->
+  * updated to work with Squarespace's recent changes to Product blocks and
+    Products V2
+  * bumped version to 0.1.1
+  
 * **2024-05-23**
 
   * initial version
@@ -147,11 +148,13 @@ Please consider [making a donation][12].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length#product-quick-view-form-text-field-max-length
-[7]: product%20custom%20form%20text%20field%20max%20length.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://www.heathertovey.com/squarespace-id-finder/
-[11]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length
+[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
+[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length#product-quick-view-form-text-field-max-length
+[9]: product%20custom%20form%20text%20field%20max%20length.html#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[12]: https://www.heathertovey.com/squarespace-id-finder/
+[13]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
+[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
