@@ -8,7 +8,7 @@ Limit product quick view text and text area field lengths.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -78,11 +78,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
-<!-- * **2024-05-18**
+* **2025-09-03**
 
-  * support quick view
-  * bumped version to 0.2.0
-  -->
+  * updated to work with Squarespace January 13, 2025 Product block changes
+  * bumped version to 0.1.1
+  
 * **2024-05-23**
 
   * initial version
