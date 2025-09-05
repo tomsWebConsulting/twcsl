@@ -1,41 +1,54 @@
-<!--
+<!-- begin TWC Product Block Form Text Field Max Length -->
 
-  begin product block form text field max length
+  <!--
   
-  License         : < https://tinyurl.com/s872fb68 >
-  
-  Version         : 0.1.0
-  
-  SS Versions     : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible      : Yes
-  
-  v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
-                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
-                    Vow, Wav, West )
-                    
-                    your template is not listed? then it is not currently
-                    supported
-  
-  Dependencies    : product quick view form text field max length
-  
-                    product custom form text field max length
-  
-  Note            : this effect is not active in Squarespace Preview to test it
-                    use private browsing < https://tinyurl.com/ynessvsf >
-  
-  By              : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    product block form text field max length
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.1
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Yes
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : product quick view form text field max length
+                      
+                      product custom form text field max length
+    
+    Notes           : this code does not work on the checkout page. it is a
+                      Squarespace security feature that no code can alter the
+                      checkout page
+                      
+                      this code is client side and making use of an HTML form
+                      feature. Since this code is client side it is possible to
+                      bypass the max length limit this code is setting. in other
+                      words you still need to be checking manually when forms or
+                      orders come in to make sure your limits are not being
+                      exceeded. consider this code more of an aid to help users
+                      not exceed your field max length limits
+    
+    Copyright       : 2024-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
     .collection-type-page .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
@@ -50,173 +63,229 @@
   
     ( ( ) => {
     
-      const version = '0.1.0';
+      const
       
-      const s = `Product Block Form Text Field Max Length v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.1.1',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `Product Block Form Text Field Max Length v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      if ( window.twc === undefined ) // initialize twc global if needed
+      const callback = ( ) => {
       
-        window.twc = { };
+        // globals
         
-      if ( twc.ftfml === undefined ) // initialize ftfml if needed
-      
-        twc.ftfml = {
+        {
         
-          ids : undefined,
+          // initialize twc module
           
-          productIdSkuMap : { },
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
           
-          response : undefined
+          // initialize twc ftfml sub-module
           
-          };
+          twc.ftfml = ( ( self ) => {
+          
+            const options = {
+            
+              ids : undefined,
+              
+              response : undefined
+              
+              };
+              
+            Object
+            
+              .assign (
+              
+                self,
+                
+                options
+                
+                );
+                
+            return self;
+            
+            } ) ( twc.ftfml || { } );
+            
+          }
+          
+        const
         
-      } ) ( );
-      
-    document.addEventListener ( 'DOMContentLoaded', ( ) => {
-    
-      const callback = ( element ) => {
-      
-        const callback = function ( ) {
-        
-          const data = twc.ftfml;
+          codeKey = 'twc-pbftfml',
           
-          const itemId = this
-            
-            .getAttribute ( 'data-item-id' )
-            
-          const noSkuAttribute = `data-${ codeKey }-no-sku`;
+          handleEvent = ( event ) => {
           
-          let b = this
-          
-            .getAttribute ( noSkuAttribute )
+            const
             
-            !==
-            
-            null;
-            
-          data.ids = [ itemId ];
-            
-          if ( b ) { // bail if no sku
-          
-            data.response = Promise.resolve ( );
-            
-            return;
-            
-            }
-            
-          b = [
-          
-            '2' // digital
-            
-            ]
-            
-            .includes (
-            
-              this
-          
-              .getAttribute ( 'data-product-type' )
+              data = twc.ftfml,
               
-              );
+              element = event
               
-          if ( b ) { // bail if no sku
-          
-            this
-            
-              .setAttribute ( noSkuAttribute, '' );
-              
-            data.response = Promise.resolve ( );
-            
-            return;
-            
-            }
-            
-          const skuAttribute = `data-${ codeKey }-sku`;
-          
-          let sku = this
-          
-            .getAttribute ( skuAttribute );
-            
-          if ( sku === null ) {
-          
-            const variantsElement = this
-            
-              .closest ( '.productDetails' )
-              
-              .querySelector ( '.product-variants' );
-              
-            if ( variantsElement !== null ) {
-            
-              sku = variantsElement
+                .currentTarget,
                 
-                .getAttribute ( 'data-selected-variant' );
-                
-              if ( sku === null ) return; // bail of no variant selected
+              detailsElement = element
               
-              sku = JSON
+                .closest ( '.productDetails' ),
+                
+              setAttributes = ( ) => {
               
-                .parse ( sku )
+                const callback = ( element ) => {
                 
-                .sku;
+                  attributes
+                  
+                    [
+                    
+                      element
+                      
+                        .getAttribute ( 'name' )
+                        
+                      ]
+                      
+                    =
+                    
+                    element
+                    
+                      .value;
+                      
+                  };
+                  
+                variantElements
                 
-              data
+                  .forEach ( callback );
+                  
+                },
                 
-                .ids
+              setVariantSku = ( ) => {
+              
+                sku = variants [
                 
-                .push ( sku );
+                  JSON
+                  
+                    .stringify (
+                    
+                      attributes
+                      
+                      )
+                      
+                  ];
+                  
+                },
+                
+              variantElements
+              
+                =
+                
+                detailsElement
+                
+                  .querySelectorAll ( '.product-variants select' ),
+                  
+              isVariantSelected
+              
+                =
+                
+                variantElements
+                
+                  .length
+                  
+                &&
+                
+                !
+                
+                [
+                
+                  ...
+                  
+                  variantElements
+                  
+                  ]
+                
+                  .filter ( e => ! e.value )
+                  
+                  .length;
+                  
+            let
+            
+              attributes = { },
+              
+              itemId,
+              
+              sku,
+              
+              variants;
+              
+            data.ids = [ ];
+            
+            if ( element.twcPbftfml ) {
+            
+              const p = element.twcPbftfml;
+              
+              itemId = p.itemId;
+              
+              variants = p.variants;
+              
+              const l = variants
+              
+                &&
+                
+                Object
+                
+                  .keys ( variants )
+                  
+                  .length;
+                  
+              switch ( true ) {
+              
+                case ! variants :
+                
+                  break;
+                  
+                case l === 1 :
+                
+                  sku = variants [ '{}' ];
+                  
+                  break;
+                  
+                case l > 1 : {
+                
+                  if ( isVariantSelected ) {
+                  
+                    setAttributes ( );
+                    
+                    setVariantSku ( );
+                    
+                    }
+                    
+                  break;
+                  
+                  }
+                  
+                }
+                
+              data.ids.push (
+              
+                ...
+                
+                [ p.itemId, sku ]
+                
+                  .filter ( e => e )
+                  
+                );
                 
               data.response = Promise.resolve ( );
               
               } else {
               
-                const callback = ( data ) => {
-                  
-                  sku = data
-                  
-                    .item
-                    
-                    .variants
-                    
-                    [ 0 ]
-                    
-                    .sku;
-                    
-                  this
-                  
-                    .setAttribute ( skuAttribute, sku );
-                    
-                  twc
-                  
-                    .ftfml
-                    
-                    .productIdSkuMap
-                    
-                    [ itemId ]
-                    
-                    =
-                    
-                    sku;
-                    
-                  twc
-                  
-                    .ftfml
-                    
-                    .ids
-                    
-                    .push ( sku );
-                    
-                  };
-                  
-                const url = this
+                const url = detailsElement
                 
-                  .closest ( '.productDetails ' )
-                  
-                  .querySelector ( 'a' )
+                  .querySelector ( '.product-title' )
                   
                   .getAttribute ( 'href' )
                   
@@ -226,46 +295,180 @@
                   
                 data.response = fetch ( url )
                 
-                  .then ( response => response.json ( ) )
+                  .then ( ( response ) => {
                   
-                  .then ( callback );
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${ codeKey } network response was not ok ${
+                        
+                          response
+                            
+                            .statusText
+                            
+                            }
+                            
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace ( /\s+/gm, ' ' );
+                        
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    const obj = response.json ( );
+                    
+                    return obj;
+                    
+                    } )
+                    
+                  .then ( ( obj ) => {
+                  
+                    const
+                    
+                      item = obj.item,
+                      
+                      l = item.variants.length;
+                      
+                    itemId = item.id;
+                    
+                    if ( l ) {
+                    
+                      const callback = ( variant ) => {
+                      
+                        const optionOrdering
+                        
+                          =
+                          
+                          item
+                          
+                            .variantOptionOrdering;
+                            
+                        let obj = { };
+                        
+                        if ( optionOrdering.length )
+                        
+                          obj = optionOrdering
+                          
+                            .reduce ( ( acc, key ) => {
+                            
+                              if ( key in variant.attributes )
+                              
+                                acc [ key ] = variant.attributes [ key ];
+                                
+                              return acc;
+                              
+                              }, { } );
+                              
+                        variants [
+                        
+                          JSON.stringify ( obj )
+                          
+                          ]
+                          
+                          =
+                          
+                          variant
+                          
+                            .sku;
+                            
+                        };
+                        
+                      variants = { };
+                      
+                      item
+                      
+                        .variants
+                        
+                        .forEach ( callback );
+                        
+                      }
+                      
+                    switch ( true ) {
+                    
+                      case ! variants :
+                      
+                        break;
+                        
+                      case l === 1 :
+                      
+                        sku = variants [ '{}' ];
+                        
+                        break;
+                        
+                      case l > 1 : {
+                      
+                        if ( isVariantSelected ) {
+                        
+                          setAttributes ( );
+                          
+                          setVariantSku ( );
+                          
+                          }
+                          
+                        break;
+                        
+                        }
+                        
+                      }
+                      
+                    data.ids.push (
+                    
+                      ...
+                      
+                      [ itemId, sku ]
+                      
+                        .filter ( e => e )
+                        
+                      );
+                      
+                    element.twcPbftfml = {
+                    
+                      itemId : itemId,
+                      
+                      variants : variants
+                      
+                      };
+                      
+                    } );
                     
                 }
                 
-            }
+            },
             
-          }
+          selector = '.sqs-block[ data-definition-name="'
           
-        const isSoldOut = element
+            +
+            
+            'website.components.product" ]:not( :has( .product-block '
+            
+            +
+            
+            '.image-container .product-mark.sold-out ) ) '
+            
+            +
+            
+            '.sqs-add-to-cart-button-wrapper';
+            
+        document
         
-          .closest ( '.product-block' )
+          .querySelectorAll ( selector )
           
-          .querySelector ( '.image-container .product-mark.sold-out' )
+          .forEach ( e =>
           
-          !==
-          
-          null;
-          
-        if ( isSoldOut ) return; // bail if sold out
-        
-        element
-        
-          .addEventListener ( 'click', callback )
-          
+            e.addEventListener ( 'click', handleEvent )
+            
+            );
+            
         };
         
-      const codeKey = 'twc-pbftfml';
+      document.addEventListener ( 'DOMContentLoaded', callback );
       
-      const selector = '.sqs-block-product .sqs-add-to-cart-button';
-      
-      document
-        
-        .querySelectorAll ( selector )
-        
-        .forEach ( callback );
-        
-      } );
+      } ) ( );
       
     </script>
     
-  <!-- end product block form text field max length -->
+  <!-- end TWC Product Block Form Text Field Max Length -->
