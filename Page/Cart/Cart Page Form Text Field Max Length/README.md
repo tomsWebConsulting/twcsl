@@ -8,7 +8,7 @@ Limit cart product edit detail form text and text area fields lengths.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### SS Versions
 
@@ -107,6 +107,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-09-03**
+
+  * updated to work with apparent chages Squarespace made to how elements load
+  * bumped version to 0.1.2
+  
 * **2024-05-27**
 
   * run in editor

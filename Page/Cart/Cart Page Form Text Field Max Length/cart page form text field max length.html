@@ -1,29 +1,31 @@
-<!--
+<!-- begin TWC Cart Page Form Text Field Max Length -->
 
-  begin cart page form text field max length
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.1
-  
-  SS Versions   : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : cart page observe changes
-  
-  Note          : this effect is not active in Squarespace Preview to test it
-                  use private browsing < https://tinyurl.com/ynessvsf >
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    cart page form text field max length
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.2
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Dependencies  : cart page observe changes
+    
+    Note          : this effect is not active in Squarespace Preview to test it
+                    use private browsing < https://tinyurl.com/ynessvsf >
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
     html:not( .squarespace-damask ) #sqs-cart-container .cart-product-form-wrapper input[ placeholder*="ftfml" ] {
@@ -38,125 +40,175 @@
   
     ( ( ) => {
     
-      const version = '0.1.1';
+      const
       
-      const s = `Cart Page Form Text Field Max Length v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.1.2',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `Cart Page Form Text Field Max Length v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      // initialize twc global if needed
+      // globals
       
-      if ( window.twc == undefined ) window.twc = { };
+      {
       
-      twc.cpftfml = {
-      
-        ids : undefined
+        // initialize twc module
         
-        };
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc cpftfml sub-module
+        
+        twc.cpftfml = ( ( self ) => {
+        
+          const options = {
+          
+            ids : undefined
+            
+            };
+            
+          Object
+          
+            .assign (
+            
+              self,
+              
+              options
+              
+              );
+              
+          return self;
+          
+          } ) ( twc.cpftfml || { } );
+          
+        }
         
       } ) ( );
       
     var twcCpftfml = ( node ) => {
     
-      let b = node.querySelector === undefined;
+      const hasQuerySelector
       
-      if ( b ) return; // bail if no querySelector
+        =
+        
+        node
+        
+          .querySelector;
+          
+      if ( ! hasQuerySelector ) return; // bail if no querySelector
+      
+      let selector;
       
       // cart container
       
       ( ( ) => {
       
-        let selector = '.cart-container';
+        const isCartContainerElement
         
-        const cartContainerElement = node
+          =
+          
+          node
+          
+            .classList
+            
+            .contains ( 'cart-container' );
+            
+        // bail if not cart container element
         
-          .querySelector ( selector );
-          
-        if ( cartContainerElement === null ) return; // bail if no element
+        if ( ! isCartContainerElement ) return;
         
-        const callback = ( element ) => {
-        
-          const callback = ( event ) => {
-          
-            console.log ( event );
-            
-            const i = [
-            
-              ...
-              
-              cartRowElements
-              
-              ]
-              
-              .indexOf (
-              
-                element
-                
-                  .closest ( '.cart-row' )
-                  
-                );
-              
-            const selector = '#sqs-cart-root script[type="application/json"]';
-            
-            // begin items
-            
-              const callback = ( item ) => {
-              
-                console.log ( item );
-                
-                const b = ! ( 'productForm' in item );
-                
-                if ( b ) return [ ]; // bail if no product form
-                
-                const ids = [ item.productId ];
-                
-                if ( item.sku !== undefined )
-                
-                  ids.push ( item.sku );
-                  
-                return ids;
-                
-                };
-                
-              let items = document
-              
-                .querySelector ( selector )
-                
-                .textContent;
-                
-              items = JSON
-              
-                .parse ( items )
-                
-                .cart
-                
-                .items;
-                
-              // end items
-              
-            const ids = items.map ( callback );
-            
-            twc.cpftfml.ids = ids [ i ];
-            
-            };
-            
-          element.addEventListener ( 'click', callback );
-          
-          };
-          
         selector = '.cart-row';
         
-        const cartRowElements = cartContainerElement
+        const
         
-          .querySelectorAll ( selector );
+          callback = ( element ) => {
           
+            const callback = ( event ) => {
+            
+              console.log ( event );
+              
+              const
+              
+                callback = ( item ) => {
+                
+                  console.log ( item );
+                  
+                  const b = ! ( 'productForm' in item );
+                  
+                  if ( b ) return [ ]; // bail if no product form
+                  
+                  const ids = [ item.productId ];
+                  
+                  if ( item.sku !== undefined )
+                  
+                    ids.push ( item.sku );
+                    
+                  return ids;
+                  
+                  },
+                  
+                i = [
+                
+                  ...
+                  
+                  cartRowElements
+                  
+                  ]
+                  
+                  .indexOf (
+                  
+                    element
+                    
+                      .closest ( '.cart-row' )
+                      
+                    ),
+                    
+                selector =
+                
+                  '#sqs-cart-root script[ type="application/json" ]';
+                  
+              twc.cpftfml.ids = JSON
+              
+                .parse (
+                
+                  document
+                  
+                    .body
+                    
+                    .querySelector ( selector )
+                    
+                    .textContent
+                    
+                  )
+                  
+                .cart
+                
+                .items
+                
+                .map ( callback )
+                
+                [ i ];
+                
+              };
+              
+            element.addEventListener ( 'click', callback );
+            
+            },
+            
+          cartRowElements = node
+          
+            .querySelectorAll ( selector );
+            
         selector = '.cart-row-edit';
         
-        cartContainerElement
+        node
         
           .querySelectorAll ( selector )
           
@@ -168,27 +220,33 @@
       
       ( ( ) => {
       
-        let selector = '.cart-product-form-container';
+        selector = '.cart-product-form-container';
         
         let elements = node
         
           .querySelector ( selector );
           
-        if ( elements === null ) return; // bail if no element
+        if ( ! elements ) return; // bail if no element
         
         const callback = ( element ) => {
         
-          const attribute = 'placeholder';
+          const
           
-          const re = /^ftfml\s*:\s*{([^}]+)}\s*/;
-          
-          let text = element
-          
-            .getAttribute ( attribute );
+            attribute = 'placeholder',
             
-          let m = text.match ( re );
+            re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+            
+          let
           
-          // begin clean up placeholder attribute value
+            text = element
+            
+              .getAttribute ( attribute ),
+              
+            m = text.match ( re );
+            
+          // clean up placeholder attribute value
+          
+          {
           
             text = text
             
@@ -206,7 +264,7 @@
               
                 element.removeAttribute ( attribute );
                 
-            // end clean up placeholder attribute value
+            }
             
           let maxLength = m [ 1 ]
           
@@ -230,24 +288,26 @@
               
               };
               
-            const json = '{' +
+            const
             
-              maxLength
+              json = '{' +
               
-                .replace ( /[\s]/g, '' )
+                maxLength
                 
-                .split ( ',' )
+                  .replace ( /[\s]/g, '' )
+                  
+                  .split ( ',' )
+                  
+                  .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                  
+                  .join ( ',' ) +
+                  
+                '}',
                 
-                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
-                
-                .join ( ',' ) +
-                
-              '}';
+              key = 'default',
               
-            const key = 'default';
-            
-            const idMaxlengthMap = JSON.parse ( json );
-            
+              idMaxlengthMap = JSON.parse ( json );
+              
             maxLength = '';
             
             if ( key in idMaxlengthMap )
@@ -286,4 +346,4 @@
       
     </script>
     
-  <!-- end cart page form text field max length -->
+  <!-- end TWC Cart Page Form Text Field Max Length -->
