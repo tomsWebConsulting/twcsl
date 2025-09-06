@@ -8,7 +8,7 @@ Change the store page image aspect ratio.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
