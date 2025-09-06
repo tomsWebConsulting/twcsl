@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.4.0
+    Version         : 0.5.0
     
     SS Versions     : 7.1, 7.0
     
@@ -47,17 +47,17 @@
     
       /* list */
       
-        .collection-type-products .grid-prices .product-price.twc-spphwf,
-        
-      /* detail */
+      .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price.twc-spphwf,
       
-        /* simple layout */
+      /* begin detail */
+      
+        .product-detail .product-meta .product-price:has( .twc-spphwf ),
         
-        .ProductItem-details .ProductItem-product-price.twc-spphwf,
+        .product-detail .product-related-products .product-list-item-price.twc-spphwf,
         
-        /* full, half, wrap layouts */
+        .product-detail .product-meta .product-add-ons .add-on-details .product-price.twc-spphwf,
         
-        .pdp-details-price .product-price.twc-spphwf,
+        /* end detail */
         
     /* 7.0 */
     
@@ -91,7 +91,7 @@
     
       const
       
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `Store Page Price Hide When From v${ version }
         
@@ -105,16 +105,26 @@
           
       console.log ( s );
       
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc spphwf sub-module
+        
+        twc.spphwf = ( ( self ) => self ) ( twc.spphwf || { } );
+        
+        // initialize twc sppc sub-module
+        
+        twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+        
+        }
+        
       } ) ( );
       
-    // initialize twc module
-    
-    var twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc sppc sub-module
-    
-    twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
-    
     // initialize twc sppc callbacks sub-module
     
     twc.sppc.callbacks = ( ( self ) => {
@@ -131,13 +141,13 @@
             
               .parentElement,
               
-            classList = element
-            
-              .classList,
-              
             hasFromText = text
             
-              .includes ( 'from' );
+              .includes ( searchText ),
+              
+            classList = element
+            
+              .classList;
               
           if ( ! hasFromText ) {
           
@@ -149,54 +159,26 @@
             
             }
             
-          let selector = 'script[ type="application/vnd.' +
-          
-            `${ codeKey.replace ( '-', '.' ) }" ]`;
-            
-          const scriptElement
-          
-            =
-            
-            document
-            
-              .head
-              
-              .querySelector ( selector );
-              
-          if ( scriptElement === null ) return true; // continue
-          
-          selector = [
-          
-            '.ProductItem-product-price', // simple
-            
-            '.pdp-details-price', // full, half, wrap
-            
-            // 7.0
-            
-            '#productDetails', // Avenue, Bedford, Pacific
-            
-            '.ProductItem-details', // Brine
-            
-            ]
-            
-            .join ( ', ' );
-            
           const
           
-            options = JSON
+            options = codeKey
             
-              .parse (
+              .split ( '-' )
               
-                scriptElement
-                
-                  .textContent
-                  
-                  .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
-                  
-                  .replaceAll ( '\n', '' )
-                  
-                ),
-                
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            selector = [
+            
+              // 7.0
+              
+              '#productDetails', // Avenue, Bedford, Pacific
+              
+              '.ProductItem-details', // Brine
+              
+              ]
+              
+              .join ( ', ' ),
+              
             isAddOn
             
               =
@@ -207,13 +189,9 @@
                 
               &&
               
-              Boolean (
+              element
               
-                element
-                
-                  .closest ( '.add-on-details' )
-                  
-                ),
+                .closest ( '.add-on-details' ),
                 
             isDetails
             
@@ -221,17 +199,25 @@
               
               options
               
-                .details
+                .detail
                 
               &&
               
-              Boolean (
+              element
               
-                element
+                .parentElement
                 
-                  .closest ( selector )
-                  
-                ),
+                .parentElement
+                
+                .classList
+                
+                .contains ( 'product-meta' )
+                
+              ||
+              
+              element
+              
+                .closest ( selector ),
                 
             isList
             
@@ -257,13 +243,9 @@
                 
               &&
               
-              Boolean (
+              element
               
-                element
-                
-                  .closest ( '[ data-test="product-related-container" ]' )
-                  
-                ),
+                .closest ( '.product-related-products' ),
                 
             isAdd
             
@@ -282,7 +264,7 @@
               ||
               
               isRelated;
-                
+              
           if ( isAdd )
           
             classList.add ( codeKey );

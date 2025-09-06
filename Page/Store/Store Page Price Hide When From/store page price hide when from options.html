@@ -1,42 +1,64 @@
 <!-- begin TWC Store Page Price Hide When From Options -->
 
-  <!--
+  <script>
   
-    store page price hide when from options
+    /*
     
-    License       : < https://tinyurl.com/s872fb68 >
-    
-    Version       : 0.4.0
-    
-    SS Versions   : 7.1, 7.0
-    
-    Copyright     : 2021-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    -->
-    
-  <script type="application/vnd.twc.spphwf">
-  
-    {
-    
-      /*
+      store page price hide when from options
       
-        control which elements where from prices are hidden
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.5.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spphwf sub-module
+    
+    twc.spphwf = ( ( self ) => {
+    
+      const options = {
+      
+        /*
         
-        values are false or true
+          control which elements where from prices are hidden
+          
+          values are false or true
+          
+          */
+          
+        list : false,
         
-        */
+        detail : true,
         
-      "list" : false,
+        detailAddon : false,
+        
+        detailRelated : false
+        
+        };
+        
+      Object
       
-      "details" : true,
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
       
-      "detailAddon" : false,
-      
-      "detailRelated" : false
-      
-      }
+      } ) ( twc.spphwf || { } );
       
     </script>
     

@@ -8,7 +8,7 @@ Hide price when it contains from on Store page.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Versions
 
@@ -65,9 +65,9 @@ Hide price when it contains from on Store page.
   that codes instructions.
   
   ```
-      // store page price hide when from
-      
-      "from" : "twcSpphwf",
+          // store page price hide when from
+          
+          'from' : 'twcSpphwf',
     ```
 
 ## Make a Donation
@@ -76,6 +76,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-09-06**
+
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.5.0
+  
 * **2025-05-18**
 
   * added options to control which elements the effect is applied
