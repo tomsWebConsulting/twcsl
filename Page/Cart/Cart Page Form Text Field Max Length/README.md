@@ -107,7 +107,7 @@ Please consider [making a donation][9].
 
 * **2025-09-03**
 
-  * updated to work with apparent chages Squarespace made to how elements load
+  * updated to work with apparent changes Squarespace made to how elements load
   * bumped version to 0.1.2
   
 * **2024-05-27**
