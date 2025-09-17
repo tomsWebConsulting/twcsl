@@ -8,7 +8,7 @@ Add some payment processor icons to site footer.
 
 ### Version
 
-  * 0.5.3
+  * 0.6.0
 
 #### SS Versions
 
@@ -44,7 +44,7 @@ near it.
 ### Hiding Icons
 
 You will need to decide which icons you do not want to be shown. Let's keep the
-first Afterpay icon as that is the one AP prefers we use and hide the rest.
+first Afterpay icon as that is the one AP prefers be use and hide the rest.
 
 The first Afterpay icon has an index number of 1. Note the index
 number. In the **payment processor icons** code installed in the first step,
@@ -53,7 +53,7 @@ there scan down the lines looking for **// index 1** near the end of a line.
 Under that we see the line **// display : none;**. This line, for icon index 1,
 controls hiding this icon. We want to keep the first icon so we do not make a
 change to this line. We do want to hide the rest of the icons. Following the
-same previous scan the lines process for icons 2 through 46, when we find the
+previous method scan the lines for icons 2 through 54, when we find the
 **// display : none;** line, remove the double forward slash space from the
 line. 
 
@@ -68,7 +68,7 @@ Be very careful editing the lines. Computers don't like it when things are not
 just so.
 
 You can of course change your mind later on which icons you want to hide or
-show. Remove or restore the double forward slash space from the appropriate
+show. Remove or restore the double forward slash space for the appropriate
 lines as needed.
 
 ### Order Icons
@@ -106,42 +106,49 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-09-15**
+
+  * reduced overll size of the code by combining nearly identical svg elements
+    and using CSS to control the fill of path elements
+  * added support for Google Play and Klarna
+  * bumped version to 0.6.0
+  
 * **2024-08-27**
 
-  * fix Discover icon spacing issue, crop gradient effect paths
+  * fixed Discover icon spacing issue, crop gradient effect paths
   * bumped version to 0.5.3
   
 * **2024-08-23**
 
-  * general tweaks to spacing of icons
-  * fix for spacing issues on Safari
+  * made tweaks to spacing of icons
+  * fixed for spacing issues on Safari
   * bumped version to 0.5.2
   
 * **2024-08-23**
 
-  * fix for not being able to hide unionpay
+  * fixed for not being able to hide unionpay
   * bumped version to 0.5.1
   
 * **2024-08-21**
 
   * keep index number and icons together
-  * restructuring much of the code for ease of maintenance
+  * restructured much of the code for ease of maintenance
   * bumped version to 0.5.0
   
 * **2024-08-20**
 
-  * add support for Diners Club, Discover, JCB, link by stripe, and UnionPay
+  * added support for Diners Club, Discover, JCB, link by stripe, and UnionPay
   * bumped version to 0.4.0
   
 * **2022-10-08**
 
-  * convert a large chunk of the CSS code to LESS
-  * add support for american express
+  * converted a large chunk of the CSS code to LESS
+  * added support for american express
   * bumped version to 0.3.0
   
 * **2022-01-30**
 
-  * add missing show/hide code for Clearpay
+  * added missing show/hide code for Clearpay
   * bumped version to 0.2d2
   
 * **2022-01-29**
