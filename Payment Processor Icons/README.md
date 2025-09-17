@@ -108,7 +108,7 @@ Please consider [making a donation][8].
 
 * **2025-09-15**
 
-  * reduced overll size of the code by combining nearly identical svg elements
+  * reduced overall size of the code by combining nearly identical svg elements
     and using CSS to control the fill of path elements
   * added support for Google Play and Klarna
   * bumped version to 0.6.0
