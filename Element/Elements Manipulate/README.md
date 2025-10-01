@@ -271,7 +271,7 @@ Please consider [making a donation][12].
 [5]: elements%20manipulate%20options.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: elements%20manipulate.html#L1
-[8]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta%20template.js
+[8]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
 [9]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
 [10]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
 [11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
