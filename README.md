@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 403 effects. Each effect has it's own version number, code,
+twcsl contains 402 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -298,8 +298,6 @@ not necessarily designed to work together.
 * [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
-  
-* [Move Product Detail Additional Info First N Blocks to End of Product Details](Move%20Product%20Detail%20Additional%20Info%20First%20N%20Blocks%20to%20End%20of%20Product%20Details)
   
 * [Blog Non-Post Pages Meta Noindex Tag Add](Blog%20Non-Post%20Pages%20Meta%20Noindex%20Tag%20Add)
   
