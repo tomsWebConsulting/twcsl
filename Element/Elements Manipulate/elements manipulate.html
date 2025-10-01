@@ -10,35 +10,29 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.9.0
+        Version         : 0.10.0
         
         SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible      : Yes
         
         v7.1
         Fluid
         Engine
         Compatible      : Yes
         
-        v7.0 Templates  : Bedford ( Anya, Bryant, Hayden )
-                          
-                          Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
-                          Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
-                          Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
-                          Sonora, Stella, Thorne, Vow, Wav, West )
-                          
-                          your template is not listed? then it is not currently
-                          supported
-        
-        Note            : this code is a base for other effects. you will want to
-                          create CSS to hide and show elements. after an element
-                          is replaced the class twc-em-show will be added to it
-                          which can be used to show elements
+        Note            : this code is a base for other effects. you will want
+                          to create CSS to hide and show elements. after an
+                          element is replaced the class twc-em-show will be
+                          added to it which can be used to show elements
         
         Copyright       : 2022-2025 Thomas Creedon
                           
-                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
         
         no user serviceable parts below
         
@@ -46,7 +40,7 @@
         
       const
       
-        version = '0.9.0',
+        version = '0.10.0',
         
         s = `
         
@@ -368,14 +362,24 @@
             
           selectorObjectCallback = ( selector, object ) => {
           
-            const elements = document
+            let i = 1;
             
-              .body
-              
-              .querySelectorAll ( selector );
-              
-            elements.forEach ( e => actionCallback ( e, object ) );
+            object.repeat++
             
+            while ( i < object.repeat ) {
+            
+              const elements = document
+              
+                .body
+                
+                .querySelectorAll ( selector );
+                
+              elements.forEach ( e => actionCallback ( e, object ) );
+              
+              i++;
+              
+              }
+              
             };
             
         maps.forEach ( mapsCallback );

@@ -9,49 +9,71 @@ append, before, prepend, or replace.
 
 ### Version
 
-  * 0.9.0
+  * 0.10.0
 
 #### SS Versions
 
   * 7.1
   
-  * 7.0 ([Brine template family][2], [Bedford template family][3])
+  * 7.0
 
+#### v7.1 Products V2 Compatible
+
+  * Yes
+  
 #### v7.1 Fluid Engine Compatible
 
   * Yes
 
 #### Dependencies
 
-  * [Squarespace plan][4] that supports [JavaScript][5].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
 ## Install
 
-* Add code from file **[elements manipulate.less][6]** to Website > Pages >
-  Custom Code > Custom CSS.
+  * v7.1
   
-* Add code from file **[elements manipulate options.html][7]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][8] for details. Read the code for any instructions within.
+    * Add code from file **[elements manipulate.less][4]** to Website > Pages >
+      Custom Code > Custom CSS.
+      
+    * Add code from file **[elements manipulate options.html][5]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
+      injection][6] for details. Read the code for any instructions within.
+      
+    * Add code from file **[elements manipulate.html][7]** to Website > Pages >
+      Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][6]
+      for details.
+      
+  * v7.0
   
-* Add code from file **[elements manipulate.html][9]** to Website > Pages >
-  Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][8]
-  for details.
+    * Add code from file **[elements manipulate.less][4]** to Website > Pages >
+      Website Tools > Custom Code > Custom CSS.
+      
+    * Add code from file **[elements manipulate options.html][5]** to Website >
+      Pages > Website Tools > Custom Code > Code Injection > FOOTER. Refer to
+      [Per-page code injection][6] for details. Read the code for any
+      instructions within.
+      
+    * Add code from file **[elements manipulate.html][7]** to Website > Pages >
+      Website Tools > Custom Code > Code Injection > FOOTER. Refer to [Per-page
+      code injection][6] for details.
+      
+## Options Data Structure Templates
 
-## Pptions Data Structure Templates
+* [Product Additional Info First N Blocks to End Of Product Meta][8]
+
+* [Product Additional Info First Row Video Block Before Quantity][9]
 
 * [Product Additional Info Specific Video Block Before Quantity][10]
-  
-* [Product Additional Info First Row Video Block Before Quantity][11]
 
 ## Callbacks
 
-You can optionally add [callback][12] functions to further customize the
+You can optionally add [callback][11] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
-Refer to [Add code to code injection][8]. Order is not important.
+Refer to [Add code to code injection][6]. Order is not important.
 
 * Log the source element.
 
@@ -174,26 +196,32 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][13].
+Please consider [making a donation][12].
 
 ## Changes
 
+* **2025-10-01**
+
+  * added product additional info first n blocks to end of product meta template
+  * added repeat option
+  * bumped version to 0.10.0
+  
 * **2025-07-30**
 
-  * change options from json script tag to JavaScript object
+  * changed options from json script tag to JavaScript object
   * removed dependency on jQuery
   * bumped version to 0.9.0
   
 * **2024-10-29**
 
   * use module pattern for adding callbacks
-  * fix for missing codeKey variable
+  * fixed for missing codeKey variable
   * bumped version to 0.8.0
   
 * **2024-10-28**
 
   * support for multiple callbacks
-  * add source ancestor selector
+  * added source ancestor selector
   * bumped version to 0.7.0
   
 * **2024-08-22**
@@ -208,28 +236,28 @@ Please consider [making a donation][13].
   
 * **2024-05-10**
 
-  * add after and before options
+  * added after and before options
   * support Bedford template family
   * bumped version to 0.5.0
   
 * **2023-06-10**
 
-  * add source selector copy feature
+  * added source selector copy feature
   * bumped version to 0.4.0
   
 * **2023-06-08**
 
-  * fix syntax errors
+  * fixed syntax errors
   * bumped version to 0.3.1
   
 * **2023-06-06**
 
-  * add a selector parent destination
+  * added a selector parent destination
   * bumped version to 0.3.0
   
 * **2023-05-31**
 
-  * add ability to append and prepend to selector destination
+  * added ability to append and prepend to selector destination
   * bumped version to 0.2.0
   
 * **2022-05-04**
@@ -237,15 +265,14 @@ Please consider [making a donation][13].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[3]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[4]: https://www.squarespace.com/pricing
-[5]: https://en.wikipedia.org/wiki/JavaScript
-[6]: elements%20manipulate.less#L1
-[7]: elements%20manipulate%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[9]: elements%20manipulate.html#L1
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: elements%20manipulate.less#L1
+[5]: elements%20manipulate%20options.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: elements%20manipulate.html#L1
+[8]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta%20template.js
+[9]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
 [10]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
-[11]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[12]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

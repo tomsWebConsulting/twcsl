@@ -1,53 +1,6 @@
-<!-- begin TWC Elements Manipulate Options -->
-
-  <script>
-  
-    /*
-    
-      elements manipulate options
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.10.0
-      
-      SS Versions     : 7.0, 7.1
-      
-      Copyright       : 2022-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc em sub-module
-    
-    twc.em = ( ( self ) => self ) ( twc.em || { } );
-    
-    // initialize twc em maps sub-module
-    
-    twc.em.maps = ( ( self ) => {
-    
-      const map = {
-      
-        /*
+        // product additional info first n blocks to end of product meta
         
-          the format of each data structure is a source selector, optional
-          source ancestor selector, source copy, destination selector, optional
-          destination ancestor selector, optional root selector, action, and
-          optional callback(s)
-          
-          following is an example data structure. copy the example data
-          structure below and paste after the example data structure. remove the
-          forward slash asterisk and asterisk forward slash lines from before
-          and after the example data structure. repeat for as many as many
-          elements as you need to manipulate. this has been done once initially
-          
-          */
-          
-        /* '[ enter source selector here between single quotes replacing square brackets ]' : {
+        '.product-detail .ProductItem-additional .sqs-block:first-child' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
           // a source element but then work up the ancestor hierarchy to
@@ -63,7 +16,7 @@
           // destinationSelector is required. use the selector x-twc-em-source
           // to use the sourceSelector as the destination
           
-          destinationSelector : '[ enter destination selector here between single quotes replacing square brackets ]',
+          destinationSelector : '.product-detail .product-meta',
           
           // destinationAncestorSelector is optional, use when you want to first
           // find a destination element but then work up the ancestor hierarchy
@@ -98,16 +51,5 @@
           
           callbacks : [ ]
           
-          }, */
+          },
           
-        };
-        
-      self.push ( map );
-      
-      return self;
-      
-      } ) ( twc.em.maps || [ ] );
-      
-    </script>
-    
-  <!-- end TWC Elements Manipulate Options -->

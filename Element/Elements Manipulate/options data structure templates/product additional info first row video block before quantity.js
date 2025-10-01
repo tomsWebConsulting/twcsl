@@ -1,3 +1,5 @@
+        // product additional info first row video block before quantity
+        
         '.product-detail .ProductItem-additional .sqs-layout > .sqs-row:first-child > .sqs-col-12 > .sqs-block-video' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
@@ -11,8 +13,8 @@
           
           sourceCopy : false,
           
-          // destinationSelector is required. use the selector x-twc-em-source to
-          // use the sourceSelector as the destination
+          // destinationSelector is required. use the selector x-twc-em-source
+          // to use the sourceSelector as the destination
           
           destinationSelector : '.product-add-to-cart',
           
@@ -22,14 +24,19 @@
           
           destinationAncestorSelector : '[ enter optional destination ancestor selector here between single quotes replacing square brackets ]',
           
-          // rootSelector is optional, use when you want the source and destination
-          // elements to have a common ancestor element
+          // rootSelector is optional, use when you want the source and
+          // destination elements to have a common ancestor element
           
           rootSelector : '[ enter optional root selector here between single quotes replacing square brackets ]',
           
           // action value is after, append, before, prepend or replace
           
           action : 'before',
+          
+          // repeat is a number. the number of times to repeat this specific
+          // element manipulation
+          
+          repeat : 1,
           
           // callbacks is optional, use when you want to manipulate the
           // structure of the source element. the value is an array. you can add
