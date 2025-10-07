@@ -62,15 +62,21 @@ append, before, prepend, or replace.
       
 ## Options Data Structure Templates
 
-* [Product Additional Info First N Blocks to End Of Product Meta][8]
+* [Footer Site Wide Divider Append to Page][8]
 
-* [Product Additional Info First Row Video Block Before Quantity][9]
+  After installing the previous into Elements Manipulate Options add code from
+  file **[footer site wide divider append to page.less][9]** to Website >
+  Pages > Website Tools > Custom Code > Custom CSS.
+  
+* [Product Additional Info First N Blocks to End Of Product Meta][10]
 
-* [Product Additional Info Specific Video Block Before Quantity][10]
+* [Product Additional Info First Row Video Block Before Quantity][11]
+
+* [Product Additional Info Specific Video Block Before Quantity][12]
 
 ## Callbacks
 
-You can optionally add [callback][11] functions to further customize the
+You can optionally add [callback][13] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
 Refer to [Add code to code injection][6]. Order is not important.
@@ -196,7 +202,7 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][14].
 
 ## Changes
 
@@ -271,8 +277,10 @@ Please consider [making a donation][12].
 [5]: elements%20manipulate%20options.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: elements%20manipulate.html#L1
-[8]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[9]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[10]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
-[11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.js
+[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.less
+[10]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[11]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
+[12]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
+[13]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

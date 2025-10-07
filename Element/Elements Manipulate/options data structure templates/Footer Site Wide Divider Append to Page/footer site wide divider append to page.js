@@ -1,6 +1,6 @@
         /*
         
-          product additional info first n blocks to end of product meta
+          footer site wide divider append to page
           
           License         : < https://tinyurl.com/s872fb68 >
           
@@ -12,7 +12,7 @@
           
           */
           
-        '.product-detail .ProductItem-additional .sqs-block:first-child' : {
+        '#footer-sections #site-wide-divider' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
           // a source element but then work up the ancestor hierarchy to
@@ -28,7 +28,7 @@
           // destinationSelector is required. use the selector x-twc-em-source
           // to use the sourceSelector as the destination
           
-          destinationSelector : '.product-detail .product-meta',
+          destinationSelector : '#sections',
           
           // destinationAncestorSelector is optional, use when you want to first
           // find a destination element but then work up the ancestor hierarchy

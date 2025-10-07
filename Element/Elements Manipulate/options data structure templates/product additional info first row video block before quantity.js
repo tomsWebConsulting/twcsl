@@ -1,5 +1,17 @@
-        // product additional info first row video block before quantity
+        /*
         
+          product additional info first row video block before quantity
+          
+          License         : < https://tinyurl.com/s872fb68 >
+          
+          Copyright       : 2022-2025 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+          
+          */
+          
         '.product-detail .ProductItem-additional .sqs-layout > .sqs-row:first-child > .sqs-col-12 > .sqs-block-video' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
