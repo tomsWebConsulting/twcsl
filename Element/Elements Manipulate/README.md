@@ -294,7 +294,7 @@ Please consider [making a donation][15].
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: elements%20manipulate.html#L1
 [8]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.js
-[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.html
+[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page%20observe.html
 [10]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.less
 [11]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
 [12]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
