@@ -16,26 +16,26 @@
     
     */
     
-  body:not( .sqs-is-page-editing ) {
+  body {
   
-      #site-wide-divider {
-      
+    &:not( .sqs-is-page-editing ) #page [data-test="page-section"]:has( x-twc-fswdatp ) {
+        
       min-height : unset !important;
       
+      .content-wrapper {
+      
+        display : none;
+        
+        }
+        
       }
       
-    #site-wide-divider .content-wrapper {
+    &.sqs-is-page-editing #page [data-test="page-section"]:has( x-twc-fswdatp ) {
     
       display : none;
       
       }
       
-    }
-    
-  body.sqs-is-page-editing #page #site-wide-divider {
-  
-    display : none;
-    
     }
     
   // end TWC Footer Site Wide Divider Append to Page

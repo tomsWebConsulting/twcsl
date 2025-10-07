@@ -64,19 +64,35 @@ append, before, prepend, or replace.
 
 * [Footer Site Wide Divider Append to Page][8]
 
-  After installing the previous into Elements Manipulate Options add code from
-  file **[footer site wide divider append to page.less][9]** to Website >
-  Pages > Website Tools > Custom Code > Custom CSS.
+  * After installing the previous code into Elements Manipulate Options add code
+    from file **[footer site wide divider append to page.html][9]** to
+    Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+    
+  * Add code from file **[footer site wide divider append to page.less][10]** to
+    Website > Pages > Website Tools > Custom Code > Custom CSS.
+    
+  * Create a section in your footer. Style the way you want with a divider.
   
-* [Product Additional Info First N Blocks to End Of Product Meta][10]
+  * Add a Code block with the content set to the following.
+  
+    ```html
+    <x-twc-fswdatp />
+    ```
+    
+    I suggest removing the default Text block and Save the section.
+    
+  There are some pages that can not be altered with custom code like the
+  checkout page.
+  
+* [Product Additional Info First N Blocks to End Of Product Meta][11]
 
-* [Product Additional Info First Row Video Block Before Quantity][11]
+* [Product Additional Info First Row Video Block Before Quantity][12]
 
-* [Product Additional Info Specific Video Block Before Quantity][12]
+* [Product Additional Info Specific Video Block Before Quantity][13]
 
 ## Callbacks
 
-You can optionally add [callback][13] functions to further customize the
+You can optionally add [callback][14] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
 Refer to [Add code to code injection][6]. Order is not important.
@@ -202,7 +218,7 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][14].
+Please consider [making a donation][15].
 
 ## Changes
 
@@ -278,9 +294,10 @@ Please consider [making a donation][14].
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: elements%20manipulate.html#L1
 [8]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.js
-[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.less
-[10]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[11]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[12]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
-[13]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.html
+[10]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.less
+[11]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[12]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
+[13]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
+[14]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -12,7 +12,7 @@
           
           */
           
-        '#footer-sections #site-wide-divider' : {
+        '#footer-sections [ data-test="page-section" ]:has( x-twc-fswdatp )' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
           // a source element but then work up the ancestor hierarchy to
@@ -61,7 +61,7 @@
           //
           // your callbacks must accept and return a node
           
-          callbacks : [ ]
+          callbacks : [ 'twcEmFswdatp' ]
           
           },
           
