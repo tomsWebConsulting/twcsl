@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 402 effects. Each effect has it's own version number, code,
+twcsl contains 403 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -221,6 +221,8 @@ not necessarily designed to work together.
     
     * [options data structure templates](Element/Elements%20Manipulate/options%20data%20structure%20templates)
       
+      * [Footer Site Wide Divider Append to Page](Element/Elements%20Manipulate/options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page)
+        
   * [Element Text Change](Element/Element%20Text%20Change)
     
   * [Social Icon](Element/Social%20Icon)
