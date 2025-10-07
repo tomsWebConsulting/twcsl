@@ -62,33 +62,36 @@ append, before, prepend, or replace.
       
 ## Options Data Structure Templates
 
-* [Footer Site Wide Divider Append to Page][8]
-
-  * After installing the previous code into Elements Manipulate Options add code
-    from file **[footer site wide divider append to page.html][9]** to
-    Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-    
-  * Add code from file **[footer site wide divider append to page.less][10]** to
-    Website > Pages > Website Tools > Custom Code > Custom CSS.
-    
-  * Create a section in your footer. Style the way you want with a divider.
+  * v7.1
   
-  * Add a Code block with the content set to the following.
-  
-    ```html
-    <x-twc-fswdatp />
-    ```
+    * [Footer Site Wide Divider Append to Page][8]
     
-    I suggest removing the default Text block and Save the section.
+      * After installing the previous code into Elements Manipulate Options add
+        code from file **[footer site wide divider append to page.html][9]** to
+        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+        
+      * Add code from file **[footer site wide divider append to
+        page.less][10]** to Website > Pages > Website Tools > Custom Code >
+        Custom CSS.
+        
+      * Create a section in your footer. Style the way you want with a divider.
+      
+      * Add a Code block with the content set to the following.
+      
+        ```html
+        <x-twc-fswdatp />
+        ```
+        
+        I suggest removing the default Text block and Save the section.
+        
+      There are some pages that can not be altered with custom code like the
+      checkout page.
+      
+    * [Product Additional Info First N Blocks to End Of Product Meta][11]
     
-  There are some pages that can not be altered with custom code like the
-  checkout page.
-  
-* [Product Additional Info First N Blocks to End Of Product Meta][11]
-
-* [Product Additional Info First Row Video Block Before Quantity][12]
-
-* [Product Additional Info Specific Video Block Before Quantity][13]
+    * [Product Additional Info First Row Video Block Before Quantity][12]
+    
+    * [Product Additional Info Specific Video Block Before Quantity][13]
 
 ## Callbacks
 
