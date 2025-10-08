@@ -1,0 +1,135 @@
+<!-- begin TWC Footer Sections Append to Page Observe -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        footer sections append to page observe
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.1.0
+        
+        SS Version      : 7.1
+        
+        Dependencies    : Elements Manipulate
+        
+        Copyright       : 2025 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Footer Sections Append to Page Observe v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc em sub-module
+      
+      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      
+      // initialize twc em callbacks sub-module
+      
+      twc.em.callbacks = ( ( self ) => {
+      
+        const callback = ( element ) => {
+        
+          const
+          
+            callback = ( mutations ) => {
+            
+              const callback = ( mutation ) => {
+              
+                // bail if not attribute
+                
+                if ( mutation.type !== 'attributes' ) return;
+                
+                // bail if not attribute class
+                
+                if ( mutation.attributeName !== 'class' ) return;
+                
+                const isEditing = mutation
+                
+                  .target
+                  
+                  .classList
+                
+                  .contains ( 'sqs-is-page-editing' );
+                  
+                if ( ! isEditing ) return; // bail if not editing
+                
+                const selector
+                
+                  =
+                  
+                  `#page [ data-test="page-section" ]:has( x-${ codeKey } )`;
+                  
+                observer.disconnect ( );
+                
+                document
+                
+                  .body
+                  
+                  .querySelector ( selector )
+                  
+                  ?.remove ( );
+                  
+                };
+                
+              mutations.forEach ( callback );
+              
+              },
+              
+            codeKey = 'twc-fsatp',
+            
+            config = {
+            
+              attributes : true
+              
+              },
+              
+            observer = new MutationObserver ( callback );
+               
+          // start listening for changes in element
+          
+          observer.observe ( document.body, config );
+          
+          return element;
+          
+          };
+          
+        self [ 'twcFsatp' ] = callback;
+        
+        return self;
+        
+        } ) ( twc.em.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Footer Sections Append to Page Observe -->
