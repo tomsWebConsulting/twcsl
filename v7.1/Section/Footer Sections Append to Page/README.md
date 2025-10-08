@@ -112,6 +112,23 @@ Append footer sections to the page site wide.
 * Add code from file **[footer sections append to page.less][7]** to
   Website > Pages > Website Tools > Custom Code > Custom CSS.
 
+* Create a section in your footer and design it as desired.
+
+* Add a Code block with the content set to the following.
+
+  ```html
+  <x-twc-fsatp />
+  ```
+  
+  If you only add the Code block I suggest removing the default Text block.
+  
+* Save the section.
+
+## Note
+
+There are some pages that can not be altered with custom code like the checkout
+page.
+
 ## Make a Donation
 
 Please consider [making a donation][8].
