@@ -221,8 +221,6 @@ not necessarily designed to work together.
     
     * [options data structure templates](Element/Elements%20Manipulate/options%20data%20structure%20templates)
       
-      * [Footer Site Wide Divider Append to Page](Element/Elements%20Manipulate/options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page)
-        
   * [Element Text Change](Element/Element%20Text%20Change)
     
   * [Social Icon](Element/Social%20Icon)
@@ -473,6 +471,8 @@ not necessarily designed to work together.
       
       * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
         
+    * [Footer Sections Append to Page](v7.1/Section/Footer%20Sections%20Append%20to%20Page)
+      
     * [Page Section First Blank Hide](v7.1/Section/Page%20Section%20First%20Blank%20Hide)
       
     * [Section Info](v7.1/Section/Section%20Info)
