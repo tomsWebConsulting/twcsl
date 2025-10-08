@@ -114,7 +114,7 @@ Append footer sections to the page site wide.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -130,8 +130,8 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate#elements-manipulate
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate#elements-manipulate
 [6]: footer%20sections%20append%20to%20page%20observe.html#L1
 [7]: footer%20sections%20append%20to%20page.less#L1
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
