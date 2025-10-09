@@ -45,7 +45,7 @@ Append footer sections to the page site wide.
           
           SS Version  : 7.1
           
-          Copyright   : 2022-2025 Thomas Creedon
+          Copyright   : 2025 Thomas Creedon
                         
                         Tom's Web Consulting < http://www.tomsWeb.consulting/ >
           
