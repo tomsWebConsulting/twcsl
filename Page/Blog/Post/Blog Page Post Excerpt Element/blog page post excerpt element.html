@@ -1,28 +1,25 @@
-<!--
+<!-- begin TWC Blog Page Post Excerpt Element -->
 
-  begin blog page post excerpt element
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.0
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Notes         : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-  
-  Copyright     : 2024 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    blog page post excerpt element
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Version      : 7.1
+    
+    Dependencies    : Elements Manipulate
+    
+    Copyright       : 2024-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
   <style>
   
     .twc-blog-item-excerpt {
@@ -57,54 +54,124 @@
   
     ( ( ) => {
     
-      const version = '0.1.0';
+      const
       
-      const s = `
-      
-        Blog Page Post Excerpt Element v${ version }
+        version = '0.2.0',
         
-        License < https://tinyurl.com/s872fb68 >
+        s = `
         
-        © 2024 Thomas Creedon
-        
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
-        
-        `
-        
-        .replace ( /^\s+/gm, '' );
-        
+          Blog Page Post Excerpt Element v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      } ) ( );
+      // initialize twc module
       
-    var twcBlogPagePostExcerptElement = ( $element ) => {
-    
-      const selector = 'body[ class*="collection-type-blog-" ].view-item';
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
       
-      if ( ! $( selector ).length ) return $( ); // bail if no element
+      // initialize twc em sub-module
       
-      const html = `
+      twc.em = ( ( self ) => self ) ( twc.em || { } );
       
-        <div class="twc-blog-item-excerpt">
+      // initialize twc em callbacks sub-module
+      
+      twc.em.callbacks = ( ( self ) => {
+      
+        const callback = ( element ) => {
         
-          ${
+          const isBlogPage = ( ( ) => {
           
-            $element
+            const
             
-              .attr ( 'content' )
+              selector = [
+                  
+                'body[ class~="collection-type-blog" ]',
+                
+                'body[ class*="collection-type-blog-" ]',
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              is = Boolean (
               
-            }
+                document
+                
+                  .querySelectorAll ( selector )
+                  
+                  .length
+                  
+                );
+                
+            return is;
             
-          </div>
+            } ) ( );
+            
+          if ( ! isBlogPage ) return; // bail if not blog page
           
-          `;
+          const isDetail = ( ( ) => {
           
-      $element = $( html );
-      
-      return $element;
-      
-      };
+            const selector = 'body[ id^="item-" ]';
+            
+            const is = document
+            
+              .querySelector ( selector )
+              
+              !==
+              
+              null;
+              
+            return is;
+            
+            } ) ( );
+            
+          if ( ! isDetail ) return; // bail if not detail
+          
+          const content = element
+          
+            .getAttribute ( 'content' );
+            
+          element = document.createElement ( 'div' );
+          
+          element.insertAdjacentHTML (
+          
+            'beforeend',
+            
+            `
+            
+              <div class="twc-blog-item-excerpt">
+              
+                ${ content }
+                
+                </div>
+                
+                `
+                
+            );
+            
+          element = element.firstElementChild;
+          
+          return element;
+          
+          };
+          
+        self [ 'twcBlogPagePostExcerptElement' ] = callback;
+        
+        return self;
+        
+        } ) ( twc.em.callbacks || { } );
+        
+      } ) ( );
       
     </script>
     
-  <!-- end blog page post excerpt element -->
+  <!-- end TWC Blog Page Post Excerpt Element -->

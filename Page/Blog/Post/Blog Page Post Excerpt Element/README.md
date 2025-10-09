@@ -8,7 +8,7 @@ Create a blog page post excerpt element.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -36,69 +36,133 @@ Create a blog page post excerpt element.
 * In the **elements manipulate** code add the following data structure per that
   codes instructions.
   
-  ```text
-      "head meta[ name=\"description\" ]" : {
-      
-        "selectorDestination" : ".blog-item-top-wrapper",
+  ```JavaScript
+        /*
         
-        // action value is after, append, before, prepend or replace
+          footer sections append to page
+          
+          License     : < https://tinyurl.com/s872fb68 >
+          
+          Version     : 0.2.0
+          
+          SS Version  : 7.1
+          
+          Copyright   : 2024-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+          
+          */
+          
+        'head meta[ name="description" ]' : {
         
-        "action" : "append",
-        
-        // selectorParentDestination is optional, use when you want to first
-        // find a selector destination but then work up the ancestor hierarchy
-        // to manipulate it
-        
-        "selectorParentDestination" : "[ enter selector parent destination here between double quotes replacing square brackets ]",
-        
-        // sourceCopy when true will make a copy of the source element and use
-        // it instead of the actual selectorSource. value is false or true
-        
-        "sourceCopy" : false,
-        
-        // callback is optional, use when you want to manipulate the structure
-        // of the source element. replace undefined with the name of your custom
-        // function
-        //
-        // your callback must accept and return a JavaScript object
-        
-        "callback" : "twcBlogPagePostExcerptElement"
-        
-        },
-        
+          // sourceAncestorSelector is optional, use when you want to first find
+          // a source element but then work up the ancestor hierarchy to
+          // manipulate an ancestor element
+          
+          sourceAncestorSelector : '[ enter optional source ancestor selector here between single quotes replacing square brackets ]',
+          
+          // sourceCopy when true will make a copy of the source element and use
+          // it instead of the actual sourceSelector. value is false or true
+          
+          sourceCopy : false,
+          
+          // destinationSelector is required. use the selector x-twc-em-source
+          // to use the sourceSelector as the destination
+          
+          destinationSelector : '.blog-item-top-wrapper',
+          
+          // destinationAncestorSelector is optional, use when you want to first
+          // find a destination element but then work up the ancestor hierarchy
+          // to manipulate an ancestor element
+          
+          destinationAncestorSelector : '[ enter optional destination ancestor selector here between single quotes replacing square brackets ]',
+          
+          // rootSelector is optional, use when you want the source and
+          // destination elements to have a common ancestor element
+          
+          rootSelector : '[ enter optional root selector here between single quotes replacing square brackets ]',
+          
+          // action value is after, append, before, prepend or replace
+          
+          action : 'append',
+          
+          // repeat is a number. the number of times to repeat this specific
+          // element manipulation
+          
+          repeat : 1,
+          
+          // callbacks is optional, use when you want to manipulate the
+          // structure of the source element. the value is an array. you can add
+          // one or multiple callback names. when adding multiple callback names
+          // separate the names with commas. some examples...
+          //
+          // [ 'callback' ]
+          //
+          // [ 'callback1', 'callback2', 'callback3' ]
+          //
+          // your callbacks must accept and return a node
+          
+          callbacks : [ 'twcBlogPagePostExcerptElement' ]
+          
+          },
+          
   ```
   
 * Options
 
-  * Page Specific
+  * 7.1
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
-    * Add code from file **[blog page post excerpt element.html][8]** to Blog
-      Settings > Advanced > Page Header Code Injection for the blog page. Refer
-      to [Per-page code injection][9] for details.
-      
-  * Site-wide
+    * Page Specific
+    
+      * Use this option if you have only a single page you want to have this
+        effect.
+        
+      * Add code from file **[blog page post excerpt element.html][8]** to Blog
+        Settings > Advanced > Page Header Code Injection for the blog page.
+        Refer to [Per-page code injection][9] for details.
+        
+    * Site-wide
+    
+      * Use this option if you have multiple pages where you want to have this
+        effect.
+        
+      * Add code from file **[blog page post excerpt element.html][10]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+        code to code injection][9] for details.
+        
+  * 7.0
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
-    * Add code from file **[blog page post excerpt element.html][10]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][9] for details.
-      
+    * Page Specific
+    
+      * Use this option if you have only a single page you want to have this
+        effect.
+        
+      * Add code from file **[blog page post excerpt element.html][8]** to Blog
+        Settings > Advanced > Page Header Code Injection for the blog page.
+        Refer to [Per-page code injection][9] for details.
+        
+    * Site-wide
+    
+      * Use this option if you have multiple pages where you want to have this
+        effect.
+        
+      * Add code from file **[blog page post excerpt element.html][10]** to
+        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+        Refer to [Add code to code injection][9] for details.
+
 ## Make a Donation
 
 Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2023-05-31**
+* **2025-10-08**
 
-  * add ability to append and prepend to selector destination
+  * updated to work with elements manipulate v0.9.0
+  * updated data structure
+  * removed dependency on jQuery
   * bumped version to 0.2.0
-  -->
+  
 * **2024-08-22**
 
   * initial version
