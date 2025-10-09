@@ -40,23 +40,49 @@ Limit product block form text and text area field lengths.
   
 * Options
 
-  * Page Specific
+  * v7.1
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
-    * Add code from file **[product block form text field max length.html][7]**
-      to Page Settings > Advanced > Page Header Code Injection for the page.
-      Refer to [Per-page code injection][8] for details.
-      
-  * Site-wide
+    * Page Specific
+    
+      * Use this option if you have only a single page you want to have this
+        effect.
+        
+      * Add code from file **[product block form text field max
+        length.html][7]** to Page Settings > Advanced > Page Header Code
+        Injection for the page. Refer to [Per-page code injection][8] for
+        details.
+        
+    * Site-wide
+    
+      * Use this option if you have multiple pages where you want to have this
+        effect.
+        
+      * Add code from file **[product block form text field max
+        length.html][7]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Refer to [Add code to code injection][9] for details.
+        
+  * v7.0
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
-    * Add code from file **[product block form text field max length.html][7]**
-      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code injection][9] for details.
-      
+    * Page Specific
+    
+      * Use this option if you have only a single page you want to have this
+        effect.
+        
+      * Add code from file **[product block form text field max
+        length.html][7]** to Page Settings > Advanced > Page Header Code
+        Injection for the page. Refer to [Per-page code injection][8] for
+        details.
+        
+    * Site-wide
+    
+      * Use this option if you have multiple pages where you want to have this
+        effect.
+        
+      * Add code from file **[product block form text field max
+        length.html][7]** to Website > Pages > Website Tools > Custom Code >
+        Code Injection > FOOTER. Refer to [Add code to code injection][9] for
+        details.
+        
 * Edit a Store page product and add a Custom Form.
 
 * For each form field you want to limit the number of characters do the
@@ -110,17 +136,6 @@ Limit product block form text and text area field lengths.
 
 * If you need installation help or customization please [contact me for paid
   consulting][11].
-
-## Notes
-
-This code does not work on the checkout page. It is a Squarespace security
-feature that no code can alter the checkout page.
-
-This code is client side and making use of an HTML form feature. Since this code
-is client side it is possible to bypass the max length limit this code is
-setting. In other words you still need to be checking manually when forms or
-orders come in to make sure your limits are not being exceeded. Consider this
-code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
