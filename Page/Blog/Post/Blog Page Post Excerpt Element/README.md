@@ -39,7 +39,7 @@ Create a blog page post excerpt element.
   ```JavaScript
         /*
         
-          footer sections append to page
+          blog page post excerpt element
           
           License     : < https://tinyurl.com/s872fb68 >
           
