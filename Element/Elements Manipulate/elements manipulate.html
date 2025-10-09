@@ -10,7 +10,7 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.10.0
+        Version         : 0.10.1
         
         SS Versions     : 7.1, 7.0
         
@@ -40,7 +40,7 @@
         
       const
       
-        version = '0.10.0',
+        version = '0.10.1',
         
         s = `
         
@@ -130,7 +130,7 @@
               
               isSourceCopy = object.sourceCopy,
               
-              rootElement = document.body,
+              rootElement = document,
               
               sourceCopyElement;
               
@@ -370,8 +370,6 @@
             
               const elements = document
               
-                .body
-                
                 .querySelectorAll ( selector );
                 
               elements.forEach ( e => actionCallback ( e, object ) );

@@ -9,7 +9,7 @@ append, before, prepend, or replace.
 
 ### Version
 
-  * 0.10.0
+  * 0.10.1
 
 #### SS Versions
 
@@ -62,36 +62,21 @@ append, before, prepend, or replace.
       
 ## Options Data Structure Templates
 
-  * v7.1
+* v7.1
+
+  * [Product Additional Info First N Blocks to End Of Product Meta][11]
   
-    * [Footer Site Wide Divider Append to Page][8]
-    
-      * After installing the previous code into Elements Manipulate Options add
-        code from file **[footer site wide divider append to page.html][9]** to
-        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-        
-      * Add code from file **[footer site wide divider append to
-        page.less][10]** to Website > Pages > Website Tools > Custom Code >
-        Custom CSS.
-        
-      * Create a section in your footer. Style the way you want with a divider.
-      
-      * Add a Code block with the content set to the following.
-      
-        ```html
-        <x-twc-fswdatp />
-        ```
-        
-        I suggest removing the default Text block and Save the section.
-        
-      There are some pages that can not be altered with custom code like the
-      checkout page.
-      
-    * [Product Additional Info First N Blocks to End Of Product Meta][11]
-    
-    * [Product Additional Info First Row Video Block Before Quantity][12]
-    
-    * [Product Additional Info Specific Video Block Before Quantity][13]
+  * [Product Additional Info First Row Video Block Before Quantity][12]
+  
+  * [Product Additional Info Specific Video Block Before Quantity][13]
+
+## Effects Dependent on Elements Manipulate
+
+* v7.1
+
+  * [Blog Page Post Excerpt Element][9]
+  
+  * [Footer Sections Append to Page Observe][8]
 
 ## Callbacks
 
@@ -225,6 +210,11 @@ Please consider [making a donation][15].
 
 ## Changes
 
+* **2025-10-08**
+
+  * fixed issue with not being able to work with head elements
+  * bumped version to 0.10.1
+  
 * **2025-10-01**
 
   * added product additional info first n blocks to end of product meta template
@@ -296,9 +286,8 @@ Please consider [making a donation][15].
 [5]: elements%20manipulate%20options.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [7]: elements%20manipulate.html#L1
-[8]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.js
-[9]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page%20observe.html
-[10]: options%20data%20structure%20templates/Footer%20Site%20Wide%20Divider%20Append%20to%20Page/footer%20site%20wide%20divider%20append%20to%20page.less
+[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
+[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
 [11]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
 [12]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
 [13]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
