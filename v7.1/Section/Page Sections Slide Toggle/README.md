@@ -28,8 +28,7 @@ Add page section toggle effect to pages.
 
 ## Install
 
-* Add the following to Website > Pages > Custom Code > Code Injection >
-  HEADER.
+* Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -106,13 +105,15 @@ Add page section toggle effect to pages.
     * data-section-count
     
       Toggle multiple sections. The default value when this attribute is not
-      used is one. This effect does not check that you are using resonable
-      values in the context of what you are building. If the wrong values are
-      used it can cause unusual results. An example.
+      used is one. An example.
       
       ```html
       <x-twc-psst data-section-count="2">
       ```
+      
+      This effect does not check that you are using resonable values in the
+      context of what you are building. If the wrong values are used it can
+      cause unusual results.
       
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
