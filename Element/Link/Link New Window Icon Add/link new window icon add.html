@@ -1,0 +1,183 @@
+<!-- begin TWC Link New Window Icon Add -->
+
+  <!--
+  
+    link new window icon add
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                      Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                      Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Copyright       : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Link New Window Icon Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const
+        
+          blockClassnameMap = {
+          
+            button : 'sqs-block-button',
+            
+            text : 'sqs-block-html',
+            
+            },
+            
+          callback = ( element ) => {
+          
+            const
+            
+              closestSelector = '.'
+              
+                +
+                
+                Object
+                
+                  .values ( blockClassnameMap )
+                  
+                  .join ( ', .' ),
+                  
+              closestElement = element
+              
+                .closest ( closestSelector ),
+                
+              selector = 'span',
+              
+              spanElement = element
+              
+                .querySelector ( selector ),
+                
+              svg = `
+              
+                <svg class="${ codeKey }__svg" viewBox="0 0 100 100">
+                
+                  <use xlink:href="#${ codeKey }">
+                  
+                    </use>
+                    
+                  </svg>
+                  
+                `;
+                
+            if ( spanElement !== null )
+            
+              element = spanElement;
+              
+            let html = element
+            
+              .textContent
+              
+              .split ( /\s+/ );
+              
+            html.push (
+            
+              `
+              
+                <span class="${ codeKey }-word-icon">
+                
+                  ${ html.pop ( ) }
+                  
+                  ${ svg }
+                  
+                  </span>
+                  
+                `
+                
+              );
+              
+            html = html.join ( ' ' );
+            
+            element.innerHTML = html;
+            
+            closestElement
+            
+              .classList
+              
+              .add ( `${ codeKey }` );
+              
+            },
+            
+          codeKey = 'twc-lnwia',
+          
+          suffixSelector = 'a[ target="_blank" ]',
+          
+          selector = '.'
+          
+            +
+            
+            Object
+            
+              .values ( blockClassnameMap )
+              
+              .join ( ` ${ suffixSelector }, .` )
+              
+              +
+              
+              ` ${ suffixSelector }`;
+              
+        document
+        
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <svg display="none" xmlns="http://www.w3.org/2000/svg">
+  
+    <symbol id="twc-lnwia" viewBox="0 0 7.938 7.938">
+    
+      <path d="m 5.8208335,0.39687501 c 0.5732639,0 1.1465278,0 1.7197917,0 0.00481,0.57439994 -0.00479,1.14883119 -5e-7,1.72323129 M 6.9143382,1.017837 C 6.3734479,1.5605026 5.8325576,2.1031683 5.2916673,2.6458339 M 3.9687506,0.39687551 c -1.1906252,-1.7e-7 -2.3812504,-3.5e-7 -3.57187561,-5.2e-7 0,2.38125001 0,4.76250001 0,7.14375001 2.38125011,0 4.76250031,0 7.14375041,0 0,-1.1906248 0,-2.3812496 0,-3.5718744" style="stroke : currentColor;">
+      
+        </path>
+        
+      </symbol>
+      
+    </svg>
+    
+  <!-- end TWC Link New Window Icon Add -->
