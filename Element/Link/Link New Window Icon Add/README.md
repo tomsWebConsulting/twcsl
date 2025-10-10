@@ -63,6 +63,9 @@ Add a link out icon to links that open a new tab or window.
       * Use this option if you have only a single page you want to have this
         effect.
         
+      * Add code from file **[link new window icon add.less][5]** to Website >
+        Pages > Custom Code > Code Injection > Custom CSS for the store page.
+        
       * Add code from file **[link new window icon add.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the store
         page. Refer to [Per-page code injection][7] for details.
@@ -71,6 +74,9 @@ Add a link out icon to links that open a new tab or window.
     
       * Use this option if you have multiple pages where you want to have this
         effect.
+        
+      * Add code from file **[link new window icon add.less][5]** to Website >
+        Pages > Custom Code > Code Injection > Custom CSS for the store page.
         
       * Add code from file **[link new window icon add.html][6]** to Website >
         Pages > Website Tools > Custom Code > Code Injection > FOOTER. Refer to
