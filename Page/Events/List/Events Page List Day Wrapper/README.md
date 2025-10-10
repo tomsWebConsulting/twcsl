@@ -8,7 +8,7 @@ Wrap the events of each day together and add a date title.
 
 ### Version
 
- * 0.1.0
+ * 0.1.1
 
 #### SS Versions
 
@@ -65,11 +65,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2024-04-28**
+* **2025-10-09**
 
-  * update to work with Form Block Wrapper Observe Changes v0.3.0
-  * bumped version to 0.3.0
-  -->
+  * added css to style title on mobile
+  * bumped version to 0.1.1
+  
 * **2025-05-11**
 
   * initial version
