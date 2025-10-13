@@ -33,19 +33,20 @@ Split title into lines.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add code from file **[store page title to lines.html][4]** and **[summary
-      block title to lines.html][5]** to Store Settings > Advanced > Page Header
-      Code Injection for the page. Refer to [Per-page code injection][6] for
-      details. Read the code for any instructions within.
+    * Add code from file **[store page title to lines options.html][4]** and
+      **[summary block title to lines.html][5]** to Store Settings > Advanced >
+      Page Header Code Injection for the page. Refer to [Per-page code
+      injection][6] for details. Read the code for any instructions within.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add code from files **[store page title to lines.html][4]** and **[summary
-      block title to lines.html][5]** to Website > Pages > Custom Code > Code
-      Injection > FOOTER. Refer to [Add code to code injection][7] for details.
+    * Add code from files **[store page title to lines options.html][4]** and
+      **[summary block title to lines.html][5]** to Website > Pages >
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
+      injection][7] for details.
 
 ## Note
 
