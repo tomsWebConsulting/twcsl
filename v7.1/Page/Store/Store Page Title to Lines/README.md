@@ -48,7 +48,7 @@ Split title into lines.
       Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][7] for details.
 
-## Note
+## Notes
 
 Entering HTML in the product title field will put that HTML into the backend.
 Your site visitors will see that HTML in their cart, checkout and etc. It looks
@@ -56,7 +56,9 @@ ugly and make things confusing.
 
 With this effect you can type in almost anything you want for the separator in
 the options. If you use a non-breaking space (option-space on macOS, Alt+0160 on
-Windows) it shouldn't cause issues on the backend.
+Windows) it shouldn't cause issues on the backend. Squarespace will turn the
+non-breaking space into the **&amp;nbsp;** HTML entity, use it for the
+separator.
 
 ## Make a Donation
 
