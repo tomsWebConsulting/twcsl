@@ -32,9 +32,13 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 ## Install
 
-* Add code from file **[store product detail add to cart button url
-  redirect.html][8]** to Store Settings > Advanced > Page Header Code Injection
+* Add code from file **[store product detail add to cart button url redirect
+  options.html][8]** to Store Settings > Advanced > Page Header Code Injection
   for the store page. Read the code for any instructions within.
+  
+* Add code from file **[store product detail add to cart button url
+  redirect.html][9]** to Store Settings > Advanced > Page Header Code Injection
+  for the store page.
   
 * Options
 
@@ -42,7 +46,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][9].
+    * Add the following to a code block in [Additional Info][10].
       
       ```html
       <script>
@@ -76,7 +80,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
     
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -162,6 +166,7 @@ Please consider [making a donation][10].
 [5]: https://support.squarespace.com/hc/en-us/articles/206545347
 [6]: https://www.squarespace.com/pricing
 [7]: https://en.wikipedia.org/wiki/JavaScript
-[8]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect%20options.html#L1
+[9]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
