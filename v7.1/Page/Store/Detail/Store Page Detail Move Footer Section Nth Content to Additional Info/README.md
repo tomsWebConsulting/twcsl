@@ -36,9 +36,9 @@
   additional info.less][7]** to Website > Pages > Website Tools > Custom Code >
   Custom CSS.
   
-* Add or edit a **Classic Editor** section and set it's **ANCHOR LINK** to start
-  with **twc-spdmfsnctai-**. After the ending dash add a number or other unique
-  string.
+* Add or edit a **Classic Editor** section, in the footer, and set it's **ANCHOR
+  LINK** to start with **twc-spdmfsnctai-**. After the ending dash add a number
+  or other unique string.
 
 ## Note
 
