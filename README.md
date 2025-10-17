@@ -379,6 +379,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Footer Sections Move](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Sections%20Move)
           
+        * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
+          
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
         * [Store Page Detail Variant Display Button Vertical](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Vertical)
@@ -573,8 +575,6 @@ not necessarily designed to work together.
         
       * [Header Buttons Add](v7.1/Element/Header/Header%20Buttons%20Add)
         
-  * [Store Product Detail Move Footer Section Nth Content to Additional Info](v7.1/Store%20Product%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
-    
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
     
   * [Gallery Section Reel Arrows Top Center](v7.1/Gallery%20Section%20Reel%20Arrows%20Top%20Center)
