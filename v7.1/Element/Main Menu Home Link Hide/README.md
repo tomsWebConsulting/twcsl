@@ -41,7 +41,7 @@ Please consider [making a donation][12].
   * added additional translation phrases
   * bumped version to 0.2.0
   -->
-* **2025-05-07**
+* **2025-10-28**
 
   * initial version
 
