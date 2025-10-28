@@ -1,0 +1,82 @@
+<!-- begin TWC Main Menu Home Link Hide -->
+
+  <!--
+  
+    main menu home link hide
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.0
+    
+    SS Versions   : 7.1
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Main Menu Home Link Hide v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      window
+      
+        .top
+        
+        .document
+        
+        .head
+        
+        .insertAdjacentHTML (
+        
+          'beforeend',
+          
+          `
+          
+            <style>
+            
+              [ data-testid="primary-nav-item-wrapper" ]:has( [ data-id="/home" ] ) {
+              
+                display : none;
+                
+                }
+                
+              </style>
+              
+            `
+            
+          );
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Main Menu Home Link Hide -->
