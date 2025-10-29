@@ -6,9 +6,9 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version       : 0.2.0
     
-    SS Versions   : 7.1
+    SS Version    : 7.1
     
     v7.1
     Fluid
@@ -27,9 +27,11 @@
   
     ( ( ) => {
     
+      debugger;
+      
       const
       
-        version = '0.1.0',
+        version = '0.2.0',
         
         s = `
         
@@ -47,10 +49,12 @@
           
       console.log ( s );
       
-      window
+      const wT = window.top;
       
-        .top
-        
+      if ( window.self === wT ) return; // bail if not editor
+      
+      wT
+      
         .document
         
         .head

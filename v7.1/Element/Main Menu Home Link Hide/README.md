@@ -8,7 +8,7 @@ Hide main menu HOME link.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -36,11 +36,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
-<!-- * **2025-06-24**
+* **2025-10-29**
 
-  * added additional translation phrases
+  * added check for bail if not editor
   * bumped version to 0.2.0
-  -->
+  
 * **2025-10-28**
 
   * initial version
