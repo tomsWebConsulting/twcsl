@@ -409,6 +409,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Products Hide](v7.1/Page/Store/List/Store%20Page%20List%20Products%20Hide)
+          
         * [Store Page List Out of Stock Badge](v7.1/Page/Store/List/Store%20Page%20List%20Out%20of%20Stock%20Badge)
           
         * [Store Page List Category Title Element to H1](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Title%20Element%20to%20H1)
@@ -532,8 +534,6 @@ not necessarily designed to work together.
   * [CTA Button Text and Url Change Based on Language](v7.1/CTA%20Button%20Text%20and%20Url%20Change%20Based%20on%20Language)
     
   * [Gallery Section Item Description Key Class Add](v7.1/Gallery%20Section%20Item%20Description%20Key%20Class%20Add)
-    
-  * [Store Category All List Hide](v7.1/Store%20Category%20All%20List%20Hide)
     
   * [Replace Blog "Header" Text with Category and or Tag](v7.1/Replace%20Blog%20"Header"%20Text%20with%20Category%20and%20or%20Tag)
     
