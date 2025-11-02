@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.5.2
+  * 0.5.3
 
 #### SS Version
 
@@ -77,6 +77,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-11-02**
+
+  * fixed issues after post Products V2 Squarespace changes
+  * removed redundant guard checks
+  * bumped version to 0.5.3
+  
 * **2025-08-12**
 
   * added checks for is store and list page
