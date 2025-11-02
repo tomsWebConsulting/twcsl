@@ -1,0 +1,226 @@
+<!-- begin TWC Store Page List Category Theme Change -->
+
+  <!--
+  
+    store page list category theme change
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    body:not( .sqs-is-page-editing ) #page .page-section:has( x-twc-splctc ) {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.3.0',
+        
+        s = `Store Page List Category Theme Change v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splcc sub-module
+    
+    twc.splcc = ( ( self ) => self ) ( twc.splcc || { } );
+    
+    // initialize twc splcc callbacks sub-module
+    
+    twc.splcc.callbacks = ( ( self ) => {
+    
+      const callback = ( categories ) => {
+      
+        const callback = ( ) => {
+        
+          const
+          
+            codeKey = 'twc-splctc',
+            
+            selector = `#page x-${ codeKey }`,
+            
+            elements = document
+            
+              .body
+              
+              .querySelectorAll ( selector );
+              
+          if ( ! elements ) return; // bail if no splctc
+          
+          const
+          
+            callback = ( element ) => {
+            
+              const theme = element
+              
+                .closest ( '.page-section' )
+                
+                .getAttribute ( 'data-section-theme' );
+              
+              element
+              
+                .textContent
+                
+                .trim ( )
+                
+                .split ( /\s*,\s*/g )
+                
+                .forEach (
+                
+                  c => categoryThemeMap [ c ] = theme
+                  
+                  );
+                  
+              },
+              
+            categoryThemeMap = { },
+            
+            findCategory = ( categories ) => {
+            
+              for ( const category of categories) {
+              
+                if ( category.fullUrl === location.pathname )
+                
+                  return category;
+                  
+                if ( category.children.length ) {
+                
+                  const result = findCategory (
+                  
+                    category.children,
+                    
+                    );
+                    
+                  if ( result ) return result;
+                  
+                  }
+                  
+                }
+                
+              return null;
+              
+              },
+              
+            category = findCategory (
+            
+              categories
+              
+              )
+              
+              .displayName;
+              
+          elements.forEach ( callback );
+            
+          // bail if not a category we want to change
+          
+          if ( ! ( category in categoryThemeMap ) ) return;
+          
+          const
+          
+            classes = [
+            
+              'black-bold',
+              
+              'black',
+              
+              'bright-inverse',
+              
+              'bright',
+              
+              'dark-bold',
+            
+              'dark',
+              
+              'light-bold',
+              
+              'light',
+              
+              'white-bold',
+              
+              'white'
+              
+              ],
+              
+            element = document
+            
+              .body
+              
+              .querySelector ( '.page-section.product-list-section' ),
+              
+            classList = element
+              
+              .classList;
+              
+          classList.remove ( ... classes )
+          
+          classList.add (
+          
+            categoryThemeMap [ category ]
+            
+            );
+            
+          element.setAttribute (
+          
+            'data-section-theme',
+            
+            categoryThemeMap [ category ]
+            
+            );
+            
+          };
+          
+        document
+         
+          .addEventListener ( 'DOMContentLoaded', callback );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.splcc.callbacks || [ ] );
+      
+    </script>
+  
+  <!-- end TWC Store Page List Category Theme Change -->
