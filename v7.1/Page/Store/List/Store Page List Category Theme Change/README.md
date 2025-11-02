@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Change products section theme of on category page.
+Change products section theme per category.
 
 ### Version
 
