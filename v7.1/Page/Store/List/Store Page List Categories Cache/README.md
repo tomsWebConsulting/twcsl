@@ -8,7 +8,7 @@ Cache store page categories in sessionStorage.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
@@ -37,22 +37,28 @@ Cache store page categories in sessionStorage.
     * Use this option if you have only a single page you want to have this
       effect.
       
-    * Add, in order, code from files **[store page list categories cache
-      options.html][4]** and **[store page list categories cache.html][5]** to
-      Store Settings > Advanced > Page Header Code Injection for the store page.
-      Refer to [Per-page code injection][6] for details.
+    * Add code from file **[store page list categories cache options.html][4]**
+      to Store Settings > Advanced > Page Header Code Injection for the store
+      page. Refer to [Per-page code injection][6] for details. Read the code for
+      any instructions within.
+      
+    * Add code from file **[store page list categories cache.html][5]** to
+      Store Settings > Advanced > Page Header Code Injection for the store
+      page. Refer to [Per-page code injection][6] for details.
       
   * Site-wide
   
     * Use this option if you have multiple pages where you want to have this
       effect.
       
-    * Add, in order, code from files **[store page list categories cache
-      options.html][4]** and **[store page list categories cache.html][5]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7] for details.
+    * Add code from file **[store page list categories cache options.html][4]**
+      to Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
+      code to code injection][7] for details. Read the code for any instructions
+      within.
       
-* Read the code for any instructions within.
+    * Add code from file **[store page list categories cache.html][5]** to
+      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
+      code to code injection][7] for details.
 
 ## Callback Example
 
@@ -98,6 +104,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-10-31**
+
+  * added tag page guard check
+  * reworked code to be a bit more efficient
+  * bumped version to 0.4.0
+  
 * **2025-07-22**
 
   * moved options out of main code

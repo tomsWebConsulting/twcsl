@@ -2,7 +2,7 @@
 
   <script>
   
-    ( ( ) => {
+    ( async ( ) => {
     
       /*
       
@@ -10,7 +10,7 @@
         
         License       : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.3.0
+        Version       : 0.4.0
         
         SS Version    : 7.1
         
@@ -21,11 +21,11 @@
         Engine
         Compatible    : Not Applicable
         
-        Notes         : the code is comprised of two script tags. both are needed for
-                        the full effect to work
+        Notes         : the code is comprised of two script tags. both are
+                        needed for the full effect to work
                         
-                        the code makes a call to the json version of the store page
-                        for information that is not normally available
+                        the code makes a call to the json version of the store
+                        page for information that is not normally available
         
         Copyright     : 2023-2025 Thomas Creedon
                         
@@ -37,7 +37,7 @@
         
       const
       
-        version = '0.3.0',
+        version = '0.4.0',
         
         s = `
         
@@ -54,6 +54,48 @@
           .replace ( /^\s+/gm, '' );
           
       console.log ( s );
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isList
+      
+        =
+        
+        !
+        
+        Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .itemId;
+          
+      if ( ! isList ) return; // bail if not list page
+      
+      const isTag = ( ( ) => {
+      
+        const
+        
+          p = new URLSearchParams ( location.search )
+          
+          is = p.has ( 'tag' );
+          
+        return is;
+        
+        } ) ( );
+        
+      if ( isTag ) return; // bail if tag page
       
       const
       
@@ -115,7 +157,7 @@
         
       // bail if categories
       
-      if ( categories !== null ) {
+      if ( categories ) {
       
         categories = JSON.parse ( categories );
         
@@ -127,148 +169,150 @@
         
       const
       
-        callback = ( mutations ) => {
+        traverse = ( categories ) => {
         
-          const callback = ( mutation ) => {
+          const callback = ( category, i ) => {
           
-            let b = ! mutation.addedNodes.length;
+            const callback = ( key ) => {
             
-            if ( b ) return true; // continue
-            
-            const node = mutation.addedNodes [ 0 ];
-            
-            b = node.nodeName !== 'BODY';
-            
-            if ( b ) return true; // continue if not BODY node
-            
-            observer.disconnect ( );
-            
-            const
-            
-              selector = 'body.collection-type-products[ id^="collection-" ]',
+              const is = keepKeys.includes ( key );
               
-              isStorePageList = document
+              if ( is ) return true; // continue
               
-                .querySelector ( selector )
-                
-                !==
-                
-                null;
-                
-            if ( ! isStorePageList ) return true; // bail if not list
-            
-            const setCategories = ( ) => {
-            
-              const callback = ( data ) => {
-              
-                const traverse = ( categories ) => {
-                
-                  const callback = ( category, i ) => {
-                  
-                    const callback = ( key ) => {
-                    
-                      const b = keepKeys.includes ( key );
-                      
-                      if ( b ) return true; // continue
-                      
-                      delete category [ key ];
-                      
-                      };
-                      
-                    Object
-                    
-                      .keys ( category )
-                      
-                      .forEach ( callback );
-                      
-                    traverse ( category.children );
-                    
-                    };
-                    
-                  categories.forEach ( callback );
-                  
-                  };
-                  
-                let categories = data.nestedCategories.all
-                
-                if ( categories !== undefined ) {
-                
-                  categories.children = data.nestedCategories.categories;
-                  
-                  categories = [ categories ];
-                  
-                  } else
-                  
-                    categories = data.nestedCategories.categories;
-                    
-                traverse ( categories );
-                
-                sessionStorage.setItem (
-                
-                  codeKey,
-                  
-                  JSON
-                  
-                    .stringify ( categories )
-                    
-                  );
-                  
-                userCallbacks ( categories );
-                
-                };
-                
-              const url =
-              
-                `${ Static.SQUARESPACE_CONTEXT.collection.fullUrl }?format=json`;
-                
-              fetch ( url )
-              
-                .then ( response => response.json ( ) )
-                
-                .then ( callback );
-                  
-              };
-              
-            const unique = ( value, index, array ) => {
-            
-              const b = array.indexOf ( value ) === index;
-              
-              return b;
+              delete category [ key ];
               
               };
               
-            let keepKeys = options.keepKeys;
+            Object
             
-            keepKeys.push ( 'children' );
-            
-            keepKeys = keepKeys.filter ( unique );
-            
-            setCategories ( );
+              .keys ( category )
+              
+              .forEach ( callback );
+              
+            traverse ( category.children );
             
             };
             
-          for ( const mutation of mutations ) {
+          categories.forEach ( callback );
           
-            const b = callback ( mutation );
+          },
+          
+        unique = ( value, index, array ) => {
+        
+          const b = array.indexOf ( value ) === index;
+          
+          return b;
+          
+          },
+          
+        url = `${
+        
+          Static
+          
+            .SQUARESPACE_CONTEXT
             
-            if ( ! b ) break; // bail if callback returns false
+            .collection
+            
+            .fullUrl
+            
+          }?format=json`;
+          
+      let
+      
+        keepKeys,
+        
+        nestedCategories;
+        
+      // keep keys
+      
+      {
+      
+        keepKeys = options.keepKeys;
+        
+        keepKeys.push ( 'children' );
+        
+        keepKeys = keepKeys.filter ( unique );
+        
+        }
+        
+      try {
+      
+        const response = await fetch ( url );
+        
+        if ( ! response.ok ) {
+        
+          const s = `
+          
+            ${ codeKey } network response was not ok ${
+            
+              response
+              
+                .statusText
+                
+                }
+                
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          throw new Error ( s );
+          
+          }
+          
+        nestedCategories = await response.json ( );
+        
+        nestedCategories = nestedCategories.nestedCategories;
+        
+        console.log ( nestedCategories );
+        
+        } catch ( error ) {
+        
+          const s = `
+          
+            ${ codeKey } there has been a problem with your fetch get operation,
+            
+            ${ error }.
+            
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          console.error ( s );
+          
+          } finally {
+          
+            categories = nestedCategories.all;
+            
+            if ( categories ) {
+            
+              categories.children = nestedCategories.categories;
+              
+              categories = [ categories ];
+              
+              } else
+              
+                categories = nestedCategories.categories;
+                
+            traverse ( categories );
+            
+            sessionStorage.setItem (
+            
+              codeKey,
+              
+              JSON
+              
+                .stringify ( categories )
+                
+              );
+              
+            userCallbacks ( categories );
             
             }
             
-          },
-          
-        config = {
-        
-          childList : true
-          
-          },
-          
-        observer = new MutationObserver ( callback );
-          
-      // start listening for changes in html
-      
-      observer.observe ( document.documentElement, config );
-      
       } ) ( );
       
     </script>
