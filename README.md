@@ -407,6 +407,8 @@ not necessarily designed to work together.
           
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
           
+        * [Store Page List Category Theme Change](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Theme%20Change)
+          
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
         * [Store Page List Products Hide](v7.1/Page/Store/List/Store%20Page%20List%20Products%20Hide)
@@ -672,8 +674,6 @@ not necessarily designed to work together.
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
   * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
-    
-  * [Store Category Theme Change](v7.1/Store%20Category%20Theme%20Change)
     
   * [Fluid Engine Page Section Upgrade Button Hide](v7.1/Fluid%20Engine%20Page%20Section%20Upgrade%20Button%20Hide)
     
