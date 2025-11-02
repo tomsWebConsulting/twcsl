@@ -20,7 +20,7 @@ Change products section theme per category.
 
 #### Fluid Engine Compatible
 
-  * Not Applicable
+  * Yes
 
 #### Dependencies
 
