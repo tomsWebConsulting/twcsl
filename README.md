@@ -391,6 +391,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Product Dimensions Tabbed](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions%20Tabbed)
           
+      * [Store Page Tag Date Add to Cart Hide](v7.1/Page/Store/Store%20Page%20Tag%20Date%20Add%20to%20Cart%20Hide)
+        
       * [Store Page Tags Text Add](v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add)
         
       * [Store Page Elements Tagged Hide](v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide)
@@ -640,8 +642,6 @@ not necessarily designed to work together.
   * [Calendar Block Link Replace With Excerpt Link](v7.1/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link)
     
   * [Blog Post Title Each Word Span Tag Add](v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add)
-    
-  * [Store Product Detail Add To Cart Show After Date Time](v7.1/Store%20Product%20Detail%20Add%20To%20Cart%20Show%20After%20Date%20Time)
     
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
     
