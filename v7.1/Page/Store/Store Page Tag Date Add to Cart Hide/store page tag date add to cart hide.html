@@ -1,0 +1,310 @@
+<!-- begin TWC Store Page Tag Date Add to Cart Hide -->
+
+  <!--
+  
+      store page tag date add to cart hide
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.2.0
+      
+      SS Version    : 7.1
+      
+      Products V2
+      Compatible    : Yes
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Notes         : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+                      
+                      this effect is not active in Squarespace Preview to test
+                      it use private browsing < https://tinyurl.com/ynessvsf >
+                      
+                      this effect is not time zone aware and therefore useful
+                      for local sales only
+      
+      Copyright     : 2023-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+    -->
+    
+  <style>
+  
+    .product-list .product-list-layout-container[ data-product-list-layout="grid" ] .product-list-item.twc-sptdhatc {
+    
+      justify-content : unset;
+      
+      }
+      
+    .product-list .product-list-item.twc-sptdhatc .sqs-add-to-cart-button-wrapper:not( [ href ] ),
+    .product-detail.twc-sptdhatc .product-meta .product-add-to-cart
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.2.0',
+        
+        s = `Store Page Tag Date Add to Cart Hide v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      if ( window.frameElement !== null ) return; // bail if in preview
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const callback = ( ) => {
+      
+        const isList
+        
+          =
+          
+          !
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item
+            
+            ?.id;
+            
+        if ( isList ) {
+        
+          const isLayoutGrid
+          
+            =
+            
+            document
+            
+              .body
+              
+              .querySelector (
+              
+                '.product-list .product-list-layout-container[ '
+                
+                  +
+                  
+                  'data-product-list-layout="grid" ]'
+                  
+                );
+                
+          if ( ! isLayoutGrid ) return; // bail if not layout grid
+          
+          }
+          
+        const
+        
+          callback = ( element ) => {
+          
+            const
+            
+              callback = ( className ) => {
+              
+                let re
+                
+                  =
+                  
+                  '(\\d{4}-\\d{2}-\\d{2})-(\\d{2})(\\d{2})(\\d{2})-([ap]m)';
+                  
+                re = new RegExp (
+                
+                `tag-${ codeKey }-${ re }(?:-${ re })?`
+                
+                  );
+                  
+                const m = className.match ( re );
+                
+                // continue if tag doesn't match format
+                
+                if ( ! m ) {
+                
+                  console
+                  
+                    .warn ( `${ codeKey } : tag format error ${ className }` );
+                    
+                  return;
+                  
+                  }
+                  
+                const
+                
+                  inRange = ( x, min, max ) => {
+                  
+                    const is = ( x - min ) * ( x - max ) <= 0;
+                    
+                    return is;
+                    
+                    },
+                    
+                  getDate = ( m ) => {
+                  
+                    m [ 1 ] = Number ( m [ 1 ] );
+                    
+                    const isPm
+                    
+                      =
+                      
+                      m [ 4 ] === 'pm'
+                      
+                      &&
+                      
+                      m [ 1 ] !== 12;
+                      
+                    if ( isPm )
+                    
+                      m [ 1 ] += 12;
+                      
+                    const
+                    
+                      d = new Date (
+                      
+                        `${ m [ 0 ] }T${ m [ 1 ] }:${ m [ 2 ] }:${ m [ 3 ] }`
+                        
+                        ),
+                        
+                      is = isNaN ( d );
+                      
+                    // bail if not a number
+                    
+                    if ( is ) {
+                    
+                      console.warn ( `${ codeKey } : date error }` );
+                      
+                      return null;
+                      
+                      }
+                      
+                    const year = d.getFullYear ( );
+                    
+                    if ( year === 1970 )
+                    
+                      d.setYear ( dYear );
+                      
+                    return d;
+                    
+                    };
+                    
+                let
+                
+                  d1,
+                  
+                  d2;
+                  
+                d1 = getDate ( m.slice ( 1, 6 ) );
+                
+                // d2
+                
+                if ( m [ 6 ] )
+                
+                  d2 = getDate ( m.slice ( 6 ) );
+                  
+                  else
+                  
+                    d2 = new Date ( 8640000000000000 );
+                    
+                hide ||= inRange ( d, d1, d2 );
+                
+                },
+                
+              tags = element
+              
+                .getAttribute ( 'class' )
+                
+                .split ( ' ' )
+                
+                .filter ( t => t.startsWith ( `tag-${ codeKey }-` ) )
+                
+                .sort ( );
+                
+            let hide = false;
+            
+            tags.forEach ( callback ); // run through the tags
+            
+            if ( hide )
+            
+              element
+              
+                .classList
+                
+                .add ( codeKey );
+                
+            },
+            
+          codeKey = 'twc-sptdhatc',
+          
+          d = new Date ( ),
+          
+          dYear = d.getFullYear ( ),
+          
+          suffix = `[ class*="tag-${ codeKey }-" ]`,
+          
+          selector = [
+          
+            `.product-list .product-list-item`,
+          
+            `.product-detail`
+            
+            ]
+            
+            .join ( `${ suffix }, ` )
+            
+            +
+            
+            `${ suffix }`;
+            
+        document
+        
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Tag Date Add to Cart Hide -->
