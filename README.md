@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 406 effects. Each effect has it's own version number, code,
+twcsl contains 404 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -60,8 +60,6 @@ not necessarily designed to work together.
       * [Blog Page Post Excerpt Element](Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element)
         
     * [Blog Page Title to Lines](Page/Blog/Blog%20Page%20Title%20to%20Lines)
-      
-    * [List](Page/Blog/List)
       
   * [Page Collection Main Page Robots No Index](Page/Page%20Collection%20Main%20Page%20Robots%20No%20Index)
     
@@ -563,8 +561,6 @@ not necessarily designed to work together.
       
       * [Body Background Image](v7.1/Element/Body/Body%20Background%20Image)
         
-    * [Image](v7.1/Element/Image)
-      
     * [Main Menu Home Link Hide](v7.1/Element/Main%20Menu%20Home%20Link%20Hide)
       
     * [Header](v7.1/Element/Header)
