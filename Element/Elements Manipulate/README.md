@@ -43,8 +43,8 @@ append, before, prepend, or replace.
       injection][6] for details. Read the code for any instructions within.
       
     * Add code from file **[elements manipulate.html][7]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Per-page code injection][6]
-      for details.
+      Custom Code > Code Injection > FOOTER. Refer to [Per-page code
+      injection][6] for details.
       
   * v7.0
   
