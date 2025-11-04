@@ -369,6 +369,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Meta Reorder](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Meta%20Reorder)
           
+        * [Store Page Detail Gallery Thumbnails Side Pill Segmented](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Gallery%20Thumbnails%20Side%20Pill%20Segmented)
+          
         * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
           
         * [Store Product Detail Variant Title Selected Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Title%20Selected%20Add)
@@ -618,8 +620,6 @@ not necessarily designed to work together.
   * [Blog Page List Item Background Color](v7.1/Blog%20Page%20List%20Item%20Background%20Color)
     
   * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
-    
-  * [Store Product Detail Gallery Thumbnails Pill Segmented](v7.1/Store%20Product%20Detail%20Gallery%20Thumbnails%20Pill%20Segmented)
     
   * [Reposition First Page Section Background so Header Does Not Hide It](v7.1/Reposition%20First%20Page%20Section%20Background%20so%20Header%20Does%20Not%20Hide%20It)
     
