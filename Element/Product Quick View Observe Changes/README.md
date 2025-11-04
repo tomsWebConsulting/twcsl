@@ -17,7 +17,7 @@ callbacks as nodes are added to the [DOM][2].
   
   * 7.0
 
-#### Products V2 Compatible
+#### v7.1 Products V2 Compatible
 
   * Yes
   
@@ -115,8 +115,8 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [6]: product%20quick%20view%20observe%20changes%20options.html#L1
-[8]: product%20quick%20view%20observe%20changes.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: product%20quick%20view%20observe%20changes.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [10]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
