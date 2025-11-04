@@ -4,7 +4,7 @@
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -46,6 +46,51 @@
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.
 
+## How To Use
+
+Edit a product and add a tag of **twc-sptdatch 2025-11-03 00:00:00 AM 2025-11-05 00:00:00 AM**.
+The twc-sptdatch indicates to the code that this is a product to be hidden based
+on the date/time entered. The first date/time is when to begin hiding the
+product, the optional second date/time when hiding ends.
+
+  * Tag Syntax
+  
+    * twc-sptdatch
+    
+    * start date/time ( YYYY-MM-DD HH:MM:SS AM )
+    
+    * stop date/time ( optional, YYYY-MM-DD HH:MM:SS AM )
+    
+    ```text
+    twc-sptdatch [ enter start date/time here replacing square brackets ] [ optional, enter stop date/time here replacing square brackets ]
+    ```
+    
+    **Using the year 1970 tells the code to replace the year with the current 
+    one.**
+    
+    **Extra spaces or not following the format described will cause a product
+    not to be hidden.**
+    
+  * Examples
+  
+    * Hide a product beginning on date/time.
+    
+      ```text
+      twc-sptdatch 2025-11-03 00:00:00 AM
+      ```
+      
+    * Hide a product for a date/time range.
+    
+      ```text
+      twc-sptdatch 2025-11-03 00:00:00 AM 2025-11-05 00:00:00 AM
+      ```
+      
+    * Hide a product annually for a date range.
+    
+      ```text
+      twc-sptdatch 1970-11-03 00:00:00 AM 1970-11-05 00:00:00 AM
+      ```
+
 ## Notes
 
 This effect is not active in Squarespace Preview to test it use private
@@ -59,6 +104,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2025-11-03**
+
+  * added how to to read me
+  * fixed code key
+  * bumped version to 0.2.1
+  
 * **2025-11-03**
 
   * added support for list pages
