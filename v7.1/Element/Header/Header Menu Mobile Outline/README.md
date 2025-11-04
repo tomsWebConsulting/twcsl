@@ -42,9 +42,9 @@ Format mobile menu as an outline.
   Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][7] for details.
 
-## Demos
+## Demo
 
-You can see a [demos of this effect here][8].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
@@ -54,29 +54,29 @@ Please consider [making a donation][9].
 
 * **2024-12-31**
 
-  * add icon active feature
-  * restructure code
+  * added icon active feature
+  * restructured code
   * bumped version to 0.43.0
   
 * **2023-08-30**
 
-  * add expandable feature
+  * added expandable feature
   * bumped version to 0.3.0
   
 * **2023-03-29**
 
-  * fix for user accounts info showing when it shouldn't
+  * fixed user accounts info showing when it shouldn't
   * bumped version to 0.2.2
   
 * **2023-03-22**
 
-  * fix for menu not being built in editor
+  * fixed menu not being built in editor
   * bumped version to 0.2.1
   
 * **2022-04-30**
 
-  * fix for blowing away menu action and cta elements
-  * fix for layout issues, use ul instead of divs
+  * fixed blowing away menu action and cta elements
+  * fixed layout issues, use ul instead of divs
   * bumped version to 0.2.0
   
 * **2021-11-21**
