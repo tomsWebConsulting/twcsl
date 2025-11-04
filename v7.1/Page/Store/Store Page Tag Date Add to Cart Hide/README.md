@@ -2,6 +2,10 @@
 
 ### [License][1]
 
+### Synopsis
+
+Hide product add to cart using tags with date/time.
+
 ### Version
 
   * 0.2.1
