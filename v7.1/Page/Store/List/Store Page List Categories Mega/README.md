@@ -32,8 +32,8 @@ Store page list categories mega menu.
 
 ## Install
 
-* Install [Store Page List Categories Cache][4]. After you install Store
-  Categories Cache be sure to continue on with the rest of the steps.
+* Install [Store Page List Categories Cache][4]. After you install Store Page
+  List Categories Cache be sure to continue on with the rest of the steps.
   
 * Options
 
