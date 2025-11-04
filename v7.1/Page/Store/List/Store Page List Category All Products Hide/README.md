@@ -82,7 +82,7 @@ Please consider [making a donation][7].
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add
 [3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add#store-page-list-category-attribute-add
 [4]: store%20page%20list%20category%20all%20products%20hide.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: store%20page%20list%20category%20all%20products%20hide.less#L1
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K

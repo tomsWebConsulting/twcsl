@@ -64,5 +64,5 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback#store-page-detail-variant-selected-callback
 [6]: store%20page%20detail%20sku%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

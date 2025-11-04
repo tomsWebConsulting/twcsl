@@ -74,8 +74,8 @@ Please consider [making a donation][6].
   * initial version
 
 [1]: scrolling%20block%20text%20gradient.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [3]: https://www.heathertovey.com/squarespace-id-finder/
 [4]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
 [5]: https://toms-web-consulting-demos.squarespace.com/scrolling-block-text-gradient?password=twcdemos

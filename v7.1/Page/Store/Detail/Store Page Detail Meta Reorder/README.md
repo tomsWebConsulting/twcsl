@@ -102,6 +102,6 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20meta%20reorder%20options.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [4]: store%20page%20detail%20meta%20reorder.html#L1
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

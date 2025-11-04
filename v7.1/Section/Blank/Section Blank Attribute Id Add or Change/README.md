@@ -72,5 +72,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: section%20blank%20attribute%20id%20add%20or%20change.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

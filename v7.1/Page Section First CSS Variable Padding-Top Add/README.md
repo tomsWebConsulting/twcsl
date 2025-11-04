@@ -79,7 +79,7 @@ Please consider [making a donation][9].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: page%20section%20first%20css%20variable%20padding-top%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [10]: https://github.com/tomsWebConsulting/twcsl#install-options

@@ -45,6 +45,6 @@ Please consider [making a donation][3].
 
 [1]: https://github.com/tomsWebConsulting/twcsl#install-options
 [2]: portfolio%20page%20grid%20image%20aspect%20ratio%20change.html#L1
-[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

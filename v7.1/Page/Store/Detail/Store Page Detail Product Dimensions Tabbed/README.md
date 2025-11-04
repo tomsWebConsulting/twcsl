@@ -184,7 +184,7 @@ Please consider [making a donation][9].
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions
 [3]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions#store-page-detail-product-dimensions
 [4]: store%20page%20detail%20product%20dimensions%20tabbed.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/golden-mist-cup?password=twcdemos
 [7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/harvest-moon-cup?password=twcdemos
 [8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/milk-dip-cup?password=twcdemos

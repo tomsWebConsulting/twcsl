@@ -49,5 +49,5 @@ Please consider [making a donation][12].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [6]: main%20menu%20home%20link%20hide.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

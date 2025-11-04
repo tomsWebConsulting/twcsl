@@ -82,7 +82,7 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: portfolio%20page%20hover%20background%20autoplay.html#L1
-[18]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[18]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://toms-web-consulting-demos.squarespace.com/portfolio-page-hover-background-autoplay?password=twcdemos
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

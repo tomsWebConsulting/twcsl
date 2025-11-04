@@ -254,8 +254,8 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: page%20sections%20slide%20toggle.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 [9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

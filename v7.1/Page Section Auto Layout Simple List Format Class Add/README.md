@@ -92,8 +92,8 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: page%20section%20auto%20layout%20simple%20list%20format%20class%20add.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [3]: https://support.squarespace.com/hc/en-us/articles/360057763852-Auto-layouts
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

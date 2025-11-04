@@ -57,5 +57,5 @@ Please consider [making a donation][8].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://jquery.com/
 [6]: project%20page%20image%20clickthrough%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

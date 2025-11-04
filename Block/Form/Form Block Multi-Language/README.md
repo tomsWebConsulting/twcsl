@@ -85,7 +85,7 @@ Please consider [making a donation][9].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: form%20block%20multi-language.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [4]: form%20block%20multi-language%20en.html#L1
 [5]: form%20block%20multi-language%20fi.html#L1
 [6]: form%20block%20multi-language%20sv.html#L1

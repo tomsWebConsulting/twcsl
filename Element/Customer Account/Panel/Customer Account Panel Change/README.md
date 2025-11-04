@@ -551,7 +551,7 @@ Please consider [making a donation][16].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: #user-content-create-your-own-language-configuration-json
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [6]: customer%20account%20panel%20change%20language%20english.html#L1
 [7]: customer%20account%20panel%20change%20language%20japanese.html#L1
 [8]: customer%20account%20panel%20change%20language%20spanish.html#L1

@@ -153,8 +153,8 @@ Please consider [making a donation][14].
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [8]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length#product-quick-view-form-text-field-max-length
 [9]: product%20custom%20form%20text%20field%20max%20length.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [12]: https://www.heathertovey.com/squarespace-id-finder/
 [13]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

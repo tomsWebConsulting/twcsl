@@ -44,5 +44,5 @@ Please consider [making a donation][5].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://github.com/tomsWebConsulting/twcsl#install-options
 [3]: event%20detail%20page%20categories%20attribute%20add.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

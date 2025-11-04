@@ -132,7 +132,7 @@ Please consider [making a donation][11].
 [5]: https://jquery.com/
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [7]: form%20block%20fields%20previous%20next.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-previous-next?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

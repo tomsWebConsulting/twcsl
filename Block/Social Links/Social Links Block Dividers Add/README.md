@@ -57,6 +57,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: social%20links%20block%20dividers%20add.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [6]: https://toms-web-consulting-demos.squarespace.com/social-links-block-dividers-add?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

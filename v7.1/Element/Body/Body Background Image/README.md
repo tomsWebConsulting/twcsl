@@ -79,5 +79,5 @@ Please consider [making a donation][5].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: body%20background%20image.css#L1
 [3]: body%20background%20image.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

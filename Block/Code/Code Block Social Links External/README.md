@@ -229,7 +229,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
 [7]: code%20block%20social%20links%20external.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: https://toms-web-consulting-demos.squarespace.com/code-block-social-links-external?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -66,6 +66,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: header%20account%20link%20text%20replace%20with%20first%20name.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [6]: https://toms-web-consulting-demos.squarespace.com/header-account-link-text-replace-with-first-name?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

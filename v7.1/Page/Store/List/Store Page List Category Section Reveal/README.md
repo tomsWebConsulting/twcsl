@@ -107,5 +107,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide#page-section-first-blank-hide
 [6]: store%20page%20list%20category%20section%20reveal.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

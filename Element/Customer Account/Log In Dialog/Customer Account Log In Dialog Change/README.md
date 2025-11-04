@@ -214,6 +214,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: customer%20account%20log%20in%20dialog%20change.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [6]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

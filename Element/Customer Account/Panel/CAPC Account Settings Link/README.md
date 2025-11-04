@@ -71,5 +71,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change#customer-account-panel-change
 [6]: capc%20account%20settings%20link.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

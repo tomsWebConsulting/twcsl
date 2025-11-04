@@ -163,8 +163,8 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length#product-custom-form-text-field-max-length
 [6]: store%20page%20form%20text%20field%20max%20length.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://www.heathertovey.com/squarespace-id-finder/
 [10]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

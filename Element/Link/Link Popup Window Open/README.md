@@ -94,8 +94,8 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: link%20popup%20window%20open.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#windowfeatures
 [6]: https://www.urlencoder.org/
 [7]: https://toms-web-consulting-demos.squarespace.com/link-popup-window-open?password=twcdemos

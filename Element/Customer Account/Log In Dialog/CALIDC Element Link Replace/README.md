@@ -60,5 +60,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change#customer-account-log-in-dialog-change
 [6]: calidc%20element%20link%20replace.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

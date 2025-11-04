@@ -72,5 +72,5 @@ Please consider [making a donation][9].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change#customer-account-log-in-dialog-change
 [6]: calidc%20close%20button%20add.css#L1
 [7]: calidc%20close%20button%20add.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

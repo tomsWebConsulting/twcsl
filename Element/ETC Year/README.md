@@ -72,5 +72,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change#element-text-change
 [6]: etc%20year.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

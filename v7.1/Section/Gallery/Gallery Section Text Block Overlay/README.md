@@ -108,7 +108,7 @@ Please consider [making a donation][12].
 [4]: https://jquery.com/
 [5]: gallery%20section%20text%20block%20overlay.less#L1
 [6]: gallery%20section%20text%20block%20overlay.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
 [9]: https://www.heathertovey.com/squarespace-id-finder/
 [10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode

@@ -116,7 +116,7 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: text%20block%20formats%20phrase%20filter.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [3]: https://toms-web-consulting-demos.squarespace.com/text-block-formats-phrase-filter?password=twcdemos
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

@@ -104,7 +104,7 @@ Please consider [making a donation][12].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change#customer-account-panel-change
 [6]: capc%20language%20translate.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: capc%20language%20translate%20english.html#L1
 [9]: capc%20language%20translate%20slovak.html#L1
 [10]: capc%20language%20translate%20template.html#L1

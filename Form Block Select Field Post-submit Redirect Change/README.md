@@ -117,7 +117,7 @@ Please consider [making a donation][7].
 [1]: https://support.squarespace.com/hc/en-us/requests/new
 [2]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [3]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [5]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
 [6]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

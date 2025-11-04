@@ -55,5 +55,5 @@ Please consider [making a donation][5].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/206545497-Momentum-template
 [3]: gallery%20page%20previous%20next%20links%20add.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

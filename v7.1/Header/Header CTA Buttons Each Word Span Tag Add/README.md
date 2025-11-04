@@ -109,6 +109,6 @@ Please consider [making a donation][9].
 [4]: https://jquery.com/
 [5]: header%20cta%20buttons%20each%20word%20span%20tag%20add.css#L1
 [6]: header%20cta%20buttons%20each%20word%20span%20tag%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://tinyurl.com/ynessvsf
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -181,7 +181,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20page%20detail%20product%20dimensions%20options.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: store%20page%20detail%20product%20dimensions.html#L1
 [7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

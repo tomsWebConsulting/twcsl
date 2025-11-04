@@ -111,6 +111,6 @@ Please consider [making a donation][9].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add#blog-post-title-each-word-span-tag-add
 [6]: blog%20page%20post%20title%20each%20word%20style.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

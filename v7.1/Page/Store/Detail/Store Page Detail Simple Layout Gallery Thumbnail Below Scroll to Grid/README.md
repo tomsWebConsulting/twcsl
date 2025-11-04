@@ -46,5 +46,5 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20simple%20layout%20gallery%20thumbnail%20below%20scroll%20to%20grid.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

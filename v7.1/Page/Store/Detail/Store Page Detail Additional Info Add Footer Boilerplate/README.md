@@ -100,7 +100,7 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: store%20page%20detail%20additional%20info%20add%20footer%20boilerplate.css#L1
 [7]: store%20page%20detail%20additional%20info%20add%20footer%20boilerplate.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/6421525446541-Editing-your-site-with-Fluid-Engine#toc-fluid-engine-vs--classic-editor
 [10]: https://www.heathertovey.com/squarespace-id-finder/
 [11]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode

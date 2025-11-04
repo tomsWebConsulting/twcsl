@@ -153,7 +153,7 @@ Please consider [making a donation][10].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
 [5]: store%20page%20list%20categories%20mega%20options.html#L1
 [6]: store%20page%20list%20categories%20mega.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

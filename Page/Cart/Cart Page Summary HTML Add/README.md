@@ -79,6 +79,6 @@ Please consider [making a donation][9].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [6]: cart%20page%20summary%20html%20add%20options.html
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: cart%20page%20summary%20html%20add.html
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -284,7 +284,7 @@ Please consider [making a donation][15].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: elements%20manipulate.less#L1
 [5]: elements%20manipulate%20options.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [7]: elements%20manipulate.html#L1
 [8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
 [9]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element

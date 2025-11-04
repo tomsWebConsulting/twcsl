@@ -89,7 +89,7 @@ Please consider [making a donation][10].
 [4]: https://jquery.com/
 [5]: https://support.squarespace.com/hc/en-us/articles/6421525446541-Editing-your-site-with-Fluid-Engine
 [6]: image%20blocks%20random.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://toms-web-consulting-demos.squarespace.com/image-blocks-random?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

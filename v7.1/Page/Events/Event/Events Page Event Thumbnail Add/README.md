@@ -97,7 +97,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [4]: https://github.com/tomsWebConsulting/twcsl
 [6]: events%20page%20event%20thumbnail%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: events%20page%20event%20first%20image%20html%20get.bookmarklet#L1
 [9]: https://en.wikipedia.org/wiki/Bookmarklet
 [10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode

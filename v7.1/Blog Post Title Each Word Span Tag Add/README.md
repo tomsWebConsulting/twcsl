@@ -79,7 +79,7 @@ Please consider [making a donation][9].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: blog%20post%20title%20each%20word%20span%20tag%20add.css#L1
 [5]: blog%20post%20title%20each%20word%20span%20tag%20add.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [8]: https://toms-web-consulting-demos.squarespace.com/blog-bptewsta/blog-post-title-one-cfdgj?password=twcdemos
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

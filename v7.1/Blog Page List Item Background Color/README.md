@@ -46,5 +46,5 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: blog%20page%20list%20item%20background%20color.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

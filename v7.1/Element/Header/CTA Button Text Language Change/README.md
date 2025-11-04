@@ -59,5 +59,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template
 [5]: cta%20button%20text%20language%20change.js#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

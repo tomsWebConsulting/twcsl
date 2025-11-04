@@ -175,6 +175,6 @@ Please consider [making a donation][11].
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate#elements-manipulate
 [8]: blog%20page%20post%20excerpt%20element.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

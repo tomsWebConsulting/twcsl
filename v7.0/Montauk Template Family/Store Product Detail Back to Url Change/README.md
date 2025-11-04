@@ -21,7 +21,7 @@
   **[store product detail back to url change.html](store%20product%20detail%20back%20to%20url%20change.html#L1)**
   to Store Settings > Advanced > Page Header Code Injection for the store page.
   Please see
-  [per-page code injection](https://support.squarespace.com/hc/en-us/articles/205815908-Using-Code-Injection#toc-per-page-code-injection).
+  [per-page code injection](https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X).
   
 * Read the code for any instructions within.
 

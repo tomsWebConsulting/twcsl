@@ -117,6 +117,6 @@ Please consider [making a donation][15].
 [10]: https://github.com/tomsWebConsulting/twcsl#install-options
 [11]: store%20page%20list%20category%20description%20add.css#L1
 [12]: store%20page%20list%20category%20description%20add.html#L1
-[13]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[14]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[13]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[14]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

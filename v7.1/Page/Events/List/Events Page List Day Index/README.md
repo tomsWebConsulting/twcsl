@@ -103,8 +103,8 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Events/List/Events%20Page%20List%20Day%20Wrapper
 [6]: events%20page%20list%20day%20index.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-per-page-code-injection
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [9]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#date-time_component_options
 [10]: https://toms-web-consulting-demos.squarespace.com/events-page-list-day-index?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -75,7 +75,7 @@ Please consider [making a donation][10].
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: add%20to%20cart%20button%20active%20hours.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://support.squarespace.com/hc/en-us/articles/212872328-Business-Information-Settings#toc-formatting-business-hours
 [9]: http://www.tomsWeb.consulting/contact.html
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
