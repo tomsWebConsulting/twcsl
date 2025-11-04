@@ -363,7 +363,11 @@ not necessarily designed to work together.
       
       * [Detail](v7.1/Page/Store/Detail)
         
+        * [Store Page Detail Related Products Three](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Three)
+          
         * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
+          
+        * [Store Page Detail Related Products Four](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Four)
           
         * [Store Page Detail Price Total](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Total)
           
@@ -629,8 +633,6 @@ not necessarily designed to work together.
     
   * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
     
-  * [Store Product Detail Related Product Four](v7.1/Store%20Product%20Detail%20Related%20Product%20Four)
-    
   * [Store Product Details Natural Order Desktop](v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop)
     
   * [Calendar Block Link Replace With Excerpt Link](v7.1/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link)
@@ -674,8 +676,6 @@ not necessarily designed to work together.
   * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
     
   * [Page Section First CSS Variable Padding-Top Add](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add)
-    
-  * [Store Product Detail Related Product Three](v7.1/Store%20Product%20Detail%20Related%20Product%20Three)
     
   * [Header](v7.1/Header)
     
