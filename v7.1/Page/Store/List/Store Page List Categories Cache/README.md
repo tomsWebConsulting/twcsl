@@ -8,7 +8,7 @@ Cache store page categories in sessionStorage.
 
 ### Version
 
-  * 0.4.0
+  * 0.4.1
 
 #### SS Version
 
@@ -104,6 +104,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2025-11-03**
+
+  * fixed is list guard check
+  * bumped version to 0.4.1
+  
 * **2025-10-31**
 
   * added tag page guard check
