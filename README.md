@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 404 effects. Each effect has it's own version number, code,
+twcsl contains 403 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -504,8 +504,6 @@ not necessarily designed to work together.
   * [Footer Sections Move to Page](v7.1/Footer%20Sections%20Move%20to%20Page)
     
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
-    
-  * [Store Page Improperly Encoded Ampersand Fix](v7.1/Store%20Page%20Improperly%20Encoded%20Ampersand%20Fix)
     
   * [PSISA Viewport Middle](v7.1/PSISA%20Viewport%20Middle)
     
