@@ -20,7 +20,8 @@
 
 * Add code from file
   **[gallery section reel arrows top center.less](gallery%20section%20reel%20arrows%20top%20center.less#L1)**
-  to Website > Pages > Custom Code > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
 
 ## Make a Donation
 
@@ -39,3 +40,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

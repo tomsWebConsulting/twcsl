@@ -20,7 +20,8 @@
 
 * Add code from file
   **[site style animation flex center.css](site%20style%20animation%20flex%20center.css#L1)**
-  to Website > Pages > Custom Code > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
 
 ## Make a Donation
 
@@ -39,3 +40,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

@@ -16,7 +16,8 @@
 
 Add code from file
 **[blog header after title.css](blog%20header%20after%20title.css#L1)**
-to Website > Pages > Custom Code > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+Editor][199] for details.
 
 ## Make a Donation
 
@@ -34,3 +35,4 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

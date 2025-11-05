@@ -29,7 +29,8 @@ Add styled text overlays to gallery section images.
 ## Install
 
 * Add code from file **[gallery section text block overlay.less][5]** to
-  Website > Pages > Custom Code > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -114,3 +115,4 @@ Please consider [making a donation][12].
 [10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [11]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

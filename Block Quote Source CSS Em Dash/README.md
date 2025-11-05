@@ -22,7 +22,8 @@
 
 * Add code from file
   **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
-  to Website > Pages > Custom Code > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -60,3 +61,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

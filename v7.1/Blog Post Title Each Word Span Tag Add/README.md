@@ -27,7 +27,8 @@ Wrap each word of a blog post title in span tags.
 ## Install
 
 * Add code from file **[blog post title each word span tag add.css][4]** to
-  Website > Pages > Custom Code > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Options
 
@@ -83,3 +84,4 @@ Please consider [making a donation][9].
 [7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [8]: https://toms-web-consulting-demos.squarespace.com/blog-bptewsta/blog-post-title-one-cfdgj?password=twcdemos
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

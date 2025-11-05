@@ -12,7 +12,8 @@
 
 Add code from file
 **[page section gallery hover on everything but.css](page%20section%20gallery%20hover%20on%20everything%20but.css#L1)**
-to Website > Pages > Custom Code > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+Editor][199] for details.
 
 ## Make a Donation
 
@@ -33,3 +34,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

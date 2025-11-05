@@ -29,10 +29,11 @@ Add span tags around the words of CTA buttons in the header.
 ## Quick Install
 
 * Add code from file **[header cta buttons each word span tag add.css][5]** to
-	Website > Pages > Custom Code > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS.  Refer to [Using the CSS
+  Editor][199] for details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
-	HEADER.
+  HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -50,33 +51,33 @@ Some examples...
 
   * site top level link
   
-  	```
-  	/?twc-hcbewsta
-  	```
+    ```
+    /?twc-hcbewsta
+    ```
     
   * site page link
   
-  	```
-  	/link?twc-hcbewsta
-  	```
+    ```
+    /link?twc-hcbewsta
+    ```
     
   * site page link that already has existing query string parameter
   
-  	```
-  	/link?parameter=1&twc-hcbewsta
-  	```
+    ```
+    /link?parameter=1&twc-hcbewsta
+    ```
     
   * site page link with a hash
   
-  	```
-  	/link?twc-hcbewsta#hash
-  	```
+    ```
+    /link?twc-hcbewsta#hash
+    ```
     
   * external site link
   
-  	```
-  	http://www.tomsWeb.consulting/?twc-hcbewsta#hash
-  	```
+    ```
+    http://www.tomsWeb.consulting/?twc-hcbewsta#hash
+    ```
   
     
 
@@ -112,3 +113,4 @@ Please consider [making a donation][9].
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: https://tinyurl.com/ynessvsf
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

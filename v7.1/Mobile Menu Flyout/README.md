@@ -20,7 +20,8 @@
 
 * Add code from file
 **[mobile menu flyout.less](mobile%20menu%20flyout.less#L1)**
-to Website > Pages > Custom Code > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+Editor][199] for details.
 
 * Read the code for any instructions within.
 
@@ -59,3 +60,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

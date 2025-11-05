@@ -19,7 +19,8 @@
 ## Quick Install
 
 * Add code from file **[site title each word span tag add.css][1]** to Website >
-  Pages > Custom Code > Custom CSS.
+  Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for
+  details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -58,9 +59,10 @@ Please consider [making a donation][5].
 
   * initial version
 
+[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [1]: site%20title%20each%20word%20span%20tag%20add.css#L1
 [2]: site%20title%20each%20word%20span%20tag%20add.html#L1
 [3]: https://bit.ly/3f6lhq2
 [4]: https://toms-web-consulting-demos.squarespace.com/site-title-each-word-span-tag-add?password=twcdemos
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

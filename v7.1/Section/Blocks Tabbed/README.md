@@ -107,7 +107,8 @@ Create rudimentary tabbed effect with button and other blocks.
       * Use this option if you have multiple pages where you want to have this
         effect.
         
-      * Add the following to Website > Pages > Custom Code > Custom CSS.
+      * Add the following to Website > Pages > Custom Code > Custom CSS. Refer
+        to [Using the CSS Editor][199] for details.
       
         ```css
         /* twc-bt line block hide */
@@ -188,3 +189,4 @@ Please consider [making a donation][10].
 [9]: https://toms-web-consulting-demos.squarespace.com/blocks-tabbed?password=twcdemos
 [8]: https://www.heathertovey.com/squarespace-id-finder/
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

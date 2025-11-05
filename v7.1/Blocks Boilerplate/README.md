@@ -19,7 +19,7 @@
 ## Install
 
 * Add code from file **[blocks boilerplate.css][1]** to Website > Pages >
-  Custom Code > Custom CSS.
+  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
   
 * Add code from file **[blocks boilerplate.html][2]** to Website > Pages >
   Custom Code > Code Injection > FOOTER.
@@ -57,3 +57,4 @@ Please consider [making a donation][4].
 [3]: https://www.heathertovey.com/squarespace-id-finder/
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

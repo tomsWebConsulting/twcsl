@@ -27,7 +27,7 @@ Add buttons to the site header.
 ## Quick Install
 
 * Add code from file **[header buttons add.less][4]** to Website > Pages >
-  Custom Code > Custom CSS.
+  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
   
 * Add code from file **[header buttons add.html][5]** to Website > Pages >
   Custom Code > Code Injection > FOOTER. Refer to [Per-page code
@@ -83,3 +83,4 @@ Please consider [making a donation][7].
 [5]: header%20buttons%20add.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

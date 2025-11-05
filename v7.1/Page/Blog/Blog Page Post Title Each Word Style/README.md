@@ -65,7 +65,8 @@ Style each word of a blog post title wrapped in a span tag.
   
     * Add the tag **twc-bpptews words 2-3 italic** to the post.
     
-    * Add the following to Website > Pages > Custom Code > Custom CSS.
+    * Add the following to Website > Pages > Custom Code > Custom CSS. Refer to
+      [Using the CSS Editor][199] for details.
     
       ```css
       /* blog post title words 2-3 italicize */
@@ -114,3 +115,4 @@ Please consider [making a donation][9].
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

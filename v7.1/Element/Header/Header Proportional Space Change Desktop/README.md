@@ -23,7 +23,8 @@ Change how space is allocated to the major elements of the header on desktop.
 ## Quick Install
 
 * Add code from file **[header proportional space change desktop.less][2]** to
-  Website > Pages > Custom Code > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Read the code for any instructions within.
 
@@ -45,3 +46,4 @@ Please consider [making a donation][3].
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: header%20proportional%20space%20change%20desktop.less#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

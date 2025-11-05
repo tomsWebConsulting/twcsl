@@ -54,7 +54,7 @@ Change form block field titles to placeholders.
       code to code injection][8] for details.
       
 * In the **Form Block Wrapper Observe Changes** code add **twcFbfttp** to
-	**added** per the **Form Block Wrapper Observe Changes** code install steps.
+  **added** per the **Form Block Wrapper Observe Changes** code install steps.
 
 ## Note
 

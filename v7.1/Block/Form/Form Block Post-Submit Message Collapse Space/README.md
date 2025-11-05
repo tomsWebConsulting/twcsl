@@ -23,7 +23,8 @@ Collapse form block post-submit message empty space.
 ## Quick Install
 
 Add code from file **[form block post-submit message collapse space.less][2]**
-to Website > Pages > Custom Code > Custom CSS.
+to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+Editor][199] for details.
 
 ## Make a Donation
 
@@ -43,3 +44,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: form%20block%20post-submit%20message%20collapse%20space.less#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

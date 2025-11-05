@@ -43,7 +43,8 @@ Show three Store page detail related products.
       this effect.
       
     * Add code from file **[store page detail related products three.less][4]**
-      to Website > Pages > Custom Code > Custom CSS.
+      to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+      Editor][199] for details.
   
 ## Make a Donation
 
@@ -66,3 +67,4 @@ Please consider [making a donation][5].
 [3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [4]: store%20page%20detail%20related%20products%20three.less#L1
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

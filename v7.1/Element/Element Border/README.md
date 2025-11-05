@@ -27,8 +27,8 @@ Add border around elements of a site.
 ## Quick Install
 
 * Add code from file **[element border.less][2]** to Website > Pages >
-  Custom Code > Custom CSS. Read the code for any instructions within. Please
-  see [Using the CSS Editor][4].
+  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
+  Read the code for any instructions within.
 
 ## Make a Donation
 
@@ -49,4 +49,4 @@ Please consider [making a donation][3].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: element%20border.less#L1
 [3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[4]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

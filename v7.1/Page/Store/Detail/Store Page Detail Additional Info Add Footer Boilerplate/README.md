@@ -32,7 +32,8 @@ Add footer boilerplate section elements to product detail additional info.
   rest of the steps.
   
 * Add code from file **[store page detail additional info add footer
-  boilerplate.css][6]** to Website > Pages > Custom Code > Custom CSS.
+  boilerplate.css][6]** to Website > Pages > Custom Code > Custom CSS. Refer to
+  [Using the CSS Editor][199] for details.
   
 * Read the code for any instructions within.
   
@@ -105,3 +106,4 @@ Please consider [making a donation][12].
 [10]: https://www.heathertovey.com/squarespace-id-finder/
 [11]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

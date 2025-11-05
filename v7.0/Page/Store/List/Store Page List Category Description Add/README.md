@@ -28,7 +28,8 @@ Add a category description to Store category pages.
   rest of the steps.
   
 * Add code from file **[store page list category description add.css][11]** to
-  Website > Pages > Custom Code > Custom CSS.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Options
 
@@ -120,3 +121,4 @@ Please consider [making a donation][15].
 [13]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [14]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

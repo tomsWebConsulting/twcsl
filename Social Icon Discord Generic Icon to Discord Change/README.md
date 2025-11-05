@@ -28,7 +28,8 @@
   
 * Add code from file
   **[social icon discord generic icon to discord change.css](social%20icon%20discord%20generic%20icon%20to%20discord%20change.css#L1)**
-  to Website > Pages > Custom Code > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Add code from file
   **[social icon discord generic icon to discord change.html](social%20icon%20discord%20generic%20icon%20to%20discord%20change.html#L1)**
@@ -76,3 +77,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

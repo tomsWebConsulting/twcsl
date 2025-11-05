@@ -36,7 +36,8 @@ append, before, prepend, or replace.
   * v7.1
   
     * Add code from file **[elements manipulate.less][4]** to Website > Pages >
-      Custom Code > Custom CSS.
+      Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for
+      details.
       
     * Add code from file **[elements manipulate options.html][5]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
@@ -293,3 +294,4 @@ Please consider [making a donation][15].
 [13]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
 [14]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

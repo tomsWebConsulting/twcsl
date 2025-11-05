@@ -23,7 +23,8 @@ Add a background image for the body element.
 ## Quick Install
 
 * Add code from file **[body background image.css][2]** to Website > Pages >
-  Custom Code > Custom CSS. Read the code for any instructions within.
+  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
+  Read the code for any instructions within.
   
 * Add code from file **[body background image.html][3]** to Website > Pages >
   Custom Code > Code Injection > HEADER. Refer to [Per-page code injection][4]
@@ -81,3 +82,4 @@ Please consider [making a donation][5].
 [3]: body%20background%20image.html#L1
 [4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

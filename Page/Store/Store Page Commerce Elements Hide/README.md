@@ -45,7 +45,8 @@ Hide all commerce elements on a Store page.
       effect.
       
     * Add code from file **[store page commerce elements hide.less][7]** to
-      Website > Pages > Custom Code > Custom CSS.
+      Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+      Editor][199] for details.
       
 * Read the code for any instructions within.
 
@@ -77,3 +78,4 @@ Please consider [making a donation][8].
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: store%20page%20commerce%20elements%20hide.less#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

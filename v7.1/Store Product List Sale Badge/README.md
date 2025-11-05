@@ -18,9 +18,10 @@
 
 ## Quick Install
 
-Add code from file **[store product list sale badge.less][2]** to Website >
-Pages > Custom Code > Custom CSS.
-
+* Add code from file **[store product list sale badge.less][2]** to Website >
+  Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for
+  details.
+  
 * Read the code for any instructions within.
 
 ## Badge Options
@@ -124,3 +125,4 @@ Please consider [making a donation][20].
 [18]: read%20me%20assets/inset%20dock%20vertically.png
 [19]: https://toms-web-consulting-demos.squarespace.com/store-product-list-sale-badge?password=twcdemos
 [20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor

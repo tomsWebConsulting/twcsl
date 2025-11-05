@@ -20,7 +20,8 @@
 
 * Add code from file
   **[header cart icon hide when zero.css](header%20cart%20icon%20hide%20when%20zero.css#L1)**
-  to Website > Pages > Custom Code > Custom CSS.
+  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+  Editor][199] for details.
   
 * Add code from file
   **[header cart icon hide when zero.html](header%20cart%20icon%20hide%20when%20zero.html#L1)**
@@ -48,3 +49,4 @@ Please consider
   * initial version
 
 [99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
