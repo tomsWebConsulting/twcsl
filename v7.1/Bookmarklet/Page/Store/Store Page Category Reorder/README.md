@@ -1,10 +1,10 @@
-# Store Page Category All Reorder
+# Store Page Category Reorder
 
 ### [License][1]
 
 ### Synopsis
 
-Reorder products of All category of Store page.
+Reorder products of a Store page category.
 
 ### Version
 
