@@ -527,7 +527,7 @@ not necessarily designed to work together.
             
       * [Store](v7.1/Bookmarklet/Page/Store)
         
-        * [Store Page Category All Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20All%20Reorder)
+        * [Store Page Category Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder)
           
     * [Store Page Detail Featured Image Set](v7.1/Bookmarklet/Store%20Page%20Detail%20Featured%20Image%20Set)
       
