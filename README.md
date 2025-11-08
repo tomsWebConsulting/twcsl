@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 403 effects. Each effect has it's own version number, code,
+twcsl contains 402 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -612,8 +612,6 @@ not necessarily designed to work together.
   * [Blog List Image Aspect Ratio Change](v7.1/Blog%20List%20Image%20Aspect%20Ratio%20Change)
     
   * [Event Content End Buttons Move to Meta](v7.1/Event%20Content%20End%20Buttons%20Move%20to%20Meta)
-    
-  * [Hide Page Header and Footer](v7.1/Hide%20Page%20Header%20and%20Footer)
     
   * [Event Meta Data Make Sticky](v7.1/Event%20Meta%20Data%20Make%20Sticky)
     
