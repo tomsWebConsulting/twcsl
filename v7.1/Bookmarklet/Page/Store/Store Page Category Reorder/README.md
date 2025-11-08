@@ -8,7 +8,7 @@ Reorder products of a Store page category.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
@@ -63,6 +63,12 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2025-11-07**
+
+  * reworked code to load products automatically
+  * reworked code to use promise all for multiple fetch calls
+  * bumped version to 0.4.0
+  
 * **2025-11-07**
 
   * added support to sort categories other than all

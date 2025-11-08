@@ -1,4 +1,4 @@
-( ( ) => {
+( async ( ) => {
 
   /*
   
@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.3.0
+    Version     : 0.4.0
     
     Copyright   : 2025 Thomas Creedon
                   
@@ -20,7 +20,7 @@
   
     title = 'TWC Store Page Category Reorder',
     
-    version = '0.3.0',
+    version = '0.4.0',
   
     s = `${ title } v${ version }
     
@@ -33,6 +33,8 @@
       .replace ( /^\s+/gm, '' );
       
   console.log ( s );
+  
+  const isSiteReload = true;
   
   try {
   
@@ -94,10 +96,12 @@
       
       .SQUARESPACE_CONTEXT,
       
-    isStorePage = iframeSquarespaceContext
+    collection = iframeSquarespaceContext
     
-      .collection
+      .collection;
       
+    isStorePage = collection
+    
       ?.type
       
       ===
@@ -142,6 +146,10 @@
   
     codeKey = 'twc-spcr',
     
+    collectionId = iframeSquarespaceContext
+    
+      .collectionId,
+      
     elementsToLoad = [
     
       {
@@ -215,10 +223,18 @@
           #${ codeKey }-wrapper {
           
             background-color : white;
-            max-width : 50%;
+            height : 75%;
+            min-height : 480px;
             min-width : 640px;
             padding : var( --${ codeKey }-space );
             position : relative;
+            width : 75%;
+            
+            }
+            
+          #${ codeKey }-wrapper > #${ codeKey }-table {
+          
+            display : none;
             
             }
             
@@ -265,21 +281,26 @@
                          var( --dt-row-stripe-alpha ) );
             font-size : x-large;
             line-height : normal;
-            margin-bottom : var( --${ codeKey }-space );
+            margin : var( --twc-spcr-space );
+            margin-top : 0;
             padding : var( --${ codeKey }-space );
             text-align : center;
+            width : calc( 100% - var( --twc-spcr-space ) * 2 );
             
             }
             
           #${ codeKey }-table_wrapper {
           
+            display : flex;
+            flex-direction : column;
+            flex : 1 1 auto;
+            min-height : 0;
             width : 100%;
             
             }
             
           #${ codeKey }-table_wrapper .dt-layout-table {
           
-            height : 400px;
             overflow-y : scroll;
             
             }
@@ -328,8 +349,6 @@
         
         attributes : {
         
-          rel : 'stylesheet',
-          
           src : 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js',
           
           type : 'text/javascript'
@@ -344,8 +363,6 @@
         
         attributes : {
         
-          rel : 'stylesheet',
-          
           src : '//cdn.datatables.net/2.2.2/js/dataTables.min.js',
           
           type : 'text/javascript'
@@ -360,8 +377,6 @@
         
         attributes : {
         
-          rel : 'stylesheet',
-          
           src : '//cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.min.js',
           
           type : 'text/javascript'
@@ -372,31 +387,19 @@
         
       ],
       
-    findCategory = ( categories ) => {
+    getCollectionCategoriesUrl
     
-      for ( const category of categories) {
+      =
       
-        if ( category.fullUrl === dcmnt.location.pathname )
-        
-          return category;
-          
-        if ( category.children.length ) {
-        
-          const result = findCategory (
-          
-            category.children,
-            
-            );
-            
-          if ( result ) return result;
-          
-          }
-          
-        }
-        
-      return null;
+      `/api/product-content-service/products/${
       
-      },
+        collectionId
+        
+        }/categories/tree`,
+        
+    getCollectionTagsUrl =
+    
+      `/api/commondata/GetCollectionTags?collectionId=${ collectionId }`,
       
     getCookieValue = ( key ) => {
     
@@ -422,7 +425,7 @@
     
       try {
       
-        const response = await fetch ( url /* , options */ );
+        const response = await fetch ( url );
         
         if ( ! response.ok ) {
         
@@ -466,9 +469,553 @@
       
     getProductsPage = async ( url, products = [ ] ) => {
     
+      const obj = await getJsonObject ( url );
+      
+      products.push ( ... obj.items );
+      
+      $messageElement
+      
+        .text ( `Loaded ${ products.length } products...` );
+        
+      if ( obj?.pagination?.nextPageUrl ) {
+      
+        const
+        
+          url = `${
+          
+            obj
+            
+              .pagination
+              
+              .nextPageUrl
+              
+            }&${ urlSuffix }`,
+            
+          promise = getProductsPage ( url, products );
+          
+        return promise;
+        
+        }
+        
+      return products;
+      
+      },
+      
+    getProductPages = async ( url ) => {
+    
+      const promise = await getProductsPage ( url );
+      
+      return promise;
+      
+      },
+      
+    loadElement = ( e ) => {
+    
       const
       
-        callback = ( item ) => {
+        callback = ( resolve, reject ) => {
+        
+          const element = document
+          
+            .createElement ( e.tag );
+            
+          element
+          
+            .setAttribute ( `data-${ codeKey }`, '' );
+            
+          if ( e.attributes )
+          
+            for ( const attribute in e.attributes ) {
+            
+              element
+              
+                .setAttribute (
+                
+                  attribute,
+                  
+                  e
+                  
+                    .attributes
+                    
+                    [ attribute ]
+                    
+                  );
+                  
+              }
+              
+          if ( e.text )
+          
+            element.innerHTML = e.text;
+            
+          if ( e.tag === 'script' && ! e.isAsync ) {
+          
+            element.onerror = reject;
+            
+            element.onload = resolve;
+            
+            } else
+            
+              resolve ( );
+              
+          document
+          
+            .head
+            
+            .appendChild ( element );
+            
+          },
+          
+        promise = new Promise ( callback );
+        
+      return promise;
+      
+      },
+      
+    loadElementsSequentially = async ( elements ) => {
+    
+      for ( const element of elements ) {
+      
+        await loadElement ( element );
+        
+        }
+        
+      },
+    
+    messageElementId = `${ codeKey }-message`,
+    
+    pathname = dcmnt
+    
+      .location
+      
+      .pathname,
+      
+    setJson = async ( setJsonOptions ) => {
+    
+      const
+      
+        options = {
+        
+          body : setJsonOptions.body,
+          
+          headers : {
+          
+            Accept : 'application/json, text/plain, */*',
+            
+            'Content-Type' : setJsonOptions.contentType,
+            
+            'X-Csrf-Token' : crumb
+            
+            },
+            
+          method : setJsonOptions.method
+          
+          };
+          
+        try {
+        
+          const response = await fetch ( setJsonOptions.url, options );
+          
+          if ( ! response.ok ) {
+          
+            const s = `
+            
+              ${ codeKey } network response was not ok ${ response.statusText }
+              
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+            throw new Error ( s );
+            
+            }
+            
+          const obj = await response.json ( );
+          
+          return obj;
+          
+          } catch ( error ) {
+          
+            const s = `
+            
+              ${ codeKey } there has been a problem with your fetch operation,
+              
+              ${ error }
+              
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+              console.error ( s );
+              
+              throw error;
+              
+            }
+            
+      },
+      
+    setJsonInChunks = async ( productIds, setJsonOptions ) => {
+    
+      const
+      
+        chunkArray = ( array, size ) => {
+        
+          const chunks = [ ];
+          
+          for ( let i = 0; i < array.length; i += size )
+          
+            chunks
+            
+              .push (
+              
+                array
+                
+                  .slice ( i, i + size )
+                  
+                );
+                
+          return chunks;
+          
+          },
+          
+        chunkSize = 500,
+        
+        totalChunks = Math
+        
+          .ceil ( productIds.length / chunkSize ),
+          
+        chunks = chunkArray ( productIds, chunkSize )
+        
+          .reverse ( );
+          
+      for ( let i = 0; i < chunks.length; i++ ) {
+      
+        setJsonOptions
+        
+          .body
+          
+          =
+          
+          JSON
+          
+            .stringify (
+            
+              {
+              
+                itemIds : chunks [ i ],
+                
+                insertAtIndex : 0
+                
+                }
+                
+              );
+              
+        try {
+        
+          let s = `Saving reorder data ${ i + 1 } of ${ totalChunks }.`;
+          
+          $messageElement.text ( s );
+          
+          const responseData = await setJson ( setJsonOptions );
+          
+          s = `Successfully saved reorder data ${ i + 1 } of ${ totalChunks }.`;
+          
+          $messageElement.text ( s );
+          
+          } catch ( error ) {
+          
+            const s = `${ codeKey } error saving chunk ${ i + 1 } : `
+            
+              +
+              
+              `${ error }`;
+              
+            console.error ( s );
+            
+            // Handle error (e.g., retry logic or breaking the loop)
+            
+            break;
+            
+            }
+            
+        }
+        
+      },
+      
+    urlSuffix = 'format=json',
+    
+    crumb = getCookieValue ( 'crumb' ),
+    
+    html = `
+    
+      <div data-${ codeKey } id="${ codeKey }-overlay">
+      
+        <div id="${ codeKey }-wrapper">
+        
+          <button data-close="${ codeKey }-overlay" id="${ codeKey }-cancel-button">
+          
+            &times;
+            
+            </button>
+            
+          <h1 id="${ codeKey }-title">
+          
+            ${ title }
+            
+            </h1>
+            
+          <h2 id="${ messageElementId }">
+          
+            Initializing...
+            
+            </h2>
+            
+          <table id="${ codeKey }-table" class="display" style="width : 100%;">
+          
+            <thead>
+            
+                <th>
+                
+                  Product ID
+                  
+                  </th>
+                  
+                <th>
+                
+                  Natural Sort
+                  
+                  </th>
+                  
+                <th>
+                
+                  Product Name
+                  
+                  </th>
+                  
+                <th>
+                
+                  SKU
+                  
+                  </th>
+                  
+                <th>
+                
+                  Published On
+                  
+                  </th>
+                  
+                <th>
+                
+                  Updated On
+                  
+                  </th>
+                  
+                <th>
+                
+                  Added On
+                  
+                  </th>
+                  
+                <th>
+                
+                  Featured
+                  
+                  </th>
+                  
+                </tr>
+                
+              </thead>
+              
+            <tbody>
+            
+              </tbody>
+              
+            </table>
+            
+          </div>
+          
+        </div>
+        
+      `,
+      
+    url = pathname
+    
+      +
+      
+      `?${ urlSuffix }`;
+      
+  await loadElementsSequentially ( elementsToLoad );
+  
+  let $messageElement;
+  
+  // set up overlay element initial
+  
+  {
+  
+    document
+    
+      .body
+      
+      .insertAdjacentHTML ( 'beforeend', html );
+      
+    $messageElement = $( `#${ messageElementId }` );
+    
+    $messageElement.text ( 'All elements loaded.' );
+    
+    document
+    
+      .getElementById ( `${ codeKey }-cancel-button` )
+      
+      .addEventListener (
+      
+        'click',
+        
+        ( ) => {
+        
+          document
+          
+            .querySelectorAll ( `[ data-${ codeKey } ]` )
+            
+            .forEach ( e => e.remove ( ) );
+            
+          }
+          
+        );
+        
+    }
+    
+  Promise
+  
+    .all (
+    
+      [
+      
+        getJsonObject ( getCollectionCategoriesUrl ),
+        
+        getJsonObject ( getCollectionTagsUrl ),
+        
+        getProductPages ( url ),
+        
+        ]
+        
+      )
+      
+    .then ( ( [ categories, tagsAll, products ] ) => {
+    
+      const
+      
+        randomizeSortButtonTitle = 'Randomize Sort',
+        
+        saveButtonTitle = 'Save My Sort';
+        
+      let
+      
+        categoryDisplayName,
+        
+        categoryId,
+        
+        userSorted = false,
+        
+        $randomizeSortElement,
+        
+        $saveSortElement;
+        
+      // set categories
+      
+      categories = categories
+      
+        .categoryTree;
+        
+      // category meta information
+      
+      {
+      
+        const
+        
+          slug = pathname
+          
+            .replace (
+            
+              collection
+              
+                .fullUrl,
+                
+              ''
+              
+              ),
+              
+          category = categories
+          
+            .find ( e => e.fullSlug === slug );
+            
+        categoryDisplayName = category.displayName;
+        
+        categoryId = category.id;
+        
+        }
+        
+      // process tags all
+      
+      tagsAll = tagsAll
+      
+        .map ( o => o.name )
+        
+        .sort ( );
+        
+      const instructionsHtml = `
+      
+        Sort the products as desired, then click the
+        
+        <strong>
+        
+          ${ saveButtonTitle }
+          
+          </strong>
+          
+        button. Your sort order will be saved to the
+        
+        <strong>
+        
+          ${ categoryDisplayName }
+          
+          </strong>
+          
+        category of this Store page, and the site will reload.
+        
+        `;
+        
+      // add tag columns to overlay element
+      
+      {
+      
+        const callback = ( tag ) => {
+        
+          $( `#${ codeKey }-table thead tr` )
+          
+            .append ( `
+            
+              <th>
+              
+                ${ tag } (tag)
+                
+                </th>
+                
+              ` );
+              
+          };
+          
+        tagsAll.forEach ( callback );
+        
+        }
+        
+      // restructure products
+      
+      {
+      
+        const callback = ( item ) => {
         
           const
           
@@ -556,892 +1103,302 @@
             
           return array;
           
-          },
+          };
           
-        obj = await getJsonObject ( url );
+        let naturalSort = 0;
         
-      products
-      
-        .push (
-        
-          ...
-          
-          obj
-          
-            .items
-            
-            .map ( callback )
-            
-          );
-          
-      $messageElement
-      
-        .text ( `Processed ${ products.length } products.` );
-        
-      if ( obj?.pagination?.nextPageUrl ) {
-      
-        const
-        
-          url = `${
-          
-            obj
-            
-              .pagination
-              
-              .nextPageUrl
-              
-            }&${ urlSuffix }`,
-            
-          promise = getProductsPage ( url, products );
-          
-        return promise;
+        products = products.map ( callback );
         
         }
         
-      // category
+      // set up table
       
       {
       
-        let categories = [
+        const table = $( `#${ codeKey }-table` )
         
-          obj
+          .DataTable (
           
-            .nestedCategories
+            {
             
-            .all
-            
-            ];
-            
-        categories
-        
-          [ 0 ]
-          
-          .children
-          
-          =
-          
-          obj
-          
-            .nestedCategories
-            
-            .categories;
-            
-        const category = findCategory ( categories );
-        
-        categoryDisplayName = category.displayName;
-        
-        categoryId = category.id;
-        
-        }
-        
-      $messageElement
-      
-        .html (
-        
-          messageHtml
-          
-            .replace ( '[ category ]', categoryDisplayName )
-            
-          );
-          
-      return products;
-      
-      },
-      
-    getProductPages = async ( url ) => {
-    
-      const promise = await getProductsPage ( url );
-      
-      return promise;
-      
-      },
-      
-    loadElement = ( e ) => {
-    
-      const
-      
-        callback = ( resolve, reject ) => {
-        
-          const element = document
-          
-            .createElement ( e.tag );
-            
-          element
-          
-            .setAttribute ( `data-${ codeKey }`, '' );
-            
-          if ( e.attributes )
-          
-            for ( const attribute in e.attributes ) {
-            
-              element
-              
-                .setAttribute (
-                
-                  attribute,
-                  
-                  e
-                  
-                    .attributes
-                    
-                    [ attribute ]
-                    
-                  );
-                  
-              }
-              
-          if ( e.text )
-          
-            element.innerHTML = e.text;
-            
-          if ( e.tag === 'script' && ! e.isAsync ) {
-          
-            element.onerror = reject;
-            
-            element.onload = resolve;
-            
-            } else
-            
-              resolve ( );
-              
-          document
-          
-            .head
-            
-            .appendChild ( element );
-            
-          },
-          
-        promise = new Promise ( callback );
-        
-      return promise;
-      
-      },
-      
-    loadElementsSequentially = async ( elements ) => {
-    
-      for ( const element of elements ) {
-      
-        await loadElement ( element );
-        
-        }
-        
-      },
-    
-    messageHtml = `
-    
-      Sort the products as desired, then click the
-      
-      <strong>
-      
-        Reorder Site Products
-        
-        </strong>
-        
-      button. This action will reorder the products in the
-      
-      <strong>
-      
-        [ category ]
-        
-        </strong>
-        
-      category on the Store page, and your site will reload.
-      
-      `,
-      
-    messageElementId = `${ codeKey }-message`,
-    
-    sendJsonInChunks = async ( productIds, setJsonOptions ) => {
-    
-      const
-      
-        chunkArray = ( array, size ) => {
-        
-          const chunks = [ ];
-          
-          for ( let i = 0; i < array.length; i += size )
-          
-            chunks
-            
-              .push (
-              
-                array
-                
-                  .slice ( i, i + size )
-                  
-                );
-                
-          return chunks;
-          
-          },
-          
-        chunkSize = 500,
-        
-        totalChunks = Math
-        
-          .ceil ( productIds.length / chunkSize ),
-          
-        chunks = chunkArray ( productIds, chunkSize )
-        
-          .reverse ( );
-          
-      for ( let i = 0; i < chunks.length; i++ ) {
-      
-        setJsonOptions
-        
-          .body
-          
-          =
-          
-          JSON
-          
-            .stringify (
-            
-              {
-              
-                itemIds : chunks [ i ],
-                
-                insertAtIndex : 0
-                
-                }
-                
-              );
-              
-        try {
-        
-          let s = `Sending reorder data ${ i + 1 } of ${ totalChunks }.`;
-          
-          $messageElement.text ( s );
-          
-          const responseData = await setJson ( setJsonOptions );
-          
-          s = `Successfully sent reorder data ${ i + 1 } of ${ totalChunks }.`;
-          
-          $messageElement.text ( s );
-          
-          } catch ( error ) {
-          
-            const s = `${ codeKey } error sending chunk ${ i + 1 } : `
-            
-              +
-              
-              `${ error }`;
-              
-            console.error ( s );
-            
-            // Handle error (e.g., retry logic or breaking the loop)
-            
-            break;
-            
-            }
-            
-        }
-        
-      },
-      
-    setJson = async ( setJsonOptions ) => {
-    
-      const
-      
-        options = {
-        
-          body : setJsonOptions.body,
-          
-          headers : {
-          
-            Accept : 'application/json, text/plain, */*',
-            
-            'Content-Type' : setJsonOptions.contentType,
-            
-            'X-Csrf-Token' : crumb
-            
-            },
-            
-          method : setJsonOptions.method
-          
-          };
-          
-        try {
-        
-          const response = await fetch ( setJsonOptions.url, options );
-          
-          if ( ! response.ok ) {
-          
-            const s = `
-            
-              ${ codeKey } network response was not ok
-              
-              ${ response.statusText }
-              
-              `
-              
-              .trim ( )
-              
-              .replace ( /\s+/gm, ' ' );
-              
-            throw new Error ( s );
-            
-            }
-            
-          const obj = await response.json ( );
-          
-          return obj;
-          
-          } catch ( error ) {
-          
-            const s = `
-            
-              ${ codeKey } there has been a problem with your fetch
-              
-              operation, ${ error }
-              
-              `
-              
-              .trim ( )
-              
-              .replace ( /\s+/gm, ' ' );
-              
-              console.error ( s );
-              
-              throw error;
-              
-            }
-            
-      },
-      
-    urlSuffix = 'format=json',
-    
-    collectionId = iframeSquarespaceContext
-    
-      .collectionId,
-      
-    crumb = getCookieValue ( 'crumb' ),
-    
-    getCollectionTagsUrl =
-    
-      `/api/commondata/GetCollectionTags?collectionId=${ collectionId }`,
-      
-    html = `
-    
-      <div data-${ codeKey } id="${ codeKey }-overlay">
-      
-        <div id="${ codeKey }-wrapper">
-        
-          <button data-close="${ codeKey }-overlay" id="${ codeKey }-cancel-button">
-          
-            &times;
-            
-            </button>
-            
-          <h1 id="${ codeKey }-title">
-          
-            ${ title }
-            
-            </h1>
-            
-          <h2 id="${ messageElementId }">
-          
-            Click the Load Products button to load products into the table.
-            
-            </h2>
-            
-          <table id="${ codeKey }-table" class="display" style="width : 100%;">
-          
-            <thead>
-            
-                <th>
-                
-                  Product ID
-                  
-                  </th>
-                  
-                <th>
-                
-                  Natural Sort
-                  
-                  </th>
-                  
-                <th>
-                
-                  Product Name
-                  
-                  </th>
-                  
-                <th>
-                
-                  SKU
-                  
-                  </th>
-                  
-                <th>
-                
-                  Published On
-                  
-                  </th>
-                  
-                <th>
-                
-                  Updated On
-                  
-                  </th>
-                  
-                <th>
-                
-                  Added On
-                  
-                  </th>
-                  
-                <th>
-                
-                  Featured
-                  
-                  </th>
-                  
-                </tr>
-                
-              </thead>
-              
-            <tbody>
-            
-              </tbody>
-              
-            </table>
-            
-          </div>
-          
-        </div>
-        
-      `,
-      
-    url = dcmnt
-    
-      .location
-      
-      .pathname
-      
-      +
-      
-      `?${ urlSuffix }`;
-      
-  let
-  
-    categoryDisplayName,
-    
-    categoryId,
-    
-    isProductsLoaded = false,
-    
-    naturalSort = 0,
-    
-    tagsAll,
-    
-    userSorted = false,
-    
-    $messageElement,
-    
-    $randomizeProductsElement,
-    
-    $reorderProductsElement;
-    
-  loadElementsSequentially ( elementsToLoad )
-  
-    .then ( ( ) => {
-    
-      const s = `${ codeKey } all elements loaded.`;
-      
-      console.log ( s );
-      
-      } )
-      
-    .then ( ( ) => {
-    
-      let
-      
-        callback = ( ) => {
-        
-          document
-          
-            .querySelectorAll ( `[ data-${ codeKey } ]` )
-            
-            .forEach ( e => e.remove ( ) );
-            
-          },
-          
-        table;
-        
-      document
-      
-        .body
-        
-        .insertAdjacentHTML ( 'beforeend', html );
-        
-      document
-      
-        .getElementById ( `${ codeKey }-cancel-button` )
-        
-        .addEventListener ( 'click', callback );
-        
-      getJsonObject ( getCollectionTagsUrl )
-      
-        .then ( ( obj ) => {
-        
-          const
-          
-            callback = ( tag ) => {
-            
-              $( `#${ codeKey }-table thead tr` )
-              
-                .append ( `
-                
-                  <th>
-                  
-                    ${ tag } (tag)
-                    
-                    </th>
-                    
-                  ` );
-                  
-              };
-              
-          tagsAll = obj
-          
-            .map ( o => o.name )
-            
-            .sort ( );
-            
-          tagsAll.forEach ( callback );
-          
-          const
-          
-            table = $( `#${ codeKey }-table` )
-            
-              .DataTable (
+              buttons : [
               
                 {
                 
-                  buttons : [
+                  text : saveButtonTitle,
                   
-                    {
-                    
-                      text : 'Load Products',
-                      
-                      action : ( e, dt, node, config ) => {
-                      
-                        $messageElement
-                        
-                          .text ( `Processing products...` );
-                          
-                        getProductPages ( url )
-                        
-                          .then ( ( data ) => {
-                          
-                            console.log ( 'data : ', data );
-                            
-                            table
-                            
-                              .clear ( )
-                              
-                              .rows
-                              
-                              .add ( data )
-                              
-                              .draw ( );
-                              
-                            $( node )
-                            
-                              .prop ( 'disabled', true );
-                              
-                            $reorderProductsElement
-                            
-                              .prop ( 'disabled', false );
-                              
-                            $randomizeProductsElement
-                            
-                              .prop ( 'disabled', false );
-                              
-                            isProductsLoaded = true;
-                            
-                            } );
-                            
-                        }
-                        
-                      },
-                      
-                    {
-                    
-                      text : 'Reorder Site Products',
-                      
-                      action : ( e, dt, node, config ) => {
-                      
-                        const
-                        
-                          collectionId = iframeSquarespaceContext
-                          
-                            .collectionId,
-                            
-                          contentType = 'application/json',
-                          
-                          productIds = table
-                            
-                            .rows ( { search : 'applied' } )
-                            
-                            .data ( )
-                            
-                            .toArray ( )
-                            
-                            .map ( r => r [ 0 ] ),
-                            
-                          websiteId = Static
-                          
-                            .SQUARESPACE_CONTEXT
-                            
-                            .website
-                            
-                            .id,
-                            
-                          setJsonOptions = {
-                          
-                            body : null,
-                             
-                            contentType : 'application/json',
-                            
-                            insertAtIndex : 0,
-                            
-                            method : 'POST',
-                            
-                            url : '/api/content-service/product/1.1/websites/' +
-                            
-                              `${ websiteId }/products/${ collectionId }/` +
-                              
-                              `categories/${ categoryId }/reorder-items`
-                              
-                            };
-                            
-                        sendJsonInChunks ( productIds, setJsonOptions )
-                        
-                          .then ( ( ) => {
-                          
-                            $messageElement
-                            
-                              .text ( 'Reloading site...' );
-                              
-                            location.reload ( );
-                            
-                            } );
-                            
-                        }
-                        
-                      },
-                      
-                    {
-                    
-                      extend : 'spacer'
-                      
-                      },
-                      
-                    {
-                    
-                      text : 'Randomize Products',
-                      
-                      action : ( e, dt, node, config ) => {
-                      
-                        $messageElement
-                        
-                          .text ( `Randomizing products...` );
-                          
-                        const data = table
-                        
-                          .rows ( )
-                          
-                          .data ( )
-                          
-                          .toArray ( )
-                          
-                          .sort ( ( ) => Math.random ( ) - 0.5 );
-                          
-                        table
-                        
-                          .clear ( )
-                          
-                          .rows
-                          
-                          .add ( data )
-                          
-                          .draw ( );
-                          
-                        $messageElement
-                        
-                          .html (
-                          
-                            messageHtml
-                            
-                              .replace ( '[ category ]', categoryDisplayName )
-                              
-                            );
-                            
-                        }
-                        
-                      },
-                      
-                    ],
-                    
-                  columnDefs : [
+                  action : ( e, dt, node, config ) => {
                   
-                    {
+                    const
                     
-                      targets : 0,
+                      contentType = 'application/json',
                       
-                      visible : false
+                      productIds = table
+                        
+                        .rows ( { search : 'applied' } )
+                        
+                        .data ( )
+                        
+                        .toArray ( )
+                        
+                        .map ( r => r [ 0 ] ),
+                        
+                      websiteId = Static
                       
-                      },
+                        .SQUARESPACE_CONTEXT
+                        
+                        .website
+                        
+                        .id,
+                        
+                      setJsonOptions = {
                       
-                    {
+                        body : null,
+                         
+                        contentType : 'application/json',
+                        
+                        insertAtIndex : 0,
+                        
+                        method : 'POST',
+                        
+                        url : '/api/content-service/product/1.1/websites/' +
+                        
+                          `${ websiteId }/products/${ collectionId }/` +
+                          
+                          `categories/${ categoryId }/reorder-items`
+                          
+                        };
+                        
+                    setJsonInChunks ( productIds, setJsonOptions )
                     
-                      targets : 1,
+                      .then ( ( ) => {
                       
-                      visible : false,
-                      
-                      searchable : false
-                      
-                      },
-                      
-                    {
+                        $messageElement
+                        
+                          .text ( 'Reloading site...' );
+                          
+                        if ( isSiteReload )
+                        
+                          location.reload ( );
+                          
+                        } );
+                        
+                    }
                     
-                      targets : Array
+                  },
+                  
+                {
+                
+                  extend : 'spacer'
+                  
+                  },
+                  
+                {
+                
+                  text : randomizeSortButtonTitle,
+                  
+                  action : ( e, dt, node, config ) => {
+                  
+                    $messageElement
+                    
+                      .text ( `Randomizing sort...` );
                       
-                        .from (
-                        
-                          { length : tagsAll.length + 1 },
-                          
-                          ( _, i ) => 7 + i
-                          
-                          ),
-                          
-                      searchable : false,
+                    const data = table
+                    
+                      .rows ( )
                       
-                      render : ( data, type, row ) => {
+                      .data ( )
                       
-                        if ( type === 'display' ) {
+                      .toArray ( )
+                      
+                      .sort ( ( ) => Math.random ( ) - 0.5 );
+                      
+                    table
+                    
+                      .clear ( )
+                      
+                      .rows
+                      
+                      .add ( data )
+                      
+                      .draw ( );
+                      
+                    $messageElement.html ( instructionsHtml );
+                    
+                    }
+                    
+                  },
+                  
+                ],
+                
+              columnDefs : [
+              
+                {
+                
+                  targets : 0,
+                  
+                  visible : false
+                  
+                  },
+                  
+                {
+                
+                  targets : 1,
+                  
+                  visible : false,
+                  
+                  searchable : false
+                  
+                  },
+                  
+                {
+                
+                  targets : Array
+                  
+                    .from (
+                    
+                      { length : tagsAll.length + 1 },
+                      
+                      ( _, i ) => 7 + i
+                      
+                      ),
+                      
+                  searchable : false,
+                  
+                  render : ( data, type, row ) => {
+                  
+                    if ( type === 'display' ) {
+                    
+                      const html =  '<input' +
+                      
+                        ( data === 'true' ? ' checked' : '' ) +
                         
-                          const html =  '<input' +
-                          
-                            ( data === 'true' ? ' checked' : '' ) +
-                            
-                            ' type="checkbox" />';
-                            
-                          return html
-                          
-                          }
-                          
-                        if ( type === 'sort' )
+                        ' type="checkbox" />';
                         
-                          data ? 1 : 0;
-                          
-                        return data;
-                        
-                        }
-                        
+                      return html
+                      
                       }
                       
-                    ],
+                    if ( type === 'sort' )
                     
-                  initComplete : function ( ) {
-                  
-                    let selector = '.dt-button:contains("Randomize Products")';
-                    
-                    $randomizeProductsElement = $( selector );
-                    
-                    $randomizeProductsElement
-                    
-                      .prop ( 'disabled', true );
+                      data ? 1 : 0;
                       
-                    selector = '.dt-button:contains("Reorder Site Products")';
+                    return data;
                     
-                    $reorderProductsElement = $( selector );
+                    }
                     
-                    $reorderProductsElement
-                    
-                      .prop ( 'disabled', true );
-                      
-                    },
-                    
-                  layout : {
-                  
-                    topStart : 'buttons'
-                    
-                    },
-                    
-                  order : [ ],
-                  
-                  pageLength : 200
-                  
                   }
                   
-                );
+                ],
                 
-          table
-          
-            .table ( )
-            
-            .header ( )
-            
-            .addEventListener (
-            
-              'click',
+              initComplete : function ( ) {
               
-              ( ) => userSorted = true
-              
-              );
-              
-          $messageElement = $( `#${ messageElementId }` );
-          
-          // table on draw
-          
-          {
-          
-            table.on (
-            
-              'draw.dt',
-              
-              ( ) => {
-              
-                const
+                let selector =
                 
-                  currentOrder = table.order ( ),
+                  `.dt-button:contains('${ randomizeSortButtonTitle }')`;
                   
-                  hasNatural = currentOrder
-                  
-                    .some ( ( [ c ] ) => c === 1 );
-                    
-                if ( userSorted && ! hasNatural ) {
+                $randomizeSortElement = $( selector );
                 
-                  table
-                  
-                    .order ( [ ... currentOrder, [ 1, 'asc' ] ] )
-                    
-                    .draw ( false );
-                    
-                  userSorted = false;
-                  
-                  }
-                  
-                }
+                $randomizeSortElement
                 
-              );
+                  .prop ( 'disabled', true );
+                  
+                selector = `.dt-button:contains('${ saveButtonTitle }')`;
+                
+                $saveSortElement = $( selector );
+                
+                $saveSortElement
+                
+                  .prop ( 'disabled', true );
+                  
+                },
+                
+              layout : {
+              
+                topStart : 'buttons'
+                
+                },
+                
+              order : [ ],
+              
+              pageLength : 200
+              
+              }
+              
+            );
+            
+        table
+        
+          .rows
+          
+          .add ( products )
+          
+          .draw ( );
+          
+        table
+        
+          .table ( )
+          
+          .header ( )
+          
+          .addEventListener (
+          
+            'click',
+            
+            ( ) => userSorted = true
+            
+            );
+            
+        // table on draw
+        
+        table.on (
+        
+          'draw.dt',
+          
+          ( ) => {
+          
+            const
+            
+              currentOrder = table.order ( ),
+              
+              hasNatural = currentOrder
+              
+                .some ( ( [ c ] ) => c === 1 );
+                
+            if ( userSorted && ! hasNatural ) {
+            
+              table
+              
+                .order ( [ ... currentOrder, [ 1, 'asc' ] ] )
+                
+                .draw ( false );
+                
+              userSorted = false;
+              
+              }
               
             }
             
-          } );
+          );
           
+        }
+        
+      // set up overlay element, buttons and message
+      
+      {
+      
+        $saveSortElement
+        
+          .prop ( 'disabled', false );
+          
+        $randomizeSortElement
+        
+          .prop ( 'disabled', false );
+          
+        $messageElement.html ( instructionsHtml );
+        
+        }
+        
       } )
-      
-    .catch ( ( error ) => {
-    
-      const s = `${ codeKey } error loading elements : `;
-      
-      console.error ( s, error );
-      
-      } );
       
   } ) ( );
