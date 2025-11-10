@@ -1,0 +1,497 @@
+<!-- begin TWC Form Block Form Element Add Watch -->
+
+  <!--
+  
+    form block form element add watch
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.5.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Notes         : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    this code is a base for other effects. on its own it doesn't
+                    do much. this code is not the end all be all of mutation
+                    observers. it may not cover your needs
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    body:not( .sqs-is-page-editing ) #siteWrapper {
+    
+      --twc-div-data-sqsp-block-form : hidden;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) div[ data-sqsp-block="form" ] {
+    
+      visibility : var( --twc-div-data-sqsp-block-form );
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) .section.twc-fbfeaw {
+    
+      display : none;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      debugger;
+      
+      const
+      
+        version = '0.5.0',
+        
+        s = `
+        
+          Form Block Form Element Add Watch v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      // global
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc fbfeaw sub-module
+        
+        twc.fbfeaw = ( ( self ) => self ) ( twc.fbfeaw || { } );
+        
+        // initialize twc fbfeaw callbacks sub-module
+        
+        twc.fbfeaw.callbacks =
+        
+          ( ( self ) => self ) ( twc.fbfeaw.callbacks || { } );
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-fbfeaw',
+        
+        selectorKey = 'div[ data-sqsp-block="form" ]';
+        
+      // hide show register
+      
+      {
+      
+        // initialize twc data sub-module
+        
+        twc.data = ( ( self ) => self ) ( twc.data || { } );
+        
+        // initialize twc data hideShow sub-module
+        
+        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+        
+        // initialize twc data hideShow selector key sub-module
+        
+        twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
+        
+          twc.data.hideShow [ selectorKey ] || [ ] );
+          
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .push ( `--${ codeKey }` );
+          
+        }
+        
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( mutations ) => {
+          
+            const isEditing = document
+            
+              .body
+              
+              .classList
+              
+              .contains ( 'sqs-is-page-editing' );
+              
+            if ( isEditing ) return; // bail if editing
+            
+            const callback = ( mutation ) => {
+            
+              // bail if no added nodes
+              
+              if ( ! mutation.addedNodes.length ) return;
+              
+              const callback = ( node ) => {
+              
+                // continue if not form element
+                
+                if ( node.tagName !== 'FORM' ) return;
+                
+                const xPathResults =
+                
+                  xPathEvaluate ( xPathExpression, node );
+                  
+                // bail if no element
+                
+                if ( ! xPathResults.snapshotLength ) return;
+                
+                const
+                
+                  descriptionElement = xPathResults.snapshotItem ( 0 ),
+                  
+                  blockElement = descriptionElement
+                  
+                    .closest ( 'div[ data-sqsp-block="form" ]' ),
+                    
+                  blockId = blockElement
+                  
+                    .getAttribute ( 'id' );
+                    
+                let userCallbacks;
+                
+                try {
+                
+                  userCallbacks = JSON
+                  
+                    .parse (
+                  
+                      descriptionElement
+                      
+                        .textContent
+                        
+                        .match ( /"callbacks"\s*:\s*(.+)/s )
+                        
+                        [ 1 ]
+                        
+                        .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
+                        
+                        .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
+                        
+                        .replace ( /,\s+]/g, ']' ) // remove trailing ,
+                        
+                      );
+                      
+                  } catch ( error ) {
+                  
+                    const s = `${ codeKey }, block id ${ blockId }, callbacks `
+                    
+                      +
+                      
+                      'parse error : ';
+                      
+                    console.error ( s, error );
+                    
+                    return;
+                    
+                    }
+                    
+                descriptionElement
+                
+                  .closest ( '.form-item' )
+                  
+                  .classList
+                  
+                  .add ( codeKey );
+                  
+                blockElement
+                
+                  .classList
+                  
+                  .add ( codeKey );
+                  
+                // process user callbacks
+                
+                {
+                
+                  if ( userCallbacks.added )
+                  
+                    userCallbacks = userCallbacks.added;
+                    
+                  // filter
+                  
+                  userCallbacks = userCallbacks
+                  
+                    .filter ( e => e [ 0 ] !== '[' );
+                    
+                  // call user callbacks
+                  
+                  {
+                  
+                    const callback = ( callback ) => {
+                    
+                      try {
+                      
+                        options
+                        
+                          .callbacks
+                          
+                          [ callback ]
+                          
+                          ( node );
+                          
+                        } catch ( error ) {
+                        
+                          const s =
+                          
+                            `${ codeKey } callback ${ callback } error : `;
+                            
+                          console.error ( s, error );
+                          
+                          }
+                          
+                      };
+                      
+                    userCallbacks.forEach ( callback );
+                    
+                    }
+                    
+                  }
+                  
+                };
+                
+              mutation
+              
+                .addedNodes
+                
+                .forEach ( callback );
+                
+              };
+              
+            mutations.forEach ( callback );
+            
+            },
+            
+          fbwocCodeKey = 'twc-fbwoc',
+          
+          fbwocOptions = fbwocCodeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+          observer = new MutationObserver ( callback ),
+          
+          observerOptions = {
+          
+            childList : true,
+            
+            subtree : true,
+            
+            },
+            
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          xPathEvaluate = ( xPathExpression, contextNode ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+          xPathExpression = `
+          
+            //div [
+            
+              contains (
+              
+                concat (
+                
+                  " ",
+                  
+                  normalize-space ( @class ),
+                  
+                  " "
+                  
+                  ),
+                  
+                " title "
+                
+                )
+                
+                and
+                
+                (
+                
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey }'
+                    
+                    )
+                    
+                  or
+                  
+                  contains (
+                  
+                    .,
+                    
+                    '${ fbwocCodeKey }'
+                    
+                    )
+                    
+                  )
+                  
+              ]
+              
+              /following-sibling::div [
+              
+                contains (
+                
+                  concat (
+                  
+                    " ",
+                    
+                    normalize-space ( @class ),
+                    
+                    " "
+                    
+                    ),
+                    
+                  " description "
+                  
+                  )
+                  
+                  and
+                  
+                  contains (
+                  
+                    .,
+                    
+                    'callbacks'
+                    
+                    )
+                    
+                  ]
+                  
+            `;
+            
+          // merge fbwoc callback into callbacks
+          
+          if ( fbwocOptions?.callbacks )
+          
+            Object.assign (
+            
+              options.callbacks,
+              
+              fbwocOptions.callbacks
+              
+              );
+              
+        // begin listening for changes in specified element
+        
+        observer.observe ( document.body, observerOptions );
+        
+        // hide show unregister
+        
+        {
+        
+          const siteWrapperElement = document
+          
+            .querySelector ( '#siteWrapper' );
+            
+          siteWrapperElement
+          
+            .style
+            
+            .setProperty ( `--${ codeKey }`, 'visible' );
+            
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .pop ( `--${ codeKey }` );
+            
+          const l = twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .length;
+            
+          if ( ! l )
+          
+            siteWrapperElement
+            
+              .style
+              
+              .setProperty ( '--twc-div-data-sqsp-block-form', 'unset' );
+              
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Form Block Form Element Add Watch -->
