@@ -805,11 +805,11 @@ not necessarily designed to work together.
       
     * [Form Block Fields Previous Next](Block/Form/Form%20Block%20Fields%20Previous%20Next)
       
+    * [Form Block Form Element Add Watch](Block/Form/Form%20Block%20Form%20Element%20Add%20Watch)
+      
     * [Form Block Multi-Language](Block/Form/Form%20Block%20Multi-Language)
       
     * [Form Block Fields Title to Placeholder](Block/Form/Form%20Block%20Fields%20Title%20to%20Placeholder)
-      
-    * [Form Block Wrapper Observe Changes](Block/Form/Form%20Block%20Wrapper%20Observe%20Changes)
       
     * [Form Block Fields From Search Parameters](Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters)
       
