@@ -1,0 +1,91 @@
+<!-- begin TWC Cart Page Item Links Redirect Options -->
+
+  <script>
+  
+    /*
+    
+      cart page item links redirect options
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.3.0
+      
+      SS Versions   : 7.1, 7.0
+      
+      Copyright     : 2020-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc cpilr sub-module
+    
+    twc.cpilr = ( ( self ) => {
+    
+      const options = {
+      
+        urlSlugMap : {
+        
+          /*
+          
+            for store page url slug copy value here from Store Settings >
+            General > URL SLUG field. you only need exactly what can be selected
+            from the field
+            
+            */
+            
+          '[ enter store page url slug here between single quotes removing square brackets ]' : {
+                                
+            /*
+          
+              the format of each line is a Product URL and a Page URL Slug
+              
+              edit the product, copy the value from Marketing > SEO and URL >
+              Edit > URL. you only need exactly what can be selected from the
+              field
+              
+              copy the value from Page Settings > General > URL SLUG field. you
+              only need exactly what can be selected from the field
+              
+              following is an example line. copy the example line below and
+              paste after the example line. remove '// ' at beginning of pasted
+              line. repeat for as many times as needed. this has been done once
+              initially
+              
+              */
+              
+            // '[ enter product url field here between single quotes removing square brackets ]' : '[ enter page url slug here between single quotes removing square brackets ]',
+            
+            '[ enter product url field here between single quotes removing square brackets ]' : '[ enter page url slug here between single quotes removing square brackets ]',
+            
+            },
+            
+          },
+          
+        // page to go to in case a product url is not found
+        
+        errorPageUrlSlug : 'error'
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.cpilr || { } );
+      
+    </script>
+    
+  <!-- end TWC Cart Page Item Links Redirect Options -->

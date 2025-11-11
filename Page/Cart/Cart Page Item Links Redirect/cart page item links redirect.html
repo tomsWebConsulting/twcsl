@@ -1,0 +1,124 @@
+<!-- begin TWC Cart Page Item Links Redirect -->
+
+  <script>
+  
+    var twcCartPageItemLinksRedirect = ( node ) => {
+    
+      /*
+      
+        cart page item links redirect
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.3.0
+        
+        SS Versions   : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible    : Not Applicable
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible    : Not Applicable
+        
+        Copyright     : 2020-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = 'cart page item links redirect',
+        
+        s = `
+        
+          Cart Page Item Links Redirect v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2020-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      if ( node.nodeType !== Node.ELEMENT_NODE ) return; // bail if not element;
+      
+      const element = node
+      
+        .querySelector ( '[ data-test="cart-container" ]' );
+        
+      if ( ! element ) return; // bail if not cart container
+      
+      const
+      
+        callback = ( element ) => {
+        
+          let href = element.getAttribute ( 'href' );
+          
+          if ( href in oneToOne )
+          
+            href = oneToOne [ href ];
+            
+            else
+            
+              href = '/' + options.errorPageUrlSlug;
+              
+          element.setAttribute ( 'href', href );
+          
+          },
+          
+        codeKey = 'twc-cpilr',
+        
+        oneToOne = { },
+        
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+        entries = Object
+        
+          .entries ( options.urlSlugMap );
+          
+      for ( const [ storeUrlSlug, obj ] of entries ) {
+      
+        for ( const [ productUrl, redirectUrl ] of Object.entries ( obj ) ) {
+        
+          oneToOne [
+          
+            `/${ storeUrlSlug }/p/${ productUrl }`
+            
+            ]
+            
+            =
+          
+            '/' + redirectUrl;
+            
+          }
+          
+        }
+        
+      // replace urls
+      
+      element
+      
+        .querySelectorAll ( '.cart-row-title' )
+        
+        .forEach ( callback );
+        
+      };
+      
+    </script>
+    
+  <!-- end TWC Cart Page Item Links Redirect -->
