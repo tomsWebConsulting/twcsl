@@ -67,6 +67,8 @@ not necessarily designed to work together.
     
     * [Cart Page Form Text Field Max Length](Page/Cart/Cart%20Page%20Form%20Text%20Field%20Max%20Length)
       
+    * [Cart Page Item Links Redirect](Page/Cart/Cart%20Page%20Item%20Links%20Redirect)
+      
     * [Cart Page Observe Changes](Page/Cart/Cart%20Page%20Observe%20Changes)
       
     * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
@@ -290,8 +292,6 @@ not necessarily designed to work together.
 * [Change Unable to Add Item to Cart Alert for Only N Available](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Only%20N%20Available)
   
 * [Configurator Page Text and Image Blocks](Configurator%20Page%20Text%20and%20Image%20Blocks)
-  
-* [Cart Item Links Redirect](Cart%20Item%20Links%20Redirect)
   
 * [Social Icon Discord Generic Icon to Discord Change](Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
   
