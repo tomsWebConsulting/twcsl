@@ -1,0 +1,218 @@
+<!-- begin TWC Store Page Detail Description Search Text Match Add Text -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page detail description search text match add text
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.2.0
+        
+        SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible      : Yes
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
+                          Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
+                          Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
+                          Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
+                          
+                          your template is not listed? then it is not currently
+                          supported
+        
+        Copyright       : 2021-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.2.0',
+        
+        s = `
+        
+          Store Page Detail Description Search Text Match Add Text v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( ) => {
+      
+        const isStorePage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          ?.type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const isDetail = ( ( ) => {
+        
+          const is
+          
+            =
+            
+            !!
+            
+            Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .item;
+              
+          return is;
+          
+          } ) ( );
+          
+        if ( ! isDetail ) return; // bail if not detail
+        
+        const
+        
+          selector = [
+          
+            '.product-detail .product-meta .product-description', // 7.1
+            
+            '.ProductItem-details-excerpt', // 7.0 ( Brine )
+            
+            ]
+            
+            .join ( ', ' ),
+            
+          elements = document
+          
+            .body
+            
+            .querySelectorAll ( selector );
+            
+        if ( ! elements ) return; // bail if no elements
+        
+        const
+        
+          callback = ( element ) => {
+          
+            const walker = document
+            
+              .createTreeWalker ( element, NodeFilter.SHOW_TEXT );
+              
+            while ( walker.nextNode ( ) ) {
+            
+              const s = walker.currentNode.data;
+              
+              if ( ! s.includes ( options.searchText ) ) continue;
+              
+              walker
+              
+                .currentNode
+                
+                .after ( text );
+                
+              }
+              
+            },
+            
+          codeKey = 'twc-spddstmat',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          tags = ( ( ) => {
+          
+            const
+            
+              selector = [
+              
+                '.product-detail', // 7.1
+                
+                // 7.0
+                
+                '.ProductItem', // Brine
+                
+                '.productWrapper', // ?
+                
+                '#productWrapper', // ?
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              tags = document
+              
+                .body
+                
+                .querySelector ( selector )
+              
+                .getAttribute ( 'class' )
+                
+                .split ( ' ' )
+                
+                .filter ( clss => clss.startsWith ( 'tag-' ) )
+                
+                .map ( ( tag ) => {
+                
+                  return tag.slice ( 4 );
+                  
+                  } );
+                  
+            return tags;
+            
+            } ) ( ),
+            
+          classTagTextMap = options.classTagTextMap,
+          
+          text = tags
+          
+            .filter ( classTag => classTagTextMap [ classTag ] )
+            
+            .map ( classTag => classTagTextMap [ classTag ] )
+            
+            .join ( ', ' );
+            
+        elements.forEach ( callback );
+        
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Description Search Text Match Add Text -->
