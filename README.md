@@ -111,6 +111,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
         
+      * [Store Page Detail Description Search Text Match Add Text](Page/Store/Detail/Store%20Page%20Detail%20Description%20Search%20Text%20Match%20Add%20Text)
+        
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
       * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
@@ -264,8 +266,6 @@ not necessarily designed to work together.
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
 * [Change Cart Empty Message](Change%20Cart%20Empty%20Message)
-  
-* [Store Product Detail Add Text After Description Matched Text Per Tag](Store%20Product%20Detail%20Add%20Text%20After%20Description%20Matched%20Text%20Per%20Tag)
   
 * [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
   
