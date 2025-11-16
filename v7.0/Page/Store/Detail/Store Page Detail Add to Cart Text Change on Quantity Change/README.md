@@ -50,5 +50,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl#install-options
-[5]: store%page%20detail%20add%20to%20cart%20text%20change%20on%20quantity%20change.html#L1
+[5]: store%20page%20detail%20add%20to%20cart%20text%20change%20on%20quantity%20change.html#L1
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
