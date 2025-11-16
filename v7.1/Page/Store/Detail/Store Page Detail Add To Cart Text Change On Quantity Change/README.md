@@ -2,6 +2,10 @@
 
 ### [License][1]
 
+### Synopsis
+
+Add quantity based text to Add to Cart button.
+
 ### Version
 
   * 0.1.0
