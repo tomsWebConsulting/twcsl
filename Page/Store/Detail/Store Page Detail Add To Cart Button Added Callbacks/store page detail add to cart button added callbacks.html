@@ -1,0 +1,287 @@
+<!-- begin TWC Store Page Detail Add To Cart Button Added Callbacks -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page detail add to cart button added callbacks
+        
+        License        : < https://tinyurl.com/s872fb68 >
+        
+        Version        : 0.2.0
+        
+        SS Versions    : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible     : Yes
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible     : Not Applicable
+        
+        Note           : this code is meant as a base for other effects. the
+                         code alone shouldn't produce any visible change
+        
+        Copyright      : 2023-2025 Thomas Creedon
+                         
+                         Tom's Web Consulting
+                         
+                         < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      const
+      
+        version = '0.2.0',
+        
+        s = `
+        
+          Store Page Detail Add To Cart Button Added Callbacks v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isDetail = ( ( ) => {
+      
+        const is
+        
+          =
+          
+          !!
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+        return is;
+        
+        } ) ( );
+        
+      if ( ! isDetail ) return; // bail if not detail
+      
+      // global
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc spdatcbac sub-module
+        
+        twc.spdatcbac = ( ( self ) => self ) ( twc.spdatcbac || { } );
+        
+        // initialize twc spdatcbac callbacks sub-module
+        
+        twc.spdatcbac.callbacks =
+        
+          ( ( self ) => self ) ( twc.spdatcbac.callbacks || [ ] );
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-spdatcbac',
+        
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+        hasCallbacks = options
+        
+          .callbacks
+          
+          .length;
+          
+      // bail if no callbacks
+      
+      if ( ! hasCallbacks ) {
+      
+        const s = `${ codeKey } no callbacks`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      const
+      
+        callback = ( ) => {
+        
+          const
+          
+            callback = ( mutations ) => {
+            
+              const callback = ( mutation ) => {
+              
+                // continue if not attribute class
+                
+                if ( mutation.attributeName !== 'class' ) return;
+                
+                // continue if no old value
+                
+                if ( ! mutation.oldValue ) return;
+                
+                const isCartAdded = mutation
+                
+                  .oldValue
+                  
+                  .split ( ' ' )
+                  
+                  .contains ( 'cart-added' );
+                  
+                if ( ! isCartAdded ) return; // continue if no cart added
+                
+                // continue if is skip first
+                
+                if ( isSkipFirst ) {
+                
+                  isSkipFirst = false;
+                  
+                  return;
+                  
+                  } else
+                  
+                    isSkipFirst = true;
+                    
+                // call user callbacks
+                
+                {
+                
+                  const callback = ( callback ) => {
+                  
+                    try {
+                    
+                      callback ( );
+                      
+                      } catch ( error ) {
+                      
+                        const s =
+                        
+                          `${ codeKey } callback ${ callback } error : `;
+                          
+                        console.error ( s, error );
+                        
+                        }
+                        
+                    };
+                    
+                  options
+                  
+                    .callbacks
+                    
+                    .forEach ( callback );
+                    
+                  }
+                  
+                };
+                
+              mutations.forEach ( callback );
+              
+              },
+              
+            observer = new MutationObserver ( callback ),
+            
+            selector = '.product-detail .product-meta '
+            
+              +
+              
+              'div:not( .product-add-ons ) .sqs-add-to-cart-button-wrapper '
+              
+              +
+              
+              '.sqs-add-to-cart-button';
+              
+          let isSkipFirst = true;
+          
+          // start listening for changes in element
+          
+          observer.observe (
+          
+            document
+            
+              .body
+              
+              .querySelector ( selector ),
+              
+            {
+            
+              attributes : true,
+              
+              attributeOldValue : true
+              
+              }
+              
+            );
+            
+          },
+          
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion,
+          
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1';
+        
+      switch ( true ) {
+      
+        case is71 :
+        
+          document
+          
+            .addEventListener ( 'DOMContentLoaded', callback );
+            
+          break;
+          
+        case is70 :
+        
+          Squarespace.onInitialize ( Y, callback );
+          
+          break;
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Add To Cart Button Added Callbacks -->
