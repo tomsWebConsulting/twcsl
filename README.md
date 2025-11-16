@@ -41,8 +41,6 @@ not necessarily designed to work together.
 
 ## Effects
 
-* [Store Product Detail Add to Cart Button After Added Callback](Store%20Product%20Detail%20Add%20to%20Cart%20Button%20After%20Added%20Callback)
-  
 * [Image Block Image Caption Second Add](Image%20Block%20Image%20Caption%20Second%20Add)
   
 * [Change Cart Continue Shopping Text](Change%20Cart%20Continue%20Shopping%20Text)
@@ -114,6 +112,8 @@ not necessarily designed to work together.
       * [Store Page Detail Description Search Text Match Add Text](Page/Store/Detail/Store%20Page%20Detail%20Description%20Search%20Text%20Match%20Add%20Text)
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
+        
+      * [Store Page Detail Add To Cart Button Added Callbacks](Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Button%20Added%20Callbacks)
         
       * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
         
