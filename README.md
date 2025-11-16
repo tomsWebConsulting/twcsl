@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 402 effects. Each effect has it's own version number, code,
+twcsl contains 403 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -384,6 +384,8 @@ not necessarily designed to work together.
         * [Store Page Detail Footer Sections Move](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Sections%20Move)
           
         * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
+          
+        * [Store Page Detail Add To Cart Text Change On Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Text%20Change%20On%20Quantity%20Change)
           
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
