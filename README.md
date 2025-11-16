@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 403 effects. Each effect has it's own version number, code,
+twcsl contains 404 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -294,8 +294,6 @@ not necessarily designed to work together.
 * [Configurator Page Text and Image Blocks](Configurator%20Page%20Text%20and%20Image%20Blocks)
   
 * [Social Icon Discord Generic Icon to Discord Change](Social%20Icon%20Discord%20Generic%20Icon%20to%20Discord%20Change)
-  
-* [Store Product Detail Add to Cart Text Change on Quantity Change](Store%20Product%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
   
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
   
@@ -743,6 +741,10 @@ not necessarily designed to work together.
     
     * [Store](v7.0/Page/Store)
       
+      * [Detail](v7.0/Page/Store/Detail)
+        
+        * [Store Page Detail Add to Cart Text Change on Quantity Change](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
+          
       * [List](v7.0/Page/Store/List)
         
         * [Store Page List Category Description Add](v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add)
