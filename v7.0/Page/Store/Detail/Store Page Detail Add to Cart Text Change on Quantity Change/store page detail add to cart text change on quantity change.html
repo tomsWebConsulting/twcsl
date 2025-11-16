@@ -1,0 +1,272 @@
+<script>
+
+  /*
+  
+    begin store page detail add to cart text change on quantity change
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.1.1
+    
+    SS Version    : 7.0
+    
+    Dependancies  : twcsl
+    
+    Note          : changing the add to cart label does not effect the cart, 
+                    checkout, or other SS pages/backend storage. this is purely
+                    a cosmetic change
+    
+    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+    $( ( ) => {
+    
+      /* text of add to cart button label to replace, replaces the first
+         occurrence of text in label */
+      
+      const
+      
+        searchText = ' ',
+      
+        /*
+        
+          replacement text, text that replaces the search text in label, use
+          [ q ] in text to insert the calculated quantity value. following are
+          some example values :
+          
+            replaceText = ' [ q ] Ounces ',
+            
+            replaceText = ' [ q ] Square Feet ',
+            
+            replaceText = ' [ q ] Yards ',
+            
+          */
+          
+        replaceText = '[ enter replacement text here between single quotes replacing square brackets ]',
+        
+        multiplier = 1, // value to multiply quantity by
+        
+        displayAsFraction = false; // use false or true
+        
+      // do not change anything below, there be the borg here
+      
+      if ( ! twcsl.ss.is70 ) return; // bail if not 7.0
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      if ( ! twcsl.page.store.detail.is ) return; // bail if not detail
+      
+      const callback = ( ) => {
+      
+        const
+        
+          addToCartInnerObserve = ( ) => {
+          
+            const callback = function ( ) {
+            
+              observer.observe ( this, {
+              
+                attributes : true,
+                
+                attributeFilter : [ attribute ],
+                
+                attributeOldValue : true,
+                
+                characterData : true,
+                
+                childList : true
+                
+                } );
+                
+              };
+              
+            // listen for changes in elements
+            
+            $( selector ).each ( callback );
+            
+            },
+            
+          attribute = 'data-twc-spdatctcoqc-mo',
+          
+          callback = ( mutations ) => {
+          
+            const callback = function ( ) {
+            
+              // previous change was forced
+              
+              const b = this.type === 'attributes' &&
+              
+                this.attributeName === attribute;
+                
+              let node;
+              
+              if ( b ) {
+              
+                const $this = $( this.target );
+                
+                if ( $this.attr ( attribute ) === 'true' ) {
+                
+                  const quantity = $this
+                  
+                    .parents ( '.sqs-add-to-cart-button-wrapper' )
+                    
+                    .siblings ( '.product-quantity-input' )
+                    
+                    .find ( 'input' )
+                    
+                    .val ( );
+                    
+                  observer.disconnect ( );
+                  
+                  node = $this.contents ( ).get ( 0 );
+                  
+                  setLabel ( node, quantity )
+                  
+                  $this.attr ( attribute, 'false' );
+                  
+                  addToCartInnerObserve ( );
+                  
+                  } else if ( this.oldValue === 'true' )
+                  
+                    return;
+                    
+                }
+                
+              if ( ! this.addedNodes.length ) return;
+              
+              node = this.addedNodes [ 0 ];
+              
+              if ( node.nodeName !== '#text' ) return; // bail if not text node
+              
+              if ( node.data !== label ) return; // bail if not label
+              
+              const quantity = $( node )
+              
+                .parents ( '.sqs-add-to-cart-button-wrapper' )
+                
+                .siblings ( '.product-quantity-input' )
+                
+                .find ( 'input' )
+                
+                .val ( );
+                
+              observer.disconnect ( );
+              
+              setLabel ( node, quantity )
+              
+              addToCartInnerObserve ( );
+              
+              };
+              
+            $.each ( mutations, callback );
+              
+            },
+            
+          getLowestFraction = ( x0 ) => {
+          
+            // based on code by Martin R < https://bit.ly/3yVE15b >
+            
+            const eps = 1.0E-15;
+            
+            let h2;
+            
+            let k2;
+            
+            let x = x0;
+            
+            let a = h = Math.floor ( x );
+            
+            let h1 = k = 1;
+            
+            let k1 = 0;
+            
+            while ( x - a > eps * k * k ) {
+            
+              x = 1 / ( x - a );
+              
+              a = Math.floor ( x );
+              
+              h2 = h1;
+              
+              h1 = h;
+              
+              k2 = k1;
+              
+              k1 = k;
+              
+              h = h2 + a * h1;
+              
+              k = k2 + a * k1;
+              
+              }
+              
+            return h + '/' + k;
+            
+            },
+            
+          label = $( '.sqs-add-to-cart-button' )
+          
+            .first ( )
+            
+            .attr ( 'data-original-label' ),
+            
+          observer = new MutationObserver ( callback ),
+          
+          selector = '.sqs-add-to-cart-button-wrapper ' +
+          
+            '.sqs-add-to-cart-button-inner',
+            
+          setLabel = ( node, quantity = 1 ) => {
+          
+            quantity = quantity * multiplier;
+            
+            const isInteger = Number.isInteger ( quantity );
+            
+            if ( displayAsFraction && ! isInteger ) {
+            
+              var [ w, f ] = quantity
+              
+                .toString ( )
+                
+                .split ( '.' );
+                
+              if ( w === '0' ) w = '';
+              
+              f = Number ( `0.${ f }` );
+              
+              f = getLowestFraction ( f );
+              
+              quantity = `${ w } ${ f }`;
+              
+              }
+              
+            const
+            
+              r = replaceText.replace ( '[ q ]', quantity ),
+              
+              text = label.replace ( searchText, r );
+              
+            node.data = text;
+            
+            };
+            
+        addToCartInnerObserve ( );
+        
+        $( '.product-quantity-input' )
+        
+          .change ( e => $( selector ).attr ( attribute, 'true' ) );
+          
+        $( selector ).attr ( attribute, 'true' );
+        
+        };
+        
+      Squarespace.onInitialize ( Y, callback );
+      
+      } );
+      
+    // end store product detail add to cart text change on quantity change
+    
+  </script>
