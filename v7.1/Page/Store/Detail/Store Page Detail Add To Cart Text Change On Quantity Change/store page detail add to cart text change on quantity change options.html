@@ -1,0 +1,73 @@
+<!-- begin TWC Store Page Detail Add To Cart Text Change On Quantity Change Options -->
+
+  <script>
+  
+    /*
+    
+      store page detail add to cart text change on quantity change
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdatctcoqc sub-module
+    
+    twc.spdatctcoqc = ( ( self ) => {
+    
+      const options = {
+      
+        // add to cart button text to replace, replaces the first occurrence
+        
+        searchText : ' ',
+        
+        /*
+        
+          replacement text, text that replaces the search text in label, use
+          [ q ] in text to insert the calculated quantity value. following are
+          some example values :
+          
+            replaceText : ' [ q ] Ounces ',
+            
+            replaceText : ' [ q ] Square Feet ',
+            
+            replaceText : ' [ q ] Yards ',
+            
+          */
+          
+        replaceText : '[ enter replacement text here between single quotes replacing square brackets ]',
+        
+        multiplier : 1, // value to multiply quantity by
+        
+        displayAsFraction : false // use false or true
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdatctcoqc || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Add To Cart Text Change On Quantity Change Options -->

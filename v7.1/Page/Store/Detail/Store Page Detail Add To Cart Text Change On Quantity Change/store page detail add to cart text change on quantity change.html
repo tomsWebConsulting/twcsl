@@ -1,0 +1,276 @@
+<!-- begin TWC Store Page Detail Add To Cart Text Change On Quantity Change -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page detail add to cart text change on quantity change
+        
+        License        : < https://tinyurl.com/s872fb68 >
+        
+        Version        : 0.1.0
+        
+        SS Version     : 7.1
+        
+        v7.1
+        Products V2
+        Compatible     : Yes
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible     : Not Applicable
+        
+        Note           : this code is meant as a base for other effects. the
+                         code alone shouldn't produce any visible change
+        
+        Copyright      : 2025 Thomas Creedon
+                         
+                         Tom's Web Consulting
+                         
+                         < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        title = 'Store Page Detail Add To Cart Text Change On Quantity Change',
+        
+        version = '0.1.0',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion,
+          
+        is71 = ssVersion === '7.1';
+        
+      if ( ! is71 ) return; // bail if not version 7.1
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isDetail = ( ( ) => {
+      
+        const is
+        
+          =
+          
+          !!
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+        return is;
+        
+        } ) ( );
+        
+      if ( ! isDetail ) return; // bail if not detail
+      
+      // global
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc spdatctcoqc sub-module
+        
+        twc.spdatctcoqc = ( ( self ) => self ) ( twc.spdatctcoqc || { } );
+        
+        }
+        
+      const callback = ( ) => {
+      
+        const
+        
+          addToCartTextSelector = '.product-detail .product-meta '
+          
+            +
+            
+            '.product-add-to-cart .sqs-add-to-cart-button-wrapper '
+            
+            +
+            
+            '.sqs-add-to-cart-button .add-to-cart-text',
+            
+          codeKey = 'twc-spdatctcoqc',
+          
+          getLowestFraction = ( x0 ) => {
+          
+            // based on code by Martin R < https://bit.ly/3yVE15b >
+            
+            const eps = 1.0E-15;
+            
+            let
+            
+              h2,
+            
+              k2,
+              
+              x = x0,
+              
+              a = h = Math.floor ( x ),
+              
+              h1 = k = 1,
+              
+              k1 = 0;
+              
+            while ( x - a > eps * k * k ) {
+            
+              x = 1 / ( x - a );
+              
+              a = Math.floor ( x );
+              
+              h2 = h1;
+              
+              h1 = h;
+              
+              k2 = k1;
+              
+              k1 = k;
+              
+              h = h2 + a * h1;
+              
+              k = k2 + a * k1;
+              
+              }
+              
+            return h + '/' + k;
+            
+            },
+            
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          quantityInputSelector = '.product-detail .product-meta '
+          
+            +
+            
+            '.product-add-to-cart .product-quantity-input-wrapper input',
+            
+          setText = ( quantity = 1 ) => {
+          
+            const isInteger = Number.isInteger ( quantity );
+            
+            quantity = quantity * options.multiplier;
+            
+            if ( options.displayAsFraction && ! isInteger ) {
+            
+              let [ w, f ] = quantity
+              
+                .toString ( )
+                
+                .split ( '.' );
+                
+              if ( w === '0' ) w = '';
+              
+              f = Number ( `0.${ f }` );
+              
+              f = getLowestFraction ( f )
+              
+              quantity = `${ w } ${ f }`;
+              
+              }
+              
+            const
+            
+              r = options
+              
+                .replaceText
+                
+                .replace ( '[ q ]', quantity ),
+                
+              text = originalText.replace (
+              
+                options.searchText,
+                
+                r
+                
+                );
+                
+            addToCartTextElement.textContent = text;
+            
+            },
+            
+          addToCartTextElement = document
+          
+            .body
+            
+            .querySelector ( addToCartTextSelector ),
+            
+          originalText = addToCartTextElement
+          
+            .textContent
+            
+            .trim ( ),
+            
+          quantityInputElement = document
+          
+            .body
+            
+            .querySelector ( quantityInputSelector );
+            
+        quantityInputElement
+        
+          .addEventListener (
+          
+            'change',
+            
+            e => setText ( quantityInputElement.value )
+            
+            );
+            
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Add To Cart Text Change On Quantity Change -->
+  
