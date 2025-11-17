@@ -1,0 +1,119 @@
+<!-- begin TWC Store Page Detail One Left Class Add -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page detail one left class add
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.2.1
+        
+        SS Version    : 7.0
+        
+        Templates     : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+                          
+        Copyright     : 2021-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.2.1',
+        
+        s = `
+        
+          Store Page Detail One Left Class Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isDetail = ( ( ) => {
+      
+        const is
+        
+          =
+          
+          !!
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+        return is;
+        
+        } ) ( );
+        
+      if ( ! isDetail ) return; // bail if not detail
+      
+      const callback = ( ) => {
+      
+        const hasQuantity = document
+        
+          .body
+          
+          .querySelector ( '.product-quantity-input' );
+          
+        if ( hasQuantity ) return; // bail if quantity field
+        
+        document
+        
+          .body
+          
+          .querySelector ( '.ProductItem' )
+          
+          .classList
+          
+          .add ( 'one-left' );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail One Left Class Add -->
