@@ -113,6 +113,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
+      * [Store Page Detail Tagged Image Add](Page/Store/Detail/Store%20Page%20Detail%20Tagged%20Image%20Add)
+        
       * [Store Page Detail Add To Cart Button Added Callbacks](Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Button%20Added%20Callbacks)
         
       * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
@@ -712,8 +714,6 @@ not necessarily designed to work together.
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
-  
-* [Store Product Detail Page Add Images Based on Tags](Store%20Product%20Detail%20Page%20Add%20Images%20Based%20on%20Tags)
   
 * [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
