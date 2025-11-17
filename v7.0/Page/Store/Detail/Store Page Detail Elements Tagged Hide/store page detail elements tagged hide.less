@@ -1,0 +1,81 @@
+/* begin TWC Store Page Detail Elements Tagged Hide */
+
+  /*
+  
+    store page detail elements tagged hide
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 2.3.0
+    
+    SS Version    : 7.0
+    
+    Templates     : Adirondack
+                    
+                    Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva, Pedro,
+                    Pursuit, Rally, Rover, Royce, Sofia, Sonora, Stella, Thorne,
+                    Vow, Wav, West )
+                    
+                    York ( Artesia, Flores, Harris, Jasper, Jones, Lange,
+                    Shibori, Taylor )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+    
+    Note          : the following tags added to your products will hide
+                    elements
+                    
+                      twc hide atc ( add to cart )
+                      
+                      twc hide mark
+                      
+                      twc hide price
+                      
+                      twc hide quantity
+    
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting
+                    
+                    < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  .tag-twc-hide-atc,
+  .tag-twc-hide-mark,
+  .tag-twc-hide-price,
+  .tag-twc-hide-quantity,
+  .tag-twc-hide-variants,
+  x-twc-selector /* dummy selector so that each selector line above can end with
+                    a comma */
+    {
+    
+      .ProductItem-details, // begin Brine, York
+      #productDetails, // Adirondack
+      x-twc-selector /* dummy selector so that each selector line above can end
+                        with a comma */
+        {
+        
+          .sqs-add-to-cart-button-wrapper,
+          .product-mark,
+          .product-price,
+          .product-quantity-input,
+          .product-variants,
+          x-twc-selector /* dummy selector so that each selector line above can
+                            end with a comma */
+            {
+            
+              display : none;
+              
+              }
+              
+          }
+          
+      }
+      
+  /* end TWC Store Page Detail Elements Tagged Hide */
