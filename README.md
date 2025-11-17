@@ -307,8 +307,6 @@ not necessarily designed to work together.
   
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
-* [Store Product Detail Elements Tagged Hide](Store%20Product%20Detail%20Elements%20Tagged%20Hide)
-  
 * [v7.1](v7.1)
   
   * [Memberspace Observe Log in Status](v7.1/Memberspace%20Observe%20Log%20in%20Status)
@@ -743,6 +741,8 @@ not necessarily designed to work together.
       
       * [Detail](v7.0/Page/Store/Detail)
         
+        * [Store Page Detail Elements Tagged Hide](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Elements%20Tagged%20Hide)
+          
         * [Store Page Detail Add to Cart Text Change on Quantity Change](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
           
       * [List](v7.0/Page/Store/List)
