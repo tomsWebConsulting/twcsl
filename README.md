@@ -199,8 +199,6 @@ not necessarily designed to work together.
   
 * [Change Unable to Add Item to Cart Alert for Out of Stock Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Out%20of%20Stock%20Variants)
   
-* [Store Product Detail One Left Class Add](Store%20Product%20Detail%20One%20Left%20Class%20Add)
-  
 * [Element](Element)
   
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
@@ -744,6 +742,8 @@ not necessarily designed to work together.
         * [Store Page Detail Elements Tagged Hide](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Elements%20Tagged%20Hide)
           
         * [Store Page Detail Add to Cart Text Change on Quantity Change](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
+          
+        * [Store Page Detail One Left Class Add](v7.0/Page/Store/Detail/Store%20Page%20Detail%20One%20Left%20Class%20Add)
           
       * [List](v7.0/Page/Store/List)
         
