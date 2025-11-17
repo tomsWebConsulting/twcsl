@@ -1,0 +1,277 @@
+<!-- begin TWC Store Page Detail Tagged Image Add -->
+
+  <!--
+  
+    store page detail tagged image add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.3.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    v7.0 Templates    : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+    
+    Notes             : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+                      
+                        this effect is not active in SS Preview to test it use
+                        private browsing < https://bit.ly/3f6lhq2 >
+                      
+                        the images are added at the end of the product details
+                        area
+    
+    Copyright         : 2023-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting  < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    #twc-spdtiao {
+    
+      display : flex;
+      flex-wrap : wrap;
+      gap : 1em;
+      justify-content : center;
+      margin-bottom : 1em;
+      margin-top : 1em;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.3.0',
+        
+        s = `
+        
+          Store Page Detail Tagged Image Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isDetail = ( ( ) => {
+      
+        const is
+        
+          =
+          
+          !!
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+        return is;
+        
+        } ) ( );
+        
+      if ( ! isDetail ) return; // bail if not detail
+      
+      // global
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc spdtiao sub-module
+        
+        twc.spdtiao = ( ( self ) => self ) ( twc.spdtiao || { } );
+        
+        }
+        
+      const callback = ( ) => {
+      
+        const
+        
+          codeKey = 'twc-spdtiao',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          tagImageUrlMap = options.tagImageUrlMap;
+            
+        let selector = [
+        
+          '.product-detail', // 7.1
+          
+          '.ProductItem', //7.0 ( Brine )
+          
+          ]
+          
+          .join ( ', ' );
+          
+        // format keys
+        
+        {
+        
+          const callback = ( key ) => {
+          
+            const keyNew = key
+            
+              .toLowerCase ( )
+              
+              .replaceAll ( ' ', '-' );
+              
+            if ( key === keyNew ) return; // continue if keys match
+            
+            options
+            
+              .tagImageUrlMap
+              
+              [ keyNew ]
+              
+              =
+              
+              options
+              
+              .tagImageUrlMap
+              
+              [ key ];
+              
+            delete tagImageUrlMap [ key ];
+            
+            };
+            
+          Object
+          
+            .keys ( tagImageUrlMap )
+            
+            .forEach ( callback );
+            
+          }
+          
+        const
+        
+          element = document
+          
+            .body
+            
+            .querySelector ( selector ),
+            
+          imagesElement = document
+          
+            .createElement ( 'div' ),
+            
+          tags = [
+          
+            ...
+            
+            element
+            
+              .classList
+              
+            ]
+            
+            .filter ( c => c.startsWith ( 'tag-' ) )
+            
+            .map ( t => t.slice ( 4 ) )
+            
+            .filter ( t => tagImageUrlMap [ t ] );
+            
+        // build images element
+        
+        {
+        
+          const callback = ( tag ) => {
+          
+            const
+            
+              element = document
+              
+                .createElement ( 'img' ),
+                
+              url = tagImageUrlMap [ tag ];
+              
+            element
+            
+              .setAttribute ( 'src', url );
+              
+            imagesElement
+            
+              .append ( element );
+              
+            };
+            
+          imagesElement.id  = `${ codeKey }`;
+          
+          tags.forEach ( callback );
+          
+          }
+          
+        selector = [
+        
+          '.product-detail .product-meta .product-description', // 7.1
+          
+          '.ProductItem-details-excerpt', // 7.0 ( Brine )
+          
+          ]
+          
+          .join ( ', ' );
+          
+        document
+        
+          .body
+          
+          .querySelector ( selector )
+          
+          .append ( imagesElement );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Tagged Image Add -->

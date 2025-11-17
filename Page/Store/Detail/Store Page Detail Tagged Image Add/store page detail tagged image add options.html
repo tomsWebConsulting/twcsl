@@ -1,0 +1,78 @@
+<!-- begin TWC Store Page Detail Tagged Image Add Options -->
+
+  <!--
+  
+    store page detail tagged image add options
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting  < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    #twc-spdtiao img {
+    
+      width : 100px; /* width of images */
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdtiao sub-module
+    
+    twc.spdtiao = ( ( self ) => {
+    
+      const options = {
+      
+        tagImageUrlMap : {
+        
+          /*
+          
+            the format of each line is a tag as appears in the squarespace store
+            page product editor interface and an image URL
+            
+            copy and repeat the line below for each mapping, remove the "// " at
+            the beginning of the line and enter the appropriate data. this has
+            been done once initially
+            
+            */
+            
+          // '[ enter tag here between single quotes replacing square brackets ]' : '[ enter image url here between single quotes replacing square brackets ]',
+          
+          '[ enter tag here between single quotes replacing square brackets ]' : '[ enter image url here between single quotes replacing square brackets ]',
+          
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdtiao || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Tagged Image Add Options -->
