@@ -1,0 +1,177 @@
+<!-- begin TWC Store Page Detail Related Product Sold Out Price Zero Hide -->
+
+  <!--
+  
+    store page detail related product sold out price zero hide
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible        : Yes
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible        : Not Applicable
+    
+    v7.0 Templates    : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
+                        Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
+                        Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
+                        Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        Five
+                        
+                        Montauk ( Julia, Kent, Om )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+    
+    Dependencies      : store page price change
+                        
+                        < https://tinyurl.com/5az53zbz >
+    
+    Note              : this code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2022-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    /* 7.1 */
+    
+    .product-detail .product-related-products .product-list-item.sold-out .twc-spdrpsopzh,
+    
+    /* begin 7.0 */
+    
+      /* Brine */
+      
+      .ProductItem-relatedProducts-item.sold-out .twc-spdrpsopzh,
+      
+      /* Five, Montauk */
+      
+      #productWrapper .relatedProducts #productList .relatedProducts-item.sold-out .twc-spdrpsopzh
+      
+      /* end 7.0 */
+      
+      {
+      
+        display : none;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+      ( ( ) => {
+      
+        const
+        
+          title = 'Store Page Detail Related Product Sold Out Price Zero Hide',
+          
+          version = '0.2.0',
+          
+          s = `${ title } v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2022-2025 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        } ) ( );
+        
+      // initialize twc module
+      
+      var twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc sppc sub-module
+      
+      twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+      
+      // initialize twc sppc callbacks sub-module
+      
+      twc.sppc.callbacks = ( ( self ) => {
+      
+        self
+        
+          .twcSpdrpsopzh = ( node, isDetail, text, searchText ) => {
+          
+            if ( ! isDetail ) return true; // continue if not detail
+            
+            const isZero = text.includes ( searchText );
+            
+            if ( ! isZero ) return true; // continue if not zero
+            
+            const
+            
+              element = node
+              
+                .parentElement,
+                
+              selector = [
+              
+                '.product-related-products', // 7.1
+                
+                // begin 7.0
+                
+                  '.ProductItem-relatedProducts', // Brine
+                  
+                  '.relatedProducts', // Five
+                  
+                  // end 7.0
+                  
+                ]
+                
+                .join ( ', ' ),
+                
+              isRelated
+              
+                =
+                
+                !!
+                
+                element
+                
+                  .closest ( selector );
+                  
+            if ( ! isRelated ) return true; // continue if not related
+            
+            const codeKey = 'twc-spdrpsopzh';
+            
+            element
+            
+              .classList
+              
+              .add ( codeKey );
+              
+            return true; // continue
+            
+            };
+            
+        return self;
+        
+        } ) ( twc.sppc.callbacks || { } );
+        
+    </script>
+    
+  <!-- end TWC Store Page Detail Related Product Sold Out Price Zero Hide -->
