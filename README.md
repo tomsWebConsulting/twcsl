@@ -113,6 +113,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
+      * [Store Page Detail Slideshow Item Badge Add](Page/Store/Detail/Store%20Page%20Detail%20Slideshow%20Item%20Badge%20Add)
+        
       * [Store Page Detail Related Product Sold Out Price Zero Hide](Page/Store/Detail/Store%20Page%20Detail%20Related%20Product%20Sold%20Out%20Price%20Zero%20Hide)
         
       * [Store Page Detail Tagged Image Add](Page/Store/Detail/Store%20Page%20Detail%20Tagged%20Image%20Add)
@@ -302,8 +304,6 @@ not necessarily designed to work together.
 * [Calendar Block Event Change](Calendar%20Block%20Event%20Change)
   
 * [Change Cart Title](Change%20Cart%20Title)
-  
-* [Store Product Detail Slideshow Item Badge Add](Store%20Product%20Detail%20Slideshow%20Item%20Badge%20Add)
   
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
