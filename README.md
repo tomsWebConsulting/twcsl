@@ -113,6 +113,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
+      * [Store Page Detail Related Product Sold Out Price Zero Hide](Page/Store/Detail/Store%20Page%20Detail%20Related%20Product%20Sold%20Out%20Price%20Zero%20Hide)
+        
       * [Store Page Detail Tagged Image Add](Page/Store/Detail/Store%20Page%20Detail%20Tagged%20Image%20Add)
         
       * [Store Page Detail Add To Cart Button Added Callbacks](Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Button%20Added%20Callbacks)
@@ -192,8 +194,6 @@ not necessarily designed to work together.
 * [Payment Processor Icons](Payment%20Processor%20Icons)
   
 * [Image Block Image Spinner](Image%20Block%20Image%20Spinner)
-  
-* [Store Product Detail Related Product Sold Out Price Zero Remove](Store%20Product%20Detail%20Related%20Product%20Sold%20Out%20Price%20Zero%20Remove)
   
 * [Form Block Select Field Post-submit Redirect Change](Form%20Block%20Select%20Field%20Post-submit%20Redirect%20Change)
   
