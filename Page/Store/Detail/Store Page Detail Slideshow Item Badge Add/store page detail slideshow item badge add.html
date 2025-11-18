@@ -1,0 +1,193 @@
+<!-- begin TWC Store Page Detail Slideshow Item Badge Add -->
+
+  <!--
+  
+    store page detail slideshow item badge add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.3.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible        : Yes
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible        : Not Applicable
+    
+    v7.0 Templates    : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
+                        Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot,
+                        Marta, Mentor, Mercer, Miller, Mojave, Moksha, Motto,
+                        Nueva, Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                        Sonora, Stella, Thorne, Vow, Wav, West )
+                        
+                        your template is not listed? then it is not currently
+                        supported
+    
+    Note              : ths code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2021-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    .twc-spdsiba-image-badge {
+    
+      background-color : black;
+      bottom : 0;
+      color : white;
+      font-weight : 600;
+      line-height : normal;
+      padding : 0.25em 0.5em;
+      position : absolute;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.3.0',
+        
+        s = `
+        
+          Store Page Detail Slideshow Item Badge Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
+      const isDetail = ( ( ) => {
+      
+        const is
+        
+          =
+          
+          !!
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item;
+            
+        return is;
+        
+        } ) ( );
+        
+      if ( ! isDetail ) return; // bail if not detail
+      
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            const
+            
+              selector = [
+              
+                '.product-gallery-slides-item-image', // 7.1
+                
+                '.ProductItem-gallery-slides-item-image', // 7.0 ( Brine )
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              text = element
+              
+                .querySelector ( selector )
+                
+                .getAttribute ( 'alt' );
+                
+            if ( ! text ) return; // bail if no text
+            
+            element
+            
+              .insertAdjacentHTML (
+              
+                'beforeend',
+                
+                `
+                
+                  <div class="${ codeKey }-image-badge">
+                
+                    ${ text }
+                    
+                    </div>
+                    
+                  `
+                  
+                );
+                
+            },
+            
+          codeKey = 'twc-spdsiba',
+          
+          selector = [
+              
+            '.product-gallery-slides-item', // 7.1
+            
+            '.ProductItem-gallery-slides-item' // 7.0 ( Brine )
+            
+            ]
+            
+            .join ( ', ' );
+            
+        document
+        
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Slideshow Item Badge Add -->
