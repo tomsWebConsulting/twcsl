@@ -109,6 +109,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
         
+      * [Store Page Detail Variant Order Reverse](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Order%20Reverse)
+        
       * [Store Page Detail Description Search Text Match Add Text](Page/Store/Detail/Store%20Page%20Detail%20Description%20Search%20Text%20Match%20Add%20Text)
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
@@ -714,8 +716,6 @@ not necessarily designed to work together.
   * [Add Store Description](v7.1/Add%20Store%20Description)
     
 * [Fix Image Block SS Encoded Query Component Links](Fix%20Image%20Block%20SS%20Encoded%20Query%20Component%20Links)
-  
-* [Store Product Detail Variant Order Reverse](Store%20Product%20Detail%20Variant%20Order%20Reverse)
   
 * [Product Block Quick View After Anchor Tag](Product%20Block%20Quick%20View%20After%20Anchor%20Tag)
   
