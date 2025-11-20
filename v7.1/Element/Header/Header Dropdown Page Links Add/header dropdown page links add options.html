@@ -1,0 +1,77 @@
+<!-- begin TWC Header Dropdown Page Links Add Options -->
+
+  <script>
+  
+    /*
+    
+      header dropdown page links add options
+      
+      Version       : 0.6.0
+      
+      SS Version    : 7.1
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc hdpl sub-module
+    
+    twc.hdpl = ( ( self ) => {
+    
+      const options = {
+      
+        dropdownPageToUrlMap : {
+        
+          /*
+          
+            adding lines here is optional, when no lines are added the dropdown
+            page will link to the first page in the dropdown page
+            
+            the format of each line is a dropdown page URL SLUG and a
+            destination URL
+            
+            for each dropdown page copy value from Configure Dropdown ( gear
+            icon )> URL SLUG field. you only need exactly what can be selected
+            from the field
+            
+            for each destination value you can enter any URL, a slug, full url,
+            and etc
+            
+            duplicate the line below and remove the "// " at the beginning of
+            the line
+            
+            */
+            
+          // '[ enter dropdown page url slug here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
+          
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.hdpl || { } );
+      
+    </script>
+    
+  <!-- end TWC Header Dropdown Page Links Add Options -->

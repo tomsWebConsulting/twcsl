@@ -1,0 +1,165 @@
+<!-- begin TWC Header Dropdown Page Links Add -->
+
+  <script>
+  
+    /*
+    
+      header dropdown page links add
+      
+      Version       : 0.6.0
+      
+      SS Version    : 7.1
+      
+      Fluid
+      Engine
+      Compatible    : Not Applicable
+      
+      Copyright     : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      */
+      
+    ( ( ) => {
+    
+      const
+      
+        version = '0.6.0',
+        
+        s = `
+        
+          Header Dropdown Page Links Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc hdpl sub-module
+        
+        twc.hdpl =
+        
+          ( ( self ) => self ) ( twc.hdpl || { dropdownPageToUrlMap : { } } );
+          
+        }
+        
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( [ key, url ] ) => {
+          
+            const selector = '.header-display-desktop '
+            
+              +
+              
+              `.header-nav-folder-title[ data-href="/${ key }" ]`;
+              
+            document
+            
+              .body
+              
+              .querySelectorAll ( selector )
+            
+              .forEach (
+              
+                e => e
+                
+                  .addEventListener (
+                  
+                    'click',
+                    
+                    ( ) => location.href = url
+                    
+                    )
+                    
+                );
+                
+            },
+            
+          codeKey = 'twc-hdpl',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          dropdownPageToUrlMap = options.dropdownPageToUrlMap,
+          
+          hasMapEntries
+          
+            =
+            
+            !!
+            
+            Object
+            
+              .keys ( dropdownPageToUrlMap )
+              
+              .length;
+              
+        if ( ! hasMapEntries ) {
+        
+          const callback = ( element ) => {
+          
+            const url = element
+            
+              .getAttribute ( 'data-href' );
+              
+            dropdownPageToUrlMap
+            
+              [ url.slice ( 1 ) ]
+              
+              =
+              
+              url;
+              
+            };
+            
+          document
+          
+          .body
+          
+          .querySelectorAll ( '.header-nav-folder-title' )
+          
+          .forEach ( callback );
+            
+          }
+          
+        Object
+        
+          .entries ( dropdownPageToUrlMap )
+          
+          .forEach ( callback );
+        
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Header Dropdown Page Links Add -->
