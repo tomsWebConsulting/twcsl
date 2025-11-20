@@ -545,8 +545,6 @@ not necessarily designed to work together.
     
   * [Page Section Background Image Repeat](v7.1/Page%20Section%20Background%20Image%20Repeat)
     
-  * [Make Navigation Folders Clickable](v7.1/Make%20Navigation%20Folders%20Clickable)
-    
   * [Header Social Icon URLs Change Based on Language](v7.1/Header%20Social%20Icon%20URLs%20Change%20Based%20on%20Language)
     
   * [Hide Store Product Detail Recommended Product Last](v7.1/Hide%20Store%20Product%20Detail%20Recommended%20Product%20Last)
@@ -578,6 +576,8 @@ not necessarily designed to work together.
       * [Header Menu Mobile Outline](v7.1/Element/Header/Header%20Menu%20Mobile%20Outline)
         
       * [CTA Button Text Language Change](v7.1/Element/Header/CTA%20Button%20Text%20Language%20Change)
+        
+      * [Header Dropdown Page Links Add](v7.1/Element/Header/Header%20Dropdown%20Page%20Links%20Add)
         
       * [Header Buttons Add](v7.1/Element/Header/Header%20Buttons%20Add)
         
