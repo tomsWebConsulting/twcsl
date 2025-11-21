@@ -1,0 +1,33 @@
+/*
+
+  store page detail variant sold out remove
+  
+  Version       : 0.3.0
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Products V2
+  Compatible    : Yes
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Copyright     : 2023-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+#main-product-variants, /* 7.1 */
+.ProductItem-details .product-variants /* 7.0 */
+
+  {
+  
+    display : none;
+    
+    }
