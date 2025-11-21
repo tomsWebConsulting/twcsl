@@ -115,6 +115,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
+      * [Store Page Detail Variant Sold Out Remove](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove)
+        
       * [Store Page Detail Slideshow Item Badge Add](Page/Store/Detail/Store%20Page%20Detail%20Slideshow%20Item%20Badge%20Add)
         
       * [Store Page Detail Related Product Sold Out Price Zero Hide](Page/Store/Detail/Store%20Page%20Detail%20Related%20Product%20Sold%20Out%20Price%20Zero%20Hide)
@@ -720,8 +722,6 @@ not necessarily designed to work together.
 * [Product Block Quick View After Anchor Tag](Product%20Block%20Quick%20View%20After%20Anchor%20Tag)
   
 * [Blog Category Page Category Attribute Add](Blog%20Category%20Page%20Category%20Attribute%20Add)
-  
-* [Store Product Detail Variant Sold Out Remove](Store%20Product%20Detail%20Variant%20Sold%20Out%20Remove)
   
 * [Header](Header)
   
