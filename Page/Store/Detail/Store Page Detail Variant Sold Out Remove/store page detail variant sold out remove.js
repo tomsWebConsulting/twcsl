@@ -1,6 +1,6 @@
 ( ( ) => {
 
-  /*
+  /*!
   
     store page detail variant sold out remove
     

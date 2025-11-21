@@ -21,13 +21,4 @@
   
   no user serviceable parts below
   
-  */
-  
-#main-product-variants, /* 7.1 */
-.ProductItem-details .product-variants /* 7.0 */
-
-  {
-  
-    display : none;
-    
-    }
+  */#main-product-variants,.ProductItem-details .product-variants{display:none}
