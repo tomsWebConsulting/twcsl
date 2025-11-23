@@ -135,7 +135,7 @@ not necessarily designed to work together.
       
       * [Store Page List Category Attribute Add](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
         
-      * [Store Page List Empty Text Add](Page/Store/List/Store%20Page%20List%20Empty%20Text%20Add)
+      * [Store Page List Empty HTML Add](Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add)
         
     * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
       
