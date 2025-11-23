@@ -135,6 +135,8 @@ not necessarily designed to work together.
       
       * [Store Page List Category Attribute Add](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
         
+      * [Store Page List Empty Text Add](Page/Store/List/Store%20Page%20List%20Empty%20Text%20Add)
+        
     * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
       
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
@@ -148,8 +150,6 @@ not necessarily designed to work together.
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
 * [Accordion Block Top Bottom Border Hide](Accordion%20Block%20Top%20Bottom%20Border%20Hide)
-  
-* [Store Product List Empty Text Add](Store%20Product%20List%20Empty%20Text%20Add)
   
 * [Text Block Formats Phrase Filter](Text%20Block%20Formats%20Phrase%20Filter)
   
