@@ -194,7 +194,7 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
-[7]: store%20page%20list%20empty%20text%20add%20options.html#L1
+[7]: store%20page%20list%20empty%20html%20add%20options.html#L1
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: store%20page%20list%20empty%20html%20add.html#L1
