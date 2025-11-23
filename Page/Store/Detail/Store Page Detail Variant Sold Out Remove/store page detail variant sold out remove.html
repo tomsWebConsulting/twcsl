@@ -83,24 +83,18 @@
         
       if ( ! isStorePage ) return; // bail if not store page
       
-      const isDetail = ( ( ) => {
+      const isDetail
       
-        const is
+        =
         
-          =
-          
-          !!
-          
-          Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .item;
-            
-        return is;
+        !!
         
-        } ) ( );
+        Static
         
+          .SQUARESPACE_CONTEXT
+          
+          .item;
+          
       if ( ! isDetail ) return; // bail if not detail
       
       const

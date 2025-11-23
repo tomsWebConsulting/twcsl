@@ -180,22 +180,18 @@
             
           if ( ! isStorePage ) return; // bail if not store page
           
-          const isDetail = ( ( ) => {
+          const isDetail
           
-            const selector = 'body[ id^="item-" ]';
+            =
             
-            const is = document
+            !!
             
-              .querySelector ( selector )
+            Static
+            
+              .SQUARESPACE_CONTEXT
               
-              !==
+              .item;
               
-              null;
-              
-            return is;
-            
-            } ) ( );
-            
           if ( ! isDetail ) return; // bail if not detail
           
           // initialize twc spdatcbtc callbacks sub-module
