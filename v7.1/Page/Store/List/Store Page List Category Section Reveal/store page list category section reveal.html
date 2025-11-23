@@ -89,24 +89,20 @@
           
         if ( ! isStorePage ) return; // bail if not store page
         
-        const isList = ( ( ) => {
+        const isList
         
-          const
+          =
           
-            selector = 'body[ id^="collection-" ]',
+          !
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
             
-            is = document
+            .item
             
-              .querySelector ( selector )
-              
-              !==
-              
-              null;
-              
-          return is;
-          
-          } ) ( );
-          
+            ?.id;
+            
         if ( ! isList ) return; // bail if not list
         
         const

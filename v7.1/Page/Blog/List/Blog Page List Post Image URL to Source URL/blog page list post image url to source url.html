@@ -106,22 +106,20 @@
           
         if ( ! isBlogPage ) return; // bail if not blog page
         
-        const isList = ( ( ) => {
+        const isList
         
-          const selector = 'body[ id^="collection-" ]';
+          =
           
-          const is = document
+          !
           
-            .querySelector ( selector )
+          Static
+          
+            .SQUARESPACE_CONTEXT
             
-            !==
+            .item
             
-            null;
+            ?.id;
             
-          return is;
-          
-          } ) ( );
-          
         if ( ! isList ) return; // bail if not list page
         
         const
