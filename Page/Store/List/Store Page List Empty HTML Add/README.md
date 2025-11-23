@@ -55,9 +55,9 @@ When there are no list products add html to the page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Empty HTML Add -->
           
@@ -83,9 +83,9 @@ When there are no list products add html to the page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Empty HTML Add -->
             
@@ -105,9 +105,9 @@ When there are no list products add html to the page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1d02e2d2ab207d710533fbbb5b1de68ebed1121/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ad45f0ca7346ffa53108dfce34578826958cd213/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Empty HTML Add -->
             
