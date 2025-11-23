@@ -96,15 +96,15 @@
     
     window.twc = ( ( self ) => self ) ( window.twc || { } );
     
-    // initialize twc spleta sub-module
+    // initialize twc spleha sub-module
     
-    twc.spleta = ( ( self ) => self ) ( twc.spleta || { } );
+    twc.spleha = ( ( self ) => self ) ( twc.spleha || { } );
     
     }
     
   const
   
-    codeKey = 'twc-spleta',
+    codeKey = 'twc-spleha',
     
     options = codeKey
     
