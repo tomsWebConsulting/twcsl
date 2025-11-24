@@ -49,7 +49,9 @@ Hide images on the list page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b0af1cf7d40a639b4b747efe38906ad3d0b505fc/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Images Hide -->
           
@@ -71,7 +73,9 @@ Hide images on the list page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b0af1cf7d40a639b4b747efe38906ad3d0b505fc/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Images Hide -->
             
@@ -87,7 +91,9 @@ Hide images on the list page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b0af1cf7d40a639b4b747efe38906ad3d0b505fc/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20product%20grid%20images%20hide.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Images Hide -->
             
