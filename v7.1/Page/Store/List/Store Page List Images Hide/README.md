@@ -49,9 +49,9 @@ Hide images on the list page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Images Hide -->
           
@@ -73,9 +73,9 @@ Hide images on the list page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Images Hide -->
             
@@ -91,9 +91,9 @@ Hide images on the list page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96a0a95b46329421ef9d806912d54a29b02c462d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@330b641d4a94b4cde2933c5d6f4c9617ec46232d/v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide/store%20page%20list%20images%20hide.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Images Hide -->
             
