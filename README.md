@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 409 effects. Each effect has it's own version number, code,
+twcsl contains 413 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -315,9 +315,19 @@ not necessarily designed to work together.
   
   * [Page](code%20bits/Page)
     
+    * [Course](code%20bits/Page/Course)
+      
+    * [Blog](code%20bits/Page/Blog)
+      
+    * [Videos](code%20bits/Page/Videos)
+      
     * [Detail](code%20bits/Page/Detail)
       
     * [List](code%20bits/Page/List)
+      
+    * [Portfolio](code%20bits/Page/Portfolio)
+      
+    * [Events](code%20bits/Page/Events)
       
     * [Store](code%20bits/Page/Store)
       
@@ -393,6 +403,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Footer Sections Move](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Sections%20Move)
           
+        * [Store Page Detail Title Text to Link](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link)
+          
         * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
           
         * [Store Page Detail Add To Cart Text Change On Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Text%20Change%20On%20Quantity%20Change)
@@ -460,8 +472,6 @@ not necessarily designed to work together.
   * [Portfolio Page Project Collection Type Class Add](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add)
     
   * [Page Site Title Change](v7.1/Page%20Site%20Title%20Change)
-    
-  * [Store Product Detail Title Text to Link](v7.1/Store%20Product%20Detail%20Title%20Text%20to%20Link)
     
   * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
     
@@ -632,8 +642,6 @@ not necessarily designed to work together.
   * [Blog Page Section Text Replace With Author, Category, Tag, or Any](v7.1/Blog%20Page%20Section%20Text%20Replace%20With%20Author,%20Category,%20Tag,%20or%20Any)
     
   * [Blog Page List Item Background Color](v7.1/Blog%20Page%20List%20Item%20Background%20Color)
-    
-  * [Store Product Detail Add to Cart Button Right of Quantity](v7.1/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Right%20of%20Quantity)
     
   * [Reposition First Page Section Background so Header Does Not Hide It](v7.1/Reposition%20First%20Page%20Section%20Background%20so%20Header%20Does%20Not%20Hide%20It)
     
