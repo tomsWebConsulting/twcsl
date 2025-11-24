@@ -1,0 +1,85 @@
+<!-- begin TWC Store Page Detail Title Text to Link Options -->
+
+  <!--
+  
+    store page detail title text to link options
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Copyright     : 2022-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc spdtttl sub-module
+    
+    twc.spdtttl = ( ( self ) => {
+    
+      const options = {
+      
+        textUrlMap : {
+        
+          /*
+          
+            the format of each line is text and a url
+            
+            the url can be any valid url. it can be a full ( external to your
+            site ) one like < https://www.tomsWeb.consulting/ > or a partial (
+            internal to your site ) one like '/contact'
+            
+            copy and repeat the line below for each mapping, remove the "// " at
+            the beginning of the line and enter the appropriate data. this has
+            been done once initially
+            
+            */
+            
+          // '[ enter text here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
+          
+          '[ enter text here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
+          
+          },
+          
+        seperator : ' | ',
+        
+        html : `
+        
+          <br>
+          
+          <a class="twc-spdtttl" href="[ url ]">
+          
+            [ text ]
+            
+            </a>
+            
+          `
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spdtttl || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Detail Title Text to Link Options -->
