@@ -17,7 +17,7 @@ Link text in the title.
 #### Products V2 Compatible
 
   * Yes
-  
+
 #### Fluid Engine Compatible
 
   * Not Applicable
@@ -54,7 +54,7 @@ Link text in the title.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link/store%20page%20detail%20title%20text%20to%20link.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Title Text to Link -->
           
@@ -80,7 +80,7 @@ Link text in the title.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link/store%20page%20detail%20title%20text%20to%20link.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Title Text to Link -->
             
@@ -100,7 +100,7 @@ Link text in the title.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Detail/Store%20Page%20List%20Empty%20HTML%20Add/store%20page%20list%20empty%20html%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link/store%20page%20detail%20title%20text%20to%20link.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Title Text to Link -->
             
