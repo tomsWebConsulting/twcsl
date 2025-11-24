@@ -459,6 +459,8 @@ not necessarily designed to work together.
           
         * [SPLACR Simple Redirect](v7.1/Page/Store/List/SPLACR%20Simple%20Redirect)
           
+        * [Store Page List Images Hide](v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide)
+          
       * [Store Page Title to Lines](v7.1/Page/Store/Store%20Page%20Title%20to%20Lines)
         
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
@@ -476,8 +478,6 @@ not necessarily designed to work together.
   * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
     
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
-    
-  * [Store Product Grid Images Hide](v7.1/Store%20Product%20Grid%20Images%20Hide)
     
   * [Text Block Text Class Add](v7.1/Text%20Block%20Text%20Class%20Add)
     
