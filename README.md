@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 413 effects. Each effect has it's own version number, code,
+twcsl contains 412 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -650,8 +650,6 @@ not necessarily designed to work together.
   * [Page Section Background Transparent](v7.1/Page%20Section%20Background%20Transparent)
     
   * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
-    
-  * [Store Product Details Natural Order Desktop](v7.1/Store%20Product%20Details%20Natural%20Order%20Desktop)
     
   * [Calendar Block Link Replace With Excerpt Link](v7.1/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link)
     
