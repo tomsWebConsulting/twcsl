@@ -61,19 +61,19 @@ These images are examples.
 
   * Rectangle
   
-    ![style rectangle][3]
+    ![style rectangle][7]
     
   * Square
   
-    ![style square][4]
+    ![style square][8]
 
   * Circle
   
-    ![style circle][5]
+    ![style circle][9]
     
 * Background Color and Color (text)
 
-  ![background color and color][6]
+  ![background color and color][10]
   
 * Font : family, weight, style (italic and normal), size, letter spacing, and
   text transform (capitalize, lowercase, uppercase)
@@ -84,28 +84,28 @@ These images are examples.
 
   |            | Left                        | Center                        | Right                        |            |
   | ----------:|:---------------------------:|:-----------------------------:|:----------------------------:|:---------- |
-  | **Top**    | ![position top left][7]     | ![position top center][8]     | ![position top right][9]     | **Top**    |
-  | **Center** | ![position center left][10] | ![position center][11]        | ![position center right][12] | **Center** |
-  | **Bottom** | ![position bottom left][13] | ![position bottom center][14] | ![position bottom right][15] | **Bottom** |
+  | **Top**    | ![position top left][11]     | ![position top center][12]     | ![position top right][13]     | **Top**    |
+  | **Center** | ![position center left][14] | ![position center][15]        | ![position center right][16] | **Center** |
+  | **Bottom** | ![position bottom left][17] | ![position bottom center][18] | ![position bottom right][19] | **Bottom** |
   |            | **Left**                    | **Center**                    | **Right**                    |            |
 
 * Inset
 
   * Floating
   
-    ![inset floating][9]
+    ![inset floating][13]
     
   * Flush
   
-    ![inset flush][16]
+    ![inset flush][21]
     
   * Dock Vertically
     
-    ![inset dock vertically][17]
+    ![inset dock vertically][22]
     
   * Dock Horizontally
     
-    ![inset dock horizontally][18]
+    ![inset dock horizontally][23]
     
 * Inset Size (margin around the badge for options that have an inset)
 
@@ -118,11 +118,11 @@ pre-order**. You will now see a pre-order badge on the store page list.
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][24].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][25].
 
 ## Changes
 
@@ -152,5 +152,21 @@ Please consider [making a donation][8].
 [4]: store%20page%20list%20badges.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[7]: https://toms-web-consulting-demos.squarespace.com/store-page-list-badges?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: read%20me%20assets/style%20rectangle.png
+[8]: read%20me%20assets/style%20square.png
+[9]: read%20me%20assets/style%20circle.png
+[10]: read%20me%20assets/background%20color%20and%20color.png
+[11]: read%20me%20assets/position%20top%20left.png
+[12]: read%20me%20assets/position%20top%20center.png
+[13]: read%20me%20assets/position%20top%20right.png
+[14]: read%20me%20assets/position%20center%20left.png
+[15]: read%20me%20assets/position%20center.png
+[16]: read%20me%20assets/position%20center%20right.png
+[17]: read%20me%20assets/position%20bottom%20left.png
+[18]: read%20me%20assets/position%20bottom%20center.png
+[19]: read%20me%20assets/position%20bottom%20right.png
+[21]: read%20me%20assets/inset%20flush.png
+[22]: read%20me%20assets/inset%20dock%20horizontally.png
+[23]: read%20me%20assets/inset%20dock%20vertically.png
+[24]: https://toms-web-consulting-demos.squarespace.com/store-page-list-badges?password=twcdemos
+[25]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
