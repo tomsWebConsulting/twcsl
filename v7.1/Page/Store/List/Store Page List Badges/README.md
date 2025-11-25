@@ -53,6 +53,62 @@ v7.0 templates.
       
 * Read the code for any instructions within.
 
+## Badge Options
+
+These images are examples.
+
+* Style
+
+  * Rectangle
+  
+    ![style rectangle][3]
+    
+  * Square
+  
+    ![style square][4]
+
+  * Circle
+  
+    ![style circle][5]
+    
+* Background Color and Color (text)
+
+  ![background color and color][6]
+  
+* Font : family, weight, style (italic and normal), size, letter spacing, and
+  text transform (capitalize, lowercase, uppercase)
+  
+* Padding (around the text)
+
+* Position
+
+  |            | Left                        | Center                        | Right                        |            |
+  | ----------:|:---------------------------:|:-----------------------------:|:----------------------------:|:---------- |
+  | **Top**    | ![position top left][7]     | ![position top center][8]     | ![position top right][9]     | **Top**    |
+  | **Center** | ![position center left][10] | ![position center][11]        | ![position center right][12] | **Center** |
+  | **Bottom** | ![position bottom left][13] | ![position bottom center][14] | ![position bottom right][15] | **Bottom** |
+  |            | **Left**                    | **Center**                    | **Right**                    |            |
+
+* Inset
+
+  * Floating
+  
+    ![inset floating][9]
+    
+  * Flush
+  
+    ![inset flush][16]
+    
+  * Dock Vertically
+    
+    ![inset dock vertically][17]
+    
+  * Dock Horizontally
+    
+    ![inset dock horizontally][18]
+    
+* Inset Size (margin around the badge for options that have an inset)
+
 ## Custom Badges
 
 In addition to the Squarespace built-in badges this code lets you add your own
