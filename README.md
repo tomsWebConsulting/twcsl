@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 412 effects. Each effect has it's own version number, code,
+twcsl contains 411 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -658,8 +658,6 @@ not necessarily designed to work together.
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
     
   * [Store Tag Page Description Add](v7.1/Store%20Tag%20Page%20Description%20Add)
-    
-  * [Store Product List Sale Badge](v7.1/Store%20Product%20List%20Sale%20Badge)
     
   * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
