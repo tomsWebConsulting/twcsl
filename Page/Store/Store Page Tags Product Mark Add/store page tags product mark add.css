@@ -1,0 +1,33 @@
+/*!
+
+  store page tags product mark add
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Products V2
+  Compatible      : Yes
+  
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  Dependencies    : Page Tags Cache < https://tinyurl.com/4frfus4a >
+  
+  Note            : this code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+  
+  Copyright       : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  */
+  
+.product-detail .product-meta .product-status .product-mark:not( :last-child )::after {
+
+  content : '•';
+  
+  }
