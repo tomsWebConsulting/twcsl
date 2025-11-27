@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 412 effects. Each effect has it's own version number, code,
+twcsl contains 413 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -98,6 +98,8 @@ not necessarily designed to work together.
     * [Store Page Savings Percentage](Page/Store/Store%20Page%20Savings%20Percentage)
       
     * [Store Page Product Add to Cart Button URL Redirect After Added to Cart](Page/Store/Store%20Page%20Product%20Add%20to%20Cart%20Button%20URL%20Redirect%20After%20Added%20to%20Cart)
+      
+    * [Store Page Tags Product Mark Add](Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add)
       
     * [Store Page Price Change](Page/Store/Store%20Page%20Price%20Change)
       
