@@ -58,9 +58,9 @@ Add product marks using tags.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page Tags Product Mark Add -->
             
@@ -82,9 +82,9 @@ Add product marks using tags.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page Tags Product Mark Add -->
               
@@ -100,9 +100,9 @@ Add product marks using tags.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.css" rel="stylesheet" type="text/css">
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add/store%20page%20tags%20product%20mark%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page Tags Product Mark Add -->
               
