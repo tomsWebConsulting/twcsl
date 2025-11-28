@@ -1,0 +1,205 @@
+<!-- begin TWC Store Page List Tag Description Add -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page list tag description add
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.2.0
+        
+        SS Version      : 7.1
+        
+        Products V2
+        Compatible      : Yes
+        
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        Dependencies    : Page Tags Cache < https://tinyurl.com/4frfus4a >
+        
+        Copyright       : 2023-2025 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.2.0',
+        
+        s = `Store Page List Tag Description Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      } ) ( );
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc ptc sub-module
+    
+    twc.ptc = ( ( self ) => self ) ( twc.ptc || { } );
+    
+    // initialize twc ptc callbacks sub-module
+    
+    twc.ptc.callbacks = ( ( self ) => {
+    
+      const callback = ( tags ) => {
+      
+        const isList
+        
+          =
+          
+          !
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item
+            
+            ?.id;
+            
+        if ( ! isList ) return; // bail if not list
+        
+        const
+        
+          searchParams = new URLSearchParams ( location.search ),
+          
+          isTagPage = searchParams.has ( 'tag' );
+          
+        if ( ! isTagPage ) return; // bail if not tag page
+        
+        // global
+        
+        {
+        
+          // initialize twc module
+          
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc spltda sub-module
+          
+          twc.spltda = ( ( self ) => self ) ( twc.spltda || { } );
+          
+          }
+          
+        const
+        
+          codeKey = 'twc-spltda',
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          hasOptions = Object
+          
+            .keys ( options )
+            
+            .length;
+            
+        if ( ! hasOptions ) return; // bail if no options
+        
+        const
+        
+          tag = searchParams.get ( 'tag' ),
+          
+          tagDescriptionMap = options.tagDescriptionMap;
+          
+        // bail if no tag mapped
+        
+        if ( ! ( tag in tagDescriptionMap ) ) return;
+        
+        const
+        
+          paragraphStyle = options
+          
+            .paragraphStyle [ 0 ]
+            
+            ===
+            
+            '['
+            
+            ?
+            
+            'Heading 3'
+            
+            :
+            
+            options
+            
+              .paragraphStyle,
+              
+          paragraphStyles = {
+          
+            'Heading 1'   : [ '<h1>', '</h1>' ],
+            'Heading 2'   : [ '<h2>', '</h2>' ],
+            'Heading 3'   : [ '<h3>', '</h3>' ],
+            'Heading 4'   : [ '<h4>', '</h4>' ],
+            'Paragraph 1' : [ '<p class="sqsrte-large">', '</p>' ],
+            'Paragraph 2' : [ '<p>', '</p>' ],
+            'Paragraph 3' : [ '<p class="sqsrte-small">', '</p>' ],
+            'Monospace'   : [ '<pre><code>', '</code></pre>' ]
+            
+            },
+            
+          html = `
+          
+            <div class="${ codeKey }-tag-description">
+            
+              ${ paragraphStyles [ paragraphStyle ] [ 0 ] }
+              
+                ${ tagDescriptionMap [ tag ] }
+                
+                ${ paragraphStyles [ paragraphStyle ] [ 1 ] }
+                
+              </div>
+              
+            `;
+            
+        document
+        
+          .body
+          
+          .querySelector ( '.category-navigation--desktop' )
+          
+          .insertAdjacentHTML (
+          
+            'afterend',
+            
+            html
+            
+            );
+            
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.ptc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Tag Description Add -->
