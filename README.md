@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 413 effects. Each effect has it's own version number, code,
+twcsl contains 412 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -702,8 +702,6 @@ not necessarily designed to work together.
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
       
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
-    
-  * [Store Product Meta New](v7.1/Store%20Product%20Meta%20New)
     
   * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
     
