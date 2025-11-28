@@ -122,7 +122,7 @@
   
     const
     
-      p = new URLSearchParams ( location.search )
+      p = new URLSearchParams ( location.search ),
       
       is = p.has ( 'tag' );
       
