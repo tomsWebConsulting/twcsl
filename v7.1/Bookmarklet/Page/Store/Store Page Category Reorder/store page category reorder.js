@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.4.0
+    Version     : 0.4.1
     
     Copyright   : 2025 Thomas Creedon
                   
@@ -20,7 +20,7 @@
   
     title = 'TWC Store Page Category Reorder',
     
-    version = '0.4.0',
+    version = '0.4.1',
   
     s = `${ title } v${ version }
     
@@ -118,18 +118,14 @@
     
     }
     
-  const isTagPage = ( ( ) => {
+  const isTagPage
   
-    const
+    =
     
-      p = new URLSearchParams ( location.search ),
+    new URLSearchParams ( location.search )
+    
+      .has ( 'tag' );
       
-      is = p.has ( 'tag' );
-      
-    return is;
-    
-    } ) ( );
-    
   // bail if tag page
   
   if ( isTagPage ) {

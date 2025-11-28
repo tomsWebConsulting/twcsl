@@ -63,6 +63,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2025-11-27**
+
+  * added missing comma
+  * bumped version to 0.4.1
+  
 * **2025-11-07**
 
   * reworked code to load products automatically
