@@ -445,6 +445,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Tag Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add)
+          
         * [Store Page List Products Hide](v7.1/Page/Store/List/Store%20Page%20List%20Products%20Hide)
           
         * [Store Page List Out of Stock Badge](v7.1/Page/Store/List/Store%20Page%20List%20Out%20of%20Stock%20Badge)
@@ -660,8 +662,6 @@ not necessarily designed to work together.
   * [Blog Post Title Each Word Span Tag Add](v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
-    
-  * [Store Tag Page Description Add](v7.1/Store%20Tag%20Page%20Description%20Add)
     
   * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
