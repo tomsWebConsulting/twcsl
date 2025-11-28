@@ -8,7 +8,7 @@ Cache Page tags in sessionStorage.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -171,11 +171,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2025-05-09**
+* **2025-11-27**
 
-  * added some missing code
-  * bumped version to 0.1.1
-  -->
+  * added queryValue to tag data
+  * bumped version to 0.2.0
+  
 * **2025-11-24**
 
   * initial version

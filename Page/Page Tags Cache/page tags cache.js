@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version       : 0.2.0
     
     SS Versions   : 7.1, 7.0
     
@@ -33,7 +33,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.2.0',
     
     s = `
     
@@ -273,14 +273,28 @@
           
           } finally {
           
-            tags
+            const callback = ( tag ) => {
             
-              .forEach (
+              tag
               
-                t => t.className = tagNameToCssClassName ( t.name )
+                .className
                 
-                );
+                =
                 
+                tagNameToCssClassName ( tag.name );
+                
+              tag
+              
+                .queryValue
+                
+                =
+                
+                tagNameToQueryValue ( tag.name );
+                
+              };
+              
+            tags.forEach ( callback );
+            
             sessionStorage.setItem (
             
               codeKey,
@@ -314,6 +328,20 @@
           .replaceAll ( '--', '-' );
           
       return className;
+      
+      },
+      
+    tagNameToQueryValue = ( name ) => {
+    
+      const queryValue = name
+        
+          .replaceAll ( ' ', '-' )
+          
+          .replace ( /[^\w-]+/g, '' )
+          
+          .replaceAll ( '--', '-' );
+          
+      return queryValue;
       
       };
       
