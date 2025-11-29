@@ -43,7 +43,7 @@ Format mobile menu as an outline.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Element/Header/Header%20Menu%20Mobile%20Outline/header%20menu%20mobile%20outline.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cea1a7ce5aa68df651c88885e89c9ceb9e309e34/v7.1/Element/Header/Header%20Menu%20Mobile%20Outline/header%20menu%20mobile%20outline.min.js" type="module"></script>
       
       <!-- end TWC Header Menu Mobile Outline -->
       
