@@ -28,12 +28,12 @@ Format mobile menu as an outline.
   externally on the [jsDelivr][4], a [CDN][5])
   
   * Add code from file **[header menu mobile outline options.less][6]** to
-    Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][7]
-    for details. Read the code for any instructions within.
+    Website > Pages > Custom Code > Custom CSS.
     
   * Add code from file **[header menu mobile outline.less][8]** to Website >
-    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][7] for
-    details.
+    Pages > Custom Code > Custom CSS.
+    
+  * Refer to [Using the CSS Editor][7] for details.
     
   * Add the following code to Website > Pages > Custom Code > Code Injection >
     FOOTER.
