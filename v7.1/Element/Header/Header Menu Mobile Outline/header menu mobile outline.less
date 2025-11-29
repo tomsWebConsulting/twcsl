@@ -1,40 +1,25 @@
-/*
+/* begin TWC Header Menu Mobile Outline */
 
-  begin header menu mobile outline
+  /*
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.4.0
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Dependencies  : LESS
-  
-  Copyright     : 2021-2024 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  */
-  
-  .twc-hmmo {
-  
-    // values are false or true, toggle if outline is expandable or not
+    begin header menu mobile outline
     
-    --twc-hmmo-expandable : false;
+    License       : < https://tinyurl.com/s872fb68 >
     
-    // values are false or true, toggle if icon is active or not, only applies
-    // if twc-hmmo-expandable is true
+    Version       : 0.5.0
     
-    --twc-hmmo-icon-active : true;
+    SS Version    : 7.1
     
-    }
+    Dependencies  : LESS
     
-  // do not change anything below, there be the borg here
-  
+    Copyright     : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
   .twc-hmmo {
   
     ul {
@@ -46,15 +31,6 @@
       
       }
       
-    .chevron--down,
-    .chevron--up
-    
-      {
-      
-        margin-left : 0.25em;
-        
-        }
-        
     .header-menu-nav-item {
     
       padding-left : unset;
@@ -74,9 +50,9 @@
       
       }
       
-    &[ data-twc-hmmo-expandable ] {
+    &[data-twc-hmmo-expandable] {
     
-      [ data-folder-id ] ~ ul {
+      [data-folder-id] ~ ul {
       
         display : none;
         
@@ -90,11 +66,11 @@
         
       }
       
-    &:not( [ data-twc-hmmo-expandable ] ) [ data-folder-id ] {
+    &:not( [data-twc-hmmo-expandable] ) [data-folder-id] {
     
       pointer-events : none;
       
-      .chevron {
+      .header-dropdown-icon {
       
         display : none;
         
@@ -104,4 +80,4 @@
       
     }
     
-  /* end header menu mobile outline */
+  /* end TWC Header Menu Mobile Outline */
