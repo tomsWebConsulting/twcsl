@@ -99,8 +99,6 @@ not necessarily designed to work together.
       
     * [Store Page Product Add to Cart Button URL Redirect After Added to Cart](Page/Store/Store%20Page%20Product%20Add%20to%20Cart%20Button%20URL%20Redirect%20After%20Added%20to%20Cart)
       
-    * [Store Page Tags Product Mark Add](Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add)
-      
     * [Store Page Price Change](Page/Store/Store%20Page%20Price%20Change)
       
     * [Detail](Page/Store/Detail)
@@ -385,6 +383,8 @@ not necessarily designed to work together.
           
     * [Store](v7.1/Page/Store)
       
+      * [Store Page Tags Product Mark Add](v7.1/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add)
+        
       * [Detail](v7.1/Page/Store/Detail)
         
         * [Store Page Detail Related Products Three](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Three)
@@ -433,8 +433,6 @@ not necessarily designed to work together.
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
           
-        * [Store Page List Badges](v7.1/Page/Store/List/Store%20Page%20List%20Badges)
-          
         * [Store Page List Categories Cache](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache)
           
         * [Store Page List Columns](v7.1/Page/Store/List/Store%20Page%20List%20Columns)
@@ -462,6 +460,8 @@ not necessarily designed to work together.
         * [Store Page List Categories Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add)
           
         * [Store Page List Categories URL Fragment Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20URL%20Fragment%20Add)
+          
+        * [Store Page List Product Marks To Badges](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges)
           
         * [SPLACR Simple Redirect](v7.1/Page/Store/List/SPLACR%20Simple%20Redirect)
           
