@@ -10,17 +10,15 @@ Add product marks using tags.
 
   * 0.1.0
 
-#### SS Versions
+#### SS Version
 
   * 7.1
-  
-  * 7.0
 
-#### v7.1 Products V2 Compatible
+#### Products V2 Compatible
 
   * Not Applicable
   
-#### v7.1 Fluid Engine Compatible
+#### Fluid Engine Compatible
 
   * Not Applicable
 
