@@ -1,0 +1,83 @@
+/* begin TWC Store Page List Product Marks To Badges */
+
+  /*!
+  
+    store page list product marks to badges
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Note          : this code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-status .product-mark.twc-splpmtb-hide {
+  
+    display : none;
+    
+    }
+    
+  .product-list .product-list-container {
+  
+    --twc-splpmtb-border-radius : unset;
+    --twc-splpmtb-bottom : unset;
+    --twc-splpmtb-left : unset;
+    --twc-splpmtb-right : unset;
+    --twc-splpmtb-top : unset;
+    --twc-splpmtb-x : 0;
+    --twc-splpmtb-y : 0;
+    
+    }
+    
+  .twc-splpmtb-item {
+  
+    bottom : var( --twc-splpmtb-bottom );
+    display : flex;
+    flex-direction : column;
+    font-family : var( --twc-splpmtb-font-family );
+    font-size : var( --twc-splpmtb-font-size );
+    font-style : var( --twc-splpmtb-font-style );
+    font-weight : var( --twc-splpmtb-font-weight );
+    gap : 0.5em;
+    left : var( --twc-splpmtb-left );
+    letter-spacing : var( --twc-splpmtb-letter-spacing );
+    line-height : 1em;
+    list-style-type : none;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    right : var( --twc-splpmtb-right );
+    text-transform : var( --twc-splpmtb-text-transform );
+    top : var( --twc-splpmtb-top );
+    transform : translate( var( --twc-splpmtb-x ), var( --twc-splpmtb-y ) );
+    
+    }
+    
+  .twc-splpmtb-item li {
+  
+    background-color : var( --twc-splpmtb-background-color );
+    border-radius : var( --twc-splpmtb-border-radius );
+    color : var( --twc-splpmtb-color );
+    height : var( --twc-splpmtb-shape-size );
+    padding : var( --twc-splpmtb-padding );
+    text-align : center;
+    width : var( --twc-splpmtb-shape-size );
+    
+    }
+    
+  /* end TWC Store Page List Product Marks To Badges */

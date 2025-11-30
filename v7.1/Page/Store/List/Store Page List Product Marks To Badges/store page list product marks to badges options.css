@@ -1,0 +1,70 @@
+/* begin TWC Store Page List Product Marks To Badges Options */
+
+  /*
+  
+    store page list product marks to badges options
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.3.0
+    
+    SS Version    : 7.1
+    
+    Note          : the size of the badge for circle and square are not
+                    automatically calculated you need to adjust the size to fit
+                    the text you use
+    
+    Copyright     : 2023-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  .product-list .product-list-container {
+  
+    --twc-splpmtb-background-color : black;
+    --twc-splpmtb-color : white;
+    --twc-splpmtb-font-family : unset;
+    --twc-splpmtb-font-size : 10px;
+    --twc-splpmtb-font-style : normal; /* values are italic and normal */
+    --twc-splpmtb-font-weight : 400;
+
+    /* values are dock-horizontally, dock-vertically, floating, and flush */
+    
+    --twc-splpmtb-inset : floating;
+    
+    --twc-splpmtb-inset-space : 1em;
+    --twc-splpmtb-letter-spacing : 0.06em;
+    --twc-splpmtb-padding : 0.5em 1em;
+    
+    /*
+    
+      values are bottom-center, bottom-left, bottom-right, center,
+      center-left, center-right, top-center, top-left, top-right
+      
+      */
+      
+    --twc-splpmtb-position : top-right;
+    
+    /* values are circle, rectangle, and square */
+    
+    --twc-splpmtb-shape : rectangle;
+    
+    --twc-splpmtb-shape-size : unset; /* used for circle and square shapes
+    
+    /*  values are capitalize, lowercase, and uppercase */
+    
+    --twc-splpmtb-text-transform : uppercase;
+    
+    /*
+    
+      optional, value is a comma separated list of tag names as entered in
+      the Squarespace UI. be sure the value ends with a semi-colon
+      
+      */
+      
+    --twc-splpmtb-tag-match : [ optional, enter comma seperated list of tag names here replacing square brackets ];
+    
+    }
+    
+  /* end TWC Store Page List Product Marks To Badges Options */
