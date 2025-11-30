@@ -82,11 +82,12 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
+        * Use this option if you want to have this effect on all Store pages.
           
         * Add code from file **[store page list product marks to badges
-          options.html][9]** to Website > Pages > Custom Code >
-          Code Injection > FOOTER. Read the code for any instructions within.
+          options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read
+          the code for any instructions within. Refer to [Using the CSS
+          Editor][14] for details.
           
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -131,9 +132,9 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
       * Use this option if you want to have this effect on all Store pages.
         
       * Add code from file **[store page list product marks to badges
-        options.css][13]** to Website > Pages > Custom Code > Custom CSS. Refer
-        to [Using the CSS Editor][14] for details. Read the code for any
-        instructions within.
+        options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read
+        the code for any instructions within. Refer to [Using the CSS
+        Editor][14] for details.
         
       * Add code from file **[store page list product marks to badges.html][12]**
         to Website > Pages > Custom Code > Code Injection > FOOTER.
@@ -196,14 +197,6 @@ These images are examples.
     
 * Inset Size (margin around the badge for options that have an inset)
 
-## Custom Badges
-
-In addition to the Squarespace built-in badges this code lets you add your own
-custom badges to products. For example lets say you want to add a **pre-order
-badge** to a product. Edit the product. Add a tag with the text **twc splb
-pre-order**. You will now see a pre-order badge on the store page list and
-detail pages.
-
 ## Demo
 
 You can see a [demo of this effect here][31].
@@ -244,7 +237,7 @@ Please consider [making a donation][32].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Page%20Tags%20Cache
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Page%20Tags%20Cache#page-tags-cache
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add#store-page-tags-product-mark-add
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add#store-page-tags-product-mark-add
 [7]: https://www.jsdelivr.com/
 [8]: https://en.wikipedia.org/wiki/Content_delivery_network
 [9]: store%20page%20list%20product%20marks%20to%20badges%20options.html#L1
