@@ -70,9 +70,9 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f68dbd2063d2d59b9b48d59d2407d46d692b7cbb/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f68dbd2063d2d59b9b48d59d2407d46d692b7cbb/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Marks To Badges -->
             
@@ -96,9 +96,9 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f68dbd2063d2d59b9b48d59d2407d46d692b7cbb/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d7cb7fe85bd3aa4677108522bb35cc86b689060b/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f68dbd2063d2d59b9b48d59d2407d46d692b7cbb/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/store%20page%20list%20product%20marks%20to%20badges.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Marks To Badges -->
             
