@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version       : 0.3.0
     
     SS Versions   : 7.1, 7.0
     
@@ -19,9 +19,17 @@
     Engine
     Compatible    : Not Applicable
     
-    Note          : the code makes a call to an unofficial Squarespace
+    Notes         : the code makes a call to an unofficial Squarespace
                     GetCollectionTags API for information that is not
                     normally available through other means
+                    
+                    the cache disable option doesn't disable the overall
+                    cache logic. it simply removes the session storage key
+                    after user callbacks are run. this causes the cache data
+                    to be regenerated when the Store page is reloaded
+                    
+                    this can be useful for testing or if you want site
+                    visitors to always have access to the current tags
     
     Copyright     : 2025 Thomas Creedon
                     
@@ -33,7 +41,7 @@
     
   const
   
-    version = '0.2.0',
+    version = '0.3.0',
     
     s = `
     
@@ -169,32 +177,6 @@
   
     callback = async ( ) => {
     
-      const userCallbacks = ( tags ) => {
-      
-        const callback = ( callback ) => {
-        
-          try {
-          
-            callback ( tags );
-            
-            } catch ( error ) {
-            
-              const s = `${ codeKey } callback error`;
-              
-              console.error ( s, error );
-              
-              }
-              
-          };
-        
-        options
-        
-          .callbacks
-          
-          .forEach ( callback );
-          
-        };
-        
       let tags = sessionStorage
       
         .getItem ( codeKey );
@@ -207,6 +189,12 @@
         
         userCallbacks ( tags );
         
+        if ( options.cacheDisable )
+        
+          sessionStorage
+          
+            .removeItem ( codeKey );
+            
         return;
         
         }
@@ -307,6 +295,12 @@
               
             userCallbacks ( tags );
             
+            if ( options.cacheDisable )
+            
+              sessionStorage
+              
+                .removeItem ( codeKey );
+                
             }
             
       },
@@ -334,15 +328,41 @@
     tagNameToQueryValue = ( name ) => {
     
       const queryValue = name
+      
+        .replaceAll ( ' ', '-' )
         
-          .replaceAll ( ' ', '-' )
-          
-          .replace ( /[^\w-]+/g, '' )
-          
-          .replaceAll ( '--', '-' );
-          
+        .replace ( /[^\w-]+/g, '' )
+        
+        .replaceAll ( '--', '-' );
+        
       return queryValue;
       
+      },
+      
+    userCallbacks = ( tags ) => {
+    
+      const callback = ( callback ) => {
+      
+        try {
+        
+          callback ( tags );
+          
+          } catch ( error ) {
+          
+            const s = `${ codeKey } callback error`;
+            
+            console.error ( s, error );
+            
+            }
+            
+        };
+      
+      options
+      
+        .callbacks
+        
+        .forEach ( callback );
+        
       };
       
   document

@@ -8,7 +8,7 @@ Cache Page tags in sessionStorage.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -43,6 +43,10 @@ Cache Page tags in sessionStorage.
     
       * Use this option if you want to have this effect on only one Page.
         
+      * Add code from file **[page tags cache options.html][16]** to
+        Page Settings > Advanced > Page Header Code Injection for the page. Read
+        the code for any instructions within.
+        
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -65,6 +69,10 @@ Cache Page tags in sessionStorage.
         
       * v7.1
       
+        * Add code from file **[page tags cache options.html][16]** to Website >
+          Pages > Custom Code > Code Injection > FOOTER. Read the code for any
+          instructions within.
+          
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
           
@@ -81,6 +89,10 @@ Cache Page tags in sessionStorage.
           
       * v7.0
       
+        * Add code from file **[page tags cache options.html][16]** to Website >
+          Pages > Website Tools > Custom Code > Code Injection > FOOTER. Read
+          the code for any instructions within.
+          
         * Add the following code to Website > Pages > Website Tools >
           Custom Code > Code Injection > FOOTER.
           
@@ -106,6 +118,10 @@ Cache Page tags in sessionStorage.
   
     * Use this option if you want to have this effect on only one Page.
       
+    * Add code from file **[page tags cache options.html][16]** to
+      Page Settings > Advanced > Page Header Code Injection for the page. Read
+      the code for any instructions within.
+      
     * Add code from file **[page tags cache.html][8]** to Page Settings >
       Advanced > Page Header Code Injection for the Page.
       
@@ -117,11 +133,19 @@ Cache Page tags in sessionStorage.
       
     * v7.1
     
+      * Add code from file **[page tags cache options.html][16]** to Website >
+        Pages > Custom Code > Code Injection > FOOTER. Read the code for any
+        instructions within.
+        
       * Add code from file **[page tags cache.html][8]** to Website >
         Pages > Custom Code > Code Injection > FOOTER.
         
     * v7.0
     
+      * Add code from file **[page tags cache options.html][16]** to Website >
+        Pages > Website Tools > Custom Code > Code Injection > FOOTER. Read
+        the code for any instructions within.
+        
       * Add code from file **[page tags cache.html][8]** to Website > Pages >
         Website Tools > Custom Code > Code Injection > FOOTER.
         
@@ -171,6 +195,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2025-11-30**
+
+  * added cache disable option
+  * bumped version to 0.3.0
+  
 * **2025-11-27**
 
   * added queryValue to tag data
@@ -185,6 +214,7 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[16]: page%20tags%20cache%20options.html#L1
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: page%20tags%20cache.html#L1
