@@ -55,7 +55,7 @@ Cache Page tags in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4c57b7e14dbd061057a912db41ceaaf635f99592/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Tags Cache -->
           
@@ -81,7 +81,7 @@ Cache Page tags in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4c57b7e14dbd061057a912db41ceaaf635f99592/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Tags Cache -->
             
@@ -101,7 +101,7 @@ Cache Page tags in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4c57b7e14dbd061057a912db41ceaaf635f99592/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Tags Cache -->
             
