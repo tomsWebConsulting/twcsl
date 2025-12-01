@@ -43,7 +43,7 @@ Cache Page tags in sessionStorage.
     
       * Use this option if you want to have this effect on only one Page.
         
-      * Add code from file **[page tags cache options.html][16]** to
+      * Add code from file **[page tags cache options.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the page. Read
         the code for any instructions within.
         
@@ -61,7 +61,7 @@ Cache Page tags in sessionStorage.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
+      * Refer to [per-page code injection][7] for details.
       
     * Site-wide
     
@@ -69,7 +69,7 @@ Cache Page tags in sessionStorage.
         
       * v7.1
       
-        * Add code from file **[page tags cache options.html][16]** to Website >
+        * Add code from file **[page tags cache options.html][6]** to Website >
           Pages > Custom Code > Code Injection > FOOTER. Read the code for any
           instructions within.
           
@@ -89,7 +89,7 @@ Cache Page tags in sessionStorage.
           
       * v7.0
       
-        * Add code from file **[page tags cache options.html][16]** to Website >
+        * Add code from file **[page tags cache options.html][6]** to Website >
           Pages > Website Tools > Custom Code > Code Injection > FOOTER. Read
           the code for any instructions within.
           
@@ -107,7 +107,7 @@ Cache Page tags in sessionStorage.
             
           ```
           
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to code injection][8] for details.
 
 * On-site
 
@@ -118,14 +118,14 @@ Cache Page tags in sessionStorage.
   
     * Use this option if you want to have this effect on only one Page.
       
-    * Add code from file **[page tags cache options.html][16]** to
+    * Add code from file **[page tags cache options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Read
       the code for any instructions within.
       
-    * Add code from file **[page tags cache.html][8]** to Page Settings >
+    * Add code from file **[page tags cache.html][9]** to Page Settings >
       Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][6] for details.
+    * Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
@@ -133,27 +133,27 @@ Cache Page tags in sessionStorage.
       
     * v7.1
     
-      * Add code from file **[page tags cache options.html][16]** to Website >
+      * Add code from file **[page tags cache options.html][6]** to Website >
         Pages > Custom Code > Code Injection > FOOTER. Read the code for any
         instructions within.
         
-      * Add code from file **[page tags cache.html][8]** to Website >
+      * Add code from file **[page tags cache.html][9]** to Website >
         Pages > Custom Code > Code Injection > FOOTER.
         
     * v7.0
     
-      * Add code from file **[page tags cache options.html][16]** to Website >
+      * Add code from file **[page tags cache options.html][6]** to Website >
         Pages > Website Tools > Custom Code > Code Injection > FOOTER. Read
         the code for any instructions within.
         
-      * Add code from file **[page tags cache.html][8]** to Website > Pages >
+      * Add code from file **[page tags cache.html][9]** to Website > Pages >
         Website Tools > Custom Code > Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][7] for details.
+    * Refer to [Add code to code injection][8] for details.
 
 ## Callback Example
 
-You can create [callback][9] functions to customize the processing of the tags
+You can create [callback][10] functions to customize the processing of the tags
 or use them.
 
 Your callback must accept an array parameter.
@@ -191,7 +191,7 @@ Your callback must accept an array parameter.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -214,9 +214,9 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[16]: page%20tags%20cache%20options.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: page%20tags%20cache.html#L1
-[9]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: page%20tags%20cache%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: page%20tags%20cache.html#L1
+[10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
