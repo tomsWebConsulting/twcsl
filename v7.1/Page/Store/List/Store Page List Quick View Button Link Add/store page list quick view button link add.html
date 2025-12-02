@@ -1,0 +1,239 @@
+<!-- begin TWC Store Page List Quick View Button Link Add -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page list quick view button link add
+        
+        License        : < https://tinyurl.com/s872fb68 >
+        
+        Version        : 0.2.0
+        
+        SS Version     : 7.1
+        
+        Products V2
+        Compatible      : Not Applicable
+        
+        Fluid
+        Engine
+        Compatible     : Not Applicable
+        
+        Dependencies   : product quick view observe changes
+        
+        Note           : this code does not work on the checkout page. it is a
+                         Squarespace security feature that no code can alter the
+                         checkout page
+        
+        Copyright      : 2021-2025 Thomas Creedon
+                         
+                         Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        title = 'Store Page List Quick View Button Link Add',
+        
+        version = '0.2.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc splqvbla sub-module
+        
+        twc.splqvbla = ( ( self ) => self ) ( twc.splqvbla || { } );
+        
+        }
+        
+      const
+      
+        codeKey = `twc-splqvbla`,
+        
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+        hasOptions = Object
+        
+          .keys ( options )
+          
+          .length;
+          
+      if ( ! hasOptions ) return; // bail if no options
+      
+      window.twcSplqvbla = ( element ) => {
+      
+        const
+        
+          selector = '.sqs-add-to-cart-button-wrapper:first-child',
+          
+          addToCartButtonElement
+          
+            =
+            
+            element
+            
+              .querySelector ( selector );
+              
+        /* bail if no add to cart button. the button not being displayed by
+           means of CSS has no effect */
+        
+        if ( ! addToCartButtonElement ) return;
+        
+        const
+        
+          changeTag = ( element, tag ) => {
+          
+            const newElement = document
+            
+              .createElement ( tag );
+            
+            [
+            
+              ...
+              
+              element
+              
+              .attributes
+              
+              ]
+              
+              .forEach (
+              
+                a => newElement.setAttribute ( a.name, a.value )
+                
+                );
+                
+            newElement
+            
+              .append (
+              
+                ...
+                
+                element
+                
+                  .childNodes
+                  
+                );
+                
+            element.replaceWith ( newElement );
+            
+            return newElement;
+            
+            },
+            
+          buttonElement = addToCartButtonElement
+          
+            .cloneNode ( true ),
+            
+          removeAttributes
+          
+            =
+            
+            ( element, attributeNames, recursive = true ) => {
+            
+              const names = attributeNames.split ( /\s+/ );
+              
+              names.forEach (
+              
+                n => element.removeAttribute ( n )
+                
+                );
+                
+              if ( ! recursive ) return element; // bail if not recursive
+              
+              names.forEach (
+              
+                name =>
+                
+                  element
+                  
+                    .querySelectorAll ( `[ ${ name } ]` )
+                    
+                    .forEach ( e => e.removeAttribute ( name ) )
+                    
+                );
+                
+              return element;
+              
+              };
+              
+        // set up button element
+        
+        {
+        
+          const
+          
+            attributes = [
+            
+              'data-dynamic-strings',
+            
+              'disabled',
+              
+              'data-quick-view-source'
+              
+              ]
+              
+              .join ( ' ' );
+              
+          let element = buttonElement
+          
+            .querySelector ( '.sqs-add-to-cart-button' );
+            
+          removeAttributes ( buttonElement, 'id' );
+          
+          element = changeTag ( element, 'a' );
+          
+          element
+          
+            .setAttribute( 'href', options.url );
+            
+          removeAttributes ( element, attributes, false );
+          
+          element
+          
+            .querySelector ( '.sqs-add-to-cart-button-inner' )
+            
+            .innerHTML
+            
+            =
+            
+            options.text;
+            
+          }
+          
+        addToCartButtonElement
+        
+          .after ( buttonElement );
+          
+        };
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Quick View Button Link Add -->
