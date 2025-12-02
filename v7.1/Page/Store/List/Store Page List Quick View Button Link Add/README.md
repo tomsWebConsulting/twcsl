@@ -62,7 +62,7 @@ Add a button link to a URL.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add/store%20page%20list%20quick%20view%20button%20link%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fe5da21f3a98539d1c08eec307c39cce6f8cd68c/v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add/store%20page%20list%20quick%20view%20button%20link%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Quick View Button Link Add -->
             
@@ -86,7 +86,7 @@ Add a button link to a URL.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add/store%20page%20list%20quick%20view%20button%20link%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fe5da21f3a98539d1c08eec307c39cce6f8cd68c/v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add/store%20page%20list%20quick%20view%20button%20link%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Quick View Button Link Add -->
             
