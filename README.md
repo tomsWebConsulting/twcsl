@@ -443,6 +443,8 @@ not necessarily designed to work together.
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
+        * [Store Page List Quick View Button Link Add](v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add)
+          
         * [Store Page List Tag Description Add](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add)
           
         * [Store Page List Products Hide](v7.1/Page/Store/List/Store%20Page%20List%20Products%20Hide)
@@ -525,8 +527,6 @@ not necessarily designed to work together.
       
       * [Section Auto Layout Right Arrow Auto Click](v7.1/Section/Auto%20Layout/Section%20Auto%20Layout%20Right%20Arrow%20Auto%20Click)
         
-  * [Store Product Grid Quick View Button Link Add](v7.1/Store%20Product%20Grid%20Quick%20View%20Button%20Link%20Add)
-    
   * [Blog Post Categories and Tags Add](v7.1/Blog%20Post%20Categories%20and%20Tags%20Add)
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
