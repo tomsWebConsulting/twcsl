@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.12.3
+  * 0.12.4
 
 #### SS Version
 
@@ -28,39 +28,90 @@ Add simple category descriptions to store category pages.
 
 ---
 
-## Install
+## Install Options
 
-* Options
+* CDN Hosted
 
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
+  
+  * Options
+  
+    * Page Specific
+    
+      * Use this option if you want to have this effect on only one Store page.
+        
+      * Add code from file **[store page list categories description add
+        options.html][6]** to Store Page Settings > Advanced >
+        Page Header Code Injection for the page. Read the code for any
+        instructions within.
+        
+      * Add the following code to Store Page Settings > Advanced >
+        Page Header Code Injection for the page.
+        
+        ```html
+        <!-- begin TWC Store Page List Categories Description Add -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page List Categories Description Add -->
+          
+        ```
+        
+      * Refer to [per-page code injection][7] for details.
+      
+    * Site-wide
+    
+      * Use this option if you want to have this effect on all Store pages.
+        
+      * Add code from file **[store page list categories description add
+        options.html][6]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Store Page List Categories Description Add -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@324e0bd79d7730ef3122f6be28090dfd3da74f9f/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page List Categories Description Add -->
+          
+        ```
+        
+        Refer to [Add code to code injection][8] for details.
+
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
+  
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
+    * Use this option if you want to have this effect on only one Store page.
       
-    * Add code from file **[store page list categories description add
-      options.html][4]** to Page Settings > Advanced > Page Header Code
-      Injection for the page. Read the code for any instructions within.
-      
-    * Add code from file **[store page list categories description
-      add.html][5]** to Page Settings > Advanced > Page Header Code Injection
-      for the page.
-      
-    * Refer to [per-page code injection][6] for details.
+    * Add code from files **[store page list categories description add
+      options.html][6]** and **[store page detail title text to link.html][9]**
+      to Store Page Settings > Advanced > Page Header Code Injection for the
+      page. Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
+    * Use this option if you want to have this effect on all Store pages.
       
-    * Add code from file **[store page list categories description add
-      options.html][4]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Read the code for any instructions within.
-      
-    * Add code from file **[store page list categories description
-      add.html][5]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER.
-      
-    * Refer to [Add code to code injection][7] for details.
+    * Add code from files **[store page list categories description add
+      options.html][6]** and **[store page detail title text to link.html][9]**
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+      code to code injection][8] for details.
       
 ## Notes
 
@@ -72,14 +123,20 @@ If you use the page style HTML you will need to create your own CSS to style it.
 
 ## Demo
 
-You can see a [demo of this effect here][8].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-12-02**
+
+  * fixed default destinationSelector after more Squarespace Store page header
+    changes
+  * bumped version to 0.12.4
+  
 * **2025-08-26**
 
   * added CSS to hide description when editing section, less user confusion
@@ -225,9 +282,11 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: store%20page%20list%20categories%20description%20add%20options.html#L1
-[5]: store%20page%20list%20categories%20description%20add.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: store%20page%20detail%20title%20text%20to%20link%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: store%20page%20detail%20title%20text%20to%20link.html#L1
+[10]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-description-add?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

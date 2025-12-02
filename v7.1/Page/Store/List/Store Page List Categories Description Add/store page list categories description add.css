@@ -1,0 +1,86 @@
+/*!
+
+  store page list categories description add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.12.4
+  
+  SS Version    : 7.1
+  
+  Products V2
+  Compatible    : Yes
+  
+  Fluid
+  Engine
+  Compatible    : Not Applicable
+  
+  Notes         : the code is comprised of a style and script tag. both are
+                  needed for the full effect to work
+                      
+                  the code makes a call to the json version of the store page
+                  for the categories
+  
+  Copyright     : 2021-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+@media screen and ( max-width : 575px ) {
+
+  .twc-splcda-description {
+  
+    margin-bottom : 0;
+    margin-top : 0;
+    padding-bottom : 30px;
+    padding-top : 44px;
+    
+    }
+    
+  }
+  
+@media screen and ( min-width : 576px ) {
+
+  .product-list [ data-product-list-layout="grid" ][ data-header-text-alignment="left" ] .twc-splcda-description {
+  
+    text-align : left;
+    
+    }
+    
+  .product-list [ data-product-list-layout="grid" ][ data-header-text-alignment="center" ] .twc-splcda-description {
+  
+    justify-content : center;
+    text-align : center;
+    
+    }
+    
+  .twc-splcda-description {
+  
+    margin-bottom : 37px;
+    padding-bottom : calc( 54px / 2 ); /* default divided */
+    position : relative;
+    
+    }
+    
+  .twc-splcda-description::after {
+  
+    border-bottom : 1px solid;
+    bottom : 0;
+    content : '';
+    left : 0;
+    opacity : 0.2;
+    position : absolute;
+    width : 100%;
+    
+    }
+    
+  }
+  
+body.sqs-is-page-editing .twc-splcda-description {
+
+  display : none;
+  
+  }
