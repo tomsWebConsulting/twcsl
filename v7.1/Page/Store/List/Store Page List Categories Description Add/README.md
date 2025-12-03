@@ -133,7 +133,7 @@ Please consider [making a donation][11].
 
 * **2025-12-03**
 
-  * fixed with code not working with some Store page settings
+  * fixed code not working with some Store page settings
   * bumped version to 0.12.5
   
 * **2025-12-02**
