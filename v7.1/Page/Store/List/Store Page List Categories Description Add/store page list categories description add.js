@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.12.4
+    Version       : 0.12.5
     
     SS Version    : 7.1
     
@@ -33,7 +33,7 @@
     
   const
   
-    version = '0.12.4',
+    version = '0.12.5',
   
     s = `
     
@@ -131,20 +131,36 @@
           
           'after',
           
-        destinationSelector
+        destinationElement
         
           =
           
-          options.destinationSelector [ 0 ] !== '['
+          options.destinationSelector [ 0 ] === '['
           
           ?
           
-          options.destinationSelector
+          document
           
+            .body
+            
+            .querySelector ( '.category-navigation--desktop' )
+            
+          ||
+          
+          document
+          
+            .body
+            
+            .querySelector ( '.category-navigation--mobile' )
+            
           :
           
-          '.category-navigation--desktop',
+          document
           
+            .body
+            
+            .querySelector ( options.destinationSelector ),
+            
         formatHtmlMap = {
         
           'Heading 1'       : '<h1 />',
@@ -166,15 +182,15 @@
           
           },
           
+        hasCustomDestinationSelector
+        
+          =
+          
+          options.destinationSelector [ 0 ] !== '[',
+          
         wrapperElement = document
         
-          .createElement ( 'div' ),
-          
-        destinationElement = document
-        
-          .body
-          
-          .querySelector ( destinationSelector );
+          .createElement ( 'div' );
           
       let
       

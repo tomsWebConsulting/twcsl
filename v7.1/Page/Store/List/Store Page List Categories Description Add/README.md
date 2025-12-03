@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.12.4
+  * 0.12.5
 
 #### SS Version
 
@@ -131,6 +131,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-12-03**
+
+  * fixed with code not working with some Store page settings
+  * bumped version to 0.12.5
+  
 * **2025-12-02**
 
   * fixed default destinationSelector after more Squarespace Store page header
