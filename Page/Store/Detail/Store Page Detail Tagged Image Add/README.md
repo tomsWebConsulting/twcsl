@@ -1,10 +1,10 @@
 # Store Page Detail Tagged Image Add
 
+### [License][1]
+
 ### Synopsis
 
 Add images after product description based on tags.
-
-### [License][1]
 
 ### Version
 

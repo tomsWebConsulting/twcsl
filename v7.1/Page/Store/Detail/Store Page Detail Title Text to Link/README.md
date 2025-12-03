@@ -1,10 +1,10 @@
 # Store Page Detail Title Text to Link
 
+### [License][1]
+
 ### Synopsis
 
 Link text in the title.
-
-### [License][1]
 
 ### Version
 

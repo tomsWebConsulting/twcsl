@@ -1,10 +1,10 @@
 # Store Page List Empty HTML Add
 
+### [License][1]
+
 ### Synopsis
 
 When there are no list products add html to the page.
-
-### [License][1]
 
 ### Version
 

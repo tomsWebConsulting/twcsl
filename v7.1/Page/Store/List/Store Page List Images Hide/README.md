@@ -1,10 +1,10 @@
 # Store Page List Images Hide
 
+### [License][1]
+
 ### Synopsis
 
 Hide images on the list page.
-
-### [License][1]
 
 ### Version
 
