@@ -391,6 +391,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
           
+        * [Store Page Detail Additional Info Footer Section Append](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append)
+          
         * [Store Page Detail Related Products Four](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Four)
           
         * [Store Page Detail Price Total](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Total)
@@ -416,8 +418,6 @@ not necessarily designed to work together.
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
         * [Store Page Detail Variant Display Button Vertical](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Vertical)
-          
-        * [Store Page Detail Additional Info Add Footer Boilerplate](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Add%20Footer%20Boilerplate)
           
         * [Store Page Detail Variant Display Button Readability Fix](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Readability%20Fix)
           
