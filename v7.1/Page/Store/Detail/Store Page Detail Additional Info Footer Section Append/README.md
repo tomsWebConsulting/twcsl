@@ -55,14 +55,14 @@ Append footer section to Store page Additional Info.
       
     * Add code from file **[store page detail additional info footer section
       append.css][9]** to Website > Pages > Custom Code > Custom CSS. Refer to
-      [Using the CSS Editor][99] for details.
+      [Using the CSS Editor][10] for details.
       
     * Add code from file **[store page detail additional info footer section
       append.js][8]** to the **elements manipulate options** code.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -83,6 +83,6 @@ Please consider [making a donation][10].
 [6]: store%20page%20detail%20additional%20info%20footer%20section%20append.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [8]: store%20page%20detail%20additional%20info%20footer%20section%20append.js#L1
-[9]: store%20page%20detail%20additional%20info%20footer%20section%20append.html#L1
-[99]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: store%20page%20detail%20additional%20info%20footer%20section%20append.css#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
