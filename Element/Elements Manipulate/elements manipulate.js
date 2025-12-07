@@ -1,0 +1,481 @@
+( ( ) => {
+
+  /*!
+  
+    elements manipulate
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.11.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible      : Yes
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Yes
+    
+    Note            : this code is a base for other effects. you will want to
+                      create CSS to hide and show elements. after an element is
+                      replaced the class twc-em-show will be added to it which
+                      can be used to show elements
+    
+    Copyright       : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.11.0',
+    
+    s = `
+    
+      Elements Manipulate v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2025 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const callback = ( ) => {
+  
+    // globals
+    
+    {
+    
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc em sub-module
+      
+      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      
+      // initialize twc em callbacks sub-module
+      
+      twc.em.callbacks = ( ( self ) => self ) ( twc.em.callbacks || { } );
+      
+      // initialize twc em maps sub-module
+      
+      twc.em.maps = ( ( self ) => self ) ( twc.em.maps || [ ] );
+      
+      }
+      
+    const maps = twc.em.maps;
+    
+    if ( ! maps.length ) return; // bail if no maps
+    
+    const
+    
+      actionCallback = ( sourceElement, object ) => {
+      
+        const
+        
+          hasDestinationAncestorSelector
+          
+            =
+            
+            !
+            
+            new RegExp ( '^\\[.+\\]$' )
+            
+              .test ( object.destinationAncestorSelector ),
+              
+          hasSourceAncestorSelector
+          
+            =
+            
+            !
+            
+            new RegExp ( '^\\[.+\\]$' )
+            
+              .test ( object.sourceAncestorSelector ),
+              
+          isDestinationSource
+          
+            =
+            
+            object
+                
+              .destinationSelector
+              
+            ===
+            
+            `x-${ codeKey }-source`;
+            
+        let
+        
+          destinationElement,
+          
+          isSourceCopy = object.sourceCopy,
+          
+          rootElement = document,
+          
+          sourceCopyElement;
+          
+        if ( hasDestinationAncestorSelector )
+        
+          destinationElement
+          
+            =
+            
+            destinationElement
+            
+              .closest (
+              
+                object
+                
+                  .destinationAncestorSelector
+                  
+                );
+                
+        if ( hasSourceAncestorSelector )
+        
+          sourceElement
+          
+            =
+            
+            sourceElement
+            
+              .closest (
+              
+                object
+                
+                  .sourceAncestorSelector
+                  
+                );
+                
+        if ( isSourceCopy )
+        
+          sourceCopyElement = sourceElement
+          
+            .cloneNode ( true );
+            
+        if ( ! isDestinationSource ) {
+        
+          const hasRootSelector
+          
+            =
+            
+            !
+            
+            new RegExp ( '^\\[.+\\]$' )
+            
+              .test ( object.rootSelector );
+              
+          if ( hasRootSelector )
+          
+            rootElement = sourceElement
+            
+              .closest ( object.rootSelector );
+              
+          destinationElement
+          
+            =
+            
+            rootElement
+            
+              .querySelector (
+              
+                object
+                
+                  .destinationSelector
+                  
+                );
+                
+          // continue if no destination
+          
+          if ( destinationElement === null ) return;
+          
+          } else
+          
+            destinationElement = sourceElement;
+            
+        const
+        
+          action = object.action,
+          
+          callback = ( callbackName ) => {
+          
+            try {
+            
+              sourceElement = codeKey
+              
+                .split ( '-' )
+                
+                .reduce ( ( obj, key ) => obj?.[ key ], window )
+                
+                .callbacks
+                
+                [ callbackName ]
+                
+                ( sourceElement, sourceCopyElement );
+                
+              if ( ! sourceElement === null ) return; // bail if no element
+              
+              } catch ( error ) {
+              
+                const s =
+                
+                  `${ codeKey } ${ callbackName } callback error`;
+                  
+                console.error ( s, error );
+                
+                }
+                
+            },
+            
+          hasCallbacks = object
+        
+            .callbacks
+            
+            .length;
+            
+        if ( isSourceCopy && ! hasCallbacks )
+        
+          sourceElement = sourceCopyElement;
+          
+          else
+          
+            object
+            
+              .callbacks
+              
+              .forEach ( callback );
+              
+        if ( object.onEditModeRemove )
+        
+          sourceElement
+          
+            .setAttribute ( attribute, '' );
+            
+        switch ( action ) {
+        
+          case 'after' :
+          
+            destinationElement
+            
+              .insertAdjacentElement (
+              
+                'afterend',
+                
+                sourceElement
+                
+                );
+                
+            break;
+            
+          case 'append' :
+          
+            destinationElement
+            
+              .insertAdjacentElement (
+              
+                'beforeend',
+                
+                sourceElement
+                
+                );
+                
+            break;
+            
+          case 'before' :
+          
+            destinationElement
+            
+              .insertAdjacentElement (
+              
+                'beforebegin',
+                
+                sourceElement
+                
+                );
+                
+            break;
+            
+          case 'prepend' :
+          
+            destinationElement
+            
+              .insertAdjacentElement (
+              
+                'afterbegin',
+                
+                sourceElement
+                
+                );
+                
+            break;
+            
+          case 'replace' :
+          
+            replaceNode ( destinationElement, sourceElement );
+            
+            break;
+            
+          }
+          
+        },
+        
+      codeKey = 'twc-em',
+      
+      mapsCallback = ( object ) => {
+      
+        for ( const [ key, value ] of Object.entries ( object ) ) {
+        
+          selectorObjectCallback ( key, value );
+          
+          }
+          
+        },
+        
+      replaceNode = ( node, newNode ) => {
+      
+        node
+        
+          .insertAdjacentElement (
+          
+            'beforebegin',
+            
+            newNode
+            
+            );
+            
+        node.remove ( );
+        
+        },
+        
+      selectorObjectCallback = ( selector, object ) => {
+      
+        let i = 1;
+        
+        object.repeat++
+        
+        while ( i < object.repeat ) {
+        
+          const elements = document
+          
+            .querySelectorAll ( selector );
+            
+          elements.forEach ( e => actionCallback ( e, object ) );
+          
+          i++;
+          
+          }
+          
+        },
+        
+      attribute = `data-${ codeKey }-source-copy`;
+      
+    maps.forEach ( mapsCallback );
+    
+    const isPreview
+    
+      =
+      
+      !!
+      
+      window
+      
+        .top
+        
+        .document
+        
+        .body
+        
+        .querySelector ( 'iframe#sqs-site-frame' );
+        
+    if ( ! isPreview ) return; // bail if not preview
+    
+    const
+    
+      handleMutation = ( mutation ) => {
+      
+        const isClassAttribute = mutation
+        
+          .attributeName
+          
+          ===
+          
+          'class';
+          
+        // bail if not class attribute
+        
+        if ( ! isClassAttribute ) return true;
+        
+        const 
+        
+          element = mutation
+          
+            .target,
+            
+          isEditMode = element
+          
+            .classList
+            
+            .contains ( 'sqs-is-page-editing' );
+            
+        if ( ! isEditMode ) return true; // bail if not edit mode
+        
+        element
+        
+          .querySelectorAll ( `[ ${ attribute } ]` )
+          
+          .forEach ( e => e.remove ( ) );
+          
+        observer.disconnect ( );
+        
+        return false;
+        
+        };
+        
+      observer = new MutationObserver (
+      
+        ( mutations ) => {
+        
+          for ( const mutation of mutations ) {
+          
+            const isContinue = handleMutation ( mutation );
+            
+            if ( ! isContinue ) break; // bail if callback returns false
+            
+            }
+            
+          }
+          
+        );
+        
+    // start listening for changes in specified elements
+    
+    observer.observe (
+    
+      document.body,
+      
+      { attributes : true }
+      
+      );
+      
+    };
+    
+  document
+  
+    .addEventListener ( 'DOMContentLoaded', callback );
+    
+  } ) ( );

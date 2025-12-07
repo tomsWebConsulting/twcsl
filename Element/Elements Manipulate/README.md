@@ -5,11 +5,11 @@
 ### Synopsis
 
 Move or copy a source element to a destination element with the action of after,
-append, before, prepend, or replace.
+append, before, prepend, or replace and other settings.
 
 ### Version
 
-  * 0.10.1
+  * 0.11.0
 
 #### SS Versions
 
@@ -33,58 +33,167 @@ append, before, prepend, or replace.
 
 ## Install
 
+* CSS
+
   * v7.1
   
     * Add code from file **[elements manipulate.less][4]** to Website > Pages >
-      Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for
-      details.
-      
-    * Add code from file **[elements manipulate options.html][5]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-      injection][6] for details. Read the code for any instructions within.
-      
-    * Add code from file **[elements manipulate.html][7]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-      injection][6] for details.
+      Custom Code > Custom CSS.
       
   * v7.0
   
     * Add code from file **[elements manipulate.less][4]** to Website > Pages >
       Website Tools > Custom Code > Custom CSS.
       
-    * Add code from file **[elements manipulate options.html][5]** to Website >
-      Pages > Website Tools > Custom Code > Code Injection > FOOTER. Refer to
-      [Per-page code injection][6] for details. Read the code for any
-      instructions within.
+  * Refer to [Using the CSS Editor][5] for details.
+    
+* Options
+
+  * CDN Hosted
+  
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][6], a [CDN][7])
+    
+    * Options
+    
+      * Page Specific
       
-    * Add code from file **[elements manipulate.html][7]** to Website > Pages >
-      Website Tools > Custom Code > Code Injection > FOOTER. Refer to [Per-page
-      code injection][6] for details.
+        * Use this option if you want to have this effect on only one page.
+          
+        * Add code from file **[elements manipulate options.html][8]** to Page
+          Settings > Advanced > Page Header Code Injection for the page. Read
+          the code for any instructions within.
+          
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the page.
+          
+          ```html
+          <!-- begin TWC Elements Manipulate -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+            
+            <!-- end TWC Elements Manipulate -->
+            
+          ```
+          
+        * Refer to [per-page code injection][9] for details.
+        
+      * Site-wide
+      
+        * Use this option if you want to have this effect on all Store pages.
+          
+        * v7.1
+        
+          * Add code from file **[elements manipulate options.html][8]** to
+            Website > Pages > Custom Code > Code Injection > FOOTER. Read the
+            code for any instructions within.
+            
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Elements Manipulate -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              
+              <!-- end TWC Elements Manipulate -->
+              
+            ```
+            
+        * v7.0
+        
+          * Add code from file **[elements manipulate options.html][8]** to
+            Website > Pages > Website Tools > Custom Code > Code Injection >
+            FOOTER. Read the code for any instructions within.
+            
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Elements Manipulate -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              
+              <!-- end TWC Elements Manipulate -->
+              
+            ```
+            
+        * Refer to [Add code to code injection][10] for details.
+        
+  * On-site
+  
+    Use this option to install the full code of this effect (files hosted on your
+    site).
+    
+    * Page Specific
+    
+      * Use this option if you want to have this effect on only one page.
+        
+      * Add code from file **[elements manipulate options.html][8]** to Page
+        Settings > Advanced > Page Header Code Injection for the page. Read
+        the code for any instructions within.
+        
+      * Add code from file **[elements manipulate.html][11]** to Page Settings >
+        Advanced > Page Header Code Injection for the page.
+        
+      * Refer to [per-page code injection][9] for details.
+      
+    * Site-wide
+    
+      * Use this option if you want to have this effect on all pages.
+        
+      * v7.1
+      
+        * Add code from file **[elements manipulate options.html][8]** to Page
+          Settings > Advanced > Page Header Code Injection for the page. Read
+          the code for any instructions within.
+          
+        * Add code from file **[elements manipulate.html][11]** to Website >
+          Pages > Custom Code > Code Injection > FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[elements manipulate options.html][8]** to
+          Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER. Read the code for any instructions within.
+          
+        * Add code from file **[elements manipulate.html][11]** to Website >
+          Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+          
+      * Refer to [Add code to code injection][10] for details.
       
 ## Options Data Structure Templates
 
 * v7.1
 
-  * [Product Additional Info First N Blocks to End Of Product Meta][11]
+  * [Product Additional Info First N Blocks to End Of Product Meta][12]
   
-  * [Product Additional Info First Row Video Block Before Quantity][12]
+  * [Product Additional Info First Row Video Block Before Quantity][13]
   
-  * [Product Additional Info Specific Video Block Before Quantity][13]
+  * [Product Additional Info Specific Video Block Before Quantity][14]
 
 ## Effects Dependent on Elements Manipulate
 
 * v7.1
 
-  * [Blog Page Post Excerpt Element][9]
+  * [Blog Page Post Excerpt Element][15]
   
-  * [Footer Sections Append to Page Observe][8]
+  * [Footer Sections Append to Page Observe][16]
+  
+  * [Store Page Detail Additional Info Footer Section Append][17]
 
 ## Callbacks
 
-You can optionally add [callback][14] functions to further customize the
+You can optionally add [callback][18] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
-Refer to [Add code to code injection][6]. Order is not important.
+Refer to [Add code to code injection][10]. Order is not important.
 
 * Log the source element.
 
@@ -207,10 +316,15 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][15].
+Please consider [making a donation][19].
 
 ## Changes
 
+* **2025-12-06**
+
+  * added onEditModeRemove flag
+  * bumped version to 0.11.0
+  
 * **2025-10-08**
 
   * fixed issue with not being able to work with head elements
@@ -284,14 +398,18 @@ Please consider [making a donation][15].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: elements%20manipulate.less#L1
-[5]: elements%20manipulate%20options.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[7]: elements%20manipulate.html#L1
-[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
-[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
-[11]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[12]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[13]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
-[14]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[5]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
+[8]: elements%20manipulate%20options.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: elements%20manipulate.html#L1
+[12]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[13]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
+[14]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
+[15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
+[16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
+[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append#store-page-detail-additional-info-footer-section-append
+[18]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[19]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
