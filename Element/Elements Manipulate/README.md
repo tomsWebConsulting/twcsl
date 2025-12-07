@@ -28,36 +28,31 @@ append, before, prepend, or replace and other settings.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [Elements Manipulate][4]
 
 ---
 
 ## Install
 
-* Install **[Elements Manipulate][5]**. After you install the code be sure to
-  continue on with the rest of the steps.
-  
 * CSS
 
   * v7.1
   
-    * Add code from file **[elements manipulate.less][6]** to Website > Pages >
+    * Add code from file **[elements manipulate.less][4]** to Website > Pages >
       Custom Code > Custom CSS.
       
   * v7.0
   
-    * Add code from file **[elements manipulate.less][6]** to Website > Pages >
+    * Add code from file **[elements manipulate.less][4]** to Website > Pages >
       Website Tools > Custom Code > Custom CSS.
       
-  * Refer to [Using the CSS Editor][7] for details.
+  * Refer to [Using the CSS Editor][5] for details.
     
 * Options
 
   * CDN Hosted
   
     Use this option for the quickest way to install this effect (files hosted
-    externally on the [jsDelivr][8], a [CDN][9])
+    externally on the [jsDelivr][6], a [CDN][7])
     
     * Options
     
@@ -65,7 +60,7 @@ append, before, prepend, or replace and other settings.
       
         * Use this option if you want to have this effect on only one page.
           
-        * Add code from file **[elements manipulate options.html][10]** to Page
+        * Add code from file **[elements manipulate options.html][8]** to Page
           Settings > Advanced > Page Header Code Injection for the page. Read
           the code for any instructions within.
           
@@ -83,7 +78,7 @@ append, before, prepend, or replace and other settings.
             
           ```
           
-        * Refer to [per-page code injection][11] for details.
+        * Refer to [per-page code injection][9] for details.
         
       * Site-wide
       
@@ -91,7 +86,7 @@ append, before, prepend, or replace and other settings.
           
         * v7.1
         
-          * Add code from file **[elements manipulate options.html][10]** to
+          * Add code from file **[elements manipulate options.html][8]** to
             Website > Pages > Custom Code > Code Injection > FOOTER. Read the
             code for any instructions within.
             
@@ -111,7 +106,7 @@ append, before, prepend, or replace and other settings.
             
         * v7.0
         
-          * Add code from file **[elements manipulate options.html][10]** to
+          * Add code from file **[elements manipulate options.html][8]** to
             Website > Pages > Website Tools > Custom Code > Code Injection >
             FOOTER. Read the code for any instructions within.
             
@@ -129,7 +124,7 @@ append, before, prepend, or replace and other settings.
               
             ```
             
-        * Refer to [Add code to code injection][12] for details.
+        * Refer to [Add code to code injection][10] for details.
         
   * On-site
   
@@ -140,14 +135,14 @@ append, before, prepend, or replace and other settings.
     
       * Use this option if you want to have this effect on only one page.
         
-      * Add code from file **[elements manipulate options.html][10]** to Page
+      * Add code from file **[elements manipulate options.html][8]** to Page
         Settings > Advanced > Page Header Code Injection for the page. Read
         the code for any instructions within.
         
-      * Add code from file **[elements manipulate.html][13]** to Page Settings >
+      * Add code from file **[elements manipulate.html][11]** to Page Settings >
         Advanced > Page Header Code Injection for the page.
         
-      * Refer to [per-page code injection][11] for details.
+      * Refer to [per-page code injection][9] for details.
       
     * Site-wide
     
@@ -155,50 +150,50 @@ append, before, prepend, or replace and other settings.
         
       * v7.1
       
-        * Add code from file **[elements manipulate options.html][10]** to Page
+        * Add code from file **[elements manipulate options.html][8]** to Page
           Settings > Advanced > Page Header Code Injection for the page. Read
           the code for any instructions within.
           
-        * Add code from file **[elements manipulate.html][13]** to Website >
+        * Add code from file **[elements manipulate.html][11]** to Website >
           Pages > Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add code from file **[elements manipulate options.html][10]** to
+        * Add code from file **[elements manipulate options.html][8]** to
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER. Read the code for any instructions within.
           
-        * Add code from file **[elements manipulate.html][13]** to Website >
+        * Add code from file **[elements manipulate.html][11]** to Website >
           Pages > Website Tools > Custom Code > Code Injection > FOOTER.
           
-      * Refer to [Add code to code injection][12] for details.
+      * Refer to [Add code to code injection][10] for details.
       
 ## Options Data Structure Templates
 
 * v7.1
 
-  * [Product Additional Info First N Blocks to End Of Product Meta][14]
+  * [Product Additional Info First N Blocks to End Of Product Meta][12]
   
-  * [Product Additional Info First Row Video Block Before Quantity][15]
+  * [Product Additional Info First Row Video Block Before Quantity][13]
   
-  * [Product Additional Info Specific Video Block Before Quantity][16]
+  * [Product Additional Info Specific Video Block Before Quantity][14]
 
 ## Effects Dependent on Elements Manipulate
 
 * v7.1
 
-  * [Blog Page Post Excerpt Element][17]
+  * [Blog Page Post Excerpt Element][15]
   
-  * [Footer Sections Append to Page Observe][18]
+  * [Footer Sections Append to Page Observe][16]
   
-  * [Store Page Detail Additional Info Footer Section Append][19]
+  * [Store Page Detail Additional Info Footer Section Append][17]
 
 ## Callbacks
 
-You can optionally add [callback][20] functions to further customize the
+You can optionally add [callback][18] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
-Refer to [Add code to code injection][12]. Order is not important.
+Refer to [Add code to code injection][10]. Order is not important.
 
 * Log the source element.
 
@@ -321,7 +316,7 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][21].
+Please consider [making a donation][19].
 
 ## Changes
 
@@ -402,21 +397,19 @@ Please consider [making a donation][21].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate#elements-manipulate
-[6]: elements%20manipulate.less#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[8]: https://www.jsdelivr.com/
-[9]: https://en.wikipedia.org/wiki/Content_delivery_network
-[10]: elements%20manipulate%20options.html#L1
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[13]: elements%20manipulate.html#L1
-[14]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[15]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[16]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
-[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
-[18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
-[19]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append#store-page-detail-additional-info-footer-section-append
-[20]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[21]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: elements%20manipulate.less#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
+[8]: elements%20manipulate%20options.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: elements%20manipulate.html#L1
+[12]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[13]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
+[14]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
+[15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
+[16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
+[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append#store-page-detail-additional-info-footer-section-append
+[18]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[19]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
