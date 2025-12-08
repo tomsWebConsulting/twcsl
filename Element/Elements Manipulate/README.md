@@ -9,7 +9,7 @@ append, before, prepend, or replace and other settings.
 
 ### Version
 
-  * 0.11.0
+  * 0.12.0
 
 #### SS Versions
 
@@ -234,11 +234,11 @@ Refer to [Add code to code injection][10]. Order is not important.
       
       twc.em.callbacks = ( ( self ) => {
       
-        const callback = ( element ) => {
+        const callback = ( node ) => {
         
-          console.log ( 'twcEmLog element', element );
+          console.log ( 'twcEmLog node', node );
           
-          return element;
+          return node;
           
           };
           
@@ -292,14 +292,16 @@ Refer to [Add code to code injection][10]. Order is not important.
       
       twc.em.callbacks = ( ( self ) => {
       
-        self [ 'twcEmIdAttributeRemove' ] = ( $element ) => {
+        const callback = ( node ) => {
         
-          $element.removeAttr ( 'id' );
+          node.removeAttribute ( 'id' );
           
-          return $element;
+          return node;
           
           };
           
+        self [ 'twcEmIdAttributeRemove' ] = callback;
+        
         return self;
         
         } ) ( twc.em.callbacks || { } );
@@ -320,6 +322,11 @@ Please consider [making a donation][19].
 
 ## Changes
 
+* **2025-12-07**
+
+  * added feature to process source element through callbacks in a pipeline
+  * bumped version to 0.12.0
+  
 * **2025-12-06**
 
   * added onEditModeRemove flag

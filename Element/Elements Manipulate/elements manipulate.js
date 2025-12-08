@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.11.0
+    Version         : 0.12.0
     
     SS Versions     : 7.1, 7.0
     
@@ -19,10 +19,10 @@
     Engine
     Compatible      : Yes
     
-    Note            : this code is a base for other effects. you will want to
-                      create CSS to hide and show elements. after an element is
-                      replaced the class twc-em-show will be added to it which
-                      can be used to show elements
+    Note            : this code is a base for other effects. you will want
+                      to create CSS to hide and show elements. after an
+                      element is replaced the class twc-em-show will be
+                      added to it which can be used to show elements
     
     Copyright       : 2022-2025 Thomas Creedon
                       
@@ -36,7 +36,7 @@
     
   const
   
-    version = '0.11.0',
+    version = '0.12.0',
     
     s = `
     
@@ -212,38 +212,8 @@
         
           action = object.action,
           
-          callback = ( callbackName ) => {
-          
-            try {
-            
-              sourceElement = codeKey
-              
-                .split ( '-' )
-                
-                .reduce ( ( obj, key ) => obj?.[ key ], window )
-                
-                .callbacks
-                
-                [ callbackName ]
-                
-                ( sourceElement, sourceCopyElement );
-                
-              if ( ! sourceElement === null ) return; // bail if no element
-              
-              } catch ( error ) {
-              
-                const s =
-                
-                  `${ codeKey } ${ callbackName } callback error`;
-                  
-                console.error ( s, error );
-                
-                }
-                
-            },
-            
           hasCallbacks = object
-        
+          
             .callbacks
             
             .length;
@@ -254,12 +224,18 @@
           
           else
           
-            object
+            sourceElement
             
-              .callbacks
+              =
               
-              .forEach ( callback );
+              runCallbacksPipeline (
               
+                sourceElement,
+                
+                object.callbacks
+                
+                );
+                
         if ( object.onEditModeRemove )
         
           sourceElement
@@ -362,6 +338,48 @@
         
         },
         
+      runCallbacksPipeline = ( node, callbacks ) => {
+      
+        const
+        
+          processNode = ( currentNode, callbackName ) => {
+          
+            try {
+            
+              const resultNode = codeKey
+                
+                .split ( '-' )
+                
+                .reduce ( ( obj, key ) => obj?.[ key ], window )
+                
+                .callbacks
+                
+                [ callbackName ]
+                
+                ( currentNode );
+                
+              return resultNode;
+              
+              } catch ( error ) {
+              
+                const s =
+                
+                  `${ codeKey } ${ callbackName } callback error`;
+                  
+                console.error ( s, error );
+                
+                }
+                
+            },
+            
+          finalNode = callbacks
+          
+            .reduce ( processNode, node );
+            
+        return finalNode;
+        
+        },
+        
       selectorObjectCallback = ( selector, object ) => {
       
         let i = 1;
@@ -370,12 +388,16 @@
         
         while ( i < object.repeat ) {
         
-          const elements = document
+          document
           
-            .querySelectorAll ( selector );
+            .querySelectorAll ( selector )
             
-          elements.forEach ( e => actionCallback ( e, object ) );
-          
+            .forEach (
+            
+              e => actionCallback ( e, object )
+              
+              );
+              
           i++;
           
           }
@@ -422,10 +444,8 @@
         
         const 
         
-          element = mutation
+          element = mutation.target,
           
-            .target,
-            
           isEditMode = element
           
             .classList
