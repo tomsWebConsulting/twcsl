@@ -407,8 +407,6 @@ not necessarily designed to work together.
           
         * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
           
-        * [Store Page Detail Footer Sections Move](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Sections%20Move)
-          
         * [Store Page Detail Title Text to Link](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link)
           
         * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
@@ -418,6 +416,8 @@ not necessarily designed to work together.
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
         * [Store Page Detail Variant Display Button Vertical](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Vertical)
+          
+        * [Store Page Detail Footer Section Append](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append)
           
         * [Store Page Detail Variant Display Button Readability Fix](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Readability%20Fix)
           
