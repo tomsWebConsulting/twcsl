@@ -187,10 +187,12 @@ append, before, prepend, or replace and other settings.
   * [Footer Sections Append to Page Observe][16]
   
   * [Store Page Detail Additional Info Footer Section Append][17]
+  
+  * [Store Page Detail Footer Section Append][18]
 
 ## Callbacks
 
-You can optionally add [callback][18] functions to further customize the
+You can optionally add [callback][19] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
 Refer to [Add code to code injection][10]. Order is not important.
@@ -318,7 +320,7 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][19].
+Please consider [making a donation][20].
 
 ## Changes
 
@@ -418,5 +420,6 @@ Please consider [making a donation][19].
 [15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
 [16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
 [17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append#store-page-detail-additional-info-footer-section-append
-[18]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[19]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append#store%20page%20detail%20footer%20section%20append
+[19]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
