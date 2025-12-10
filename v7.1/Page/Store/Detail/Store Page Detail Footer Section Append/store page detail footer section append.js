@@ -2,15 +2,24 @@
         
           store page detail footer section append
           
-          License     : < https://tinyurl.com/s872fb68 >
+          License         : < https://tinyurl.com/s872fb68 >
           
-          Version     : 0.2.0
+          Version         : 0.2.0
           
-          SS Version  : 7.1
+          SS Version      : 7.1
           
-          Copyright   : 2023-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+          Products V2
+          Compatible      : Yes
+          
+          Fluid
+          Engine
+          Compatible      : Yes
+          
+          Copyright       : 2023-2025 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
           
           */
           

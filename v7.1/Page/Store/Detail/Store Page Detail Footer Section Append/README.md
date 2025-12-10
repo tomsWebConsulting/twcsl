@@ -61,14 +61,14 @@ Append footer boilerplate sections after product detail section.
       
 * Add sections to the footer.
 
-  * Add a code block to each section and set the content to the following.
+  * Add a Code block to each section and set the content to the following.
     
     ```html
     <x-twc-spdfsa />
     ```
     
     If the section is a Classic Editor section put the code block as the first
-    block of the section. Below the code block build up your boilerplate content
+    block of the section. Below the Code block build up your boilerplate content
     you want to be added to each product.
     
   * Save the page.
