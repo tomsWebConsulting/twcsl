@@ -54,9 +54,9 @@ Add product dimensions to some products of list pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@331bd1845b24e4b27e343f5f968366375605c66d/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@331bd1845b24e4b27e343f5f968366375605c66d/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Dimensions -->
             
@@ -80,9 +80,9 @@ Add product dimensions to some products of list pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@331bd1845b24e4b27e343f5f968366375605c66d/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@331bd1845b24e4b27e343f5f968366375605c66d/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Dimensions -->
             
