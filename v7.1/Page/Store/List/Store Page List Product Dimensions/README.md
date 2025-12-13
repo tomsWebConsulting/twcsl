@@ -8,7 +8,7 @@ Add product dimensions to some products of list pages.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -139,12 +139,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!--* **2024-08-16**
+* **2025-10-13**
 
-  * control decimal places in format instead of a single setting
-  * use site measurement standard setting for conversions
-  * bumped version to 0.2.0
-  -->
+  * fixed issue with showing dimensions when select menu doesn't have
+    unselected option
+  * bumped version to 0.1.1
+  
 * **2025-10-12**
 
   * initial version
