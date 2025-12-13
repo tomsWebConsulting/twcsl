@@ -405,8 +405,6 @@ not necessarily designed to work together.
           
         * [Store Product Detail Variant Title Selected Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Title%20Selected%20Add)
           
-        * [Store Page Detail Simple Layout Gallery Thumbnail Below Scroll to Grid](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Simple%20Layout%20Gallery%20Thumbnail%20Below%20Scroll%20to%20Grid)
-          
         * [Store Page Detail Title Text to Link](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link)
           
         * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
@@ -440,6 +438,8 @@ not necessarily designed to work together.
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
           
         * [Store Page List Category Theme Change](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Theme%20Change)
+          
+        * [Store Page List Product Dimensions](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions)
           
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
