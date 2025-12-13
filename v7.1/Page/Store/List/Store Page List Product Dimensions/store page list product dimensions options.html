@@ -1,0 +1,112 @@
+<!-- begin TWC Store Page List Product Dimensions Options -->
+
+  <script>
+  
+    /*
+    
+      store page list product dimensions options
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc splpd sub-module
+    
+    twc.splpd = ( ( self ) => {
+    
+      const options = {
+      
+        /*
+        
+          format is a string used to add dimensions to products on your page.
+          following are format tags for use in your format :
+          
+            centimeters
+            
+            %w2Cm   width
+            %l2Cm   length
+            %h2Cm   height
+            
+            inches
+            
+            %w2In   width
+            %l2In   length
+            %h2In   height
+            
+            kilograms
+            
+            %k2Kg
+            
+            millimeters
+            
+            %w2Mm   width
+            %l2Mm   length
+            %h2Mm   height
+            
+            pounds
+            
+            %p2Lb
+            
+            note : the number after the h, k, l, p, or w indicates the number of
+                   decimal places
+                   
+          following is a full example of the format string. your format goes
+          between the backticks
+          
+            format : `
+            
+              %w0In"W %l1In"D %h2In"H - %p2Lb lb
+              <br />
+              %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
+                    
+              `,
+              
+          */
+          
+        format : `
+        
+          %w0In"W %l1In"D %h2In"H - %p2Lb lb
+          <br />
+          %w2Mm x %l2Mm x %h2Mm mm - %k2Kg kg
+          
+          `,
+          
+        // shipping size unit value is CENTIMETER or INCH
+        
+        shippingSizeUnit : 'INCH',
+        
+        // shipping weight unit value is KILOGRAM or POUND
+        
+        shippingWeightUnit : 'POUND'
+        
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.splpd || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Product Dimensions Options -->

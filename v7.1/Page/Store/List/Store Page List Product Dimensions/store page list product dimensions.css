@@ -1,0 +1,59 @@
+/*! begin TWC Store Page List Product Dimensions */
+
+  /*!
+  
+    store page list product dimensions
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Products V2
+    Compatible      : Yes
+    
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    Copyright       : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  @media
+  
+    screen and ( min-width : 768px ),
+    screen and ( max-width : 1511px ) and ( orientation : landscape )
+    
+      {
+      
+        .twc-splpd {
+        
+          --body-font-line-height : 1;
+          --normal-text-size-value : 0.75;
+  
+          font-size : calc( ( var( --normal-text-size-value ) - 1 ) * 1.2vw + 1rem );
+          line-height : var( --body-font-line-height );
+          
+          }
+          
+        .twc-splpd__option--hide {
+        
+          display : none;
+          
+          }
+          
+        .twc-splpd span {
+        
+          display : inline-block;
+          
+          }
+          
+        }
+        
+  /*! end TWC Store Page List Product Dimensions */

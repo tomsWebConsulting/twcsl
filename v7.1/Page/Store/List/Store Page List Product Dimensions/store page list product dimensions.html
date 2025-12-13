@@ -1,0 +1,581 @@
+<!-- begin TWC Store Page List Product Dimensions -->
+
+  <!--
+  
+    store page list product dimensions
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Products V2
+    Compatible      : Yes
+    
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    Notes           : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+                      
+                      the code makes a call to the json version of the store
+                      page for information that is not normally available
+                      
+                      the dimensions entered in the squarespace editor are
+                      shipping dimensions, not product dimensions. if you don't
+                      need to use shipping dimensions for shipping you can use
+                      it for product dimensions
+    
+    Copyright       : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    @media
+    
+      screen and ( min-width : 768px ),
+      screen and ( max-width : 1511px ) and ( orientation : landscape )
+      
+        {
+        
+          .twc-splpd {
+          
+            --body-font-line-height : 1;
+            --normal-text-size-value : 0.75;
+    
+            font-size : calc( ( var( --normal-text-size-value ) - 1 ) * 1.2vw + 1rem );
+            line-height : var( --body-font-line-height );
+            
+            }
+            
+          .twc-splpd__option--hide {
+          
+            display : none;
+            
+            }
+            
+          .twc-splpd span {
+          
+            display : inline-block;
+            
+            }
+            
+          }
+    
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Store Page List Product Dimensions v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = async ( ) => {
+      
+        const isStorePage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          ?.type
+          
+          ===
+          
+          13;
+          
+        if ( ! isStorePage ) return; // bail if not store page
+        
+        const isList
+        
+          =
+          
+          !
+          
+          Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .item
+            
+            ?.id;
+            
+        if ( ! isList ) return; // bail if not list
+        
+        const
+        
+          applyMatch = ( format, m, dimensions ) => {
+          
+            const
+            
+              decimalPlaces = m [ 2 ],
+              
+              newUnit = m [ 3 ];
+              
+            let
+            
+              r,
+              
+              unit;
+              
+            switch ( m [ 1 ] ) {
+            
+              case 'h' :
+              case 'l' :
+              case 'w' :
+              
+                r = dimensions [
+                
+                  hlwMap [
+                  
+                    m [ 1 ]
+                    
+                    ]
+                    
+                  ];
+                  
+                unit = options.shippingSizeUnit;
+                
+                break;
+                
+              case 'k' :
+              case 'p' :
+              
+                r = dimensions.weight
+                  
+                unit = options.shippingWeightUnit;
+                
+                break;
+                
+              }
+              
+            r = convertUnitCallbacks
+            
+              [ unit ]
+              
+              [ newUnit ]
+              
+              ( r )
+              
+              .toFixed ( decimalPlaces );
+              
+            format = format
+            
+              .replaceAll ( m [ 0 ], r );
+              
+            return format;
+            
+            },
+            
+          codeKey = 'twc-splpd',
+          
+          convertUnitCallbacks = {
+          
+            CENTIMETER : {
+            
+              Cm : ( cm ) => cm,
+              
+              In : ( cm ) => cm / 2.54,
+              
+              Mm : ( cm ) => cm * 10
+              
+              },
+              
+            INCH : {
+            
+              Cm : ( inch ) => inch * 2.54,
+              
+              In : ( inch ) => inch,
+              
+              Mm : ( inch ) => inch / 0.039370
+              
+              },
+              
+            KILOGRAM : {
+            
+              Kg : ( kg ) => kg,
+              
+              Lb : ( lb ) => lb * 0.453592
+              
+              },
+              
+            POUND : {
+            
+              Kg : ( kg ) => kg * 2.20462,
+              
+              Lb : ( lb ) => lb
+              
+              }
+              
+            },
+            
+          hideClassName = `${ codeKey }__option--hide`,
+          
+          hlwMap = {
+          
+            h : 'height',
+            
+            l : 'length',
+            
+            w : 'width'
+            
+            },
+            
+          itemCallback = ( item ) => {
+          
+            const
+            
+              variants = item
+              
+                .variants,
+                
+              hasVariants =
+              
+                variants
+                
+                .length;
+                
+            if ( ! hasVariants ) return; // continue if no variants
+            
+            const hasMultipleOptions
+            
+              =
+              
+              item
+              
+                .variantOptionOrdering
+                
+                .length
+                
+                >
+                
+                1;
+                
+            if ( hasMultipleOptions ) return; // continue if multiple options
+            
+            const
+            
+              hasMultipleVariants = hasVariants
+                
+                >
+                
+                1,
+                
+              selector
+              
+                =
+                
+                `div[ data-product-id="${ item.id }" ] `
+                
+                  +
+                  
+                  '.product-list-item-link .product-list-item-meta',
+                  
+              metaElement = document
+              
+                .body
+                
+                .querySelector ( selector );
+                
+            metaElement.insertAdjacentHTML (
+            
+              'beforeend',
+              
+              `
+              
+                <div class="${ codeKey }">
+                
+                  </div>
+                  
+                `
+                
+              );
+              
+            const element = metaElement
+            
+              .querySelector ( `.${ codeKey }` );
+              
+            variants.forEach (
+            
+              v => variantCallback (
+              
+                v,
+                
+                element,
+                
+                hasMultipleVariants,
+                
+                item
+                
+                )
+                
+              );
+              
+            if ( ! hasMultipleVariants ) return; // continue if one variant
+            
+            const callback = ( event, element ) => {
+            
+              element
+              
+                .querySelectorAll ( `.${ optionClassName }` )
+                
+                .forEach (
+                
+                  e => e
+                  
+                    .classList
+                    
+                    .add ( `${ hideClassName }` )
+                    
+                  );
+                  
+              element
+              
+                .querySelector (
+                
+                  `[ data-option="${
+                  
+                    event.target.value
+                    
+                    }" ]`
+                    
+                  )
+                  
+                ?.classList
+                
+                .remove ( hideClassName );
+                
+              };
+              
+            metaElement
+            
+              .closest ( '.product-list-item-link' )
+              
+              .nextElementSibling
+              
+              .querySelector ( 'select' )
+              
+              .addEventListener (
+              
+                'change',
+                
+                e => callback ( e, element )
+                
+                );
+                
+            },
+            
+          optionClassName = `${ codeKey }__option`,
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          searchParams = new URLSearchParams (
+          
+            location.search
+            
+            ),
+            
+          variantCallback = ( variant, element, hasMultipleVariants, item ) => {
+          
+            // dimensions
+            
+            const
+            
+              dimensions = {
+              
+                height : variant.height,
+                
+                length : variant.len,
+                
+                weight : variant.weight,
+                
+                width : variant.width
+                
+                },
+                
+              hasDimensions = Object
+              
+                .values ( dimensions )
+                
+                .some ( Boolean );
+                
+            if ( ! hasDimensions ) return; // continue if no dimensions
+            
+            const
+            
+              clss
+              
+                =
+                
+                hasMultipleVariants
+                
+                ?
+                
+                ` ${ hideClassName }`
+                
+                :
+                
+                '',
+              
+              matches = [
+              
+                ...
+                
+                options
+                
+                  .format
+                  
+                  .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
+                  
+                ],
+                
+              option
+              
+                =
+                
+                Object
+                
+                  .values ( variant.attributes )
+                  
+                  [ 0 ],
+                  
+              attribute
+              
+                =
+                
+                option
+                
+                ?
+                
+                ` data-option="${ option }"`
+                
+                :
+                
+                '',
+                
+              format = matches.reduce (
+              
+                ( f, m ) => applyMatch ( f, m, dimensions ),
+                
+                options.format
+                
+                );
+                
+            element
+            
+              .insertAdjacentHTML (
+              
+                'beforeend',
+                
+                `
+                
+                  <div class="${ optionClassName }${ clss }"${ attribute }>
+                  
+                    ${ format }
+                    
+                    </div>
+                    
+                  `
+                  
+                );
+                
+            };
+            
+        searchParams.set ( 'format', 'json' );
+        
+        const url = `${ location.pathname }?${ searchParams.toString ( ) }`;
+        
+        try {
+        
+          const response = await fetch ( url );
+          
+          if ( ! response.ok ) {
+          
+            const s = `
+            
+              ${ codeKey } network response was not ok ${
+              
+                response
+                
+                  .statusText
+                  
+                  }
+                  
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+            throw new Error ( s );
+            
+            }
+            
+          const
+          
+            obj = await response.json ( );
+            
+          obj
+          
+            .items
+            
+            .forEach ( itemCallback );
+            
+          } catch ( error ) {
+          
+            const s = `
+            
+              ${ codeKey } there has been a problem with your fetch get operation,
+              
+              ${ error }.
+              
+              `
+              
+              .trim ( )
+              
+              .replace ( /\s+/gm, ' ' );
+              
+            console.error ( s );
+            
+            }
+            
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page List Product Dimensions -->
