@@ -33,7 +33,7 @@ Add product dimensions to some products of list pages.
   * CDN Hosted
   
     Use this option for the quickest way to install this effect (files hosted
-    externally on the [jsDelivr][6], a [CDN][7])
+    externally on the [jsDelivr][4], a [CDN][5])
     
     * Options
     
@@ -42,7 +42,7 @@ Add product dimensions to some products of list pages.
         * Use this option if you want to have this effect on only one page.
           
         * Add code from file **[store page list product dimensions
-          options.html][8]** to Page Settings > Advanced >
+          options.html][6]** to Page Settings > Advanced >
           Page Header Code Injection for the page. Read the code for any
           instructions within.
           
@@ -62,14 +62,14 @@ Add product dimensions to some products of list pages.
             
           ```
           
-        * Refer to [per-page code injection][9] for details.
+        * Refer to [per-page code injection][7] for details.
         
       * Site-wide
       
         * Use this option if you want to have this effect on all Store pages.
           
         * Add code from file **[store page list product dimensions
-          options.html][8]** to Website > Pages > Custom Code > Code Injection >
+          options.html][6]** to Website > Pages > Custom Code > Code Injection >
           FOOTER. Read the code for any instructions within.
           
         * Add the following code to Website > Pages > Custom Code >
@@ -88,7 +88,7 @@ Add product dimensions to some products of list pages.
             
           ```
           
-        * Refer to [Add code to code injection][10] for details.
+        * Refer to [Add code to code injection][8] for details.
         
   * On-site
   
@@ -100,28 +100,28 @@ Add product dimensions to some products of list pages.
       * Use this option if you want to have this effect on only one page.
         
       * Add code from file **[store page list product dimensions
-        options.html][8]** to Page Settings > Advanced >
+        options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the page. Read the code for any
         instructions within.
         
-      * Add code from file **[store page list product dimensions.html][11]** to
+      * Add code from file **[store page list product dimensions.html][9]** to
         Page Settings > Advanced > Page Header Code Injection for the page.
         
-      * Refer to [per-page code injection][9] for details.
+      * Refer to [per-page code injection][7] for details.
       
     * Site-wide
     
       * Use this option if you want to have this effect on all pages.
         
       * Add code from file **[store page list product dimensions
-        options.html][8]** to Page Settings > Advanced >
+        options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the page. Read the code for any
         instructions within.
         
-      * Add code from file **[store page list product dimensions.html][11]**
+      * Add code from file **[store page list product dimensions.html][9]**
         to Website > Pages > Custom Code > Code Injection > FOOTER.
         
-      * Refer to [Add code to code injection][10] for details.
+      * Refer to [Add code to code injection][8] for details.
 
 ## Note
 
@@ -131,11 +131,11 @@ you can use it for product dimensions.
 
 ## Demo
 
-You can see a [demo of this effect here][17].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][18].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -152,11 +152,11 @@ Please consider [making a donation][18].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[6]: https://www.jsdelivr.com/
-[7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: store%20page%20list%20product%20dimensions%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: store%20page%20list%20product%20dimensions.html#L1
-[17]: https://toms-web-consulting-demos.squarespace.com/store-page-list-product-dimensions/p/milk-dip-cup?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: store%20page%20list%20product%20dimensions%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: store%20page%20list%20product%20dimensions.html#L1
+[10]: https://toms-web-consulting-demos.squarespace.com/store-page-list-product-dimensions?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
