@@ -31,71 +31,13 @@ pages.
 
 ## Install Options
 
-  * CDN Hosted
+* CDN Hosted
+
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
   
-    Use this option for the quickest way to install this effect (files hosted
-    externally on the [jsDelivr][4], a [CDN][5])
-    
-    * Options
-    
-      * Page Specific
-      
-        * Use this option if you want to have this effect on only one page.
-          
-        * Add code from file **[store page detail product dimensions
-          options.html][6]** to Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
-          instructions within.
-          
-        * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
-          
-          ```html
-          <!-- begin TWC Store Page List Product Dimensions -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20List%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
-            
-            <!-- end TWC Store Page Detail Product Dimensions -->
-            
-          ```
-          
-        * Refer to [per-page code injection][7] for details.
-        
-      * Site-wide
-      
-        * Use this option if you want to have this effect on all Store pages.
-          
-        * Add code from file **[store page detail product dimensions
-          options.html][6]** to Website > Pages > Custom Code > Code Injection >
-          FOOTER. Read the code for any instructions within.
-          
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Store Page Detail Product Dimensions -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
-            
-            <!-- end TWC Store Page Detail Product Dimensions -->
-            
-          ```
-          
-        * Refer to [Add code to code injection][8] for details.
-        
-  * On-site
+  * Options
   
-    Use this option to install the full code of this effect (files hosted on your
-    site).
-    
     * Page Specific
     
       * Use this option if you want to have this effect on only one page.
@@ -105,24 +47,86 @@ pages.
         Page Header Code Injection for the page. Read the code for any
         instructions within.
         
-      * Add code from file **[store page detail product dimensions.html][9]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the page.
+        
+        ```html
+        <!-- begin TWC Store Page List Product Dimensions -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page Detail Product Dimensions -->
+          
+        ```
         
       * Refer to [per-page code injection][7] for details.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all pages.
+      * Use this option if you want to have this effect on all Store pages.
         
       * Add code from file **[store page detail product dimensions
-        options.html][6]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
-        instructions within.
+        options.html][6]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Read the code for any instructions within.
         
-      * Add code from file **[store page detail product dimensions.html][9]**
-        to Website > Pages > Custom Code > Code Injection > FOOTER.
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Store Page Detail Product Dimensions -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@439905db6425c1e23e0725d6bbbc5437ef1ab664/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page Detail Product Dimensions -->
+          
+        ```
         
       * Refer to [Add code to code injection][8] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
+  
+  * Page Specific
+  
+    * Use this option if you want to have this effect on only one page.
+      
+    * Add code from file **[store page detail product dimensions
+      options.html][6]** to Page Settings > Advanced >
+      Page Header Code Injection for the page. Read the code for any
+      instructions within.
+      
+    * Add code from file **[store page detail product dimensions.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the page.
+      
+    * Refer to [per-page code injection][7] for details.
+    
+  * Site-wide
+  
+    * Use this option if you want to have this effect on all pages.
+      
+    * Add code from file **[store page detail product dimensions
+      options.html][6]** to Page Settings > Advanced >
+      Page Header Code Injection for the page. Read the code for any
+      instructions within.
+      
+    * Add code from file **[store page detail product dimensions.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][8] for details.
+    
+* Add **[ twc-spdpd ]** to the product description and/or text blocks in
+  additional info. **[ twc-spdpd ]** will be replaced with the product
+  dimensions. You can use **[ twc-spdpd ]** in multiple places.
 
 ## Note
 

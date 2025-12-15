@@ -17,7 +17,9 @@
     Engine
     Compatible      : Not Applicable
     
-    Note            : the dimensions entered in the squarespace editor are
+    Notes           : this code currently supports only variant display dropdown
+                      
+                      the dimensions entered in the squarespace editor are
                       shipping dimensions, not product dimensions. if you don't
                       need to use shipping dimensions for shipping you can use
                       it for product dimensions. if you need product dimensions
