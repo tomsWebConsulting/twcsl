@@ -4,36 +4,37 @@
   
     store page detail product dimensions
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.5.1
+    Version         : 0.6.0
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
     Products V2
-    Compatible    : Yes
+    Compatible      : Yes
     
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
-    Notes         : the code is comprised of several tags. all are needed for the
-                    full effect to work
-                    
-                    this effect only considers the first variants dimensions. in
-                    other words it doesn't work with products that have more than
-                    one variant
-                    
-                    the dimensions entered in the squarespace editor are shipping
-                    dimensions, not product dimensions. if you don't need to use
-                    shipping dimensions for shipping you can use it for product
-                    dimensions. if you need product dimensions as well as shipping
-                    then use the <script type="application/vnd.twc.spdpd"> tag
-                    referenced in the read me
+    Notes           : the code is comprised of several tags. all are needed for
+                      the full effect to work
+                      
+                      this effect only considers the first variants dimensions.
+                      in other words it doesn't work with products that have
+                      more than one variant
+                      
+                      the dimensions entered in the squarespace editor are
+                      shipping dimensions, not product dimensions. if you don't
+                      need to use shipping dimensions for shipping you can use
+                      it for product dimensions. if you need product dimensions
+                      as well as shipping then use the
+                      <script type="application/vnd.twc.spdpd"> tag referenced
+                      in the read me
     
-    Copyright     : 2022-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -41,49 +42,32 @@
     
   <style>
   
-    body:not( .sqs-is-page-editing ) .product-description,
-    body:not( .sqs-is-page-editing ) .sqs-html-content
+    .twc-spdpd {
     
-      {
-      
-        visibility : hidden;
-        
-        }
-        
-    body:not( .sqs-is-page-editing ) .twc-spdpd-show .product-description,
-    body:not( .sqs-is-page-editing ) .sqs-html-content
-    
-      {
-      
-        visibility : visible;
-        
-        }
-        
-    body:not( .sqs-is-page-editing ) em.twc-spdpd,
-    body:not( .sqs-is-page-editing ) strong.twc-spdpd,
-    body:not( .sqs-is-page-editing ) u.twc-spdpd
-    
-      {
-      
-        white-space-collapse : collapse;
-        
-        }
-        
-    body:not( .sqs-is-page-editing ) p.twc-spdpd {
-    
-      white-space-collapse : collapse !important;
+      white-space :  nowrap;
       
       }
       
+    .sqs-block-code:has( #twc-spdpd ),
+    .twc-spdpd--hide
+    
+      {
+      
+        display :  none;
+        
+        }
+        
     </style>
     
   <script>
   
     ( ( ) => {
     
+      debugger;
+      
       const
       
-        version = '0.5.1',
+        version = '0.6.0',
         
         s = `
         
@@ -135,6 +119,121 @@
         
           codeKey = 'twc-spdpd',
           
+          selector = [
+          
+            '.product-description',
+            
+            '.sqs-block-html .sqs-block-content'
+            
+            ]
+            
+            .join ( ', ' );
+            
+          triggerText = `[ ${ codeKey } ]`;
+          
+        let elements = [
+        
+          ...
+          
+          document
+          
+            .body
+            
+            .querySelectorAll ( selector )
+            
+          ]
+          
+          .filter (
+          
+            e => e
+            
+              .textContent
+              
+              .includes ( triggerText )
+              
+            );
+            
+        if ( ! elements.length ) return; // bail if no trigger text
+              
+        const
+        
+          variants = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .product
+            
+            .variants,
+            
+          hasVariants = variants.length;
+          
+        if ( ! hasVariants ) return; // continue if no variants
+        
+        const
+        
+          applyMatch = ( format, m, dimensions, sizeUnit, weightUnit ) => {
+          
+            const
+            
+              decimalPlaces = m [ 2 ],
+              
+              newUnit = m [ 3 ];
+              
+            let
+            
+              r,
+              
+              unit;
+              
+            switch ( m [ 1 ] ) {
+            
+              case 'h' :
+              case 'l' :
+              case 'w' :
+              
+                r = dimensions [
+                
+                  hlwMap [
+                  
+                    m [ 1 ]
+                    
+                    ]
+                    
+                  ];
+                  
+                unit = sizeUnit;
+                
+                break;
+                
+              case 'k' :
+              case 'p' :
+              
+                r = dimensions.weight
+                  
+                unit = weightUnit;
+                
+                break;
+                
+              }
+              
+            r = convertUnitCallbacks
+            
+              [ unit ]
+              
+              [ newUnit ]
+              
+              ( r )
+              
+              .toFixed ( decimalPlaces );
+              
+            format = format
+            
+              .replaceAll ( m [ 0 ], r );
+              
+            return format;
+            
+            },
+            
           convertUnitCallbacks = {
           
             CENTIMETER : {
@@ -175,6 +274,106 @@
               
             },
             
+          handleEvent = ( event ) => {
+          
+            const isVariantSelected
+            
+              =
+              
+              !
+              
+              [
+              
+                ...
+                
+                variantElements
+                
+                ]
+              
+                .filter ( e => ! e.querySelector ( 'select' )?.value )
+                
+                .length;
+                
+            if ( ! isVariantSelected ) return; // bail if no variant selected
+            
+            const addKeyValue = ( element ) => {
+            
+              attributes [
+              
+                element
+                
+                  .getAttribute ( 'data-variant-option-name' )
+                  
+                ]
+                
+                =
+                
+                element
+                
+                  .querySelector (
+                  
+                    '.variant-select-wrapper'
+                    
+                    )
+                    
+                  .getAttribute ( 'data-selected-value' )
+                  
+              };
+              
+            let attributes = { };
+            
+            variantElements.forEach ( addKeyValue );
+            
+            attributes = JSON.stringify ( attributes );
+            
+            elements.forEach (
+            
+              e => e.classList.add ( hideClassName )
+              
+              );
+              
+            [
+            
+              ...
+              
+              elements
+              
+              ]
+              
+              .filter (
+              
+                e => e.dataset.attributes === attributes
+                
+                )
+                
+              .forEach (
+              
+                e => e.classList.remove ( hideClassName )
+                
+                );
+                
+            },
+            
+          hasUnselected = document
+          
+            .body
+            
+            .querySelector (
+            
+              '.product-meta .product-variants '
+              
+              +
+              
+              '.variant-select-wrapper select '
+              
+              +
+              
+              '.unselected-option-value'
+              
+              ),
+              
+          hideClassName = `${ codeKey }--hide`,
+          
           hlwMap = {
           
             h : 'height',
@@ -185,353 +384,222 @@
             
             },
             
-          nodeHtmlMap = [ ],
-          
           options = codeKey
           
             .split ( '-' )
             
             .reduce ( ( obj, key ) => obj?.[ key ], window ),
             
-          re = new RegExp ( `\\[${ codeKey }\\]`, 'gm' ),
+          re = new RegExp ( `\\[ ${ codeKey } \\]`, 'gm' ),
           
           replaceTextNodeWithHTML = ( node, html ) => {
           
-            const
+            const template = document
             
-              element = document
+              .createElement ( 'template' );
               
-                .createElement ( 'div' ),
-                
-              fragment = document
-              
-                .createDocumentFragment ( );
-                
-            element.innerHTML = html;
+            template.innerHTML = html;
             
-            while ( element.firstChild )
+            node.replaceWith ( template.content );
             
-              fragment
-              
-                .appendChild ( element.firstChild );
-                
-            node
-            
-              .parentNode
-              
-              .replaceChild ( fragment, node );
-              
             },
             
-          shippingSize = Static
+          replaceTriggerText = ( element ) => {
           
-            .SQUARESPACE_CONTEXT
+            const walker = document
             
-            .product
-            
-            .variants [ 0 ]
-            
-            .shippingSize,
-            
-          shippingWeight = Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .product
-            
-            .variants [ 0 ]
-            
-            .shippingWeight,
-            
-          dimensions
-          
-            =
-          
-            options.dimensions
-            
-            ||
-            
-            {
-            
-              height : shippingSize.height,
+              .createTreeWalker (
               
-              length : shippingSize.len,
-              
-              weight : shippingWeight.value,
-              
-              width : shippingSize.width
-              
-              };
-              
-        let
-        
-          callback = ( m ) => {
-          
-            const
-            
-              decimalPlaces = m [ 2 ],
-              
-              newUnit = m [ 3 ];
-              
-            let r,
-            
-              unit;
-            
-            switch ( m [ 1 ] ) {
-            
-              case 'h' :
-              case 'l' :
-              case 'w' :
-              
-                r = dimensions [
+                element,
                 
-                  hlwMap [
-                  
-                    m [ 1 ]
-                    
-                    ]
-                    
-                  ];
-                  
-                unit = shippingSize.unit;
-                  
-                break;
+                NodeFilter.SHOW_TEXT
                 
-              case 'k' :
-              case 'p' :
+                );
+                
+            while ( walker.nextNode ( ) ) {
+            
+              const
               
-                r = dimensions.weight
-                  
-                unit = shippingWeight.unit;
+                node = walker.currentNode,
                 
-                break;
+                text = node.textContent,
+                
+                hasTriggerText = re.test ( text );
+                
+              if ( ! hasTriggerText ) continue;
+              
+              replaceTextNodeWithHTML (
+              
+                node,
+              
+                html
+                
+                );
                 
               }
               
-            r = convertUnitCallbacks
-            
-              [ unit ]
-              
-              [ newUnit ]
-              
-              ( r )
-              
-              .toFixed ( decimalPlaces );
-              
-            format = format
-            
-              .replaceAll ( m [ 0 ], r );
-              
             },
             
-          format = options.format,
-          
-          selector = [
-          
-            '.product-description',
-            
-            '.sqs-block-html .sqs-block-content'
-            
-            ]
-            
-            .join ( ', ' );
-            
-        const matches = [
-        
-          ...
-          
-          format
-          
-            .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
-            
-          ];
-          
-        matches.forEach ( callback );
-        
-        callback = ( element ) => {
-        
-          const walker =
-          
-            document.createTreeWalker ( element, NodeFilter.SHOW_TEXT );
-            
-          while ( walker.nextNode ( ) ) {
+          variantCallback = ( variant ) => {
           
             const
             
-              node = walker.currentNode,
+              attributes =  JSON
               
-              html = node
+                .stringify ( variant.attributes ),
+                
+              shippingSize = variant
+                
+                .shippingSize,
+                
+              shippingWeight = variant
               
-                .data
+                .shippingWeight,
                 
-                .replace ( re, format );
+              dimensions
+              
+                =
                 
-            if ( html === node.data ) continue;
+                options
+                
+                  ?.variants
+                  
+                  ?.[ attributes ]
+                  
+                ??
+                
+                {
+                
+                  height : shippingSize.height,
+                  
+                  length : shippingSize.len,
+                  
+                  weight : shippingWeight.value,
+                  
+                  width : shippingSize.width
+                  
+                  },
+                  
+              hasDimensions = Object
+              
+                .values ( dimensions )
+                
+                .some ( Boolean );
+                
+            if ( ! hasDimensions ) return; // continue if no dimensions
             
-            nodeHtmlMap.push ( [ node, html ] );
+            const
             
-            }
+              clss
+              
+                =
+                
+                hasVariants
+                
+                  >
+                  
+                  1
+                  
+                ?
+                
+                ` ${ hideClassName }`
+                
+                :
+                
+                '',
+              
+              matches = [
+              
+                ...
+                
+                options
+                
+                  .format
+                  
+                  .matchAll ( /%([hklpw])(\d)(Cm|In|Kg|Lb|Mm)/g )
+                  
+                ],
+                
+              sizeUnit = shippingSize.unit,
+              
+              weightUnit = shippingWeight.unit,
+              
+              format = matches.reduce (
+              
+                ( f, m ) =>
+                
+                  applyMatch ( f, m, dimensions, sizeUnit, weightUnit ),
+                  
+                options.format
+                
+                );
+                
+            html += `
             
-          };
-          
-        [
-        
-          ...
-          
-          document
+              <span class="${
+              
+                codeKey
+                
+                }${
+                
+                  clss
+                  
+                  }" data-attributes='${
+                  
+                    attributes
+                    
+                    }'>
+                
+                ${ format }
+                
+                </span>
+                
+              `
+              
+              .trim ( );
+              
+            },
+            
+          variantElements = document
           
             .body
             
-            .querySelectorAll ( selector )
+            .querySelectorAll (
             
-          ]
-          
-          .filter (
-          
-            e => e
-            
-              .textContent
+              '#main-product-variants .variant-option'
               
-              .includes ( `[${ codeKey }]` )
+              );
               
-            )
-            
-          .forEach ( callback );
-          
-        callback = ( [ node, html ] ) => {
+        let html = '';
         
-          node
-          
-            .parentElement
-            
-            .classList
-            
-            .add ( codeKey );
-            
-          replaceTextNodeWithHTML (
-          
-            node,
-          
-            html
-            
-            );
-            
-          };
-          
-        nodeHtmlMap.forEach ( callback );
+        variants.forEach (
         
-        // meta elements clean
+          v => variantCallback ( v )
+          
+          );
+          
+        if ( ! hasUnselected )
         
-        {
+          html = html
+          
+            .replace ( ` ${ hideClassName }`, '' );
+            
+        elements.forEach ( replaceTriggerText );
         
-          const attribute= 'content';
-          
-          callback = ( element ) => {
-          
-            const content = element
-            
-              .getAttribute ( attribute )
-              
-              .replace ( re, '' );
-              
-            element
-            
-              .setAttribute ( attribute, content );
-              
-            };
-            
-          selector
-          
-            =
-            
-            'meta'
-            
-            +
-            
-            [
-            
-              '[ property="og:description" ]',
-              
-              '[ itemprop="description" ]',
-              
-              '[ name="twitter:description" ]',
-              
-              '[ name="description" ]'
-              
-              ]
-              
-              .join ( ', meta' );
-              
-          document
-          
-            .head
-            
-            .querySelectorAll ( selector )
-          
-            .forEach ( callback );
-            
-          }
-          
-        // script element clean
+        elements = document
         
-        {
-        
-          callback = ( element ) => {
+          .body
           
-            const html = element
-            
-              .innerHTML
-              
-              .replace ( re, '' );
-              
-            element
-            
-              .innerHTML
-              
-              =
-              
-              html;
-              
-            };
-            
-          selector
-          
-            =
-            
-            'script[ type="application/ld+json" ]';
-            
-          [
-          
-            ...
-            
-            document
-            
-              .head
-              
-              .querySelectorAll ( selector )
-              
-            ]
-            
-            .filter (
-            
-              e => e.textContent.includes ( `[${ codeKey }]` )
-              
-              )
-              
-            .forEach ( callback );
-            
-          }
+          .querySelectorAll ( `.${ codeKey }` );
           
         document
         
           .body
           
-          .querySelector ( '.product-detail' )
+          .querySelector ( '#main-product-variants' )
           
-          .classList
-          
-          .add ( `${ codeKey }-show` );
-          
+          ?.addEventListener ( 'change', handleEvent );
+        
         };
         
       document

@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.5.1
+  * 0.6.0
 
 #### SS Version
 
@@ -29,106 +29,394 @@ pages.
 
 ---
 
-## Quick Install
+## Install Options
 
-* Add code from file **[store page detail product dimensions options.html][4]**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
-  Refer to [Per-page code injection][5] for details.
+  * CDN Hosted
   
-* Add code from file **[store page detail product dimensions.html][6]** to
-  Store Settings > Advanced > Page Header Code Injection for the store page.
-  Refer to [Per-page code injection][5] for details.
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][4], a [CDN][5])
+    
+    * Options
+    
+      * Page Specific
+      
+        * Use this option if you want to have this effect on only one page.
+          
+        * Add code from file **[store page detail product dimensions
+          options.html][6]** to Page Settings > Advanced >
+          Page Header Code Injection for the page. Read the code for any
+          instructions within.
+          
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the page.
+          
+          ```html
+          <!-- begin TWC Store Page List Product Dimensions -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/Detail/Store%20Page%20List%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            
+            <!-- end TWC Store Page Detail Product Dimensions -->
+            
+          ```
+          
+        * Refer to [per-page code injection][7] for details.
+        
+      * Site-wide
+      
+        * Use this option if you want to have this effect on all Store pages.
+          
+        * Add code from file **[store page detail product dimensions
+          options.html][6]** to Website > Pages > Custom Code > Code Injection >
+          FOOTER. Read the code for any instructions within.
+          
+        * Add the following code to Website > Pages > Custom Code >
+          Code Injection > FOOTER.
+          
+          ```html
+          <!-- begin TWC Store Page Detail Product Dimensions -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            
+            <!-- end TWC Store Page Detail Product Dimensions -->
+            
+          ```
+          
+        * Refer to [Add code to code injection][8] for details.
+        
+  * On-site
   
-* Read the code for any instructions within.
-  
-* Add **[twc-spdpd]** to the product description and/or text blocks in
-  additional info. [twc-spdpd] will be replaced with the product dimensions. You
-  can use [twc-spdpd] in multiple places.
+    Use this option to install the full code of this effect (files hosted on your
+    site).
+    
+    * Page Specific
+    
+      * Use this option if you want to have this effect on only one page.
+        
+      * Add code from file **[store page detail product dimensions
+        options.html][6]** to Page Settings > Advanced >
+        Page Header Code Injection for the page. Read the code for any
+        instructions within.
+        
+      * Add code from file **[store page detail product dimensions.html][9]** to
+        Page Settings > Advanced > Page Header Code Injection for the page.
+        
+      * Refer to [per-page code injection][7] for details.
+      
+    * Site-wide
+    
+      * Use this option if you want to have this effect on all pages.
+        
+      * Add code from file **[store page detail product dimensions
+        options.html][6]** to Page Settings > Advanced >
+        Page Header Code Injection for the page. Read the code for any
+        instructions within.
+        
+      * Add code from file **[store page detail product dimensions.html][9]**
+        to Website > Pages > Custom Code > Code Injection > FOOTER.
+        
+      * Refer to [Add code to code injection][8] for details.
 
-## Notes
-
-This effect only considers the first variants dimensions. In other words it
-doesn't work with products that have more than one variant.
+## Note
 
 The dimensions entered in the Squarespace editor are shipping dimensions, not
 product dimensions. If you don't need to use shipping dimensions for shipping
 you can use it for product dimensions. If you need product dimensions as well as
-shipping then add the following to a code block in Additional Info.
+shipping then add one of the following examples to a code block in Additional
+Info and customize it for your need.
 
-```html
-<!-- begin TWC Store Page Detail Product Dimensions Options -->
+* Product with no variants.
 
-  <script>
+  ```html
+  <!-- begin TWC Store Page Detail Product Dimensions Options -->
   
-    /*
+    <script id="twc-spdpd">
     
-      store page detail product dimensions options
+      /*
       
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.5.1
-      
-      SS Version    : 7.1
-      
-      Copyright     : 2022-2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc spdpd sub-module
-    
-    twc.spdpd = ( ( self ) => {
-    
-      const options = {
-      
-        dimensions : {
+        store page detail product dimensions options
         
-          length : 1,
-          
-          width : 2,
-          
-          height : 3,
-          
-          weight : 4
-          
-          }
-          
-        };
+        License       : < https://tinyurl.com/s872fb68 >
         
-      Object
-      
-        .assign (
+        Version       : 0.6.0
         
-          self,
-          
-          options
-          
-          );
-          
-      return self;
+        SS Version    : 7.1
+        
+        Copyright     : 2022-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
       
-      } ) ( twc.spdpd || { } );
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
       
-    </script>
+      // initialize twc spdpd sub-module
+      
+      twc.spdpd = ( ( self ) => {
+      
+        const options = {
+        
+          variants : {
+          
+            '{}' : {
+            
+              length : 1,
+              
+              width : 2,
+              
+              height : 3,
+              
+              weight : 4
+              
+              },
+              
+            }
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.spdpd || { } );
+        
+      </script>
+      
+    <!-- end TWC Store Page Detail Product Dimensions Options -->
+    ```
     
-  <!-- end TWC Store Page Detail Product Dimensions Options -->
-```
+* Product with variants and one option
+
+  ```html
+  <!-- begin TWC Store Page Detail Product Dimensions Options -->
+  
+    <script id="twc-spdpd">
+    
+      /*
+      
+        store page detail product dimensions options
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.6.0
+        
+        SS Version    : 7.1
+        
+        Copyright     : 2022-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc spdpd sub-module
+      
+      twc.spdpd = ( ( self ) => {
+      
+        const options = {
+        
+          variants : {
+          
+            '{"Color":"Red"}' : {
+            
+              length : 1,
+              
+              width : 2,
+              
+              height : 3,
+              
+              weight : 4
+              
+              },
+              
+            '{"Color":"Green"}' : {
+            
+              length : 5,
+              
+              width : 6,
+              
+              height : 7,
+              
+              weight : 8
+              
+              },
+              
+            '{"Color":"Blue"}' : {
+            
+              length : 9,
+              
+              width : 10,
+              
+              height : 11,
+              
+              weight : 12
+              
+              },
+              
+            }
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.spdpd || { } );
+        
+      </script>
+      
+    <!-- end TWC Store Page Detail Product Dimensions Options -->
+  ```
+
+* Product with variants and multiple options
+
+  ```html
+  <!-- begin TWC Store Page Detail Product Dimensions Options -->
+  
+    <script id="twc-spdpd">
+    
+      /*
+      
+        store page detail product dimensions options
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.6.0
+        
+        SS Version    : 7.1
+        
+        Copyright     : 2022-2025 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc spdpd sub-module
+      
+      twc.spdpd = ( ( self ) => {
+      
+        const options = {
+        
+          variants : {
+          
+            '{"Color":"Red","Size":"Small"}' : {
+            
+              length : 1,
+              
+              width : 2,
+              
+              height : 3,
+              
+              weight : 4
+              
+              },
+              
+            '{"Color":"Red","Size":"Large"}' : {
+            
+              length : 5,
+              
+              width : 6,
+              
+              height : 7,
+              
+              weight : 8
+              
+              },
+              
+            '{"Color":"Green","Size":"Small"}' : {
+            
+              length : 9,
+              
+              width : 10,
+              
+              height : 11,
+              
+              weight : 12
+              
+              },
+              
+            '{"Color":"Green","Size":"Large"}' : {
+            
+              length : 13,
+              
+              width : 14,
+              
+              height : 15,
+              
+              weight : 16
+              
+              },
+              
+            }
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.spdpd || { } );
+        
+      </script>
+      
+    <!-- end TWC Store Page Detail Product Dimensions Options -->
+  ```
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-12-14**
+
+  * added full support for variants
+  * bumped version to 0.6.0
+  
 * **2025-08-03**
 
   * fixed issue with twc.spdpd dimensions and format not merging
@@ -180,8 +468,11 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: store%20page%20detail%20product%20dimensions%20options.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: store%20page%20detail%20product%20dimensions.html#L1
-[7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: store%20page%20detail%20product%20dimensions%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: store%20page%20detail%20product%20dimensions.html#L1
+[10]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
