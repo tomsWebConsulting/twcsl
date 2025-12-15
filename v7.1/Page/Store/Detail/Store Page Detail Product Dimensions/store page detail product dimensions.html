@@ -17,20 +17,15 @@
     Engine
     Compatible      : Not Applicable
     
-    Notes           : the code is comprised of several tags. all are needed for
-                      the full effect to work
-                      
-                      this effect only considers the first variants dimensions.
-                      in other words it doesn't work with products that have
-                      more than one variant
+    Notes           : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
                       
                       the dimensions entered in the squarespace editor are
                       shipping dimensions, not product dimensions. if you don't
                       need to use shipping dimensions for shipping you can use
                       it for product dimensions. if you need product dimensions
-                      as well as shipping then use the
-                      <script type="application/vnd.twc.spdpd"> tag referenced
-                      in the read me
+                      as well as shipping then use the <script id="twc-spdpd">
+                      tag referenced in the read me
     
     Copyright       : 2022-2025 Thomas Creedon
                       
@@ -63,8 +58,6 @@
   
     ( ( ) => {
     
-      debugger;
-      
       const
       
         version = '0.6.0',
