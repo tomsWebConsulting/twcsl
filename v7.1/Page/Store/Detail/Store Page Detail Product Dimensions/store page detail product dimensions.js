@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.6.0
+    Version         : 0.7.0
     
     SS Version      : 7.1
     
@@ -17,7 +17,8 @@
     Engine
     Compatible      : Not Applicable
     
-    Notes           : this code currently supports only variant display dropdown
+    Notes           : this code is comprised of a style and script tag. both are
+                      needed for the full effect to work
                       
                       the dimensions entered in the squarespace editor are
                       shipping dimensions, not product dimensions. if you don't
@@ -36,7 +37,7 @@
     
   const
   
-    version = '0.6.0',
+    version = '0.7.0',
     
     s = `
     
@@ -249,7 +250,17 @@
         
           =
           
-          !
+          [
+          
+            ...
+            
+            variantElements
+            
+            ]
+          
+            .every ( e => e.querySelector ( 'select' )?.value )
+            
+          ||
           
           [
           
@@ -259,10 +270,22 @@
             
             ]
           
-            .filter ( e => ! e.querySelector ( 'select' )?.value )
+            .every (
             
-            .length;
-            
+              e => [
+              
+                ...
+                
+                e
+                
+                  .querySelectorAll ( 'input' )
+                  
+                ]
+                
+                .some ( e => e.checked )
+                
+              );
+          
         if ( ! isVariantSelected ) return; // bail if no variant selected
         
         const addKeyValue = ( element ) => {
@@ -285,7 +308,15 @@
                 
                 )
                 
-              .getAttribute ( 'data-selected-value' )
+              ?.getAttribute ( 'data-selected-value' )
+              
+            ??
+            
+            element
+            
+              .querySelector ( 'input:checked' )
+              
+              .getAttribute ( 'value' );
               
           };
           
@@ -323,24 +354,6 @@
             
         },
         
-      hasUnselected = document
-      
-        .body
-        
-        .querySelector (
-        
-          '.product-meta .product-variants '
-          
-          +
-          
-          '.variant-select-wrapper select '
-          
-          +
-          
-          '.unselected-option-value'
-          
-          ),
-          
       hideClassName = `${ codeKey }--hide`,
       
       hlwMap = {
@@ -353,14 +366,38 @@
         
         },
         
+      metaSelector
+      
+        =
+        
+        'meta[ '
+        
+        +
+        
+        [
+        
+          'itemprop = "description',
+          
+          'name = "description',
+          
+          'name = "twitter:description',
+          
+          'property = "og:description',
+          
+          ]
+          
+          .join ( '" ], meta[ ' )
+          
+          +
+          
+          '" ]',
+          
       options = codeKey
       
         .split ( '-' )
         
         .reduce ( ( obj, key ) => obj?.[ key ], window ),
         
-      re = new RegExp ( `\\[ ${ codeKey } \\]`, 'gm' ),
-      
       replaceTextNodeWithHTML = ( node, html ) => {
       
         const template = document
@@ -391,10 +428,12 @@
           
             node = walker.currentNode,
             
-            text = node.textContent,
+            hasTriggerText = node
             
-            hasTriggerText = re.test ( text );
-            
+              .textContent
+              
+              .includes ( triggerText );
+              
           if ( ! hasTriggerText ) continue;
           
           replaceTextNodeWithHTML (
@@ -408,6 +447,12 @@
           }
           
         },
+        
+      scriptSelector
+      
+        =
+        
+        'script[ type = "application/ld+json" ]',
         
       variantCallback = ( variant ) => {
       
@@ -529,16 +574,42 @@
           
         },
         
-      variantElements = document
+      variantsElement = document
       
         .body
         
-        .querySelectorAll (
+        .querySelector (
         
-          '#main-product-variants .variant-option'
+          '#main-product-variants'
           
-          );
+          ),
           
+      radioWrapperElement = variantsElement
+      
+        ?.querySelector ( '.variant-radiobtn-wrapper' ),
+        
+      selectWrapperElement = variantsElement
+      
+        ?.querySelector ( '.variant-select-wrapper' ),
+        
+      isShowFirstVariant
+      
+        =
+        
+        selectWrapperElement
+        
+        &&
+        
+        !
+        
+        selectWrapperElement
+        
+          ?.querySelector ( '.unselected-option-value' ),
+          
+      variantElements = variantsElement
+      
+        ?.querySelectorAll ( '.variant-option' );
+        
     let html = '';
     
     variants.forEach (
@@ -547,7 +618,7 @@
       
       );
       
-    if ( ! hasUnselected )
+    if ( isShowFirstVariant )
     
       html = html
       
@@ -569,6 +640,88 @@
       
       ?.addEventListener ( 'change', handleEvent );
     
+    // meta element clean
+    
+    [
+    
+      ...
+      
+      document
+      
+        .head
+        
+        .querySelectorAll ( metaSelector )
+        
+      ]
+      
+      .filter (
+      
+        e => e
+        
+          .getAttribute ( 'content' )
+          
+          .includes ( triggerText )
+          
+        )
+        
+      .forEach (
+      
+        e => e
+        
+          .setAttribute (
+          
+            'content',
+            
+            e
+            
+              .getAttribute ( 'content' )
+              
+              .replaceAll ( triggerText, '' )
+              
+              .trim ( )
+              
+            )
+            
+        );
+        
+    // script element clean
+    
+    [
+    
+      ...
+      
+      document
+      
+        .head
+        
+        .querySelectorAll ( scriptSelector )
+        
+      ]
+      
+      .filter (
+      
+        e => e.textContent.includes ( triggerText )
+        
+        )
+        
+      .forEach (
+      
+        e => e
+        
+          .textContent
+          
+          =
+          
+          e
+          
+            .textContent
+            
+            .replaceAll ( triggerText, '' )
+            
+            .trim ( )
+            
+        );
+        
     };
     
   document

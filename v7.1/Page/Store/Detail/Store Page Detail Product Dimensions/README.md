@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.6.0
+  * 0.7.0
 
 #### SS Version
 
@@ -149,7 +149,7 @@ Info and customize it for your need.
         
         License       : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.6.0
+        Version       : 0.7.0
         
         SS Version    : 7.1
         
@@ -219,7 +219,7 @@ Info and customize it for your need.
         
         License       : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.6.0
+        Version       : 0.7.0
         
         SS Version    : 7.1
         
@@ -313,7 +313,7 @@ Info and customize it for your need.
         
         License       : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.6.0
+        Version       : 0.7.0
         
         SS Version    : 7.1
         
@@ -416,6 +416,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2025-12-15**
+
+  * added support for Variant Display Button
+  * restored head meta and script element text clean up
+  * bumped version to 0.7.0
+  
 * **2025-12-14**
 
   * added full support for variants
