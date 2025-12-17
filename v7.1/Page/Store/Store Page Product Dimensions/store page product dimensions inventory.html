@@ -1,0 +1,84 @@
+<!-- begin TWC Store Page Product Dimensions Inventory -->
+
+  <script>
+  
+    /*
+    
+      store page product dimensions inventory
+      
+      License       : < https://tinyurl.com/s872fb68 >
+      
+      Version       : 0.1.0
+      
+      SS Version    : 7.1
+      
+      Copyright     : 2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    twc.sppd.inventory = ( ( self ) => {
+    
+      const inventory : {
+      
+        /*
+        
+          the format of each data structure is an sku and physical dimensions
+          
+          following is an example data structure. copy the example data
+          structure below and paste after the example data structure. remove
+          the forward slash asterisk and asterisk forward slash lines from
+          before and after the example data structure. repeat for as many
+          products you want to provide physical dimensions in additional to
+          shipping dimensions. this has been done once initially
+          
+          */
+          
+        /*
+        
+        '[ enter sku or product id here between single quotes replacing square brackets ]' : {
+        
+          length : [ enter number here replacing square brackets ],
+          
+          width : [ enter number here replacing square brackets ],
+          
+          height : [ enter number here replacing square brackets ],
+          
+          weight : [ enter number here replacing square brackets ]
+          
+          },
+          
+          */
+          
+        '[ enter sku here between single quotes replacing square brackets ]' : {
+        
+          length : [ enter number here replacing square brackets ],
+          
+          width : [ enter number here replacing square brackets ],
+          
+          height : [ enter number here replacing square brackets ],
+          
+          weight : [ enter number here replacing square brackets ]
+          
+          },
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          inventory
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.sppd.inventory || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Product Dimensions Inventory -->
