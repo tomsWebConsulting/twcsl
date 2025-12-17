@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.1
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -17,13 +17,16 @@
     Engine
     Compatible      : Not Applicable
     
-    Notes           : the code makes a call to the json version of the store
+    Notes           : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+                      
+                      the code makes a call to the json version of the store
                       page for information that is not normally available
                       
                       the dimensions entered in the squarespace editor are
-                      shipping dimensions, not product dimensions. if you don't
+                      shipping dimensions, not physical dimensions. if you don't
                       need to use shipping dimensions for shipping you can use
-                      it for product dimensions
+                      it for physical dimensions
     
     Copyright       : 2025 Thomas Creedon
                       
@@ -35,7 +38,7 @@
     
   const
   
-    version = '0.1.1',
+    version = '0.2.0',
     
     s = `
     
@@ -85,6 +88,26 @@
         
     if ( ! isList ) return; // bail if not list
     
+    // sppd globals
+    
+    {
+    
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc sppd sub-module
+      
+      twc.sppd = ( ( self ) => self ) ( twc.sppd || { } );
+      
+      // initialize twc sppd inventory sub-module
+      
+      twc.sppd.inventory =
+      
+        ( ( self ) => self ) ( twc.sppd.inventory || { } );
+        
+      }
+      
     const
     
       applyMatch = ( format, m, dimensions ) => {
@@ -206,19 +229,17 @@
         
       itemCallback = ( item ) => {
       
-        const
+        const hasDimensions
         
-          variants = item
+          =
           
-            .variants,
-            
-          hasVariants =
+          item.productType
           
-            variants
-            
-            .length;
-            
-        if ( ! hasVariants ) return; // continue if no variants
+          ===
+          
+          1;
+          
+        if ( ! hasDimensions ) return; // continue if no dimentions
         
         const hasMultipleOptions
         
@@ -246,18 +267,28 @@
           
         const
         
-          hasMultipleVariants = hasVariants
-            
-            >
-            
-            1,
-            
           metaElement = document
           
             .body
             
-            .querySelector ( selector );
+            .querySelector ( selector ),
             
+          variants = item
+          
+            .variants,
+            
+          hasMultipleVariants
+          
+            =
+            
+            variants
+              
+              .length
+              
+              >
+              
+              1;
+              
         metaElement.insertAdjacentHTML (
         
           'beforeend',
@@ -386,18 +417,34 @@
         
         const
         
-          dimensions = {
+          sku = variant.sku,
           
-            height : variant.height,
+          dimensions
+          
+            =
             
-            length : variant.len,
+            twc
             
-            weight : variant.weight,
+              .sppd
+              
+              .inventory
+              
+              ?.[ sku ]
+              
+            ??
             
-            width : variant.width
+            {
             
-            },
-            
+              height : variant.height,
+              
+              length : variant.len,
+              
+              weight : variant.weight,
+              
+              width : variant.width
+              
+              },
+              
           hasDimensions = Object
           
             .values ( dimensions )
@@ -421,7 +468,7 @@
             :
             
             '',
-          
+            
           matches = [
           
             ...
@@ -474,7 +521,19 @@
             
             `
             
-              <div class="${ optionClassName }${ clss }"${ attribute }>
+              <div class="${
+              
+                optionClassName
+                
+                }${
+                
+                  clss
+                  
+                  }"${
+                  
+                    attribute
+                    
+                    }>
               
                 ${ format }
                 
@@ -488,8 +547,16 @@
         
     searchParams.set ( 'format', 'json' );
     
-    const url = `${ location.pathname }?${ searchParams.toString ( ) }`;
+    const url = `${
     
+      location.pathname
+      
+      }?${
+      
+        searchParams.toString ( )
+        
+        }`;
+        
     try {
     
       const response = await fetch ( url );
