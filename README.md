@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 419 effects. Each effect has it's own version number, code,
+twcsl contains 422 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -119,6 +119,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Variant Sold Out Remove](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove)
         
+        * [Store Page Detail Variant Sold Out Remove.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove.bbprojectd)
+          
       * [Store Page Detail Slideshow Item Badge Add](Page/Store/Detail/Store%20Page%20Detail%20Slideshow%20Item%20Badge%20Add)
         
       * [Store Page Detail Related Product Sold Out Price Zero Hide](Page/Store/Detail/Store%20Page%20Detail%20Related%20Product%20Sold%20Out%20Price%20Zero%20Hide)
@@ -415,6 +417,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Title Text to Link](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link)
           
+          * [Store Page Detail Title Text to Link.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link/Store%20Page%20Detail%20Title%20Text%20to%20Link.bbprojectd)
+            
         * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
           
         * [Store Page Detail Add To Cart Text Change On Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Text%20Change%20On%20Quantity%20Change)
@@ -483,6 +487,10 @@ not necessarily designed to work together.
         
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
+      * [Store Page Variant Dropdown Select Text Change](v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change)
+        
+        * [Store Page Dropdown Menu Select Text Change.bbprojectd](v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change/Store%20Page%20Dropdown%20Menu%20Select%20Text%20Change.bbprojectd)
+          
       * [Store Page Price Remove Decimal for Prices Greater Than or Equal to N](v7.1/Page/Store/Store%20Page%20Price%20Remove%20Decimal%20for%20Prices%20Greater%20Than%20or%20Equal%20to%20N)
         
       * [Store Page Product Element Hide](v7.1/Page/Store/Store%20Page%20Product%20Element%20Hide)
@@ -646,8 +654,6 @@ not necessarily designed to work together.
   * [Site Title Each Word Span Tag Add](v7.1/Site%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Move Blog Listing Item Title Above Meta](v7.1/Move%20Blog%20Listing%20Item%20Title%20Above%20Meta)
-    
-  * [Replace Variant Menu "select" Text](v7.1/Replace%20Variant%20Menu%20"select"%20Text)
     
   * [Header Cart Icon Hide When Zero](v7.1/Header%20Cart%20Icon%20Hide%20When%20Zero)
     
