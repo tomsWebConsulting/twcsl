@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.7.0
+    Version         : 0.8.0
     
     SS Version      : 7.1
     
@@ -21,11 +21,9 @@
                       needed for the full effect to work
                       
                       the dimensions entered in the squarespace editor are
-                      shipping dimensions, not product dimensions. if you don't
+                      shipping dimensions, not physical dimensions. if you don't
                       need to use shipping dimensions for shipping you can use
-                      it for product dimensions. if you need product dimensions
-                      as well as shipping then use the <script id="twc-spdpd">
-                      tag referenced in the read me
+                      it for physical dimensions
     
     Copyright       : 2022-2025 Thomas Creedon
                       
@@ -37,7 +35,7 @@
     
   const
   
-    version = '0.7.0',
+    version = '0.8.0',
     
     s = `
     
@@ -124,20 +122,24 @@
         );
         
     if ( ! elements.length ) return; // bail if no trigger text
-          
-    const
     
-      variants = Static
+    const hasDimensions
+    
+      =
+      
+      Static
       
         .SQUARESPACE_CONTEXT
         
         .product
         
-        .variants,
+        .productType
         
-      hasVariants = variants.length;
-      
-    if ( ! hasVariants ) return; // continue if no variants
+        ===
+        
+        1;
+        
+    if ( ! hasDimensions ) return; // continue if no dimentions
     
     const
     
@@ -454,14 +456,10 @@
         
         'script[ type = "application/ld+json" ]',
         
-      variantCallback = ( variant ) => {
+      variantCallback = ( variant, variants ) => {
       
         const
         
-          attributes =  JSON
-          
-            .stringify ( variant.attributes ),
-            
           shippingSize = variant
             
             .shippingSize,
@@ -470,15 +468,19 @@
           
             .shippingWeight,
             
+          sku = variant.sku,
+          
           dimensions
           
             =
             
-            options
+            twc
             
-              ?.variants
+              .sppd
               
-              ?.[ attributes ]
+              .inventory
+              
+              ?.[ sku ]
               
             ??
             
@@ -504,12 +506,18 @@
         
         const
         
+          attributes =  JSON
+          
+            .stringify ( variant.attributes ),
+            
           clss
           
             =
             
-            hasVariants
+            variants
             
+              .length
+              
               >
               
               1
@@ -574,6 +582,14 @@
           
         },
         
+      variants = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .product
+        
+        .variants,
+        
       variantsElement = document
       
         .body
@@ -614,7 +630,7 @@
     
     variants.forEach (
     
-      v => variantCallback ( v )
+      v => variantCallback ( v, variants )
       
       );
       
