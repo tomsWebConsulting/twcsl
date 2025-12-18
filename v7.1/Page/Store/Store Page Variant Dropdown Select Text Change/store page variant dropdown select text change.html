@@ -47,6 +47,20 @@
           
       console.log ( s );
       
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      if ( ! isStorePage ) return; // bail if not store page
+      
       const callback = ( ) => {
       
         // globals
