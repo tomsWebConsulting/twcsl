@@ -1,0 +1,136 @@
+( ( ) => {
+
+  /*!
+  
+    store page variant dropdown select text change
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Version      : 7.1
+    
+    Products V2
+    Compatible      : Yes
+    
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    Copyright       : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.2.0',
+    
+    s = `
+    
+      Store Page Variant Dropdown Select Text Change v${ version }
+      
+      © 2021-2025 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const callback = ( ) => {
+  
+    // globals
+    
+    {
+    
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc spdmstc sub-module
+      
+      twc.spdmstc = ( ( self ) => self ) ( twc.spdmstc || { } );
+      
+      }
+      
+    const
+    
+      callback = ( element ) => {
+      
+        const attribute = 'data-selected-value';
+        
+        element
+        
+          .setAttribute (
+          
+            attribute,
+            
+            element
+            
+              .getAttribute ( attribute )
+              
+              .replace (
+              
+                options.searchText,
+                
+                options.replaceText
+                
+                )
+                
+            );
+            
+        element = element
+        
+          .querySelector ( '.unselected-option-value' )
+        
+        element
+        
+          .textContent
+          
+          =
+          
+          element
+          
+            .textContent
+            
+            .replace (
+            
+              options.searchText,
+              
+              options.replaceText
+              
+              );
+              
+        },
+        
+      codeKey = 'twc-spdmstc',
+      
+      options = codeKey
+      
+        .split ( '-' )
+        
+        .reduce ( ( obj, key ) => obj?.[ key ], window ),
+        
+      selector = '.variant-select-wrapper';
+        
+    document
+    
+      .body
+      
+      .querySelectorAll ( selector )
+      
+      .forEach ( callback );
+      
+    };
+    
+  document
+  
+    .addEventListener ( 'DOMContentLoaded', callback );
+  
+  } ) ( );
