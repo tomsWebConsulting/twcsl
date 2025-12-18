@@ -66,8 +66,8 @@ product dimensions.
 
 ## Effects That Can Use This Code
 
-[Store Page Detail Product Dimensions][8]
-[Store Page List Product Dimensions][9]
+* [Store Page Detail Product Dimensions][8]
+* [Store Page List Product Dimensions][9]
 
 ## Make a Donation
 
