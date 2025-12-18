@@ -65,9 +65,9 @@ pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@005f424a3133869fe44d9b541ddd29080f04f0fa/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@005f424a3133869fe44d9b541ddd29080f04f0fa/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Product Dimensions -->
             
@@ -91,9 +91,9 @@ pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@005f424a3133869fe44d9b541ddd29080f04f0fa/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@005f424a3133869fe44d9b541ddd29080f04f0fa/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Product Dimensions -->
             
