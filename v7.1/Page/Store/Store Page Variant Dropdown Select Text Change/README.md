@@ -54,7 +54,7 @@ Change Select text of variant dropdown.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change/store%20page%20variant%20dropdown%20select%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4997a15a6e7e40c29d3c67860da29fbac7b3a9ec/v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change/store%20page%20variant%20dropdown%20select%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Variant Dropdown Select Text Change -->
           
@@ -78,7 +78,7 @@ Change Select text of variant dropdown.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change/store%20page%20variant%20dropdown%20select%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4997a15a6e7e40c29d3c67860da29fbac7b3a9ec/v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change/store%20page%20variant%20dropdown%20select%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Variant Dropdown Select Text Change -->
           
