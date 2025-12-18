@@ -28,7 +28,7 @@ Add product dimensions to some products of list pages.
 
 ---
 
-## Install Options
+## Install
 
 * Optional Install
 
