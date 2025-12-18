@@ -64,9 +64,9 @@ Add product dimensions to some products of list pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Dimensions -->
             
@@ -90,9 +90,9 @@ Add product dimensions to some products of list pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@725b576b4755ea93f9c91471b460e0ebe5966ff1/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/store%20page%20list%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Product Dimensions -->
             
@@ -167,7 +167,7 @@ Please consider [making a donation][12].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Product%20Dimensions#store-page-product-dimensions
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions#store-page-detail-product-dimensions
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
 [7]: store%20page%20list%20product%20dimensions%20options.html#L1
