@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 414 effects. Each effect has it's own version number, code,
+twcsl contains 419 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -233,6 +233,8 @@ not necessarily designed to work together.
     
     * [options data structure templates](Element/Elements%20Manipulate/options%20data%20structure%20templates)
       
+    * [Elements Manipulate.bbprojectd](Element/Elements%20Manipulate/Elements%20Manipulate.bbprojectd)
+      
   * [Element Text Change](Element/Element%20Text%20Change)
     
   * [Social Icon](Element/Social%20Icon)
@@ -383,6 +385,10 @@ not necessarily designed to work together.
           
     * [Store](v7.1/Page/Store)
       
+      * [Store Page Product Dimensions](v7.1/Page/Store/Store%20Page%20Product%20Dimensions)
+        
+        * [Store Page Product Dimensions.bbprojectd](v7.1/Page/Store/Store%20Page%20Product%20Dimensions/Store%20Page%20Product%20Dimensions.bbprojectd)
+          
       * [Store Page Tags Product Mark Add](v7.1/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add)
         
       * [Detail](v7.1/Page/Store/Detail)
@@ -403,6 +409,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
           
+          * [Store Page Detail Product Dimensions.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/Store%20Page%20Detail%20Product%20Dimensions.bbprojectd)
+            
         * [Store Product Detail Variant Title Selected Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Title%20Selected%20Add)
           
         * [Store Page Detail Title Text to Link](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link)
@@ -441,6 +449,8 @@ not necessarily designed to work together.
           
         * [Store Page List Product Dimensions](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions)
           
+          * [Store Page List Product Dimensions.bbprojectd](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Dimensions/Store%20Page%20List%20Product%20Dimensions.bbprojectd)
+            
         * [Store Page List Categories Mega](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega)
           
         * [Store Page List Quick View Button Link Add](v7.1/Page/Store/List/Store%20Page%20List%20Quick%20View%20Button%20Link%20Add)
