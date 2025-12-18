@@ -65,9 +65,9 @@ pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3b29f23eb9c4191bc3f750ad346284e475035374/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3b29f23eb9c4191bc3f750ad346284e475035374/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Product Dimensions -->
             
@@ -91,9 +91,9 @@ pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3b29f23eb9c4191bc3f750ad346284e475035374/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3b29f23eb9c4191bc3f750ad346284e475035374/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c10bbb78a3161f05e981d8cb3e717a552fd30641/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/store%20page%20detail%20product%20dimensions.min.js" type="module"></script>
             
             <!-- end TWC Store Page Detail Product Dimensions -->
             
@@ -141,8 +141,8 @@ pages.
 ## Note
 
 The dimensions entered in the Squarespace editor are shipping dimensions, not
-product dimensions. If you don't need to use shipping dimensions for shipping
-you can use it for product dimensions.
+physical dimensions. If you don't need to use shipping dimensions for shipping
+you can use it for physical dimensions.
 
 ## Demo
 
