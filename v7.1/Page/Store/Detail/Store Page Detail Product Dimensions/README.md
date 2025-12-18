@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.8.0
+  * 0.8.1
 
 #### SS Version
 
@@ -153,6 +153,11 @@ You can see a [demo of this effect here][10].
 Please consider [making a donation][11].
 
 ## Changes
+
+* **2025-10-17**
+
+  * restored recognition of previous trigger test
+  * bumped version to 0.8.1
 
 * **2025-10-17**
 

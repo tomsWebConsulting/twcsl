@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.8.0
+    Version         : 0.8.1
     
     SS Version      : 7.1
     
@@ -35,7 +35,7 @@
     
   const
   
-    version = '0.8.0',
+    version = '0.8.1',
     
     s = `
     
@@ -87,6 +87,14 @@
     
       codeKey = 'twc-spdpd',
       
+      re = new RegExp (
+      
+        `\\[ ${ codeKey } \\]|\\[${ codeKey }\\]`,
+        
+        'g'
+        
+        ),
+        
       selector = [
       
         '.product-description',
@@ -97,8 +105,6 @@
         
         .join ( ', ' );
         
-      triggerText = `[ ${ codeKey } ]`;
-      
     let elements = [
     
       ...
@@ -113,11 +119,11 @@
       
       .filter (
       
-        e => e
+        e => re.test (
         
-          .textContent
+          e.textContent
           
-          .includes ( triggerText )
+          )
           
         );
         
@@ -430,11 +436,11 @@
           
             node = walker.currentNode,
             
-            hasTriggerText = node
+            hasTriggerText = re.test (
             
-              .textContent
+              node.textContent
               
-              .includes ( triggerText );
+              );
               
           if ( ! hasTriggerText ) continue;
           
@@ -672,11 +678,11 @@
       
       .filter (
       
-        e => e
+        e => re.test (
         
-          .getAttribute ( 'content' )
+          e.getAttribute ( 'content' )
           
-          .includes ( triggerText )
+          )
           
         )
         
@@ -692,7 +698,7 @@
             
               .getAttribute ( 'content' )
               
-              .replaceAll ( triggerText, '' )
+              .replace ( re, '' )
               
               .trim ( )
               
@@ -716,7 +722,7 @@
       
       .filter (
       
-        e => e.textContent.includes ( triggerText )
+        e => re.test ( e.textContent )
         
         )
         
@@ -732,7 +738,7 @@
           
             .textContent
             
-            .replaceAll ( triggerText, '' )
+            .replace ( re, '' )
             
             .trim ( )
             
