@@ -1,0 +1,51 @@
+/*!
+
+  store page detail tag based image add before additional info
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.2.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Products V2
+  Compatible      : Yes
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  v7.0
+  Templates       : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
+                    Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                    Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                    Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                    Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                    Stella, Thorne, Vow, Wav, West )
+                    
+                    your template is not listed? then it is not currently
+                    supported
+  
+  Dependencies    : Page Tags Cache < https://tinyurl.com/4frfus4a >
+  
+  Note            : the images are added before the Additional Info area of
+                    the product detail page
+  
+  Copyright       : 2021-2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+#twc-spdtbiabai {
+
+  box-sizing : border-box;
+  margin : 0 auto;
+  padding : 3vw var( --sqs-site-gutter );
+  width : 100%;
+  
+  }
