@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 421 effects. Each effect has it's own version number, code,
+twcsl contains 423 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -61,6 +61,8 @@ not necessarily designed to work together.
     
   * [Page Tags Cache](Page/Page%20Tags%20Cache)
     
+    * [Page Tags Cache.bbprojectd](Page/Page%20Tags%20Cache/Page%20Tags%20Cache.bbprojectd)
+      
   * [Cart](Page/Cart)
     
     * [Cart Page Form Text Field Max Length](Page/Cart/Cart%20Page%20Form%20Text%20Field%20Max%20Length)
@@ -127,6 +129,10 @@ not necessarily designed to work together.
         
       * [Store Page Detail Add To Cart Button Added Callbacks](Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Button%20Added%20Callbacks)
         
+      * [Store Page Detail Tag Based Image Add Before Additional Info](Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info)
+        
+        * [Store Page Detail Tag Based Image Add Before Additional Info.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info.bbprojectd)
+          
       * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
         
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
@@ -761,8 +767,6 @@ not necessarily designed to work together.
   
   * [Header Site Title Link Not Homepage Change](Header/Header%20Site%20Title%20Link%20Not%20Homepage%20Change)
     
-* [Add Images to Product Detail Page Based on Tags Above Additional Info](Add%20Images%20to%20Product%20Detail%20Page%20Based%20on%20Tags%20Above%20Additional%20Info)
-  
 * [Change Form Block Post-Submit Redirect Based on a Radio Form Field Selected Option](Change%20Form%20Block%20Post-Submit%20Redirect%20Based%20on%20a%20Radio%20Form%20Field%20Selected%20Option)
   
 * [v7.0](v7.0)
