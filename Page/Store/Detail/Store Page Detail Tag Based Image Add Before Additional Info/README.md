@@ -63,9 +63,9 @@ Add images to product detail based on tags before Additional Info.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
             
             <!-- end TWC Page Tags Cache -->
             
@@ -92,9 +92,9 @@ Add images to product detail based on tags before Additional Info.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@71bb4218b4abff9b3bbfdb04f384ed33c7be432c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.css" rel="stylesheet" type="text/css">
             
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
               
               <!-- end TWC Page Tags Cache -->
               
@@ -115,7 +115,7 @@ Add images to product detail based on tags before Additional Info.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.min.js" type="module"></script>
               
               <!-- end TWC Page Tags Cache -->
               
