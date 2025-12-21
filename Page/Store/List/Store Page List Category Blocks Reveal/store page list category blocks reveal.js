@@ -1,0 +1,140 @@
+( ( ) => {
+
+  /*!
+  
+    store page list category blocks reveal
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.3.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Products V2
+    Compatible      : Yes
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : No
+    
+    v7.0
+    Templates       : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                      Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
+                      Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
+                      Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                      Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
+                      Stella, Thorne, Vow, Wav, West )
+                      
+                      your template is not listed? then it is not currently
+                      supported
+    
+    Dependencies    : store page list category attribute add
+    
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+    
+    Copyright       : 2021-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.3.0',
+    
+    s = `Store Page List Category Blocks Reveal v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2021-2025 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const callback = ( ) => {
+  
+    const category = document
+    
+      .body
+      
+      .getAttribute ( 'data-twc-splcaa-store-category' );
+      
+    if ( ! category ) return; // bail if no category
+    
+    const
+    
+      codeKey = 'twc-splcbr',
+      
+      nextUntil = ( element, selector ) => {
+      
+        const result = [ ];
+        
+        let e = element.nextElementSibling;
+      
+        while ( e && ! e.matches ( selector ) ) {
+        
+          result.push ( e );
+          
+          e = e.nextElementSibling;
+          
+          }
+          
+        return result;
+        
+        },
+        
+      parentSelector = 'div[ data-sqsp-block = "code" ]',
+      
+      selector = [
+      
+        /* v7.1 */
+        
+        `.page-section:first-child x-${ codeKey }[ category = "${
+        
+            category
+            
+            }" ]`,
+            
+        /* Brine */
+        
+        `.Intro-content x-${ codeKey }[ category = "${ category }" ]`
+        
+        ]
+        
+        .join ( ', ' );
+        
+    nextUntil (
+    
+      document
+      
+        .body
+        
+        .querySelector ( selector )
+        
+        .closest ( parentSelector ),
+        
+      parentSelector
+      
+      )
+      
+      .forEach (
+      
+        e => e.classList.add ( `${ codeKey }--show` )
+        
+        );
+        
+    };
+    
+  document
+  
+    .addEventListener ( 'DOMContentLoaded', callback );
+  
+  } ) ( );
