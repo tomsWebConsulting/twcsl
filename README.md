@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 423 effects. Each effect has it's own version number, code,
+twcsl contains 425 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -143,6 +143,12 @@ not necessarily designed to work together.
       
       * [Store Page List Category Attribute Add](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
         
+        * [Store Page List Category Attribute Add.bbprojectd](Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/Store%20Page%20List%20Category%20Attribute%20Add.bbprojectd)
+          
+      * [Store Page List Category Blocks Reveal](Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal)
+        
+        * [Store Page List Category Blocks Reveal.bbprojectd](Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/Store%20Page%20List%20Category%20Blocks%20Reveal.bbprojectd)
+          
       * [Store Page List Empty HTML Add](Page/Store/List/Store%20Page%20List%20Empty%20HTML%20Add)
         
     * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
@@ -296,8 +302,6 @@ not necessarily designed to work together.
 * [Cart Unit Prices](Cart%20Unit%20Prices)
   
 * [Page Edit Keys](Page%20Edit%20Keys)
-  
-* [Add Store Category Accordion](Add%20Store%20Category%20Accordion)
   
 * [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
   
