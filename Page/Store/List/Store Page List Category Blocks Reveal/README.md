@@ -58,9 +58,9 @@ Reveal blocks based on category.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Category Blocks Reveal -->
             
@@ -82,9 +82,9 @@ Reveal blocks based on category.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Category Blocks Reveal -->
               
@@ -100,9 +100,9 @@ Reveal blocks based on category.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.css" rel="stylesheet" type="text/css">
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@31ce8ad240e9a1a02af7749587fa5ec4c935ed58/Page/Store/List/Store%20Page%20List%20Category%20Blocks%20Reveal/store%20page%20list%20category%20blocks%20reveal.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Category Blocks Reveal -->
               
