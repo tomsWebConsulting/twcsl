@@ -28,8 +28,6 @@ of your choice.
 #### Dependencies
 
   * [Squarespace plan][3] that supports [JavaScript][4].
-  
-  * [jQuery][5]
 
 ---
 
@@ -43,14 +41,14 @@ of your choice.
       effect.
       
     * Add code from file **[store page detail add button after add to cart
-      button options.html][6]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page. Refer to [Per-page code injection][7] for
+      button options.html][5]** to Store Settings > Advanced > Page Header Code
+      Injection for the store page. Refer to [Per-page code injection][6] for
       details. Read the code for any instructions within.
       
     * Add code from file **[store page detail add button after add to cart
-      button.html][8]** to Store Settings > Advanced > Page Header Code
+      button.html][7]** to Store Settings > Advanced > Page Header Code
       Injection for the store page after the previous code. Refer to [Per-page
-      code injection][7] for details.
+      code injection][6] for details.
       
   * Site-wide
   
@@ -58,13 +56,13 @@ of your choice.
       effect.
       
     * Add code from file **[store page detail add button after add to cart
-      button options.html][6]** to Store Settings > Advanced > Page Header Code
+      button options.html][5]** to Store Settings > Advanced > Page Header Code
       Injection for the store page after the previous code. Refer to [Per-page
-      code injection][7] for details. Read the code for any instructions within.
+      code injection][6] for details. Read the code for any instructions within.
       
     * Add code from file **[store page detail add button after add to cart
-      button.html][8]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER after the previous code. Refer to [Add code to code injection][9]
+      button.html][7]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER after the previous code. Refer to [Add code to code injection][8]
       for details.
 
 ## How to Use
@@ -76,7 +74,7 @@ of your choice.
     * In the options code set the text, url and other options.
     
   * Add a unique button to each product with the same text and unique URL.
-    
+  
     * In the options code set the text.
     
     * For each product enter your URL adding **#twc-spdabaatcb** to the end on a
@@ -86,18 +84,18 @@ of your choice.
       temperamental when pasting extra text at the end of the URL.
       
   * Mix and match.
-    
+  
     * Set the settings as for the first option.
     
     * On some products add a URL per the second option.
 
 ## Demo
 
-You can see a [demo of this effect here][10].
+You can see a [demo of this effect here][9].
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -136,10 +134,9 @@ Please consider [making a donation][11].
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://jquery.com/
-[6]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button%20options.html#L1
-[8]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-button-after-add-to-cart-button/p/earth-sky-planter?password=twcdemos
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button%20options.html#L1
+[7]: store%20page%20detail%20add%20button%20after%20add%20to%20cart%20button.html#L1
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-button-after-add-to-cart-button/p/earth-sky-planter?password=twcdemos
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
