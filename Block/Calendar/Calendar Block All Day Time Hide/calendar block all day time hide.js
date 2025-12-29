@@ -1,0 +1,126 @@
+/*!
+
+  calendar block all day time hide
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  Copyright       : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+( ( ) => {
+
+  const
+  
+    version = '0.1.0',
+    
+    s = `
+    
+      Calendar Block All Day Time Hide v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2025 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const callback = ( ) => {
+  
+    const
+    
+      codeKey = 'twc-cbadth',
+      
+      xPathEvaluate = ( xPathExpression, contextNode ) => {
+      
+        const xPathResults = document
+        
+          .evaluate (
+          
+            xPathExpression,
+            
+            contextNode,
+            
+            null,
+            
+            XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+            
+            null
+            
+            );
+            
+        return xPathResults;
+        
+        },
+        
+      xPathExpression = `
+      
+        //div[
+        
+          contains (
+          
+            @class,
+            
+            'flyoutitem-datetime--24hr'
+            
+            )
+            
+          and 
+          
+          normalize-space ( text ( ) ) = '00:00 – 23:59'
+          
+          ]
+          
+        `,
+        
+      xPathResults = xPathEvaluate (
+      
+        xPathExpression,
+        
+        document
+        
+          .body
+          
+          .querySelector ( '#siteWrapper' )
+          
+        );
+        
+    for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+    
+      xPathResults
+      
+        .snapshotItem ( i )
+        
+        .closest ( '.flyoutitem' )
+        
+        .classList
+        
+        .add ( codeKey );
+        
+      }
+      
+    };
+    
+  document
+  
+    .addEventListener ( 'DOMContentLoaded', callback );
+    
+  } ) ( );
