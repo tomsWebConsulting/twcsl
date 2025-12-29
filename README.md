@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 425 effects. Each effect has it's own version number, code,
+twcsl contains 426 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -107,6 +107,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Add Button After Add to Cart Button](Page/Store/Detail/Store%20Page%20Detail%20Add%20Button%20After%20Add%20to%20Cart%20Button)
         
+        * [Store Page Detail Add Button After Add to Cart Button.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Add%20Button%20After%20Add%20to%20Cart%20Button/Store%20Page%20Detail%20Add%20Button%20After%20Add%20to%20Cart%20Button.bbprojectd)
+          
       * [Store Page Detail Price Gte Afterpay Hide](Page/Store/Detail/Store%20Page%20Detail%20Price%20Gte%20Afterpay%20Hide)
         
       * [Store Page Detail Add to Cart Button Text Change](Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Button%20Text%20Change)
