@@ -1,0 +1,313 @@
+<!-- begin TWC Calendar Block Observe Changes -->
+
+  <!--
+  
+    calendar block observe changes
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.4.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Yes
+    
+    Note            : this code is a base for other effects. this code alone
+                      should not produce any visible change
+    
+    Copyright       : 2022-2025 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.4.0',
+        
+        s = `
+        
+          Calendar Block Observe Changes v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // bail if no mutation observer available
+      
+      if ( ! ( 'MutationObserver' in window ) ) return;
+      
+      // global
+      
+      {
+    
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc cboc sub-module
+        
+        twc.cboc = ( ( self ) => self ) ( twc.cboc || { } );
+        
+        // initialize twc cboc callbacks sub-module
+        
+        twc.cboc.callbacks = ( ( self ) => self ) ( twc.cboc.callbacks || { } );
+          
+        // initialize twc cboc callbacks item sub-module
+        
+        twc.cboc.callbacks.item =
+        
+          ( ( self ) => self ) ( twc.cboc.callbacks.item || [ ] );
+          
+        // initialize twc cboc callbacks item sub-module
+        
+        twc.cboc.callbacks.flyOutItem =
+        
+          ( ( self ) => self ) ( twc.cboc.callbacks.flyOutItem || [ ] );
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-cboc',
+        
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+        flyOutItemCallbacks = options
+        
+          .callbacks
+          
+          .flyOutItem,
+          
+        itemCallbacks = options
+        
+          .callbacks
+          
+          .item,
+          
+        hasCallbacks =
+        
+          itemCallbacks.length
+          
+          ||
+          
+          flyOutItemCallbacks.length;
+          
+      if ( ! hasCallbacks ) return; // bail if no callbacks
+      
+      const callback = ( ) => {
+      
+        const
+        
+          callback = ( ) => {
+          
+            const
+            
+              selector = [
+              
+                '.sqs-block-calendar', // 7.1, 7.0
+                
+                // 7.0, Events page view calendar
+                
+                '.sqs-events-collection-calendar',
+                
+                ]
+                
+                .join ( ', ' ),
+                
+              calendarElements = document
+              
+                .body
+                
+                .querySelectorAll ( selector ),
+                
+              debugFlag = options.debugFlag,
+              
+              hasCalendars = calendarElements.length;
+              
+            if ( debugFlag )
+            
+              console.log (
+              
+                `${ codeKey } calendar elements : `,
+                
+                calendarElements
+                
+                );
+                
+            if ( ! hasCalendars ) return; // bail if no calendars
+            
+            const
+            
+              callback = ( mutations ) => {
+              
+                if ( debugFlag )
+                
+                  console.log ( `${ codeKey } mutations : `, mutations );
+                  
+                const callback = ( mutation ) => {
+                
+                  if ( debugFlag )
+                  
+                    console.log ( `${ codeKey } mutation : `, mutation );
+                    
+                  const addedNodes = mutation.addedNodes;
+                  
+                  // bail if no added nodes
+                  
+                  if ( ! addedNodes.length ) return;
+                  
+                  const callback = ( element ) => {
+                  
+                    const isElement = element
+                    
+                      .nodeType
+                      
+                      ===
+                      
+                      1;
+                      
+                    if ( ! isElement ) return; // bail if not element
+                    
+                    const
+                    
+                      classList = element.classList,
+                      
+                      hasEvent = classList
+                      
+                        .contains ( 'has-event' );
+                        
+                    if ( ! hasEvent ) return; // bail if not event
+                    
+                    const callback = ( callback, element ) => {
+                    
+                      try {
+                      
+                        callback ( element );
+                        
+                        } catch ( error ) {
+                        
+                          const s = `${ codeKey } callback error`;
+                          
+                          console.error ( s, error );
+                          
+                          }
+                          
+                      };
+                      
+                    itemCallbacks.forEach (
+                    
+                      c => callback (
+                      
+                        c,
+                        
+                        element
+                        
+                          .querySelector ( '.itemlist' )
+                          
+                        )
+                        
+                      );
+                      
+                    flyOutItemCallbacks.forEach (
+                    
+                      c => callback (
+                      
+                        c,
+                        
+                        element
+                        
+                          .querySelector ( '.itemlist' )
+                          
+                        )
+                        
+                      );
+                      
+                    };
+                    
+                  addedNodes.forEach ( callback );
+                  
+                  };
+                  
+                mutations.forEach ( callback );
+                
+                },
+                
+              observer = new MutationObserver ( callback );
+              
+            // start listening for changes in specified elements
+            
+            calendarElements.forEach (
+            
+              e => observer.observe (
+              
+                e,
+                
+                {
+                
+                  childList : true,
+                  
+                  subtree : true
+                  
+                  }
+                  
+                )
+                
+              );
+              
+            },
+            
+          ssVersion = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .templateVersion;
+            
+        switch ( ssVersion ) {
+        
+          case '7.1' :
+          
+            callback ( );
+            
+            break;
+            
+          case '7' :
+          
+            Squarespace.onInitialize ( Y, callback );
+            
+            break;
+            
+          }
+          
+        };
+        
+      document
+      
+        .addEventListener ( 'DOMContentLoaded', callback );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Calendar Block Observe Changes -->
