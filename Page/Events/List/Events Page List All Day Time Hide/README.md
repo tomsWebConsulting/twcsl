@@ -47,9 +47,9 @@ Hide all day event times.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
           
           <!-- end TWC Events Page List All Day Time Hide -->
           
@@ -71,9 +71,9 @@ Hide all day event times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Events Page List All Day Time Hide -->
             
@@ -89,9 +89,9 @@ Hide all day event times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7face2f065e60e12234caf88fcd0d0f48bde5b6c/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/events%20page%20list%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Events Page List All Day Time Hide -->
             
