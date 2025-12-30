@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.1.0
+  Version         : 0.1.1
   
   SS Versions     : 7.1, 7.0
   
@@ -19,4 +19,4 @@
   
   no user serviceable parts below
   
-  */.yui3-squarespacecalendar .flyoutitem .flyoutitem-datetime{display:none}
+  */.yui3-squarespacecalendar .twc-cbadth .flyoutitem-datetime,.yui3-squarespacecalendar .twc-cbadth .item-time{display:none}

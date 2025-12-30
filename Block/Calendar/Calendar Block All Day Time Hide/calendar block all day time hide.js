@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Versions     : 7.1, 7.0
     
@@ -18,6 +18,9 @@
     Note            : the code is comprised of a style and script tag. both are
                       needed for the full effect to work
     
+    Dependencies    : calendar block observe changes
+                      < https://tinyurl.com/23rjk6zw >
+    
     Copyright       : 2025 Thomas Creedon
                       
                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
@@ -28,7 +31,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.1.1',
     
     s = `
     
@@ -128,7 +131,7 @@
         
           .snapshotItem ( i )
           
-          .closest ( '.flyoutitem' )
+          .closest ( 'td' )
           
           .classList
           

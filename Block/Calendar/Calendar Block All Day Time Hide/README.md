@@ -8,7 +8,7 @@ Hide all day calendar times.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -124,11 +124,10 @@ Please consider [making a donation][12].
 
 ## Changes
 
-<!-- * **2025-10-17**
+* **2025-12-30**
 
-  * restored recognition of previous trigger test
-  * bumped version to 0.8.1
-  -->
+  * added hiding item start time
+  * bumped version to 0.1.1
   
 * **2025-12-29**
 
@@ -144,5 +143,5 @@ Please consider [making a donation][12].
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: calendar%20block%20all%20day%20time%20hide.html#L1
-[11]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions/p/milk-dip-cup?password=twcdemos
+[11]: https://toms-web-consulting-demos.squarespace.com/calendar-block-all-day-time-hide?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
