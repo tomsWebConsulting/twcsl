@@ -51,7 +51,7 @@ Observe changes to calendar block and call custom callbacks.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
           
           <!-- end TWC Calendar Block Observe Changes -->
           
@@ -77,7 +77,7 @@ Observe changes to calendar block and call custom callbacks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Observe Changes -->
             
@@ -97,7 +97,7 @@ Observe changes to calendar block and call custom callbacks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Observe Changes -->
             
