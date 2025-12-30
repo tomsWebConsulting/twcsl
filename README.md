@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 426 effects. Each effect has it's own version number, code,
+twcsl contains 430 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -320,8 +320,6 @@ not necessarily designed to work together.
 * [Change Unable to Add Item to Cart Alert for Unselected Variants](Change%20Unable%20to%20Add%20Item%20to%20Cart%20Alert%20for%20Unselected%20Variants)
   
 * [Blog Non-Post Pages Meta Noindex Tag Add](Blog%20Non-Post%20Pages%20Meta%20Noindex%20Tag%20Add)
-  
-* [Calendar Block Event Change](Calendar%20Block%20Event%20Change)
   
 * [Change Cart Title](Change%20Cart%20Title)
   
@@ -867,6 +865,16 @@ not necessarily designed to work together.
       
     * [Form Block Text Field Max Length](Block/Form/Form%20Block%20Text%20Field%20Max%20Length)
       
+  * [Calendar](Block/Calendar)
+    
+    * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
+      
+      * [Calendar Block Observe Changes.bbprojectd](Block/Calendar/Calendar%20Block%20Observe%20Changes/Calendar%20Block%20Observe%20Changes.bbprojectd)
+        
+    * [Calendar Block All Day Time Hide](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide)
+      
+      * [Calendar Block All Day Time Hide.bbprojectd](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/Calendar%20Block%20All%20Day%20Time%20Hide.bbprojectd)
+        
   * [Gallery](Block/Gallery)
     
     * [Gallery Block Slideshow Auto Play](Block/Gallery/Gallery%20Block%20Slideshow%20Auto%20Play)
