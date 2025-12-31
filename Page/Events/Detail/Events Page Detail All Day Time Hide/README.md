@@ -47,9 +47,9 @@ Hide all day event times.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
           
           <!-- end TWC Events Page Detail All Day Time Hide -->
           
@@ -71,9 +71,9 @@ Hide all day event times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Events Page Detail All Day Time Hide -->
             
@@ -89,9 +89,9 @@ Hide all day event times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee2d2d20ac0c58b6fe35b8a5843a5dd494d9284b/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@97b907804dc91f7ec0843b1568ad8fb041da20aa/Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide/events%20page%20detail%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Events Page Detail All Day Time Hide -->
             
