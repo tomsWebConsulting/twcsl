@@ -136,7 +136,7 @@ to 11:59pm.
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][10].
 
 ## Changes
 
