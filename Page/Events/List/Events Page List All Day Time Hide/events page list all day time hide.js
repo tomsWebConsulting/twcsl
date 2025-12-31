@@ -15,9 +15,6 @@
     Engine
     Compatible      : Not Applicable
     
-    Note            : the code is comprised of a style and script tag. both are
-                      needed for the full effect to work
-    
     Copyright       : 2025 Thomas Creedon
                       
                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
