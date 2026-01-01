@@ -59,7 +59,7 @@ Limit store page form text and text area field lengths.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@eaa0594217a4e92f3bc1e80f01c26583d7a70404/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
             
             <!-- end TWC Store Page Form Text Field Max Length -->
             
@@ -81,7 +81,7 @@ Limit store page form text and text area field lengths.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@eaa0594217a4e92f3bc1e80f01c26583d7a70404/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
               
               <!-- end TWC Store Page Form Text Field Max Length -->
               
@@ -97,7 +97,7 @@ Limit store page form text and text area field lengths.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@eaa0594217a4e92f3bc1e80f01c26583d7a70404/Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/store%20page%20form%20text%20field%20max%20length.min.js" type="module"></script>
               
               <!-- end TWC Store Page Form Text Field Max Length -->
               
