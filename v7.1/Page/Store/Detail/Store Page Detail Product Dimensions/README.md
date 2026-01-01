@@ -50,7 +50,8 @@ pages.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one page.
+        * Use this option if you want to have this effect on only one Store
+          page.
           
         * Add code from file **[store page detail product dimensions
           options.html][6]** to Page Settings > Advanced >
@@ -108,7 +109,7 @@ pages.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one page.
+      * Use this option if you want to have this effect on only one Store page.
         
       * Add code from file **[store page detail product dimensions
         options.html][6]** to Page Settings > Advanced >

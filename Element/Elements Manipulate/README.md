@@ -58,7 +58,7 @@ append, before, prepend, or replace and other settings.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one page.
+        * Use this option if you want to have this effect on only one Page.
           
         * Add code from file **[elements manipulate options.html][8]** to Page
           Settings > Advanced > Page Header Code Injection for the page. Read
@@ -133,7 +133,7 @@ append, before, prepend, or replace and other settings.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one page.
+      * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[elements manipulate options.html][8]** to Page
         Settings > Advanced > Page Header Code Injection for the page. Read

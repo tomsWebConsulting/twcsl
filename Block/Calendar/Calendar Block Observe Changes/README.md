@@ -37,7 +37,7 @@ Observe changes to calendar block and call custom callbacks.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one page.
+      * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[calendar block observe changes options.html][6]**
         to Page Settings > Advanced > Page Header Code Injection for the page.
@@ -112,7 +112,7 @@ Observe changes to calendar block and call custom callbacks.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one page.
+    * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[calendar block observe changes options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the page. Read

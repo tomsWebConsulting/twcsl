@@ -44,7 +44,7 @@ Hide all day calendar times.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one page.
+        * Use this option if you want to have this effect on only one Page.
           
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the page.
@@ -93,7 +93,7 @@ Hide all day calendar times.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one page.
+      * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[calendar block all day time hide.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the page.
