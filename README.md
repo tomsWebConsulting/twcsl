@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 436 effects. Each effect has it's own version number, code,
+twcsl contains 439 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -103,6 +103,8 @@ not necessarily designed to work together.
       
     * [Store Page Form Text Field Max Length](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length)
       
+      * [Store Page Form Text Field Max Length.bbprojectd](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/Store%20Page%20Form%20Text%20Field%20Max%20Length.bbprojectd)
+        
     * [Store Page Price Change Log](Page/Store/Store%20Page%20Price%20Change%20Log)
       
     * [Store Page Savings Percentage](Page/Store/Store%20Page%20Savings%20Percentage)
@@ -239,6 +241,8 @@ not necessarily designed to work together.
     
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
+    * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
+      
   * [Product Custom Form Text Field Max Length](Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length)
     
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
@@ -303,6 +307,8 @@ not necessarily designed to work together.
   
 * [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
   
+  * [Product Custom Form Text Field Max Length.bbprojectd](Product%20Custom%20Form%20Text%20Field%20Max%20Length/Product%20Custom%20Form%20Text%20Field%20Max%20Length.bbprojectd)
+    
 * [Cart Prices Change](Cart%20Prices%20Change)
   
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
