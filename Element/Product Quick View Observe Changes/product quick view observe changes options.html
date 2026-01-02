@@ -1,0 +1,55 @@
+<!-- begin TWC Product Quick View Observe Changes Options -->
+
+  <!--
+  
+    product quick view observe changes options
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.3.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    Copyright       : 2024-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    // initialize twc pqvoc sub-module
+    
+    twc.pqvoc = ( ( self ) => self ) ( twc.pqvoc || { } );
+    
+    // initialize twc pqvoc callbacks sub-module
+    
+    twc.pqvoc.callbacks = ( ( self ) => {
+    
+      const callbacks = [
+        
+        /*
+        
+          following is an example line. copy and paste it after the example
+          line. remove the double forward slash space of the new line. enter the
+          name of your callback
+          
+          */
+          
+        // '[ enter your callback name here between single quotes replacing square brackets ]',
+        
+        ];
+        
+      self.push ( ... callbacks );
+      
+      return self;
+      
+      } ) ( twc.pqvoc.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end TWC Product Quick View Observe Changes Options -->
