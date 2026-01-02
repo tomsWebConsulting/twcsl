@@ -146,7 +146,7 @@ append, before, prepend, or replace and other settings.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all pages.
+      * Use this option if you want to have this effect on all Pages.
         
       * v7.1
       

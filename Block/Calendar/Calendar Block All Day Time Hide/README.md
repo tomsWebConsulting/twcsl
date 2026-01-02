@@ -66,7 +66,7 @@ Hide all day calendar times.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all pages.
+        * Use this option if you want to have this effect on all Pages.
           
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -102,7 +102,7 @@ Hide all day calendar times.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all pages.
+      * Use this option if you want to have this effect on all Pages.
         
       * Add code from file **[calendar block all day time hide.html][10]** to
         Website > Pages > Custom Code > Code Injection > FOOTER.

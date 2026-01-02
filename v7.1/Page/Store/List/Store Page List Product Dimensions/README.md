@@ -122,7 +122,7 @@ Add product dimensions to some products of list pages.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all pages.
+      * Use this option if you want to have this effect on all Pages.
         
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >

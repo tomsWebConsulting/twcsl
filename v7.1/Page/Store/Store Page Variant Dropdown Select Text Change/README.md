@@ -108,7 +108,7 @@ Change Select text of variant dropdown.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all pages.
+    * Use this option if you want to have this effect on all Pages.
       
     * Add code from file **[store page variant dropdown select text change
       options.html][6]** to Page Settings > Advanced >

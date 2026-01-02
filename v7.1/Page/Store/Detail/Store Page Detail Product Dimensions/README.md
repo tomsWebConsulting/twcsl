@@ -123,7 +123,7 @@ pages.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all pages.
+      * Use this option if you want to have this effect on all Pages.
         
       * Add code from file **[store page detail product dimensions
         options.html][6]** to Page Settings > Advanced >

@@ -69,7 +69,7 @@ callbacks as nodes are added to the [DOM][2].
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all pages.
+        * Use this option if you want to have this effect on all Pages.
           
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
