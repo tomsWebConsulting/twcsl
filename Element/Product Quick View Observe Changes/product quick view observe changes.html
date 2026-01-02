@@ -4,32 +4,32 @@
   
     product quick view observe changes
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.0
+    Version           : 0.3.0
     
-    SS Versions   : 7.1, 7.0
+    SS Versions       : 7.1, 7.0
     
     v7.1
     Products V2
-    Compatible    : Yes
+    Compatible        : Yes
     
     v7.1
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible        : Not Applicable
     
-    Dependencies  : modal lightbox observe changes
-                    
-                    < https://tinyurl.com/2pfvaeud >
+    Dependencies      : modal lightbox observe changes
+                        
+                        < https://tinyurl.com/2pfvaeud >
     
-    Note          : this code is a base for other effects. on its own it doesn't
-                    do anything. this code is not the end all be all of mutation
-                    observers. it may not cover your needs
+    Note              : this code is a base for other effects. on its own it
+                        doesn't do anything. this code is not the end all be
+                        all of mutation observers. it may not cover your needs
     
-    Copyright     : 2024-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2024-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -41,13 +41,13 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.3.0',
         
         s = `Product Quick View Observe Changes v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2024-2025 Thomas Creedon
+          © 2024-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -55,69 +55,107 @@
           
       console.log ( s );
       
-      // globals
+      // initialize twc module
       
-      {
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
       
-        // initialize twc module
+      // initialize twc pqvoc sub-module
+      
+      twc.pqvoc = ( ( self ) => self ) ( twc.pqvoc || { } );
+      
+      // initialize twc pqvoc callbacks sub-module
+      
+      twc.pqvoc.callbacks =
+      
+        ( ( self ) => self ) ( twc.pqvoc.callbacks || [ ] );
         
-        window.twc = ( ( self ) => self ) ( window.twc || { } );
+      // initialize twc mloc sub-module
+      
+      twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+      
+      // initialize twc mloc callbacks sub-module
+      
+      twc.mloc.callbacks = ( ( self ) => {
+      
+        const callback = ( element ) => {
         
-        // initialize twc pqvoc sub-module
-        
-        twc.pqvoc = ( ( self ) => self ) ( twc.pqvoc || { } );
-        
-        // initialize twc pqvoc callbacks sub-module
-        
-        twc.pqvoc.callbacks =
-        
-          ( ( self ) => self ) ( twc.pqvoc.callbacks || [ ] );
+          const isQuickView = element
           
-        }
-        
-      } ) ( );
-      
-    var twcPqvoc = ( node ) => {
-    
-      const isQuickView = node
-      
-        .classList
-        
-        .contains ( 'sqs-product-quick-view-lightbox' );
-        
-      if ( ! isQuickView ) return; // bail if no product quick view
-      
-      const
-      
-        callback = ( mutations ) => {
-        
-          const callback = ( mutation ) => {
+            .classList
+            
+            .contains ( 'sqs-product-quick-view-lightbox' );
+            
+          if ( ! isQuickView ) return; // bail if no product quick view
           
-            let hasAdded = mutation.addedNodes.length;
+          const
+          
+            codeKey = 'twc-pqvoc',
             
-            if ( ! hasAdded ) return; // continue
+            mutationCallback = ( mutation ) => {
             
-            const
-            
-              element = mutation
+              const hasAdded = mutation
               
                 .addedNodes
                 
-                [ 0 ],
+                .length;
                 
-              isProduct = [
+              if ( ! hasAdded ) return; // continue
               
-                'product-detail', // 7.1
+              const
+              
+                element = mutation
                 
-                'ProductItem' // 7.0
+                  .addedNodes
+                  
+                  [ 0 ],
+                  
+                isProduct = [
                 
-                ]
+                  'product-detail', // 7.1
+                  
+                  'ProductItem' // 7.0
+                  
+                  ]
+                  
+                  .some (
+                  
+                    c => element
+                    
+                      .classList
+                      
+                      .contains ( c )
+                      
+                    );
+                    
+              if ( ! isProduct ) return; // bail if not product item
+              
+              options
+              
+                .callbacks
                 
-                .some ( c => element.classList.contains ( c ) );
+                .forEach ( runCallback );
                 
-            if ( ! isProduct ) return; // bail if not product item
+              },
+              
+            mutationsCallback = ( mutations ) => {
             
-            const callback = ( callback ) => {
+              mutations.forEach ( mutationCallback );
+              
+              },
+              
+            observer = new MutationObserver (
+            
+              mutationsCallback
+              
+              ),
+              
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            runCallback = ( callback ) => {
             
               try {
               
@@ -133,47 +171,33 @@
                   
                   }
                   
-              };
+              },
               
-            options
+            selector =
             
-              .callbacks
+              '.sqs-product-quick-view-content';
               
-              .forEach ( callback );
-              
-            };
+          // start listening for changes in element
+          
+          observer.observe (
+          
+            element
             
-          mutations.forEach ( callback );
+              .querySelector ( selector ),
+            
+            { childList : true }
+            
+            );
+            
+          };
           
-          },
-          
-        codeKey = 'twc-pqvoc',
+        self.push ( callback );
         
-        config = {
+        return self;
         
-          childList : true
-          
-          },
-          
-        observer = new MutationObserver ( callback ),
+        } ) ( twc.mloc.callbacks || [ ] );
         
-        options = codeKey
-        
-          .split ( '-' )
-          
-          .reduce ( ( obj, key ) => obj?.[ key ], window ),
-          
-        selector = '.sqs-product-quick-view-content',
-        
-        element = node
-        
-          .querySelector ( selector );
-          
-      // start listening for changes in element
-      
-      observer.observe ( element, config );
-      
-      };
+      } ) ( );
       
     </script>
     
