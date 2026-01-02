@@ -59,7 +59,7 @@ callbacks as nodes are added to the [DOM][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Product%20Quick%20View%20Observe%20Changes/product%20quick%20view%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ce0a4adc6c47139874d6d6614efc398332e1861c/Product%20Quick%20View%20Observe%20Changes/product%20quick%20view%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Product Quick View Observe Changes -->
             
@@ -79,7 +79,7 @@ callbacks as nodes are added to the [DOM][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Product%20Quick%20View%20Observe%20Changes/product%20quick%20view%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ce0a4adc6c47139874d6d6614efc398332e1861c/Product%20Quick%20View%20Observe%20Changes/product%20quick%20view%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Product Quick View Observe Changes -->
             
