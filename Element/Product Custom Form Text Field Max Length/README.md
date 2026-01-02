@@ -58,9 +58,9 @@ Limit custom form text and text area field lengths.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@42d391d55602969f59a213a6a4664687760adf87/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@58d7419f510b88837005d8301346644fb21baca5/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@42d391d55602969f59a213a6a4664687760adf87/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
             
             <!-- end TWC Product Custom Form Text Field Max Length -->
             
@@ -80,9 +80,9 @@ Limit custom form text and text area field lengths.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@42d391d55602969f59a213a6a4664687760adf87/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@58d7419f510b88837005d8301346644fb21baca5/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@42d391d55602969f59a213a6a4664687760adf87/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
             
             <!-- end TWC Product Custom Form Text Field Max Length -->
             
