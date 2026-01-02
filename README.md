@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 440 effects. Each effect has it's own version number, code,
+twcsl contains 442 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -239,6 +239,8 @@ not necessarily designed to work together.
   
   * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
     
+    * [Product Quick View Observe Changes.bbprojectd](Element/Product%20Quick%20View%20Observe%20Changes/Product%20Quick%20View%20Observe%20Changes.bbprojectd)
+      
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
     * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
@@ -251,6 +253,8 @@ not necessarily designed to work together.
     
   * [Product Quick View Form Text Field Max Length](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length)
     
+    * [Product Quick View Form Text Field Max Length.bbprojectd](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length.bbprojectd)
+      
   * [Link](Element/Link)
     
     * [Link Popup Window Open](Element/Link/Link%20Popup%20Window%20Open)
