@@ -48,7 +48,7 @@ added to the [DOM][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Modal%20Lightbox%20Observe%20Changes/modal%20lightbox%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Element/Modal%20Lightbox%20Observe%20Changes/modal%20lightbox%20observe%20changes.min.js" type="module"></script>
           
           <!-- end TWC Modal Lightbox Observe Changes -->
           
@@ -68,7 +68,7 @@ added to the [DOM][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Modal%20Lightbox%20Observe%20Changes/modal%20lightbox%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Element/Modal%20Lightbox%20Observe%20Changes/modal%20lightbox%20observe%20changes.min.js" type="module"></script>
           
           <!-- end TWC Modal Lightbox Observe Changes -->
           
