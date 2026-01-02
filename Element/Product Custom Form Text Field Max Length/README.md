@@ -8,7 +8,7 @@ Limit custom form text and text area field lengths.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Versions
 
@@ -16,6 +16,10 @@ Limit custom form text and text area field lengths.
   
   * 7.0 ([Brine template family][2])
 
+#### v7.1 Products V2 Compatible
+
+  * Yes
+  
 #### v7.1 Fluid Engine Compatible
 
   * Not Applicable
@@ -25,44 +29,90 @@ Limit custom form text and text area field lengths.
   * [Squarespace plan][3] that supports [JavaScript][4].
   
   * [Modal Lightbox Observe Changes][5]
-  
-  * [Product Quick View Form Text Field Max Length][6]
 
 ---
 
 ## Install
 
-* Install [Modal Lightbox Observe Changes][7]. After you install the code be
+* Install [Modal Lightbox Observe Changes][6]. After you install the code be
   sure to continue on with the rest of the steps.
-  
-* Install [Product Quick View Form Text Field Max Length][8]. After you install
-  the code be sure to continue on with the rest of the steps.
   
 * Options
 
-  * Page Specific
+  * CDN Hosted
   
-    * Use this option if you have only a single page you want to have this
-      effect.
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][7], a [CDN][8])
+    
+    * Options
+    
+      * Page Specific
       
-    * Add code from file **[product custom form text field max length.html][9]**
-      to Page Settings > Advanced > Page Header Code Injection for the page,
-      **before** the product quick view observe changes code. Refer to [Per-page
-      code injection][10] for details.
+        * Use this option if you want to have this effect on only one Page.
+          
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the page.
+          
+          ```html
+          <!-- begin TWC Product Custom Form Text Field Max Length -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@58d7419f510b88837005d8301346644fb21baca5/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
+            
+            <!-- end TWC Product Custom Form Text Field Max Length -->
+            
+          ```
+          
+        * Refer to [per-page code injection][9] for details.
+        
+      * Site-wide
       
-  * Site-wide
+        * Use this option if you want to have this effect on all Pages.
+          
+        * Add the following code to Website > Pages > Custom Code >
+          Code Injection > FOOTER.
+          
+          ```html
+          <!-- begin TWC Product Custom Form Text Field Max Length -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@58d7419f510b88837005d8301346644fb21baca5/Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length/product%20custom%20form%20text%20field%20max%20length.min.js" type="module"></script>
+            
+            <!-- end TWC Product Custom Form Text Field Max Length -->
+            
+          ```
+          
+        * Refer to [Add code to code injection][10] for details.
+        
+  * On-site
   
-    * Use this option if you have multiple elements such as a store page and
-      product blocks where you want to have this effect.
+    Use this option to install the full code of this effect (files hosted on
+    your site).
+    
+    * Page Specific
+    
+      * Use this option if you want to have this effect on only one Page.
+        
+      * Add code from file **[product custom form text field max length.html][11]** to
+        Page Settings > Advanced > Page Header Code Injection for the page.
+        
+      * Refer to [per-page code injection][9] for details.
       
-    * Add code from file **[product custom form text field max length.html][9]**
-      to Website > Pages > Custom Code > Code Injection > FOOTER, **before**
-      the product quick view observe changes code. Refer to [Add code to code
-      injection][11] for details.
-      
-* Add the **twcPcftfml** callback name to the modal lightbox observe changes
-  code per that codes install instructions.
-  
+    * Site-wide
+    
+      * Use this option if you want to have this effect on all Pages.
+        
+      * Add code from file **[product custom form text field max length.html][11]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER.
+        
+      * Refer to [Add code to code injection][10] for details.
+
 * Edit a Store page product and add a Custom Form.
   
 * For each form field you want to limit the number of characters do the
@@ -134,11 +184,16 @@ Please consider [making a donation][14].
 
 ## Changes
 
-* **2025-09-03**
+* **2026-01-01**
 
-  * updated to work with Squarespace's recent changes to Product blocks and
-    Products V2
-  * bumped version to 0.1.1
+  * updated to work with Modal Lightbox Observe Changes v0.2.0
+  * bumped version to 0.3.0
+  
+* **2025-08-25**
+
+  * moved options out of main code
+  * updated to work with v7.1 Products V2
+  * bumped version to 0.2.0
   
 * **2024-05-23**
 
@@ -149,12 +204,12 @@ Please consider [making a donation][14].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length
-[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
-[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length#product-quick-view-form-text-field-max-length
-[9]: product%20custom%20form%20text%20field%20max%20length.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
+[7]: https://www.jsdelivr.com/
+[8]: https://en.wikipedia.org/wiki/Content_delivery_network
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: product%20custom%20form%20text%20field%20max%20length.html#L1
 [12]: https://www.heathertovey.com/squarespace-id-finder/
 [13]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
