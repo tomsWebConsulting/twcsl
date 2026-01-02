@@ -1,0 +1,182 @@
+( ( ) => {
+
+  /*!
+  
+    modal lightbox observe changes
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    Note            : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be
+                      all of mutation observers. it may not cover your needs
+    
+    Copyright       : 2024-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.2.0',
+    
+    s = `Modal Lightbox Observe Changes v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2024-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const callback = ( ) => {
+  
+    // globals
+    
+    {
+  
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc mloc sub-module
+      
+      twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+      
+      // initialize twc mloc callbacks sub-module
+      
+      twc.mloc.callbacks =
+      
+        ( ( self ) => self ) ( twc.mloc.callbacks || [ ] );
+        
+      }
+      
+    const
+    
+      codeKey = `twc-mloc`,
+      
+      options = codeKey
+      
+        .split ( '-' )
+        
+        .reduce ( ( obj, key ) => obj?.[ key ], window ),
+        
+      hasCallbacks = options
+      
+        .callbacks
+        
+        .length;
+        
+    if ( ! hasCallbacks ) return; // bail if no callbacks
+    
+    const
+    
+      mutationCallback = ( mutation ) => {
+      
+        mutation
+        
+          .addedNodes
+          
+          .forEach ( nodeCallback );
+          
+        },
+        
+      mutationsCallback = ( mutations ) => {
+      
+        mutations.forEach ( mutationCallback );
+        
+        },
+        
+      nodeCallback = ( node ) => {
+      
+        const isElement = node
+        
+          .nodeType
+          
+          ===
+          
+          1;
+          
+        if ( ! isElement ) return; // bail if not element
+        
+        const isModalLightbox = node
+        
+          .classList
+          
+          .contains ( 'sqs-modal-lightbox' );
+          
+        // bail if not element of interest
+        
+        if ( ! isModalLightbox ) return;
+        
+        options
+        
+          .callbacks
+          
+          .forEach (
+          
+            c => runCallback ( c, node )
+            
+            );
+            
+        },
+        
+      observer = new MutationObserver (
+      
+        mutationsCallback
+        
+        ),
+        
+      runCallback = ( callback, node ) => {
+      
+        try {
+        
+          callback ( node );
+          
+          } catch ( error ) {
+          
+            const s = `${ codeKey } callback error`;
+            
+            console.error ( s, error );
+            
+            }
+            
+        };
+        
+    // start listening for changes in body
+    
+    observer.observe (
+    
+      document.body,
+      
+      { childList : true }
+      
+      );
+      
+    };
+    
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    callback
+    
+    );
+    
+  } ) ( );

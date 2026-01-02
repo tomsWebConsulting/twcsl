@@ -1,138 +1,190 @@
-<!--
+<!-- begin TWC Modal Lightbox Observe Changes -->
 
-  begin modal lightbox observe changes
-  
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.1
-  
-  SS Versions   : 7.1, 7.0
-  
-  v7.1
-  Fluid
-  Engine
-  Compatible    : Not Applicable
-  
-  Note          : this code is a base for other effects. on its own it
-                  doesn't do anything. this code is not the end all be all
-                  of mutation observers. it may not cover your needs
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <script>
-    
-    if ( window.twc == undefined ) window.twc = { };
-    
-    twc.mloc = {
-    
-      callbacks : [
-      
-        /*
-        
-          following is an example line. copy and paste it after the example
-          line. remove the double forward slash space of the new line. replace
-          the name with your callback
-          
-          */
-          
-        // '[ enter your callback name here replacing square brackets ]',
-        
-        ]
-        
-      };
-      
-    </script>
-    
-  <!-- do not change anything below, there be the borg here -->
-  
   <script>
   
-    document.addEventListener ( 'DOMContentLoaded', ( ) => {
+    ( ( ) => {
     
-      const version = '0.1.1';
+      /*
       
-      const s = `Modal Lightbox Observe Changes v${ version }, ` +
+        modal lightbox observe changes
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.2.0
+        
+        SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        Note            : this code is a base for other effects. on its own it
+                          doesn't do anything. this code is not the end all be
+                          all of mutation observers. it may not cover your needs
+        
+        Copyright       : 2024-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
       
-        'License < https://tinyurl.com/s872fb68 >, ' +
+        version = '0.2.0',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+        s = `Modal Lightbox Observe Changes v${ version }
         
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024-2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
       console.log ( s );
       
-      const callback = ( mutations ) => {
+      const callback = ( ) => {
       
-        const callback = ( mutation ) => {
+        // globals
         
-          const callback = ( node ) => {
+        {
+      
+          // initialize twc module
           
-            const b = ! node
+          window.twc = ( ( self ) => self ) ( window.twc || { } );
+          
+          // initialize twc mloc sub-module
+          
+          twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+          
+          // initialize twc mloc callbacks sub-module
+          
+          twc.mloc.callbacks =
+          
+            ( ( self ) => self ) ( twc.mloc.callbacks || [ ] );
+            
+          }
+          
+        const
+        
+          codeKey = `twc-mloc`,
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          hasCallbacks = options
+          
+            .callbacks
+            
+            .length;
+            
+        if ( ! hasCallbacks ) return; // bail if no callbacks
+        
+        const
+        
+          mutationCallback = ( mutation ) => {
+          
+            mutation
+            
+              .addedNodes
+              
+              .forEach ( nodeCallback );
+              
+            },
+            
+          mutationsCallback = ( mutations ) => {
+          
+            mutations.forEach ( mutationCallback );
+            
+            },
+            
+          nodeCallback = ( node ) => {
+          
+            const isElement = node
+            
+              .nodeType
+              
+              ===
+              
+              1;
+              
+            if ( ! isElement ) return; // bail if not element
+            
+            const isModalLightbox = node
             
               .classList
               
               .contains ( 'sqs-modal-lightbox' );
               
-            if ( b ) return; // bail if not element of interest
+            // bail if not element of interest
             
-            const callback = ( callback ) => {
+            if ( ! isModalLightbox ) return;
             
-              try {
-              
-                callback = window [ callback ];
-                
-                callback ( node );
-                
-                } catch ( error ) {
-                
-                  const s = `${ codeKey } callback error`;
-                  
-                  console.error ( s, error );
-                  
-                  }
-                  
-              };
-              
-            twc
+            options
             
-              [ codeKeySuffix ]
-              
               .callbacks
               
-              .forEach ( callback );
+              .forEach (
               
+                c => runCallback ( c, node )
+                
+                );
+                
+            },
+            
+          observer = new MutationObserver (
+          
+            mutationsCallback
+            
+            ),
+            
+          runCallback = ( callback, node ) => {
+          
+            try {
+            
+              callback ( node );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
             };
             
-          mutation
-          
-            .addedNodes
-            
-            .forEach ( callback );
-            
-          };
-          
-        mutations.forEach ( callback );
+        // start listening for changes in body
         
+        observer.observe (
+        
+          document.body,
+          
+          { childList : true }
+          
+          );
+          
         };
         
-      const codeKeySuffix = 'mloc';
+      document.addEventListener (
       
-      const codeKey = `twc-${ codeKeySuffix }`;
-      
-      const config = {
-      
-        childList : true
+        'DOMContentLoaded',
         
-        };
+        callback
         
-      const observer = new MutationObserver ( callback );
-      
-      // start listening for changes in body
-      
-      observer.observe ( document.body, config );
-      
-      } );
+        );
+        
+      } ) ( );
       
     </script>
     
-  <!-- end modal lightbox observe changes -->
+  <!-- end TWC Modal Lightbox Observe Changes -->
