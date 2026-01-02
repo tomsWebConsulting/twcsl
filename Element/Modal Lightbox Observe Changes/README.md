@@ -121,9 +121,9 @@ Your callbacks must accept an element as a parameter.
   
   twc.mloc.callbacks = ( ( self ) => {
   
-    const callback = ( node ) => {
+    const callback = ( element ) => {
     
-      console.log ( 'twc mloc log : ', node );
+      console.log ( 'twc mloc log : ', element );
       
       };
       
