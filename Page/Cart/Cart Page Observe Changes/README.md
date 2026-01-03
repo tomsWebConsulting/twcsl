@@ -4,11 +4,12 @@
 
 ### Synopsis
 
-Observe cart page changes.
+Observe changes to the cart page and call custom callbacks as nodes are
+added or removed from the [DOM][2].
 
 ### Version
 
-  * 0.2.2
+  * 0.3.0
 
 #### SS Versions
 
@@ -22,84 +23,192 @@ Observe cart page changes.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
+  * [Squarespace plan][3] that supports [JavaScript][4].
 
 ---
 
-## Quick Install
+## Install Options
 
-* Add code from file **[cart page observe changes.html][4]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][5] for details.
+* CDN Hosted
+
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][5], a [CDN][6])
   
-* Read the code for any instructions within.
+  * Options
   
-* Add your custom callback names to the code. Your callbacks must be installed
-  before the code.
-
-## Example Callbacks
-
-Following are example callbacks. They don't do anything except log to the
-console nodes that were added or removed to/from the cart page. Note the use of
-var.
-
-```html
-<script>
-
-  var cpocNodeAddedLog = ( node ) => {
-  
-    console.log ( 'cpocNodeAddedLog : ', node );
+    * Page Specific
     
-    };
-    
-  </script>
-```
-
-```html
-<script>
-
-  var cpocNodeRemovedLog = ( node ) => {
-  
-    console.log ( 'cpocNodeRemovedLog : ', node );
-    
-    };
-    
-  </script>
-```
-
-In your callbacks you will probably want to check the node to see if it is one
-in which you are interested. For example.
-
-```html
-<script>
-
-  var cartContinaerLog = ( node ) => {
-  
-    const b = node.querySelector === undefined;
-    
-    if ( b ) return; // bail if no querySelector
-    
-    const selector = '.cart-container';
-    
-    node = node
-    
-      .querySelector ( selector );
+      * Use this option if you want to have this effect on only one Page.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the page.
+        
+        ```html
+        <!-- begin TWC Cart Page Observe Changes -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
+          
+          <!-- end TWC Cart Page Observe Changes -->
+          
+        ```
+        
+      * Refer to [per-page code injection][7] for details.
       
-    if ( node === null ) return; // bail if no cart container
+    * Site-wide
     
-    console.log ( 'cartContinaerLog : ', node );
+      * Use this option if you want to have this effect on all Pages.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Cart Page Observe Changes -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
+          
+          <!-- end TWC Cart Page Observe Changes -->
+          
+        ```
+        
+      * Refer to [Add code to code injection][8] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on
+  your site).
+  
+  * Page Specific
+  
+    * Use this option if you want to have this effect on only one Page.
+      
+    * Add code from file **[cart page observe changes.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the page.
+      
+    * Refer to [per-page code injection][7] for details.
     
-    };
+  * Site-wide
+  
+    * Use this option if you want to have this effect on all Pages.
+      
+    * Add code from file **[cart page observe changes.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][8] for details.
+
+## Callback Example
+
+You can create [callback][10] functions to customize the processing of the cart
+page.
+
+Your callbacks must accept an node as a parameter.
+
+```html
+<script>
+
+  // initialize twc module
+  
+  window.twc =
+  
+    ( ( self ) => self ) ( window.twc || { } );
     
+  // initialize twc cpoc sub-module
+  
+  twc.cpoc =
+  
+    ( ( self ) => self ) ( twc.cpoc || { } );
+    
+  // initialize twc cpoc callbacks sub-module
+  
+  twc.cpoc.callbacks =
+  
+    ( ( self ) => self )
+    
+    ( twc.cpoc.callbacks || { } );
+    
+  // initialize twc cpoc callbacks added sub-module
+  
+  twc.cpoc.callbacks.added =
+  
+    ( ( self ) => {
+    
+      const callback = ( node ) => {
+      
+        console.log ( 'twc cpoc added log : ', node );
+        
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.cpoc.callbacks.added || [ ] );
+      
   </script>
 ```
+
+```html
+<script>
+
+  // initialize twc module
+  
+  window.twc =
+  
+    ( ( self ) => self ) ( window.twc || { } );
+    
+  // initialize twc cpoc sub-module
+  
+  twc.cpoc =
+  
+    ( ( self ) => self ) ( twc.cpoc || { } );
+    
+  // initialize twc cpoc callbacks sub-module
+  
+  twc.cpoc.callbacks =
+  
+    ( ( self ) => self )
+    
+    ( twc.cpoc.callbacks || { } );
+    
+  // initialize twc cpoc callbacks removed sub-module
+  
+  twc.cpoc.callbacks.removed =
+  
+    ( ( self ) => {
+    
+      const callback = ( node ) => {
+      
+        console.log ( 'twc cpoc removed log : ', node );
+        
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.cpoc.callbacks.removed || [ ] );
+      
+  </script>
+```
+
+## Note
+
+This code is a base for other effects.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-01-03**
+
+  * updated to use module pattern for adding callbacks
+  * bumped version to 0.3.0
+  
 * **2024-05-01**
 
   * improve error reporting
@@ -127,8 +236,13 @@ Please consider [making a donation][6].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: cart%20page%20observe%20changes.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+[3]: https://www.squarespace.com/pricing
+[4]: https://en.wikipedia.org/wiki/JavaScript
+[5]: https://www.jsdelivr.com/
+[6]: https://en.wikipedia.org/wiki/Content_delivery_network
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: cart%20page%20observe%20changes.html#L1
+[10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

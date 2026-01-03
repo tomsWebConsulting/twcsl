@@ -1,0 +1,234 @@
+( ( ) => {
+
+  /*!
+  
+    cart page observe changes
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.3.0
+    
+    SS Versions     : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible      : Not Applicable
+    
+    Note            : this code is a base for other effects. on its own it
+                      doesn't do anything. this code is not the end all be
+                      all of mutation observers. it may not cover your needs
+    
+    Copyright       : 2022-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.3.0',
+    
+    s = `Cart Page Observe Changes v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const isCartPage =
+  
+    location.pathname === '/cart';
+  
+  if ( ! isCartPage ) return; // bail if not cart page
+  
+  const hasMutationObserver =
+  
+    ( 'MutationObserver' in window );
+    
+  // bail if no mutation observer available
+  
+  if ( ! hasMutationObserver ) return;
+  
+  const dclCallback = ( ) => {
+  
+    // globals
+    
+    {
+  
+      // initialize twc module
+      
+      window.twc =
+      
+        ( ( self ) => self ) ( window.twc || { } );
+        
+      // initialize twc cpoc sub-module
+      
+      twc.cpoc =
+      
+        ( ( self ) => self ) ( twc.cpoc || { } );
+      
+      // initialize twc cpoc callbacks sub-module
+      
+      twc.cpoc.callbacks =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc.callbacks || { } );
+        
+      // initialize twc cpoc callbacks added sub-module
+      
+      twc.cpoc.callbacks.added =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc.callbacks.added || [ ] );
+        
+      // initialize twc cpoc callbacks removed sub-module
+      
+      twc.cpoc.callbacks.removed =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc.callbacks.removed || [ ] );
+        
+      }
+      
+    const
+    
+      codeKey = `twc-cpoc`,
+      
+      options = codeKey
+      
+        .split ( '-' )
+        
+        .reduce ( ( obj, key ) => obj?.[ key ], window ),
+        
+      hasAddedCallbacks = options
+      
+        .callbacks
+        
+        .added
+        
+        .length,
+        
+      hasRemovedCallbacks = options
+      
+        .callbacks
+        
+        .removed
+        
+        .length,
+        
+      hasCallbacks =
+      
+        hasAddedCallbacks || hadRemovedCallbacks;
+        
+    if ( ! hasCallbacks ) return; // bail if no callbacks
+    
+    const
+    
+      mutationCallback = ( mutation ) => {
+      
+        mutation
+        
+          .addedNodes
+          
+          .forEach ( n => nodeCallback ( n ) );
+          
+        mutation
+        
+          .removedNodes
+          
+          .forEach (
+          
+            n => nodeCallback ( n, 'removed' )
+            
+            );
+            
+        },
+        
+      mutationsCallback = ( mutations ) => {
+      
+        mutations.forEach ( mutationCallback );
+        
+        },
+        
+      nodeCallback = ( node, key = 'added' ) => {
+      
+        options
+        
+          .callbacks
+          
+          [ key ]
+          
+          .forEach (
+          
+            c => runCallback ( c, node )
+            
+            );
+            
+        },
+        
+      observer = new MutationObserver (
+      
+        mutationsCallback
+        
+        ),
+        
+      runCallback = ( callback, node ) => {
+      
+        try {
+        
+          callback ( node );
+          
+          } catch ( error ) {
+          
+            const s = `${ codeKey } callback error`;
+            
+            console.error ( s, error );
+            
+            }
+            
+        };
+        
+    // start listening for changes in body
+    
+    observer.observe (
+    
+      document.getElementById (
+      
+        'sqs-cart-container'
+        
+        ),
+        
+      {
+      
+        childList : true,
+        
+        subtree : true
+        
+        }
+        
+      );
+      
+    };
+    
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    dclCallback
+    
+    );
+    
+  } ) ( );

@@ -1,99 +1,203 @@
-<script>
+<!-- begin TWC Cart Page Observe Changes -->
 
-  document.addEventListener ( 'DOMContentLoaded', ( ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      cart page observe changes
+      /*
       
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.2.2
-      
-      SS Versions   : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible    : Not Applicable
-      
-      Note          : this code is a base for other effects. on its own it
-                      doesn't do anything. this code is not the end all be all
-                      of mutation observers. it may not cover your needs
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    const callbacks = {
-    
-      added : [
-      
-        /*
+        cart page observe changes
         
-          following is an example line. copy and paste it after the example
-          line. remove the double forward slash space of the new line. replace
-          the name with your callback
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.3.0
+        
+        SS Versions     : 7.1, 7.0
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible      : Not Applicable
+        
+        Note            : this code is a base for other effects. on its own it
+                          doesn't do anything. this code is not the end all be
+                          all of mutation observers. it may not cover your needs
+        
+        Copyright       : 2022-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.3.0',
+        
+        s = `Cart Page Observe Changes v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
           
-          */
+          © 2022-2026 Thomas Creedon
           
-        // '[ optional, enter your callback name here replacing square brackets ]',
-        
-        ],
-        
-      removed : [
-      
-        /*
-        
-          following is an example line. copy and paste it after the example
-          line. remove the double forward slash space of the new line. replace
-          the name with your callback
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
-          */
+          .replace ( /^\s+/gm, '' );
           
-        // '[ optional, enter your callback name here replacing square brackets ]',
+      console.log ( s );
+      
+      const isCartPage =
+      
+        location.pathname === '/cart';
+      
+      if ( ! isCartPage ) return; // bail if not cart page
+      
+      const hasMutationObserver =
+      
+        ( 'MutationObserver' in window );
         
-        ]
+      // bail if no mutation observer available
+      
+      if ( ! hasMutationObserver ) return;
+      
+      const dclCallback = ( ) => {
+      
+        // globals
         
-      };
+        {
       
-    // do not change anything below, there be the borg here
-    
-    const version = '0.2.2';
-    
-    const s = `Cart Page Observe Changes v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    let b = location.pathname != '/cart';
-    
-    if ( b ) return; // bail if not cart page
-    
-    b = ! ( 'MutationObserver' in window );
-    
-    if ( b ) return; // bail if no mutation observer available
-    
-    const callback = ( mutations ) => {
-    
-      const callback = ( mutation ) => {
-      
-        const callback = ( node ) => {
-        
-          const callback = ( callback ) => {
+          // initialize twc module
           
-            const cllbck = window [ callback ];
+          window.twc =
+          
+            ( ( self ) => self ) ( window.twc || { } );
             
+          // initialize twc cpoc sub-module
+          
+          twc.cpoc =
+          
+            ( ( self ) => self ) ( twc.cpoc || { } );
+          
+          // initialize twc cpoc callbacks sub-module
+          
+          twc.cpoc.callbacks =
+          
+            ( ( self ) => self )
+            
+            ( twc.cpoc.callbacks || { } );
+            
+          // initialize twc cpoc callbacks added sub-module
+          
+          twc.cpoc.callbacks.added =
+          
+            ( ( self ) => self )
+            
+            ( twc.cpoc.callbacks.added || [ ] );
+            
+          // initialize twc cpoc callbacks removed sub-module
+          
+          twc.cpoc.callbacks.removed =
+          
+            ( ( self ) => self )
+            
+            ( twc.cpoc.callbacks.removed || [ ] );
+            
+          }
+          
+        const
+        
+          codeKey = `twc-cpoc`,
+          
+          options = codeKey
+          
+            .split ( '-' )
+            
+            .reduce ( ( obj, key ) => obj?.[ key ], window ),
+            
+          hasAddedCallbacks = options
+          
+            .callbacks
+            
+            .added
+            
+            .length,
+            
+          hasRemovedCallbacks = options
+          
+            .callbacks
+            
+            .removed
+            
+            .length,
+            
+          hasCallbacks =
+          
+            hasAddedCallbacks || hadRemovedCallbacks;
+            
+        if ( ! hasCallbacks ) return; // bail if no callbacks
+        
+        const
+        
+          mutationCallback = ( mutation ) => {
+          
+            mutation
+            
+              .addedNodes
+              
+              .forEach ( n => nodeCallback ( n ) );
+              
+            mutation
+            
+              .removedNodes
+              
+              .forEach (
+              
+                n => nodeCallback ( n, 'removed' )
+                
+                );
+                
+            },
+            
+          mutationsCallback = ( mutations ) => {
+          
+            mutations.forEach ( mutationCallback );
+            
+            },
+            
+          nodeCallback = ( node, key = 'added' ) => {
+          
+            options
+            
+              .callbacks
+              
+              [ key ]
+              
+              .forEach (
+              
+                c => runCallback ( c, node )
+                
+                );
+                
+            },
+            
+          observer = new MutationObserver (
+          
+            mutationsCallback
+            
+            ),
+            
+          runCallback = ( callback, node ) => {
+          
             try {
             
-              cllbck ( node );
+              callback ( node );
               
               } catch ( error ) {
               
-                const s = `${ codeKey } : ${ callback } `;
+                const s = `${ codeKey } callback error`;
                 
                 console.error ( s, error );
                 
@@ -101,66 +205,38 @@
                 
             };
             
-          cllbcks.forEach ( callback );
-            
-          };
+        // start listening for changes in body
+        
+        observer.observe (
+        
+          document.getElementById (
           
-        const nodesAdded = mutation.addedNodes;
-        
-        const nodesRemoved = mutation.removedNodes;
-        
-        let cllbcks;
-        
-        let nodes;
-        
-        switch ( true ) {
-        
-          case Boolean ( nodesAdded.length ):
+            'sqs-cart-container'
+            
+            ),
+            
+          {
           
-            cllbcks = callbacks.added;
+            childList : true,
             
-            nodes = nodesAdded
+            subtree : true
             
-            break;
+            }
             
-          case Boolean ( nodesRemoved.length ) :
+          );
           
-            cllbcks = callbacks.removed;
-            
-            nodes = nodesRemoved;
-            
-            break;
-            
-          }
-          
-        nodes.forEach ( callback );
-        
         };
         
-      mutations.forEach ( callback );
+      document.addEventListener (
       
-      };
+        'DOMContentLoaded',
+        
+        dclCallback
+        
+        );
+        
+      } ) ( );
       
-    const codeKey = 'twc-cpoc';
+    </script>
     
-    const observer = new MutationObserver ( callback );
-      
-    const element = document
-    
-      .getElementById ( 'sqs-cart-container' );
-      
-    const options = {
-    
-      childList : true,
-      
-      subtree : true
-      
-      };
-      
-    // begin listening for changes in element
-    
-    observer.observe ( element, options );
-      
-    } );
-    
-  </script>
+  <!-- end TWC Cart Page Observe Changes -->
