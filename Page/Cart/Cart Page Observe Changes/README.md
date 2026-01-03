@@ -48,7 +48,7 @@ added or removed from the [DOM][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c002830e7ae685fd1401c562383f90077b89289c/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Observe Changes -->
           
@@ -68,7 +68,7 @@ added or removed from the [DOM][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ee9fb8db0a1f734e2a1fa27d06b9dfdb999cc7b4/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c002830e7ae685fd1401c562383f90077b89289c/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Observe Changes -->
           
