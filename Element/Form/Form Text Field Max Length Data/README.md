@@ -52,7 +52,7 @@ Gather product ids and skus for use with form text field max length effects.
       
         <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
         
-        <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@58d7419f510b88837005d8301346644fb21baca5/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@44bb419202ee883221805f65e9ee7295eb90beaf/Page/Cart/Cart%20Page%20Observe%20Changes/cart%20page%20observe%20changes.min.js" type="module"></script>
         
         <!-- end TWC Form Text Field Max Length Data -->
         
