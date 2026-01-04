@@ -1293,7 +1293,7 @@
       
       License           : < https://tinyurl.com/s872fb68 >
       
-      Version           : 0.2.0
+      Version           : 0.3.1
       
       SS Versions       : 7.1, 7.0
       
@@ -1313,9 +1313,9 @@
                           your template is not listed? then it is not currently
                           supported
       
-      Dependencies      : modal lightbox observe changes
+      Dependencies      : form inner wrapper observe changes
                           
-                          product quick view form text field max length
+                          < https://tinyurl.com/yjbszby7 >
       
       Notes             : this code does not work on the checkout page. it is a
                           Squarespace security feature that no code can alter the
@@ -1353,7 +1353,7 @@
       
         const
         
-          version = '0.2.0',
+          version = '0.3.1',
           
           s = `Product Custom Form Text Field Max Length v${ version }
           
@@ -1373,23 +1373,51 @@
       
       window.twc = ( ( self ) => self ) ( window.twc || { } );
       
-      // initialize twc mloc sub-module
+      // initialize twc ftfml sub-module
       
-      twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+      twc.ftfml = ( ( self ) => {
       
-      // initialize twc mloc callbacks sub-module
-      
-      twc.mloc.callbacks = ( ( self ) => {
-      
-        const callback = ( node ) => {
+        const options = {
         
+          ids : undefined,
+          
+          response : undefined
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.ftfml || { } );
+        
+      // initialize twc fiwoc sub-module
+      
+      twc.fiwoc = ( ( self ) => self ) ( twc.fiwoc || { } );
+      
+      // initialize twc fiwoc callbacks sub-module
+      
+      twc.fiwoc.callbacks = ( ( self ) => {
+      
+        const callback = ( element ) => {
+        
+          debugger;
+          
           const
           
             codeKey = `twc-pcftfml`,
             
-            selector = '.form-wrapper input[ placeholder*="ftfml" ]',
+            selector = 'input[ placeholder*="ftfml" ]',
             
-            elements = node
+            elements = element
             
               .querySelectorAll ( selector );
               
@@ -1515,7 +1543,7 @@
         
         return self;
         
-        } ) ( twc.mloc.callbacks || [ ] );
+        } ) ( twc.fiwoc.callbacks || [ ] );
         
       </script>
       
@@ -2833,173 +2861,731 @@
       
     <!-- end TWC Cart Page Form Text Field Max Length -->
   
-  <script>
-  
-    document.addEventListener ( 'DOMContentLoaded', ( ) => {
-    
-      /*
-      
-        cart page observe changes
-        
-        License       : < https://tinyurl.com/s872fb68 >
-        
-        Version       : 0.2.2
-        
-        SS Versions   : 7.1, 7.0
-        
-        v7.1
-        Fluid
-        Engine
-        Compatible    : Not Applicable
-        
-        Note          : this code is a base for other effects. on its own it
-                        doesn't do anything. this code is not the end all be all
-                        of mutation observers. it may not cover your needs
-        
-        By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-        
-        */
-        
-      const callbacks = {
-      
-        added : [
-        
-          /*
+  <!-- begin TWC Cart Page Observe Changes -->
           
-            following is an example line. copy and paste it after the example
-            line. remove the double forward slash space of the new line. replace
-            the name with your callback
-            
-            */
-            
-          // '[ optional, enter your callback name here replacing square brackets ]',
+          'twcCpftfml',
+  
+          
+          'twcCpftfml',
+    <script>
+          
+          'twcCpftfml',
+    
+          
+          'twcCpftfml',
+      ( ( ) => {
+          
+          'twcCpftfml',
+      
+          
+          'twcCpftfml',
+        /*
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+          cart page observe changes
           
           'twcCpftfml',
           
-          ],
           
-        removed : [
+          'twcCpftfml',
+          License         : < https://tinyurl.com/s872fb68 >
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          Version         : 0.3.0
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          SS Versions     : 7.1, 7.0
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          v7.1
+          
+          'twcCpftfml',
+          Fluid
+          
+          'twcCpftfml',
+          Engine
+          
+          'twcCpftfml',
+          Compatible      : Not Applicable
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          Note            : this code is a base for other effects. on its own it
+          
+          'twcCpftfml',
+                            doesn't do anything. this code is not the end all be
+          
+          'twcCpftfml',
+                            all of mutation observers. it may not cover your needs
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          Copyright       : 2022-2026 Thomas Creedon
+          
+          'twcCpftfml',
+                            
+          
+          'twcCpftfml',
+                            Tom's Web Consulting
+          
+          'twcCpftfml',
+                            
+          
+          'twcCpftfml',
+                            < http://www.tomsWeb.consulting/ >
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          no user serviceable parts below
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          */
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+        const
+          
+          'twcCpftfml',
         
-          /*
           
-            following is an example line. copy and paste it after the example
-            line. remove the double forward slash space of the new line. replace
-            the name with your callback
+          'twcCpftfml',
+          version = '0.3.0',
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          s = `Cart Page Observe Changes v${ version }
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+            License < https://tinyurl.com/s872fb68 >
+          
+          'twcCpftfml',
             
-            */
+          
+          'twcCpftfml',
+            © 2022-2026 Thomas Creedon
+          
+          'twcCpftfml',
             
-          // '[ optional, enter your callback name here replacing square brackets ]',
           
-          ]
+          'twcCpftfml',
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
-        };
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            .replace ( /^\s+/gm, '' );
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+        console.log ( s );
+          
+          'twcCpftfml',
         
-      // do not change anything below, there be the borg here
-      
-      const version = '0.2.2';
-      
-      const s = `Cart Page Observe Changes v${ version }, ` +
-      
-        'License < https://tinyurl.com/s872fb68 >, ' +
+          
+          'twcCpftfml',
+        const isCartPage =
+          
+          'twcCpftfml',
         
-        'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
+          
+          'twcCpftfml',
+          location.pathname === '/cart';
+          
+          'twcCpftfml',
         
-      console.log ( s );
-      
-      let b = location.pathname != '/cart';
-      
-      if ( b ) return; // bail if not cart page
-      
-      b = ! ( 'MutationObserver' in window );
-      
-      if ( b ) return; // bail if no mutation observer available
-      
-      const callback = ( mutations ) => {
-      
-        const callback = ( mutation ) => {
+          
+          'twcCpftfml',
+        if ( ! isCartPage ) return; // bail if not cart page
+          
+          'twcCpftfml',
         
-          const callback = ( node ) => {
           
-            const callback = ( callback ) => {
+          'twcCpftfml',
+        const hasMutationObserver =
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+          ( 'MutationObserver' in window );
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+        // bail if no mutation observer available
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+        if ( ! hasMutationObserver ) return;
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+        const dclCallback = ( ) => {
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+          // globals
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          {
+          
+          'twcCpftfml',
+        
+          
+          'twcCpftfml',
+            // initialize twc module
+          
+          'twcCpftfml',
             
-              const cllbck = window [ callback ];
-              
-              try {
-              
-                cllbck ( node );
-                
-                } catch ( error ) {
-                
-                  const s = `${ codeKey } : ${ callback } `;
-                  
-                  console.error ( s, error );
-                  
-                  }
-                  
-              };
-              
-            cllbcks.forEach ( callback );
-              
-            };
+          
+          'twcCpftfml',
+            window.twc =
+          
+          'twcCpftfml',
             
-          const nodesAdded = mutation.addedNodes;
           
-          const nodesRemoved = mutation.removedNodes;
+          'twcCpftfml',
+              ( ( self ) => self ) ( window.twc || { } );
           
-          let cllbcks;
+          'twcCpftfml',
+              
           
-          let nodes;
+          'twcCpftfml',
+            // initialize twc cpoc sub-module
           
-          switch ( true ) {
-          
-            case Boolean ( nodesAdded.length ):
+          'twcCpftfml',
             
-              cllbcks = callbacks.added;
-              
-              nodes = nodesAdded
-              
-              break;
-              
-            case Boolean ( nodesRemoved.length ) :
+          
+          'twcCpftfml',
+            twc.cpoc =
+          
+          'twcCpftfml',
             
-              cllbcks = callbacks.removed;
+          
+          'twcCpftfml',
+              ( ( self ) => self ) ( twc.cpoc || { } );
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            // initialize twc cpoc callbacks sub-module
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            twc.cpoc.callbacks =
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              ( ( self ) => self )
+          
+          'twcCpftfml',
               
-              nodes = nodesRemoved;
+          
+          'twcCpftfml',
+              ( twc.cpoc.callbacks || { } );
+          
+          'twcCpftfml',
               
-              break;
+          
+          'twcCpftfml',
+            // initialize twc cpoc callbacks added sub-module
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            twc.cpoc.callbacks.added =
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              ( ( self ) => self )
+          
+          'twcCpftfml',
               
+          
+          'twcCpftfml',
+              ( twc.cpoc.callbacks.added || [ ] );
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            // initialize twc cpoc callbacks removed sub-module
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            twc.cpoc.callbacks.removed =
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              ( ( self ) => self )
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              ( twc.cpoc.callbacks.removed || [ ] );
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
             }
-            
-          nodes.forEach ( callback );
           
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+          const
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+            codeKey = `twc-cpoc`,
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+            options = codeKey
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              .split ( '-' )
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            hasAddedCallbacks = options
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              .callbacks
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              .added
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              .length,
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            hasRemovedCallbacks = options
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              .callbacks
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              .removed
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              .length,
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            hasCallbacks =
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              hasAddedCallbacks || hadRemovedCallbacks;
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+          if ( ! hasCallbacks ) return; // bail if no callbacks
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          const
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+            mutationCallback = ( mutation ) => {
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              mutation
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+                .addedNodes
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                .forEach ( n => nodeCallback ( n ) );
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+              mutation
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+                .removedNodes
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                .forEach (
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                  n => nodeCallback ( n, 'removed' )
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+                  );
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+              },
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            mutationsCallback = ( mutations ) => {
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              mutations.forEach ( mutationCallback );
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              },
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            nodeCallback = ( node, key = 'added' ) => {
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              options
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+                .callbacks
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                [ key ]
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                .forEach (
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                  c => runCallback ( c, node )
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+                  );
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+              },
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            observer = new MutationObserver (
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              mutationsCallback
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              ),
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            runCallback = ( callback, node ) => {
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              try {
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+                callback ( node );
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                } catch ( error ) {
+          
+          'twcCpftfml',
+                
+          
+          'twcCpftfml',
+                  const s = `${ codeKey } callback error`;
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+                  console.error ( s, error );
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+                  }
+          
+          'twcCpftfml',
+                  
+          
+          'twcCpftfml',
+              };
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+          // start listening for changes in body
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          observer.observe (
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+            document.getElementById (
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              'sqs-cart-container'
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              ),
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            {
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
+              childList : true,
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              subtree : true
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+              }
+          
+          'twcCpftfml',
+              
+          
+          'twcCpftfml',
+            );
+          
+          'twcCpftfml',
+            
+          
+          'twcCpftfml',
           };
           
-        mutations.forEach ( callback );
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+        document.addEventListener (
+          
+          'twcCpftfml',
         
-        };
+          
+          'twcCpftfml',
+          'DOMContentLoaded',
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          dclCallback
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+          );
+          
+          'twcCpftfml',
+          
+          
+          'twcCpftfml',
+        } ) ( );
+          
+          'twcCpftfml',
         
-      const codeKey = 'twc-cpoc';
+          
+          'twcCpftfml',
+      </script>
+          
+          'twcCpftfml',
       
-      const observer = new MutationObserver ( callback );
-        
-      const element = document
-      
-        .getElementById ( 'sqs-cart-container' );
-        
-      const options = {
-      
-        childList : true,
-        
-        subtree : true
-        
-        };
-        
-      // begin listening for changes in element
-      
-      observer.observe ( element, options );
-        
-      } );
-      
-    </script>
+          
+          'twcCpftfml',
+    <!-- end TWC Cart Page Observe Changes -->
+          
+          'twcCpftfml',
     
   <!-- end TWC Product Custom Form Text Field Max Length -->
