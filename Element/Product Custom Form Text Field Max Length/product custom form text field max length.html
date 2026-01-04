@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.3.1
     
     SS Versions       : 7.1, 7.0
     
@@ -26,9 +26,13 @@
                         your template is not listed? then it is not currently
                         supported
     
-    Dependencies      : modal lightbox observe changes
+    Dependencies      : form inner wrapper observe changes
                         
-                        product quick view form text field max length
+                        < https://tinyurl.com/yjbszby7 >
+    
+                      : modal lightbox observe changes
+                        
+                        < https://tinyurl.com/877wczvk >
     
     Notes             : this code does not work on the checkout page. it is a
                         Squarespace security feature that no code can alter the
@@ -52,7 +56,7 @@
     
   <style>
   
-    .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+    input[ placeholder*="ftfml" ] {
     
       visibility : hidden;
       
@@ -66,7 +70,7 @@
     
       const
       
-        version = '0.2.0',
+        version = '0.3.1',
         
         s = `Product Custom Form Text Field Max Length v${ version }
         
@@ -80,35 +84,23 @@
           
       console.log ( s );
       
-      } ) ( );
+      const elementCallback = ( element ) => {
       
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc mloc sub-module
-    
-    twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
-    
-    // initialize twc mloc callbacks sub-module
-    
-    twc.mloc.callbacks = ( ( self ) => {
-    
-      const callback = ( node ) => {
-      
+        debugger;
+        
         const
         
           codeKey = `twc-pcftfml`,
           
-          selector = '.form-wrapper input[ placeholder*="ftfml" ]',
+          selector = 'input[ placeholder*="ftfml" ]',
           
-          elements = node
+          elements = element
           
             .querySelectorAll ( selector );
             
         if ( ! elements.length ) return; // bail if no elements
         
-        const callback = ( ) => {
+        // const callback = ( ) => {
         
           const callback = ( element ) => {
           
@@ -156,7 +148,7 @@
               
                 const b = ! twc
                 
-                  .ftfml
+                  .ftfmld
                   
                   .ids
                   
@@ -212,23 +204,63 @@
             
           elements.forEach ( callback );
           
-          };
-          
-        twc
-        
-          .ftfml
-          
-          .response
-          
-          .finally ( callback );
-          
         };
         
-      self.push ( callback );
+      // initialize twc module
       
-      return self;
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
       
-      } ) ( twc.mloc.callbacks || [ ] );
+      twc.ftfmld = ( ( self ) => {
+      
+        const options = {
+        
+          ids : [ ]
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.ftfmld || { } );
+        
+      // initialize twc fiwoc sub-module
+      
+      twc.fiwoc = ( ( self ) => self ) ( twc.fiwoc || { } );
+      
+      // initialize twc fiwoc callbacks sub-module
+      
+      twc.fiwoc.callbacks = ( ( self ) => {
+      
+        self.push ( elementCallback );
+        
+        return self;
+        
+        } ) ( twc.fiwoc.callbacks || [ ] );
+        
+      // initialize twc mloc sub-module
+      
+      twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+      
+      // initialize twc mloc callbacks sub-module
+      
+      twc.mloc.callbacks = ( ( self ) => {
+      
+        self.push ( elementCallback );
+        
+        return self;
+        
+        } ) ( twc.mloc.callbacks || [ ] );
+        
+      } ) ( );
       
     </script>
     

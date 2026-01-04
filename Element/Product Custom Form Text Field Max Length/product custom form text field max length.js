@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.3.1
     
     SS Versions       : 7.1, 7.0
     
@@ -26,9 +26,13 @@
                         your template is not listed? then it is not currently
                         supported
     
-    Dependencies      : modal lightbox observe changes
+    Dependencies      : form inner wrapper observe changes
                         
-                        product quick view form text field max length
+                        < https://tinyurl.com/yjbszby7 >
+    
+                      : modal lightbox observe changes
+                        
+                        < https://tinyurl.com/877wczvk >
     
     Notes             : this code does not work on the checkout page. it is a
                         Squarespace security feature that no code can alter the
@@ -52,7 +56,7 @@
     
   const
   
-    version = '0.2.0',
+    version = '0.3.1',
     
     s = `Product Custom Form Text Field Max Length v${ version }
     
@@ -66,10 +70,168 @@
       
   console.log ( s );
   
+  const elementCallback = ( element ) => {
+  
+    debugger;
+    
+    const
+    
+      codeKey = `twc-pcftfml`,
+      
+      selector = 'input[ placeholder*="ftfml" ]',
+      
+      elements = element
+      
+        .querySelectorAll ( selector );
+        
+    if ( ! elements.length ) return; // bail if no elements
+    
+    // const callback = ( ) => {
+    
+      const callback = ( element ) => {
+      
+        const
+        
+          attribute = 'placeholder',
+          
+          re = /^ftfml\s*:\s*{([^}]+)}\s*/;
+        
+        let
+        
+          text = element
+          
+            .getAttribute ( attribute ),
+            
+          m = text.match ( re );
+          
+        // clean up placeholder attribute value
+        
+        {
+        
+          text = text
+          
+            .replace ( m [ 0 ], '' )
+            
+            .trim ( );
+            
+          if ( text ) // set/show placeholder or remove
+          
+            element
+            
+              .setAttribute ( attribute, text );
+              
+            else
+            
+              element.removeAttribute ( attribute );
+              
+          }
+          
+        let maxLength = m [ 1 ].trim ( );
+        
+        if ( isNaN ( maxLength ) ) {
+        
+          const callback = ( key ) => {
+          
+            const b = ! twc
+            
+              .ftfmld
+              
+              .ids
+              
+              .includes ( key );
+              
+            if ( b ) return; // bail if no key
+            
+            maxLength = idMaxlengthMap [ key ];
+            
+            };
+            
+          const
+          
+            json = '{' +
+            
+              maxLength
+              
+                .replace ( /[\s]/g, '' )
+                
+                .split ( ',' )
+                
+                .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
+                
+                .join ( ',' ) +
+                
+              '}',
+              
+            key = 'default',
+            
+            idMaxlengthMap = JSON.parse ( json );
+            
+          maxLength = '';
+          
+          if ( key in idMaxlengthMap )
+          
+            maxLength = idMaxlengthMap [ key ];
+            
+          Object
+          
+            .keys ( idMaxlengthMap )
+            
+            .forEach ( callback );
+            
+          }
+          
+        if ( maxLength )
+        
+          element
+          
+            .setAttribute ( 'maxlength', maxLength );
+            
+        };
+        
+      elements.forEach ( callback );
+      
+    };
+    
   // initialize twc module
   
   window.twc = ( ( self ) => self ) ( window.twc || { } );
   
+  twc.ftfmld = ( ( self ) => {
+  
+    const options = {
+    
+      ids : [ ]
+      
+      };
+      
+    Object
+    
+      .assign (
+      
+        self,
+        
+        options
+        
+        );
+        
+    return self;
+    
+    } ) ( twc.ftfmld || { } );
+    
+  // initialize twc fiwoc sub-module
+  
+  twc.fiwoc = ( ( self ) => self ) ( twc.fiwoc || { } );
+  
+  // initialize twc fiwoc callbacks sub-module
+  
+  twc.fiwoc.callbacks = ( ( self ) => {
+  
+    self.push ( elementCallback );
+    
+    return self;
+    
+    } ) ( twc.fiwoc.callbacks || [ ] );
+    
   // initialize twc mloc sub-module
   
   twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
@@ -78,137 +240,7 @@
   
   twc.mloc.callbacks = ( ( self ) => {
   
-    const callback = ( node ) => {
-    
-      const
-      
-        codeKey = `twc-pcftfml`,
-        
-        selector = '.form-wrapper input[ placeholder*="ftfml" ]',
-        
-        elements = node
-        
-          .querySelectorAll ( selector );
-          
-      if ( ! elements.length ) return; // bail if no elements
-      
-      const callback = ( ) => {
-      
-        const callback = ( element ) => {
-        
-          const
-          
-            attribute = 'placeholder',
-            
-            re = /^ftfml\s*:\s*{([^}]+)}\s*/;
-          
-          let
-          
-            text = element
-            
-              .getAttribute ( attribute ),
-              
-            m = text.match ( re );
-            
-          // clean up placeholder attribute value
-          
-          {
-          
-            text = text
-            
-              .replace ( m [ 0 ], '' )
-              
-              .trim ( );
-              
-            if ( text ) // set/show placeholder or remove
-            
-              element
-              
-                .setAttribute ( attribute, text );
-                
-              else
-              
-                element.removeAttribute ( attribute );
-                
-            }
-            
-          let maxLength = m [ 1 ].trim ( );
-          
-          if ( isNaN ( maxLength ) ) {
-          
-            const callback = ( key ) => {
-            
-              const b = ! twc
-              
-                .ftfml
-                
-                .ids
-                
-                .includes ( key );
-                
-              if ( b ) return; // bail if no key
-              
-              maxLength = idMaxlengthMap [ key ];
-              
-              };
-              
-            const
-            
-              json = '{' +
-              
-                maxLength
-                
-                  .replace ( /[\s]/g, '' )
-                  
-                  .split ( ',' )
-                  
-                  .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
-                  
-                  .join ( ',' ) +
-                  
-                '}',
-                
-              key = 'default',
-              
-              idMaxlengthMap = JSON.parse ( json );
-              
-            maxLength = '';
-            
-            if ( key in idMaxlengthMap )
-            
-              maxLength = idMaxlengthMap [ key ];
-              
-            Object
-            
-              .keys ( idMaxlengthMap )
-              
-              .forEach ( callback );
-              
-            }
-            
-          if ( maxLength )
-          
-            element
-            
-              .setAttribute ( 'maxlength', maxLength );
-              
-          };
-          
-        elements.forEach ( callback );
-        
-        };
-        
-      twc
-      
-        .ftfml
-        
-        .response
-        
-        .finally ( callback );
-        
-      };
-      
-    self.push ( callback );
+    self.push ( elementCallback );
     
     return self;
     
