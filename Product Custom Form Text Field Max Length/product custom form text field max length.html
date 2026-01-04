@@ -1317,6 +1317,10 @@
                           
                           < https://tinyurl.com/yjbszby7 >
       
+                        : modal lightbox observe changes
+                          
+                          < https://tinyurl.com/877wczvk >
+      
       Notes             : this code does not work on the checkout page. it is a
                           Squarespace security feature that no code can alter the
                           checkout page
@@ -1339,7 +1343,7 @@
       
     <style>
     
-      .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
+      input[ placeholder*="ftfml" ] {
       
         visibility : hidden;
         
@@ -1367,47 +1371,7 @@
             
         console.log ( s );
         
-        } ) ( );
-        
-      // initialize twc module
-      
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
-      
-      // initialize twc ftfml sub-module
-      
-      twc.ftfml = ( ( self ) => {
-      
-        const options = {
-        
-          ids : undefined,
-          
-          response : undefined
-          
-          };
-          
-        Object
-        
-          .assign (
-          
-            self,
-            
-            options
-            
-            );
-            
-        return self;
-        
-        } ) ( twc.ftfml || { } );
-        
-      // initialize twc fiwoc sub-module
-      
-      twc.fiwoc = ( ( self ) => self ) ( twc.fiwoc || { } );
-      
-      // initialize twc fiwoc callbacks sub-module
-      
-      twc.fiwoc.callbacks = ( ( self ) => {
-      
-        const callback = ( element ) => {
+        const elementCallback = ( element ) => {
         
           debugger;
           
@@ -1423,7 +1387,7 @@
               
           if ( ! elements.length ) return; // bail if no elements
           
-          const callback = ( ) => {
+          // const callback = ( ) => {
           
             const callback = ( element ) => {
             
@@ -1471,7 +1435,7 @@
                 
                   const b = ! twc
                   
-                    .ftfml
+                    .ftfmld
                     
                     .ids
                     
@@ -1527,23 +1491,63 @@
               
             elements.forEach ( callback );
             
-            };
-            
-          twc
-          
-            .ftfml
-            
-            .response
-            
-            .finally ( callback );
-            
           };
           
-        self.push ( callback );
+        // initialize twc module
         
-        return self;
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
         
-        } ) ( twc.fiwoc.callbacks || [ ] );
+        twc.ftfmld = ( ( self ) => {
+        
+          const options = {
+          
+            ids : [ ]
+            
+            };
+            
+          Object
+          
+            .assign (
+            
+              self,
+              
+              options
+              
+              );
+              
+          return self;
+          
+          } ) ( twc.ftfmld || { } );
+          
+        // initialize twc fiwoc sub-module
+        
+        twc.fiwoc = ( ( self ) => self ) ( twc.fiwoc || { } );
+        
+        // initialize twc fiwoc callbacks sub-module
+        
+        twc.fiwoc.callbacks = ( ( self ) => {
+        
+          self.push ( elementCallback );
+          
+          return self;
+          
+          } ) ( twc.fiwoc.callbacks || [ ] );
+          
+        // initialize twc mloc sub-module
+        
+        twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
+        
+        // initialize twc mloc callbacks sub-module
+        
+        twc.mloc.callbacks = ( ( self ) => {
+        
+          self.push ( elementCallback );
+          
+          return self;
+          
+          } ) ( twc.mloc.callbacks || [ ] );
+          
+        } ) ( );
         
       </script>
       
