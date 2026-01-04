@@ -1,6 +1,6 @@
-  <!-- begin TWC Product Custom Form Text Field Max Length -->
-  
-    <!-- begin TWC Cart Page Observe Changes -->
+<!-- begin TWC Product Custom Form Text Field Max Length -->
+
+  <!-- begin TWC Cart Page Observe Changes -->
   
     <script>
     
@@ -242,7 +242,7 @@
       </script>
       
     <!-- end TWC Cart Page Observe Changes -->
-  
+    
   <!-- begin TWC Form Inner Wrapper Observe Changes -->
   
     <script>
@@ -428,7 +428,7 @@
       </script>
       
     <!-- end TWC Form Inner Wrapper Observe Changes -->
-  
+    
   <!-- begin TWC Modal Lightbox Observe Changes -->
   
     <script>
@@ -619,7 +619,7 @@
       </script>
       
     <!-- end TWC Modal Lightbox Observe Changes -->
-  
+    
   <!-- begin TWC Form Text Field Max Length Data -->
   
     <script>
@@ -1257,7 +1257,7 @@
       </script>
       
     <!-- end TWC Form Text Field Max Length Data -->
-  
+    
   <!-- begin TWC Product Custom Form Text Field Max Length -->
   
     <!--
@@ -1525,367 +1525,5 @@
       </script>
       
     <!-- end TWC Product Custom Form Text Field Max Length -->
-  
-  <!-- begin TWC Cart Page Form Text Field Max Length -->
-  
-    <!--
     
-      cart page form text field max length
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.1.2
-      
-      SS Versions   : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible    : Not Applicable
-      
-      Dependencies  : cart page observe changes
-      
-      Notes         : this code does not work on the checkout page. it is a
-                      Squarespace security feature that no code can alter the
-                      checkout page
-  
-                      this code is client side and making use of an HTML form
-                      feature. Since this code is client side it is possible to
-                      bypass the max length limit this code is setting. in other
-                      words you still need to be checking manually when forms or
-                      orders come in to make sure your limits are not being
-                      exceeded. consider this code more of an aid to help users
-                      not exceed your field max length limits
-      
-      Copyright     : 2024-2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-    <style>
-    
-      html:not( .squarespace-damask ) #sqs-cart-container .cart-product-form-wrapper input[ placeholder*="ftfml" ] {
-      
-        visibility : hidden;
-        
-        }
-        
-      </style>
-      
-    <script>
-    
-      ( ( ) => {
-      
-        const
-        
-          version = '0.1.2',
-          
-          s = `Cart Page Form Text Field Max Length v${ version }
-          
-            License < https://tinyurl.com/s872fb68 >
-            
-            © 2024-2025 Thomas Creedon
-            
-            Tom's Web Consulting < http://www.tomsWeb.consulting >`
-            
-            .replace ( /^\s+/gm, '' );
-            
-        console.log ( s );
-        
-        // globals
-        
-        {
-        
-          // initialize twc module
-          
-          window.twc = ( ( self ) => self ) ( window.twc || { } );
-          
-          // initialize twc cpftfml sub-module
-          
-          twc.cpftfml = ( ( self ) => {
-          
-            const options = {
-            
-              ids : undefined
-              
-              };
-              
-            Object
-            
-              .assign (
-              
-                self,
-                
-                options
-                
-                );
-                
-            return self;
-            
-            } ) ( twc.cpftfml || { } );
-            
-          }
-          
-        } ) ( );
-        
-      var twcCpftfml = ( node ) => {
-      
-        const hasQuerySelector
-        
-          =
-          
-          node
-          
-            .querySelector;
-            
-        if ( ! hasQuerySelector ) return; // bail if no querySelector
-        
-        let selector;
-        
-        // cart container
-        
-        ( ( ) => {
-        
-          const isCartContainerElement
-          
-            =
-            
-            node
-            
-              .classList
-              
-              .contains ( 'cart-container' );
-              
-          // bail if not cart container element
-          
-          if ( ! isCartContainerElement ) return;
-          
-          selector = '.cart-row';
-          
-          const
-          
-            callback = ( element ) => {
-            
-              const callback = ( event ) => {
-              
-                console.log ( event );
-                
-                const
-                
-                  callback = ( item ) => {
-                  
-                    console.log ( item );
-                    
-                    const b = ! ( 'productForm' in item );
-                    
-                    if ( b ) return [ ]; // bail if no product form
-                    
-                    const ids = [ item.productId ];
-                    
-                    if ( item.sku !== undefined )
-                    
-                      ids.push ( item.sku );
-                      
-                    return ids;
-                    
-                    },
-                    
-                  i = [
-                  
-                    ...
-                    
-                    cartRowElements
-                    
-                    ]
-                    
-                    .indexOf (
-                    
-                      element
-                      
-                        .closest ( '.cart-row' )
-                        
-                      ),
-                      
-                  selector =
-                  
-                    '#sqs-cart-root script[ type="application/json" ]';
-                    
-                twc.cpftfml.ids = JSON
-                
-                  .parse (
-                  
-                    document
-                    
-                      .body
-                      
-                      .querySelector ( selector )
-                      
-                      .textContent
-                      
-                    )
-                    
-                  .cart
-                  
-                  .items
-                  
-                  .map ( callback )
-                  
-                  [ i ];
-                  
-                };
-                
-              element.addEventListener ( 'click', callback );
-              
-              },
-              
-            cartRowElements = node
-            
-              .querySelectorAll ( selector );
-              
-          selector = '.cart-row-edit';
-          
-          node
-          
-            .querySelectorAll ( selector )
-            
-            .forEach ( callback );
-            
-          } ) ( );
-          
-        // cart product form container
-        
-        ( ( ) => {
-        
-          selector = '.cart-product-form-container';
-          
-          let elements = node
-          
-            .querySelector ( selector );
-            
-          if ( ! elements ) return; // bail if no element
-          
-          const callback = ( element ) => {
-          
-            const
-            
-              attribute = 'placeholder',
-              
-              re = /^ftfml\s*:\s*{([^}]+)}\s*/;
-              
-            let
-            
-              text = element
-              
-                .getAttribute ( attribute ),
-                
-              m = text.match ( re );
-              
-            // clean up placeholder attribute value
-            
-            {
-            
-              text = text
-              
-                .replace ( m [ 0 ], '' )
-                
-                .trim ( );
-                
-              if ( text ) // set/show placeholder or remove
-              
-                element
-                
-                  .setAttribute ( attribute, text );
-                  
-                else
-                
-                  element.removeAttribute ( attribute );
-                  
-              }
-              
-            let maxLength = m [ 1 ]
-            
-              .trim ( );
-              
-            if ( isNaN ( maxLength ) ) {
-            
-              const callback = ( key ) => {
-              
-                const b = ! twc
-                
-                  .cpftfml
-                  
-                  .ids
-                  
-                  .includes ( key );
-                  
-                if ( b ) return; // bail if no key
-                
-                maxLength = idMaxlengthMap [ key ];
-                
-                };
-                
-              const
-              
-                json = '{' +
-                
-                  maxLength
-                  
-                    .replace ( /[\s]/g, '' )
-                    
-                    .split ( ',' )
-                    
-                    .map ( s => s.replace ( /([^:]+)/, '"$1"' ) )
-                    
-                    .join ( ',' ) +
-                    
-                  '}',
-                  
-                key = 'default',
-                
-                idMaxlengthMap = JSON.parse ( json );
-                
-              maxLength = '';
-              
-              if ( key in idMaxlengthMap )
-              
-                maxLength = idMaxlengthMap [ key ];
-                
-              Object
-              
-                .keys ( idMaxlengthMap )
-                
-                .forEach ( callback );
-                
-              }
-              
-            if ( maxLength )
-            
-              element
-              
-                .setAttribute ( 'maxlength', maxLength );
-                
-            };
-            
-          selector = '.cart-product-form-field-label ' +
-          
-            'input[ placeholder*="ftfml" ]';
-            
-          elements = elements
-          
-            .querySelectorAll ( selector )
-            
-            .forEach ( callback );
-            
-          } ) ( );
-          
-        };
-        
-      </script>
-      
-    <!-- end TWC Cart Page Form Text Field Max Length -->
-  
-      
-    <!-- end TWC Product Custom Form Text Field Max Length -->
+  <!-- end TWC Product Custom Form Text Field Max Length -->
