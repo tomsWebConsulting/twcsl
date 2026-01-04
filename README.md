@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 448 effects. Each effect has it's own version number, code,
+twcsl contains 441 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -103,10 +103,6 @@ not necessarily designed to work together.
     
     * [Store Page Price Zero Remove](Page/Store/Store%20Page%20Price%20Zero%20Remove)
       
-    * [Store Page Form Text Field Max Length](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length)
-      
-      * [Store Page Form Text Field Max Length.bbprojectd](Page/Store/Store%20Page%20Form%20Text%20Field%20Max%20Length/Store%20Page%20Form%20Text%20Field%20Max%20Length.bbprojectd)
-        
     * [Store Page Price Change Log](Page/Store/Store%20Page%20Price%20Change%20Log)
       
     * [Store Page Savings Percentage](Page/Store/Store%20Page%20Savings%20Percentage)
@@ -239,10 +235,6 @@ not necessarily designed to work together.
   
 * [Element](Element)
   
-  * [Product Quick View Observe Changes](Element/Product%20Quick%20View%20Observe%20Changes)
-    
-    * [Product Quick View Observe Changes.bbprojectd](Element/Product%20Quick%20View%20Observe%20Changes/Product%20Quick%20View%20Observe%20Changes.bbprojectd)
-      
   * [Form](Element/Form)
     
     * [Form Text Field Max Length Data](Element/Form/Form%20Text%20Field%20Max%20Length%20Data)
@@ -259,10 +251,6 @@ not necessarily designed to work together.
       
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
     
-  * [Product Quick View Form Text Field Max Length](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length)
-    
-    * [Product Quick View Form Text Field Max Length.bbprojectd](Element/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length/Product%20Quick%20View%20Form%20Text%20Field%20Max%20Length.bbprojectd)
-      
   * [Link](Element/Link)
     
     * [Link Popup Window Open](Element/Link/Link%20Popup%20Window%20Open)
@@ -925,8 +913,6 @@ not necessarily designed to work together.
       
   * [Product](Block/Product)
     
-    * [Product Block Form Text Field Max Length](Block/Product/Product%20Block%20Form%20Text%20Field%20Max%20Length)
-      
   * [Text](Block/Text)
     
     * [Text Block Tab Stops](Block/Text/Text%20Block%20Tab%20Stops)
