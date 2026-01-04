@@ -1,67 +1,293 @@
-<!-- begin TWC Product Custom Form Text Field Max Length -->
-
-  <!-- begin TWC Product Block Form Text Field Max Length -->
+  <!-- begin TWC Product Custom Form Text Field Max Length -->
   
-    <!--
-    
-      product block form text field max length
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.1.1
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Yes
-      
-      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                        Stella, Thorne, Vow, Wav, West )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Dependencies    : product quick view form text field max length
-                        
-                        product custom form text field max length
-      
-      Copyright       : 2024-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-    <style>
-    
-      .collection-type-page .sqs-async-form-content .form-wrapper .field-list .field .field-element[ placeholder*="ftfml" ] {
-      
-        visibility : hidden;
-        
-        }
-        
-      </style>
-      
+    <!-- begin TWC Cart Page Observe Changes -->
+  
     <script>
     
       ( ( ) => {
       
+        /*
+        
+          cart page observe changes
+          
+          License         : < https://tinyurl.com/s872fb68 >
+          
+          Version         : 0.3.0
+          
+          SS Versions     : 7.1, 7.0
+          
+          v7.1
+          Fluid
+          Engine
+          Compatible      : Not Applicable
+          
+          Note            : this code is a base for other effects. on its own it
+                            doesn't do anything. this code is not the end all be
+                            all of mutation observers. it may not cover your needs
+          
+          Copyright       : 2022-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+          
+          no user serviceable parts below
+          
+          */
+          
         const
         
-          version = '0.1.1',
+          version = '0.3.0',
           
-          s = `Product Block Form Text Field Max Length v${ version }
+          s = `Cart Page Observe Changes v${ version }
           
             License < https://tinyurl.com/s872fb68 >
             
-            © 2024-2025 Thomas Creedon
+            © 2022-2026 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >`
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        const isCartPage =
+        
+          location.pathname === '/cart';
+        
+        if ( ! isCartPage ) return; // bail if not cart page
+        
+        const hasMutationObserver =
+        
+          ( 'MutationObserver' in window );
+          
+        // bail if no mutation observer available
+        
+        if ( ! hasMutationObserver ) return;
+        
+        const dclCallback = ( ) => {
+        
+          // globals
+          
+          {
+        
+            // initialize twc module
+            
+            window.twc =
+            
+              ( ( self ) => self ) ( window.twc || { } );
+              
+            // initialize twc cpoc sub-module
+            
+            twc.cpoc =
+            
+              ( ( self ) => self ) ( twc.cpoc || { } );
+            
+            // initialize twc cpoc callbacks sub-module
+            
+            twc.cpoc.callbacks =
+            
+              ( ( self ) => self )
+              
+              ( twc.cpoc.callbacks || { } );
+              
+            // initialize twc cpoc callbacks added sub-module
+            
+            twc.cpoc.callbacks.added =
+            
+              ( ( self ) => self )
+              
+              ( twc.cpoc.callbacks.added || [ ] );
+              
+            // initialize twc cpoc callbacks removed sub-module
+            
+            twc.cpoc.callbacks.removed =
+            
+              ( ( self ) => self )
+              
+              ( twc.cpoc.callbacks.removed || [ ] );
+              
+            }
+            
+          const
+          
+            codeKey = `twc-cpoc`,
+            
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            hasAddedCallbacks = options
+            
+              .callbacks
+              
+              .added
+              
+              .length,
+              
+            hasRemovedCallbacks = options
+            
+              .callbacks
+              
+              .removed
+              
+              .length,
+              
+            hasCallbacks =
+            
+              hasAddedCallbacks || hadRemovedCallbacks;
+              
+          if ( ! hasCallbacks ) return; // bail if no callbacks
+          
+          const
+          
+            mutationCallback = ( mutation ) => {
+            
+              mutation
+              
+                .addedNodes
+                
+                .forEach ( n => nodeCallback ( n ) );
+                
+              mutation
+              
+                .removedNodes
+                
+                .forEach (
+                
+                  n => nodeCallback ( n, 'removed' )
+                  
+                  );
+                  
+              },
+              
+            mutationsCallback = ( mutations ) => {
+            
+              mutations.forEach ( mutationCallback );
+              
+              },
+              
+            nodeCallback = ( node, key = 'added' ) => {
+            
+              options
+              
+                .callbacks
+                
+                [ key ]
+                
+                .forEach (
+                
+                  c => runCallback ( c, node )
+                  
+                  );
+                  
+              },
+              
+            observer = new MutationObserver (
+            
+              mutationsCallback
+              
+              ),
+              
+            runCallback = ( callback, node ) => {
+            
+              try {
+              
+                callback ( node );
+                
+                } catch ( error ) {
+                
+                  const s = `${ codeKey } callback error`;
+                  
+                  console.error ( s, error );
+                  
+                  }
+                  
+              };
+              
+          // start listening for changes in body
+          
+          observer.observe (
+          
+            document.getElementById (
+            
+              'sqs-cart-container'
+              
+              ),
+              
+            {
+            
+              childList : true,
+              
+              subtree : true
+              
+              }
+              
+            );
+            
+          };
+          
+        document.addEventListener (
+        
+          'DOMContentLoaded',
+          
+          dclCallback
+          
+          );
+          
+        } ) ( );
+        
+      </script>
+      
+    <!-- end TWC Cart Page Observe Changes -->
+  
+  
+  <!-- begin TWC Modal Lightbox Observe Changes -->
+  
+    <script>
+    
+      ( ( ) => {
+      
+        /*
+        
+          modal lightbox observe changes
+          
+          License         : < https://tinyurl.com/s872fb68 >
+          
+          Version         : 0.2.0
+          
+          SS Versions     : 7.1, 7.0
+          
+          v7.1
+          Fluid
+          Engine
+          Compatible      : Not Applicable
+          
+          Note            : this code is a base for other effects. on its own it
+                            doesn't do anything. this code is not the end all be
+                            all of mutation observers. it may not cover your needs
+          
+          Copyright       : 2024-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+          
+          no user serviceable parts below
+          
+          */
+          
+        const
+        
+          version = '0.2.0',
+          
+          s = `Modal Lightbox Observe Changes v${ version }
+          
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2024-2026 Thomas Creedon
             
             Tom's Web Consulting < http://www.tomsWeb.consulting >`
             
@@ -74,208 +300,666 @@
           // globals
           
           {
-          
+        
             // initialize twc module
             
             window.twc = ( ( self ) => self ) ( window.twc || { } );
             
-            // initialize twc ftfml sub-module
+            // initialize twc mloc sub-module
             
-            twc.ftfml = ( ( self ) => {
+            twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
             
-              const options = {
-              
-                ids : undefined,
-                
-                response : undefined
-                
-                };
-                
-              Object
-              
-                .assign (
-                
-                  self,
-                  
-                  options
-                  
-                  );
-                  
-              return self;
-              
-              } ) ( twc.ftfml || { } );
+            // initialize twc mloc callbacks sub-module
+            
+            twc.mloc.callbacks =
+            
+              ( ( self ) => self ) ( twc.mloc.callbacks || [ ] );
               
             }
             
           const
           
-            codeKey = 'twc-pbftfml',
+            codeKey = `twc-mloc`,
             
-            handleEvent = ( event ) => {
+            options = codeKey
             
+              .split ( '-' )
+              
+              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              
+            hasCallbacks = options
+            
+              .callbacks
+              
+              .length;
+              
+          if ( ! hasCallbacks ) return; // bail if no callbacks
+          
+          const
+          
+            mutationCallback = ( mutation ) => {
+            
+              mutation
+              
+                .addedNodes
+                
+                .forEach ( nodeCallback );
+                
+              },
+              
+            mutationsCallback = ( mutations ) => {
+            
+              mutations.forEach ( mutationCallback );
+              
+              },
+              
+            nodeCallback = ( node ) => {
+            
+              const isElement = node
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              if ( ! isElement ) return; // bail if not element
+              
+              const isModalLightbox = node
+              
+                .classList
+                
+                .contains ( 'sqs-modal-lightbox' );
+                
+              // bail if not element of interest
+              
+              if ( ! isModalLightbox ) return;
+              
+              options
+              
+                .callbacks
+                
+                .forEach (
+                
+                  c => runCallback ( c, node )
+                  
+                  );
+                  
+              },
+              
+            observer = new MutationObserver (
+            
+              mutationsCallback
+              
+              ),
+              
+            runCallback = ( callback, node ) => {
+            
+              try {
+              
+                callback ( node );
+                
+                } catch ( error ) {
+                
+                  const s = `${ codeKey } callback error`;
+                  
+                  console.error ( s, error );
+                  
+                  }
+                  
+              };
+              
+          // start listening for changes in body
+          
+          observer.observe (
+          
+            document.body,
+            
+            { childList : true }
+            
+            );
+            
+          };
+          
+        document.addEventListener (
+        
+          'DOMContentLoaded',
+          
+          callback
+          
+          );
+          
+        } ) ( );
+        
+      </script>
+      
+    <!-- end TWC Modal Lightbox Observe Changes -->
+  
+  <!-- begin TWC Form Text Field Max Length Data -->
+  
+    <script>
+    
+      ( ( ) => {
+      
+        /*
+        
+          form text field max length data
+          
+          License         : < https://tinyurl.com/s872fb68 >
+          
+          Version         : 0.1.0
+          
+          SS Versions     : 7.1, 7.0
+          
+          v7.1
+          Products V2
+          Compatible      : Yes
+          
+          v7.1
+          Fluid
+          Engine
+          Compatible      : Yes
+          
+          Dependencies    : cart page observe changes
+                            
+                            < https://tinyurl.com/2tbppm2v >
+          
+          Notes           : this code is a base for other effects
+                          
+                            this code makes calls to the json version of products
+                            for information that is not normally available
+          
+                            this code does not work on the checkout page. it is a
+                            Squarespace security feature that no code can alter
+                            the checkout page
+          
+          Copyright       : 2026 Thomas Creedon
+                            
+                            Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+          
+          no user serviceable parts below
+          
+          */
+          
+        const
+        
+          version = '0.1.0',
+          
+          s = `
+          
+            Form Text Field Max Length Data v${ version }
+            
+            License < https://tinyurl.com/s872fb68 >
+            
+            © 2026 Thomas Creedon
+            
+            Tom's Web Consulting < http://www.tomsWeb.consulting >
+            
+            `
+            
+            .replace ( /^\s+/gm, '' );
+            
+        console.log ( s );
+        
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc ftfmld sub-module
+        
+        twc.ftfmld = ( ( self ) => {
+        
+          const options = {
+          
+            ids : [ ]
+            
+            };
+            
+          Object
+          
+            .assign (
+            
+              self,
+              
+              options
+              
+              );
+              
+          return self;
+          
+          } ) ( twc.ftfmld || { } );
+          
+        // initialize twc cpoc sub-module
+        
+        twc.cpoc =
+        
+          ( ( self ) => self ) ( twc.cpoc || { } );
+          
+        // initialize twc cpoc callbacks sub-module
+        
+        twc.cpoc.callbacks =
+        
+          ( ( self ) => self )
+          
+          ( twc.cpoc.callbacks || { } );
+          
+        // initialize twc cpoc callbacks added sub-module
+        
+        twc.cpoc.callbacks.added =
+        
+          ( ( self ) => {
+          
+            const callback = async ( node ) => {
+            
+              const isElement = node
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              if ( ! isElement ) return; // bail if not element
+              
+              const isCartContainer = node
+              
+                .getAttribute ( 'data-test' )
+                
+                ===
+                
+                "cart-container";
+                
+              // bail if not element of interest
+              
+              if ( ! isCartContainer ) return;
+              
               const
               
-                data = twc.ftfml,
+                fetchJsonBatch = async ( urls ) => {
                 
-                element = event
-                
-                  .currentTarget,
+                  try {
                   
-                detailsElement = element
-                
-                  .closest ( '.productDetails' ),
-                  
-                setAttributes = ( ) => {
-                
-                  const callback = ( element ) => {
-                  
-                    attributes
+                    const responses = await Promise.all (
                     
-                      [
+                      urls.map ( async ( url ) => {
                       
-                        element
+                        const response = await fetch ( url );
                         
-                          .getAttribute ( 'name' )
+                        if ( ! response.ok ) {
+                        
+                          const s = `
                           
-                        ]
+                            ${ codeKey } network response was not ok ${ response.statusText }
+                            
+                            `
+                            
+                            .trim ( )
+                            
+                            .replace ( /\s+/gm, ' ' );
+                            
+                          throw new Error ( s );
+                          
+                          }
+                          
+                        return response.json ( );
                         
-                      =
+                      } )
                       
-                      element
+                    );
+                    
+                    return responses; // array of JSON objects
+                    
+                  } catch ( error ) {
+                  
+                    const s = `
+                    
+                      ${ codeKey } there has been a problem with your fetch batch operation,
                       
-                        .value;
-                        
-                    };
-                    
-                  variantElements
-                  
-                    .forEach ( callback );
-                    
-                  },
-                  
-                setVariantSku = ( ) => {
-                
-                  sku = variants [
-                  
-                    JSON
-                    
-                      .stringify (
+                      ${ error }.
                       
-                        attributes
-                        
-                        )
-                        
-                    ];
-                    
-                  },
-                  
-                variantElements
-                
-                  =
-                  
-                  detailsElement
-                  
-                    .querySelectorAll ( '.product-variants select' ),
-                    
-                isVariantSelected
-                
-                  =
-                  
-                  variantElements
-                  
-                    .length
-                    
-                  &&
-                  
-                  !
-                  
-                  [
-                  
-                    ...
-                    
-                    variantElements
-                    
-                    ]
-                  
-                    .filter ( e => ! e.value )
-                    
-                    .length;
-                    
-              let
-              
-                attributes = { },
-                
-                itemId,
-                
-                sku,
-                
-                variants;
-                
-              data.ids = [ ];
-              
-              if ( element.twcPbftfml ) {
-              
-                const p = element.twcPbftfml;
-                
-                itemId = p.itemId;
-                
-                variants = p.variants;
-                
-                const l = variants
-                
-                  &&
-                  
-                  Object
-                  
-                    .keys ( variants )
-                    
-                    .length;
-                    
-                switch ( true ) {
-                
-                  case ! variants :
-                  
-                    break;
-                    
-                  case l === 1 :
-                  
-                    sku = variants [ '{}' ];
-                    
-                    break;
-                    
-                  case l > 1 : {
-                  
-                    if ( isVariantSelected ) {
-                    
-                      setAttributes ( );
+                      `
                       
-                      setVariantSku ( );
+                      .trim ( )
                       
-                      }
+                      .replace ( /\s+/gm, ' ' );
                       
-                    break;
+                    console.error ( s );
+                    
+                    return null;
                     
                     }
                     
-                  }
+                  },
                   
-                data.ids.push (
+                urls = [
                 
                   ...
                   
-                  [ p.itemId, sku ]
+                  node
                   
-                    .filter ( e => e )
+                    .querySelectorAll ( '.cart-row-title' )
+                    
+                  ]
+                  
+                  .map (
+                  
+                    e => `${ e.getAttribute ( 'href' ) }?format=json`
+                    
+                    ),
+                    
+                results = await fetchJsonBatch ( urls );
+                
+              if ( ! results ) return; // bail if no results
+              
+              results.forEach ( o => {
+              
+                const item = o.item;
+                
+                options.ids.push ( item.id );
+                
+                item
+                
+                  .variants
+                  
+                  .forEach (
+                  
+                    v => options.ids.push ( v.sku )
+                    
+                    );
+                    
+                } );
+                
+              };
+              
+            self.push ( callback );
+            
+            return self;
+            
+            } ) ( twc.cpoc.callbacks.added || [ ] );
+            
+        const
+        
+          codeKey = 'twc-ftfmld',
+          
+          collectClassNames = ( obj, a = [ ] ) => {
+          
+            for ( const key in obj ) {
+            
+              const
+              
+                value = obj [ key ],
+                
+                isOject =
+                
+                  value && typeof value === 'object',
+                  
+                isString = typeof value === 'string';
+                
+              if ( isString )
+              
+                a.push ( value );
+                
+                else if ( isOject )
+                
+                  collectClassNames ( value, a );
+                  
+              }
+              
+            return a;
+            
+            },
+            
+          dclCallback = async ( ) => {
+          
+            const
+            
+              isList
+              
+                =
+                
+                !
+                
+                Static
+                
+                  .SQUARESPACE_CONTEXT
+                  
+                  .item
+                  
+                  ?.id,
+                  
+              isStorePage = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .collection
+                
+                ?.type
+                
+                ===
+                
+                13,
+                
+              isStorePageList =
+              
+                isStorePage && isList;
+                
+            if ( isStorePageList ) {
+            
+              try {
+              
+                const url = Static
+                
+                  .SQUARESPACE_CONTEXT
+                  
+                  .collection
+                  
+                  .fullUrl
+                  
+                  +
+                  
+                  '?format=json';
+                  
+                const response = await fetch ( url );
+                
+                if ( ! response.ok ) {
+                
+                  const s = `
+                  
+                    ${ codeKey } network response was not ok ${
+                    
+                      response
+                      
+                        .statusText
+                        
+                        }
+                        
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  throw new Error ( s );
+                  
+                  }
+                  
+                const
+                
+                  itemCallback = ( item ) => {
+                  
+                    options.ids.push ( item.id );
+                    
+                    item.variants.forEach (
+                    
+                      v => options.ids.push ( v.sku )
+                      
+                      );
+                      
+                    },
+                    
+                  obj = await response.json ( );
+                  
+                obj
+                
+                  .items
+                  
+                  .forEach ( itemCallback );
+                
+                return;
+                  
+                } catch ( error ) {
+                
+                  const s = `
+                  
+                    ${ codeKey } there has been a problem with your fetch get operation,
+                    
+                    ${ error }.
+                    
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  console.error ( s );
+                  
+                  }
+                  
+              }
+              
+            const
+            
+              selector = '.sqs-add-to-cart-button-wrapper';
+              
+            document
+            
+              .body
+              
+              .querySelectorAll ( selector )
+              
+              .forEach ( elementCallback );
+              
+            },
+              
+          elementCallback = async ( element ) => {
+          
+            const
+            
+              classNames = {
+              
+                // 7.1, 7.0; product block
+                
+                productBlock : 'product-block',
+                
+                '7.1' : {
+                
+                  // plp : 'product-list-item',
+                  
+                  pdp : 'product-detail',
+                  
+                  pdpAddOn : 'product-add-ons'
+                  
+                  },
+                  
+                7 : {
+                
+                  pdp : 'ProductItem-details'
+                  
+                  }
+                  
+                },
+                
+              selector = collectClassNames ( classNames )
+              
+                .map ( c => `.${ c }` )
+                
+                .join( ', ' );
+                
+            element = element.closest ( selector );
+            
+            const
+            
+              classList = element.classList,
+              
+              isPdp
+              
+                =
+                
+                classList.contains (
+                
+                  classNames
+                  
+                    [ '7.1' ]
+                    
+                    .pdp
+                    
+                  )
+                  
+                ||
+                
+                classList.contains (
+                
+                  classNames
+                  
+                    [ '7' ]
+                    
+                    .pdp
+                    
+                  ),
+                  
+              isPdpAddOn = classList.contains (
+              
+                classNames
+                
+                  [ '7.1' ]
+                  
+                  .pdpAddOn
+                  
+                ),
+                
+              isProductBlock = classList
+              
+                .contains (
+                
+                  classNames
+                  
+                    .productBlock
                     
                   );
                   
-                data.response = Promise.resolve ( );
+            switch ( true ) {
+            
+              case isPdp :
+              
+                options.ids.push (
                 
-                } else {
-                
-                  const url = detailsElement
+                  Static.SQUARESPACE_CONTEXT.itemId
                   
-                    .querySelector ( '.product-title' )
+                  );
+                  
+                Static
+                
+                  .SQUARESPACE_CONTEXT
+                  
+                  .product
+                  
+                  .variants
+                  
+                  .forEach (
+                  
+                    v => options.ids.push ( v.sku )
+                    
+                    );
+                    
+                break;
+                
+              case isPdpAddOn : {
+              
+                try {
+                
+                  const url = element
+                  
+                    .querySelector ( '.add-on-thumbnail-link' )
                     
                     .getAttribute ( 'href' )
                     
@@ -283,1007 +967,111 @@
                     
                     '?format=json';
                     
-                  data.response = fetch ( url )
+                  const response = await fetch ( url );
                   
-                    .then ( ( response ) => {
+                  if ( ! response.ok ) {
+                  
+                    const s = `
                     
-                      if ( ! response.ok ) {
+                      ${ codeKey } network response was not ok ${
                       
-                        const s = `
+                        response
                         
-                          ${ codeKey } network response was not ok ${
-                          
-                            response
-                              
-                              .statusText
-                              
-                              }
-                              
-                          `
-                          
-                          .trim ( )
-                          
-                          .replace ( /\s+/gm, ' ' );
-                          
-                        throw new Error ( s );
-                        
-                        }
-                        
-                      const obj = response.json ( );
-                      
-                      return obj;
-                      
-                      } )
-                      
-                    .then ( ( obj ) => {
-                    
-                      const
-                      
-                        item = obj.item,
-                        
-                        l = item.variants.length;
-                        
-                      itemId = item.id;
-                      
-                      if ( l ) {
-                      
-                        const callback = ( variant ) => {
-                        
-                          const optionOrdering
-                          
-                            =
-                            
-                            item
-                            
-                              .variantOptionOrdering;
-                              
-                          let obj = { };
-                          
-                          if ( optionOrdering.length )
-                          
-                            obj = optionOrdering
-                            
-                              .reduce ( ( acc, key ) => {
-                              
-                                if ( key in variant.attributes )
-                                
-                                  acc [ key ] = variant.attributes [ key ];
-                                  
-                                return acc;
-                                
-                                }, { } );
-                                
-                          variants [
-                          
-                            JSON.stringify ( obj )
-                            
-                            ]
-                            
-                            =
-                            
-                            variant
-                            
-                              .sku;
-                              
-                          };
-                          
-                        variants = { };
-                        
-                        item
-                        
-                          .variants
-                          
-                          .forEach ( callback );
-                          
-                        }
-                        
-                      switch ( true ) {
-                      
-                        case ! variants :
-                        
-                          break;
-                          
-                        case l === 1 :
-                        
-                          sku = variants [ '{}' ];
-                          
-                          break;
-                          
-                        case l > 1 : {
-                        
-                          if ( isVariantSelected ) {
-                          
-                            setAttributes ( );
-                            
-                            setVariantSku ( );
-                            
-                            }
-                            
-                          break;
+                          .statusText
                           
                           }
                           
-                        }
-                        
-                      data.ids.push (
+                      `
                       
-                        ...
-                        
-                        [ itemId, sku ]
-                        
-                          .filter ( e => e )
-                          
-                        );
-                        
-                      element.twcPbftfml = {
+                      .trim ( )
                       
-                        itemId : itemId,
-                        
-                        variants : variants
-                        
-                        };
-                        
-                      } );
+                      .replace ( /\s+/gm, ' ' );
                       
-                  }
+                    throw new Error ( s );
+                    
+                    }
+                    
+                  const
                   
-              },
+                    obj = await response.json ( ),
+                    
+                    item = obj.item;
+                    
+                  options.ids.push ( item.id );
+                  
+                  item
+                  
+                    .variants
+                    
+                    .forEach (
+                    
+                      v => options.ids.push ( v.sku )
+                      
+                      );
+                      
+                  } catch ( error ) {
+                  
+                    const s = `
+                    
+                      ${ codeKey } there has been a problem with your fetch get operation,
+                      
+                      ${ error }.
+                      
+                      `
+                      
+                      .trim ( )
+                      
+                      .replace ( /\s+/gm, ' ' );
+                      
+                    console.error ( s );
+                    
+                    }
+                    
+                break;
+                
+                }
+                
+              case isProductBlock : {
               
-            selector = '.sqs-block[ data-definition-name="'
+                const obj = JSON.parse (
+                
+                  element
+                  
+                    .getAttribute ( 'data-product' )
+                    
+                  );
+                  
+                options.ids.push ( obj.id );
+                
+                obj?.variants.forEach (
+                
+                  v => options.ids.push ( v.sku )
+                  
+                  );
+                  
+                break;
+                
+                }
+                
+              }
+              
+            },
             
-              +
-              
-              'website.components.product" ]:not( :has( .product-block '
-              
-              +
-              
-              '.image-container .product-mark.sold-out ) ) '
-              
-              +
-              
-              '.sqs-add-to-cart-button-wrapper';
-              
-          document
+          options = codeKey
           
-            .querySelectorAll ( selector )
+            .split ( '-' )
             
-            .forEach ( e =>
+            .reduce ( ( obj, key ) => obj?.[ key ], window );
             
-              e.addEventListener ( 'click', handleEvent )
-              
-              );
-              
-          };
-          
-        document.addEventListener ( 'DOMContentLoaded', callback );
+        document
         
+          .addEventListener ( 'DOMContentLoaded', dclCallback );
+          
         } ) ( );
         
       </script>
       
-    <!-- end TWC Product Block Form Text Field Max Length -->
-  
-  <!-- begin TWC Store Page Form Text Field Max Length -->
-  
-    <!--
-    
-      store page form text field max length
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.3.4
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Products V2
-      Compatible      : Yes
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Not Applicable
-      
-      v7.0
-      Templates       : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                        Stella, Thorne, Vow, Wav, West )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Dependencies    : product custom form text field max length
-      
-      Notes           : this code does not work on the checkout page. it is a
-                        Squarespace security feature that no code can alter the
-                        checkout page
-                        
-                        this code is client side and making use of an HTML form
-                        feature. Since this code is client side it is possible to
-                        bypass the max length limit this code is setting. in other
-                        words you still need to be checking manually when forms or
-                        orders come in to make sure your limits are not being
-                        exceeded. consider this code more of an aid to help users
-                        not exceed your field max length limits
-      
-      Copyright       : 2024-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-      <script>
-      
-        ( ( ) => {
-        
-          const
-          
-            version = '0.3.4',
-            
-            s = `Store Page Form Text Field Max Length v${ version }
-            
-              License < https://tinyurl.com/s872fb68 >
-              
-              © 2024-2025 Thomas Creedon
-              
-              Tom's Web Consulting < http://www.tomsWeb.consulting >`
-              
-              .replace ( /^\s+/gm, '' );
-              
-          console.log ( s );
-          
-          const callback = ( ) => {
-          
-            const isStorePage = Static
-            
-              .SQUARESPACE_CONTEXT
-              
-              .collection
-              
-              ?.type
-              
-              ===
-              
-              13;
-              
-            if ( ! isStorePage ) return; // bail if not store page
-            
-            // globals
-            
-            {
-            
-              // initialize twc module
-              
-              window.twc = ( ( self ) => self ) ( window.twc || { } );
-              
-              // initialize twc ftfml sub-module
-              
-              twc.ftfml = ( ( self ) => {
-              
-                const options = {
-                
-                  ids : undefined,
-                  
-                  response : undefined
-                  
-                  };
-                  
-                Object
-                
-                  .assign (
-                  
-                    self,
-                    
-                    options
-                    
-                    );
-                    
-                return self;
-                
-                } ) ( twc.ftfml || { } );
-                
-              }
-              
-            const
-            
-              codeKey = `twc-spftfml`,
-              
-              detail = ( ) => {
-              
-                const
-                
-                  callback = ( element ) => {
-                  
-                    const callback = async ( event ) => {
-                    
-                      const
-                      
-                        addOnClassName = 'add-on-card',
-                        
-                        data = twc.ftfml,
-                        
-                        element = event
-                        
-                          .target
-                          
-                          .closest (
-                          
-                            [
-                            
-                              `.${ addOnClassName }`,
-                              
-                              '.product-detail', // 7.1
-                              
-                              '.ProductItem-details' // 7.0 ( Brine )
-                              
-                              ]
-                              
-                              .join ( ', ' )
-                              
-                            ),
-                            
-                        isAddOn = element
-                        
-                          .classList
-                          
-                          .contains ( addOnClassName );
-                          
-                      let
-                      
-                        context,
-                        
-                        variants;
-                        
-                      if ( ! isAddOn ) {
-                      
-                        context = Static.SQUARESPACE_CONTEXT,
-                        
-                        variants = context
-                        
-                          .product
-                          
-                          .variants;
-                          
-                        } else {
-                        
-                          try {
-                          
-                            const
-                            
-                              url = element
-                              
-                                .querySelector ( '.add-on-title-link' )
-                                
-                                .getAttribute ( 'href' )
-                                
-                                +
-                                
-                                '?format=json',
-                                
-                              response = await fetch ( url );
-                              
-                            if ( ! response.ok ) {
-                            
-                              const s = `
-                              
-                                ${ codeKey } network response was not ok ${
-                                
-                                  response
-                                  
-                                    .statusText
-                                    
-                                    }
-                                    
-                                `
-                                
-                                .trim ( )
-                                
-                                .replace ( /\s+/gm, ' ' );
-                                
-                              throw new Error ( s );
-                              
-                              }
-                              
-                            context = await response.json ( );
-                            
-                            variants = context.item.variants;
-                            
-                            } catch ( error ) {
-                            
-                              const s = `
-                              
-                                ${ codeKey } there has been a problem with your fetch get operation,
-                                
-                                ${ error }.
-                                
-                                `
-                                
-                                .trim ( )
-                                
-                                .replace ( /\s+/gm, ' ' );
-                                
-                              console.error ( s );
-                              
-                              }
-                              
-                          }
-                          
-                      data.ids = [ context.itemId ];
-                      
-                      if ( ! variants ) { // bail if no variants
-                      
-                        data.response = Promise.resolve ( );
-                        
-                        return;
-                        
-                        }
-                        
-                      let sku;
-                      
-                      if ( variants.length === 1 )
-                      
-                        sku = variants [ 0 ].sku;
-                        
-                        else {
-                        
-                          const variantsElement = element
-                            
-                            .querySelector ( '.product-variants' );
-                            
-                          switch ( true ) {
-                          
-                            case is71 : {
-                            
-                              const
-                              
-                                elements = variantsElement
-                                
-                                  .querySelectorAll (
-                                  
-                                    '.variant-select-wrapper'
-                                    
-                                    ),
-                                    
-                                isVariantSelected
-                                
-                                  =
-                                  
-                                  !
-                                  
-                                  [
-                                  
-                                    ...
-                                    
-                                    elements
-                                    
-                                    ]
-                                  
-                                    .filter (
-                                    
-                                      e => e
-                                      
-                                        .getAttribute ( 'data-selected-value' )
-                                        
-                                        .startsWith ( 'Select ' )
-                                        
-                                      )
-                                      
-                                      .length;
-                                  
-                              // bail if no variant selected
-                              
-                              if ( ! isVariantSelected ) return;
-                              
-                              const
-                              
-                                attributes = { },
-                                
-                                callback = ( element ) => {
-                                
-                                  attributes
-                                  
-                                    [
-                                    
-                                      element
-                                      
-                                        .closest ( '.variant-option' )
-                                        
-                                        .getAttribute (
-                                        
-                                          'data-variant-option-name'
-                                          
-                                          )
-                                          
-                                      ]
-                                      
-                                    =
-                                    
-                                    value = element
-                                    
-                                      .getAttribute ( 'data-selected-value' );
-                                      
-                                  };
-                                  
-                              elements
-                              
-                                .forEach ( callback );
-                                
-                              sku = variants
-                              
-                                .filter (
-                                
-                                  v =>
-                                  
-                                    objectsShallowEqual (
-                                    
-                                      v.attributes,
-                                      
-                                      attributes
-                                      
-                                      )
-                                      
-                                  )
-                                  
-                                [ 0 ]
-                                
-                                .sku;
-                                
-                              break;
-                              
-                              }
-                              
-                            case is70 : {
-                            
-                              sku = variantsElement
-                              
-                                .getAttribute ( 'data-selected-variant' );
-                                
-                              if ( ! sku ) return; // bail if no sku
-                              
-                              sku = JSON
-                              
-                                .parse ( sku )
-                                
-                                .sku;
-                                
-                              break;
-                              
-                              }
-                              
-                            }
-                            
-                          }
-                          
-                      data.ids.push ( sku );
-                      
-                      data.response = Promise.resolve ( );
-                      
-                      };
-                      
-                    element
-                    
-                      .addEventListener ( 'click', callback );
-                      
-                    },
-                    
-                  selector = [
-                  
-                    // 7.1
-                    
-                    '.product-detail:not( .product-related-products )'
-                    
-                      +
-                      
-                      ':has( :not( .product-mark.sold-out ) ) '
-                      
-                      +
-                      
-                      '.sqs-add-to-cart-button-wrapper',
-                      
-                    // 7.0
-                    
-                    '.ProductItem:not( .sold-out ) '
-                    
-                      +
-                      
-                      '.sqs-add-to-cart-button-wrapper '
-                      
-                      +
-                      
-                      '.sqs-add-to-cart-button.use-form'
-                      
-                    ]
-                    
-                    .join ( ', ' );
-                    
-                document
-                
-                  .body
-                  
-                  .querySelectorAll ( selector )
-                  
-                  .forEach ( callback );
-                  
-                },
-                
-              isDetail = ( ( ) => {
-              
-                const
-                
-                  selector = 'body[ id^="item-" ]',
-                  
-                  is = document
-                  
-                    .querySelector ( selector )
-                    
-                    !==
-                    
-                    null;
-                    
-                return is;
-                
-                } ) ( ),
-                
-              isList = ( ( ) => {
-              
-                const
-                
-                  selector = 'body[ id^="collection-" ]',
-                  
-                  is = document
-                  
-                    .querySelector ( selector )
-                    
-                    !==
-                    
-                    null;
-                    
-                return is;
-                
-                } ) ( ),
-                
-              list = ( ) => {
-              
-                const callback = ( data ) => {
-                  
-                  const callback = ( item ) => {
-                  
-                    const hasForm = item
-                    
-                      .additionalFieldsFormId;
-                      
-                    if ( ! hasForm ) return; // bail if no form
-                    
-                    const variantOptionsLength = item
-                    
-                      .variantOptionOrdering
-                      
-                      .length;
-                      
-                    // bail if more than one option
-                    
-                    if ( variantOptionsLength > 1 ) return;
-                    
-                    const
-                    
-                      selector = '.product-list-item:has( '
-                      
-                        +
-                        
-                        `.product-list-item-link[ href="${ item.fullUrl }" ] ) `
-                        
-                        +
-                        
-                        '.sqs-add-to-cart-button-wrapper',
-                        
-                      element = document
-                      
-                        .body
-                        
-                        .querySelector ( selector );
-                        
-                    if ( ! element ) return; // bail if no element
-                    
-                    element
-                    
-                      .setAttribute ( 'data-item-id', item.id );
-                      
-                    const
-                    
-                      callback = ( event ) => {
-                      
-                        const
-                        
-                          data = twc.ftfml,
-                          
-                          element = event
-                          
-                            .currentTarget,
-                            
-                          itemId = element
-                          
-                            .getAttribute ( 'data-item-id' ),
-                            
-                          noSku = element
-                          
-                            .getAttribute ( noSkuAttribute );
-                            
-                        data.ids = [ itemId ];
-                        
-                        if ( noSku ) { // bail if no sku
-                        
-                          data.response = Promise.resolve ( );
-                          
-                          return;
-                          
-                          }
-                          
-                        let sku = element
-                        
-                          .getAttribute ( `data-${ codeKey }-sku` );
-                          
-                        if ( sku ) { // bail if sku
-                        
-                          data.ids.push ( sku );
-                          
-                          data.response = Promise.resolve ( );
-                          
-                          return;
-                          
-                          }
-                          
-                        const variantsElement = element
-                          
-                          .closest ( '.product-list-item' )
-                          
-                          .querySelector ( '.product-variants' );
-                          
-                        if ( ! variantsElement ) return; // bail if no variants
-                        
-                        const
-                        
-                          elements = variantsElement
-                          
-                            .querySelectorAll (
-                            
-                              '.variant-select-wrapper'
-                              
-                              ),
-                              
-                          isVariantSelected
-                          
-                            =
-                            
-                            !
-                            
-                            [
-                            
-                              ...
-                              
-                              elements
-                              
-                              ]
-                            
-                              .filter (
-                              
-                                e => e
-                                
-                                  .getAttribute ( 'data-selected-value' )
-                                  
-                                  .startsWith ( 'Select ' )
-                                  
-                                )
-                                
-                                .length;
-                                
-                        // bail if no variant selected
-                        
-                        if ( ! isVariantSelected ) return;
-                        
-                        const
-                        
-                          attributes = { },
-                          
-                          callback = ( element ) => {
-                          
-                            attributes
-                            
-                              [
-                              
-                                element
-                                
-                                  .closest ( '.variant-option' )
-                                  
-                                  .getAttribute (
-                                  
-                                    'data-variant-option-name'
-                                    
-                                    )
-                                    
-                                ]
-                                
-                              =
-                              
-                              value = element
-                              
-                                .getAttribute ( 'data-selected-value' );
-                                
-                            };
-                            
-                        elements
-                        
-                          .forEach ( callback );
-                          
-                        sku = variants
-                        
-                          .filter (
-                          
-                            v =>
-                            
-                              objectsShallowEqual (
-                              
-                                v.attributes,
-                                
-                                attributes
-                                
-                                )
-                                
-                            )
-                            
-                          [ 0 ]
-                          
-                          .sku;
-                          
-                        data.ids.push ( sku );
-                        
-                        data.response = Promise.resolve ( );
-                        
-                        },
-                        
-                      noSkuAttribute = `data-${ codeKey }-no-sku`,
-                      
-                      variants = item.variants,
-                      
-                      variantsLength = variants.length;
-                      
-                    if ( ! variantsLength )
-                    
-                      element
-                      
-                        .setAttribute ( noSkuAttribute, '' );
-                        
-                      else if ( variantsLength === 1 ) {
-                      
-                        const
-                        
-                          variant = variants [ 0 ],
-                          
-                          isNoStock =
-                          
-                            !
-                            
-                            variant.unlimited
-                            
-                            &&
-                            
-                            !
-                            
-                            variant.qtyInStock;
-                            
-                        if ( isNoStock ) return; // bail no stock
-                        
-                        element
-                        
-                          .setAttribute (
-                          
-                            `data-${ codeKey }-sku`,
-                            
-                            variant.sku
-                            
-                            );
-                            
-                        }
-                        
-                    element
-                    
-                      .addEventListener ( 'click', callback );
-                      
-                    };
-                    
-                  data
-                  
-                    .items
-                    
-                    .forEach ( callback );
-                    
-                  };
-                  
-                const url = location
-                
-                  .pathname
-                  
-                  +
-                  
-                  '?format=json';
-                  
-                fetch ( url )
-                
-                  .then ( response => response.json ( ) )
-                  
-                  .then ( callback );
-                    
-                },
-                
-              objectsShallowEqual = ( obj1, obj2 ) => {
-              
-                const
-                
-                  keys1 = Object.keys ( obj1 ),
-                  
-                  keys2 = Object.keys ( obj2 );
-                  
-                let isEqual = keys1.length === keys2.length;
-                
-                // bail id keys lengths not equal
-                
-                if ( ! isEqual ) return false;
-                
-                for ( let key of keys1 ) {
-                
-                  isEqual = obj1 [ key ] === obj2 [ key ];
-                  
-                  // bail if key/value pair not equal
-                  
-                  if ( ! isEqual ) return false;
-                  
-                  }
-                  
-                return true;
-                
-                },
-                
-              ssVersion = Static
-              
-                .SQUARESPACE_CONTEXT
-                
-                .templateVersion,
-                
-              is70 = ssVersion === '7',
-              
-              is71 = ssVersion === '7.1';
-              
-            switch ( true ) {
-            
-              case isDetail:
-              
-                detail ( );
-                
-                break;
-                
-              case isList:
-              
-                if ( ! is71 ) return; // bail if not 7.1
-                
-                list ( );
-                
-                break;
-                
-              }
-              
-            };
-            
-          document.addEventListener ( 'DOMContentLoaded', callback );
-          
-          } ) ( );
-          
-        </script>
-        
-    <!-- end TWC Store Page Form Text Field Max Length -->
+    <!-- end TWC Form Text Field Max Length Data -->
   
   <!-- begin TWC Product Custom Form Text Field Max Length -->
   
@@ -1552,957 +1340,6 @@
       </script>
       
     <!-- end TWC Product Custom Form Text Field Max Length -->
-  
-  <!-- begin TWC Product Quick View Form Text Field Max Length -->
-  
-    <!--
-    
-      product quick view form text field max length
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.1.1
-      
-      SS Versions     : 7.1, 7.0
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible      : Not Applicable
-      
-      v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield, Feed,
-                        Foster, Greenwich, Hatch, Heights, Hunter, Hyde, Impact,
-                        Jaunt, Juke, Keene, Kin, Lincoln, Maple, Margot, Marta,
-                        Mentor, Mercer, Miller, Mojave, Moksha, Motto, Nueva,
-                        Pedro, Pursuit, Rally, Rover, Royce, Sofia, Sonora,
-                        Stella, Thorne, Vow, Wav, West )
-                        
-                        your template is not listed? then it is not currently
-                        supported
-      
-      Dependencies    : product quick view observe changes
-      
-      Notes           : this code does not work on the checkout page. it is a
-                        Squarespace security feature that no code can alter the
-                        checkout page
-                        
-                        this code is client side and making use of an HTML form
-                        feature. Since this code is client side it is possible to
-                        bypass the max length limit this code is setting. in other
-                        words you still need to be checking manually when forms or
-                        orders come in to make sure your limits are not being
-                        exceeded. consider this code more of an aid to help users
-                        not exceed your field max length limits
-      
-      Copyright       : 2024-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-    <script>
-    
-      ( ( ) => {
-      
-        const
-        
-          title = 'Product Quick View Form Text Field Max Length',
-          
-          version = '0.1.1',
-          
-          s = `${ title } v${ version }
-          
-            License < https://tinyurl.com/s872fb68 >
-            
-            © 2024-2025 Thomas Creedon
-            
-            Tom's Web Consulting < http://www.tomsWeb.consulting >`
-            
-            .replace ( /^\s+/gm, '' );
-            
-        console.log ( s );
-        
-        // globals
-        
-        {
-        
-          // initialize twc module
-          
-          window.twc = ( ( self ) => self ) ( window.twc || { } );
-          
-          // initialize twc ftfml sub-module
-          
-          twc.ftfml = ( ( self ) => {
-          
-            const options = {
-            
-              ids : undefined,
-              
-              response : undefined
-              
-              };
-              
-            Object
-            
-              .assign (
-              
-                self,
-                
-                options
-                
-                );
-                
-            return self;
-            
-            } ) ( twc.ftfml || { } );
-            
-          }
-          
-        } ) ( );
-        
-      var twcPqvftfml = ( element ) => {
-      
-        const
-        
-          handleEvent = ( event ) => {
-          
-            const
-            
-              data = twc.ftfml,
-              
-              element = event
-              
-                .currentTarget,
-                
-              metaElement = element
-              
-                .closest (
-                
-                  [
-                  
-                    '.product-meta', // 7.1
-                    
-                    '.ProductItem-details' // 7.0
-                    
-                    ]
-                    
-                    .join ( ', ' )
-                    
-                  ),
-                  
-              setAttributes = ( ) => {
-              
-                const callback = ( element ) => {
-                
-                  attributes
-                  
-                    [
-                    
-                      element
-                      
-                        .getAttribute ( 'data-variant-option-name' )
-                        
-                      ]
-                      
-                    =
-                    
-                    element
-                    
-                      .querySelector ( 'select' )
-                      
-                      .value;
-                      
-                  };
-                  
-                variantElements
-                
-                  .forEach ( callback );
-                  
-                },
-                
-              setVariantSku = ( ) => {
-              
-                sku = variants [
-                
-                  JSON
-                  
-                    .stringify (
-                    
-                      attributes
-                      
-                      )
-                      
-                  ];
-                  
-                },
-                
-              variantElements
-              
-                =
-                
-                metaElement
-                
-                  .querySelectorAll ( '.product-variants .variant-option' ),
-                  
-              isVariantSelected
-              
-                =
-                
-                variantElements
-                
-                  .length
-                  
-                &&
-                
-                !
-                
-                [
-                
-                  ...
-                  
-                  variantElements
-                  
-                  ]
-                
-                  .filter ( e => ! e.querySelector ( 'select' )?.value )
-                  
-                  .length;
-                  
-            let
-            
-              attributes = { },
-              
-              itemId,
-              
-              sku,
-              
-              variants;
-              
-            data.ids = [ ];
-            
-            if ( element.twcPqvftfml ) {
-            
-              const p = element.twcPqvftfml;
-              
-              itemId = p.itemId;
-              
-              variants = p.variants;
-              
-              const l = variants
-              
-                &&
-                
-                Object
-                
-                  .keys ( variants )
-                  
-                  .length;
-                  
-              switch ( true ) {
-              
-                case ! variants :
-                
-                  break;
-                  
-                case l === 1 :
-                
-                  sku = variants [ '{}' ];
-                  
-                  break;
-                  
-                case l > 1 : {
-                
-                  if ( isVariantSelected ) {
-                  
-                    setAttributes ( );
-                    
-                    setVariantSku ( );
-                    
-                    }
-                    
-                  break;
-                  
-                  }
-                  
-                }
-                
-              data.ids.push (
-              
-                ...
-                
-                [ p.itemId, sku ]
-                
-                  .filter ( e => e )
-                  
-                );
-                
-              data.response = Promise.resolve ( );
-              
-              } else {
-              
-                const url = metaElement
-                
-                  .querySelector (
-                  
-                    [
-                    
-                      '.quick-view-item-link', // 7.1
-                      
-                      '.ProductItem-details-quickViewFullItemLink' // 7.0
-                      
-                      ]
-                      
-                      .join ( ', ' )
-                      
-                    )
-                    
-                  .getAttribute ( 'href' )
-                  
-                  +
-                  
-                  '?format=json';
-                  
-                data.response = fetch ( url )
-                
-                  .then ( ( response ) => {
-                  
-                    if ( ! response.ok ) {
-                    
-                      const s = `
-                      
-                        ${ codeKey } network response was not ok ${
-                        
-                          response
-                          
-                            .statusText
-                            
-                            }
-                            
-                        `
-                        
-                        .trim ( )
-                        
-                        .replace ( /\s+/gm, ' ' );
-                        
-                      throw new Error ( s );
-                      
-                      }
-                      
-                    const obj = response.json ( );
-                    
-                    return obj;
-                    
-                    } )
-                    
-                  .then ( ( obj ) => {
-                  
-                    const
-                    
-                      item = obj.item,
-                      
-                      l = item.variants.length;
-                      
-                    itemId = item.id;
-                    
-                    if ( l ) {
-                    
-                      const callback = ( variant ) => {
-                      
-                        const optionOrdering
-                        
-                          =
-                          
-                          item
-                          
-                            .variantOptionOrdering;
-                            
-                        let obj = { };
-                        
-                        if ( optionOrdering.length )
-                        
-                          obj = optionOrdering
-                          
-                            .reduce ( ( acc, key ) => {
-                            
-                              if ( key in variant.attributes )
-                              
-                                acc [ key ] = variant.attributes [ key ];
-                                
-                              return acc;
-                              
-                              }, { } );
-                              
-                        variants [
-                        
-                          JSON.stringify ( obj )
-                          
-                          ]
-                          
-                          =
-                          
-                          variant
-                          
-                            .sku;
-                            
-                        };
-                        
-                      variants = { };
-                      
-                      item
-                      
-                        .variants
-                        
-                        .forEach ( callback );
-                        
-                      }
-                      
-                    switch ( true ) {
-                    
-                      case ! variants :
-                      
-                        break;
-                        
-                      case l === 1 :
-                      
-                        sku = variants [ '{}' ];
-                        
-                        break;
-                        
-                      case l > 1 : {
-                      
-                        if ( isVariantSelected ) {
-                        
-                          setAttributes ( );
-                          
-                          setVariantSku ( );
-                          
-                          }
-                          
-                        break;
-                        
-                        }
-                        
-                      }
-                      
-                    data.ids.push (
-                    
-                      ...
-                      
-                      [ itemId, sku ]
-                      
-                        .filter ( e => e )
-                        
-                      );
-                      
-                    element.twcPqvftfml = {
-                    
-                      itemId : itemId,
-                      
-                      variants : variants
-                      
-                      };
-                      
-                    } );
-                    
-                }
-                
-            },
-            
-          codeKey = `twc-pqvftfml`,
-          
-          selector = [
-          
-            // 7.1
-            
-            '.product-detail:not( :has( .product-mark.sold-out ) ) '
-            
-              +
-              
-              '.sqs-add-to-cart-button-wrapper',
-              
-            // 7.0
-            
-            '.ProductItem:not( .sold-out ) .sqs-add-to-cart-button-wrapper '
-            
-              +
-              
-              '.sqs-add-to-cart-button.use-form'
-              
-            ]
-            
-            .join ( ', ' );
-            
-        element = element
-          
-          .querySelector ( selector );
-          
-        if ( ! element ) return; // bail if no element
-        
-        element
-        
-          .addEventListener ( 'click', handleEvent );
-          
-        };
-        
-      </script>
-      
-    <!-- end TWC Product Quick View Form Text Field Max Length -->
-  
-  <!-- begin TWC Product Quick View Observe Changes Options -->
-  
-    <!--
-    
-      product quick view observe changes options
-      
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.3.0
-      
-      SS Versions     : 7.1, 7.0
-      
-      Copyright       : 2024-2026 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      -->
-      
-    <script>
-    
-      // initialize twc module
-      
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
-      
-      // initialize twc pqvoc sub-module
-      
-      twc.pqvoc = ( ( self ) => self ) ( twc.pqvoc || { } );
-      
-      // initialize twc pqvoc callbacks sub-module
-      
-      twc.pqvoc.callbacks = ( ( self ) => {
-      
-        const callbacks = [
-          
-          /*
-          
-            following is an example line. copy and paste it after the example
-            line. remove the double forward slash space of the new line. enter the
-            name of your callback
-            
-            */
-            
-          // '[ enter your callback name here between single quotes replacing square brackets ]',
-          
-          'twcPqvftfml',
-          
-          ];
-          
-        self.push ( ... callbacks );
-        
-        return self;
-        
-        } ) ( twc.pqvoc.callbacks || [ ] );
-        
-      </script>
-      
-    <!-- end TWC Product Quick View Observe Changes Options -->
-  
-  <!-- begin TWC Product Quick View Observe Changes -->
-  
-    <!--
-    
-      product quick view observe changes
-      
-      License           : < https://tinyurl.com/s872fb68 >
-      
-      Version           : 0.3.0
-      
-      SS Versions       : 7.1, 7.0
-      
-      v7.1
-      Products V2
-      Compatible        : Yes
-      
-      v7.1
-      Fluid
-      Engine
-      Compatible        : Not Applicable
-      
-      Dependencies      : modal lightbox observe changes
-                          
-                          < https://tinyurl.com/2pfvaeud >
-      
-      Note              : this code is a base for other effects. on its own it
-                          doesn't do anything. this code is not the end all be
-                          all of mutation observers. it may not cover your needs
-      
-      Copyright         : 2024-2026 Thomas Creedon
-                          
-                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-    <script>
-    
-      ( ( ) => {
-      
-        const
-        
-          version = '0.3.0',
-          
-          s = `Product Quick View Observe Changes v${ version }
-          
-            License < https://tinyurl.com/s872fb68 >
-            
-            © 2024-2026 Thomas Creedon
-            
-            Tom's Web Consulting < http://www.tomsWeb.consulting >`
-            
-            .replace ( /^\s+/gm, '' );
-            
-        console.log ( s );
-        
-        // initialize twc module
-        
-        window.twc = ( ( self ) => self ) ( window.twc || { } );
-        
-        // initialize twc pqvoc sub-module
-        
-        twc.pqvoc = ( ( self ) => self ) ( twc.pqvoc || { } );
-        
-        // initialize twc pqvoc callbacks sub-module
-        
-        twc.pqvoc.callbacks =
-        
-          ( ( self ) => self ) ( twc.pqvoc.callbacks || [ ] );
-          
-        // initialize twc mloc sub-module
-        
-        twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
-        
-        // initialize twc mloc callbacks sub-module
-        
-        twc.mloc.callbacks = ( ( self ) => {
-        
-          const callback = ( element ) => {
-          
-            const isQuickView = element
-            
-              .classList
-              
-              .contains ( 'sqs-product-quick-view-lightbox' );
-              
-            if ( ! isQuickView ) return; // bail if no product quick view
-            
-            const
-            
-              codeKey = 'twc-pqvoc',
-              
-              mutationCallback = ( mutation ) => {
-              
-                const hasAdded = mutation
-                
-                  .addedNodes
-                  
-                  .length;
-                  
-                if ( ! hasAdded ) return; // continue
-                
-                const
-                
-                  element = mutation
-                  
-                    .addedNodes
-                    
-                    [ 0 ],
-                    
-                  isProduct = [
-                  
-                    'product-detail', // 7.1
-                    
-                    'ProductItem' // 7.0
-                    
-                    ]
-                    
-                    .some (
-                    
-                      c => element
-                      
-                        .classList
-                        
-                        .contains ( c )
-                        
-                      );
-                      
-                if ( ! isProduct ) return; // bail if not product item
-                
-                options
-                
-                  .callbacks
-                  
-                  .forEach ( runCallback );
-                  
-                },
-                
-              mutationsCallback = ( mutations ) => {
-              
-                mutations.forEach ( mutationCallback );
-                
-                },
-                
-              observer = new MutationObserver (
-              
-                mutationsCallback
-                
-                ),
-                
-              options = codeKey
-              
-                .split ( '-' )
-                
-                .reduce ( ( obj, key ) => obj?.[ key ], window ),
-                
-              runCallback = ( callback ) => {
-              
-                try {
-                
-                  callback = window [ callback ];
-                  
-                  callback ( element );
-                  
-                  } catch ( error ) {
-                  
-                    const s = `${ codeKey } callback error`;
-                    
-                    console.error ( s, error );
-                    
-                    }
-                    
-                },
-                
-              selector =
-              
-                '.sqs-product-quick-view-content';
-                
-            // start listening for changes in element
-            
-            observer.observe (
-            
-              element
-              
-                .querySelector ( selector ),
-              
-              { childList : true }
-              
-              );
-              
-            };
-            
-          self.push ( callback );
-          
-          return self;
-          
-          } ) ( twc.mloc.callbacks || [ ] );
-          
-        } ) ( );
-        
-      </script>
-      
-    <!-- end TWC Product Quick View Observe Changes -->
-  
-  <!-- begin TWC Modal Lightbox Observe Changes -->
-  
-    <script>
-    
-      ( ( ) => {
-      
-        /*
-        
-          modal lightbox observe changes
-          
-          License         : < https://tinyurl.com/s872fb68 >
-          
-          Version         : 0.2.0
-          
-          SS Versions     : 7.1, 7.0
-          
-          v7.1
-          Fluid
-          Engine
-          Compatible      : Not Applicable
-          
-          Note            : this code is a base for other effects. on its own it
-                            doesn't do anything. this code is not the end all be
-                            all of mutation observers. it may not cover your needs
-          
-          Copyright       : 2024-2026 Thomas Creedon
-                            
-                            Tom's Web Consulting
-                            
-                            < http://www.tomsWeb.consulting/ >
-          
-          no user serviceable parts below
-          
-          */
-          
-        const
-        
-          version = '0.2.0',
-          
-          s = `Modal Lightbox Observe Changes v${ version }
-          
-            License < https://tinyurl.com/s872fb68 >
-            
-            © 2024-2026 Thomas Creedon
-            
-            Tom's Web Consulting < http://www.tomsWeb.consulting >`
-            
-            .replace ( /^\s+/gm, '' );
-            
-        console.log ( s );
-        
-        const callback = ( ) => {
-        
-          // globals
-          
-          {
-        
-            // initialize twc module
-            
-            window.twc = ( ( self ) => self ) ( window.twc || { } );
-            
-            // initialize twc mloc sub-module
-            
-            twc.mloc = ( ( self ) => self ) ( twc.mloc || { } );
-            
-            // initialize twc mloc callbacks sub-module
-            
-            twc.mloc.callbacks =
-            
-              ( ( self ) => self ) ( twc.mloc.callbacks || [ ] );
-              
-            }
-            
-          const
-          
-            codeKey = `twc-mloc`,
-            
-            options = codeKey
-            
-              .split ( '-' )
-              
-              .reduce ( ( obj, key ) => obj?.[ key ], window ),
-              
-            hasCallbacks = options
-            
-              .callbacks
-              
-              .length;
-              
-          if ( ! hasCallbacks ) return; // bail if no callbacks
-          
-          const
-          
-            mutationCallback = ( mutation ) => {
-            
-              mutation
-              
-                .addedNodes
-                
-                .forEach ( nodeCallback );
-                
-              },
-              
-            mutationsCallback = ( mutations ) => {
-            
-              mutations.forEach ( mutationCallback );
-              
-              },
-              
-            nodeCallback = ( node ) => {
-            
-              const isElement = node
-              
-                .nodeType
-                
-                ===
-                
-                1;
-                
-              if ( ! isElement ) return; // bail if not element
-              
-              const isModalLightbox = node
-              
-                .classList
-                
-                .contains ( 'sqs-modal-lightbox' );
-                
-              // bail if not element of interest
-              
-              if ( ! isModalLightbox ) return;
-              
-              options
-              
-                .callbacks
-                
-                .forEach (
-                
-                  c => runCallback ( c, node )
-                  
-                  );
-                  
-              },
-              
-            observer = new MutationObserver (
-            
-              mutationsCallback
-              
-              ),
-              
-            runCallback = ( callback, node ) => {
-            
-              try {
-              
-                callback ( node );
-                
-                } catch ( error ) {
-                
-                  const s = `${ codeKey } callback error`;
-                  
-                  console.error ( s, error );
-                  
-                  }
-                  
-              };
-              
-          // start listening for changes in body
-          
-          observer.observe (
-          
-            document.body,
-            
-            { childList : true }
-            
-            );
-            
-          };
-          
-        document.addEventListener (
-        
-          'DOMContentLoaded',
-          
-          callback
-          
-          );
-          
-        } ) ( );
-        
-      </script>
-      
-    <!-- end TWC Modal Lightbox Observe Changes -->
   
   <!-- begin TWC Cart Page Form Text Field Max Length -->
   
@@ -2865,731 +1702,5 @@
       
     <!-- end TWC Cart Page Form Text Field Max Length -->
   
-  <!-- begin TWC Cart Page Observe Changes -->
-          
-          'twcCpftfml',
-  
-          
-          'twcCpftfml',
-    <script>
-          
-          'twcCpftfml',
-    
-          
-          'twcCpftfml',
-      ( ( ) => {
-          
-          'twcCpftfml',
       
-          
-          'twcCpftfml',
-        /*
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          cart page observe changes
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          License         : < https://tinyurl.com/s872fb68 >
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          Version         : 0.3.0
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          SS Versions     : 7.1, 7.0
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          v7.1
-          
-          'twcCpftfml',
-          Fluid
-          
-          'twcCpftfml',
-          Engine
-          
-          'twcCpftfml',
-          Compatible      : Not Applicable
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          Note            : this code is a base for other effects. on its own it
-          
-          'twcCpftfml',
-                            doesn't do anything. this code is not the end all be
-          
-          'twcCpftfml',
-                            all of mutation observers. it may not cover your needs
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          Copyright       : 2022-2026 Thomas Creedon
-          
-          'twcCpftfml',
-                            
-          
-          'twcCpftfml',
-                            Tom's Web Consulting
-          
-          'twcCpftfml',
-                            
-          
-          'twcCpftfml',
-                            < http://www.tomsWeb.consulting/ >
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          no user serviceable parts below
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          */
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-        const
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          version = '0.3.0',
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          s = `Cart Page Observe Changes v${ version }
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-            License < https://tinyurl.com/s872fb68 >
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            © 2022-2026 Thomas Creedon
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            Tom's Web Consulting < http://www.tomsWeb.consulting >`
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            .replace ( /^\s+/gm, '' );
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-        console.log ( s );
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-        const isCartPage =
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          location.pathname === '/cart';
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-        if ( ! isCartPage ) return; // bail if not cart page
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-        const hasMutationObserver =
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          ( 'MutationObserver' in window );
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-        // bail if no mutation observer available
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-        if ( ! hasMutationObserver ) return;
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-        const dclCallback = ( ) => {
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          // globals
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          {
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-            // initialize twc module
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            window.twc =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              ( ( self ) => self ) ( window.twc || { } );
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            // initialize twc cpoc sub-module
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            twc.cpoc =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              ( ( self ) => self ) ( twc.cpoc || { } );
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            // initialize twc cpoc callbacks sub-module
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            twc.cpoc.callbacks =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              ( ( self ) => self )
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              ( twc.cpoc.callbacks || { } );
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            // initialize twc cpoc callbacks added sub-module
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            twc.cpoc.callbacks.added =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              ( ( self ) => self )
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              ( twc.cpoc.callbacks.added || [ ] );
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            // initialize twc cpoc callbacks removed sub-module
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            twc.cpoc.callbacks.removed =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              ( ( self ) => self )
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              ( twc.cpoc.callbacks.removed || [ ] );
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            }
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-          const
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-            codeKey = `twc-cpoc`,
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-            options = codeKey
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              .split ( '-' )
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              .reduce ( ( obj, key ) => obj?.[ key ], window ),
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            hasAddedCallbacks = options
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              .callbacks
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              .added
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              .length,
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            hasRemovedCallbacks = options
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              .callbacks
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              .removed
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              .length,
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            hasCallbacks =
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              hasAddedCallbacks || hadRemovedCallbacks;
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-          if ( ! hasCallbacks ) return; // bail if no callbacks
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          const
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-            mutationCallback = ( mutation ) => {
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              mutation
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-                .addedNodes
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                .forEach ( n => nodeCallback ( n ) );
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-              mutation
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-                .removedNodes
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                .forEach (
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                  n => nodeCallback ( n, 'removed' )
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-                  );
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-              },
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            mutationsCallback = ( mutations ) => {
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              mutations.forEach ( mutationCallback );
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              },
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            nodeCallback = ( node, key = 'added' ) => {
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              options
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-                .callbacks
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                [ key ]
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                .forEach (
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                  c => runCallback ( c, node )
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-                  );
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-              },
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            observer = new MutationObserver (
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              mutationsCallback
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              ),
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            runCallback = ( callback, node ) => {
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              try {
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-                callback ( node );
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                } catch ( error ) {
-          
-          'twcCpftfml',
-                
-          
-          'twcCpftfml',
-                  const s = `${ codeKey } callback error`;
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-                  console.error ( s, error );
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-                  }
-          
-          'twcCpftfml',
-                  
-          
-          'twcCpftfml',
-              };
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-          // start listening for changes in body
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          observer.observe (
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-            document.getElementById (
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              'sqs-cart-container'
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              ),
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            {
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-              childList : true,
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              subtree : true
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-              }
-          
-          'twcCpftfml',
-              
-          
-          'twcCpftfml',
-            );
-          
-          'twcCpftfml',
-            
-          
-          'twcCpftfml',
-          };
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-        document.addEventListener (
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-          'DOMContentLoaded',
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          dclCallback
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-          );
-          
-          'twcCpftfml',
-          
-          
-          'twcCpftfml',
-        } ) ( );
-          
-          'twcCpftfml',
-        
-          
-          'twcCpftfml',
-      </script>
-          
-          'twcCpftfml',
-      
-          
-          'twcCpftfml',
-    <!-- end TWC Cart Page Observe Changes -->
-          
-          'twcCpftfml',
-    
-  <!-- end TWC Product Custom Form Text Field Max Length -->
+    <!-- end TWC Product Custom Form Text Field Max Length -->
