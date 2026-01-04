@@ -55,7 +55,7 @@ nodes are added to the [DOM][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbf096605d7834211f58698c4226b2047faf7a85/Element/Form%20Inner%20Wrapper%20Observe%20Changes/form%20inner%20wrapper%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0df5bc3bbd377506040c93d86186fa88c0ece7bb/Element/Form%20Inner%20Wrapper%20Observe%20Changes/form%20inner%20wrapper%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Form Inner Wrapper Observe Changes -->
             
@@ -75,7 +75,7 @@ nodes are added to the [DOM][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbf096605d7834211f58698c4226b2047faf7a85/Element/Form%20Inner%20Wrapper%20Observe%20Changes/form%20inner%20wrapper%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0df5bc3bbd377506040c93d86186fa88c0ece7bb/Element/Form%20Inner%20Wrapper%20Observe%20Changes/form%20inner%20wrapper%20observe%20changes.min.js" type="module"></script>
             
             <!-- end TWC Form Inner Wrapper Observe Changes -->
             
