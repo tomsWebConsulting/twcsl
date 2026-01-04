@@ -9,7 +9,7 @@ nodes are added to the [DOM][2].
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -92,7 +92,7 @@ nodes are added to the [DOM][2].
     
       * Use this option if you want to have this effect on only one Page.
         
-      * Add code from file **[modal lightbox observe changes.html][12]** to
+      * Add code from file **[form inner wrapper observe changes.html][12]** to
         Page Settings > Advanced > Page Header Code Injection for the page.
         
       * Refer to [per-page code injection][10] for details.
@@ -101,7 +101,7 @@ nodes are added to the [DOM][2].
     
       * Use this option if you want to have this effect on all Pages.
         
-      * Add code from file **[modal lightbox observe changes.html][12]** to
+      * Add code from file **[form inner wrapper observe changes.html][12]** to
         Website > Pages > Custom Code > Code Injection > FOOTER.
         
       * Refer to [Add code to code injection][11] for details.
@@ -153,12 +153,11 @@ Please consider [making a donation][14].
 
 ## Changes
 
-<!-- * **2026-01-01**
+* **2026-01-03**
 
-  * updated to use module pattern for adding callbacks
-  * updated to work with upcoming Squarespace Product Form Markup Changes
-  * bumped version to 0.2.0
-  -->
+  * moved comments deeper in the code
+  * bumped version to 0.1.1
+  
 * **2026-01-02**
 
   * initial version
@@ -168,8 +167,8 @@ Please consider [making a donation][14].
 [3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [4]: https://www.squarespace.com/pricing
 [5]: https://en.wikipedia.org/wiki/JavaScript
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Form%20Inner%20Wrapper%20Observe%20Changes
-[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Form%20Inner%20Wrapper%20Observe%20Changes#form-inner-wrapper-observe-changes
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes
+[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [8]: https://www.jsdelivr.com/
 [9]: https://en.wikipedia.org/wiki/Content_delivery_network
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X

@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Versions     : 7.1, 7.0
     
@@ -27,6 +27,8 @@
                       supported
     
     Dependencies    : modal lightbox observe changes
+                      
+                      < https://tinyurl.com/877wczvk >
     
     Copyright       : 2026 Thomas Creedon
                       
@@ -38,7 +40,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.1.1',
     
     s = `Form Inner Wrapper Observe Changes v${ version }
     
