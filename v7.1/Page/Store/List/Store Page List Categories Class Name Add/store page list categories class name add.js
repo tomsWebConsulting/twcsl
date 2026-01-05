@@ -1,0 +1,238 @@
+( ( ) => {
+
+  /*!
+  
+    store page list categories class name add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Version        : 7.1
+    
+    Products V2
+    Compatible        : Yes
+    
+    Fluid
+    Engine
+    Compatible        : Not Applicable
+    
+    Dependencies      : page categories cache
+                        
+                        < https://tinyurl.com/yrcxfwnr >
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  const
+  
+    version = '0.1.0',
+  
+    s = `
+    
+      Store Page List Categories Class Name Add v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const isStorePage = Static
+  
+    .SQUARESPACE_CONTEXT
+    
+    .collection
+    
+    ?.type
+    
+    ===
+    
+    13;
+    
+  if ( ! isStorePage ) return; // bail if not store page
+  
+  const isList
+  
+    =
+    
+    !
+    
+    Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .item
+      
+      ?.id;
+      
+  if ( ! isList ) return; // bail if not list
+  
+  const isTagPage
+  
+    =
+    
+    new URLSearchParams ( location.search )
+    
+      .has ( 'tag' );
+      
+  if ( isTagPage ) return; // bail if tag page
+  
+  // initialize twc module
+  
+  window.twc = ( ( self ) => self ) ( window.twc || { } );
+  
+  // initialize twc pcc sub-module
+  
+  twc.pcc = ( ( self ) => self ) ( twc.pcc || { } );
+  
+  // initialize twc pcc callbacks sub-module
+  
+  twc.pcc.callbacks = ( ( self ) => {
+  
+    const callback = async ( categories ) => {
+    
+      const
+      
+        categoryIdCallback = ( categoryId, itemId ) => {
+        
+          const
+          
+            className = categories.filter (
+            
+              c => c.id === categoryId
+              
+              )
+              
+              [ 0 ]
+              
+              .className,
+              
+            selector =
+            
+              '.product-list .product-list-item[ '
+              
+                +
+                
+                `data-product-id="${ itemId }" ]`;
+                
+          document
+          
+            .body
+            
+            .querySelector ( selector )
+            
+            .classList
+            
+            .add ( className );
+            
+          },
+          
+        codeKey = 'twc-pcc',
+        
+        itemCallback = ( item ) => {
+        
+          item
+          
+            .categoryIds
+            
+            .forEach (
+            
+              i => categoryIdCallback ( i, item.id )
+              
+              );
+            
+          },
+          
+        searchParams =
+        
+          new URLSearchParams ( location.search );
+          
+      searchParams.set ( 'format', 'json' );
+      
+      const url = `${
+      
+        Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .fullUrl
+          
+        }?${
+        
+          searchParams.toString ( )
+          
+          }`;
+          
+      try {
+      
+        const response = await fetch ( url );
+        
+        if ( ! response.ok ) {
+        
+          const s = `
+          
+            ${ codeKey } network response was not ok ${
+            
+              response.statusText
+              
+              }
+              
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          throw new Error ( s );
+          
+          }
+          
+        const obj = await response.json ( );
+        
+        obj
+        
+          .items
+          
+          .forEach ( itemCallback );
+          
+        } catch ( error ) {
+        
+          const s = `
+          
+            ${ codeKey } there has been a problem with your fetch get operation,
+            
+            ${ error }.
+            
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          console.error ( s );
+          
+          }
+          
+      };
+       
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.pcc.callbacks || [ ] );
+    
+  } ) ( );
