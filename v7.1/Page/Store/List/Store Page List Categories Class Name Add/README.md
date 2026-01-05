@@ -56,7 +56,7 @@ Add categories as class names to list items.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8cd8c760fc0f4a8d194e0b29014809e79f92ebc2/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Categories Class Names Add -->
             
@@ -78,7 +78,7 @@ Add categories as class names to list items.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8cd8c760fc0f4a8d194e0b29014809e79f92ebc2/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Categories Class Names Add -->
               
@@ -94,7 +94,7 @@ Add categories as class names to list items.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8cd8c760fc0f4a8d194e0b29014809e79f92ebc2/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/store%20page%20list%20categories%20class%20name%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Categories Class Names Add -->
               
