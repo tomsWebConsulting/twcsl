@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.3.0
+    Version       : 0.3.1
     
     SS Versions   : 7.1, 7.0
     
@@ -41,7 +41,7 @@
     
   const
   
-    version = '0.3.0',
+    version = '0.3.1',
     
     s = `
     
@@ -149,34 +149,28 @@
   
     codeKey = 'twc-ptc',
     
-    options = codeKey
+    dclCallback = async ( ) => {
     
-      .split ( '-' )
+      const
       
-      .reduce ( ( obj, key ) => obj?.[ key ], window ),
+        hasCallbacks = options
+        
+          .callbacks
+          
+          .length;
+          
+      // bail if no callbacks
       
-    hasCallbacks = options
-    
-      .callbacks
+      if ( ! hasCallbacks ) {
       
-      .length;
-      
-  // bail if no callbacks
-  
-  if ( ! hasCallbacks ) {
-  
-    const s = `${ codeKey } no callbacks`;
-    
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  const
-  
-    callback = async ( ) => {
-    
+        const s = `${ codeKey } no callbacks`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
       let tags = sessionStorage
       
         .getItem ( codeKey );
@@ -225,12 +219,10 @@
           
             ${ codeKey } network response was not ok ${
             
-              response
+              response.statusText
               
-                .statusText
-                
-                }
-                
+              }
+              
             `
             
             .trim ( )
@@ -305,6 +297,12 @@
             
       },
       
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce ( ( obj, key ) => obj?.[ key ], window ),
+      
     tagNameToCssClassName = ( name ) => {
     
       const className = 'tag-'
@@ -365,8 +363,12 @@
         
       };
       
-  document
+  document.addEventListener (
   
-    .addEventListener ( 'DOMContentLoaded', callback );
+    'DOMContentLoaded',
+    
+    dclCallback
+    
+    );
     
   } ) ( );
