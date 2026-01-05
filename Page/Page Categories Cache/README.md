@@ -55,7 +55,7 @@ Cache Page categories in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dcc85b8fc499266f58d85566684e897607244d64/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Categories Cache -->
           
@@ -81,7 +81,7 @@ Cache Page categories in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dcc85b8fc499266f58d85566684e897607244d64/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Categories Cache -->
             
@@ -101,7 +101,7 @@ Cache Page categories in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9c3f075a7ae97f0203a89710358f9b0ee2972c15/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dcc85b8fc499266f58d85566684e897607244d64/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Categories Cache -->
             
