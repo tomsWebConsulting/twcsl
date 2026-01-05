@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version       : 0.1.1
     
     SS Versions   : 7.1, 7.0
     
@@ -45,7 +45,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.1.1',
     
     s = `
     
@@ -153,32 +153,6 @@
   
     codeKey = 'twc-pcc',
     
-    options = codeKey
-    
-      .split ( '-' )
-      
-      .reduce ( ( obj, key ) => obj?.[ key ], window ),
-      
-    hasCallbacks = options
-    
-      .callbacks
-      
-      .length;
-      
-  // bail if no callbacks
-  
-  if ( ! hasCallbacks ) {
-  
-    const s = `${ codeKey } no callbacks`;
-    
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  const
-  
     collectionId = Static
     
       .SQUARESPACE_CONTEXT
@@ -189,6 +163,26 @@
       
     dlcCallback = async ( ) => {
     
+      const
+      
+        hasCallbacks = options
+        
+          .callbacks
+          
+          .length;
+          
+      // bail if no callbacks
+      
+      if ( ! hasCallbacks ) {
+      
+        const s = `${ codeKey } no callbacks`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
       let categories = sessionStorage
       
         .getItem ( codeKey );
@@ -338,6 +332,12 @@
       return className;
       
       },
+      
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce ( ( obj, key ) => obj?.[ key ], window ),
       
     ssVersion = Static
     

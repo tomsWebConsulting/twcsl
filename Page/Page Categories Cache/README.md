@@ -8,7 +8,7 @@ Cache Page categories in sessionStorage.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Versions
 
@@ -195,11 +195,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2025-11-30**
+* **2026-01-05**
 
-  * added cache disable option
-  * bumped version to 0.1.0-development.0
-  -->
+  * moved has callbacks check into dlcCallback
+  * bumped version to 0.1.1
+  
 * **2026-01-04**
 
   * initial version
