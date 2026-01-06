@@ -2,30 +2,27 @@
 
   <script>
   
-    var twcCartPageItemLinksRedirect = ( node ) => {
+    ( ( ) => {
     
       /*
       
         cart page item links redirect
         
-        License       : < https://tinyurl.com/s872fb68 >
+        License           : < https://tinyurl.com/s872fb68 >
         
-        Version       : 0.3.0
+        Version           : 0.3.1
         
-        SS Versions   : 7.1, 7.0
+        SS Versions       : 7.1, 7.0
         
-        v7.1
-        Products V2
-        Compatible    : Not Applicable
+        Dependencies      : cart page observe changes
+                            
+                            < https://tinyurl.com/323xeep5 >
         
-        v7.1
-        Fluid
-        Engine
-        Compatible    : Not Applicable
-        
-        Copyright     : 2020-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        Copyright         : 2020-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
         
         no user serviceable parts below
         
@@ -33,7 +30,7 @@
         
       const
       
-        version = 'cart page item links redirect',
+        version = '0.3.1',
         
         s = `
         
@@ -41,7 +38,7 @@
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2020-2025 Thomas Creedon
+          © 2020-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -51,73 +48,147 @@
           
       console.log ( s );
       
-      if ( node.nodeType !== Node.ELEMENT_NODE ) return; // bail if not element;
+      // initialize twc module
       
-      const element = node
+      window.twc =
       
-        .querySelector ( '[ data-test="cart-container" ]' );
+        ( ( self ) => self ) ( window.twc || { } );
         
-      if ( ! element ) return; // bail if not cart container
+      // initialize twc cpilr sub-module
       
-      const
+      twc.cpilr =
       
-        callback = ( element ) => {
+        ( ( self ) => self )
         
-          let href = element.getAttribute ( 'href' );
+        ( twc.cpilr || { } );
+        
+      // initialize twc cpoc sub-module
+      
+      twc.cpoc =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc || { } );
+        
+      // initialize twc cpoc callbacks sub-module
+      
+      twc.cpoc.callbacks =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc.callbacks || { } );
+        
+      // initialize twc cpoc callbacks added sub-module
+      
+      twc.cpoc.callbacks.added =
+      
+        ( ( self ) => {
+        
+          const callback = ( node ) => {
           
-          if ( href in oneToOne )
-          
-            href = oneToOne [ href ];
+            const isElement =
             
-            else
-            
-              href = '/' + options.errorPageUrlSlug;
+              node.nodeType === Node.ELEMENT_NODE;
               
-          element.setAttribute ( 'href', href );
-          
-          },
-          
-        codeKey = 'twc-cpilr',
-        
-        oneToOne = { },
-        
-        options = codeKey
-        
-          .split ( '-' )
-          
-          .reduce ( ( obj, key ) => obj?.[ key ], window ),
-          
-        entries = Object
-        
-          .entries ( options.urlSlugMap );
-          
-      for ( const [ storeUrlSlug, obj ] of entries ) {
-      
-        for ( const [ productUrl, redirectUrl ] of Object.entries ( obj ) ) {
-        
-          oneToOne [
-          
-            `/${ storeUrlSlug }/p/${ productUrl }`
+            if ( ! isElement ) return; // bail if not element;
             
-            ]
+            const isCartContiner =
             
-            =
-          
-            '/' + redirectUrl;
+              node.getAttribute ( 'data-test' )
+              
+              ===
+              
+              'cart-container';
+              
+            if ( ! isCartContiner ) return; // bail if not cart container
             
-          }
+            const
+            
+              codeKey = 'twc-cpilr',
+              
+              elementCallback = ( element ) => {
+              
+                let href = element.getAttribute ( 'href' );
+                
+                if ( href in oneToOne )
+                
+                  href = oneToOne [ href ];
+                  
+                  else
+                  
+                    href = '/' + options.errorPageUrlSlug;
+                    
+                element.setAttribute ( 'href', href );
+                
+                },
+                
+              oneToOne = { },
+              
+              options = codeKey.split ( '-' )
+                
+                .reduce (
+                
+                  ( obj, key ) => obj?.[ key ], window
+                  
+                  ),
+                  
+              entries = Object
+              
+                .entries ( options.urlSlugMap );
+                
+            for (
+            
+              const [ storeUrlSlug, obj ] of entries
+              
+              ) {
+              
+                const urlEntries = Object.entries ( obj );
+                
+                for (
+                
+                  const [
+                  
+                    productUrl,
+                    
+                    redirectUrl
+                    
+                    ]
+                    
+                    of urlEntries
+                    
+                  ) {
+                
+                    oneToOne [
+                    
+                      `/${ storeUrlSlug }/p/${ productUrl }`
+                      
+                      ]
+                      
+                      =
+                    
+                      `/${ redirectUrl }`;
+                      
+                    }
+                    
+                }
+                
+            // replace urls
+            
+            node
+            
+              .querySelectorAll ( '.cart-row-title' )
+              
+              .forEach ( elementCallback );
+              
+            };
+            
+          self.push ( callback );
           
-        }
-        
-      // replace urls
-      
-      element
-      
-        .querySelectorAll ( '.cart-row-title' )
-        
-        .forEach ( callback );
-        
-      };
+          return self;
+          
+          } ) ( twc.cpoc.callbacks.added || [ ] );
+          
+      } ) ( );
       
     </script>
     
