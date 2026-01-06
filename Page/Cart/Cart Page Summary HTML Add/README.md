@@ -58,7 +58,7 @@ Add HTML to the cart page summary.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Summary HTML Add -->
             
@@ -84,7 +84,7 @@ Add HTML to the cart page summary.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
               
               <!-- end TWC Cart Page Summary HTML Add -->
               
@@ -104,7 +104,7 @@ Add HTML to the cart page summary.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Summary%20HTML%20Add/cart%20page%20summary%20html%20add.min.js" type="module"></script>
               
               <!-- end TWC Cart Page Summary HTML Add -->
               
