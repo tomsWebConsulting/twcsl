@@ -62,7 +62,7 @@ Redirect cart page product item links.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4fbc670dcf2724d4ca6efaea498c9876c1f63fc0/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Item Links Redirect -->
             
@@ -88,7 +88,7 @@ Redirect cart page product item links.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4fbc670dcf2724d4ca6efaea498c9876c1f63fc0/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
               
               <!-- end TWC Cart Page Item Links Redirect -->
               
@@ -109,7 +109,7 @@ Redirect cart page product item links.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ed8fde655afdb8dc62a9032747af00ebc3e01b8/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4fbc670dcf2724d4ca6efaea498c9876c1f63fc0/Page/Cart/Cart%20Page%20Item%20Links%20Redirect/cart%20page%20item%20links%20redirect.min.js" type="module"></script>
               
               <!-- end TWC Cart Page Item Links Redirect -->
               
