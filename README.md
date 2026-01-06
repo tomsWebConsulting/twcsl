@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 445 effects. Each effect has it's own version number, code,
+twcsl contains 447 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -73,6 +73,8 @@ not necessarily designed to work together.
         
     * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
       
+      * [Cart Page Summary HTML Add.bbprojectd](Page/Cart/Cart%20Page%20Summary%20HTML%20Add/Cart%20Page%20Summary%20HTML%20Add.bbprojectd)
+        
   * [Page Categories Cache](Page/Page%20Categories%20Cache)
     
     * [Page Categories Cache.bbprojectd](Page/Page%20Categories%20Cache/Page%20Categories%20Cache.bbprojectd)
@@ -319,6 +321,8 @@ not necessarily designed to work together.
     
 * [Cart Prices Change](Cart%20Prices%20Change)
   
+  * [Cart Prices Change.bbprojectd](Cart%20Prices%20Change/Cart%20Prices%20Change.bbprojectd)
+    
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Form Block Track Field Block IDs](Form%20Block%20Track%20Field%20Block%20IDs)
