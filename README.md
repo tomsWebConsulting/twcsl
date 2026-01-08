@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 448 effects. Each effect has it's own version number, code,
+twcsl contains 449 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -209,6 +209,8 @@ not necessarily designed to work together.
       
       * [Product Editor Tags Add](Bookmarklet/Element/Product%20Editor/Product%20Editor%20Tags%20Add)
         
+        * [Product Editor Tags Add.bbprojectd](Bookmarklet/Element/Product%20Editor/Product%20Editor%20Tags%20Add/Product%20Editor%20Tags%20Add.bbprojectd)
+          
   * [Dropbox Files Download URLs](Bookmarklet/Dropbox%20Files%20Download%20URLs)
     
   * [Text Block Easy Links](Bookmarklet/Text%20Block%20Easy%20Links)
@@ -483,10 +485,6 @@ not necessarily designed to work together.
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
           
-        * [Store Page List Categories Cache](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache)
-          
-          * [Store Page List Categories Cache.bbprojectd](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache/Store%20Page%20List%20Categories%20Cache.bbprojectd)
-            
         * [Store Page List Columns](v7.1/Page/Store/List/Store%20Page%20List%20Columns)
           
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
@@ -619,6 +617,10 @@ not necessarily designed to work together.
             
       * [Store](v7.1/Bookmarklet/Page/Store)
         
+        * [Store Page Categories Add](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Add)
+          
+          * [Store Page Categories Add.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Add/Store%20Page%20Categories%20Add.bbprojectd)
+            
         * [Store Page Category Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder)
           
     * [Store Page Detail Featured Image Set](v7.1/Bookmarklet/Store%20Page%20Detail%20Featured%20Image%20Set)
