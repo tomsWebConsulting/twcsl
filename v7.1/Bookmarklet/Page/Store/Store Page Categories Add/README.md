@@ -8,7 +8,7 @@ Add a comma separated string as categories in the Store page Categories panel.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -56,11 +56,12 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-05-12**
+* **2026-01-08**
 
-  * add support for guard processor
-  * bumped version to 0.2d0
-  -->
+  * fixed issue where a category couldn't be added to the root level if it
+    currently existed as a subcategory
+  * bumped version to 0.1.1
+  
 * **2026-01-08**
 
   * initial version

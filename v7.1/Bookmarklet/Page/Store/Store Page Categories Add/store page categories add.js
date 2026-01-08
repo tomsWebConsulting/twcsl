@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Version      : 7.1
     
@@ -22,7 +22,7 @@
   
     title = 'Store Page Categories Add',
     
-    version = '0.1.0',
+    version = '0.1.1',
   
     s = `${ title } v${ version }
     
@@ -62,19 +62,19 @@
       
     xPathExpression = `
     
-      .//div [
+      .//h1 [
       
-        starts-with ( @class, 'Transition-panel-' )
+        normalize-space ( text ( ) ) = 'Categories'
         
         and
         
-        .//h1 [
+        ancestor::div [
         
-          normalize-space ( text ( ) ) = 'Categories'
+          starts-with ( @class, 'Transition-panel-' )
           
           ]
           
-        ]
+        ]/ancestor::div [ 2 ]
         
       `,
       
@@ -170,7 +170,7 @@
       
       },
       
-    selector = `[ data-test="${ attribute }" ]`;
+    selector = `:scope > [ data-test="${ attribute }" ]`;
     
   let newCategories = new Set ( );
   
@@ -180,11 +180,7 @@
     
       categoriesWrapperElement = xPathResults
       
-        .snapshotItem ( 0 )
-        
-        .parentElement
-        
-        .parentElement,
+        .snapshotItem ( 0 ),
         
       formElement = categoriesWrapperElement
       
