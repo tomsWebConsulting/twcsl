@@ -23,18 +23,18 @@ Hide all day calendar times.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-
+  
   * [Calendar Block Observe Changes][4]
 
 ---
 
-## Install Options
+## Install
 
+* Install **[Calendar Block Observe Changes][5]**. After you install the code be
+  sure to continue on with the rest of the steps.
+  
 * Options
 
-  * Install **[Calendar Block Observe Changes][5]**. After you install the code
-    be sure to continue on with the rest of the steps.
-    
   * CDN Hosted
   
     Use this option for the quickest way to install this effect (files hosted
