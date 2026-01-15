@@ -75,7 +75,7 @@ not necessarily designed to work together.
         
     * [Cart Page Prices Change](Page/Cart/Cart%20Page%20Prices%20Change)
       
-      * [Cart Pages Prices Change.bbprojectd](Page/Cart/Cart%20Page%20Prices%20Change/Cart%20Pages%20Prices%20Change.bbprojectd)
+      * [Cart Page Prices Change.bbprojectd](Page/Cart/Cart%20Page%20Prices%20Change/Cart%20Page%20Prices%20Change.bbprojectd)
         
     * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
       
