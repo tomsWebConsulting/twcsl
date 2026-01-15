@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 449 effects. Each effect has it's own version number, code,
+twcsl contains 450 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -72,6 +72,10 @@ not necessarily designed to work together.
     * [Cart Page Observe Changes](Page/Cart/Cart%20Page%20Observe%20Changes)
       
       * [Cart Page Observe Changes.bbprojectd](Page/Cart/Cart%20Page%20Observe%20Changes/Cart%20Page%20Observe%20Changes.bbprojectd)
+        
+    * [Cart Page Prices Change](Page/Cart/Cart%20Page%20Prices%20Change)
+      
+      * [Cart Pages Prices Change.bbprojectd](Page/Cart/Cart%20Page%20Prices%20Change/Cart%20Pages%20Prices%20Change.bbprojectd)
         
     * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
       
@@ -323,10 +327,6 @@ not necessarily designed to work together.
   
   * [Product Custom Form Text Field Max Length.bbprojectd](Product%20Custom%20Form%20Text%20Field%20Max%20Length/Product%20Custom%20Form%20Text%20Field%20Max%20Length.bbprojectd)
     
-* [Cart Prices Change](Cart%20Prices%20Change)
-  
-  * [Cart Prices Change.bbprojectd](Cart%20Prices%20Change/Cart%20Prices%20Change.bbprojectd)
-    
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Form Block Track Field Block IDs](Form%20Block%20Track%20Field%20Block%20IDs)
@@ -411,6 +411,8 @@ not necessarily designed to work together.
         
       * [Blog Page Post Date Go To Add](v7.1/Page/Blog/Blog%20Page%20Post%20Date%20Go%20To%20Add)
         
+        * [Blog Page Post Date Go To Add.bbprojectd](v7.1/Page/Blog/Blog%20Page%20Post%20Date%20Go%20To%20Add/Blog%20Page%20Post%20Date%20Go%20To%20Add.bbprojectd)
+          
     * [Cart](v7.1/Page/Cart)
       
       * [Cart Page Redirect to URL](v7.1/Page/Cart/Cart%20Page%20Redirect%20to%20URL)
