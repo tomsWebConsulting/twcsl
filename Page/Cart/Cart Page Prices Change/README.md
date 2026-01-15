@@ -54,7 +54,7 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c002830e7ae685fd1401c562383f90077b89289c/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d4ce975c12c6b8d487c7fd38bb90faa9b43190ec/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Prices Change -->
             
@@ -78,7 +78,7 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d4ce975c12c6b8d487c7fd38bb90faa9b43190ec/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Prices Change -->
             
@@ -98,7 +98,7 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d4ce975c12c6b8d487c7fd38bb90faa9b43190ec/Page/Cart/Cart%20Page%20Prices%20Change/cart%20page%20prices%20change.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Prices Change -->
             
