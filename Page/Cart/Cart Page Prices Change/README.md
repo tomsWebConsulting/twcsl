@@ -221,7 +221,7 @@ Please consider [making a donation][13].
 
   * moved options out of main code
   * reworked code to use JavaScript Module Patterns for callbacks
-  * updated to work with Cart Page Observe Changes v0.3.1
+  * updated to work with Cart Page Observe Changes v0.4.0
   * removed dependency on jQuery
   * bumped version to 0.4.0
   
