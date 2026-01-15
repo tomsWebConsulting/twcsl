@@ -9,7 +9,7 @@ added or removed from the [DOM][2].
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -135,7 +135,7 @@ Your callbacks must accept an node as a parameter.
   
     ( ( self ) => {
     
-      const callback = ( node ) => {
+      const callback = ( node, stopObserver, startObserver ) => {
       
         console.log ( 'twc cpoc added log : ', node );
         
@@ -179,7 +179,7 @@ Your callbacks must accept an node as a parameter.
   
     ( ( self ) => {
     
-      const callback = ( node ) => {
+      const callback = ( node, stopObserver, startObserver ) => {
       
         console.log ( 'twc cpoc removed log : ', node );
         
@@ -204,6 +204,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-01-14**
+
+  * updated to pass stopObserver and startObserver parameters to callbacks
+  * bumped version to 0.4.0
+  
 * **2026-01-03**
 
   * updated to use module pattern for adding callbacks

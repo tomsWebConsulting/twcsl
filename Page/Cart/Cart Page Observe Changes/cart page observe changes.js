@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.3.0
+    Version         : 0.4.0
     
     SS Versions     : 7.1, 7.0
     
@@ -31,7 +31,7 @@
     
   const
   
-    version = '0.3.0',
+    version = '0.4.0',
     
     s = `Cart Page Observe Changes v${ version }
     
@@ -89,18 +89,30 @@
       
       twc.cpoc.callbacks.added =
       
-        ( ( self ) => self )
+        ( ( self ) => self ) (
         
-        ( twc.cpoc.callbacks.added || [ ] );
-        
+          twc.cpoc.callbacks.added
+          
+          ||
+          
+          [ ]
+          
+          );
+          
       // initialize twc cpoc callbacks removed sub-module
       
       twc.cpoc.callbacks.removed =
       
-        ( ( self ) => self )
+        ( ( self ) => self ) (
         
-        ( twc.cpoc.callbacks.removed || [ ] );
-        
+          twc.cpoc.callbacks.removed
+          
+          ||
+          
+          [ ]
+          
+          );
+          
       }
       
     const
@@ -111,8 +123,14 @@
       
         .split ( '-' )
         
-        .reduce ( ( obj, key ) => obj?.[ key ], window ),
+        .reduce (
         
+          ( obj, key ) =>
+          
+            obj?.[ key ], window
+            
+          ),
+          
       hasAddedCallbacks = options
       
         .callbacks
@@ -131,7 +149,7 @@
         
       hasCallbacks =
       
-        hasAddedCallbacks || hadRemovedCallbacks;
+        hasAddedCallbacks || hasRemovedCallbacks;
         
     if ( ! hasCallbacks ) return; // bail if no callbacks
     
@@ -189,8 +207,16 @@
       
         try {
         
-          callback ( node );
+          callback (
           
+            node,
+            
+            stopObserver,
+            
+            startObserver
+            
+            );
+            
           } catch ( error ) {
           
             const s = `${ codeKey } callback error`;
@@ -199,28 +225,38 @@
             
             }
             
-        };
+        },
+        
+      startObserver = ( ) => {
+      
+        observer.observe (
+        
+          document.getElementById (
+          
+            'sqs-cart-container'
+            
+            ),
+            
+          {
+          
+            childList : true,
+            
+            subtree : true
+            
+            }
+            
+          );
+          
+        },
+        
+      stopObserver = ( ) =>
+      
+        observer.disconnect ( );
         
     // start listening for changes in body
     
-    observer.observe (
+    startObserver ( );
     
-      document.getElementById (
-      
-        'sqs-cart-container'
-        
-        ),
-        
-      {
-      
-        childList : true,
-        
-        subtree : true
-        
-        }
-        
-      );
-      
     };
     
   document.addEventListener (
