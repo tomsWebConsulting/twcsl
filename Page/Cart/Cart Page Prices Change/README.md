@@ -192,6 +192,8 @@ won't be called.
       
         console.log ( 'twc cppc log : ', node );
         
+        return 'log';
+        
         };
         
       return self;
@@ -261,8 +263,8 @@ Please consider [making a donation][13].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/cart%20page%20prices%20change
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/cart%20page%20prices%20change#cart-page-observe-changes
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: cart%20page%20prices%20change%20options.html#L1
