@@ -11,7 +11,7 @@ const isEventsPage
     .querySelectorAll (
     
       [
-          
+      
         'body[ class*="collection-type-events-" ]',
         
         'body[ class~="collection-type-events" ]'

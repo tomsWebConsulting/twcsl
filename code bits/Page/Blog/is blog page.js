@@ -11,7 +11,7 @@ const isBlogPage
     .querySelectorAll (
     
       [
-          
+      
         'body[ class*="collection-type-blog-" ]',
         
         'body[ class~="collection-type-blog" ]'
