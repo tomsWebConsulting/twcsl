@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Changes prices on the Cart page.
+Add unit price column to cart page.
 
 ### Version
 
@@ -132,7 +132,7 @@ Changes prices on the Cart page.
 
 ## Note
 
-Adding unit proces on the cart page does not effect the store pages, checkout,
+Adding unit prices on the cart page does not effect the store pages, checkout,
 or other Squarespace pages/backend storage. This is purely a cosmetic change. No
 code can change the checkout page. It is an Squarespace security feature.
 
