@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 451 effects. Each effect has it's own version number, code,
+twcsl contains 452 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -42,8 +42,6 @@ not necessarily designed to work together.
 ## Effects
 
 * [Image Block Image Caption Second Add](Image%20Block%20Image%20Caption%20Second%20Add)
-  
-* [Change Cart Continue Shopping Text](Change%20Cart%20Continue%20Shopping%20Text)
   
 * [Scrolling Block Text Gradient](Scrolling%20Block%20Text%20Gradient)
   
@@ -65,6 +63,10 @@ not necessarily designed to work together.
       
   * [Cart](Page/Cart)
     
+    * [Cart Page Continue Shopping Button Text Change](Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change)
+      
+      * [Cart Page Continue Shopping Button Text Change.bbprojectd](Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change.bbprojectd)
+        
     * [Cart Page Item Links Redirect](Page/Cart/Cart%20Page%20Item%20Links%20Redirect)
       
       * [Cart Page Item Links Redirect.bbprojectd](Page/Cart/Cart%20Page%20Item%20Links%20Redirect/Cart%20Page%20Item%20Links%20Redirect.bbprojectd)
