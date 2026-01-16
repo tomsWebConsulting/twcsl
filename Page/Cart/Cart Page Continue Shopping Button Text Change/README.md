@@ -121,8 +121,9 @@ Change the Continue Shopping button text on the Cart page.
       Page Header Code Injection for the page. Read the code for any
       instructions within.
       
-    * Add code from file **[cart page unit prices.html][11]** to Page Settings >
-      Advanced > Page Header Code Injection for the page.
+    * Add code from file **[cart page continue shopping button text
+      change.html][11]** to Page Settings > Advanced > Page Header Code
+      Injection for the page.
       
     * Refer to [per-page code injection][9] for details.
     
@@ -136,8 +137,9 @@ Change the Continue Shopping button text on the Cart page.
         options.html][8]** to Website > Pages > Custom Code > Code Injection >
         FOOTER. Read the code for any instructions within.
         
-      * Add code from file **[cart page unit prices.html][11]** to Website >
-        Pages > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[cart page continue shopping button text
+        change.html][11]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.
         
     * v7.0
     
@@ -145,8 +147,9 @@ Change the Continue Shopping button text on the Cart page.
         options.html][8]** to Website > Pages > Website Tools > Custom Code >
         Code Injection > FOOTER. Read the code for any instructions within.
         
-      * Add code from file **[cart page unit prices.html][11]** to Website >
-        Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[cart page continue shopping button text
+        change.html][11]** to Website > Pages > Website Tools > Custom Code >
+        Code Injection > FOOTER.
         
     * Refer to [Add code to code injection][10] for details.
 
