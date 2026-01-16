@@ -50,9 +50,9 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@19a08f9413e032104ef637ae1f5a490ebc7227d8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Unit Prices -->
             
@@ -72,9 +72,9 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@19a08f9413e032104ef637ae1f5a490ebc7227d8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Unit Prices -->
             
@@ -90,9 +90,9 @@ Changes prices on the Cart page.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@19a08f9413e032104ef637ae1f5a490ebc7227d8/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4cdc620b3adfc59bc03a04f7a32cec40e5a91188/Page/Cart/Cart%20Page%20Unit%20Prices/cart%20page%20unit%20prices.min.js" type="module"></script>
             
             <!-- end TWC Cart Page Unit Prices -->
             
