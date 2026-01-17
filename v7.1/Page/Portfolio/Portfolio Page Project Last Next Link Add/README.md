@@ -46,7 +46,7 @@ Add a next link to the last Project of a Portfolio page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/Page/Portfolio/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add/portfolio%20page%20project%20last%20next%20link%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add/portfolio%20page%20project%20last%20next%20link%20add.min.js" type="module"></script>
           
           <!-- end TWC Portfolio Page Project Last Next Link Add -->
           
@@ -66,7 +66,7 @@ Add a next link to the last Project of a Portfolio page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/Page/Portfolio/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add/portfolio%20page%20project%20last%20next%20link%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add/portfolio%20page%20project%20last%20next%20link%20add.min.js" type="module"></script>
           
           <!-- end TWC Portfolio Page Project Last Next Link Add -->
           
@@ -100,7 +100,7 @@ Add a next link to the last Project of a Portfolio page.
 
 ## How To Use
 
-* Create a Text block and add a link that end with **#twc-ppplnla&label=Next**.
+* Create a Text block and add a link that ends with **#twc-ppplnla&label=Next**.
 
 * The text of the link will be used for the next link text. Replace Next with
   the word for Next in your site's language.
