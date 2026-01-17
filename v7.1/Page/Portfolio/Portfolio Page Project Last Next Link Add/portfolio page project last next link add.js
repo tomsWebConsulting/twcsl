@@ -1,0 +1,235 @@
+( ( ) => {
+
+  /*!
+  
+    portfolio page project last next link add
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.1.0',
+    
+    s = `Portfolio Page Project Last Next Link Add v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const isPortfolioPage = Static
+  
+    .SQUARESPACE_CONTEXT
+    
+    .collection
+    
+    ?.type
+    
+    ===
+    
+    23;
+    
+  if ( ! isPortfolioPage ) return; // bail if not portfolio page
+  
+  const dclCallback = ( ) => {
+  
+    const hasNextLink = document
+    
+      .body
+      
+      .querySelector (
+      
+        '.item-pagination-link--next'
+        
+        );
+        
+    // bail if next link
+    
+    if ( hasNextLink ) return;
+    
+    const
+    
+      codeKey = 'twc-ppplnla',
+      
+      element = document
+      
+        .body
+        
+        .querySelector (
+        
+          `[ href *= "#${ codeKey }" ]`
+          
+          );
+          
+    // bail if no element
+    
+    if ( ! element ) return;
+    
+    const
+    
+      parseURL = ( url ) => {
+      
+        try {
+        
+          url = new URL ( url );
+          
+          } catch {
+          
+            url = new URL ( url, location.href );
+            
+            } finally {
+            
+              return url;
+              
+              }
+              
+        },
+        
+      url = parseURL (
+      
+        element
+        
+          .getAttribute ( 'href' )
+          
+          );
+          
+    let hash = url.hash.slice ( 1 );
+    
+    const isTrigger = hash.startsWith (
+    
+      `${ codeKey }&label=`
+      
+      );
+      
+    // bail if no trigger
+    
+    if ( ! isTrigger ) return;
+    
+    hash = new URLSearchParams ( hash );
+    
+    const
+    
+      title = element.textContent,
+      
+      label = hash.get ( 'label' );
+      
+    hash.delete ( codeKey );
+    
+    hash.delete ( 'label' );
+    
+    url.hash = hash;
+    
+    const href = url
+    
+      .toString ( )
+      
+      .replace (
+      
+        new RegExp (
+        
+          `^${ location.origin }`
+          
+          ),
+          
+        ''
+        
+        );
+        
+    element
+    
+      .closest (
+      
+        '[ data-sqsp-block="text" ]'
+        
+        )
+        
+      .remove ( );
+      
+    document
+    
+      .body
+      
+      .querySelector (
+      
+        '.item-pagination-link--prev'
+        
+        )
+        
+      .insertAdjacentHTML (
+      
+        'afterend',
+        
+        `
+        
+          <a class="item-pagination-link item-pagination-link--next" href="${ href }">
+          
+            <div class="pagination-title-wrapper">
+              
+              <div class="visually-hidden">
+              
+                ${ label }
+                
+                </div>
+                
+              <div class="item-pagination-prev-next">
+              
+                ${ label }
+                
+                </div>
+              
+              <h2 class="item-pagination-title">
+              
+                ${ title }
+                
+                </h2>
+                
+              </div>
+              
+            <div class="icon icon--stroke item-pagination-icon">
+            
+              <svg class="caret-right-icon--small" viewBox="0 0 9 16">
+              
+                <polyline fill="none" stroke-miterlimit="10" points="1.6,1.2 6.5,7.9 1.6,14.7">
+                
+                  </polyline>
+                  
+                </svg>
+                
+              </div>
+              
+            </a>
+            
+          `
+          
+        );
+        
+    };
+    
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    dclCallback
+    
+    );
+    
+  } ) ( );
