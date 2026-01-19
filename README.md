@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 455 effects. Each effect has it's own version number, code,
+twcsl contains 457 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -493,6 +493,8 @@ not necessarily designed to work together.
         
       * [Store Page Elements Tagged Hide](v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide)
         
+        * [Store Page Elements Tagged Hide.bbprojectd](v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/Store%20Page%20Elements%20Tagged%20Hide.bbprojectd)
+          
       * [List](v7.1/Page/Store/List)
         
         * [Store Page List Tag Date Hide](v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Date%20Hide)
@@ -595,6 +597,8 @@ not necessarily designed to work together.
       
     * [Page Section First Blank Hide](v7.1/Section/Page%20Section%20First%20Blank%20Hide)
       
+      * [Page Section First Blank Hide.bbprojectd](v7.1/Section/Page%20Section%20First%20Blank%20Hide/Page%20Section%20First%20Blank%20Hide.bbprojectd)
+        
     * [Section Info](v7.1/Section/Section%20Info)
       
     * [Auto Layout](v7.1/Section/Auto%20Layout)
