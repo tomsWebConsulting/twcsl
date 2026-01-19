@@ -39,7 +39,7 @@ Hide elements of store products that are tagged.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Portfolio
+      * Use this option if you want to have this effect on only one Store
         page.
         
       * Add the following code to Page Settings > Advanced >
@@ -50,7 +50,7 @@ Hide elements of store products that are tagged.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7267d8a55b9620bf17f37cc16052e0725a4aa133/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
           
           <!-- end TWC Store Page Elements Tagged Hide -->
           
@@ -60,7 +60,7 @@ Hide elements of store products that are tagged.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
+      * Use this option if you want to have this effect on all Store pages.
         
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > HEADER.
@@ -70,7 +70,7 @@ Hide elements of store products that are tagged.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7267d8a55b9620bf17f37cc16052e0725a4aa133/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
           
           <!-- end TWC Store Page Elements Tagged Hide -->
           
@@ -85,7 +85,7 @@ Hide elements of store products that are tagged.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
+    * Use this option if you want to have this effect on only one Store page.
       
     * Add code from file **[store page elements tagged hide.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the page.
@@ -94,10 +94,10 @@ Hide elements of store products that are tagged.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
+    * Use this option if you want to have this effect on all Store pages.
       
     * Add code from file **[store page elements tagged hide.html][8]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER.
+      Website > Pages > Custom Code > Code Injection > HEADER.
       
     * Refer to [Add code to code injection][7] for details.
 
