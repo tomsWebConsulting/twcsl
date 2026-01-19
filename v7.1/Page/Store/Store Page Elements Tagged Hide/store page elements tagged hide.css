@@ -1,0 +1,109 @@
+/* begin TWC Store Page Elements Tagged Hide */
+
+  /*!
+  
+    store page elements tagged hide
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Version    : 7.1
+    
+    Products V2
+    Compatible    : Yes
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2024-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  /* begin list */
+  
+    /* add to cart */
+    
+    .product-list .product-list-item.tag-twc-atc-hide .sqs-add-to-cart-button-wrapper,
+    .product-list .product-list-item.tag-twc-list-atc-hide .sqs-add-to-cart-button-wrapper,
+    
+    /* price */
+    
+    .product-list .product-list-item.tag-twc-price-hide .product-list-item-link .product-list-item-meta .product-list-item-price,
+    .product-list .product-list-item.tag-twc-list-price-hide .product-list-item-link .product-list-item-meta .product-list-item-price,
+    
+    /* status */
+    
+    .product-list .product-list-item.tag-twc-status-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+    .product-list .product-list-item.tag-twc-list-status-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+    .product-list .product-list-item.tag-twc-mark-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+    .product-list .product-list-item.tag-twc-list-mark-hide .product-list-item-link .product-list-item-meta .product-list-item-status,
+    
+    /* end list */
+    
+  /* begin detail */
+  
+    /* add to cart */
+    
+    .product-detail:not( [ data-is-pdp-site-styling-updates-enabled = true ] ).tag-twc-atc-hide .product-meta .product-add-to-cart,
+    .product-detail:not( [ data-is-pdp-site-styling-updates-enabled = true ] ).tag-twc-detail-atc-hide .product-meta .product-add-to-cart,
+    
+    /* add to cart button */
+    
+    .product-detail.tag-twc-detail-atc-button-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
+    
+    /* description */
+    
+    .product-detail.tag-twc-description-hide .product-meta .product-description,
+    .product-detail.tag-twc-detail-description-hide .product-meta .product-description,
+    .product-detail.tag-twc-excerpt-hide .product-meta .product-description,
+    .product-detail.tag-twc-detail-excerpt-hide .product-meta .product-description,
+    
+    /* price */
+    
+    .product-detail.tag-twc-price-hide .product-meta .product-price,
+    .product-detail.tag-twc-detail-price-hide .product-meta .product-price,
+    
+    /* quantity */
+    
+    .product-detail.tag-twc-quantity-hide .product-meta .product-add-to-cart .product-quantity-input-wrapper,
+    .product-detail.tag-twc-detail-quantity-hide .product-meta .product-add-to-cart .product-quantity-input-wrapper,
+    
+    /* review summary */
+    
+    .product-detail.tag-twc-review-summary-hide .product-meta .product-review-summary
+    .product-detail.tag-twc-detail-review-summary-hide .product-meta .product-review-summary
+    .product-detail.tag-twc-reviews-hide .product-meta .product-review-summary
+    .product-detail.tag-twc-detail-reviews-hide .product-meta .product-review-summary
+    
+    /* status */
+    
+    .product-detail.tag-twc-status-hide .product-meta .product-status,
+    .product-detail.tag-twc-detail-status-hide .product-meta .product-status,
+    .product-detail.tag-twc-mark-hide .product-meta .product-status,
+    .product-detail.tag-twc-detail-mark-hide .product-meta .product-status,
+    
+    /* title */
+    
+    .product-detail.tag-twc-title-hide .product-meta .product-title,
+    .product-detail.tag-twc-detail-title-hide .product-meta .product-title,
+    
+    /* variants */
+    
+    .product-detail.tag-twc-variants-hide .product-meta .product-variants,
+    .product-detail.tag-twc-detail-variants-hide .product-meta .product-variants,
+    
+    /* end detail */
+    
+  x-twc-selector /* dummy selector so that each selector line above can end
+                    with a comma */
+    {
+    
+      display : none;
+      
+      }
+      
+  /* end TWC Store Page Elements Tagged Hide */

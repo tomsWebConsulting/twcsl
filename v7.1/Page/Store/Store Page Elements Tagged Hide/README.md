@@ -8,7 +8,7 @@ Hide elements of store products that are tagged.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Version
 
@@ -24,31 +24,82 @@ Hide elements of store products that are tagged.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [code injection][3].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
-## Quick Install
+## Install Options
 
-* Options
+* CDN Hosted
 
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
+  
+  * Options
+  
+    * Page Specific
+    
+      * Use this option if you want to have this effect on only one Portfolio
+        page.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the page.
+        
+        ```html
+        <!-- begin TWC Store Page Elements Tagged Hide -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
+          
+          <!-- end TWC Store Page Elements Tagged Hide -->
+          
+        ```
+        
+      * Refer to [per-page code injection][6] for details.
+      
+    * Site-wide
+    
+      * Use this option if you want to have this effect on all Pages.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > HEADER.
+        
+        ```html
+        <!-- begin TWC Store Page Elements Tagged Hide -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@48fd557c40b6635fe45c48a8fee03f6a3bedbccd/v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/store%20page%20elements%20tagged%20hide.min.css" type="module"></script>
+          
+          <!-- end TWC Store Page Elements Tagged Hide -->
+          
+        ```
+        
+      * Refer to [Add code to code injection][7] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on
+  your site).
+  
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
+    * Use this option if you want to have this effect on only one Page.
       
-    * Add code from file **[store page elements tagged hide.html][4]** to Store
-      Settings > Advanced > Page Header Code Injection for the store page.
-      Refer to [Per-page code injection][5] for details.
+    * Add code from file **[store page elements tagged hide.html][8]** to
+      Page Settings > Advanced > Page Header Code Injection for the page.
       
+    * Refer to [per-page code injection][6] for details.
+    
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
+    * Use this option if you want to have this effect on all Pages.
       
-    * Add code from file **[store page elements tagged hide.html][4]** to
-      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
-      code to code injection][6] for details.
+    * Add code from file **[store page elements tagged hide.html][8]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][7] for details.
 
 ## Tags
 
@@ -61,6 +112,10 @@ The following tags are available for your use.
   * twc-list-atc-hide
   
   * twc-detail-atc-hide
+  
+* Add to Cart Button
+
+  * twc-detail-atc-button-hide
   
 * Description
 
@@ -110,10 +165,16 @@ The following tags are available for your use.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2026-01-19**
+
+  * added twc-detail-atc-button-hide tag
+  * folded Quantity element into the twc-atc-hide tag for the pdp
+  * bumped version to 0.2.0
+  
 * **2025-08-02**
 
   * updated to work with v7.1 Products V2
@@ -125,8 +186,10 @@ Please consider [making a donation][7].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908
-[4]: store%20page%20elements%20tagged%20hide.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: store%20page%20elements%20tagged%20hide.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

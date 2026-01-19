@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.1.1
+      Version       : 0.2.0
       
       SS Version    : 7.1
       
@@ -17,9 +17,9 @@
       
       Fluid
       Engine
-      Compatible    : Yes
+      Compatible    : Not Applicable
       
-      Copyright     : 2024-2025 Thomas Creedon
+      Copyright     : 2024-2026 Thomas Creedon
                       
                       Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
@@ -50,8 +50,12 @@
     
       /* add to cart */
       
-      .product-detail.tag-twc-atc-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
-      .product-detail.tag-twc-detail-atc-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
+      .product-detail:not( [ data-is-pdp-site-styling-updates-enabled = true ] ).tag-twc-atc-hide .product-meta .product-add-to-cart,
+      .product-detail:not( [ data-is-pdp-site-styling-updates-enabled = true ] ).tag-twc-detail-atc-hide .product-meta .product-add-to-cart,
+      
+      /* add to cart button */
+      
+      .product-detail.tag-twc-detail-atc-button-hide .product-meta .product-add-to-cart .sqs-add-to-cart-button-wrapper,
       
       /* description */
       
