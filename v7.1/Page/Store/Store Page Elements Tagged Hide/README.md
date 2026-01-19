@@ -24,7 +24,7 @@ Hide elements of store products that are tagged.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
+  * [Squarespace plan][2] that is Core or above.
 
 ---
 
@@ -33,7 +33,7 @@ Hide elements of store products that are tagged.
 * CDN Hosted
 
   Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][4], a [CDN][5])
+  externally on the [jsDelivr][3], a [CDN][4])
   
   * Options
   
@@ -56,7 +56,7 @@ Hide elements of store products that are tagged.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
+      * Refer to [per-page code injection][5] for details.
       
     * Site-wide
     
@@ -76,7 +76,7 @@ Hide elements of store products that are tagged.
           
         ```
         
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to code injection][6] for details.
       
 * On-site
 
@@ -87,19 +87,19 @@ Hide elements of store products that are tagged.
   
     * Use this option if you want to have this effect on only one Store page.
       
-    * Add code from file **[store page elements tagged hide.html][8]** to
+    * Add code from file **[store page elements tagged hide.html][7]** to
       Page Settings > Advanced > Page Header Code Injection for the page.
       
-    * Refer to [per-page code injection][6] for details.
+    * Refer to [per-page code injection][5] for details.
     
   * Site-wide
   
     * Use this option if you want to have this effect on all Store pages.
       
-    * Add code from file **[store page elements tagged hide.html][8]** to
+    * Add code from file **[store page elements tagged hide.html][7]** to
       Website > Pages > Custom Code > Code Injection > HEADER.
       
-    * Refer to [Add code to code injection][7] for details.
+    * Refer to [Add code to code injection][6] for details.
 
 ## Tags
 
@@ -165,7 +165,7 @@ The following tags are available for your use.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -186,10 +186,9 @@ Please consider [making a donation][9].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://www.jsdelivr.com/
-[5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: store%20page%20elements%20tagged%20hide.html#L1
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://www.jsdelivr.com/
+[4]: https://en.wikipedia.org/wiki/Content_delivery_network
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: store%20page%20elements%20tagged%20hide.html#L1
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
