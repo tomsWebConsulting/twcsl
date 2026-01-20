@@ -1,10 +1,10 @@
-# Cart Page Title Text Change
+# Cart Page Title Change
 
 ### [License][1]
 
 ### Synopsis
 
-Change the Title text on the Cart page.
+Change the title text on the Cart page.
 
 ### Version
 
@@ -38,7 +38,7 @@ Change the Title text on the Cart page.
     
     * v7.1
     
-      * Add code from file **[cart page title text change options.html][8]** to
+      * Add code from file **[cart page title change options.html][8]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
         for any instructions within.
         
@@ -46,19 +46,19 @@ Change the Title text on the Cart page.
         Code Injection > FOOTER.
         
         ```html
-        <!-- begin TWC Cart Page Title Text Change -->
+        <!-- begin TWC Cart Page Title Change -->
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
           
-          <!-- end TWC Cart Page Title Text Change -->
+          <!-- end TWC Cart Page Title Change -->
           
         ```
         
     * v7.0
     
-      * Add code from file **[cart page title text change options.html][8]** to
+      * Add code from file **[cart page title change options.html][8]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         Read the code for any instructions within.
         
@@ -66,13 +66,13 @@ Change the Title text on the Cart page.
         Custom Code > Code Injection > FOOTER.
         
         ```html
-        <!-- begin TWC Cart Page Title Text Change -->
+        <!-- begin TWC Cart Page Title Change -->
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
           
-          <!-- end TWC Cart Page Title Text Change -->
+          <!-- end TWC Cart Page Title Change -->
           
         ```
         
@@ -85,21 +85,21 @@ Change the Title text on the Cart page.
     
     * v7.1
     
-      * Add code from file **[cart page title text change options.html][8]** to
+      * Add code from file **[cart page title change options.html][8]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
         for any instructions within.
         
-      * Add code from file **[cart page title text change.html][11]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[cart page title change.html][11]** to Website >
+        Pages > Custom Code > Code Injection > FOOTER.
         
     * v7.0
     
-      * Add code from file **[cart page title text change options.html][8]** to
+      * Add code from file **[cart page title change options.html][8]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         Read the code for any instructions within.
         
-      * Add code from file **[cart page title text change.html][11]** to
-        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[cart page title change.html][11]** to Website >
+        Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         
     * Refer to [Add code to code injection][10] for details.
 
@@ -125,8 +125,8 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: cart%20page%20title%20text%20change%20options.html#L1
+[8]: cart%20page%20title%20change%20options.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: cart%20page%20title%20text%20change.html#L1
+[11]: cart%20page%20title%20change.html#L1
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

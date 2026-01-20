@@ -2,7 +2,7 @@
 
   /*!
   
-    cart page title text change
+    cart page title change
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -30,7 +30,7 @@
     
     s = `
     
-      Cart Page Title Text Change v${ version }
+      Cart Page Title Change v${ version }
       
       License < https://tinyurl.com/s872fb68 >
       
