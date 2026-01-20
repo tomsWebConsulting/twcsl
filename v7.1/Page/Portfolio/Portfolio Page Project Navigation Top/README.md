@@ -39,7 +39,7 @@ Move Project navigation to the top of the page.
         page.
         
       * Add code from file **[portfolio page project navigation top
-        options.html][8]** to Page Settings > Advanced >
+        options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the page. Read the code for any
         instructions within.
         
@@ -59,14 +59,14 @@ Move Project navigation to the top of the page.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
+      * Refer to [per-page code injection][7] for details.
       
     * Site-wide
     
       * Use this option if you want to have this effect on all Pages.
         
       * Add code from file **[portfolio page project navigation top
-        options.html][8]** to Page Settings > Advanced >
+        options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the page. Read the code for any
         instructions within.
         
@@ -86,7 +86,7 @@ Move Project navigation to the top of the page.
           
         ```
         
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to code injection][8] for details.
       
 * On-site
 
@@ -99,39 +99,39 @@ Move Project navigation to the top of the page.
       age.
       
     * Add code from file **[portfolio page project navigation top
-      options.html][8]** to Page Settings > Advanced >
+      options.html][6]** to Page Settings > Advanced >
       Page Header Code Injection for the page. Read the code for any
       instructions within.
       
-    * Add code from file **[portfolio page project navigation top.html][8]** to
+    * Add code from file **[portfolio page project navigation top.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the page.
       
-    * Refer to [per-page code injection][6] for details.
+    * Refer to [per-page code injection][7] for details.
     
   * Site-wide
   
     * Use this option if you want to have this effect on all Portfolio pages.
       
     * Add code from file **[portfolio page project navigation top
-      options.html][8]** to Page Settings > Advanced >
+      options.html][6]** to Page Settings > Advanced >
       Page Header Code Injection for the page. Read the code for any
       instructions within.
       
-    * Add code from file **[portfolio page project navigation top.html][8]** to
+    * Add code from file **[portfolio page project navigation top.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][7] for details.
+    * Refer to [Add code to code injection][8] for details.
 
 ## How To Use
 
 * For each Project add a "blank" section as your first section. Leave it as is
   after being added. It becomes a placeholder to keep the spacing working
   properly for the first section of the page. The section will show when editing
-  page but not in Preview or for site visitors.
+  a Project but not in Preview or for site visitors.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -149,7 +149,8 @@ Please consider [making a donation][9].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: portfolio%20page%20project%20navigation%20top.html#L1
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: portfolio%20page%20project%20navigation%20top%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: portfolio%20page%20project%20navigation%20top.html#L1
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
