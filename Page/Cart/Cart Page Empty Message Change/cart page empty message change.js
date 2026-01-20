@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 2.0.0
+    Version           : 2.0.1
     
     SS Versions       : 7.1, 7.0
     
@@ -26,7 +26,7 @@
     
   const
   
-    version = '2.0.0',
+    version = '2.0.1',
     
     s = `
     
@@ -134,6 +134,8 @@
                 
             text = options.text;
             
+          stopObserver ( );
+          
           element.setAttribute (
           
             'aria-label',
@@ -143,6 +145,8 @@
             );
             
           element.textContent = text;
+          
+          startObserver ( );
           
         };
         

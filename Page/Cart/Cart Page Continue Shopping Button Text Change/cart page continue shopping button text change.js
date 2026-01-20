@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 2.0.0
+    Version           : 2.0.1
     
     SS Versions       : 7.1, 7.0
     
@@ -16,7 +16,9 @@
     
     Copyright         : 2021-2026 Thomas Creedon
                         
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -24,7 +26,7 @@
     
   const
   
-    version = '2.0.0',
+    version = '2.0.1',
     
     s = `
     
@@ -124,10 +126,18 @@
             
               .split ( '-' )
               
-              .reduce ( ( obj, key ) => obj?.[ key ], window ),
+              .reduce (
               
+                ( obj, key ) => obj?.[ key ],
+                
+                window
+                
+                ),
+                
             text = options.text;
             
+          stopObserver ( );
+          
           element.setAttribute (
           
             'aria-label',
@@ -137,6 +147,8 @@
             );
             
           element.textContent = text;
+          
+          startObserver ( );
           
         };
         

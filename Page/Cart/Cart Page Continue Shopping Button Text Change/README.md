@@ -8,7 +8,7 @@ Change the Continue Shopping button text on the Cart page.
 
 ### Version
 
-  * 2.0.0
+  * 2.0.1
 
 #### SS Versions
 
@@ -111,6 +111,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-01-20**
+
+  * updated to use stopObserver and startObserver
+  * bumped version to 2.0.1
+  
 * **2026-01-15**
 
   * updated to work with Cart Page Observe Changes v0.4.0
