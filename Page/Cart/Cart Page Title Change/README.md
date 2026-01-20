@@ -50,7 +50,7 @@ Change the Title text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Title Text Change -->
           
@@ -70,7 +70,7 @@ Change the Title text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Text%20Change/cart%20page%20title%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Title Text Change -->
           
