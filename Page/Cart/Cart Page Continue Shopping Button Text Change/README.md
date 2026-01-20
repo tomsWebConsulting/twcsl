@@ -50,7 +50,7 @@ Change the Continue Shopping button text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Continue Shopping Button Text Change -->
           
@@ -70,7 +70,7 @@ Change the Continue Shopping button text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Continue Shopping Button Text Change -->
           

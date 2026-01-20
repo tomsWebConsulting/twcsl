@@ -50,7 +50,7 @@ Change the empty cart message on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0861df4bc135b6718c04f6bf532f3274c59a9be8/Page/Cart/Cart%20Page%20Empty%20Message%20Change/cart%20page%20empty%20message%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Empty%20Message%20Change/cart%20page%20empty%20message%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Empty Message Change -->
           
@@ -70,7 +70,7 @@ Change the empty cart message on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0861df4bc135b6718c04f6bf532f3274c59a9be8/Page/Cart/Cart%20Page%20Empty%20Message%20Change/cart%20page%20empty%20message%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Empty%20Message%20Change/cart%20page%20empty%20message%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Empty Message Change -->
           
