@@ -50,7 +50,7 @@ Change the title text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77ff5386b8369aeda31b2ec46afa254c8c659182/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Title Change -->
           
@@ -70,7 +70,7 @@ Change the title text on the Cart page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@888c6e1743e63292f0240aacd623ff1c08057ea8/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77ff5386b8369aeda31b2ec46afa254c8c659182/Page/Cart/Cart%20Page%20Title%20Change/cart%20page%20title%20change.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Title Change -->
           
