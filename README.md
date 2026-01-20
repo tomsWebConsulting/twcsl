@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 459 effects. Each effect has it's own version number, code,
+twcsl contains 460 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -82,6 +82,10 @@ not necessarily designed to work together.
     * [Cart Page Summary HTML Add](Page/Cart/Cart%20Page%20Summary%20HTML%20Add)
       
       * [Cart Page Summary HTML Add.bbprojectd](Page/Cart/Cart%20Page%20Summary%20HTML%20Add/Cart%20Page%20Summary%20HTML%20Add.bbprojectd)
+        
+    * [Cart Page Empty Message Change](Page/Cart/Cart%20Page%20Empty%20Message%20Change)
+      
+      * [Cart Page Empty Message Change.bbprojectd](Page/Cart/Cart%20Page%20Empty%20Message%20Change/Cart%20Page%20Empty%20Message%20Change.bbprojectd)
         
     * [Cart Page Unit Prices](Page/Cart/Cart%20Page%20Unit%20Prices)
       
@@ -326,8 +330,6 @@ not necessarily designed to work together.
     * [Product Option Variant Select Auto](Element/Product%20Variant/Product%20Option%20Variant%20Select%20Auto)
       
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
-  
-* [Change Cart Empty Message](Change%20Cart%20Empty%20Message)
   
 * [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
   
