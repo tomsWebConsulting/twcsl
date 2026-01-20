@@ -78,30 +78,30 @@ Change the empty cart message on the Cart page.
         
     * Refer to [Add code to code injection][10] for details.
     
-* On-site
-
-  Use this option to install the full code of this effect (files hosted on your
-  site).
+  * On-site
   
-  * v7.1
-  
-    * Add code from file **[cart page empty message change options.html][8]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
-      any instructions within.
-      
-    * Add code from file **[cart page empty message change.html][11]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER.
-      
-  * v7.0
-  
-    * Add code from file **[cart page empty message change options.html][8]** to
-      Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-      Read the code for any instructions within.
-      
-    * Add code from file **[cart page empty message change.html][11]** to
-      Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-      
-  * Refer to [Add code to code injection][10] for details.
+    Use this option to install the full code of this effect (files hosted on your
+    site).
+    
+    * v7.1
+    
+      * Add code from file **[cart page empty message change options.html][8]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+        any instructions within.
+        
+      * Add code from file **[cart page empty message change.html][11]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER.
+        
+    * v7.0
+    
+      * Add code from file **[cart page empty message change options.html][8]** to
+        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+        Read the code for any instructions within.
+        
+      * Add code from file **[cart page empty message change.html][11]** to
+        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+        
+    * Refer to [Add code to code injection][10] for details.
 
 ## Make a Donation
 
