@@ -36,101 +36,53 @@ Change the Continue Shopping button text on the Cart page.
     Use this option for the quickest way to install this effect (files hosted
     externally on the [jsDelivr][6], a [CDN][7])
     
-    * Options
+    * v7.1
     
-      * Page Specific
-      
-        * Use this option if you want to have this effect on only one Page.
-          
-        * Add code from file **[cart page continue shopping button text change
-          options.html][8]** to Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
-          instructions within.
-          
-        * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
-          
-          ```html
-          <!-- begin TWC Cart Page Continue Shopping Button Text Change -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
-            
-            <!-- end TWC Cart Page Continue Shopping Button Text Change -->
-            
-          ```
-          
-        * Refer to [per-page code injection][9] for details.
+      * Add code from file **[cart page continue shopping button text change
+        options.html][8]** to Website > Pages > Custom Code >
+        Code Injection > FOOTER. Read the code for any instructions within.
         
-      * Site-wide
-      
-      * v7.1
-      
-        * Add code from file **[cart page continue shopping button text change
-          options.html][8]** to Website > Pages > Custom Code >
-          Code Injection > FOOTER. Read the code for any instructions within.
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Cart Page Continue Shopping Button Text Change -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
           
-          ```html
-          <!-- begin TWC Cart Page Continue Shopping Button Text Change -->
+          <!-- end TWC Cart Page Continue Shopping Button Text Change -->
           
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
-            
-            <!-- end TWC Cart Page Continue Shopping Button Text Change -->
-            
-          ```
-          
-      * v7.0
-      
-        * Add code from file **[cart page continue shopping button text change
-          options.html][8]** to Website > Pages > Website Tools > Custom Code >
-          Code Injection > FOOTER. Read the code for any instructions within.
-          
-        * Add the following code to Website > Pages > Website Tools >
-          Custom Code > Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Cart Page Continue Shopping Button Text Change -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
-            
-            <!-- end TWC Cart Page Continue Shopping Button Text Change -->
-            
-          ```
-          
-      * Refer to [Add code to code injection][10] for details.
-      
-* On-site
-
-  Use this option to install the full code of this effect (files hosted on your
-  site).
-  
-  * Page Specific
-  
-    * Use this option if you want to have this effect on only one Page.
-      
-    * Add code from file **[cart page continue shopping button text change
-      options.html][8]** to Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
-      instructions within.
-      
-    * Add code from file **[cart page continue shopping button text
-      change.html][11]** to Page Settings > Advanced > Page Header Code
-      Injection for the page.
-      
-    * Refer to [per-page code injection][9] for details.
+        ```
+        
+    * v7.0
     
-  * Site-wide
+      * Add code from file **[cart page continue shopping button text change
+        options.html][8]** to Website > Pages > Website Tools > Custom Code >
+        Code Injection > FOOTER. Read the code for any instructions within.
+        
+      * Add the following code to Website > Pages > Website Tools >
+        Custom Code > Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Cart Page Continue Shopping Button Text Change -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6484b8c48c707679260792abe3694a26a64622cc/Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/cart%20page%20continue%20shopping%20button%20text%20change.min.js" type="module"></script>
+          
+          <!-- end TWC Cart Page Continue Shopping Button Text Change -->
+          
+        ```
+        
+    * Refer to [Add code to code injection][10] for details.
+    
+  * On-site
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option to install the full code of this effect (files hosted on
+    your site).
+    
     * v7.1
     
       * Add code from file **[cart page continue shopping button text change
