@@ -1,0 +1,20 @@
+/*!
+
+  portfolio page project navigation top
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Fluid Engine    : Not Applicable
+  Compatible
+  
+  Copyright       : 2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */body:not(.sqs-edit-mode-active).view-item #page:has(#twc-pppnt) .page-section:first-child{min-height:unset}body:not(.sqs-edit-mode-active).view-item #page:has(#twc-pppnt) .page-section:first-child>.content-wrapper{display:none}body:not(.sqs-edit-mode-active) #page:has(#twc-pppnt) #itemPagination{display:none}#twc-pppnt{gap:1em}#twc-pppnt .item-pagination-link{margin:0}#twc-pppnt>:first-child,#twc-pppnt>:last-child{flex:1}#twc-pppnt>h2{flex:0 1 auto;text-align:center}#twc-pppnt .item-pagination-link--next{justify-content:flex-end}body.sqs-edit-mode-active #twc-pppnt{display:none}
