@@ -1,0 +1,161 @@
+( ( ) => {
+
+  /*!
+  
+    cart page title text change
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 2.0.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Dependencies      : cart page observe changes
+                        
+                        < https://tinyurl.com/323xeep5 >
+    
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '2.0.0',
+    
+    s = `
+    
+      Cart Page Title Text Change v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2021-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc =
+  
+    ( ( self ) => self )
+    
+    ( window.twc || { } );
+    
+  // initialize twc cpttc sub-module
+  
+  twc.cpttc =
+  
+    ( ( self ) => self )
+    
+    ( twc.cpttc || { } );
+    
+  // initialize twc cpoc sub-module
+  
+  twc.cpoc =
+  
+    ( ( self ) => self )
+    
+    ( twc.cpoc || { } );
+    
+  // initialize twc cpoc callbacks sub-module
+  
+  twc.cpoc.callbacks =
+  
+    ( ( self ) => self )
+    
+    ( twc.cpoc.callbacks || { } );
+    
+  // initialize twc cpoc callbacks added sub-module
+  
+  twc.cpoc.callbacks.added =
+  
+    ( ( self ) => {
+    
+      const callback = (
+      
+        node,
+        
+        stopObserver,
+        
+        startObserver
+        
+        ) => {
+        
+          const isElement = node
+          
+            .nodeType
+            
+            ===
+            
+            1;
+            
+          // bail if not element
+          
+          if ( ! isElement ) return;
+          
+          const
+          
+            selector =
+            
+              '.cart-title',
+              
+            element = node
+            
+              .querySelector ( selector );
+              
+          // bail if no element
+          
+          if ( ! element ) return;
+          
+          const
+          
+            codeKey = 'twc-cpttc',
+            
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce (
+              
+                ( obj, key ) => obj?.[ key ],
+                
+                window
+                
+                ),
+                
+            text = options.text;
+            
+          stopObserver ( );
+          
+          element.setAttribute (
+          
+            'aria-label',
+            
+            text
+            
+            );
+            
+          element.textContent = text;
+          
+          startObserver ( );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.cpoc.callbacks.added || [ ] );
+      
+  } ) ( );
