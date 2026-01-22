@@ -1,0 +1,276 @@
+<!-- begin TWC Cart Page Has Items Continue Shopping Add -->
+
+  <!--
+  
+    cart page has items continue shopping add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 1.0.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Dependencies      : cart page observe changes
+                        
+                        < https://tinyurl.com/323xeep5 >
+    
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    #twc-cphicsa {
+    
+      margin-bottom : 10px;
+      margin-top : 22px;
+      
+      }
+      
+    .twc-cphicsa-has-items {
+    
+      margin-bottom : 10px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '1.0.0',
+        
+        s = `
+        
+          Cart Page Has Items Continue Shopping Add v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const codeKey = 'twc-cphicsa';
+      
+      // initialize twc module
+      
+      window.twc =
+      
+        ( ( self ) => self )
+        
+        ( window.twc || { } );
+        
+      // initialize twc cphicsa sub-module
+      
+      twc.cphicsa =
+      
+        ( ( self ) => self )
+        
+        ( twc.cphicsa || { } );
+        
+      // initialize twc cpoc sub-module
+      
+      twc.cpoc =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc || { } );
+        
+      // initialize twc cpoc callbacks sub-module
+      
+      twc.cpoc.callbacks =
+      
+        ( ( self ) => self )
+        
+        ( twc.cpoc.callbacks || { } );
+        
+      // initialize twc cpoc callbacks added sub-module
+      
+      twc.cpoc.callbacks.added =
+      
+        ( ( self ) => {
+        
+          const callback = (
+          
+            node,
+            
+            stopObserver,
+            
+            startObserver
+            
+            ) => {
+            
+              const isElement = node
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              // bail if not element
+              
+              if ( ! isElement ) return;
+              
+              const isCartContiner =
+              
+                node.getAttribute ( 'data-test' )
+                
+                ===
+                
+                'cart-container';
+                
+              // bail if not cart container
+              
+              if ( ! isCartContiner ) return;
+              
+              const
+              
+                // codeKey = 'twc-cphicsa',
+                
+                options = codeKey
+                
+                  .split ( '-' )
+                  
+                  .reduce (
+                  
+                    ( obj, key ) => obj?.[ key ],
+                    
+                    window
+                    
+                    ),
+                    
+                buttonText = options.buttonText;
+                
+              stopObserver ( );
+              
+              node
+              
+                .insertAdjacentHTML (
+                
+                  'beforebegin',
+                  
+                  `
+                  
+                    <div id=${ codeKey }>
+                    
+                      <div class="${ codeKey }-has-items">
+                      
+                        ${ options.hasItemsText }
+                        
+                        </div>
+                        
+                      <a aria-label="${ buttonText }" data-test="continue-shopping-link" class="sqs-editable-button sqs-button-element--secondary cart-continue-button" href="${
+                      
+                        Static
+                        
+                          .SQUARESPACE_CONTEXT
+                          
+                          .websiteSettings
+                          
+                          .storeSettings
+                          
+                          .continueShoppingLinkUrl
+                          
+                        }">
+                      
+                        ${ buttonText }
+                        
+                        </a>
+                        
+                      </div>
+                      
+                    `
+                    
+                  );
+                  
+            startObserver ( );
+            
+            };
+            
+          self.push ( callback );
+          
+          return self;
+          
+          } ) ( twc.cpoc.callbacks.added || [ ] );
+          
+      // initialize twc cpoc callbacks removed sub-module
+      
+      twc.cpoc.callbacks.removed =
+      
+        ( ( self ) => {
+        
+          const callback = (
+          
+            node,
+            
+            stopObserver,
+            
+            startObserver
+            
+            ) => {
+            
+              const isElement = node
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              // bail if not element
+              
+              if ( ! isElement ) return;
+              
+              const isCartContiner =
+              
+                node.getAttribute ( 'data-test' )
+                
+                ===
+                
+                'cart-container';
+                
+              // bail if not cart container
+              
+              if ( ! isCartContiner ) return;
+              
+              stopObserver ( );
+              
+              document
+              
+                .body
+                
+                .querySelector ( `#${ codeKey }` )
+                
+                .remove ( );
+                
+              startObserver ( );
+              
+              };
+              
+          self.push ( callback );
+          
+          return self;
+          
+          } ) ( twc.cpoc.callbacks.removed || [ ] );
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Cart Page Has Items Continue Shopping Add -->
