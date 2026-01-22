@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 461 effects. Each effect has it's own version number, code,
+twcsl contains 462 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -204,8 +204,6 @@ not necessarily designed to work together.
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
 * [Text Block Formats Phrase Filter](Text%20Block%20Formats%20Phrase%20Filter)
-  
-* [Text Block Links Open in New Window](Text%20Block%20Links%20Open%20in%20New%20Window)
   
 * [Add Form Block Section Labels](Add%20Form%20Block%20Section%20Labels)
   
@@ -957,6 +955,10 @@ not necessarily designed to work together.
     
     * [Text Block Tab Stops](Block/Text/Text%20Block%20Tab%20Stops)
       
+    * [Text Block Links Open New Window or Tab](Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab)
+      
+      * [Text Block Links Open New Window or Tab.bbprojectd](Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab.bbprojectd)
+        
   * [Summary](Block/Summary)
     
     * [Summary Block Title to Lines](Block/Summary/Summary%20Block%20Title%20to%20Lines)
