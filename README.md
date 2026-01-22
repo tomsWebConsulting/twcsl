@@ -67,6 +67,10 @@ not necessarily designed to work together.
       
       * [Cart Page Continue Shopping Button Text Change.bbprojectd](Page/Cart/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change/Cart%20Page%20Continue%20Shopping%20Button%20Text%20Change.bbprojectd)
         
+    * [Cart Page Has Items Continue Shopping Add](Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add)
+      
+      * [Cart Page Has Items Continue Shopping Add.bbprojectd](Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add.bbprojectd)
+        
     * [Cart Page Item Links Redirect](Page/Cart/Cart%20Page%20Item%20Links%20Redirect)
       
       * [Cart Page Item Links Redirect.bbprojectd](Page/Cart/Cart%20Page%20Item%20Links%20Redirect/Cart%20Page%20Item%20Links%20Redirect.bbprojectd)
@@ -198,8 +202,6 @@ not necessarily designed to work together.
 * [Add to Cart Button Active Hours](Add%20to%20Cart%20Button%20Active%20Hours)
   
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
-  
-* [Accordion Block Top Bottom Border Hide](Accordion%20Block%20Top%20Bottom%20Border%20Hide)
   
 * [Text Block Formats Phrase Filter](Text%20Block%20Formats%20Phrase%20Filter)
   
@@ -342,8 +344,6 @@ not necessarily designed to work together.
 * [Block Quote Source CSS Em Dash](Block%20Quote%20Source%20CSS%20Em%20Dash)
   
 * [Form Block Track Field Block IDs](Form%20Block%20Track%20Field%20Block%20IDs)
-  
-* [Add Continue Shopping Message When Cart Has Items](Add%20Continue%20Shopping%20Message%20When%20Cart%20Has%20Items)
   
 * [Page Edit Keys](Page%20Edit%20Keys)
   
