@@ -50,9 +50,9 @@ Add Continue Shopping when Cart page has items.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@902197e5480abc6baa9e4808fe1e233a5448470c/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@902197e5480abc6baa9e4808fe1e233a5448470c/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Has Items Continue Shopping Add -->
           
@@ -72,9 +72,9 @@ Add Continue Shopping when Cart page has items.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@902197e5480abc6baa9e4808fe1e233a5448470c/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b7fa985554e34dd74b2075f44bd3229a6d1325b3/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@902197e5480abc6baa9e4808fe1e233a5448470c/Page/Cart/Cart%20Page%20Has%20Items%20Continue%20Shopping%20Add/cart%20page%20has%20items%20continue%20shopping%20add.min.js" type="module"></script>
           
           <!-- end TWC Cart Page Has Items Continue Shopping Add -->
           
