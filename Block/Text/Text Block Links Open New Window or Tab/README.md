@@ -47,7 +47,7 @@ Make all Text block link open in a new window or tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b3a78c465826c5790da443581b8a7ce5cc48e5b8/Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab/text%20block%20links%20open%20new%20window%20or%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a7fae31b4c080b60757d27943ac8de0e143ba527/Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab/text%20block%20links%20open%20new%20window%20or%20tab.min.js" type="module"></script>
           
           <!-- end TWC Text Block Links Open New Window or Tab -->
           
@@ -67,7 +67,7 @@ Make all Text block link open in a new window or tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b3a78c465826c5790da443581b8a7ce5cc48e5b8/Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab/text%20block%20links%20open%20new%20window%20or%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a7fae31b4c080b60757d27943ac8de0e143ba527/Block/Text/Text%20Block%20Links%20Open%20New%20Window%20or%20Tab/text%20block%20links%20open%20new%20window%20or%20tab.min.js" type="module"></script>
           
           <!-- end TWC Text Block Links Open New Window or Tab -->
           
