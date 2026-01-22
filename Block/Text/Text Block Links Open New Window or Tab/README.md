@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Make all Text block link open in a new window or tab.
+Make all Text block links open in a new window or tab.
 
 ### Version
 
