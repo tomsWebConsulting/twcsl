@@ -131,8 +131,8 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Cart/Cart%20Page%20Observe%20Changes#cart-page-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: cart%20page%20chas%20items%20continue%20shopping%20add%20options.html#L1
+[8]: cart%20page%20has%20items%20continue%20shopping%20add%20options.html#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: cart%20page%20chas%20items%20continue%20shopping%20add.html#L1
+[11]: cart%20page%20has%20items%20continue%20shopping%20add.html#L1
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
