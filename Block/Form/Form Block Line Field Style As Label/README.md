@@ -47,7 +47,7 @@ Style Form block Label field as section labels.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Form Block Line Field Style As Label -->
           
@@ -69,7 +69,7 @@ Style Form block Label field as section labels.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
             
             <!-- end TWC Form Block Line Field Style As Label -->
             
@@ -85,7 +85,7 @@ Style Form block Label field as section labels.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/Block/Form/Form%20Block%20Line%20Field%20Style%20As%20Label/form%20block%20line%20field%20style%20as%20label.min.css" rel="stylesheet" type="text/css">
             
             <!-- end TWC Form Block Line Field Style As Label -->
             
@@ -144,7 +144,7 @@ Please consider [making a donation][12].
 
 * **2026-01-23**
 
-  * verified code works on v7.0 using Brine template family
+  * reworked code to use CSS variables
   * bumped version to 1.1.0
   
 * **2021-08-18**
