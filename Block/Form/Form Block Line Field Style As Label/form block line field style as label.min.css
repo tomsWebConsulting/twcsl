@@ -1,0 +1,21 @@
+/*!
+
+  form block line field style as label
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 1.1.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Fluid
+  Engine
+  Compatible        : Yes
+  
+  Copyright         : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+  
+  */body:not(.sqs-edit-mode-active) .form-wrapper .field-list .section .title{--form-block-title-text-font-font-size-value:1.2;--form-block-title-text-font-font-weight:bold}
