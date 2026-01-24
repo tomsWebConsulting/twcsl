@@ -20,10 +20,6 @@ Style Form block Label field as section labels.
 
   * Yes
 
-#### Dependencies
-
-  * [Squarespace plan][2] that supports [JavaScript][3].
-
 ---
 
 ## Install Options
@@ -152,8 +148,6 @@ Please consider [making a donation][12].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://www.squarespace.com/pricing
-[3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
