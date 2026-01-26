@@ -35,9 +35,9 @@ Move Project navigation to the top of the page.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Portfolio
-        page.
-        
+      Use this option if you want to have this effect on only one Portfolio
+      page.
+      
       * Add code from file **[portfolio page project navigation top
         options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the page. Read the code for any
@@ -63,12 +63,13 @@ Move Project navigation to the top of the page.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
+      Use this option if you want to have this effect on all Pages.
+      
+      * Add the following code to .
         
       * Add code from file **[portfolio page project navigation top
-        options.html][6]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
-        instructions within.
+        options.html][6]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Read the code for any instructions within.
         
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
@@ -95,9 +96,8 @@ Move Project navigation to the top of the page.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Portfolio 
-      age.
-      
+    Use this option if you want to have this effect on only one Portfolio age.
+    
     * Add code from file **[portfolio page project navigation top
       options.html][6]** to Page Settings > Advanced >
       Page Header Code Injection for the page. Read the code for any
@@ -110,12 +110,11 @@ Move Project navigation to the top of the page.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Portfolio pages.
-      
+    Use this option if you want to have this effect on all Portfolio pages.
+    
     * Add code from file **[portfolio page project navigation top
-      options.html][6]** to Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
-      instructions within.
+      options.html][6]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER. Read the code for any instructions within.
       
     * Add code from file **[portfolio page project navigation top.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
