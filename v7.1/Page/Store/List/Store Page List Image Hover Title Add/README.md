@@ -49,9 +49,9 @@ Add image hover title.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bba9760baa9c13b41b399fcd6399076fcce5984e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bba9760baa9c13b41b399fcd6399076fcce5984e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Image Hover Title Add -->
           
@@ -71,9 +71,9 @@ Add image hover title.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bba9760baa9c13b41b399fcd6399076fcce5984e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bba9760baa9c13b41b399fcd6399076fcce5984e/v7.1/Page/Store/List/Store%20Page%20List%20Image%20Hover%20Title%20Add/store%20page%20list%20image%20hover%20title%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Image Hover Title Add -->
           
