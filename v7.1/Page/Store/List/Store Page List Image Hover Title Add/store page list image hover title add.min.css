@@ -1,0 +1,27 @@
+/*!
+
+  store page list image hover title add
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Products V2
+  Compatible      : Yes
+  
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  Note            : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+  
+  Copyright       : 2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */.product-list-image-wrapper{--normal-text-size-value:var( --product-grid-text-below-title-font-font-size-value );position:relative}.product-list-image-wrapper figcaption{align-items:center;background:rgba(0,0,0,.5);color:#fff;display:flex;font-family:var( --product-grid-text-below-title-font-font-family );font-size:calc((var( --normal-text-size-value ) - 1)*1.2vw + 1rem);inset:0;justify-content:center;opacity:0;padding:1em;pointer-events:none;position:absolute;text-align:center;transition:opacity .25s ease}.product-list-image-wrapper:hover figcaption{opacity:1}
