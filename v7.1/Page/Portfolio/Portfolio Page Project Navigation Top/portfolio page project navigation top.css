@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.2.0
+  Version         : 0.2.1
   
   SS Version      : 7.1
   
@@ -74,6 +74,30 @@ body:not( .sqs-edit-mode-active ) #page:has( #twc-pppnt ) #itemPagination {
   
   }
   
+@media screen and ( max-width : 767px ) and ( orientation : portrait ) {
+
+  #twc-pppnt > pre code {
+  
+    font-size : calc( ( var( --normal-meta-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+    
+    }
+    
+  }
+  
+@media
+screen and ( min-width : 768px ),
+screen and ( max-width : calc( 1511px ) ) and ( orientation : landscape )
+
+  {
+  
+    #twc-pppnt > pre code {
+    
+      font-size : calc( ( var( --normal-meta-size-value ) - 1 ) * 1.2vw + 1rem );
+      
+      }
+      
+    }
+    
 body.sqs-edit-mode-active #twc-pppnt {
 
   display : none;

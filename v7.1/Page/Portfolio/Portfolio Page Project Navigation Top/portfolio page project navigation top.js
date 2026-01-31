@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.2.0
+    Version         : 0.2.1
     
     SS Version      : 7.1
     
@@ -23,7 +23,7 @@
     
   const
   
-    version = '0.2.0',
+    version = '0.2.1',
     
     s = `Portfolio Page Project Navigation Top v${ version }
     

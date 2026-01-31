@@ -8,7 +8,7 @@ Move Project navigation to the top of the page.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -134,6 +134,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-01-31**
+
+  * fixed issue with Monospace font not matching Squarespace's
+  * bumped version to 0.2.1
+  
 * **2026-01-30**
 
   * added options for paragraph style and custom HTML
