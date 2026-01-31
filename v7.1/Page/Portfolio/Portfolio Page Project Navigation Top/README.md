@@ -8,7 +8,7 @@ Move Project navigation to the top of the page.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -134,11 +134,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2026-01-14**
+* **2026-01-30**
 
-  * updated to pass stopObserver and startObserver parameters to callbacks
-  * bumped version to 0.4.0
-  -->
+  * added options for paragraph style and custom HTML
+  * redesigned the navigation element to use a project's title
+  * bumped version to 0.2.0
+  
 * **2026-01-19**
 
   * initial version

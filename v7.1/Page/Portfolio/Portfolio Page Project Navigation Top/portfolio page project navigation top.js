@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -23,7 +23,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.2.0',
     
     s = `Portfolio Page Project Navigation Top v${ version }
     
@@ -109,22 +109,93 @@
         
       selector =
       
-        '#sections [ data-test = "page-section" ] ';
+        '#sections [ data-test = "page-section" ] ',
         
-    let title = options.title;
-  
-    title =
+      templateElement = document
+      
+        .createElement ( 'template' ),
+        
+      title = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .item
+        
+        .title,
+        
+      formatHtmlMap = {
+      
+        'Heading 1'       : '<h1 />',
+        'Heading 2'       : '<h2 />',
+        'Heading 3'       : '<h3 />',
+        'Heading 4'       : '<h4 />',
+        'Paragraph 1'     : '<p class="sqsrte-large" />',
+        'Paragraph 2'     : '<p />',
+        'Paragraph 3'     : '<p class="sqsrte-small" />',
+        'Monospace'       : '<pre>' +
+        
+          '<code>' +
+          
+            '</code>' +
+            
+          '</pre>',
+          
+        'HTML'            : options.html
+        
+        };
+        
+    let
     
-      title [ 0 ] === '['
+      html
       
-      ?
+        =
+        
+        options.paragraphStyle [ 0 ] !== '['
+        
+        ?
+        
+        options
+        
+          .paragraphStyle
+          
+        :
+        
+        'Heading 2';
+        
+    const isHtml = html === 'HTML';
+    
+    html = formatHtmlMap [ html ];
+    
+    if ( ! isHtml ) {
+    
+      templateElement.innerHTML = html;
       
-      ''
+      let element = templateElement
       
-      :
+        .content
+        
+        .querySelectorAll ( '*' );
+        
+      element = element [
       
-      title;
+        element.length - 1
+        
+        ];
+        
+      element.innerHTML = title;
       
+      } else
+      
+        templateElement.innerHTML
+        
+          =
+          
+          html.replace (
+          
+            '[ title ]', title
+            
+            );
+            
     // element
     
     {
@@ -153,18 +224,8 @@
           
             '.item-pagination-link--prev'
             
-            ),
+            );
             
-        html = `
-        
-          <h2>
-          
-            ${ title }
-            
-            </h2>
-            
-          `;
-          
       element.id = codeKey;
       
       switch ( true ) {
@@ -179,11 +240,9 @@
               
               )
               
-            .insertAdjacentHTML (
+            .after (
             
-              'afterend',
-              
-              html
+              templateElement.content
               
               );
               
@@ -191,46 +250,42 @@
           
         case hasNext :
         
-          element
+          templateElement
           
-            .insertAdjacentHTML (
+            .content
             
-              'afterbegin',
+            .prepend (
+            
+              document.createElement ( 'div' )
               
-              `
-              
-                <div>
-                
-                  </div>
-                  
-                ${ html }
-                
-                `
-                
               );
               
+          element.prepend (
+          
+            templateElement.content
+            
+            );
+            
           break;
           
         case hasPrev :
+        
+          templateElement
           
-          element
-          
-            .insertAdjacentHTML (
+            .content
             
-              'beforeend',
+            .append (
+            
+              document.createElement ( 'div' )
               
-              `
-              
-                ${ html }
-                
-                <div>
-                
-                  </div>
-                  
-                `
-                
               );
               
+          element.append (
+          
+            templateElement.content
+            
+            );
+            
           break;
           
         }
@@ -244,7 +299,7 @@
       .querySelector ( selector )
       
       .after ( element );
-        
+      
     };
     
   document.addEventListener (

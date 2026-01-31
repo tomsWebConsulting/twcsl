@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.1.0
+  Version         : 0.2.0
   
   SS Version      : 7.1
   
@@ -39,6 +39,7 @@ body:not( .sqs-edit-mode-active ) #page:has( #twc-pppnt ) #itemPagination {
   
 #twc-pppnt {
 
+  align-items : center;
   gap : 1em;
   
   }
@@ -54,14 +55,16 @@ body:not( .sqs-edit-mode-active ) #page:has( #twc-pppnt ) #itemPagination {
 
   {
   
-    flex : 1;
+    flex : 0 1 33%;
+    min-width : 2rem;
     
     }
     
-#twc-pppnt > h2 {
+#twc-pppnt > *:nth-child( 2 ) {
 
-  flex : 0 1 auto;
-  text-align: center;
+  flex : 1 1 auto;
+  min-width : 0;
+  text-align : center;
   
   }
   

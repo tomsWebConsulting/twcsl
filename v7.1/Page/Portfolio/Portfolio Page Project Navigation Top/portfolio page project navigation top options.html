@@ -8,7 +8,7 @@
       
       License       : < https://tinyurl.com/s872fb68 >
       
-      Version       : 0.1.0
+      Version       : 0.2.0
       
       SS Version    : 7.1
       
@@ -32,7 +32,37 @@
     
       const options = {
       
-        title : '[ optional, enter tite here between single quotes replacing square brackets ]'
+        /*
+        
+          optional, paragraph style whose value is one of the following. the
+          default is Heading 2
+          
+            Heading 1
+            Heading 2
+            Heading 3
+            Heading 4
+            Paragraph 1
+            Paragraph 2
+            Paragraph 3
+            Monospace
+            HTML
+            
+          */
+          
+        paragraphStyle : '[ enter paragraph style here between single quotes replacing square brackets ]',
+        
+        /*
+        
+          optional, html value is used when paragraphStyle is set to HTML. use
+          [ title ] in the HTML to insert the title of a project into the HTML
+          
+          */
+          
+        html : `
+        
+          [ optional, enter html here between backticks replacing square brackets ]
+          
+          `
           
         };
         
