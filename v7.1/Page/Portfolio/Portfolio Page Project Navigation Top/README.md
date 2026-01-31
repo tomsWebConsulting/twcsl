@@ -51,9 +51,9 @@ Move Project navigation to the top of the page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4dca59f4ad5b4aa1885306c882721e23074fb654/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4dca59f4ad5b4aa1885306c882721e23074fb654/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.js" type="module"></script>
           
           <!-- end TWC Portfolio Page Project Navigation Top -->
           
@@ -79,9 +79,9 @@ Move Project navigation to the top of the page.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4dca59f4ad5b4aa1885306c882721e23074fb654/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8b81a7ac710fa97ad4449971361b588b76c8c45/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4dca59f4ad5b4aa1885306c882721e23074fb654/v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Navigation%20Top/portfolio%20page%20project%20navigation%20top.min.js" type="module"></script>
           
           <!-- end TWC Portfolio Page Project Navigation Top -->
           
