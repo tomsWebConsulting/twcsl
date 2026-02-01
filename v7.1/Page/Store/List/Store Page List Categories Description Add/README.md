@@ -54,9 +54,9 @@ Add simple category descriptions to store category pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@da5b69446f422b50357e67ca0dcab81bf50c559e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@da5b69446f422b50357e67ca0dcab81bf50c559e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Categories Description Add -->
           
@@ -80,9 +80,9 @@ Add simple category descriptions to store category pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@da5b69446f422b50357e67ca0dcab81bf50c559e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@910f3f6a089019028487f749a77cbb9deb2da06e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@da5b69446f422b50357e67ca0dcab81bf50c559e/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Description%20Add/store%20page%20list%20categories%20description%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Categories Description Add -->
           
