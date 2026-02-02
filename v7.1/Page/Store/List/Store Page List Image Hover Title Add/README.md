@@ -42,7 +42,7 @@ Add image hover title.
       Use this option if you want to have this effect on only one Store page.
       
       * Add the following code to Store Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Store Page List Image Hover Title Add -->

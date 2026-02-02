@@ -89,8 +89,8 @@ that has been assembled and configured to provide the described effect. It is
 generalized code it may contain pieces of code that you may not need depending
 on how you've configured your site.
 
-This code does not work on the checkout page. It is a SS security feature that
-no code can alter the checkout page.
+This code does not work on the Checkout Page. It is a SS security feature that
+no code can alter the Checkout Page.
 
 This code is client side and making use of an HTML form feature. Since this code
 is client side it is possible to bypass the max length limit this code is

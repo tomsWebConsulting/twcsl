@@ -27,7 +27,7 @@ Toggle code block script warnings off and on.
 * Add code from file **[code block warning toggle.bookmarklet][2]** as the URL
   for a bookmark in your browser named **Code Block Warning Toggle**.
   
-* Go to a page with a code block. Edit the page. When code block warnings are
+* Go to a Page with a code block. Edit the Page. When code block warnings are
   interfering with your editing experience use the bookmarklet.
 
 ## What is a bookmarklet?

@@ -146,7 +146,7 @@ Reveal blocks based on category.
 
 * v7.1
 
-  * In the Store page add a page section before the store page section. Add a
+  * In the Store page add a Page section before the Store Page section. Add a
     code block with the following code.
     
     ```html

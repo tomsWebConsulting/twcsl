@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Expand all pages in the pages panel.
+Expand all pages in the Pages panel.
 
 ### Version
 

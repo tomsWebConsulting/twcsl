@@ -26,7 +26,7 @@ Hide tagged commerce elements on a Store page.
       effect.
       
     * Add code from file **[store page detail elements tagged hide.html][5]** to
-      Store Page Settings > Advanced > Page Header Code Injection for the page.
+      Store Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
       

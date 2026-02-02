@@ -5,7 +5,7 @@
 ### Synopsis
 
 Add URL fragment to all category links so that the browser will attempt to
-scroll to the top of the store page section.
+scroll to the top of the Store Page section.
 
 ### Version
 
@@ -35,18 +35,16 @@ scroll to the top of the store page section.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[store page list categories url fragment
       add.html][4]** to Page Settings > Advanced > Page Header Code Injection
-      for the page. Refer to [per-page code injection][5] for details.
+      for the Page. Refer to [per-page code injection][5] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[store page list categories url fragment
       add.html][4]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Refer to [Add code to code injection][6] for details.

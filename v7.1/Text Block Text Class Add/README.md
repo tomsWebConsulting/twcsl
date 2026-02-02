@@ -29,18 +29,16 @@
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[text block text class add.html][1]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [Per-page code injection][2] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[text block text class add.html][1]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][7] for details.
@@ -53,7 +51,7 @@ As this is a base effect it is up to you to design your CSS using the tools
 this code gives you. I can provide some basic guidance on getting a start on
 your code by way of a vertical tab example.
 
-First you need to layout a page section similar to the following.
+First you need to layout a Page section similar to the following.
 
 ![tabs layout](read%20me%20assets/tabs%20layout.png)
 
@@ -139,7 +137,7 @@ html:not( .squarespace-damask ) #page-section-628d8e17fbb0f46fdf5d3c47 .sqs-row 
   /* end styling for labels */
 ```
 
-You would of course change page section and block ids to match your page. Where
+You would of course change page section and block ids to match your Page. Where
 you put the CSS depends on the effect you are trying to achieve.
 
 ## Note

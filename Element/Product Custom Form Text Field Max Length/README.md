@@ -56,7 +56,7 @@ Limit custom form text and text area field lengths.
         * Use this option if you want to have this effect on only one Page.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Product Custom Form Text Field Max Length -->
@@ -105,7 +105,7 @@ Limit custom form text and text area field lengths.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[product custom form text field max length.html][13]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][11] for details.
       
@@ -174,8 +174,8 @@ Limit custom form text and text area field lengths.
 
 ## Notes
 
-This code does not work on the checkout page. It is a Squarespace security
-feature that no code can alter the checkout page.
+This code does not work on the Checkout Page. It is a Squarespace security
+feature that no code can alter the Checkout Page.
 
 This code is client side and making use of an HTML form feature. Since this code
 is client side it is possible to bypass the max length limit this code is

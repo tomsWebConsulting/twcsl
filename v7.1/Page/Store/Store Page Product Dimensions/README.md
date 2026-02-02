@@ -35,10 +35,10 @@ Override shipping dimensions.
   * Use this option if you want to have this effect on only one Store page.
     
   * Add code from file **[store page product dimensions.html][4]** to
-    Store Settings > Advanced > Page Header Code Injection for the page.
+    Store Settings > Advanced > Page Header Code Injection for the Page.
     
   * Add code from file **[store page product dimensions inventory.html][5]** to
-    Store Settings > Advanced > Page Header Code Injection for the page. Read
+    Store Settings > Advanced > Page Header Code Injection for the Page. Read
     the code for any instructions within.
     
   * Refer to [per-page code injection][6] for details.

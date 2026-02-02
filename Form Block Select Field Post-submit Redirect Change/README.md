@@ -38,11 +38,11 @@ that existed in the prevoius version of the form block before the update.*
   
 * Add code from file **[form block select field post-submit redirect
   change.html][3]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Refer to [Per-page code injection][4] for details.
+  the Page. Refer to [Per-page code injection][4] for details.
   
 * Read the code for any instructions within.
   
-* Add a form block to your page and set up as desired.
+* Add a form block to your Page and set up as desired.
   
 * For the form [add a post-submit redirect][5]. In the REDIRECT URL field enter
   **#**.

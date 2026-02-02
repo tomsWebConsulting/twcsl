@@ -32,18 +32,16 @@ Split title into lines.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[events page title to lines.html][4]** to
       Events Settings > Advanced > Page Header Code Injection for the events
       page. Refer to [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[events page title to lines.html][4]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][6] for details.

@@ -23,7 +23,7 @@
   
 * Add code from file
   **[page section background image repeat.html](page%20section%20background%20image%20repeat.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Read
+  to Page Settings > Advanced > Page Header Code Injection for the Page. Read
   the code for any instructions within.
 
 ## Notes

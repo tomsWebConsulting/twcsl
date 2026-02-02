@@ -19,11 +19,11 @@
 ## Quick Install
 
 * Add code from file **[page section first blank hide.html][2]** to Page
-  Settings > Advanced > Page Header Code Injection for the page. Please see
+  Settings > Advanced > Page Header Code Injection for the Page. Please see
   [per-page code injection][3].
   
-* Add a new blank section at the top of the page. Do not alter any of its
-  settings. Save the page.
+* Add a new blank section at the top of the Page. Do not alter any of its
+  settings. Save the Page.
 
 ## Note
 

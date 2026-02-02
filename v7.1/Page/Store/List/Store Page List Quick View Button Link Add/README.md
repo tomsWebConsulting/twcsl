@@ -51,11 +51,11 @@ Add a button link to a URL.
           
         * Add code from file **[store page list quick view button link add
           options.html][8]** to Store Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
+          Page Header Code Injection for the Page. Read the code for any
           instructions within.
           
         * Add the following code to Store Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Store Page List Quick View Button Link Add -->
@@ -106,7 +106,7 @@ Add a button link to a URL.
       * Add code from files **[store page list quick view button link add
         options.html][8]** and **[store page list quick view button link
         add.html][11]** to Store Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][9] for details.
         

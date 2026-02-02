@@ -42,7 +42,7 @@ Track tagged form block field block ids for later use in other code.
   * Page Specific
   
     * Add code from file **[form block track field block ids.html][5]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      Settings > Advanced > Page Header Code Injection for the Page. Refer to
       [Per-page code injection][6] for details.
       
   * Site-wide

@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Fill form fields from search query parameters of the page URL.
+Fill form fields from search query parameters of the Page URL.
 
 ### Version
 
@@ -37,18 +37,16 @@ Fill form fields from search query parameters of the page URL.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[form block fields from search parameters.html][5]**
-      to Page Settings > Advanced > Page Header Code Injection for the page.
+      to Page Settings > Advanced > Page Header Code Injection for the Page.
       Refer to [per-page code injection][6] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[form block fields from search parameters.html][5]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
       [Add code to code injection][7] for details.

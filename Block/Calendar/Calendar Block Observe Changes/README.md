@@ -40,11 +40,11 @@ Observe changes to calendar block and call custom callbacks.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[calendar block observe changes options.html][6]**
-        to Page Settings > Advanced > Page Header Code Injection for the page.
+        to Page Settings > Advanced > Page Header Code Injection for the Page.
         Read the code for any instructions within.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Calendar Block Observe Changes -->
@@ -115,11 +115,11 @@ Observe changes to calendar block and call custom callbacks.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[calendar block observe changes options.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Read
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
       
     * Add code from file **[calendar block observe changes.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
     
@@ -130,7 +130,7 @@ Observe changes to calendar block and call custom callbacks.
     * v7.1
     
       * Add code from file **[calendar block observe changes options.html][6]**
-        to Page Settings > Advanced > Page Header Code Injection for the page.
+        to Page Settings > Advanced > Page Header Code Injection for the Page.
         Read the code for any instructions within.
         
       * Add code from file **[calendar block observe changes.html][9]** to

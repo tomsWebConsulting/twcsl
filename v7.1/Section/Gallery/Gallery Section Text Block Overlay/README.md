@@ -43,7 +43,7 @@ Add styled text overlays to gallery section images.
   Website > Pages > Custom Code > Code Injection > FOOTER. Please see
   [Per-page code injection][7].
 
-* Add a section to a page.
+* Add a section to a Page.
 
   * There is no need to spend time changing the design layout of this section as
     the code will hide this section.
@@ -52,7 +52,7 @@ Add styled text overlays to gallery section images.
     For [Classic Editor][8] only use line blocks to keep text blocks from
     collapsing together.
     
-* Add a gallery section to a page.
+* Add a gallery section to a Page.
 
   * Add the gallery section just before the previous section you created.
   

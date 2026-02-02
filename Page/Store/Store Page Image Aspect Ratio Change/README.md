@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Change the store page image aspect ratio.
+Change the Store Page image aspect ratio.
 
 ### Version
 
@@ -33,12 +33,12 @@ Change the store page image aspect ratio.
 ## Install
 
 * Add code from file **[store page image aspect ratio change options.html][5]**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
   Refer to [Per-page code injection][6] for details. Read the code for any
   instructions within.
   
 * Add code from file **[store page image aspect ratio change.html][7]** to Store
-  Settings > Advanced > Page Header Code Injection for the store page after the
+  Settings > Advanced > Page Header Code Injection for the Store Page after the
   previous options code. Refer to [Per-page code injection][6] for details.
 
 ## Make a Donation

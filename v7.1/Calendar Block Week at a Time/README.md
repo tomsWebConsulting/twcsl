@@ -27,7 +27,7 @@
   
 * Add code from file
   **[calendar block week at a time.html](calendar%20block%20week%20at%20a%20time.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Demo
 

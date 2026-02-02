@@ -20,7 +20,7 @@
 
 * Add code from file
   **[event meta data make sticky.html](event%20meta%20data%20make%20sticky.html#L1)**
-  to Event List Settings > Advanced > Page Header Code Injection for the page.
+  to Event List Settings > Advanced > Page Header Code Injection for the Page.
   
 ## Make a Donation
 

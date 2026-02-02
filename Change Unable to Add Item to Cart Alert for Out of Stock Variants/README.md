@@ -18,7 +18,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 Add code from file **change unable to add item to cart alert for out of stock
 variants.html** to Store Settings > Advanced > Page Header Code Injection for
-the store page.
+the Store Page.
 
 ## Make a Donation
 

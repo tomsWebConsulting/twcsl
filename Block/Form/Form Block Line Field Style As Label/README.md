@@ -36,7 +36,7 @@ Style Form block Label field as section labels.
       * Use this option if you want to have this effect on only one Page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Form Block Line Field Style As Label -->
@@ -99,7 +99,7 @@ Style Form block Label field as section labels.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[form block line field style as label.html][8]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
     
@@ -130,7 +130,7 @@ to the title of your form section. Set Underline to off.
 
 ![label field example settings][11]
 
-Save the page.
+Save the Page.
 
 ## Make a Donation
 

@@ -34,11 +34,10 @@ Add a link out icon to links that open a new tab or window.
   
     * Page Specific
     
-      * Use this option if you have only a single page you want to have this
-        effect.
-        
+      Use this option when you want only one Page to have this effect.
+      
       * Add code from file **[link new window icon add.less][5]** to Website >
-        Pages > Custom Code > Code Injection > Custom CSS for the store page.
+        Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         
       * Add code from file **[link new window icon add.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the store
@@ -50,7 +49,7 @@ Add a link out icon to links that open a new tab or window.
         effect.
         
       * Add code from file **[link new window icon add.less][5]** to Website >
-        Pages > Custom Code > Code Injection > Custom CSS for the store page.
+        Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         
       * Add code from file **[link new window icon add.html][6]** to Website >
         Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
@@ -60,11 +59,10 @@ Add a link out icon to links that open a new tab or window.
   
     * Page Specific
     
-      * Use this option if you have only a single page you want to have this
-        effect.
-        
+      Use this option when you want only one Page to have this effect.
+      
       * Add code from file **[link new window icon add.less][5]** to Website >
-        Pages > Custom Code > Code Injection > Custom CSS for the store page.
+        Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         
       * Add code from file **[link new window icon add.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the store
@@ -76,7 +74,7 @@ Add a link out icon to links that open a new tab or window.
         effect.
         
       * Add code from file **[link new window icon add.less][5]** to Website >
-        Pages > Custom Code > Code Injection > Custom CSS for the store page.
+        Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         
       * Add code from file **[link new window icon add.html][6]** to Website >
         Pages > Website Tools > Custom Code > Code Injection > FOOTER. Refer to

@@ -34,11 +34,11 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 * Add code from file **[store product detail add to cart button url redirect
   options.html][8]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page. Read the code for any instructions within.
+  for the Store Page. Read the code for any instructions within.
   
 * Add code from file **[store product detail add to cart button url
   redirect.html][9]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page.
+  for the Store Page.
   
 * Options
 

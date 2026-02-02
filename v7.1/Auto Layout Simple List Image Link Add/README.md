@@ -27,7 +27,7 @@
   
 * Add code from file
   **[auto layout simple list image link add.html](auto%20layout%20simple%20list%20image%20link%20add.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Read the code for any instructions within.
 

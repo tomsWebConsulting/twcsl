@@ -18,7 +18,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 Add code from file
 **[change unable to add item to cart alert for only n available.html](change%20unable%20to%20add%20item%20to%20cart%20alert%20for%20only%20n%20available.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

@@ -114,9 +114,8 @@ Create a blog page post excerpt element.
   
     * Page Specific
     
-      * Use this option if you have only a single page you want to have this
-        effect.
-        
+      Use this option when you want only one Page to have this effect.
+      
       * Add code from file **[blog page post excerpt element.html][8]** to Blog
         Settings > Advanced > Page Header Code Injection for the blog page.
         Refer to [Per-page code injection][9] for details.
@@ -134,9 +133,8 @@ Create a blog page post excerpt element.
   
     * Page Specific
     
-      * Use this option if you have only a single page you want to have this
-        effect.
-        
+      Use this option when you want only one Page to have this effect.
+      
       * Add code from file **[blog page post excerpt element.html][8]** to Blog
         Settings > Advanced > Page Header Code Injection for the blog page.
         Refer to [Per-page code injection][9] for details.

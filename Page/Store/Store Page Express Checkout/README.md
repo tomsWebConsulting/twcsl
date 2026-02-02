@@ -29,7 +29,7 @@ Trigger Express Checkout feature for a Store page.
 ## Quick Install
 
 * Add code from **[store page express checkout.html][4]** to Store Settings >
-  Advanced > Page Header Code Injection for the store page. Refer to [Per-page
+  Advanced > Page Header Code Injection for the Store Page. Refer to [Per-page
   code injection][5] for details.
 
 ## Note

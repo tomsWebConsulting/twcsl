@@ -29,18 +29,16 @@
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[header height add as css variable.html][1]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      Settings > Advanced > Page Header Code Injection for the Page. Refer to
       [Per-page code injection][7] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[header height add as css variable.html][1]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][8] for details.

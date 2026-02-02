@@ -32,11 +32,10 @@ Watch for Form block form elements to be added to the [DOM][2].
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[form block form element add watch.html][5]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
     
@@ -44,9 +43,8 @@ Watch for Form block form elements to be added to the [DOM][2].
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * v7.1
     
       * Add code from file **[form block form element add watch.html][5]** to

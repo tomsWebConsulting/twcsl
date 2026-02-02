@@ -40,7 +40,7 @@ Make all Text block links open in a new window or tab.
       * Use this option if you want to have this effect on only one Page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Text Block Links Open New Window or Tab -->
@@ -85,7 +85,7 @@ Make all Text block links open in a new window or tab.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[text block links open new window or tab.html][8]**
-      to Page Settings > Advanced > Page Header Code Injection for the page.
+      to Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
     

@@ -43,7 +43,7 @@ Hide elements of store products that are tagged.
         page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Store Page Elements Tagged Hide -->
@@ -88,7 +88,7 @@ Hide elements of store products that are tagged.
     * Use this option if you want to have this effect on only one Store page.
       
     * Add code from file **[store page elements tagged hide.html][7]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][5] for details.
     

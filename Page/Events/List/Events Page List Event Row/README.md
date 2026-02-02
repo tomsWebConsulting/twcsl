@@ -36,7 +36,7 @@ Format list events in into a row like structure.
       this effect.
       
     * Add code from file **[events page list event row.html][4]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][5] for details.
       
   * Site-wide

@@ -43,11 +43,11 @@ Add simple category descriptions to store category pages.
         
       * Add code from file **[store page list categories description add
         options.html][6]** to Store Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add the following code to Store Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Store Page List Categories Description Add -->
@@ -119,7 +119,7 @@ The code contains default settings to place the description on the top of the
 page. If you want to place the description in another location you will need to
 use the optional destination selector to do so.
 
-If you use the page style HTML you will need to create your own CSS to style it.
+If you use the Page style HTML you will need to create your own CSS to style it.
 
 ## Demo
 

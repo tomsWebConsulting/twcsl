@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-When there are no list products add html to the page.
+When there are no list products add html to the Page.
 
 ### Version
 
@@ -48,7 +48,7 @@ When there are no list products add html to the page.
         page. Read the code for any instructions within.
         
       * Add the following code to Store Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin Store Page List Empty HTML Add -->
@@ -126,7 +126,7 @@ When there are no list products add html to the page.
       
     * Add code from files **[store page list empty html add options.html][7]**
       and **[store page list empty html add.html][10]** to
-      Store Page Settings > Advanced > Page Header Code Injection for the page.
+      Store Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][8] for details.
       

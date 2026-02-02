@@ -23,7 +23,7 @@
   
 * Add code from file
   **[product block improperly encoded ampersand fix.html](product%20block%20improperly%20encoded%20ampersand%20fix.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 

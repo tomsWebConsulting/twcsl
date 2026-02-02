@@ -17,7 +17,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 Add code from file **change unable to add item to cart alert.html** to Store
-Settings > Advanced > Page Header Code Injection for the store page.
+Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

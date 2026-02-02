@@ -25,7 +25,7 @@
   
 * Add code from file
   **[page css variable scroll ratio add.html](page%20css%20variable%20scroll%20ratio%20add.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Read the code for any instructions within.
 

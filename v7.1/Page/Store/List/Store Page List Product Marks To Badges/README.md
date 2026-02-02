@@ -59,7 +59,7 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
           
         * Add code from file **[store page list product marks to badges
           options.html][9]** to Store Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
+          Page Header Code Injection for the Page. Read the code for any
           instructions within.
           
         * Add the following code to Store Page Settings > Advanced >

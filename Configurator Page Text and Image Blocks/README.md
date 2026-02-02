@@ -34,11 +34,11 @@ Create a simple product configurator.
   rest of the steps.
   
 * Add code from file **[configurator page text and image blocks.html][8]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Read the
+  Page Settings > Advanced > Page Header Code Injection for the Page. Read the
   code for any instructions within.
   
 * Add code from file **[cptaib variant url redirect.html][9]** to
-  Page Settings > Advanced > Page Header Code Injection for the page **before**
+  Page Settings > Advanced > Page Header Code Injection for the Page **before**
   the **configurator page text and image blocks** code. If you write your own
   doneCallback code then you can skip this step.
   
@@ -65,7 +65,7 @@ Create a simple product configurator.
   The last line is **exclude** and that tells the code not to use this text
   block as a variant label.
   
-  Any text block in the page section without the last line of exclude will be
+  Any text block in the Page section without the last line of exclude will be
   used as a variant label for the option.
   
 * Add a new section after the previous section with image blocks that contain
@@ -78,7 +78,7 @@ Create a simple product configurator.
   options and variants as needed.
   
 * Once you have set up all options and variants add a final section at the very
-  bottom of the page similar to the following.
+  bottom of the Page similar to the following.
   
   ![done options variants links][12]
   
@@ -94,7 +94,7 @@ Create a simple product configurator.
   
 * Add code from file **[cptaib store page product detail options and variants
   select.html][14]** to Store Settings > Advanced > Page Header Code Injection
-  for the page.
+  for the Page.
 
 ## Note
 

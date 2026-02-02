@@ -37,7 +37,7 @@ Add a background image for the body element.
 ## Example
 
 To make a particular page section transparent you might add something like the
-following to Page Settings > Advanced > Page Header Code Injection for the page.
+following to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ```html
 <style>

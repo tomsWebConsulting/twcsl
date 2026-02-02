@@ -31,9 +31,8 @@ Add descriptions to product category pages.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[store page list category description add.html][7]**
       to Store Settings > Advanced > Page Header Code Injection for the store
       page. Refer to [Per-page code injection][8] for details.

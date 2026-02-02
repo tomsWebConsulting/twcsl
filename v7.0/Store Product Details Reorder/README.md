@@ -16,7 +16,7 @@
 
 * Add code from file
   **[store product details reorder.html](store%20product%20details%20reorder.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

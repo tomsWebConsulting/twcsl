@@ -36,7 +36,7 @@ Wrap the events of each day together and add a date title.
       this effect.
       
     * Add code from file **[events page list day wrapper.html][4]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][5] for details.
       
   * Site-wide

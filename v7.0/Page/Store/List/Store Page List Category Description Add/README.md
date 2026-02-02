@@ -35,18 +35,16 @@ Add a category description to Store category pages.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[store page list category description add.html][12]**
       to Store Settings > Advanced > Page Header Code Injection for the store
       page. Refer to [Per-page code injection][13] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[store page list category description add.html][12]**
       to Settings > Developer Tools > FOOTER. Refer to [Add code to code
       injection][14] for details.

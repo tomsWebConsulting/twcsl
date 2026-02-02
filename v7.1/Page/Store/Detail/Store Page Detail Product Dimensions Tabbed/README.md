@@ -78,13 +78,13 @@ detail pages to use tabs.
   ```
   
 * Add code from file **[store page detail product dimensions tabbed.html][4]**
-  to Store Settings > Advanced > Page Header Code Injection for the store page
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page
   below the Store Page Detail Product Dimensions code. Refer to [Per-page code
   injection][5] for details.
 
 ## Tabs Style Variations
 
-Install these variations after the store page detail product dimensions tabbed
+Install these variations after the Store Page detail product dimensions tabbed
 code.
 
   * Tabs on Bottom

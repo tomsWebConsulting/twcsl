@@ -23,7 +23,7 @@
   
 * Add code from file
   **[scroll to top of store category product grid.html](scroll%20to%20top%20of%20store%20category%20product%20grid.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

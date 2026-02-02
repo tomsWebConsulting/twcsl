@@ -37,27 +37,25 @@ of your choice.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[store page detail add button after add to cart
       button options.html][5]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page. Refer to [Per-page code injection][6] for
+      Injection for the Store Page. Refer to [Per-page code injection][6] for
       details. Read the code for any instructions within.
       
     * Add code from file **[store page detail add button after add to cart
       button.html][7]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page after the previous code. Refer to [Per-page
+      Injection for the Store Page after the previous code. Refer to [Per-page
       code injection][6] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[store page detail add button after add to cart
       button options.html][5]** to Store Settings > Advanced > Page Header Code
-      Injection for the store page after the previous code. Refer to [Per-page
+      Injection for the Store Page after the previous code. Refer to [Per-page
       code injection][6] for details. Read the code for any instructions within.
       
     * Add code from file **[store page detail add button after add to cart

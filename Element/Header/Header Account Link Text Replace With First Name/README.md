@@ -36,7 +36,7 @@ Replace the header account link with the members' first name.
 
 ##  Notes
 
-The code adds a **twc-haltrwfn** CSS class name to each account link in the page
+The code adds a **twc-haltrwfn** CSS class name to each account link in the Page
 for use in your custom CSS.
 
 The code does not change Squarespace's default behaviour of having the Account

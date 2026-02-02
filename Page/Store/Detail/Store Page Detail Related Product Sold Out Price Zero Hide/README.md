@@ -44,7 +44,7 @@ Hide related product zero price when sold out.
       
     * Add code from file **[store page detail related product sold out price
       zero hide.html][8]** to Store Page Settings > Advanced > Page Header Code
-      Injection for the page.
+      Injection for the Page.
       
     * Refer to [per-page code injection][9] for details.
       

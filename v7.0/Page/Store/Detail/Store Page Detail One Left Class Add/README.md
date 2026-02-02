@@ -30,7 +30,7 @@ Add one left class when there is no quantity field.
       effect.
       
     * Add code from file **[store page detail one left class add.html][4]** to
-      Store Page Settings > Advanced > Page Header Code Injection for the page.
+      Store Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][5] for details.
       

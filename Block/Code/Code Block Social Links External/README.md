@@ -37,16 +37,16 @@ Create Social Links for entities outside your site.
   Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
   injection][9] for details.
   
-* Create a blank page in the Not Linked area and set the PAGE TITLE, NAVIGATION
+* Create a Blank Page in the Not Linked area and set the PAGE TITLE, NAVIGATION
   TITLE, AND URL SLUG to **twc-cbsle** and add the following to Page Settings >
-  Advanced > Page Header Code Injection for the page. Refer to [Per-page code
+  Advanced > Page Header Code Injection for the Page. Refer to [Per-page code
   injection][8] for details.
   
   ```html
   <meta name="robots" content="noindex" />
   ```
     
-  Add a Code block to the page and add the following as the content.
+  Add a Code block to the Page and add the following as the content.
   
   ```html
   <style>
@@ -78,7 +78,7 @@ Create Social Links for entities outside your site.
     </style>
   ```
   
-  Add a Social Links block to the page. Add the following social media links to
+  Add a Social Links block to the Page. Add the following social media links to
   your site. For your own social media links you are already using for your site
   needs, you can skip that service in the list.
   
@@ -125,9 +125,9 @@ Create Social Links for entities outside your site.
   If the site is v7.1 and the section is a Classic Editor section remove the
   default Text block added by Squarespace.
   
-  Save the page.
+  Save the Page.
   
-* Add a code block to a page and set the content similarly to the following
+* Add a code block to a Page and set the content similarly to the following
   example. You will of course want to customize the links for the external
   entity you want to represent.
   
@@ -187,7 +187,7 @@ moment and then turn into social links. This is normal and won't be seen by your
 site visitors.
 
 The code has a cache for storing elements of the Social Links block you added to
-the twc-cbsle page you created. The cache is not used when in Squarespace
+the twc-cbsle Page you created. The cache is not used when in Squarespace
 Preview. The use of a cache means it is possible that the information will
 become stale. This effects the design of the social links, not links themselves.
 The design will update when the browser session is restared.

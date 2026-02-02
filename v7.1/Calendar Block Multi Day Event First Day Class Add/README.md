@@ -23,7 +23,7 @@
   
 * Add code from file **[calendar block multi day event first day class
   add.html][3]** to Page Settings > Advanced > Page Header Code Injection for
-  the page **before** the **calendar block event change** code.
+  the Page **before** the **calendar block event change** code.
   
 * Read the code for any instructions within.
   

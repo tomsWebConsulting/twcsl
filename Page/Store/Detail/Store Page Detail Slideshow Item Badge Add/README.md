@@ -41,7 +41,7 @@ Add badges to product detail slideshow badges.
       
     * Add code from file **[store page detail slideshow item badge
       add.html][14]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page.
+      Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][5] for details.
       

@@ -32,7 +32,7 @@
       effect.
       
     * Add code from file **[store page list category attribute add.html][5]**
-      to Store Settings > Advanced > Page Header Code Injection for the page.
+      to Store Settings > Advanced > Page Header Code Injection for the Page.
       Refer to [Per-page code injection][6] for details.
       
   * Site-wide

@@ -30,7 +30,7 @@ manually maintained multi-language site.
 ## Install
 
 * Add code from file **[form block multi-language.html][2]** to Page Settings >
-  Advanced > Page Header Code Injection for the page. Refer to [Per-page code
+  Advanced > Page Header Code Injection for the Page. Refer to [Per-page code
   injection][3] for details.
 
 * Add code from one of the following language files **before** the **form block

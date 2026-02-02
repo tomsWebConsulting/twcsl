@@ -38,7 +38,7 @@ Hide product add to cart using tags with date/time.
       effect.
       
     * Add code from file **[store page tag date add to cart hide.html][4]** to
-      Store Settings > Advanced > Page Header Code Injection for the page. Refer
+      Store Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [Per-page code injection][5] for details.
       
   * Site-wide

@@ -53,7 +53,7 @@ Add images to product detail based on tags before Additional Info.
           
         * Add code from file **[store page detail tag based image add before
           additional info options.html][9]** to Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
+          Page Header Code Injection for the Page. Read the code for any
           instructions within.
           
         * Add the following code to Page Settings > Advanced >
@@ -135,7 +135,7 @@ Add images to product detail based on tags before Additional Info.
         
       * Add code from file **[store page detail tag based image add before
         additional info options.html][9]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add code from file **[page tags cache.html][12]** to Page Settings >

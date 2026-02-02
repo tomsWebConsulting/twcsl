@@ -39,7 +39,7 @@ Add a next link to the last Project of a Portfolio page.
         page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Portfolio Page Project Last Next Link Add -->
@@ -85,7 +85,7 @@ Add a next link to the last Project of a Portfolio page.
       
     * Add code from file **[portfolio page project last next link
       add.html][8]** to Page Settings > Advanced > Page Header Code Injection
-      for the page.
+      for the Page.
       
     * Refer to [per-page code injection][6] for details.
     

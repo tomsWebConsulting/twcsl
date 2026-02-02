@@ -61,11 +61,11 @@ append, before, prepend, or replace and other settings.
         * Use this option if you want to have this effect on only one Page.
           
         * Add code from file **[elements manipulate options.html][8]** to Page
-          Settings > Advanced > Page Header Code Injection for the page. Read
+          Settings > Advanced > Page Header Code Injection for the Page. Read
           the code for any instructions within.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Elements Manipulate -->
@@ -136,11 +136,11 @@ append, before, prepend, or replace and other settings.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[elements manipulate options.html][8]** to Page
-        Settings > Advanced > Page Header Code Injection for the page. Read
+        Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
         
       * Add code from file **[elements manipulate.html][11]** to Page Settings >
-        Advanced > Page Header Code Injection for the page.
+        Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][9] for details.
       
@@ -151,7 +151,7 @@ append, before, prepend, or replace and other settings.
       * v7.1
       
         * Add code from file **[elements manipulate options.html][8]** to Page
-          Settings > Advanced > Page Header Code Injection for the page. Read
+          Settings > Advanced > Page Header Code Injection for the Page. Read
           the code for any instructions within.
           
         * Add code from file **[elements manipulate.html][11]** to Website >

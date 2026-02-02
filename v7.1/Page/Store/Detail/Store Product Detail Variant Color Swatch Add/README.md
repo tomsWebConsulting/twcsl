@@ -32,11 +32,11 @@ Add color swatch to variants.
 
 * Add code from file **[store product detail variant color swatch
   add options.html][4]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page. Refer to [Per-page code injection][5] for details.Read the
+  the Store Page. Refer to [Per-page code injection][5] for details.Read the
   code for any instructions within.
   
 * Add code from file **[store product detail variant color swatch add.html][6]**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

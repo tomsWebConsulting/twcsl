@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Append footer sections to the page site wide.
+Append Footer Sections to the Page site wide.
 
 ### Version
 

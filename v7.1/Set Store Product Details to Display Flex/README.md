@@ -11,7 +11,7 @@
 ## Quick Install
 
 Add code from file **set store product details to display flex.html** to Store
-Settings > Advanced > Page Header Code Injection for the store page.
+Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

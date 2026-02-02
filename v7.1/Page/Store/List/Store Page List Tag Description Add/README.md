@@ -51,7 +51,7 @@ Add descriptions to Store page tag pages.
           
         * Add code from file **[store page list tag description add
           options.html][8]** to Store Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
+          Page Header Code Injection for the Page. Read the code for any
           instructions within.
           
         * Add the following code to Page Settings > Advanced >

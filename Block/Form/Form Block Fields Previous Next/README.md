@@ -47,25 +47,23 @@ to move through sections.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[form block fields previous next.html][7]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][8] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[form block fields previous next.html][7]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][9].
       
 * Read the code for any instructions within.
 
-* Add or edit a Form block on your page and set up as desired.
+* Add or edit a Form block on your Page and set up as desired.
   
 * In the **Form Block Wrapper Observe Changes** code add **twcFbfpn** to
   **added** per the **Form Block Wrapper Observe Changes** code install steps.

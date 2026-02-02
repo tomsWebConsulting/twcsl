@@ -47,11 +47,11 @@ Add HTML to the cart page summary.
         * Use this option if you want to have this effect on only one Page.
           
         * Add code from file **[cart page summary html add options.html][8]**
-          to Page Settings > Advanced > Page Header Code Injection for the page.
+          to Page Settings > Advanced > Page Header Code Injection for the Page.
           Read the code for any instructions within.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Cart Page Summary HTML Add -->
@@ -122,11 +122,11 @@ Add HTML to the cart page summary.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[cart page summary html add options.html][8]** to
-        Page Settings > Advanced > Page Header Code Injection for the page. Read
+        Page Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
         
       * Add code from file **[cart page summary html add.html][11]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][9] for details.
       
@@ -137,7 +137,7 @@ Add HTML to the cart page summary.
       * v7.1
       
         * Add code from file **[cart page summary html add options.html][8]**
-          to Page Settings > Advanced > Page Header Code Injection for the page.
+          to Page Settings > Advanced > Page Header Code Injection for the Page.
           Read the code for any instructions within.
           
         * Add code from file **[cart page summary html add.html][11]** to

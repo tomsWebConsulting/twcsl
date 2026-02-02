@@ -33,7 +33,7 @@ that existed in the prevoius version of the form block before the update.*
   
 * Add code from file **[form block post-submit redirect url email parameter
   add.html][4]** to Page Settings > Advanced > Page Header Code Injection for
-  the page. Refer to [Per-page code injection][5] for details.
+  the Page. Refer to [Per-page code injection][5] for details.
   
 * Read the code for any instructions within.
 

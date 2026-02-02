@@ -22,7 +22,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 Add code from file
 **[move or copy store intro after products list.html](move%20or%20copy%20store%20intro%20after%20products%20list.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

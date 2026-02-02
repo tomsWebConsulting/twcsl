@@ -29,7 +29,7 @@
 * Page Specific
 
   * Add code from file **[text block formats phrase filter.html][1]** to Page
-    Settings > Advanced > Page Header Code Injection for the page. Please see
+    Settings > Advanced > Page Header Code Injection for the Page. Please see
     [per-page code injection][2].
     
 * Site-wide
@@ -37,7 +37,7 @@
   * Add code from file **[text block formats phrase filter.html][1]** to
     Website > Pages > Custom Code > Code Injection > FOOTER.
     
-* Add a Classic Editor blank page section.
+* Add a Classic Editor Blank Page section.
 
 * Above the text block add a code block with the following code.
 

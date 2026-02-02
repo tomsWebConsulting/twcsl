@@ -47,7 +47,7 @@ Hide all day calendar times.
         * Use this option if you want to have this effect on only one Page.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Calendar Block All Day Time Hide -->
@@ -96,7 +96,7 @@ Hide all day calendar times.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[calendar block all day time hide.html][10]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
       

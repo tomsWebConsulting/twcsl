@@ -35,23 +35,21 @@ Hide price when it contains from on Store page.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[store page price hide when from options.html][8]**
       to Store Settings > Advanced > Page Header Code Injection for the store
       page. Read the code for any instructions within.
       
     * Add code from file **[store page price hide when from.html][9]** to
-      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Store Settings > Advanced > Page Header Code Injection for the Store Page.
       
     * Refer to [Per-page code injection][10] for details.
     
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[store page price hide when from options.html][8]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
       for any instructions within.
@@ -61,7 +59,7 @@ Hide price when it contains from on Store page.
       
     * Refer to [Add code to code injection][11] for details.
     
-* Add the following to searchReplaceText in the store page price change code per
+* Add the following to searchReplaceText in the Store Page price change code per
   that codes instructions.
   
   ```

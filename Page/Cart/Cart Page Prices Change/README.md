@@ -43,11 +43,11 @@ Changes prices on the Cart page.
         * Use this option if you want to have this effect on only one Page.
           
         * Add code from file **[cart page prices change options.html][8]** to
-          Page Settings > Advanced > Page Header Code Injection for the page.
+          Page Settings > Advanced > Page Header Code Injection for the Page.
           Read the code for any instructions within.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Cart Page Prices Change -->
@@ -116,11 +116,11 @@ Changes prices on the Cart page.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[cart page prices change options.html][8]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Read
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
       
     * Add code from file **[cart page prices change.html][11]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][9] for details.
     
@@ -131,7 +131,7 @@ Changes prices on the Cart page.
     * v7.1
     
       * Add code from file **[cart page prices change options.html][8]** to
-        Page Settings > Advanced > Page Header Code Injection for the page. Read
+        Page Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
         
       * Add code from file **[cart page prices change.html][11]** to Website >
@@ -207,9 +207,9 @@ won't be called.
 
 ## Note
 
-Changing prices on the cart page does not effect the store pages, checkout, or
+Changing prices on the cart page does not effect the Store Pages, checkout, or
 other Squarespace pages/backend storage. This is purely a cosmetic change. No
-code can change the checkout page. It is an Squarespace security feature.
+code can change the Checkout Page. It is an Squarespace security feature.
 
 ## Make a Donation
 

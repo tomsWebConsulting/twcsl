@@ -13,8 +13,8 @@
 * Add code from file **[row column finder.bookmarklet][1]** as the URL for a
   bookmark in your browser named **Row Column Finder**.
   
-* Go to a page in a site and use the bookmarklet to tag the row and column
-  elements of the page. To remove the tags use the bookmarklet again.
+* Go to a Page in a site and use the bookmarklet to tag the row and column
+  elements of the Page. To remove the tags use the bookmarklet again.
 
 ## Note
 

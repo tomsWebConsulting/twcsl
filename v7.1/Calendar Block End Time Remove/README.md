@@ -27,7 +27,7 @@
   
 * Add code from file
   **[calendar block end time remove.html](calendar%20block%20end%20time%20remove.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Demo
 

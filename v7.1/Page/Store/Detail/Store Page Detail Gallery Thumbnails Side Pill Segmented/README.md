@@ -35,12 +35,12 @@ Style thumbnails side as segmented pill.
       
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented options.html][2]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the store page. Refer to [Per-page code
+      Page Header Code Injection for the Store Page. Refer to [Per-page code
       injection][3] for details. Read the code for any instructions within.
       
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented.html][4]** to Store Page Settings > Advanced > Page Header Code
-      Injection for the store page.
+      Injection for the Store Page.
       
   * Site-wide
   

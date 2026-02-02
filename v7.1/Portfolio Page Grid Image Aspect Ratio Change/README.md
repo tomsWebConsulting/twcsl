@@ -22,7 +22,7 @@
   rest of the steps.
   
 * Add code from file **[portfolio page grid image aspect ratio change.html][2]**
-  to Page Settings > Advanced > Page Header Code Injection for the page. Refer
+  to Page Settings > Advanced > Page Header Code Injection for the Page. Refer
   to [Per-page code injection][12] for details.
   
 * Read the code for any instructions within.

@@ -19,7 +19,7 @@
 ## Quick Install
 
 Add code from file **hide store product detail recommended product last.html**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

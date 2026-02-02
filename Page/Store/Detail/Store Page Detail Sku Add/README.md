@@ -34,7 +34,7 @@ Add sku to the description of store detail pages.
   the code be sure to continue on with the rest of the steps.
   
 * Add code from file **[store page detail sku add.html][6]** to Store Settings >
-  Advanced > Page Header Code Injection for the store page. Please see [per-page
+  Advanced > Page Header Code Injection for the Store Page. Please see [per-page
   code injection][7]. Read the code for any instructions within.
   
 * In each of your product descriptions add the following text where you want the

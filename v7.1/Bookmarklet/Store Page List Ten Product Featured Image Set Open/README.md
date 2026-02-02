@@ -41,7 +41,7 @@ Page Detail Featured Image Set][3]** bookmarklet.
   Set** bookmarklet.
   
 * Once the ten product detail pages are processed, reload the Store list page,
-  and use this bookmarklet again. Reload the page loads the tags that have been
+  and use this bookmarklet again. Reload the Page loads the tags that have been
   added to the products by the **Store Page Detail Featured Image Set**
   bookmarklet.
   

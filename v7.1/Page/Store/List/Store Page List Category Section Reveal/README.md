@@ -36,10 +36,10 @@ Reveal Store page list sections based on category.
   First Blank Hide be sure to continue on with the rest of the steps.
   
 * Add code from file **[store page list category section reveal.html][6]** to
-  Store Settings > Advanced > Page Header Code Injection for the store page.
+  Store Settings > Advanced > Page Header Code Injection for the Store Page.
   Refer to [Per-page code injection][7] for details.
   
-* In the store page add a section. Set the section up as desired. To reveal a
+* In the Store Page add a section. Set the section up as desired. To reveal a
   section for a category, set the **ANCHOR LINK name** using the following
   format.
   

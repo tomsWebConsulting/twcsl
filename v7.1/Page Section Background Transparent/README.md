@@ -23,7 +23,7 @@ Set page section backgrounds to transparent.
 ## Quick Install
 
 * Add code from file **[page section background transparent.html][2]** to Page
-  Settings > Advanced > Page Header Code Injection for the page.
+  Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Note
 

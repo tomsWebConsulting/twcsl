@@ -43,7 +43,7 @@ Append footer section to Store page Additional Info.
       
     * Add code from file **[store page detail additional info footer section
       append.html][6]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page. Refer to [per-page code
+      Page Header Code Injection for the Page. Refer to [per-page code
       injection][7] for details.
       
     * Add code from file **[store page detail additional info footer section

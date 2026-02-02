@@ -39,7 +39,7 @@ Style each word of a blog post title wrapped in a span tag.
       effect.
       
     * Add code from file **[blog page post title each word style.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the page, after
+      Page Settings > Advanced > Page Header Code Injection for the Page, after
       the **blog post title each word span tag add** code. Refer to [per-page
       code injection][7] for details.
       

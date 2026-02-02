@@ -29,7 +29,7 @@ Add a robots no index tag to the main page of a collection.
 ## Quick Install
 
 * Add code from file **[page collection main page robots no index.html][4]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Please see
+  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
   [Per-page code injection][5].
 
 ## Note

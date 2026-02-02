@@ -36,7 +36,7 @@ Display random buttons in a section.
   ```
   
 * Add code from file **[button block replace random.html][5]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Please see
+  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
   [Per-page code injection][6].
   
 * Buttons
@@ -60,7 +60,7 @@ Display random buttons in a section.
     The source buttons are the buttons that will be selected randomly to replace
     the destination buttons.
     
-    * Add a section at the bottom of the page.
+    * Add a section at the bottom of the Page.
     
     * Add a code block with the following code.
       

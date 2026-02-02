@@ -35,18 +35,16 @@ Create rudimentary tabbed effect with button and other blocks.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[blocks tabbed.html][5]** to Page Settings >
-      Advanced > Page Header Code Injection for the page. Refer to [Per-page
+      Advanced > Page Header Code Injection for the Page. Refer to [Per-page
       code injection][6] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[blocks tabbed.html][5]** to Website > Pages >
       Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][7] for details.
@@ -77,11 +75,10 @@ Create rudimentary tabbed effect with button and other blocks.
   
     * Page Specific
     
-      * Use this option if you have only a single page you want to have this
-        effect.
-        
+      Use this option when you want only one Page to have this effect.
+      
       * Add the following to Page Settings > Advanced >
-        Page Header Code Injection for the page. Refer to [Per-page code
+        Page Header Code Injection for the Page. Refer to [Per-page code
         injection][6] for details.
         
         ```html
@@ -143,7 +140,7 @@ Create rudimentary tabbed effect with button and other blocks.
     
     * #twc-bt-abc-#block-123456789012345678901234
     
-  Please note that groups must be unique when a page loads. Otherwise you will
+  Please note that groups must be unique when a Page loads. Otherwise you will
   get strange results. This comes into play when you have multiple groups on a
   page.
   

@@ -31,18 +31,16 @@ more for mobile.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from **[store page list columns.html][2]** to Store Settings >
-      Advanced > Page Header Code Injection for the store page. Refer to
+      Advanced > Page Header Code Injection for the Store Page. Refer to
       [Per-page code injection][3] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from **[store page list columns.less][4]** to Website > Pages >
       Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][5] for details.

@@ -36,19 +36,17 @@ Change store page prices.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add, in order, code from files **[store page price change
       options.html][7]** and **[store page price change.html][8]** to
-      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Store Settings > Advanced > Page Header Code Injection for the Store Page.
       Refer to [per-page code injection][9] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[store page price change options.html][7]** to
       Website > Pages > Custom Code > Code Injection > HEADER.
       
@@ -118,7 +116,7 @@ Log][11]. If a callback returns false the rest of the callbacks won't be called.
 
 Changing prices on a Store page does not affect the cart, checkout, or other
 Squarespace pages/backend storage. This is purely a cosmetic change. No code can
-change the checkout page or SS backend. It is an SS security feature.
+change the Checkout Page or SS backend. It is an SS security feature.
 
 ## Make a Donation
 

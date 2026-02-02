@@ -36,7 +36,7 @@ Add or change the section id attribute.
   ```
   
 * Add code from file **[section blank attribute id add or change.html][5]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Please see
+  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
   [Per-page code injection][6]. 
   
 * For each section you want to add an id add a code block to the section. In the

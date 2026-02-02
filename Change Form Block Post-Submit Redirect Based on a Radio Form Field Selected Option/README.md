@@ -33,7 +33,7 @@ that existed in the prevoius version of the form block before the update.*
   
 * Add code from file **[change form block post-submit redirect based on a radio
   form field selected option.html][4]** to Page Settings > Advanced > Page
-  Header Code Injection for the page.
+  Header Code Injection for the Page.
 
 ## Make a Donation
 

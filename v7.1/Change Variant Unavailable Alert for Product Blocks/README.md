@@ -17,7 +17,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 Add code from file **change variant unavailable alert for product blocks.html**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

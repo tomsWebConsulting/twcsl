@@ -20,7 +20,7 @@ Add code from file **[move image block card button under image.html](move%20imag
 
 * Page Only Effect
 
-  * Page Settings > Advanced > Page Header Code Injection for the page.
+  * Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Site Wide Effect
 

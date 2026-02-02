@@ -1054,7 +1054,7 @@ building effects in Squarespace sites.
         
       * **Step 3**
       
-        Copy the entire contents of the page and add it to Website > Pages >
+        Copy the entire contents of the Page and add it to Website > Pages >
         Website Tools > Code Injection > HEADER after the previously installed
         code. jQuery must be before the twcsl code.
         
@@ -1087,14 +1087,14 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
   * getFormNth ( [nth form on page] )
   
-    * Default is the first form on the page.
+    * Default is the first form on the Page.
     * Returns jQuery object or undefined for no form.
     
 * getPageSectionNth
 
   * getPageSectionNth ( [nth section on page] )
   
-    * Default is the first section on the page.
+    * Default is the first section on the Page.
     * Returns jQuery object or undefined for no page section.
     
 * getUrlParser
@@ -1363,7 +1363,7 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
 * **2022-03-25**
 
-  * cart and search pages are under the page object instead of being top level
+  * cart and search pages are under the Page object instead of being top level
     is flags
   * added page types album, cover, gallery, index, portfolio, and videos
   * massive restructuring, the overall functionality of v0.1d19 is preserved

@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Move Project navigation to the top of the page.
+Move Project navigation to the top of the Page.
 
 ### Version
 
@@ -40,11 +40,11 @@ Move Project navigation to the top of the page.
       
       * Add code from file **[portfolio page project navigation top
         options.html][6]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Portfolio Page Project Navigation Top -->
@@ -100,11 +100,11 @@ Move Project navigation to the top of the page.
     
     * Add code from file **[portfolio page project navigation top
       options.html][6]** to Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
+      Page Header Code Injection for the Page. Read the code for any
       instructions within.
       
     * Add code from file **[portfolio page project navigation top.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
     
@@ -125,7 +125,7 @@ Move Project navigation to the top of the page.
 
 * For each Project add a "blank" section as your first section. Leave it as is
   after being added. It becomes a placeholder to keep the spacing working
-  properly for the first section of the page. The section will show when editing
+  properly for the first section of the Page. The section will show when editing
   a Project but not in Preview or for site visitors.
 
 ## Make a Donation

@@ -21,7 +21,7 @@
 * Install the code from **[Page Section Image Scrubbing Animation][2]**.
   
 * Add code from file **[PSISA viewport middle.html][3]** to Page Settings >
-  Advanced > Page Header Code Injection for the page **before** the **page
+  Advanced > Page Header Code Injection for the Page **before** the **page
   section image scrubbing animation** code.
 
 ## Demo

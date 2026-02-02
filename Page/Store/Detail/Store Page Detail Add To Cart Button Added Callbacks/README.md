@@ -42,7 +42,7 @@ the product has been added to the cart.
       
     * Add code from file **[store page detail add to cart button added
       callbacks.html][4]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page.
+      Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][5] for details.
       

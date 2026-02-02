@@ -40,7 +40,7 @@ Hide all day event times.
       * Use this option if you want to have this effect on only one Page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Events Page Detail All Day Time Hide -->
@@ -109,7 +109,7 @@ Hide all day event times.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[events page detail all day time hide.html][8]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
     

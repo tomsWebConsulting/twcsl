@@ -25,7 +25,7 @@ Get a list of image URLs of gallery sections.
 * Add code from file **[gallery sections image urls.bookmarklet][2]** as the URL
   for a bookmark in your browser named **Gallery Sections Image URLs**.
   
-* Go to a page in a site with gallery sections of type grid simple and use the
+* Go to a Page in a site with gallery sections of type grid simple and use the
   bookmarklet to get the URLs of the images.
 
 ## What is a bookmarklet?

@@ -46,7 +46,7 @@
 
 ## Note
 
-  When you edit a page you will not see the content of a footer section that has
+  When you edit a Page you will not see the content of a footer section that has
   been moved until you click the **EDIT SITE FOOTER** button.
   
 ## Make a Donation

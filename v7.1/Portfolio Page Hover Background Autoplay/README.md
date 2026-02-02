@@ -48,9 +48,8 @@ Add an autoplay effect to a portfolio page using layout hover background.
       
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[portfolio page hover background autoplay.html][5]**
       to Portfolio Settings > Advanced > Page Header Code Injection for the
       portfolio page. Refer to [Per-page code injection][6] for details.

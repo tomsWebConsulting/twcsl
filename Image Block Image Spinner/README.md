@@ -29,7 +29,7 @@
   
 * Add code from file
 **[image block image spinner.html](image%20block%20image%20spinner.html#L1)**
-to Page Settings > Advanced > Page Header Code Injection for the page.
+to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 

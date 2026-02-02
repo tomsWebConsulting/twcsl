@@ -75,8 +75,8 @@ This code is a base for other effects.
 This code makes calls to the json version of products for information that is
 not normally available.
 
-This code does not work on the Checkout page. It is a Squarespace security
-feature that no code can alter the checkout page
+This code does not work on the Checkout Page. It is a Squarespace security
+feature that no code can alter the Checkout Page.
 
 ## Make a Donation
 

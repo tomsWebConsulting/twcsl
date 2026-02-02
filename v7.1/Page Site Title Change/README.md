@@ -19,7 +19,7 @@
 ## Quick Install
 
 * Add code from file **[page site title change.html][1]** to Page Settings >
-  Advanced > Page Header Code Injection for the page. Please see [per-page code
+  Advanced > Page Header Code Injection for the Page. Please see [per-page code
   injection][2].
   
 * Read the code for any instructions within.

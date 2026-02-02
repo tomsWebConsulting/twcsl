@@ -27,12 +27,12 @@ Reorder store page product detail elements.
 ## Install
 
 * Add code from file **[store page detail meta reorder options.html][2]** to
-  Store Settings > Advanced > Page Header Code Injection for the store page.
+  Store Settings > Advanced > Page Header Code Injection for the Store Page.
   Refer to [Per-page code injection][3] for details. Read the code for any
   instructions within.
   
 * Add code from file **[store page detail meta reorder.html][4]** to
-  Store Settings > Advanced > Page Header Code Injection for the store page.
+  Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Example Reorderings
 

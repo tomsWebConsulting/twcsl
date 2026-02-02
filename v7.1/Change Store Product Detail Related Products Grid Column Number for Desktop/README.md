@@ -20,7 +20,7 @@
 
 Add code from file
 **[change store product detail related products grid column number for desktop.html](change%20store%20product%20detail%20related%20products%20grid%20column%20number%20for%20desktop.html#L1)**
-to Store Settings > Advanced > Page Header Code Injection for the store page.
+to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

@@ -41,20 +41,19 @@ Search for text in the product description and add text after it based on tags.
       
     * Add code from file **[store page detail description search text match add
       text options.html][5]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
+      Page Header Code Injection for the Page. Read the code for any
       instructions within.
       
     * Add code from file **[store page detail description search text match add
       text.html][6]** to Store Page Settings > Advanced > Page Header Code
-      Injection for the page.
+      Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * v7.1
     
       * Add code from file **[store page detail description search text match

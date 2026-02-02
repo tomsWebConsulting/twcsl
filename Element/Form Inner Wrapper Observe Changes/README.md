@@ -48,7 +48,7 @@ nodes are added to the [DOM][2].
         * Use this option if you want to have this effect on only one Page.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Form Inner Wrapper Observe Changes -->
@@ -93,7 +93,7 @@ nodes are added to the [DOM][2].
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[form inner wrapper observe changes.html][12]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][10] for details.
       

@@ -43,11 +43,11 @@ Link text in the title.
         
       * Add code from file **[store page detail title text to link
         options.html][6]** to Store Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add the following code to Store Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Store Page Detail Title Text to Link -->
@@ -120,7 +120,7 @@ Link text in the title.
     * Add code from files **[store page detail title text to link
       options.html][6]** and **[store page detail title text to
       link.html][9]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page.
+      Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
       

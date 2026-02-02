@@ -31,7 +31,7 @@ Hide products on store page list page.
   * Page Specific
   
     * Add code from file **[store page list products hide.html][2]** to
-      Store Settings > Advanced > Page Header Code Injection for the store page.
+      Store Settings > Advanced > Page Header Code Injection for the Store Page.
       Refer to [Per-page code injection][3] for details.
       
   * Site-wide

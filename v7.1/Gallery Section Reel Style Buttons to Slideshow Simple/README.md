@@ -27,7 +27,7 @@
   
 * Add code from file
   **[gallery section reel style buttons to slideshow simple.html](gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the page.
+  to Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 

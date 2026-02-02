@@ -23,7 +23,7 @@
   
 * Add code from file
   **[add store description.html](add%20store%20description.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

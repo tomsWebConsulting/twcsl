@@ -71,7 +71,7 @@ Append footer boilerplate sections after product detail section.
     block of the section. Below the Code block build up your boilerplate content
     you want to be added to each product.
     
-  * Save the page.
+  * Save the Page.
 
 ## Make a Donation
 

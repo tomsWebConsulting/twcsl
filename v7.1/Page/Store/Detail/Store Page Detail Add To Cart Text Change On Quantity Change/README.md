@@ -39,12 +39,12 @@ Add quantity based text to Add to Cart button.
       
     * Add code from file **[store page detail add to cart text change on
       quantity change options.html][4]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
+      Page Header Code Injection for the Page. Read the code for any
       instructions within.
       
     * Add code from file **[store page detail add to cart text change on
       quantity change.html][5]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page.
+      Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
       

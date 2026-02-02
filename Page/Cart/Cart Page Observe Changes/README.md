@@ -41,7 +41,7 @@ added or removed from the [DOM][2].
       * Use this option if you want to have this effect on only one Page.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the page.
+        Page Header Code Injection for the Page.
         
         ```html
         <!-- begin TWC Cart Page Observe Changes -->
@@ -86,7 +86,7 @@ added or removed from the [DOM][2].
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[cart page observe changes.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the page.
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
     

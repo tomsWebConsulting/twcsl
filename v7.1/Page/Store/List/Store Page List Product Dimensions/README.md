@@ -54,11 +54,11 @@ Add product dimensions to some products of list pages.
           
         * Add code from file **[store page list product dimensions
           options.html][7]** to Page Settings > Advanced >
-          Page Header Code Injection for the page. Read the code for any
+          Page Header Code Injection for the Page. Read the code for any
           instructions within.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Store Page List Product Dimensions -->
@@ -112,11 +112,11 @@ Add product dimensions to some products of list pages.
         
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add code from file **[store page list product dimensions.html][10]** to
-        Page Settings > Advanced > Page Header Code Injection for the page.
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
       
@@ -126,7 +126,7 @@ Add product dimensions to some products of list pages.
         
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >
-        Page Header Code Injection for the page. Read the code for any
+        Page Header Code Injection for the Page. Read the code for any
         instructions within.
         
       * Add code from file **[store page list product dimensions.html][10]**

@@ -44,7 +44,7 @@ Cache Page tags in sessionStorage.
       * Use this option if you want to have this effect on only one Page.
         
       * Add code from file **[page tags cache options.html][6]** to
-        Page Settings > Advanced > Page Header Code Injection for the page. Read
+        Page Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
         
       * Add the following code to Page Settings > Advanced >
@@ -119,7 +119,7 @@ Cache Page tags in sessionStorage.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[page tags cache options.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Read
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
       
     * Add code from file **[page tags cache.html][9]** to Page Settings >

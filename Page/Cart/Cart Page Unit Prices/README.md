@@ -43,7 +43,7 @@ Add unit price column to cart page.
         * Use this option if you want to have this effect on only one Page.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the page.
+          Page Header Code Injection for the Page.
           
           ```html
           <!-- begin TWC Cart Page Unit Prices -->
@@ -110,7 +110,7 @@ Add unit price column to cart page.
     * Use this option if you want to have this effect on only one Page.
       
     * Add code from file **[cart page unit prices.html][10]** to Page Settings >
-      Advanced > Page Header Code Injection for the page.
+      Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][8] for details.
     
@@ -132,9 +132,9 @@ Add unit price column to cart page.
 
 ## Note
 
-Adding unit prices on the cart page does not effect the store pages, checkout,
+Adding unit prices on the cart page does not effect the Store Pages, checkout,
 or other Squarespace pages/backend storage. This is purely a cosmetic change. No
-code can change the checkout page. It is an Squarespace security feature.
+code can change the Checkout Page. It is an Squarespace security feature.
 
 ## Make a Donation
 

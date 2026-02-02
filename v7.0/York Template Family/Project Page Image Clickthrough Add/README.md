@@ -5,7 +5,7 @@
 ### Synopsis
 
 Add image clickthroughs to Project page images that have the settings but don't
-use it in the page code. 
+use it in the Page code. 
 
 ### Version
 

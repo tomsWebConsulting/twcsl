@@ -30,18 +30,16 @@ Hide page sections using dates.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[section date hide.html][4]** to Store Settings >
-      Advanced > Page Header Code Injection for the store page. Refer to
+      Advanced > Page Header Code Injection for the Store Page. Refer to
       [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[section date hide.html][4]** to Website > Pages >
       Custom Code > Code Injection > FOOTER. Refer to [Add code to code
       injection][6] for details.
@@ -74,7 +72,7 @@ can be entered into the code along with dates.
 You can find a data-section-id by using Heather Tovey's [Squarespace ID
 Finder][7].
 
-To use SIF go to your page and use SIF. You will see something like the
+To use SIF go to your Page and use SIF. You will see something like the
 following. You only need the data-section-id value which is the number within
 the quotes to use in the code.
 
@@ -186,8 +184,8 @@ Hide a gallery section beginning on date.
 
 ## Notes
 
-The code runs when the page loads. It will not hide a section if the visitor
-loads the page and the page sits there as the various dates come and go.
+The code runs when the Page loads. It will not hide a section if the visitor
+loads the Page and the Page sits there as the various dates come and go.
 
 The time zone calculations may not be perfect. The state of the art of
 JavaScript date time zone calculations are a bit of a mess at present.

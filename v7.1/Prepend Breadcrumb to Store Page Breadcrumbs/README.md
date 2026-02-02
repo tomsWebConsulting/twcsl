@@ -17,7 +17,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 Add code from file **prepend breadcrumb to store page breadcrumbs.html** to
-Store Settings > Advanced > Page Header Code Injection for the store page.
+Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

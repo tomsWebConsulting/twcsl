@@ -32,7 +32,7 @@ Display store detail variant buttons in a more readable manner.
 
 * Add code from file **[store page detail variant display button readability
   fix.html][2]** to Store Settings > Advanced > Page Header Code Injection
-  for the store page. Refer to [Per-page code injection][3] for details.
+  for the Store Page. Refer to [Per-page code injection][3] for details.
 
 ## Note
 

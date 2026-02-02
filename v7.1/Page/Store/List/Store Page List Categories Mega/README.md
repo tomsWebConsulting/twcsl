@@ -39,20 +39,18 @@ Store page list categories mega menu.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from files **[store page list categories mega options.html][5]**
       and **[store page list categories mega.html][6]** to Store Settings >
-      Advanced > Page Header Code Injection for the store page **before** the
+      Advanced > Page Header Code Injection for the Store Page **before** the
       **store page list categories cache** code. Refer to [Per-page code
       injection][7] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from files **[store page list categories mega options.html][5]**
       and **[store page list categories mega.html][6]** to Website > Pages >
       Custom Code > Code Injection > FOOTER **before** the **store page list
@@ -64,8 +62,8 @@ Store page list categories mega menu.
 ## Note
 
 In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will see
-Squarespace's default style of categories until you save the page. If for some
-reason the categories don't update after saving the page, refresh the page.
+Squarespace's default style of categories until you save the Page. If for some
+reason the categories don't update after saving the Page, refresh the Page.
 
 ## Demo
 

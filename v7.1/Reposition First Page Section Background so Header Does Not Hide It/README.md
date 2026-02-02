@@ -17,7 +17,7 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 Add code from file **move main content down so header doesn't hide it.html** to
-Page Settings > Advanced > Page Header Code Injection for the page.
+Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 

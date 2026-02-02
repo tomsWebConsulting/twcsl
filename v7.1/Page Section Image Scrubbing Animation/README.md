@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add image scrubbing effect to a page section.
+Add image scrubbing effect to a Page Section.
 
 ### Version
 
@@ -30,7 +30,7 @@ Add image scrubbing effect to a page section.
   ```
   
 * Add code from file **[page section image scrubbing animation.html][2]** to
-  Page Settings > Advanced > Page Header Code Injection for the page. Please see
+  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
   [Per-page code injection][3].
   
 * Add an empty section.
@@ -173,8 +173,8 @@ Add image scrubbing effect to a page section.
 
 * data-background-color
   
-  By default the code will get the background color of the page section after
-  the page section with the **x-twc-psisa** tag. Adding this attribute
+  By default the code will get the background color of the Page section after
+  the Page section with the **x-twc-psisa** tag. Adding this attribute
   overrides the default value. The value is a valid color.
   
   ```html
@@ -186,7 +186,7 @@ Add image scrubbing effect to a page section.
 * data-animation-ends-before-leaving-viewport
   
   By default the animation completes before leaving viewport.  To have the
-  animation continue as the page section leaves the viewport set the value the
+  animation continue as the Page section leaves the viewport set the value the
   false.
   
   ```html
@@ -217,7 +217,7 @@ this effect works.
   * top
   
     top is called to adjust the top variable. Normally the animation starts when
-    the page section reaches the bottom of the header or the top of the viewport
+    the Page section reaches the bottom of the header or the top of the viewport
     when the header is not fixed. This top callback lets you override the
     default behavior. The following parameters are passed to the callback :
     

@@ -23,7 +23,7 @@
   
 * Add code from file
   **[auto change product grid image opacity on touch screen device.html](auto%20change%20product%20grid%20image%20opacity%20on%20touch%20screen%20device.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the store page.
+  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

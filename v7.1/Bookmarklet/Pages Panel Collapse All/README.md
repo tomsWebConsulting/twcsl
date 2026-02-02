@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Collapse all pages in the pages panel.
+Collapse all pages in the Pages panel.
 
 ### Version
 

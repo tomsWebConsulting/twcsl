@@ -32,12 +32,12 @@ Add selected variant to option title.
 
 * Add code from file **[store product detail variant title selected
   add options.html][4]** to Store Settings > Advanced > Page Header Code
-  Injection for the store page. Refer to [Per-page code injection][5] for
+  Injection for the Store Page. Refer to [Per-page code injection][5] for
   details. Read the code for any instructions within.
   
 * Add code from file **[store product detail variant title selected
   add.html][6]** to Store Settings > Advanced > Page Header Code Injection for
-  the store page.
+  the Store Page.
 
 ## Make a Donation
 

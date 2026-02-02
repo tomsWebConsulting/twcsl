@@ -41,11 +41,11 @@ Add images after product description based on tags.
       
     * Add code from file **[store page detail tagged image add
       options.html][5]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the page. Read the code for any
+      Page Header Code Injection for the Page. Read the code for any
       instructions within.
       
     * Add code from file **[store page detail tagged image add.html][6]** to
-      Store Page Settings > Advanced > Page Header Code Injection for the page.
+      Store Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
       

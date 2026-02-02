@@ -37,23 +37,21 @@ Limit the number of characters allowed in some form block fields.
 
   * Page Specific
   
-    * Use this option if you have only a single page you want to have this
-      effect.
-      
+    Use this option when you want only one Page to have this effect.
+    
     * Add code from file **[form block text field max length.html][5]** to Page
-      Settings > Advanced > Page Header Code Injection for the page. Refer to
+      Settings > Advanced > Page Header Code Injection for the Page. Refer to
       [Per-page code injection][6] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple pages where you want to have this
-      effect.
-      
+    Use this option when you want multiple Pages to have this effect.
+    
     * Add code from file **[form block text field max length.html][5]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7]
       
-* Add or edit a form block on your page and set up as desired.
+* Add or edit a form block on your Page and set up as desired.
   
 * In the **Form Block Wrapper Observe Changes** code add the callback name
   **twcFbtfml** to **added** per the **Form Block Wrapper Observe Changes**

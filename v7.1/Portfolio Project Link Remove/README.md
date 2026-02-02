@@ -27,7 +27,7 @@
   
 * Add code from file
   **[portfolio project link remove.html](portfolio%20project%20link%20remove.html#L1)**
-  to Project Settings > Advanced > Page Header Code Injection for the store page.
+  to Project Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 

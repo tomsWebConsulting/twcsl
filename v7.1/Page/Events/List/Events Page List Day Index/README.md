@@ -39,7 +39,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
       this effect.
       
     * Add code from file **[events page list day index.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the page. Refer
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][7] for details.
       
   * Site-wide

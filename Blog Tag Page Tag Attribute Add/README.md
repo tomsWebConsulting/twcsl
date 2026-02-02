@@ -25,7 +25,7 @@
   
 * Add code from file
   **[blog tag page tag attribute add.html](blog%20tag%20page%20tag%20attribute%20add.html#L1)**
-  to Blog Settings > Advanced > Page Header Code Injection for the blog page.
+  to Blog Settings > Advanced > Page Header Code Injection for the Blog Page.
   
 * Read the code for any instructions within.
 
