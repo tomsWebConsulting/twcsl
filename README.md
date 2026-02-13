@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 468 effects. Each effect has it's own version number, code,
+twcsl contains 472 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -199,8 +199,6 @@ not necessarily designed to work together.
       
     * [Store Page Price Hide When From](Page/Store/Store%20Page%20Price%20Hide%20When%20From)
       
-* [Add to Cart Button Active Hours](Add%20to%20Cart%20Button%20Active%20Hours)
-  
 * [Blog Tag Page Tag Attribute Add](Blog%20Tag%20Page%20Tag%20Attribute%20Add)
   
 * [Text Block Formats Phrase Filter](Text%20Block%20Formats%20Phrase%20Filter)
@@ -265,6 +263,10 @@ not necessarily designed to work together.
       
       * [Form Text Field Max Length Data.bbprojectd](Element/Form/Form%20Text%20Field%20Max%20Length%20Data/Form%20Text%20Field%20Max%20Length%20Data.bbprojectd)
         
+  * [Add to Cart Button Active Hours](Element/Add%20to%20Cart%20Button%20Active%20Hours)
+    
+    * [Add to Cart Button Active Hours.bbprojectd](Element/Add%20to%20Cart%20Button%20Active%20Hours/Add%20to%20Cart%20Button%20Active%20Hours.bbprojectd)
+      
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
     * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
@@ -333,6 +335,8 @@ not necessarily designed to work together.
     
     * [Product Option Variant Select Auto](Element/Product%20Variant/Product%20Option%20Variant%20Select%20Auto)
       
+      * [Product Option Variant Select Auto.bbprojectd](Element/Product%20Variant/Product%20Option%20Variant%20Select%20Auto/Product%20Option%20Variant%20Select%20Auto.bbprojectd)
+        
 * [Search Page Input Aria-Label Attribute Add](Search%20Page%20Input%20Aria-Label%20Attribute%20Add)
   
 * [Product Custom Form Text Field Max Length](Product%20Custom%20Form%20Text%20Field%20Max%20Length)
@@ -927,6 +931,8 @@ not necessarily designed to work together.
       
     * [Form Block Form Element Add Watch](Block/Form/Form%20Block%20Form%20Element%20Add%20Watch)
       
+      * [Form Block Form Element Add Watch.bbprojectd](Block/Form/Form%20Block%20Form%20Element%20Add%20Watch/Form%20Block%20Form%20Element%20Add%20Watch.bbprojectd)
+        
     * [Form Block Multi-Language](Block/Form/Form%20Block%20Multi-Language)
       
     * [Form Block Fields Title to Placeholder](Block/Form/Form%20Block%20Fields%20Title%20to%20Placeholder)
@@ -939,6 +945,8 @@ not necessarily designed to work together.
       
     * [Form Block Text Field Max Length](Block/Form/Form%20Block%20Text%20Field%20Max%20Length)
       
+      * [Form Block Text Field Max Length.bbprojectd](Block/Form/Form%20Block%20Text%20Field%20Max%20Length/Form%20Block%20Text%20Field%20Max%20Length.bbprojectd)
+        
   * [Calendar](Block/Calendar)
     
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
@@ -1054,7 +1062,7 @@ building effects in Squarespace sites.
         
       * **Step 3**
       
-        Copy the entire contents of the Page and add it to Website > Pages >
+        Copy the entire contents of the page and add it to Website > Pages >
         Website Tools > Code Injection > HEADER after the previously installed
         code. jQuery must be before the twcsl code.
         
@@ -1087,14 +1095,14 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
 
   * getFormNth ( [nth form on page] )
   
-    * Default is the first form on the Page.
+    * Default is the first form on the page.
     * Returns jQuery object or undefined for no form.
     
 * getPageSectionNth
 
   * getPageSectionNth ( [nth section on page] )
   
-    * Default is the first section on the Page.
+    * Default is the first section on the page.
     * Returns jQuery object or undefined for no page section.
     
 * getUrlParser
@@ -1363,7 +1371,7 @@ if ( twcsl.page.store.list.hasCategory ) console.log ( 'has category' );
   
 * **2022-03-25**
 
-  * cart and search pages are under the Page object instead of being top level
+  * cart and search pages are under the page object instead of being top level
     is flags
   * added page types album, cover, gallery, index, portfolio, and videos
   * massive restructuring, the overall functionality of v0.1d19 is preserved
