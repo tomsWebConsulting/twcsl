@@ -129,6 +129,89 @@ Watch for Form block form elements to be added to the [DOM][2].
         
     * Refer to [Add code to code injection][8].
 
+## How To Use
+
+* Add or edit a form block.
+
+* Add a Line field as the first field with a LABEL of **fbfeaw** and
+  DESCRIPTION of the following...
+
+  ```text
+  "callbacks" : {
+  
+    "added" : [
+    
+      /*
+      
+        the format of each line is the name of a function. following is an
+        example line. copy the example line below and paste after the example
+        line. remove '// ' at the beginning of the pasted line. this has been
+        done once initially
+        
+        */
+        
+      // "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      "[ optional, enter callback name here between double quotes replacing square brackets ]",
+      
+      ]
+      
+    }
+    
+  ```
+    
+## Callbacks
+
+Your callbacks must accept an element as a parameter. Following is a very
+generalized example of a callback.
+
+```html
+<script>
+
+  ( ( ) => {
+  
+    // initialize twc module
+    
+    window.twc =
+    
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
+    // initialize twc fbfeaw sub-module
+    
+    twc.fbfeaw =
+    
+      ( ( self ) => self )
+      
+      ( twc.fbfeaw || { } );
+      
+    // initialize twc fbfeaw callbacks sub-module
+    
+    twc.fbfeaw.callbacks =
+    
+      ( ( self ) => {
+      
+        self [ 'twcFbfeawLog' ] =
+          
+          ( element ) => {
+          
+            console.log ( 'twcFbfeawLog : ', element );
+            
+            };
+            
+        return self;
+        
+        } )
+        
+      ( twc.fbfeaw.callbacks || { } );
+      
+    } ) ( );
+    
+  </script>
+
+```
+
 ## Notes
 
 * This code is a base for other effects.
