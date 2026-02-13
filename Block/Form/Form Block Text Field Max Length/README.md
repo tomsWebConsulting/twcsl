@@ -54,7 +54,7 @@ Limit the number of characters allowed in some form block fields.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95ea23e2b97ec85f5965c53a94fadec8b4752505/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c145aacb42a3e067ecc60e18f756a01df9ea2a8/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
             
             <!-- end TWC Form Block Text Field Max Length -->
             
@@ -76,7 +76,7 @@ Limit the number of characters allowed in some form block fields.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95ea23e2b97ec85f5965c53a94fadec8b4752505/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c145aacb42a3e067ecc60e18f756a01df9ea2a8/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
               
               <!-- end TWC Form Block Text Field Max Length -->
               
@@ -92,7 +92,7 @@ Limit the number of characters allowed in some form block fields.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95ea23e2b97ec85f5965c53a94fadec8b4752505/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c145aacb42a3e067ecc60e18f756a01df9ea2a8/Block/Form/Form%20Block%20Text%20Field%20Max%20Length/form%20block%20text%20field%20max%20length.min.js" type="module"></script>
               
               <!-- end TWC Form Block Text Field Max Length -->
               
