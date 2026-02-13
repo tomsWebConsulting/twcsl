@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.4.0
+    Version       : 0.5.0
     
     SS Versions   : 7.1, 7.0
     
@@ -15,10 +15,10 @@
     Engine
     Compatible    : Yes
     
-    Dependencies  : form block wrapper observe changes
-                    < https://tinyurl.com/ub8akb85 >
+    Dependencies  : form block form element add watch
+                    < https://tinyurl.com/4aa4mb6a >
     
-    Copyright     : 2022-2025 Thomas Creedon
+    Copyright     : 2022-2026 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
@@ -32,7 +32,7 @@
     
       const
       
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `
         
@@ -40,7 +40,7 @@
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2022-2025 Thomas Creedon
+          © 2022-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -52,173 +52,187 @@
       
       // initialize twc module
       
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      window.twc =
       
-      // initialize twc fbwoc sub-module
-      
-      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
-      
-      twc.fbwoc.callbacks = ( ( self ) => {
-      
-        self
+        ( ( self ) => self )
         
-          [ 'twcFbtfml' ]
+        ( window.twc || { } );
+        
+      // initialize twc fbfeaw sub-module
+      
+      twc.fbfeaw =
+      
+        ( ( self ) => self )
+        
+        ( twc.fbfeaw || { } );
+        
+      twc.fbfeaw.callbacks =
+      
+        ( ( self ) => {
+        
+          self [ 'twcFbtfml' ] =
           
-          =
-          
-          ( element ) => {
-          
-            const hasClass = element
+            ( element ) => {
             
-              .classList
+              const hasClass = element
               
-              .contains ( 'react-form-contents' );
-            
-            if ( ! hasClass ) return; // bail if not react form
-            
-            const
-            
-              callback = ( element ) => {
+                .classList
+                
+                .contains ( 'react-form-contents' );
+                
+              if ( ! hasClass ) return; // bail if not react form
               
-                const
-                
-                  re = new RegExp ( `${ codeKey }\\s*:\\s*(\\d+)\n*` ),
-                
-                  selector = [
-                  
-                    'input',
-                    
-                    'textarea',
-                    
-                    ]
-                    
-                    .join ( ', ' );
-                    
-                let
-                
-                  text = element
-                  
-                    .textContent,
-                    
-                  maxLength = text
-                  
-                    .match ( re );
-                    
-                text = text
-                
-                  .replace ( maxLength [ 0 ], '' )
-                  
-                  .trim ( );
-                  
-                maxLength = maxLength [ 1 ];
-                
-                findNextMatchingSibling (
-                
-                  element,
-                  
-                  selector
-                  
-                  )
-                  
-                  .setAttribute ( 'maxlength', maxLength );
-                  
-                if ( text ) {
-                
-                  element
-                  
-                    .setAttribute ( 'aria-label', text );
-                    
-                  element
-                  
-                    .textContent
-                    
-                    =
-                    
-                    text;
-                    
-                  } else
-                  
-                    element.remove ( );
-                    
-                },
-                
-              codeKey = 'twc-fbtfml',
+              const
               
-              findNextMatchingSibling = ( element, selector ) => {
-              
-                let
+                callback = ( element ) => {
                 
-                  b,
+                  const
                   
-                  nextSiblingElement = element
-                  
-                    ?.nextElementSibling;
+                    re = new RegExp (
                     
-                while ( nextSiblingElement ) {
-                
-                  b = nextSiblingElement
-                  
-                    .matches ( selector );
-                    
-                  if ( b )
-                  
-                    return nextSiblingElement;
-                    
-                  nextSiblingElement = nextSiblingElement
-                  
-                    .nextElementSibling;
-                    
-                  }
-                  
-                return null;
-                
-                },
-              
-              xPathEvaluate = ( xPathExpression, contextNode ) => {
-              
-                const xPathResults = document
-                
-                  .evaluate (
-                  
-                    xPathExpression,
-                    
-                    contextNode,
-                    
-                    null,
-                    
-                    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-                    
-                    null
-                    
-                    );
-                    
-                return xPathResults;
-                
-                };
-                
-            let
-            
-              xPathExpression = `
-              
-                .//div [
-                
-                  contains (
-                  
-                    concat (
-                    
-                      ' ',
-                      
-                      normalize-space ( @class ),
-                      
-                      ' '
+                      `${ codeKey }\\s*:\\s*(\\d+)\n*`
                       
                       ),
+                      
+                    selector = [
                     
-                    ' form-item '
+                      'input',
+                      
+                      'textarea',
+                      
+                      ]
+                      
+                      .join ( ', ' );
+                      
+                  let
+                  
+                    text = element
+                    
+                      .textContent,
+                      
+                    maxLength = text
+                    
+                      .match ( re );
+                      
+                  text = text
+                  
+                    .replace ( maxLength [ 0 ], '' )
+                    
+                    .trim ( );
+                    
+                  maxLength = maxLength [ 1 ];
+                  
+                  findNextMatchingSibling (
+                  
+                    element,
+                    
+                    selector
                     
                     )
                     
-                  ]//p [
+                    .setAttribute (
+                    
+                      'maxlength',
+                      
+                      maxLength
+                      
+                      );
+                      
+                  if ( text ) {
+                  
+                    element.setAttribute (
+                    
+                      'aria-label',
+                      
+                      text
+                      
+                      );
+                      
+                    element
+                    
+                      .textContent
+                      
+                      =
+                      
+                      text;
+                      
+                    } else
+                    
+                      element.remove ( );
+                      
+                  },
+                  
+                codeKey = 'twc-fbtfml',
+                
+                findNextMatchingSibling =
+                
+                  ( element, selector ) => {
+                  
+                    let
+                    
+                      b,
+                      
+                      nextSiblingElement = element
+                      
+                        ?.nextElementSibling;
+                        
+                    while ( nextSiblingElement ) {
+                    
+                      b = nextSiblingElement
+                      
+                        .matches ( selector );
+                        
+                      if ( b )
+                      
+                        return nextSiblingElement;
+                        
+                      nextSiblingElement =
+                      
+                        nextSiblingElement
+                        
+                          .nextElementSibling;
+                          
+                      }
+                      
+                    return null;
+                    
+                    },
+                  
+                xPathEvaluate = (
+                
+                  xPathExpression,
+                  
+                  contextNode
+                  
+                  ) => {
+                  
+                    const xPathResults = document
+                    
+                      .evaluate (
+                      
+                        xPathExpression,
+                        
+                        contextNode,
+                        
+                        null,
+                        
+                        XPathResult
+                        
+                          .ORDERED_NODE_SNAPSHOT_TYPE,
+                          
+                        null
+                        
+                        );
+                        
+                    return xPathResults;
+                    
+                    };
+                    
+              let
+              
+                xPathExpression = `
+                
+                  .//div [
                   
                     contains (
                     
@@ -232,47 +246,75 @@
                         
                         ),
                       
-                      ' description '
+                      ' form-item '
                       
                       )
                       
-                    and
+                    ]//p [
                     
-                    contains (
+                      contains (
+                      
+                        concat (
+                        
+                          ' ',
+                          
+                          normalize-space ( @class ),
+                          
+                          ' '
+                          
+                          ),
+                        
+                        ' description '
+                        
+                        )
+                        
+                      and
+                      
+                      contains (
+                      
+                        .,
+                        
+                        '${ codeKey }'
+                        
+                        )
+                        
+                      ]
+                  
+                  `,
+                  
+                xPathResults = xPathEvaluate (
+                
+                  xPathExpression,
+                  
+                  element
+                  
+                  );
+                  
+              for (
+              
+                let i = 0;
+                
+                i < xPathResults.snapshotLength;
+                
+                i++
+                
+                ) {
+                
+                    const element = xPathResults
                     
-                      .,
+                      .snapshotItem ( i );
                       
-                      '${ codeKey }'
-                      
-                      )
-                      
-                    ]
-                
-                `,
-                
-              xPathResults = xPathEvaluate (
+                    callback ( element );
+                    
+                    }
+                    
+              };
               
-                xPathExpression,
-                
-                element
-                
-                );
-                
-            for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
-            
-              const element = xPathResults
-              
-                .snapshotItem ( i );
-                
-              callback ( element );
-              
-              }
-              
-            };
-            
-        return self;
-        
-        } ) ( twc.fbwoc.callbacks || { } );
+          return self;
+          
+          } )
+          
+        ( twc.fbfeaw.callbacks || { } );
         
       } ) ( );
       

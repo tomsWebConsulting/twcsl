@@ -1,0 +1,315 @@
+( ( ) => {
+
+  /*!
+  
+    form block text field max length
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.5.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    v7.1
+    Fluid
+    Engine
+    Compatible    : Yes
+    
+    Dependencies  : form block form element add watch
+                    < https://tinyurl.com/4aa4mb6a >
+    
+    Copyright     : 2022-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.5.0',
+    
+    s = `
+    
+      Form Block Text Field Max Length v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc =
+  
+    ( ( self ) => self )
+    
+    ( window.twc || { } );
+    
+  // initialize twc fbfeaw sub-module
+  
+  twc.fbfeaw =
+  
+    ( ( self ) => self )
+    
+    ( twc.fbfeaw || { } );
+    
+  twc.fbfeaw.callbacks =
+  
+    ( ( self ) => {
+    
+      self [ 'twcFbtfml' ] =
+      
+        ( element ) => {
+        
+          const hasClass = element
+          
+            .classList
+            
+            .contains ( 'react-form-contents' );
+            
+          if ( ! hasClass ) return; // bail if not react form
+          
+          const
+          
+            callback = ( element ) => {
+            
+              const
+              
+                re = new RegExp (
+                
+                  `${ codeKey }\\s*:\\s*(\\d+)\n*`
+                  
+                  ),
+                  
+                selector = [
+                
+                  'input',
+                  
+                  'textarea',
+                  
+                  ]
+                  
+                  .join ( ', ' );
+                  
+              let
+              
+                text = element
+                
+                  .textContent,
+                  
+                maxLength = text
+                
+                  .match ( re );
+                  
+              text = text
+              
+                .replace ( maxLength [ 0 ], '' )
+                
+                .trim ( );
+                
+              maxLength = maxLength [ 1 ];
+              
+              findNextMatchingSibling (
+              
+                element,
+                
+                selector
+                
+                )
+                
+                .setAttribute (
+                
+                  'maxlength',
+                  
+                  maxLength
+                  
+                  );
+                  
+              if ( text ) {
+              
+                element.setAttribute (
+                
+                  'aria-label',
+                  
+                  text
+                  
+                  );
+                  
+                element
+                
+                  .textContent
+                  
+                  =
+                  
+                  text;
+                  
+                } else
+                
+                  element.remove ( );
+                  
+              },
+              
+            codeKey = 'twc-fbtfml',
+            
+            findNextMatchingSibling =
+            
+              ( element, selector ) => {
+              
+                let
+                
+                  b,
+                  
+                  nextSiblingElement = element
+                  
+                    ?.nextElementSibling;
+                    
+                while ( nextSiblingElement ) {
+                
+                  b = nextSiblingElement
+                  
+                    .matches ( selector );
+                    
+                  if ( b )
+                  
+                    return nextSiblingElement;
+                    
+                  nextSiblingElement =
+                  
+                    nextSiblingElement
+                    
+                      .nextElementSibling;
+                      
+                  }
+                  
+                return null;
+                
+                },
+              
+            xPathEvaluate = (
+            
+              xPathExpression,
+              
+              contextNode
+              
+              ) => {
+              
+                const xPathResults = document
+                
+                  .evaluate (
+                  
+                    xPathExpression,
+                    
+                    contextNode,
+                    
+                    null,
+                    
+                    XPathResult
+                    
+                      .ORDERED_NODE_SNAPSHOT_TYPE,
+                      
+                    null
+                    
+                    );
+                    
+                return xPathResults;
+                
+                };
+                
+          let
+          
+            xPathExpression = `
+            
+              .//div [
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                  
+                  ' form-item '
+                  
+                  )
+                  
+                ]//p [
+                
+                  contains (
+                  
+                    concat (
+                    
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
+                    
+                    ' description '
+                    
+                    )
+                    
+                  and
+                  
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey }'
+                    
+                    )
+                    
+                  ]
+              
+              `,
+              
+            xPathResults = xPathEvaluate (
+            
+              xPathExpression,
+              
+              element
+              
+              );
+              
+          for (
+          
+            let i = 0;
+            
+            i < xPathResults.snapshotLength;
+            
+            i++
+            
+            ) {
+            
+                const element = xPathResults
+                
+                  .snapshotItem ( i );
+                  
+                callback ( element );
+                
+                }
+                
+          };
+          
+      return self;
+      
+      } )
+      
+    ( twc.fbfeaw.callbacks || { } );
+    
+  } ) ( );
