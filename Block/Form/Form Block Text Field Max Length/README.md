@@ -179,26 +179,33 @@ Please consider [making a donation][12].
 
 * **2025-02-13**
 
-  * updated to work with Form Block Text Field Max Length v0.5.0
+  * updated to work with Form Block Form Element Add Watch v0.5.0
   * bumped version to 0.5.0
   
-* **2025-04-09**
+* **2025-03-01**
 
-  * updated to work with Form Block Text Field Max Length v0.4.0
-  * remove dependency on jQuery
+  * restructure how user callbacks are added
+  * code is active in Preview
+  * remove jQuery dependency
   * bumped version to 0.4.0
   
-* **2024-04-28**
+* **2024-04-27**
 
-  * updated to work with Form Block Text Field Max Length v0.3.0
+  * restructured the code
+  * fix for user callbacks not running
   * bumped version to 0.3.0
   
-* **2023-05-11**
+* **2023-10-09**
 
-  * clean up the aria-label on the description as well
+  * remove some guard checks that prevented some nodes being passed to callbacks
+  * bumped version to 0.2.1
+  
+* **2023-07-28**
+
+  * support calling multiple callbacks
   * bumped version to 0.2.0
   
-* **2022-05-11**
+* **2023-07-14**
 
   * initial version
 
