@@ -109,7 +109,7 @@ Limit the number of characters allowed in some form block fields.
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[form block form element add watch.html][10]** to
+      * Add code from file **[form block text field max length.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
@@ -120,12 +120,12 @@ Limit the number of characters allowed in some form block fields.
       
       * v7.1
       
-        * Add code from file **[form block form element add watch.html][10]** to
+        * Add code from file **[form block text field max length.html][10]** to
           Website > Pages > Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add code from file **[form block form element add watch.html][10]** to
+        * Add code from file **[form block text field max length.html][10]** to
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
@@ -211,6 +211,6 @@ Please consider [making a donation][12].
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: form%20block%20form%20element%20add%20watch.html#L1
+[10]: form%20block%20text%20field%20max%20length.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/form-block-text-field-max-length?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
