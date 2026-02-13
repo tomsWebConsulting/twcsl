@@ -135,8 +135,8 @@ Limit the number of characters allowed in some form block fields.
 
 * Add or edit a form block on your Page and set up as desired.
   
-* In the **Form Block Text Field Max Length** code add the callback name
-  **twcFbtfml** to **added** per the **Form Block Text Field Max Length**
+* In the **Form Block Form Element Add Watch** code add the callback name
+  **twcFbtfml** to **added** per the **Form Block Form Element Add Watch**
   code install steps.
   
 * For each text or text area field where you want a max character limit do the
@@ -144,8 +144,8 @@ Limit the number of characters allowed in some form block fields.
   
   * Edit the field.
     
-  * At the beginning of the description field enter **twc-fbtfml : [enter max
-    length number here replacing square brackets]**. An example.
+  * At the beginning of the description field enter **twc-fbtfml : [ enter max
+    length number here replacing square brackets ]**. An example.
     
     ```text
     twc-fbtfml : 10
