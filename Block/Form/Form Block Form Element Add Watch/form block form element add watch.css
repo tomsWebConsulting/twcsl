@@ -1,0 +1,44 @@
+/*!
+
+  form block form element add watch
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.6.0
+  
+  SS Versions     : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible      : Yes
+  
+  Notes           : this code is a base for other effects. on its own it
+                    doesn't do much. this code is not the end all be all of
+                    mutation observers. it may not cover your needs
+  
+  Copyright       : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+body:not( .sqs-is-page-editing ) #siteWrapper {
+
+  --twc-div-data-sqsp-block-form : hidden;
+  
+  }
+  
+body:not( .sqs-is-page-editing ) div[ data-sqsp-block="form" ] {
+
+  visibility : var( --twc-div-data-sqsp-block-form );
+  
+  }
+  
+body:not( .sqs-is-page-editing ) .section.twc-fbfeaw {
+
+  display : none;
+  
+  }
