@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.1.0
+    Version     : 0.2.0
     
     Copyright   : 2026 Thomas Creedon
                   
@@ -20,7 +20,7 @@
   
     title = 'Analytics Traffic Geography Visits By Country Remove',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `${ title } v${ version }
     
@@ -36,6 +36,8 @@
   
   const
   
+    chartsTitle = 'Visits by Country',
+    
     l = location,
     
     screenBodyElement =
@@ -50,6 +52,14 @@
           
           ),
           
+    titleElement = screenBodyElement
+    
+      .querySelector (
+      
+        '.react-charts-title-label'
+        
+        ),
+        
     xPathEvaluate = (
     
       xPathExpression,
@@ -88,28 +98,16 @@
       
       &&
       
-      xPathEvaluate (
+      titleElement
       
-        `
+        .textContent
         
-          .//span [
-          
-            normalize-space ( )
-            
-            =
-            
-            'Visits by Country'
-            
-            ]
-            
-          `,
-          
-        screenBodyElement
+        .trim ( )
         
-        )
-        
-        .snapshotItem ( 0 );
-        
+      ===
+      
+      chartsTitle;
+      
   if ( ! isPanel ) {
   
     alert (
@@ -152,8 +150,28 @@
   
   if ( ! countries ) return;
   
+  let
+  
+    pathElements,
+    
+    popupElement,
+    
+    total;
+    
   const
   
+    chartWrapperElement =
+    
+      screenBodyElement.querySelector (
+      
+        ':scope > div:first-child > '
+        
+        +
+        
+        'div:last-child > div'
+        
+        ),
+        
     countryElementMap = { },
     
     crc32 = ( s ) => {
@@ -411,31 +429,151 @@
     
       },
       
+    hasChartMutationObserver =
+    
+      screenBodyElement
+      
+        ._hasChartMutationObserver,
+        
+    hasPopupObserver =
+    
+      screenBodyElement
+      
+        ._hasPopupObserver,
+        
     isStyleAdded = document
     
       .getElementById ( codeKey ),
       
-    mutationCallback = ( mutation ) => {
+    chartWrapperMutationCallback =
+    
+      ( mutation ) => {
+      
+        for ( const n of mutation.addedNodes )
+        
+          chartWrapperNodeCallback ( n );
+          
+        },
+        
+    chartWrapperMutationsCallback =
+    
+      ( mutations ) => {
+      
+        for ( const m of mutations )
+        
+          chartWrapperMutationCallback ( m );
+          
+        },
+        
+    chartWrapperNodeCallback = ( node ) => {
+    
+      const isTitle = titleElement
+      
+        .textContent
+        
+        .trim ( )
+        
+        ===
+        
+        chartsTitle;
+        
+      // bail if not title
+      
+      if ( ! isTitle ) {
+      
+        popupObserver.disconnect ( );
+        
+        return;
+        
+        }
+        
+      const hasSvg = node
+      
+        .querySelector ( 'svg' );
+        
+      // bail if no svg
+      
+      if ( ! hasSvg ) return;
+      
+      console.log ( node );
+      
+      const countrySet =
+      
+        screenBodyElement._countrySet;
+        
+      pathElements = node
+      
+        .querySelectorAll ( 'svg g path' );
+        
+      populateCountryElementMap ( );
+      
+      for ( const c of countrySet )
+      
+        removeChartCountry ( c );
+        
+      setPopupElement ( );
+      
+      startPopupObserver ( );
+      
+      },
+      
+    chartWrapperObserver =
+    
+      new MutationObserver (
+      
+        chartWrapperMutationsCallback
+        
+        ),
+        
+    populateCountryElementMap = ( ) => {
+      
+      for ( const e of pathElements ) {
+      
+        const name = hashCountryMap [
+        
+          crc32 ( e.getAttribute ( 'd' ) )
+          
+          ];
+          
+        // if no name continue
+        
+        if ( ! name ) continue;
+        
+        const hasName = countryElementMap [ name ];
+        
+        if ( ! hasName )
+        
+          countryElementMap [ name ] = [ ];
+          
+        countryElementMap [ name ].push ( e );
+        
+        }
+        
+      },
+      
+    popupMutationCallback = ( mutation ) => {
     
       for ( const n of mutation.addedNodes )
       
-        nodeCallback ( n );
+        popupNodeCallback ( n );
         
       },
       
-    mutationsCallback = ( mutations ) => {
+    popupMutationsCallback = ( mutations ) => {
     
       for ( const m of mutations )
       
-        mutationCallback ( m );
+        popupMutationCallback ( m );
         
       },
       
-    nodeCallback = ( node ) => {
+    popupNodeCallback = ( node ) => {
     
-      const isCountry = countries
+      const isCountry = screenBodyElement
       
-        .includes (
+        ._countrySet
+      
+        .has (
         
           node.textContent.trim ( )
           
@@ -459,45 +597,93 @@
         
       },
       
-    observer = new MutationObserver (
+    popupObserver = new MutationObserver (
     
-      mutationsCallback
+      popupMutationsCallback
       
       ),
       
-    pathElements = screenBodyElement
+    removeChartCountry = ( c ) => {
     
-      .querySelectorAll ( 'svg g path' ),
+      const element = countryElementMap [ c ];
       
-    totalNode = xPathEvaluate (
+      // bail if no element;
+      
+      if ( ! element ) return;
+      
+      for ( const e of element ) {
+      
+        e.classList.add ( codeKey );
+        
+        e.addEventListener (
+        
+          'click',
+          
+          e => {
+          
+            e.stopImmediatePropagation ( );
+            
+            e.preventDefault ( );
+            
+            },
+            
+          true
+          
+          );
+          
+        }
+        
+      },
+      
+    setPopupElement = ( ) => {
     
-      `
+      popupElement =
       
-        .//div[
+        chartWrapperElement.querySelector (
         
-          contains (
+          'div > *:last-child > p:first-child'
           
-            @class,
-            
-            'react-charts-title-total'
-            
-            )
-            
-          ]/text ( )[
+          );
           
-            normalize-space ( )
-            
-            ]
-            
-        `,
-        
-        screenBodyElement
-        
-      )
+      },
       
-      .snapshotItem ( 0 );
+    startPopupObserver = ( ) => {
+    
+      // start listening for changes in element
       
-  let total = Number (
+      popupObserver.observe (
+      
+        popupElement,
+        
+        { childList : true }
+        
+        );
+        
+      },
+      
+    totalNode = screenBodyElement
+    
+      .querySelector (
+      
+        '.react-charts-title-total'
+        
+        )
+        
+      .firstChild;
+      
+  localStorage
+  
+    .setItem ( codeKey, countries );
+    
+  countries =
+  
+    countries.split ( /\s*,\s*/ );
+    
+  pathElements = chartWrapperElement
+  
+    .querySelectorAll ( 'svg g path' );
+    
+  total = Number (
   
     totalNode
     
@@ -506,14 +692,6 @@
       .replace ( /[^0-9.-]/g, '' )
       
     );
-    
-  localStorage
-  
-    .setItem ( codeKey, countries );
-    
-  countries =
-  
-    countries.split ( /\s*,\s*/ );
     
   if ( ! isStyleAdded )
   
@@ -537,30 +715,32 @@
         
       );
       
-  // countryElementMap populate
+  // country set
   
-  for ( const e of pathElements ) {
+  {
   
-    const name = hashCountryMap [
+    if ( ! screenBodyElement._countrySet )
     
-      crc32 ( e.getAttribute ( 'd' ) )
+      screenBodyElement
       
-      ];
+        ._countrySet
+        
+        =
+        
+        new Set ( );
+        
+    for ( const c of countries )
+    
+      screenBodyElement
       
-    // if no name continue
-    
-    if ( ! name ) continue;
-    
-    const hasName = countryElementMap [ name ];
-    
-    if ( ! hasName )
-    
-      countryElementMap [ name ] = [ ];
-      
-    countryElementMap [ name ].push ( e );
-    
+        ._countrySet
+        
+        .add ( c );
+        
     }
     
+  populateCountryElementMap ( );
+  
   // countries filter
   
   for ( const c of countries ) {
@@ -613,32 +793,14 @@
       
     total -= visits;
     
-    for ( const e of countryElementMap [ c ] ) {
+    removeChartCountry ( c );
     
-      e.classList.add ( codeKey );
-      
-      e.addEventListener (
-      
-        'click',
-        
-        e => {
-        
-          e.stopImmediatePropagation ( );
-          
-          e.preventDefault ( );
-          
-          },
-          
-        true
-        
-        );
-        
-      }
-      
     element.remove ( );
     
     }
     
+  // new total
+  
   totalNode.textContent = total
   
     .toLocaleString (
@@ -721,26 +883,42 @@
       
     }
     
-  // start listening for changes in element
+  if ( ! hasChartMutationObserver ) {
   
-  observer.observe (
-  
-    screenBodyElement.querySelector (
-      
-      ':scope > div:first-child > '
-      
-      +
-      
-      'div:last-child > div > div > '
-      
-      +
-      
-      'div:last-child > p:first-child'
-      
-      ),
-  
-    { childList : true }
+    // start listening for changes in map wrapper
     
-    );
+    chartWrapperObserver.observe (
+    
+      chartWrapperElement,
+      
+      { childList : true }
+      
+      );
+      
+    screenBodyElement
+    
+      ._hasChartMutationObserver
+      
+      =
+      
+      true;
+      
+    }
+    
+  if ( ! hasPopupObserver ) {
   
+    setPopupElement ( );
+    
+    startPopupObserver ( );
+    
+    screenBodyElement
+    
+      ._hasPopupObserver
+      
+      =
+      
+      true;
+      
+    }
+    
   } ) ( );

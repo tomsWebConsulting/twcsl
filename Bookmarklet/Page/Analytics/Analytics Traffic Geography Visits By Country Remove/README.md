@@ -47,10 +47,10 @@ Countries will be colored red to remind you they have been removed.
 
 When the page is reloaded you need to run the bookmarklet again.
 
-If you drill down in the Visits By Country data and surface back up to Visits By
-Country, the map and the table will be out of sync. In other words the page is
-in a spurious state. To reset the data reload the page and use the bookmarklet
-again.
+The map legend is not altered in any way by this bookmarklet. By extension
+nothing related to the legend is altered. In other words removing a countries
+data from the page does not readjust the legend or color of the countries, with
+the exception of making the remove countries red on the map.
 
 ## What is a bookmarklet?
 
@@ -62,11 +62,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-05-12**
+* **2026-02-16**
 
-  * add support for guard processor
-  * bumped version to 0.2d0
-  -->
+  * added code to reapply changes to the map after a dive/surface cycle
+  * bumped version to 0.2.0
+  
 * **2026-02-15**
 
   * initial version
