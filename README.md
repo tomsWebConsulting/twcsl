@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 475 effects. Each effect has it's own version number, code,
+twcsl contains 476 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -597,6 +597,8 @@ not necessarily designed to work together.
       
     * [Page Sections Slide Toggle](v7.1/Section/Page%20Sections%20Slide%20Toggle)
       
+      * [Page Sections Slide Toggle.bbprojectd](v7.1/Section/Page%20Sections%20Slide%20Toggle/Page%20Sections%20Slide%20Toggle.bbprojectd)
+        
     * [Gallery](v7.1/Section/Gallery)
       
       * [Gallery Section Image Order Random](v7.1/Section/Gallery/Gallery%20Section%20Image%20Order%20Random)
