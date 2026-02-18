@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.8.1
+  * 0.9.0
 
 #### SS Version
 
@@ -40,18 +40,28 @@ Add page section toggle effect to pages.
   
     Use this option when you want only one Page to have this effect.
     
-    * Add code from file **[page sections slide toggle.html][5]** to Page
-      Settings > Advanced > Page Header Code Injection for the Page. Refer to
-      [Per-page code injection][6] for details.
+    * Add code from file **[page sections slide toggle options.html][5]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
+      the code for any instructions within.
       
+    * Add code from files **[page sections slide toggle.html][6]** to Page
+      Settings > Advanced > Page Header Code Injection for the Page.
+      
+    * Refer to [Per-page code injection][7] for details.
+    
   * Site-wide
   
     Use this option when you want multiple Pages to have this effect.
     
-    * Add code from file **[page sections slide toggle.html][5]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][7] for details.
+    * Add code from file **[page sections slide toggle options.html][5]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
+      the code for any instructions within.
       
+    * Add code from file **[page sections slide toggle.html][6]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][8] for details.
+    
 * Read the code for any instructions within.
 
 * Add a section and set it's height to small. This whole section will become a
@@ -113,6 +123,15 @@ Add page section toggle effect to pages.
       context of what you are building. If the wrong values are used it can
       cause unusual results.
       
+    * data-open
+      
+      Open sections when the page loads. The default value when this attribute
+      is not used is false. An example to have the sections open on page load.
+      
+      ```html
+      <x-twc-psst data-open="true">
+      ```
+
 * Add a section after the previous section and add whatever blocks you want to
   the section. This will be the content that gets toggled (hidden/shown).
   
@@ -156,6 +175,8 @@ don't have to scroll up to click and close the section.
       
     </x-twc-psst-close>
   ```
+  
+Note: If you test the close feature in Preview it will trigger the edit mode.
 
 ## Demo
 
@@ -167,6 +188,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-02-17**
+
+  * moved options out of main code
+  * added sections open on load feature
+  * bumped version to 0.9.0
+  
 * **2024-10-28**
 
   * fix for effect not working with FE
@@ -251,9 +278,10 @@ Please consider [making a donation][10].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
-[5]: page%20sections%20slide%20toggle.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+[5]: page%20sections%20slide%20toggle%20options.html#L1
+[6]: page%20sections%20slide%20toggle.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 [9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

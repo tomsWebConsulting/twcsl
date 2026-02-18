@@ -1,62 +1,32 @@
-<!--
+<!-- begin TWC Page Sections Slide Toggle -->
 
-  begin page sections slide toggle
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.8.1
-  
-  SS Version    : 7.1
-  
-  Fluid
-  Engine
-  Compatible    : Yes
-  
-  Dependencies  : jQuery
-  
-  Notes         : the code is comprised of several tags. all are needed for the
-                  full effect to work
-  
-  Copyright     : 2021-2024 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
-  <style>
-  
-    #page {
+    page sections slide toggle
     
-      --twc-psst-toggle-size : 1em; /* toggle size */
-      
-      --twc-psst-toggle-color : unset; /* toggle color */
-      
-      /* toggle justification ( alignment ) */
-      
-      --twc-psst-toggle-justify : flex-start;
-      
-      }
-      
-    </style>
+    License       : < https://tinyurl.com/s872fb68 >
     
-  <script>
-  
-    // initialize twc global if needed
+    Version       : 0.9.0
     
-    if ( window.twc == undefined ) window.twc = { };
+    SS Version    : 7.1
     
-    twc.psst = {
+    Fluid
+    Engine
+    Compatible    : Yes
     
-      // duration, a number (milliseconds) or the word slow or fast
-      
-      duration : '[ enter duration between single quotes replacing square brackets ]',
-      
-      };
-      
-    </script>
+    Dependencies  : jQuery
     
-  <!-- do not change anything below, there be the borg here -->
-  
+    Notes         : the code is comprised of several tags. all are needed for the
+                    full effect to work
+    
+    Copyright     : 2021-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts
+    
+    -->
+    
   <style>
   
     #page {
@@ -195,7 +165,7 @@
     
       const
       
-        version = '0.8.1',
+        version = '0.9.0',
       
         s = `
         
@@ -203,7 +173,7 @@
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2021-2024 Thomas Creedon
+          © 2021-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -219,7 +189,13 @@
         
         isEditor = $( 'html' )
         
-          .hasClass ( 'squarespace-damask' );
+          .hasClass ( 'squarespace-damask' ),
+          
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window );
           
       let
       
@@ -261,24 +237,46 @@
           
             className = 'twc-psst-display-flex';
             
-          let count = $this.attr ( 'data-section-count' );
+          let
+          
+            count = $this.attr ( 'data-section-count' ),
+            
+            open = $this.attr ( 'data-open' );
           
           count = count === undefined ? 1 : Number ( count );
           
-          const $sectionsNext = $this
+          open = open === undefined ? false : Boolean ( open );
           
-            .parents ( selector )
+          const
+          
+            $sectionElement = $this
             
-            .addClass ( `${ codeKey }` )
+              .parents ( selector ),
+              
+            $sectionsNext = $sectionElement
             
-            .click ( callback )
+              .addClass ( `${ codeKey }` )
+              
+              .click ( callback )
+              
+              .nextAll ( selector )
+              
+              .slice ( 0, count );
+              
+          if ( ! open )
+          
+            $sectionsNext
             
-            .nextAll ( selector )
+              .css ( 'display', 'none' );
+              
+            else
             
-            .slice ( 0, count )
-            
-            .css ( 'display', 'none' );
-            
+              $sectionElement.toggleClass (
+              
+                `${ codeKey }--open`
+                
+                );
+                
           $this
           
             .parents ( '.col' )
@@ -295,8 +293,8 @@
             
           },
           
-        duration = twc.psst.duration,
-      
+        duration = options.duration,
+        
         selector = `#page .page-section x-${ codeKey }`;
         
       $( selector )
@@ -403,4 +401,4 @@
       
     </script>
     
-  <!-- end page sections slide toggle -->
+  <!-- end TWC Page Sections Slide Toggle -->
