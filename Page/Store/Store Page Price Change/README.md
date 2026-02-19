@@ -190,7 +190,7 @@ Please consider [making a donation][14].
 * **2026-02-18**
 
   * added watch option
-  * bumped version to 0.8.0
+  * bumped version to 0.9.0
   
 * **2025-07-12**
 
