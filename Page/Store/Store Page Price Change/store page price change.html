@@ -10,7 +10,7 @@
         
         License         : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.8.0
+        Version         : 0.9.0
         
         SS Versions     : 7.1, 7.0
         
@@ -23,7 +23,8 @@
         Engine
         Compatible      : Not Applicable
         
-        v7.0 Templates  : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+        v7.0
+        Templates       : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
                           Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
                           Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
                           Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
@@ -48,9 +49,10 @@
                           expressions will stop the processing of search/replace
                           text pairs
         
-        Copyright       : 2021-2025 Thomas Creedon
+        Copyright       : 2021-2026 Thomas Creedon
                           
-                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+                          Tom's Web Consulting
+                          < http://www.tomsWeb.consulting/ >
         
         no user serviceable parts below
         
@@ -58,13 +60,13 @@
         
       const
       
-        version = '0.8.0',
+        version = '0.9.0',
         
         s = `Store Page Price Change v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2021-2025 Thomas Creedon
+          © 2021-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -72,45 +74,61 @@
           
       console.log ( s );
       
-      // bail if no mutation observer available
+      const hasMutationObserver =
       
-      if ( ! ( 'MutationObserver' in window ) ) return;
+        'MutationObserver' in window;
+        
+      // bail if no mutation observer
+      
+      if ( ! hasMutationObserver ) return;
+      
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      // bail if not store page
+      
+      if ( ! isStorePage ) return;
       
       const
       
         callback = ( ) => {
         
-          const isStorePage = Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .collection
-            
-            ?.type
-            
-            ===
-            
-            13;
-            
-          if ( ! isStorePage ) return; // bail if not store page
-          
           // globals
           
           {
           
             // initialize twc module
             
-            window.twc = ( ( self ) => self ) ( window.twc || { } );
+            window.twc =
             
+              ( ( self ) => self )
+              
+              ( window.twc || { } );
+              
             // initialize twc sppc sub-module
             
-            twc.sppc = ( ( self ) => self ) ( twc.sppc || { } );
+            twc.sppc =
             
+              ( ( self ) => self )
+              
+              ( twc.sppc || { } );
+              
             // initialize twc sppc callbacks sub-module
             
             twc.sppc.callbacks =
             
-              ( ( self ) => self ) ( twc.sppc.callbacks || { } );
+              ( ( self ) => self )
+              
+              ( twc.sppc.callbacks || { } );
               
             }
             
@@ -318,38 +336,32 @@
               
               },
               
-            isDetail = ( ( ) => {
+            isDetail
             
-              const selector = 'body[ id^="item-" ]';
+              =
               
-              const is = document
+              !!
               
-                .querySelector ( selector )
+              Static
+              
+                .SQUARESPACE_CONTEXT
                 
-                !==
+                .item,
                 
-                null;
-                
-              return is;
-              
-              } ) ( ),
-              
-            isList = ( ( ) => {
+            isList
             
-              const selector = 'body[ id^="collection-" ]';
+              =
               
-              const is = document
+              !
               
-                .querySelector ( selector )
+              Static
+              
+                .SQUARESPACE_CONTEXT
                 
-                !==
+                .item
                 
-                null;
+                ?.id,
                 
-              return is;
-              
-              } ) ( ),
-              
             isListAddToCartButtons = document
             
               .body
@@ -366,8 +378,80 @@
             
               .split ( '-' )
               
-              .reduce ( ( obj, key ) => obj?.[ key ], window );
+              .reduce (
               
+                ( obj, key ) => obj?.[ key ],
+                
+                window
+                
+                ),
+                
+            pricesObserve = ( ) => {
+            
+              const isAfterPay
+              
+                =
+                
+                isDetail
+                
+                &&
+                
+                options
+                
+                  .afterpay;
+                  
+              // start listening for changes in element
+              
+              productPriceElements
+              
+                .forEach (
+                
+                  e => observer
+                  
+                    .observe ( e, config )
+                    
+                  );
+                  
+              // bail if not afterpay
+              
+              if ( ! isAfterPay ) return;
+              
+              // start listening for changes in element
+              
+              document
+              
+                .body
+                
+                .querySelectorAll (
+                
+                  [
+                  
+                    // 7.1
+                    
+                    '.product-payment-method-messaging',
+                    
+                    // 7.0
+                    
+                    'div[ data-afterpay="true" ]'
+                    
+                    ]
+                    
+                    .join ( ', ' )
+                    
+                  )
+                
+                .forEach (
+                
+                  e => observer
+                  
+                    .observe ( e, config )
+                    
+                  );
+                  
+              },
+              
+            isWatch = options.watch;
+            
           let productPriceElements
           
             =
@@ -398,8 +482,18 @@
               
           productPriceElements
           
-            .forEach ( e => e.setAttribute ( attribute, 'false' ) );
+            .forEach (
             
+              e => e.setAttribute (
+              
+                attribute,
+                
+                'false'
+                
+                )
+                
+              );
+              
           productPriceElements
           
             .forEach ( e => changeText ( e ) );
@@ -454,7 +548,9 @@
               
             case isList :
             
-              if ( ! isListAddToCartButtons ) return; // bail if no atc
+              // bail if no atc
+              
+              if ( ! isListAddToCartButtons ) return;
               
               productPriceElements
               
@@ -481,53 +577,10 @@
               break;
               
             }
-            
-          const pricesObserve = ( ) => {
           
-            const isAfterPay
             
-              =
-              
-              isDetail
-              
-              &&
-              
-              options
-              
-                .afterpay;
-                
-            // start listening for changes in element
-            
-            productPriceElements
-            
-              .forEach ( e => observer.observe ( e, config ) );
-              
-            if ( ! isAfterPay ) return; // bail if not afterpay
-            
-            // start listening for changes in element
-            
-            document
-            
-              .body
-              
-              .querySelectorAll (
-              
-                [
-                
-                  '.product-payment-method-messaging', // 7.1
-                  
-                  'div[ data-afterpay="true" ]' // 7.0
-                  
-                  ]
-                  
-                  .join ( ', ' )
-                  
-                )
-              
-              .forEach ( e => observer.observe ( e, config ) );
-              
-            };
-            
+          if ( ! isWatch ) return;
+          
           pricesObserve ( );
           
           },
@@ -546,16 +599,26 @@
       
         case is71 :
         
-          document
-           
-            .addEventListener ( 'DOMContentLoaded', callback );
+          document.addEventListener (
+          
+            'DOMContentLoaded',
+            
+            callback
+            
+            );
             
           break;
           
         case is70 :
         
-          Squarespace.onInitialize ( Y, callback );
+          Squarespace.onInitialize (
           
+            Y,
+            
+            callback
+            
+            );
+            
           break;
           
         }

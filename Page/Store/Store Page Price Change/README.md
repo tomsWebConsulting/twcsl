@@ -8,9 +8,9 @@ Change store page prices.
 
 ### Version
 
-  * 0.8.0
+  * 0.9.0
 
-#### SS Versions
+#### SS Version
 
   * 7.1
   
@@ -27,35 +27,96 @@ Change store page prices.
 #### Dependencies
 
   * [Squarespace plan][5] that supports [JavaScript][6].
-  
+
 ---
 
-## Install
+## Install Options
 
-* Options
+* CDN Hosted
 
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][7], a [CDN][8])
+  
+  * Options
+  
+    * Page Specific
+    
+      Use this option if you want to have this effect on only one Store page.
+      
+      * Add code from file **[store page price change options.html][9]** to
+        Page Settings > Advanced > Page Header Code Injection for the Store
+        Page. Read the code for any instructions within.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Store Page.
+        
+        ```html
+        <!-- begin TWC Store Page Price Change -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page Price Change -->
+          
+        ```
+        
+      * Refer to [per-page code injection][10] for details.
+      
+    * Site-wide
+    
+      Use this option if you want to have this effect on all Store Pages.
+      
+      * Add code from file **[store page price change options.html][9]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER for the Store
+        Page. Read the code for any instructions within.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Store Page Price Change -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page Price Change -->
+          
+        ```
+        
+      * Refer to [Add code to code injection][11] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on
+  your site).
+  
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option if you want to have this effect on only one Store Page.
     
-    * Add, in order, code from files **[store page price change
-      options.html][7]** and **[store page price change.html][8]** to
-      Store Settings > Advanced > Page Header Code Injection for the Store Page.
-      Refer to [per-page code injection][9] for details.
+    * Add code from file **[store page price change options.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the Store Page.
+      Read the code for any instructions within.
       
+    * Add code from file **[store page price change.html][12]** to
+      Page Settings > Advanced > Page Header Code Injection for the Store Page.
+      
+    * Refer to [per-page code injection][10] for details.
+    
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option if you want to have this effect on all Store pages.
     
-    * Add code from file **[store page price change options.html][7]** to
-      Website > Pages > Custom Code > Code Injection > HEADER.
+    * Add code from file **[store page price change options.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+      any instructions within.
       
-    * Add code from file **[store page price change.html][8]** to Website >
+    * Add code from file **[store page price change.html][12]** to Website >
       Pages > Custom Code > Code Injection > FOOTER.
       
-    Refer to [Add code to code injection][10] for details.
-    
-* Read the code for any instructions within.
+    * Refer to [Add code to code injection][11] for details.
 
 ## searchReplaceText Example Lines
 
@@ -110,20 +171,27 @@ Change store page prices.
 ## Callbacks
 
 For an example of how to write a callback please see [Store Page Price Change
-Log][11]. If a callback returns false the rest of the callbacks won't be called.
+Log][13]. If a callback returns false the rest of the callbacks won't be called.
 
-## Note
+## Notes
 
-Changing prices on a Store page does not affect the cart, checkout, or other
-Squarespace pages/backend storage. This is purely a cosmetic change. No code can
+Changing prices on a Store Page does not affect the cart, checkout, or other
+Squarespace Pages/backend storage. This is purely a cosmetic change. No code can
 change the Checkout Page or SS backend. It is an SS security feature.
+
+The watch option controls if this code watches for price changes.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][14].
 
 ## Changes
 
+* **2026-02-18**
+
+  * added watch option
+  * bumped version to 0.8.0
+  
 * **2025-07-12**
 
   * fixed bug were MutationObserver was not watching prices
@@ -265,14 +333,17 @@ Please consider [making a donation][12].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://www.squarespace.com/pricing
 [2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
 [3]: https://support.squarespace.com/hc/en-us/articles/206544937-Five-template
 [4]: https://support.squarespace.com/hc/en-us/articles/205815568-Montauk-template-family
 [5]: https://www.squarespace.com/pricing
 [6]: https://en.wikipedia.org/wiki/JavaScript
-[7]: store%20page%20price%20change%20options.html#L1
-[8]: store%20page%20price%20change.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change%20Log#store-page-price-change-log
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://www.jsdelivr.com/
+[8]: https://en.wikipedia.org/wiki/Content_delivery_network
+[9]: store%20page%20price%20change%20options.html#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[12]: store%20page%20price%20change.html#L1
+[13]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change%20Log#store-page-price-change-log
+[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
