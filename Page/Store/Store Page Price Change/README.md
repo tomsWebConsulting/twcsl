@@ -55,7 +55,7 @@ Change store page prices.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Price Change -->
           
@@ -79,7 +79,7 @@ Change store page prices.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Price Change -->
           
