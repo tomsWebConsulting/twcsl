@@ -8,7 +8,7 @@ Remove countries from Analytics > Traffic Geography > Visits By Country data.
 
 ### Version
 
-  * 0.1.0
+  * 0.3.0
 
 #### SS Versions
 
@@ -47,10 +47,9 @@ Countries will be colored red to remind you they have been removed.
 
 When the page is reloaded you need to run the bookmarklet again.
 
-The map legend is not altered in any way by this bookmarklet. By extension
-nothing related to the legend is altered. In other words removing a countries
-data from the page does not readjust the legend or color of the countries, with
-the exception of making the remove countries red on the map.
+This code does not respond to the date range pop-up menu. If you use the menu
+the page will be left in a spurious state. The use the menu first reload the
+page and then use the bookmarklet.
 
 ## What is a bookmarklet?
 
@@ -62,6 +61,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-02-20**
+
+  * added code to update chart choropleth map and legend
+  * bumped version to 0.3.0
+  
 * **2026-02-16**
 
   * added code to reapply changes to the map after a dive/surface cycle

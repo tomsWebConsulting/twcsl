@@ -6,7 +6,7 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.2.0
+    Version     : 0.3.0
     
     Copyright   : 2026 Thomas Creedon
                   
@@ -20,7 +20,7 @@
   
     title = 'Analytics Traffic Geography Visits By Country Remove',
     
-    version = '0.2.0',
+    version = '0.3.0',
   
     s = `${ title } v${ version }
     
@@ -152,6 +152,10 @@
   
   let
   
+    countryElementMap,
+    
+    legendElement,
+    
     pathElements,
     
     popupElement,
@@ -172,8 +176,92 @@
         
         ),
         
-    countryElementMap = { },
+    chartWrapperMutationCallback =
     
+      ( mutation ) => {
+      
+        for ( const n of mutation.addedNodes )
+        
+          chartWrapperNodeCallback ( n );
+          
+        },
+        
+    chartWrapperMutationsCallback =
+    
+      ( mutations ) => {
+      
+        for ( const m of mutations )
+        
+          chartWrapperMutationCallback ( m );
+          
+        },
+        
+    chartWrapperNodeCallback = ( node ) => {
+    
+      const isTitle = titleElement
+      
+        .textContent
+        
+        .trim ( )
+        
+        ===
+        
+        chartsTitle;
+        
+      // bail if not title
+      
+      if ( ! isTitle ) {
+      
+        popupObserver.disconnect ( );
+        
+        return;
+        
+        }
+        
+      const hasSvg = node
+      
+        .querySelector ( 'svg' );
+        
+      // bail if no svg
+      
+      if ( ! hasSvg ) return;
+      
+      console.log ( node );
+      
+      const countryRemovedSet =
+      
+        screenBodyElement._countryRemovedSet;
+        
+      pathElements = node
+      
+        .querySelectorAll ( 'svg g path' );
+        
+      populateCountryElementMap ( );
+      
+      for ( const c of countryRemovedSet )
+      
+        removeChartCountry ( c );
+        
+      overridePathElementFills ( );
+      
+      setLegendElement ( );
+      
+      updateChartLegend ( );
+      
+      setPopupElement ( );
+      
+      startPopupObserver ( );
+      
+      },
+      
+    chartWrapperObserver =
+    
+      new MutationObserver (
+      
+        chartWrapperMutationsCallback
+        
+        ),
+        
     crc32 = ( s ) => {
     
       let crc = ~ 0;
@@ -226,6 +314,8 @@
         
       `,
     
+    fillClassNamePrefix = `${ codeKey }-fill-`,
+    
     getAncestor = ( element, levels ) => {
     
       if ( ! element ) return null; // bail if no element
@@ -241,6 +331,28 @@
         }
         
       return element;
+      
+      },
+      
+    getCountry = ( element ) => {
+    
+      const country = element
+      
+        .querySelector (
+        
+          ':scope > div > '
+          
+          +
+          
+          'div:first-child > div:last-child'
+          
+          )
+          
+        .textContent
+        
+        .trim ( );
+        
+      return country;
       
       },
       
@@ -304,7 +416,7 @@
       '723d68ae' : 'Costa Rica',
       'dcd4f3ac' : 'Croatia',
       'eeaf8e89' : 'Cuba',
-      '81284c97' : 'Cuba',
+      // '81284c97' : 'Karpas Peninsula', // unrecognized "country"
       'fd163cdc' : 'Cyprus',
       'fc3f8c77' : 'Czechia',
       '7f6cf6b9' : 'Denmark',
@@ -435,6 +547,12 @@
       
         ._hasChartMutationObserver,
         
+    hasFillBinsCountriesMap =
+    
+      screenBodyElement
+      
+        ._fillBinsCountriesMap,
+        
     hasPopupObserver =
     
       screenBodyElement
@@ -445,87 +563,53 @@
     
       .getElementById ( codeKey ),
       
-    chartWrapperMutationCallback =
+    overridePathElementFills = ( ) => {
     
-      ( mutation ) => {
+      const 
       
-        for ( const n of mutation.addedNodes )
+        entries = Object.entries (
         
-          chartWrapperNodeCallback ( n );
+          screenBodyElement
+        
+            ._fillBinsCountries
+            
+            .map
+            
+          );
           
-        },
-        
-    chartWrapperMutationsCallback =
-    
-      ( mutations ) => {
+      for (
       
-        for ( const m of mutations )
+        const [ bin, countries ] of entries
         
-          chartWrapperMutationCallback ( m );
+        ) {
+        
+          for ( const c of countries ) {
           
-        },
-        
-    chartWrapperNodeCallback = ( node ) => {
-    
-      const isTitle = titleElement
-      
-        .textContent
-        
-        .trim ( )
-        
-        ===
-        
-        chartsTitle;
-        
-      // bail if not title
-      
-      if ( ! isTitle ) {
-      
-        popupObserver.disconnect ( );
-        
-        return;
-        
+            const elements =
+            
+              countryElementMap [ c ];
+              
+            // continue if no element
+            
+            if ( ! elements ) continue;
+            
+            for ( const e of elements ) {
+            
+              e.className.baseVal =
+              
+                `${ fillClassNamePrefix }${ bin }`;
+                
+              }
+              
+            }
+            
         }
         
-      const hasSvg = node
-      
-        .querySelector ( 'svg' );
-        
-      // bail if no svg
-      
-      if ( ! hasSvg ) return;
-      
-      console.log ( node );
-      
-      const countrySet =
-      
-        screenBodyElement._countrySet;
-        
-      pathElements = node
-      
-        .querySelectorAll ( 'svg g path' );
-        
-      populateCountryElementMap ( );
-      
-      for ( const c of countrySet )
-      
-        removeChartCountry ( c );
-        
-      setPopupElement ( );
-      
-      startPopupObserver ( );
-      
       },
       
-    chartWrapperObserver =
-    
-      new MutationObserver (
-      
-        chartWrapperMutationsCallback
-        
-        ),
-        
     populateCountryElementMap = ( ) => {
+    
+      countryElementMap = { };
       
       for ( const e of pathElements ) {
       
@@ -571,7 +655,7 @@
     
       const isCountry = screenBodyElement
       
-        ._countrySet
+        ._countryRemovedSet
       
         .has (
         
@@ -613,7 +697,7 @@
       
       for ( const e of element ) {
       
-        e.classList.add ( codeKey );
+        e.classList.add ( `${ codeKey }-removed` );
         
         e.addEventListener (
         
@@ -633,6 +717,18 @@
           
         }
         
+      },
+      
+    setLegendElement = ( ) => {
+    
+      legendElement = chartWrapperElement
+      
+        .querySelector (
+        
+          ':scope > div > *:nth-child( 2 )'
+          
+          );
+          
       },
       
     setPopupElement = ( ) => {
@@ -661,6 +757,20 @@
         
       },
       
+    tableDataWrapperElement =
+    
+      screenBodyElement
+      
+        .querySelector (
+        
+          ':scope > div:last-child > '
+          
+          +
+          
+          'div > div:last-child'
+          
+          ),
+          
     totalNode = screenBodyElement
     
       .querySelector (
@@ -669,7 +779,45 @@
         
         )
         
-      .firstChild;
+      .firstChild,
+      
+    updateChartLegend = ( ) => {
+    
+      const fillBinsCountries =
+      
+        screenBodyElement
+        
+          ._fillBinsCountries;
+          
+      legendElement.querySelector (
+      
+        ':scope > *:first-child'
+        
+        )
+        
+        .textContent
+        
+        =
+        
+        fillBinsCountries
+        
+          .min;
+          
+      legendElement.querySelector (
+      
+        ':scope > *:last-child'
+        
+        )
+        
+        .textContent
+        
+        =
+        
+        fillBinsCountries
+        
+          .max;
+          
+      };
       
   localStorage
   
@@ -693,6 +841,8 @@
       
     );
     
+  setLegendElement ( );
+  
   if ( ! isStyleAdded )
   
     document.head.insertAdjacentHTML (
@@ -703,7 +853,37 @@
       
         <style id="${ codeKey }">
         
-          .${ codeKey } {
+          .${ fillClassNamePrefix }1 {
+          
+            fill : rgb( 208, 208, 208 ) !important;
+            
+            }
+            
+          .${ fillClassNamePrefix }2 {
+          
+            fill : rgb( 161, 161, 161 ) !important;
+            
+            }
+            
+          .${ fillClassNamePrefix }3 {
+          
+            fill : rgb( 121, 121, 121 ) !important;
+            
+            }
+            
+          .${ fillClassNamePrefix }4 {
+          
+            fill : rgb( 98, 98, 98 ) !important;
+            
+            }
+            
+          .${ fillClassNamePrefix }5 {
+          
+            fill : rgb( 62, 62, 62 ) !important;
+            
+            }
+            
+          .${ codeKey }-removed {
           
             fill : red !important;
             
@@ -719,11 +899,11 @@
   
   {
   
-    if ( ! screenBodyElement._countrySet )
+    if ( ! screenBodyElement._countryRemovedSet )
     
       screenBodyElement
       
-        ._countrySet
+        ._countryRemovedSet
         
         =
         
@@ -733,7 +913,7 @@
     
       screenBodyElement
       
-        ._countrySet
+        ._countryRemovedSet
         
         .add ( c );
         
@@ -815,20 +995,12 @@
   
   {
   
-    const elements = screenBodyElement
+    const elements =
     
-      .querySelector (
-      
-        ':scope > div:last-child > div > '
+      tableDataWrapperElement
         
-        +
+        .children;
         
-        'div:last-child'
-        
-        )
-        
-      .childNodes;
-      
     for ( const e of elements ) {
     
       const percentage =
@@ -883,6 +1055,129 @@
       
     }
     
+  // fill bins countries
+  
+  {
+  
+    screenBodyElement
+    
+      ._fillBinsCountries = {
+      
+        map : {
+        
+          1 : [ ],
+          
+          2 : [ ],
+          
+          3 : [ ],
+          
+          4 : [ ],
+          
+          5 : [ ]
+          
+          },
+          
+        max : undefined,
+        
+        min : undefined
+        
+        };
+        
+    const
+    
+      bins = 5,
+      
+      conceptualMin = 0,
+      
+      elements = tableDataWrapperElement
+      
+        .children,
+        
+      fillBinsCountries =
+      
+        screenBodyElement
+        
+          ._fillBinsCountries,
+          
+      map = { };
+      
+    for ( const e of elements ) {
+    
+      const country = getCountry ( e );
+      
+      map [ country ] = getVisits ( e );
+      
+      }
+      
+    const
+    
+      entries = Object.entries ( map ),
+      
+      values = Object.values ( map ),
+      
+      max = Math.max ( ... values ),
+      
+      min = Math.min ( ... values ),
+      
+      step =
+      
+        ( max - conceptualMin )
+        
+        /
+        
+        bins,
+        
+      getBucket = ( v ) => {
+      
+        /*
+        
+          zero is a real choropleth value,
+          but we don't recolor it, continue
+          
+          */
+          
+        if ( v === 0 ) return 0;
+      
+        let rawBucket =
+        
+          Math.floor ( v / step ) + 1;
+          
+        // clamp into 1 – 5
+        
+        rawBucket =
+        
+          Math.max ( 1, rawBucket );
+          
+        rawBucket =
+        
+          Math.min ( bins, rawBucket );
+          
+        return rawBucket;
+        
+        };
+        
+    fillBinsCountries.max = max;
+    
+    fillBinsCountries.min = min;
+    
+    for ( const [ k, v ] of entries ) {
+    
+      fillBinsCountries.map [
+      
+        `${ getBucket ( v ) }`
+        
+        ]
+        
+        .push ( k );
+        
+      }
+      
+    }
+    
+  overridePathElementFills ( );
+  
+  updateChartLegend ( );
+  
   if ( ! hasChartMutationObserver ) {
   
     // start listening for changes in map wrapper
