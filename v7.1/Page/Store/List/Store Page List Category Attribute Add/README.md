@@ -46,7 +46,7 @@ Add category attribute to Category Pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/store%20page%20list%20category%20attribute%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@090537fa8d837dfe1f20fbf19acab7cd31cfe909/v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/store%20page%20list%20category%20attribute%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Category Attribute Add -->
           
@@ -66,7 +66,7 @@ Add category attribute to Category Pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/store%20page%20list%20category%20attribute%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@090537fa8d837dfe1f20fbf19acab7cd31cfe909/v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/store%20page%20list%20category%20attribute%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Category Attribute Add -->
           
