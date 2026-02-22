@@ -145,5 +145,5 @@ Please consider [making a donation][9].
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: portfolio%20page%20project%20navigation%20top.html#L1
+[8]: store%20page%20list%20category%20attribute%20add.html#L1
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
