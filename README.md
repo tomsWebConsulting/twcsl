@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 478 effects. Each effect has it's own version number, code,
+twcsl contains 481 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -523,6 +523,10 @@ not necessarily designed to work together.
           
         * [SPLACR Date Progression Redirect](v7.1/Page/Store/List/SPLACR%20Date%20Progression%20Redirect)
           
+        * [Store Page List Category Attribute Add](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add)
+          
+          * [Store Page List Category Attribute Add.bbprojectd](v7.1/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add/Store%20Page%20List%20Category%20Attribute%20Add.bbprojectd)
+            
         * [Store Page List Categories Class Name Add](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add)
           
           * [Store Page List Categories Class Name Add.bbprojectd](v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Class%20Name%20Add/Store%20Page%20List%20Categories%20Class%20Name%20Add.bbprojectd)
@@ -565,6 +569,8 @@ not necessarily designed to work together.
           
       * [Store Page Title to Lines](v7.1/Page/Store/Store%20Page%20Title%20to%20Lines)
         
+        * [Store Page Title to Lines.bbprojectd](v7.1/Page/Store/Store%20Page%20Title%20to%20Lines/Store%20Page%20Title%20to%20Lines.bbprojectd)
+          
       * [Store Page Tag Rating](v7.1/Page/Store/Store%20Page%20Tag%20Rating)
         
       * [Store Page Variant Dropdown Select Text Change](v7.1/Page/Store/Store%20Page%20Variant%20Dropdown%20Select%20Text%20Change)
