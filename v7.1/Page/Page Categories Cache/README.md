@@ -8,19 +8,17 @@ Cache Page categories in sessionStorage.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
-#### SS Versions
+#### SS Version
 
   * 7.1
-  
-  * 7.0
 
-#### v7.1 Products V2 Compatible
+#### Products V2 Compatible
 
   * Not Applicable
   
-#### v7.1 Fluid Engine Compatible
+#### Fluid Engine Compatible
 
   * Not Applicable
 
@@ -41,8 +39,8 @@ Cache Page categories in sessionStorage.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[page categories cache options.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
@@ -55,7 +53,7 @@ Cache Page categories in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Categories Cache -->
           
@@ -65,50 +63,28 @@ Cache Page categories in sessionStorage.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
+      Use this option if you want to have this effect on all Pages.
+      
+      * Add code from file **[page categories cache options.html][6]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
+        for any instructions within.
         
-      * v7.1
-      
-        * Add code from file **[page categories cache options.html][6]** to
-          Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
-          for any instructions within.
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Page Categories Cache -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
           
-          ```html
-          <!-- begin TWC Page Categories Cache -->
+          <!-- end TWC Page Categories Cache -->
           
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
-            
-            <!-- end TWC Page Categories Cache -->
-            
-          ```
-          
-      * v7.0
-      
-        * Add code from file **[page categories cache options.html][6]** to
-          Website > Pages > Website Tools > Custom Code > Code Injection >
-          FOOTER. Read the code for any instructions within.
-          
-        * Add the following code to Website > Pages > Website Tools >
-          Custom Code > Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Page Categories Cache -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
-            
-            <!-- end TWC Page Categories Cache -->
-            
-          ```
-          
+        ```
+        
       * Refer to [Add code to code injection][8] for details.
-
+      
 * On-site
 
   Use this option to install the full code of this effect (files hosted on your
@@ -116,8 +92,8 @@ Cache Page categories in sessionStorage.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[page categories cache options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
@@ -129,26 +105,15 @@ Cache Page categories in sessionStorage.
       
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
+    Use this option if you want to have this effect on all Pages.
+    
+    * Add code from file **[page categories cache options.html][6]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
+      for any instructions within.
       
-    * v7.1
-    
-      * Add code from file **[page categories cache options.html][6]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
-        for any instructions within.
-        
-      * Add code from file **[page categories cache.html][9]** to Website >
-        Pages > Custom Code > Code Injection > FOOTER.
-        
-    * v7.0
-    
-      * Add code from file **[page categories cache options.html][6]** to
-        Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-        Read the code for any instructions within.
-        
-      * Add code from file **[page categories cache.html][9]** to Website >
-        Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-        
+    * Add code from file **[page categories cache.html][9]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER.
+      
     * Refer to [Add code to code injection][8] for details.
 
 ## Callback Example
@@ -195,6 +160,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-02-25**
+
+  * removed support for Squarespace v7.0
+  * replaced undocumented API call with format=json
+  * bumped version to 0.2.0
+  
 * **2026-01-05**
 
   * moved has callbacks check into dlcCallback

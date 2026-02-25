@@ -4,40 +4,36 @@
   
     page categories cache
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.1
+    Version         : 0.2.0
     
-    SS Versions   : 7.1, 7.0
+    SS Version      : 7.1
     
-    v7.1
     Products V2
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
-    v7.1
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
-    Notes         : this code makes a call to an unofficial Squarespace API
-                    product content service products categories tree or
-                    GetCollectionCategories for information that is not
-                    normally available through other means
-                    
-                    the structure of the cache data is different between
-                    v7.1 and v7.0. therefore your callbacks need to take
-                    this into account
-                    
-                    the cache disable option doesn't disable the overall
-                    cache logic. it simply removes the session storage key
-                    after user callbacks are run. this causes the cache data
-                    to be regenerated when the Store page is reloaded. this
-                    can be useful for testing or if you want site visitors
-                    to always have access to the current categories
+    Notes           : the code makes a call to the json version of a page
+                      for categories information that is not normally
+                      available through other means
+                      
+                      the cache disable option doesn't disable the overall
+                      cache logic. it simply removes the session storage key
+                      after user callbacks are run. this causes the cache
+                      data to be regenerated when the Store page is
+                      reloaded. this can be useful for testing or if you
+                      want site visitors to always have access to the
+                      current categories
     
-    Copyright     : 2026 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -45,7 +41,7 @@
     
   const
   
-    version = '0.1.1',
+    version = '0.2.0',
     
     s = `
     
@@ -65,15 +61,13 @@
   
   const
   
-    isBlogPage
+    isBlogPage =
     
-      =
-      
       !!
       
       document
       
-        .querySelectorAll (
+        .querySelector (
         
           [
               
@@ -85,19 +79,15 @@
             
             .join ( ', ' )
             
-          )
+          ),
           
-          .length,
-          
-    isEventsPage
+    isEventsPage =
     
-      =
-      
       !!
       
       document
       
-        .querySelectorAll (
+        .querySelector (
         
           [
               
@@ -109,9 +99,7 @@
             
             .join ( ', ' )
             
-          )
-          
-          .length,
+          ),
           
     isStorePage = Static
     
@@ -135,32 +123,124 @@
   
     // initialize twc module
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    window.twc =
     
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
     // initialize twc pcc sub-module
     
-    twc.pcc = ( ( self ) => self ) ( twc.pcc || { } );
+    twc.pcc =
     
+      ( ( self ) => self )
+      
+      ( twc.pcc || { } );
+      
     // initialize twc pcc callbacks sub-module
     
     twc.pcc.callbacks =
     
-      ( ( self ) => self ) ( twc.pcc.callbacks || [ ] );
+      ( ( self ) => self )
+      
+      ( twc.pcc.callbacks || [ ] );
       
     }
     
   const
   
+    categoryNameToCssClassName =
+    
+      ( name ) => {
+      
+        // bail if no name
+        
+        if ( ! name ) return;
+        
+        const className = 'category-'
+        
+          +
+          
+          name
+          
+            .replaceAll ( ' ', '-' )
+            
+            .toLowerCase ( )
+            
+            .replace ( /[^\w-]+/g, '' )
+            
+            .replaceAll ( '--', '-' );
+            
+        return className;
+        
+        },
+        
     codeKey = 'twc-pcc',
     
-    collectionId = Static
+    context = Static
     
-      .SQUARESPACE_CONTEXT
+      .SQUARESPACE_CONTEXT,
       
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    collectionId = context
+    
       .collection
       
       .id,
       
+    url = context
+      
+      .collection
+      
+      .fullUrl
+      
+      +
+      
+      '?format=json',
+      
+    userCallbacks = ( categories ) => {
+    
+      options
+      
+        .callbacks
+        
+        .forEach (
+        
+          c => {
+          
+            try {
+            
+              c ( categories );
+              
+              } catch ( error ) {
+              
+                const s = `${
+                
+                  codeKey
+                  
+                  } callback error`;
+                  
+                console.error ( s, error );
+                
+                }
+                
+            }
+            
+          );
+          
+      },
+    
     dlcCallback = async ( ) => {
     
       const
@@ -185,21 +265,25 @@
         
       let categories = sessionStorage
       
-        .getItem ( codeKey );
+        .getItem (
+        
+          `${ codeKey }-${ collectionId }`
+          
+          );
         
       // bail if categories
       
       if ( categories ) {
       
-        categories = JSON.parse ( categories );
-        
         userCallbacks ( categories );
         
         if ( options.cacheDisable )
         
-          sessionStorage
+          sessionStorage.removeItem (
           
-            .removeItem ( codeKey );
+            `${ codeKey }-${ collectionId }`
+            
+            );
             
         return;
         
@@ -213,14 +297,10 @@
         
           const s = `
           
-            ${ codeKey } network response was not ok ${
+            ${ codeKey } network response was
             
-              response
-              
-                .statusText
-                
-              }
-              
+            not ok ${ response.statusText }
+            
             `
             
             .trim ( )
@@ -233,15 +313,13 @@
           
         categories = await response.json ( );
         
-        if ( is71 )
-        
-          categories = categories.categoryTree;
-          
         } catch ( error ) {
         
           const s = `
           
-            ${ codeKey } there has been a problem with your fetch get
+            ${ codeKey } there has been a
+            
+            problem with your fetch get
             
             operation, ${ error }.
             
@@ -255,44 +333,54 @@
           
           } finally {
           
-            const callback = ( category ) => {
+            // process categories
             
-              category.className =
+            {
+            
+              categories = categories
+              
+                .nestedCategories;
+                
+              const all = categories.all;
+              
+              all.className =
               
                 categoryNameToCssClassName (
                 
-                  category [
+                  all.displayName
                   
-                    is71
-                    
-                    ?
-                    
-                    'displayName'
-                    
-                    :
-                    
-                    is70
-                    
-                    ?
-                    
-                    'name'
-                    
-                    :
-                    
-                    undefined
-                    
-                    ]
-                    
                   );
                   
-              };
+              categories
               
-            categories.forEach ( callback );
-            
+                .categories
+                
+                .forEach (
+                
+                  c => c.className =
+                  
+                    categoryNameToCssClassName (
+                    
+                      c [ 'displayName' ]
+                      
+                      )
+                      
+                  );
+                  
+              }
+              
             sessionStorage.setItem (
             
-              codeKey,
+              `${
               
+                codeKey
+                
+                }-${
+                
+                  collectionId
+                  
+                  }`,
+                  
               JSON
               
                 .stringify ( categories )
@@ -303,108 +391,24 @@
             
             if ( options.cacheDisable )
             
-              sessionStorage
+              sessionStorage.removeItem (
               
-                .removeItem ( codeKey );
+                `${
+                
+                  codeKey
+                  
+                  }-${
+                  
+                    collectionId
+                    
+                    }`
+                    
+                );
                 
             }
             
-      },
+      };
       
-    categoryNameToCssClassName = ( name ) => {
-    
-      if ( ! name ) return; // bail if no name
-      
-      const className = 'category-'
-      
-        +
-        
-        name
-        
-          .replaceAll ( ' ', '-' )
-          
-          .toLowerCase ( )
-          
-          .replace ( /[^\w-]+/g, '' )
-          
-          .replaceAll ( '--', '-' );
-          
-      return className;
-      
-      },
-      
-    options = codeKey
-    
-      .split ( '-' )
-      
-      .reduce ( ( obj, key ) => obj?.[ key ], window ),
-      
-    ssVersion = Static
-    
-      .SQUARESPACE_CONTEXT
-      
-      .templateVersion,
-      
-    userCallbacks = ( categories ) => {
-    
-      const callback = ( callback ) => {
-      
-        try {
-        
-          callback ( categories );
-          
-          } catch ( error ) {
-          
-            const s = `${ codeKey } callback error`;
-            
-            console.error ( s, error );
-            
-            }
-            
-        };
-      
-      options
-      
-        .callbacks
-        
-        .forEach ( callback );
-        
-      },
-      
-    is70 = ssVersion === '7',
-    
-    is71 = ssVersion === '7.1',
-    
-    url =
-    
-      is71
-      
-      ?
-      
-      `/api/product-content-service/products/${ collectionId }/`
-      
-        +
-        
-        'categories/tree'
-        
-      :
-      
-      is70
-      
-      ?
-      
-      '/api/commondata/GetCollectionCategories?collectionId='
-      
-        +
-        
-        `${ collectionId }`
-        
-      :
-      
-      undefined;
-      
-  if ( ! url ) return; // bail if no url
-  
   document.addEventListener (
   
     'DOMContentLoaded',
