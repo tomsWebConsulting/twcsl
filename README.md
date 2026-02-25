@@ -99,10 +99,6 @@ not necessarily designed to work together.
       
       * [Cart Page Unit Prices.bbprojectd](Page/Cart/Cart%20Page%20Unit%20Prices/Cart%20Page%20Unit%20Prices.bbprojectd)
         
-  * [Page Categories Cache](Page/Page%20Categories%20Cache)
-    
-    * [Page Categories Cache.bbprojectd](Page/Page%20Categories%20Cache/Page%20Categories%20Cache.bbprojectd)
-      
   * [Events](Page/Events)
     
     * [Events Page Title to Lines](Page/Events/Events%20Page%20Title%20to%20Lines)
@@ -451,6 +447,10 @@ not necessarily designed to work together.
         
         * [Portfolio Page Project Last Next Link Add.bbprojectd](v7.1/Page/Portfolio/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add/Portfolio%20Page%20Project%20Last%20Next%20Link%20Add.bbprojectd)
           
+    * [Page Categories Cache](v7.1/Page/Page%20Categories%20Cache)
+      
+      * [Page Categories Cache.bbprojectd](v7.1/Page/Page%20Categories%20Cache/Page%20Categories%20Cache.bbprojectd)
+        
     * [Events](v7.1/Page/Events)
       
       * [Events Page Event Date Go To Add](v7.1/Page/Events/Events%20Page%20Event%20Date%20Go%20To%20Add)
