@@ -30,101 +30,112 @@ Store page list categories mega menu.
 
 ---
 
-## Install Options
+## Install
 
-* CDN Hosted
+* Use the [Page Categories to Module][5] bookmarklet and follow its
+  instructions.
+  
+* Options
 
-  Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][4], a [CDN][5])
+  * CDN Hosted
   
-  * Options
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][6], a [CDN][7])
+    
+    * Options
+    
+      * Page Specific
+        
+        Use this option if you want to have this effect on only one Store Page.
+        
+        * Add code from file **[store page list categories mega
+          options.html][8]** to Page Settings > Advanced > Page Header Code
+          Injection for the Store Page. Read the code for any instructions
+          within.
+          
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the Store Page.
+          
+          ```html
+          <!-- begin TWC Store Page List Categories Mega -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+            
+            <!-- end TWC Store Page List Categories Mega -->
+            
+          ```
+          
+        *  Refer to [per-page code injection][9] for details.
+        
+      * Site-wide
+      
+        Use this option if you want to have this effect on all Store Pages.
+        
+        * Add code from file **[store page list categories mega
+          options.html][8]** to Website > Pages > Custom Code > Code Injection >
+          FOOTER. Read the code for any instructions within.
+          
+        * Add the following code to Website > Pages > Custom Code >
+          Code Injection > FOOTER.
+          
+          ```html
+          <!-- begin TWC Store Page List Categories Mega -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+            
+            <!-- end TWC Store Page List Categories Mega -->
+            
+          ```
+          
+        *  Refer to [Add code to code injection][10] for details.
+        
+  * On-site
   
+    Use this option to install the full code of this effect (files hosted on your
+    site).
+    
     * Page Specific
       
       Use this option if you want to have this effect on only one Store Page.
       
-      * Add code from file **[store page list categories mega
-        options.html][6]** to Page Settings > Advanced > Page Header Code
-        Injection for the Store Page. Read the code for any instructions within.
+      * Add code from file **[store page list categories mega options.html][8]**
+        to Page Settings > Advanced > Page Header Code Injection for the Store
+        Page. Read the code for any instructions within.
         
-      * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the Store Page.
+      * Add code from file **[store page list categories mega.html][11]** to
+        Page Settings > Advanced > Page Header Code Injection for the Store
+        Page.
         
-        ```html
-        <!-- begin TWC Store Page List Categories Mega -->
+      * Refer to [per-page code injection][9] for details.
         
-          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-          
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
-          
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
-          
-          <!-- end TWC Store Page List Categories Mega -->
-          
-        ```
-        
-      *  Refer to [per-page code injection][7] for details.
-      
     * Site-wide
-    
+      
       Use this option if you want to have this effect on all Store Pages.
       
-      * Add code from file **[store page list categories mega options.html][6]**
+      * Add code from file **[store page list categories mega options.html][8]**
         to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
         code for any instructions within.
         
-      * Add the following code to Website > Pages > Custom Code >
-        Code Injection > FOOTER.
+      * Add code from file **[store page list categories mega.html][11]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER.
         
-        ```html
-        <!-- begin TWC Store Page List Categories Mega -->
-        
-          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-          
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
-          
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
-          
-          <!-- end TWC Store Page List Categories Mega -->
-          
-        ```
-        
-      *  Refer to [Add code to code injection][8] for details.
-      
-* On-site
+      * Refer to [Add code to code injection][10] for details.
 
-  Use this option to install the full code of this effect (files hosted on your
-  site).
-  
-  * Page Specific
-    
-    Use this option if you want to have this effect on only one Store Page.
-    
-    * Add code from file **[store page list categories mega options.html][6]**
-      to Page Settings > Advanced > Page Header Code Injection for the Store
-      Page. Read the code for any instructions within.
-      
-    * Add code from file **[store page list categories mega.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the Store Page.
-      
-    * Refer to [per-page code injection][7] for details.
-      
-  * Site-wide
-    
-    Use this option if you want to have this effect on all Store Pages.
-    
-    * Add code from file **[store page list categories mega options.html][6]**
-      to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
-      for any instructions within.
-      
-    * Add code from file **[store page list categories mega.html][9]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER.
-      
-    * Refer to [Add code to code injection][8] for details.
+## Demo
+
+You can see a [demo of this effect here][12].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][13].
 
 ## Changes
 
@@ -207,10 +218,13 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://www.jsdelivr.com/
-[5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: store%20page%20list%20categories%20mega%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: store%20page%20list%20categories%20mega.html#L1
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Bookmarklet/Page/Page%20Categories%20to%20Module
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Bookmarklet/Page/Page%20Categories%20to%20Module#page-categories-to-module
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
+[8]: store%20page%20list%20categories%20mega%20options.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: store%20page%20list%20categories%20mega.html#L1
+[12]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
+[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
