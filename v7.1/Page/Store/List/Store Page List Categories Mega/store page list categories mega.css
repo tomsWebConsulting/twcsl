@@ -1,0 +1,180 @@
+/*!
+
+  store page list categories mega
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.6.0
+  
+  SS Version        : 7.1
+  
+  Products V2
+  Compatible        : Yes
+  
+  Fluid
+  Engine
+  Compatible        : Not Applicable
+  
+  Dependencies      : page categories to module
+                      
+                      < https://tinyurl.com/yc8cp3bn >
+  
+  Notes             : this code is not active when Categories Style is set to
+                      DROPDOWN
+                      
+                      in the editor when you change the Menu Placement
+                      (SIDE/TOP) you will see Squarespace's default style of
+                      categories until you save the Store Page. if for some
+                      reason the categories don't update after saving the
+                      Store Page, refresh the Store Page
+  
+  Copyright         : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+.product-list[ data-product-list-layout ] {
+
+  --twc-splcm-spacing-left : 1em;
+  
+  }
+  
+/* begin hide */
+
+  /* begin category */
+  
+    body:not( .sqs-is-page-editing ) .product-list .product-list-nav-and-filters .product-list-nav .nested-category-children, /* top */
+    body:not( .sqs-is-page-editing ) .nested-category-tree-wrapper /* side */
+    
+    /* end category */
+    
+  {
+  
+    display : none /* !important */;
+    
+    }
+    
+  /* end hide */
+
+.product-list[ data-nav-and-filters-position = "top" ] .twc-splcm {
+
+  margin : 10px 0;
+  
+  }
+  
+.twc-splcm {
+
+  margin : 0;
+  overflow-x : scroll;
+  padding-inline-start : unset;
+  white-space : nowrap;
+  
+  }
+  
+.twc-splcm summary {
+
+  display : list-item;
+  width : max-content;
+  
+  }
+  
+.twc-splcm summary::marker {
+
+  font-size : larger;
+  
+  }
+  
+.twc-splcm ul {
+
+  display : flex;
+  gap : 0.75em;
+  
+  }
+
+.twc-splcm .nested-category-breadcrumb-link.active {
+
+  cursor : default;
+  font-weight : 700;
+  
+  }
+  
+.twc-splcm > li > details > ul {
+
+  flex-wrap : var( --twc-splcm-wrap );
+  justify-content : center;
+  
+  }
+
+.product-list[ data-nav-and-filters-position ] .twc-splcm ul {
+
+  padding-inline-start : calc( var( --twc-splcm-spacing-left ) * 2 );
+  
+  }
+  
+.product-list .twc-splcm .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
+
+  margin : unset;
+  
+  }
+  
+.product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
+
+  gap : unset;
+  
+  }
+
+/* begin top */
+
+  .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
+  
+    flex-direction : column;
+    
+    }
+
+  /* begin seperator */
+  
+    .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm > li > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
+
+      display : unset;
+      margin-left : 0.6em;
+      
+      }
+      
+    /* end seperator */
+    
+  /* end top */
+
+/* begin sidebar */
+
+  .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul {
+  
+    flex-direction : column;
+    
+    }
+
+  .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul ul li:first-child {
+  
+    margin-top : 0.75em;
+    
+    }
+    
+  /* end sidebar */
+
+body.sqs-is-page-editing .twc-splcm {
+
+  display : none;
+  
+  }
+  
+@media screen and ( max-width : 767px ) {
+
+  .twc-splcm {
+  
+    display : none;
+    
+    }
+    
+  }

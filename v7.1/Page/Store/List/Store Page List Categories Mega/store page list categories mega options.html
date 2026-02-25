@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.5.3
+    Version       : 0.6.0
     
     SS Version    : 7.1
     
@@ -25,6 +25,10 @@
     
       --twc-splcm-spacing-left : 1em;
       
+      /* value is wrap or nowrap */
+      
+      --twc-splcm-wrap : wrap;
+      
       }
       
     </style>
@@ -41,9 +45,13 @@
     
       const options = {
       
-        categoriesExpandedOnLoad : false, // value is false or true
+        // value is false or true
         
-        hideIcon : false // value is false or true
+        categoriesExpandedOnLoad : false,
+        
+        // value is false or true
+        
+        hideIcon : false
         
         };
         

@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.5.3
+  * 0.6.0
 
 #### SS Version
 
@@ -26,48 +26,101 @@ Store page list categories mega menu.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Store Page List Categories Cache][4]
+  * [Page Categories to Module][4]
 
 ---
 
-## Install
+## Install Options
 
-* Install [Store Page List Categories Cache][4]. After you install Store Page
-  List Categories Cache be sure to continue on with the rest of the steps.
-  
-* Options
+* CDN Hosted
 
-  * Page Specific
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
   
-    Use this option when you want only one Page to have this effect.
+  * Options
+  
+    * Page Specific
+      
+      Use this option if you want to have this effect on only one Store Page.
+      
+      * Add code from file **[store page list categories mega
+        options.html][6]** to Page Settings > Advanced > Page Header Code
+        Injection for the Store Page. Read the code for any instructions within.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Store Page.
+        
+        ```html
+        <!-- begin TWC Store Page List Categories Mega -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page List Categories Mega -->
+          
+        ```
+        
+      *  Refer to [per-page code injection][7] for details.
+      
+    * Site-wide
     
-    * Add code from files **[store page list categories mega options.html][5]**
-      and **[store page list categories mega.html][6]** to Store Settings >
-      Advanced > Page Header Code Injection for the Store Page **before** the
-      **store page list categories cache** code. Refer to [Per-page code
-      injection][7] for details.
+      Use this option if you want to have this effect on all Store Pages.
+      
+      * Add code from file **[store page list categories mega options.html][6]**
+        to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
+        code for any instructions within.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Store Page List Categories Mega -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+          
+          <!-- end TWC Store Page List Categories Mega -->
+          
+        ```
+        
+      *  Refer to [Add code to code injection][8] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
+  
+  * Page Specific
+    
+    Use this option if you want to have this effect on only one Store Page.
+    
+    * Add code from file **[store page list categories mega options.html][6]**
+      to Page Settings > Advanced > Page Header Code Injection for the Store
+      Page. Read the code for any instructions within.
+      
+    * Add code from file **[store page list categories mega.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the Store Page.
+      
+    * Refer to [per-page code injection][7] for details.
       
   * Site-wide
-  
-    Use this option when you want multiple Pages to have this effect.
     
-    * Add code from files **[store page list categories mega options.html][5]**
-      and **[store page list categories mega.html][6]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER **before** the **store page list
-      categories cache** code. Refer to [Add code to code injection][8] for
-      details.
+    Use this option if you want to have this effect on all Store Pages.
+    
+    * Add code from file **[store page list categories mega options.html][6]**
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
+      for any instructions within.
       
-* Read the code files for any instructions, notes or options within.
-
-## Note
-
-In the editor when you change the CATEGORIES TYPE (Sidebar/Top) you will see
-Squarespace's default style of categories until you save the Page. If for some
-reason the categories don't update after saving the Page, refresh the Page.
-
-## Demo
-
-You can see a [demo of this effect here][9].
+    * Add code from file **[store page list categories mega.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][8] for details.
 
 ## Make a Donation
 
@@ -75,6 +128,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-02-24**
+
+  * updated to work with Store Filter beta
+  * updated to use Page Categories to Module
+  * bumped version to 0.6.0
+  
 * **2025-11-02**
 
   * fixed issues after post Products V2 Squarespace changes
@@ -148,10 +207,10 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
-[5]: store%20page%20list%20categories%20mega%20options.html#L1
-[6]: store%20page%20list%20categories%20mega.html#L1
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: store%20page%20list%20categories%20mega%20options.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
+[9]: store%20page%20list%20categories%20mega.html#L1
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

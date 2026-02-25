@@ -4,35 +4,38 @@
   
     store page list categories mega
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.5.3
+    Version           : 0.6.0
     
-    SS Version    : 7.1
+    SS Version        : 7.1
     
     Products V2
-    Compatible    : Yes
+    Compatible        : Yes
     
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible        : Not Applicable
     
-    Dependencies  : store page list categories cache
-                    
-                    < https://tinyurl.com/5hc92p6u >
+    Dependencies      : page categories to module
+                        
+                        < https://tinyurl.com/yc8cp3bn >
     
-    Notes         : the code is comprised of a style and script tag. both are
-                    needed for the full effect to work
-                    
-                    in the editor when you change the CATEGORIES TYPE
-                    (Sidebar/Top) you will see Squarespace's default style of
-                    categories until you save the page. If for some reason the
-                    categories don't update after saving the page, refresh the
-                    page
+    Notes             : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+                        
+                        this code is not active when Categories Style is set to
+                        DROPDOWN
+                        
+                        in the editor when you change the Menu Placement
+                        (SIDE/TOP) you will see Squarespace's default style of
+                        categories until you save the Store Page. if for some
+                        reason the categories don't update after saving the
+                        Store Page, refresh the Store Page
     
-    Copyright     : 2023-2025 Thomas Creedon
-                       
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2023-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -50,7 +53,7 @@
     
       /* begin category */
       
-        body:not( .sqs-is-page-editing ) .product-list .nested-category-children, /* top */
+        body:not( .sqs-is-page-editing ) .product-list .product-list-nav-and-filters .product-list-nav .nested-category-children, /* top */
         body:not( .sqs-is-page-editing ) .nested-category-tree-wrapper /* side */
         
         /* end category */
@@ -63,10 +66,15 @@
         
       /* end hide */
 
+    .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm {
+    
+      margin : 10px 0;
+      
+      }
+      
     .twc-splcm {
     
-      margin-block-end : unset;
-      margin-block-start : unset;
+      margin : 0;
       overflow-x : scroll;
       padding-inline-start : unset;
       white-space : nowrap;
@@ -100,6 +108,13 @@
       
       }
       
+    .twc-splcm > li > details > ul {
+    
+      flex-wrap : var( --twc-splcm-wrap );
+      justify-content : center;
+      
+      }
+
     .product-list[ data-nav-and-filters-position ] .twc-splcm ul {
     
       padding-inline-start : calc( var( --twc-splcm-spacing-left ) * 2 );
@@ -107,18 +122,12 @@
       }
       
     .product-list .twc-splcm .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
-
-      /* white-space : nowrap; */
-      
-      }
-
-    .product-list .twc-splcm .nested-category-breadcrumb-list-item .nested-category-breadcrumb-link {
     
       margin : unset;
       
       }
       
-    .product-list[ data-nav-and-filters-position="top" ] .twc-splcm ul ul {
+    .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
     
       gap : unset;
       
@@ -126,14 +135,7 @@
 
     /* begin top */
     
-      .product-list[ data-nav-and-filters-position="top" ] .twc-splcm {
-      
-        margin-bottom : calc( 37px - 1em );
-        padding-bottom : 1em;
-        
-        }
-        
-      .product-list[ data-nav-and-filters-position="top" ] .twc-splcm ul ul {
+      .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
       
         flex-direction : column;
         
@@ -141,7 +143,7 @@
 
       /* begin seperator */
       
-        .product-list[ data-nav-and-filters-position="top" ] .twc-splcm > li > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
+        .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm > li > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
 
           display : unset;
           margin-left : 0.6em;
@@ -154,20 +156,13 @@
 
     /* begin sidebar */
     
-      .product-list[ data-nav-and-filters-position="sidebar" ] .twc-splcm {
-      
-        float : left;
-        margin-right : 40px
-        
-        }
-        
-      .product-list[ data-nav-and-filters-position="sidebar" ] .twc-splcm ul {
+      .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul {
       
         flex-direction : column;
         
         }
 
-      .product-list[ data-nav-and-filters-position="sidebar" ] .twc-splcm ul ul li:first-child {
+      .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul ul li:first-child {
       
         margin-top : 0.75em;
         
@@ -199,7 +194,7 @@
     
       const
       
-        version = '0.5.3',
+        version = '0.6.0',
         
         s = `
         
@@ -207,527 +202,697 @@
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2023-2025 Thomas Creedon
+          © 2023-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
           `
           
-          .replace ( /^\s+/gm, '' );
+          .replace ( /^ +/gm, '' );
           
       console.log ( s );
       
+      const isStorePage = Static
+      
+        .SQUARESPACE_CONTEXT
+        
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      // bail if not store page
+      
+      if ( ! isStorePage ) return;
+      
+      const isList
+      
+        =
+        
+        !
+        
+        Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .item
+          
+          ?.id;
+          
+      // bail if not list page
+      
+      if ( ! isList ) return;
+      
       // initialize twc module
       
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      window.twc =
       
-      // initialize twc splcc sub-module
-      
-      twc.splcc = ( ( self ) => self ) ( twc.splcc || { } );
-      
-      // initialize twc splcc callbacks sub-module
-      
-      twc.splcc.callbacks = ( ( self ) => {
-      
-        const callback = ( categories ) => {
+        ( ( self ) => self )
         
-          const callback = ( ) => {
+        ( window.twc || { } );
+        
+      // initialize twc pctm sub-module
+      
+      twc.pctm =
+      
+        ( ( self ) => self )
+        
+        ( twc.pctm || { } );
+        
+      const categories = twc
+      
+        .pctm
+        
+        [
+        
+          Static
+          
+            .SQUARESPACE_CONTEXT
             
-            const
+            .collection
             
-              codeKey = 'twc-splcm',
-              
-              selectorKey = '.product-list';
-              
-            // hide show register
+            .id
             
-            {
+          ];
+          
+      // bail if no categories
+      
+      if ( ! categories ) return;
+      
+      // globals
+      
+      {
+      
+        // initialize twc splcc sub-module
+        
+        twc.splcc =
+        
+          ( ( self ) => self )
+          
+          ( twc.splcc || { } );
+          
+        }
+        
+      const dclCallback = ( ) => {
+      
+        const isSubNavigation =
+        
+          !!
+          
+          document
+          
+            .body
             
-              // initialize twc data sub-module
-              
-              twc.data = ( ( self ) => self ) ( twc.data || { } );
-              
-              // initialize twc data hideShow sub-module
-              
-              twc.data.hideShow =
-              
-                ( ( self ) => self ) ( twc.data.hideShow || { } );
-                
-              if ( twc.data.hideShow [ selectorKey ] === undefined )
-              
-                twc
-                
-                  .data
-                  
-                  .hideShow
-                  
-                  [ selectorKey ]
-                  
-                  =
-                  
-                  [ ];
-                  
-              twc
-              
-                .data
-                
-                .hideShow
-                
-                [ selectorKey ]
-                
-                .push ( `--${ codeKey }` );
-                
-              }
-              
-            {
+            .querySelector (
             
-              const
+              '.product-list[ '
               
-                getCategoryUrlSlug = ( ) => {
-                
-                  const slug = location
-                  
-                    .pathname
-                    
-                    .replace (
-                    
-                      url,
-                      
-                      ''
-                      
-                      );
-                      
-                  return slug;
-                  
-                  },
-                  
-                getParents = ( element, selector ) => {
-                
-                  const parents = [ ];
-                  
-                  let current = element
-                  
-                    .parentElement;
-                    
-                  while ( current ) {
-                  
-                    if ( ! selector || current.matches ( selector ) )
-                    
-                      parents.push ( current );
-                      
-                    current = current.parentElement;
-                    
-                    }
-                    
-                  return parents;
-                  
-                  },
-                  
-                options = codeKey
-                
-                  .split ( '-' )
-                  
-                  .reduce ( ( obj, key ) => obj?.[ key ], window ),
-                  
-                traverse = ( categories, ulElement ) => {
-                
-                  const callback = ( category ) => {
-                  
-                    const hasChildren = category
-                    
-                      .children
-                      
-                      .length;
-                    
-                    let liElement = document
-                    
-                      .createElement ( 'template' );
-                      
-                    liElement.innerHTML = `
-                    
-                      <li class="children nested-category-breadcrumb-list-item">
-                      
-                        <a class="nested-category-breadcrumb-link" href="${ category.fullUrl }">
-                        
-                          ${ category.displayName }
-                          
-                          </a>
-                          
-                        <span class="breadcrumb-separator" aria-hidden="true">
-                        
-                          |
-                          
-                          </span>
-                          
-                        </li>
-                        
-                      `;
-                      
-                    liElement = liElement
-                    
-                      .content
-                      
-                      .firstElementChild;
-                      
-                    let element;
-                    
-                    if ( hasChildren ) {
-                    
-                      element = wrap (
-                      
-                        liElement
-                        
-                          .querySelector (
-                          
-                            '.nested-category-breadcrumb-link'
-                            
-                            ),
-                            
-                        `
-                        
-                          <details open>
-                          
-                            <summary>
-                            
-                              </summary>
-                              
-                              </details>
-                              
-                          `
-                          
-                        );
-                        
-                      if ( ! options.categoriesExpandedOnLoad )
-                      
-                        element
-                        
-                          .removeAttribute ( 'open' );
-                          
-                      } else {
-                      
-                        liElement
-                        
-                          .classList
-                          
-                          .remove ( 'children' );
-                          
-                        element = liElement;
-                        
-                        }
-                        
-                    ulElement
-                    
-                      .append ( liElement );
-                      
-                    if ( ! hasChildren ) return; // continue
-                    
-                    const childrenUlElement = document
-                    
-                      .createElement ( 'ul' )
-                      
-                    element.append ( childrenUlElement );
-                    
-                    traverse ( category.children, childrenUlElement );
-                    
-                    }
-                    
-                  categories
-                  
-                    .forEach ( callback );
-                    
-                  },
-                  
-                ulElement = document
-                
-                  .createElement ( 'ul' ),
-                  
-                url = Static
-                   
-                  .SQUARESPACE_CONTEXT
-                  
-                  .collection
-                  
-                  .fullUrl,
-                  
-                windowWidth = document
-                
-                  .documentElement
-                  
-                  .clientWidth,
-                  
-                wrap = ( target, wrapper = '<div>' ) => {
-                
-                  const
-                  
-                    callback = ( element ) => {
-                    
-                      let
-                      
-                        deepestElement,
-                  
-                        outerWrapperElement;
-                        
-                      if ( typeof wrapper === 'string' ) {
-                      
-                        // parse html string into dom
-                        
-                        {
-                        
-                          const element = document
-                          
-                            .createElement ( 'template' );
-                            
-                          element.innerHTML = wrapper
-                          
-                            .trim ( );
-                            
-                          outerWrapperElement = element
-                          
-                            .content
-                            
-                            .firstElementChild;
-                            
-                          // bail if no outer wrapper element
-                          
-                          if ( ! outerWrapperElement ) return;
-                          
-                          }
-                          
-                        // deepest element
-                        
-                        {
-                        
-                          deepestElement = outerWrapperElement;
-                          
-                          while ( deepestElement.firstElementChild )
-                          
-                            deepestElement = deepestElement.firstElementChild;
-                            
-                          }
-                          
-                        } else if ( wrapper instanceof Element ) {
-                        
-                          // clone dom element to avoid reuse
-                          
-                          outerWrapperElement = wrapper
-                          
-                            .cloneNode ( false );
-                            
-                          deepestElement = outerWrapperElement;
-                          
-                          } else {
-                          
-                            const s = 'Invalid wrapper type: must be HTML '
-                            
-                              +
-                              
-                              'string or DOM element';
-                              
-                            throw new Error ( s );
-                            
-                            }
-                            
-                      // insert and wrap
-                      
-                      {
-                      
-                        if ( element.parentNode )
-                        
-                          element
-                          
-                            .parentNode
-                            
-                            .insertBefore (
-                            
-                              outerWrapperElement,
-                              
-                              element
-                              
-                              );
-                              
-                        deepestElement
-                        
-                          .appendChild ( element );
-                          
-                        }
-                        
-                      wrappers
-                      
-                        .push ( outerWrapperElement );
-                        
-                      },
-                      
-                    elements
-                    
-                      =
-                      
-                      typeof target === 'string'
-                      
-                      ?
-                      
-                      document
-                      
-                        .querySelectorAll ( target )
-                        
-                      :
-                      
-                      target instanceof NodeList
-                      
-                      ?
-                      
-                      target
-                      
-                      :
-                      
-                      [ target ];
-                      
-                  let wrappers = [ ];
-                    
-                  elements.forEach ( callback );
-                  
-                  wrappers = wrappers
-                  
-                    .length
-                    
-                    ===
-                    
-                    1
-                    
-                    ?
-                    
-                    wrappers [ 0 ]
-                    
-                    :
-                    
-                    wrappers;
-                    
-                  return wrappers;
-                  
-                  },
-                  
-                categoryUrlSlug = getCategoryUrlSlug ( );
-                
-              let
+              +
               
-                element,
-                
-                selector;
-                
-              ulElement
+              'data-category-interface-type = '
               
-                .classList
-                
-                .add ( codeKey );
-                
-              if ( options.hideIcon )
+              +
               
-                ulElement
-                
-                  .setAttribute ( `data-${ codeKey }-hide-icon`, '' );
-                  
-              traverse ( categories, ulElement );
+              '"subnav" ]'
               
-              // set initial active and open
+              );
               
-              {
+        // bail if not sub navigation
+        
+        if ( ! isSubNavigation ) return;
+        
+        const
+        
+          codeKey = 'twc-splcm',
+          
+          selectorKey = '.product-list';
+          
+        // hide show register
+        
+        {
+        
+          // initialize twc data sub-module
+          
+          twc.data =
+          
+            ( ( self ) => self )
+            
+            ( twc.data || { } );
+            
+          // initialize twc data hideShow sub-module
+          
+          twc.data.hideShow =
+          
+            ( ( self ) => self )
+            
+            ( twc.data.hideShow || { } );
+            
+          if ( twc.data.hideShow [ selectorKey ] === undefined )
+          
+            twc
+            
+              .data
               
-                selector = `[ href="${ url }${ categoryUrlSlug }" ]`;
-                
-                element = ulElement
-                
-                  .querySelector ( selector );
-                  
-                element
-                
-                  .classList
-                  
-                  .add ( 'active' );
-                  
-                getParents ( element, 'details' )
-                
-                  .forEach ( e => e.setAttribute ( 'open', '' ) );
-                  
-                }
-                
-              // add categories mega
+              .hideShow
               
-              {
+              [ selectorKey ]
               
-                element = document
+              =
+              
+              [ ];
+              
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .push ( `--${ codeKey }` );
+            
+          }
+          
+        {
+        
+          const
+          
+            getCategoryTree =
+            
+              ( categoriesFlatPreorderList ) => {
+              
+                const
                 
-                  .body
+                  idCategoryMap =
                   
-                  .querySelector ( '.product-list-container' );
-                  
-                element
-                
-                  .parentNode
-                  
-                  .insertBefore (
-                  
-                    ulElement,
+                    Object.create ( null ),
                     
-                    element
+                  categories = [ ];
+                  
+                categoriesFlatPreorderList
+                
+                  .forEach (
+                  
+                    c =>
                     
+                      idCategoryMap [ c.id ] =
+                      
+                        { ... c, children : [ ] }
+                        
                     );
                     
+                categoriesFlatPreorderList
+                
+                  .forEach (
+                  
+                    c => {
+                    
+                      if ( c.parentCategoryId )
+                      
+                        idCategoryMap
+                        
+                          [ c.parentCategoryId ]
+                          
+                          .children
+                          
+                          .push (
+                          
+                            idCategoryMap [ c.id ]
+                            
+                            );
+                            
+                        else
+                        
+                          categories.push (
+                          
+                            idCategoryMap [ c.id ]
+                            
+                            );
+                            
+                      }
+                      
+                    );
+                    
+                return categories;
+                
+                },
+                
+            getCategoryUrlSlug = ( ) => {
+            
+              const slug = location
+              
+                .pathname
+                
+                .replace (
+                
+                  url,
+                  
+                  ''
+                  
+                  );
+                  
+              return slug;
+              
+              },
+              
+            getParents = ( element, selector ) => {
+            
+              const parents = [ ];
+              
+              let current = element
+              
+                .parentElement;
+                
+              while ( current ) {
+              
+                if ( ! selector || current.matches ( selector ) )
+                
+                  parents.push ( current );
+                  
+                current = current.parentElement;
+                
                 }
                 
-              }
+              return parents;
               
-            // hide show unregister
-            
-            {
-            
-              twc
+              },
               
-                .data
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce (
+              
+                ( obj, key ) => obj?.[ key ],
                 
-                .hideShow
+                window ),
                 
-                [ selectorKey ]
+            traverse = ( categories, ulElement ) => {
+            
+              const callback = ( category ) => {
+              
+                const hasChildren = category
                 
-                .pop ( `--${ codeKey }` );
+                  .children
+                  
+                  .length;
                 
+                let liElement = document
+                
+                  .createElement ( 'template' );
+                  
+                liElement.innerHTML = `
+                
+                  <li class="children nested-category-breadcrumb-list-item">
+                  
+                    <a class="nested-category-breadcrumb-link" href="${ url }${ category.fullSlug }">
+                    
+                      ${ category.displayName }
+                      
+                      </a>
+                      
+                    <span class="breadcrumb-separator" aria-hidden="true">
+                    
+                      |
+                      
+                      </span>
+                      
+                    </li>
+                    
+                  `;
+                  
+                liElement = liElement
+                
+                  .content
+                  
+                  .firstElementChild;
+                  
+                let element;
+                
+                if ( hasChildren ) {
+                
+                  element = wrap (
+                  
+                    liElement
+                    
+                      .querySelector (
+                      
+                        '.nested-category-breadcrumb-link'
+                        
+                        ),
+                        
+                    `
+                    
+                      <details open>
+                      
+                        <summary>
+                        
+                          </summary>
+                          
+                          </details>
+                          
+                      `
+                      
+                    );
+                    
+                  if ( ! options.categoriesExpandedOnLoad )
+                  
+                    element
+                    
+                      .removeAttribute ( 'open' );
+                      
+                  } else {
+                  
+                    liElement
+                    
+                      .classList
+                      
+                      .remove ( 'children' );
+                      
+                    element = liElement;
+                    
+                    }
+                    
+                ulElement
+                
+                  .append ( liElement );
+                  
+                if ( ! hasChildren ) return; // continue
+                
+                const childrenUlElement = document
+                
+                  .createElement ( 'ul' )
+                  
+                element.append ( childrenUlElement );
+                
+                traverse ( category.children, childrenUlElement );
+                
+                }
+                
+              categories
+              
+                .forEach ( callback );
+                
+              },
+              
+            ulElement = document
+            
+              .createElement ( 'ul' ),
+              
+            url = Static
+               
+              .SQUARESPACE_CONTEXT
+              
+              .collection
+              
+              .fullUrl,
+              
+            windowWidth = document
+            
+              .documentElement
+              
+              .clientWidth,
+              
+            wrap = ( target, wrapper = '<div>' ) => {
+            
               const
               
-                l = twc
+                callback = ( element ) => {
                 
-                  .data
+                  let
                   
-                  .hideShow
-                  
-                  [ selectorKey ]
-                  
-                  .length,
-                  
-                productListElement = document
-                
-                  .querySelector ( '.product-list' );
-                  
-              if ( ! l )
+                    deepestElement,
               
-                productListElement
+                    outerWrapperElement;
+                    
+                  if ( typeof wrapper === 'string' ) {
+                  
+                    // parse html string into dom
+                    
+                    {
+                    
+                      const element = document
+                      
+                        .createElement ( 'template' );
+                        
+                      element.innerHTML = wrapper
+                      
+                        .trim ( );
+                        
+                      outerWrapperElement = element
+                      
+                        .content
+                        
+                        .firstElementChild;
+                        
+                      // bail if no outer wrapper element
+                      
+                      if ( ! outerWrapperElement ) return;
+                      
+                      }
+                      
+                    // deepest element
+                    
+                    {
+                    
+                      deepestElement = outerWrapperElement;
+                      
+                      while ( deepestElement.firstElementChild )
+                      
+                        deepestElement = deepestElement.firstElementChild;
+                        
+                      }
+                      
+                    } else if ( wrapper instanceof Element ) {
+                    
+                      // clone dom element to avoid reuse
+                      
+                      outerWrapperElement = wrapper
+                      
+                        .cloneNode ( false );
+                        
+                      deepestElement = outerWrapperElement;
+                      
+                      } else {
+                      
+                        const s = 'Invalid wrapper type: must be HTML '
+                        
+                          +
+                          
+                          'string or DOM element';
+                          
+                        throw new Error ( s );
+                        
+                        }
+                        
+                  // insert and wrap
+                  
+                  {
+                  
+                    if ( element.parentNode )
+                    
+                      element
+                      
+                        .parentNode
+                        
+                        .insertBefore (
+                        
+                          outerWrapperElement,
+                          
+                          element
+                          
+                          );
+                          
+                    deepestElement
+                    
+                      .appendChild ( element );
+                      
+                    }
+                    
+                  wrappers
+                  
+                    .push ( outerWrapperElement );
+                    
+                  },
+                  
+                elements
                 
-                  .style
+                  =
                   
-                  .setProperty ( '--twc-product-list-visibility', 'visible' );
+                  typeof target === 'string'
                   
-              }
+                  ?
+                  
+                  document
+                  
+                    .querySelectorAll ( target )
+                    
+                  :
+                  
+                  target instanceof NodeList
+                  
+                  ?
+                  
+                  target
+                  
+                  :
+                  
+                  [ target ];
+                  
+              let wrappers = [ ];
+                
+              elements.forEach ( callback );
               
-            };
+              wrappers = wrappers
+              
+                .length
+                
+                ===
+                
+                1
+                
+                ?
+                
+                wrappers [ 0 ]
+                
+                :
+                
+                wrappers;
+                
+              return wrappers;
+              
+              },
+              
+            categoryUrlSlug = getCategoryUrlSlug ( );
             
-          document
-           
-            .addEventListener ( 'DOMContentLoaded', callback );
-            
-          };
+          let
           
-        self.push ( callback );
+            element,
+            
+            selector;
+            
+          ulElement
+          
+            .classList
+            
+            .add ( codeKey );
+            
+          if ( options.hideIcon )
+          
+            ulElement
+            
+              .setAttribute ( `data-${ codeKey }-hide-icon`, '' );
+              
+          traverse (
+          
+            getCategoryTree ( categories ),
+            
+            ulElement
+            
+            );
+            
+          // set initial active and open
+          
+          {
+          
+            selector = `[ href="${ url }${ categoryUrlSlug }" ]`;
+            
+            element = ulElement
+            
+              .querySelector ( selector );
+              
+            element
+            
+              .classList
+              
+              .add ( 'active' );
+              
+            getParents ( element, 'details' )
+            
+              .forEach ( e => e.setAttribute ( 'open', '' ) );
+              
+            }
+            
+          // add categories mega
+          
+          {
+          
+            document
+            
+              .body
+              
+              .querySelector (
+              
+                [
+                
+                  '.nested-category-children',
+                  
+                  '.nested-category-tree-wrapper'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+              .after ( ulElement );
+              
+            }
+            
+          }
+          
+        // hide show unregister
         
-        return self;
+        {
         
-        } ) ( twc.splcc.callbacks || [ ] );
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .pop ( `--${ codeKey }` );
+            
+          const
+          
+            l = twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length,
+              
+            productListElement = document
+            
+              .querySelector ( '.product-list' );
+              
+          if ( ! l )
+          
+            productListElement
+            
+              .style
+              
+              .setProperty ( '--twc-product-list-visibility', 'visible' );
+              
+          }
+          
+        };
+        
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        dclCallback
+        
+        );
         
       } ) ( );
       
