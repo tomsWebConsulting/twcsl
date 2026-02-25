@@ -55,9 +55,9 @@ Store page list categories mega menu.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Categories Mega -->
           
@@ -81,9 +81,9 @@ Store page list categories mega menu.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@43bd5decf42fc6e64dc790bc7e696b9331351b8d/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@29470cb09cf8481dafc7dc15cf81b4e893ebc631/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
           
           <!-- end TWC Store Page List Categories Mega -->
           
