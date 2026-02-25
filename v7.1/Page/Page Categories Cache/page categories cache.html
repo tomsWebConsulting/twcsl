@@ -1,0 +1,424 @@
+<!-- begin TWC Page Categories Cache -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        page categories cache
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.1.1
+        
+        SS Versions   : 7.1, 7.0
+        
+        v7.1
+        Products V2
+        Compatible    : Not Applicable
+        
+        v7.1
+        Fluid
+        Engine
+        Compatible    : Not Applicable
+        
+        Notes         : this code makes a call to an unofficial Squarespace API
+                        product content service products categories tree or
+                        GetCollectionCategories for information that is not
+                        normally available through other means
+                        
+                        the structure of the cache data is different between
+                        v7.1 and v7.0. therefore your callbacks need to take
+                        this into account
+                        
+                        the cache disable option doesn't disable the overall
+                        cache logic. it simply removes the session storage key
+                        after user callbacks are run. this causes the cache data
+                        to be regenerated when the Store page is reloaded. this
+                        can be useful for testing or if you want site visitors
+                        to always have access to the current categories
+        
+        Copyright     : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.1.1',
+        
+        s = `
+        
+          Page Categories Cache v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        isBlogPage
+        
+          =
+          
+          !!
+          
+          document
+          
+            .querySelectorAll (
+            
+              [
+                  
+                'body[ class*="collection-type-blog-" ]',
+                
+                'body[ class~="collection-type-blog" ]'
+                
+                ]
+                
+                .join ( ', ' )
+                
+              )
+              
+              .length,
+              
+        isEventsPage
+        
+          =
+          
+          !!
+          
+          document
+          
+            .querySelectorAll (
+            
+              [
+                  
+                'body[ class*="collection-type-events-" ]',
+                
+                'body[ class~="collection-type-events" ]'
+                
+                ]
+                
+                .join ( ', ' )
+                
+              )
+              
+              .length,
+              
+        isStorePage = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          ?.type
+          
+          ===
+          
+          13,
+          
+        hasCategories = isBlogPage || isEventsPage || isStorePage;
+          
+      if ( ! hasCategories ) return; // bail if not has categories
+      
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = ( ( self ) => self ) ( window.twc || { } );
+        
+        // initialize twc pcc sub-module
+        
+        twc.pcc = ( ( self ) => self ) ( twc.pcc || { } );
+        
+        // initialize twc pcc callbacks sub-module
+        
+        twc.pcc.callbacks =
+        
+          ( ( self ) => self ) ( twc.pcc.callbacks || [ ] );
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-pcc',
+        
+        collectionId = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          .id,
+          
+        dlcCallback = async ( ) => {
+        
+          const
+          
+            hasCallbacks = options
+            
+              .callbacks
+              
+              .length;
+              
+          // bail if no callbacks
+          
+          if ( ! hasCallbacks ) {
+          
+            const s = `${ codeKey } no callbacks`;
+            
+            console.warn ( s );
+            
+            return;
+            
+            }
+            
+          let categories = sessionStorage
+          
+            .getItem ( codeKey );
+            
+          // bail if categories
+          
+          if ( categories ) {
+          
+            categories = JSON.parse ( categories );
+            
+            userCallbacks ( categories );
+            
+            if ( options.cacheDisable )
+            
+              sessionStorage
+              
+                .removeItem ( codeKey );
+                
+            return;
+            
+            }
+            
+          try {
+          
+            const response = await fetch ( url );
+            
+            if ( ! response.ok ) {
+            
+              const s = `
+              
+                ${ codeKey } network response was not ok ${
+                
+                  response
+                  
+                    .statusText
+                    
+                  }
+                  
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
+              
+              }
+              
+            categories = await response.json ( );
+            
+            if ( is71 )
+            
+              categories = categories.categoryTree;
+              
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${ codeKey } there has been a problem with your fetch get
+                
+                operation, ${ error }.
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              } finally {
+              
+                const callback = ( category ) => {
+                
+                  category.className =
+                  
+                    categoryNameToCssClassName (
+                    
+                      category [
+                      
+                        is71
+                        
+                        ?
+                        
+                        'displayName'
+                        
+                        :
+                        
+                        is70
+                        
+                        ?
+                        
+                        'name'
+                        
+                        :
+                        
+                        undefined
+                        
+                        ]
+                        
+                      );
+                      
+                  };
+                  
+                categories.forEach ( callback );
+                
+                sessionStorage.setItem (
+                
+                  codeKey,
+                  
+                  JSON
+                  
+                    .stringify ( categories )
+                    
+                  );
+                  
+                userCallbacks ( categories );
+                
+                if ( options.cacheDisable )
+                
+                  sessionStorage
+                  
+                    .removeItem ( codeKey );
+                    
+                }
+                
+          },
+          
+        categoryNameToCssClassName = ( name ) => {
+        
+          if ( ! name ) return; // bail if no name
+          
+          const className = 'category-'
+          
+            +
+            
+            name
+            
+              .replaceAll ( ' ', '-' )
+              
+              .toLowerCase ( )
+              
+              .replace ( /[^\w-]+/g, '' )
+              
+              .replaceAll ( '--', '-' );
+              
+          return className;
+          
+          },
+          
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce ( ( obj, key ) => obj?.[ key ], window ),
+          
+        ssVersion = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .templateVersion,
+          
+        userCallbacks = ( categories ) => {
+        
+          const callback = ( callback ) => {
+          
+            try {
+            
+              callback ( categories );
+              
+              } catch ( error ) {
+              
+                const s = `${ codeKey } callback error`;
+                
+                console.error ( s, error );
+                
+                }
+                
+            };
+          
+          options
+          
+            .callbacks
+            
+            .forEach ( callback );
+            
+          },
+          
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1',
+        
+        url =
+        
+          is71
+          
+          ?
+          
+          `/api/product-content-service/products/${ collectionId }/`
+          
+            +
+            
+            'categories/tree'
+            
+          :
+          
+          is70
+          
+          ?
+          
+          '/api/commondata/GetCollectionCategories?collectionId='
+          
+            +
+            
+            `${ collectionId }`
+            
+          :
+          
+          undefined;
+          
+      if ( ! url ) return; // bail if no url
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        dlcCallback
+        
+        );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Page Categories Cache -->
