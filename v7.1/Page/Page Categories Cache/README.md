@@ -8,7 +8,7 @@ Cache Page categories in sessionStorage.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -160,6 +160,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-02-25**
+
+  * restored JSON to object conversion
+  * bumped version to 0.2.1
+  
 * **2026-02-25**
 
   * removed support for Squarespace v7.0
