@@ -53,7 +53,7 @@ Cache Page categories in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b999db7a71ab8a78bc7ff04a95cd6472da83837f/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1341dd8e08957ba20da65284d9e171d71bc03c65/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Categories Cache -->
           
@@ -77,7 +77,7 @@ Cache Page categories in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b999db7a71ab8a78bc7ff04a95cd6472da83837f/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1341dd8e08957ba20da65284d9e171d71bc03c65/v7.1/Page/Page%20Categories%20Cache/page%20categories%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Categories Cache -->
           
