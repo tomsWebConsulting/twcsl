@@ -50,7 +50,7 @@ Change Gallery Section Lighbox SVG control icons.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1fbae67a893f5c3086740aec6a8f078c2ba77286/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lighbox Control Icons Change -->
           
@@ -74,7 +74,7 @@ Change Gallery Section Lighbox SVG control icons.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1fbae67a893f5c3086740aec6a8f078c2ba77286/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lighbox Control Icons Change -->
           
