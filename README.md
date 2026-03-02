@@ -625,9 +625,9 @@ not necessarily designed to work together.
         
       * [Gallery Section Horizontal Scroll](v7.1/Section/Gallery/Gallery%20Section%20Horizontal%20Scroll)
         
-      * [Gallery Section Lighbox Control Icons Change](v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change)
+      * [Gallery Section Lightbox Control Icons Change](v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change)
         
-        * [Gallery Section Lighbox Control Icons Change.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/Gallery%20Section%20Lighbox%20Control%20Icons%20Change.bbprojectd)
+        * [Gallery Section Lighbox Control Icons Change.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/Gallery%20Section%20Lighbox%20Control%20Icons%20Change.bbprojectd)
           
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
