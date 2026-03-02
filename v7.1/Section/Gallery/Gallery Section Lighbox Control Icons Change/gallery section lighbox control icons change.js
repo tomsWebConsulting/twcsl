@@ -2,7 +2,7 @@
 
   /*!
   
-    gallery section lighbox control icons change
+    gallery section lightbox control icons change
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -28,7 +28,7 @@
     
     s = `
     
-      Gallery Section Lighbox Control Icons Change v${ version }
+      Gallery Section Lightbox Control Icons Change v${ version }
       
       License < https://tinyurl.com/s872fb68 >
       
@@ -44,8 +44,6 @@
   
   const dclCallback = ( ) => {
   
-    debugger;
-    
     const
     
       codeKey = 'twc-gslcic',

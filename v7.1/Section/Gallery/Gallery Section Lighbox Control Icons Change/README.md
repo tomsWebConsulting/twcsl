@@ -1,10 +1,10 @@
-# Gallery Section Lighbox Control Icons Change
+# Gallery Section Lightbox Control Icons Change
 
 ### [License][1]
 
 ### Synopsis
 
-Change Gallery Section Lighbox SVG control icons.
+Change Gallery Section Lightbox SVG control icons.
 
 ### Version
 
@@ -37,7 +37,7 @@ Change Gallery Section Lighbox SVG control icons.
       
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[gallery section lighbox control icons change
+      * Add code from file **[gallery section lightbox control icons change
         options.html][6]** to Page Settings > Advanced > Page Header Code
         Injection for the Page. Read the code for any instructions
         within.
@@ -46,13 +46,13 @@ Change Gallery Section Lighbox SVG control icons.
         Page Header Code Injection for the Page.
         
         ```html
-        <!-- begin TWC Gallery Section Lighbox Control Icons Change -->
+        <!-- begin TWC Gallery Section Lightbox Control Icons Change -->
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
           
-          <!-- end TWC Gallery Section Lighbox Control Icons Change -->
+          <!-- end TWC Gallery Section Lightbox Control Icons Change -->
           
         ```
         
@@ -62,7 +62,7 @@ Change Gallery Section Lighbox SVG control icons.
     
       Use this option if you want to have this effect on all Pages.
       
-      * Add code from file **[gallery section lighbox control icons change
+      * Add code from file **[gallery section lightbox control icons change
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
         FOOTER. Read the code for any instructions within.
         
@@ -70,13 +70,13 @@ Change Gallery Section Lighbox SVG control icons.
         Code Injection > FOOTER.
         
         ```html
-        <!-- begin TWC Gallery Section Lighbox Control Icons Change -->
+        <!-- begin TWC Gallery Section Lightbox Control Icons Change -->
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lighbox%20Control%20Icons%20Change/gallery%20section%20lighbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
           
-          <!-- end TWC Gallery Section Lighbox Control Icons Change -->
+          <!-- end TWC Gallery Section Lightbox Control Icons Change -->
           
         ```
         
@@ -91,12 +91,12 @@ Change Gallery Section Lighbox SVG control icons.
     
     Use this option if you want to have this effect on only one Page.
     
-    * Add code from file **[gallery section lighbox control icons change
+    * Add code from file **[gallery section lightbox control icons change
       options.html][6]** to Page Settings > Advanced >
       Page Header Code Injection for the Page. Read the code for any
       instructions within.
       
-    * Add code from file **[gallery section lighbox control icons
+    * Add code from file **[gallery section lightbox control icons
       change.html][9]** to Page Settings > Advanced >
       Page Header Code Injection for the Page.
       
@@ -106,11 +106,11 @@ Change Gallery Section Lighbox SVG control icons.
     
     Use this option if you want to have this effect on all Pages.
     
-    * Add code from file **[gallery section lighbox control icons change
+    * Add code from file **[gallery section lightbox control icons change
       options.html][6]** to Website > Pages > Custom Code > Code Injection >
       FOOTER. Read the code for any instructions within.
       
-    * Add code from file **[gallery section lighbox control icons
+    * Add code from file **[gallery section lightbox control icons
       change.html][9]** to Website > Pages > Custom Code > Code Injection >
       FOOTER.
       
@@ -142,10 +142,10 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: gallery%20section%20lighbox%20control%20icons%20change%20options.html#L1
+[6]: gallery%20section%20lightbox%20control%20icons%20change%20options.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: gallery%20section%20lighbox%20control%20icons%20change.html#L1
+[9]: gallery%20section%20lightbox%20control%20icons%20change.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/store-page-list-categories-mega?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
 
