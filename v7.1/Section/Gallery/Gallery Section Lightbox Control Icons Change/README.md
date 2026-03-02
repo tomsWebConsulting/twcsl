@@ -50,7 +50,7 @@ Change Gallery Section Lightbox SVG control icons.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@011884de792af569a7447bad860c619a30b1eb1e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Control Icons Change -->
           
@@ -74,7 +74,7 @@ Change Gallery Section Lightbox SVG control icons.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0c147fb5c9594150350e370b95dbc13789cc4575/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@011884de792af569a7447bad860c619a30b1eb1e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/gallery%20section%20lightbox%20control%20icons%20change.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Control Icons Change -->
           
