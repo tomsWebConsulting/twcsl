@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 488 effects. Each effect has it's own version number, code,
+twcsl contains 489 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -745,6 +745,8 @@ not necessarily designed to work together.
           
       * [Header Buttons Add](v7.1/Element/Header/Header%20Buttons%20Add)
         
+        * [Header Buttons Add.bbprojectd](v7.1/Element/Header/Header%20Buttons%20Add/Header%20Buttons%20Add.bbprojectd)
+          
   * [Add Image Tags Between Event List Items](v7.1/Add%20Image%20Tags%20Between%20Event%20List%20Items)
     
   * [Gallery Section Reel Arrows Top Center](v7.1/Gallery%20Section%20Reel%20Arrows%20Top%20Center)
