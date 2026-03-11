@@ -4,24 +4,24 @@
   
     page sections slide toggle
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.9.0
+    Version           : 0.10.0
     
-    SS Version    : 7.1
+    SS Version        : 7.1
     
     Fluid
     Engine
-    Compatible    : Yes
+    Compatible        : Yes
     
-    Dependencies  : jQuery
+    Dependencies      : jQuery
     
-    Notes         : the code is comprised of several tags. all are needed for the
-                    full effect to work
+    Notes             : the code is comprised of several tags. all are needed
+                        for the full effect to work
     
-    Copyright     : 2021-2026 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts
     
@@ -165,7 +165,7 @@
     
       const
       
-        version = '0.9.0',
+        version = '0.10.0',
       
         s = `
         
@@ -187,144 +187,422 @@
       
         codeKey = 'twc-psst',
         
+        codeKeyCamelCase = codeKey
+        
+          .replace (
+          
+            /-([a-zA-Z])/g,
+            
+            ( _, c ) => c.toUpperCase ( )
+            
+            ),
+            
         isEditor = $( 'html' )
         
-          .hasClass ( 'squarespace-damask' ),
+          .hasClass (
+          
+            'squarespace-damask'
+            
+            ),
+            
+        openClassName =
+        
+          `${ codeKey }--open`,
           
         options = codeKey
         
           .split ( '-' )
           
-          .reduce ( ( obj, key ) => obj?.[ key ], window );
+          .reduce (
           
-      let
-      
-        callback = function ( ) {
+            ( obj, key ) => obj?.[ key ],
+            
+            window
+            
+            ),
+            
+        sectionSelector =
         
-          const callback = function ( ) {
-          
-            const isEditing = $( 'body' )
-            
-              .hasClass ( 'sqs-is-page-editing' );
+          '[ data-test = "page-section" ]',
+      
+        attribute = `data-${
               
-            if ( isEditing ) return; // bail if is editing
-            
+          codeKey
+          
+          }-section-group`,
+          
+        closeSectionClickCallback =
+        
+          function ( ) {
+          
             $( this )
             
-              .toggleClass ( `${ codeKey }--open` );
+              .parents ( '.page-section' )
               
-            if ( duration )
-            
-              $sectionsNext
+              .prevAll ( `.${ codeKey }` )
               
-                .slideToggle ( duration );
-                
-              else
+              .first ( )
               
-                $sectionsNext
-                
-                  .slideToggle ( );
-                  
-            dispatchEvent ( new Event ( 'resize' ) );
-            
-            }
-            
-          const
-          
-            selector = '.page-section',
-          
-            $this = $( this ),
-          
-            className = 'twc-psst-display-flex';
-            
-          let
-          
-            count = $this.attr ( 'data-section-count' ),
-            
-            open = $this.attr ( 'data-open' );
-          
-          count = count === undefined ? 1 : Number ( count );
-          
-          open = open === undefined ? false : Boolean ( open );
-          
-          const
-          
-            $sectionElement = $this
-            
-              .parents ( selector ),
+              .click ( );
               
-            $sectionsNext = $sectionElement
+            };
             
-              .addClass ( `${ codeKey }` )
-              
-              .click ( callback )
-              
-              .nextAll ( selector )
-              
-              .slice ( 0, count );
-              
-          if ( ! open )
+      let
+      
+        duration = options.duration,
+        
+        sectionGroupCount = 1,
+      
+        $anchorLinkElement = $(
+        
+          location.hash
           
-            $sectionsNext
-            
-              .css ( 'display', 'none' );
-              
-            else
-            
-              $sectionElement.toggleClass (
-              
-                `${ codeKey }--open`
-                
-                );
-                
-          $this
+          );
           
-            .parents ( '.col' )
+      const
+      
+        gotoAnchorLink = ( ) => {
+        
+          const isExists =
+          
+            $anchorLinkElement.length;
             
-            .first ( )
-            
-            .addClass ( className )
-            
-            .parents ( '.sqs-row' )
-            
-            .first ( )
-            
-            .addClass ( className );
+          // bail if no element
+          
+          if ( ! isExists ) return;
+          
+          $anchorLinkElement [ 0 ]
+          
+            .scrollIntoView ( );
             
           },
           
-        duration = options.duration,
+        sectionNextClickCallback =
         
-        selector = `#page .page-section x-${ codeKey }`;
-        
-      $( selector )
-      
-        .each ( callback );
-        
-      callback = function ( ) {
-      
-        const callback = function ( ) {
-        
-          $( this )
+          function ( $sectionNextElements ) {
           
-            .parents ( '.page-section' )
+            const isEditing = $( 'body' )
             
-            .prevAll ( `.${ codeKey }` )
+              .hasClass (
+              
+                'sqs-is-page-editing'
+                
+                );
+                
+            // bail if is editing
             
-            .first ( )
+            if ( isEditing ) return;
             
-            .click ( );
+            $( this )
             
+              .toggleClass (
+              
+                openClassName
+                
+                );
+                
+            $sectionNextElements
+            
+              .slideToggle ( duration );
+              
+            dispatchEvent (
+            
+              new Event ( 'resize' )
+              
+              );
+              
+            };
+            
+      $(
+      
+        `#page ${
+        
+          sectionSelector
+          
+          } x-${
+          
+            codeKey
+            
+            }`
+            
+        )
+        
+        .each (
+        
+          function ( ) {
+          
+            const
+            
+              $this = $( this ),
+              
+              $sectionElement = $this
+              
+                .parents ( sectionSelector )
+                
+                .addClass ( `${ codeKey }` )
+                
+                .attr (
+                
+                  attribute,
+                  
+                  sectionGroupCount
+                  
+                  );
+                  
+            let
+            
+              count = $this.attr (
+              
+                'data-section-count'
+                
+                ),
+                
+              open = $this.attr (
+              
+                'data-open'
+                
+                );
+                
+            count = count
+            
+              ===
+              
+              undefined
+              
+              ?
+              
+              1
+              
+              :
+              
+              Number ( count );
+              
+            $sectionElement.data (
+            
+              `${
+              
+                codeKeyCamelCase
+                
+                }Open`,
+                
+              open
+              
+                ===
+                
+                undefined
+                
+                ?
+                
+                false
+                
+                :
+                
+                Boolean ( open )
+                
+              );
+              
+            const $sectionNextElements =
+            
+              $sectionElement
+              
+                .nextAll (
+                
+                  sectionSelector
+                  
+                  )
+                  
+                .slice ( 0, count )
+                
+                .attr (
+                
+                  attribute,
+                  
+                  sectionGroupCount++
+                  
+                  );
+                  
+            $sectionElement.click (
+            
+              function ( ) {
+              
+                sectionNextClickCallback
+                
+                  .call (
+                  
+                    this,
+                    
+                    $sectionNextElements
+                    
+                    );
+                    
+                }
+                
+              );
+              
+            }
+            
+          );
+          
+      const $anchorLinkSection =
+      
+        $anchorLinkElement.closest (
+        
+          `[ ${ attribute } ]`
+          
+          );
+      
+      if ( ! $anchorLinkSection.length ) {
+      
+        $( `.${ codeKey }` ).each (
+        
+          function ( ) {
+          
+            const
+            
+              $this = $( this ),
+              
+              $elements = $( `
+              
+                [
+                
+                  data-${
+                  
+                    codeKey
+                    
+                    }-section-group
+                    
+                  =
+                  
+                  "${
+                  
+                    $this.attr (
+                    
+                      attribute
+                      
+                      )
+                      
+                    }"
+                    
+                  ]
+                  
+                ` )
+                
+                .slice ( 1 ),
+                
+              hasAnchorLink = $elements
+              
+                .is (
+                
+                  $anchorLinkSection
+                  
+                  );
+                  
+            // bail if has anchor link
+            
+            if ( hasAnchorLink ) return;
+            
+            const open = $this.data (
+            
+              `${ codeKeyCamelCase }Open`
+              
+              );
+              
+            if ( open )
+            
+              $this.toggleClass (
+              
+                openClassName
+                
+                );
+                
+              else
+              
+                $elements.css (
+                
+                  'display',
+                  
+                  'none'
+                  
+                  );
+                  
+            } );
+            
+        } else {
+        
+          const $elements = $( `
+          
+            [
+            
+              data-${
+              
+                codeKey
+                
+                }-section-group
+                
+              =
+              
+              "${
+              
+                $anchorLinkSection
+                
+                  .attr ( attribute )
+                  
+                }"
+                
+              ]
+              
+            ` )
+              
+              .first ( )
+              
+              .addClass ( openClassName )
+              
+              .end ( );
+              
+          $(
+          
+            '[ data-twc-psst-section-group ]'
+            
+            +
+            
+            `:not( .${ codeKey } )`
+            
+            )
+            
+            .not ( $elements )
+              
+            .css (
+            
+              'display',
+              
+              'none'
+              
+              );
+              
           }
           
-        $( this ).click ( callback );
-        
-        }
-        
-      selector = `#page .page-section x-${ codeKey }-close`;
+      $(
       
-      $( selector ).each ( callback )
-      
+        `#page .page-section x-${
+        
+          codeKey
+          
+          }-close`
+          
+        ).each (
+        
+          function ( ) {
+          
+            $( this ).click (
+            
+              closeSectionClickCallback
+              
+              );
+              
+            }
+            
+          );
+        
       if ( isNaN ( duration ) ) {
       
         if ( duration [ 0 ] == '[' )
@@ -335,45 +613,167 @@
         
           duration = Number ( duration );
           
-      $( '#page' ).css ( '--twc-psst-section-visibility', 'visible' );
+      $( '#page' ).css (
+      
+        `--${ codeKey }-section-visibility`,
+        
+        'visible'
+        
+        );
+        
+      gotoAnchorLink ( );
       
       // section open when URL hash changes
       
-      callback = function ( ) {
+      $( window ).on (
       
-        const selector = location.hash;
+        'hashchange',
         
-        $( selector )
+        ( ) => {
         
-          .parents ( '.page-section' )
+          $anchorLinkElement = $(
           
-          .prevAll ( `.${ codeKey }:not( .${ codeKey }--open )` )
+            location.hash
+            
+            );
+            
+          let isExists =
           
-          .first ( )
+            $anchorLinkElement.length;
+            
+          // bail if no element
           
-          .click ( );
+          if ( ! isExists ) return;
           
-        }
+          const $anchorLinkSection =
+          
+            $anchorLinkElement
+            
+              .closest (
+              
+                `[ ${ attribute } ]`
+                
+                );
+            
+          isExists =
+          
+            $anchorLinkSection.length;
+            
+          // bail if no element
+          
+          if ( ! isExists ) return;
+          
+          const $elements = $( `[
+            
+            data-twc-psst-section-group
+            
+            =
+            
+            "${
+            
+              $anchorLinkSection
+              
+                .attr ( attribute )
+                
+              }"
+              
+            ]` );
+            
+          const hasClassName = $elements
+            
+              .first ( )
+              
+              .hasClass (
+              
+                openClassName
+                
+                );
+                
+          // bail if class name
+          
+          if ( hasClassName ) return;
+          
+          let i = 0;
+          
+          const
+          
+            count = $elements.length - 1,
+            
+            complete = ( ) => {
+            
+              if ( ++i !== count )
+              
+                return;
+                
+              dispatchEvent (
+              
+                new Event ( 'resize' )
+                
+                );
+              
+              setTimeout (
+              
+                ( ) => {
+                
+                  gotoAnchorLink ( );
+                  
+                  },
+                  
+                100
+                
+                );
+                
+              };
+              
+          $elements
+          
+            .first ( )
+            
+            .addClass ( openClassName )
+            
+            .end ( )
+            
+            .slice ( 1 )
+            
+            .slideToggle (
+            
+              duration,
+              
+              complete
+              
+              );
+              
+          }
+          
+        );
         
-      $( window ).on ( 'hashchange', callback );
-        
-      if ( ! isEditor ) return; // bail if not editor
+      // bail if not editor
       
-      const config = {
+      if ( ! isEditor ) return;
       
-        attributes : true
-        
-        };
-        
-      callback = ( mutations ) => {
+      const
       
-        const callback = ( mutation ) => {
+        mutationCallback = ( mutation ) => {
         
-          if ( mutation.type != 'attributes' ) return; // bail if not attribute
+          const isAttribute =
           
+            mutation.type === 'attributes';
+            
+          // bail if not attribute
+          
+          if ( ! isAttribute ) return;
+          
+          const isClass =
+          
+            mutation.attributeName
+            
+            ===
+            
+            'class';
+            
           // bail if not attribute class
           
-          if ( mutation.attributeName != 'class' ) return;
+          if ( ! isClass ) return;
           
           const isEditing = $( target )
           
@@ -383,20 +783,46 @@
           
           if ( ! isEditing ) return;
           
-          dispatchEvent ( new Event ( 'resize' ) );
+          dispatchEvent (
           
-          };
+            new Event ( 'resize' )
+            
+            );
+            
+          },
           
-        mutations.forEach ( callback );
+        mutationsCallback =
         
-        };
+          ( mutations ) => {
+          
+            mutations
+            
+              .forEach ( mutationCallback );
+            
+            },
+            
+        observer =
         
-      const observer = new MutationObserver ( callback );
-         
+          new MutationObserver (
+          
+            mutationsCallback
+            
+            );
+            
       // start listening for changes in element
       
-      observer.observe ( document.body, config );
+      observer.observe (
       
+        document.body,
+        
+        {
+        
+          attributes : true
+          
+          }
+          
+        );
+        
       } );
       
     </script>

@@ -8,7 +8,7 @@ Add page section toggle effect to pages.
 
 ### Version
 
-  * 0.9.0
+  * 0.10.0
 
 #### SS Version
 
@@ -188,6 +188,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-03-11**
+
+  * added support for anchor links
+  * bumped version to 0.10.0
+  
 * **2026-02-17**
 
   * moved options out of main code
