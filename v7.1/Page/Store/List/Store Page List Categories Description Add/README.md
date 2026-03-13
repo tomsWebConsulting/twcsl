@@ -8,7 +8,7 @@ Add simple category descriptions to store category pages.
 
 ### Version
 
-  * 0.12.5
+  * 0.12.6
 
 #### SS Version
 
@@ -131,6 +131,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-03-12**
+
+  * fixed descriptions not showing after more Squarespace Store plp changes for
+    new filter beta
+  * bumped version to 0.12.6
+  
 * **2025-12-03**
 
   * fixed code not working with some Store page settings
