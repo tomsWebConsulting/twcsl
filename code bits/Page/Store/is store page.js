@@ -16,7 +16,9 @@ const isStorePage = Static
 
   Example Usage :
   
-    if ( ! isStorePage ) return; // bail if not store page
+    // bail if not store page
+    
+    if ( ! isStorePage ) return;
     
   
   License       : < https://tinyurl.com/s872fb68 >
