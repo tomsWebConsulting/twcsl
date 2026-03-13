@@ -18,7 +18,9 @@ const isList
 
   Example Usage :
   
-    if ( ! isList ) return; // bail if not list page
+    // bail if not list page
+    
+    if ( ! isList ) return;
     
   
   License       : < https://tinyurl.com/s872fb68 >
