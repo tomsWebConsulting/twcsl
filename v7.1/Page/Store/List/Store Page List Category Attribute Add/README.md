@@ -100,8 +100,7 @@ Add category attribute to Category Pages.
 ## Note
 
 * This code adds a data-twc-splcaa-store-category attribute to the body tag with
-  the value set to a Category Name. For the All Category there no attribute is
-  added.
+  the value set to a Category Name. For the All Category no attribute is added.
 
 ## Make a Donation
 
