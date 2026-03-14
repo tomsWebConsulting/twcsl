@@ -4,36 +4,38 @@
   
     page tags cache
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.3.1
+    Version         : 0.4.0
     
-    SS Versions   : 7.1, 7.0
+    SS Versions     : 7.1, 7.0
     
     v7.1
     Products V2
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
     v7.1
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
-    Notes         : the code makes a call to an unofficial Squarespace
-                    GetCollectionTags API for information that is not
-                    normally available through other means
-                    
-                    the cache disable option doesn't disable the overall
-                    cache logic. it simply removes the session storage key
-                    after user callbacks are run. this causes the cache data
-                    to be regenerated when the Store page is reloaded
-                    
-                    this can be useful for testing or if you want site
-                    visitors to always have access to the current tags
+    Notes           : the code makes a call to the json version of a page
+                      for tags information that is not normally available
+                      through other means
+                      
+                      the cache disable option doesn't disable the overall
+                      cache logic. it simply removes the session storage key
+                      after user callbacks are run. this causes the cache
+                      data to be regenerated when the Store Page is
+                      reloaded. this can be useful for testing or if you
+                      want site visitors to always have access to the
+                      current tags
     
-    Copyright     : 2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2025-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -41,7 +43,7 @@
     
   const
   
-    version = '0.3.1',
+    version = '0.4.0',
     
     s = `
     
@@ -49,7 +51,7 @@
       
       License < https://tinyurl.com/s872fb68 >
       
-      © 2025 Thomas Creedon
+      © 2025-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -61,15 +63,13 @@
   
   const
   
-    isBlogPage
+    isBlogPage =
     
-      =
-      
       !!
       
       document
       
-        .querySelectorAll (
+        .querySelector (
         
           [
               
@@ -81,19 +81,15 @@
             
             .join ( ', ' )
             
-          )
+          ),
           
-          .length,
-          
-    isEventsPage
+    isEventsPage =
     
-      =
-      
       !!
       
       document
       
-        .querySelectorAll (
+        .querySelector (
         
           [
               
@@ -105,9 +101,7 @@
             
             .join ( ', ' )
             
-          )
-          
-          .length,
+          ),
           
     isStorePage = Static
     
@@ -121,9 +115,21 @@
       
       13,
       
-    hasTags = isBlogPage || isEventsPage || isStorePage;
+    hasTags =
+    
+      isBlogPage
       
-  if ( ! hasTags ) return; // bail if not has tags
+      ||
+      
+      isEventsPage
+      
+      ||
+      
+      isStorePage;
+      
+  // bail if not has tags
+  
+  if ( ! hasTags ) return;
   
   // globals
   
@@ -131,25 +137,125 @@
   
     // initialize twc module
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    window.twc =
     
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
     // initialize twc ptc sub-module
     
-    twc.ptc = ( ( self ) => self ) ( twc.ptc || { } );
+    twc.ptc =
     
+      ( ( self ) => self )
+      
+      ( twc.ptc || { } );
+      
     // initialize twc ptc callbacks sub-module
     
     twc.ptc.callbacks =
     
-      ( ( self ) => self ) ( twc.ptc.callbacks || [ ] );
+      ( ( self ) => self )
+      
+      ( twc.ptc.callbacks || [ ] );
       
     }
     
   const
   
+    tagNameToCssClassName =
+    
+      ( name ) => {
+      
+        // bail if no name
+        
+        if ( ! name ) return;
+        
+        const className = 'tag-'
+        
+          +
+          
+          name
+          
+            .replaceAll ( ' ', '-' )
+            
+            .toLowerCase ( )
+            
+            .replace ( /[^\w-]+/g, '' )
+            
+            .replaceAll ( '--', '-' );
+            
+        return className;
+        
+        },
+        
     codeKey = 'twc-ptc',
     
-    dclCallback = async ( ) => {
+    context = Static
+    
+      .SQUARESPACE_CONTEXT,
+      
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    collectionId = context
+    
+      .collection
+      
+      .id,
+      
+    url = context
+      
+      .collection
+      
+      .fullUrl
+      
+      +
+      
+      '?format=json',
+      
+    userCallbacks = ( tags ) => {
+    
+      options
+      
+        .callbacks
+        
+        .forEach (
+        
+          c => {
+          
+            try {
+            
+              c ( tags );
+              
+              } catch ( error ) {
+              
+                const s = `${
+                
+                  codeKey
+                  
+                  } callback error`;
+                  
+                console.error ( s, error );
+                
+                }
+                
+            }
+            
+          );
+          
+      },
+    
+    domContentLoadedCallback = async ( ) => {
     
       const
       
@@ -171,53 +277,59 @@
         
         }
         
-      let tags = sessionStorage
+      let tags = JSON.parse (
       
-        .getItem ( codeKey );
+        sessionStorage.getItem (
+        
+          `${
+          
+            codeKey
+            
+            }-${
+            
+              collectionId
+              
+              }`
+              
+          )
+          
+        );
         
       // bail if tags
       
       if ( tags ) {
       
-        tags = JSON.parse ( tags );
-        
         userCallbacks ( tags );
         
         if ( options.cacheDisable )
         
-          sessionStorage
+          sessionStorage.removeItem (
           
-            .removeItem ( codeKey );
+            `${ codeKey }-${ collectionId }`
+            
+            );
             
         return;
         
         }
         
-      const url
-      
-        =
-        
-        '/api/commondata/GetCollectionTags?collectionId='
-        
-        +
-        
-        Static
-        
-          .SQUARESPACE_CONTEXT
-          
-          .collection
-          
-          .id;
-          
       try {
       
-        const response = await fetch ( url );
+        const response =
         
+          await fetch ( url );
+          
         if ( ! response.ok ) {
         
           const s = `
           
-            ${ codeKey } network response was not ok ${
+            ${
+            
+              codeKey
+              
+              } network response was
+              
+            not ok ${
             
               response.statusText
               
@@ -239,9 +351,13 @@
         
           const s = `
           
-            ${ codeKey } there has been a problem with your fetch get
+            ${ codeKey } there has
             
-            operation, ${ error }.
+            been a problem with your
+            
+            fetch get operation,
+            
+            ${ error }.
             
             `
             
@@ -253,32 +369,40 @@
           
           } finally {
           
-            const callback = ( tag ) => {
+            // process tags
             
-              tag
-              
-                .className
-                
-                =
-                
-                tagNameToCssClassName ( tag.name );
-                
-              tag
-              
-                .queryValue
-                
-                =
-                
-                tagNameToQueryValue ( tag.name );
-                
-              };
-              
-            tags.forEach ( callback );
+            tags = tags
             
+              .collection
+              
+              .tags
+              
+              .map ( name => ( {
+              
+                className :
+                
+                  tagNameToCssClassName (
+                  
+                    name
+                    
+                    ),
+                    
+                name
+                
+                } ) );
+                
             sessionStorage.setItem (
             
-              codeKey,
+              `${
               
+                codeKey
+                
+                }-${
+                
+                  collectionId
+                  
+                  }`,
+                  
               JSON
               
                 .stringify ( tags )
@@ -291,83 +415,29 @@
             
               sessionStorage
               
-                .removeItem ( codeKey );
+                .removeItem (
                 
+                  `${
+                  
+                    codeKey
+                    
+                    }-${
+                    
+                      collectionId
+                      
+                      }`
+                      
+                  );
+                  
             }
             
-      },
-      
-    options = codeKey
-    
-      .split ( '-' )
-      
-      .reduce ( ( obj, key ) => obj?.[ key ], window ),
-      
-    tagNameToCssClassName = ( name ) => {
-    
-      const className = 'tag-'
-      
-        +
-        
-        name
-        
-          .replaceAll ( ' ', '-' )
-          
-          .toLowerCase ( )
-          
-          .replace ( /[^\w-]+/g, '' )
-          
-          .replaceAll ( '--', '-' );
-          
-      return className;
-      
-      },
-      
-    tagNameToQueryValue = ( name ) => {
-    
-      const queryValue = name
-      
-        .replaceAll ( ' ', '-' )
-        
-        .replace ( /[^\w-]+/g, '' )
-        
-        .replaceAll ( '--', '-' );
-        
-      return queryValue;
-      
-      },
-      
-    userCallbacks = ( tags ) => {
-    
-      const callback = ( callback ) => {
-      
-        try {
-        
-          callback ( tags );
-          
-          } catch ( error ) {
-          
-            const s = `${ codeKey } callback error`;
-            
-            console.error ( s, error );
-            
-            }
-            
-        };
-      
-      options
-      
-        .callbacks
-        
-        .forEach ( callback );
-        
       };
       
   document.addEventListener (
   
     'DOMContentLoaded',
     
-    dclCallback
+    domContentLoadedCallback
     
     );
     

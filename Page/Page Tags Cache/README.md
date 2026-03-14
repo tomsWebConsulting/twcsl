@@ -8,7 +8,7 @@ Cache Page tags in sessionStorage.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Versions
 
@@ -195,6 +195,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-03-13**
+
+  * replaced undocumented API call with format=json and formated data similar to
+    the API call returns
+  * bumped version to 0.4.0
+  
 * **2025-11-30**
 
   * added cache disable option
