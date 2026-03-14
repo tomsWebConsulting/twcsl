@@ -8,7 +8,7 @@ Add descriptions to Store page tag pages.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -16,7 +16,7 @@ Add descriptions to Store page tag pages.
 
 #### Products V2 Compatible
 
-  * Not Applicable
+  * Yes
   
 #### Fluid Engine Compatible
 
@@ -167,6 +167,13 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-03-13**
+
+  * fixed descriptions not showing after more Squarespace Store plp changes for
+    new filter beta
+  * updated to work with Page Tags Cache v0.2.1
+  * bumped version to 0.2.1
+  
 * **2025-11-27**
 
   * made options JavaScript
