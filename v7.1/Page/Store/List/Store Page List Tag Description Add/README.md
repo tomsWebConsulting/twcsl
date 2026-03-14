@@ -62,7 +62,7 @@ Add descriptions to Store page tag pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ce75286c8b91249e5defe8a5b73a37d4bfe5a5f1/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@60887ec6ab6dcc0435f795cb5b9743b0cd087801/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Tag Description Add -->
             
@@ -88,7 +88,7 @@ Add descriptions to Store page tag pages.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ce75286c8b91249e5defe8a5b73a37d4bfe5a5f1/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@60887ec6ab6dcc0435f795cb5b9743b0cd087801/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Tag Description Add -->
               
@@ -109,7 +109,7 @@ Add descriptions to Store page tag pages.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ce75286c8b91249e5defe8a5b73a37d4bfe5a5f1/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@60887ec6ab6dcc0435f795cb5b9743b0cd087801/v7.1/Page/Store/List/Store%20Page%20List%20Tag%20Description%20Add/store%20page%20list%20tag%20description%20add.min.js" type="module"></script>
               
               <!-- end TWC Store Page List Tag Description Add -->
               
