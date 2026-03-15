@@ -1,0 +1,1983 @@
+( ( ) => {
+
+  /*!
+  
+    customer account log in dialog change
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.10.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.10.0',
+    
+    s = `Customer Account Log In Dialog Change v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2023-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc =
+    
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
+    // initialize twc calidc sub-module
+    
+    twc.calidc =
+    
+      ( ( self ) => self )
+      
+      ( twc.calidc || { } );
+      
+    // initialize twc calidc callbacks sub-module
+    
+    twc.calidc.callbacks =
+    
+      ( ( self ) => self )
+      
+      ( twc.calidc.callbacks || [ ] );
+      
+    }
+    
+  let
+  
+    flDebug = false,
+    
+    wrapperObserver;
+  
+  const
+  
+    accountFrameIdValue =
+    
+      'accountFrame',
+      
+    classAdd = ( element, classes ) => {
+    
+      const callback = ( clss ) => {
+      
+        if ( flDebug )
+        
+          console.log ( clss );
+          
+        element
+        
+          .classList
+          
+          .add ( clss );
+          
+        };
+        
+      classes
+      
+        .split ( ' ' )
+        
+        .forEach ( callback );
+        
+      },
+      
+    codeKey = 'twc-calidc',
+    
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    wrapperObserverOptions = {
+    
+      characterData : true,
+      
+      childList : true,
+      
+      subtree : true
+      
+      },
+      
+    anchorClassAdd = ( node, key ) => {
+    
+      const element = node
+      
+        .querySelector (
+        
+        `[ href="/account/login/${ key }" ]`,
+        
+          );
+          
+      // bail if no element
+      
+      if ( ! element ) return;
+      
+      classAdd (
+      
+        element,
+        
+        `${ classPrefix }${ key }-link`
+        
+        );
+        
+      },
+      
+    attributeNameClass =
+    
+      `data-${ codeKey }-class`,
+      
+    classPrefix = `${ codeKey }-`,
+    
+    classRemove = ( element ) => {
+    
+      const classList =
+      
+        element.classList;
+        
+      for ( const clss of classList ) {
+      
+        const isCodeClass = clss
+        
+          .startsWith ( classPrefix );
+          
+        if ( ! isCodeClass ) continue;
+        
+        classList.remove ( clss );
+        
+        }
+        
+      },
+      
+    formMutationCallback =
+    
+      ( mutation ) => {
+      
+        const isClassAttribute =
+        
+          mutation.attributeName
+          
+          ===
+          
+          'class';
+          
+        // bail if attribute not class
+        
+        if ( ! isClassAttribute ) return;
+        
+        const
+        
+          element = mutation.target,
+          
+          className = element
+            
+            .getAttribute (
+            
+              attributeNameClass
+              
+              );
+              
+        // bail if no data class attribute
+        
+        if ( ! className ) return;
+        
+        const classNames = className
+        
+          .split ( ' ' );
+          
+        for ( const className of classNames ) {
+        
+          const
+          
+            classList =
+            
+              element.classList,
+              
+            hasClass = classList
+            
+              .contains ( className );
+              
+          // bail if class already added
+          
+          if ( hasClass ) continue;
+          
+          if ( flDebug )
+          
+            console.log ( className );
+            
+          classList
+          
+            .add ( className );
+            
+          }
+          
+        },
+        
+    formObserver =
+    
+      new MutationObserver (
+      
+        m => m.forEach (
+        
+          formMutationCallback
+          
+          )
+          
+        ),
+        
+    passwordClassAddCallback =
+    
+      ( element ) => {
+          
+        const
+        
+          dataTest = element
+          
+            .getAttribute (
+            
+              'data-test'
+              
+              ),
+              
+          valuePrefix = `${
+          
+            classPrefix
+            
+            }password`;
+            
+        switch ( dataTest ) {
+        
+          case 'create-account-confirm-password' :
+          
+            value =
+            
+              `${ valuePrefix }-confirm`;
+              
+            break;
+            
+          case 'create-account-password' :
+          case 'login-password' :
+          
+            value = valuePrefix;
+            
+            break;
+            
+          }
+          
+        ancestorElement = element
+        
+          .parentElement
+          
+          .parentElement;
+          
+        classRemove (
+        
+          ancestorElement
+          
+          );
+          
+        classAdd (
+        
+          ancestorElement,
+          
+          value );
+          
+        ancestorElement.setAttribute (
+        
+          attributeNameClass,
+          
+          value
+          
+          );
+          
+        },
+        
+    processMutationRecord = (
+    
+      mutation,
+      
+      dcmnt,
+      
+      rootElement,
+      
+      wrapperElement
+      
+      ) => {
+      
+        const
+        
+          isCharacterData = mutation
+          
+            .type
+            
+            ===
+            
+            'characterData',
+            
+          isNodesAdded
+          
+            =
+            
+            Boolean (
+            
+              mutation
+              
+                .addedNodes
+                
+                .length
+                
+              );
+              
+        let isOfInterest =
+        
+          isNodesAdded
+          
+          ||
+          
+          isCharacterData;
+            
+        // bail if no nodes added and no character data
+        
+        if ( ! isOfInterest ) return;
+        
+        let
+        
+          isNodeText,
+          
+          node;
+          
+        switch ( true ) {
+        
+          case isCharacterData :
+          
+            node = mutation
+            
+              .target
+              
+              .parentElement;
+              
+            break;
+            
+          case isNodesAdded : {
+          
+            node = mutation
+            
+              .addedNodes
+              
+              [ 0 ];
+              
+            isNodeText = node
+            
+              .nodeName
+              
+              ===
+              
+              '#text';
+              
+            if ( isNodeText )
+            
+              node = node.parentElement;
+              
+            break;
+            
+            }
+            
+          }
+          
+        const isCaptcha
+        
+          =
+          
+          !
+          
+          isNodeText
+          
+          &&
+          
+          node.closest (
+          
+            '.reCaptchaContainer'
+            
+            );
+            
+        // bail if captcha
+        
+        if ( isCaptcha ) return;
+        
+        const isSpinner
+        
+          =
+          
+          !
+          
+          isNodeText
+          
+          &&
+          
+          node.getAttribute (
+          
+            'data-test'
+            
+            )
+            
+          ===
+          
+          'loading-spinner';
+          
+        // bail if spinner
+        
+        if ( isSpinner ) return;
+        
+        node = node
+        
+          .closest (
+          
+            '#user-account-login-root'
+            
+            )
+            
+          ?.firstChild
+          
+          .firstChild
+          
+          ||
+          
+          node;
+          
+        const formElement = node
+        
+          .querySelector ( 'form' );
+          
+        // bail if no form element
+        
+        if ( ! formElement ) return;
+        
+        const
+        
+          url = new URL (
+          
+            dcmnt.location.href
+            
+            ),
+            
+          isAccountVerify = url
+          
+            .searchParams
+            
+            .has (
+            
+              'loginNewlyVerifiedAccount'
+              
+              ),
+              
+          isPasswordReset = formElement
+          
+            .children
+            
+            .length
+            
+            ===
+            
+            2,
+            
+          isSessionExpired
+          
+            =
+            
+            !
+            
+            isAccountVerify
+            
+            &&
+            
+            url
+            
+              .pathname
+              
+              ===
+              
+              '/account/frame/login/reauthenticate';
+              
+        let
+        
+          selector =
+          
+            'button[ type="submit" ]'
+            
+            +
+            
+            '[ data-test="login-button" ]',
+            
+          isSignIn = formElement
+          
+            .querySelector (
+            
+              selector
+              
+              )
+              
+            !==
+            
+            null;
+            
+        selector =
+        
+          'button[ type="submit" ]'
+          
+          +
+          
+          '[ data-test="create-'
+          
+          +
+          
+          'account-create-button" ]';
+          
+        let isSignUp = formElement
+        
+          .querySelector ( selector )
+          
+          !==
+          
+          null;
+          
+        isOfInterest =
+        
+           isPasswordReset
+           
+           ||
+           
+           isSignIn
+           
+           ||
+           
+           isSignUp;
+           
+        // bail if not password reset or sign in or up
+        
+        if ( ! isOfInterest ) return;
+        
+        let
+        
+          ancestorElement,
+          
+          dialogType,
+          
+          element,
+          
+          s,
+          
+          value;
+          
+        const
+        
+          callbacks = options.callbacks,
+          
+          isSignInMemberSite
+          
+            =
+            
+            isSignIn
+            
+            &&
+            
+            !
+            
+            isAccountVerify
+            
+            &&
+            
+            !
+            
+            isSessionExpired
+            
+            &&
+            
+            !!
+            
+            node
+            
+              .querySelector ( 'h3' ),
+              
+          isSignUpMemberSite
+          
+            =
+            
+            isSignUp
+            
+            &&
+            
+            formElement
+            
+              .children
+              
+              .length
+              
+              ===
+              
+              7;
+              
+        // set dialog type
+        
+        {
+        
+          switch ( true ) {
+          
+            case isPasswordReset :
+            
+              dialogType =
+              
+                'password-reset';
+                
+              break;
+              
+            case isSignIn :
+            
+              dialogType = 'sign-in';
+              
+              break;
+              
+            case isSignUp :
+            
+              dialogType = 'sign-up';
+              
+              break;
+              
+            }
+            
+          switch ( true ) {
+          
+            case isSignInMemberSite :
+            
+              dialogType =
+              
+                'sign-in-member-site';
+                
+              break;
+              
+            case isSignUpMemberSite :
+            
+              dialogType =
+              
+                'sign-up-member-site';
+                
+              break;
+              
+            }
+            
+          }
+          
+        // code and dialog type class add
+        
+        {
+        
+          classRemove ( rootElement );
+          
+          classAdd (
+          
+            rootElement,
+            
+            [
+            
+              codeKey,
+              
+              `${
+              
+                classPrefix
+                
+                }${
+                
+                  dialogType
+                  
+                  }`
+                  
+              ]
+              
+              .join ( ' ' )
+              
+            );
+            
+          }
+          
+        const title = ( ( ) => {
+        
+          const
+          
+            re = new RegExp (
+            
+              '^\\[.+\\]$'
+              
+              ),
+              
+            titleElement = node
+            
+              .querySelector ( 'h1' );
+              
+          switch ( true ) {
+          
+            case isPasswordReset :
+            
+              s = options
+              
+                .title
+                
+                .passwordReset;
+                
+              break;
+              
+            case isSignIn :
+            
+              s = options
+              
+                .title
+                
+                .signIn;
+                
+              break;
+              
+            case isSignUp :
+            
+              s = options
+              
+                .title
+                
+                .signUp;
+                
+              break;
+              
+            }
+            
+          const isMemberSite =
+          
+            isSignInMemberSite
+            
+            ||
+            
+            isSignUpMemberSite;
+            
+          if ( isMemberSite ) {
+          
+            const wordJoinerCharacter8288
+            
+              =
+              
+              String
+              
+                .fromCharCode ( 8288 );
+                
+            let
+            
+              language = Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .website
+                
+                .language,
+                
+              re = {
+              
+                'de-DE' : / ^\w+$/,
+                
+                'fi-FI' : /^[^:]+: /,
+                
+                'ja-JP' : new RegExp (
+                
+                  `「${ wordJoinerCharacter8288 }|`
+                  
+                  +
+                  
+                  `${ wordJoinerCharacter8288 }」.+`,
+                  
+                  'g'
+                  
+                  ),
+                  
+                default : /^\w+ /
+                
+                };
+                
+            language = Object
+            
+              .hasOwn ( re, language )
+              
+              ? language : 'default';
+              
+            re = re [ language ];
+            
+            const
+            
+              pricingPlanName =
+              
+                titleElement
+                
+                  .textContent
+                  
+                  .replace ( re, '' ),
+                  
+              hasPricingPlanName = Object
+              
+                .hasOwn (
+                
+                  options
+                
+                    .title
+                    
+                    .pricingPlanNames,
+                    
+                  pricingPlanName
+                  
+                  );
+                  
+            // bail no pricing plan name
+            
+            if ( ! hasPricingPlanName )
+            
+              return;
+              
+            s = options
+            
+              .title
+              
+              .pricingPlanNames
+              
+              [ pricingPlanName ];
+              
+            const hasTag = s
+            
+              .includes ( '[ ppn ]' );
+              
+            // bail it no tag
+            
+            if ( ! hasTag ) return;
+            
+            s = s.replace (
+            
+              '[ ppn ]',
+              
+              pricingPlanName
+              
+              );
+              
+            }
+            
+          const isChange = re.test ( s );
+          
+          // bail if no change
+          
+          if ( isChange ) return;
+          
+          wrapperObserver.disconnect ( );
+          
+          titleElement
+          
+            .textContent
+            
+            =
+            
+            s;
+            
+          wrapperObserver.observe (
+          
+            wrapperElement,
+            
+            wrapperObserverOptions
+            
+            );
+            
+          } ) ( );
+          
+        // email class add
+        
+        {
+        
+          value = `${ classPrefix }email`;
+          
+          selector = 'input[ type="email" ]';
+          
+          element = formElement
+          
+            .querySelector ( selector );
+            
+          if ( element ) {
+          
+            ancestorElement = element
+            
+              .parentElement
+              
+              .parentElement;
+              
+            classAdd (
+            
+              ancestorElement,
+              
+              value
+              
+              );
+              
+            ancestorElement
+            
+              .setAttribute (
+              
+                attributeNameClass,
+                
+                value
+                
+                );
+                
+            }
+            
+          }
+          
+        // password class add
+        
+        {
+        
+          selector =
+          
+            'input[ type="password" ]';
+            
+          formElement
+          
+            .querySelectorAll ( selector )
+            
+            .forEach (
+            
+              passwordClassAddCallback
+              
+              );
+              
+          }
+          
+        if ( isPasswordReset || isSignUp )
+        
+          // sign in link
+          
+          {
+          
+            element = node
+            
+              .querySelector (
+              
+                '[ href="/account/login" ]'
+                
+                );
+                
+            if ( element )
+            
+              classAdd (
+              
+                element,
+                
+                `${
+                
+                  classPrefix
+                  
+                  }sign-in-link`
+                  
+                );
+                
+            }
+            
+        switch ( true ) {
+        
+          case isSignIn : {
+          
+            const isSignInAgain = node
+            
+              .querySelector ( 'footer' )
+              
+              .children
+              
+              .length
+              
+              ===
+              
+              1;
+                
+            // error class add
+            
+            {
+            
+              const elements =
+              
+                formElement
+                  
+                  .querySelectorAll (
+                  
+                    selector
+                    
+                    );
+                    
+              if ( elements.length )
+              
+                classAdd (
+                
+                  [
+                  
+                    ...
+                    
+                    elements
+                    
+                    ]
+                    
+                    .slice ( -1 )
+                    
+                    [ 0 ]
+                    
+                    .parentElement
+                    
+                    .parentElement
+                    
+                    .nextElementSibling,
+                    
+                  `${
+                  
+                    classPrefix
+                    
+                      }error-text`
+                      
+                  );
+                  
+              }
+              
+            if ( ! isSignInAgain ) {
+            
+              anchorClassAdd (
+              
+                node,
+                
+                'request-reset'
+                
+                );
+                
+              anchorClassAdd (
+              
+                node,
+                
+                'create'
+                
+                );
+                
+              // exclusive context text
+              
+              {
+              
+                element = node
+                
+                  .querySelector ( 'h3' );
+                  
+                if ( element )
+                
+                  classAdd (
+                  
+                    element,
+                    
+                    `${
+                    
+                      classPrefix
+                      
+                      }exclusive-context-text`
+                      
+                    );
+                    
+                }
+                
+              } else {
+              
+                // sign in again or account verify class add
+                
+                {
+                
+                  // text
+                  
+                  {
+                  
+                    element = node
+                    
+                      .querySelector (
+                      
+                        'h3'
+                        
+                        );
+                        
+                    if ( element ) {
+                    
+                      value =
+                      
+                        classPrefix;
+                        
+                      if ( ! isAccountVerify )
+                      
+                        value +=
+                        
+                          'again-text';
+                          
+                        else
+                        
+                          value +=
+                          
+                            'account-verify-text';
+                            
+                      classAdd (
+                      
+                        element,
+                        
+                        value
+                        
+                        );
+                        
+                      }
+                      
+                    }
+                    
+                  // sign in with email
+                  
+                  {
+                  
+                    element = formElement
+                    
+                      .querySelector (
+                      
+                        'div:first-child'
+                        
+                        );
+                        
+                    classAdd (
+                    
+                      element,
+                      
+                      `${
+                      
+                        classPrefix
+                        
+                        }with-email-text`
+                        
+                      );
+                      
+                    }
+                    
+                  }
+                  
+                // not you class add
+                
+                {
+                
+                  element = node
+                  
+                    .querySelector (
+                    
+                      'footer [ href="#" ]'
+                      
+                      );
+                      
+                  if ( element )
+                  
+                    classAdd (
+                    
+                      element,
+                      
+                      `${
+                      
+                        classPrefix
+                        
+                        }not-you`
+                        
+                      );
+                      
+                  }
+                  
+                }
+                
+            break;
+            
+            }
+            
+          case isSignUp : {
+          
+            const nodeOriginal =
+            
+              mutation
+              
+                .addedNodes
+                
+                [ 0 ];
+                
+            let isError;
+              
+            // first name class add
+            
+            {
+            
+              element = formElement
+              
+                .querySelector (
+                
+                  'input[ type="text" ]'
+                  
+                  +
+                  
+                  '[ data-test="create-account-first-name" ]'
+                  
+                  );
+                  
+              value =
+              
+                `${ classPrefix }name-first`;
+                
+              if ( element ) {
+              
+                ancestorElement = element
+                
+                  .parentElement
+                  
+                  .parentElement;
+                  
+                classAdd (
+                
+                  ancestorElement,
+                  
+                    value
+                    
+                    );
+                    
+                ancestorElement
+                
+                  .setAttribute (
+                  
+                    attributeNameClass,
+                    
+                    value
+                    
+                    );
+                    
+                }
+                
+              }
+              
+            // last name class add
+            
+            {
+            
+              selector =
+              
+                'input[ type="text" ]'
+                
+                +
+                
+                '[ data-test="create-'
+                
+                +
+                
+                'account-last-name" ]';
+                
+              value =
+              
+                `${ classPrefix }name-last`;
+              
+              element = formElement
+              
+                .querySelector ( selector );
+                
+              if ( element ) {
+              
+                ancestorElement = element
+                
+                  .parentElement
+                  
+                  .parentElement;
+                  
+                classAdd (
+                
+                  ancestorElement,
+                  
+                  value
+                  
+                  );
+                  
+                ancestorElement
+                
+                  .setAttribute (
+                  
+                    attributeNameClass,
+                    
+                    value
+                    
+                    );
+                    
+                }
+                
+              }
+              
+            // name class add
+            
+            {
+            
+              ancestorElement =
+              
+                ancestorElement
+                
+                  .parentElement;
+                  
+              value =
+              
+                `${ classPrefix }name`;
+                
+              classAdd (
+              
+                ancestorElement,
+                
+                value
+                
+                );
+                
+              ancestorElement
+              
+                .setAttribute (
+                
+                  attributeNameClass,
+                  
+                  value
+                  
+                  );
+                  
+              }
+              
+            // account exists
+            
+            {
+            
+              isError = nodeOriginal
+              
+                .previousElementSibling
+                
+                ?.getAttribute (
+                
+                  'data-test'
+                  
+                  )
+                  
+                ===
+                
+                'create-account-email';
+                
+              if ( isError )
+              
+                classAdd (
+                
+                  nodeOriginal,
+                  
+                  `${
+                  
+                    classPrefix
+                    
+                    }account-exists-error-text`
+                    
+                  );
+                  
+              }
+              
+            // password length
+            
+            {
+            
+              isError = nodeOriginal
+              
+                .previousElementSibling
+                
+                ?.getAttribute (
+                
+                  'data-test'
+                  
+                  )
+                  
+                ===
+                
+                'create-account-password';
+                
+              if ( isError )
+              
+                classAdd (
+                
+                  nodeOriginal,
+                  
+                  `${
+                  
+                    classPrefix
+                    
+                      }password-length-error-text`
+                      
+                  );
+                  
+              }
+              
+            // passwords no match
+            
+            {
+            
+              isError = nodeOriginal
+              
+                .previousElementSibling
+                
+                ?.getAttribute (
+                
+                  'data-test'
+                  
+                  )
+                  
+                ===
+                
+                'create-account-confirm-password';
+                
+              if ( isError )
+              
+                classAdd (
+                
+                  nodeOriginal,
+                  
+                  `${
+                  
+                    classPrefix
+                    
+                      }passwords-not-match-error-text`
+                      
+                  );
+                  
+              }
+              
+            break;
+            
+            }
+            
+          }
+          
+        if ( isSignUpMemberSite ) {
+        
+          isSignUp = false;
+          
+          // sign up member site text class add
+          
+          {
+          
+            element = node
+            
+              .querySelector ( 'h3' );
+              
+            if ( element !== undefined )
+            
+              classAdd (
+              
+                element,
+                
+                `${
+                
+                  classPrefix
+                  
+                  }unlock-exclusive-content-text`
+                  
+                );
+                
+            }
+            
+          // sign up member site emails updates text class add
+          
+          {
+          
+            classAdd (
+            
+              node
+              
+                .querySelector (
+                
+                  'button[ data-test="'
+                  
+                  +
+                  
+                  'create-account-'
+                  
+                  +
+                  
+                  'create-button" ]'
+                  
+                  )
+                  
+                .previousElementSibling
+                
+                .previousElementSibling,
+                
+              `${
+              
+                classPrefix
+                
+                }emails-updates-text`
+                
+              );
+              
+            }
+            
+          }
+          
+        if ( callbacks.length ) {
+        
+          wrapperObserver
+          
+            .disconnect ( );
+            
+          const callback =
+          
+            ( callback ) => {
+            
+              try {
+              
+                callback (
+                
+                  dcmnt,
+                  
+                  dialogType
+                  
+                  );
+                  
+                } catch ( error ) {
+                
+                  const s = `${
+                  
+                    codeKey
+                    
+                    } callback error`;
+                    
+                  console.error (
+                  
+                    s,
+                    
+                    error
+                    
+                    );
+                    
+                  }
+                  
+              };
+              
+          callbacks.forEach ( callback );
+          
+          wrapperObserver.observe (
+          
+            wrapperElement,
+            
+            wrapperObserverOptions
+            
+            );
+            
+          }
+          
+        // start listening for changes in element
+        
+        formObserver.observe (
+        
+          formElement,
+          
+          {
+          
+            attributes : true,
+            
+            subtree : true
+            
+            }
+            
+          );
+          
+        },
+        
+    loadEventCallback =
+    
+      ( event, css ) => {
+      
+        const
+        
+          element = event.target,
+        
+          isLogin = element
+            
+            .contentWindow
+            
+            .location
+            
+            .pathname
+            
+            .startsWith (
+            
+              '/account/frame/login'
+              
+              );
+              
+        // bail if not log in
+        
+        if ( ! isLogin ) return;
+        
+        const
+        
+          dcmnt = element
+          
+            .contentDocument,
+            
+          id =
+          
+            'user-account-login-root',
+            
+          rootElement = dcmnt
+          
+            .querySelector (
+            
+              `#${ id }`
+              
+              ),
+              
+          wrapperElement = rootElement
+          
+            .lastChild;
+            
+        wrapperObserver =
+        
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              m =>
+              
+                processMutationRecord (
+                
+                  m,
+                  
+                  dcmnt,
+                  
+                  rootElement,
+                  
+                  wrapperElement
+                  
+                  )
+                  
+              )
+              
+            );
+            
+        // css add
+        
+        {
+        
+          const
+          
+            re = new RegExp (
+            
+              '^\s+\[.+\]\s+$'
+              
+              ),
+              
+            isAdd = re.test ( css );
+            
+          if ( ! isAdd ) {
+          
+            const style = dcmnt
+            
+              .createElement (
+              
+                'style'
+                
+                );
+                
+            style.innerHTML = css;
+            
+            dcmnt
+            
+              .head
+              
+              .append ( style );
+              
+            }
+            
+          }
+          
+        // make a pass over the panel already on the DOM
+        
+        {
+        
+          const mutation = {
+          
+            addedNodes : [
+            
+              wrapperElement
+              
+              ]
+              
+            };
+            
+          processMutationRecord (
+          
+            mutation,
+            
+            dcmnt,
+            
+            rootElement,
+            
+            wrapperElement
+            
+            );
+            
+          }
+          
+        // start listening for changes in specified element
+        
+        wrapperObserver.observe (
+        
+          wrapperElement,
+          
+          wrapperObserverOptions
+          
+          );
+          
+        },
+        
+    load = ( element ) => {
+    
+      element.addEventListener (
+      
+        'load',
+        
+        e => loadEventCallback (
+        
+          e,
+          
+          document
+          
+            .getElementsByTagName (
+            
+              `x-${ codeKey }-style`
+              
+              )
+              
+            [ 0 ]
+            
+            .textContent
+            
+          )
+          
+        );
+        
+      },
+      
+    mutationCallback =
+    
+      ( mutation ) => {
+      
+        const length = mutation
+        
+          .addedNodes
+          
+          .length;
+          
+         // bail if no nodes added
+        
+        if ( ! length ) return;
+        
+        const
+        
+          element = mutation
+          
+            .addedNodes [ 0 ],
+            
+          id = element.id,
+          
+          isAccountFrame =
+          
+            id
+            
+            ===
+            
+            `${
+            
+              accountFrameIdValue
+              
+              }`;
+              
+        // bail if not account frame
+        
+        if ( ! isAccountFrame )
+        
+          return;
+        
+        const baseUrl = `${
+        
+          location.protocol
+          
+          }//${
+          
+            location.host
+            
+            }`;
+            
+        let url = element
+        
+          .getAttribute ( 'src' );
+          
+        url = new URL (
+        
+          url,
+          
+          baseUrl
+          
+          );
+          
+        const isLogin = url
+        
+          .pathname
+          
+          .startsWith (
+          
+            '/account/frame'
+            
+            );
+            
+        // bail if not log in
+        
+        if ( ! isLogin ) return;
+        
+        load ( element );
+        
+        },
+        
+    mutationsCallback =
+    
+      ( mutations ) => {
+      
+        mutations.forEach (
+        
+          mutationCallback
+          
+          );
+          
+        },
+        
+    observer =
+    
+      new MutationObserver (
+      
+        mutationsCallback
+        
+        ),
+        
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        // bail if bypass
+        
+        if ( options.bypass ) return;
+        
+        flDebug = options.debug;
+        
+        const element = document
+        
+          .querySelector (
+          
+            `#${
+            
+              accountFrameIdValue
+              
+              }`
+              
+            );
+            
+        /*
+        
+          if the account frame is already on the DOM, load. if not, then
+          watch for it to appear on DOM and load
+          
+          */
+          
+        if ( element ) {
+        
+          const
+          
+            url = new URL (
+            
+              element
+              
+                .getAttribute ( 'src' ),
+                
+              `${
+              
+                location.protocol
+                
+                }//${
+                
+                  location.host
+                  
+                  }`
+                  
+              )
+              
+              .pathname,
+              
+            isSignIn = url
+            
+              .startsWith (
+              
+                '/account/frame'
+                
+                );
+                
+          // bail if not sign in
+          
+          if ( ! isSignIn ) return;
+          
+          load ( element );
+          
+          }
+          
+        // start listening for changes in specified element
+        
+        observer.observe (
+        
+          document.body,
+          
+          { childList : true }
+          
+          );
+          
+        };
+        
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  } ) ( );

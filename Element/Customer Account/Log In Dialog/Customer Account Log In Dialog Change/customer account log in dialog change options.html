@@ -1,0 +1,102 @@
+<!-- begin TWC Customer Account Log In Dialog Change Options -->
+
+  <!--
+  
+    customer account log in dialog change options
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.10.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Copyright         : 2023-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <x-twc-calidc-style style="display : none;">
+  
+    [ optional, enter css here replacing square brackets ]
+    
+    </x-twc-calidc-style>
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc =
+    
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
+    // initialize twc calidc sub-module
+    
+    twc.calidc = ( ( self ) => {
+    
+      const options = {
+      
+        title : {
+        
+          signIn : '[ optional, enter sign in title text here between single quotes replacing square brackets ]',
+          
+          signUp : '[ optional, enter sign up title text here between single quotes replacing square brackets ]',
+          
+          pricingPlanNames : {
+          
+            /*
+            
+              the format of each line is a pricing plan name and a title. you
+              can use the following tag in your title to have the pricing plan
+              name replace it to save some typing
+              
+                [ ppn ]
+                
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many plan names you want to
+              change. if you want the same title for all pricing plans, leave
+              the plan name blank
+              
+              */
+              
+            // '[ enter pricing plan name here between single quotes replacing square brackets ]' : '[ enter name text here between single quotes replacing square brackets ]',
+            
+            },
+            
+          passwordReset : '[ optional, enter password reset title text here between single quotes replacing square brackets ]'
+          
+          },
+          
+        // bypass this effect, value is false or true
+        
+        bypass : false,
+          
+        // value is false or true
+        
+        debug : false
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.calidc || { } );
+      
+    </script>
+    
+  <!-- end TWC Customer Account Log In Dialog Change Options -->

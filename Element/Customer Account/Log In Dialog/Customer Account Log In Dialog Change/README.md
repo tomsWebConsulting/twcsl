@@ -8,7 +8,7 @@ Alter customer account sign up and in dialogs.
 
 ### Version
 
-  * 0.9.0
+  * 0.10.0
 
 #### SS Versions
 
@@ -20,19 +20,46 @@ Alter customer account sign up and in dialogs.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
 
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
-## Quick Install
+## Install Options
 
-* Add code from file **[customer account log in dialog change.html][4]** to
-  Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-  code injection][5] for details.
+* CDN Hosted
+
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
   
-* Read the code for any instructions within.
+  * Add code from file **[customer account log in dialog change
+    options.html][6]** to Website > Pages > Custom Code > Code Injection >
+    FOOTER. Read the code for any instructions within. Refer to [Add code to
+    code injection][7] for details.
+    
+  * Add the following code to Website > Pages > Custom Code >
+    Code Injection > FOOTER.
+    
+    ```html
+    <!-- begin TWC Customer Account Log In Dialog Change -->
+    
+      <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+      
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change/customer%20account%20log%20in%20dialog%20change.min.js" type="module"></script>
+      
+      <!-- end TWC Customer Account Log In Dialog Change -->
+      
+    ```
+  
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on
+  your site).
+  
+  * Add code from file **[customer account log in dialog change
+    options.html][6]** to Website > Pages > Custom Code > Code Injection >
+    FOOTER. Read the code for any instructions within. Refer to [Add code to
+    code injection][7] for details.
+    
+  * Add code from file **[customer account log in dialog change.html][8]** to
+    Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Classes
 
@@ -73,7 +100,7 @@ these cases.
 
 ## Callback Example
 
-You can create a [callback][6] function to customize the processing of the
+You can create a [callback][9] function to customize the processing of the
 member area log in dialog.
 
 Your callback must accept 2 parameters :
@@ -129,10 +156,17 @@ Your callback must accept 2 parameters :
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-03-14**
+
+  * moved options out of main code
+  * restructured the code
+  * fixed issue with run away mutations when changing titles
+  * bumped version to 0.10.0
+  
 * **2025-06-25**
 
   * added class names twc-calidc-password-length-error-text and
@@ -213,7 +247,10 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: customer%20account%20log%20in%20dialog%20change.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[6]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: customer%20account%20log%20in%20dialog%20change%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[8]: customer%20account%20log%20in%20dialog%20change.html#L1
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
