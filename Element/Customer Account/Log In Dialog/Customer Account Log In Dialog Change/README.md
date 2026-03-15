@@ -42,7 +42,7 @@ Alter customer account sign up and in dialogs.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change/customer%20account%20log%20in%20dialog%20change.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2be32c9b41c4d1acc0062f9638fe0518e53f3bd2/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change/customer%20account%20log%20in%20dialog%20change.min.js" type="module"></script>
       
       <!-- end TWC Customer Account Log In Dialog Change -->
       
