@@ -4,15 +4,15 @@
   
     Pages Panel Expand All
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.1.0
+    Version         : 0.1.1
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
-    Copyright     : 2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2025-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -20,7 +20,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.1.1',
     
     s = `
     
@@ -28,7 +28,7 @@
       
       License < https://tinyurl.com/s872fb68 >
       
-      © 2025 Thomas Creedon
+      © 2025-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -46,7 +46,7 @@
     
       +
       
-      'd="M6 7.5V10l5 5 5-5V7.5l-5 5-5-5z" ] )',
+      'd="M6 7.5V10l5 5 5-5V7.5l-5 5z" ] )',
       
     selector
     
