@@ -65,8 +65,6 @@ Move Project navigation to the top of the Page.
     
       Use this option if you want to have this effect on all Pages.
       
-      * Add the following code to .
-        
       * Add code from file **[portfolio page project navigation top
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
         FOOTER. Read the code for any instructions within.
