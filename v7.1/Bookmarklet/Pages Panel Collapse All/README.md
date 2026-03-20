@@ -8,7 +8,7 @@ Collapse all pages in the Pages panel.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -37,11 +37,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2025-05-17**
+* **2026-03-19**
 
-  * added randomize products button
-  * bumped version to 0.2.0
-  -->
+  * updated to work with recent Squarespace change to the SVG path attribute
+  * bumped version to 0.1.1
+  
 * **2025-12-10**
 
   * initial version
