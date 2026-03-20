@@ -96,7 +96,7 @@ or other technical issues.
 
 This code is designed to be a site-wide effect. For example you'd want the icons
 to show up in the footer for a site. However with some minor tweaks the code
-could be restricted to a single page. It is also possible to have different sets
+could be restricted to one Page. It is also possible to have different sets
 of icons shown on different pages, with some tweaks. If you need custom
 installation help, [contact me for paid consulting][7].
 
