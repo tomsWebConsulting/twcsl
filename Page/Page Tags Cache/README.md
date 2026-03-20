@@ -197,8 +197,8 @@ Please consider [making a donation][11].
 
 * **2026-03-13**
 
-  * replaced undocumented API call with format=json and formated data similar to
-    the API call returns
+  * replaced undocumented API call with format=json and formatted data similar
+    to the API call returns
   * bumped version to 0.4.0
   
 * **2025-11-30**
