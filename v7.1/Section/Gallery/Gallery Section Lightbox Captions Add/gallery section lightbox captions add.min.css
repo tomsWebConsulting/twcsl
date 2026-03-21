@@ -1,0 +1,21 @@
+/*!
+
+  gallery section lightbox captions add
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.1.1
+  
+  SS Version        : 7.1
+  
+  Fluid
+  Engine
+  Compatible        : Not Applicable
+  
+  Copyright         : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */.gallery-lightbox-item:not(:last-child) figcaption{visibility:hidden}.gallery-lightbox-item-wrapper{flex-direction:column;gap:1em;text-align:center}
