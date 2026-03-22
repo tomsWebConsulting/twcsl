@@ -8,7 +8,7 @@ Add captions to Gallery Section Lightbox.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -45,9 +45,9 @@ Add captions to Gallery Section Lightbox.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Captions Add -->
           
@@ -67,9 +67,9 @@ Add captions to Gallery Section Lightbox.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a89156db92c0d9c59e74bd78e1f75c230905bb74/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Captions Add -->
           
@@ -107,13 +107,13 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2026-02-24**
+* **2026-03-04*
 
-  * updated to work with Store Filter beta
-  * updated to use Page Categories to Module
-  * bumped version to 0.6.0
-  -->
-* **2026-03-02**
+  * fixed issue with only the first newline being replaced with br
+  * reduced issue with images jumping
+  * bumped version to 0.1.1
+  
+* **2026-02-28**
 
   * initial version
 
