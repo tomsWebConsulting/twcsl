@@ -4,19 +4,15 @@
   
     gallery section lightbox captions add
     
-    License           : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.1
+    Version         : 0.2.0
     
-    SS Version        : 7.1
+    SS Version      : 7.1
     
-    Fluid
-    Engine
-    Compatible        : Not Applicable
-    
-    Copyright         : 2026 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -24,7 +20,7 @@
     
   const
   
-    version = '0.1.1',
+    version = '0.2.0',
     
     s = `
     
@@ -42,161 +38,241 @@
       
   console.log ( s );
   
-  const dclCallback = ( ) => {
+  let
   
-    const
+    height = 0,
     
-      codeKey = 'twc-gslca',
-      
-      itemCallback = ( element ) => {
+    observer;
+    
+  const
+  
+    attributesMutationCallback =
+    
+      ( mutation ) => {
       
         const
         
-          text = element
+          attribute = 'data-open',
           
-            .querySelector (
-            
-              '.gallery-lightbox-item '
-              
-              +
-              
-              'img'
-              
-              )
-              
-            .getAttribute ( 'alt' )
-            
-            .replace ( '\n', '<br>' )
-            
-            ||
-            
-            '',
-            
-          html = `
+          isAttribute = mutation
           
-            <figcaption>
+            .attributeName
             
-              ${ text }
-              
-              </figcaption>
-              
-            `;
+            ===
             
+            attribute;
+            
+        // bail if not attribute of interest
+        
+        if ( ! isAttribute ) return;
+        
+        const
+        
+          element = mutation
+          
+            .target,
+            
+          isOpen = element
+          
+            .getAttribute ( attribute )
+            
+            ===
+            
+            'true';
+            
+        // bail if not open
+        
+        if ( ! isOpen ) return;
+        
+        height = 0;
+        
         element
-        
-          .querySelector (
-          
-            '.gallery-lightbox-item-wrapper'
-            
-            )
-            
-          .insertAdjacentHTML (
-          
-            'beforeend',
-            
-            html
-            
-            );
-            
-        },
-        
-      mutationCallback = ( mutation ) => {
-      
-        mutation
-        
-          .addedNodes
-          
-          .forEach ( nodeCallback );
-          
-        },
-        
-      mutationsCallback = ( mutations ) => {
-      
-        mutations.forEach ( mutationCallback );
-        
-        },
-        
-      nodeCallback = ( node ) => {
-      
-        const isElement = node
-        
-          .nodeType
-          
-          ===
-          
-          1;
-          
-        // bail if not element
-        
-        if ( ! isElement ) return;
-        
-        const hasClass = node
-        
-          .classList
-          
-          .contains ( 
-          
-            'gallery-lightbox-outer-wrapper'
-            
-            );
-            
-        // bail if no class name
-        
-        if ( ! hasClass ) return;
-        
-        const styleElement = document
-        
-          .createElement ( 'style' );
-          
-        node
         
           .querySelectorAll (
           
-            '.gallery-lightbox-item'
+            'figcaption'
             
             )
             
-          .forEach ( itemCallback );
+          .forEach (
           
-        observer.disconnect ( );
-        
+            e => height = Math.max (
+            
+              e.offsetHeight,
+              
+              height
+              
+              )
+              
+            );
+            
+        element
+          
+          .style
+          
+          .setProperty (
+          
+            `--${ codeKey }-height`,
+            
+            `${ height }px`
+            
+            );
+            
         },
         
-      observer = new MutationObserver (
+    codeKey = 'twc-gslca',
+    
+    itemCallback = ( element ) => {
+    
+      const
       
-        mutationsCallback
+        text = element
         
-        ),
-        
-      options = codeKey
-      
-        .split ( '-' )
-        
-        .reduce (
-        
-          ( obj, key ) => obj?.[ key ],
+          .querySelector ( 'img' )
           
-          window
+          .getAttribute ( 'alt' )
+          
+          .replaceAll ( '\n', '<br>' )
+          
+          ||
+          
+          '',
+          
+        html = `
+        
+          <figcaption>
+          
+            ${ text }
+            
+            </figcaption>
+            
+          `,
+          
+        selector =
+        
+          '.gallery-lightbox-item-wrapper';
+          
+      element
+      
+        .querySelector ( selector )
+        
+        .insertAdjacentHTML (
+        
+          'beforeend',
+          
+          html
           
           );
-        
-    // start listening for changes in element
-    
-    observer.observe (
-    
-      document.body,
-        
-      { childList : true }
+          
+      },
       
-      );
-      
-    };
+    nodeCallback = ( node ) => {
     
+      const isElement = node
+      
+        .nodeType
+        
+        ===
+        
+        1;
+        
+      // bail if not element
+      
+      if ( ! isElement ) return;
+      
+      const hasClass = node
+      
+        .classList
+        
+        .contains ( 
+        
+          'gallery-lightbox-outer-wrapper'
+          
+          );
+          
+      // bail if no class name
+      
+      if ( ! hasClass ) return;
+      
+      node
+      
+        .querySelectorAll (
+        
+          '.gallery-lightbox-item'
+          
+          )
+          
+        .forEach ( itemCallback );
+        
+      observer.disconnect ( );
+      
+      new MutationObserver (
+      
+        ms => ms.forEach (
+        
+          m =>
+          
+            attributesMutationCallback (
+            
+              m
+              
+              )
+              
+          )
+          
+        )
+        
+        // start listening for changes in element
+        
+        .observe (
+        
+          node.querySelector (
+          
+            '.gallery-lightbox'
+            
+            ),
+            
+          { attributes : true }
+          
+          );
+          
+      },
+      
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        observer = new MutationObserver (
+        
+          ms => ms.forEach (
+          
+            m => m
+              
+              .addedNodes
+              
+              .forEach ( nodeCallback )
+              
+            )
+            
+          );
+          
+        // start listening for changes in element
+        
+        observer.observe (
+        
+          document.body,
+            
+          { childList : true }
+            
+          );
+          
+        };
+        
   document.addEventListener (
   
     'DOMContentLoaded',
     
-    dclCallback
+    domContentLoadedCallback
     
     );
     

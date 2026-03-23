@@ -8,7 +8,7 @@ Add captions to Gallery Section Lightbox.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Version
 
@@ -107,6 +107,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2026-03-22*
+
+  * fixed issue wth arrows appearing off balance
+  * bumped version to 0.2.0
+  
 * **2026-03-04*
 
   * fixed issue with only the first newline being replaced with br
