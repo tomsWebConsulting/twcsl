@@ -45,9 +45,9 @@ Add captions to Gallery Section Lightbox.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5667f220358ad764bfc6e02eccb1ee75bf34ea17/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5667f220358ad764bfc6e02eccb1ee75bf34ea17/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Captions Add -->
           
@@ -67,9 +67,9 @@ Add captions to Gallery Section Lightbox.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5667f220358ad764bfc6e02eccb1ee75bf34ea17/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e20fa756cde9545f6f18f4edacf72337d161049e/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5667f220358ad764bfc6e02eccb1ee75bf34ea17/v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/gallery%20section%20lightbox%20captions%20add.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Lightbox Captions Add -->
           
