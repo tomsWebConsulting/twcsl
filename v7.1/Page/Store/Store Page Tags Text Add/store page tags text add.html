@@ -2,30 +2,27 @@
 
   <!--
   
-    begin store page tags text add
+    store page tags text add
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.1
+    Version         : 0.3.0
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
     Products V2
-    Compatible    : Yes
+    Compatible      : Yes
     
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible      : Not Applicable
     
-    Notes         : the code is comprised of a style and script tag. both are
-                    needed for the full effect to work
-                    
-                    the code makes a call to the JSON version of the store page
-                    for information that is not normally avaiable on the page
+    Notes           : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
     
-    Copyright     : 2023-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -59,15 +56,15 @@
     
       const
       
-        version = '0.2.1',
-      
+        version = '0.3.0',
+        
         s = `
         
           Store Page Tags Text Add v${ version }
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2023-2025 Thomas Creedon
+          © 2023-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -77,53 +74,85 @@
           
       console.log ( s );
       
-      const isStorePage = Static
+      // initialize twc module
       
-        .SQUARESPACE_CONTEXT
-        
-        .collection
-        
-        ?.type
-        
-        ===
-        
-        13;
-        
-      if ( ! isStorePage ) return; // bail if not store page
+      window.twc =
       
-      const callback = async ( ) => {
-      
-        const
+        ( ( self ) => self )
         
-          callback = ( tag ) => {
+        ( window.twc || { } );
+        
+      // initialize twc ptc sub-module
+      
+      twc.ptc =
+      
+        ( ( self ) => self )
+        
+        ( twc.ptc || { } );
+        
+      // initialize twc ptc callbacks sub-module
+      
+      twc.ptc.callbacks = ( ( self ) => {
+      
+        const callback = ( tags ) => {
+        
+          const isStorePage = Static
           
-            const
+            .SQUARESPACE_CONTEXT
             
-              re = new RegExp ( `${ codeKey } (.+) (ld|l|d)` ),
+            .collection
             
-              m = tag.match ( re );
+            ?.type
+            
+            ===
+            
+            13;
+            
+          // bail if not store page
+          
+          if ( ! isStorePage ) return;
+          
+          const
+          
+            codeKey = 'twc-sptta',
+            
+            fullUrl = Static
+            
+              .SQUARESPACE_CONTEXT
               
-            if ( ! m ) return; // continue if tag doesn't match format
-            
-            const
-            
-              pageShow = m [ 2 ],
+              .collection
               
-              b
+              .fullUrl,
               
-                =
-                
-                isList && pageShow === 'd'
-                
-                ||
-                
-                isDetail && pageShow === 'l';
-                
-            if ( b ) return; // continue
+            isDetail
             
-            const
+              =
+              
+              !!
+              
+              Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .item,
+                
+            isList
             
-              callback = ( element ) => {
+              =
+              
+              !
+              
+              Static
+              
+                .SQUARESPACE_CONTEXT
+                
+                .item
+                
+                ?.id,
+                
+            elementCallback =
+            
+              ( element, tag, text ) => {
               
                 let
                 
@@ -149,7 +178,15 @@
                 
                   case isDetail :
                   
-                    selector = '.product-detail .product-meta';
+                    selector
+                    
+                      =
+                      
+                      '.product-detail '
+                      
+                      +
+                      
+                      '.product-meta';
                       
                     break;
                     
@@ -159,20 +196,26 @@
                     
                       =
                       
-                      '.product-list .product-list-item '
+                      '.product-list '
                       
                       +
                       
-                      '.product-list-item-link .product-list-item-meta';
+                      '.product-list-item '
+                      
+                      +
+                      
+                      '.product-list-item-link '
+                      
+                      +
+                      
+                      '.product-list-item-meta';
                       
                     break;
                     
                   }
                   
-                url
+                url.append ( 'tag', tag.name );
                 
-                  .append ( 'tag', tag );
-                  
                 url = `${ fullUrl }?${ url }`;
                 
                 const wrapperElement = element
@@ -239,156 +282,96 @@
                     
                 },
                 
-              text = m [ 1 ],
+            tagCallback = ( tag ) => {
+            
+              const
               
-              className =
-              
-                tagNameToCssClassName ( m [ 0 ] ),
+                re = new RegExp (
                 
-              selector = `.${ className }`;
-              
-            document
-            
-              .body
-              
-              .querySelectorAll ( selector )
-              
-              .forEach ( callback );
-              
-            },
-            
-          codeKey = 'twc-sptta',
-          
-          isDetail = ( ( ) => {
-          
-            const
-            
-              selector = 'body[ id^="item-" ]',
-              
-              is = document
-              
-                .querySelector ( selector )
-                
-                !==
-                
-                null;
-                
-            return is;
-            
-            } ) ( ),
-            
-          isList = ( ( ) => {
-          
-            const
-            
-              selector = 'body[ id^="collection-" ]',
-              
-              is = document
-              
-                .querySelector ( selector )
-                
-                !==
-                
-                null;
-                
-            return is;
-            
-            } ) ( ),
-            
-          fullUrl = Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .collection
-            
-            .fullUrl,
-            
-          tagNameToCssClassName = ( name ) => {
-          
-            const className = 'tag-'
-            
-              +
-              
-              name
-              
-                .replaceAll ( ' ', '-' )
-                
-                .toLowerCase ( )
-                
-                .replace ( /[^\w-]+/g, '' )
-                
-                .replaceAll ( '--', '-' );
-                
-            return className;
-            
-            },
-            
-          url = `${ fullUrl }?format=json`;
-            
-        try {
-        
-          const response = await fetch ( url );
-          
-          if ( ! response.ok ) {
-          
-            const s = `
-            
-              ${ codeKey } network response was not ok ${
-              
-                response
-                
-                  .statusText
+                  `${ codeKey } (.+) (ld|l|d)`
                   
-                  }
+                  ),
                   
-              `
+                m = tag.name.match ( re );
+                
+              // continue if tag doesn't match format
               
-              .trim ( )
+              if ( ! m ) return;
               
-              .replace ( /\s+/gm, ' ' );
+              const
               
-            throw new Error ( s );
-            
-            }
-            
-          const obj = await response.json ( );
+                pageShow = m [ 2 ],
+                
+                isShow
+                
+                  =
+                  
+                  isList && pageShow === 'd'
+                  
+                  ||
+                  
+                  isDetail && pageShow === 'l';
+                  
+              // continue
+              
+              if ( isShow ) return;
+              
+              const
+              
+                text = m [ 1 ],
+                
+                selector = `.${
+                
+                  tag.className
+                  
+                  }`;
+                  
+              document
+              
+                .body
+                
+                .querySelectorAll ( selector )
+                
+                .forEach (
+                
+                  e => elementCallback (
+                  
+                    e,
+                    
+                    tag,
+                    
+                    text
+                    
+                    )
+                    
+                  );
+                
+              };
+              
+          tags
           
-          obj
+            .filter (
+            
+              t => t.name.startsWith (
+              
+                `${ codeKey } `
+                
+                )
+                
+              )
+              
+            .forEach ( tagCallback );
+            
+          };
           
-            .collection
-            
-            .tags
-            
-            .filter ( t => t.startsWith ( `${ codeKey } ` ) )
-            
-            .forEach ( callback );
-            
-          } catch ( error ) {
-          
-            const s = `
-            
-              ${ codeKey } there has been a problem with your fetch get operation,
-              
-              ${ error }.
-              
-              `
-              
-              .trim ( )
-              
-              .replace ( /\s+/gm, ' ' );
-              
-            console.error ( s );
-            
-            }
-            
-        };
+        self.push ( callback );
         
-      document
-      
-        .addEventListener ( 'DOMContentLoaded', callback );
+        return self;
+        
+        } ) ( twc.ptc.callbacks || [ ] );
         
       } ) ( );
       
     </script>
-    
+  
   <!-- end TWC Store Page Tags Text Add -->

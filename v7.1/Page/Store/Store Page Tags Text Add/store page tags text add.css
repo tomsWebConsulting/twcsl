@@ -1,0 +1,42 @@
+/*!
+
+  store page tags text add
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.3.0
+  
+  SS Version      : 7.1
+  
+  Products V2
+  Compatible      : Yes
+  
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  Copyright       : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+  .twc-sptta {
+
+    display : flex;
+    flex-wrap : wrap;
+    column-gap : 2em;
+    list-style-position : inside;
+    padding : 0;
+    row-gap : 0;      
+    white-space : nowrap;
+    
+    }
+    
+  .product-list .product-list-item .product-list-item-link .product-list-item-meta .twc-sptta {
+
+    flex-direction : column;
+    
+    }
