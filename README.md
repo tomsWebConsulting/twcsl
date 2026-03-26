@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 497 effects. Each effect has it's own version number, code,
+twcsl contains 499 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -519,6 +519,8 @@ not necessarily designed to work together.
         
       * [Store Page Tags Text Add](v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add)
         
+        * [Store Page Tags Text Add.bbprojectd](v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/Store%20Page%20Tags%20Text%20Add.bbprojectd)
+          
       * [Store Page Elements Tagged Hide](v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide)
         
         * [Store Page Elements Tagged Hide.bbprojectd](v7.1/Page/Store/Store%20Page%20Elements%20Tagged%20Hide/Store%20Page%20Elements%20Tagged%20Hide.bbprojectd)
@@ -579,6 +581,8 @@ not necessarily designed to work together.
           
         * [Store Page List Product Marks To Badges](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges)
           
+          * [Store Page List Product Marks To Badges.bbprojectd](v7.1/Page/Store/List/Store%20Page%20List%20Product%20Marks%20To%20Badges/Store%20Page%20List%20Product%20Marks%20To%20Badges.bbprojectd)
+            
         * [SPLACR Simple Redirect](v7.1/Page/Store/List/SPLACR%20Simple%20Redirect)
           
         * [Store Page List Images Hide](v7.1/Page/Store/List/Store%20Page%20List%20Images%20Hide)
