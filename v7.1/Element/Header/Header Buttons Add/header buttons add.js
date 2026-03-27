@@ -1,0 +1,269 @@
+( ( ) => {
+
+  /*!
+  
+    header buttons add
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.10.0
+    
+    SS Version      : 7.1
+    
+    Fluid
+    Engine
+    Compatible      : Not Appllicable
+    
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.10.0',
+    
+    s = `Header Buttons Add v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2021-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc =
+    
+      ( ( self ) => self )
+      
+      ( window.twc || { } );
+      
+    // initialize twc hba sub-module
+    
+    twc.hba =
+    
+      ( ( self ) => self )
+      
+      ( twc.hba || { } );
+      
+    }
+    
+  const
+  
+    codeKey = 'twc-hba',
+    
+    options = codeKey
+    
+      .split ( '-' )
+      
+      ?.reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        );
+        
+  // bail if no options
+  
+  if ( ! options ) return;
+  
+  const
+  
+    targetAtttributeValue = options
+    
+      .targetAttributeValue,
+      
+    addButton = (
+    
+      data,
+      
+      index,
+      
+      ctaElement,
+      
+      buttonOriginalElement
+      
+      ) => {
+      
+        const buttonElement =
+        
+          buttonOriginalElement
+          
+            .cloneNode ( );
+            
+        buttonElement.setAttribute (
+        
+          'href',
+          
+          data.url
+          
+          );
+          
+        buttonElement.textContent =
+        
+          data.text;
+          
+        buttonElement
+        
+          .classList
+          
+          .add ( codeKey );
+          
+        ctaElement
+        
+          .append ( buttonElement );
+          
+        if ( targetAtttributeValue )
+        
+          buttonElement.setAttribute (
+          
+            'target',
+            
+            targetAtttributeValue
+            
+            );
+            
+        const className =
+        
+          {
+          
+            secondary :
+            
+              'sqs-button-element--secondary',
+              
+            tertiary :
+            
+              'sqs-button-element--tertiary'
+              
+            }
+            
+            [ data.type ];
+            
+        // continue
+        
+        if ( ! className ) return;
+        
+        buttonElement
+        
+          .classList
+          
+          .remove (
+          
+            'sqs-button-element--primary'
+            
+            );
+            
+        buttonElement
+        
+          .classList
+          
+          .add ( className );
+          
+        },
+        
+    ctaCallback = ( element ) => {
+  
+      const buttonOriginalElement =
+      
+        element.firstElementChild;
+        
+      options
+      
+        .buttons
+        
+        .forEach (
+        
+          ( data, index ) =>
+          
+          addButton (
+          
+            data,
+            
+            index,
+            
+            element,
+            
+            buttonOriginalElement
+            
+            )
+            
+          );
+          
+      },
+      
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        const
+        
+          selector = [
+          
+            '.header-actions-action--cta',
+            
+            '.header-menu-cta'
+            
+            ]
+            
+            .join ( ', ' ),
+          
+          buttonOriginalTargetAttributeAdd =
+          
+            options
+            
+              .buttonOriginalTargetAttributeAdd,
+              
+          addTargetAttribute =
+          
+            buttonOriginalTargetAttributeAdd
+            
+            &&
+            
+            targetAtttributeValue;
+            
+        document
+        
+          .body
+          
+          .querySelectorAll ( selector )
+          
+          .forEach ( ctaCallback );
+          
+        if ( addTargetAttribute )
+        
+          buttonOriginalElement
+          
+            .setAttribute (
+            
+              'target',
+              
+              targetAtttributeValue
+              
+              );
+              
+        };
+        
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  } ) ( );

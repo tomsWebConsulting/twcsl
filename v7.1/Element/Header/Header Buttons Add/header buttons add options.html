@@ -1,0 +1,124 @@
+<!-- begin TWC Header Buttons Add Options -->
+
+  <script>
+  
+    /*
+    
+      header buttons add
+      
+      License         : < https://tinyurl.com/s872fb68 >
+      
+      Version         : 0.10.0
+      
+      SS Version      : 7.1
+      
+      Fluid
+      Engine
+      Compatible      : Not Appllicable
+      
+      Copyright       : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      */
+      
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc =
+      
+        ( ( self ) => self )
+        
+        ( window.twc || { } );
+        
+      // initialize twc hba sub-module
+      
+      twc.hba = ( ( self ) => {
+      
+        const options = {
+        
+          buttons : [
+          
+            /*
+            
+              following is an example of a new button data structure. copy the
+              example new button data structure and paste after the example new
+              button data structure. remove the forward slash asterisk and
+              asterisk forward slash lines from before and after the copied
+              example. repeat for as many new buttons you want to create. this
+              has been done once initially
+              
+              */
+              
+            /*
+            
+            {
+            
+              text : '[ enter button text here between single quotes replacing square brackets ]',
+              
+              url : '[ enter url here between single quotes replacing square brackets ]',
+              
+              // optional - type, value is secondary or tertiary
+              
+              type : '[ optional, enter type here between single quotes replacing square brackets ]'
+              
+              },
+              
+            */
+            
+            {
+            
+              text : '[ enter button text here between single quotes replacing square brackets ]',
+              
+              url : '[ enter url here between single quotes replacing square brackets ]',
+              
+              // optional - type, value is secondary or tertiary
+              
+              type : '[ optional, enter type here between single quotes replacing square brackets ]'
+              
+              },
+              
+            ],
+            
+          /*
+          
+            optional - targetAtttributeValue, value is _self, _blank, _parent,
+            _top, or framename. enter the value between single quotes. see
+            < https://mzl.la/2Q0JROF >
+            
+            */
+            
+          targetAttributeValue : '',
+          
+          /*
+          
+            optional - buttonOriginalTargetAttributeAdd, value is false or
+            true. when true the target attribute will be added to Squarespace's
+            built-in cta button
+            
+            */
+            
+          buttonOriginalTargetAttributeAdd : false
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.hba || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Header Buttons Add Options -->

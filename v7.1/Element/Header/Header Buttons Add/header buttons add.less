@@ -2,182 +2,262 @@
 
   /*
   
-    begin header buttons add
+    header buttons add
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.9.0
+    Version         : 0.10.0
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
-    Fluid
-    Engine
-    Compatible    : Not Applicable
+    Dependencies    : LESS
     
-    Dependencies  : LESS
+    Note            : on mobile at 575px and below the orientation is forced to
+                      column
     
-    Note          : on mobile at 575px and below the orientation is forced to
-                    column
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    no user serviceable parts below
     
     */
     
-    @gap : 0.5rem; // space between buttons
+  #siteWrapper .header .header-actions-action--cta .sqs-button-element--primary {
+  
+    align-self : center;
     
-    // direction-order controls whether buttons will be oriented in a row or
-    // column and if they will be in normal or reversed order. the first
-    // argument can be row or column, the second argument can be normal or
-    // reverse
+    }
     
-    .direction-order ( row, reverse );
+  .header .header-actions-action--cta, // desktop
+  .header-menu-cta // mobile
+  
+    {
     
-    // do not change anything below, there be the borg here
-    
-    #siteWrapper .header .header-actions-action--cta .sqs-button-element--primary {
-    
-      align-self : center;
+      display : flex;
+      flex-direction : @d1;
+      
+      grid-gap : @gap;
+      gap : @gap;
       
       }
       
-    .header .header-actions-action--cta, // desktop
-    .header-menu-cta // mobile
-    
-      {
-      
-        display : -webkit-box;
-        display : -ms-flexbox;
-        display : flex;
-        
-        -webkit-box-orient : @d3;
-        -webkit-box-direction : @d2;
-        -ms-flex-direction : @d1;
-        flex-direction : @d1;
-        
-        grid-gap : @gap;
-        gap : @gap;
-        
-        }
-        
-    // desktop
-    
+  // begin desktop
+  
     .header .header-actions-action--cta {
     
-        text-align : center;
-        
-        }
-        
-    @media only screen and ( pointer : coarse ) and ( max-width : 1024px ),
-    screen and ( max-width : 799px ) {
-    
-      .header .header-actions-action--cta {
+      text-align : center;
       
-        display : none;
-        
-        }
-        
       }
       
-    // begin mobile
-    
-      .header-menu-cta {
+    @media
+      only screen and ( pointer : coarse ) and ( max-width : 1024px ),
+      screen and ( max-width : 799px )
       
-        justify-content : center;
+        {
         
+          .header .header-actions-action--cta {
+          
+            display : none;
+            
+            }
+            
         }
         
-      @media screen and ( max-width : 575px ) {
+    // end desktop
+    
+  // begin mobile
+  
+    .header-menu-cta {
+    
+      justify-content : center;
       
-        .header-menu-cta {
+      }
+      
+    .header-menu-cta a {
+    
+      margin-left : auto;
+      margin-right : auto;
+      
+      }
+      
+    @media screen and (max-width : 767px ) and ( orientation : portrait ) {
+    
+      #siteWrapper .header-menu-cta .sqs-button-element--secondary,
+      #siteWrapper .header-menu-cta .sqs-button-element--tertiary
+      
+        {
         
-          -webkit-box-orient : @d6;
-          -webkit-box-direction : @d5;
-          -ms-flex-direction : @d4;
-          flex-direction : @d4;
+          font-size : 1.2rem;
           
           }
           
+      }
+      
+    @media screen and ( max-width : 575px ) {
+    
+      .header-menu-cta {
+      
+        flex-direction : @d4;
+        
         }
         
-      .header-menu-cta a {
+      }
       
-        margin-left : auto;
-        margin-right : auto;
+    // end mobile
+    
+  // begin direction mixins
+  
+    // begin desktop
+    
+      // direction row, normal
+      
+      .direction-order ( @d, @o ) when ( @d = row ) and ( @o = normal ) {
+      
+        @d1 : row;
+        @d2 : normal;
+        @d3 : horizontal;
+        
+        }
+        
+      // direction row, reverse
+      
+      .direction-order ( @d, @o ) when ( @d = row ) and ( @o = reverse ) {
+      
+        @d1 : row-reverse;
+        @d2 : reverse;
+        @d3 : horizontal;
+        
+        }
+        
+      // direction column, normal
+      
+      .direction-order ( @d, @o ) when ( @d = column ) and ( @o = normal ) {
+      
+        @d1 : column;
+        @d2 : normal;
+        @d3 : vertical;
+        
+        }
+        
+      // direction column, reverse
+      
+      .direction-order ( @d, @o ) when ( @d = column ) and ( @o = reverse ) {
+      
+        @d1 : column-reverse;
+        @d2 : reverse;
+        @d3 : vertical;
+        
+        }
+        
+      // end desktop
+      
+    // begin mobile
+    
+      // direction column, normal
+      
+      .direction-order ( @d, @o ) when ( @o = normal ) {
+      
+        @d4 : column;
+        @d5 : normal;
+        @d6 : vertical;
+        
+        }
+        
+      // direction column, reverse
+      
+      .direction-order ( @d, @o ) when ( @o = reverse ) {
+      
+        @d4 : column-reverse;
+        @d5 : reverse;
+        @d6 : vertical;
         
         }
         
       // end mobile
       
-    // begin direction mixins
+    // end direction mixins
     
-      // begin desktop
+  // begin match primary font size mixins
+  
+    .desktop-media ( ) {
+    
+      @media
+        screen and ( min-width : 768px ),
+        screen and ( max-width : calc( 1511px ) ) and ( orientation : landscape ) {
+        
+          #siteWrapper .header-actions .header-actions-action--cta {
+          
+            .inner ( );
+            
+            }
+            
+          }
+          
+      }
       
-        // direction row, normal
-        
-        .direction-order ( @d, @o ) when ( @d = row ) and ( @o = normal ) {
-        
-          @d1 : row;
-          @d2 : normal;
-          @d3 : horizontal;
-          
-          }
-          
-        // direction row, reverse
-        
-        .direction-order ( @d, @o ) when ( @d = row ) and ( @o = reverse ) {
-        
-          @d1 : row-reverse;
-          @d2 : reverse;
-          @d3 : horizontal;
-          
-          }
-          
-        // direction column, normal
-        
-        .direction-order ( @d, @o ) when ( @d = column ) and ( @o = normal ) {
-        
-          @d1 : column;
-          @d2 : normal;
-          @d3 : vertical;
-          
-          }
-          
-        // direction column, reverse
-        
-        .direction-order ( @d, @o ) when ( @d = column ) and ( @o = reverse ) {
-        
-          @d1 : column-reverse;
-          @d2 : reverse;
-          @d3 : vertical;
-          
-          }
-          
-        // end desktop
-        
-      // mobile
+    .mobile-media ( @type ) {
+    
+      @media screen and ( max-width : 767px ) and ( orientation : portrait ) {
       
-        // direction column, normal
+        #siteWrapper .header-menu-cta .sqs-button-element--@{type} {
         
-        .direction-order ( @d, @o ) when ( @o = normal ) {
-        
-          @d4 : column;
-          @d5 : normal;
-          @d6 : vertical;
+          font-size : 1.2rem;
           
           }
           
-        // direction column, reverse
+        }
         
-        .direction-order ( @d, @o ) when ( @o = reverse ) {
+      @media
+        screen and ( min-width : 768px ),
+        screen and ( max-width : calc( 1511px ) ) and ( orientation : landscape ) {
         
-          @d4 : column-reverse;
-          @d5 : reverse;
-          @d6 : vertical;
+          #siteWrapper .header-actions .header-actions-action--cta {
           
+            .inner ( );
+            
+            }
+            
           }
           
-      // end direction mixins
+      }
       
-    // end header buttons add
+    .secondary-match-primary-font-size ( @boolean ) when ( @boolean = true ) {
+    
+      .inner ( ) {
+      
+        .sqs-button-element--secondary {
+        
+          --secondary-button-font-font-size-value : ~"var( --header-button-font-font-size-value )";
+          
+          }
+          
+        }
+        
+      .desktop-media ( );
+      
+      .mobile-media ( 'secondary' );
+      
+      }
+      
+    .tertiary-match-primary-font-size ( @boolean ) when ( @boolean = true ) {
+    
+      .inner ( ) {
+      
+        .sqs-button-element--tertiary {
+        
+          --tertiary-button-font-font-size-value : ~"var( --header-button-font-font-size-value )";
+          
+          }
+          
+        }
+        
+      .desktop-media ( );
+      
+      .mobile-media ( 'tertiary' );
+      
+      }
+      
+    // end match primary font size mixins
     
   /* end TWC Header Buttons Add */
