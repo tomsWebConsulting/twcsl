@@ -48,7 +48,7 @@ Add buttons to the site header.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/v7.1/Element/Header/Header%20Buttons%20Add/header%20buttons%20add.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3da1ecd6a66a90be1b80443aab847044500a218c/v7.1/Element/Header/Header%20Buttons%20Add/header%20buttons%20add.min.js" type="module"></script>
       
       <!-- end TWC Header Buttons Add -->
       
