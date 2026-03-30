@@ -44,7 +44,7 @@ false or true, causing accessibility guideline compliance issues.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ab14060b4a9656f26096184b37fa72b0651adb76/Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix/autocomplete%20attribute%20false%20true%20fix.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1ad70cc9a8425449463b3b911594ca5ccc55ca47/Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix/autocomplete%20attribute%20false%20true%20fix.min.js" type="module"></script>
           
           <!-- end TWC Autocomplete Attribute False True Value Fix -->
           
@@ -64,7 +64,7 @@ false or true, causing accessibility guideline compliance issues.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ab14060b4a9656f26096184b37fa72b0651adb76/Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix/autocomplete%20attribute%20false%20true%20fix.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1ad70cc9a8425449463b3b911594ca5ccc55ca47/Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix/autocomplete%20attribute%20false%20true%20fix.min.js" type="module"></script>
           
           <!-- end TWC Autocomplete Attribute False True Value Fix -->
           
