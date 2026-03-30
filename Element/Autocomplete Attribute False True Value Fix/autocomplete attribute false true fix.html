@@ -1,0 +1,109 @@
+<!-- begin TWC Autocomplete Attribute False True Value Fix -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        autocomplete attribute false true fix
+        
+        License           : < https://tinyurl.com/s872fb68 >
+        
+        Version           : 0.1.0
+        
+        SS Versions       : 7.1, 7.0
+        
+        Copyright         : 2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          Autocomplete Attribute False True Fix v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const domContentLoadedCallback =
+      
+        ( ) => {
+        
+          document
+          
+            .body
+            
+            .querySelectorAll (
+            
+              '[ autocomplete = "false" ]'
+              
+              )
+              
+            .forEach (
+            
+              e => e.setAttribute (
+              
+                'autocomplete',
+                
+                'off'
+                
+                )
+                
+              );
+              
+          document
+          
+            .body
+            
+            .querySelectorAll (
+            
+              '[ autocomplete = "true" ]'
+              
+              )
+              
+            .forEach (
+            
+              e => e.setAttribute (
+              
+                'autocomplete',
+                
+                'on'
+                
+                )
+                
+              );
+              
+          };
+          
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      } ) ( );
+      
+    </script>
+  
+  <!-- end TWC Autocomplete Attribute Fix -->
