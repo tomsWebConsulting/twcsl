@@ -95,6 +95,13 @@ false or true, causing accessibility guideline compliance issues.
       
     * Refer to [Add code to code injection][7] for details.
 
+## Note
+
+This code does not guarantee that it will fix the issue it attempts to
+address. You will have to test it to see it it works for you. For example it may
+work for accessibility devices. Accessibility site test software may still flag
+issue as this code runs when the page is almost fully loaded.
+
 ## Make a Donation
 
 Please consider [making a donation][9].
