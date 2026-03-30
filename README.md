@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 499 effects. Each effect has it's own version number, code,
+twcsl contains 501 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -284,6 +284,10 @@ not necessarily designed to work together.
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
     * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
+      
+  * [Autocomplete Attribute False True Value Fix](Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix)
+    
+    * [Autocomplete Attribute False True Value Fix.bbprojectd](Element/Autocomplete%20Attribute%20False%20True%20Value%20Fix/Autocomplete%20Attribute%20False%20True%20Value%20Fix.bbprojectd)
       
   * [Product Custom Form Text Field Max Length](Element/Product%20Custom%20Form%20Text%20Field%20Max%20Length)
     
