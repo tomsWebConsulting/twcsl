@@ -1,34 +1,72 @@
-/* begin TWC Header Menu Mobile Outline Options */
+<!-- begin TWC Header Menu Mobile Outline Options -->
 
-  /*
+  <script>
   
-    header menu mobile outline options
+    ( ( ) => {
     
-    License       : < https://tinyurl.com/s872fb68 >
+      /*
+      
+        header menu mobile outline options
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.6.0-
+        
+        SS Version      : 7.1
+        
+        Copyright       : 2021-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc =
+      
+        ( ( self ) => self )
+        
+        ( window.twc || { } );
+        
+      // initialize twc hmmo sub-module
+      
+      twc.hmmo = ( ( self ) => {
+      
+        const options = {
+        
+          // toggle if outline is expandable or not, value is false or true
+          
+          expandable : false,
+          
+          /*
+          
+            toggle if icon is active or not, only applies if expandable is true.
+            value is false or true
+            
+            */
+            
+          iconActive : true
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.hmmo || { } );
+        
+      } ) ( );
+      
+    </script>
     
-    Version       : 0.5.0
-    
-    SS Version    : 7.1
-    
-    Dependencies  : LESS
-    
-    Copyright     : 2021-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-  .twc-hmmo {
-  
-    // values are false or true, toggle if outline is expandable or not
-    
-    --twc-hmmo-expandable : false;
-    
-    // values are false or true, toggle if icon is active or not, only applies
-    // if twc-hmmo-expandable is true
-    
-    --twc-hmmo-icon-active : true;
-    
-    }
-    
-  /* end TWC Header Menu Mobile Outline Options */
+  <!-- end TWC Header Menu Mobile Outline Options -->

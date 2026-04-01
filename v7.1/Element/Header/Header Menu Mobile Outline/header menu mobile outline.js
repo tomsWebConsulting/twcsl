@@ -4,15 +4,17 @@
   
     header menu mobile outline
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.5.0
+    Version         : 0.6.0
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
-    Copyright     : 2021-2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -20,7 +22,7 @@
     
   const
   
-    version = '0.5.0',
+    version = '0.6.0',
     
     s = `
     
@@ -28,7 +30,7 @@
       
       License < https://tinyurl.com/s872fb68 >
       
-      © 2021-2025 Thomas Creedon
+      © 2021-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -38,326 +40,574 @@
       
   console.log ( s );
   
-  const callback = ( ) => {
+  // globals
   
-    let selector = '.header-menu-nav-list';
+  {
+  
+    // initialize twc module
     
-    const
+    window.twc =
     
-      activeClassName = 'header-menu-nav-folder--active',
+      ( ( self ) => self )
       
-      build = ( ) => {
+      ( window.twc || { } );
+      
+    // initialize twc hmmo sub-module
+    
+    twc.hmmo =
+    
+      ( ( self ) => self )
+      
+      ( twc.hmmo || { } );
+      
+    // initialize twc hmmo callbacks sub-module
+    
+    twc.hmmo.callbacks =
+    
+      ( ( self ) => self )
+      
+      ( twc.hmmo.callbacks || [ ] );
+      
+    }
+    
+  let observer;
+  
+  const
+  
+    activeClassName =
+    
+      'header-menu-nav-'
+      
+      +
+      
+      'folder--active',
+      
+    codeKey = 'twc-hmmo',
+    
+    folderItemCallback =
+    
+      ( element, ulElement ) => {
+      
+        const liElement = document
+        
+          .createElement ( 'li' );
+          
+        liElement
+        
+          .classList
+          
+          .add ( 'header-menu-nav-item' );
+          
+        liElement
+        
+          .append ( element );
+          
+        ulElement
+        
+          .append ( liElement );
+          
+        },
+        
+    menuElement = document
+    
+      .createElement ( 'ul' ),
+      
+    options = codeKey
+    
+      .split ( '-' )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    navigationElement = document
+    
+      .body
+      
+      .querySelector (
+      
+        '.header-menu-nav-list'
+        
+        ),
+        
+    removeOldFolders = ( ) => {
+    
+      navigationElement
+      
+        .querySelectorAll (
+        
+          '[ data-folder ]:not('
+          
+          +
+          
+          `${ rootSelector } )`
+          
+          )
+          
+        .forEach ( e => e.remove ( ) );
+        
+      },
+      
+    replaceMenuContent = ( ) => {
+    
+      navigationElement
+      
+        .querySelector (
+        
+          '.header-menu-nav-'
+          
+          +
+          
+          'folder-content'
+          
+          )
+          
+        .replaceWith ( menuElement );
+        
+      },
+      
+    rootSelector =
+    
+      '[ data-folder = "root" ]',
+      
+    setExpandableAttribute = ( ) => {
+    
+      navigationElement
+      
+        .setAttribute (
+        
+          `data-${ codeKey }`
+          
+          +
+          
+          '-expandable',
+          
+          ''
+          
+          );
+          
+      },
+      
+    isExpandable = options.expandable,
+    
+    isIconActive = options.iconActive,
+    
+    itemCallback =
+    
+      ( element, menuElement ) => {
       
         const
         
-          rootSelector = '[ data-folder="root" ]',
+          dataFolderId = element
           
-          menuElement = document
-          
-            .createElement ( 'ul' );
+            .getAttribute (
             
-        let
-        
-          callback = ( element ) => {
+              'data-folder-id'
+              
+              ),
+              
+          isFolder =
           
-            const
+            dataFolderId
             
-              dataFolderId = element
-              
-                .getAttribute ( 'data-folder-id' ),
-                
-              isFolder = dataFolderId === undefined ? false : true,
-              
-              isUserAccounts = element
-              
-                .classList
-                
-                .contains ( 'user-accounts-text-link' );
-                
-            if ( isUserAccounts )
+            ?
             
-              element = element.parentElement;
-              
-            const liElement = document
+            true
             
-              .createElement ( 'li' );
-              
-             liElement
-             
-              .classList
-              
-              .add ( 'header-menu-nav-item' );
-              
-            liElement
+            :
             
-              .append ( element );
-              
-            if ( isFolder ) {
+            false,
             
-              const
-              
-                callback = ( element ) => {
-                
-                  const liElement = document
-                  
-                    .createElement ( 'li' );
-                    
-                  liElement
-                  
-                    .classList
-                    
-                    .add ( 'header-menu-nav-item' );
-                    
-                  liElement
-                  
-                    .append ( element );
-                    
-                  ulElement
-                  
-                    .append ( liElement );
-                    
-                  },
-                  
-                ulElement = document
-                
-                  .createElement ( 'ul' );
-                  
-              selector = `[ data-folder="${ dataFolderId }" ] `
-              
-                +
-                
-                '.header-menu-nav-item:not( .header-menu-controls ) a';
-                
-              navigationElement
-              
-                .querySelectorAll ( selector )
-                
-                .forEach ( callback );
-                
-              liElement.append ( ulElement );
-              
-              }
-              
-            menuElement
-            
-              .append ( liElement );
-              
-            },
-            
-          isExpandable,
-          
-          isIconActive,
-          
-          selector = '.header-menu-nav-item a';
-        
-        folderElement
-        
-          .querySelectorAll ( selector  )
-          
-          .forEach ( callback );
-          
-        navigationElement
-        
-          .querySelectorAll ( `[ data-folder ]:not( ${ rootSelector } )` )
-          
-          .forEach ( e => e.remove ( ) );
-          
-        navigationElement
-        
-          .querySelector ( '.header-menu-nav-folder-content' )
-          
-          .replaceWith ( menuElement );
-          
-        // is expandable
-        
-        {
-        
-          isExpandable = getComputedStyle (
-          
-            navigationElement
-          
-            )
-            
-            .getPropertyValue ( `--${ codeKey }-expandable` );
-            
-          isExpandable = isExpandable === 'true' ? true : false;
-          
-          if ( ! isExpandable ) return; // bail if not expandable
-          
-          }
-          
-        // is icon active
-        
-        {
-        
-          isIconActive = getComputedStyle (
-          
-            navigationElement
-          
-            )
-            
-            .getPropertyValue ( `--${ codeKey }-icon-active` );
-            
-          isIconActive = isIconActive === 'true' ? true : false;
-          
-          }
-          
-        callback = ( event ) => {
-        
-          event.preventDefault ( );
-          
-          const
-          
-            className = 'header-dropdown-flip',
-            
-            element = event.currentTarget;
-            
-          let b = isExpandable && isIconActive;
-          
-          element
+          isUserAccounts = element
           
             .classList
             
-            .toggle ( `${ codeKey }-open` );
+            .contains (
             
-          if ( b ) {
-          
-            const
-            
-              classList = element
+              'user-accounts-text-link'
               
-                .querySelector ( '.header-dropdown-icon' )
-                
-                .classList,
-                
-              hasClassName = classList
+              );
               
-                .contains ( className );
-                
-            if ( hasClassName )
-            
-              classList
-              
-                .remove ( className );
-                
-              else {
-              
-                classList
-                
-                  .add ( className );
-                  
-                }
-                
-            }
-            
-          };
-          
-        navigationElement
+        if ( isUserAccounts )
         
-          .setAttribute ( `data-${ codeKey }-expandable`, '' );
+          element =
+          
+            element.parentElement;
+            
+        const liElement = document
+        
+          .createElement ( 'li' );
+          
+         liElement
+         
+          .classList
+          
+          .add (
+          
+            'header-menu-nav-item'
+            
+            );
+            
+        liElement
+        
+          .append ( element );
+          
+        if ( isFolder ) {
+        
+          const ulElement =
+          
+            document.createElement (
+            
+              'ul'
+              
+              );
+              
+          navigationElement
+          
+            .querySelectorAll (
+            
+              '[ data-folder = "'
+              
+              +
+              
+              `${ dataFolderId }" ] `
+              
+              +
+              
+              '.header-menu-nav-'
+              
+              +
+              
+              'item:not( .header-menu-'
+              
+              +
+              
+              'controls ) a'
+              
+              )
+              
+            .forEach (
+            
+              e =>
+              
+                folderItemCallback (
+                
+                  e,
+                  
+                  ulElement
+                  
+                  )
+                  
+              );
+              
+          liElement.append ( ulElement );
+          
+          }
           
         menuElement
         
-          .querySelectorAll ( '[ data-folder-id ]' )
+          .append ( liElement );
           
+        },
+        
+    rootFolderElement =
+    
+      navigationElement
+      
+        .querySelector (
+        
+          rootSelector
+          
+          ),
+          
+    runUserCallbacks = ( ) => {
+    
+      runUserCallback = ( callback ) => {
+      
+        try {
+        
+          callback ( menuElement );
+          
+          } catch ( error ) {
+          
+            const s = `${
+            
+              codeKey
+              
+              } callback error`;
+              
+            console.error (
+            
+              s,
+              
+              error
+              
+              );
+              
+            }
+            
+        },
+        
+      options
+      
+        .callbacks
+        
+        .forEach (
+        
+          runUserCallback
+          
+          );
+          
+      },
+      
+    clickCallback = ( event ) => {
+    
+      event.preventDefault ( );
+      
+      const
+      
+        className =
+        
+          'header-dropdown-flip',
+          
+        element = event.currentTarget,
+        
+        isChangeIcon =
+        
+          isExpandable && isIconActive;
+          
+      element
+      
+        .classList
+        
+        .toggle (
+        
+          `${ codeKey }-open`
+          
+          );
+          
+      // bail if no icon change
+      
+      if ( ! isChangeIcon ) return;
+      
+      const
+      
+        classList = element
+        
+          .querySelector (
+          
+            '.header-dropdown-icon'
+            
+            )
+            
+          .classList,
+          
+        hasClassName = classList
+        
+          .contains ( className );
+          
+      if ( hasClassName )
+      
+        classList.remove (
+        
+          className
+          
+          );
+          
+        else
+        
+          classList.add (
+          
+            className
+            
+            );
+            
+      },
+      
+    attachClickHandlers = (
+    
+      menuElement
+      
+      ) => {
+      
+        menuElement
+        
+          .querySelectorAll (
+          
+            '[ data-folder-id ]' )
+            
           .forEach (
           
-            e => e.addEventListener ( 'click', callback )
+            e =>
             
+              e.addEventListener (
+              
+                'click',
+                
+                clickCallback
+                
+                )
+                
             );
             
         },
         
-      codeKey = 'twc-hmmo',
+    populateMenuItems = ( ) => {
+    
+      rootFolderElement
       
-      navigationElement = document
-      
-        .body
+        .querySelectorAll (
         
-        .querySelector ( selector );
+          '.header-menu-nav-item a'
+          
+          )
+          
+        .forEach (
         
-    navigationElement
+          e => itemCallback (
+          
+            e,
+            
+            menuElement
+            
+            )
+            
+          );
+          
+      },
+      
+    buildMenu = ( ) => {
     
-      .classList
+      populateMenuItems ( );
       
-      .add ( `${ codeKey }` );
+      removeOldFolders ( );
       
-    selector = '.header-menu-nav-folder[ data-folder="root" ]';
+      replaceMenuContent ( menuElement );
+      
+      // bail if not expandable
+      
+      if ( ! isExpandable ) return;
+      
+      setExpandableAttribute ( );
+      
+      attachClickHandlers (
+      
+        menuElement
+        
+        );
+        
+      },
+      
+    mutationCallback = ( mutation ) => {
     
-    const
-    
-      folderElement = navigationElement
+      const hasAttributeClass =
       
-        .querySelector ( selector ),
+        mutation.attributeName
+        
+        ===
+        
+        'class';
+        
+      // continue if not attribute class
       
-      isActive = folderElement
+      if ( ! hasAttributeClass )
       
+        return false;
+      
+      const hasActiveClass = mutation
+      
+        .target
+        
         .classList
         
         .contains ( activeClassName );
         
-    if ( isActive )
-    
-      build ( );
+      // continue if no active class
       
-      else {
+      if ( ! hasActiveClass )
+      
+        return false;
+        
+      observer.disconnect ( );
+      
+      buildMenu ( );
+      
+      runUserCallbacks ( );
+
+      return true;
+      
+      },
+      
+    domContentLoadedCallback =
+    
+      ( ) => {
       
         const
         
-          callback = ( mutations ) => {
+          isActive = rootFolderElement
           
-            const callback = ( mutation ) => {
+            .classList
             
-              // continue if not attribute class
-              
-              if ( mutation.attributeName !== 'class' ) return true;
-              
-              const b = mutation
-              
-                .target
-                
-                .classList
-                
-                .contains ( activeClassName );
-                
-              if ( ! b ) return true; // continue if no active class
-              
-              observer.disconnect ( );
-              
-              build ( );
-              
-              return false;
-              
-              };
-              
-            for ( const mutation of mutations ) {
+            .contains ( activeClassName );
             
-              const b = callback ( mutation );
+        navigationElement
+        
+          .classList
+          
+          .add ( `${ codeKey }` );
+          
+        if ( isActive ) {
+        
+          buildMenu ( );
+          
+          runUserCallbacks ( );
+          
+          return;
+          
+          }
+          
+        observer = new MutationObserver (
+        
+          ms => {
+          
+            for ( const m of ms ) {
+            
+              const isBreak =
               
-              if ( ! b ) break; // bail if callback returns false
+                mutationCallback ( m );
+                
+              // bail if callback returns false
+              
+              if ( isBreak ) break;
               
               }
               
-            },
+            }
             
-          observer = new MutationObserver ( callback );
+          );
           
         // start listening for changes in element
         
         observer.observe (
         
-          folderElement,
+          rootFolderElement,
           
           { attributes : true }
           
           );
           
-        }
+        };
         
-    };
-    
-  document
+  document.addEventListener (
   
-    .addEventListener ( 'DOMContentLoaded', callback );
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
     
   } ) ( );

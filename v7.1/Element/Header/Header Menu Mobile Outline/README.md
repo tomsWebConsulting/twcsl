@@ -8,7 +8,7 @@ Format mobile menu as an outline.
 
 ### Version
 
-  * 0.5.0
+  * 0.6.0
 
 #### SS Version
 
@@ -30,10 +30,10 @@ Format mobile menu as an outline.
   * Add code from file **[header menu mobile outline options.less][6]** to
     Website > Pages > Custom Code > Custom CSS.
     
-  * Add code from file **[header menu mobile outline.less][8]** to Website >
+  * Add code from file **[header menu mobile outline.less][7]** to Website >
     Pages > Custom Code > Custom CSS.
     
-  * Refer to [Using the CSS Editor][7] for details.
+  * Refer to [Using the CSS Editor][8] for details.
     
   * Add the following code to Website > Pages > Custom Code > Code Injection >
     FOOTER.
@@ -56,28 +56,89 @@ Format mobile menu as an outline.
   Use this option to install the full code of this effect (files hosted on your
   site).
   
-  * Add code from file **[header menu mobile outline options.less][6]** to
-    Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][7]
-    for details. Read the code for any instructions within.
-    
-  * Add code from file **[header menu mobile outline.less][8]** to Website >
-    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][7] for
+  * Add code from file **[header menu mobile outline.less][7]** to Website >
+    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][8] for
     details.
+    
+  * Add code from file **[header menu mobile outline options.html][6]** to
+    Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
+    Editor][8] for details. Read the code for any instructions within.
     
   * Add code from file **[header menu mobile outline.html][10]** to Website >
     Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
     injection][9] for details.
 
+## Callbacks
+
+You can optionally add [callback][11] functions to further customize the
+newly created menu outline element. Your callbacks must accept an element as a
+parameter. Callbacks are run in the order the browser processes them, so order
+can be important. Following is a minimal example of a callback.
+
+```html
+<script>
+
+  ( ( ) => {
+  
+    // initialize twc module
+    
+    window.twc =
+    
+      ( ( self ) => self  )
+      
+      ( window.twc || { } );
+    
+    // initialize twc hmmo sub-module
+    
+    twc.hmmo =
+    
+      ( ( self ) =>  self )
+      
+      ( twc.hmmo || { } );
+    
+    // initialize twc hmmo callbacks sub-module
+    
+    twc.hmmo.callbacks =
+    
+      ( ( self ) => {
+      
+        const callback = ( element ) => {
+        
+          console.log ( 'hmmo log element : ', element );
+          
+          };
+          
+        self.push ( callback );
+        
+        return self;
+        
+        } )
+        
+      ( twc.hmmo.callbacks || [ ] );
+      
+    } ) ( );
+    
+  </script>
+
+```
+
 ## Demo
 
-You can see a [demo of this effect here][11].
+You can see a [demo of this effect here][12].
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][13].
 
 ## Changes
 
+* **2026-04-01**
+
+  * added support for user callbacks
+  * restructured code
+  * moved options from LESS based to JavaScript
+  * bumped version to 0.6.0
+  
 * **2025-11-28**
 
   * moved options out of main code
@@ -121,10 +182,11 @@ Please consider [making a donation][12].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: header%20menu%20mobile%20outline%20options.less#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[8]: header%20menu%20mobile%20outline.less#L1
+[6]: header%20menu%20mobile%20outline%20options.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[7]: header%20menu%20mobile%20outline.less#L1
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [10]: header%20menu%20mobile%20outline.html#L1
-[11]: https://toms-web-consulting-demos.squarespace.com/header-menu-mobile-outline/header-menu-mobile-outline?password=twcdemos
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[12]: https://toms-web-consulting-demos.squarespace.com/header-menu-mobile-outline/header-menu-mobile-outline?password=twcdemos
+[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
