@@ -27,13 +27,13 @@ Format mobile menu as an outline.
   Use this option for the quickest way to install this effect (files hosted
   externally on the [jsDelivr][4], a [CDN][5])
   
-  * Add code from file **[header menu mobile outline options.less][6]** to
-    Website > Pages > Custom Code > Custom CSS.
-    
   * Add code from file **[header menu mobile outline.less][7]** to Website >
-    Pages > Custom Code > Custom CSS.
+    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][8] for
+    details.
     
-  * Refer to [Using the CSS Editor][8] for details.
+  * Add code from file **[header menu mobile outline options.html][6]** to
+    Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+    instructions within.
     
   * Add the following code to Website > Pages > Custom Code > Code Injection >
     FOOTER.
@@ -61,12 +61,13 @@ Format mobile menu as an outline.
     details.
     
   * Add code from file **[header menu mobile outline options.html][6]** to
-    Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-    Editor][8] for details. Read the code for any instructions within.
+    Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+    instructions within.
     
   * Add code from file **[header menu mobile outline.html][10]** to Website >
-    Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-    injection][9] for details.
+    Pages > Custom Code > Code Injection > FOOTER.
+    
+  * Refer to [Add code to code injection][9] for details.
 
 ## Callbacks
 
