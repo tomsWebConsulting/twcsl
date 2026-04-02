@@ -46,7 +46,7 @@ Promote a descendant of a Dropdown Page for a Header Menu Mobile Outline.
       
         <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
         
-        <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b2e41776a026efb1ad7c1c89ee9f13728f1bbc9/v7.1/Element/Header/HMMO%20Promote/hmmo%20promote.min.js" type="module"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a9047b33437ff99cceae3805728fcb855c5b66e2/v7.1/Element/Header/HMMO%20Promote/hmmo%20promote.min.js" type="module"></script>
         
         <!-- end TWC HMMO Promote -->
         
