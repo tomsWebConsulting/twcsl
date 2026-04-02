@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 502 effects. Each effect has it's own version number, code,
+twcsl contains 504 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -763,6 +763,10 @@ not necessarily designed to work together.
           
       * [CTA Button Text Language Change](v7.1/Element/Header/CTA%20Button%20Text%20Language%20Change)
         
+      * [HMMO Promote](v7.1/Element/Header/HMMO%20Promote)
+        
+        * [HMMO Promote.bbprojectd](v7.1/Element/Header/HMMO%20Promote/HMMO%20Promote.bbprojectd)
+          
       * [Header Dropdown Page Links Add](v7.1/Element/Header/Header%20Dropdown%20Page%20Links%20Add)
         
         * [Header Dropdown Page Links Add.bbprojectd](v7.1/Element/Header/Header%20Dropdown%20Page%20Links%20Add/Header%20Dropdown%20Page%20Links%20Add.bbprojectd)
