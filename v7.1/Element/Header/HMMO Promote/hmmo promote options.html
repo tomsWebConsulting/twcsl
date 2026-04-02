@@ -1,0 +1,81 @@
+<!-- begin TWC HMMO Promote Options -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        hmmo promote options
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.1.0
+        
+        SS Version      : 7.1
+        
+        Copyright       : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+        
+      // initialize twc hmmop sub-module
+      
+      twc.hmmop = ( ( self ) => {
+      
+        const options = {
+        
+          dropdownPageUrlSlugMap : {
+          
+            /*
+            
+              the format of each line is a Dropdown Page URL SLUG and a Page URL
+              SLUG that is a descendant of the Dropdown Page
+              
+              for each Page copy the value from Page Settings > General > URL
+              SLUG field. you only need exactly what can be selected from the
+              field
+              
+              for the home Page URL SLOG enter an empty string
+              
+              following is an example line. copy the example line below and
+              paste after the example line. remove '// ' at beginning of pasted
+              line. repeat for as many times as needed. this has been done once
+              initially
+              
+              */
+              
+            // '[ enter a Dropdown Page URL SLUG here between single quotes replacing squarespace brackets ]' : '[ enter a Page URL SLUG here that is a descendant of the Dropdown Page between single quotes replacing squarespace brackets ]',
+            
+            '[ enter a Dropdown Page URL SLUG here between single quotes replacing squarespace brackets ]' : '[ enter a Page URL SLUG here that is a descendant of the Dropdown Page between single quotes replacing squarespace brackets ]',
+            
+            }
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.hmmop || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC HMMO Promote Options -->

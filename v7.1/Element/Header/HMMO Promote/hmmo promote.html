@@ -1,0 +1,195 @@
+<!-- begin TWC HMMO Promote -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        hmmo promote
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.1.0
+        
+        SS Version      : 7.1
+        
+        Copyright       : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      const
+      
+        version = '0.1.0',
+        
+        s = `
+        
+          HMMO Promote v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc hmmo sub-module
+      
+      twc.hmmo = twc.hmmo || { };
+      
+      // initialize twc hmmop sub-module
+      
+      twc.hmmop = twc.hmmop || { };
+      
+      // initialize twc hmmo callbacks sub-module
+      
+      twc.hmmo.callbacks =
+      
+        ( ( self ) => {
+        
+          const callback = ( element ) => {
+          
+            const
+            
+              codeKey = 'twc-hmmop',
+              
+              urlsCallback = (
+              
+                dropdownPageUrl,
+                
+                pageUrl
+                
+                ) => {
+                
+                  const
+                  
+                    parentElement =
+                    
+                      element
+                      
+                        .querySelector (
+                        
+                          '[ data-folder-id = '
+                          
+                          +
+                          
+                          `"/${
+                          
+                            dropdownPageUrl
+                            
+                            }" ]`
+                            
+                          ),
+                          
+                    descendantElement =
+                    
+                      parentElement
+                      
+                        .nextElementSibling
+                        
+                        .querySelector (
+                        
+                          '.header-menu-nav-'
+                          
+                          +
+                          
+                          'item:has( [ '
+                          
+                          +
+                          
+                          'href = "/'
+                          
+                          +
+                          
+                          `${ pageUrl }`
+                          
+                          +
+                          
+                          '" ] )'
+                          
+                          );
+                          
+                  parentElement
+                  
+                    .replaceWith (
+                    
+                      descendantElement
+                      
+                        .firstElementChild
+                        
+                      );
+                      
+                  descendantElement
+                  
+                    .remove ( );
+                    
+                  },
+                  
+              options = codeKey
+              
+                .split ( '-' )
+                
+                .reduce (
+                
+                  ( obj, key ) => obj?.[ key ],
+                  
+                  window
+                  
+                  ),
+                  
+              entries = Object.entries (
+              
+                twc
+                
+                  .hmmop
+                  
+                  .dropdownPageUrlSlugMap
+                  
+                );
+                
+            for ( const [
+            
+              dropdownPageUrl,
+              
+              pageUrl
+              
+              ] of entries ) {
+              
+                urlsCallback (
+                
+                  dropdownPageUrl,
+                  
+                  pageUrl
+                  
+                  );
+                  
+                }
+                
+            };
+            
+          self.push ( callback );
+          
+          return self;
+          
+          } )
+          
+        ( twc.hmmo.callbacks || [ ] );
+        
+      } ) ( );
+      
+    </script>
+  
+  <!-- end TWC HMMO Promote -->
