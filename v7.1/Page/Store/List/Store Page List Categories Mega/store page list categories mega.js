@@ -4,7 +4,7 @@
   
   License           : < https://tinyurl.com/s872fb68 >
   
-  Version           : 0.6.0
+  Version           : 0.6.1
   
   SS Version        : 7.1
   
@@ -40,7 +40,7 @@
 
   const
   
-    version = '0.6.0',
+    version = '0.6.1',
     
     s = `
     
@@ -684,8 +684,20 @@
               
             )
             
-          .after ( ulElement );
+          .after (
           
+            document
+            
+              .importNode (
+              
+                ulElement,
+                
+                true
+                
+                )
+                
+            );
+            
         }
         
       }

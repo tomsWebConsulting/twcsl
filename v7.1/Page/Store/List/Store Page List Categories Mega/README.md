@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.6.0
+  * 0.6.1
 
 #### SS Version
 
@@ -139,6 +139,12 @@ Please consider [making a donation][13].
 
 ## Changes
 
+* **2026-04-08**
+
+  * updated code to use DOM nodes per insertion to comply with browser
+    best‑practices
+  * bumped version to 0.6.1
+  
 * **2026-02-24**
 
   * updated to work with Store Filter beta
