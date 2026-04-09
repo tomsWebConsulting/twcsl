@@ -35,7 +35,7 @@ Create Button templates and use them in other locations.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a9047b33437ff99cceae3805728fcb855c5b66e2/v7.0/Block/Button/Button%20Templates/button%20templates.html.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d37f7e27969054249882ceef625f1ab102014685/v7.0/Block/Button/Button%20Templates/button%20templates.min.js" type="module"></script>
       
       <!-- end TWC Button Templates -->
       
