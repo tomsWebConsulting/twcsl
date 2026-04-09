@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 504 effects. Each effect has it's own version number, code,
+twcsl contains 508 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -977,6 +977,14 @@ not necessarily designed to work together.
       
   * [Member Area Sign In and up Dialog Change](v7.0/Member%20Area%20Sign%20In%20and%20up%20Dialog%20Change)
     
+  * [Block](v7.0/Block)
+    
+    * [Button](v7.0/Block/Button)
+      
+      * [Button Templates](v7.0/Block/Button/Button%20Templates)
+        
+        * [Button Templates.bbprojectd](v7.0/Block/Button/Button%20Templates/Button%20Templates.bbprojectd)
+          
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
 * [Block](Block)
