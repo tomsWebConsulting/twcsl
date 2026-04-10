@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.4.0
+    Version       : 0.4.1
     
     SS Version    : 7.1
     
@@ -25,7 +25,7 @@
                     the code makes a call to the json version of the store page
                     to grab the tags as entered in the UI
     
-    Copyright     : 2023-2025 Thomas Creedon
+    Copyright     : 2023-2026 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
@@ -133,7 +133,7 @@
         
           const
           
-            version = '0.4.0',
+            version = '0.4.1',
           
             s = `
             
@@ -141,7 +141,7 @@
               
               License < https://tinyurl.com/s872fb68 >
               
-              © 2023-2025 Thomas Creedon
+              © 2023-2026 Thomas Creedon
               
               Tom's Web Consulting < http://www.tomsWeb.consulting >
               
@@ -649,8 +649,20 @@
                   
                     .querySelector ( 'tbody' )
                     
-                    .append ( ratingElement );
+                    .append (
                     
+                      document
+                      
+                        .importNode (
+                        
+                          ratingElement,
+                          
+                          true
+                          
+                          )
+                          
+                      );
+                      
                   },
                   
                 label = data [ 1 ],

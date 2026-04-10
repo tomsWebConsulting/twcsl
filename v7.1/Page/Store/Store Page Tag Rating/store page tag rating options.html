@@ -6,14 +6,14 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.4.0
+    Version       : 0.4.1
     
     SS Version    : 7.1
     
     Note          : the code is comprised of a style and script tag. both are
                     needed for the full effect to work
                     
-    Copyright     : 2023-2025 Thomas Creedon
+    Copyright     : 2023-2026 Thomas Creedon
                     
                     Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
@@ -36,35 +36,39 @@
     
   <script>
   
-    // initialize twc module
+    ( ( ) => {
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc sptr sub-module
-    
-    twc.sptr = ( ( self ) => {
-    
-      const options = {
+      // initialize twc module
       
-        trueSymbol : '★',
-        
-        falseSymbol : '☆'
-        
-        };
-        
-      Object
+      window.twc = window.twc || { };
       
-        .assign (
-        
-          self,
-          
-          options
-          
-          );
-          
-      return self;
+      // initialize twc sptr sub-module
       
-      } ) ( twc.sptr || { } );
+      twc.sptr = ( ( self ) => {
+      
+        const options = {
+        
+          trueSymbol : '★',
+          
+          falseSymbol : '☆'
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.sptr || { } );
+        
+      } ) ( );
       
     </script>
     

@@ -8,7 +8,7 @@ Add ratings to Store page products.
 
 ### Version
 
-  * 0.4.0
+  * 0.4.1
 
 #### SS Version
 
@@ -140,6 +140,12 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2026-04-08**
+
+  * updated code to use DOM nodes per insertion to comply with browser
+    best‑practices
+  * bumped version to 0.4.1
+  
 * **2025-08-03**
 
   * updated to work with v7.1 Products V2
