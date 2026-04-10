@@ -35,39 +35,43 @@
     
   <script>
   
-    // initialize twc module
+    ( ( ) => {
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc splcm sub-module
-    
-    twc.splcm = ( ( self ) => {
-    
-      const options = {
+      // initialize twc module
       
-        // value is false or true
-        
-        categoriesExpandedOnLoad : false,
-        
-        // value is false or true
-        
-        hideIcon : false
-        
-        };
-        
-      Object
+      window.twc = window.twc || { };
       
-        .assign (
-        
-          self,
-          
-          options
-          
-          );
-          
-      return self;
+      // initialize twc splcm sub-module
       
-      } ) ( twc.splcm || { } );
+      twc.splcm = ( ( self ) => {
+      
+        const options = {
+        
+          // value is false or true
+          
+          categoriesExpandedOnLoad : false,
+          
+          // value is false or true
+          
+          hideIcon : false
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.splcm || { } );
+        
+      } ) ( );
       
     </script>
     
