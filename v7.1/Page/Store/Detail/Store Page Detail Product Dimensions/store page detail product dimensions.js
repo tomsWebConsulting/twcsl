@@ -1,41 +1,41 @@
+/*!
+
+  store page detail product dimensions
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.8.2
+  
+  SS Version      : 7.1
+  
+  Products V2
+  Compatible      : Yes
+  
+  Fluid
+  Engine
+  Compatible      : Not Applicable
+  
+  Notes           : this code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    the dimensions entered in the squarespace editor are
+                    shipping dimensions, not physical dimensions. if you don't
+                    need to use shipping dimensions for shipping you can use
+                    it for physical dimensions
+  
+  Copyright       : 2022-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
 ( ( ) => {
 
-  /*!
-  
-    store page detail product dimensions
-    
-    License         : < https://tinyurl.com/s872fb68 >
-    
-    Version         : 0.8.1
-    
-    SS Version      : 7.1
-    
-    Products V2
-    Compatible      : Yes
-    
-    Fluid
-    Engine
-    Compatible      : Not Applicable
-    
-    Notes           : this code is comprised of a style and script tag. both are
-                      needed for the full effect to work
-                      
-                      the dimensions entered in the squarespace editor are
-                      shipping dimensions, not physical dimensions. if you don't
-                      need to use shipping dimensions for shipping you can use
-                      it for physical dimensions
-    
-    Copyright       : 2022-2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
   const
   
-    version = '0.8.1',
+    version = '0.8.2',
     
     s = `
     
@@ -43,7 +43,7 @@
       
       License < https://tinyurl.com/s872fb68 >
       
-      © 2022-2025 Thomas Creedon
+      © 2022-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -414,7 +414,19 @@
           
         template.innerHTML = html;
         
-        node.replaceWith ( template.content );
+        node.replaceWith (
+        
+          document
+          
+            .importNode (
+            
+              template.content,
+              
+              true
+              
+              )
+              
+          );
         
         },
         

@@ -9,7 +9,7 @@ pages.
 
 ### Version
 
-  * 0.8.1
+  * 0.8.2
 
 #### SS Version
 
@@ -155,6 +155,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-04-10**
+
+  * updated code to use DOM nodes per insertion to comply with browser
+    best‑practices
+  * bumped version to 0.8.2
+  
 * **2025-10-17**
 
   * restored recognition of previous trigger test
