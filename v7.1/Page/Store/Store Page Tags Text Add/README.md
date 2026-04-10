@@ -57,9 +57,9 @@ Add text to products.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e0d1fc92023758b81c371b000d3f3084298e9df6/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e0d1fc92023758b81c371b000d3f3084298e9df6/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page Tags Text Add -->
             
@@ -79,9 +79,9 @@ Add text to products.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e0d1fc92023758b81c371b000d3f3084298e9df6/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.css" rel="stylesheet" type="text/css">
           
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e0d1fc92023758b81c371b000d3f3084298e9df6/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tags%20text%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page Tags Text Add -->
             
