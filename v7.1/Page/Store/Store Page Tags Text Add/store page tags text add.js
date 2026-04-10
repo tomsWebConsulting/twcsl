@@ -4,7 +4,7 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.3.0
+  Version         : 0.3.1
   
   SS Version      : 7.1
   
@@ -23,14 +23,30 @@
   
   */
   
+const
+
+  version = '0.3.1',
+  
+  s = `
+  
+    Store Page Tags Text Add v${ version }
+    
+    License < https://tinyurl.com/s872fb68 >
+    
+    © 2023-2026 Thomas Creedon
+    
+    Tom's Web Consulting < http://www.tomsWeb.consulting >
+    
+    `
+    
+    .replace ( /^\s+/gm, '' );
+    
+console.log ( s );
+
 // initialize twc module
 
-window.twc =
+window.twc = window.twc || { };
 
-  ( ( self ) => self )
-  
-  ( window.twc || { } );
-  
 // initialize twc ptc sub-module
 
 twc.ptc =
@@ -45,26 +61,6 @@ twc.ptc.callbacks = ( ( self ) => {
 
   const callback = ( tags ) => {
   
-    const
-    
-      version = '0.3.0',
-      
-      s = `
-      
-        Store Page Tags Text Add v${ version }
-        
-        License < https://tinyurl.com/s872fb68 >
-        
-        © 2023-2025 Thomas Creedon
-        
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
-        
-        `
-        
-        .replace ( /^\s+/gm, '' );
-        
-    console.log ( s );
-    
     const isStorePage = Static
     
       .SQUARESPACE_CONTEXT
@@ -223,8 +219,20 @@ twc.ptc.callbacks = ( ( self ) => {
               
             wrapperElement
             
-              .append ( ulElement );
+              .append (
               
+                document
+                
+                  .importNode (
+                  
+                    ulElement,
+                    
+                    true
+                    
+                    )
+                    
+                );
+                
             }
             
           ulElement

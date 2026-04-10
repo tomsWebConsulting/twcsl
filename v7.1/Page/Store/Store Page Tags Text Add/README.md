@@ -8,7 +8,7 @@ Add text to products.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
@@ -153,6 +153,12 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-04-10**
+
+  * updated code to use DOM nodes per insertion to comply with browser
+    best‑practices
+  * bumped version to 0.3.1
+  
 * **2026-03-25**
 
   * updated to depend on page tags cache

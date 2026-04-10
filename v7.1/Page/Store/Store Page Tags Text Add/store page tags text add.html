@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.3.0
+    Version         : 0.3.1
     
     SS Version      : 7.1
     
@@ -56,7 +56,7 @@
     
       const
       
-        version = '0.3.0',
+        version = '0.3.1',
         
         s = `
         
@@ -76,12 +76,8 @@
       
       // initialize twc module
       
-      window.twc =
+      window.twc = window.twc || { };
       
-        ( ( self ) => self )
-        
-        ( window.twc || { } );
-        
       // initialize twc ptc sub-module
       
       twc.ptc =
@@ -254,8 +250,20 @@
                     
                   wrapperElement
                   
-                    .append ( ulElement );
+                    .append (
                     
+                      document
+                      
+                        .importNode (
+                        
+                          ulElement,
+                          
+                          true
+                          
+                          )
+                          
+                      );
+                      
                   }
                   
                 ulElement
