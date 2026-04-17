@@ -1,0 +1,301 @@
+( ( ) => {
+
+  /*!
+  
+    accordion block one active
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.1.0',
+    
+    s = `
+    
+      Accordion Block One Active v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const
+  
+    codeKey = 'twc-aboa',
+    
+    getElementTopInViewport =
+    
+      ( element ) => {
+      
+        const
+        
+          { top } =  element
+          
+            .getBoundingClientRect ( ),
+            
+          isVisible =
+          
+            top
+            
+            >=
+            
+            0
+            
+            &&
+            
+            top
+            
+            <=
+            
+            window.innerHeight;
+            
+        return isVisible;
+        
+        },
+        
+    xPathEvaluate = (
+    
+      xPathExpression,
+      
+      contextNode
+      
+      ) => {
+      
+        const xPathResults = document
+        
+          .evaluate (
+          
+            xPathExpression,
+            
+            contextNode,
+            
+            null,
+            
+            XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+            
+            null
+            
+            );
+            
+        return xPathResults;
+        
+        },
+        
+    xPathExpression = `
+    
+      .//div[
+      
+        contains (
+        
+          concat (
+          
+            ' ',
+            
+            normalize-space ( @class ),
+            
+            ' '
+            
+            ),
+            
+          ' accordion-item__description '
+          
+          )
+          
+        ]/p[
+        
+          normalize-space ( . ) = 'twc-aboa'
+          
+          ]
+          
+      `,
+      
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        const
+        
+          xPathResults =
+          
+            xPathEvaluate (
+            
+              xPathExpression,
+              
+              document.body
+                
+              ),
+              
+          hasTrigger = xPathResults
+          
+            .snapshotLength;
+            
+        // bail if no trigger
+        
+        if ( ! hasTrigger ) return;
+        
+        const
+        
+          dropdownOpenClassName =
+          
+            'accordion-item__dropdown--open',
+            
+          elements = document
+          
+            .body
+            
+            .querySelectorAll (
+            
+              '.sqs-block-accordion'
+              
+              ),
+              
+          clickCallback = ( event ) => {
+          
+            let element =
+            
+              event.currentTarget;
+              
+            [ ... elements ]
+            
+              .filter (
+              
+                e => e !== element
+                
+                )
+                
+              .forEach (
+              
+                ( e ) => {
+                
+                  e.querySelectorAll (
+                  
+                    '.accordion-item'
+                    
+                    )
+                    
+                  .forEach (
+                  
+                    e => e.removeAttribute (
+                    
+                      'data-is-open'
+                      
+                      )
+                      
+                    );
+                    
+                  e.querySelectorAll (
+                  
+                    `.${ dropdownOpenClassName }`
+                    
+                    )
+                    
+                  .forEach (
+                  
+                    e => e
+                    
+                      .classList
+                      
+                      .remove (
+                      
+                        dropdownOpenClassName
+                        
+                        )
+                        
+                    );
+                    
+                  }
+                  
+                );
+                
+            element = event.target;
+            
+            const isElementTopInViewport =
+            
+              getElementTopInViewport (
+              
+                element
+                
+                );
+                
+            // bail if element to in viewport
+            
+            if ( isElementTopInViewport )
+            
+              return;
+              
+            element
+              
+              .closest (
+              
+                '.accordion-item'
+                
+                )
+                
+              .scrollIntoView ( );
+              
+            };
+            
+          for (
+          
+            let i = 0;
+            
+            i < xPathResults
+            
+              .snapshotLength;
+              
+            i++
+            
+            ) {
+            
+              xPathResults
+              
+                .snapshotItem ( i )
+                
+                .remove ( );
+                
+              }
+              
+        elements.forEach (
+        
+          e => e.addEventListener (
+          
+            'click',
+            
+            clickCallback
+            
+            )
+            
+          );
+          
+        };
+        
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  } ) ( );
