@@ -37,7 +37,7 @@ Only one Accordion Block will be active on a Page at a time.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d37f7e27969054249882ceef625f1ab102014685/Block/Accordion/Accordion%20Block%20One%20Active/accordion%20block%20one%20active.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5e7d1301fb0254ba47805db3e695357566dacd2f/Block/Accordion/Accordion%20Block%20One%20Active/accordion%20block%20one%20active.min.js" type="module"></script>
       
       <!-- end TWC Accordion Block One Active -->
       
