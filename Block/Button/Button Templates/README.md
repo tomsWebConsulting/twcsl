@@ -8,11 +8,13 @@ Create Button templates and use them in other locations.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
-#### SS Version
+#### SS Versions
 
   * 7.1
+  
+  * 7.0
 
 #### Dependencies
 
@@ -55,25 +57,34 @@ Create Button templates and use them in other locations.
 
 ## How To Use
 
-* Add a **Blank Page** and type `TWC Button Templates` and return.
+* Add a **Blank Page** in **NOT LINKED**. Type `TWC Button Templates` and
+  return.
 
-* Hover over the new **TWC Button Templates** **Page** in **NOT LINKED**.
-  Click on the **Settings** icon.
+* Hover over the new **TWC Button Templates** **Page**. Click on the
+  **Settings** icon.
   
 * Set **URL SLUG** to `twc-bt`.
 
-** Click on **Advanced**. Add `&lt;meta name="robots" content="noindex"&gt;` to
-**PAGE HEADER CODE INJECTION**.
+* Click on **Advanced** and add the following to **PAGE HEADER CODE INJECTION**.
 
+  ```html
+  <meta name="robots" content="noindex">
+  ```
+  
 * Click **SAVE**.
 
 * Edit the **Page**.
 
-* Add a **Button Block**, set it up as desired, and add the text
-"` - twc-bt [ enter id here replacing square brackets ]`". The added text will
-be removed when the button template is used elsewhere in the site. Note the id
-you enter as it will be used shortly. For clarity the format of that added text
-is the following.
+* Add a **Button Block**, set it up as desired, and add the following text to
+the **Text** field.
+
+  ```text
+   - twc-bt [ enter id here replacing square brackets ]
+  ```
+  
+The added text will be removed when the button template is used elsewhere in the
+site. Note the id you enter as it will be used shortly. For clarity the format
+of that added text is the following.
 
 space character
 
@@ -91,8 +102,11 @@ You can create as many button templates as you want on the **TWC Button
 Templates** **Page**.
 
 Wherever you want to use a button template add a **Code Block** and set
-**Content** to `&lt;x-twc-bt data-id="[ enter id here replacing square
-brackets ]"&gt;&lt;/x-twc-bt&gt;`.
+**Content** to the following.
+
+```html
+<x-twc-bt data-id="[ enter id here replacing square brackets ]"></x-twc-bt>
+```
 
 ## Make a Donation
 
@@ -100,6 +114,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2026-04-17**
+
+  * added support for v7.1
+  * added feature to alter user when editing if an id can't be found
+  * bumped version to 0.3.0
+  
 * **2026-04-08**
 
   * updated code to use DOM nodes per insertion to comply with browser
