@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 512 effects. Each effect has it's own version number, code,
+twcsl contains 513 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -983,10 +983,6 @@ not necessarily designed to work together.
     
     * [Button](v7.0/Block/Button)
       
-      * [Button Templates](v7.0/Block/Button/Button%20Templates)
-        
-        * [Button Templates.bbprojectd](v7.0/Block/Button/Button%20Templates/Button%20Templates.bbprojectd)
-          
 * [Event Back to All Events Link Change](Event%20Back%20to%20All%20Events%20Link%20Change)
   
 * [Block](Block)
@@ -1051,6 +1047,12 @@ not necessarily designed to work together.
       
   * [Product](Block/Product)
     
+  * [Button](Block/Button)
+    
+    * [Button Templates](Block/Button/Button%20Templates)
+      
+      * [Button Templates.bbprojectd](Block/Button/Button%20Templates/Button%20Templates.bbprojectd)
+        
   * [Text](Block/Text)
     
     * [Text Block Tab Stops](Block/Text/Text%20Block%20Tab%20Stops)
