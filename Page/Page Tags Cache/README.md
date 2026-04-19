@@ -47,7 +47,7 @@ Cache Page tags in sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dde2da6ff4c94499a98b26f08a65f274a74f527e/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
           
           <!-- end TWC Page Tags Cache -->
           
@@ -73,7 +73,7 @@ Cache Page tags in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dde2da6ff4c94499a98b26f08a65f274a74f527e/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Tags Cache -->
             
@@ -93,7 +93,7 @@ Cache Page tags in sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@dde2da6ff4c94499a98b26f08a65f274a74f527e/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/Page/Page%20Tags%20Cache/page%20tags%20cache.min.js" type="module"></script>
             
             <!-- end TWC Page Tags Cache -->
             
@@ -153,29 +153,33 @@ Your callback must accept an array parameter.
 ```html
 <script>
 
-  // initialize twc module
+  ( ( ) => {
   
-  window.twc = ( ( self ) => self ) ( window.twc || { } );
-  
-  // initialize twc ptc sub-module
-  
-  twc.ptc = ( ( self ) => self ) ( twc.ptc || { } );
-  
-  // initialize twc ptc callbacks sub-module
-  
-  twc.ptc.callbacks = ( ( self ) => {
-  
-    const callback = ( tags ) => {
+    // initialize twc module
     
-      console.log ( 'ptc log : ', tags );
+    window.twc = window.twc || { };
+    
+    // initialize twc ptc sub-module
+    
+    twc.ptc = twc.ptc || { };
+    
+    // initialize twc ptc callbacks sub-module
+    
+    twc.ptc.callbacks = ( ( self ) => {
+    
+      const callback = ( tags ) => {
       
-      };
+        console.log ( 'ptc log : ', tags );
+        
+        };
+        
+      self.push ( callback );
       
-    self.push ( callback );
-    
-    return self;
-    
-    } ) ( twc.ptc.callbacks || [ ] );
+      return self;
+      
+      } ) ( twc.ptc.callbacks || [ ] );
+      
+    } ) ( );
     
   </script>
 
