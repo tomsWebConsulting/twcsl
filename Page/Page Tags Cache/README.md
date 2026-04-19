@@ -8,21 +8,13 @@ Cache Page tags in sessionStorage.
 
 ### Version
 
-  * 0.4.0
+  * 0.4.1
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Products V2 Compatible
-
-  * Not Applicable
-  
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -195,6 +187,12 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-04-19**
+
+  * fixed issue with tagNameToCssClassName not encoding className correctly, --
+    was encoded to -
+  * bumped version to 0.4.1
+  
 * **2026-03-13**
 
   * replaced undocumented API call with format=json and formatted data similar
