@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 513 effects. Each effect has it's own version number, code,
+twcsl contains 515 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -511,6 +511,10 @@ not necessarily designed to work together.
           
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
+        * [Store Page Detail Option Variant Select Auto](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto)
+          
+          * [Store Page Detail Option Variant Select Auto.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto.bbprojectd)
+            
         * [Store Page Detail Variant Display Button Vertical](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Vertical)
           
         * [Store Page Detail Footer Section Append](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append)
