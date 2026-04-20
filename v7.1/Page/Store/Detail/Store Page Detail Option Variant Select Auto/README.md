@@ -46,7 +46,7 @@ Auto select variants.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/store%20page%20detail%20option%20variant%20select%20auto.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@38131be379b6b1e8c762a040759865c1d26b2241/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/store%20page%20detail%20option%20variant%20select%20auto.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Option Variant Select Auto -->
           
@@ -68,7 +68,7 @@ Auto select variants.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/store%20page%20detail%20option%20variant%20select%20auto.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@38131be379b6b1e8c762a040759865c1d26b2241/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/store%20page%20detail%20option%20variant%20select%20auto.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Option Variant Select Auto -->
           
@@ -98,12 +98,13 @@ Auto select variants.
       
   * Site-wide
   
-    * Add code from file **[store page detail option variant select auto options.html][6]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Read the code for any
-      instructions within.
+    * Add code from file **[store page detail option variant select auto
+      options.html][6]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER. Read the code for any instructions within.
       
-    * Add code from file **[store page detail option variant select auto.html][9]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER.
+    * Add code from file **[store page detail option variant select
+      auto.html][9]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER.
       
     * Refer to [Add code to code injection][8] for details.
 
