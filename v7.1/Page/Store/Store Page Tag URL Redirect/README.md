@@ -45,7 +45,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/store%20page%20tag%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/store%20page%20tag%20url%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Page Tag URL Redirect -->
           
