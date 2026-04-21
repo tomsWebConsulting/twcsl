@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.4.1
+    Version           : 0.4.2
     
     SS Versions       : 7.1, 7.0
     
@@ -34,7 +34,7 @@
     
   const
   
-    version = '0.4.1',
+    version = '0.4.2',
     
     s = `
     
@@ -176,9 +176,9 @@
         
         name
         
-          .replaceAll ( / +/g, '-' )
+          .replace ( /[^ \w-]+/g, '' )
           
-          .replace ( /[^\w-]+/g, '' )
+          .replaceAll ( / +/g, '-' )
           
           .toLowerCase ( );
           
@@ -234,35 +234,57 @@
       
       .id;
       
-    domContentLoadedCallback =
+    loadCallback = async ( ) => {
     
-      async ( ) => {
+      const hasCallbacks = options
       
-        const hasCallbacks = options
+        .callbacks
         
-          .callbacks
+        .length;
+        
+      // bail if no callbacks
+      
+      if ( ! hasCallbacks ) {
+      
+        const s = `${
+        
+          codeKey
           
-          .length;
+          } no callbacks`;
           
-        // bail if no callbacks
+        console.warn ( s );
         
-        if ( ! hasCallbacks ) {
+        return;
         
-          const s = `${
+        }
+        
+      let tags = JSON.parse (
+      
+        sessionStorage.getItem (
+        
+          `${
           
             codeKey
             
-            } no callbacks`;
+            }-${
             
-          console.warn ( s );
+              collectionId
+              
+              }`
+              
+          )
           
-          return;
-          
-          }
-          
-        let tags = JSON.parse (
+        );
         
-          sessionStorage.getItem (
+      // bail if tags
+      
+      if ( tags ) {
+      
+        userCallbacks ( tags );
+        
+        if ( options.cacheDisable )
+        
+          sessionStorage.removeItem (
           
             `${
             
@@ -274,19 +296,91 @@
                 
                 }`
                 
-            )
+            );
             
-          );
-          
-        // bail if tags
+        return;
         
-        if ( tags ) {
+        }
         
-          userCallbacks ( tags );
+      try {
+      
+        const response =
+        
+          await fetch ( url );
           
-          if ( options.cacheDisable )
+        if ( ! response.ok ) {
+        
+          const s = `
           
-            sessionStorage.removeItem (
+            ${
+            
+              codeKey
+              
+              } network response was
+              
+            not ok ${
+            
+              response.statusText
+              
+              }
+              
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          throw new Error ( s );
+          
+          }
+          
+        tags = await response.json ( );
+        
+        } catch ( error ) {
+        
+          const s = `
+          
+            ${ codeKey } there has
+            
+            been a problem with your
+            
+            fetch get operation,
+            
+            ${ error }.
+            
+            `
+            
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' );
+            
+          console.error ( s );
+          
+          } finally {
+          
+            // process tags
+            
+            tags = tags
+            
+              .collection
+              
+              .tags
+              
+              .map ( name => ( {
+              
+                className :
+                
+                  tagNameToCssClassName (
+                  
+                    name
+                    
+                    ),
+                    
+                name
+                
+                } ) );
+                
+            sessionStorage.setItem (
             
               `${
               
@@ -296,139 +390,43 @@
                 
                   collectionId
                   
-                  }`
+                  }`,
                   
+              JSON
+              
+                .stringify ( tags )
+                
               );
               
-          return;
-          
-          }
-          
-        try {
-        
-          const response =
-          
-            await fetch ( url );
+            userCallbacks ( tags );
             
-          if ( ! response.ok ) {
-          
-            const s = `
+            if ( options.cacheDisable )
             
-              ${
+              sessionStorage
               
-                codeKey
+                .removeItem (
                 
-                } network response was
-                
-              not ok ${
-              
-                response.statusText
-                
-                }
-                
-              `
-              
-              .trim ( )
-              
-              .replace ( /\s+/gm, ' ' );
-              
-            throw new Error ( s );
-            
+                  `${
+                  
+                    codeKey
+                    
+                    }-${
+                    
+                      collectionId
+                      
+                      }`
+                      
+                  );
+                  
             }
             
-          tags = await response.json ( );
-          
-          } catch ( error ) {
-          
-            const s = `
-            
-              ${ codeKey } there has
-              
-              been a problem with your
-              
-              fetch get operation,
-              
-              ${ error }.
-              
-              `
-              
-              .trim ( )
-              
-              .replace ( /\s+/gm, ' ' );
-              
-            console.error ( s );
-            
-            } finally {
-            
-              // process tags
-              
-              tags = tags
-              
-                .collection
-                
-                .tags
-                
-                .map ( name => ( {
-                
-                  className :
-                  
-                    tagNameToCssClassName (
-                    
-                      name
-                      
-                      ),
-                      
-                  name
-                  
-                  } ) );
-                  
-              sessionStorage.setItem (
-              
-                `${
-                
-                  codeKey
-                  
-                  }-${
-                  
-                    collectionId
-                    
-                    }`,
-                    
-                JSON
-                
-                  .stringify ( tags )
-                  
-                );
-                
-              userCallbacks ( tags );
-              
-              if ( options.cacheDisable )
-              
-                sessionStorage
-                
-                  .removeItem (
-                  
-                    `${
-                    
-                      codeKey
-                      
-                      }-${
-                      
-                        collectionId
-                        
-                        }`
-                        
-                    );
-                    
-              }
-              
-        };
-        
-  document.addEventListener (
+      };
+      
+  window.addEventListener (
   
-    'DOMContentLoaded',
+    'load',
     
-    domContentLoadedCallback
+    loadCallback
     
     );
     

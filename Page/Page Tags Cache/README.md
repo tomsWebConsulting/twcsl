@@ -8,7 +8,7 @@ Cache Page tags in sessionStorage.
 
 ### Version
 
-  * 0.4.1
+  * 0.4.2
 
 #### SS Versions
 
@@ -193,6 +193,14 @@ Please consider [making a donation][11].
 
 * **2026-04-19**
 
+  * fixed issue with tagNameToCssClassName not encoding className correctly,
+    invalid tag characters
+  * changed DOMContentLoaded event to load
+  * bumped version to 0.4.2
+  
+* **2026-04-19**
+
+  * changed DOMContentLoaded event to load
   * fixed issue with tagNameToCssClassName not encoding className correctly, --
     was encoded to -
   * bumped version to 0.4.1
