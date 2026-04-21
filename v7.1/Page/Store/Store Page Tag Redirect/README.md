@@ -41,7 +41,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ac30ebd2d3e33046f65a2d4891ee665a215efc9a/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Page Tag URL Redirect -->
           
@@ -61,7 +61,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@77bad4a208e56692dd4a80d2112767ed7d27ec12/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ac30ebd2d3e33046f65a2d4891ee665a215efc9a/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Page Tag URL Redirect -->
           
