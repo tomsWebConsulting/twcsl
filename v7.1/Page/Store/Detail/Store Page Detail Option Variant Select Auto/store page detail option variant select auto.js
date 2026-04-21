@@ -80,7 +80,7 @@
     
     window.twc = window.twc || { };
     
-    // initialize twc sptr--rd sub-module
+    // initialize twc spdovsao sub-module
     
     twc.spdovsao =
     
