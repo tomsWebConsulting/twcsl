@@ -1,0 +1,532 @@
+( ( ) => {
+
+  /*!
+  
+    add to cart button active hours
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Copyright         : 2023-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.2.0',
+    
+    s = `Add to Cart Button Active Hours v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2023-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc = window.twc || { };
+      
+    // initialize twc atcbah sub-module
+    
+    twc.atcbah = twc.atcbah || { };
+      
+    }
+    
+  const
+  
+    businessHours = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .websiteSettings
+      
+      .businessHours,
+      
+    codeKey = 'twc-atcbah',
+    
+    convertTimeZone =
+    
+      ( d, timeZone ) => {
+      
+        d =
+        
+          typeof d === 'string'
+          
+          ?
+          
+          new Date ( d )
+          
+          :
+          
+          d;
+          
+        d = d.toLocaleString (
+        
+          'en-US',
+          
+          { timeZone : timeZone }
+          
+          );
+          
+        d = new Date ( d );   
+        
+        return d;
+        
+        },
+        
+    daysOfWeek = [
+    
+      'sunday',
+      
+      'monday',
+      
+      'tuesday',
+      
+      'wednesday',
+      
+      'thursday',
+      
+      'friday',
+      
+      'saturday',
+      
+      ],
+      
+    hoursTextToRanges = ( text ) => {
+    
+      let ranges;
+      
+      text = text.match (
+      
+        /(.+\s*-\s*.+(,[ ]*)?){1,}|All Day|Open|^$/
+        
+        );
+        
+      text = text ? text.input : '';
+      
+      switch ( true ) {
+      
+        case ! text :
+        
+          ranges = [ ]; // Closed
+          
+          break;
+          
+        case text === 'All Day':
+        case text === 'Open':
+        
+          ranges = [
+          
+            {
+            
+              from : 0,
+              
+              to : 1440
+              
+              }
+              
+            ];
+            
+          break;
+          
+        }
+        
+      if ( ranges ) return ranges;
+      
+      const textToMinutes = ( m ) => {
+      
+        m = m
+        
+          .match (
+          
+            /(\d+)(:\d+)?(:\d+)?(am|pm)?/
+            
+            )
+            
+          .map (
+          
+            t => t ? t : ''
+            
+            )
+            
+          .splice ( 1 );
+          
+        if ( ! m [ 1 ] )
+        
+          m [ 1 ] = ':00';
+          
+        if ( ! m [ 2 ] )
+        
+          m [ 1 ] = ':00';
+          
+        if ( m [ 3 ] )
+        
+          m [ 3 ] = ` ${ m [ 3 ] }`;
+          
+        m = m.join ( '' );
+        
+        m = Date
+        
+          .parse ( `1/1/70; ${ m }` );
+          
+        m = new Date ( m );
+        
+        m =
+        
+          m.getHours ( )
+          
+          *
+          
+          60
+          
+          +
+          
+          m.getMinutes ( );
+          
+        return m;
+        
+        };
+        
+      ranges = (
+      
+        text
+        
+        .split ( ',' )
+        
+        .map ( t => t.trim ( ) )
+        
+        .map ( t => {
+        
+          t = t
+          
+            .split ( '-' )
+            
+            .map ( s => s.trim ( ) );
+            
+          return t;
+          
+          } )
+          
+        )
+        
+        .map ( a => {
+        
+          const
+          
+            from = textToMinutes (
+            
+              a [ 0 ]
+              
+              ),
+              
+            to = textToMinutes (
+            
+              a [ 1 ]
+              
+              );
+              
+          a = {
+          
+            from : from,
+            
+            to : to
+            
+            };
+            
+          return a;
+          
+          } );
+          
+      return ranges;
+      
+      },
+      
+    options = codeKey
+    
+      .split ( /-(.*)/ )
+      
+      .filter ( Boolean )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    timeZone = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .website
+      
+      .timeZone;
+      
+  // comment out for debugging
+  
+  let d = new Date ( );
+  
+  // for debugging remove //
+  
+  // let d = new Date ( '2/1/2026; 06:00:00' );
+  
+  d = convertTimeZone ( d, timeZone );
+  
+  const minutes =
+  
+    d.getHours ( )
+    
+    *
+    
+    60
+    
+    +
+    
+    d.getMinutes ( );
+    
+  if ( options.hours ) {
+  
+    Object
+    
+      .keys ( options.hours )
+      
+      .forEach ( key => {
+      
+        const v = options.hours [ key ];
+        
+        options.hours [ key ] = {
+        
+          text : v,
+          
+          ranges : hoursTextToRanges ( v )
+          
+          };
+          
+        } );
+        
+    Object.assign (
+    
+      businessHours,
+      
+      options.hours
+      
+      );
+      
+    }
+    
+  let isOpen = d.getDay ( );
+  
+  isOpen = daysOfWeek [ isOpen ];
+  
+  isOpen = businessHours [ isOpen ];
+  
+  isOpen = isOpen
+  
+    .ranges
+    
+    .filter ( range =>
+    
+      minutes
+      
+      >=
+      
+      range.from && minutes
+      
+      <
+      
+      range.to
+      
+      );
+      
+  isOpen = isOpen.length;
+  
+  if ( isOpen ) return; // bail if open
+  
+  const
+  
+    buttonSelector =
+    
+      '.sqs-add-to-cart-button-wrapper';
+      
+    mutationCallback = ( mutation ) => {
+    
+      mutation
+      
+        .addedNodes [ 0 ]
+        
+        ?.querySelector (
+        
+          buttonSelector
+          
+          )
+          
+        .classList
+        
+        .add ( codeKey );
+        
+      },
+      
+    mutationsCallback =
+    
+      ( mutations ) => {
+      
+        mutations.forEach (
+        
+          mutationCallback
+          
+          );
+          
+        },
+        
+    observer = new MutationObserver (
+    
+      mutationsCallback
+      
+      );
+      
+  // initialize twc mloc sub-module
+  
+  twc.mloc = twc.mloc || { };
+    
+  // initialize twc mloc callbacks sub-module
+  
+  twc.mloc.callbacks = ( ( self ) => {
+  
+    const callback = ( element ) => {
+    
+      const isQuickView = element
+      
+        .classList
+        
+        .contains (
+        
+          'sqs-product-quick-'
+          
+          +
+          
+          'view-lightbox'
+          
+          );
+          
+      // bail if not quick view
+      
+      if ( ! isQuickView ) return;
+      
+      // start listening for changes in element
+      
+      observer.observe (
+      
+        element
+        
+          .querySelector (
+          
+            '.sqs-product-quick-view-content'
+            
+            ),
+            
+        { childList : true }
+        
+        );
+        
+      };
+      
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.mloc.callbacks || [ ] );
+    
+  const
+  
+    callback = ( ) => {
+    
+      const
+      
+        selector =
+        
+          `${ buttonSelector }:not( `
+          
+          +
+          
+          ':has( .sqs-view-options-'
+          
+          +
+          
+          'button )',
+          
+        elements = document
+        
+          .body
+          
+          .querySelectorAll ( selector ),
+          
+        hasAddToCart = elements.length;
+        
+      // bail if no atc
+      
+      if ( ! hasAddToCart ) return;
+      
+      elements.forEach (
+      
+        e => e.classList.add ( codeKey )
+        
+        );
+        
+      };
+      
+    ssVersion = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .templateVersion,
+      
+    is70 = ssVersion === '7',
+    
+    is71 = ssVersion === '7.1';
+    
+  switch ( true ) {
+  
+    case is71 :
+    
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        callback
+        
+        );
+        
+      break;
+      
+    case is70 :
+    
+      Squarespace.onInitialize (
+      
+        Y,
+        
+        callback
+        
+        );
+        
+      break;
+      
+    }
+    
+  } ) ( );

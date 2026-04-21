@@ -1,0 +1,34 @@
+/*!
+
+  add to cart button active hours
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.2.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Copyright         : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+.twc-atcbah {
+
+  opacity : 0.5;
+  pointer-events : none;
+  
+  }
+  
+.pdp-layout .pdp-details .twc-atcbah .sqs-add-to-cart-button,
+.primary-button-style-outline .twc-atcbah .sqs-button-element--primary,
+.primary-button-style-outline .sqs-modal-lightbox .sqs-modal-lightbox-content .twc-atcbah .sqs-button-element--primary
+
+  {
+  
+    border-color : grey;
+    
+    }
