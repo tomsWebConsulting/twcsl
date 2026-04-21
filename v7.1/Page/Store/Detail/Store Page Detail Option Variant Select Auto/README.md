@@ -8,7 +8,7 @@ Auto select variants.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -139,13 +139,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
-<!-- * **2026-04-19**
+* **2026-04-20**
 
-  * fixed issue with tagNameToCssClassName not encoding className correctly,
-    invalid tag characters
-  * changed DOMContentLoaded event to load
-  * bumped version to 0.4.2
-  -->
+  * fixed issue with Y not defined
+  * bumped version to 0.1.1
+  
 * **2026-04-19**
 
   * initial version

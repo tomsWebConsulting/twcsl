@@ -6,7 +6,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Version      : 7.1
     
@@ -22,7 +22,7 @@
     
   const
   
-    version = '0.1.0',
+    version = '0.1.1',
     
     s = `
     
@@ -128,7 +128,9 @@
       
       isRadio,
               
-      isSelect
+      isSelect,
+      
+      Y
       
       ) => {
       
@@ -298,8 +300,10 @@
                 
               isRadio,
               
-              isSelect
-                  
+              isSelect,
+              
+              Y
+              
               );
               
             }
