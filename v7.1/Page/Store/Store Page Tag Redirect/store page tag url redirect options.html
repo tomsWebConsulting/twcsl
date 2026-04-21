@@ -1,0 +1,91 @@
+<!-- begin TWC Store Page Tag URL Redirect Options -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        store page tag url redirect options
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.1.0
+        
+        SS Version      : 7.1
+        
+        Copyright       : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc sptr--rd sub-module
+      
+      twc [ 'sptr--rd' ] = ( ( self ) => {
+      
+        const options = {
+        
+          idUrlMap : {
+          
+            /*
+            
+              the format of each line is an id and url
+                              
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many times as needed
+              
+              */
+              
+            // '[ enter id here between single quotes replacing square brackets ]' : '[ enter url here between single quotes replacing square brackets ]',
+            
+            },
+            
+          idQueryFragmentMap : {
+          
+            /*
+            
+              the format of each line is an id and query/fragment string
+                              
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many times as needed
+              
+              */
+              
+            // '[ enter id here between single quotes replacing square brackets ]' : '[ enter query/fragment here between single quotes replacing square brackets ]',
+            
+            },
+            
+          addToCartText : '[ enter add to cart text here between single quotes replacing square brackets ]'
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc [ 'sptr--rd' ] || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Tag URL Redirect Options -->
