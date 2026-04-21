@@ -277,10 +277,6 @@ not necessarily designed to work together.
       
       * [Form Text Field Max Length Data.bbprojectd](Element/Form/Form%20Text%20Field%20Max%20Length%20Data/Form%20Text%20Field%20Max%20Length%20Data.bbprojectd)
         
-  * [Add to Cart Button Active Hours](Element/Add%20to%20Cart%20Button%20Active%20Hours)
-    
-    * [Add to Cart Button Active Hours.bbprojectd](Element/Add%20to%20Cart%20Button%20Active%20Hours/Add%20to%20Cart%20Button%20Active%20Hours.bbprojectd)
-      
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
     * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
@@ -476,6 +472,10 @@ not necessarily designed to work together.
       * [Store Page Product Dimensions](v7.1/Page/Store/Store%20Page%20Product%20Dimensions)
         
         * [Store Page Product Dimensions.bbprojectd](v7.1/Page/Store/Store%20Page%20Product%20Dimensions/Store%20Page%20Product%20Dimensions.bbprojectd)
+          
+      * [Store Page Tag URL Redirect](v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect)
+        
+        * [Store Page Tag URL Redirect.bbprojectd](v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/Store%20Page%20Tag%20URL%20Redirect.bbprojectd)
           
       * [Store Page Tags Product Mark Add](v7.1/Page/Store/Store%20Page%20Tags%20Product%20Mark%20Add)
         
