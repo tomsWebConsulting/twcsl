@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 516 effects. Each effect has it's own version number, code,
+twcsl contains 518 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -277,6 +277,10 @@ not necessarily designed to work together.
       
       * [Form Text Field Max Length Data.bbprojectd](Element/Form/Form%20Text%20Field%20Max%20Length%20Data/Form%20Text%20Field%20Max%20Length%20Data.bbprojectd)
         
+  * [Add to Cart Button Active Hours](Element/Add%20to%20Cart%20Button%20Active%20Hours)
+    
+    * [Add to Cart Button Active Hours.bbprojectd](Element/Add%20to%20Cart%20Button%20Active%20Hours/Add%20to%20Cart%20Button%20Active%20Hours.bbprojectd)
+      
   * [Modal Lightbox Observe Changes](Element/Modal%20Lightbox%20Observe%20Changes)
     
     * [Modal Lightbox Observe Changes.bbprojectd](Element/Modal%20Lightbox%20Observe%20Changes/Modal%20Lightbox%20Observe%20Changes.bbprojectd)
