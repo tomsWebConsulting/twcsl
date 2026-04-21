@@ -47,9 +47,9 @@ Enable add to cart buttons during active hours.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@67f9a2c253a5e26f42996b8c8d2553a5dc38fac0/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@38131be379b6b1e8c762a040759865c1d26b2241/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
           
           <!-- end TWC Add to Cart Button Active Hours -->
           
@@ -71,9 +71,9 @@ Enable add to cart buttons during active hours.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@67f9a2c253a5e26f42996b8c8d2553a5dc38fac0/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@38131be379b6b1e8c762a040759865c1d26b2241/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
           
           <!-- end TWC Add to Cart Button Active Hours -->
           
