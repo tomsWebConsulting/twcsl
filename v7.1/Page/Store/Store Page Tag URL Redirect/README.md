@@ -25,7 +25,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
 * CDN Hosted
 
   Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][6], a [CDN][7])
+  externally on the [jsDelivr][4], a [CDN][5])
   
   * Options
   
@@ -33,6 +33,10 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
     
       Use this option if you want to have this effect on only one Store Page.
       
+      * Add code from file **[store page tag url redirect options.html][6]** to
+        Page Settings > Advanced > Page Header Code Injection for the Stoe Page.
+        Read the code for any instructions within.
+        
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Store Page.
         
@@ -41,18 +45,22 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/store%20page%20tag%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Page Tag URL Redirect -->
           
         ```
         
-      * Refer to [per-page code injection][8] for details.
+      * Refer to [per-page code injection][7] for details.
       
     * Site-wide
     
       Use this option if you want to have this effect on all Store Pages.
       
+      * Add code from file **[store page tag url redirect options.html][6]** to
+        Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
+        for any instructions within.
+        
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
         
@@ -61,13 +69,13 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tags%20Text%20Add/store%20page%20tag%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b697d3239d5cec6094ee818c161e8cf409d4e5ad/v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/store%20page%20tag%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Page Tag URL Redirect -->
           
         ```
         
-      * Refer to [Add code to code injection][9] for details.
+      * Refer to [Add code to code injection][8] for details.
 
 * On-site
 
@@ -78,19 +86,27 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
   
     Use this option if you want to have this effect on only one Store page.
     
-    * Add code from file **[store page tags text add.html][10]** to
+    * Add code from file **[store page tag url redirect options.html][6]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
+      the code for any instructions within.
+      
+    * Add code from file **[store page tag url redirect.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Store Page.
       
-    * Refer to [per-page code injection][8] for details.
+    * Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
     Use this option if you want to have this effect on all Store Pages.
     
-    * Add code from file **[store page tags text add.html][10]** to Website >
+    * Add code from file **[store page tag url redirect options.html][6]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
+      for any instructions within.
+      
+    * Add code from file **[store page tag url redirect.html][9]** to Website >
       Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][9] for details.
+    * Refer to [Add code to code injection][8] for details.
 
 ## How To Use
 
@@ -129,7 +145,7 @@ twc-sptr--rd [ your id here ]
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -146,11 +162,10 @@ Please consider [making a donation][12].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Page%20Tags%20Cache#page-tags-cache
-[6]: https://www.jsdelivr.com/
-[7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: store%20page%20tag%20url%20redirect.html#L1
-[11]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: store%20page%20tag%20url%20redirect%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: store%20page%20tag%20url%20redirect.html#L1
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
