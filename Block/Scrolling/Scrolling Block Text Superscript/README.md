@@ -47,9 +47,9 @@ Superscript text.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b2d6134a8c47a1bd8601b43585e3dd4b8a9c626e/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b2d6134a8c47a1bd8601b43585e3dd4b8a9c626e/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.js" type="module"></script>
           
           <!-- end TWC Scrolling Block Text Superscript -->
           
@@ -71,9 +71,9 @@ Superscript text.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b2d6134a8c47a1bd8601b43585e3dd4b8a9c626e/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b2d6134a8c47a1bd8601b43585e3dd4b8a9c626e/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Scrolling/Scrolling%20Block%20Text%20Superscript/scrolling%20block%20text%20superscript.min.js" type="module"></script>
           
           <!-- end TWC Scrolling Block Text Superscript -->
           
