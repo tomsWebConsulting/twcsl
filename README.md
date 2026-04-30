@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 518 effects. Each effect has it's own version number, code,
+twcsl contains 522 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -489,9 +489,11 @@ not necessarily designed to work together.
         
         * [Store Page Detail Related Products Three](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Three)
           
-        * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
+        * [Store Page Detail Page Sections Append Footer Section](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section)
           
-        * [Store Page Detail Additional Info Footer Section Append](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append)
+          * [Store Page Detail Page Sections Append Footer Section.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section.bbprojectd)
+            
+        * [Store Page Detail Price Force Mutation on Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Price%20Force%20Mutation%20on%20Quantity%20Change)
           
         * [Store Page Detail Related Products Four](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Related%20Products%20Four)
           
@@ -1062,6 +1064,12 @@ not necessarily designed to work together.
     * [Button Templates](Block/Button/Button%20Templates)
       
       * [Button Templates.bbprojectd](Block/Button/Button%20Templates/Button%20Templates.bbprojectd)
+        
+  * [Scrolling](Block/Scrolling)
+    
+    * [Scrolling Block Text Superscript](Block/Scrolling/Scrolling%20Block%20Text%20Superscript)
+      
+      * [Scrolling Block Text Superscript.bbprojectd](Block/Scrolling/Scrolling%20Block%20Text%20Superscript/Scrolling%20Block%20Text%20Superscript.bbprojectd)
         
   * [Text](Block/Text)
     
