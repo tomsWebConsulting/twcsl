@@ -54,6 +54,6 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: shipping%20option%contains%20text%20hide.bookmarklet#L1
+[2]: shipping%20option%20contains%20text%20hide.bookmarklet#L1
 [3]: https://en.wikipedia.org/wiki/Bookmarklet
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
