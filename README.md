@@ -219,10 +219,6 @@ not necessarily designed to work together.
         
         * [Analytics Traffic Geography Visits By Country Remove.bbprojectd](Bookmarklet/Page/Analytics/Analytics%20Traffic%20Geography%20Visits%20By%20Country%20Remove/Analytics%20Traffic%20Geography%20Visits%20By%20Country%20Remove.bbprojectd)
           
-  * [Shipping Options Remove All](Bookmarklet/Shipping%20Options%20Remove%20All)
-    
-    * [Shipping Options Remove All.bbprojectd](Bookmarklet/Shipping%20Options%20Remove%20All/Shipping%20Options%20Remove%20All.bbprojectd)
-      
   * [Code Block Warning Toggle](Bookmarklet/Code%20Block%20Warning%20Toggle)
     
   * [Row Column Finder](Bookmarklet/Row%20Column%20Finder)
@@ -252,6 +248,10 @@ not necessarily designed to work together.
   * [Shipping Option Contains Text Hide](Bookmarklet/Shipping%20Option%20Contains%20Text%20Hide)
     
     * [Shipping Option Contains Text Hide.bbprojectd](Bookmarklet/Shipping%20Option%20Contains%20Text%20Hide/Shipping%20Option%20Contains%20Text%20Hide.bbprojectd)
+      
+  * [Shipping Options Visible Delete](Bookmarklet/Shipping%20Options%20Visible%20Delete)
+    
+    * [Shipping Options Visible Delete.bbprojectd](Bookmarklet/Shipping%20Options%20Visible%20Delete/Shipping%20Options%20Visible%20Delete.bbprojectd)
       
   * [Block](Bookmarklet/Block)
     
