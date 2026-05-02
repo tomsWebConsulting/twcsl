@@ -2,11 +2,11 @@
 
   /*
   
-    shipping options remove all
+    shipping options visible delete
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.1.0
+    Version     : 0.1.1
     
     Copyright   : 2026 Thomas Creedon
                   
@@ -18,9 +18,9 @@
     
   const
   
-    title = 'Shipping Options Remove All',
+    title = 'Shipping Options Visible Delete',
     
-    version = '0.1.0',
+    version = '0.1.1',
   
     s = `${ title } v${ version }
     
@@ -66,11 +66,11 @@
       
       +
       
-      'sure you want to delete all '
+      'sure you want to delete visible '
       
       +
       
-      'Shipping options? This can not '
+      'Shipping Options? This can not '
       
       +
       
@@ -158,8 +158,34 @@
     
     deleteCallback = async ( element ) => {
     
-      console.log ( 'pulse' );
+      const isHidden = element
       
+        .style
+        
+        .display
+        
+        ===
+        
+        'none';
+        
+      // continue if hidden
+      
+      if ( isHidden ) {
+      
+        element
+        
+          .style
+          
+          .display
+          
+          =
+          
+          '';
+          
+        return;
+        
+        }
+        
       const
       
         fiberKey = Object
@@ -236,13 +262,9 @@
         
           const s = `
           
-            ${
+            ${ codeKey } network response
             
-              codeKey
-              
-              }
-              
-              network response was not ok ${
+            was not ok ${
             
                 response
                 
@@ -264,16 +286,12 @@
         
           const s = `
           
-            ${
+            ${ codeKey } there has been
             
-              codeKey
-              
-              } there has been a problem
-              
-              with your fetch get operation,
+            a problem with your fetch
             
-              ${ error }.
-              
+            delete operation, ${ error }.
+            
             `
             
             .trim ( )
