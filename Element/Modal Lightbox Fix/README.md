@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Fix Squarespace's incorrect CSS for lightboxes
+Fix Squarespace's incorrect CSS for lightboxes.
 
 ### Version
 
