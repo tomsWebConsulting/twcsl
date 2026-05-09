@@ -85,11 +85,18 @@ Fix Squarespace's incorrect CSS for lightboxes
   
     Use this option if you want to have this effect on all Pages.
     
-      * Add code from file **[modal lightbox fix.html][6]** to Website >
-        Pages > Custom Code > Code Injection > FOOTER.
+    * v7.1
+    
+      * Add code from file **[modal lightbox fix.css][16]** to Website >
+        Pages > Custom Code > Custom CSS..
         
-      * Refer to [Add code to code injection][5] for details.
-      
+    * v7.0
+    
+      * Add code from file **[modal lightbox fix.css][16]** to Website > Pages >
+        Website Tools > Custom CSS..
+        
+    * Refer to [Add code to code injection][5] for details.
+    
 ## Make a Donation
 
 Please consider [making a donation][7].
