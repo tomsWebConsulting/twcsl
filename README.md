@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 526 effects. Each effect has it's own version number, code,
+twcsl contains 529 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -303,6 +303,10 @@ not necessarily designed to work together.
       
   * [Announcement Bar Observe Changes](Element/Announcement%20Bar%20Observe%20Changes)
     
+  * [Modal Lightbox Fix](Element/Modal%20Lightbox%20Fix)
+    
+    * [Modal Lightbox Fix.bbprojectd](Element/Modal%20Lightbox%20Fix/Modal%20Lightbox%20Fix.bbprojectd)
+      
   * [Link](Element/Link)
     
     * [Link Popup Window Open](Element/Link/Link%20Popup%20Window%20Open)
@@ -673,6 +677,8 @@ not necessarily designed to work together.
         
     * [Section Date Hide](v7.1/Section/Section%20Date%20Hide)
       
+      * [Section Date Hide.bbprojectd](v7.1/Section/Section%20Date%20Hide/Section%20Date%20Hide.bbprojectd)
+        
     * [Blank](v7.1/Section/Blank)
       
       * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
