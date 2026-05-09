@@ -95,11 +95,11 @@ Fix Squarespace's incorrect CSS for lightboxes
       * Add code from file **[modal lightbox fix.css][7]** to Website > Pages >
         Website Tools > Custom CSS..
         
-    * Refer to [Add code to code injection][5] for details.
+    * Refer to [Using the CSS Editor][8] for details.
     
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -119,4 +119,5 @@ Please consider [making a donation][8].
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [6]: modal%20lightbox%20fix.html#L1
 [7]: modal%20lightbox%20fix.css#L1
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
