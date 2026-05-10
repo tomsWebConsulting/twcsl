@@ -8,7 +8,7 @@ Hide page sections using dates.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Version
 
