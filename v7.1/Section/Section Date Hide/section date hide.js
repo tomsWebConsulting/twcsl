@@ -1,12 +1,14 @@
 ( ( ) => {
 
+  // debugger;
+  
   /*!
   
     section date hide
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.4.0
+    Version         : 0.5.0
     
     SS Version      : 7.1
     
@@ -20,7 +22,7 @@
     
   const
   
-    version = '0.4.0',
+    version = '0.5.0',
     
     s = `Section Date Hide v${ version }
     
@@ -608,60 +610,100 @@
               
               {
               
+                const d =
+                
+                  new Date ( + d1 );
+                  
                 if (
                 
                   m2 [ 1 ][ 0 ] === '+'
                   
                   )
                   
-                  m2 [ 1 ] =
+                  {
                   
-                    Number ( m1 [ 1 ] )
+                    d.setFullYear (
                     
-                    +
-                    
-                    Number (
-                    
-                      m2 [ 1 ].slice ( 1 )
-                      
-                      );
-                      
-                  if (
-                  
-                    m2 [ 2 ][ 0 ] === '+'
-                    
-                    )
-                    
-                    m2 [ 2 ] =
-                    
-                      Number ( m1 [ 2 ] )
+                      d.getFullYear ( )
                       
                       +
                       
                       Number (
                       
-                        m2 [ 2 ].slice ( 1 )
+                        m2 [ 1 ]
                         
-                        );
+                          .slice ( 1 )
+                          
+                        )
                         
+                      );
+                      
+                    m2 [ 1 ] =
+                    
+                      d.getFullYear ( );
+                      
+                    }
+                    
+                if (
+                
+                  m2 [ 2 ][ 0 ] === '+'
+                  
+                  )
+                  
+                  {
+                  
+                    d.setMonth (
+                    
+                      d.getMonth ( )
+                      
+                      +
+                      
+                      Number (
+                      
+                        m2 [ 2 ]
+                        
+                          .slice ( 1 )
+                          
+                        )
+                        
+                      );
+                      
+                    m2 [ 2 ] =
+                    
+                      d.getMonth ( );
+                      
+                    }
+                    
                 if (
                 
                   m2 [ 3 ][ 0 ] === '+'
                   
                   )
                   
-                  m2 [ 3 ] =
+                  {
                   
-                    Number ( m1 [ 3 ] )
+                    d.setDate (
                     
-                    +
-                    
-                    Number (
-                    
-                      m2 [ 3 ].slice ( 1 )
+                      d.getDate ( )
                       
+                      +
+                      
+                      Number (
+                      
+                        m2 [ 3 ]
+                        
+                          .slice ( 1 )
+                          
+                        )
+                        
                       );
                       
+                    m2 [ 3 ] =
+                    
+                      d.getDate ( );
+                      
+                    }
+                    
                 }
                 
               // to string
@@ -824,6 +866,10 @@
         
       };
       
+  // domContentLoadedCallback ( );
+  
+  //
+  
   addEventListener (
   
     'DOMContentLoaded',
@@ -832,4 +878,6 @@
     
     );
     
+  //
+  
   } ) ( );

@@ -114,9 +114,9 @@ This effect hides Squarespace sections based on simple date and time rules.
 Sections are **visible by default** — your rules only determine **when they
 should be hidden**.
 
-The syntax is intentionally lightweight. It’s not a date engine. It won’t do
-leap‑year math or rollover calculations. But it *will* cover the many common
-scheduling needs with a compact, flexible format.
+The syntax is intentionally lightweight. It’s not a date engine. It does handle
+rollover calculations. And, it *will* cover the many common scheduling needs
+with a compact, flexible format.
 
 You can also apply **multiple rules to the same section**, which allows more
 complex behavior within the syntax’s limits.
@@ -193,23 +193,22 @@ Each part can be:
 
 #### **Placeholders**
 
-- `YYYY` → current year
-- `MM` → current month
-- `DD` → current day
+|      |               |
+|------|---------------|
+| YYYY | current year  |
+| MM   | current month |
+| DD   | current day   |
 
 #### **Relative offsets (Stop Date only)**
 
-- `+1` → add to Start Date’s value
-- `+7` → add 7 days
-- `+2` → add 2 months
-- etc.
+|      |                           |
+|------|---------------------------|
+| +1   | add to Start Date’s value |
+| +7   | add 7 days                |
+| +2   | add 2 months              |
+| etc. |                           |
 
 Offsets always reference the **resolved Start Date**, not placeholders.
-
-#### Important
-
-Offsets do **not** roll over. If the result is an invalid date, the rule is
-ignored.
 
 ### 2. Time Component
 
@@ -225,10 +224,10 @@ Time is optional.
 
 Examples:
 
-```
-1970-01-01 12:00:00
-1970-01-01
-```
+|                     |
+|---------------------|
+| 1970-01-01 12:00:00 |
+| 1970-01-01          |
 
 ### 3. Stop Date
 
@@ -244,11 +243,11 @@ Offsets only apply to Stop Date.
 
 Examples:
 
-```
-+1-MM-DD → Start year + 1
-YYYY-+1-DD → Start month + 1
-YYYY-MM-+1 → Start day + 1
-```
+|            |                 |
+|------------|-----------------|
+| +1-MM-DD   | Start year + 1  |
+| YYYY-+1-DD | Start month + 1 |
+| YYYY-MM-+1 | Start day + 1   |
 
 Offsets always reference the **Start Date**, not placeholders.
 
@@ -259,15 +258,15 @@ Offsets always reference the **Start Date**, not placeholders.
 If the **day** field is a **single digit (1–7)**, the Start Date switches into
 weekday mode:
 
-| Number | Day |
-|--------|------|
-| 1 | Sunday |
-| 2 | Monday |
-| 3 | Tuesday |
-| 4 | Wednesday |
-| 5 | Thursday |
-| 6 | Friday |
-| 7 | Saturday |
+| Number | Day       |
+|--------|-----------|
+| 1      | Sunday    |
+| 2      | Monday    |
+| 3      | Tuesday   |
+| 4      | Wednesday |
+| 5      | Thursday  |
+| 6      | Friday    |
+| 7      | Saturday  |
 
 #### Rules:
 
@@ -279,9 +278,9 @@ weekday mode:
 
 Example:
 
-```
-YYYY-MM-1 00:00:00 → triggers on Sunday at midnight
-```
+|                    |                                |
+|--------------------|--------------------------------|
+| YYYY-MM-1 00:00:00 | triggers on Sunday at midnight |
 
 ## Where You Can Use This Syntax
 
@@ -335,7 +334,7 @@ There is **no difference** in how dates are interpreted.
   
   * Keeps all rules in one place
   
-  * Works even if you can’t edit the section’s HTML
+  * Works even if you can’t edit the section.
   
   * Allows more complex combinations of rules
   
@@ -345,10 +344,6 @@ You can mix both approaches on the same site.
 
 This system is intentionally simple. It is **not** a date engine.
 
-* No rollover math
-
-  * `+1` month from January 31 does not become February 29
-  
 * Invalid dates are ignored
 
 * Day‑of‑week mode ignores year and month
@@ -369,26 +364,20 @@ This system is intentionally simple. It is **not** a date engine.
 
 ### **1. Using a single digit when they meant a date**
 
-```
-YYYY-MM-3   → Tuesday
-YYYY-MM-03  → the 3rd day of the month
-```
+|            |                          |
+|------------|--------------------------|
+| YYYY-MM-3  | Tuesday                  |
+| YYYY-MM-03 | the 3rd day of the month |
 
-### **2. Expecting rollover**
-
-```
-YYYY-+1-DD  → Start month + 1, no rollover
-```
-
-### **3. Thinking placeholders reference Start Date**
+### **2. Thinking placeholders reference Start Date**
 
 They always reference **today**, not Start Date.
 
-### **4. Forgetting time defaults to midnight**
+### **3. Forgetting time defaults to midnight**
 
-```
-1970-01-01  → 1970-01-01 00:00:00
-```
+|            |                     |
+|------------|---------------------|
+| 1970-01-01 | 1970-01-01 00:00:00 |
 
 ## Notes
 
@@ -413,6 +402,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-05-10**
+
+  * added support for roll over dates for date stop
+  * bumped version to 0.5.0
+  
 * **2026-05-03**
 
   * added more complex syntax for handling dates
