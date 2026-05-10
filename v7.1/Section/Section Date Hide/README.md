@@ -45,7 +45,7 @@ Hide page sections using dates.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1c89a97ce1530410be91c594bfaf83fbd763d030/v7.1/Section/Section%20Date%20Hide/section%20date%20hide.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@70fbc207650f8d6e968c54d632aac224edc67301/v7.1/Section/Section%20Date%20Hide/section%20date%20hide.min.js" type="module"></script>
           
           <!-- end TWC Section Date Hide -->
           
@@ -69,7 +69,7 @@ Hide page sections using dates.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1c89a97ce1530410be91c594bfaf83fbd763d030/v7.1/Section/Section%20Date%20Hide/section%20date%20hide.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@70fbc207650f8d6e968c54d632aac224edc67301/v7.1/Section/Section%20Date%20Hide/section%20date%20hide.min.js" type="module"></script>
           
           <!-- end TWC Section Date Hide -->
           
