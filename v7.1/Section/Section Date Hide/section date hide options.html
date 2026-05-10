@@ -1,0 +1,75 @@
+<!-- begin TWC Section Date Hide Options -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        section date hide options
+        
+        License         : < https://tinyurl.com/s872fb68 >
+        
+        Version         : 0.4.0
+        
+        SS Version      : 7.1
+        
+        Copyright       : 2021-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc sdh sub-module
+      
+      twc.sdh = ( ( self ) => {
+      
+        const options = {
+        
+          sectionidDateMap : [
+          
+            /*
+            
+              the format of each line is a section id, start date, and optional
+              stop date
+              
+              following is an example line. copy the example line below and
+              paste after the example line. remove the double forward slash
+              space before the example line. repeat for as many as many sections
+              you want to hide. this has been done once initially
+              
+              */
+              
+            // [ '[ enter section id here between double quotes replacing square brackets ]', '[ enter start date here between double quotes replacing square brackets ]', '[ optional, enter stop date here between double quotes replacing square brackets ]' ],
+            
+            [ '[ enter section id here between double quotes replacing square brackets ]', '[ enter start date here between double quotes replacing square brackets ]', '[ optional, enter stop date here between double quotes replacing square brackets ]' ],
+            
+            ]
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.sdh || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Section Date Hide Options -->

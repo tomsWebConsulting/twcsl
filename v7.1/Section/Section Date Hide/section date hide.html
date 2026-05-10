@@ -1,43 +1,22 @@
-<!--
+<!-- begin TWC Section Date Hide -->
 
-  begin section date hide
+  <!--
   
-  License      : < https://tinyurl.com/s872fb68 >
-  
-  Version      : 0.3.1
-  
-  SS Version   : 7.1
-  
-  Fluid
-  Engine
-  Compatible  : Yes
-  
-  Note        : the code is comprised of several tags. all are needed for the
-                full effect to work
-  
-  Copyright   : 2021-2024 Thomas Creedon
-                
-                Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
-  <style>
-  
-    body:not( .sqs-edit-mode-active ) > #siteWrapper {
+    section date hide
     
-      --twc-sdh-page-section-display : none;
-      
-      }
-      
-    body:not( .sqs-edit-mode-active ) > #siteWrapper .page-section {
+    License         : < https://tinyurl.com/s872fb68 >
     
-      display : var( --twc-sdh-page-section-display );
-      
-      }
-      
-    </style>
+    Version         : 0.4.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
     
   <script>
   
@@ -45,13 +24,13 @@
     
       const
       
-        version = '0.3.1',
+        version = '0.4.0',
         
         s = `Section Date Hide v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2021-2024 Thomas Creedon
+          © 2021-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -59,266 +38,806 @@
           
       console.log ( s );
       
-      const callback = ( event ) => {
+      // globals
       
-        const isEditing = document
+      {
+      
+        // initialize twc module
         
-          .body
-          
-          .classList
-          
-          .contains ( 'sqs-edit-mode-active' );
-          
-        if ( isEditing ) return; // bail if not editing
+        window.twc = window.twc || { };
         
-        const
+        // initialize twc sdh sub-module
         
-          codeKey = 'twc-sdh',
-          
-          d = new Date ( ),
-          
-          dYear = d.getFullYear ( ),
-          
-          sectionIdDateMap = { };
-          
-        let
+        twc.sdh =
         
-          callback = ( element ) => {
+          twc.sdh
           
-            let
+          ||
+          
+          { sectionidDateMap : [ ] };
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-sdh',
+        
+        customElementSelector =
+        
+          `x-${ codeKey }`,
+          
+        // d = new Date ( '1970-01-01' ),
+        
+        d = new Date ( ),
+        
+        dDay = d.getDate ( ),
+        
+        dDayOfWeek = d.getDay ( ) + 1,
+        
+        dedupeArrayOfArrays = ( data ) => {
+        
+          const
+          
+            seen = new Set ( ),
             
-              map = element
-                
-                .textContent
-                
-                .replace ( /\/\*[^]*?\*\//g, '' ) // remove * comments
-                
-                .replace ( /^\s*\/\/.*/gm, '' ) // remove // comments
-                
-                .replace ( /,\s*}\s*$/, '}' ) // remove last item comma
-                
-                .replaceAll ( '\n', '' );
-                
-            map = JSON.parse ( map );
-            
-            const entries = Object.entries ( map ) ;
-            
-            for ( const [ sectionId, object ] of entries ) {
+            result = data.filter ( row => {
             
               const
               
-                re = new RegExp ( '^\\[.+\\]$' ),
+                key =
                 
-                dateStop =
-                
-                  ! re.test ( object.dateStop ) ? object.dateStop : undefined;
+                  JSON.stringify ( row ),
                   
-              sectionIdDateMap [ sectionId ] = [
+                  hasKey = seen.has ( key );
+                  
+              let isUnique;
               
-                object.dateStart,
+              if ( hasKey )
+              
+                isUnique = false;
+                
+                else {
+                
+                seen.add ( key );
+                
+                isUnique = true;
+                
+                }
+            
+              return isUnique;
+              
+              } );
+              
+          return result;
+          
+          },
+          
+        dHours =
+        
+          ( d.getHours ( ) + 1 )
+          
+            .toString ( )
+            
+            .padStart ( 2, '0' ),
+            
+        dMinutes =
+        
+          ( d.getMinutes ( ) + 1 )
+          
+            .toString ( )
+            
+            .padStart ( 2, '0' ),
+            
+        dMonth = d.getMonth ( ) + 1,
+        
+        dSeconds =
+        
+          ( d.getSeconds ( ) + 1 )
+          
+            .toString ( )
+            
+            .padStart ( 2, '0' ),
+            
+        dYear = d.getFullYear ( ),
+        
+        inRange = ( x, min, max ) => {
+        
+          const isInRange =
+          
+            ( x - min )
+            
+            *
+            
+            ( x - max )
+            
+            <=
+            
+            0;
+            
+          return isInRange;
+          
+          },
+          
+        keys = new Set ( ),
+        
+        longOffsetFormatter =
+        
+          new Intl.DateTimeFormat (
+          
+            'en-US',
+            
+            {
+            
+              timeZone :
+              
+                Static
+                
+                  .SQUARESPACE_CONTEXT
+                  
+                  .website
+                  
+                  .timeZone,
+                  
+              timeZoneName : 'longOffset'
+              
+              }
+              
+            ),
+            
+        options = codeKey
+        
+          .split ( /-(.*)/ )
+          
+          .filter ( Boolean )
+          
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
+            
+            window
+            
+            ),
+            
+        pageSectionFirstSelector =
+        
+          '#page [ data-test = '
+  
+          +
+          
+          '"page-section" ]:first-child',
+          
+        re = new RegExp (
+        
+          '((?:\\d|Y){4}|\\+\\d+)-'
+          
+          +
+          
+          '((?:\\d|M){2}|\\+\\d+)-'
+          
+          +
+          
+          '((?:\\d|D){1,2}|\\+\\d+)'
+          
+          +
+          
+          '(?: ((?:\\d|h){2}):'
+          
+          +
+          
+          '((?:\\d|m){2}):'
+          
+          +
+          
+          '((?:\\d|s){2}))'
+          
+          ),
+          
+        rows = [ ],
+        
+        customElementCallback =
+        
+          ( element ) => {
+          
+            const
+            
+              dateStart = element
+              
+                .getAttribute (
+                
+                  'data-date-start'
+                  
+                  ),
+                  
+              dateStop = element
+              
+                .getAttribute (
+                
+                  'data-date-stop'
+                  
+                  ),
+                  
+              sectionId = element
+              
+                .closest (
+                
+                  '[ data-test = '
+                  
+                  +
+                  
+                  '"page-section" ]'
+                  
+                  )
+                
+                .getAttribute (
+                
+                  'data-section-id'
+                  
+                  );
+                  
+            options
+            
+              .sectionidDateMap
+              
+              .push ( [
+              
+                sectionId,
+                
+                dateStart,
                 
                 dateStop
                 
-                ];
-              
-              }
-              
-            },
-            
-          selector = 'head script[ type="application/vnd.' +
-          
-            `${ codeKey.replaceAll ( '-', '.' ) }" ]`;
-            
-        document
-        
-          .querySelectorAll ( selector )
-          
-          .forEach ( callback );
-          
-        callback = ( element ) => {
-        
-          const sectionId = element
-          
-            .closest ( '.page-section' )
-            
-            .getAttribute ( 'data-section-id' );
-            
-          sectionIdDateMap [ sectionId ] = [
-          
-            element.getAttribute ( 'data-date-start' ),
-            
-            element.getAttribute ( 'data-date-stop' )
-            
-            ];
-            
-          try {
-          
-            element
-            
-              .closest ( '.fe-block' )
-              
-              .remove ( );
-              
-            } catch ( error ) {
+                ] );
+                
+            try {
             
               element
               
-                .closest ( '.sqs-block-code' )
+                .closest ( '.fe-block' )
                 
                 .remove ( );
                 
-              }
+              } catch ( error ) {
               
-          };
-          
-        selector = `x-${ codeKey }`;
+                element
+                
+                  .closest (
+                  
+                    '.sqs-block-code'
+                    
+                    )
+                    
+                  .remove ( );
+                  
+                }
+                
+            },
+            
+        domContentLoadedCallback = ( ) => {
         
-        document
-        
-          .querySelectorAll ( selector )
+          const isEditing =
           
-          .forEach ( callback );
-          
-        const
-        
-          entries = Object.entries ( sectionIdDateMap ),
-          
-          timeZone = Static
-          
-            .SQUARESPACE_CONTEXT
+            document
             
-            .website
-            
-            .timeZone,
-            
-          longOffsetFormatter = new Intl
+              .body
+              
+              .classList
+              
+              .contains (
+              
+                'sqs-edit-mode-active'
+                
+                );
+                
+           // bail if not editing
+           
+          if ( isEditing ) return;
           
-            .DateTimeFormat (
+          const paddingTop =
+          
+            document
             
-              'en-US',
+              .body
+              
+              .querySelector (
+              
+                pageSectionFirstSelector
+                
+                )
+                
+              .style
+              
+              .paddingTop;
+              
+          document
+          
+            .querySelectorAll (
+            
+              customElementSelector
+              
+              )
+              
+            .forEach (
+            
+              customElementCallback
+              
+              );
+              
+          const entries =
+          
+            dedupeArrayOfArrays (
+            
+              options
+              
+                .sectionidDateMap
+                
+                .filter (
+                
+                  a => a [ 0 ] !== '['
+                  
+                  )
+                  
+              );
+              
+          for (
+          
+            const [
+            
+              sectionId,
+              
+              dateStart,
+              
+              dateStop
+              
+              ]
+              
+              of
+              
+              entries
+              
+            ) {
+            
+              let
+              
+                d1,
+                
+                d2,
+                
+                gmtOffset,
+                
+                isDate,
+                
+                longOffsetString,
+                
+                m1,
+                
+                year,
+                
+                ymdFormatted;
+                
+              // d1
               
               {
               
-                timeZone : timeZone, 
+                m1 = dateStart.match ( re );
                 
-                timeZoneName : 'longOffset'
+                // bail if no match
+                
+                if ( ! m1 ) continue;
+                
+                const hasPlus =
+                
+                  m1
+                  
+                    .slice ( 1, 4 )
+                    
+                    .some (
+                    
+                      e =>
+                      
+                        e.includes ( '+' )
+                        
+                      );
+                      
+                // continue if has plus
+                
+                if ( hasPlus ) continue;
+                
+                let dayOfWeek = 0;
+                
+                // day of week
+                
+                if ( m1 [ 3 ].length === 1 ) {
+                
+                  dayOfWeek =
+                  
+                    Number ( m1 [ 3 ] );
+                    
+                  m1 [ 3 ] = dDay;
+                  
+                  }
+                  
+                // ymd
+                
+                {
+                
+                  if ( m1 [ 1 ] === 'YYYY' )
+                  
+                    m1 [ 1 ] = dYear;
+                    
+                  if ( m1 [ 2 ] === 'MM' )
+                  
+                    m1 [ 2 ] = dMonth;
+                    
+                  if ( m1 [ 3 ] === 'DD' )
+                  
+                    m1 [ 3 ] = dDay;
+                    
+                  }
+                  
+                if ( dayOfWeek ) {
+                
+                  const isDayOfWeek =
+                  
+                    dayOfWeek === dDayOfWeek;
+                    
+                  if ( ! isDayOfWeek ) continue;
+                  
+                  }
+                  
+                // to string
+                
+                for ( let i = 1; i < 4; i++ )
+                
+                  m1 [ i ] =
+                  
+                    m1 [ i ].toString ( );
+                    
+                // pad
+                
+                {
+                
+                  m1 [ 2 ] = m1 [ 2 ]
+                  
+                    .padStart ( 2, '0' );
+                    
+                  m1 [ 3 ] = m1 [ 3 ]
+                  
+                    .padStart ( 2, '0' );
+                    
+                  }
+                  
+                ymdFormatted =
+                
+                  m1
+                  
+                    .slice ( 1, 4 )
+                    
+                    .join ( '-' );
+                    
+                longOffsetString =
+                
+                  longOffsetFormatter
+                  
+                    .format (
+                    
+                      new Date (
+                      
+                        `${
+                        
+                          ymdFormatted
+                          
+                          }T00:00:00.000`
+                          
+                        )
+                        
+                      );
+                      
+                gmtOffset = longOffsetString
+                
+                  .split ( 'GMT' )
+                  
+                  [ 1 ];
+                  
+                d1 = new Date (
+                
+                  `${
+                  
+                    ymdFormatted
+                    
+                    }T${
+                    
+                      m1
+                      
+                        .slice ( 4 )
+                        
+                        .join ( ':' )
+                        
+                      }${
+                      
+                        gmtOffset
+                        
+                        }`
+                        
+                  );
+                  
+                isDate = d1 instanceof Date;
+                
+                // bail if not date
+                
+                if ( ! isDate ) continue;
                 
                 }
                 
-              );
+              // d2
               
-        for ( const [ sectionId, dates ] of entries ) {
-        
-          const inRange = ( x, min, max ) => {
-          
-            const b = ( x - min ) * ( x - max ) <= 0;
-            
-            return b;
-            
-            };
-            
-          let d1 = dates [ 0 ];
-          
-          if ( d1 === undefined ) continue;
-          
-          let re = '\\d{4}-\\d{2}-\\d{2}';
-            
-          re = new RegExp ( re );
-          
-          let b = ! re.test ( d1 );
-          
-          if ( b ) continue;
-          
-          const
-          
-            longOffsetString = longOffsetFormatter
-            
-              .format (
+              {
               
-                new Date ( `${ dates [ 0 ] }T00:00:00.000` )
+                let m2 =
                 
-                ),
+                  dateStop?.match ( re );
+                  
+                if ( m2 ) {
                 
-            gmtOffset = longOffsetString
-            
-              .split ( 'GMT' )
-              
-              [ 1 ];
-              
-          let d2 = dates [ 1 ];
-          
-          // d1
-          
-            d1 += `T00:00:00${ gmtOffset }`;
-            
-            d1 = new Date ( d1 );
-            
-            b = isNaN ( d1 );
-            
-            if ( b ) continue;
-            
-            let year = d1.getFullYear ( );
-            
-            if ( year == 1970 )
-            
-              d1.setYear ( dYear );
-              
-          // d2
-          
-            b = d2 === undefined || ! re.test ( d2 );
-            
-            if ( b )
-            
-              d2 = '275760-09-12';
-              
-              else
-              
-                d2 += `T00:00:00${ gmtOffset }`;
+                  // ymd
+                  
+                  {
+                  
+                    if (
+                    
+                      m2 [ 1 ] === 'YYYY'
+                      
+                      )
+                      
+                      m2 [ 1 ] = dYear;
+                      
+                    if (
+                    
+                      m2 [ 2 ] === 'MM'
+                      
+                      )
+                      
+                      m2 [ 2 ] = dMonth;
+                      
+                    if (
+                    
+                      m2 [ 3 ] === 'DD'
+                      
+                      )
+                      
+                      m2 [ 3 ] = dDay;
+                      
+                    }
+                    
+                  // +
+                  
+                  {
+                  
+                    if (
+                    
+                      m2 [ 1 ][ 0 ] === '+'
+                      
+                      )
+                      
+                      m2 [ 1 ] =
+                      
+                        Number ( m1 [ 1 ] )
+                        
+                        +
+                        
+                        Number (
+                        
+                          m2 [ 1 ].slice ( 1 )
+                          
+                          );
+                          
+                      if (
+                      
+                        m2 [ 2 ][ 0 ] === '+'
+                        
+                        )
+                        
+                        m2 [ 2 ] =
+                        
+                          Number ( m1 [ 2 ] )
+                          
+                          +
+                          
+                          Number (
+                          
+                            m2 [ 2 ].slice ( 1 )
+                            
+                            );
+                            
+                    if (
+                    
+                      m2 [ 3 ][ 0 ] === '+'
+                      
+                      )
+                      
+                      m2 [ 3 ] =
+                      
+                        Number ( m1 [ 3 ] )
+                        
+                        +
+                        
+                        Number (
+                        
+                          m2 [ 3 ].slice ( 1 )
+                          
+                          );
+                          
+                    }
+                    
+                  // to string
+                  
+                  for (
+                  
+                    let i = 1; i < 4; i++
+                    
+                    )
+                    
+                    m2 [ i ] =
+                    
+                      m2 [ i ].toString ( );
+                      
+                  // pad
+                  
+                  {
+                  
+                    m2 [ 2 ] = m2 [ 2 ]
+                    
+                      .padStart ( 2, '0' );
+                      
+                    m2 [ 3 ] = m2 [ 3 ]
+                    
+                      .padStart ( 2, '0' );
+                      
+                    }
+                    
+                  }
+                  
+                ymdFormatted =
                 
-            d2 = new Date ( d2 );
-            
-            b = isNaN ( d2 );
-            
-            if ( b ) continue;
-            
-            year = d2.getFullYear ( );
-            
-            if ( year == 1970 )
-            
-              d2.setYear ( dYear );
+                  m2.slice ( 1, 4 )
+                  
+                    .join ( '-' ),
+                    
+                longOffsetString =
+                
+                  longOffsetFormatter
+                  
+                    .format (
+                    
+                      new Date (
+                      
+                        `${
+                        
+                          ymdFormatted
+                          
+                          }T00:00:00.000`
+                          
+                        )
+                        
+                      );
+                      
+                gmtOffset = longOffsetString
+                
+                  .split ( 'GMT' )
+                  
+                  [ 1 ];
+                  
+                d2 = new Date (
+                
+                  m2
+                  
+                  ?
+                  
+                  `${
+                  
+                    ymdFormatted
+                    
+                    }T${
+                    
+                      !
+                      
+                      m2
+                      
+                        .slice ( 4 )
+                        
+                        .every (
+                        
+                          v => v === undefined
+                          
+                          )
+                          
+                      ?
+                      
+                      m2
+                      
+                        .slice ( 4 )
+                        
+                        .join ( ':' )
+                      
+                      :
+                      
+                      '00:00:00'
+                      
+                      }${
+                      
+                        gmtOffset
+                        
+                        }`
+                        
+                  :
+                  
+                  '275760-09-12'
+                  
+                  );
+                  
+                isDate = d2 instanceof Date;
+                
+                // bail if not date
+                
+                if ( ! isDate ) continue;
+                
+                }
+                
+              const isDateInRange =
               
-          b = inRange ( d, d1, d2 );
-          
-          if ( b ) {
-          
-            const selector = `[ data-section-id = "${ sectionId }" ]`;
-            
-            document
-            
-              .querySelector ( selector )
+                inRange ( d, d1, d2 );
+                
+              // bail if date not in range
               
-              .remove ( );
+              if ( ! isDateInRange )
               
+                continue;
+                
+              document
+              
+                .querySelector (
+                
+                  `[ data-section-id = `
+                  
+                  +
+                  
+                  `"${ sectionId }" ]`
+                  
+                  )
+                  
+                .remove ( );
+                
             }
             
-          }
+          document
           
-        selector = '#siteWrapper';
-        
-        document
-        
-          .querySelector ( selector )
+            .body
+            
+            .querySelector (
+            
+              pageSectionFirstSelector
+              
+              )
+              
+            .style
+            
+            .paddingTop
+            
+            =
+            
+            paddingTop;
+            
+          };
           
-          .style
-          
-          .setProperty ( `--${ codeKey }-page-section-display`, 'flex' );
-          
-        };
-        
-      addEventListener ( 'DOMContentLoaded', callback );
+      addEventListener (
       
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
       } ) ( );
       
     </script>
     
-  <!-- end section date hide -->
+  <!-- end TWC Section Date Hide -->
