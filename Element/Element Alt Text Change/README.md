@@ -47,7 +47,7 @@ Change alt attribute values.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13c825b2e35fd5e6df46f4f08fd8e07e2b956bfa/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
           
           <!-- end TWC Element Alt Text Change -->
           
@@ -73,7 +73,7 @@ Change alt attribute values.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13c825b2e35fd5e6df46f4f08fd8e07e2b956bfa/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
             
             <!-- end TWC Element Alt Text Change -->
             
@@ -93,7 +93,7 @@ Change alt attribute values.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13c825b2e35fd5e6df46f4f08fd8e07e2b956bfa/Element/Element%20Alt%20Text%20Change/element%20alt%20text%20change.min.js" type="module"></script>
             
             <!-- end TWC Element Alt Text Change -->
             
