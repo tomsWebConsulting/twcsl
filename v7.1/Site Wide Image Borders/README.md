@@ -8,7 +8,7 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.7.3
+  * 0.8.0
 
 #### SS Version
 
@@ -23,15 +23,44 @@ Add border images around image elements of a site.
 ## Quick Install
 
 * Add code from file **[site wide image borders.less][2]** to Website > Pages >
-  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
+  Custom Code > Custom CSS. Refer to [Using the CSS Editor][3] for details.
   Read the code for any instructions within.
+
+## Notes
+
+* This effect is not complete.
+
+* This effect won't magically fix your images if there are transparent areas
+  around the image and apply the effect. The same is true if the image has a
+  border that matches the background behind the image.
+  
+* There is no switch for portfolio projects as Squarespace does not distinguish
+  them from regular pages
+         
+* Elements that have badges may appear outside the image border effect. For
+  those cases you will need custom CSS to try and move the badge as needed.
+        
+* This effect doesn't work with :
+
+  * fluid engine image block design fit, this is a CSS limitation not
+    Squarespace or this code
+    
+  * image block shapes
+    
+  * video blocks
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-05-12**
+
+  * removed .store-product-detail-additional-info
+  * updated CSS for a number of elements
+  * bumped version to 0.8.0
+  
 * **2024-06-20**
 
   * bunch of tweaks to refine the effect for current v7.1
@@ -116,5 +145,5 @@ Please consider [making a donation][3].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20wide%20image%20borders.less#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
