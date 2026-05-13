@@ -1,0 +1,77 @@
+<!-- begin TWC Element Alt Text Change Options -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      /*
+      
+        element alt text change options
+        
+        License       : < https://tinyurl.com/s872fb68 >
+        
+        Version       : 0.2.0
+        
+        SS Versions   : 7.1, 7.0
+        
+        Copyright     : 2025-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc eatc sub-module
+      
+      twc.eatc = twc.eatc || { };
+      
+      // initialize twc eatc selectorTextMap sub-module
+      
+      twc.eatc.selectorTextMap =
+      
+        ( ( self ) => {
+      
+          const map = {
+          
+            /*
+            
+              following is an example line. copy the example line below and
+              paste after the example line. remove '// ' at beginning of pasted
+              line. repeat for as many elements you want to process. this has
+              been done once initially
+              
+              note : you have to escape double quote characters in your
+                     selectors using \"
+              
+              */
+              
+            // "[ enter selector here between double quotes replacing square brackets ]" : "[ enter alt text here between double quotes replacing square brackets ]",
+            
+            "[ enter selector here between double quotes replacing square brackets ]" : "[ enter alt text here between double quotes replacing square brackets ]",
+            
+            };
+            
+          Object
+          
+            .assign (
+            
+              self,
+              
+              map
+              
+              );
+              
+          return self;
+          
+          } )
+          
+        ( twc.eatc.selectorTextMap || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Element Alt Text Change Options -->

@@ -1,0 +1,131 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    element alt text change
+    
+    License       : < https://tinyurl.com/s872fb68 >
+    
+    Version       : 0.2.0
+    
+    SS Versions   : 7.1, 7.0
+    
+    Copyright     : 2025-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    version = '0.2.0',
+    
+    s = `
+    
+      Element Alt Text Change v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2025-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc = window.twc || { };
+    
+    // initialize twc eatc sub-module
+    
+    twc.eatc = twc.eatc || { };
+    
+    // initialize twc eatc selectorTextMap sub-module
+    
+    twc.eatc.selectorTextMap =
+    
+      twc.eatc.selectorTextMap || { };
+      
+    }
+    
+  const
+  
+    codeKey = 'twc-eatc',
+    
+    options = codeKey
+    
+      .split ( /-(.*)/ )
+      
+      .filter ( Boolean )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        const entries = Object.entries (
+        
+          options.selectorTextMap
+          
+          );
+          
+        for (
+        
+          const [ selector, text ]
+          
+            of
+            
+            entries
+          
+          )
+        
+          document
+          
+            .body
+            
+            .querySelector ( selector )
+            
+            ?.setAttribute (
+            
+              'alt',
+              
+              text
+              
+              );
+              
+        };
+        
+  // domContentLoadedCallback ( );
+  
+  //
+  
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  //
+  
+  } ) ( );
