@@ -6,29 +6,30 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.2.0
+    Version     : 0.3.0
     
     SS Version  : 7.1
     
-    Note        : this effect is not active in SS Preview. to test it use
-                  private browsing < https://tinyurl.com/ynessvsf >
-    
-    Copyright   : 2021-2024 Thomas Creedon
+    Copyright   : 2021-2026 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     */
     
-    body:not( .sqs-edit-mode-active ):not( .collection-type-products.view-item ) #page .page-section:first-child.section-height--medium:not( .content-collection ):not( .gallery-section ):not( .user-items-list-section ) {
+    body:not( .sqs-edit-mode-active, .collection-type-products.view-item ) #page [data-sqsp-section]:first-child {
     
-      min-height : unset;
+      &.section-height--medium:not( .content-collection, .gallery-section, .user-items-list-section ) {
       
-      }
+        min-height : unset;
+        
+        }
+        
+      & > .content-wrapper {
       
-    body:not( .sqs-edit-mode-active ):not( .collection-type-products.view-item ) #page .page-section:first-child > .content-wrapper {
-    
-      display : none;
-      
+        display : none;
+        
+        }
+        
       }
       
   </style>

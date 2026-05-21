@@ -4,7 +4,7 @@
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -35,6 +35,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-05-21**
+
+  * reworked code, no functional change
+  * bumped version to 0.3.0
+  
 * **2024-09-20**
 
   * make effect active in editor but not when editing
