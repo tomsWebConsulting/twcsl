@@ -96,7 +96,7 @@ Create effects when a variant is selected.
 
 ## Callback Example
 
-You can create a [callback][8] function to customize the processing of the
+You can create a [callback][11] function to customize the processing of the
 product variant selected.
 
 Your callback must accept four parameters :
