@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 532 effects. Each effect has it's own version number, code,
+twcsl contains 534 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -155,6 +155,8 @@ not necessarily designed to work together.
         
       * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
         
+        * [Store Page Detail Sku Add.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/Store%20Page%20Detail%20Sku%20Add.bbprojectd)
+          
       * [Store Page Detail Variant Sold Out Remove](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove)
         
         * [Store Page Detail Variant Sold Out Remove.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove.bbprojectd)
@@ -171,8 +173,6 @@ not necessarily designed to work together.
         
         * [Store Page Detail Tag Based Image Add Before Additional Info.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info/Store%20Page%20Detail%20Tag%20Based%20Image%20Add%20Before%20Additional%20Info.bbprojectd)
           
-      * [Store Page Detail Variant Selected Callback](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
-        
       * [Store Product Detail Add to Cart Button Url Redirect](Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect)
         
     * [Store Page Price Swap Sale Original](Page/Store/Store%20Page%20Price%20Swap%20Sale%20Original)
@@ -535,6 +535,10 @@ not necessarily designed to work together.
           
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
           
+        * [Store Page Detail Variant Selected Callback](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback)
+          
+          * [Store Page Detail Variant Selected Callback.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback/Store%20Page%20Detail%20Variant%20Selected%20Callback.bbprojectd)
+            
         * [Store Page Detail Option Variant Select Auto](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto)
           
           * [Store Page Detail Option Variant Select Auto.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto/Store%20Page%20Detail%20Option%20Variant%20Select%20Auto.bbprojectd)
