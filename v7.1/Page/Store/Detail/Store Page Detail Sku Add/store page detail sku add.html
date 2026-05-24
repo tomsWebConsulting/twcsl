@@ -1,0 +1,270 @@
+<!--
+
+  begin store page detail sku add
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.2.1
+  
+  SS Versions   : 7.1, 7.0
+  
+  Dependencies  : store page detail variant selected callback
+                  < https://tinyurl.com/y2pedhwp >
+  
+  Copyright     : 2024 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  -->
+  
+  <style>
+  
+    /* begin style no variant text */
+    
+      /* simple */
+      
+      .ProductItem-details .ProductItem-details-excerpt .twc-spdsa.no-variant,
+      
+      /* full, half, wrap */
+      
+      .pdp-layout .pdp-details .pdp-details-excerpt .twc-spdsa.no-variant
+      
+        {
+        
+          /*
+          
+            this is very simple styling. you can of course do anything you want
+            using CSS declarations
+            
+            */
+            
+          font-style : italic;
+          
+          }
+          
+      /* end style no variant text */
+      
+    </style>
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    
+    twc.spdsa = ( ( ) => { // initialize twc spdsa sub-module
+    
+      const options = {
+      
+        noVariantSelectedText : 'select a variant'
+        
+        };
+        
+      return options;
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- do not change anything below, there be the borg here -->
+  
+  <style>
+  
+    #pdp {
+    
+      --twc-spdsa-excerpt-visibility : hidden;
+      
+      }
+      
+    .ProductItem-details .ProductItem-details-excerpt, /* simple */
+    .pdp-layout .pdp-details .pdp-details-excerpt /* full, half, wrap */
+    
+      {
+      
+        visibility : var( --twc-spdsa-excerpt-visibility );
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const version = '0.2.1',
+      
+        s = `Store Page Detail Sku Add v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2024 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const callback = ( event ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            const html = element
+            
+              .innerHTML
+              
+              .replaceAll ( `[${ codeKey }]`, span )
+              
+              .replace ( /\s+/g, ' ' );
+              
+            element
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            },
+            
+          options = twc.spdsa,
+          
+          variants = Static
+          
+            .SQUARESPACE_CONTEXT
+            
+            .product
+            
+            .variants,
+            
+          codeKey = options
+          
+            .codeKey;
+            
+        let
+        
+          selector = [
+          
+            '.ProductItem-details .ProductItem-details-excerpt', // simple
+            
+            '.pdp-layout .pdp-details .pdp-details-excerpt' // full, half, wrap
+            
+            ]
+            
+            .join ( ', ' ),
+            
+          sku;
+          
+        if ( variants.length == 1 )
+        
+          sku = variants [ 0 ].sku;
+          
+          else
+          
+            sku = options.noVariantSelectedText;
+            
+        const span = `
+        
+          <span class="${ codeKey }-sku">
+          
+            ${ sku }
+            
+            </span>
+            
+          `;
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+        
+        selector = '#pdp';
+        
+        document
+        
+          .querySelector ( selector )
+          
+          .style
+          
+          .setProperty ( '--twc-spdsa-excerpt-visibility',  'hidden' );
+          
+        };
+        
+      twc
+      
+        .spdsa
+        
+        .codeKey
+        
+        =
+        
+        'twc-spdsa';
+        
+      addEventListener ( 'DOMContentLoaded', callback );
+      
+      } ) ( );
+  
+    // initialize twc spdvsc sub-module
+    
+    twc.spdvsc = ( ( self ) => self ) ( twc.spdvsc || { } );
+    
+    // initialize twc spdvsc callbacks sub-module
+    
+    twc.spdvsc.callbacks = ( ( self ) => {
+    
+      const callback = ( sku, selectedVariant, element ) => {
+      
+        const
+        
+          callback = ( element ) => {
+          
+            if ( sku )
+            
+              element
+              
+                .classList
+                
+                .remove ( 'no-variant' );
+                
+              else {
+              
+                sku = options.noVariantSelectedText;
+                
+                element
+                
+                  .classList
+                  
+                  .add ( 'no-variant' );
+                  
+                }
+                
+            element.textContent = sku;
+            
+            },
+            
+          options = twc.spdsa,
+          
+          codeKey = options.codeKey,
+          
+          selector = `.${ codeKey }-sku`;
+          
+        document
+        
+          .querySelectorAll ( selector )
+          
+          .forEach ( callback );
+          
+        };
+        
+      self.push ( callback );
+      
+      return self;
+      
+      } ) ( twc.spdsa.callbacks || [ ] );
+      
+    </script>
+    
+  <!-- end store page detail sku add -->
