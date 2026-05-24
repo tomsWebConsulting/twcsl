@@ -41,7 +41,7 @@ Create effects when a variant is selected.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4d54ca6cb1803e5347e465a4c085942203ac512f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback/store%20page%20detail%20variant%20selected%20callback.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c3e98cab841d3c9da222a672d065d21b95d6fa3e/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback/store%20page%20detail%20variant%20selected%20callback.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Variant Selected Callback -->
           
@@ -63,7 +63,7 @@ Create effects when a variant is selected.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4d54ca6cb1803e5347e465a4c085942203ac512f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback/store%20page%20detail%20variant%20selected%20callback.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c3e98cab841d3c9da222a672d065d21b95d6fa3e/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Selected%20Callback/store%20page%20detail%20variant%20selected%20callback.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Variant Selected Callback -->
           
