@@ -1,0 +1,587 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    store page detail variant selected callback
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.4.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const debugFlag = true;
+  
+  const
+  
+    title = 'Store Product Detail Variant Selected Callback',
+    
+    version = '0.4.0',
+    
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2023-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const isStorePage = Static
+  
+    .SQUARESPACE_CONTEXT
+    
+    .collection
+    
+    ?.type
+    
+    ===
+    
+    13;
+    
+  // bail if not store page
+  
+  if ( ! isStorePage ) return;
+  
+  const isDetail
+  
+    =
+    
+    !!
+    
+    Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .item;
+      
+  // bail if not detail
+  
+  if ( ! isDetail ) return;
+  
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc = window.twc || { };
+    
+    // initialize twc spdvsc sub-module
+    
+    twc.spdvsc = twc.spdvsc || { };
+    
+    // initialize twc spdvsc callbacks sub-module
+    
+    twc.spdvsc.callbacks =
+    
+      twc.spdvsc.callbacks || [ ];
+      
+    }
+    
+  const
+  
+    codeKey = 'twc-spdvsc',
+    
+    options = codeKey
+    
+      .split ( /-(.*)/ )
+      
+      .filter ( Boolean )
+      
+      .reduce (
+      
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+        
+    callbacks = options
+    
+      .callbacks,
+      
+    hasCallbacks = callbacks.length;
+    
+    if ( debugFlag )
+    
+      console.log (
+      
+        `${ codeKey } callbacks : `,
+        
+        callbacks
+        
+        );
+        
+  if ( ! hasCallbacks ) {
+  
+    console.warn (
+    
+      `${
+      
+        codeKey
+        
+        } no callbacks`
+        
+      );
+      
+    return;
+    
+    }
+    
+  let
+  
+    context,
+    
+    elements,
+    
+    variants;
+    
+  const
+  
+    mutationCallback = ( mutation ) => {
+    
+      if ( debugFlag ) {
+      
+        console.log (
+        
+          `${ codeKey } mutation : `,
+          
+          mutation
+          
+          );
+          
+        console.log (
+        
+          `${
+          
+            codeKey
+            
+            } mutation.target : `,
+            
+          mutation.target
+          
+          );
+          
+        }
+        
+      const
+      
+        isVariantSelected =
+        
+          !
+          
+          [
+          
+            ...
+            
+            elements
+            
+            ]
+          
+            .filter (
+            
+              e => e
+              
+                .getAttribute (
+                
+                  'data-selected-value'
+                  
+                  )
+                  
+                .startsWith ( 'Select ' )
+                
+              )
+              
+            .length;
+            
+      if ( debugFlag )
+      
+        console.log (
+        
+          `${
+          
+            codeKey
+            
+            } isVariantSelected : `,
+            
+          isVariantSelected
+          
+          );
+          
+      // bail if no variant selected
+      
+      if ( ! isVariantSelected ) return;
+      
+      const attributes = { };
+      
+      elements.forEach (
+        
+        e => {
+        
+          attributes
+          
+            [
+            
+              e
+              
+                .closest (
+                
+                  '.variant-option'
+                  
+                  )
+                  
+                .getAttribute (
+                
+                  'data-variant-option-name'
+                  
+                  )
+                  
+              ]
+              
+            =
+            
+            value = e.getAttribute (
+            
+              'data-selected-value'
+              
+              );
+              
+          }
+          
+        );
+      
+      if ( debugFlag )
+      
+        console.log (
+        
+          `${
+          
+            codeKey
+            
+            } attributes : `,
+            
+          attributes
+          
+          );
+          
+      const variant = variants.filter (
+      
+        v => objectsShallowEqual (
+        
+          v.attributes,
+          
+          attributes
+          
+          )
+          
+        )
+        
+        [ 0 ];
+        
+      runCallbacks (
+      
+        variant.sku,
+        
+        variant,
+        
+        context,
+        
+        mutation.target
+        
+        );
+        
+      },
+      
+    objectsShallowEqual =
+    
+      ( obj1, obj2 ) => {
+      
+        const
+        
+          keys1 = Object.keys ( obj1 ),
+          
+          keys2 = Object.keys ( obj2 );
+          
+        let isEqual =
+        
+          keys1.length === keys2.length;
+          
+        // bail id keys lengths not equal
+        
+        if ( ! isEqual ) return false;
+        
+        for ( let key of keys1 ) {
+        
+          isEqual =
+          
+            obj1 [ key ] === obj2 [ key ];
+            
+          // bail if key/value pair not equal
+          
+          if ( ! isEqual ) return false;
+          
+          }
+          
+        return true;
+        
+        },
+        
+    observer = new MutationObserver (
+    
+      ms => {
+        
+        if ( debugFlag )
+        
+          console.log (
+          
+            `${ codeKey } mutations : `,
+            
+            ms
+            
+            );
+            
+        ms.forEach ( mutationCallback );
+        
+        }
+        
+      ),
+      
+    runCallbacks = (
+    
+      sku,
+      
+      variant,
+      
+      context,
+      
+      element
+      
+      ) => {
+      
+        callbacks.forEach (
+        
+          c => {
+          
+            try {
+            
+              c (
+              
+                sku,
+                
+                variant,
+                
+                context,
+                
+                element
+                
+                );
+                
+              } catch ( error ) {
+              
+                console.error (
+                
+                  s = `${
+                  
+                    codeKey
+                    
+                    } callback error`,
+                    
+                  error
+                  
+                  );
+                  
+                }
+                
+            },
+            
+          );
+          
+        },
+        
+    domContentLoadedCallback =
+    
+      ( ) => {
+      
+        context = JSON
+        
+          .parse (
+          
+            document
+          
+            .body
+            
+            .querySelector (
+            
+              '.product-detail'
+              
+              )
+              
+            .getAttribute (
+            
+              'data-context'
+              
+              )
+              
+            );
+            
+        const
+        
+          product = context.product,
+          
+          productType =
+          
+            product.productType,
+            
+          hasSku =
+          
+            !
+            
+            [
+            
+              2 // digital
+              
+              ]
+              
+            .includes ( productType );
+            
+        if ( debugFlag ) {
+        
+          console.log (
+          
+            `${ codeKey } context : `,
+            
+            context
+            
+            );
+            
+          console.log (
+          
+            `${ codeKey } product : `,
+            
+            product
+            
+            );
+            
+          console.log (
+          
+            `${ codeKey } hasSku : `,
+            
+            hasSku
+            
+            );
+            
+          console.log (
+          
+            `${ codeKey } productType : `,
+            
+            productType
+            
+            );
+            
+          }
+          
+        // bail if no sku
+        
+        if ( ! hasSku ) return;
+        
+        elements = document
+        
+          .querySelectorAll (
+          
+            '[ id = "main-product-variants" ] '
+            
+            +
+            
+            '.variant-dropdown'
+            
+            );
+            
+        variants = product.variants;
+        
+        if ( debugFlag ) {
+        
+          console.log (
+          
+            `${ codeKey } elements : `,
+            
+            elements
+            
+            );
+            
+          console.log (
+          
+            `${ codeKey } variants : `,
+            
+            variants
+            
+            );
+            
+          }
+          
+        if ( variants.length > 1 ) {
+        
+          // start listening for changes in elements
+          
+          elements.forEach (
+          
+            e => {
+            
+              observer.observe (
+              
+                e,
+                
+                {
+                
+                  attributes : true,
+                  
+                  attributeFilter :
+                  
+                    [ 'data-selected-value' ],
+                    
+                  attributeOldValue : true,
+                  
+                  }
+                  
+                )
+                
+              }
+              
+            );
+            
+          } else
+          
+            runCallbacks (
+            
+              variants [ 0 ].sku,
+              
+              variants [ 0 ],
+              
+              context
+              
+              );
+              
+        };
+        
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  } ) ( );
