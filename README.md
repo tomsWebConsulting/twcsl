@@ -153,10 +153,6 @@ not necessarily designed to work together.
         
       * [Store Page Detail Description Search Text Match Add Text](Page/Store/Detail/Store%20Page%20Detail%20Description%20Search%20Text%20Match%20Add%20Text)
         
-      * [Store Page Detail Sku Add](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
-        
-        * [Store Page Detail Sku Add.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/Store%20Page%20Detail%20Sku%20Add.bbprojectd)
-          
       * [Store Page Detail Variant Sold Out Remove](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove)
         
         * [Store Page Detail Variant Sold Out Remove.bbprojectd](Page/Store/Detail/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove/Store%20Page%20Detail%20Variant%20Sold%20Out%20Remove.bbprojectd)
@@ -519,6 +515,10 @@ not necessarily designed to work together.
           
         * [Store Page Detail Gallery Thumbnails Side Pill Segmented](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Gallery%20Thumbnails%20Side%20Pill%20Segmented)
           
+        * [Store Page Detail Sku Add](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add)
+          
+          * [Store Page Detail Sku Add.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/Store%20Page%20Detail%20Sku%20Add.bbprojectd)
+            
         * [Store Page Detail Product Dimensions](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions)
           
           * [Store Page Detail Product Dimensions.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions/Store%20Page%20Detail%20Product%20Dimensions.bbprojectd)
