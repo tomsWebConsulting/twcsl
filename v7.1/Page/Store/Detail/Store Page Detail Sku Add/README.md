@@ -45,9 +45,9 @@ Add sku to the description of store detail pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5d7a7b6c65fc95268c40dfea8178bbb10aaa01ec/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5d7a7b6c65fc95268c40dfea8178bbb10aaa01ec/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Sku Add -->
           
@@ -69,9 +69,9 @@ Add sku to the description of store detail pages.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5d7a7b6c65fc95268c40dfea8178bbb10aaa01ec/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96e8dc387753ee13adc372ebc34d2adeed55f29f/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5d7a7b6c65fc95268c40dfea8178bbb10aaa01ec/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Sku%20Add/store%20page%20detail%20sku%20add.min.js" type="module"></script>
           
           <!-- end TWC Store Page Detail Sku Add -->
           
