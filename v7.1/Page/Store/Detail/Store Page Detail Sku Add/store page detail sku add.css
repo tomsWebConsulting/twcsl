@@ -1,0 +1,28 @@
+/*!
+
+  store page detail sku add
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.3.0
+  
+  SS Version        : 7.1
+  
+  Dependencies      : store page detail variant selected callback
+                      < https://tinyurl.com/5cju3x4w >
+  
+  Copyright         : 2024-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+.product-detail .product-meta {
+
+  --twc-spdsa-excerpt-visibility : hidden;
+  
+  visibility : var( --twc-spdsa-excerpt-visibility );
+  
+  }
