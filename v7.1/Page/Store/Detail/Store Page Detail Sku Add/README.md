@@ -34,11 +34,11 @@ Add sku to the description of store detail pages.
       Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page detail sku add options.html][6]** to
-        Page Settings > Advanced > Page Header Code Injection for the Page. Read
-        the code for any instructions within.
+        Page Settings > Advanced > Page Header Code Injection for the Store
+        Page. Read the code for any instructions within.
         
       * Add the following code to Page Settings > Advanced >
-        Page Header Code Injection for the Page.
+        Page Header Code Injection for the Store Page.
         
         ```html
         <!-- begin TWC Store Page Detail Sku Add -->
@@ -88,12 +88,12 @@ Add sku to the description of store detail pages.
   
     Use this option if you want to have this effect on only one Store Page.
     
-    * Add code from file **[store page detail sku add options.html][6]** to Page
-      Settings > Advanced > Page Header Code Injection for the Page. Read
-      the code for any instructions within.
+    * Add code from files **[store page detail sku add options.html][6]** to
+      Page Settings > Advanced > Page Header Code Injection for the Store Page.
+      Read the code for any instructions within.
       
     * Add code from file **[store page detail sku add.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the Page.
+      Page Settings > Advanced > Page Header Code Injection for the Store Page.
       
     * Refer to [per-page code injection][7] for details.
     
@@ -101,10 +101,12 @@ Add sku to the description of store detail pages.
   
     Use this option if you want to have this effect on all Store Pages.
     
-    * Add code from files **[store page detail sku add options.html][6]** and
-      **[store page detail sku add.html][9]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Read the code for any instructions
-      within.
+    * Add code from files **[store page detail sku add options.html][6]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+      any instructions within.
+      
+    * Add code from file **[store page detail sku add.html][9]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER.
       
     * Refer to [Add code to code injection][8] for details.
 
@@ -130,7 +132,7 @@ Please consider [making a donation][10].
   
 * **2024-09-15**
 
-  * make compatible with page detail variant selected callback v0.3.0
+  * make compatible with store page detail variant selected callback v0.3.0
   * bumped version to 0.2.1
   
 * **2024-05-11**
