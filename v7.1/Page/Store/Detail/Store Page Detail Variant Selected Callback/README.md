@@ -53,10 +53,6 @@ Create effects when a variant is selected.
     
       Use this option if you want to have this effect on all Store Pages.
       
-      * Add code from file **[add to cart button active hours options.html][7]**
-        to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
-        code for any instructions within.
-        
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
         
@@ -71,7 +67,7 @@ Create effects when a variant is selected.
           
         ```
         
-      * Refer to [Add code to code injection][8] for details.
+      * Refer to [Add code to code injection][7] for details.
       
 * On-site
 
@@ -83,7 +79,7 @@ Create effects when a variant is selected.
     Use this option if you want to have this effect on only one Store Page.
     
     * Add code from file **[store page detail variant selected
-      callback.html][9]** to Page Settings > Advanced >
+      callback.html][8]** to Page Settings > Advanced >
       Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][6] for details.
@@ -93,14 +89,14 @@ Create effects when a variant is selected.
     Use this option if you want to have this effect on all Store Pages.
     
     * Add code from file **[store page detail variant selected
-      callback.html][9]** to Website > Pages > Custom Code > Code Injection >
+      callback.html][8]** to Website > Pages > Custom Code > Code Injection >
       FOOTER.
       
-    * Refer to [Add code to code injection][8] for details.
+    * Refer to [Add code to code injection][7] for details.
 
 ## Callback Example
 
-You can create a [callback][11] function to customize the processing of the
+You can create a [callback][9] function to customize the processing of the
 product variant selected.
 
 Your callback must accept four parameters :
@@ -228,7 +224,7 @@ Please consider [making a donation][10].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: store%20page%20detail%20variant%20selected%20callback.html#L1
-[11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: store%20page%20detail%20variant%20selected%20callback.html#L1
+[9]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
