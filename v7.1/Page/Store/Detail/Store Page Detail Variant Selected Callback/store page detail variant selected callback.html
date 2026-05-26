@@ -8,7 +8,7 @@
       
       License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.4.0
+      Version         : 0.5.0
       
       SS Version      : 7.1
       
@@ -30,7 +30,7 @@
       
         title = 'Store Page Detail Variant Selected Callback',
         
-        version = '0.4.0',
+        version = '0.5.0',
         
         s = `${ title } v${ version }
         
@@ -156,160 +156,6 @@
         
       const
       
-        mutationCallback = ( mutation ) => {
-        
-          if ( debugFlag ) {
-          
-            console.log (
-            
-              `${ codeKey } mutation : `,
-              
-              mutation
-              
-              );
-              
-            console.log (
-            
-              `${
-              
-                codeKey
-                
-                } mutation.target : `,
-                
-              mutation.target
-              
-              );
-              
-            }
-            
-          const
-          
-            isVariantSelected =
-            
-              !
-              
-              [
-              
-                ...
-                
-                elements
-                
-                ]
-              
-                .filter (
-                
-                  e => e
-                  
-                    .getAttribute (
-                    
-                      'data-selected-value'
-                      
-                      )
-                      
-                    .startsWith ( 'Select ' )
-                    
-                  )
-                  
-                .length;
-                
-          if ( debugFlag )
-          
-            console.log (
-            
-              `${
-              
-                codeKey
-                
-                } isVariantSelected : `,
-                
-              isVariantSelected
-              
-              );
-              
-          // bail if no variant selected
-          
-          if ( ! isVariantSelected ) return;
-          
-          const attributes = { };
-          
-          elements.forEach (
-            
-            e => {
-            
-              attributes
-              
-                [
-                
-                  e
-                  
-                    .closest (
-                    
-                      '.variant-option'
-                      
-                      )
-                      
-                    .getAttribute (
-                    
-                      'data-variant-option-name'
-                      
-                      )
-                      
-                  ]
-                  
-                =
-                
-                value = e.getAttribute (
-                
-                  'data-selected-value'
-                  
-                  );
-                  
-              }
-              
-            );
-          
-          if ( debugFlag )
-          
-            console.log (
-            
-              `${
-              
-                codeKey
-                
-                } attributes : `,
-                
-              attributes
-              
-              );
-              
-          const variant = variants.filter (
-          
-            v => objectsShallowEqual (
-            
-              v.attributes,
-              
-              attributes
-              
-              )
-              
-            )
-            
-            [ 0 ];
-            
-          runCallbacks (
-          
-            variant.sku,
-            
-            variant,
-            
-            context,
-            
-            mutation.target
-            
-            );
-            
-          },
-          
         objectsShallowEqual =
         
           ( obj1, obj2 ) => {
@@ -344,26 +190,6 @@
             
             },
             
-        observer = new MutationObserver (
-        
-          ms => {
-            
-            if ( debugFlag )
-            
-              console.log (
-              
-                `${ codeKey } mutations : `,
-                
-                ms
-                
-                );
-                
-            ms.forEach ( mutationCallback );
-            
-            }
-            
-          ),
-          
         runCallbacks = (
         
           sku,
@@ -416,6 +242,330 @@
               
             },
             
+        changeCallback = ( event ) => {
+        
+          console.log ( event.currentTarget );
+          
+          const
+          
+            element = event.target,
+            
+            isRadio =
+            
+              element
+              
+                .tagName
+                
+                ===
+                
+                'INPUT'
+                
+              &&
+              
+              element
+              
+                .getAttribute ( 'type' )
+                
+                ===
+                
+                'radio';
+              
+            isSelect = element
+            
+              .tagName
+              
+              ===
+              
+              'SELECT';
+              
+          if ( debugFlag ) {
+          
+            console.log (
+            
+              `${ codeKey } element : `,
+              
+              element
+              
+              );
+              
+            console.log (
+            
+              `${
+              
+                codeKey
+                
+                } event : `,
+                
+              event
+              
+              );
+              
+            console.log (
+            
+              `${
+              
+                codeKey
+                
+                } isRadio : `,
+                
+              isRadio
+              
+              );
+              
+            console.log (
+            
+              `${
+              
+                codeKey
+                
+                } isSelect : `,
+                
+              isSelect
+              
+              );
+              
+            }
+            
+          let isVariantSelected;
+          
+          const attributes = { };
+          
+          switch ( true ) {
+          
+            case isRadio : {
+            
+              isVariantSelected = [
+              
+                ...
+                
+                element
+                
+                  .closest (
+                  
+                    '.field-list'
+                    
+                    )
+                    
+                  .children
+                  
+                ]
+                
+                .map (
+                
+                  e => {
+                  
+                    const
+                    
+                      optionName =
+                      
+                        e.getAttribute (
+                        
+                          'data-variant-option-name'
+                          
+                          ),
+                          
+                      optionElements =
+                      
+                        [
+                        
+                          ...
+                          
+                          elements
+                          
+                          ]
+                        
+                        .filter (
+                        
+                          e => e
+                          
+                            .id
+                            
+                            .startsWith (
+                            
+                              `variant-option-${
+                              
+                                optionName
+                                
+                                }-`
+                                
+                              )
+                          
+                          ),
+                          
+                      is =
+                      
+                        !
+                        
+                        optionElements
+                        
+                        .every (
+                        
+                          e =>
+                          
+                            e.checked
+                            
+                            ===
+                            
+                            false
+                            
+                          );
+                            
+                    attributes
+                    
+                      [
+                      
+                        optionName
+                            
+                        ]
+                        
+                      =
+                      
+                      optionElements
+                      
+                        .filter (
+                        
+                          e => e.checked
+                          
+                          )
+                          
+                        [ 0 ]
+                        
+                        ?.value;
+                          
+                    return is;
+                    
+                    }
+                    
+                  )
+                  
+                .every ( v => v === true );
+                
+              break;
+              
+              }
+              
+            case isSelect : {
+            
+              isVariantSelected =
+              
+                [
+                
+                  ...
+                  
+                  elements
+                  
+                  ]
+                
+                .every ( e => e.value );
+                
+              elements.forEach (
+                
+                e => {
+                
+                  attributes
+                  
+                    [
+                    
+                      e
+                      
+                        .closest (
+                        
+                          '.variant-option'
+                          
+                          )
+                          
+                        .getAttribute (
+                        
+                          'data-variant-option-name'
+                          
+                          )
+                          
+                      ]
+                      
+                    =
+                    
+                    e.value;
+                    
+                  }
+                  
+                );
+                
+              break;
+              
+              }
+              
+            }
+            
+          if ( debugFlag )
+          
+            console.log (
+            
+              `${
+              
+                codeKey
+                
+                } isVariantSelected : `,
+                
+              isVariantSelected
+              
+              );
+              
+          // bail if no variant selected
+          
+          if ( ! isVariantSelected ) return;
+          
+          if ( debugFlag )
+          
+            console.log (
+            
+              `${
+              
+                codeKey
+                
+                } attributes : `,
+                
+              attributes
+              
+              );
+              
+          const variant = variants.filter (
+          
+            v => objectsShallowEqual (
+            
+              v.attributes,
+              
+              attributes
+              
+              )
+              
+            )
+            
+            [ 0 ];
+            
+          if ( debugFlag )
+          
+            console.log (
+            
+              `${ codeKey } variant : `,
+              
+              variant
+              
+              );
+              
+          runCallbacks (
+          
+            variant.sku,
+            
+            variant,
+            
+            context,
+            
+            element
+            
+            );
+            
+          },
+          
         domContentLoadedCallback =
         
           ( ) => {
@@ -502,21 +652,69 @@
             
             if ( ! hasSku ) return;
             
-            elements = document
+            variants = product.variants;
             
-              .querySelectorAll (
+            if ( debugFlag )
+            
+              console.log (
               
-                '[ id = "main-product-variants" ] '
+                `${ codeKey } variants : `,
                 
-                +
-                
-                '.variant-dropdown'
+                variants
                 
                 );
                 
-            variants = product.variants;
+            if ( variants.length === 1 ) {
             
-            if ( debugFlag ) {
+              runCallbacks (
+              
+                variants [ 0 ].sku,
+                
+                variants [ 0 ],
+                
+                context
+                
+                );
+                
+              return;
+              
+              }
+              
+            elements = document
+            
+              .body
+              
+              .querySelector (
+              
+                '#main-product-variants'
+                
+                );
+                
+            elements.addEventListener (
+            
+              'change',
+              
+              changeCallback
+              
+              );
+              
+            elements = elements
+            
+              .querySelectorAll (
+              
+                [
+                
+                  '.radio-button-input',
+                  
+                  '.variant-select'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                );
+                
+            if ( debugFlag )
             
               console.log (
               
@@ -526,58 +724,6 @@
                 
                 );
                 
-              console.log (
-              
-                `${ codeKey } variants : `,
-                
-                variants
-                
-                );
-                
-              }
-              
-            if ( variants.length > 1 ) {
-            
-              // start listening for changes in elements
-              
-              elements.forEach (
-              
-                e => {
-                
-                  observer.observe (
-                  
-                    e,
-                    
-                    {
-                    
-                      attributes : true,
-                      
-                      attributeFilter :
-                      
-                        [ 'data-selected-value' ],
-                        
-                      attributeOldValue : true,
-                      
-                      }
-                      
-                    )
-                    
-                  }
-                  
-                );
-                
-              } else
-              
-                runCallbacks (
-                
-                  variants [ 0 ].sku,
-                  
-                  variants [ 0 ],
-                  
-                  context
-                  
-                  );
-                  
             };
             
       document.addEventListener (

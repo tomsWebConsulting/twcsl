@@ -8,7 +8,7 @@ Create effects when a variant is selected.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Version
 
@@ -31,8 +31,8 @@ Create effects when a variant is selected.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Store Page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -51,6 +51,8 @@ Create effects when a variant is selected.
       
     * Site-wide
     
+      Use this option if you want to have this effect on all Store Pages.
+      
       * Add code from file **[add to cart button active hours options.html][7]**
         to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
         code for any instructions within.
@@ -78,7 +80,7 @@ Create effects when a variant is selected.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from file **[store page detail variant selected
       callback.html][9]** to Page Settings > Advanced >
@@ -88,6 +90,8 @@ Create effects when a variant is selected.
     
   * Site-wide
   
+    Use this option if you want to have this effect on all Store Pages.
+    
     * Add code from file **[store page detail variant selected
       callback.html][9]** to Website > Pages > Custom Code > Code Injection >
       FOOTER.
@@ -190,6 +194,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-05-26**
+
+  * added support for button style variant options
+  * bumped version to 0.5.0
+  
 * **2026-05-24**
 
   * updated to better work with Products V2 changes
