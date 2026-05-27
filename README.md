@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 534 effects. Each effect has it's own version number, code,
+twcsl contains 537 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -187,6 +187,8 @@ not necessarily designed to work together.
         
     * [Store Page Commerce Elements Hide](Page/Store/Store%20Page%20Commerce%20Elements%20Hide)
       
+      * [Store Page Commerce Elements Hide.bbprojectd](Page/Store/Store%20Page%20Commerce%20Elements%20Hide/Store%20Page%20Commerce%20Elements%20Hide.bbprojectd)
+        
     * [Store Page Image Aspect Ratio Change](Page/Store/Store%20Page%20Image%20Aspect%20Ratio%20Change)
       
     * [Store Page Express Checkout](Page/Store/Store%20Page%20Express%20Checkout)
@@ -957,6 +959,8 @@ not necessarily designed to work together.
         
         * [Store Page Detail Elements Tagged Hide](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Elements%20Tagged%20Hide)
           
+          * [Store Page Detail Elements Tagged Hide.bbprojectd](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Elements%20Tagged%20Hide/Store%20Page%20Detail%20Elements%20Tagged%20Hide.bbprojectd)
+            
         * [Store Page Detail Add to Cart Text Change on Quantity Change](v7.0/Page/Store/Detail/Store%20Page%20Detail%20Add%20to%20Cart%20Text%20Change%20on%20Quantity%20Change)
           
         * [Store Page Detail One Left Class Add](v7.0/Page/Store/Detail/Store%20Page%20Detail%20One%20Left%20Class%20Add)
@@ -965,6 +969,8 @@ not necessarily designed to work together.
         
         * [Store Page List Category Description Add](v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add)
           
+          * [Store Page List Category Description Add.bbprojectd](v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/Store%20Page%20List%20Category%20Description%20Add.bbprojectd)
+            
   * [Bedford Template Family](v7.0/Bedford%20Template%20Family)
     
     * [Blog Post Tag Url Change](v7.0/Bedford%20Template%20Family/Blog%20Post%20Tag%20Url%20Change)
