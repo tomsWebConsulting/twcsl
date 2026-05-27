@@ -4,15 +4,15 @@
 
 ### Synopsis
 
-Hide tagged commerce elements on a Store page.
+Hide tagged commerce elements on a Store Page.
 
 ### Version
 
-  * 2.3.0
+  * 2.3.1
 
 #### SS Version
 
-  * 7.0 ([Adirondack][2], [Brine template family][3], [York template family][4])
+  * 7.0 ([Adirondack][2], [Bedford template family][3], [Brine template family][4], [York template family][5])
 
 ---
 
@@ -22,34 +22,40 @@ Hide tagged commerce elements on a Store page.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
+    Use this option if you want to have this effect on only one Store Page.
+    
+    * Add code from file **[store page detail elements tagged hide.html][6]** to
+      Store Page Settings > Advanced > Page Header Code Injection for the Store
+      Page.
       
-    * Add code from file **[store page detail elements tagged hide.html][5]** to
-      Store Page Settings > Advanced > Page Header Code Injection for the Page.
-      
-    * Refer to [per-page code injection][6] for details.
+    * Refer to [per-page code injection][7] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you want to have this effect on all Store Pages.
+    
     * Add code from file **[store page detail add to cart button added
-      callbacks.html][5]** to Website > Pages > Website Tools > Custom Code >
+      callbacks.html][6]** to Website > Pages > Website Tools > Custom Code >
       Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][7].
+    * Refer to [Add code to code injection][8].
 
 * Add "twc hide atc", "twc hide mark", "twc hide price", "twc hide quantity"
   and/or "twc hide variants" tags, without the quotes, to each product where you
-  want to hide the Add To Cart button, mark, price and/or quantity elements.
+  want to hide the Add To Cart button, mark, price, quantity and/or variants
+  elements.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
+
+* **2026-05-26**
+
+  * checked support for Bedford template family
+  * fixed selector for variants
+  * bumped version to 2.3.1
 
 * **2025-11-16**
 
@@ -88,9 +94,10 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://support.squarespace.com/hc/en-us/articles/206545397-Adirondack-template
-[3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[4]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
-[5]: store%20page%20detail%20elements%20tagged%20hide.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[4]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[5]: https://support.squarespace.com/hc/en-us/articles/218211197-York-template-family
+[6]: store%20page%20detail%20elements%20tagged%20hide.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
