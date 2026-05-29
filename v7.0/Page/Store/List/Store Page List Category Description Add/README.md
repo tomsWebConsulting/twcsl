@@ -114,12 +114,12 @@ Add a category description to Store category pages.
         
       * Add code from file **[store page list category description
         add.html][16]** to Website > Pages > Website Tools > Custom Code >
-        Code Injection > FOOTER. Refer to [Add code to code injection][17] for
+        Code Injection > FOOTER. Refer to [Add code to code injection][16] for
         details.
 
 ## Make a Donation
 
-Please consider [making a donation][18].
+Please consider [making a donation][17].
 
 ## Changes
 
@@ -192,5 +192,5 @@ Please consider [making a donation][18].
 [13]: store%20page%20list%20category%20description%20add%20options.html#L1
 [14]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [15]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[17]: store%20page%20list%20category%20description%20add.html#L1
-[18]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[16]: store%20page%20list%20category%20description%20add.html#L1
+[17]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
