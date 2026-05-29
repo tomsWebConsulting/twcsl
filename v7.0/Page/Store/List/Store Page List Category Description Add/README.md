@@ -54,7 +54,7 @@ Add a category description to Store category pages.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@765644b389da987c519515eb20fa6744e9467936/v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/store%20page%20list%20category%20description%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ca674b99a9dd2d6d2acf7b98fc19f358c526bbad/v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/store%20page%20list%20category%20description%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Category Description Add -->
             
@@ -78,7 +78,7 @@ Add a category description to Store category pages.
             
             <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/store%20page%20list%20category%20description%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@765644b389da987c519515eb20fa6744e9467936/v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/store%20page%20list%20category%20description%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ca674b99a9dd2d6d2acf7b98fc19f358c526bbad/v7.0/Page/Store/List/Store%20Page%20List%20Category%20Description%20Add/store%20page%20list%20category%20description%20add.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Category Description Add -->
             
