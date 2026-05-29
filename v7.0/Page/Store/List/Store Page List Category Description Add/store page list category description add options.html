@@ -1,0 +1,99 @@
+<!-- begin TWC Store Page List Category Description Add Options -->
+
+  <!--
+  
+    scrolling block text superscript options
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.7.0
+    
+    SS Version      : 7.0
+    
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    .twc-splcda {
+    
+      margin-bottom : 25px;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc splcda sub-module
+      
+      twc.splcda = ( ( self ) => {
+      
+        const options = {
+        
+          map : {
+          
+            /*
+            
+              the format of each line is a category name and a page url slug
+              
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many categories you want to
+              add descriptions too. this has been done once initially
+              
+              */
+              
+            // '[ enter category name here between single quotes replacing square brackets ]' : '[ enter page url slug here between single quotes replacing square brackets ]',
+            
+            '[ enter category name here between single quotes replacing square brackets ]' : '[ enter page url slug here between single quotes replacing square brackets ]',
+            
+            },
+            
+          // use afterbegin, afterend, beforebegin or beforeend
+          
+          insertPosition : 'beforebegin',
+          
+          /*
+          
+            optional - selector, use to override built in selectors. the
+            selector you use may not be supported by the CSS in this effect
+            
+            */
+            
+          selector : ''
+          
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.splcda || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Scrolling Block Text Superscript Options -->
