@@ -1,418 +1,430 @@
-( async ( ) => {
+<!-- begin TWC Store Page List Category Description Add -->
 
-  // debugger;
+  <script>
   
-  /*!
-  
-    store page list category description add
+    ( ( ) => {
     
-    License           : < https://tinyurl.com/s872fb68 >
-    
-    Version           : 0.7.0
-    
-    SS Version        : 7.0
-    
-    Templates         : Avenue
-                        
-                        Bedford ( Anya, Bryant, Hayden )
-                        
-                        Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                        Feed, Foster, Greenwich, Hatch, Heights, Hunter,
-                        Hyde, Impact, Jaunt, Juke, Keene, Kin, Lincoln,
-                        Maple, Margot, Marta, Mentor, Mercer, Miller,
-                        Mojave, Moksha, Motto, Nueva, Pedro, Pursuit, Rally,
-                        Rover, Royce, Sofia, Sonora, Stella, Thorne, Vow,
-                        Wav, West )
-                        
-                        Skye ( Foundry, Indigo, Ready, Skye, Tudor )
-                        
-                        Wells
-                        
-                        your template is not listed? then it is not
-                        currently supported
-    
-    Dependencies      : page categories to module
-    
-    Copyright         : 2021-2026 Thomas Creedon
-                        
-                        Tom's Web Consulting
-                        
-                        < http://www.tomsWeb.consulting/ >
-    
-    */
-    
-  const
-  
-    version = '0.7.0',
-  
-    s = `
-    
-      Store Page List Category Description Add v${ version }
-    
-      License < https://tinyurl.com/s872fb68 >
+      // debugger;
       
-      © 2021-2026 Thomas Creedon
+      /*
       
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >
-      
-      `
-      
-      .replace ( /^\s+/gm, '' );
-      
-  console.log ( s );
-  
-  const
-  
-    context = Static.SQUARESPACE_CONTEXT,
-    
-    templateId = context.templateId,
-    
-    templateIdSelectorMap = {
-    
-      // Avenue
-      
-      '4fd11f32c4aad9b01c9e624c' :
-      
-        '#productList',
+        store page list category description add
         
-      // Bedford family
-      
-      '52a74dafe4b073a80cd253c5' :
-      
-        '#productList',
+        License           : < https://tinyurl.com/s872fb68 >
         
-      // Wells
-      
-      '4f9adc1524ac5df956fdf98f' :
-      
-        '#productList',
+        Version           : 0.7.1
         
-      // Brine, Skye
-      
-      '55f0aac0e4b0f0a5b7e0b22e' :
-      
-        '.ProductList-grid',
+        SS Version        : 7.0
         
-      '54d3906fe4b04c1c9981b00e' :
-      
-        '.ProductList-grid',
+        Templates         : Avenue
+                            
+                            Bedford ( Anya, Bryant, Hayden )
+                            
+                            Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                            Feed, Foster, Greenwich, Hatch, Heights, Hunter,
+                            Hyde, Impact, Jaunt, Juke, Keene, Kin, Lincoln,
+                            Maple, Margot, Marta, Mentor, Mercer, Miller,
+                            Mojave, Moksha, Motto, Nueva, Pedro, Pursuit, Rally,
+                            Rover, Royce, Sofia, Sonora, Stella, Thorne, Vow,
+                            Wav, West )
+                            
+                            Skye ( Foundry, Indigo, Ready, Skye, Tudor )
+                            
+                            Wells
+                            
+                            your template is not listed? then it is not
+                            currently supported
         
-      },
-      
-    isTemplate =
-    
-      templateId
-      
-      in
-      
-      templateIdSelectorMap;
-      
-  // bail if not template
-  
-  if ( ! isTemplate ) return;
-  
-  const isStorePage = context
-  
-    .collection
-    
-    ?.type
-    
-    ===
-    
-    13;
-    
-  // bail if not store page
-  
-  if ( ! isStorePage ) return;
-  
-  const isList = ! context.item?.id;
-  
-  // bail if not list page
-  
-  if ( ! isList ) return;
-  
-  const
-  
-    searchParams =
-    
-      new URLSearchParams (
-      
-        location.search
+        Dependencies      : page categories to module
         
-        ),
+        Copyright         : 2021-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
         
-    isTag = searchParams
-    
-      .has ( 'tag' );
-  
-  // bail if tag
-  
-  if ( isTag ) return;
-  
-  // initialize twc module
-  
-  window.twc = window.twc || { };
-  
-  // initialize twc pctm sub-module
-  
-  twc.spdvsc = twc.pctm || { };
-  
-  const
-  
-    collectionId = context.collectionId,
-    
-    categories = twc
-    
-      .pctm
-      
-      [ collectionId ];
-      
-  // bail if no categories
-  
-  if ( ! categories ) {
-  
-    const s =
-    
-      `${ codeKey } no categories`;
-      
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  // initialize twc splcda sub-module
-  
-  twc.splcda = twc.splcda || { };
-  
-  const
-  
-    codeKey = 'twc-splcda',
-    
-    options = codeKey
-    
-      .split ( /-(.*)/ )
-      
-      .filter ( Boolean )
-      
-      .reduce (
-      
-        ( obj, key ) => obj?.[ key ],
+        */
         
-        window
-        
-        ),
-        
-    map = options.map;
-    
-  // bail if no map
-  
-  if ( ! map ) {
-  
-    const s = `${ codeKey } no map`;
-    
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  const
-  
-    category =
-    
-      twc
+      const
       
-        .pctm
+        version = '0.7.1',
+      
+        s = `
         
-        [ collectionId ]
+          Store Page List Category Description Add v${ version }
         
-        .filter (
-        
-          c =>
+          License < https://tinyurl.com/s872fb68 >
           
-            c.nameEncoded
-            
-            ===
+          © 2021-2026 Thomas Creedon
           
-            (
+          'Tom\'s Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        context = Static.SQUARESPACE_CONTEXT,
+        
+        templateId = context.templateId,
+        
+        templateIdSelectorMap = {
+        
+          // Avenue
+          
+          '4fd11f32c4aad9b01c9e624c' :
+          
+            '#productList',
             
-              searchParams
+          // Bedford family
+          
+          '52a74dafe4b073a80cd253c5' :
+          
+            '#productList',
+            
+          // Wells
+          
+          '4f9adc1524ac5df956fdf98f' :
+          
+            '#productList',
+            
+          // Brine, Skye
+          
+          '55f0aac0e4b0f0a5b7e0b22e' :
+          
+            '.ProductList-grid',
+            
+          '54d3906fe4b04c1c9981b00e' :
+          
+            '.ProductList-grid',
+            
+          },
+          
+        isTemplate =
+        
+          templateId
+          
+          in
+          
+          templateIdSelectorMap;
+          
+      // bail if not template
+      
+      if ( ! isTemplate ) return;
+      
+      const isStorePage = context
+      
+        .collection
+        
+        ?.type
+        
+        ===
+        
+        13;
+        
+      // bail if not store page
+      
+      if ( ! isStorePage ) return;
+      
+      const isList = ! context.item?.id;
+      
+      // bail if not list page
+      
+      if ( ! isList ) return;
+      
+      const
+      
+        searchParams =
+        
+          new URLSearchParams (
+          
+            location.search
+            
+            ),
+            
+        isTag = searchParams
+        
+          .has ( 'tag' );
+      
+      // bail if tag
+      
+      if ( isTag ) return;
+      
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc pctm sub-module
+        
+        twc.pctm = twc.pctm || { };
+        
+        // initialize twc splcda sub-module
+        
+        twc.splcda = twc.splcda || { };
+        
+        }
+        
+      const
+      
+        codeKey = 'twc-splcda',
+        
+        options = codeKey
+        
+          .split ( /-(.*)/ )
+          
+          .filter ( Boolean )
+          
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
+            
+            window
+            
+            ),
+            
+        map = options.map;
+        
+      // bail if no map
+      
+      if ( ! map ) {
+      
+        const s = `${ codeKey } no map`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      const
+      
+        collectionId = context.collectionId,
+        
+        normalizeWhitespace = s =>
+        
+          s
+          
+            .trim ( )
+            
+            .replace ( /\s+/gm, ' ' ),
+            
+        getData = async ( url ) => {
+        
+          try {
+          
+            const response =
+            
+              await fetch ( url );
               
-                .get ( 'category' )
+            if ( ! response.ok ) {
+            
+              const s =
+              
+                normalizeWhitespace (
                 
-              ??
+                  `
+                    
+                    ${ codeKey } network
+                    
+                    response was not ok
+                    
+                    ${
+                    
+                      response.statusText
+                      
+                      }
+                      
+                    `
+                    
+                  );
+                  
+              throw new Error ( s );
               
-              'all'
+              }
               
+            const data =
+            
+              await response.json ( );
+              
+            return data;
+            
+            } catch ( error ) {
+            
+              const s =
+              
+                normalizeWhitespace (
+                
+                  `
+                  
+                    ${ codeKey } there has
+                    
+                    been a problem with
+                    
+                    your fetch get
+                    
+                    operation, ${ error }.
+                    
+                    `
+                    
+                  );
+                  
+              console.error ( s );
+              
+              return null;
+              
+              }
+              
+          };
+          
+        initialize = async ( ) => {
+        
+          const
+          
+            categories = twc
+            
+              .pctm
+              
+              [ collectionId ];
+              
+          // bail if no categories
+          
+          if ( ! categories ) {
+          
+            const s =
+            
+              `${ codeKey } no categories`;
+              
+            console.warn ( s );
+            
+            return;
+            
+            }
+            
+          const category =
+          
+            twc
+            
+              .pctm
+              
+              [ collectionId ]
+              
+              .filter (
+              
+                c =>
+                
+                  c.nameEncoded
+                  
+                  ===
+                
+                  (
+                  
+                    searchParams
+                    
+                      .get ( 'category' )
+                      
+                    ??
+                    
+                    'all'
+                    
+                    )
+                    
+                )
+                
+              [ 0 ];
+              
+          let url = map [ category?.name ];
+          
+          // bail if no url
+          
+          if ( ! url ) {
+          
+            const s = `${ codeKey } no url`;
+              
+            console.warn ( s );
+            
+            return;
+            
+            }
+            
+          let html = await getData (
+          
+            `/${ url }?format=json`
+            
+            );
+            
+          // bail if no content
+          
+          if ( ! html ) {
+          
+            const s = `${ codeKey } no html`;
+            
+            console.warn ( s );
+            
+            return;
+            
+            }
+            
+          html = html
+          
+            .mainContent
+            
+            .replace (
+            
+              'class="',
+              
+              `class="${ codeKey } `,
+              
+              );
+          
+          document
+          
+            .body
+            
+            .querySelector (
+            
+              options.selector !== ''
+              
+              ?
+              
+              options.selector
+              
+              :
+              
+              templateIdSelectorMap [
+              
+                templateId
+                
+                ]
+                
               )
               
-          )
-          
-        [ 0 ];
-        
-  let url = map [ category?.name ];
-    
-  // bail if no url
-  
-  if ( ! url ) {
-  
-    const s = `${ codeKey } no url`;
-      
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  url = `/${ url }?format=json`;
-  
-  const
-  
-    normalizeWhitespace = s =>
-    
-      s
-      
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' ),
-        
-    getData = async ( ) => {
-    
-      try {
-      
-        const response =
-        
-          await fetch ( url );
-          
-        if ( ! response.ok ) {
-        
-          const s =
-          
-            normalizeWhitespace (
+            .insertAdjacentHTML (
             
-              `
-                
-                ${ codeKey } network
-                
-                response was not ok
-                
-                ${
-                
-                  response.statusText
-                  
-                  }
-                  
-                `
-                
+              options.insertPosition,
+              
+              html
+              
               );
               
-          throw new Error ( s );
+          };
           
-          }
-          
-        const data =
-        
-          await response.json ( );
-          
-        return data;
-        
-        } catch ( error ) {
-        
-          const s =
-          
-            normalizeWhitespace (
-            
-              `
-              
-                ${ codeKey } there has
-                
-                been a problem with
-                
-                your fetch get
-                
-                operation, ${ error }.
-                
-                `
-                
-              );
-              
-          console.error ( s );
-          
-          return null;
-          
-          }
-          
-      };
+      Squarespace.onInitialize (
       
-  let html = await getData ( );
-  
-  // bail if no content
-  
-  if ( ! html ) {
-  
-    const s = `${ codeKey } no html`;
-    
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  html = html
-  
-    .mainContent
-    
-    .replace (
-    
-      'class="',
-      
-      `class="${ codeKey } `,
-      
-      );
-  
-  const
-  
-    initialize = ( ) => {
-    
-      document
-      
-        .body
+        Y,
         
-        .querySelector (
+        initialize
         
-          options.selector !== ''
-          
-          ?
-          
-          options.selector
-          
-          :
-          
-          templateIdSelectorMap [
-          
-            templateId
-            
-            ]
-            
-          )
-          
-        .insertAdjacentHTML (
+        );
         
-          options.insertPosition,
-          
-          html
-          
-          );
-          
-      };
-      
-  Squarespace.onInitialize (
-  
-    Y,
+      } ) ( );
     
-    initialize
+    </script>
     
-    );
-    
-  } ) ( );
+  <!-- end TWC Store Page List Category Description Add -->

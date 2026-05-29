@@ -8,7 +8,7 @@ Add a category description to Store category pages.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Version
 
@@ -117,12 +117,29 @@ Add a category description to Store category pages.
         Code Injection > FOOTER. Refer to [Add code to code injection][16] for
         details.
 
+## How to Use
+
+Create a new Dropdown Page. Set Title to **TWC Store Page List Categories
+Add** and URL Slug to **twc-splcda**.
+
+In the Dropdown Page create Blank Pages, one for each Store Page Category where
+you want to add a description. Note the URL Slug for use in the options
+code. While the Blank Pages you create can be free form in regards to the
+Settings, you may want to use URL Slugs of the form **twc-splcda/red** to keep
+things organized and to remind you that the Page is being used by this code.
+
 ## Make a Donation
 
 Please consider [making a donation][17].
 
 ## Changes
 
+* **2026-05-29**
+
+  * reworked code to be more flexible where page categories to modules code is
+    placed
+  * bumped version to 0.7.1
+  
 * **2026-05-29**
 
   * updated to use Blank Pages as source for description

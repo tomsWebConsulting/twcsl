@@ -1,4 +1,4 @@
-( async ( ) => {
+( ( ) => {
 
   // debugger;
   
@@ -8,7 +8,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.7.0
+    Version           : 0.7.1
     
     SS Version        : 7.0
     
@@ -43,7 +43,7 @@
     
   const
   
-    version = '0.7.0',
+    version = '0.7.1',
   
     s = `
     
@@ -149,42 +149,24 @@
   
   if ( isTag ) return;
   
-  // initialize twc module
+  // globals
   
-  window.twc = window.twc || { };
+  {
   
-  // initialize twc pctm sub-module
-  
-  twc.spdvsc = twc.pctm || { };
-  
-  const
-  
-    collectionId = context.collectionId,
+    // initialize twc module
     
-    categories = twc
+    window.twc = window.twc || { };
     
-      .pctm
-      
-      [ collectionId ];
-      
-  // bail if no categories
-  
-  if ( ! categories ) {
-  
-    const s =
+    // initialize twc pctm sub-module
     
-      `${ codeKey } no categories`;
-      
-    console.warn ( s );
+    twc.pctm = twc.pctm || { };
     
-    return;
+    // initialize twc splcda sub-module
+    
+    twc.splcda = twc.splcda || { };
     
     }
     
-  // initialize twc splcda sub-module
-  
-  twc.splcda = twc.splcda || { };
-  
   const
   
     codeKey = 'twc-splcda',
@@ -219,56 +201,8 @@
     
   const
   
-    category =
+    collectionId = context.collectionId,
     
-      twc
-      
-        .pctm
-        
-        [ collectionId ]
-        
-        .filter (
-        
-          c =>
-          
-            c.nameEncoded
-            
-            ===
-          
-            (
-            
-              searchParams
-              
-                .get ( 'category' )
-                
-              ??
-              
-              'all'
-              
-              )
-              
-          )
-          
-        [ 0 ];
-        
-  let url = map [ category?.name ];
-    
-  // bail if no url
-  
-  if ( ! url ) {
-  
-    const s = `${ codeKey } no url`;
-      
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  url = `/${ url }?format=json`;
-  
-  const
-  
     normalizeWhitespace = s =>
     
       s
@@ -277,7 +211,7 @@
         
         .replace ( /\s+/gm, ' ' ),
         
-    getData = async ( ) => {
+    getData = async ( url ) => {
     
       try {
       
@@ -345,36 +279,106 @@
           
       };
       
-  let html = await getData ( );
-  
-  // bail if no content
-  
-  if ( ! html ) {
-  
-    const s = `${ codeKey } no html`;
+    initialize = async ( ) => {
     
-    console.warn ( s );
-    
-    return;
-    
-    }
-    
-  html = html
-  
-    .mainContent
-    
-    .replace (
-    
-      'class="',
+      const
       
-      `class="${ codeKey } `,
+        categories = twc
+        
+          .pctm
+          
+          [ collectionId ];
+          
+      // bail if no categories
       
-      );
-  
-  const
-  
-    initialize = ( ) => {
-    
+      if ( ! categories ) {
+      
+        const s =
+        
+          `${ codeKey } no categories`;
+          
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      const category =
+      
+        twc
+        
+          .pctm
+          
+          [ collectionId ]
+          
+          .filter (
+          
+            c =>
+            
+              c.nameEncoded
+              
+              ===
+            
+              (
+              
+                searchParams
+                
+                  .get ( 'category' )
+                  
+                ??
+                
+                'all'
+                
+                )
+                
+            )
+            
+          [ 0 ];
+          
+      let url = map [ category?.name ];
+      
+      // bail if no url
+      
+      if ( ! url ) {
+      
+        const s = `${ codeKey } no url`;
+          
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      let html = await getData (
+      
+        `/${ url }?format=json`
+        
+        );
+        
+      // bail if no content
+      
+      if ( ! html ) {
+      
+        const s = `${ codeKey } no html`;
+        
+        console.warn ( s );
+        
+        return;
+        
+        }
+        
+      html = html
+      
+        .mainContent
+        
+        .replace (
+        
+          'class="',
+          
+          `class="${ codeKey } `,
+          
+          );
+      
       document
       
         .body
