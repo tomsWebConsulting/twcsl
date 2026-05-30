@@ -1,26 +1,18 @@
-# Store Page Detail Additional Info Footer Section Append
+# Store Page Detail Page Sections Append Footer Section
 
 ### [License][1]
 
 ### Synopsis
 
-Append footer section to Store page Additional Info.
+Append Footer Section to Store Page detail Page Sections.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-  
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -36,36 +28,138 @@ Append footer section to Store page Additional Info.
   continue on with the rest of the steps.
   
 * Options
+ 
+  * CDN Hosted
+  
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][6], a [CDN][7])
+    
+    * Options
+    
+      * Page Specific
+      
+        Use this option if you want to have this effect on only one Store Page.
+        
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the Store Page.Refer to [per-page code
+          injection][8] for details.
+          
+          ```html
+          <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
+            
+            <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
+            
+          ```
+      
+        * Add code from file **[store page detail page sections append footer
+          section.js][9]** to the **elements manipulate options** code.
+          
+      * Site-wide
+      
+        Use this option if you want to have this effect on all Store Pages.
+        
+        * v7.1
+        
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
+              
+              <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
+              
+            ```
+            
+        * v7.0
+        
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.js" type="module"></script>
+              
+              <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
+              
+            ```
+            
+        * Refer to [Add code to code injection][10] for details.
+        
+        * Add code from file **[store page detail page sections append footer
+          section.js][9]** to the **elements manipulate options** code.
+          
+  * On-site
+  
+    Use this option to install the full code of this effect (files hosted on
+    your site).
+    
+    * Page Specific
+    
+      Use this option if you want to have this effect on only one Store Page.
+      
+      * Add code from file **[store page detail page sections append footer
+        section.css][11]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Refer to [per-page code
+        injection][8] for details.
+        
+      * Add code from file **[store page detail page sections append footer
+        section.js][9]** to the **elements manipulate options** code.
+        
+    * Site-wide
+    
+      Use this option if you want to have this effect on all Store Pages.
+      
+      * v7.1
+      
+        * Add code from file **[store page detail page sections append footer
+          section.css][11]** to Website > Pages > Custom Code > Code Injection >
+          FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[store page detail page sections append footer
+          section.css][11]** to Website > Pages > Website Tools > Custom Code >
+          Code Injection > FOOTER.
+          
+      * Refer to [Add code to code injection][10] for details.
+        
+      * Add code from file **[store page detail page sections append footer
+        section.js][9]** to the **elements manipulate options** code.
 
-  * Page Specific
-  
-    * Use this option if you want to have this effect on only one Store page.
-      
-    * Add code from file **[store page detail additional info footer section
-      append.html][6]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the Page. Refer to [per-page code
-      injection][7] for details.
-      
-    * Add code from file **[store page detail additional info footer section
-      append.js][8]** to the **elements manipulate options** code.
-      
-  * Site-wide
-  
-    * Use this option if you want to have this effect on all Store pages.
-      
-    * Add code from file **[store page detail additional info footer section
-      append.css][9]** to Website > Pages > Custom Code > Custom CSS. Refer to
-      [Using the CSS Editor][10] for details.
-      
-    * Add code from file **[store page detail additional info footer section
-      append.js][8]** to the **elements manipulate options** code.
+## How to Use
+
+For Footer Sections you want to append to Page Sections add a Code Block with
+Content set to the following.
+
+```html
+<x-twc-spdpsafs />
+```
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-04-23**
+
+  * updated to work with Squarespace removal of additional info in product
+    editor
+  * bumped version to 0.4.0
+  
 * **2025-12-05**
 
   * updated to use elements manipulate
@@ -80,9 +174,9 @@ Please consider [making a donation][11].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate#elements-manipulate
-[6]: store%20page%20detail%20additional%20info%20footer%20section%20append.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: store%20page%20detail%20additional%20info%20footer%20section%20append.js#L1
-[9]: store%20page%20detail%20additional%20info%20footer%20section%20append.css#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[9]: store%20page%20detail%20page%20sections%20append%20footer%20section.html#L1
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: store%20page%20detail%20page%20sections%20append%20footer%20section.css#L1

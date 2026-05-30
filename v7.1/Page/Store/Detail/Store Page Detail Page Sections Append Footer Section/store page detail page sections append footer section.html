@@ -1,25 +1,18 @@
-<!-- begin TWC Store Page Detail Additional Info Footer Section Append -->
+<!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
 
   <style>
   
     /*
     
-      store page detail additional info footer section append
+      store page detail page sections append footer section
       
       License         : < https://tinyurl.com/s872fb68 >
       
-      Version         : 0.3.0
+      Version         : 0.4.0
       
       SS Version      : 7.1
       
-      Products V2
-      Compatible      : Yes
-      
-      Fluid
-      Engine
-      Compatible      : Yes
-      
-      Copyright       : 2021-2025 Thomas Creedon
+      Copyright       : 2021-2026 Thomas Creedon
                         
                         Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
@@ -27,12 +20,19 @@
       
       */
       
-    body:not( .sqs-edit-mode-active ) #footer-sections [ data-test="page-section" ]:has( x-twc-fsspdaia ) {
+    body {
     
-      display : none;
+      &.sqs-edit-mode-active #page-regions .region:nth-child( 2 ) [data-test="page-section"]:has( x-twc-spdpsafs ),
+      &:not( .sqs-edit-mode-active ) #footer-sections [data-test="page-section"]:has( x-twc-spdpsafs )
       
+        {
+          
+          display : none;
+          
+          }
+          
       }
       
     </style>
     
-  <!-- end TWC Store Page Detail Additional Info Footer Section Append -->
+  <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
