@@ -16,7 +16,9 @@ const isDetail
 
   Example Usage :
   
-    if ( ! isDetail ) return; // bail if not detail
+    // bail if not detail
+    
+    if ( ! isDetail ) return;
     
   
   License       : < https://tinyurl.com/s872fb68 >
