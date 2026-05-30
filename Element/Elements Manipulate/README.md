@@ -9,21 +9,13 @@ append, before, prepend, or replace and other settings.
 
 ### Version
 
-  * 0.12.0
+  * 0.13.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
-  
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -58,8 +50,8 @@ append, before, prepend, or replace and other settings.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add code from file **[elements manipulate options.html][8]** to Page
           Settings > Advanced > Page Header Code Injection for the Page. Read
           the code for any instructions within.
@@ -82,8 +74,8 @@ append, before, prepend, or replace and other settings.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Store pages.
-          
+        Use this option if you want to have this effect on all Store pages.
+        
         * v7.1
         
           * Add code from file **[elements manipulate options.html][8]** to
@@ -133,8 +125,8 @@ append, before, prepend, or replace and other settings.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[elements manipulate options.html][8]** to Page
         Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
@@ -146,8 +138,8 @@ append, before, prepend, or replace and other settings.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * v7.1
       
         * Add code from file **[elements manipulate options.html][8]** to Page
@@ -172,11 +164,11 @@ append, before, prepend, or replace and other settings.
 
 * v7.1
 
-  * [Product Additional Info First N Blocks to End Of Product Meta][12]
+  * [Product Detail Page Last Page Section First N Blocks to End of Product Meta][12]
   
-  * [Product Additional Info First Row Video Block Before Quantity][13]
+  * [Product Detail Page Last Page Section First Video Block Before Quantity][13]
   
-  * [Product Additional Info Specific Video Block Before Quantity][14]
+  * [Product Detail Page Specific Video Block Before Quantity][14]
 
 ## Effects Dependent on Elements Manipulate
 
@@ -186,7 +178,7 @@ append, before, prepend, or replace and other settings.
   
   * [Footer Sections Append to Page Observe][16]
   
-  * [Store Page Detail Additional Info Footer Section Append][17]
+  * [Store Page Detail Page Sections Append Footer Section][17]
   
   * [Store Page Detail Footer Section Append][18]
 
@@ -214,7 +206,7 @@ Refer to [Add code to code injection][10]. Order is not important.
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2022-2025 Thomas Creedon
+          © 2022-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -226,11 +218,11 @@ Refer to [Add code to code injection][10]. Order is not important.
       
       // initialize twc module
       
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      window.twc = window.twc || { };
       
       // initialize twc em sub-module
       
-      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      twc.em = twc.em || { };
       
       // initialize twc em callbacks sub-module
       
@@ -272,7 +264,7 @@ Refer to [Add code to code injection][10]. Order is not important.
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2022-2025 Thomas Creedon
+          © 2022-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -284,11 +276,11 @@ Refer to [Add code to code injection][10]. Order is not important.
       
       // initialize twc module
       
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      window.twc = window.twc || { };
       
       // initialize twc em sub-module
       
-      twc.em = ( ( self ) => self ) ( twc.em || { } );
+      twc.em = twc.em || { };
       
       // initialize twc em callbacks sub-module
       
@@ -324,6 +316,13 @@ Please consider [making a donation][20].
 
 ## Changes
 
+* **2026-05-29**
+
+  * updated options data structure templates to work with Squarespace removal of
+    additional info in product editor
+  * lifted functions to reduce nesting
+  * bumped version to 0.13.0
+  
 * **2025-12-07**
 
   * added feature to process source element through callbacks in a pipeline
@@ -419,7 +418,7 @@ Please consider [making a donation][20].
 [14]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
 [15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
 [16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
-[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Additional%20Info%20Footer%20Section%20Append#store-page-detail-additional-info-footer-section-append
+[17]: https://github.com/tomsWebConsulting/twcsl/tree/main//Users/creedon/Documents/Projects/Squarespace/Site/twcsl/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
 [18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append#store%20page%20detail%20footer%20section%20append
 [19]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

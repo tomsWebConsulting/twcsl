@@ -1,12 +1,12 @@
         /*
         
-          product additional info specific video block before quantity
+          product detail page specific video block before quantity
           
           License         : < https://tinyurl.com/s872fb68 >
           
           SS Version      : 7.1
           
-          Copyright       : 2022-2025 Thomas Creedon
+          Copyright       : 2022-2026 Thomas Creedon
                             
                             Tom's Web Consulting
                             
@@ -14,7 +14,7 @@
           
           */
           
-        '[[ enter block id here between single quotes replacing square brackets ]]' : {
+        '[ enter block id here between single quotes replacing square brackets ]' : {
         
           // sourceAncestorSelector is optional, use when you want to first find
           // a source element but then work up the ancestor hierarchy to

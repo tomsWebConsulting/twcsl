@@ -1,30 +1,23 @@
 ( ( ) => {
 
+  // debugger
+  
   /*!
   
     elements manipulate
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.12.0
+    Version         : 0.13.0
     
     SS Versions     : 7.1, 7.0
-    
-    v7.1
-    Products V2
-    Compatible      : Yes
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Yes
     
     Note            : this code is a base for other effects. you will want
                       to create CSS to hide and show elements. after an
                       element is replaced the class twc-em-show will be
                       added to it which can be used to show elements
     
-    Copyright       : 2022-2025 Thomas Creedon
+    Copyright       : 2022-2026 Thomas Creedon
                       
                       Tom's Web Consulting
                       
@@ -36,7 +29,7 @@
     
   const
   
-    version = '0.12.0',
+    version = '0.13.0',
     
     s = `
     
@@ -44,7 +37,7 @@
     
       License < https://tinyurl.com/s872fb68 >
       
-      © 2022-2025 Thomas Creedon
+      © 2022-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -54,37 +47,127 @@
       
   console.log ( s );
   
-  const callback = ( ) => {
+  let observer;
   
-    // globals
+  const
+  
+    codeKey = 'twc-em',
     
-    {
+    processNode =
     
-      // initialize twc module
+      ( currentNode, callbackName ) => {
       
-      window.twc = ( ( self ) => self ) ( window.twc || { } );
-      
-      // initialize twc em sub-module
-      
-      twc.em = ( ( self ) => self ) ( twc.em || { } );
-      
-      // initialize twc em callbacks sub-module
-      
-      twc.em.callbacks = ( ( self ) => self ) ( twc.em.callbacks || { } );
-      
-      // initialize twc em maps sub-module
-      
-      twc.em.maps = ( ( self ) => self ) ( twc.em.maps || [ ] );
-      
-      }
-      
-    const maps = twc.em.maps;
+        try {
+        
+          const resultNode = codeKey
+            
+            .split ( '-' )
+            
+            .reduce (
+            
+              ( obj, key ) =>
+              
+                obj?.[ key ],
+                
+              window
+              
+              )
+              
+            .callbacks
+            
+            [ callbackName ]
+            
+            ( currentNode );
+            
+          return resultNode;
+          
+          } catch ( error ) {
+          
+            const s =
+            
+              `${ codeKey } ${
+              
+                callbackName
+                
+                } callback error`;
+                
+            console.error (
+            
+              s, error
+              
+              );
+              
+            }
+            
+        },
+        
+    replaceNode = ( node, newNode ) => {
     
-    if ( ! maps.length ) return; // bail if no maps
+      node.insertAdjacentElement (
+      
+        'beforebegin',
+        
+        newNode
+        
+        );
+        
+      node.remove ( );
+      
+      },
+      
+    runCallbacksPipeline =
     
-    const
+      ( node, callbacks ) => {
+      
+        const
+        
+          finalNode = callbacks.reduce (
+          
+            processNode, node
+            
+            );
+            
+        return finalNode;
+        
+        },
+        
+    selectorObjectCallback =
     
-      actionCallback = ( sourceElement, object ) => {
+      ( selector, object ) => {
+      
+        let i = 1;
+        
+        object.repeat++;
+        
+        while ( i < object.repeat ) {
+        
+          document
+          
+            .querySelectorAll (
+            
+              selector
+              
+              )
+              
+            .forEach (
+            
+              e => actionCallback (
+              
+                e, object
+                
+                )
+                
+              );
+              
+          i++;
+          
+          }
+          
+        },
+        
+    actionCallback =
+    
+      ( sourceElement, object ) => {
       
         const
         
@@ -96,8 +179,14 @@
             
             new RegExp ( '^\\[.+\\]$' )
             
-              .test ( object.destinationAncestorSelector ),
+              .test (
               
+                object
+                
+                  .destinationAncestorSelector
+                  
+                  ),
+                  
           hasSourceAncestorSelector
           
             =
@@ -106,8 +195,14 @@
             
             new RegExp ( '^\\[.+\\]$' )
             
-              .test ( object.sourceAncestorSelector ),
+              .test (
               
+                object
+                
+                  .sourceAncestorSelector
+                  
+                  ),
+                  
           isDestinationSource
           
             =
@@ -116,42 +211,26 @@
                 
               .destinationSelector
               
-            ===
-            
-            `x-${ codeKey }-source`;
-            
+              ===
+              
+              `x-${ codeKey }-source`;
+              
         let
         
           destinationElement,
           
-          isSourceCopy = object.sourceCopy,
+          isSourceCopy =
           
+            object.sourceCopy,
+            
           rootElement = document,
           
           sourceCopyElement;
           
-        if ( hasDestinationAncestorSelector )
-        
-          destinationElement
-          
-            =
-            
-            destinationElement
-            
-              .closest (
-              
-                object
-                
-                  .destinationAncestorSelector
-                  
-                );
-                
         if ( hasSourceAncestorSelector )
         
-          sourceElement
+          sourceElement =
           
-            =
-            
             sourceElement
             
               .closest (
@@ -164,10 +243,14 @@
                 
         if ( isSourceCopy )
         
-          sourceCopyElement = sourceElement
+          sourceCopyElement =
           
-            .cloneNode ( true );
+            sourceElement.cloneNode (
             
+              true
+              
+              );
+              
         if ( ! isDestinationSource ) {
         
           const hasRootSelector
@@ -178,18 +261,24 @@
             
             new RegExp ( '^\\[.+\\]$' )
             
-              .test ( object.rootSelector );
+              .test (
               
+                object.rootSelector
+                
+                );
+                
           if ( hasRootSelector )
           
             rootElement = sourceElement
             
-              .closest ( object.rootSelector );
+              .closest (
               
-          destinationElement
+                object.rootSelector
+                
+                );
+                
+          destinationElement =
           
-            =
-            
             rootElement
             
               .querySelector (
@@ -202,12 +291,16 @@
                 
           // continue if no destination
           
-          if ( destinationElement === null ) return;
+          if ( ! destinationElement )
           
+            return;
+            
           } else
           
-            destinationElement = sourceElement;
+            destinationElement =
             
+              sourceElement;
+              
         const
         
           action = object.action,
@@ -220,8 +313,10 @@
             
         if ( isSourceCopy && ! hasCallbacks )
         
-          sourceElement = sourceCopyElement;
+          sourceElement =
           
+            sourceCopyElement;
+            
           else
           
             sourceElement
@@ -238,10 +333,28 @@
                 
         if ( object.onEditModeRemove )
         
-          sourceElement
+          sourceElement.setAttribute (
           
-            .setAttribute ( attribute, '' );
+            attribute,
             
+            ''
+            
+            );
+            
+        if ( hasDestinationAncestorSelector )
+        
+          destinationElement =
+          
+            destinationElement
+            
+              .closest (
+              
+                object
+                
+                  .destinationAncestorSelector
+                  
+                );
+                
         switch ( action ) {
         
           case 'after' :
@@ -302,135 +415,31 @@
             
           case 'replace' :
           
-            replaceNode ( destinationElement, sourceElement );
+            replaceNode (
             
+              destinationElement,
+              
+              sourceElement
+              
+              );
+              
             break;
             
           }
           
         },
         
-      codeKey = 'twc-em',
-      
-      mapsCallback = ( object ) => {
-      
-        for ( const [ key, value ] of Object.entries ( object ) ) {
-        
-          selectorObjectCallback ( key, value );
-          
-          }
-          
-        },
-        
-      replaceNode = ( node, newNode ) => {
-      
-        node
-        
-          .insertAdjacentElement (
-          
-            'beforebegin',
-            
-            newNode
-            
-            );
-            
-        node.remove ( );
-        
-        },
-        
-      runCallbacksPipeline = ( node, callbacks ) => {
-      
-        const
-        
-          processNode = ( currentNode, callbackName ) => {
-          
-            try {
-            
-              const resultNode = codeKey
-                
-                .split ( '-' )
-                
-                .reduce ( ( obj, key ) => obj?.[ key ], window )
-                
-                .callbacks
-                
-                [ callbackName ]
-                
-                ( currentNode );
-                
-              return resultNode;
-              
-              } catch ( error ) {
-              
-                const s =
-                
-                  `${ codeKey } ${ callbackName } callback error`;
-                  
-                console.error ( s, error );
-                
-                }
-                
-            },
-            
-          finalNode = callbacks
-          
-            .reduce ( processNode, node );
-            
-        return finalNode;
-        
-        },
-        
-      selectorObjectCallback = ( selector, object ) => {
-      
-        let i = 1;
-        
-        object.repeat++
-        
-        while ( i < object.repeat ) {
-        
-          document
-          
-            .querySelectorAll ( selector )
-            
-            .forEach (
-            
-              e => actionCallback ( e, object )
-              
-              );
-              
-          i++;
-          
-          }
-          
-        },
-        
-      attribute = `data-${ codeKey }-source-copy`;
-      
-    maps.forEach ( mapsCallback );
+    attribute = `data-${
     
-    const isPreview
+      codeKey
+      
+      }-source-copy`,
+      
+    handleMutation = ( mutation ) => {
     
-      =
+      const isClassAttribute =
       
-      !!
-      
-      window
-      
-        .top
-        
-        .document
-        
-        .body
-        
-        .querySelector ( 'iframe#sqs-site-frame' );
-        
-    if ( ! isPreview ) return; // bail if not preview
-    
-    const
-    
-      handleMutation = ( mutation ) => {
-      
-        const isClassAttribute = mutation
+        mutation
         
           .attributeName
           
@@ -438,64 +447,154 @@
           
           'class';
           
-        // bail if not class attribute
+      // bail if not class attribute
+      
+      if ( ! isClassAttribute )
+      
+        return true;
         
-        if ( ! isClassAttribute ) return true;
+      const 
+      
+        element = mutation.target,
         
-        const 
+        isEditing = element
         
-          element = mutation.target,
+          .classList
           
-          isEditMode = element
+          .contains ( 'sqs-is-page-editing' );
           
-            .classList
+      // bail if not editing
+      
+      if ( ! isEditing ) return true;
+      
+      element
+      
+        .querySelectorAll (
+        
+          `[ ${ attribute } ]`
+          
+          )
+          
+        .forEach ( e => e.remove ( ) );
+        
+      observer.disconnect ( );
+      
+      return false;
+      
+      },
+      
+    mapsCallback = ( object ) => {
+    
+      const entries =
+      
+        Object.entries ( object );
+        
+      for (
+      
+        const [ key, value ] of entries
+        
+        ) {
+      
+          selectorObjectCallback (
+          
+            key,
             
-            .contains ( 'sqs-is-page-editing' );
+            value
             
-        if ( ! isEditMode ) return true; // bail if not edit mode
-        
-        element
-        
-          .querySelectorAll ( `[ ${ attribute } ]` )
+            );
+            
+          }
           
-          .forEach ( e => e.remove ( ) );
-          
-        observer.disconnect ( );
+      },
+      
+    domContentLoadedCallback = ( ) => {
+    
+      // globals
+      
+      {
+      
+        // initialize twc module
         
-        return false;
+        window.twc = window.twc || { };
         
-        };
+        // initialize twc em sub-module
         
+        twc.em = twc.em || { };
+        
+        // initialize twc em callbacks sub-module
+        
+        twc.em.callbacks = twc.em.callbacks || { };
+        
+        // initialize twc em maps sub-module
+        
+        twc.em.maps = twc.em.maps || [ ];
+        
+        }
+        
+      const maps = twc.em.maps;
+      
+      if ( ! maps.length ) return; // bail if no maps
+      
+      maps.forEach ( mapsCallback );
+      
+      const isEditMode = document
+      
+        .body
+        
+        .classList
+        
+        .contains ( 'sqs-edit-mode' );
+        
+      // bail if not edit mode
+      
+      if ( ! isEditMode ) return;
+      
       observer = new MutationObserver (
       
         ( mutations ) => {
         
-          for ( const mutation of mutations ) {
+          for (
           
-            const isContinue = handleMutation ( mutation );
+            const mutation of mutations
             
-            if ( ! isContinue ) break; // bail if callback returns false
+            ) {
             
+              const isContinue =
+              
+                handleMutation (
+                
+                  mutation
+                  
+                  );
+                  
+              // bail if callback returns false
+              
+              if ( ! isContinue ) break;
+              
+              }
+              
             }
             
-          }
-          
         );
         
-    // start listening for changes in specified elements
-    
-    observer.observe (
-    
-      document.body,
+      // start listening for changes in specified elements
       
-      { attributes : true }
+      observer.observe (
       
-      );
+        document.body,
+        
+        { attributes : true }
+        
+        );
+        
+      };
       
-    };
-    
-  document
+  document.addEventListener (
   
-    .addEventListener ( 'DOMContentLoaded', callback );
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
     
   } ) ( );

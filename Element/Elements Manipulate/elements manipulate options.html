@@ -2,114 +2,120 @@
 
   <script>
   
-    /*
+    ( ( ) => {
     
-      elements manipulate options
+      /*
       
-      License         : < https://tinyurl.com/s872fb68 >
-      
-      Version         : 0.12.0
-      
-      SS Versions     : 7.0, 7.1
-      
-      Copyright       : 2022-2025 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc em sub-module
-    
-    twc.em = ( ( self ) => self ) ( twc.em || { } );
-    
-    // initialize twc em maps sub-module
-    
-    twc.em.maps = ( ( self ) => {
-    
-      const map = {
-      
-        /*
+        elements manipulate options
         
-          the format of each data structure is a source selector, optional
-          source ancestor selector, source copy, destination selector, optional
-          destination ancestor selector, optional root selector, action, and
-          optional callback(s)
-          
-          following is an example data structure. copy the example data
-          structure below and paste after the example data structure. remove the
-          forward slash asterisk and asterisk forward slash lines from before
-          and after the example data structure. repeat for as many as many
-          elements as you need to manipulate.
-          
-          */
-          
-        /* '[ enter source selector here between single quotes replacing square brackets ]' : {
+        License         : < https://tinyurl.com/s872fb68 >
         
-          // optional - sourceAncestorSelector, use when you want to first find
-          // a source element but then manipulate an ancestor element
-          
-          sourceAncestorSelector : '[ optional - enter source ancestor selector here between single quotes replacing square brackets ]',
-          
-          // sourceCopy when true will make a copy of the source element and use
-          // it instead of the actual sourceSelector. value is false or true
-          
-          sourceCopy : false,
-          
-          // destinationSelector, use the selector x-twc-em-source to use the
-          // sourceSelector as the destination
-          
-          destinationSelector : '[ enter destination selector here between single quotes replacing square brackets ]',
-          
-          // optional - destinationAncestorSelector, use when you want to first
-          // find a destination element but then manipulate an ancestor element
-          
-          destinationAncestorSelector : '[ enter optional destination ancestor selector here between single quotes replacing square brackets ]',
-          
-          // optional - rootSelector, use when you want the source and
-          // destination elements to have a common ancestor element
-          
-          rootSelector : '[ optional - enter root selector here between single quotes replacing square brackets ]',
-          
-          // action value is after, append, before, prepend or replace
-          
-          action : 'append',
-          
-          // repeat is a number. the number of times to repeat this specific
-          // element manipulation
-          
-          repeat : 1,
-          
-          // onEditModeRemove value is true or false. when true the source
-          // element will be removed
-          
-          onEditModeRemove : false,
-          
-          // callbacks is optional, use when you want to manipulate the
-          // structure of the source element. the value is an array. you can add
-          // one or multiple callback names. when adding multiple callback names
-          // separate the names with commas. some examples...
-          //
-          // [ 'callback' ]
-          //
-          // [ 'callback1', 'callback2', 'callback3' ]
-          //
-          // your callbacks must accept and return a node
-          
-          callbacks : [ ]
-          
-          }, */
-          
-        };
+        Version         : 0.13.0
         
-      self.push ( map );
+        SS Versions     : 7.1, 7.0
+        
+        Copyright       : 2022-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
       
-      return self;
+      window.twc = window.twc || { };
       
-      } ) ( twc.em.maps || [ ] );
+      // initialize twc em sub-module
+      
+      twc.em = twc.em || { };
+      
+      // initialize twc em maps sub-module
+      
+      twc.em.maps = ( ( self ) => {
+      
+        const map = {
+        
+          /*
+          
+            the format of each data structure is a source selector, optional
+            source ancestor selector, source copy, destination selector,
+            optional destination ancestor selector, optional root selector,
+            action, and optional callback(s)
+            
+            following is an example data structure. copy the example data
+            structure below and paste after the example data structure. remove
+            the forward slash asterisk and asterisk forward slash lines from
+            before and after the example data structure. repeat for as many as
+            many elements as you need to manipulate
+            
+            */
+            
+          /* '[ enter source selector here between single quotes replacing square brackets ]' : {
+          
+            // optional - sourceAncestorSelector, use when you want to first find
+            // a source element but then manipulate an ancestor element
+            
+            sourceAncestorSelector : '[ optional - enter source ancestor selector here between single quotes replacing square brackets ]',
+            
+            // sourceCopy when true will make a copy of the source element and use
+            // it instead of the actual sourceSelector. value is false or true
+            
+            sourceCopy : false,
+            
+            // destinationSelector, use the selector x-twc-em-source to use the
+            // sourceSelector as the destination
+            
+            destinationSelector : '[ enter destination selector here between single quotes replacing square brackets ]',
+            
+            // optional - destinationAncestorSelector, use when you want to first
+            // find a destination element but then manipulate an ancestor element
+            
+            destinationAncestorSelector : '[ enter optional destination ancestor selector here between single quotes replacing square brackets ]',
+            
+            // optional - rootSelector, use when you want the source and
+            // destination elements to have a common ancestor element
+            
+            rootSelector : '[ optional - enter root selector here between single quotes replacing square brackets ]',
+            
+            // action value is after, append, before, prepend or replace
+            
+            action : 'append',
+            
+            // repeat is a number. the number of times to repeat this specific
+            // element manipulation
+            
+            repeat : 1,
+            
+            // onEditModeRemove value is true or false. when true the source
+            // element will be removed
+            
+            onEditModeRemove : false,
+            
+            // callbacks is optional, use when you want to manipulate the
+            // structure of the source element. the value is an array. you can add
+            // one or multiple callback names. when adding multiple callback names
+            // separate the names with commas. some examples...
+            //
+            // [ 'callback' ]
+            //
+            // [ 'callback1', 'callback2', 'callback3' ]
+            //
+            // your callbacks must accept and return a node
+            
+            callbacks : [ ]
+            
+            }, */
+            
+          };
+          
+        self.push ( map );
+        
+        return self;
+        
+        } ) ( twc.em.maps || [ ] );
+        
+      } ) ( );
       
     </script>
     
