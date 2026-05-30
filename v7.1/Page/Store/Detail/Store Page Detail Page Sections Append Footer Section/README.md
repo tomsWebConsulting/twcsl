@@ -41,20 +41,21 @@ Append Footer Section to Store Page detail Page Sections.
         Use this option if you want to have this effect on only one Store Page.
         
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the Store Page.Refer to [per-page code
-          injection][8] for details.
+          Page Header Code Injection for the Store Page.
           
           ```html
           <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3fd1fb5f8e062cc456e5b52d6603adac05a31ef0/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
             
             <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
             
           ```
-      
+          
+          Refer to [per-page code injection][8] for details.
+          
         * Add code from file **[store page detail page sections append footer
           section.js][9]** to the **elements manipulate options** code.
           
@@ -62,42 +63,22 @@ Append Footer Section to Store Page detail Page Sections.
       
         Use this option if you want to have this effect on all Store Pages.
         
-        * v7.1
-        
-          * Add the following code to Website > Pages > Custom Code >
-            Code Injection > FOOTER.
+        * Add the following code to Website > Pages > Custom Code >
+          Code Injection > HEADER.
+          
+          ```html
+          <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            ```html
-            <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@3fd1fb5f8e062cc456e5b52d6603adac05a31ef0/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
             
-              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-              
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
-              
-              <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
-              
-            ```
+            <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
             
-        * v7.0
-        
-          * Add the following code to Website > Pages > Website Tools >
-            Custom Code > Code Injection > FOOTER.
-            
-            ```html
-            <!-- begin TWC Store Page Detail Page Sections Append Footer Section -->
-            
-              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-              
-              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.css" rel="stylesheet" type="text/css">
-              
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ccf285a8a514218335f07e57373989a1cfdeba22/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section/store%20page%20detail%20page%20sections%20append%20footer%20section.min.js" type="module"></script>
-              
-              <!-- end TWC Store Page Detail Page Sections Append Footer Section -->
-              
-            ```
-            
-        * Refer to [Add code to code injection][10] for details.
-        
+          ```
+          
+          Refer to [Add code to code injection][10] for details.
+          
         * Add code from file **[store page detail page sections append footer
           section.js][9]** to the **elements manipulate options** code.
           
@@ -122,19 +103,9 @@ Append Footer Section to Store Page detail Page Sections.
     
       Use this option if you want to have this effect on all Store Pages.
       
-      * v7.1
-      
-        * Add code from file **[store page detail page sections append footer
-          section.css][11]** to Website > Pages > Custom Code > Code Injection >
-          FOOTER.
-          
-      * v7.0
-      
-        * Add code from file **[store page detail page sections append footer
-          section.css][11]** to Website > Pages > Website Tools > Custom Code >
-          Code Injection > FOOTER.
-          
-      * Refer to [Add code to code injection][10] for details.
+      * Add code from file **[store page detail page sections append footer
+        section.css][11]** to Website > Pages > Custom Code > Custom CSS. Refer
+        to [Using the CSS Editor][12] for details.
         
       * Add code from file **[store page detail page sections append footer
         section.js][9]** to the **elements manipulate options** code.
@@ -150,7 +121,7 @@ Content set to the following.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][13].
 
 ## Changes
 
@@ -179,4 +150,6 @@ Please consider [making a donation][12].
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: store%20page%20detail%20page%20sections%20append%20footer%20section.html#L1
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[12]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
 [11]: store%20page%20detail%20page%20sections%20append%20footer%20section.css#L1
+[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
