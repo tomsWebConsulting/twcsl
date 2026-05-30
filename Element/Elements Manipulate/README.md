@@ -413,9 +413,9 @@ Please consider [making a donation][20].
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [11]: elements%20manipulate.html#L1
-[12]: options%20data%20structure%20templates/product%20additional%20info%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[13]: options%20data%20structure%20templates/product%20additional%20info%20first%20row%20video%20block%20before%20quantity.js
-[14]: options%20data%20structure%20templates/product%20additional%20info%20specific%20video%20block%20before%20quantity.js
+[12]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[13]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20video%20block%20before%20quantity.js
+[14]: options%20data%20structure%20templates/product%20detail%20page%20specific%20video%20block%20before%20quantity.js
 [15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
 [16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
 [17]: https://github.com/tomsWebConsulting/twcsl/tree/main//Users/creedon/Documents/Projects/Squarespace/Site/twcsl/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
