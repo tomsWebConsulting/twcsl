@@ -1,23 +1,16 @@
 ( async ( ) => {
 
+  // debugger;
+  
   /*
   
     page categories to module
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Versions     : 7.1, 7.0
-    
-    v7.1
-    Products V2
-    Compatible      : Not Applicable
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Not Applicable
     
     Note            : this code makes a call to an unofficial Squarespace API
                       product content service products categories tree or
@@ -36,7 +29,7 @@
   
     title = 'Page Categories to Module',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `${ title } v${ version }
     
@@ -194,28 +187,18 @@
     
   const
   
-    categoryNameToCssClassName =
+    addClassNameCallback =
     
-      ( name ) => {
+      ( category ) => {
       
-        if ( ! name ) return; // bail if no name
+        category.className =
         
-        const className = 'category-'
-        
-          +
+          `category-${
           
-          name
-          
-            .replaceAll ( ' ', '-' )
+            category.nameEncoded
             
-            .toLowerCase ( )
+            }`;
             
-            .replace ( /[^\w-]+/g, '' )
-            
-            .replaceAll ( '--', '-' );
-            
-        return className;
-        
         },
         
     codeKey = 'twc-pctm',
@@ -228,6 +211,8 @@
     
       .id,
       
+    fullUrl = collection.fullUrl,
+    
     pageType = {
     
       [ isBlogPage ] :  'Blog',
@@ -248,30 +233,56 @@
     
     is71 = ssVersion === '7.1',
     
-    addClassNameCallback =
+    addFullUrlCallback = ( category ) => {
+    
+      category.fullUrl =
+      
+        fullUrl
+        
+        +
+        
+        `?category=${
+          
+          encodeURIComponent (
+          
+            category.name
+            
+            )
+            
+            .replaceAll ( '%20', '+' )
+            
+          }`
+          
+      },
+      
+    addNameEncodedCallback =
     
       ( category ) => {
       
-        category.className =
+        category.nameEncoded =
         
-          categoryNameToCssClassName (
+          category [
           
-            category [
+            {
             
-              {
+              [ is71 ] : 'displayName',
               
-                [ is71 ] : 'displayName',
-                
-                [ is70 ] : 'name'
-                
-                }
-                
-                [ true ]
-                
-              ]
+              [ is70 ] : 'name'
               
-            );
+              }
+              
+              [ true ]
+              
+            ]
             
+          .replaceAll ( ' ', '-' )
+          
+          .toLowerCase ( )
+          
+          .replace ( /[^\w-]+/g, '' )
+          
+          .replaceAll ( '--', '-' );
+          
         },
         
     url =
@@ -377,12 +388,56 @@
           categories =
           
             categories.categoryTree;
-              
+            
         categories.forEach (
         
-          addClassNameCallback
+          c => {
           
+            addNameEncodedCallback ( c );
+            
+            addClassNameCallback ( c );
+            
+            }
+            
           );
+          
+        if ( is70 ) {
+        
+          categories.forEach (
+          
+            addFullUrlCallback
+            
+            );
+            
+          // all category
+          
+          {
+          
+            categories.push (
+            
+              {
+              
+                className : 'category-all',
+                
+                count : 200,
+                
+                fullUrl : fullUrl,
+                
+                modifiedOn :
+                
+                  new Date ( ).getTime ( ),
+                  
+                name : 'All',
+                
+                nameEncoded : 'all'
+                
+                }
+                
+              );
+              
+            }
+            
+          }
           
         const
         
@@ -402,8 +457,12 @@
             
               /[<>]/g,
               
-              c => ( c === '<' ? '&lt;' : '&gt;' )
+              c => (
               
+                c === '<' ? '&lt;' : '&gt;'
+                
+                )
+                
               )
               
             .replace (
@@ -440,7 +499,7 @@
                   
                   License         : &lt; https://tinyurl.com/s872fb68 &gt;
                   
-                  Version         : 0.1.0
+                  Version         : ${ version }
                   
                   SS Versions     : 7.1, 7.0
                   
@@ -454,12 +513,8 @@
                   
                 // initialize twc module
                 
-                window.twc =
+                window.twc = window.twc || { };
                 
-                  ( ( self ) =&gt; self )
-                  
-                  ( window.twc || { } );
-                  
                 // initialize twc pctm sub-module
                 
                 twc.pctm = ( ( self ) =&gt; {

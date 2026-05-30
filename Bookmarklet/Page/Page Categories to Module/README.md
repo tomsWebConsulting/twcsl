@@ -8,21 +8,13 @@ Create Page Categores Modules.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
-
-#### Products V2 Compatible
-
-  * Not Applicable
-  
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -41,21 +33,35 @@ a bookmark in your browser named **TWC Page Categories to Module**.
 
 * Options
 
-  * 7.1
+  * Page Specific
   
-    Paste the content in Website > Pages > Custom Code > Code Injection >
-    HEADER.
+    Use this option if you want to have this effect on only one Page.
     
-  * 7.0
+    * Paste clipboard content to Page Settings > Advanced >
+      Page Header Code Injection for the Page. Refer to [per-page code
+      injection][3] for details.
     
-    Paste the content in Website > Pages > Website Tools > Code Injection >
-    HEADER.
+  * Site-wide
+  
+    Use this option if you want to have this effect on all Pages.
+    
+    * v7.1
+    
+      * Paste clipboard content to Website > Pages > Custom Code >
+        Code Injection > HEADER.
+        
+    * v7.0
+    
+      * Paste clipboard content to Website > Pages > Website Tools >
+        Custom Code > Code Injection > HEADER.
+        
+    * Refer to [Add code to code injection][4] for details.
 
 ## Notes
 
 This bookmarklet takes a snapshot of your categories. When you update your
-categories follow the How to Use steps again and replace categories modules you
-have installed in your site-wide Header Code Injection.
+categories follow the **How to Use** steps again and replace categories modules
+you have installed in your site-wide header code injection.
 
 When using this bookmarklet and the output window/tab does not appear, check
 that ad blocker or security software is not preventing the pop-up window/tab
@@ -63,25 +69,26 @@ from appearing.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][3].
+Wikipedia has a nice entry on [bookmarklet][5].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2026-01-08**
+* **2026-05-28**
 
-  * fixed issue where a category couldn't be added to the root level if it
-    currently existed as a subcategory
-  * bumped version to 0.1.1
-  -->
+  * added nameEncoded and fullUrl key/value pairs
+  * bumped version to 0.2.0
+  
 * **2026-01-23**
 
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: page%20categories%20to%20module.bookmarklet#L1
-[3]: https://en.wikipedia.org/wiki/Bookmarklet
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://en.wikipedia.org/wiki/Bookmarklet
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
