@@ -418,7 +418,7 @@ Please consider [making a donation][20].
 [14]: options%20data%20structure%20templates/product%20detail%20page%20specific%20video%20block%20before%20quantity.js
 [15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
 [16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
-[17]: https://github.com/tomsWebConsulting/twcsl/tree/main//Users/creedon/Documents/Projects/Squarespace/Site/twcsl/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
+[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
 [18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append#store%20page%20detail%20footer%20section%20append
 [19]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
