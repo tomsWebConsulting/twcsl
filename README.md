@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 537 effects. Each effect has it's own version number, code,
+twcsl contains 540 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -206,6 +206,10 @@ not necessarily designed to work together.
     * [Page Categories to Module](Bookmarklet/Page/Page%20Categories%20to%20Module)
       
       * [Page Categories to Module.bbprojectd](Bookmarklet/Page/Page%20Categories%20to%20Module/Page%20Categories%20to%20Module.bbprojectd)
+        
+    * [Page Settings SEO to Default](Bookmarklet/Page/Page%20Settings%20SEO%20to%20Default)
+      
+      * [Page Settings SEO to Default.bbprojectd](Bookmarklet/Page/Page%20Settings%20SEO%20to%20Default/Page%20Settings%20SEO%20to%20Default.bbprojectd)
         
     * [Blog](Bookmarklet/Page/Blog)
       
@@ -549,6 +553,8 @@ not necessarily designed to work together.
           
         * [Store Page Detail Footer Section Append](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append)
           
+          * [Store Page Detail Footer Section Append.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append/Store%20Page%20Detail%20Footer%20Section%20Append.bbprojectd)
+            
         * [Store Page Detail Variant Display Button Readability Fix](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Variant%20Display%20Button%20Readability%20Fix)
           
         * [Store Page Detail Product Dimensions Tabbed](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions%20Tabbed)
