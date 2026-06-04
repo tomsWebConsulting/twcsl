@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 540 effects. Each effect has it's own version number, code,
+twcsl contains 543 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -213,6 +213,12 @@ not necessarily designed to work together.
         
     * [Blog](Bookmarklet/Page/Blog)
       
+      * [List](Bookmarklet/Page/Blog/List)
+        
+        * [Blog Page List Url Slug Last Dash Text Remove](Bookmarklet/Page/Blog/List/Blog%20Page%20List%20Url%20Slug%20Last%20Dash%20Text%20Remove)
+          
+          * [Blog Page List Url Slug Last Dash Text Remove.bbprojectd](Bookmarklet/Page/Blog/List/Blog%20Page%20List%20Url%20Slug%20Last%20Dash%20Text%20Remove/Blog%20Page%20List%20Url%20Slug%20Last%20Dash%20Text%20Remove.bbprojectd)
+            
       * [Blog Post Settings Author Menu Sort](Bookmarklet/Page/Blog/Blog%20Post%20Settings%20Author%20Menu%20Sort)
         
     * [Analytics](Bookmarklet/Page/Analytics)
