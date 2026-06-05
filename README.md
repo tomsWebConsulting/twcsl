@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 543 effects. Each effect has it's own version number, code,
+twcsl contains 548 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -123,6 +123,8 @@ not necessarily designed to work together.
         
       * [Events Page List Event Row](Page/Events/List/Events%20Page%20List%20Event%20Row)
         
+        * [Events Page List Event Row.bbprojectd](Page/Events/List/Events%20Page%20List%20Event%20Row/Events%20Page%20List%20Event%20Row.bbprojectd)
+          
   * [Store](Page/Store)
     
     * [Store Page Price Zero Remove](Page/Store/Store%20Page%20Price%20Zero%20Remove)
@@ -491,6 +493,10 @@ not necessarily designed to work together.
         
       * [List](v7.1/Page/Events/List)
         
+        * [Events Page List Horizontal Scroll](v7.1/Page/Events/List/Events%20Page%20List%20Horizontal%20Scroll)
+          
+          * [Events Page List Horizontal Scroll.bbprojectd](v7.1/Page/Events/List/Events%20Page%20List%20Horizontal%20Scroll/Events%20Page%20List%20Horizontal%20Scroll.bbprojectd)
+            
         * [Events Page List Day Index](v7.1/Page/Events/List/Events%20Page%20List%20Day%20Index)
           
       * [Event](v7.1/Page/Events/Event)
@@ -1128,6 +1134,10 @@ not necessarily designed to work together.
     * [Events](Block/Summary/Events)
       
       * [Summary Block Events End Time Remove](Block/Summary/Events/Summary%20Block%20Events%20End%20Time%20Remove)
+        
+    * [Summary Block Blog List Column](Block/Summary/Summary%20Block%20Blog%20List%20Column)
+      
+      * [Summary Block Blog List Column.bbprojectd](Block/Summary/Summary%20Block%20Blog%20List%20Column/Summary%20Block%20Blog%20List%20Column.bbprojectd)
         
 ---
 
