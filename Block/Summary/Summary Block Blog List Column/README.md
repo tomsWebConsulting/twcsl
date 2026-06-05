@@ -47,9 +47,9 @@ Style Summary Block Blog List Design as a column.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
           
           <!-- end TWC Summary Block Blog List Column -->
           
@@ -75,9 +75,9 @@ Style Summary Block Blog List Design as a column.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
             
             <!-- end TWC Summary Block Blog List Column -->
             
@@ -97,9 +97,9 @@ Style Summary Block Blog List Design as a column.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@2ed6a929f8beb3375f8907f11bb01e0fafab3795/Block/Summary/Summary%20Block%20Blog%20List%20Column/summary%20block%20blog%20list%20column.min.js" type="module"></script>
             
             <!-- end TWC Summary Block Blog List Column -->
             
