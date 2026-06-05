@@ -1,0 +1,188 @@
+/* begin TWC Events Page List Horizontal Scroll */
+
+  /*
+  
+    events page list horizontal scroll
+    
+    Version       : 0.1.0
+    
+    SS Version    : 7.1
+    
+    Fluid
+    Engine
+    Compatible    : Not Applicable
+    
+    Copyright     : 2025 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */
+    
+  @twc-eplhs-event-width-desktop : 480px;
+  @twc-eplhs-event-width-mobile : 640px;
+  
+  // do not change anything below, there be the borg here
+  
+  body:not( .sqs-is-page-editing ) {
+  
+    .collection-type-events-stacked {
+    
+      background-color : var( --siteBackgroundColor );
+      overflow-x : scroll;
+      scrollbar-width : none; /* Firefox */
+      
+      &::-webkit-scrollbar {
+      
+        display : none; /* Chrome, Safari */
+        
+        }
+        
+      }
+      
+    .sqs-events-collection-list {
+    
+      display : flex;
+      
+      }
+      
+    .eventlist {
+    
+      display : flex;
+      gap : 68px;
+      
+      }
+      
+    .eventlist-event {
+    
+      display : block;
+      margin : 0;
+      width : @twc-eplhs-event-width-desktop  ;
+      
+      &:last-child {
+      
+        padding-right : 4vw;
+        
+        }
+        
+      }
+      
+    &.tweak-events-stacked-show-past-events .eventlist--upcoming .eventlist-event:last-child {
+    
+      margin-right : 68px;
+      padding : 0;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-11-square .eventlist-column-thumbnail {
+    
+      padding-bottom : 100%;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-32-standard .eventlist-column-thumbnail {
+    
+      padding-bottom : 66.666%;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-23-standard-vertical .eventlist-column-thumbnail {
+    
+      padding-bottom : 150%;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-43-four-thirds .eventlist-column-thumbnail {
+    
+      padding-bottom : 75%;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-169-widescreen .eventlist-column-thumbnail {
+    
+      padding-bottom : 56.25%;
+      
+      }
+      
+    &.tweak-events-stacked-thumbnail-size-ultra-widescreen .eventlist-column-thumbnail {
+    
+      padding-bottom : 40.911%;
+      
+      }
+      
+    .eventlist-column-thumbnail {
+    
+      width : unset;
+      
+      }
+      
+    .eventlist-column-info {
+    
+      margin-top : 25.5px;
+      padding : 0;
+      width : unset;
+      
+      }
+      
+    .eventlist-past-upcoming-divider {
+    
+      border : unset;
+      border-left : 1px solid rgba( 230, 230, 230, 0.8 );
+      height : unset;
+      
+      }
+      
+    }
+    
+  @media
+  only screen and ( pointer : coarse ) and ( max-width : 1024px ),
+  screen and ( max-width : 799px )
+  
+    {
+    
+      body:not( .sqs-is-page-editing ) .eventlist-event {
+      
+        width : @twc-eplhs-event-width-mobile;
+        
+        }
+        
+      }
+      
+  @media screen and ( max-width : 767px ) {
+  
+    body:not( .sqs-is-page-editing ) {
+    
+      &.tweak-events-stacked-width-full .events .eventlist-event:last-child,
+      &.tweak-events-stacked-width-inset .events .eventlist-event:last-child
+      
+        {
+        
+          padding-right : 6vw;
+          
+          }
+          
+      }
+      
+    }
+    
+  @media only screen and ( max-width : 639px ) {
+  
+    body:not( .sqs-is-page-editing ) {
+    
+      .eventlist {
+      
+        gap : 34px;
+        
+        }
+        
+      &.tweak-events-stacked-show-past-events .eventlist--upcoming .eventlist-event:last-child {
+      
+        margin-right : 34px;
+        padding : 0;
+        
+        }
+        
+      }
+      
+    }
+    
+  /* end TWC Events Page List Horizontal Scroll */
