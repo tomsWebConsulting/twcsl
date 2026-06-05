@@ -1,0 +1,17 @@
+/*!
+
+  summary block blog list column
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.1.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Copyright         : 2024-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */.twc-sbblc .summary-block-setting-design-list .summary-item{display:flex;flex-direction:column;gap:25px}.twc-sbblc .summary-block-setting-design-list .summary-thumbnail-outer-container,.twc-sbblc .summary-content{width:unset!important}@media screen and (max-width:640px){.twc-sbblc.sqs-block[data-definition-name="website.components.summary"] .summary-block-setting-design-list .summary-thumbnail-outer-container{width:unset!important}}@media screen and (max-width:480px){.twc-sbblc .sqs-gallery-design-list .sqs-gallery-design-list-slide:not(.no-image) .sqs-gallery-meta-container{width:unset!important}}
