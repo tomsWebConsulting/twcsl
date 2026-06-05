@@ -1,0 +1,15 @@
+/*!
+
+  events page list grid
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Copyright       : 2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviable parts below
+  
+  */@media only screen and (min-width:640px){body:not(.sqs-is-page-editing){& .events-stacked{display:flex;flex-direction:column;gap:68px}& .eventlist{display:grid;gap:68px;grid-template-columns:repeat(var( --twc-eplg-columns ),1fr)}& .eventlist-event{flex-direction:column;gap:34px;margin-top:unset}&.tweak-events-stacked-thumbnail-size-11-square .eventlist-column-thumbnail{padding-bottom:100%}&.tweak-events-stacked-thumbnail-size-32-standard .eventlist-column-thumbnail{padding-bottom:66.666%}&.tweak-events-stacked-thumbnail-size-23-standard-vertical .eventlist-column-thumbnail{padding-bottom:150%}&.tweak-events-stacked-thumbnail-size-43-four-thirds .eventlist-column-thumbnail{padding-bottom:75%}&.tweak-events-stacked-thumbnail-size-169-widescreen .eventlist-column-thumbnail{padding-bottom:56.25%}&.tweak-events-stacked-thumbnail-size-ultra-widescreen .eventlist-column-thumbnail{padding-bottom:40.911%}& .eventlist-column-thumbnail{width:unset}& .eventlist-column-info{display:flex;flex-direction:column;gap:17px;height:100%;margin-top:unset;padding-left:unset;width:unset}& .eventlist-title{margin:unset!important}& .eventlist-meta{margin:unset}& .eventlist-excerpt{flex-grow:1;margin:unset}& .eventlist-button{margin:auto}& .eventlist-event .clear{display:none}& .eventlist--upcoming+.eventlist--past .eventlist-past-upcoming-divider{grid-column:1/-1;margin:0;width:100%}}}
