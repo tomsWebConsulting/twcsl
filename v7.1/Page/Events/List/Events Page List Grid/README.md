@@ -45,7 +45,7 @@ Style Events Page List as a grid.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/v7.1/Page/Events/List/Events%20Page%20List%20Grid/events%20page%20list%20grid.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c1a3a81df14984d7ec751469e693498b49cde081/v7.1/Page/Events/List/Events%20Page%20List%20Grid/events%20page%20list%20grid.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Events Page List Grid -->
           
@@ -69,7 +69,7 @@ Style Events Page List as a grid.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8beca97b8824791e21fdd91021222d1454d0549/v7.1/Page/Events/List/Events%20Page%20List%20Grid/events%20page%20list%20grid.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c1a3a81df14984d7ec751469e693498b49cde081/v7.1/Page/Events/List/Events%20Page%20List%20Grid/events%20page%20list%20grid.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Events Page List Grid -->
           
