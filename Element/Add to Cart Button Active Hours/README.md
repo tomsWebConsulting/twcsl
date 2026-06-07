@@ -33,8 +33,8 @@ Enable add to cart buttons during active hours.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[add to cart button active hours options.html][6]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
         Read the code for any instructions within.
@@ -59,6 +59,8 @@ Enable add to cart buttons during active hours.
       
     * Site-wide
     
+      Use this option if you want to have this effect on all Pages.
+      
       * Add code from file **[add to cart button active hours options.html][6]**
         to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
         code for any instructions within.
@@ -102,6 +104,8 @@ Enable add to cart buttons during active hours.
       
   * Site-wide
   
+    Use this option if you want to have this effect on all Pages.
+    
     * Add code from file **[add to cart button active hours options.html][6]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
       for any instructions within.
@@ -118,7 +122,7 @@ Please consider [making a donation][10].
 
 ## Changes
 
-* **2026-04-21**
+* **2026-06-07**
 
   * moved options out of main code
   * removed jQuery dependency
@@ -126,7 +130,7 @@ Please consider [making a donation][10].
   
 * **2023-07-19**
 
-  * fix a bug in textToRanges returning bad ranges
+  * fixed a bug in textToRanges returning bad ranges
   * bumped version to 0.1.1
   
 * **2023-07-19**

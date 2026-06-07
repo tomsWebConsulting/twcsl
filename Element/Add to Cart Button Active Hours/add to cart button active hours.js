@@ -1,23 +1,5 @@
 ( ( ) => {
 
-  /*!
-  
-    add to cart button active hours
-    
-    License           : < https://tinyurl.com/s872fb68 >
-    
-    Version           : 0.2.0
-    
-    SS Versions       : 7.1, 7.0
-    
-    Copyright         : 2023-2026 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
-    
-    */
-    
   const
   
     version = '0.2.0',
@@ -41,11 +23,11 @@
     // initialize twc module
     
     window.twc = window.twc || { };
-      
+    
     // initialize twc atcbah sub-module
     
     twc.atcbah = twc.atcbah || { };
-      
+    
     }
     
   const
