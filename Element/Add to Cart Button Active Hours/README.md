@@ -96,9 +96,8 @@ Enable add to cart buttons during active hours.
       to Page Settings > Advanced > Page Header Code Injection for the Page.
       Read the code for any instructions within.
       
-    * Add code from file **[store page detail option variant select
-      auto.html][9]** to Page Settings > Advanced >
-      Page Header Code Injection for the Page.
+    * Add code from file **[add to cart button active hours.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page.
       
     * Refer to [per-page code injection][7] for details.
       
@@ -110,9 +109,8 @@ Enable add to cart buttons during active hours.
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
       for any instructions within.
       
-    * Add code from file **[store page detail option variant select
-      auto.html][9]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER.
+    * Add code from file **[add to cart button active hours.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
       
     * Refer to [Add code to code injection][8] for details.
 
