@@ -47,9 +47,9 @@ Enable add to cart buttons during active hours.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e863f11e0e1b38e2f4b0814ed193d7d2c557dd22/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e863f11e0e1b38e2f4b0814ed193d7d2c557dd22/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
           
           <!-- end TWC Add to Cart Button Active Hours -->
           
@@ -73,9 +73,9 @@ Enable add to cart buttons during active hours.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e863f11e0e1b38e2f4b0814ed193d7d2c557dd22/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1b4712c6e7182513b89e70e87a8fc4f7853f6fde/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e863f11e0e1b38e2f4b0814ed193d7d2c557dd22/Element/Add%20to%20Cart%20Button%20Active%20Hours/add%20to%20cart%20button%20active%20hours.min.js" type="module"></script>
           
           <!-- end TWC Add to Cart Button Active Hours -->
           
@@ -126,7 +126,7 @@ Please consider [making a donation][10].
 
   * moved options out of main code
   * removed jQuery dependency
-  * bumped version to 0.2.0
+  * bumped version to 0.2.0 (commit e863f11e0e1b38e2f4b0814ed193d7d2c557dd22)
   
 * **2023-07-19**
 
