@@ -1,0 +1,20 @@
+/*!
+
+  section blank image blocks lightbox
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Fluid Engine    : Not Applicable
+  Compatible
+  
+  Copyright       : 2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */body:not(.sqs-edit-mode-active) .sqs-block-image:has(x-twc-sbibl),body:not(.sqs-edit-mode-active) [data-sqsp-block=code]:has(x-twc-sbibl){display:none}body:not(.sqs-edit-mode-active) [data-test=page-section]:has(x-twc-sbibl) .sqs-block-image:hover,body:not(.sqs-edit-mode-active) [data-test=page-section]:has(x-twc-sbibl) [data-sqsp-block=image]:hover{cursor:zoom-in}

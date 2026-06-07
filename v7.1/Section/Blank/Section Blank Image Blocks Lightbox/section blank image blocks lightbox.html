@@ -1,0 +1,906 @@
+<!-- begin TWC Section Blank Image Blocks Lightbox -->
+
+  <!--
+  
+    section blank image blocks lightbox
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Fluid Engine    : Not Applicable
+    Compatible
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    /* fluid engine */
+    
+    body:not( .sqs-edit-mode-active ) [ data-sqsp-block = "code" ]:has( x-twc-sbibl ),
+    
+    /* classic editor */
+    
+    body:not( .sqs-edit-mode-active ) .sqs-block-image:has( x-twc-sbibl )
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    /* fluid engine */
+    
+    body:not( .sqs-edit-mode-active ) [ data-test = "page-section" ]:has( x-twc-sbibl ) [ data-sqsp-block = "image" ]:hover,
+    
+    /* classic editor */
+    
+    body:not( .sqs-edit-mode-active ) [ data-test = "page-section" ]:has( x-twc-sbibl ) .sqs-block-image:hover
+    
+      {
+      
+        cursor : zoom-in;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.1.0',
+        
+        s = `Section Blank Image Blocks Lightbox v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const dclCallback = ( ) => {
+      
+        const
+        
+          addSwipeListeners =
+          
+            (
+            
+              element, onSwipeLeft, onSwipeRight
+              
+              ) => {
+              
+                const
+                
+                  // max time allowed to travel threshold
+                  
+                  allowedTime = 500,
+                  
+                  onTouchStart = ( e ) => {
+                  
+                    const touch =
+                    
+                      e.changedTouches [ 0 ];
+                      
+                    isSwiping = true;
+                    
+                    startTime = Date.now ( );
+                    
+                    startX = touch.pageX;
+                    
+                    startY = touch.pageY;
+                    
+                    },
+                    
+                  // max vertical movement allowed
+                  
+                  restraint = 80,
+                  
+                  // minimum horizontal movement (px)
+                  
+                  threshold = 40;
+                  
+                let
+                
+                  isSwiping = false,
+                  
+                  startTime = 0,
+                  
+                  startX = 0,
+                  
+                  startY = 0;
+                  
+            onTouchMove = ( e ) => {
+            
+              // if vertical movement is too large, cancel swipe
+              
+              const
+              
+                touch = e.changedTouches [ 0 ],
+              
+                dy = Math.abs (
+                
+                  touch.pageY - startY
+                  
+                  );
+                  
+              if ( dy > restraint )
+              
+                isSwiping = false;
+                
+              },
+              
+            onTouchEnd = ( e ) => {
+            
+              if ( ! isSwiping ) return;
+          
+              const
+              
+                touch = e.changedTouches [ 0 ],
+                
+                distanceX = touch.pageX - startX,
+                
+                elapsed =
+                
+                  Date.now ( ) - startTime,
+                  
+                isValidSwipe =
+                
+                  elapsed
+                  
+                  <=
+                  
+                  allowedTime
+                  
+                  &&
+                  
+                  Math.abs ( distanceX )
+                  
+                  >=
+                  
+                  threshold;
+                  
+              // bail if not valid swipe
+              
+              if ( ! isValidSwipe ) return;
+              
+              if ( distanceX < 0 )
+              
+                // user swiped left → next image
+                
+                onSwipeLeft ( );
+                
+                else
+                
+                  // user swiped right → previous image
+                  
+                  onSwipeRight ( );
+                  
+              },
+              
+            element.addEventListener (
+            
+              'touchstart',
+              
+              onTouchStart,
+              
+              { passive : true }
+              
+              );
+              
+            element.addEventListener (
+            
+              'touchmove',
+              
+              onTouchMove,
+              
+              { passive : true }
+              
+              );
+              
+            element.addEventListener (
+            
+              'touchend',
+              
+              onTouchEnd,
+              
+              { passive : true }
+              
+              );
+              
+            },
+          
+          codeKey = 'twc-sbibl',
+          
+          copyAttributes = (
+          
+            sourceElement,
+            
+            destinationElement,
+            
+            attrbts
+            
+            ) => {
+            
+              for ( const name of attrbts ) {
+              
+                const hasAttribute =
+                
+                  sourceElement
+                  
+                  .hasAttribute ( name );
+                  
+                // bail if no attribute
+                
+                if ( ! hasAttribute ) return;
+                
+                destinationElement
+                
+                  .setAttribute (
+                  
+                    name,
+                    
+                    sourceElement
+                    
+                      .getAttribute ( name )
+                      
+                    );
+                    
+                }
+                
+              return destinationElement;
+              
+              },
+              
+          elements = document
+          
+            .body
+            
+            .querySelectorAll ( `x-${ codeKey }` ),
+            
+          handleBlockElementClick = ( event ) => {
+          
+            event.preventDefault ( );
+            
+            const
+            
+              setFigureCallback = ( id ) => {
+              
+                const element = listElement
+                
+                  .querySelector (
+                  
+                    `[ data-id = "${ id }" ]`
+                    
+                    );
+                    
+                element.setAttribute (
+                
+                  'data-active',
+                  
+                  'false'
+                  
+                  );
+                  
+                listElement.appendChild (
+                
+                  element
+                  
+                  );
+                  
+                },
+                
+              element = event
+              
+                .currentTarget,
+                
+              blockId = element.id,
+              
+              selector =
+              
+                '[ data-test = "page-section" ]',
+                
+              sectionId = element
+              
+                .closest ( selector )
+                
+                .getAttribute ( 
+                
+                  sectionIdAttribute
+                  
+                  ),
+                  
+              wrapperElement = document
+              
+                .body
+                
+                .querySelector (
+                
+                  `.${
+                  
+                    codeKey
+                    
+                    }[ data-section-id = "${
+                    
+                      sectionId
+                      
+                      }" ]`
+                      
+                  ),
+                  
+              listElement = wrapperElement
+                
+                ._listElement,
+                
+              order = wrapperElement
+              
+                ._canonicalOrder,
+                
+              i = order.indexOf ( blockId );
+              
+            for ( const id of [
+            
+              ... order.slice ( i + 1 ),
+              
+              ... order.slice ( 0, i + 1 )
+              
+              ] ) {
+                
+                setFigureCallback ( id );
+                
+                }
+                
+            listElement.querySelector (
+            
+              '.gallery-lightbox-item:last-child'
+              
+              )
+              
+              .setAttribute (
+              
+                'data-active',
+                
+                'true'
+                
+                );
+                
+            wrapperElement
+            
+              .querySelector (
+              
+                '[ data-open ]'
+                
+                )
+                
+              .setAttribute (
+            
+              'data-open',
+              
+              'true'
+              
+              );
+              
+            },
+            
+          handleCloseClick = ( event ) => {
+          
+            event
+            
+              .currentTarget
+              
+              .closest ( '[ data-open = "true" ]' )
+              
+              ?.setAttribute (
+              
+                'data-open',
+                
+                'false'
+                
+              );
+              
+            },
+            
+          handleNextClick = ( event ) => {
+          
+            const
+            
+              listElement = event
+              
+                .currentTarget
+                
+                .closest ( `.${ codeKey }` )
+                
+                ._listElement,
+                
+              element = listElement
+              
+                .firstElementChild;
+                
+            hideFigures ( listElement );
+            
+            listElement.appendChild (
+            
+              element
+              
+              );
+              
+            element.setAttribute (
+            
+              'data-active',
+              
+              'true',
+              
+              );
+              
+            },
+            
+          handlePreviousClick = ( event ) => {
+          
+            const listElement = event
+            
+              .currentTarget
+              
+                .closest ( `.${ codeKey }` )
+                
+                ._listElement;
+                
+            hideFigures ( listElement );
+            
+            listElement.prepend (
+            
+              listElement
+              
+                .lastElementChild
+                
+              );
+              
+            listElement
+            
+              .lastElementChild
+              
+              .setAttribute (
+              
+                'data-active',
+                
+                'true',
+                
+                );
+                
+            },
+            
+          hideFigures = ( listElement ) => {
+          
+            for (
+            
+              const e of listElement.children
+              
+              ) {
+              
+                e.setAttribute (
+                
+                  'data-active',
+                  
+                  'false'
+                  
+                );
+                
+              }
+              
+            },
+            
+          imageBlockSelector = [
+          
+            // fluid engine
+            
+            '[ data-sqsp-block = "image" ]',
+            
+            // classic editor
+            
+            '.sqs-block-image'
+            
+            ]
+            
+            .join ( ', ' ),
+            
+          processImages =
+          
+            ( element, listElement ) => {
+            
+              const
+              
+                figureTemplate = document
+                
+                  .createElement ( 'template' ),
+                  
+                blockElement = element
+                
+                  .closest ( imageBlockSelector ),
+                  
+                id = blockElement.id;
+                
+              figureTemplate.innerHTML = `
+              
+                <figure class="gallery-lightbox-item" data-active="false" data-id="${ id }">
+                
+                  <div class="gallery-lightbox-item-wrapper">
+                  
+                    <div class="gallery-lightbox-item-src">
+                    
+                      <div class="gallery-lightbox-item-img content-fit" data-loaded="false">
+                      
+                        <img data-src data-image-focal-point alt height sizes src srcset style="object-fit : contain; width : 100%; height : 100%; display : block;" width />
+                        
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    
+                  </figure>
+                  
+                `;
+                
+              copyAttributes (
+              
+                element,
+                
+                figureTemplate
+                
+                  .content
+                  
+                  .querySelector ( 'img' ),
+                  
+                [
+                
+                  'alt',
+                  
+                  'data-image-focal-point',
+                  
+                  'height',
+                  
+                  'sizes',
+                  
+                  'src',
+                  
+                  'srcset',
+                  
+                  'width'
+                  
+                  ]
+                  
+                );
+                
+              listElement.append (
+              
+                figureTemplate.content
+                
+                );
+                
+              blockElement.addEventListener (
+              
+                'click',
+                
+                handleBlockElementClick
+                
+                );
+                
+              },
+              
+          processTriggersCallback =
+          
+            ( element ) => {
+            
+              const
+              
+                id = element
+                
+                  .closest ( '.page-section' )
+                  
+                  .getAttribute ( sectionIdAttribute ),
+                  
+                lightboxTemplateElement =
+                
+                  document
+                  
+                    .createElement ( 'template' ),
+                    
+                elements = element
+                
+                  .closest (
+                  
+                    [
+                    
+                      // fluid engine
+                      
+                      '.fluid-engine',
+                      
+                      // classic editor
+                      
+                      '.sqs-col-12'
+                      
+                      ]
+                      
+                      .join ( ', ' )
+                      
+                    )
+                    
+                  .querySelectorAll (
+                  
+                    imageBlockSelector
+                    
+                    );
+                    
+              lightboxTemplateElement
+              
+                .innerHTML
+                
+                =
+                
+                `
+                
+                  <div class="gallery-lightbox-outer-wrapper ${ codeKey }" data-section-id="${ id }">
+                  
+                    <div aria-label="Gallery" class="gallery-lightbox" data-section-theme data-open="false" role="dialog">
+                    
+                        <div class="gallery-lightbox-background"></div>
+                        
+                      <div class="gallery-lightbox-header">
+                      
+                        <button aria-label="Close" class="gallery-lightbox-close-btn">
+                        
+                          <div class="gallery-lightbox-close-btn-icon">
+                          
+                            <svg viewBox="0 0 40 40">
+                            
+                                <path d="M4.3,35.7L35.7,4.3"></path>
+                                
+                                <path d="M4.3,4.3l31.4,31.4"></path>
+                                
+                              </svg>
+                              
+                            </div>
+                            
+                          </button>
+                          
+                        </div>
+                        
+                      <div class="gallery-lightbox-wrapper">
+                      
+                        <div class="gallery-lightbox-list">
+                        
+                          </div>
+                          
+                        <div class="gallery-lightbox-controls">
+                        
+                          <div class="gallery-lightbox-control" data-previous>
+                          
+                            <button aria-label="Previous Slide" class="gallery-lightbox-control-btn">
+                            
+                              <div class="gallery-lightbox-control-btn-icon">
+                              
+                                <svg class="caret-left-icon--small" viewBox="0 0 9 16">
+                                
+                                    <polyline fill="none" points="7.3,14.7 2.5,8 7.3,1.2" stroke-miterlimit="10"></polyline>
+                                    
+                                  </svg>
+                                  
+                                </div>
+                                
+                              </button>
+                              
+                            </div>
+                            
+                          <div class="gallery-lightbox-control" data-next>
+                          
+                            <button class="gallery-lightbox-control-btn" aria-label="Next Slide">
+                            
+                              <div class="gallery-lightbox-control-btn-icon">
+                              
+                                <svg class="caret-right-icon--small" viewBox="0 0 9 16">
+                                
+                                    <polyline fill="none" points="1.6,1.2 6.5,7.9 1.6,14.7" stroke-miterlimit="10"></polyline>
+                                    
+                                  </svg>
+                                  
+                                </div>
+                                
+                              </button>
+                              
+                            </div>
+                            
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    
+                  `;
+                  
+              const wrapperElement =
+              
+                lightboxTemplateElement
+                
+                  .content
+                  
+                  .firstElementChild;
+                  
+              wrapperElement._canonicalOrder =
+              
+                [ ... elements ]
+                
+                  .map ( e => e.id );
+                  
+              wrapperElement._listElement =
+              
+                wrapperElement.querySelector (
+                
+                  '.gallery-lightbox-list'
+                  
+                  );
+                  
+              wrapperElement._nextButton =
+              
+                wrapperElement
+                
+                  .querySelector (
+                  
+                    '[ data-previous ] '
+                    
+                    +
+                    
+                    '.gallery-lightbox-control-btn'
+                    
+                    ),
+                    
+              wrapperElement._previousButton =
+              
+                wrapperElement
+                
+                  .querySelector (
+                  
+                    '[ data-next ] '
+                    
+                    +
+                    
+                    '.gallery-lightbox-control-btn'
+                    
+                    ),
+                    
+              addSwipeListeners (
+              
+                wrapperElement._listElement,
+                
+                // swipe left - next
+                
+                ( ) => handleNextClick ( {
+                
+                  currentTarget
+                  
+                  :
+                  
+                  wrapperElement._nextButton
+                  
+                  } ),
+                  
+                // swipe right - previous
+                
+                ( ) => handlePreviousClick ( {
+                
+                  currentTarget
+                  
+                  :
+                  
+                  wrapperElement._previousButton
+                  
+                  } ),
+                  
+                );
+                
+              wrapperElement
+              
+                .querySelector (
+                
+                  '.gallery-lightbox-close-btn'
+                  
+                  )
+                  
+                .addEventListener (
+                
+                  'click',
+                  
+                  handleCloseClick
+                  
+                  );
+                  
+              wrapperElement
+              
+                ._nextButton
+                
+                .addEventListener (
+                
+                  'click',
+                  
+                  handleNextClick
+                  
+                  );
+                  
+              wrapperElement
+              
+                ._previousButton
+                
+                .addEventListener (
+                
+                  'click',
+                  
+                  handlePreviousClick
+                  
+                  );
+                  
+              for ( const e of elements ) {
+              
+                processImages (
+                
+                  e.querySelector ( 'img' ),
+                  
+                  wrapperElement._listElement
+                  
+                  );
+                  
+                }
+                
+              document
+              
+                .body
+                
+                .append (
+                
+                  lightboxTemplateElement
+                  
+                    .content
+                    
+                  );
+                  
+              },
+              
+          sectionIdAttribute =
+          
+            'data-section-id';
+            
+        for ( const e of elements ) {
+        
+          processTriggersCallback ( e );
+          
+          }
+          
+        };
+        
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        dclCallback
+        
+        );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Section Blank Image Blocks Lightbox -->
