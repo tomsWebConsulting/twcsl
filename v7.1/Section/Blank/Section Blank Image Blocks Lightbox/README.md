@@ -45,9 +45,9 @@ Add a lightbox for Image Blocks in a Section.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.js" type="module"></script>
           
           <!-- end TWC Section Blank Image Blocks Lightbox -->
           
@@ -67,9 +67,9 @@ Add a lightbox for Image Blocks in a Section.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b639e8d6c2398c49125c1b92b9a6d341a5bae757/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/section%20blank%20image%20blocks%20lightbox.min.js" type="module"></script>
           
           <!-- end TWC Section Blank Image Blocks Lightbox -->
           
