@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 555 effects. Each effect has it's own version number, code,
+twcsl contains 557 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -715,6 +715,10 @@ not necessarily designed to work together.
         
     * [Blank](v7.1/Section/Blank)
       
+      * [Section Blank Image Blocks Lightbox](v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox)
+        
+        * [Section Blank Image Blocks Lightbox.bbprojectd](v7.1/Section/Blank/Section%20Blank%20Image%20Blocks%20Lightbox/Section%20Blank%20Image%20Blocks%20Lightbox.bbprojectd)
+          
       * [Section Blank Attribute Id Add or Change](v7.1/Section/Blank/Section%20Blank%20Attribute%20Id%20Add%20or%20Change)
         
     * [Footer Sections Append to Page](v7.1/Section/Footer%20Sections%20Append%20to%20Page)
