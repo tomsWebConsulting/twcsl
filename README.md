@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 552 effects. Each effect has it's own version number, code,
+twcsl contains 555 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -949,6 +949,12 @@ not necessarily designed to work together.
       
       * [Button Block Replace Random](v7.1/Block/Button/Button%20Block%20Replace%20Random)
         
+    * [Text](v7.1/Block/Text)
+      
+      * [Text Block Text Style Linear Growth](v7.1/Block/Text/Text%20Block%20Text%20Style%20Linear%20Growth)
+        
+        * [Text Block Text Style Linear Growth.bbprojectd](v7.1/Block/Text/Text%20Block%20Text%20Style%20Linear%20Growth/Text%20Block%20Text%20Style%20Linear%20Growth.bbprojectd)
+          
     * [Summary](v7.1/Block/Summary)
       
       * [Events](v7.1/Block/Summary/Events)
