@@ -17,7 +17,7 @@ at larger browser window widths.
 
 #### Dependencies
 
-  * [Squarespace plan][2].
+  * [Squarespace plan][2] that supports [Page Header Code Injection][5].
 
 ---
 
