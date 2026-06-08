@@ -117,7 +117,7 @@ Style Form block Label field as section labels.
       * Add code from file **[form block line field style as label.css][9]** to
         Website > Pages > Website Tools > Custom Code > Custom CSS.
         
-    *  Refer to [Using the CSS Editor][10] for details.
+    * Refer to [Using the CSS Editor][10] for details.
 
 ## How To Use
 
