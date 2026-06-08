@@ -94,7 +94,7 @@ Move Project navigation to the top of the Page.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Portfolio age.
+    Use this option if you want to have this effect on only one Portfolio Page.
     
     * Add code from file **[portfolio page project navigation top
       options.html][6]** to Page Settings > Advanced >
