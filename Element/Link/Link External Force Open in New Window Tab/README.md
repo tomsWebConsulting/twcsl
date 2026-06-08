@@ -43,7 +43,7 @@ Force external link to open in a new window/tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab/link%20external%20force%20open%20in%20new%20window%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8394e8b011f77f35a028e91fa8045a44eb3b334/Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab/link%20external%20force%20open%20in%20new%20window%20tab.min.js" type="module"></script>
           
           <!-- end TWC Links External Force Open in New Window Tab -->
           
@@ -63,7 +63,7 @@ Force external link to open in a new window/tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@907f08f5e5c30dd376146d4ca3a25bbdef33be24/Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab/link%20external%20force%20open%20in%20new%20window%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8394e8b011f77f35a028e91fa8045a44eb3b334/Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab/link%20external%20force%20open%20in%20new%20window%20tab.min.js" type="module"></script>
           
           <!-- end TWC Links External Force Open in New Window Tab -->
           
