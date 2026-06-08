@@ -84,7 +84,7 @@ Add a lightbox for Image Blocks in a Section.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Portfolio age.
+    Use this option if you want to have this effect on only one Page.
     
     * Add code from file **[section blank image blocks lightbox.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -93,7 +93,7 @@ Add a lightbox for Image Blocks in a Section.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Portfolio pages.
+    Use this option if you want to have this effect on all Pages.
     
     * Add code from file **[section blank image blocks lightbox.html][8]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
