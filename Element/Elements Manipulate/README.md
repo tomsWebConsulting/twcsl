@@ -64,7 +64,7 @@ append, before, prepend, or replace and other settings.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@163ce8a238249955e67affbe56b10ab7a44bad2c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
             
             <!-- end TWC Elements Manipulate -->
             
@@ -90,7 +90,7 @@ append, before, prepend, or replace and other settings.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@163ce8a238249955e67affbe56b10ab7a44bad2c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
               
               <!-- end TWC Elements Manipulate -->
               
@@ -110,7 +110,7 @@ append, before, prepend, or replace and other settings.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@163ce8a238249955e67affbe56b10ab7a44bad2c/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
               
               <!-- end TWC Elements Manipulate -->
               
