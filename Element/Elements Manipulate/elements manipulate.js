@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.13.0
+    Version         : 0.14.0
     
     SS Versions     : 7.1, 7.0
     
@@ -29,7 +29,7 @@
     
   const
   
-    version = '0.13.0',
+    version = '0.14.0',
     
     s = `
     
@@ -53,6 +53,108 @@
   
     codeKey = 'twc-em',
     
+    codeKeyCamelCase = codeKey
+    
+      .replace (
+      
+        /-([a-zA-Z])/g,
+        
+        ( _, c ) => c.toUpperCase ( )
+        
+        ),
+        
+    deleteAttribute = `data-${
+    
+      codeKey
+      
+      }-delete`,
+      
+    footerAttribute = `data-${
+    
+      codeKey
+      
+      }-footer`,
+      
+    footerAttributeCallback =
+    
+      ( element ) => {
+      
+        element
+        
+          [ `${
+          
+            codeKeyCamelCase
+            
+            }FooterPlaceholderElement`
+            
+            ]
+            
+          .replaceWith ( element );
+          
+        },
+        
+    handleMutation = ( mutation ) => {
+    
+      const isClassAttribute =
+      
+        mutation
+        
+          .attributeName
+          
+          ===
+          
+          'class';
+          
+      // bail if not class attribute
+      
+      if ( ! isClassAttribute )
+      
+        return true;
+        
+      const 
+      
+        element = mutation.target,
+        
+        isEditing = element
+        
+          .classList
+          
+          .contains ( 'sqs-is-page-editing' );
+          
+      // bail if not editing
+      
+      if ( ! isEditing ) return true;
+      
+      element
+      
+        .querySelectorAll (
+        
+          `[ ${ footerAttribute } ]`
+          
+          )
+          
+        .forEach (
+        
+          footerAttributeCallback
+          
+          );
+          
+      element
+      
+        .querySelectorAll (
+        
+          `[ ${ deleteAttribute } ]`
+          
+          )
+          
+        .forEach ( e => e.remove ( ) );
+        
+      observer.disconnect ( );
+      
+      return false;
+      
+      },
+      
     processNode =
     
       ( currentNode, callbackName ) => {
@@ -131,40 +233,6 @@
         
         },
         
-    selectorObjectCallback =
-    
-      ( selector, object ) => {
-      
-        let i = 1;
-        
-        object.repeat++;
-        
-        while ( i < object.repeat ) {
-        
-          document
-          
-            .querySelectorAll (
-            
-              selector
-              
-              )
-              
-            .forEach (
-            
-              e => actionCallback (
-              
-                e, object
-                
-                )
-                
-              );
-              
-          i++;
-          
-          }
-          
-        },
-        
     actionCallback =
     
       ( sourceElement, object ) => {
@@ -187,10 +255,8 @@
                   
                   ),
                   
-          hasSourceAncestorSelector
+          hasSourceAncestorSelector =
           
-            =
-            
             !
             
             new RegExp ( '^\\[.+\\]$' )
@@ -317,12 +383,60 @@
           
             sourceCopyElement;
             
-          else
+          else {
           
-            sourceElement
+            object.isFooter = sourceElement
             
-              =
+              .closest ( '#footer-sections' )
               
+            if ( object.isFooter ) {
+            
+              const element = document
+              
+                .createComment (
+                
+                  `${
+                  
+                    codeKey
+                    
+                    } element placeholder`
+                  
+                  );
+                  
+              sourceElement.after (
+              
+                element
+                
+                );
+                
+              sourceElement
+              
+                [ `${
+                
+                  codeKeyCamelCase
+                  
+                  }FooterPlaceholderElement`
+                  
+                  ]
+                  
+                =
+                
+                element;
+                
+              sourceElement
+              
+                .setAttribute (
+                
+                  footerAttribute,
+                  
+                  ''
+                  
+                  );
+                  
+              }
+              
+            sourceElement =
+            
               runCallbacksPipeline (
               
                 sourceElement,
@@ -331,11 +445,21 @@
                 
                 );
                 
-        if ( object.onEditModeRemove )
+            }
+            
+        const isDelete =
+        
+          object.onEditModeRemove
+          
+          &&
+          
+          ! object.isFooter;
+          
+        if ( isDelete )
         
           sourceElement.setAttribute (
           
-            attribute,
+            deleteAttribute,
             
             ''
             
@@ -429,60 +553,40 @@
           
         },
         
-    attribute = `data-${
+    selectorObjectCallback =
     
-      codeKey
+      ( selector, object ) => {
       
-      }-source-copy`,
-      
-    handleMutation = ( mutation ) => {
-    
-      const isClassAttribute =
-      
-        mutation
+        let i = 1;
         
-          .attributeName
-          
-          ===
-          
-          'class';
-          
-      // bail if not class attribute
-      
-      if ( ! isClassAttribute )
-      
-        return true;
+        object.repeat++;
         
-      const 
-      
-        element = mutation.target,
+        while ( i < object.repeat ) {
         
-        isEditing = element
+          document
+          
+            .querySelectorAll (
+            
+              selector
+              
+              )
+              
+            .forEach (
+            
+              e => actionCallback (
+              
+                e, object
+                
+                )
+                
+              );
+              
+          i++;
+          
+          }
+          
+        },
         
-          .classList
-          
-          .contains ( 'sqs-is-page-editing' );
-          
-      // bail if not editing
-      
-      if ( ! isEditing ) return true;
-      
-      element
-      
-        .querySelectorAll (
-        
-          `[ ${ attribute } ]`
-          
-          )
-          
-        .forEach ( e => e.remove ( ) );
-        
-      observer.disconnect ( );
-      
-      return false;
-      
-      },
-      
     mapsCallback = ( object ) => {
     
       const entries =
@@ -507,7 +611,7 @@
           
       },
       
-    domContentLoadedCallback = ( ) => {
+    loadCallback = ( ) => {
     
       // globals
       
@@ -589,11 +693,11 @@
         
       };
       
-  document.addEventListener (
+  window.addEventListener (
   
-    'DOMContentLoaded',
+    'load',
     
-    domContentLoadedCallback
+    loadCallback
     
     );
     

@@ -9,7 +9,7 @@ append, before, prepend, or replace and other settings.
 
 ### Version
 
-  * 0.13.0
+  * 0.14.0
 
 #### SS Versions
 
@@ -316,6 +316,12 @@ Please consider [making a donation][20].
 
 ## Changes
 
+* **2026-06-09**
+
+  * changed from domContentLoaded event to load to detect body.sqs-edit-mode
+  * added code to restore moved footer elements when clicking the EDIT button
+  * bumped version to 0.14.0
+  
 * **2026-05-29**
 
   * updated options data structure templates to work with Squarespace removal of
