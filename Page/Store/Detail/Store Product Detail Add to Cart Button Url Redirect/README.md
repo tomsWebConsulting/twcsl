@@ -8,7 +8,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 ### Version
 
-  * 0.8.1
+  * 0.8.2
 
 #### SS Versions
 
