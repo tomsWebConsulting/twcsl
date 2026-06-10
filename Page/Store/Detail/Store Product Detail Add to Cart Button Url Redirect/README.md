@@ -157,7 +157,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][12].
+    * Add the following to a Code Block in Section.
       
       ```html
       <script>
