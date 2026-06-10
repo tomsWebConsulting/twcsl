@@ -202,12 +202,24 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
     
     * Set **url** to a URL.
     
+## Note
+
+When testing redirects in the Editor you may get a redirect error as some sites
+refuse to load when loaded in the Editor. This is not an error or bug in my
+code. You can check the redirect in either [private browsing][14] or using
+?noredirect.
+
 ## Make a Donation
 
-Please consider [making a donation][14].
+Please consider [making a donation][15].
 
 ## Changes
 
+* **2026-06-09**
+
+  * fixed issue with redirected atc button adding product to cart
+  * bumped version to 0.8.2
+  
 * **2026-06-09**
 
   * fixed issue with idUrlMap code block code
@@ -301,4 +313,5 @@ Please consider [making a donation][14].
 [11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [13]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[14]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
