@@ -48,7 +48,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1c92702529674ec55d24c4897dc179b3c1fe6aa1/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
           
           <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
           
@@ -74,7 +74,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1c92702529674ec55d24c4897dc179b3c1fe6aa1/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
             
             <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
             
@@ -95,7 +95,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@1c92702529674ec55d24c4897dc179b3c1fe6aa1/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
             
             <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
             
