@@ -8,7 +8,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
 ### Version
 
-  * 0.8.0
+  * 0.8.1
 
 #### SS Versions
 
@@ -16,41 +16,164 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
   * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
 
-#### v7.1 Products V2 Compatible
-
-  * Yes
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][6] that supports [JavaScript][7].
 
 ---
 
-## Install
+## Install Options
 
-* Add code from file **[store product detail add to cart button url redirect
-  options.html][8]** to Store Settings > Advanced > Page Header Code Injection
-  for the Store Page. Read the code for any instructions within.
+* CDN Hosted
+
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][8], a [CDN][9])
   
-* Add code from file **[store product detail add to cart button url
-  redirect.html][9]** to Store Settings > Advanced > Page Header Code Injection
-  for the Store Page.
+  * Options
   
-* Options
+    * Page Specific
+    
+      Use this option if you want to have this effect on only one Page.
+      
+      * Add code from file **[store product detail add to cart button url
+        redirect options.html][10]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for instructions
+        within.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Page.
+        
+        ```html
+        <!-- begin TWC Store Product Detail Add to Cart Button Url Redirect -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+          
+          <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
+          
+        ```
+        
+      * Refer to [per-page code injection][11] for details.
+      
+    * Site-wide
+    
+      Use this option if you want to have this effect on all Store pages.
+      
+      * v7.1
+      
+        * Add code from file **[store product detail add to cart button url
+          redirect options.html][10]** to Website > Pages > Custom Code >
+          Code Injection > FOOTER. Read the code for instructions within.
+          
+        * Add the following code to Website > Pages > Custom Code >
+          Code Injection > FOOTER.
+          
+          ```html
+          <!-- begin TWC Store Product Detail Add to Cart Button Url Redirect -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+            
+            <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
+            
+          ```
+          
+      * v7.0
+      
+        * Add code from file **[store product detail add to cart button url
+          redirect options.html][10]** to Website > Pages > Website Tools >
+          Custom Code > Code Injection > FOOTER. Read the code for instructions
+          within.
+          
+        * Add the following code to Website > Pages > Website Tools >
+          Custom Code > Code Injection > FOOTER.
+          
+          ```html
+          <!-- begin TWC Store Product Detail Add to Cart Button Url Redirect -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Page/Store/Detail/Store%20Product%20Detail%20Add%20to%20Cart%20Button%20Url%20Redirect/store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.min.js" type="module"></script>
+            
+            <!-- end TWC Store Product Detail Add to Cart Button Url Redirect -->
+            
+          ```
+          
+      * Refer to [Add code to code injection][12] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
+  
+  * Page Specific
+  
+    Use this option if you want to have this effect on only one Page.
+    
+    * Add code from file **[store product detail add to cart button url redirect
+      options.html][10]** to Page Settings > Advanced >
+      Page Header Code Injection for the Page. Read the code for instructions
+      within.
+      
+    * Add code from file **[store product detail add to cart button url
+      redirect.html][13]** to Page Settings > Advanced >
+      Page Header Code Injection for the Page.
+      
+    * Refer to [per-page code injection][11] for details.
+    
+  * Site-wide
+  
+    Use this option if you want to have this effect on all Pages.
+    
+    * v7.1
+    
+      * Add code from file **[store product detail add to cart button url
+        redirect options.html][10]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for instructions
+        within.
+        
+      * Add code from file **[store product detail add to cart button url
+        redirect.html][13]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.
+        
+    * v7.0
+    
+      * Add code from file **[store product detail add to cart button url
+        redirect options.html][10]** to Website > Pages > Website Tools >
+        Custom Code > Code Injection > FOOTER. Read the code for instructions
+        within.
+        
+      * Add code from file **[store product detail add to cart button url
+        redirect.html][13]** to Website > Pages > Website Tools > Custom Code >
+        Code Injection > FOOTER.
+        
+    * Refer to [Add code to code injection][12] for details.
+    
+* Redirect Options
 
   * Some Add to Cart buttons redirect to any URL(s).
   
     * Edit a product.
     
-    * Add the following to a code block in [Additional Info][10].
+    * Add the following to a code block in [Additional Info][12].
       
       ```html
       <script>
       
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc spdatcbur sub-module
+        
+        window.twc.spdatcbur =
+        
+          window.twc.spdatcbur || { };
+          
+        // initialize twc spdatcbur idUrlMap
+        
         twc.spdatcbur.idUrlMap = {
         
           /*
@@ -70,20 +193,26 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
           };
           
         </script>
+
       ```
       
-  * All Add to Cart buttons redirect to a single URL.
+  * All Add to Cart buttons redirect to a single URL. In options code:
   
-    * Set **bailIfNoSkusInMap** to **false**.
+    * Set **bailIfNoIdsInMap** to **false**.
     
     * Set **url** to a URL.
     
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][14].
 
 ## Changes
 
+* **2026-06-09**
+
+  * fixed issue with idUrlMap code block code
+  * bumped version to 0.8.1
+  
 * **2025-07-07**
 
   * moved options out of main code
@@ -166,7 +295,10 @@ Please consider [making a donation][11].
 [5]: https://support.squarespace.com/hc/en-us/articles/206545347
 [6]: https://www.squarespace.com/pricing
 [7]: https://en.wikipedia.org/wiki/JavaScript
-[8]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect%20options.html#L1
-[9]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/206541037-Adding-additional-information-to-products
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://www.jsdelivr.com/
+[9]: https://en.wikipedia.org/wiki/Content_delivery_network
+[10]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect%20options.html#L1
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[13]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
+[14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

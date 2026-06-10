@@ -4,49 +4,44 @@
   
     ( ( ) => {
     
+      // debugger;
+      
       /*
       
         store product detail add to cart button url redirect
         
-        License         : < https://tinyurl.com/s872fb68 >
+        License             : < https://tinyurl.com/s872fb68 >
         
-        Version         : 0.8.0
+        Version             : 0.8.1
         
-        SS Versions     : 7.1, 7.0
+        SS Versions         : 7.1, 7.0
         
-        v7.1
-        Products V2
-        Compatible      : Yes
+        v7.0 Templates      : Avenue
+                              
+                              Bedford ( Anya, Bryant, Hayden )
+                              
+                              Brine ( Aria, Blend, Burke, Cacao, Clay,
+                              Fairfield, Feed, Foster, Greenwich, Hatch,
+                              Heights, Hunter, Hyde, Impact, Jaunt, Juke, Keene,
+                              Kin, Lincoln, Maple, Margot, Marta, Mentor,
+                              Mercer, Miller, Mojave, Moksha, Motto, Nueva,
+                              Pedro, Pursuit, Rally, Rover, Royce, Sofia,
+                              Sonora, Stella, Thorne, Vow, Wav, West )
+                              
+                              Pacific ( Bryler, Charlotte, Fulton*, Horizon,
+                              Naomi )
+                              
+                              your template is not listed? then it is not
+                              currently supported
+                              
+                              * discontinued < https://tinyurl.com/y9d8fwvx >
         
-        v7.1
-        Fluid
-        Engine
-        Compatible      : Not Applicable
-        
-        v7.0 Templates  : Avenue
-                          
-                          Bedford ( Anya, Bryant, Hayden )
-                          
-                          Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                          Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                          Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
-                          Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
-                          Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
-                          Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
-                          
-                          Pacific ( Bryler, Charlotte, Fulton*, Horizon, Naomi )
-                          
-                          your template is not listed? then it is not currently
-                          supported
-                          
-                          * discontinued < https://tinyurl.com/y9d8fwvx >
-        
-        Copyright       : 2021-2025 Thomas Creedon
-                          
-                          Tom's Web Consulting
-                          
-                          < http://www.tomsWeb.consulting/ >
-        
+        Copyright           : 2021-2026 Thomas Creedon
+                              
+                              Tom's Web Consulting
+                              
+                              < http://www.tomsWeb.consulting/ >
+            
         no user serviceable parts below
         
         */
@@ -55,7 +50,7 @@
       
         title = 'Store Product Detail Add to Cart Button Url Redirect',
         
-        version = '0.8.0',
+        version = '0.8.1',
         
         s = `${ title } v${ version }
         
@@ -85,7 +80,9 @@
             
             13;
             
-          if ( ! isStorePage ) return; // bail if not store page
+          // bail if not store page
+          
+          if ( ! isStorePage ) return;
           
           const isDetail
           
@@ -99,9 +96,111 @@
               
               .item;
               
-          if ( ! isDetail ) return; // bail if not detail page
+          // bail if not detail page
+          
+          if ( ! isDetail ) return;
           
           const
+          
+            codeKey = 'twc-spdatcbur',
+            
+            findPreviousMatchingSibling =
+            
+              ( element, selector ) => {
+              
+                let
+                
+                  b,
+                  
+                  previousSiblingElement =
+                  
+                    element
+                    
+                      ?.previousElementSibling;
+                      
+                while ( previousSiblingElement ) {
+                
+                  b = previousSiblingElement
+                  
+                    .matches ( selector );
+                    
+                  if ( b )
+                  
+                    return previousSiblingElement;
+                    
+                  previousSiblingElement =
+                  
+                    previousSiblingElement
+                    
+                      .previousElementSibling;
+                      
+                  }
+                  
+                return null;
+                
+                },
+                
+            objectsShallowEqual =
+            
+              ( obj1, obj2 ) => {
+              
+                const
+                
+                  keys1 =
+                  
+                    Object.keys ( obj1 ),
+                  
+                  keys2 =
+                  
+                    Object.keys ( obj2 );
+                    
+                let isEqual =
+                
+                  keys1.length
+                  
+                  ===
+                  
+                  keys2.length;
+                  
+                // bail id keys lengths not equal
+                
+                if ( ! isEqual ) return false;
+                
+                for ( let key of keys1 ) {
+                
+                  isEqual =
+                  
+                    obj1 [ key ]
+                    
+                    ===
+                    
+                    obj2 [ key ];
+                    
+                  // bail if key/value pair not equal
+                  
+                  if ( ! isEqual )
+                  
+                    return false;
+                    
+                  }
+                  
+                return true;
+                
+                },
+                
+            options = codeKey
+            
+              .split ( /-(.*)/ )
+              
+              .filter ( Boolean )
+              
+              .reduce (
+              
+                ( obj, key ) => obj?.[ key ],
+                
+                window
+                
+                ),
           
             callback = ( event ) => {
             
@@ -181,44 +280,68 @@
                           
                             e => e
                             
-                              .getAttribute ( 'data-selected-value' )
+                              .getAttribute (
                               
-                              .startsWith ( 'Select ' )
+                                'data-selected-value'
+                                
+                                )
                               
+                              .startsWith (
+                              
+                                'Select '
+                                
+                                )
+                                
                             )
                             
                             .length;
                             
                     // bail if no variant selected
                     
-                    if ( ! isVariantSelected ) return;
+                    if ( ! isVariantSelected )
                     
+                      return;
+                      
                     const
                     
                       attributes = { },
                       
-                      callback = ( element ) => {
+                      callback =
                       
-                        attributes
+                        ( element ) => {
                         
-                          [
+                          attributes
                           
-                            element
+                            [
                             
-                              .closest ( '.variant-option' )
+                              element
                               
-                              .getAttribute ( 'data-variant-option-name' )
+                                .closest (
+                                
+                                  '.variant-option'
+                                  
+                                  )
+                                  
+                                .getAttribute (
+                                
+                                  'data-variant-option-name'
+                                  
+                                  )
+                                  
+                              ]
                               
-                            ]
+                            =
                             
-                          =
-                          
-                          value = element
-                          
-                            .getAttribute ( 'data-selected-value' );
+                            value = element
                             
-                        };
-                        
+                              .getAttribute (
+                              
+                                'data-selected-value'
+                                
+                                );
+                                
+                          };
+                          
                     elements
                     
                       .forEach ( callback );
@@ -227,8 +350,14 @@
                     
                       .filter (
                       
-                        v => objectsShallowEqual ( v.attributes, attributes )
+                        v => objectsShallowEqual (
                         
+                          v.attributes,
+                          
+                          attributes
+                          
+                          )
+                          
                         )
                         
                       [ 0 ]
@@ -243,18 +372,22 @@
                     
                   case is70 : {
                   
-                    let selectedVariant
-                    
-                      =
+                    let selectedVariant =
                       
                       productVariantsElement
                       
-                        .getAttribute ( 'data-selected-variant' );
+                        .getAttribute (
                         
+                          'data-selected-variant'
+                          
+                          );
+                          
                     // bail if no selected variant
                     
-                    if ( ! selectedVariant ) return;
+                    if ( ! selectedVariant )
                     
+                      return;
+                      
                     selectedVariant = JSON
                     
                       .parse ( selectedVariant );
@@ -287,34 +420,30 @@
                         
                         .id;
                         
-              if ( ! id ) return; // bail if no id
+              // bail if no id
               
-              const url
+              if ( ! id ) return;
               
-                =
-                
+              const url =
+              
                 id
                 
                 in
+                
+                options.idUrlMap
+                
+                ?
                 
                 options
                 
                   .idUrlMap
                   
-                  ?
+                  [ id ]
                   
-                  options
-                  
-                    .idUrlMap
-                    
-                    [ id ]
-                    
-                  :
-                  
-                  options
-                  
-                    .url;
-                    
+                :
+                
+                options.url;
+                
               window.open (
               
                 url,
@@ -327,68 +456,10 @@
                 
               },
               
-            codeKey = 'twc-spdatcbur',
+            selector =
             
-            findPreviousMatchingSibling = ( element, selector ) => {
-            
-              let
+              '.sqs-add-to-cart-button',
               
-                b,
-                
-                previousSiblingElement = element
-                
-                  ?.previousElementSibling;
-                  
-              while ( previousSiblingElement ) {
-              
-                b = previousSiblingElement
-                
-                  .matches ( selector );
-                  
-                if ( b )
-                
-                  return previousSiblingElement;
-                  
-                previousSiblingElement = previousSiblingElement
-                
-                  .previousElementSibling;
-                  
-                }
-                
-              return null;
-              
-              },
-              
-            objectsShallowEqual = ( obj1, obj2 ) => {
-            
-              const
-              
-                keys1 = Object.keys ( obj1 ),
-                
-                keys2 = Object.keys ( obj2 );
-                
-              let isEqual = keys1.length === keys2.length;
-              
-              if ( ! isEqual ) return false; // bail id keys lengths not equal
-              
-              for ( let key of keys1 ) {
-              
-                isEqual = obj1 [ key ] === obj2 [ key ];
-                
-                // bail if key/value pair not equal
-                
-                if ( ! isEqual ) return false;
-                
-                }
-                
-              return true;
-              
-              },
-              
-            options = twc.spdatcbur,
-            
-            selector = '.sqs-add-to-cart-button',
-            
             variants = Static
             
               .SQUARESPACE_CONTEXT
@@ -397,25 +468,19 @@
               
               .variants,
               
-            hasIdUrlMap
+            hasIdUrlMap =
             
-              =
+              options?.idUrlMap,
               
-              options
-              
-                ?.idUrlMap,
-                
-            hasTargetAtttributeValue
+            hasTargetAtttributeValue =
             
-              =
+              options.targetAtttributeValue,
               
-              options
+            ids = variants?.map (
+            
+              v => v.sku
               
-                .targetAtttributeValue,
-                
-            ids = variants
-              
-              ?.map ( v => v.sku );
+              );
               
           if ( ! hasIdUrlMap )
           
@@ -423,10 +488,12 @@
             
           if ( ! hasTargetAtttributeValue )
           
-            options
+            options.targetAtttributeValue
             
-              .targetAtttributeValue = '_self';
-              
+            =
+            
+            '_self';
+            
           if ( ! ids )
           
             ids.push (
@@ -437,41 +504,35 @@
                 
                 .itemId
                 
-                );
-                
+              );
+              
           // bail if no ids in map
           
           {
           
-            const b
+            const isBail =
             
-              =
+              options.bailIfNoIdsInMap
               
-              options
-              
-                .bailIfNoIdsInMap
-                
               &&
               
               !
               
-              ids
+              ids.some (
               
-                .some (
+                r => Object
                 
-                  r => Object
+                  .keys ( options.idUrlMap )
                   
-                    .keys ( options.idUrlMap )
-                    
-                    .indexOf ( r )
-                    
-                    >=
-                    
-                    0
-                    
-                  );
+                  .indexOf ( r )
                   
-            if ( b ) return;
+                  >=
+                  
+                  0
+                  
+                );
+                
+            if ( isBail ) return;
             
             }
             
@@ -503,8 +564,12 @@
             
             .map (
             
-              e => e.closest ( '.sqs-add-to-cart-button-wrapper' )
+              e => e.closest (
               
+                '.sqs-add-to-cart-button-wrapper'
+                
+                )
+                
               );
               
           elements.forEach (
@@ -515,8 +580,14 @@
             
           elements.forEach (
           
-            e => e.addEventListener ( 'pointerdown', callback )
+            e => e.addEventListener (
             
+              'pointerdown',
+              
+              callback
+              
+              )
+              
             );
             
           },
@@ -535,16 +606,26 @@
       
         case is71 :
         
-          window
-           
-            .addEventListener ( 'load', callback );
+          window.addEventListener (
+          
+            'load',
+            
+            callback
+            
+            );
             
           break;
           
         case is70 :
         
-          Squarespace.onInitialize ( Y, callback );
+          Squarespace.onInitialize (
           
+            Y,
+            
+            callback
+            
+            );
+            
           break;
           
         }
