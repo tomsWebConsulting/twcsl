@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.6.1
+  * 0.7.0
 
 #### SS Version
 
