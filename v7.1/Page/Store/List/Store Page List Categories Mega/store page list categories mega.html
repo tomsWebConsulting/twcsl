@@ -6,26 +6,20 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.6.1
+    Version           : 0.7.0
     
     SS Version        : 7.1
     
-    Products V2
-    Compatible        : Yes
-    
-    Fluid
-    Engine
-    Compatible        : Not Applicable
-    
-    Dependencies      : page categories to module
-                        
-                        < https://tinyurl.com/yc8cp3bn >
+    Dependencies      : page categories cache < https://tinyurl.com/yrcxfwnr >
     
     Notes             : the code is comprised of a style and script tag. both
                         are needed for the full effect to work
                         
                         this code is not active when Categories Style is set to
                         DROPDOWN
+                        
+                        Store Settings > General > Filter Visibility must be
+                        toggled on for this code to work correctly
                         
                         in the editor when you change the Menu Placement
                         (SIDE/TOP) you will see Squarespace's default style of
@@ -192,13 +186,17 @@
   
     ( ( ) => {
     
+      debugger;
+      
       const
       
-        version = '0.6.1',
+        title = 'Store Page List Categories Mega',
         
+        version = '0.7.0',
+      
         s = `
         
-          Store Page List Categories Mega v${ version }
+          ${ title } v${ version }
           
           License < https://tinyurl.com/s872fb68 >
           
@@ -208,13 +206,17 @@
           
           `
           
-          .replace ( /^ +/gm, '' );
+          .replace ( /^\s+/gm, '' );
           
       console.log ( s );
       
-      const isStorePage = Static
+      const
       
-        .SQUARESPACE_CONTEXT
+        context = Static
+        
+          .SQUARESPACE_CONTEXT,
+          
+        isStorePage = context
         
         .collection
         
@@ -224,9 +226,7 @@
         
         13;
         
-      // bail if not store page
-      
-      if ( ! isStorePage ) return;
+      if ( ! isStorePage ) return; // bail if not store page
       
       const isList
       
@@ -234,252 +234,114 @@
         
         !
         
-        Static
+        context
         
-          .SQUARESPACE_CONTEXT
-          
           .item
           
           ?.id;
           
-      // bail if not list page
+      if ( ! isList ) return; // bail if not list
       
-      if ( ! isList ) return;
+      /*
+      
+      const isTagPage
+      
+        =
+        
+        new URLSearchParams ( location.search )
+        
+          .has ( 'tag' );
+          
+      if ( isTagPage ) return; // bail if tag page
+      
+      */
       
       // initialize twc module
       
-      window.twc =
+      window.twc = window.twc || { };
       
-        ( ( self ) => self )
-        
-        ( window.twc || { } );
-        
-      // initialize twc pctm sub-module
+      // initialize twc splcc sub-module
       
-      twc.pctm =
+      twc.splcc = twc.splcc || { };
+        
+      // initialize twc pcc sub-module
       
-        ( ( self ) => self )
-        
-        ( twc.pctm || { } );
-        
-      const categories = twc
+      twc.pcc = twc.pcc || { };
       
-        .pctm
-        
-        [
-        
-          Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .collection
-            
-            .id
-            
-          ];
-          
-      // bail if no categories
+      // initialize twc pcc callbacks sub-module
       
-      if ( ! categories ) return;
+      twc.pcc.callbacks = ( ( self ) => {
       
-      // globals
-      
-      {
-      
-        // initialize twc splcc sub-module
+        const callback = ( categories ) => {
         
-        twc.splcc =
-        
-          ( ( self ) => self )
-          
-          ( twc.splcc || { } );
-          
-        }
-        
-      const dclCallback = ( ) => {
-      
-        const isSubNavigation =
-        
-          !!
-          
-          document
-          
-            .body
+          const isSubNavigation =
+                
+            !!
             
-            .querySelector (
+            document
             
-              '.product-list[ '
+              .body
               
-              +
+              .querySelector (
               
-              'data-category-interface-type = '
-              
-              +
-              
-              '"subnav" ]'
-              
-              );
-              
-        // bail if not sub navigation
-        
-        if ( ! isSubNavigation ) return;
-        
-        const
-        
-          codeKey = 'twc-splcm',
+                '.product-list[ '
+                
+                +
+                
+                'data-category-interface-type = '
+                
+                +
+                
+                '"subnav" ]'
+                
+                );
+                
+          // bail if not sub navigation
           
-          selectorKey = '.product-list';
+          if ( ! isSubNavigation ) return;
           
-        // hide show register
-        
-        {
-        
-          // initialize twc data sub-module
-          
-          twc.data =
-          
-            ( ( self ) => self )
-            
-            ( twc.data || { } );
-            
-          // initialize twc data hideShow sub-module
-          
-          twc.data.hideShow =
-          
-            ( ( self ) => self )
-            
-            ( twc.data.hideShow || { } );
-            
-          if ( twc.data.hideShow [ selectorKey ] === undefined )
-          
-            twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              =
-              
-              [ ];
-              
-          twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            .push ( `--${ codeKey }` );
-            
-          }
-          
-        {
-        
           const
           
-            getCategoryTree =
+            codeKey = 'twc-splcm',
             
-              ( categoriesFlatPreorderList ) => {
+            getParents =
+            
+              ( element, selector ) => {
               
-                const
+                const parents = [ ];
                 
-                  idCategoryMap =
-                  
-                    Object.create ( null ),
-                    
-                  categories = [ ];
-                  
-                categoriesFlatPreorderList
+                let current = element
                 
-                  .forEach (
+                  .parentElement;
                   
-                    c =>
-                    
-                      idCategoryMap [ c.id ] =
-                      
-                        { ... c, children : [ ] }
-                        
-                    );
-                    
-                categoriesFlatPreorderList
+                while ( current ) {
                 
-                  .forEach (
+                  if (
                   
-                    c => {
+                    ! selector
                     
-                      if ( c.parentCategoryId )
-                      
-                        idCategoryMap
-                        
-                          [ c.parentCategoryId ]
-                          
-                          .children
-                          
-                          .push (
-                          
-                            idCategoryMap [ c.id ]
-                            
-                            );
-                            
-                        else
-                        
-                          categories.push (
-                          
-                            idCategoryMap [ c.id ]
-                            
-                            );
-                            
-                      }
-                      
-                    );
+                    ||
                     
-                return categories;
+                    current.matches (
+                    
+                      selector
+                      
+                      )
+                      
+                    )
+                    
+                    parents.push ( current );
+                    
+                  current =
+                  
+                    current.parentElement;
+                    
+                  }
+                  
+                return parents;
                 
                 },
                 
-            getCategoryUrlSlug = ( ) => {
-            
-              const slug = location
-              
-                .pathname
-                
-                .replace (
-                
-                  url,
-                  
-                  ''
-                  
-                  );
-                  
-              return slug;
-              
-              },
-              
-            getParents = ( element, selector ) => {
-            
-              const parents = [ ];
-              
-              let current = element
-              
-                .parentElement;
-                
-              while ( current ) {
-              
-                if ( ! selector || current.matches ( selector ) )
-                
-                  parents.push ( current );
-                  
-                current = current.parentElement;
-                
-                }
-                
-              return parents;
-              
-              },
-              
             options = codeKey
             
               .split ( '-' )
@@ -490,20 +352,246 @@
                 
                 window ),
                 
-            traverse = ( categories, ulElement ) => {
+            selectorKey = '.product-list',
             
-              const callback = ( category ) => {
+            ulElement = document
+            
+              .createElement ( 'ul' ),
               
-                const hasChildren = category
+            url = context
+            
+              .collection
+              
+              .fullUrl,
+              
+            windowWidth = document
+            
+              .documentElement
+              
+              .clientWidth,
+              
+            wrapForeachCallback =
+            
+              ( element, wrapper, wrappers ) => {
+              
+                let
                 
-                  .children
+                  deepestElement,
+            
+                  outerWrapperElement;
                   
-                  .length;
+                if ( typeof wrapper === 'string' ) {
                 
+                  // parse html string into dom
+                  
+                  {
+                  
+                    const element = document
+                    
+                      .createElement (
+                      
+                        'template'
+                        
+                        );
+                        
+                    element.innerHTML =
+                    
+                      wrapper.trim ( );
+                      
+                    outerWrapperElement =
+                    
+                      element
+                      
+                        .content
+                        
+                        .firstElementChild;
+                        
+                    // bail if no outer wrapper element
+                    
+                    if ( ! outerWrapperElement )
+                    
+                      return;
+                      
+                    }
+                    
+                  // deepest element
+                  
+                  {
+                  
+                    deepestElement =
+                    
+                      outerWrapperElement;
+                      
+                    while ( deepestElement.firstElementChild )
+                    
+                      deepestElement =
+                      
+                        deepestElement
+                        
+                          .firstElementChild;
+                          
+                    }
+                    
+                  } else if (
+                  
+                    wrapper instanceof Element
+                    
+                    ) {
+                    
+                      // clone dom element to avoid reuse
+                      
+                      outerWrapperElement =
+                      
+                        wrapper
+                        
+                          .cloneNode ( false );
+                          
+                      deepestElement =
+                      
+                        outerWrapperElement;
+                        
+                      } else {
+                      
+                        const s =
+                        
+                          'Invalid wrapper type: must be HTML '
+                          
+                          +
+                          
+                          'string or DOM element';
+                          
+                        throw new Error (
+                        
+                          s
+                          
+                          );
+                          
+                        }
+                        
+                // insert and wrap
+                
+                {
+                
+                  if ( element.parentNode )
+                  
+                    element
+                    
+                      .parentNode
+                      
+                      .insertBefore (
+                      
+                        outerWrapperElement,
+                        
+                        element
+                        
+                        );
+                        
+                  deepestElement
+                  
+                    .appendChild ( element );
+                    
+                  }
+                  
+                wrappers.push (
+                
+                  outerWrapperElement
+                  
+                  );
+                  
+                },
+                
+            categoryUrlSlug = location
+            
+              .pathname
+              
+              .replace (
+              
+                url,
+                
+                ''
+                
+                ),
+                
+            wrap =
+            
+              ( target, wrapper = '<div>' ) => {
+              
+                const
+                
+                  elements =
+                  
+                    typeof target === 'string'
+                    
+                    ?
+                    
+                    document
+                    
+                      .querySelectorAll ( target )
+                      
+                    :
+                    
+                    target instanceof NodeList
+                    
+                    ?
+                    
+                    target
+                    
+                    :
+                    
+                    [ target ];
+                    
+                let wrappers = [ ];
+                  
+                elements.forEach (
+                
+                  e => wrapForeachCallback (
+                  
+                    e,
+                    
+                    wrapper,
+                    
+                    wrappers
+                    
+                    )
+                  
+                  );
+                  
+                wrappers =
+                
+                  wrappers.length === 1
+                  
+                  ?
+                  
+                  wrappers [ 0 ]
+                  
+                  :
+                  
+                  wrappers;
+                  
+                return wrappers;
+                
+                },
+                
+            categoryForeachCallback =
+            
+              ( category, ulElement ) => {
+              
+                const hasChildren =
+                
+                  category
+                  
+                    .children
+                    
+                    .length;
+                  
                 let liElement = document
                 
-                  .createElement ( 'template' );
+                  .createElement (
                   
+                    'template'
+                    
+                    );
+                    
                 liElement.innerHTML = `
                 
                   <li class="children nested-category-breadcrumb-list-item">
@@ -558,11 +646,19 @@
                       
                     );
                     
-                  if ( ! options.categoriesExpandedOnLoad )
+                  if (
                   
-                    element
+                    ! options
                     
-                      .removeAttribute ( 'open' );
+                      .categoriesExpandedOnLoad
+                      
+                    )
+                    
+                    element.removeAttribute (
+                    
+                      'open'
+                      
+                      );
                       
                   } else {
                   
@@ -576,198 +672,60 @@
                     
                     }
                     
-                ulElement
+                ulElement.append (
                 
-                  .append ( liElement );
+                  liElement
                   
-                if ( ! hasChildren ) return; // continue
-                
-                const childrenUlElement = document
-                
-                  .createElement ( 'ul' )
+                  );
                   
-                element.append ( childrenUlElement );
+                // continue
                 
-                traverse ( category.children, childrenUlElement );
+                if ( ! hasChildren ) return;
                 
-                }
+                const childrenUlElement =
                 
-              categories
-              
-                .forEach ( callback );
+                  document.createElement (
+                  
+                    'ul'
+                    
+                    );
+                    
+                element.append (
                 
-              },
-              
-            ulElement = document
+                  childrenUlElement
+                  
+                  );
+                  
+                traverse (
+                
+                  category.children,
+                  
+                  childrenUlElement
+                  
+                  );
+                  
+                },
+                
+            traverse =
             
-              .createElement ( 'ul' ),
+              ( categories, ulElement ) => {
               
-            url = Static
-               
-              .SQUARESPACE_CONTEXT
-              
-              .collection
-              
-              .fullUrl,
-              
-            windowWidth = document
-            
-              .documentElement
-              
-              .clientWidth,
-              
-            wrap = ( target, wrapper = '<div>' ) => {
-            
-              const
-              
-                callback = ( element ) => {
+                categories.forEach (
                 
-                  let
+                  e =>
                   
-                    deepestElement,
-              
-                    outerWrapperElement;
+                    categoryForeachCallback (
                     
-                  if ( typeof wrapper === 'string' ) {
+                      e,
+                      
+                      ulElement
+                      
+                      )
                   
-                    // parse html string into dom
-                    
-                    {
-                    
-                      const element = document
-                      
-                        .createElement ( 'template' );
-                        
-                      element.innerHTML = wrapper
-                      
-                        .trim ( );
-                        
-                      outerWrapperElement = element
-                      
-                        .content
-                        
-                        .firstElementChild;
-                        
-                      // bail if no outer wrapper element
-                      
-                      if ( ! outerWrapperElement ) return;
-                      
-                      }
-                      
-                    // deepest element
-                    
-                    {
-                    
-                      deepestElement = outerWrapperElement;
-                      
-                      while ( deepestElement.firstElementChild )
-                      
-                        deepestElement = deepestElement.firstElementChild;
-                        
-                      }
-                      
-                    } else if ( wrapper instanceof Element ) {
-                    
-                      // clone dom element to avoid reuse
-                      
-                      outerWrapperElement = wrapper
-                      
-                        .cloneNode ( false );
-                        
-                      deepestElement = outerWrapperElement;
-                      
-                      } else {
-                      
-                        const s = 'Invalid wrapper type: must be HTML '
-                        
-                          +
-                          
-                          'string or DOM element';
-                          
-                        throw new Error ( s );
-                        
-                        }
-                        
-                  // insert and wrap
+                  );
                   
-                  {
-                  
-                    if ( element.parentNode )
-                    
-                      element
-                      
-                        .parentNode
-                        
-                        .insertBefore (
-                        
-                          outerWrapperElement,
-                          
-                          element
-                          
-                          );
-                          
-                    deepestElement
-                    
-                      .appendChild ( element );
-                      
-                    }
-                    
-                  wrappers
-                  
-                    .push ( outerWrapperElement );
-                    
-                  },
-                  
-                elements
+                };
                 
-                  =
-                  
-                  typeof target === 'string'
-                  
-                  ?
-                  
-                  document
-                  
-                    .querySelectorAll ( target )
-                    
-                  :
-                  
-                  target instanceof NodeList
-                  
-                  ?
-                  
-                  target
-                  
-                  :
-                  
-                  [ target ];
-                  
-              let wrappers = [ ];
-                
-              elements.forEach ( callback );
-              
-              wrappers = wrappers
-              
-                .length
-                
-                ===
-                
-                1
-                
-                ?
-                
-                wrappers [ 0 ]
-                
-                :
-                
-                wrappers;
-                
-              return wrappers;
-              
-              },
-              
-            categoryUrlSlug = getCategoryUrlSlug ( );
-            
           let
           
             element,
@@ -782,13 +740,27 @@
             
           if ( options.hideIcon )
           
-            ulElement
+            ulElement.setAttribute (
             
-              .setAttribute ( `data-${ codeKey }-hide-icon`, '' );
+              `data-${ codeKey }-hide-icon`,
               
+              ''
+              
+              );
+              
+          categories
+          
+            .all
+            
+            .children
+            
+            =
+            
+            categories.categories;
+            
           traverse (
           
-            getCategoryTree ( categories ),
+            [ categories.all ],
             
             ulElement
             
@@ -798,8 +770,16 @@
           
           {
           
-            selector = `[ href="${ url }${ categoryUrlSlug }" ]`;
+            selector = `[ href = "${
             
+              url
+              
+              }${
+              
+                categoryUrlSlug
+                
+                }" ]`;
+                
             element = ulElement
             
               .querySelector ( selector );
@@ -812,8 +792,18 @@
               
             getParents ( element, 'details' )
             
-              .forEach ( e => e.setAttribute ( 'open', '' ) );
+              .forEach (
               
+                e => e.setAttribute (
+                
+                  'open',
+                  
+                  ''
+                  
+                  )
+                  
+                );
+                
             }
             
           // add categories mega
@@ -854,60 +844,16 @@
                 
             }
             
-          }
+          };
           
-        // hide show unregister
+        self.push ( callback );
         
-        {
+        return self;
         
-          twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            .pop ( `--${ codeKey }` );
-            
-          const
-          
-            l = twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .length,
-              
-            productListElement = document
-            
-              .querySelector ( '.product-list' );
-              
-          if ( ! l )
-          
-            productListElement
-            
-              .style
-              
-              .setProperty ( '--twc-product-list-visibility', 'visible' );
-              
-          }
-          
-        };
-        
-      document.addEventListener (
-      
-        'DOMContentLoaded',
-        
-        dclCallback
-        
-        );
+        } ) ( twc.pcc.callbacks || [ ] );
         
       } ) ( );
       
     </script>
-    
+  
   <!-- end TWC Store Page List Categories Mega -->

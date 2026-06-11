@@ -14,26 +14,18 @@ Store page list categories mega menu.
 
   * 7.1
 
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
   
-  * [Page Categories to Module][4]
+  * [Page Categories Cache][4]
 
 ---
 
 ## Install
 
-* Use the [Page Categories to Module][5] bookmarklet and follow its
-  instructions.
+* Install **[Page Categories Cache][5]**. After you install the code be sure to
+  continue on with the rest of the steps.
   
 * Options
 
@@ -129,6 +121,10 @@ Store page list categories mega menu.
         
       * Refer to [Add code to code injection][10] for details.
 
+## How to Use
+
+Set the Store Settings > General > Filter Visibility toggle to on.
+
 ## Demo
 
 You can see a [demo of this effect here][12].
@@ -139,6 +135,11 @@ Please consider [making a donation][13].
 
 ## Changes
 
+* **2026-06-10**
+
+  * updated to use work with page categories cache
+  * bumped version to 0.7.0
+  
 * **2026-04-08**
 
   * updated code to use DOM nodes per insertion to comply with browser
@@ -224,8 +225,8 @@ Please consider [making a donation][13].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Bookmarklet/Page/Page%20Categories%20to%20Module
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Bookmarklet/Page/Page%20Categories%20to%20Module#page-categories-to-module
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Page%20Categories%20Cache
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Page%20Categories%20Cache#page-categories-cache
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: store%20page%20list%20categories%20mega%20options.html#L1
