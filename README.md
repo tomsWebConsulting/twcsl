@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 560 effects. Each effect has it's own version number, code,
+twcsl contains 562 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -330,6 +330,10 @@ not necessarily designed to work together.
     * [Link External Force Open in New Window Tab](Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab)
       
       * [Link External Force Open in New Window Tab.bbprojectd](Element/Link/Link%20External%20Force%20Open%20in%20New%20Window%20Tab/Link%20External%20Force%20Open%20in%20New%20Window%20Tab.bbprojectd)
+        
+    * [Link Force No Open in New Window Tab](Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab)
+      
+      * [Link Force No Open in New Window Tab.bbprojectd](Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab/Link%20Force%20No%20Open%20in%20New%20Window%20Tab.bbprojectd)
         
     * [Link New Window Icon Add](Element/Link/Link%20New%20Window%20Icon%20Add)
       
