@@ -43,7 +43,7 @@ Force link to not open in a new window/tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8394e8b011f77f35a028e91fa8045a44eb3b334/Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab/link%20force%20no%20open%20in%20new%20window%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0f57c476d455a9913602660e881cb6bc8a894030/Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab/link%20force%20no%20open%20in%20new%20window%20tab.min.js" type="module"></script>
           
           <!-- end TWC Links External Force Open in New Window Tab -->
           
@@ -63,7 +63,7 @@ Force link to not open in a new window/tab.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d8394e8b011f77f35a028e91fa8045a44eb3b334/Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab/link%20force%20no%20open%20in%20new%20window%20tab.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0f57c476d455a9913602660e881cb6bc8a894030/Element/Link/Link%20Force%20No%20Open%20in%20New%20Window%20Tab/link%20force%20no%20open%20in%20new%20window%20tab.min.js" type="module"></script>
           
           <!-- end TWC Links External Force Open in New Window Tab -->
           
