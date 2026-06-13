@@ -1,4 +1,4 @@
-<!-- begin TWC Link External Force Open in New Window Tab -->
+<!-- begin TWC Link Force No Open in New Window Tab -->
 
   <script>
   
@@ -8,7 +8,7 @@
       
       /*
       
-        link external force open in new window tab
+        link force no open in new window tab
         
         License           : < https://tinyurl.com/s872fb68 >
         
@@ -28,7 +28,7 @@
         
       const
       
-        title = 'Link External Force Open in New Window Tab',
+        title = 'Link Force No Open in New Window Tab',
         
         version = '0.1.0',
         
@@ -48,43 +48,17 @@
       
         ( ) => {
         
-          [
+          document
           
-            ...
+            .body
             
-            document
+            .querySelectorAll ( 'a' )
             
-              .body
-              
-              .querySelectorAll ( 'a' )
-              
-            ]
-            
-            .filter (
-            
-              e => e.host !== location.host
-              
-              )
-              
-            .filter (
-            
-              e =>
-              
-                e.getAttribute ( 'target' )
-                
-                !==
-                
-                '_blank'
-                
-              )
-              
             .forEach (
             
-              e => e.setAttribute (
+              e => e.removeAttribute (
               
-                'target',
-                
-                '_blank'
+                'target'
                 
                 )
                 
@@ -110,4 +84,4 @@
       
     </script>
     
-  <!-- end TWC Link External Force Open in New Window Tab -->
+  <!-- end TWC Link Force No Open in New Window Tab -->
