@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 562 effects. Each effect has it's own version number, code,
+twcsl contains 569 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -693,6 +693,8 @@ not necessarily designed to work together.
       
   * [Page Section Image Scrubbing Animation](v7.1/Page%20Section%20Image%20Scrubbing%20Animation)
     
+    * [Page Section Image Scrubbing Animation.bbprojectd](v7.1/Page%20Section%20Image%20Scrubbing%20Animation/Page%20Section%20Image%20Scrubbing%20Animation.bbprojectd)
+      
   * [Section](v7.1/Section)
     
     * [Blocks Tabbed](v7.1/Section/Blocks%20Tabbed)
@@ -707,6 +709,8 @@ not necessarily designed to work together.
         
       * [Gallery Section Right Arrow Auto Click](v7.1/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click)
         
+        * [Gallery Section Right Arrow Auto Click.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/Gallery%20Section%20Right%20Arrow%20Auto%20Click.bbprojectd)
+          
       * [Gallery Section Lightbox Captions Add](v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add)
         
         * [Gallery Section Lightbox Captions Add.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Captions%20Add/Gallery%20Section%20Lightbox%20Captions%20Add.bbprojectd)
@@ -753,6 +757,8 @@ not necessarily designed to work together.
     
   * [Footer Sections Move to Page](v7.1/Footer%20Sections%20Move%20to%20Page)
     
+    * [Footer Sections Move to Page.bbprojectd](v7.1/Footer%20Sections%20Move%20to%20Page/Footer%20Sections%20Move%20to%20Page.bbprojectd)
+      
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
   * [PSISA Viewport Middle](v7.1/PSISA%20Viewport%20Middle)
@@ -768,6 +774,12 @@ not necessarily designed to work together.
         * [Post](v7.1/Bookmarklet/Page/Blog/Post)
           
           * [Blog Page Post Tags Add](v7.1/Bookmarklet/Page/Blog/Post/Blog%20Page%20Post%20Tags%20Add)
+            
+      * [Blank](v7.1/Bookmarklet/Page/Blank)
+        
+        * [Blank Page Links Open in New Window Tab Off](v7.1/Bookmarklet/Page/Blank/Blank%20Page%20Links%20Open%20in%20New%20Window%20Tab%20Off)
+          
+          * [Page Links Open in New Window Tab Off.bbprojectd](v7.1/Bookmarklet/Page/Blank/Blank%20Page%20Links%20Open%20in%20New%20Window%20Tab%20Off/Page%20Links%20Open%20in%20New%20Window%20Tab%20Off.bbprojectd)
             
       * [Store](v7.1/Bookmarklet/Page/Store)
         
@@ -939,6 +951,8 @@ not necessarily designed to work together.
     
   * [Page Section First CSS Variable Padding-Top Add](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add)
     
+    * [Page Section First CSS Variable Padding-Top Add.bbprojectd](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add.bbprojectd)
+      
   * [Header](v7.1/Header)
     
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
