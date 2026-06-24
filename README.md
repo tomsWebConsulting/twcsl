@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 569 effects. Each effect has it's own version number, code,
+twcsl contains 571 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1106,6 +1106,10 @@ not necessarily designed to work together.
     * [Form Block Multi-Language](Block/Form/Form%20Block%20Multi-Language)
       
       * [Form Block Multi-Language.bbprojectd](Block/Form/Form%20Block%20Multi-Language/Form%20Block%20Multi-Language.bbprojectd)
+        
+    * [Form Block Email Signup Change](Block/Form/Form%20Block%20Email%20Signup%20Change)
+      
+      * [Form Block Email Signup Change.bbprojectd](Block/Form/Form%20Block%20Email%20Signup%20Change/Form%20Block%20Email%20Signup%20Change.bbprojectd)
         
     * [Form Block Fields Title to Placeholder](Block/Form/Form%20Block%20Fields%20Title%20to%20Placeholder)
       
