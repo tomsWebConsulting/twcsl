@@ -47,7 +47,7 @@ Chnage the Email Signup text.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8410f9d900cd3bb0a6dd461578331fd18dd612be/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e7bfb45d18ec386c19d98d22587c959133f7946f/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
           
           <!-- end TWC Form Block Email Signup Change -->
           
@@ -73,7 +73,7 @@ Chnage the Email Signup text.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8410f9d900cd3bb0a6dd461578331fd18dd612be/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e7bfb45d18ec386c19d98d22587c959133f7946f/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
             
             <!-- end TWC Form Block Email Signup Change -->
             
@@ -93,7 +93,7 @@ Chnage the Email Signup text.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8410f9d900cd3bb0a6dd461578331fd18dd612be/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@e7bfb45d18ec386c19d98d22587c959133f7946f/Block/Form/Form%20Block%20Email%20Signup%20Change/form%20block%20email%20signup%20change.min.js" type="module"></script>
             
             <!-- end TWC Form Block Email Signup Change -->
             
