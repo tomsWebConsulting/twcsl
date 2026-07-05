@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 571 effects. Each effect has it's own version number, code,
+twcsl contains 574 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -55,6 +55,8 @@ not necessarily designed to work together.
         
     * [Blog Page Title to Lines](Page/Blog/Blog%20Page%20Title%20to%20Lines)
       
+      * [Blog Page Title to Lines.bbprojectd](Page/Blog/Blog%20Page%20Title%20to%20Lines/Blog%20Page%20Title%20to%20Lines.bbprojectd)
+        
   * [Page Collection Main Page Robots No Index](Page/Page%20Collection%20Main%20Page%20Robots%20No%20Index)
     
   * [Page Tags Cache](Page/Page%20Tags%20Cache)
@@ -103,6 +105,8 @@ not necessarily designed to work together.
     
     * [Events Page Title to Lines](Page/Events/Events%20Page%20Title%20to%20Lines)
       
+      * [Events Page Title to Lines.bbprojectd](Page/Events/Events%20Page%20Title%20to%20Lines/Events%20Page%20Title%20to%20Lines.bbprojectd)
+        
     * [Detail](Page/Events/Detail)
       
       * [Events Page Detail All Day Time Hide](Page/Events/Detail/Events%20Page%20Detail%20All%20Day%20Time%20Hide)
@@ -753,6 +757,8 @@ not necessarily designed to work together.
     
   * [Change Site Title Space Runs to Break Element](v7.1/Change%20Site%20Title%20Space%20Runs%20to%20Break%20Element)
     
+    * [Change Site Title Space Runs to Break Element.bbprojectd](v7.1/Change%20Site%20Title%20Space%20Runs%20to%20Break%20Element/Change%20Site%20Title%20Space%20Runs%20to%20Break%20Element.bbprojectd)
+      
   * [Header Social Icon Bandcamp Generic Icon to Bandcamp Change](v7.1/Header%20Social%20Icon%20Bandcamp%20Generic%20Icon%20to%20Bandcamp%20Change)
     
   * [Footer Sections Move to Page](v7.1/Footer%20Sections%20Move%20to%20Page)
