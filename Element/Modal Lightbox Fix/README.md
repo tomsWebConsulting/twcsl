@@ -8,7 +8,7 @@ Fix Squarespace's incorrect CSS for lightboxes.
 
 ### Version
 
-  * 1.0.0
+  * 1.0.1
 
 #### SS Versions
 
@@ -103,11 +103,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2026-05-03**
+* **2026-07-05**
 
-  * added more complex syntax for handling dates
-  * bumped version to 0.4.0
-  -->
+  * fixed issue with background underlay
+  * bumped version to 1.0.1
+  
 * **2026-05-09**
 
   * initial version

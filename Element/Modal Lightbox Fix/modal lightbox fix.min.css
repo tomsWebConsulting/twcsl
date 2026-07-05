@@ -4,7 +4,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 1.0.0
+    Version           : 1.0.1
     
     SS Versions       : 7.1, 7.0
     
@@ -14,4 +14,4 @@
     
     no user serviceable parts below
     
-    */.sqs-modal-lightbox{inset:0;position:fixed;width:unset;z-index:100000000}.sqs-modal-lightbox-content{height:unset;position:unset;width:unset;z-index:unset}.sqs-modal-lightbox-content .lightbox-inner{height:unset;top:unset;inset:0;position:absolute;width:unset}
+    */.sqs-modal-lightbox{inset:0;position:fixed;width:unset;z-index:100000000;.lightbox-background{position:fixed}}.sqs-modal-lightbox-content{height:unset;position:unset;width:unset;z-index:unset;.lightbox-inner{height:unset;top:unset;inset:0;position:absolute;width:unset}}

@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 1.0.0
+    Version           : 1.0.1
     
     SS Versions       : 7.1, 7.0
     
@@ -25,6 +25,12 @@
     width : unset;
     z-index : 100000000;
     
+    .lightbox-background {
+    
+      position : fixed;
+      
+      }
+      
     }
     
   .sqs-modal-lightbox-content {
@@ -34,17 +40,17 @@
     width : unset;
     z-index : unset;
     
-    }
+    .lightbox-inner {
     
-  .sqs-modal-lightbox-content .lightbox-inner {
-  
-    height : unset;
-    top : unset;
-    width : unset;
-    
-    inset : 0;
-    position : absolute;
-    
+      height : unset;
+      top : unset;
+      width : unset;
+      
+      inset : 0;
+      position : absolute;
+      
+      }
+      
     }
     
   /* end TWC Modal Lightbox Fix */
