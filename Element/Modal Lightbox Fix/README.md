@@ -39,7 +39,7 @@ Fix Squarespace's incorrect CSS for lightboxes.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8526024252872d4470a7218b371e66db24d37e1/Element/Modal%20Lightbox%20Fix/modal%20lightbox%20fix.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95d9bf52f9bb2f8c0391618aa4a0a8f0b6c63dcf/Element/Modal%20Lightbox%20Fix/modal%20lightbox%20fix.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Modal Lightbox Fix -->
           
@@ -59,7 +59,7 @@ Fix Squarespace's incorrect CSS for lightboxes.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c8526024252872d4470a7218b371e66db24d37e1/Element/Modal%20Lightbox%20Fix/modal%20lightbox%20fix.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95d9bf52f9bb2f8c0391618aa4a0a8f0b6c63dcf/Element/Modal%20Lightbox%20Fix/modal%20lightbox%20fix.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Modal Lightbox Fix -->
           
