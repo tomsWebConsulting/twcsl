@@ -1,0 +1,15 @@
+/*!
+  
+    button element no link inactive
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    */.sqs-button-element--primary,.sqs-button-element--secondary,.sqs-button-element--tertiary,x-twc-selector{&[href=""]{cursor:none;pointer-events:none}}
