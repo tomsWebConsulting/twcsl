@@ -37,7 +37,7 @@ Make Button elements with no link inactive.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95d9bf52f9bb2f8c0391618aa4a0a8f0b6c63dcf/Element/Button/Button%20Element%20No%20Link%20Inactive/button%20element%20no%20link%20inactive.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1a2a637af737cfd932c328cee2d7952e3642538/Element/Button/Button%20Element%20No%20Link%20Inactive/button%20element%20no%20link%20inactive.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Button Element No Link Inactive -->
           
@@ -57,7 +57,7 @@ Make Button elements with no link inactive.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@95d9bf52f9bb2f8c0391618aa4a0a8f0b6c63dcf/Element/Button/Button%20Element%20No%20Link%20Inactive/button%20element%20no%20link%20inactive.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1a2a637af737cfd932c328cee2d7952e3642538/Element/Button/Button%20Element%20No%20Link%20Inactive/button%20element%20no%20link%20inactive.min.css" rel="stylesheet" type="text/css">
           
           <!-- end TWC Button Element No Link Inactive -->
           
