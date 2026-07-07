@@ -4,72 +4,79 @@
   
     text block text style linear growth
     
-    License         : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version           : 0.2.0
     
-    SS Version      : 7.1
+    SS Version        : 7.1
     
-    Copyright       : 2026 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Dependencies      : LESS
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     */
     
-  @media screen and ( min-width : [ enter breakpoint here replacing square brackets ] ) {
-  
-    [ data-sqsp-block = "text" ] {
+  @media
+    screen and ( min-width : [ enter breakpoint here replacing square brackets ] ),
+    screen and ( min-width : [ enter breakpoint here replacing square brackets ] ),
+    screen and ( orientation : landscape )
     
-      & h1 {
+      {
       
-        font-size : calc( ( var( --heading-1-size-value ) - 1 ) * 1.2vw + 1rem );
+        [data-sqsp-block="text"] {
         
+          h1 {
+          
+            font-size : ~"calc( ( var( --heading-1-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          h2 {
+          
+            font-size : ~"calc( ( var( --heading-2-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          h3 {
+          
+            font-size : ~"calc( ( var( --heading-3-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          h4 {
+          
+            font-size : ~"calc( ( var( --heading-4-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          .sqsrte-large {
+          
+            font-size : ~"calc( ( var( --large-text-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          .site-wrapper {
+          
+            font-size : ~"calc( ( var( --normal-text-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          .sqsrte-small {
+          
+            font-size : ~"calc( ( var( --small-text-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          .sqs-block-html pre code {
+          
+            font-size : ~"calc( ( var( --normal-meta-size-value ) - 1 ) * 1.2vw + 1rem )";
+            
+            }
+            
+          }
+          
         }
         
-      & h2 {
-      
-        font-size : calc( ( var( --heading-2-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & h3 {
-      
-        font-size : calc( ( var( --heading-3-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & h4 {
-      
-        font-size : calc( ( var( --heading-4-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & .sqsrte-large {
-      
-        font-size : calc( ( var( --large-text-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & .site-wrapper {
-      
-        font-size : calc( ( var( --normal-text-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & .sqsrte-small {
-      
-        font-size : calc( ( var( --small-text-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      & .sqs-block-html pre code {
-      
-        font-size : calc( ( var( --normal-meta-size-value ) - 1 ) * 1.2vw + 1rem );
-        
-        }
-        
-      }
-      
-    }
-    
   /* end TWC Text Block Text Style Linear Growth */

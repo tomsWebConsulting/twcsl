@@ -9,7 +9,7 @@ at larger browser window widths.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -34,16 +34,19 @@ at larger browser window widths.
     
     * Add code from file **[text block text style linear growth.html][4]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
-      the code for instructions within. Refer to [per-page code injection][5]
-      for details.
+      the code for instructions within.
+      
+    * Refer to [per-page code injection][5] for details.
       
   * Site-wide
   
     Use this option if you want to have this effect on all Pages.
     
-    * Add code from file **[text block text style linear growth.css][6]** to
+    * Add code from file **[text block text style linear growth.less][6]** to
       Website > Pages > Custom Code > Custom CSS. Read the code for instructions
-      within. Refer to [Using the CSS Editor][7] for details.
+      within.
+      
+    * Refer to [Using the CSS Editor][7] for details.
 
 ## Make a Donation
 
@@ -51,12 +54,12 @@ Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2026-04-21**
+* **2026-07-06**
 
-  * moved options out of main code
-  * removed jQuery dependency
+  * fixed calc functions with LESS syntax
+  * simplified code syntax
   * bumped version to 0.2.0
-  -->
+  
 * **2026-06-06**
 
   * initial version
@@ -66,6 +69,6 @@ Please consider [making a donation][8].
 [3]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/CSS%20Breakpoint%20Get#css-breakpoint-get
 [4]: text%20block%20text%20style%20linear%20growth.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: text%20block%20text%20style%20linear%20growth.css#L1
+[6]: text%20block%20text%20style%20linear%20growth.less#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
