@@ -1,9 +1,7 @@
 // License < https://tinyurl.com/s872fb68 > | © 2025 Thomas Creedon | Tom's Web Consulting < http://www.tomsWeb.consulting/ >
 
-const isDetail
+const isDetail =
 
-  =
-  
   !!
   
   Static

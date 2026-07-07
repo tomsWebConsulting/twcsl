@@ -1,9 +1,7 @@
-// License < https://tinyurl.com/s872fb68 > | © 2025 Thomas Creedon | Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+// License < https://tinyurl.com/s872fb68 > | © 2025-2026 Thomas Creedon | Tom's Web Consulting < http://www.tomsWeb.consulting/ >
 
-const isEventsPage
+const isEventsPage =
 
-  =
-  
   !!
   
   document
@@ -28,7 +26,9 @@ const isEventsPage
 
   Example Usage :
   
-    if ( ! isEventsPage ) return; // bail if not events page
+    // bail if not events page
+    
+    if ( ! isEventsPage ) return;
     
   Note : the body tag must be available in the DOM
   
@@ -39,7 +39,7 @@ const isEventsPage
   
   SS Versions   : 7.1, 7.0
   
-  Copyright     : 2025 Thomas Creedon
+  Copyright     : 2025-2026 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   

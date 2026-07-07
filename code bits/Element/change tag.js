@@ -18,8 +18,14 @@ const changeTag = ( element, tag ) => {
     
     .forEach (
     
-      a => newElement.setAttribute ( a.name, a.value )
+      a => newElement.setAttribute (
       
+        a.name,
+        
+        a.value
+        
+        )
+        
       );
       
   newElement

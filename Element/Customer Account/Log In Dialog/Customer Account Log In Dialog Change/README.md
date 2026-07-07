@@ -8,7 +8,7 @@ Alter customer account sign up and in dialogs.
 
 ### Version
 
-  * 0.10.0
+  * 0.10.1
 
 #### SS Versions
 
@@ -160,6 +160,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-06-24**
+
+  * insert CSS after account login page CSS
+  * bumped version to 0.10.1
+  
 * **2026-03-14**
 
   * moved options out of main code

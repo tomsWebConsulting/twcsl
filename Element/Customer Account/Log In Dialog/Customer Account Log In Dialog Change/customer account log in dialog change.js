@@ -6,7 +6,7 @@
     
     License       : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.10.0
+    Version       : 0.10.1
     
     SS Versions   : 7.1, 7.0
     
@@ -24,7 +24,7 @@
     
   const
   
-    version = '0.10.0',
+    version = '0.10.1',
     
     s = `Customer Account Log In Dialog Change v${ version }
     
@@ -1715,7 +1715,7 @@
             
             dcmnt
             
-              .head
+              .body
               
               .append ( style );
               
