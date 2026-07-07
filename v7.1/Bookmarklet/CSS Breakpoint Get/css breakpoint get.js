@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Versions     : 7.1
     
@@ -24,7 +24,7 @@
   
     title = 'CSS Breakpoint Get',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `${ title } v${ version }
     
@@ -74,11 +74,7 @@
       
       );
       
-  dcmnt = siteFrameElement
-  
-    ?.contentDocument;
-    
-  if ( ! dcmnt ) {
+  if ( ! siteFrameElement ) {
   
     const s = `TWC ${ title }
     
@@ -96,68 +92,18 @@
     
     }
     
-  let breakpoint = dcmnt
-  
-    .head
+  const breakpoint = siteFrameElement
     
-    .querySelectorAll (
-    
-      'style[ id ^= "style_tweak_tag_" ]'
+      .contentWindow
       
-      );
-       
-  if ( ! breakpoint.length ) {
-  
-    const s = `TWC ${ title }
-    
-      Please make a change to Site Styles > Miscellaneous > Page With(Max) or Site Margin.
+      .Static
       
-      Undo that change but do not SAVE or EXIT.
+      .SQUARESPACE_CONTEXT
       
-      Run this bookmarklet again.
+      .tweakJSON
       
-      `
+      .maxPageWidth;
       
-      .trim ( )
-      
-      .replace ( /^ +/gm, '' );
-      
-    alert ( s );
-    
-    return; // bail if no site frame
-    
-    }
-    
-  breakpoint = [
-  
-    ...
-    
-    breakpoint
-    
-    ]
-    
-    .filter (
-    
-      e => e
-      
-        .textContent
-        
-        .startsWith ( 'h1' )
-        
-      )
-      
-    [ 0 ]
-    
-    .textContent
-    
-    .match (
-    
-      /@media screen and \(min-width:(\d+)px\){h1{font-size:calc\(var\(--heading-1-size-value\) \* 1rem\)}}/
-      
-      )
-      
-    [ 1 ];
-    
   {
   
     const s = `TWC ${ title }
@@ -166,10 +112,8 @@
       
         breakpoint
         
-        }px.
+        }.
         
-      Exit Site Styles without saving changes.
-      
       `
       
       .trim ( )
