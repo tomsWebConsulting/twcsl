@@ -8,7 +8,7 @@ Log store page price changes.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -69,11 +69,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2021-05-08**
+* **2026-07-12**
 
-  * verified code works on v7.0 using Brine template family
-  * bumped version to 0.1d2
-  -->
+  * updated to work with Store Page Price Change v0.10.0
+  * bumped version to 0.2.0
+  
 * **2024-10-04**
 
   * initial version
