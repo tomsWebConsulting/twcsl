@@ -1,54 +1,55 @@
 ( ( ) => {
 
+  // debugger;
+  
   /*!
   
     store page price change
     
-    License         : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.9.0
+    Version           : 0.10.0
     
-    SS Versions     : 7.1, 7.0
-    
-    v7.1
-    Products V2
-    Compatible      : Yes
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Not Applicable
+    SS Versions       : 7.1, 7.0
     
     v7.0
-    Templates       : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
-                      Feed, Foster, Greenwich, Hatch, Heights, Hunter, Hyde,
-                      Impact, Jaunt, Juke, Keene, Kin, Lincoln, Maple,
-                      Margot, Marta, Mentor, Mercer, Miller, Mojave, Moksha,
-                      Motto, Nueva, Pedro, Pursuit, Rally, Rover, Royce,
-                      Sofia, Sonora, Stella, Thorne, Vow, Wav, West )
-                      
-                      Five
-                      
-                      Montauk ( Julia, Kent, Om )
-                      
-                      your template is not listed? then it is not currently
-                      supported
+    Templates         : Brine ( Aria, Blend, Burke, Cacao, Clay, Fairfield,
+                        Feed, Foster, Greenwich, Hatch, Heights, Hunter,
+                        Hyde, Impact, Jaunt, Juke, Keene, Kin, Lincoln,
+                        Maple, Margot, Marta, Mentor, Mercer, Miller,
+                        Mojave, Moksha, Motto, Nueva, Pedro, Pursuit, Rally,
+                        Rover, Royce, Sofia, Sonora, Stella, Thorne, Vow,
+                        Wav, West )
+                        
+                        Five
+                        
+                        Montauk ( Julia, Kent, Om )
+                        
+                        your template is not listed? then it is not
+                        currently supported
     
-    Notes           : the code adds a data-twc-sppc-mo attribute with value
-                      of false on elements with class name product-price. by
-                      changing the attribute value to true you will cause a
-                      mutation which will cause the search replace text to
-                      run. the attribute value will be set to false after
-                      the search replace text run
-                      
-                      the code fails silently. poorly formed regular
-                      expressions will stop the processing of search/replace
-                      text pairs
+    Notes             : this code is a base for other effects
+                        
+                        this code makes calls to the json version of
+                        products for information that is not normally
+                        available
+                        
+                        the code adds a data-twc-sppc-mo attribute with
+                        value of false on elements with class names for
+                        price. by changing the attribute value to true you
+                        will cause a mutation which will cause the search
+                        replace text to run. the attribute value will be set
+                        to false after the search replace text run
+                        
+                        the code fails silently. poorly formed regular
+                        expressions will stop the processing of
+                        search/replace text pairs
     
-    Copyright       : 2021-2026 Thomas Creedon
-                      
-                      Tom's Web Consulting
-                      < http://www.tomsWeb.consulting/ >
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -56,9 +57,11 @@
     
   const
   
-    version = '0.9.0',
+    title = 'Store Page Price Change',
     
-    s = `Store Page Price Change v${ version }
+    version = '0.10.0',
+    
+    s = `${ title } v${ version }
     
       License < https://tinyurl.com/s872fb68 >
       
@@ -70,388 +73,862 @@
       
   console.log ( s );
   
-  const hasMutationObserver =
+  const
   
-    'MutationObserver' in window;
+    context = Static.SQUARESPACE_CONTEXT,
     
-  // bail if no mutation observer
-  
-  if ( ! hasMutationObserver ) return;
-  
-  const isStorePage = Static
-  
-    .SQUARESPACE_CONTEXT
-    
-    .collection
-    
-    ?.type
-    
-    ===
-    
-    13;
-    
+    isStorePage = context
+      
+      .collection
+      
+      ?.type
+      
+      ===
+      
+      13;
+      
   // bail if not store page
   
   if ( ! isStorePage ) return;
   
+  // globals
+  
+  {
+  
+    // initialize twc module
+    
+    window.twc = window.twc || { };
+      
+    // initialize twc sppc sub-module
+    
+    twc.sppc = twc.sppc || { };
+      
+    // initialize twc sppc callbacks sub-module
+    
+    twc.sppc.callbacks =
+    
+      twc.sppc.callbacks || { };
+      
+    }
+    
+  let
+  
+    items,
+    
+    observer,
+    
+    productPriceElements;
+    
   const
   
-    callback = ( ) => {
+    codeKey = 'twc-sppc',
     
-      // globals
+    isDetail = !! context.item,
+    
+    isList = ! context.item?.id,
+    
+    options = codeKey
+    
+      .split ( '-' )
       
-      {
+      .reduce (
       
-        // initialize twc module
+        ( obj, key ) => obj?.[ key ],
         
-        window.twc =
+        window
         
-          ( ( self ) => self )
+        ),
+       
+    searchReplacePipeline =
+    
+      (
+      
+        text,
+        
+        node,
+        
+        type,
+        
+        data
+        
+        ) => {
+        
+          const entries = Object.entries (
           
-          ( window.twc || { } );
+            options.searchReplaceText
+            
+            );
+            
+          for (
           
-        // initialize twc sppc sub-module
-        
-        twc.sppc =
-        
-          ( ( self ) => self )
+            const [ key, value ] of entries
+            
+            ) {
+            
+              let
+              
+                r = value,
+                
+                s = key;
+                
+              const m = s.match (
+              
+                /\/(.+)\/(.*)/
+                
+                );
+                
+              if ( m ) {
+              
+                try {
+                
+                  s = new RegExp (
+                  
+                    m [ 1 ],
+                    
+                    m [ 2 ]
+                    
+                    );
+                    
+                  } catch {
+                  
+                    // bail on error, keep current text
+                    
+                    return text;
+                    
+                    }
+                    
+                if ( ! s.test ( text ) )
+                
+                  continue;
+                  
+                }
+                
+              const isFunction =
+              
+                typeof
+                
+                options
+                
+                  .callbacks
+                  
+                  [ r ]
+                  
+                  ===
+                  
+                  'function';
+                  
+              if ( isFunction ) {
+              
+                r = options
+                
+                  .callbacks
+                  
+                  [ r ]
+                  
+                  (
+                  
+                    node,
+                    
+                    type,
+                    
+                    text,
+                    
+                    s,
+                    
+                    data
+                    
+                    );
+                    
+                if (
+                
+                  typeof r === 'boolean'
+                  
+                  ) {
+                  
+                    // bail
+                    
+                    if ( r === false )
+                    
+                      break;
+                      
+                    // skip replace
+                    
+                    continue;
+                    
+                    }
+                    
+                }
+                
+              text =
+              
+                text.replace ( s, r );
+                
+              }
+              
+          return text;
           
-          ( twc.sppc || { } );
+          },
           
-        // initialize twc sppc callbacks sub-module
+    ssVersion = context.templateVersion,
+    
+    urls = [ ],
+    
+    attribute = `data-${ codeKey }-mo`,
+    
+    changeText = async ( node ) => {
+    
+      const
+      
+        type =
         
-        twc.sppc.callbacks =
-        
-          ( ( self ) => self )
+          node.closest (
           
-          ( twc.sppc.callbacks || { } );
+            [
+            
+              // 7.1
+              
+              '#main-product-price',
+              
+              // begin 7.0
+              
+                // Brine
+                
+                '.ProductItem-details',
+                
+                // Five, Montauk
+                
+                '#productDetails'
+                
+                // end 7.0
+                
+              ]
+              
+              .join ( ', ' )
+              
+            )
+            
+          ?
+          
+          'detail'
+          
+          :
+          
+          isList
+          
+          ?
+          
+          'list'
+          
+          :
+          
+          node.closest (
+          
+            [
+            
+              // 7.1
+              
+              '.related-products',
+              
+              // begin v7.0
+              
+                // Brine
+                
+                '.ProductItem-relatedProducts-item',
+                
+                // Five, Montauk
+                
+                '.relatedProducts-item'
+                
+                // end v7.0
+                
+              ]
+              
+              .join ( ', ' )
+              
+            )
+            
+          ?
+          
+          'related'
+          
+          :
+          
+          node.closest (
+          
+            '.add-on-details'
+            
+            )
+            
+          ?
+          
+          'add on'
+          
+          :
+          
+          undefined,
+          
+        walker =
+        
+          document.createTreeWalker (
+          
+            node,
+            
+            NodeFilter.SHOW_TEXT
+            
+            );
+            
+      let url;
+      
+      switch ( type ) {
+      
+        case 'add on' : {
+        
+          url = node
+          
+            .parentNode
+            
+            .previousElementSibling
+            
+            .getAttribute ( 'href' );
+            
+          break;
+          
+          }
+          
+        case 'detail' :
+        
+          url = context.item.fullUrl;
+          
+          break;
+          
+        case 'list' : {
+        
+          url = node.parentNode;
+          
+          url =
+          
+            url
+            
+              .closest (
+              
+                [
+                
+                  // 7.1
+                  
+                  '.product-list-item-link',
+                  
+                  // 7.0 ( Brine, Montauk )
+                  
+                  '.product'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+              ?.getAttribute (
+              
+                'href'
+                
+                )
+                
+            ??
+            
+            // 7.0
+            
+            url
+            
+              .closest (
+              
+                '.ProductList-item'
+                
+                )
+                
+              .querySelector (
+              
+                '.ProductList-item-link'
+                
+                )
+                
+              .getAttribute (
+              
+                'href'
+                
+                );
+                
+          break;
+          
+          }
+          
+        case 'related' : {
+        
+          url =
+          
+            (
+            
+              node.closest (
+                
+                [
+                
+                  // 7.1
+                  
+                  '.product-list-item-link',
+                  
+                  // 7.0 Five, Montauk
+                  
+                  '.relatedProducts-item'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+              ??
+              
+              // Brine
+              
+              node
+              
+                .closest (
+                
+                  '.ProductItem-relatedProducts-item'
+                  
+                  )
+                  
+                .querySelector (
+                
+                  '.ProductItem-relatedProducts-link'
+                  
+                  )
+                  
+              )
+              
+              .getAttribute ( 'href' );
+              
+          break;
+          
+          }
           
         }
         
-      const
+      const data = items
       
-        codeKey = 'twc-sppc',
+        .filter (
         
-        attribute = `data-${ codeKey }-mo`,
+          i => i.fullUrl === url
+          
+          )
+          
+          [ 0 ];
+          
+      while ( walker.nextNode ( ) ) {
+      
+        const
         
-        callback = ( mutations ) => {
+          node = walker.currentNode,
+          
+          t = searchReplacePipeline (
+          
+            node.data,
+            
+            node,
+            
+            type,
+            
+            data
+            
+            );
+            
+        node.data = t;
         
-          const callback = ( mutation ) => {
-          
-            const hasAttribute = mutation
-            
-              .attributeName
-              
-              ===
-              
-              attribute;
-              
-            let b = ! mutation
-            
-              .addedNodes
-              
-              .length
-              
-              &&
-              
-              ! hasAttribute;
-              
-            // continue if no element and no attribute
-            
-            if ( b ) return true;
-            
-            const target = mutation.target;
-            
-            // previous change was forced
-            
-            if ( hasAttribute ) {
-            
-              b = target
-              
-                .getAttribute ( attribute )
-                
-                ===
-                
-                'true';
-                
-              if ( b )
-              
-                target
-                
-                  .setAttribute ( attribute, 'false' );
-                  
-                else if ( mutation.oldValue === 'true' )
-                
-                  return true; // continue
-                  
-              }
-              
-            observer.disconnect ( );
-            
-            b
-            
-              =
-              
-              changeText ( target )
-              
-              ===
-              
-              false;
-              
-            if ( b ) return false; // bail
-            
-            pricesObserve ( );
-            
-            return true;
-            
-            };
-            
-          for ( const mutation of mutations ) {
-          
-            const b = callback ( mutation );
-            
-            if ( ! b ) break; // bail if callback returns false
-            
-            }
-            
-          },
-          
-        changeText = ( node ) => {
+        }
         
-          const walker = document
-          
-            .createTreeWalker ( node, NodeFilter.SHOW_TEXT );
-            
-          let b;
-          
-          while ( walker.nextNode ( ) ) {
-          
-            const
-            
-              callback =  ( s, r ) => {
-              
-                const m = s.match ( /\/(.+)\/(.*)/ );
-                
-                if ( m ) { // m appears to be a regex pattern
-                
-                  try {
-                  
-                    s = new RegExp ( m [ 1 ], m [ 2 ] );
-                    
-                    } catch {
-                    
-                      return false; // bail on error
-                      
-                      }
-                      
-                  // continue if text no match
-                  
-                  if ( ! s.test ( t ) ) return true;
-                  
-                  }
-                  
-                b
-                
-                  =
-                  
-                  typeof
-                  
-                  options
-                  
-                    .callbacks
-                    
-                    [ r ]
-                    
-                    ===
-                    
-                    'function';
-                    
-                if ( b ) {
-                
-                  r = options
-                  
-                    .callbacks
-                    
-                    [ r ]
-                    
-                    ( node, isDetail, t, s );
-                    
-                  if ( typeof r === 'boolean' ) return r;
-                  
-                  }
-                  
-                t = t.replace ( s, r );
-                
-                },
-                
-              entries = Object
-              
-                .entries (
-                
-                  options
-                  
-                    .searchReplaceText
-                    
-                  );
-                  
-              node = walker.currentNode;
-              
-            let t = node.data;
-            
-            for ( const [ key, value ] of entries ) {
-            
-              b
-              
-                =
-                
-                callback ( key, value )
-                
-                ===
-                
-                false;
-                
-              if ( b ) break; // bail if callback returns false
-              
-              }
-              
-            node.data = t;
-            
-            }
-            
-          },
-          
-        config = {
-        
-          attributeFilter : [ attribute ],
-          
-          attributeOldValue : true,
-          
-          childList : true,
-          
-          subtree : true
-          
-          },
-          
+      },
+      
+    is70 = ssVersion === '7',
+    
+    is71 = ssVersion === '7.1',
+    
+    observeOptions = {
+    
+      attributeFilter : [ attribute ],
+      
+      attributeOldValue : true,
+      
+      childList : true,
+      
+      subtree : true
+      
+      },
+      
+    pricesObserve = ( ) => {
+    
+      const isAfterPay =
+      
         isDetail
         
-          =
-          
-          !!
-          
-          Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .item,
-            
-        isList
+        &&
         
-          =
-          
-          !
-          
-          Static
-          
-            .SQUARESPACE_CONTEXT
-            
-            .item
-            
-            ?.id,
-            
-        isListAddToCartButtons = document
+        options.afterpay;
         
-          .body
-          
-          .querySelector ( '.product-list-item-add-to-cart' )
-          
-          !==
-          
-          null,
-          
-        observer = new MutationObserver ( callback ),
+      // start listening for changes in element
+      
+      productPriceElements
+      
+        .forEach (
         
-        options = codeKey
+          e => observer.observe (
+          
+            e,
+            
+            observeOptions
+            
+            )
+            
+          );
+          
+      // bail if not afterpay
+      
+      if ( ! isAfterPay ) return;
+      
+      // start listening for changes in element
+      
+      document
+      
+        .body
         
-          .split ( '-' )
-          
-          .reduce (
-          
-            ( obj, key ) => obj?.[ key ],
-            
-            window
-            
-            ),
-            
-        pricesObserve = ( ) => {
+        .querySelectorAll (
         
-          const isAfterPay
+          [
           
-            =
+            // 7.1
             
-            isDetail
+            '.product-payment-method-messaging',
             
-            &&
+            // 7.0
             
-            options
+            'div[ data-afterpay="true" ]'
             
-              .afterpay;
+            ]
+            
+            .join ( ', ' )
+            
+          )
+        
+        .forEach (
+        
+          e => observer.observe (
+          
+            e,
+            
+            observeOptions
+            
+            )
+            
+          );
+          
+      },
+      
+    mutationCallback = ( mutation ) => {
+    
+      const hasAttribute = mutation
+      
+        .attributeName
+        
+        ===
+        
+        attribute;
+        
+      let b = ! mutation
+      
+        .addedNodes
+        
+        .length
+        
+        &&
+        
+        ! hasAttribute;
+        
+      // continue if no element and no attribute
+      
+      if ( b ) return true;
+      
+      const target = mutation.target;
+      
+      // previous change was forced
+      
+      if ( hasAttribute ) {
+      
+        b = target
+        
+          .getAttribute (
+          
+            attribute
+            
+            )
+            
+            ===
+            
+            'true';
+            
+        if ( b )
+        
+          target.setAttribute (
+          
+            attribute,
+            
+            'false'
+            
+            );
+            
+          else if (
+          
+            mutation.oldValue === 'true'
+            
+            )
+            
+            return true; // continue
+            
+        }
+        
+      observer.disconnect ( );
+      
+      b =
+      
+        changeText ( target )
+        
+        ===
+        
+        false;
+        
+      if ( b ) return false; // bail
+      
+      pricesObserve ( );
+      
+      return true;
+      
+      },
+      
+    callback = async ( ) => {
+    
+      const isProductEditMode = window
+      
+        .top
+        
+        .document
+        
+        .querySelector (
+        
+          '.editor-modal-dialog'
+          
+          );
+          
+       // bail if product edit mode
+       
+      if ( isProductEditMode ) return;
+      
+      switch ( true ) {
+      
+        case isDetail : {
+        
+          urls.push (
+          
+            context.item.fullUrl,
+            
+            ...
+            
+            [
+            
+              ...
               
-          // start listening for changes in element
-          
-          productPriceElements
-          
-            .forEach (
-            
-              e => observer
+              document
               
-                .observe ( e, config )
+                .body
                 
-              );
+                .querySelectorAll (
+                
+                  [
+                  
+                    // begin v7.1
+                    
+                      '.add-on-title-link',
+                      
+                      '.product-list-item-link',
+                      
+                      // end v7.1
+                      
+                    // begin 7.0
+                    
+                      // Brine
+                      
+                      '.ProductItem-relatedProducts-link',
+                      
+                      // Five, Montauk
+                      
+                      '.relatedProducts-item'
+                      
+                    ]
+                    
+                    .join ( ', ' )
+                    
+                  )
+                  
+              ]
               
-          // bail if not afterpay
+              .map (
+              
+                e => e.getAttribute (
+                
+                  'href'
+                  
+                  )
+                  
+                )
+                
+            );
+            
+          break;
           
-          if ( ! isAfterPay ) return;
+          }
           
-          // start listening for changes in element
+        case isList :
+        
+          urls.push (
           
+            context
+              
+              .collection
+              
+              .fullUrl
+              
+            );
+            
+          break;
+          
+        }
+        
+      const promises = urls.map (
+      
+        async u => {
+        
+          u += '?format=json';
+          
+          try {
+          
+            let r = await fetch ( u );
+              
+            if ( ! r.ok ) {
+            
+              const s = `
+              
+                ${
+                
+                  codeKey
+                  
+                  } network response was not ok ${
+                  
+                    r.statusText
+                    
+                    }
+                    
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
+              
+              }
+              
+            r = await r.json ( );
+            
+            switch ( true ) {
+            
+              case isDetail :
+              
+                r = r.item;
+                
+                break;
+                
+              case isList :
+              
+                r = r.items;
+                
+                break;
+                
+              }
+              
+            return r;
+            
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${
+                
+                  codeKey
+                  
+                  }
+                  
+                there has been a problem
+                
+                with your fetch get
+                
+                operation, ${
+                
+                  error
+                  
+                  }.
+                  
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              }
+              
+          }
+          
+        );
+        
+      items = await Promise.all (
+      
+        promises
+        
+        );
+        
+      if ( isList )
+      
+        items = items [ 0 ];
+        
+      const
+      
+        isListAddToCartButtons =
+        
           document
           
             .body
             
-            .querySelectorAll (
+            .querySelector (
             
-              [
+              '.product-list-item-add-to-cart'
               
-                // 7.1
-                
-                '.product-payment-method-messaging',
-                
-                // 7.0
-                
-                'div[ data-afterpay="true" ]'
-                
-                ]
-                
-                .join ( ', ' )
-                
               )
-            
-            .forEach (
-            
-              e => observer
               
-                .observe ( e, config )
-                
-              );
-              
-          },
-          
+            !==
+            
+            null,
+            
         isWatch = options.watch;
         
-      let productPriceElements
+      productPriceElements =
       
-        =
-        
         [
         
           ...
@@ -476,32 +953,44 @@
               
           ];
           
-      productPriceElements
+      productPriceElements.forEach (
       
-        .forEach (
+        e => e.setAttribute (
         
-          e => e.setAttribute (
+          attribute,
           
-            attribute,
-            
-            'false'
+          'false'
+          
+          )
+          
+        );
+        
+      productPriceElements.forEach (
+      
+        e => changeText ( e )
+        
+        );
+        
+      productPriceElements.forEach (
+      
+        e => e
+        
+          .classList
+          
+          .add (
+        
+            codeKey
             
             )
             
-          );
-          
-      productPriceElements
-      
-        .forEach ( e => changeText ( e ) );
+        );
         
       switch ( true ) {
       
         case isDetail :
         
-          productPriceElements
+          productPriceElements =
           
-            =
-            
             productPriceElements
             
               .filter (
@@ -520,13 +1009,19 @@
                       
                         [
                         
-                          '.product-content-wrapper', // 7.1
+                          // 7.1
+                          
+                          '.product-content-wrapper',
                           
                           // begin 7.0
                           
-                            '.ProductItem-details', // Brine
+                            // Brine
                             
-                            '#productDetails', // Five, Montauk
+                            '.ProductItem-details',
+                            
+                            // Five, Montauk
+                            
+                            '#productDetails',
                             
                             // end 7.0
                             
@@ -546,11 +1041,11 @@
         
           // bail if no atc
           
-          if ( ! isListAddToCartButtons ) return;
+          if ( ! isListAddToCartButtons )
           
-          productPriceElements
-          
-            =
+            return;
+            
+          productPriceElements =
             
             productPriceElements
           
@@ -562,10 +1057,18 @@
                   
                     e
                     
-                      .closest ( '.product-list-item' )
+                      .closest (
                       
-                      .querySelector ( '.product-variants' )
+                        '.product-list-item'
+                        
+                        )
+                        
+                      .querySelector (
                       
+                        '.product-variants'
+                        
+                        )
+                        
                     )
                     
                 );
@@ -579,17 +1082,25 @@
       
       pricesObserve ( );
       
-      },
+      };
       
-    ssVersion = Static
+  observer = new MutationObserver (
+  
+    ms => {
     
-      .SQUARESPACE_CONTEXT
+      for ( const m of ms ) {
       
-      .templateVersion,
+        const b = mutationCallback ( m );
+        
+        // bail if callback returns false
+        
+        if ( ! b ) break;
+        
+        }
+        
+      }
       
-    is70 = ssVersion === '7',
-    
-    is71 = ssVersion === '7.1';
+    );
     
   switch ( true ) {
   

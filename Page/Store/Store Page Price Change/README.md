@@ -8,7 +8,7 @@ Change store page prices.
 
 ### Version
 
-  * 0.9.0
+  * 0.10.0
 
 #### SS Version
 
@@ -55,6 +55,8 @@ Change store page prices.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
+          
           <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Price Change -->
@@ -78,6 +80,8 @@ Change store page prices.
         <!-- begin TWC Store Page Price Change -->
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
           
           <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
@@ -123,21 +127,21 @@ Change store page prices.
 ```JavaScript
           // remove word from
           
-          "from" : "",
+          'from' : '',
           
   ```
 
 ```JavaScript
           // change language of word from, from english to swedish
           
-          "from" : "fra",
+          'from' : 'fra',
           
   ```
 
 ```JavaScript
           // remove zero decimal from price
           
-          ".00" : "",
+          '.00' : '',
           
   ```
 
@@ -150,21 +154,21 @@ Change store page prices.
             
             */
             
-          "/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/" : "$1",
+          '/(\\d+(?:,\\d{3})*)(?:\\.\\d{2})?/' : '$1',
           
   ```
 
 ```JavaScript
           // add thousands separator
           
-          "/\\d(?=(?:\\d{3})+(?!\\d))/g" : "$&,",
+          '/\\d(?=(?:\\d{3})+(?!\\d))/g' : '$&,',
           
   ```
 
 ```JavaScript
           // replacement text callback name
           
-          "log" : "twcSppcl",
+          'log' : 'twcSppcl',
           
   ```
 
@@ -187,6 +191,13 @@ Please consider [making a donation][14].
 
 ## Changes
 
+* **2026-07-13**
+
+  * change isDetail parameter to type for more fine grained detection of the
+    kind of price being changed
+  * added data parameter to callbacks containing product meta data
+  * bumped version to 0.10.0
+  
 * **2026-02-18**
 
   * added watch option
