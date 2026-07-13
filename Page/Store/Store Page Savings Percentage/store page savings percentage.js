@@ -1,0 +1,799 @@
+/*!
+
+  store page savings percentage
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.2.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Dependencies      : store page price change
+  
+                      < https://tinyurl.com/5az53zbz >
+  
+  Copyright         : 2025-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+( ( ) => {
+
+  // debugger;
+  
+  const
+  
+    title = 'Store Page Savings Percentage',
+    
+    version = '0.2.0',
+    
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2025-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  } ) ( );
+  
+// initialize twc module
+
+window.twc = window.twc || { };
+
+// initialize twc sppc sub-module
+
+twc.sppc = twc.sppc || { };
+
+// initialize twc sppc callbacks sub-module
+
+twc.sppc.callbacks = ( ( self ) => {
+
+  self.twcSpsp = (
+  
+    node,
+    
+    type,
+    
+    text,
+    
+    searchText,
+    
+    data
+    
+    ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-spsp',
+        
+        element = node
+        
+          .parentElement,
+        
+        observedElement = element
+        
+          .closest (
+          
+            '[ data-twc-sppc-mo ]'
+            
+            ),
+            
+        percentClassName =
+        
+          `${ codeKey }__percent`,
+          
+        hasPercent = element
+        
+          ?.querySelector (
+          
+            `.${ percentClassName }`
+            
+            );
+            
+      // continue if has percent
+      
+      if ( hasPercent )
+      
+        return true;
+        
+      const
+      
+        context = window
+        
+          .Static
+          
+          .SQUARESPACE_CONTEXT,
+          
+        getPercent = (
+        
+          priceOriginal,
+          
+          priceSale
+          
+          ) => {
+          
+            const percent =
+            
+              Math.ceil (
+              
+                (
+                
+                  (
+                  
+                    priceOriginal
+                    
+                    -
+                    
+                    priceSale
+                    
+                    )
+                    
+                  /
+                  
+                  priceOriginal
+                  
+                  *
+                  
+                  100
+                  
+                )
+                
+                *
+                
+                10
+                
+                )
+                
+                /
+                
+                10;
+                
+            return percent;
+            
+            },
+            
+        getPercentHtml =
+        
+          ( percent ) => {
+          
+            const html = `
+            
+              <span class="${
+              
+                percentClassName
+                
+                }">
+                
+                ${
+                
+                  options
+                  
+                    .percentText
+                    
+                    .replaceAll (
+                    
+                      '[ percent ]',
+                      
+                      percent
+                      
+                      )
+                      
+                  }
+                  
+                </span>
+                
+              `;
+              
+            return html;
+            
+            },
+            
+        isOriginalPrice =
+        
+          element
+          
+            .classList
+            
+            .contains (
+            
+              'original-price'
+              
+              ),
+             
+        options = codeKey
+        
+          .split ( '-' )
+          
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
+            
+            window
+            
+            ),
+            
+        priceNormalizedToCurrency =
+        
+          ( price ) => {
+          
+            price = new Intl
+            
+              .NumberFormat (
+              
+                context
+                  
+                  .website
+                  
+                  .language,
+                  
+                {
+                
+                  style : 'currency',
+                  
+                  currency : context
+                    
+                    .websiteSettings
+                    
+                    .storeSettings
+                    
+                    .selectedCurrency
+                    
+                  }
+                    
+                )
+                
+                .format (
+                
+                  price
+                  
+                  /
+                  
+                  100
+                  
+                  );
+                  
+            return price;
+            
+            },
+            
+        re = {
+        
+          price : /\d[\d.,]*/,
+          
+          priceNormalize : /[^\d]/g
+          
+          },
+          
+        selector = [
+        
+          // begin 7.1
+          
+            // list
+            
+            '.product-list-item-price',
+            
+            // detail
+            
+            '.product-price-value',
+            
+            // end 7.1
+            
+          '.product-price' // 7.0
+          
+          ]
+          
+          .join ( ', ' ),
+          
+        ssVersion = context
+        
+          .templateVersion,
+          
+        wrapperElement = observedElement
+        
+          .querySelector (
+          
+            '.product-price-value'
+            
+            )
+            
+          ??
+          
+          observedElement,
+          
+        hasFrom = text.includes (
+        
+          options.labels.from
+          
+          ),
+          
+        is70 = ssVersion === '7',
+        
+        is71 = ssVersion === '7.1';
+        
+        switch ( true ) {
+        
+          case hasFrom : {
+          
+            const variant = data
+            
+              .variants
+              
+              .sort (
+              
+                ( a, b ) =>
+                
+                  ( b.onSale ? 1 : 0 )
+                  
+                  -
+                  
+                  ( a.onSale ? 1 : 0 )
+                  
+                  ||
+                  
+                  a.salePrice
+                  
+                  -
+                  
+                  b.salePrice
+                  
+                  /*
+                  
+                  ||
+                  
+                  a.price - b.price
+                  
+                  */
+                  
+                )
+                
+              [ 0 ];
+              
+            if ( ! variant.onSale )
+            
+              return true;
+              
+            const isMatch =
+            
+              variant.salePrice
+              
+              ===
+              
+              Number (
+              
+                text
+                
+                  .match ( re.price )
+                  
+                  [ 0 ]
+                  
+                  .replace (
+                  
+                    re.priceNormalize,
+                    
+                    ''
+                    
+                    )
+                    
+                );
+                
+            // bail if no match
+            
+            if ( ! isMatch ) return true;
+            
+            const
+            
+              isService =
+              
+                data.productType
+                
+                ===
+                
+                3,
+                
+              isServiceSubscription =
+              
+                !!
+                
+                data?.subscriptionPlan,
+                
+              priceSale = text;
+              
+            let
+            
+              html,
+              
+              m,
+              
+              priceOriginal =
+              
+                priceNormalizedToCurrency (
+                
+                  variant.price
+                  
+                  )
+                  
+                  .replaceAll (
+                  
+                    ' ',
+                    
+                    '&nbsp'
+                    
+                    ),
+                    
+              rePattern = {
+              
+                dflt :
+                
+                  [
+                  
+                    '(\\s*)',
+                    
+                    '(.*?)',
+                    
+                    '(\\[ currency \\])',
+                    
+                    '(\\s*)'
+                    
+                    ],
+                    
+                serviceSubscription :
+                
+                  [
+                  
+                    '(\\s*)',
+                    
+                    '(.*?)',
+                    
+                    '(\\[ currency \\])',
+                    
+                    '([^\\d]+)',
+                    
+                    '(\\d+)',
+                    
+                    '(.+)',
+                    
+                    '(\\s*)'
+                    
+                    ]
+                    
+                };
+                
+            switch ( true ) {
+            
+              case
+              
+                isService
+                
+                &&
+                
+                isServiceSubscription :
+                
+                  rePattern = rePattern
+                  
+                    .serviceSubscription;
+                    
+                break;
+                
+              case isService :
+              
+                rePattern = rePattern
+                
+                  .dflt;
+                  
+                break;
+                
+              default :
+              
+                rePattern = rePattern
+                
+                  .dflt;
+                  
+                break;
+                
+              }
+              
+            rePattern = rePattern
+            
+              .join ( '' );
+              
+            m = text
+            
+              .split (
+              
+                priceNormalizedToCurrency (
+                
+                  variant.salePrice
+                  
+                  )
+                  
+                )
+                
+              .join ( '[ currency ]' )
+              
+              .match (
+              
+                new RegExp (
+                
+                  rePattern
+                  
+                  )
+                  
+                );
+                
+            switch ( true ) {
+            
+              case
+              
+                isService
+                
+                &&
+                
+                isServiceSubscription :
+                
+                  m [ 3 ] =
+                  
+                    priceOriginal;
+                    
+                  priceOriginal = m
+                  
+                    .slice ( 3, 7 );
+                    
+                break;
+                
+              case isService :
+              
+                m [ 3 ] =
+                
+                  priceOriginal;
+                  
+                priceOriginal = m
+                
+                  .slice ( 3, 4 );
+                  
+                break;
+                
+              default:
+              
+                m [ 3 ] =
+                
+                  priceOriginal;
+                  
+                priceOriginal = m
+                
+                  .slice ( 3, 4 );
+                  
+                break;
+                
+              }
+              
+            priceOriginal =
+            
+              priceOriginal
+              
+              .join ( '' );
+              
+            html = `
+            
+              <span class = "visually-hidden${
+              
+                is70 ? ' v6-visually-hidden' : ''
+                
+                }">
+              
+                ${
+                
+                  options
+                  
+                    .labels
+                    
+                    .salePrice
+                    
+                    }:
+                    
+                </span>
+                
+              <span${
+              
+                is71 ? ' class = "sale-price"' : ''
+                
+                }>
+              
+                ${ priceSale }
+                
+                </span>
+                
+              <span class = "visually-hidden${
+              
+                is70 ? ' v6-visually-hidden' : ''
+                
+                }">
+              
+                ${
+                
+                  options
+                  
+                    .labels
+                    
+                    .originalPrice
+                    
+                    }:
+                    
+                </span>
+                
+              <span class = "original-price">
+              
+                ${ priceOriginal }
+                
+                </span>
+                
+              ${
+              
+                getPercentHtml (
+                
+                  getPercent (
+                  
+                    variant.price
+                    
+                    /
+                    
+                    100,
+                    
+                    variant.salePrice
+                    
+                    /
+                    
+                    100
+                    
+                    )
+                    
+                  )
+                  
+                }
+                
+              `;
+              
+            wrapperElement
+            
+              .innerHTML
+              
+              =
+              
+              html;
+              
+            break;
+            
+            }
+            
+          case isOriginalPrice : {
+          
+            const
+            
+              priceOriginal =
+              
+                Number (
+                
+                  text
+                  
+                    .match ( re.price )
+                    
+                    [ 0 ]
+                    
+                    .replace (
+                    
+                      re.priceNormalize,
+                      
+                      ''
+                      
+                      )
+                      
+                  ),
+                  
+              priceSale =
+              
+                Number (
+                
+                  is71
+                  
+                  ?
+                  
+                  element
+                  
+                    .previousElementSibling
+                    
+                    .previousElementSibling
+                    
+                    .textContent
+                    
+                    .match ( re.price )
+                    
+                    [ 0 ]
+                    
+                    .replace (
+                    
+                      re.priceNormalize,
+                      
+                      ''
+                      
+                      )
+                      
+                  :
+                    
+                  is70
+                  
+                  ?
+                  
+                  element
+                  
+                    .previousElementSibling
+                    
+                    .previousSibling
+                    
+                    .textContent
+                    
+                    .match ( re.price )
+                    
+                    [ 0 ]
+                    
+                    .replace (
+                    
+                      re.priceNormalize,
+                      
+                      ''
+                      
+                      )
+                      
+                  :
+                    
+                  undefined
+                  
+                  ),
+                  
+            percent =
+            
+              getPercent (
+              
+                priceOriginal,
+                
+                priceSale
+                
+                );
+                
+            wrapperElement
+            
+              .insertAdjacentHTML (
+              
+                'beforeend',
+                
+                getPercentHtml (
+                
+                  percent
+                  
+                  )
+                  
+                );
+                
+            break;
+            
+            }
+            
+          }
+          
+      return true; // continue
+      
+      };
+      
+  return self;
+  
+  } ) ( twc.sppc.callbacks || { } );

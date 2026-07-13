@@ -1,0 +1,82 @@
+<!-- begin TWC Store Page Savings Percentage Options -->
+
+  <!--
+  
+    store page savings percentage options
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    Copyright       : 2025-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    /* 7.1 */
+    
+    .product-list .product-list-item .product-list-item-link .product-list-item-meta .product-list-item-price .original-price, /* list */
+    .product-detail .product-meta .product-price .original-price /* detail */
+    
+      {
+      
+        display : inline-block;
+        
+        }
+        
+    </style>
+    
+  <script>
+  
+    // initialize twc module
+    
+    window.twc = window.twc || { };
+    
+    // initialize twc spsp sub-module
+    
+    twc.spsp = ( ( self ) => {
+    
+      const options = {
+      
+        // [ percent ] will be replaced with the percent number
+        
+        percentText : '[ percent ]% Off!',
+        
+        labels : {
+        
+          // the word 'from' in the language of the site
+          
+          from : 'from',
+          
+          // the words 'Original Price' in the language of the site
+          
+          originalPrice : 'Original Price',
+          
+          // the words 'Sale Price' in the language of the site
+          
+          salePrice : 'Sale Price'
+          
+          }
+          
+        };
+        
+      Object
+      
+        .assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+      return self;
+      
+      } ) ( twc.spsp || { } );
+      
+    </script>
+    
+  <!-- end TWC Store Page Savings Percentage Options -->

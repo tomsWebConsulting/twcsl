@@ -1,0 +1,46 @@
+/*!
+
+  store page savings percentage
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.2.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Dependencies      : store page price change
+  
+                      < https://tinyurl.com/5az53zbz >
+  
+  Copyright         : 2025-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+/* 7.0 */
+
+/* begin Brine */
+
+  .ProductItem-details .product-price .original-price,
+  .ProductList .product-price .original-price,
+  
+  /* end Brine */
+  
+/* Five */
+
+#productList .product .product-price .original-price,
+
+/* Montauk */
+
+#productDetails .product-price .original-price
+
+  {
+  
+    display : inline-block;
+    
+    }
