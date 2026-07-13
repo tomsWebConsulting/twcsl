@@ -55,9 +55,9 @@ Change store page prices.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Price Change -->
           
@@ -81,9 +81,9 @@ Change store page prices.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7f253a7a3e1aab9dc93a4dcd7fef64793f120a16/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
           
           <!-- end TWC Store Page Price Change -->
           
