@@ -54,9 +54,9 @@ Add savings percent to products on sale.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbdc1ca1b7ab2836d9ea26b6afb307e32fffdbe6/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbdc1ca1b7ab2836d9ea26b6afb307e32fffdbe6/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
             
             <!-- end TWC Store Page Savings Percentage -->
             
@@ -80,9 +80,9 @@ Add savings percent to products on sale.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbdc1ca1b7ab2836d9ea26b6afb307e32fffdbe6/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@6ec7be8ce712e747d7537bd2d72e22063ed6c603/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@bbdc1ca1b7ab2836d9ea26b6afb307e32fffdbe6/Page/Store/Store%20Page%20Price%20Change/store%20page%20price%20change.min.js" type="module"></script>
             
             <!-- end TWC Store Page Savings Percentage -->
             
@@ -142,6 +142,7 @@ Please consider [making a donation][13].
 * **2026-07-13**
 
   * added support for from prices to show savings percent
+  * moved options out of main code
   * updated to work with Store Page Savings Percentage v0.10.0
   * bumped version to 0.2.0
   
