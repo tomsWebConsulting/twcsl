@@ -8,15 +8,11 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.8.0
+  * 0.9.0
 
 #### SS Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -55,6 +51,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-07-24**
+
+  * added .custom-rule-sets rule set
+  * bumped version to 0.9.0
+  
 * **2026-05-12**
 
   * removed .store-product-detail-additional-info

@@ -4,43 +4,39 @@
   
     site wide image borders
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.8.0
+    Version           : 0.9.0
     
-    SS Version    : 7.1
+    SS Version        : 7.1
     
-    Fluid
-    Engine
-    Compatible    : Yes
+    Dependancies      : LESS
     
-    Dependancies  : LESS
+    Notes             : this effect is not complete
+                        
+                        this effect won't magically fix your images if there are
+                        transparent areas around the image and apply the effect.
+                        the same is true if the image has a border that matches
+                        the background behind the image
+                        
+                        there is no switch for portfolio projects as SS does not
+                        distinguish them from regular pages
+                        
+                        elements that have badges may appear outside the image
+                        border effect. for those cases you will need custom CSS
+                        to try and move the badge as needed
+                        
+                        this effect doesn't work with :
+                        
+                          fluid engine image block design fit
+                          
+                          image block shapes
+                          
+                          video blocks
     
-    Notes         : this effect is not complete
-                    
-                    this effect won't magically fix your images if there are
-                    transparent areas around the image and apply the effect. the
-                    same is true if the image has a border that matches the
-                    background behind the image
-                    
-                    there is no switch for portfolio projects as SS does not
-                    distinguish them from regular pages
-                    
-                    elements that have badges may appear outside the image border
-                    effect. for those cases you will need custom CSS to try and
-                    move the badge as needed
-                    
-                    this effect doesn't work with :
-                    
-                      fluid engine image block design fit
-                      
-                      image block shapes
-                      
-                      video blocks
-    
-    Copyright     : 2021-2026 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     */
     
@@ -83,11 +79,20 @@
     
     .custom-declarations {
     
-      // for your own declarations ( property/value pairs ). these will be placed
-      // after the built-in properties ( border-color, border-radius,
+      // for your own declarations ( property/value pairs ). these will be
+      // placed after the built-in properties ( border-color, border-radius,
       // border-style, border-width, and z-index )
          
       // enter your property/value pairs here
+      
+      }
+      
+    .custom-rule-sets {
+    
+      // for your own rule sets. these will be nested in the main rule set for
+      // this effect
+         
+      // enter your rule sets here
       
       }
       
@@ -107,6 +112,8 @@
       z-index : 1;
       
       .custom-declarations( );
+      
+      .custom-rule-sets( );
       
       }
       
