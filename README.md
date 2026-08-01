@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 579 effects. Each effect has it's own version number, code,
+twcsl contains 583 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -799,6 +799,8 @@ not necessarily designed to work together.
             
         * [Store Page Category Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder)
           
+          * [Store Page Category Reorder.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder/Store%20Page%20Category%20Reorder.bbprojectd)
+            
     * [Store Page Detail Featured Image Set](v7.1/Bookmarklet/Store%20Page%20Detail%20Featured%20Image%20Set)
       
     * [Pages Panel Expand All](v7.1/Bookmarklet/Pages%20Panel%20Expand%20All)
@@ -827,6 +829,12 @@ not necessarily designed to work together.
     
   * [Page Section Background Image Repeat](v7.1/Page%20Section%20Background%20Image%20Repeat)
     
+  * [Module](v7.1/Module)
+    
+    * [Overlay Modal Dialog](v7.1/Module/Overlay%20Modal%20Dialog)
+      
+      * [Overlay Modal Dialog.bbprojectd](v7.1/Module/Overlay%20Modal%20Dialog/Overlay%20Modal%20Dialog.bbprojectd)
+        
   * [Header Social Icon URLs Change Based on Language](v7.1/Header%20Social%20Icon%20URLs%20Change%20Based%20on%20Language)
     
   * [Hide Store Product Detail Recommended Product Last](v7.1/Hide%20Store%20Product%20Detail%20Recommended%20Product%20Last)
