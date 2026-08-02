@@ -8,7 +8,7 @@ Add categories to a Store Page with no categories.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -42,11 +42,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
-<!-- * **2025-11-27**
+* **2026-08-01**
 
-  * added missing comma
-  * bumped version to 0.4.1
-  -->
+  * fixed syntax error
+  * bumped version to 0.1.1
+  
 * **2026-08-01**
 
   * initial version
