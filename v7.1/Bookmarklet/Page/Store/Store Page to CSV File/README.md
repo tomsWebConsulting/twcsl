@@ -50,11 +50,11 @@ fields are purely for needs outside of Squarespace.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][4].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -69,6 +69,5 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20to%20csv%20file.bookmarklet#L1
-[3]: https://s3.us-east-1.amazonaws.com/media.tomsweb.consulting/twc-spcftc/twc+spcftc+demo.mp4
-[4]: https://en.wikipedia.org/wiki/Bookmarklet
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
