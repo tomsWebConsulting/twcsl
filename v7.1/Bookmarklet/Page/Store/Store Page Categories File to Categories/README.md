@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add categories to a Store Page with no categories.
+Add categories file to a Store Page with no categories.
 
 ### Version
 
