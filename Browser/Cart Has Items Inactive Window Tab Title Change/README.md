@@ -42,7 +42,7 @@ standard Squarespace page title and a custom one.
     
       <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
       
-      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@75170e8732b4e60253af564fdfbdf8e0bcebd5c8/Browser/Cart%20Has%20Items%20Inactive%20Window%20Tab%20Title%20Change/cart%20has%20items%20inactive%20window%20tab%20title%20change%20options.min.js" type="module"></script>
+      <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@75170e8732b4e60253af564fdfbdf8e0bcebd5c8/Browser/Cart%20Has%20Items%20Inactive%20Window%20Tab%20Title%20Change/cart%20has%20items%20inactive%20window%20tab%20title%20change.min.js" type="module"></script>
       
       <!-- end TWC Cart Has Items Inactive Window Tab Title Change -->
       
