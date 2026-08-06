@@ -4,8 +4,8 @@
 
 ### Synopsis
 
-When the cart has items and the window/tab becomes inactive flip between the
-standard Squarespace page title and a custom one.
+When the cart has items and the browser window/tab becomes inactive flip between
+the standard Squarespace page title and a custom one.
 
 ### Version
 
