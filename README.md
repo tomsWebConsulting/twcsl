@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 589 effects. Each effect has it's own version number, code,
+twcsl contains 592 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -413,6 +413,12 @@ not necessarily designed to work together.
   
 * [Page Edit Keys](Page%20Edit%20Keys)
   
+* [Browser](Browser)
+  
+  * [Cart Has Items Inactive Window Tab Title Change](Browser/Cart%20Has%20Items%20Inactive%20Window%20Tab%20Title%20Change)
+    
+    * [Cart Has Items Inactive Window Tab Title Change.bbprojectd](Browser/Cart%20Has%20Items%20Inactive%20Window%20Tab%20Title%20Change/Cart%20Has%20Items%20Inactive%20Window%20Tab%20Title%20Change.bbprojectd)
+      
 * [Form Block Post-submit Redirect URL Email Parameter Add](Form%20Block%20Post-submit%20Redirect%20URL%20Email%20Parameter%20Add)
   
 * [Image Map Responsive Template](Image%20Map%20Responsive%20Template)
