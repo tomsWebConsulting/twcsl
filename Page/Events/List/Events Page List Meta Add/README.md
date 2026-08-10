@@ -47,7 +47,7 @@ Add additional meta information to Events Page list.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.html" type="module"></script>
           
           <!-- end TWC Events Page List Meta Add -->
           
@@ -73,7 +73,7 @@ Add additional meta information to Events Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.html" type="module"></script>
             
             <!-- end TWC Events Page List Meta Add -->
             
@@ -93,7 +93,7 @@ Add additional meta information to Events Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Events/List/Events%20Page%20List%20Meta%20Add/events%20page%20list%20meta%20add.html" type="module"></script>
             
             <!-- end TWC Events Page List Meta Add -->
             
