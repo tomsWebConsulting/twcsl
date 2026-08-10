@@ -143,7 +143,7 @@ Please consider [making a donation][13].
 
   * added support for from prices to show savings percent
   * moved options out of main code
-  * updated to work with Store Page Savings Percentage v0.10.0
+  * updated to work with Store Page Price Change v0.10.0
   * bumped version to 0.2.0
   
 * **2025-07-04**
