@@ -1,0 +1,1175 @@
+<!-- begin TWC Events Page List Meta Add -->
+
+  <!--
+  
+    events page list meta add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Notes             : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+                        
+                        this code makes calls to the json version of products
+                        for information that is not normally available
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Events Page List Meta Add',
+        
+        version = '0.1.0',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        context = Static.SQUARESPACE_CONTEXT,
+        
+        isList = ! context.item?.id;
+        
+      // bail if not list page
+      
+      if ( ! isList ) return;
+      
+      const domContentLoadedCallback =
+      
+        async ( ) => {
+        
+          const isEventsPage =
+          
+            !!
+            
+            document
+            
+              .querySelectorAll (
+              
+                [
+                
+                  'body[ class *= "collection-type-events-" ]',
+                  
+                  'body[ class ~= "collection-type-events" ]'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+                .length;
+                
+          // bail if not events page
+          
+          if ( ! isEventsPage ) return;
+          
+          // globals
+          
+          {
+          
+            // initialize twc module
+            
+            window.twc = window.twc || { };
+            
+            // initialize twc eplma sub-module
+            
+            twc.eplma = twc.eplma || { };
+            
+            }
+            
+          const searchParams =
+          
+            new URLSearchParams (
+            
+              location.search
+              
+              );
+              
+          searchParams.set (
+          
+            'format',
+            
+            'json'
+            
+            );
+            
+          const
+          
+            codeKey = 'twc-eplma',
+            
+            url = `${
+            
+              location.protocol
+              
+              }//${
+              
+                location.host
+                
+                }${
+                
+                  location.pathname
+                  
+                  }?${
+                  
+                    searchParams.toString ( )
+                    
+                    }`;
+                    
+          let events;
+          
+          try {
+          
+            const response =
+            
+              await fetch ( url );
+              
+            if ( ! response.ok ) {
+            
+              const s = `
+              
+                ${ codeKey } network response was
+                
+                not ok ${ response.statusText }
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
+              
+              }
+              
+            const obj =
+            
+              await response.json ( );
+              
+            events = obj.upcoming;
+            
+            events.push ( ... obj.past );
+            
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${ codeKey } there has been a
+                
+                problem with your fetch get
+                
+                operation, ${ error }.
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              }
+              
+          const
+          
+            categoryCallback =
+            
+              ( category ) => {
+              
+                const html = `
+                
+                  <a href="${
+                  
+                    context
+                    
+                      .collection
+                      
+                      .fullUrl
+                    
+                    }?category=${
+                    
+                      category.replaceAll (
+                      
+                        ' ',
+                        
+                        '+'
+                        
+                        )
+                        
+                      }">
+                  
+                    ${
+                    
+                      category
+                      
+                      }</a>
+                    
+                  `;
+                  
+                return html;
+                
+                },
+                
+            dateFormatRootMap = {
+            
+              'dmwy-nssn' : {
+              
+                day : 'numeric',
+                
+                month : 'short',
+                
+                weekday : 'short',
+                
+                year : 'numeric'
+                
+                },
+                
+              'dmwy-nlln' : {
+              
+                day : 'numeric',
+                
+                month : 'long',
+                
+                weekday : 'long',
+                
+                year : 'numeric'
+                
+                }
+                
+              },
+              
+            isSameDay = ( d1, d2 ) => {
+            
+              const isSameDay =
+              
+                d1.getFullYear ( )
+                
+                ===
+                
+                d2.getFullYear ( )
+                
+                &&
+                
+                d1.getMonth ( )
+                
+                ===
+                
+                d2.getMonth ( )
+                
+                &&
+                
+                d1.getDate ( )
+                
+                ===
+                
+                d2.getDate ( );
+                
+              return isSameDay;
+              
+              },
+              
+            language = context
+            
+              .website
+              
+              .language,
+              
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce (
+              
+                ( obj, key ) =>
+                
+                  obj?.[ key ],
+                  
+                window
+                
+                ),
+                
+            tagCallback = ( tag ) => {
+            
+              const html = `
+              
+                <a href="${
+                
+                  context
+                   
+                    .collection
+                    
+                    .fullUrl
+                  
+                    +
+                    
+                    '?tag='
+                    
+                  }${
+                  
+                    tag.replaceAll (
+                    
+                      ' ',
+                      
+                      '+'
+                      
+                      )
+                      
+                    }">
+                
+                  ${
+                  
+                    tag
+                    
+                    }</a>
+                  
+                `;
+                
+              return html;
+              
+              },
+              
+            dateFormatMap = {
+            
+              'en-GB' : {
+              
+                'long' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nlln'
+                    
+                    ],
+                    
+                'short' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nssn'
+                    
+                    ]
+                    
+                },
+                
+              'es-MX' : {
+              
+                'long' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nlln'
+                    
+                    ],
+                    
+                'short' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nssn'
+                    
+                    ]
+                    
+                },
+                
+              'en-US' : {
+              
+                'long' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nlln'
+                    
+                    ],
+                    
+                'short' :
+                
+                  dateFormatRootMap [
+                  
+                    'dmwy-nssn'
+                    
+                    ]
+                    
+                },
+                
+              default : { }
+              
+              },
+              
+            entryCallback = (
+            
+              meta, event, element
+              
+              ) => {
+              
+                const isEnabled =
+                
+                  meta [ 0 ]
+                  
+                  !==
+                  
+                  '['
+                  
+                  &&
+                  
+                  meta
+                  
+                  !==
+                  
+                  '';
+                  
+                // continue
+                
+                if ( ! isEnabled )
+                
+                  return true;
+                  
+                const
+                
+                  d1 = new Date (
+                  
+                    event.startDate
+                    
+                    ),
+                    
+                  d2 = new Date (
+                  
+                    event.endDate
+                    
+                    ),
+                    
+                  b = isSameDay ( d1, d2 ),
+                  
+                  l =
+                  
+                    language
+                    
+                    in
+                    
+                    dateFormatMap
+                    
+                    ?
+                    
+                    language
+                    
+                    :
+                    
+                    'default',
+                    
+                  timeZoneOption = {
+                  
+                    timeZone : context
+                      
+                      .website
+                      
+                      .timeZone
+                      
+                    },
+                    
+                  options = {
+                  
+                    timeZone : timeZoneOption
+                    
+                      .timeZone
+                      
+                    };
+                    
+                let
+                
+                  html,
+                  
+                  separator = `
+                  
+                    <span class="event-datetime-divider">
+                    
+                      </span>
+                      
+                    `;
+                    
+                Object.assign (
+                
+                  options,
+                  
+                  dateFormatMap
+                  
+                    [ l ]
+                    
+                    [
+                    
+                      b
+                      
+                      ?
+                      
+                      'long'
+                      
+                      :
+                      
+                      'short'
+                      
+                      ]
+                      
+                  );
+                  
+                switch ( meta ) {
+                
+                  case 'categories' :
+                  
+                    html = event
+                    
+                      .categories
+                      
+                      .map (
+                      
+                        categoryCallback
+                        
+                        )
+                        
+                      .join ( '' )
+                      
+                      .replace (
+                      
+                        /,(\s+)$/,
+                        
+                        '$1'
+                        
+                        );
+                        
+                    break;
+                    
+                  case 'date' : {
+                  
+                    const dl1 = d1
+                    
+                      .toLocaleDateString (
+                      
+                        language,
+                        
+                        options
+                        
+                        );
+                        
+                    let
+                    
+                      dl2 = d2
+                      
+                        .toLocaleDateString (
+                        
+                          language,
+                          
+                          options
+                          
+                          ),
+                          
+                      endDateHtml = `
+                      
+                        <time class="event-date" datetime="${
+                        
+                          d2
+                          
+                            .toISOString ( )
+                            
+                            .slice ( 0, 10 )
+                          
+                          }">
+                          
+                          ${ dl2 }
+                          
+                          </time>
+                          
+                        `;
+                        
+                    if ( b )
+                    
+                      endDateHtml
+                      
+                      =
+                      
+                      separator
+                      
+                      =
+                      
+                      '';
+                      
+                    html = `
+                    
+                      <time class="event-date" datetime="${
+                      
+                        d1
+                        
+                          .toISOString ( )
+                          
+                          .slice ( 0, 10 )
+                        
+                        }">
+                        
+                        ${ dl1 }
+                        
+                        </time>
+                        
+                        ${ separator }
+                        
+                        ${ endDateHtml }
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'date dow' : {
+                  
+                    const
+                    
+                      dateTime1 = d1
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      dateTime2 = d2
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      dowOptions = {
+                      
+                        weekday : 'long'
+                        
+                        };
+                        
+                      startDayOfWeek =
+                      
+                        new Intl
+                        
+                          .DateTimeFormat (
+                          
+                            language,
+                            
+                            dowOptions
+                            
+                            )
+                            
+                          .format ( d1 );
+                          
+                    let endDayOfWeekHtml =
+                    
+                      new Intl
+                      
+                        .DateTimeFormat (
+                        
+                          language,
+                          
+                          dowOptions
+                          
+                          )
+                          
+                        .format ( d2 );
+                        
+                    endDayOfWeekHtml = `
+                    
+                      <time class="event-time-localized-end" datetime="${
+                      
+                        dateTime2
+                        
+                        }">
+                        
+                        ${
+                        
+                          endDayOfWeekHtml
+                          
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    if ( b )
+                    
+                      endDayOfWeekHtml
+                    
+                      =
+                      
+                      separator
+                      
+                      =
+                      
+                      '';
+                      
+                    html = `
+                    
+                      <span class="event-time-localized">
+                      
+                        <time class="event-time-localized-start" datetime="${
+                        
+                          dateTime1
+                          
+                          }">
+                        
+                          ${ startDayOfWeek }
+                          
+                          </time>
+                          
+                        ${ separator }
+                        
+                        ${ endDayOfWeekHtml }
+                        
+                        </span>
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'date time' : {
+                  
+                    const
+                    
+                      dateTime1 = d1
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      dateTime2 = d2
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      t1 = d1
+                      
+                        .toLocaleTimeString (
+                        
+                          language,
+                          
+                          timeZoneOption
+                          
+                          )
+                          
+                        .replace ( /:\d+ /, ' ' ),
+                        
+                      t2 = d2
+                      
+                        .toLocaleTimeString (
+                        
+                          language,
+                          
+                          timeZoneOption
+                          
+                          )
+                          
+                        .replace (
+                        
+                          /:\d+ /,
+                          
+                          ' '
+                          
+                          );
+                          
+                    const
+                    
+                      dl1 = d1
+                      
+                        .toLocaleDateString (
+                        
+                          language,
+                          
+                          options
+                          
+                          ),
+                          
+                      dl2 = d2
+                      
+                        .toLocaleDateString (
+                        
+                          language,
+                          
+                          options
+                          
+                          );
+                          
+                    let
+                    
+                      endDateHtml = `
+                      
+                        <time class="event-date" datetime="${
+                        
+                          dateTime1
+                          
+                          }">${
+                          
+                            dl2
+                            
+                          }</time>
+                          
+                        `,
+                        
+                      endHtml,
+                        
+                      endTimeHtml = `
+                      
+                        <span class="eventlist-meta-time">
+                        
+                          <time class="event-time-localized" datetime="${
+                        
+                          dateTime2
+                          
+                          }">${
+                          
+                            t2
+                              
+                            }</time>
+                            
+                          </span>
+                          
+                        `;
+                        
+                    if ( b ) 
+                    
+                      endHtml = `
+                      
+                        ${ separator }
+                        
+                        ${ endTimeHtml }
+                        
+                        `;
+                        
+                      else
+                      
+                        endHtml = `
+                        
+                          ${ separator }
+                          
+                          ${ endDateHtml }
+                          
+                          ${ endTimeHtml }
+                          
+                          `;
+                          
+                    html = `
+                    
+                      <time class="event-date" datetime="${
+                      
+                        dateTime1
+                        
+                        }">
+                      
+                        ${
+                        
+                          dl1
+                          
+                          }</time>
+                        
+                      <span class="eventlist-meta-time">
+                      
+                        <time class="event-time-localized" datetime="${
+                        
+                        dateTime1
+                        
+                        }">
+                        
+                          ${ t1 }
+                          
+                          </time>
+                          
+                        </span>
+                        
+                      ${ endHtml }
+                      
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'location' : {
+                  
+                    const
+                    
+                      location = event
+                        
+                        .location,
+                        
+                      address = [
+                      
+                        location.addressTitle,
+                        
+                        location.addressLine1,
+                        
+                        location.addressLine2,
+                        
+                        location.addressCountry
+                        
+                        ]
+                        
+                        .filter (
+                        
+                          a => a !== ''
+                          
+                          );
+                          
+                    // bail if no address
+                    
+                    if ( ! address.length )
+                    
+                      break;
+                      
+                    html = `
+                    
+                      <a href="http://maps.google.com?${
+                      
+                        address.join ( ' ' )
+                        
+                        }" class="eventlist-meta-address-maplink" target="_blank">
+                      
+                        ${
+                        
+                          address
+                          
+                          [ 2 ]
+                          
+                          .split ( /, */ )
+                          
+                          [ 0 ]
+                          
+                          }
+                          
+                        </a>
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'tags' :
+                  
+                    html = event
+                    
+                      .tags
+                      
+                      .map ( tagCallback )
+                      
+                      .join ( '' )
+                      
+                      .replace (
+                      
+                        /,(\s+)$/,
+                        
+                        '$1'
+                        
+                        );
+                        
+                    break;
+                    
+                  case 'time' : {
+                  
+                    const
+                    
+                      dateTime1 = d1
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      dateTime2 = d2
+                      
+                        .toISOString ( )
+                        
+                        .slice ( 0, 10 ),
+                      
+                      t1 = d1
+                      
+                        .toLocaleTimeString (
+                        
+                          language,
+                          
+                          timeZoneOption
+                          
+                          )
+                          
+                        .replace (
+                        
+                          /:\d+ /, ' '
+                          
+                          ),
+                          
+                      t2 = d2
+                      
+                        .toLocaleTimeString (
+                        
+                          language,
+                          
+                          timeZoneOption
+                          
+                          )
+                          
+                        .replace (
+                        
+                          /:\d+ /,
+                          
+                          ' '
+                          
+                          );
+                          
+                    html = `
+                    
+                      <span class="event-time-localized">
+                      
+                        <time class="event-time-localized-start" datetime="${
+                      
+                        dateTime1
+                        
+                        }">${
+                        
+                          t1
+                          
+                          }</time>
+                          
+                        <span class="event-datetime-divider">
+                        
+                          </span>
+                          
+                        <time class="event-time-localized-end" datetime="${
+                        
+                          dateTime2
+                          
+                          }">${
+                          
+                            t2
+                            
+                            }</time>
+                            
+                        </span>
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  }
+                  
+                element.insertAdjacentHTML (
+                
+                  'beforeend',
+                  
+                  `
+                  
+                    <li class="${
+                    
+                      codeKey
+                      
+                      } eventlist-meta-item event-meta-item eventlist-meta-${
+                      
+                        meta.replaceAll (
+                        
+                          ' ', '-'
+                          
+                          )
+                          
+                        }">
+                    
+                      ${ html }
+                      
+                      </li>
+                      
+                    `
+                    
+                  );
+                  
+                },
+                
+            eventCallback = ( event ) => {
+            
+              const element = document
+              
+                .body
+                
+                .querySelector (
+                
+                  '.eventlist-title:has( '
+                  
+                  +
+                  
+                  '.eventlist-title-link[ '
+                  
+                  +
+                  
+                  `href = "${ event.fullUrl }" ] )`
+                  
+                  )
+                  
+                .nextElementSibling;
+                
+              options
+              
+                .metaAdd
+                
+                .forEach ( m =>
+                
+                  entryCallback (
+                  
+                    m,
+                    
+                    event,
+                    
+                    element
+                    
+                    )
+                    
+                  );
+                  
+              };
+              
+          events.forEach ( eventCallback );
+          
+          };
+          
+      // domContentLoadedCallback ( );
+      
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
+  
+  <!-- end TWC Events Page List Meta Add -->

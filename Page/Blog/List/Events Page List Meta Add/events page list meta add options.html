@@ -1,0 +1,118 @@
+<!-- begin TWC Events Page List Meta Add Options -->
+
+  <!--
+  
+    events page list meta add options
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Note              : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    .tweak-events-stacked-show-time .eventlist-event--multiday .twc-eplma.eventlist-meta-date-time .event-date::after {
+    
+      content : ', ';
+      
+      }
+      
+    .tweak-events-stacked-show-time .eventlist-event--multiday .twc-eplma.eventlist-meta-date .event-date::after {
+    
+      content : unset;
+      
+      }
+      
+    .twc-eplma {
+    
+      &.eventlist-meta-categories,
+      &.eventlist-meta-tags
+      
+        {
+        
+           a:not( :last-child )::after {
+          
+            content : ', ';
+            
+            }
+            
+          }
+          
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc eplma sub-module
+      
+      twc.eplma = ( ( self ) => {
+      
+        const options = {
+        
+          metaAdd : [
+          
+            /*
+            
+              value is categories, date, date dow, date time, location, tags or
+              time
+              
+              date dow : shows the day of week name
+              
+              */
+              
+            /*
+            
+              following is an example line. copy and paste it after the example
+              line. remove the double forward slash space from each new line
+              
+              you can repeat the example line for as many meta items you want to
+              add this has been done once initially
+              
+              */
+              
+            // '[ add value here between single quotes replacing square brackets ]',
+            
+            '[ add value here between single quotes replacing square brackets ]',
+            
+            ]
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.eplma || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Events Page List Meta Add Options -->
