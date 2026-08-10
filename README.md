@@ -59,10 +59,6 @@ not necessarily designed to work together.
         
     * [List](Page/Blog/List)
       
-      * [Events Page List Meta Add](Page/Blog/List/Events%20Page%20List%20Meta%20Add)
-        
-        * [Events Page List Meta Add.bbprojectd](Page/Blog/List/Events%20Page%20List%20Meta%20Add/Events%20Page%20List%20Meta%20Add.bbprojectd)
-          
   * [Page Collection Main Page Robots No Index](Page/Page%20Collection%20Main%20Page%20Robots%20No%20Index)
     
   * [Page Tags Cache](Page/Page%20Tags%20Cache)
@@ -121,6 +117,10 @@ not necessarily designed to work together.
           
     * [List](Page/Events/List)
       
+      * [Events Page List Meta Add](Page/Events/List/Events%20Page%20List%20Meta%20Add)
+        
+        * [Events Page List Meta Add.bbprojectd](Page/Events/List/Events%20Page%20List%20Meta%20Add/Events%20Page%20List%20Meta%20Add.bbprojectd)
+          
       * [Events Page List All Day Time Hide](Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide)
         
         * [Events Page List All Day Time Hide.bbprojectd](Page/Events/List/Events%20Page%20List%20All%20Day%20Time%20Hide/Events%20Page%20List%20All%20Day%20Time%20Hide.bbprojectd)
