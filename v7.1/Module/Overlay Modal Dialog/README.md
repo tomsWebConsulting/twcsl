@@ -139,11 +139,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
-<!-- * **2026-07-05**
+* **2026-08-01**
 
-  * fixed issue with background underlay
-  * bumped version to 1.0.1
-  -->
+  * fixed syntax error
+  * bumped version to 0.1.1
+  
 * **2026-08-01**
 
   * initial version
