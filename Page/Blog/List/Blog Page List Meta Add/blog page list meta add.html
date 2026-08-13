@@ -1,0 +1,1240 @@
+<!-- begin TWC Blog Page List Meta Add -->
+
+  <!--
+  
+    blog page list meta add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Notes             : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+                        
+                        this code makes calls to the json version of products
+                        for information that is not normally available
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    /* begin reset */
+    
+      .tweak-blog-alternating-side-by-side-primary-meta-categories:not( .tweak-blog-alternating-side-by-side-secondary-meta-none ) .blog-alternating-side-by-side,
+      .tweak-blog-basic-grid-primary-meta-categories:not( .tweak-blog-basic-grid-secondary-meta-none ) .blog-basic-grid,
+      .tweak-blog-masonry-secondary-meta-categories:not( .tweak-blog-masonry-primary-meta-none ) .blog-masonry,
+      .tweak-blog-side-by-side-primary-meta-categories:not( .tweak-blog-side-by-side-secondary-meta-none ) .blog-side-by-side,
+      .tweak-blog-single-column-secondary-meta-categories:not( .tweak-blog-single-column-primary-meta-none ) .blog-single-column
+      
+        {
+        
+          .blog-meta-delimiter:not( .blog-category-delimiter ) {
+          
+            display : unset;
+            
+            }
+            
+          }
+          
+      .blog-meta-section {
+      
+        display : unset;
+        
+        }
+        
+      /* end reset */
+      
+    /* hide */
+    
+    .tweak-blog-alternating-side-by-side-primary-meta-categories:not( .tweak-blog-alternating-side-by-side-secondary-meta-none ) .blog-alternating-side-by-side .blog-meta-delimiter.blog-category-delimiter,
+    .tweak-blog-basic-grid-primary-meta-categories:not( .tweak-blog-basic-grid-secondary-meta-none ) .blog-basic-grid .blog-meta-delimiter.blog-category-delimiter,
+    .tweak-blog-masonry-secondary-meta-categories:not( .tweak-blog-masonry-primary-meta-none ) .blog-masonry .blog-meta-delimiter.blog-category-delimiter,
+    .tweak-blog-side-by-side-primary-meta-categories:not( .tweak-blog-side-by-side-secondary-meta-none ) .blog-side-by-side .blog-meta-delimiter.blog-category-delimiter,
+    .tweak-blog-single-column-secondary-meta-categories:not( .tweak-blog-single-column-primary-meta-none ) .blog-single-column .blog-meta-delimiter.blog-category-delimiter
+    
+      {
+      
+        display : none;
+        
+        }
+        
+    .tweak-blog-masonry-delimiter-space .blog-masonry .blog-meta-delimiter:after {
+    
+      content : '•';
+      
+      }
+      
+    .blog-meta-section {
+    
+      .blog-meta-tertiary,
+      .blog-meta-quaternary,
+      .blog-meta-quinary,
+      .blog-meta-senary,
+      .blog-meta-septenary,
+      .blog-meta-octonary,
+      .blog-meta-nonary,
+      .blog-meta-denary,
+      .blog-meta-undenary,
+      .blog-meta-duodenary,
+      .blog-meta-tredecenary,
+      .blog-meta-quattuordecenary,
+      .blog-meta-quindecenary
+      
+        {
+        
+          display : contents;
+          
+          }
+          
+      }
+      
+    .blog-alternating-side-by-side,
+    .blog-basic-grid,
+    .blog-masonry,
+    .blog-side-by-side,
+    .blog-single-column
+    
+      {
+      
+        .blog-meta-tertiary,
+        .blog-meta-quaternary,
+        .blog-meta-quinary,
+        .blog-meta-senary,
+        .blog-meta-septenary,
+        .blog-meta-octonary,
+        .blog-meta-nonary,
+        .blog-meta-denary,
+        .blog-meta-undenary,
+        .blog-meta-duodenary,
+        .blog-meta-tredecenary,
+        .blog-meta-quattuordecenary,
+        .blog-meta-quindecenary
+        
+          {
+          
+            .blog-date,
+            .blog-categories-list
+            
+              {
+              
+                display : inline;
+                
+                }
+                
+            }
+            
+        }
+        
+    .blog-time {
+
+      white-space : nowrap;
+      
+      }
+      
+    @media screen and ( max-width : 767px ) and ( orientation : portrait ) {
+    
+      .blog-alternating-side-by-side {
+      
+        .blog-tags-list,
+        .blog-time,
+        .blog-address-maplink
+        
+          {
+          
+            font-size : calc( ( var( --blog-alternating-side-by-side-list-meta-font-font-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+            
+            }
+            
+        }
+        
+      .blog-basic-grid {
+      
+        .blog-tags-list,
+        .blog-time,
+        .blog-address-maplink
+        
+          {
+          
+            font-size : calc( ( var( --blog-basic-grid-list-meta-font-font-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+            
+            }
+            
+        }
+        
+      .blog-masonry {
+      
+        .blog-tags-list,
+        .blog-time,
+        .blog-address-maplink
+        
+          {
+          
+            font-size : calc( ( var( --blog-grid-masonry-list-meta-font-font-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+              
+            }
+            
+        }
+        
+      .blog-side-by-side {
+      
+        .blog-tags-list,
+        .blog-time,
+        .blog-address-maplink
+        
+          {
+          
+            font-size : calc( ( var( --blog-side-by-side-list-meta-font-font-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+            
+            }
+            
+        }
+        
+      .blog-single-column {
+      
+        .blog-tags-list,
+        .blog-time,
+        .blog-address-maplink
+        
+          {
+          
+            font-size : calc( ( var( --blog-single-column-list-meta-font-font-size-value ) - 1 ) * calc( 0.012 * min( 100vh, 900px ) ) + 1rem );
+            
+            }
+            
+        }
+        
+      }
+      
+    @media
+      screen and ( min-width : 768px ),
+      screen and ( orientation : landscape )
+      
+        {
+        
+          .blog-alternating-side-by-side {
+          
+            .blog-tags-list,
+            .blog-time,
+            .blog-address-maplink
+            
+              {
+              
+                font-size : min(
+                
+                  calc( ( var( --blog-alternating-side-by-side-list-meta-font-font-size-value ) - 1 ) * 1.2vw + 1rem ),
+                  max( calc( ( var(--blog-alternating-side-by-side-list-meta-font-font-size-value ) - 1 ) * 0.012 * var( --maxPageWidth ) + 1rem ),
+                  calc( var( --blog-alternating-side-by-side-list-meta-font-font-size-value ) * 1rem ) )
+                  
+                  );
+                  
+                }
+                
+            }
+            
+          .blog-basic-grid {
+          
+            .blog-tags-list,
+            .blog-time,
+            .blog-address-maplink
+            
+              {
+              
+                font-size : min(
+                
+                  calc( ( var( --blog-basic-grid-list-meta-font-font-size-value ) - 1 ) * 1.2vw + 1rem ),
+                  max( calc( ( var(--blog-basic-grid-list-meta-font-font-size-value ) - 1 ) * 0.012 * var( --maxPageWidth ) + 1rem ),
+                  calc( var( --blog-basic-grid-list-meta-font-font-size-value ) * 1rem ) )
+                  
+                  );
+                  
+                }
+                
+            }
+            
+          .blog-masonry {
+          
+            .blog-tags-list,
+            .blog-time,
+            .blog-address-maplink
+            
+              {
+              
+                font-size : min(
+                
+                  calc( ( var( --blog-grid-masonry-list-meta-font-font-size-value ) - 1 ) * 1.2vw + 1rem ),
+                  max( calc( ( var(--blog-grid-masonry-list-meta-font-font-size-value ) - 1 ) * 0.012 * var( --maxPageWidth ) + 1rem ),
+                  calc( var( --blog-grid-masonry-list-meta-font-font-size-value ) * 1rem ) )
+                  
+                  );
+                  
+                }
+                
+            }
+            
+          .blog-side-by-side {
+          
+            .blog-tags-list,
+            .blog-time,
+            .blog-address-maplink
+            
+              {
+              
+                font-size : min(
+                
+                  calc( ( var( --blog-side-by-side-list-meta-font-font-size-value ) - 1 ) * 1.2vw + 1rem ),
+                  max( calc( ( var(--blog-side-by-side-list-meta-font-font-size-value ) - 1 ) * 0.012 * var( --maxPageWidth ) + 1rem ),
+                  calc( var( --blog-side-by-side-list-meta-font-font-size-value ) * 1rem ) )
+                  
+                  );
+                  
+                }
+                
+            }
+            
+          .blog-single-column {
+          
+            .blog-tags-list,
+            .blog-time,
+            .blog-address-maplink
+            
+              {
+              
+                font-size : min(
+                
+                  calc( ( var( --blog-single-column-list-meta-font-font-size-value ) - 1 ) * 1.2vw + 1rem ),
+                  max( calc( ( var( --blog-single-column-list-meta-font-font-size-value) - 1 )  * 0.012 * var( --maxPageWidth ) + 1rem ),
+                  calc( var( --blog-single-column-list-meta-font-font-size-value ) * 1rem ) )
+                  
+                  );
+                  
+                }
+                
+            }
+            
+          }
+          
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Blog Page List Meta Add',
+        
+        version = '0.1.0',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        context = Static.SQUARESPACE_CONTEXT,
+        
+        isList = ! context.item?.id;
+        
+      // bail if not list page
+      
+      if ( ! isList ) return;
+      
+      const domContentLoadedCallback =
+      
+        async ( ) => {
+        
+          const isBlogPage =
+          
+            !!
+            
+            document
+            
+              .querySelectorAll (
+              
+                [
+                
+                  'body[ class *= "collection-type-blog-" ]',
+                  
+                  'body[ class ~= "collection-type-blog" ]'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+              .length;
+              
+          // bail if not blog page
+          
+          if ( ! isBlogPage ) return;
+          
+          // globals
+          
+          {
+          
+            // initialize twc module
+            
+            window.twc = window.twc || { };
+            
+            // initialize twc bplma sub-module
+            
+            twc.bplma = twc.bplma || { };
+            
+            }
+            
+          const searchParams =
+          
+            new URLSearchParams (
+            
+              location.search
+              
+              );
+              
+          searchParams.set (
+          
+            'format',
+            
+            'json'
+            
+            );
+            
+          const
+          
+            codeKey = 'twc-bplma',
+            
+            url = `${
+            
+              location.protocol
+              
+              }//${
+              
+                location.host
+                
+                }${
+                
+                  location.pathname
+                  
+                  }?${
+                  
+                    searchParams.toString ( )
+                    
+                    }`;
+                    
+          let items;
+          
+          try {
+          
+            const response =
+            
+              await fetch ( url );
+              
+            if ( ! response.ok ) {
+            
+              const s = `
+              
+                ${ codeKey } network response was
+                
+                not ok ${ response.statusText }
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              throw new Error ( s );
+              
+              }
+              
+            items = await response.json ( );
+            
+            items = items.items;
+            
+            } catch ( error ) {
+            
+              const s = `
+              
+                ${ codeKey } there has been a
+                
+                problem with your fetch get
+                
+                operation, ${ error }.
+                
+                `
+                
+                .trim ( )
+                
+                .replace ( /\s+/gm, ' ' );
+                
+              console.error ( s );
+              
+              }
+              
+          const
+          
+            categoryCallback =
+            
+              ( category ) => {
+              
+                const html = `
+                
+                  <a class="blog-categories" href="${
+                  
+                    context
+                    
+                      .collection
+                      
+                      .fullUrl
+                    
+                    }/category/${
+                    
+                      encodeURIComponent (
+                      
+                        category
+                        
+                        )
+                        
+                        .replaceAll (
+                        
+                          '%20',
+                          
+                          '+'
+                          
+                          )
+                          
+                      }">
+                  
+                    ${
+                    
+                      category
+                      
+                      }</a>
+                    
+                  `;
+                  
+                return html;
+                
+                },
+                
+            dateFormatRootMap = {
+            
+              'dmy-nn2d' : {
+              
+                day : 'numeric',
+                
+                month : 'numeric',
+                
+                year : '2-digit'
+                
+                },
+                
+              },
+              
+            language = context
+            
+              .website
+              
+              .language,
+              
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce (
+              
+                ( obj, key ) =>
+                
+                  obj?.[ key ],
+                  
+                window
+                
+                ),
+                
+            tagCallback = ( tag ) => {
+            
+              const html = `
+              
+                <a href="${
+                
+                  context
+                   
+                    .collection
+                    
+                    .fullUrl
+                  
+                  }/tag/${
+                  
+                    tag.replaceAll (
+                    
+                      ' ',
+                      
+                      '+'
+                      
+                      )
+                      
+                    }">
+                
+                  ${
+                  
+                    tag
+                    
+                    }</a>
+                  
+                `;
+                
+              return html;
+              
+              },
+              
+            dateFormatMap = {
+            
+              'en-GB' : dateFormatRootMap [
+              
+                'dmy-nn2d'
+                
+                ],
+                
+              'es-MX' : dateFormatRootMap [
+              
+                'dmy-nn2d'
+                
+                ],
+              
+              'en-US' : dateFormatRootMap [
+              
+                'dmy-nn2d'
+                
+                ],
+              
+              default : { }
+              
+              },
+              
+            entryCallback = (
+            
+              order, meta, item, element
+              
+              ) => {
+              
+                const isEnabled =
+                
+                  meta [ 0 ]
+                  
+                  !==
+                  
+                  '['
+                  
+                  &&
+                  
+                  meta
+                  
+                  !==
+                  
+                  '';
+                  
+                // continue
+                
+                if ( ! isEnabled )
+                
+                  return true;
+                  
+                const
+                
+                  datePublishOn = new Date (
+                  
+                    item.publishOn
+                    
+                    ),
+                    
+                  dateUpdatedOn = new Date (
+                  
+                    item.updatedOn
+                    
+                    ),
+                    
+                  l =
+                  
+                    language
+                    
+                    in
+                    
+                    dateFormatMap
+                    
+                    ?
+                    
+                    language
+                    
+                    :
+                    
+                    'default',
+                    
+                  timeZoneOption = {
+                  
+                    timeZone : context
+                      
+                      .website
+                      
+                      .timeZone
+                      
+                    },
+                    
+                  options = {
+                  
+                    timeZone : timeZoneOption
+                    
+                      .timeZone
+                      
+                    };
+                    
+                let html;
+                
+                Object.assign (
+                
+                  options,
+                  
+                  dateFormatMap [ l ]
+                    
+                  );
+                  
+                switch ( meta ) {
+                
+                  case 'categories' :
+                  
+                    // continue
+                    
+                    if ( ! item.categories )
+                    
+                      break;
+                      
+                    html = item
+                    
+                      .categories
+                      
+                      .map (
+                      
+                        categoryCallback
+                        
+                        )
+                        
+                      .join ( '' )
+                      
+                      .replace (
+                      
+                        /,(\s+)$/,
+                        
+                        '$1'
+                        
+                        );
+                        
+                    html = `
+                    
+                      <span class="blog-categories-list">
+                      
+                        ${ html }
+                        
+                        </span>
+                        
+                      `;
+                    
+                    break;
+                    
+                  case 'date' :
+                  
+                    html = `
+                    
+                      <time class="blog-date" pubdate data-animation-role="date">
+                      
+                        ${
+                        
+                          datePublishOn
+                          
+                            .toLocaleDateString (
+                            
+                              language,
+                              
+                              options
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  case 'date dow' : {
+                  
+                    const dowOptions = {
+                      
+                        weekday : 'long'
+                        
+                        };
+                        
+                    html = `
+                    
+                      <time class="blog-date" pubdowdate data-animation-role="date">
+                      
+                        ${
+                        
+                          new Intl
+                          
+                            .DateTimeFormat (
+                            
+                              language,
+                              
+                              dowOptions
+                              
+                              )
+                              
+                            .format (
+                            
+                              datePublishOn
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'date time' :
+                  
+                    html = `
+                    
+                      <time class="blog-date" pubdate data-animation-role="date">
+                      
+                        ${
+                        
+                          datePublishOn
+                          
+                            .toLocaleDateString (
+                            
+                              language,
+                              
+                              options
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      <time class="blog-time" pubdate data-animation-role="date">
+                      
+                        ${
+                        
+                          datePublishOn
+                          
+                            .toLocaleTimeString (
+                            
+                              language,
+                              
+                              timeZoneOption
+                              
+                              )
+                              
+                            .replace (
+                            
+                              /:\d+ /, ' '
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  case 'date time updated' :
+                  
+                    html = `
+                    
+                      <time class="blog-date" updatedate data-animation-role="date">
+                      
+                        ${
+                        
+                          dateUpdatedOn
+                          
+                            .toLocaleDateString (
+                            
+                              language,
+                              
+                              options
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      <time class="blog-time" updatedate data-animation-role="date">
+                      
+                        ${
+                        
+                          datePublishOn
+                          
+                            .toLocaleTimeString (
+                            
+                              language,
+                              
+                              timeZoneOption
+                              
+                              )
+                              
+                            .replace (
+                            
+                              /:\d+ /, ' '
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  case 'date updated' :
+                  
+                    html = `
+                    
+                      <time class="blog-date" updatedate data-animation-role="date">
+                      
+                        ${
+                        
+                          dateUpdatedOn
+                          
+                            .toLocaleDateString (
+                            
+                              language,
+                              
+                              options
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  case 'location' : {
+                  
+                    const
+                    
+                      location = item
+                      
+                        .location,
+                        
+                      address = [
+                      
+                        location.addressTitle,
+                        
+                        location.addressLine1,
+                        
+                        location.addressLine2,
+                        
+                        location.addressCountry
+                        
+                        ]
+                        
+                        .filter (
+                        
+                          a => a !== ''
+                          
+                          )
+                          
+                        .join ( ', ' ),
+                        
+                      text = location
+                      
+                        .addressTitle
+                        
+                        ?
+                        
+                        location.addressTitle
+                        
+                        :
+                        
+                        address;
+                        
+                    html = `
+                    
+                      <a href="http://maps.google.com?${
+                      
+                        address
+                        
+                        }" class="blog-address-maplink" target="_blank">
+                      
+                        ${
+                        
+                          text
+                          
+                          }
+                          
+                        </a>
+                        
+                      `;
+                      
+                    break;
+                    
+                    }
+                    
+                  case 'tags' :
+                  
+                    // continue
+                    
+                    if ( ! item.tags ) break;
+                    
+                    html = item
+                    
+                      .tags
+                      
+                      .map (
+                      
+                        tagCallback
+                        
+                        )
+                        
+                      .join ( '' )
+                      
+                      .replace (
+                      
+                        /,(\s+)$/,
+                        
+                        '$1'
+                        
+                        );
+                        
+                    html = `
+                    
+                      <span class="blog-tags-list">
+                      
+                        ${ html }
+                        
+                        </span>
+                        
+                      `;
+                    
+                    break;
+                    
+                  case 'time' :
+                  
+                    html = `
+                    
+                      <time class="blog-time" pubdate data-animation-role="date">
+                      
+                        ${
+                        
+                          datePublishOn
+                          
+                            .toLocaleTimeString (
+                            
+                              language,
+                              
+                              timeZoneOption
+                              
+                              )
+                              
+                            .replace (
+                            
+                              /:\d+ /, ' '
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  case 'time updated' :
+                  
+                    html = `
+                    
+                      <time class="blog-time" updatedate data-animation-role="date">
+                      
+                        ${
+                        
+                          dateUpdatedOn
+                          
+                            .toLocaleTimeString (
+                            
+                              language,
+                              
+                              timeZoneOption
+                              
+                              )
+                              
+                            .replace (
+                            
+                              /:\d+ /, ' '
+                              
+                              )
+                              
+                          }
+                          
+                        </time>
+                        
+                      `;
+                      
+                    break;
+                    
+                  }
+                  
+                // continue
+                
+                if ( ! html ) return;
+                
+                element.insertAdjacentHTML (
+                
+                  'beforeend',
+                  
+                  `
+                  
+                    <span class="blog-meta-delimiter">
+                    
+                      </span>
+                      
+                    <span class="${
+                    
+                      codeKey
+                      
+                      } blog-meta-${
+                      
+                        order
+                        
+                        }">
+                      
+                      ${ html }
+                      
+                      </span>
+                      
+                    `
+                    
+                  );
+                  
+                },
+                
+            itemCallback = ( item ) => {
+            
+              const
+              
+                element = document
+                
+                  .body
+                  
+                  .querySelector (
+                  
+                    `.blog-title a[ href = "${
+                    
+                      item.sourceUrl
+                      
+                      ??
+                      
+                      item.fullUrl
+                      
+                      }" ]`
+                      
+                    )
+                    
+                  .parentElement
+                  
+                  .previousElementSibling,
+                  
+                entries = Object.entries (
+                
+                  options.metaAdd
+                  
+                  );
+                  
+            for (
+            
+              const [
+              
+                order,
+                
+                meta
+                
+                ]
+                
+                of
+                
+                entries
+                
+              )
+              
+              entryCallback (
+              
+                order,
+                
+                meta,
+                
+                item,
+                
+                element
+                
+                );
+                
+              };
+              
+          items.forEach ( itemCallback );
+          
+          };
+          
+      // domContentLoadedCallback ( );
+      
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Blog Page List Meta Add -->

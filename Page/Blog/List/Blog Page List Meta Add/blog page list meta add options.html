@@ -1,0 +1,124 @@
+<!-- begin TWC Blog Page List Meta Add Options -->
+
+  <!--
+  
+    blog page list meta add options
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Note              : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    .tweak-blog-stacked-show-time .eventlist-event--multiday .twc-bplma.eventlist-meta-date-time .event-date::after {
+    
+      content : ', ';
+      
+      }
+      
+    .tweak-blog-stacked-show-time .eventlist-event--multiday .twc-bplma.eventlist-meta-date .event-date::after {
+    
+      content : unset;
+      
+      }
+      
+    .twc-bplma {
+    
+      &.eventlist-meta-categories-list,
+      &.eventlist-meta-tags-list
+      
+        {
+        
+           a:not( :last-child )::after {
+          
+            content : ', ';
+            
+            }
+            
+          }
+          
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc bplma sub-module
+      
+      twc.bplma = ( ( self ) => {
+      
+        const options = {
+        
+          metaAdd : {
+          
+            /*
+            
+              value is categories, date, date dow, date time, date time updated,
+              date updated, location, tags, time, time updated
+              
+              date dow : shows the day of week name
+              
+              */
+              
+            tertiary : '[ add value here between single quotes replacing square brackets ]',
+            
+            quaternary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            quinary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            senary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            septenary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            octonary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            nonary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            denary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            undenary : '[ optional, add value here between single quotes replacing square brackets ]',
+            
+            duodenary : '[ optional, add value here between single quotes replacing square brackets ]'
+            
+            }
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.bplma || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Blog Page List Meta Add Options -->
