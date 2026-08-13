@@ -47,7 +47,7 @@ Add additional meta information to Blog Page list.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
           
           <!-- end TWC Blog Page List Meta Add -->
           
@@ -73,7 +73,7 @@ Add additional meta information to Blog Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
             
             <!-- end TWC Blog Page List Meta Add -->
             
@@ -93,7 +93,7 @@ Add additional meta information to Blog Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b45426453bb2150c65e7c6bd48b9e35cd670d547/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.html" type="module"></script>
             
             <!-- end TWC Blog Page List Meta Add -->
             
