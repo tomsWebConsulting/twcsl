@@ -47,9 +47,9 @@ Add additional meta information to Blog Page list.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1a2a637af737cfd932c328cee2d7952e3642538/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
           
           <!-- end TWC Blog Page List Meta Add -->
           
@@ -75,9 +75,9 @@ Add additional meta information to Blog Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1a2a637af737cfd932c328cee2d7952e3642538/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
             
             <!-- end TWC Blog Page List Meta Add -->
             
@@ -97,9 +97,9 @@ Add additional meta information to Blog Page list.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d1a2a637af737cfd932c328cee2d7952e3642538/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@0b0dc14434e0f12dc47084b6738496fbb91f026a/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ae975d51d64336422a625a346ddbef28477025b0/Page/Blog/List/Blog%20Page%20List%20Meta%20Add/blog%20page%20list%20meta%20add.min.js" type="module"></script>
             
             <!-- end TWC Blog Page List Meta Add -->
             
