@@ -8,7 +8,7 @@ Reorder products of a Store page category.
 
 ### Version
 
-  * 0.4.1
+  * 0.4.2
 
 #### SS Version
 
@@ -62,6 +62,11 @@ Wikipedia has a nice entry on [bookmarklet][4].
 Please consider [making a donation][5].
 
 ## Changes
+
+* **2026-08-15**
+
+  * fixed some syntax issues
+  * bumped version to 0.4.2
 
 * **2025-11-27**
 

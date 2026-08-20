@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.1
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -22,7 +22,7 @@
   
     title = 'Overlay Modal Dialog',
     
-    version = '0.1.1',
+    version = '0.2.0',
   
     s = `
     
@@ -62,7 +62,6 @@
       
         #${ codeKey } {
         
-          align-items : center;
           background-color : rgb( 231, 231, 231, 0.6 );
           box-sizing : border-box;
           display : none;
@@ -88,6 +87,8 @@
             rgba( 0, 0, 0, 0.08 ) 0px 0px 1px 0px;
           color : rgb( 14, 14, 14 );
           font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          height : fit-content;
+          margin-top : 16vh;
           max-height : 100vh;
           max-width : 100vw;
           overflow : auto;

@@ -6,9 +6,9 @@
     
     License     : < https://tinyurl.com/s872fb68 >
     
-    Version     : 0.4.1
+    Version     : 0.4.2
     
-    Copyright   : 2025 Thomas Creedon
+    Copyright   : 2025-2026 Thomas Creedon
                   
                   Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
@@ -20,13 +20,13 @@
   
     title = 'TWC Store Page Category Reorder',
     
-    version = '0.4.1',
+    version = '0.4.2',
   
     s = `${ title } v${ version }
     
       License < https://tinyurl.com/s872fb68 >
       
-      © 2025 Thomas Creedon
+      © 2025-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >`
       
@@ -70,7 +70,7 @@
     
       .body
       
-      .querySelector ( 'iframe#sqs-site-frame' );
+      .querySelector ( 'iframe#sqs-site-frame' ),
       
     dcmnt = iframeElement
     
@@ -98,7 +98,7 @@
       
     collection = iframeSquarespaceContext
     
-      .collection;
+      .collection,
       
     isStorePage = collection
     
