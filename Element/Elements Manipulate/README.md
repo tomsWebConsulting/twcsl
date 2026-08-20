@@ -64,7 +64,7 @@ append, before, prepend, or replace and other settings.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fd2cecc06220f428f5ec583112bee71d45c20dd1/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
             
             <!-- end TWC Elements Manipulate -->
             
@@ -90,7 +90,7 @@ append, before, prepend, or replace and other settings.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fd2cecc06220f428f5ec583112bee71d45c20dd1/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
               
               <!-- end TWC Elements Manipulate -->
               
@@ -110,7 +110,7 @@ append, before, prepend, or replace and other settings.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@b1b9c4ec88225c95a5a25b57810226a576b3c8f4/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fd2cecc06220f428f5ec583112bee71d45c20dd1/Element/Elements%20Manipulate/elements%20manipulate.min.js" type="module"></script>
               
               <!-- end TWC Elements Manipulate -->
               
@@ -319,7 +319,7 @@ Please consider [making a donation][20].
 * **2026-08-20**
 
   * added options data structure, footer page sections after page sections
-  * bumped version to 0.14.1 (commit e863f11e0e1b38e2f4b0814ed193d7d2c557dd22)
+  * bumped version to 0.14.1 (commit fd2cecc06220f428f5ec583112bee71d45c20dd1)
   
 * **2026-06-09**
 
