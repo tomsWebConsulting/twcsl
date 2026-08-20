@@ -239,8 +239,7 @@ Please consider [making a donation][10].
 * **2026-08-19**
 
   * reordered code
-  * fixed form-inner-wrapper class name bug, after apparent recent Squarespace
-    change
+  * fixed bug in find id for form
   * bumped version to 0.6.1
   
 * **2026-02-13**

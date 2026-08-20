@@ -351,18 +351,58 @@
           
             descriptionElement = xPathResults
             
-              .snapshotItem ( 0 );
+              .snapshotItem ( 0 ),
               
-            id = descriptionElement
+            element = descriptionElement
             
               .closest (
               
-                'div[ data-sqsp-block = "form" ]'
+                [
                 
-                )
+                  'div[ data-sqsp-block = "form" ]',
+                  
+                  '.form-inner-wrapper'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                ),
                 
-              .getAttribute ( 'id' );
+            id = element
+            
+              .getAttribute ( 'id' )
               
+              ??
+              
+              (
+              
+                element
+                
+                  .previousElementSibling
+                  
+                  .classList
+                  
+                  .contains ( 'form-title' )
+                  
+                ?
+                
+                element
+                
+                  .previousElementSibling
+                  
+                  .textContent
+                  
+                :
+                
+                null
+                
+                );
+                
+          // bail if no id
+          
+          if ( ! id ) return;
+          
           let userCallbacks;
           
           try {
