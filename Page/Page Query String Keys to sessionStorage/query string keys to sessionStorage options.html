@@ -1,0 +1,70 @@
+<!-- begin TWC Page Query String Keys to sessionStorage Options -->
+
+  <!--
+  
+    query string keys to sessionStorage options
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc qskts sub-module
+      
+      twc.qskts = ( ( self ) => {
+      
+        const options = {
+        
+          whitelist : [
+          
+            /*
+            
+              the format of each line is query string key name. following is an
+              example line. copy the example line below and paste after the
+              example line. remove '// ' at the beginning of the pasted line.
+              this has been done once initially
+              
+              */
+              
+            // '[ add key here between single quotes replacing square brackets ]',
+            
+            '[ add key here between single quotes replacing square brackets ]',
+            
+            ]
+            
+          };
+          
+        Object.assign (
+        
+          self,
+          
+          options
+          
+          );
+          
+        return self;
+        
+        } ) ( twc.qskts || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Page Query String Keys to sessionStorage Options -->

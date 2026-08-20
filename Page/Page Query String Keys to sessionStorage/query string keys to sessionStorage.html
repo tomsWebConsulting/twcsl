@@ -1,0 +1,137 @@
+<!-- begin TWC Page Query String Keys to sessionStorage -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      /*
+      
+        query string keys to sessionStorage
+        
+        License           : < https://tinyurl.com/s872fb68 >
+        
+        Version           : 0.1.0
+        
+        SS Versions       : 7.1, 7.0
+        
+        Copyright         : 2026 Thomas Creedon
+                            
+                            Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        title = 'Page Query String Keys to sessionStorage',
+        
+        version = '0.1.0',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const domContentLoadedCallback =
+      
+        ( ) => {
+        
+          // globals
+          
+          {
+          
+            // initialize twc module
+            
+            window.twc = window.twc || { };
+            
+            // initialize twc qskts sub-module
+            
+            twc.qskts = twc.qskts || { };
+            
+            }
+            
+          const
+          
+            codeKey = 'twc-qskts',
+            
+            options = codeKey
+            
+              .split ( '-' )
+              
+              .reduce (
+              
+                ( obj, key ) =>
+                
+                  obj?.[ key ],
+                  
+                window
+                
+                ),
+                
+            searchParams =
+            
+              new URLSearchParams (
+              
+                location.search
+                
+                );
+              
+          options
+          
+            .whitelist
+            
+            .forEach ( k => {
+            
+              const value =
+              
+                searchParams.get ( k );
+                
+              // continue
+              
+              if ( ! value ) return;
+              
+              sessionStorage.setItem (
+              
+                `${ codeKey }-${ k }`,
+                
+                value
+                
+                );
+                
+              } );
+              
+          };
+          
+      // domContentLoadedCallback ( );
+      
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
+  
+  <!-- end TWC Page Query String Keys to sessionStorage -->
