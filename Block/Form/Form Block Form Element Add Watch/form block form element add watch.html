@@ -6,14 +6,9 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.6.0
+    Version         : 0.6.1
     
     SS Versions     : 7.1, 7.0
-    
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Yes
     
     Notes           : the code is comprised of a style and script tag. both are
                       needed for the full effect to work
@@ -32,22 +27,26 @@
     
   <style>
   
-    body:not( .sqs-is-page-editing ) #siteWrapper {
+    body:not( .sqs-is-page-editing ) {
     
-      --twc-div-data-sqsp-block-form : hidden;
+      #siteWrapper {
       
-      }
+        --twc-div-data-sqsp-block-form : hidden;
+        
+        }
+        
+      div[ data-sqsp-block = "form" ] {
       
-    body:not( .sqs-is-page-editing ) div[ data-sqsp-block="form" ] {
-    
-      visibility : var( --twc-div-data-sqsp-block-form );
+        visibility : var( --twc-div-data-sqsp-block-form );
+        
+        }
+        
+      .section.twc-fbfeaw {
       
-      }
-      
-    body:not( .sqs-is-page-editing ) .section.twc-fbfeaw {
-    
-      display : none;
-      
+        display : none;
+        
+        }
+        
       }
       
     </style>
@@ -56,13 +55,17 @@
   
     ( ( ) => {
     
+      // debugger;
+      
       const
       
-        version = '0.6.0',
+        title = 'Form Block Form Element Add Watch',
+        
+        version = '0.6.1',
         
         s = `
         
-          Form Block Form Element Add Watch v${ version }
+          ${ title } v${ version }
           
           License < https://tinyurl.com/s872fb68 >
           
@@ -76,37 +79,23 @@
           
       console.log ( s );
       
-      // bail if no mutation observer available
-      
-      if ( ! ( 'MutationObserver' in window ) ) return;
-      
       // global
       
       {
       
         // initialize twc module
         
-        window.twc =
-        
-          ( ( self ) => self )
-          
-          ( window.twc || { } );
+        window.twc = window.twc || { };
           
         // initialize twc fbfeaw sub-module
         
-        twc.fbfeaw =
-        
-          ( ( self ) => self )
-          
-          ( twc.fbfeaw || { } );
+        twc.fbfeaw = twc.fbfeaw || { };
           
         // initialize twc fbfeaw callbacks sub-module
         
         twc.fbfeaw.callbacks =
         
-          ( ( self ) => self )
-          
-          ( twc.fbfeaw.callbacks || { } );
+          twc.fbfeaw.callbacks || { };
           
         }
         
@@ -124,19 +113,13 @@
       
         // initialize twc data sub-module
         
-        twc.data =
-        
-          ( ( self ) => self )
-          
-          ( twc.data || { } );
+        twc.data = twc.data || { };
           
         // initialize twc data hideShow sub-module
         
         twc.data.hideShow =
         
-          ( ( self ) => self )
-          
-          ( twc.data.hideShow || { } );
+          twc.data.hideShow || { };
           
         // initialize twc data hideShow selector key sub-module
         
@@ -166,449 +149,461 @@
           
         }
         
-      const dclCallback = ( ) => {
+      const
       
-        const
+        fbwocCodeKey = 'twc-fbwoc',
         
-          fbwocCodeKey = 'twc-fbwoc',
+        fbwocOptions = fbwocCodeKey
+        
+          .split ( '-' )
           
-          fbwocOptions = fbwocCodeKey
+          .reduce (
           
-            .split ( '-' )
+            ( obj, key ) => obj?.[ key ],
             
-            .reduce (
-            
-              ( obj, key ) => obj?.[ key ],
-              
-              window
-              
-              ),
-              
-          mutationCallback = ( mutation ) => {
-          
-            // bail if no added nodes
-            
-            if ( ! mutation.addedNodes.length ) return;
-            
-            mutation
-            
-              .addedNodes
-              
-              .forEach ( nodeCallback );
-              
-            },
-              
-          mutationsCallback = ( mutations ) => {
-          
-            const isEditing = document
-            
-              .body
-              
-              .classList
-              
-              .contains ( 'sqs-is-page-editing' );
-              
-            if ( isEditing ) return; // bail if editing
-            
-            for ( const m of mutations )
-            
-              mutationCallback ( m );
-              
-            },
-            
-          nodeCallback = ( node ) => {
-          
-            const isForm =
-            
-              node.tagName === 'FORM';
-              
-            // continue if not form element
-            
-            if ( ! isForm ) return;
-            
-            const xPathResults =
-            
-              xPathEvaluate ( xPathExpression, node );
-              
-            // bail if no element
-            
-            if ( ! xPathResults.snapshotLength ) return;
-            
-            const descriptionElement =
-            
-              xPathResults.snapshotItem ( 0 );
-              
-            let element = descriptionElement
-            
-              .closest (
-              
-                [
-                
-                  'div[ data-sqsp-block="form" ]',
-                  
-                  '.form-inner-wrapper'
-                  
-                  ]
-                  
-                  .join ( ', ' )
-                  
-                );
-                
-            const id = element
-            
-              .getAttribute ( 'id' )
-              
-              ??
-              
-              element
-              
-                .previousElementSibling
-                
-                .classList
-                
-                .contains ( 'form-title' )
-                
-              ?
-              
-              element
-              
-                .previousElementSibling
-                
-                .textContent
-                
-              :
-              
-              null;
-              
-            // bail if no id
-            
-            if ( ! id ) return;
-            
-            let userCallbacks;
-            
-            try {
-            
-              userCallbacks = JSON
-              
-                .parse (
-              
-                  descriptionElement
-                  
-                    .textContent
-                    
-                    .match ( /"callbacks"\s*:\s*(.+)/s )
-                    
-                    [ 1 ]
-                    
-                    // remove * comments
-                    
-                    .replace ( /\/\*[^]*?\*\//g, '' )
-                    
-                    // remove // comments
-                    
-                    .replace ( /^\s*\/\/.*/gm, '' )
-                    
-                    // remove trailing ,
-                    
-                    .replace ( /,\s+]/g, ']' )
-                    
-                  );
-                  
-              } catch ( error ) {
-              
-                const s = `${ codeKey }, id ${ id }, `
-                
-                  +
-                  
-                  'callbacks parse error : ';
-                  
-                console.error ( s, error );
-                
-                return;
-                
-                }
-                
-            descriptionElement
-            
-              .closest ( '.form-item' )
-              
-              .classList
-              
-              .add ( codeKey );
-              
-            // process user callbacks
-            
-            {
-            
-              if ( userCallbacks.added )
-              
-                userCallbacks =
-                
-                  userCallbacks.added;
-                  
-              // filter
-              
-              userCallbacks = userCallbacks
-              
-                .filter ( e => e [ 0 ] !== '[' );
-                
-              // call user callbacks
-              
-              {
-              
-                for ( const c of userCallbacks )
-                
-                  userCallback ( c, node );
-                  
-                }
-                
-              }
-              
-            },
-            
-          observer = new MutationObserver (
-          
-            mutationsCallback
+            window
             
             ),
             
-          options = codeKey
+        options = codeKey
+        
+          .split ( '-' )
           
-            .split ( '-' )
-            
-            .reduce (
-            
-              ( obj, key ) => obj?.[ key ],
-              
-              window
-              
-              ),
-              
-          userCallback =
+          .reduce (
           
-            ( callback, node ) => {
+            ( obj, key ) => obj?.[ key ],
             
-              try {
-              
-                options
-                
-                  .callbacks
-                  
-                  [ callback ]
-                  
-                  ( node );
-                  
-                } catch ( error ) {
-                
-                  const s =
-                  
-                    `${ codeKey } callback ${ callback } error : `;
-                    
-                  console.error ( s, error );
-                  
-                  }
-                  
-              },
-              
-          xPathEvaluate =
-          
-            (
+            window
             
-              xPathExpression,
-              
-              contextNode
-              
-              ) => {
-              
-                const xPathResults = document
-                
-                  .evaluate (
-                  
-                    xPathExpression,
-                    
-                    contextNode,
-                    
-                    null,
-                    
-                    XPathResult
-                    
-                      .ORDERED_NODE_SNAPSHOT_TYPE,
-                      
-                    null
-                    
-                    );
-                    
-                return xPathResults;
-                
-                },
-                
-          xPathExpression = `
+            ),
+            
+        userCallback =
+        
+          ( callback, node ) => {
           
-            //div [
+            try {
+            
+              options
+              
+                .callbacks
+                
+                [ callback ]
+                
+                ( node );
+                
+              } catch ( error ) {
+              
+                const s =
+                
+                  `${
+                  
+                    codeKey
+                    
+                    } callback ${
+                    
+                    callback
+                    
+                    } error : `;
+                    
+                console.error ( s, error );
+                
+                }
+                
+            },
+            
+        xPathEvaluate = (
+        
+          xPathExpression,
+          
+          contextNode
+          
+          ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult
+                
+                  .ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+        xPathExpression = `
+        
+          //div [
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' title '
+              
+              )
+              
+              and
+              
+              (
+              
+                contains (
+                
+                  .,
+                  
+                  '${ codeKey }'
+                  
+                  )
+                  
+                or
+                
+                contains (
+                
+                  .,
+                  
+                  '${ fbwocCodeKey }'
+                  
+                  )
+                  
+                )
+                
+            ]
+            
+            /following-sibling::div [
             
               contains (
               
                 concat (
                 
-                  " ",
+                  ' ',
                   
                   normalize-space ( @class ),
                   
-                  " "
+                  ' '
                   
                   ),
                   
-                " title "
+                ' description '
                 
                 )
                 
                 and
                 
-                (
-                
-                  contains (
-                  
-                    .,
-                    
-                    '${ codeKey }'
-                    
-                    )
-                    
-                  or
-                  
-                  contains (
-                  
-                    .,
-                    
-                    '${ fbwocCodeKey }'
-                    
-                    )
-                    
-                  )
-                  
-              ]
-              
-              /following-sibling::div [
-              
                 contains (
                 
-                  concat (
+                  .,
                   
-                    " ",
-                    
-                    normalize-space ( @class ),
-                    
-                    " "
-                    
-                    ),
-                    
-                  " description "
+                  'callbacks'
                   
                   )
                   
-                  and
-                  
-                  contains (
-                  
-                    .,
-                    
-                    'callbacks'
-                    
-                    )
-                    
-                  ]
-                  
-            `;
-            
-          // merge fbwoc callback into callbacks
-          
-          if ( fbwocOptions?.callbacks )
-          
-            Object.assign (
-            
-              options.callbacks,
-              
-              fbwocOptions.callbacks
-              
-              );
-              
-        // begin listening for changes in specified element
-        
-        observer.observe (
-        
-          document.body,
-          
-          {
-          
-            childList : true,
-            
-            subtree : true
-            
-            }
-            
-          );
-          
-        // hide show unregister
-        
-        {
-        
-          const siteWrapperElement = document
-          
-            .querySelector ( '#siteWrapper' );
-            
-          siteWrapperElement
-          
-            .style
-            
-            .setProperty (
-            
-              `--${ codeKey }`, 'visible'
-              
-              );
-              
-          twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            .pop ( `--${ codeKey }` );
-            
-          const l = twc
-          
-            .data
-            
-            .hideShow
-            
-            [ selectorKey ]
-            
-            .length;
-            
-          if ( ! l )
-          
-            siteWrapperElement
-            
-              .style
-              
-              .setProperty (
-              
-                '--twc-div-data-sqsp-block-form',
+                ]
                 
-                'unset'
+          `,
+          
+        nodeCallback = ( node ) => {
+        
+          const isForm =
+          
+            node.tagName === 'FORM';
+            
+          // continue if not form element
+          
+          if ( ! isForm ) return;
+          
+          const
+          
+            xPathResults =
+            
+              xPathEvaluate (
+              
+                xPathExpression,
+                
+                node
                 
                 );
                 
-          }
+          // bail if no element
           
-        };
+          if ( ! xPathResults.snapshotLength )
+          
+            return;
+            
+          const
+          
+            descriptionElement = xPathResults
+            
+              .snapshotItem ( 0 );
+              
+            id = descriptionElement
+            
+              .closest (
+              
+                'div[ data-sqsp-block = "form" ]'
+                
+                )
+                
+              .getAttribute ( 'id' );
+              
+          let userCallbacks;
+          
+          try {
+          
+            userCallbacks = JSON
+            
+              .parse (
+            
+                descriptionElement
+                
+                  .textContent
+                  
+                  .match (
+                  
+                    /"callbacks"\s*:\s*(.+)/s
+                    
+                    )
+                    
+                  [ 1 ]
+                  
+                  // remove * comments
+                  
+                  .replace (
+                  
+                    /\/\*[^]*?\*\//g,
+                    
+                    ''
+                    
+                    )
+                    
+                  // remove // comments
+                  
+                  .replace (
+                  
+                    /^\s*\/\/.*/gm,
+                    
+                    ''
+                    
+                    )
+                    
+                  // remove trailing ,
+                  
+                  .replace ( /,\s+]/g, ']' )
+                  
+                );
+                
+            } catch ( error ) {
+            
+              const s = `${
+              
+                codeKey
+                
+                }, id ${
+                
+                  id
+                  
+                  }, `
+              
+                +
+                
+                'callbacks parse error : ';
+                
+              console.error ( s, error );
+              
+              return;
+              
+              }
+              
+          descriptionElement
+          
+            .closest ( '.form-item' )
+            
+            .classList
+            
+            .add ( codeKey );
+            
+          // process user callbacks
+          
+          {
+          
+            if ( userCallbacks.added )
+            
+              userCallbacks =
+              
+                userCallbacks.added;
+                
+            // filter
+            
+            userCallbacks = userCallbacks
+            
+              .filter (
+              
+                e => e [ 0 ] !== '['
+                
+                );
+                
+            // call user callbacks
+            
+            for ( const c of userCallbacks )
+            
+              userCallback ( c, node );
+              
+            }
+            
+          },
+          
+        mutationCallback = ( mutation ) => {
         
+          // bail if no added nodes
+          
+          if ( ! mutation.addedNodes.length )
+          
+            return;
+            
+          mutation
+          
+            .addedNodes
+            
+            .forEach ( nodeCallback );
+            
+          },
+          
+        mutationsCallback = ( mutations ) => {
+        
+          const isEditing = document
+          
+            .body
+            
+            .classList
+            
+            .contains ( 'sqs-is-page-editing' );
+            
+          // bail if editing
+          
+          if ( isEditing ) return;
+          
+          for ( const m of mutations )
+          
+            mutationCallback ( m );
+            
+          },
+          
+        domContentLoadedCallback =
+        
+          ( ) => {
+          
+            // merge fbwoc callback into callbacks
+            
+            if ( fbwocOptions?.callbacks )
+            
+              Object.assign (
+              
+                options.callbacks,
+                
+                fbwocOptions.callbacks
+                
+                );
+                
+            // begin listening for changes in specified element
+            
+            new MutationObserver (
+            
+              mutationsCallback
+              
+              )
+              
+              .observe (
+              
+                document.body,
+                
+                {
+                
+                  childList : true,
+                  
+                  subtree : true
+                  
+                  }
+                  
+                );
+                
+            // hide show unregister
+            
+            {
+            
+              const siteWrapperElement = document
+              
+                .querySelector ( '#siteWrapper' );
+                
+              siteWrapperElement
+              
+                .style
+                
+                .setProperty (
+                
+                  `--${ codeKey }`, 'visible'
+                  
+                  );
+                  
+              twc
+              
+                .data
+                
+                .hideShow
+                
+                [ selectorKey ]
+                
+                .pop ( `--${ codeKey }` );
+                
+              const l = twc
+              
+                .data
+                
+                .hideShow
+                
+                [ selectorKey ]
+                
+                .length;
+                
+              if ( ! l )
+              
+                siteWrapperElement
+                
+                  .style
+                  
+                  .setProperty (
+                  
+                    '--twc-div-data-sqsp-block-form',
+                    
+                    'unset'
+                    
+                    );
+                    
+              }
+              
+            };
+            
       document.addEventListener (
       
         'DOMContentLoaded',
         
-        dclCallback
+        domContentLoadedCallback
         
         );
         

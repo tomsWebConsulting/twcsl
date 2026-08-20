@@ -4,21 +4,17 @@
 
 ### Synopsis
 
-Watch for Form block form elements to be added to the [DOM][2].
+Watch for Form Block form elements to be added to the [DOM][2].
 
 ### Version
 
-  * 0.6.0
+  * 0.6.1
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -166,49 +162,63 @@ Your callbacks must accept an element as a parameter. Following is a very
 generalized example of a callback.
 
 ```html
-<script>
+<!-- begin TWC FBFEAW Log -->
 
-  ( ( ) => {
+  <script>
   
-    // initialize twc module
+    ( ( ) => {
     
-    window.twc =
-    
-      ( ( self ) => self )
+      /*
       
-      ( window.twc || { } );
-      
-    // initialize twc fbfeaw sub-module
-    
-    twc.fbfeaw =
-    
-      ( ( self ) => self )
-      
-      ( twc.fbfeaw || { } );
-      
-    // initialize twc fbfeaw callbacks sub-module
-    
-    twc.fbfeaw.callbacks =
-    
-      ( ( self ) => {
-      
-        self [ 'twcFbfeawLog' ] =
-          
-          ( element ) => {
-          
-            console.log ( 'twcFbfeawLog : ', element );
-            
-            };
-            
-        return self;
+        fbfeaw log
         
-        } )
+        License         : < https://tinyurl.com/s872fb68 >
         
-      ( twc.fbfeaw.callbacks || { } );
+        Version         : 0.6.1
+        
+        SS Versions     : 7.1, 7.0
+        
+        Copyright       : 2023-2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        */
+        
+      // initialize twc module
       
-    } ) ( );
-    
-  </script>
+      window.twc = window.twc || { };
+        
+      // initialize twc fbfeaw sub-module
+      
+      twc.fbfeaw = twc.fbfeaw || { };
+        
+      // initialize twc fbfeaw callbacks sub-module
+      
+      twc.fbfeaw.callbacks =
+      
+        ( ( self ) => {
+        
+          self [ 'twcFbfeawLog' ] =
+            
+            ( element ) => {
+            
+              console.log ( 'twcFbfeawLog : ', element );
+              
+              };
+              
+          return self;
+          
+          } )
+          
+        ( twc.fbfeaw.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+  
+  <!-- end TWC FBFEAW Log -->
 
 ```
 
@@ -226,6 +236,13 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-08-19**
+
+  * reordered code
+  * fixed form-inner-wrapper class name bug, after apparent recent Squarespace
+    change
+  * bumped version to 0.6.1
+  
 * **2026-02-13**
 
   * added support for the lightbox design setting

@@ -4,16 +4,14 @@
   
   License         : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.6.0
+  Version         : 0.6.1
   
   SS Versions     : 7.1, 7.0
   
-  v7.1
-  Fluid
-  Engine
-  Compatible      : Yes
-  
-  Notes           : this code is a base for other effects. on its own it
+  Notes           : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+                    
+                    this code is a base for other effects. on its own it
                     doesn't do much. this code is not the end all be all of
                     mutation observers. it may not cover your needs
   
@@ -25,20 +23,24 @@
   
   */
   
-body:not( .sqs-is-page-editing ) #siteWrapper {
+body:not( .sqs-is-page-editing ) {
 
-  --twc-div-data-sqsp-block-form : hidden;
+  #siteWrapper {
   
-  }
+    --twc-div-data-sqsp-block-form : hidden;
+    
+    }
+    
+  div[ data-sqsp-block = "form" ] {
   
-body:not( .sqs-is-page-editing ) div[ data-sqsp-block="form" ] {
-
-  visibility : var( --twc-div-data-sqsp-block-form );
+    visibility : var( --twc-div-data-sqsp-block-form );
+    
+    }
+    
+  .section.twc-fbfeaw {
   
-  }
-  
-body:not( .sqs-is-page-editing ) .section.twc-fbfeaw {
-
-  display : none;
-  
+    display : none;
+    
+    }
+    
   }
