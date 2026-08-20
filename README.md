@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 597 effects. Each effect has it's own version number, code,
+twcsl contains 601 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -47,6 +47,10 @@ not necessarily designed to work together.
   
 * [Page](Page)
   
+  * [Page Query String Keys to sessionStorage](Page/Page%20Query%20String%20Keys%20to%20sessionStorage)
+    
+    * [Page Query String Keys to sessionStorage.bbprojectd](Page/Page%20Query%20String%20Keys%20to%20sessionStorage/Page%20Query%20String%20Keys%20to%20sessionStorage.bbprojectd)
+      
   * [Blog](Page/Blog)
     
     * [Post](Page/Blog/Post)
@@ -1151,6 +1155,10 @@ not necessarily designed to work together.
       
     * [Form Block Fields Previous Next](Block/Form/Form%20Block%20Fields%20Previous%20Next)
       
+    * [Form Block Fields From sessionStorage](Block/Form/Form%20Block%20Fields%20From%20sessionStorage)
+      
+      * [Form Block Fields From sessionStorage.bbprojectd](Block/Form/Form%20Block%20Fields%20From%20sessionStorage/Form%20Block%20Fields%20From%20sessionStorage.bbprojectd)
+        
     * [Form Block Form Element Add Watch](Block/Form/Form%20Block%20Form%20Element%20Add%20Watch)
       
       * [Form Block Form Element Add Watch.bbprojectd](Block/Form/Form%20Block%20Form%20Element%20Add%20Watch/Form%20Block%20Form%20Element%20Add%20Watch.bbprojectd)
