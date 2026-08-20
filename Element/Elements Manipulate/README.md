@@ -9,7 +9,7 @@ append, before, prepend, or replace and other settings.
 
 ### Version
 
-  * 0.14.0
+  * 0.14.1
 
 #### SS Versions
 
@@ -316,6 +316,11 @@ Please consider [making a donation][20].
 
 ## Changes
 
+* **2026-08-20**
+
+  * added options data structure, footer page sections after page sections
+  * bumped version to 0.14.1 (commit e863f11e0e1b38e2f4b0814ed193d7d2c557dd22)
+  
 * **2026-06-09**
 
   * changed from domContentLoaded event to load to detect body.sqs-edit-mode
