@@ -1,0 +1,477 @@
+<!--
+
+  begin form block fields from search parameters
+  
+  License       : < https://tinyurl.com/s872fb68 >
+  
+  Version       : 0.3.1
+  
+  SS Versions   : 7.1, 7.0
+  
+  v7.1
+  Fluid
+  Engine
+  Compatible    : Yes
+  
+  Dependencies  : form block wrapper observe changes
+                  < https://tinyurl.com/ub8akb85 >
+  
+  Note          : this effect does not work with checkbox, radio, or
+                  survey fields
+  
+  Copyright     : 2022-2025 Thomas Creedon
+                  
+                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  -->
+  
+  <style>
+  
+    body:not( .sqs-is-page-editing ) #siteWrapper {
+    
+      --twc-sqs-block-form-description-display : none;
+      
+      }
+      
+    body:not( .sqs-is-page-editing ) .form-wrapper .field-list .description {
+    
+      display : var( --twc-sqs-block-form-description-display );
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      const
+      
+        version = '0.3.1',
+        
+        s = `
+        
+          Form Block Fields From Search Parameters v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2025 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = ( ( self ) => self ) ( window.twc || { } );
+      
+      // initialize twc fbwoc sub-module
+      
+      twc.fbwoc = ( ( self ) => self ) ( twc.fbwoc || { } );
+      
+      // initialize twc fbwoc callbacks sub-module
+      
+      const
+      
+        codeKey = 'twc-fbffsp',
+        
+        selectorKey = '.form-wrapper .field-list .description';
+        
+      // hide show register
+      
+      {
+      
+        // initialize twc data sub-module
+        
+        twc.data = ( ( self ) => self ) ( twc.data || { } );
+        
+        // initialize twc data hideShow sub-module
+        
+        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
+        
+        // initialize twc data hideShow selector key sub-module
+        
+        twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
+        
+          twc.data.hideShow [ selectorKey ] || [ ] );
+          
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .push ( `--${ codeKey }` );
+          
+        }
+        
+      twc.fbwoc.callbacks = ( ( self ) => {
+      
+        const callback = ( element ) => {
+        
+          const hasClass = element
+          
+            .classList
+            
+            .contains ( 'react-form-contents' );
+          
+          if ( ! hasClass ) return; // bail if not react form
+          
+          const
+          
+            callback = ( element ) => {
+            
+              let text = element.textContent;
+              
+              const
+              
+                re = new RegExp ( `${ codeKey } : (.+)[\n]?`, 's' ),
+                
+                m = text.match ( re );
+                
+              if ( m === null ) return; // continue
+              
+              const
+              
+                formItemElement = element
+                
+                  .closest ( '.form-item' ),
+                    
+                searchParameterKeyLabelMap = m [ 1 ]
+                
+                  .split ( ', ' )
+                  
+                  .map ( s => s.split ( '=' ) ),
+                  
+                skipFields = [
+                
+                  'checkbox',
+                  
+                  'radio',
+                  
+                  'survey',
+                  
+                  ];
+                
+              text = text
+              
+                .replace ( m [ 0 ], '' )
+                
+                .trim ( );
+                
+              if ( text ) // set description or remove
+              
+                element.textContent = text;
+                
+                else
+                
+                  element.remove ( );
+                  
+              const isSkipField = [
+              
+                ...
+                
+                formItemElement
+                
+                  .classList
+                  
+                ]
+              
+                .some ( c => skipFields.indexOf ( c ) >= 0 );
+              
+              if ( isSkipField ) return; // continue
+              
+              const searchParams =
+              
+                new URLSearchParams ( location.search );
+                
+              for ( const [ key, caption ] of searchParameterKeyLabelMap ) {
+              
+                const b = ! searchParams.has ( key );
+                
+                if ( b ) continue; // continue if no key
+                
+                const selector = 'input, select, textarea';
+                
+                let
+                
+                  input,
+                  
+                  value = searchParams.get ( key );
+                  
+                if ( caption === undefined )
+                
+                  input = formItemElement;
+                  
+                  else {
+                  
+                    const
+                    
+                      xPathExpression = `
+                      
+                        .//div [
+                        
+                          contains (
+                          
+                            concat (
+                            
+                              ' ',
+                              
+                              normalize-space ( @class ),
+                              
+                              ' '
+                              
+                              ),
+                              
+                            ' caption-text '
+                            
+                            )
+                            
+                            and
+                            
+                            contains (
+                            
+                              .,
+                              
+                              
+                              '${ caption }'
+                              
+                              )
+                              
+                            ]
+                            
+                        `,
+                        
+                      xPathResults =
+                      
+                        xPathEvaluate ( xPathExpression, formItemElement );
+                        
+                    if ( ! xPathResults.snapshotLength ) return; // continue
+                    
+                    input = xPathResults
+                    
+                      .snapshotItem ( 0 )
+                      
+                      .closest ( '.field' )
+                      
+                    }
+                    
+                input = input
+                
+                  .querySelector ( selector );
+                  
+                value = decodeURIComponent ( value );
+                
+                inputChangeTrigger ( input, value );
+                
+                }
+                
+              },
+              
+            fieldListElement = element
+            
+              .querySelector ( '.field-list' ),
+              
+            inputChangeTrigger = ( node, value = '' ) => {
+            
+              /*
+              
+                based on code by Dan G < https://tinyurl.com/4hes79u8 > and
+                others
+                
+                */
+                
+              const
+              
+                inputTypes = [
+                
+                  HTMLInputElement,
+                  
+                  HTMLSelectElement,
+                  
+                  HTMLTextAreaElement
+                  
+                  ],
+                  
+                isInputType = inputTypes
+                
+                  .some ( type => node instanceof type );
+                  
+              /*
+              
+                only process the change on elements we know have a value setter in their
+                constructor
+                
+                */
+                
+              if ( ! isInputType ) return; // bail if not input type
+              
+              const
+              
+                isSelect = node instanceof inputTypes [ 1 ],
+                
+                eventType = isSelect ? 'change' : 'input',
+                
+                event = new Event ( eventType, { bubbles : true } ),
+                
+                setValue = Object
+                
+                  .getOwnPropertyDescriptor ( node.__proto__, 'value' )
+                  
+                  ?.set;
+                  
+              if ( isSelect )
+              
+                node.value = value;
+                
+                else {
+                
+                  if ( ! setValue ) return; // bail if no setValue
+                  
+                  setValue.call ( node, value );
+                  
+                  }
+                  
+              node.dispatchEvent ( event );
+              
+              },
+              
+            xPathEvaluate = ( xPathExpression, contextNode ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              },
+              
+            xPathExpression = `
+            
+              .//p[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' description '
+                  
+                  )
+                  
+                  and
+                  
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey } : '
+                    
+                    )
+                    
+                  ]
+                  
+              `,
+              
+            xPathResults = xPathEvaluate ( xPathExpression, element );
+            
+          for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+          
+            const element = xPathResults.snapshotItem ( i );
+            
+            callback ( element );
+            
+            }
+            
+          // hide show unregister
+          
+          {
+          
+            const siteWrapperElement = document
+            
+              .querySelector ( '#siteWrapper' );
+              
+            siteWrapperElement
+            
+              .style
+              
+              .setProperty ( `--${ codeKey }`, 'visible' );
+              
+            twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .pop ( `--${ codeKey }` );
+              
+            const l = twc
+            
+              .data
+              
+              .hideShow
+              
+              [ selectorKey ]
+              
+              .length;
+              
+            if ( ! l )
+            
+              siteWrapperElement
+              
+                .style
+                
+                .setProperty ( '--twc-sqs-block-form-description-display',
+                
+                  'unset' );
+                  
+            }
+            
+          };
+          
+        self
+        
+          [ 'twcFbffsp' ]
+          
+          =
+          
+          callback;
+          
+        return self;
+        
+        } ) ( twc.fbwoc.callbacks || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end form block fields from search parameters -->
