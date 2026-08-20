@@ -1,180 +1,212 @@
-<script>
+<!-- begin TWC Page Section First CSS Variable Padding-Top Add -->
 
-  $( ( ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      page section first css variable padding-top add
+      // debugger;
       
-      License      : < https://tinyurl.com/s872fb68 >
+      /*
       
-      Version      : 0.2.0
-      
-      SS Version   : 7.1
-      
-      Dependencies : twcsl
-      
-      Notes        : this code is a base for other effects. the code alone
-                     should not produce any visible change
-      
-      By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const version = '0.2.0';
-    
-    const s = `Page Section First CSS Variable Padding-Top Add v${ version }, ` +
-    
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    // bail if no mutation observer available
-    
-    if ( ! ( 'MutationObserver' in window ) ) return;
-    
-    const attribute = 'style';
-    
-    const getPageSectionFirstPaddingTop = ( ) => {
-    
-      const paddingTop = twcsl
-      
-        .getPageSectionNth ( )
+        page section first css variable padding-top add
         
-        .css ( 'padding-top' );
+        License         : < https://tinyurl.com/s872fb68 >
         
-      return paddingTop;
+        Version         : 0.3.0
+        
+        SS Version      : 7.1
+        
+        Note            : this code is a base for other effects. the code alone
+                          should not produce any visible change
+        
+        Copyright       : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting
+                          
+                          < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
       
-      };
-      
-    const paddingTop = getPageSectionFirstPaddingTop ( );
-    
-    const pageSectionFirstCallback = mutations => {
-    
-      const callback = mutation => {
-      
-        // continue if not attribute
+        title = 'Page Section First CSS Variable Padding-Top Add',
         
-        if ( mutation.type != 'attributes' ) return true;
+        version = '0.3.0',
         
-        // continue if not style
+        s = `
         
-        if ( mutation.attributeName != attribute ) return true;
-        
-        const $target = $( mutation.target );
-        
-        // continue if not first child
-        
-        if ( $target.index ( ) != 1 ) return true;
-        
-        const paddingTop = $target
-        
-          .css ( 'padding-top' );
+          ${ title } v${ version }
           
-        setSectionsCssVariable ( paddingTop );
-        
-        };
-        
-      mutations.forEach ( callback );
-        
-      }; // end pageSectionFirstCallback
-      
-    const pageSectionFirstConfig = {
-    
-      attributeFilter : [ attribute ],
-      
-      childList : true
-      
-      };
-      
-    const pageSectionFirstObserve = ( ) => {
-    
-      const selector = '#page .page-section';
-      
-      const pageSectionFirst = $( selector )
-      
-        .first ( )
-        
-        .get ( 0 );
-        
-      pageSectionFirstObserver =
-      
-        new MutationObserver ( pageSectionFirstCallback );
-        
-      // starts listening for changes in page section first
-      
-      pageSectionFirstObserver
-      
-        .observe ( pageSectionFirst, pageSectionFirstConfig );
-        
-      };
-      
-    const sections = $( '#sections' )
-    
-      .get ( 0 );
-      
-    const sectionsCallback = ( mutations ) => {
-    
-      mutations.forEach ( mutation => {
-      
-        console.log ( mutation );
-        
-        // bail if nodes added or removed
-        
-        if ( ! mutation.addedNodes.length && ! mutation.removedNodes.length )
-        
-          return;
+          License < https://tinyurl.com/s872fb68 >
           
-        const hasSection =
-        
-          $.merge ( $( mutation.addedNodes ), $( mutation.removedNodes ) )
+          © 2022-2026 Thomas Creedon
           
-          .is ( '.page-section' );
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
           
-        if ( ! hasSection ) return true; // continue not hasSection
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        attribute = 'style',
         
-        pageSectionFirstObserver.disconnect ( );
+        codeKey = 'twc-psfcvpta',
         
-        pageSectionFirstObserve ( );
+        getPaddingTop = ( ) => {
         
-        } ); // end forEach
+          const paddingTop =
+          
+            getComputedStyle (
+            
+              document
+              
+                .body
+                
+                .querySelector (
+                
+                  '#page '
+                  
+                  +
+                  
+                  '.page-section:first-child'
+                  
+                  )
+                  
+              )
+              
+              .getPropertyValue (
+              
+                'padding-top'
+                
+                );
+                
+          return paddingTop;
+          
+          },
+          
+        setCssVariable = ( paddingTop ) => {
         
-      }; // end sectionsCallback
-      
-    const sectionsConfig = {
-    
-      childList : true
-      
-      };
-      
-    const sectionsObserver = new MutationObserver ( sectionsCallback );
-    
-    const setSectionsCssVariable = ( paddingTop ) => {
-    
-      const cssVariableName = '--twc-psfcvpta-section-first-padding-top';
-      
-      const selector = ':root';
-      
-      $( selector )
-      
-        .css ( cssVariableName, paddingTop );
+          document
+          
+            .querySelector ( ':root' )
+          
+            .style
+            
+            .setProperty (
+            
+              `--${ codeKey }`,
+              
+              paddingTop
+              
+              );
+              
+          },
+          
+        mutationCallback = ( mutation ) => {
         
-      };
+          const isTypeAttributes =
+          
+            mutation.type
+            
+            ===
+            
+            'attributes';
+            
+          // continue if not attribute
+          
+          if ( ! isTypeAttributes ) return;
+          
+          const isAttributeNameStyle =
+          
+            mutation.attributeName
+            
+            ===
+            
+            attribute
+            
+          // continue if not style
+          
+          if ( ! isAttributeNameStyle )
+          
+            return;
+            
+          setCssVariable (
+          
+            getPaddingTop ( )
+            
+            );
+            
+          },
+          
+        domContentLoadedCallback = ( ) => {
+        
+          setCssVariable (
+          
+            getPaddingTop ( )
+            
+            );
+            
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              m => mutationCallback ( m )
+              
+              )
+              
+            )
+            
+            // start listening for changes in element
+            
+            .observe (
+            
+              document
+              
+                .body
+                
+                .querySelector (
+                
+                  '#page-regions '
+                  
+                  +
+                  
+                  '.page-section:first-child'
+                  
+                  ),
+                  
+              {
+          
+                attributeFilter : [ attribute ],
+                
+                childList : true
+                
+                }
+                  
+              );
+              
+            };
+            
+      // domContentLoadedCallback ( );
       
-    let pageSectionFirstObserver;
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
     
-    setSectionsCssVariable ( paddingTop );
-    
-    // starts listening for changes in sections
-    
-    sectionsObserver.observe ( sections, sectionsConfig );
-    
-    pageSectionFirstObserve ( );
-    
-    } );
-    
-  </script>
+  <!-- end TWC Page Section First CSS Variable Padding-Top Add -->
