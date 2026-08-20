@@ -48,7 +48,7 @@ Store white listed search query strings in [sessionStorage][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ef7e0c70e3f699f4cb9766bbcd7a4a3680b250bb/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
           
           <!-- end TWC Page Query String Keys to sessionStorage -->
           
@@ -74,7 +74,7 @@ Store white listed search query strings in [sessionStorage][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ef7e0c70e3f699f4cb9766bbcd7a4a3680b250bb/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Page Query String Keys to sessionStorage -->
             
@@ -94,7 +94,7 @@ Store white listed search query strings in [sessionStorage][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ef7e0c70e3f699f4cb9766bbcd7a4a3680b250bb/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Page/Page%20Query%20String%20Keys%20to%20sessionStorage/query%20string%20keys%20to%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Page Query String Keys to sessionStorage -->
             
