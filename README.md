@@ -775,6 +775,10 @@ not necessarily designed to work together.
       
       * [Section Auto Layout Right Arrow Auto Click](v7.1/Section/Auto%20Layout/Section%20Auto%20Layout%20Right%20Arrow%20Auto%20Click)
         
+    * [Page Section First CSS Variable Padding-Top Add](v7.1/Section/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add)
+      
+      * [Page Section First CSS Variable Padding-Top Add.bbprojectd](v7.1/Section/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add.bbprojectd)
+        
   * [Blog Post Categories and Tags Add](v7.1/Blog%20Post%20Categories%20and%20Tags%20Add)
     
   * [Prepend Breadcrumb to Store Page Breadcrumbs](v7.1/Prepend%20Breadcrumb%20to%20Store%20Page%20Breadcrumbs)
@@ -1005,10 +1009,6 @@ not necessarily designed to work together.
     
   * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
     
-  * [Page Section First CSS Variable Padding-Top Add](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add)
-    
-    * [Page Section First CSS Variable Padding-Top Add.bbprojectd](v7.1/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add.bbprojectd)
-      
   * [Header](v7.1/Header)
     
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
