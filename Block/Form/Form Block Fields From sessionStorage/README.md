@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Fill Form Block fields from sessionStorage.
+Fill Form Block fields from [sessionStorage][2].
 
 ### Version
 
@@ -18,9 +18,9 @@ Fill Form Block fields from sessionStorage.
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [JavaScript][3].
+  * [Squarespace plan][3] that supports [JavaScript][4].
   
-  * [Form Block Form Element Add Watch][4]
+  * [Form Block Form Element Add Watch][5]
 
 ---
 
@@ -29,7 +29,7 @@ Fill Form Block fields from sessionStorage.
 * CDN Hosted
 
   Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][5], a [CDN][6])
+  externally on the [jsDelivr][6], a [CDN][7])
   
   * Options
   
@@ -45,9 +45,9 @@ Fill Form Block fields from sessionStorage.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
           
           <!-- end TWC Form Block Fields From sessionStorage -->
           
@@ -69,9 +69,9 @@ Fill Form Block fields from sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From sessionStorage -->
             
@@ -87,9 +87,9 @@ Fill Form Block fields from sessionStorage.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@237605653282c59244b7e77266e6d0883df5bb50/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@13a2bc230fba5cbf77882c8a971d88179edacbea/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From sessionStorage -->
             
@@ -163,8 +163,9 @@ Please consider [making a donation][10].
 [2]: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://www.jsdelivr.com/
-[6]: https://en.wikipedia.org/wiki/Content_delivery_network
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Form%20Element%20Add%20Watch
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: form%20block%20fields%20from%20sessionStorage.html#L1
