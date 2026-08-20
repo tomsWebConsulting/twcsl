@@ -1,5 +1,8 @@
-(()=>{
-/*!
+( ( ) => {
+
+  // debugger;
+  
+  /*!
   
     page section first css variable padding-top add
     
@@ -21,4 +24,181 @@
     no user serviceable parts below
     
     */
-const e="Page Section First CSS Variable Padding-Top Add",t="0.3.0",n=`\n    \n      ${e} v${t}\n      \n      License < https://tinyurl.com/s872fb68 >\n      \n      © 2022-2026 Thomas Creedon\n      \n      Tom's Web Consulting < http://www.tomsWeb.consulting >\n      \n      `.replace(/^\s+/gm,"");console.log(n);const o="style",r="twc-psfcvpta",s=()=>{const e=getComputedStyle(document.body.querySelector("#page .page-section:first-child")).getPropertyValue("padding-top");return e},c=e=>{document.querySelector(":root").style.setProperty(`--${r}`,e)},i=e=>{const t="attributes"===e.type;if(!t)return;const n=e.attributeName===o;n&&c(s())},a=()=>{c(s()),new MutationObserver(e=>e.forEach(e=>i(e))).observe(document.body.querySelector("#page-regions .page-section:first-child"),{attributeFilter:[o],childList:!0})};document.addEventListener("DOMContentLoaded",a)})();
+    
+  const
+  
+    title = 'Page Section First CSS Variable Padding-Top Add',
+    
+    version = '0.3.0',
+    
+    s = `
+    
+      ${ title } v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const
+  
+    attribute = 'style',
+    
+    codeKey = 'twc-psfcvpta',
+    
+    getPaddingTop = ( ) => {
+    
+      const paddingTop =
+      
+        getComputedStyle (
+        
+          document
+          
+            .body
+            
+            .querySelector (
+            
+              '#page '
+              
+              +
+              
+              '.page-section:first-child'
+              
+              )
+              
+          )
+          
+          .getPropertyValue (
+          
+            'padding-top'
+            
+            );
+            
+      return paddingTop;
+      
+      },
+      
+    setCssVariable = ( paddingTop ) => {
+    
+      document
+      
+        .querySelector ( ':root' )
+      
+        .style
+        
+        .setProperty (
+        
+          `--${ codeKey }`,
+          
+          paddingTop
+          
+          );
+          
+      },
+      
+    mutationCallback = ( mutation ) => {
+    
+      const isTypeAttributes =
+      
+        mutation.type
+        
+        ===
+        
+        'attributes';
+        
+      // continue if not attribute
+      
+      if ( ! isTypeAttributes ) return;
+      
+      const isAttributeNameStyle =
+      
+        mutation.attributeName
+        
+        ===
+        
+        attribute
+        
+      // continue if not style
+      
+      if ( ! isAttributeNameStyle )
+      
+        return;
+        
+      setCssVariable (
+      
+        getPaddingTop ( )
+        
+        );
+        
+      },
+      
+    domContentLoadedCallback = ( ) => {
+    
+      setCssVariable (
+      
+        getPaddingTop ( )
+        
+        );
+        
+      new MutationObserver (
+      
+        ms => ms.forEach (
+        
+          m => mutationCallback ( m )
+          
+          )
+          
+        )
+        
+        // start listening for changes in element
+        
+        .observe (
+        
+          document
+          
+            .body
+            
+            .querySelector (
+            
+              '#page-regions '
+              
+              +
+              
+              '.page-section:first-child'
+              
+              ),
+              
+          {
+      
+            attributeFilter : [ attribute ],
+            
+            childList : true
+            
+            }
+              
+          );
+          
+        };
+        
+  // domContentLoadedCallback ( );
+  
+  //
+  
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  //
+  
+  } ) ( );
