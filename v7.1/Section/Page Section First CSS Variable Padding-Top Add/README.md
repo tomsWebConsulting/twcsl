@@ -42,7 +42,7 @@ property.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ef7e0c70e3f699f4cb9766bbcd7a4a3680b250bb/v7.1/Sections/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/page%20section%20first%20css%20variable%20padding-top%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9cf7e86e8ecede17bad2bdc09eb6921aefc67775/v7.1/Sections/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/page%20section%20first%20css%20variable%20padding-top%20add.min.js" type="module"></script>
           
           <!-- end TWC Page Section First CSS Variable Padding-Top Add -->
           
@@ -62,7 +62,7 @@ property.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ef7e0c70e3f699f4cb9766bbcd7a4a3680b250bb/v7.1/Sections/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/page%20section%20first%20css%20variable%20padding-top%20add.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9cf7e86e8ecede17bad2bdc09eb6921aefc67775/v7.1/Sections/Page%20Section%20First%20CSS%20Variable%20Padding-Top%20Add/page%20section%20first%20css%20variable%20padding-top%20add.min.js" type="module"></script>
           
           <!-- end TWC Page Section First CSS Variable Padding-Top Add -->
           
@@ -111,7 +111,7 @@ Please consider [making a donation][9].
 
   * removed jQuery dependency
   * updated to work with recent Squarespace changes
-  * bumped version to 0.3.0 (commit e863f11e0e1b38e2f4b0814ed193d7d2c557dd22)
+  * bumped version to 0.3.0 (commit 9cf7e86e8ecede17bad2bdc09eb6921aefc67775)
   
 * **2023-12-30**
 
