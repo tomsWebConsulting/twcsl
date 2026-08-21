@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 601 effects. Each effect has it's own version number, code,
+twcsl contains 600 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -789,10 +789,6 @@ not necessarily designed to work together.
       
   * [Header Social Icon Bandcamp Generic Icon to Bandcamp Change](v7.1/Header%20Social%20Icon%20Bandcamp%20Generic%20Icon%20to%20Bandcamp%20Change)
     
-  * [Footer Sections Move to Page](v7.1/Footer%20Sections%20Move%20to%20Page)
-    
-    * [Footer Sections Move to Page.bbprojectd](v7.1/Footer%20Sections%20Move%20to%20Page/Footer%20Sections%20Move%20to%20Page.bbprojectd)
-      
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
   * [PSISA Viewport Middle](v7.1/PSISA%20Viewport%20Middle)
@@ -1175,6 +1171,8 @@ not necessarily designed to work together.
       
     * [Form Block Fields From Search Parameters](Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters)
       
+      * [Form Block Fields From Search Parameters.bbprojectd](Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/Form%20Block%20Fields%20From%20Search%20Parameters.bbprojectd)
+        
     * [Form Block Date Field Years Past Threshold](Block/Form/Form%20Block%20Date%20Field%20Years%20Past%20Threshold)
       
     * [Form Block Multi-Column](Block/Form/Form%20Block%20Multi-Column)
