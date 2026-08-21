@@ -24,34 +24,92 @@ Fill form fields from search query parameters of the Page URL.
 
 ---
 
-## Install Options
+## Install
 
-* CDN Hosted
+* Install **[Form Block Form Element Add Watch][5]**. After you install the
+  code be sure to continue on with the rest of the steps.
+  
+* Options
 
-  Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][5], a [CDN][6])
+  * CDN Hosted
   
-  * Options
+    Use this option for the quickest way to install this effect (files hosted
+    externally on the [jsDelivr][6], a [CDN][7])
+    
+    * Options
+    
+      * Page Specific
+      
+        Use this option if you want to have this effect on only one Page.
+        
+        * Add the following code to Page Settings > Advanced >
+          Page Header Code Injection for the Page.
+          
+          ```html
+          <!-- begin TWC Form Block Fields From Search Parameters -->
+          
+            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+            
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+            
+            <!-- end TWC Form Block Fields From Search Parameters -->
+            
+          ```
+          
+        * Refer to [per-page code injection][8] for details.
+        
+      * Site-wide
+      
+        Use this option if you want to have this effect on all Pages.
+        
+        * v7.1
+        
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Form Block Fields From Search Parameters -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+              
+              <!-- end TWC Form Block Fields From Search Parameters -->
+              
+            ```
+            
+        * v7.0
+        
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Form Block Fields From Search Parameters -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+              
+              <!-- end TWC Form Block Fields From Search Parameters -->
+              
+            ```
+            
+        * Refer to [Add code to code injection][9] for details.
+        
+  * On-site
   
+    Use this option to install the full code of this effect (files hosted on
+    your site).
+    
     * Page Specific
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add the following code to Page Settings > Advanced >
+      * Add code from file **[form block fields from search
+        parameters.html][10]** to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
-        ```html
-        <!-- begin TWC Form Block Fields From Search Parameters -->
-        
-          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-          
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
-          
-          <!-- end TWC Form Block Fields From Search Parameters -->
-          
-        ```
-        
-      * Refer to [per-page code injection][7] for details.
+      * Refer to [per-page code injection][8] for details.
       
     * Site-wide
     
@@ -59,69 +117,17 @@ Fill form fields from search query parameters of the Page URL.
       
       * v7.1
       
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Form Block Fields From Search Parameters -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
-            
-            <!-- end TWC Form Block Fields From Search Parameters -->
-            
-          ```
+        * Add code from file **[form block fields from search
+          parameters.html][10]** to Website > Pages > Website Tools >
+          Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add the following code to Website > Pages > Website Tools >
+        * Add code from file **[form block fields from search
+          parameters.html][10]** to Website > Pages > Website Tools >
           Custom Code > Code Injection > FOOTER.
           
-          ```html
-          <!-- begin TWC Form Block Fields From Search Parameters -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
-            
-            <!-- end TWC Form Block Fields From Search Parameters -->
-            
-          ```
-          
-      * Refer to [Add code to code injection][8] for details.
-      
-* On-site
-
-  Use this option to install the full code of this effect (files hosted on your
-  site).
-  
-  * Page Specific
-  
-    Use this option if you want to have this effect on only one Page.
-    
-    * Add code from file **[form block fields from search parameters.html][9]** to
-      Page Settings > Advanced > Page Header Code Injection for the Page.
-      
-    * Refer to [per-page code injection][7] for details.
-    
-  * Site-wide
-  
-    Use this option if you want to have this effect on all Pages.
-    
-    * v7.1
-    
-      * Add code from file **[form block fields from search
-        parameters.html][9]** to Website > Pages > Website Tools >
-        Custom Code > Code Injection > FOOTER.
-        
-    * v7.0
-    
-      * Add code from file **[form block fields from search
-        parameters.html][9]** to Website > Pages > Website Tools >
-        Custom Code > Code Injection > FOOTER.
-        
-    * Refer to [Add code to code injection][8].
+      * Refer to [Add code to code injection][9].
 
 ## How to Use
 
@@ -164,11 +170,11 @@ This effect does not work with checkbox, radio, or survey fields.
 
 ## Demo
 
-You can see a [demo of this effect here][10].
+You can see a [demo of this effect here][11].
 
 ## Make a Donation
 
-Please consider [making a donation][11].
+Please consider [making a donation][12].
 
 ## Changes
 
@@ -205,10 +211,11 @@ Please consider [making a donation][11].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Form%20Element%20Add%20Watch
-[5]: https://www.jsdelivr.com/
-[6]: https://en.wikipedia.org/wiki/Content_delivery_network
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: form%20block%20fields%20from%20search%20parameters.html#L1
-[10]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-from-search-parameters?first=John&last=Doe&text=Text&textarea=Text+Area&password=twcdemos
-[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Form%20Element%20Add%20Watch#form-block-form-element-add-watch
+[6]: https://www.jsdelivr.com/
+[7]: https://en.wikipedia.org/wiki/Content_delivery_network
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: form%20block%20fields%20from%20search%20parameters.html#L1
+[11]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-from-search-parameters?first=John&last=Doe&text=Text&textarea=Text+Area&password=twcdemos
+[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
