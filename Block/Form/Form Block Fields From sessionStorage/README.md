@@ -8,7 +8,7 @@ Fill Form Block fields from [sessionStorage][2].
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Versions
 
@@ -134,15 +134,28 @@ Fill Form Block fields from [sessionStorage][2].
 Add the callback name **twcFbffs** to the **Form Block Form Element Add Watch**
 callbacks per that codes instructions.
 
-Add a Text Field to your Form Block with the **LABEL** field set to the value of
-a search query parameter key. Set the **DESCRIPTION** field to **twc-fbffs**.
-The field will be hidden. You can repeat this step for as many times as needed.
-Note: you can use the **DUPLICATE** option for the field to reduce repetitive
-steps.
+Add a Field (except a Checkbox, Name, Radio, or Survey) to your Form Block. Add
+one of following examples to the **DESCRIPTION** field. Modifying it to suit
+your need.
+
+  * twc-fbffs utm_source
+  
+  * twc-fbffs utm_source hide
+  
+The general format of the line is the following.
+
+```
+twc-fbffs [enter a sessionStorage key value minus the twc-fbffs- prefix ] [ optional, hide ]
+```
+
+The **hide** tells the code to hide the field.
+
+You can repeat these steps as many times as needed. Note: you can use the
+**DUPLICATE** option for the field to reduce repetitive steps.
 
 ## Note
 
-This effect does not work with checkbox, radio, or survey fields.
+This effect does not work with Checkbox, Name, Radio, or Survey fields.
 
 ## Make a Donation
 
@@ -150,11 +163,12 @@ Please consider [making a donation][10].
 
 ## Changes
 
-<!-- * **2025-06-02**
+* **2026-08-21**
 
-  * fixed select fields not storing values, inputChangeTrigger
-  * bumped version to 0.3.1
- -->
+  * made the code more flexible so the user can define which sessionStorage key
+    value is put into the field
+  * bumped version to 0.2.0 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
+  
 * **2026-08-19**
 
   * initial version

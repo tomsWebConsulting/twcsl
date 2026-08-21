@@ -6,20 +6,22 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.0
+    Version           : 0.2.0
     
     SS Versions       : 7.1, 7.0
     
-    Dependencies      : form block wrapper observe changes
+    Dependencies      : form block form element add watch
                         
-                        < https://tinyurl.com/45enb6h8 >
+                        < https://tinyurl.com/mr35uwnr >
     
-    Note              : this effect does not work with checkbox, hidden, radio,
-                        or survey fields
+    Note              : this effect does not work with checkbox, hidden,
+                        radio, or survey fields
     
     Copyright         : 2026 Thomas Creedon
                         
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -29,7 +31,7 @@
   
     title = 'Form Block Fields From sessionStorage',
     
-    version = '0.1.0',
+    version = '0.2.0',
     
     s = `
     
@@ -55,22 +57,16 @@
   
   twc.fbfeaw = twc.fbfeaw || { };
   
-  const
+  // initialize twc fbfeaw callbacks sub-module
   
-    codeKey = 'twc-fbffs',
-    
-    selectorKey = '.form-wrapper '
-    
-      +
-      
-      '.field-list .description';
-    
   twc.fbfeaw.callbacks = ( ( self ) => {
   
     // debugger;
     
     const
     
+      codeKey = 'twc-fbffs',
+      
       inputChangeTrigger =
       
         ( node, value = '' ) => {
@@ -181,6 +177,22 @@
       
         'input, select, textarea',
         
+      selectorKey = '.form-wrapper '
+      
+        +
+        
+        '.field-list .description',
+        
+      skipFields = [
+      
+        'checkbox',
+        
+        'radio',
+        
+        'survey',
+        
+        ],
+        
       xPathEvaluate = (
       
         xPathExpression, contextNode
@@ -213,27 +225,91 @@
       
         ( element ) => {
         
-          const fieldElement = element
+          const
           
-            .closest ( '.field' );
+            fieldElement = element
             
+              .closest ( '.field' );
+              
+            isSkipField = [
+            
+              ...
+              
+              fieldElement
+              
+                .classList
+                
+              ]
+            
+              .some (
+              
+                c =>
+                
+                  skipFields.indexOf ( c )
+                  
+                  >=
+                  
+                  0
+                  
+                );
+                
+          // continue
+          
+          if ( isSkipField ) return;
+          
+          let
+          
+            m,
+            
+            text = element.textContent;
+            
+          const re = new RegExp (
+          
+            `^${
+            
+              codeKey
+              
+              }\\s*:\\s*(.+)`
+              
+            );
+            
+          m = text.match ( re );
+          
+          if ( ! m ) return; // continue
+          
           fieldElement
           
             .classList
             
             .add ( `${ codeKey }` );
             
-          let value = element
+          // set description or remove
           
-            .previousElementSibling
-            
-            .textContent;
-            
-          value = sessionStorage
+          {
           
-            .getItem (
+            text = text
             
-              `twc-qskts-${ value }`
+              .replace ( m [ 0 ], '' )
+              
+              .trim ( );
+              
+            if ( text )
+            
+              element.textContent = text;
+              
+              else
+              
+                element.remove ( );
+                
+            }
+            
+          m = m [ 1 ].split ( /\s+/ );
+          
+          const value =
+          
+            sessionStorage.getItem (
+            
+              `twc-qskts-${ m [ 0 ] }`
               
               );
               
@@ -255,6 +331,14 @@
             
             );
             
+          if ( m?.[ 1 ] === 'hide' )
+          
+            fieldElement
+            
+              .classList
+              
+              .add ( `${ codeKey }--hide` );
+              
           },
           
       callback = ( element ) => {

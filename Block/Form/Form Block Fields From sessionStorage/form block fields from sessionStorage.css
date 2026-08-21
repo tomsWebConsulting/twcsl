@@ -4,13 +4,9 @@
   
   License           : < https://tinyurl.com/s872fb68 >
   
-  Version           : 0.1.0
+  Version           : 0.2.0
   
   SS Versions       : 7.1, 7.0
-  
-  Dependencies      : form block wrapper observe changes
-                      
-                      < https://tinyurl.com/45enb6h8 >
   
   Note              : this effect does not work with checkbox, hidden, radio,
                       or survey fields
@@ -25,7 +21,7 @@
   
 body:not( .sqs-is-page-editing ) {
 
-  .sqs-site-style-form .field-list .field.twc-fbffs {
+  .sqs-site-style-form .field-list .field.twc-fbffs--hide {
   
     display : none;
     

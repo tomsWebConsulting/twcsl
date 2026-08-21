@@ -6,13 +6,13 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.0
+    Version           : 0.2.0
     
     SS Versions       : 7.1, 7.0
     
-    Dependencies      : form block wrapper observe changes
+    Dependencies      : form block form element add watch
                         
-                        < https://tinyurl.com/45enb6h8 >
+                        < https://tinyurl.com/mr35uwnr >
     
     Note              : this effect does not work with checkbox, hidden, radio,
                         or survey fields
@@ -25,356 +25,438 @@
     
     -->
     
-    <style>
+  <style>
+  
+    body:not( .sqs-is-page-editing ) {
     
-      body:not( .sqs-is-page-editing ) {
+      .sqs-site-style-form .field-list .field.twc-fbffs--hide {
       
-        .sqs-site-style-form .field-list .field.twc-fbffs {
+        display : none;
         
-          display : none;
-          
-          }
-          
         }
         
-      </style>
+      }
       
-    <script>
+    </style>
     
-      ( ( ) => {
+  <script>
+  
+    ( ( ) => {
+    
+      const
       
-        const
+        title = 'Form Block Fields From sessionStorage',
         
-          title = 'Form Block Fields From sessionStorage',
+        version = '0.2.0',
+        
+        s = `
+        
+          ${ title } v${ version }
           
-          version = '0.1.0',
+          License < https://tinyurl.com/s872fb68 >
           
-          s = `
+          © 2026 Thomas Creedon
           
-            ${ title } v${ version }
-            
-            License < https://tinyurl.com/s872fb68 >
-            
-            © 2026 Thomas Creedon
-            
-            Tom's Web Consulting < http://www.tomsWeb.consulting >
-            
-            `
-            
-            .replace ( /^\s+/gm, '' );
-            
-        console.log ( s );
-        
-        // initialize twc module
-        
-        window.twc = window.twc || { };
-        
-        // initialize twc fbfeaw sub-module
-        
-        twc.fbfeaw = twc.fbfeaw || { };
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc fbfeaw sub-module
+      
+      twc.fbfeaw = twc.fbfeaw || { };
+      
+      // initialize twc fbfeaw callbacks sub-module
+      
+      twc.fbfeaw.callbacks = ( ( self ) => {
+      
+        // debugger;
         
         const
         
           codeKey = 'twc-fbffs',
           
+          inputChangeTrigger =
+          
+            ( node, value = '' ) => {
+            
+              /*
+              
+                based on code by Dan G < https://tinyurl.com/4hes79u8 > and
+                others
+                
+                */
+                
+              const
+              
+                inputTypes = [
+                
+                  HTMLInputElement,
+                  
+                  HTMLSelectElement,
+                  
+                  HTMLTextAreaElement
+                  
+                  ],
+                  
+                isInputType = inputTypes
+                
+                  .some (
+                  
+                    type => node instanceof type
+                    
+                    );
+                    
+              /*
+              
+                only process the change on elements we know have a value
+                setter in their constructor
+                
+                */
+                
+              // bail if not input type
+              
+              if ( ! isInputType ) return;
+              
+              const
+              
+                isSelect =
+                
+                  node
+                  
+                  instanceof
+                  
+                  inputTypes
+                  
+                  [ 1 ],
+                  
+                eventType =
+                
+                  isSelect
+                  
+                  ?
+                  
+                  'change'
+                  
+                  :
+                  
+                  'input',
+                  
+                event = new Event (
+                
+                  eventType,
+                  
+                  { bubbles : true }
+                  
+                  ),
+                  
+                setValue = Object
+                
+                  .getOwnPropertyDescriptor (
+                  
+                    node.__proto__,
+                    
+                    'value'
+                    
+                    )
+                    
+                  ?.set;
+                  
+              if ( isSelect )
+              
+                node.value = value;
+                
+                else {
+                
+                  // bail if no setValue
+                  
+                  if ( ! setValue ) return;
+                  
+                  setValue
+                  
+                    .call ( node, value );
+                    
+                  }
+                  
+              node.dispatchEvent ( event );
+              
+              },
+              
+          selector =
+          
+            'input, select, textarea',
+            
           selectorKey = '.form-wrapper '
           
             +
             
-            '.field-list .description';
+            '.field-list .description',
+            
+          skipFields = [
           
-        twc.fbfeaw.callbacks = ( ( self ) => {
-        
-          // debugger;
+            'checkbox',
+            
+            'radio',
+            
+            'survey',
+            
+            ],
+            
+          xPathEvaluate = (
           
-          const
+            xPathExpression, contextNode
+            
+            ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult
+                  
+                    .ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              },
+              
+          fieldElementCallback =
           
-            inputChangeTrigger =
+            ( element ) => {
             
-              ( node, value = '' ) => {
+              const
               
-                /*
-                
-                  based on code by Dan G < https://tinyurl.com/4hes79u8 > and
-                  others
-                  
-                  */
-                  
-                const
-                
-                  inputTypes = [
-                  
-                    HTMLInputElement,
-                    
-                    HTMLSelectElement,
-                    
-                    HTMLTextAreaElement
-                    
-                    ],
-                    
-                  isInputType = inputTypes
-                  
-                    .some (
-                    
-                      type => node instanceof type
-                      
-                      );
-                      
-                /*
-                
-                  only process the change on elements we know have a value
-                  setter in their constructor
-                  
-                  */
-                  
-                // bail if not input type
-                
-                if ( ! isInputType ) return;
-                
-                const
-                
-                  isSelect =
-                  
-                    node
-                    
-                    instanceof
-                    
-                    inputTypes
-                    
-                    [ 1 ],
-                    
-                  eventType =
-                  
-                    isSelect
-                    
-                    ?
-                    
-                    'change'
-                    
-                    :
-                    
-                    'input',
-                    
-                  event = new Event (
-                  
-                    eventType,
-                    
-                    { bubbles : true }
-                    
-                    ),
-                    
-                  setValue = Object
-                  
-                    .getOwnPropertyDescriptor (
-                    
-                      node.__proto__,
-                      
-                      'value'
-                      
-                      )
-                      
-                    ?.set;
-                    
-                if ( isSelect )
-                
-                  node.value = value;
-                  
-                  else {
-                  
-                    // bail if no setValue
-                    
-                    if ( ! setValue ) return;
-                    
-                    setValue
-                    
-                      .call ( node, value );
-                      
-                    }
-                    
-                node.dispatchEvent ( event );
-                
-                },
-                
-            selector =
-            
-              'input, select, textarea',
-              
-            xPathEvaluate = (
-            
-              xPathExpression, contextNode
-              
-              ) => {
-              
-                const xPathResults = document
-                
-                  .evaluate (
-                  
-                    xPathExpression,
-                    
-                    contextNode,
-                    
-                    null,
-                    
-                    XPathResult
-                    
-                      .ORDERED_NODE_SNAPSHOT_TYPE,
-                    
-                    null
-                    
-                    );
-                    
-                return xPathResults;
-                
-                },
-                
-            fieldElementCallback =
-            
-              ( element ) => {
-              
-                const fieldElement = element
+                fieldElement = element
                 
                   .closest ( '.field' );
                   
+                isSkipField = [
+                
+                  ...
+                  
+                  fieldElement
+                  
+                    .classList
+                    
+                  ]
+                
+                  .some (
+                  
+                    c =>
+                    
+                      skipFields.indexOf ( c )
+                      
+                      >=
+                      
+                      0
+                      
+                    );
+                    
+              // continue
+              
+              if ( isSkipField ) return;
+              
+              let
+              
+                m,
+                
+                text = element.textContent;
+                
+              const re = new RegExp (
+              
+                `^${
+                
+                  codeKey
+                  
+                  }\\s*:\\s*(.+)`
+                  
+                );
+                
+              m = text.match ( re );
+              
+              if ( ! m ) return; // continue
+              
+              fieldElement
+              
+                .classList
+                
+                .add ( `${ codeKey }` );
+                
+              // set description or remove
+              
+              {
+              
+                text = text
+                
+                  .replace ( m [ 0 ], '' )
+                  
+                  .trim ( );
+                  
+                if ( text )
+                
+                  element.textContent = text;
+                  
+                  else
+                  
+                    element.remove ( );
+                    
+                }
+                
+              m = m [ 1 ].split ( /\s+/ );
+              
+              const value =
+              
+                sessionStorage.getItem (
+                
+                  `twc-qskts-${ m [ 0 ] }`
+                  
+                  );
+                  
+              // continue
+              
+              if ( ! value ) return;
+              
+              inputChangeTrigger (
+              
+                fieldElement
+                
+                  .querySelector (
+                  
+                    selector
+                    
+                    ),
+                    
+                value
+                
+                );
+                
+              if ( m?.[ 1 ] === 'hide' )
+              
                 fieldElement
                 
                   .classList
                   
-                  .add ( `${ codeKey }` );
+                  .add ( `${ codeKey }--hide` );
                   
-                let value = element
+              },
+              
+          callback = ( element ) => {
+          
+            const hasClass = element
+            
+              .classList
+              
+              .contains (
+              
+                'react-form-contents'
                 
-                  .previousElementSibling
-                  
-                  .textContent;
-                  
-                value = sessionStorage
+                );
                 
-                  .getItem (
+            // bail if not react form
+            
+            if ( ! hasClass ) return;
+            
+            const
+            
+              xPathExpression = `
+              
+                .//p[
+                
+                  contains (
                   
-                    `twc-qskts-${ value }`
+                    concat (
                     
-                    );
-                    
-                // continue
-                
-                if ( ! value ) return;
-                
-                inputChangeTrigger (
-                
-                  fieldElement
-                  
-                    .querySelector (
-                    
-                      selector
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
                       
                       ),
                       
-                  value
-                  
-                  );
-                  
-                },
-                
-            callback = ( element ) => {
-            
-              const hasClass = element
-              
-                .classList
-                
-                .contains (
-                
-                  'react-form-contents'
-                  
-                  );
-                  
-              // bail if not react form
-              
-              if ( ! hasClass ) return;
-              
-              const
-              
-                xPathExpression = `
-                
-                  .//p[
-                  
+                    ' description '
+                    
+                    )
+                    
+                    and
+                    
                     contains (
                     
-                      concat (
+                      .,
                       
-                        ' ',
-                        
-                        normalize-space ( @class ),
-                        
-                        ' '
-                        
-                        ),
-                        
-                      ' description '
+                      '${ codeKey }'
                       
                       )
                       
-                      and
-                      
-                      contains (
-                      
-                        .,
-                        
-                        '${ codeKey }'
-                        
-                        )
-                        
-                      ]
-                      
-                  `,
-                  
-                xPathResults = xPathEvaluate (
+                    ]
+                    
+                `,
                 
-                  xPathExpression,
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                element
+                
+                );
+                
+            for (
+            
+              let i = 0;
+              
+              i < xPathResults.snapshotLength;
+              
+              i++
+              
+              ) {
+              
+                const element = xPathResults
+                
+                  .snapshotItem ( i );
                   
+                fieldElementCallback (
+                
                   element
                   
                   );
                   
-              for (
+              }
               
-                let i = 0;
-                
-                i < xPathResults.snapshotLength;
-                
-                i++
-                
-                ) {
-                
-                  const element = xPathResults
-                  
-                    .snapshotItem ( i );
-                    
-                  fieldElementCallback (
-                  
-                    element
-                    
-                    );
-                    
-                }
-                
-              };
-              
-          self
-          
-            [ 'twcFbffs' ]
+            };
             
-            =
-            
-            callback;
-            
-          return self;
-          
-          } )
-          
-          ( twc.fbfeaw.callbacks || { } );
-          
-        } ) ( );
+        self
         
-      </script>
+          [ 'twcFbffs' ]
+          
+          =
+          
+          callback;
+          
+        return self;
+        
+        } )
+        
+        ( twc.fbfeaw.callbacks || { } );
+        
+      } ) ( );
       
+    </script>
+    
   <!-- end form block fields from sessionStorage -->
