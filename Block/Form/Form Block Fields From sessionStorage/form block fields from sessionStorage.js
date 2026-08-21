@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.2.1
     
     SS Versions       : 7.1, 7.0
     
@@ -14,14 +14,12 @@
                         
                         < https://tinyurl.com/mr35uwnr >
     
-    Note              : this effect does not work with checkbox, hidden,
-                        radio, or survey fields
+    Note              : this effect does not work with checkbox, hidden, radio,
+                        or survey fields
     
     Copyright         : 2026 Thomas Creedon
                         
-                        Tom's Web Consulting
-                        
-                        < http://www.tomsWeb.consulting/ >
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -31,7 +29,7 @@
   
     title = 'Form Block Fields From sessionStorage',
     
-    version = '0.2.0',
+    version = '0.2.1',
     
     s = `
     
@@ -185,7 +183,15 @@
         
       skipFields = [
       
+        'address',
+        
         'checkbox',
+        
+        'file',
+        
+        'line-field',
+        
+        'name',
         
         'radio',
         
@@ -221,21 +227,21 @@
           
           },
           
-      fieldElementCallback =
+      descriptionElementCallback =
       
         ( element ) => {
         
           const
           
-            fieldElement = element
+            formItemElement = element
             
-              .closest ( '.field' );
+              .closest ( '.form-item' );
               
             isSkipField = [
             
               ...
               
-              fieldElement
+              formItemElement
               
                 .classList
                 
@@ -245,8 +251,10 @@
               
                 c =>
                 
-                  skipFields.indexOf ( c )
+                  skipFields
                   
+                    .indexOf ( c )
+                    
                   >=
                   
                   0
@@ -277,7 +285,7 @@
           
           if ( ! m ) return; // continue
           
-          fieldElement
+          formItemElement
           
             .classList
             
@@ -319,7 +327,7 @@
           
           inputChangeTrigger (
           
-            fieldElement
+            formItemElement
             
               .querySelector (
               
@@ -333,7 +341,7 @@
             
           if ( m?.[ 1 ] === 'hide' )
           
-            fieldElement
+            formItemElement
             
               .classList
               
@@ -415,7 +423,7 @@
             
               .snapshotItem ( i );
               
-            fieldElementCallback (
+            descriptionElementCallback (
             
               element
               

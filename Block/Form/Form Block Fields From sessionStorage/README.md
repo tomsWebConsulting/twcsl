@@ -8,7 +8,7 @@ Fill Form Block fields from [sessionStorage][2].
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -134,9 +134,8 @@ Fill Form Block fields from [sessionStorage][2].
 Add the callback name **twcFbffs** to the **Form Block Form Element Add Watch**
 callbacks per that codes instructions.
 
-Add a Field (except a Checkbox, Name, Radio, or Survey) to your Form Block. Add
-one of following examples to the **DESCRIPTION** field. Modifying it to suit
-your need.
+Add a Field (read the follow Note section) to your Form Block. Add one of
+following examples to the **DESCRIPTION** field. Modifying it to suit your need.
 
   * twc-fbffs utm_source
   
@@ -144,18 +143,24 @@ your need.
   
 The general format of the line is the following.
 
-```
 twc-fbffs [enter a sessionStorage key value minus the twc-fbffs- prefix ] [ optional, hide ]
-```
 
 The **hide** tells the code to hide the field.
 
 You can repeat these steps as many times as needed. Note: you can use the
 **DUPLICATE** option for the field to reduce repetitive steps.
 
-## Note
+## Notes
 
-This effect does not work with Checkbox, Name, Radio, or Survey fields.
+This effect does not work with Address, Checkbox, File Upload, Hidden, Line,
+Name, Radio, or Survey fields.
+
+Date and Time fields expect values to be in a particular format.
+
+  * Date : format is "yyyy-MM-dd"
+  
+  * Time : format is "HH:mm", "HH:mm:ss" or "HH:mm:ss.SSS" where HH is 00-23,
+    mm is 00-59, ss is 00-59, and SSS is 000-999.
 
 ## Make a Donation
 
@@ -163,6 +168,11 @@ Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-08-21**
+
+  * added more field types to skipFields
+  * bumped version to 0.2.1 (commit d40fe02a6fffffc2ff001be103625312401095f4)
+  
 * **2026-08-21**
 
   * made the code more flexible so the user can define which sessionStorage key

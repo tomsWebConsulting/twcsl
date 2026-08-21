@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.2.1
     
     SS Versions       : 7.1, 7.0
     
@@ -47,7 +47,7 @@
       
         title = 'Form Block Fields From sessionStorage',
         
-        version = '0.2.0',
+        version = '0.2.1',
         
         s = `
         
@@ -201,7 +201,15 @@
             
           skipFields = [
           
+            'address',
+            
             'checkbox',
+            
+            'file',
+            
+            'line-field',
+            
+            'name',
             
             'radio',
             
@@ -237,21 +245,21 @@
               
               },
               
-          fieldElementCallback =
+          descriptionElementCallback =
           
             ( element ) => {
             
               const
               
-                fieldElement = element
+                formItemElement = element
                 
-                  .closest ( '.field' );
+                  .closest ( '.form-item' );
                   
                 isSkipField = [
                 
                   ...
                   
-                  fieldElement
+                  formItemElement
                   
                     .classList
                     
@@ -261,8 +269,10 @@
                   
                     c =>
                     
-                      skipFields.indexOf ( c )
+                      skipFields
                       
+                        .indexOf ( c )
+                        
                       >=
                       
                       0
@@ -293,7 +303,7 @@
               
               if ( ! m ) return; // continue
               
-              fieldElement
+              formItemElement
               
                 .classList
                 
@@ -335,7 +345,7 @@
               
               inputChangeTrigger (
               
-                fieldElement
+                formItemElement
                 
                   .querySelector (
                   
@@ -349,7 +359,7 @@
                 
               if ( m?.[ 1 ] === 'hide' )
               
-                fieldElement
+                formItemElement
                 
                   .classList
                   
@@ -431,7 +441,7 @@
                 
                   .snapshotItem ( i );
                   
-                fieldElementCallback (
+                descriptionElementCallback (
                 
                   element
                   
