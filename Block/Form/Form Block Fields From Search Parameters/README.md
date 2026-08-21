@@ -45,7 +45,7 @@ Fill form fields from search query parameters of the Page URL.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
           
           <!-- end TWC Form Block Fields From Search Parameters -->
           
@@ -67,7 +67,7 @@ Fill form fields from search query parameters of the Page URL.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From Search Parameters -->
             
@@ -83,7 +83,7 @@ Fill form fields from search query parameters of the Page URL.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4e39832b89f6c72da4a540693395a2a7a83c5fc5/Block/Form/Form%20Block%20Fields%20From%20Search%20Parameters/form%20block%20fields%20from%20search%20parameters.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From Search Parameters -->
             
@@ -175,7 +175,7 @@ Please consider [making a donation][11].
 * **2025-06-02**
 
   * updated to work with, form block form element add watch
-  * bumped version to 0.3.2 (commit e863f11e0e1b38e2f4b0814ed193d7d2c557dd22)
+  * bumped version to 0.3.2 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
  
 * **2025-06-02**
 
