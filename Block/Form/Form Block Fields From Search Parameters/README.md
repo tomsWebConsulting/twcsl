@@ -178,7 +178,7 @@ Please consider [making a donation][12].
 
 ## Changes
 
-* **2025-06-02**
+* **2026-08-20**
 
   * updated to work with, form block form element add watch
   * bumped version to 0.3.2 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
