@@ -45,9 +45,9 @@ Fill Form Block fields from [sessionStorage][2].
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
           
           <!-- end TWC Form Block Fields From sessionStorage -->
           
@@ -69,9 +69,9 @@ Fill Form Block fields from [sessionStorage][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From sessionStorage -->
             
@@ -87,9 +87,9 @@ Fill Form Block fields from [sessionStorage][2].
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d40fe02a6fffffc2ff001be103625312401095f4/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Block/Form/Form%20Block%20Fields%20From%20sessionStorage/form%20block%20fields%20from%20sessionStorage.min.js" type="module"></script>
             
             <!-- end TWC Form Block Fields From sessionStorage -->
             
@@ -171,7 +171,7 @@ Please consider [making a donation][10].
 * **2026-08-21**
 
   * added more field types to skipFields
-  * bumped version to 0.2.1 (commit d40fe02a6fffffc2ff001be103625312401095f4)
+  * bumped version to 0.2.1 (commit 337abd0b8ec04f02e51d551249bfd490407a51e8)
   
 * **2026-08-21**
 
