@@ -8,7 +8,7 @@ Turn off links Open in New Tab setting.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -33,7 +33,7 @@ Blank Page Links Open in New Window Tab Off**.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][5].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Note
 
@@ -41,22 +41,20 @@ This bookmarklet does not work with Gallery Sections.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2026-05-28**
+* **2026-08-23**
 
-  * added nameEncoded and fullUrl key/value pairs
+  * updated to work with new Squarespace Page Blank structure
   * bumped version to 0.2.0
-  -->
+  
 * **2026-06-13**
 
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: blank%20page%20links%20open%20in%20new%20window%20tab%20off.bookmarklet#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[5]: https://en.wikipedia.org/wiki/Bookmarklet
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

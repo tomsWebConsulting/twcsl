@@ -8,12 +8,12 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0-development.3
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
     Notes           : this bookmarklet makes a call to an unofficial Squarespace
-                      API page sections
+                      API
                       
                       gallery sections are not supported
     
@@ -29,7 +29,7 @@
   
     title = 'Blank Page Links Open in New Window Tab Off',
     
-    version = '0.1.0-development.3',
+    version = '0.2.0',
   
     s = `${ title } v${ version }
     
@@ -75,7 +75,11 @@
   
     .querySelector (
     
-      'iframe[ data-testid = "sqs-site-frame" ]'
+      'iframe[ data-testid = '
+      
+      +
+      
+      '"sqs-site-frame" ]'
       
       );
       
@@ -121,7 +125,7 @@
       
       ===
       
-      23;
+      10;
     
   // bail if not blank page
   
@@ -143,26 +147,18 @@
     
     }
     
+  let
+  
+    isChanged = false,
+    
+    obj;
+    
   const
   
     codeKey = 'twc-bploinwto',
     
-    dataPageSections = dcmnt
+    collectionId = context.collectionId,
     
-      .body
-      
-      .querySelector (
-      
-        '#sections[ data-page-sections ]'
-        
-        )
-        
-      .getAttribute (
-      
-        'data-page-sections'
-        
-        ),
-        
     getCookieValue = ( key ) => {
     
       let v = '';
@@ -191,23 +187,215 @@
       
       },
       
-    urlPrefix = `/api/page-sections/${
+    mutateButtonNewWindow = (
     
-      dataPageSections
+      node,
+      
+      parent,
+      
+      key
+      
+      ) => {
+      
+        const isKey =
+        
+          key
+          
+          ===
+          
+          'buttonNewWindow';
+          
+        // bail if not key
+        
+        if ( ! isKey ) return;
+        
+        // bail if false
+        
+        if ( ! node ) return;
+          
+        parent [ key ] = false;
+        
+        isChanged = true;
+        
+        },
+        
+    transformHtml = ( html ) => {
+    
+      const
+      
+        text = 'target="_blank" '
+        
+        hasText = html.includes ( text );
+        
+      // continue
+      
+      if ( ! hasText ) return html;
+      
+      html = html.replaceAll (
+      
+        text,
+        
+        ''
+        
+        );
+        
+      isChanged = true;
+      
+      return html;
+      
+      },
+      
+    url = `/api/pages/by-collection-id/${
+    
+      collectionId
       
       }`,
+      
+    mutateHtmlNode =
+    
+      (
+      
+        node,
+        
+        parent,
+        
+        key
+        
+        ) => {
+        
+          const hasKey = [
+          
+            'description',
+            
+            'html',
+            
+            'source'
+            
+            ]
+            
+            .includes ( key );
+            
+          if ( ! hasKey ) return; // continue
+          
+          const isString =
+          
+            typeof node
+            
+            ===
+            
+            'string';
+            
+          // continue
+          
+          if ( ! isString ) return;
+          
+          parent [ key ] =
+          
+            transformHtml ( node );
+            
+          },
+          
+    mutateNode = ( node, parent, key ) => {
+    
+      mutateButtonNewWindow (
+      
+        node,
+        
+        parent,
+        
+        key
+        
+        );
+        
+      mutateHtmlNode (
+      
+        node,
+        
+        parent,
+        
+        key
+        
+        );
+        
+      },
+      
+    walk = (
+    
+      node,
+      
+      parent = null,
+      
+      key = null,
+      
+      fnctn
+      
+      ) => {
+      
+        fnctn ( node, parent, key );
+        
+        if ( Array.isArray ( node ) ) {
+        
+          for (
+          
+            let i = 0;
+            
+            i < node.length;
+            
+            i++
+            
+            )
+            
+              walk (
+              
+                node [ i ],
+                
+                node,
+                
+                i,
+                
+                fnctn
+                
+                );
+                
+          return;
+          
+          }
+          
+        if (
+        
+          node
+          
+          &&
+          
+          typeof node === 'object'
+          
+          )
+          
+          for (
+          
+            const k of Object.keys ( node )
+            
+            )
+            
+              walk (
+              
+                node [ k ],
+                
+                node,
+                
+                k,
+                
+                fnctn
+                
+                );
+                
+      },
       
     wndw = siteFrameElement
     
       .contentWindow,
       
     crumb = getCookieValue ( 'crumb' );
-    
-  let
-  
-    obj,
-    
-    url = urlPrefix;
     
   try {
   
@@ -269,52 +457,30 @@
       
       }
       
-  // console.log ( json );
+  walk ( obj, null, null, mutateNode );
   
-  delete obj.collectionId;
+  // no change
   
-  delete obj.id;
+  if ( ! isChanged ) {
   
-  delete obj.websiteId;
-  
-  const json = JSON
-  
-    .stringify ( obj )
-  
-    .replace (
+    const s = `TWC ${ title }
     
-      /target=\\"_blank\\" */g,
+      No changes have been made to open links in new tab for this Page.
       
-      ''
+      `
       
-      )
+      .trim ( )
       
-    .replace (
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
     
-      /("updatedOn":)\d+/,
-      
-      `$1${ new Date ( ).getTime ( ) }`
-      
-      );
-      
-  console.log ( json );
+    return;
+    
+    }
+    
+  const json = JSON.stringify ( obj );
   
-  url = `${
-  
-    urlPrefix
-    
-    }/collection/${
-    
-      wndw
-      
-        .Static
-        
-        .SQUARESPACE_CONTEXT
-        
-        .collectionId
-        
-      }?forceSave=false`;
-      
   try {
   
     const response = await fetch (
@@ -392,7 +558,27 @@
       console.error ( s );
       
       }
-      
-  wndw.location.reload ( );
+     
+  // is complete and reload
   
+  {
+  
+    const s = `TWC ${ title }
+    
+      Open links in new tab have been disabled.
+      
+      The page will now reload.
+      
+      `
+      
+      .trim ( )
+      
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
+    
+    wndw.location.reload ( );
+    
+    }
+    
   } ) ( );
