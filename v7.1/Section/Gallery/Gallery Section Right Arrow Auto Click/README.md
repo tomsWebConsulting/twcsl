@@ -45,9 +45,9 @@ Auto click right arrow of Gallery sections.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c369e5cc8dca3368944463e00b4a6d35280dfbcc/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c369e5cc8dca3368944463e00b4a6d35280dfbcc/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Right Arrow Auto Click -->
           
@@ -67,9 +67,9 @@ Auto click right arrow of Gallery sections.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c369e5cc8dca3368944463e00b4a6d35280dfbcc/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@c369e5cc8dca3368944463e00b4a6d35280dfbcc/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Right Arrow Auto Click -->
           
@@ -156,7 +156,7 @@ Please consider [making a donation][10].
   
   * restructured the code
   * updated to work with new Squarespace Page Blank structure
-  * bumped version to 0.3.0 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
+  * bumped version to 0.3.0 (commit c369e5cc8dca3368944463e00b4a6d35280dfbcc)
   
 * **2025-03-30**
   
