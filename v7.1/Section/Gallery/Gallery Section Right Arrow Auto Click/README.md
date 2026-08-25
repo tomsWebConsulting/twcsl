@@ -8,7 +8,7 @@ Auto click right arrow of Gallery sections.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### SS Version
 
@@ -24,25 +24,82 @@ Auto click right arrow of Gallery sections.
 
 ---
 
-## Quick Install
+## Install Options
 
-* Options
+* CDN Hosted
 
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
+  
+  * Options
+  
+    * Page Specific
+    
+      Use this option if you want to have this effect on only one Page.
+      
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Page.
+        
+        ```html
+        <!-- begin TWC Gallery Section Right Arrow Auto Click -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
+          
+          <!-- end TWC Gallery Section Right Arrow Auto Click -->
+          
+        ```
+        
+      * Refer to [per-page code injection][6] for details.
+      
+    * Site-wide
+    
+      Use this option if you want to have this effect on all Pages.
+      
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Gallery Section Right Arrow Auto Click -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/Section/Gallery/Gallery%20Section%20Right%20Arrow%20Auto%20Click/gallery%20section%20right%20arrow%20auto%20click.min.js" type="module"></script>
+          
+          <!-- end TWC Gallery Section Right Arrow Auto Click -->
+          
+        ```
+        
+      * Refer to [Add code to code injection][7] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
+  
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option if you want to have this effect on only one Page.
     
-    * Add code from file **[gallery section right arrow auto click.html][5]** to
-      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [Per-page code injection][6] for details.
+    * Add code from file **[gallery section right arrow auto click.html][8]**
+      to Page Settings > Advanced > Page Header Code Injection for the Page.
       
+    * Refer to [per-page code injection][6] for details.
+    
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option if you want to have this effect on all Pages.
     
-    * Add code from file **[gallery section right arrow auto click.html][5]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7] for details.
+    * Add code from file **[gallery section right arrow auto click.html][8]**
+      to Website > Pages > Website Tools > Custom Code > Code Injection >
+      FOOTER.
+      
+    * Refer to [Add code to code injection][7].
 
 ## How to Use
 
@@ -86,15 +143,21 @@ Auto click right arrow of Gallery sections.
 
 ## Notes
 
-This effect is not active in Sqparespace Preview to test it use [private
-browsing][8].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][9].
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-08-24**
+  
+  * restructured the code
+  * updated to work with new Squarespace Page Blank structure
+  * bumped version to 0.3.0 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
+  
 * **2025-03-30**
   
   * added pause/cancel feature
@@ -108,9 +171,10 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: gallery%20section%20right%20arrow%20auto%20click.html#L1
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: gallery%20section%20right%20arrow%20auto%20click.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

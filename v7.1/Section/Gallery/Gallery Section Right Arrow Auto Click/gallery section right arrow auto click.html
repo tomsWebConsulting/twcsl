@@ -1,39 +1,45 @@
-<!--
+<!-- begin TWC Gallery Section Right Arrow Auto Click -->
 
-  begin gallery section right arrow auto click
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.2.0
-  
-  SS Version    : 7.1
-  
-  Notes         : the code is comprised of a style and script tag. both are
-                  needed for the full effect to work
-                  
-                  this effect is not active in SS Preview to test it use
-                  private browsing < https://tinyurl.com/ynessvsf >
-  
-  Copyright     : 2024-2025 Thomas Creedon
-                  
-                  Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    gallery section right arrow auto click
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.3.0
+    
+    SS Version      : 7.1
+    
+    Notes           : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+                      
+                      this effect is not active in SS Preview to test it use
+                      private browsing < https://tinyurl.com/ynessvsf >
+    
+    Copyright       : 2024-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    html:not( .squarespace-damask ) #sections {
+    html:not( .squarespace-damask ) {
     
-      --twc-gallery-section-visibility : hidden;
+      #page-regions {
       
-      }
-      
-    html:not( .squarespace-damask ) #sections .gallery-section {
-    
-      display : var( --twc-gallery-section-visibility );
-      
+        --twc-gallery-section-visibility : hidden;
+        
+        .gallery-section {
+        
+          display : var( --twc-gallery-section-visibility );
+          
+          }
+          
+        }
+        
       }
       
     </style>
@@ -42,17 +48,21 @@
   
     ( ( ) => {
     
+      // debugger;
+      
       const
       
-        version = '0.2.0',
+        title = 'Gallery Section Right Arrow Auto Click',
+        
+        version = '0.3.0',
         
         s = `
         
-          Gallery Section Right Arrow Auto Click v${ version }
+          ${ title } v${ version }
           
           License < https://tinyurl.com/s872fb68 >
           
-          © 2024-2025 Thomas Creedon
+          © 2024-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >
           
@@ -62,309 +72,137 @@
           
       console.log ( s );
       
-      if ( window.frameElement !== null ) return; // bail if in preview
+      // bail if in preview
+      
+      if ( window.frameElement ) return;
       
       const
       
         codeKey = 'twc-gsraac',
         
-        selectorKey = '.gallery-section';
+        nextSelector = [
         
-      // hide show register
-      
-      {
-      
-        // initialize twc module
-        
-        window.twc = ( ( self ) => self ) ( window.twc || { } );
-        
-        // initialize twc data sub-module
-        
-        twc.data = ( ( self ) => self ) ( twc.data || { } );
-        
-        // initialize twc data hideShow sub-module
-        
-        twc.data.hideShow = ( ( self ) => self ) ( twc.data.hideShow || { } );
-        
-        // initialize twc data hideShow selector key sub-module
-        
-        twc.data.hideShow [ selectorKey ] = ( ( self ) => self ) (
-        
-          twc.data.hideShow [ selectorKey ] || [ ] );
+          '.gallery-fullscreen-slideshow-'
           
-        twc
-        
-          .data
-          
-          .hideShow
-          
-          [ selectorKey ]
-          
-          .push ( `--${ codeKey }` );
-          
-        }
-        
-      const
-      
-        callback = ( ) => {
-        
-          const
-          
-            callback = ( element ) => {
+            +
             
-              const re = new RegExp ( `^${ codeKey }\\s*:\\s*(.+)\$`, 'm' );
-              
-              let
-              
-                text = element.textContent,
-              
-                options = text.match ( re );
-                
-              if ( options === null ) return; // continue
-              
-              const
-              
-                sectionElement = element
-                
-                  .closest ( '.gallery-section' ),
-                  
-                slideshow = ( ) => {
-                
-                  const
-                  
-                    inactivityDelay = options
-                    
-                      .inactivityDelay,
-                      
-                    intervalCallback = ( ) => {
-                    
-                      isAutoClick = true;
-                      
-                      nextElement.click ( );
-                      
-                      isAutoClick = false;
-                      
-                      },
-                      
-                    nextSelector = [
-                    
-                      '.gallery-fullscreen-slideshow-control-btn[ ' +
-                      
-                        'data-next ]',
-                        
-                      '.gallery-reel-control-btn[ data-next ]',
-                      
-                      '.gallery-slideshow-control-next ' +
-                      
-                        '.gallery-slideshow-control-btn'
-                        
-                      ]
-                      
-                      .join ( ', ' ),
-                      
-                    resetInactivityTimer = ( ) => {
-                    
-                      const milliseconds = inactivityDelay
-                        
-                        *
-                        
-                        1000;
-                        
-                      if ( inactivityId )
-                      
-                        clearTimeout ( inactivityId );
-                        
-                      inactivityId = setTimeout (
-                      
-                        start,
-                        
-                        milliseconds
-                        
-                        );
-                        
-                      },
-                      
-                    start = ( ) => {
-                    
-                      if ( intervalId ) return; // prevent multiple intervals
-                      
-                      const
-                      
-                        milliseconds = options
-                        
-                          .slideDuration
-                          
-                          *
-                          
-                          1000;
-                          
-                      intervalId = setInterval (
-                      
-                        intervalCallback,
-                        
-                        milliseconds
-                        
-                        );
-                        
-                      },
-                      
-                    stop = ( ) => {
-                    
-                      if ( ! intervalId ) return;
-                      
-                      clearInterval ( intervalId );
-                      
-                      intervalId = null;
-                      
-                      },
-                      
-                    wrapperCallback = ( ) => {
-                    
-                      if ( isAutoClick ) return; // bail if auto click
-                                        
-                      stop ( );
-                      
-                      const b = inactivityDelay === -1;
-                      
-                      if ( b ) {  // bail if -1
-                      
-                        wrapperElement
-                        
-                          .removeEventListener ( 'click', callback );
-                          
-                        wrapperElement
-                        
-                          .removeEventListener ( 'touchstart', callback );
-                          
-                        return;
-                        
-                        }
-                        
-                      resetInactivityTimer ( );
-                      
-                      },
-                      
-                    wrapperSelector = [
-                    
-                      '.gallery-fullscreen-slideshow-wrapper',
-                      
-                      '.gallery-reel-wrapper',
-                      
-                      '.gallery-slideshow-wrapper'
-                      
-                      ]
-                      
-                      .join ( ', ' ),
-                      
-                    wrapperElement = sectionElement
-                    
-                      .querySelector ( wrapperSelector ),
-                      
-                    nextElement = wrapperElement
-                    
-                      .querySelector ( nextSelector );
-                      
-                  let
-                  
-                    isAutoClick = false,
-                    
-                    inactivityId,
-                    
-                    intervalId;
-                    
-                  wrapperElement
-                  
-                    .addEventListener ( 'click', wrapperCallback );
-                    
-                  wrapperElement
-                  
-                    .addEventListener ( 'touchstart', wrapperCallback );
-                    
-                  start ( );
-                  
-                  };
-                  
-              sectionElement
-              
-                .classList
-                
-                .add ( codeKey );
-                
-              text = text
-              
-                .replace ( options [ 0 ], '' )
-                
-                .trim ( );
-                
-              options = JSON
-              
-                .parse ( options [ 1 ] );
-                
-              const b = options.intersectionObserver;
-              
-              if ( text )
-              
-                element.textContent = text;
-                
-                else
-                
-                  element
-                  
-                    .closest ( '.gallery-caption' )
-                    
-                    .remove ( );
-                    
-              if ( b ) {
-              
-                const
-                
-                  callback = ( entries, observer ) => {
-                  
-                    const callback = ( entry ) => {
-                    
-                      const b = ! entry.isIntersecting;
-                      
-                      if ( b ) return; // bail if not intersecting
-                      
-                      observer.disconnect ( );
-                      
-                      slideshow ( );
-                      
-                      };
-                      
-                    entries.forEach ( callback );
-                    
-                    },
-                    
-                  options = {
-                  
-                    // root : document.querySelector ( '' ),
-                    
-                    rootMargin : '0px',
-                    
-                    threshold : 0.75
-                    
-                    },
-                  
-                  observer = new IntersectionObserver (
-                  
-                    callback,
-                    
-                    options
-                    
-                    );
-                    
-                observer.observe ( sectionElement );
-                
-                } else
-                
-                  slideshow ( );
-                  
-              },
-              
-            xPathExpression = `
+            'control-btn[ data-next ]',
             
-              .//section [
+          '.gallery-reel-control-btn[ '
+          
+            +
+            
+            'data-next ]',
+            
+          '.gallery-slideshow-control-next '
+          
+            +
+            
+            '.gallery-slideshow-control-btn'
+            
+          ]
+          
+          .join ( ', ' ),
+          
+        observerOptions = {
+        
+          // root : document.querySelector ( '' ),
+          
+          rootMargin : '0px',
+          
+          threshold : 0.75
+          
+          },
+        
+        re = new RegExp (
+        
+          `^${ codeKey }\\s*:\\s*(.+)\$`,
+          
+          'm'
+          
+          ),
+          
+        selectorKey = '.gallery-section',
+        
+        wrapperSelector = [
+        
+          '.gallery-fullscreen-'
+          
+            +
+            
+            'slideshow-wrapper',
+          
+          '.gallery-reel-wrapper',
+          
+          '.gallery-slideshow-wrapper'
+          
+          ]
+          
+          .join ( ', ' ),
+          
+        xPathEvaluate = (
+        
+          xPathExpression,
+          
+          contextNode
+          
+          ) => {
+        
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult
+                
+                  .ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+        xPathExpression = `
+        
+          .//section [
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-section '
+              
+              )
+              
+            ]//div [
+            
+              @data-test = 'gallery-slideshow-full'
+              
+              or
+                
+              @data-test = 'gallery-slideshow-reel'
+              
+              or
+                
+              @data-test = 'gallery-slideshow-simple'
+              
+              ]//figcaption [
               
                 contains (
                 
@@ -378,176 +216,488 @@
                     
                     ),
                     
-                  ' gallery-section '
+                  ' gallery-caption '
                   
                   )
                   
-                ]//div [
+                ]//p [
                 
-                  @data-test = 'gallery-slideshow-full'
+                  contains (
                   
-                  or
+                    concat (
                     
-                  @data-test = 'gallery-slideshow-reel'
-                  
-                  or
+                      ' ',
+                      
+                      normalize-space ( @class ),
+                      
+                      ' '
+                      
+                      ),
                     
-                  @data-test = 'gallery-slideshow-simple'
+                    ' gallery-caption-content '
+                    
+                    )
+                    
+                  ]
                   
-                  ]//figcaption [
+                  [
                   
                     contains (
                     
-                      concat (
+                      .,
                       
-                        ' ',
-                        
-                        normalize-space ( @class ),
-                        
-                        ' '
-                        
-                        ),
-                        
-                      ' gallery-caption '
+                      '${ codeKey }'
                       
                       )
                       
-                    ]//p [
-                    
-                      contains (
-                      
-                        concat (
-                        
-                          ' ',
-                          
-                          normalize-space ( @class ),
-                          
-                          ' '
-                          
-                          ),
-                        
-                        ' gallery-caption-content '
-                        
-                        )
-                        
-                      ]
-                      
-                      [
-                      
-                        contains (
-                        
-                          .,
-                          
-                          '${ codeKey }'
-                          
-                          )
-                          
-                        ]
-      
-              `,
+                    ]
+  
+          `,
+          
+        sectionCallback = ( element ) => {
+        
+          let
+          
+            text = element.textContent,
+          
+            options = text.match ( re );
+            
+          // continue
+          
+          if ( ! options ) return;
+          
+          let
+          
+            isAutoClick = false,
+            
+            inactivityId,
+            
+            intervalId;
+            
+          const
+          
+            inactivityDelay = options
+            
+              .inactivityDelay,
               
+            sectionElement = element
+            
+              .closest ( '.gallery-section' ),
+              
+            stop = ( ) => {
+            
+              if ( ! intervalId ) return;
+              
+              clearInterval ( intervalId );
+              
+              intervalId = null;
+              
+              },
+              
+            wrapperElement = sectionElement
+            
+              .querySelector (
+              
+                wrapperSelector
+                
+                ),
+                
+            nextElement = wrapperElement
+            
+              .querySelector (
+              
+                nextSelector
+                
+                ),
+                
+            intervalCallback = ( ) => {
+            
+              isAutoClick = true;
+              
+              nextElement.click ( );
+              
+              isAutoClick = false;
+              
+              },
+              
+            start = ( ) => {
+            
+              // prevent multiple intervals
+              
+              if ( intervalId ) return;
+              
+              intervalId = setInterval (
+              
+                intervalCallback,
+                
+                options.slideDuration
+                
+                *
+                
+                1000
+                
+                );
+                
+              },
+              
+            resetInactivityTimer = ( ) => {
+            
+              if ( inactivityId )
+              
+                clearTimeout (
+                
+                  inactivityId
+                  
+                  );
+                  
+              inactivityId = setTimeout (
+              
+                start,
+                
+                inactivityDelay
+                
+                *
+                
+                1000
+                
+                );
+                
+              },
+              
+            wrapperCallback = ( ) => {
+            
+              // bail if auto click
+              
+              if ( isAutoClick ) return;
+                          
+              stop ( );
+              
+              const isBail =
+              
+                inactivityDelay === -1;
+                
+              // bail if -1
+              
+              if ( isBail ) {
+              
+                wrapperElement
+                
+                  .removeEventListener (
+                  
+                    'click',
+                    
+                    wrapperCallback
+                    
+                    );
+                    
+                wrapperElement
+                
+                  .removeEventListener (
+                  
+                    'touchstart',
+                    
+                    wrapperCallback
+                    
+                    );
+                    
+                return;
+                
+                }
+                
+              resetInactivityTimer ( );
+              
+              },
+              
+            slideshow = ( ) => {
+            
+              wrapperElement
+              
+                .addEventListener (
+                
+                  'click',
+                  
+                  wrapperCallback
+                  
+                  );
+                  
+              wrapperElement
+              
+                .addEventListener (
+                
+                  'touchstart',
+                  
+                  wrapperCallback
+                  
+                  );
+                  
+              start ( );
+              
+              };
+              
+          text = text.replace (
+          
+            options [ 0 ],
+            
+            ''
+            
+            )
+            
+            .trim ( );
+            
+          options = JSON
+          
+            .parse ( options [ 1 ] );
+            
+          const isObserver = options
+          
+            .intersectionObserver;
+            
+          sectionElement
+          
+            .classList
+            
+            .add ( codeKey );
+            
+          if ( text )
+          
+            element.textContent = text;
+            
+            else
+            
+              element
+              
+                .closest (
+                
+                  '.gallery-caption'
+                  
+                  )
+                  
+                .remove ( );
+                
+          if ( isObserver ) {
+          
+            let observer;
+            
+            const observerCallback =
+            
+              ( entries, observer ) => {
+              
+                entries.forEach (
+                
+                  e => {
+                  
+                    const isIntersecting =
+                    
+                      e.isIntersecting;
+                      
+                    // bail if not intersecting
+                    
+                    if ( ! isIntersecting )
+                    
+                      return;
+                      
+                    observer.disconnect ( );
+                    
+                    slideshow ( );
+                    
+                    }
+                    
+                  );
+                
+                };
+                
+            observer =
+            
+              new IntersectionObserver (
+              
+                observerCallback,
+                
+                observerOptions
+                
+                );
+                
+            observer.observe (
+            
+              sectionElement
+              
+              );
+              
+            } else
+            
+              slideshow ( );
+              
+          },
+          
+        domContentLoadedCallback = ( ) => {
+        
+          const
+          
             xPathResults = xPathEvaluate (
             
               xPathExpression,
               
-              document
+              document.body
               
-                .body
+              );
+              
+          for (
+          
+            let i = 0;
+            
+            i < xPathResults.snapshotLength;
+            
+            i++
+            
+            )
+            
+            sectionCallback (
+            
+              xPathResults.snapshotItem ( i )
                 
               );
               
-          for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+        // hide show unregister
+        
+        {
+        
+          const sectionsElement = document
           
-            callback (
+            .querySelector (
             
-              xPathResults
+              '#page-regions'
               
-                .snapshotItem ( i )
-                
               );
               
-            }
-            
-          // hide show unregister
+          sectionsElement
           
-          {
-          
-            const sectionsElement = document
+            .style
             
-              .querySelector ( '#sections' );
+            .setProperty (
+            
+              `--${ codeKey }`,
               
+              'visible'
+              
+              );
+              
+          twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .pop ( `--${ codeKey }` );
+            
+          const l = twc
+          
+            .data
+            
+            .hideShow
+            
+            [ selectorKey ]
+            
+            .length;
+            
+          if ( ! l )
+          
             sectionsElement
             
               .style
               
-              .setProperty ( `--${ codeKey }`, 'visible' );
+              .setProperty (
               
-            twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .pop ( `--${ codeKey }` );
-              
-            const l = twc
-            
-              .data
-              
-              .hideShow
-              
-              [ selectorKey ]
-              
-              .length;
-              
-            if ( ! l )
-            
-              sectionsElement
-              
-                .style
+                '--twc-gallery-section-visibility',
                 
-                .setProperty ( '--twc-gallery-section-visibility', 'flex' );
+                'flex'
                 
-            }
-            
-          },
-          
-        xPathEvaluate = ( xPathExpression, contextNode ) => {
-        
-          const xPathResults = document
-          
-            .evaluate (
-            
-              xPathExpression,
-              
-              contextNode,
-              
-              null,
-              
-              XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-              
-              null
-              
-              );
-              
-          return xPathResults;
+                );
+                
+          }
           
           };
+          
+      // hide show register
+      
+      {
+      
+        // initialize twc module
         
+        window.twc = window.twc || { };
+        
+        // initialize twc data sub-module
+        
+        twc.data = twc.data || { };
+        
+        // initialize twc data hideShow sub-module
+        
+        twc.data.hideShow =
+        
+          twc.data.hideShow || { };
+          
+        // initialize twc data hideShow selector key sub-module
+        
+        twc
+        
+          .data
+          
+          .hideShow [
+          
+            selectorKey
+            
+            ]
+            
+            =
+            
+            ( ( self ) => self ) (
+            
+              twc
+              
+                .data
+                
+                .hideShow [
+                
+                selectorKey
+                
+                ]
+                
+                ||
+                
+                [ ]
+                
+                );
+                
+        twc
+        
+          .data
+          
+          .hideShow
+          
+          [ selectorKey ]
+          
+          .push ( `--${ codeKey }` );
+          
+        }
+        
+      // domContentLoadedCallback ( );
+      
+      //
+      
       document
       
         .addEventListener (
         
           'DOMContentLoaded',
           
-          callback
+          domContentLoadedCallback
           
           );
           
+      //
+      
       } ) ( );
       
     </script>
-  
-  <!-- end gallery section right arrow auto click -->
+    
+  <!-- end TWC Gallery Section Right Arrow Auto Click -->
