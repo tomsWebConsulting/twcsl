@@ -23,7 +23,7 @@ I'm [available for consulting](http://www.tomsWeb.consulting/).
 
 ## Layout Overview
 
-twcsl contains 600 effects. Each effect has it's own version number, code,
+twcsl contains 601 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -751,6 +751,8 @@ not necessarily designed to work together.
           
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
+        * [Gallery Section Text Block Overlay.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/Gallery%20Section%20Text%20Block%20Overlay.bbprojectd)
+          
     * [Section Date Hide](v7.1/Section/Section%20Date%20Hide)
       
       * [Section Date Hide.bbprojectd](v7.1/Section/Section%20Date%20Hide/Section%20Date%20Hide.bbprojectd)
