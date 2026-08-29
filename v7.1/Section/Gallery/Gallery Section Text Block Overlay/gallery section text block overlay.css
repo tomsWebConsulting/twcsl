@@ -1,150 +1,121 @@
-/*
+/*!
 
-  begin gallery section text block overlay
+  gallery section text block overlay
   
-  License     : < https://tinyurl.com/s872fb68 >
+  License         : < https://tinyurl.com/s872fb68 >
   
-  Version     : 0.2.1
+  Version         : 0.3.0
   
-  SS Version  : 7.1
+  SS Version      : 7.1
   
-  Note        : this effect is not active in SS Preview to test it use
-                private browsing < https://tinyurl.com/ynessvsf >
+  Note            : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
   
-  By          : Thomas Creedon < http://www.tomsWeb.consulting/ >
+  Copyright       : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
   
   */
   
-  @opacity : 0.8;
+body:not( .sqs-is-page-editing ) {
+
+  .twc-gstbo {
   
-  /* do not change anything below, there be the borg here */
-  
-  html:not( .squarespace-damask ) {
-  
-    #siteWrapper {
+    .gallery-grid-item {
     
-      --twc-page-section-display : none;
+      position : relative;
       
       }
       
-    .page-section {
+    .gallery-caption {
     
-      display : var( --twc-page-section-display );
+      background-color : var( --siteBackgroundColor );
+      box-sizing : border-box;
+      flex-direction : column;
+      height : auto;
+      margin-top : 0;
+      opacity : var( --twc-gstbo-opacity );
+      padding-left : 15px;
+      padding-right : 15px;
+      position : absolute;
+      top : 50% !important;
+      
+      -webkit-transform : translateY( -50% );
+      -ms-transform : translateY( -50% );
+      transform : translateY( -50% );
       
       }
       
-    .twc-gstbo { /* galleries */
+    .gallery-fullscreen-slideshow-item,
+    .gallery-slideshow-item
     
-      .gallery-caption {
-        
-        background-color : var( --siteBackgroundColor );
-        height : auto;
-        margin-top : 0;
-        position : absolute;
-        top : 50% !important;
-        
-        -webkit-transform : translateY( -50% );
-        -ms-transform : translateY( -50% );
-        transform : translateY( -50% );
-        
-        .gallery-caption-content {
-        
-          padding-bottom : 17px;
-          padding-top : 17px;
-          
-          }
-          
-        }
-        
-      .gallery-caption-grid-masonry,
-      .gallery-caption-grid-simple,
-      .gallery-caption-grid-strips
+      {
       
-        {
+        &[data-active="true"][data-in="true"] {
         
-          padding : 0;
-          
-          .sqs-block-html,
-          .gallery-caption-content
+          .gallery-caption-fullscreen-slideshow,
+          .gallery-caption
           
             {
             
-              padding-left : 17px;
-              padding-right : 17px;
+              opacity : var( --twc-gstbo-opacity );
               
               }
               
           }
           
-      .gallery-caption-grid-masonry,
-      .gallery-caption-grid-simple,
-      .gallery-caption-grid-strips
-      
-        {
+        }
         
-          opacity : @opacity;
-          
-          }
-          
-      .gallery-grid .gallery-grid-item {
+    .gallery-caption-fullscreen-slideshow,
+    .gallery-caption-reel,
+    .gallery-caption-slideshow
+    
+      {
       
-        position : relative;
+        padding-bottom : 15px;
+        padding-top : 15px;
         
         }
         
-      .gallery-slideshow,
-      .gallery-fullscreen-slideshow
-      
-        {
-        
-          &[data-show-captions="true"] {
-          
-            &[data-width="full-bleed"],
-            &[data-thumbnails="false"]
-            
-              {
-              
-                margin-bottom : 50px;
-                
-                }
-                
-            }
-            
-          }
-          
-      .gallery-fullscreen-slideshow-item,
-      .gallery-reel-item,
-      .gallery-slideshow-item
-      
-        {
-        
-          &[data-active="true"] {
-          
-            .gallery-caption-reel {
-            
-                opacity : @opacity;
-                
-              }
-              
-            &[data-in="true"] {
-            
-              .gallery-caption-fullscreen-slideshow,
-              .gallery-caption
-              
-                {
-                
-                  opacity : @opacity;
-                  
-                  }
-                  
-              }
-              
-            }
-            
-          }
-      
-      } /* end galleries */
-      
-    } /* end is not preview */
+    .gallery-caption-slideshow {
     
-  /* end gallery section text block overlay */
+      box-shadow: 5px 5px 10px var(--paragraphMediumColor);
+      
+      }
+      
+    [data-sqsp-block="text"] {
+    
+      padding-bottom : 0;
+      padding-top : 0;
+      
+      }
+      
+    .gallery-caption-wrapper {
+    
+      text-align : center;
+      
+      ~ [data-sqsp-block="text"] {
+      
+        padding-top : 15px;
+        
+        }
+        
+      }
+      
+    + .page-section {
+    
+      display : none;
+      
+      }
+      
+    }
+    
+  }
+  
+body.sqs-is-page-editing .twc-gstbo [data-sqsp-block="text"] {
+
+  display : unset;
+  
+  }

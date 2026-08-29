@@ -1,194 +1,883 @@
-<script>
+<!-- begin TWC Gallery Section Text Block Overlay -->
 
-  /*
+  <!--
   
     gallery section text block overlay
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.1
+    Version         : 0.3.0
     
-    SS Version    : 7.1
+    SS Version      : 7.1
     
-    Dependencies  : jQuery
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
     
-    Notes         : this effect only supports gallery type slideshow simple
-                    
-                    this effect is not active in SS Preview to test it use
-                    private browsing < https://bit.ly/3f6lhq2 >
-    
-    By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
+    Copyright       : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
-    */
+    -->
     
-  $( ( ) => {
+  <style>
   
-    const codeKey = 'twc-gstbo';
+    body:not( .sqs-is-page-editing ) {
     
-    const version = '0.2.1';
-    
-    const s = `Gallery Section Text Block Overlay v${ version }, ` +
+      .twc-gstbo {
       
-      'License < https://tinyurl.com/s872fb68 >, ' +
-      
-      'Tom\'s Web Consulting < http://www.tomsWeb.consulting >';
-      
-    console.log ( s );
-    
-    const selectorKey = '.page-section';
-    
-    if ( window.twc == undefined ) window.twc = { };
-    
-    if ( twc.data == undefined ) twc.data = { };
-    
-    if ( twc.data.hideShow == undefined ) twc.data.hideShow = { };
-    
-    if ( twc.data.hideShow [ selectorKey ] == undefined )
-    
-      twc
-      
-        .data
+        .gallery-grid-item {
         
-        .hideShow
-        
-        [ selectorKey ]
-        
-        =
-        
-        [ ];
-        
-    twc
-    
-      .data
-      
-      .hideShow
-      
-      [ selectorKey ]
-      
-      .push ( `--${ codeKey }` );
-      
-    ( ( ) => {
-    
-      if ( window.frameElement !== null ) return; // bail if in preview
-      
-      $( '.gallery-section' ) // find and process gallery sections
-      
-        .filter ( function ( ) { // find gallery sections
-        
-          const selector = '.gallery-caption p.gallery-caption-content' +
+          position : relative;
           
-            `:contains(${ codeKey })`;
-            
-          const $element = $( selector, this )
+          }
           
-            .first ( );
-            
-          const enabled = Boolean (
+        .gallery-caption {
+        
+          background-color : var( --siteBackgroundColor );
+          box-sizing : border-box;
+          flex-direction : column;
+          height : auto;
+          margin-top : 0;
+          opacity : var( --twc-gstbo-opacity );
+          padding-left : 15px;
+          padding-right : 15px;
+          position : absolute;
+          top : 50% !important;
           
-            $element.length
-            
-            );
-            
-          if ( enabled ) {
+          -webkit-transform : translateY( -50% );
+          -ms-transform : translateY( -50% );
+          transform : translateY( -50% );
           
-            const text = $element
+          }
+          
+        .gallery-fullscreen-slideshow-item,
+        .gallery-slideshow-item
+        
+          {
+          
+            &[ data-active = "true" ][ data-in = "true" ] {
             
-              .text ( )
+              .gallery-caption-fullscreen-slideshow,
+              .gallery-caption
               
-              .replace ( `${ codeKey }`, '' )
+                {
+                
+                  opacity : var( --twc-gstbo-opacity );
+                  
+                  }
+                  
+              }
               
-              .trim ( );
-              
-            $element.text ( text );
+            }
+            
+        .gallery-caption-fullscreen-slideshow,
+        .gallery-caption-reel,
+        .gallery-caption-slideshow
+        
+          {
+          
+            padding-bottom : 15px;
+            padding-top : 15px;
             
             }
             
-          return enabled;
-          
-          } ) // end filter
-          
-        .addClass ( codeKey )
+        .gallery-caption-slideshow {
         
-        .each ( function ( ) { // process gallery sections
+          box-shadow: 5px 5px 10px var(--paragraphMediumColor);
+          
+          }
+          
+        [ data-sqsp-block = "text" ] {
         
-          const selector = '.gallery-caption p.gallery-caption-content';
+          padding-bottom : 0;
+          padding-top : 0;
           
-          const $this = $( this );
+          }
           
-          $( selector, $this ).each ( function ( ) {
+        .gallery-caption-wrapper {
+        
+          text-align : center;
           
-            const $this = $( this );
+          ~ [ data-sqsp-block = "text" ] {
+          
+            padding-top : 15px;
             
-            const selector = $this
+            }
             
-              .text ( )
+          }
+          
+        + .page-section {
+        
+          display : none;
+          
+          }
+          
+        }
+        
+      }
+      
+    body.sqs-is-page-editing .twc-gstbo [ data-sqsp-block = "text" ] {
+    
+      display : unset;
+      
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Gallery Section Text Block Overlay',
+        
+        version = '0.3.0',
+        
+        s = `
+        
+          ${ title } v${ version }
+          
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2023-2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        captionXPathExpression = `
+        
+          .//p [
+          
+            contains (
+            
+              concat (
               
-              .trim ( );
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-caption-content '
               
-            let b = selector.startsWith ( '#block-' );
+              )
+              
+            and
             
-            if ( ! b ) return true; // continue
+            contains (
             
-            const $block = $( selector );
+              .,
+              
+              '#block-'
+              
+              )
+              
+            ]
             
-            b = $block.hasClass ( 'sqs-block-html' );
-            
-            if ( ! b ) return true; // continue
-            
-            $this.replaceWith ( $block );
-            
-            } );
-            
-          $this
+          `,
           
-            .next ( '.page-section' )
-            
-            .remove ( );
-            
-          } );
+        codeKey = 'twc-gstbo',
+        
+        listItemSeletor = [
+        
+          '.gallery-fullscreen-slideshow-item',
           
+          '.gallery-grid-item',
+          
+          '.gallery-masonry-item',
+          
+          '.gallery-reel-item',
+          
+          '.gallery-slideshow-item',
+          
+          '.gallery-strips-item'
+          
+          ]
+          
+          .join ( ', ' ),
+          
+        listSelector = [
+        
+          '.gallery-fullscreen-slideshow-list',
+          
+          '.gallery-grid-wrapper',
+          
+          '.gallery-masonry-wrapper',
+          
+          '.gallery-reel-list',
+          
+          '.gallery-slideshow-list',
+          
+          '.gallery-strips-wrapper'
+          
+          ]
+          
+          .join ( ', ' ),
+          
+        overlayCallback = (
+        
+          element,
+          
+          nextSectionElement
+          
+          ) => {
+          
+            const
+            
+              text = element.textContent,
+              
+              m = text.match (
+              
+                /(#block-.+)/
+                
+                );
+                
+            element.textContent =
+            
+              text.replace ( m [ 1 ], '' );
+              
+            let textBlockElement =
+            
+              nextSectionElement
+              
+                .querySelector (
+                
+                  m [ 1 ]
+                  
+                  );
+                  
+            // bail if no text block
+            
+            if ( ! textBlockElement ) return;
+            
+            textBlockElement =
+            
+              textBlockElement.cloneNode (
+              
+                true
+                
+                );
+                
+            removeAttributes (
+            
+              textBlockElement,
+              
+              'id'
+              
+              );
+              
+            element
+            
+              .closest ( 'figcaption' )
+              
+              .appendChild (
+              
+                textBlockElement
+                
+                );
+                
+            },
+            
+        removeAttributes = (
+        
+          element,
+          
+          attributeNames,
+          
+          recursive = true
+          
+          ) => {
+          
+            const names =
+            
+              attributeNames.split ( /\s+/ );
+              
+            names.forEach (
+            
+              n =>
+              
+                element.removeAttribute ( n )
+                
+              );
+              
+            // bail if not recursive
+            
+            if ( ! recursive )
+            
+              return element;
+              
+            names.forEach (
+            
+              name =>
+              
+                element
+                
+                  .querySelectorAll (
+                  
+                    `[ ${ name } ]`
+                    
+                    )
+                  
+                  .forEach (
+                  
+                    e =>
+                    
+                      e.removeAttribute (
+                      
+                        name
+                        
+                        )
+                        
+                    )
+                    
+              );
+              
+            return element;
+            
+            },
+            
+        sectionXPathExpression = `
+        
+          .//section [
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-section '
+              
+              )
+              
+            ]//figure[
+            
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-fullscreen-slideshow-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  following-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-fullscreen-slideshow-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              or
+              
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-grid-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  preceding-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-grid-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              or
+              
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-masonry-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  preceding-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-masonry-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              or
+              
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-reel-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  preceding-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-reel-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              or
+              
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-slideshow-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  following-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-slideshow-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              or
+              
+              (
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-strips-item '
+                  
+                  )
+                  
+                and
+                
+                not (
+                
+                  preceding-sibling::figure[
+                  
+                    contains (
+                    
+                      concat (
+                      
+                        ' ',
+                        
+                        normalize-space ( @class ),
+                        
+                        ' '
+                        
+                        ),
+                        
+                      ' gallery-strips-item '
+                      
+                      )
+                      
+                    ]
+                    
+                  )
+                  
+                )
+                
+              ]//p [
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                  
+                  ' gallery-caption-content '
+                  
+                  )
+                  
+                ][
+                
+                  contains (
+                  
+                    .,
+                    
+                    '${ codeKey }'
+                    
+                    )
+                    
+                  ]
+                  
+          `,
+          
+        selectorKey = '.page-section',
+        
+        xPathEvaluate = (
+        
+          xPathExpression,
+          
+          contextNode
+          
+          ) => {
+        
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult
+                
+                  .ORDERED_NODE_SNAPSHOT_TYPE,
+                
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            },
+            
+        sectionCallback = ( ) => {
+        
+          const sectionXPathResults =
+          
+            xPathEvaluate (
+            
+              sectionXPathExpression,
+              
+              document
+              
+                .body
+                
+                .querySelector (
+                
+                  '#page-regions'
+                  
+                  )
+                  
+              );
+                
+          for (
+          
+            let i = 0;
+            
+            i
+            
+            <
+            
+            sectionXPathResults
+            
+              .snapshotLength;
+              
+            i++
+            
+            ) {
+            
+              const
+              
+                element = sectionXPathResults
+                
+                  .snapshotItem ( i ),
+                  
+                listElement = element
+                
+                  .closest (
+                  
+                    listSelector
+                    
+                    ),
+                    
+                sectionElement = element
+                
+                  .closest (
+                  
+                    '.gallery-section'
+                    
+                    ),
+                    
+                text = element
+                
+                  .textContent
+                  
+                  .replace ( `${ codeKey }`, '' )
+                  
+                  .trim ( ),
+                  
+                captionXPathResults =
+                
+                  xPathEvaluate (
+                  
+                    captionXPathExpression,
+                    
+                    listElement
+                    
+                    ),
+                    
+                nextSectionElement =
+                
+                  sectionElement
+                  
+                    .nextElementSibling;
+                    
+              element.textContent = text;
+              
+              sectionElement
+              
+                .classList
+                
+                .add ( codeKey );
+                
+              for (
+              
+                let i = 0;
+                
+                i
+                
+                <
+                
+                captionXPathResults
+                
+                  .snapshotLength;
+                  
+                i++
+                
+                ) {
+                
+                  const element =
+                  
+                    captionXPathResults
+                    
+                      .snapshotItem ( i );
+                      
+                  overlayCallback (
+                  
+                    element,
+                    
+                    nextSectionElement
+                    
+                    );
+                    
+                  }
+                 
+              }
+              
+          },
+          
+        loadCallback = ( ) => {
+        
+          sectionCallback ( );
+          
+          window.dispatchEvent (
+          
+            new Event ( 'resize' )
+            
+            );
+            
+          };
+          
+      // loadCallback ( );
+      
+      //
+      
+      window
+      
+        .addEventListener (
+        
+          'load',
+          
+          loadCallback
+          
+          );
+          
+      //
+      
       } ) ( );
       
-    let i = twc
+    </script>
     
-      .data
-      
-      .hideShow
-      
-      [ selectorKey ]
-      
-      .indexOf ( `--${ codeKey }` )
-      
-    if ( i != -1 )
-    
-      twc
-      
-        .data
-        
-        .hideShow
-        
-        [ selectorKey ]
-        
-        .splice ( i, 1 );
-        
-    i = twc
-    
-      .data
-      
-      .hideShow
-      
-      [ selectorKey ]
-      
-      .length;
-      
-    if ( ! i )
-    
-      $( '#sections' )
-      
-        .css ( '--twc-page-section-display', 'flex' );
-        
-    } );
-    
-  </script>
+  <!-- end TWC Gallery Section Text Block Overlay -->

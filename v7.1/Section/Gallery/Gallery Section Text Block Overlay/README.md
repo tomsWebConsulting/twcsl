@@ -8,87 +8,161 @@ Add styled text overlays to gallery section images.
 
 ### Version
 
-  * 0.2.1
+  * 0.3.0
 
 #### SS Version
 
   * 7.1
 
-#### Fluid Engine Compatible
-
-  * Yes
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
-  
-  * [jQuery][4]
- 
+
 ---
 
-## Install
+## Install Options
 
-* Add code from file **[gallery section text block overlay.less][5]** to
-  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-  Editor][199] for details.
-  
-* Add the following to Website > Pages > Custom Code > Code Injection >
-  HEADER.
-  
-  ```html
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  ```
-  
-* Add code from file **[gallery section text block overlay.html][6]** to
-  Website > Pages > Custom Code > Code Injection > FOOTER. Please see
-  [Per-page code injection][7].
+* CDN Hosted
 
-* Add a section to a Page.
-
-  * There is no need to spend time changing the design layout of this section as
-    the code will hide this section.
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
+  
+  * Options
+  
+    * Page Specific
     
-  * Add text blocks that you want to use as gallery section image text overlays.
-    For [Classic Editor][8] only use line blocks to keep text blocks from
-    collapsing together.
+      Use this option if you want to have this effect on only one Page.
+      
+      * Add code from file **[gallery section text block overlay
+        options.html][6]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for instructions
+        within.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Page.
+        
+        ```html
+        <!-- begin TWC Gallery Section Text Block Overlay -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
+          
+          <!-- end TWC Gallery Section Text Block Overlay -->
+          
+        ```
+        
+      * Refer to [per-page code injection][7] for details.
+      
+    * Site-wide
     
-* Add a gallery section to a Page.
+      Use this option if you want to have this effect on all Pages.
+      
+      * Add code from file **[gallery section text block overlay
+        options.html][6]** to Website > Pages > Custom Code >
+        Code Injection > FOOTER. Read the code for instructions within.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Gallery Section Text Block Overlay -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
+          
+          <!-- end TWC Gallery Section Text Block Overlay -->
+          
+        ```
+        
+* On-site
 
-  * Add the gallery section just before the previous section you created.
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
-  * For Gallery Type select **Slideshow: simple**.
+  * Page Specific
   
-  * Turn the **Captions** on.
+    Use this option if you want to have this effect on only one Page.
+    
+      * Add code from file **[gallery section text block overlay
+        options.html][6]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for instructions
+        within.
+        
+    * Add code from file **[gallery section text block overlay.html][8]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page.
+      
+    * Refer to [per-page code injection][7] for details.
+    
+  * Site-wide
   
-  * In the first image description add the following line.
+    Use this option if you want to have this effect on all Pages.
+    
+    * Add code from file **[gallery section text block overlay
+      options.html][6]** to Website > Pages > Custom Code > Code Injection >
+      FOOTER. Read the code for instructions within.
+      
+    * Add code from file **[gallery section text block overlay.html][8]** to
+      Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][9] for details.
+
+## How to Use
+
+* Add a Gallery Section to the Page.
+
+  * Turn Captions on.
+  
+  * In the first image Description add the following line.
     
     ```text
     twc-gstbo
     ```
     
-  * For each image you want to have a text block overlay set its 
-    description to a text block id. If you want an overlay for the first image
-    add a line to the description that is the text block id.
+* Optional
+
+  This code supports using Text Blocks for Descriptions.
+  
+  * Add a section to the Page after the Gallery Section.
+  
+  * There is no need to spend time changing the design layout of this section as
+    this code will hide this section.
+    
+  * Add Text Blocks that you want to use as the Gallery Section image text
+    overlays. For [Classic Editor][10] only use Line Blocks to keep Text Blocks
+    from collapsing together.
+    
+  * For each image you want to have a Text Block overlay set its Description to
+    a Text Block ID. If you want an overlay for the first image add a line to
+    the Description that is the Text Block ID.
     
     ![first image description](read%20me%20assets/first%20image%20description.png)
     
-    To find text block ids you can use a tool like Heather Tovey's most
-    excellent looking [Squarespace ID Finder][9].
-
-## Note
-
-This effect is not active in SS Preview to test it use [private browsing][10].
+    To find Text Block IDs you can use a tool like Heather Tovey's most
+    excellent looking [Squarespace ID Finder][11].
 
 ## Demo
 
-You can see a [demo of this effect here][11].
+You can see a [demo of this effect here][12].
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][13].
 
 ## Changes
 
+* **2026-08-29**
+
+  * reworked code to not remove native captions
+  * restructured the code
+  * removed jQuery dependency
+  * bumped version to 0.3.0
+  
 * **2023-08-28**
 
   * fix for opacity issue
@@ -106,13 +180,13 @@ Please consider [making a donation][12].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://jquery.com/
-[5]: gallery%20section%20text%20block%20overlay.less#L1
-[6]: gallery%20section%20text%20block%20overlay.html#L1
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: gallery%20section%20text%20block%20overlay%20options.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
-[9]: https://www.heathertovey.com/squarespace-id-finder/
-[10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[11]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[8]: gallery%20section%20text%20block%20overlay.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/6421525446541#toc-classic-editor
+[11]: https://www.heathertovey.com/squarespace-id-finder/
+[12]: https://toms-web-consulting-demos.squarespace.com/gallery-section-text-block-overlay?password=twcdemos
+[13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

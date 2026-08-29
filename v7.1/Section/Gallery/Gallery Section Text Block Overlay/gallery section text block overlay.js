@@ -1,0 +1,767 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    gallery section text block overlay
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.3.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    title = 'Gallery Section Text Block Overlay',
+    
+    version = '0.3.0',
+    
+    s = `
+    
+      ${ title } v${ version }
+      
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2023-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >
+      
+      `
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const
+  
+    captionXPathExpression = `
+    
+      .//p [
+      
+        contains (
+        
+          concat (
+          
+            ' ',
+            
+            normalize-space ( @class ),
+            
+            ' '
+            
+            ),
+            
+          ' gallery-caption-content '
+          
+          )
+          
+        and
+        
+        contains (
+        
+          .,
+          
+          '#block-'
+          
+          )
+          
+        ]
+        
+      `,
+      
+    codeKey = 'twc-gstbo',
+    
+    listItemSeletor = [
+    
+      '.gallery-fullscreen-slideshow-item',
+      
+      '.gallery-grid-item',
+      
+      '.gallery-masonry-item',
+      
+      '.gallery-reel-item',
+      
+      '.gallery-slideshow-item',
+      
+      '.gallery-strips-item'
+      
+      ]
+      
+      .join ( ', ' ),
+      
+    listSelector = [
+    
+      '.gallery-fullscreen-slideshow-list',
+      
+      '.gallery-grid-wrapper',
+      
+      '.gallery-masonry-wrapper',
+      
+      '.gallery-reel-list',
+      
+      '.gallery-slideshow-list',
+      
+      '.gallery-strips-wrapper'
+      
+      ]
+      
+      .join ( ', ' ),
+      
+    overlayCallback = (
+    
+      element,
+      
+      nextSectionElement
+      
+      ) => {
+      
+        const
+        
+          text = element.textContent,
+          
+          m = text.match (
+          
+            /(#block-.+)/
+            
+            );
+            
+        element.textContent =
+        
+          text.replace ( m [ 1 ], '' );
+          
+        let textBlockElement =
+        
+          nextSectionElement
+          
+            .querySelector (
+            
+              m [ 1 ]
+              
+              );
+              
+        // bail if no text block
+        
+        if ( ! textBlockElement ) return;
+        
+        textBlockElement =
+        
+          textBlockElement.cloneNode (
+          
+            true
+            
+            );
+            
+        removeAttributes (
+        
+          textBlockElement,
+          
+          'id'
+          
+          );
+          
+        element
+        
+          .closest ( 'figcaption' )
+          
+          .appendChild (
+          
+            textBlockElement
+            
+            );
+            
+        },
+        
+    removeAttributes = (
+    
+      element,
+      
+      attributeNames,
+      
+      recursive = true
+      
+      ) => {
+      
+        const names =
+        
+          attributeNames.split ( /\s+/ );
+          
+        names.forEach (
+        
+          n =>
+          
+            element.removeAttribute ( n )
+            
+          );
+          
+        // bail if not recursive
+        
+        if ( ! recursive )
+        
+          return element;
+          
+        names.forEach (
+        
+          name =>
+          
+            element
+            
+              .querySelectorAll (
+              
+                `[ ${ name } ]`
+                
+                )
+              
+              .forEach (
+              
+                e =>
+                
+                  e.removeAttribute (
+                  
+                    name
+                    
+                    )
+                    
+                )
+                
+          );
+          
+        return element;
+        
+        },
+        
+    sectionXPathExpression = `
+    
+      .//section [
+      
+        contains (
+        
+          concat (
+          
+            ' ',
+            
+            normalize-space ( @class ),
+            
+            ' '
+            
+            ),
+            
+          ' gallery-section '
+          
+          )
+          
+        ]//figure[
+        
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-fullscreen-slideshow-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              following-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-fullscreen-slideshow-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          or
+          
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-grid-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              preceding-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-grid-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          or
+          
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-masonry-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              preceding-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-masonry-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          or
+          
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-reel-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              preceding-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-reel-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          or
+          
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-slideshow-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              following-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-slideshow-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          or
+          
+          (
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+                
+              ' gallery-strips-item '
+              
+              )
+              
+            and
+            
+            not (
+            
+              preceding-sibling::figure[
+              
+                contains (
+                
+                  concat (
+                  
+                    ' ',
+                    
+                    normalize-space ( @class ),
+                    
+                    ' '
+                    
+                    ),
+                    
+                  ' gallery-strips-item '
+                  
+                  )
+                  
+                ]
+                
+              )
+              
+            )
+            
+          ]//p [
+          
+            contains (
+            
+              concat (
+              
+                ' ',
+                
+                normalize-space ( @class ),
+                
+                ' '
+                
+                ),
+              
+              ' gallery-caption-content '
+              
+              )
+              
+            ][
+            
+              contains (
+              
+                .,
+                
+                '${ codeKey }'
+                
+                )
+                
+              ]
+              
+      `,
+      
+    selectorKey = '.page-section',
+    
+    xPathEvaluate = (
+    
+      xPathExpression,
+      
+      contextNode
+      
+      ) => {
+    
+        const xPathResults = document
+        
+          .evaluate (
+          
+            xPathExpression,
+            
+            contextNode,
+            
+            null,
+            
+            XPathResult
+            
+              .ORDERED_NODE_SNAPSHOT_TYPE,
+            
+            null
+            
+            );
+            
+        return xPathResults;
+        
+        },
+        
+    sectionCallback = ( ) => {
+    
+      const sectionXPathResults =
+      
+        xPathEvaluate (
+        
+          sectionXPathExpression,
+          
+          document
+          
+            .body
+            
+            .querySelector (
+            
+              '#page-regions'
+              
+              )
+              
+          );
+            
+      for (
+      
+        let i = 0;
+        
+        i
+        
+        <
+        
+        sectionXPathResults
+        
+          .snapshotLength;
+          
+        i++
+        
+        ) {
+        
+          const
+          
+            element = sectionXPathResults
+            
+              .snapshotItem ( i ),
+              
+            listElement = element
+            
+              .closest (
+              
+                listSelector
+                
+                ),
+                
+            sectionElement = element
+            
+              .closest (
+              
+                '.gallery-section'
+                
+                ),
+                
+            text = element
+            
+              .textContent
+              
+              .replace ( `${ codeKey }`, '' )
+              
+              .trim ( ),
+              
+            captionXPathResults =
+            
+              xPathEvaluate (
+              
+                captionXPathExpression,
+                
+                listElement
+                
+                ),
+                
+            nextSectionElement =
+            
+              sectionElement
+              
+                .nextElementSibling;
+                
+          element.textContent = text;
+          
+          sectionElement
+          
+            .classList
+            
+            .add ( codeKey );
+            
+          for (
+          
+            let i = 0;
+            
+            i
+            
+            <
+            
+            captionXPathResults
+            
+              .snapshotLength;
+              
+            i++
+            
+            ) {
+            
+              const element =
+              
+                captionXPathResults
+                
+                  .snapshotItem ( i );
+                  
+              overlayCallback (
+              
+                element,
+                
+                nextSectionElement
+                
+                );
+                
+              }
+             
+          }
+          
+      },
+      
+    loadCallback = ( ) => {
+    
+      sectionCallback ( );
+      
+      window.dispatchEvent (
+      
+        new Event ( 'resize' )
+        
+        );
+        
+      };
+      
+  // loadCallback ( );
+  
+  //
+  
+  window
+  
+    .addEventListener (
+    
+      'load',
+      
+      loadCallback
+      
+      );
+      
+  //
+  
+  } ) ( );

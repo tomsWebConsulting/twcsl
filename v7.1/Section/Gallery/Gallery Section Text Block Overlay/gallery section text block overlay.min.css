@@ -1,0 +1,20 @@
+/*!
+
+  gallery section text block overlay
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.3.0
+  
+  SS Version      : 7.1
+  
+  Note            : the code is comprised of a style and script tag. both are
+                    needed for the full effect to work
+  
+  Copyright       : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */body:not(.sqs-is-page-editing){.twc-gstbo{.gallery-grid-item{position:relative}.gallery-caption{background-color:var( --siteBackgroundColor );box-sizing:border-box;flex-direction:column;height:auto;margin-top:0;opacity:var( --twc-gstbo-opacity );padding-left:15px;padding-right:15px;position:absolute;top:50%!important;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.gallery-fullscreen-slideshow-item,.gallery-slideshow-item{&[data-active=true][data-in=true]{.gallery-caption,.gallery-caption-fullscreen-slideshow{opacity:var( --twc-gstbo-opacity )}}}.gallery-caption-fullscreen-slideshow,.gallery-caption-reel,.gallery-caption-slideshow{padding-bottom:15px;padding-top:15px}.gallery-caption-slideshow{box-shadow:5px 5px 10px var(--paragraphMediumColor)}[data-sqsp-block=text]{padding-bottom:0;padding-top:0}.gallery-caption-wrapper{text-align:center;~[data-sqsp-block=text]{padding-top:15px}}+.page-section{display:none}}}body.sqs-is-page-editing .twc-gstbo [data-sqsp-block=text]{display:unset}
