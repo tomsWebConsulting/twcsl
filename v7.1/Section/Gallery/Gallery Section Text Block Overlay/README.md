@@ -46,9 +46,9 @@ Add styled text overlays to gallery section images.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@012e513c67e092e7878f1a74a0813624c2d0cec4/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@012e513c67e092e7878f1a74a0813624c2d0cec4/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Text Block Overlay -->
           
@@ -61,8 +61,8 @@ Add styled text overlays to gallery section images.
       Use this option if you want to have this effect on all Pages.
       
       * Add code from file **[gallery section text block overlay
-        options.html][6]** to Website > Pages > Custom Code >
-        Code Injection > FOOTER. Read the code for instructions within.
+        options.html][6]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Read the code for instructions within.
         
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
@@ -72,9 +72,9 @@ Add styled text overlays to gallery section images.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@337abd0b8ec04f02e51d551249bfd490407a51e8/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@012e513c67e092e7878f1a74a0813624c2d0cec4/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f2e12e40bfd48fa5d650480d1510f5b6e1f00f3e/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@012e513c67e092e7878f1a74a0813624c2d0cec4/v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/gallery%20section%20text%20block%20overlay.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Text Block Overlay -->
           
