@@ -164,27 +164,29 @@ append, before, prepend, or replace and other settings.
 
 * v7.1
 
-  * [Product Detail Page Last Page Section First N Blocks to End of Product Meta][12]
+  * [Footer Page Sections After Page Sections][12]
   
-  * [Product Detail Page Last Page Section First Video Block Before Quantity][13]
+  * [Product Detail Page Last Page Section First N Blocks to End of Product Meta][13]
   
-  * [Product Detail Page Specific Video Block Before Quantity][14]
+  * [Product Detail Page Last Page Section First Video Block Before Quantity][14]
+  
+  * [Product Detail Page Specific Video Block Before Quantity][15]
 
 ## Effects Dependent on Elements Manipulate
 
 * v7.1
 
-  * [Blog Page Post Excerpt Element][15]
+  * [Blog Page Post Excerpt Element][16]
   
-  * [Footer Sections Append to Page Observe][16]
+  * [Footer Sections Append to Page Observe][17]
   
-  * [Store Page Detail Page Sections Append Footer Section][17]
+  * [Store Page Detail Page Sections Append Footer Section][18]
   
-  * [Store Page Detail Footer Section Append][18]
+  * [Store Page Detail Footer Section Append][19]
 
 ## Callbacks
 
-You can optionally add [callback][19] functions to further customize the
+You can optionally add [callback][20] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
 Refer to [Add code to code injection][10]. Order is not important.
@@ -312,7 +314,7 @@ script tag.
 
 ## Make a Donation
 
-Please consider [making a donation][20].
+Please consider [making a donation][21].
 
 ## Changes
 
@@ -424,12 +426,13 @@ Please consider [making a donation][20].
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [11]: elements%20manipulate.html#L1
-[12]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
-[13]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20video%20block%20before%20quantity.js
-[14]: options%20data%20structure%20templates/product%20detail%20page%20specific%20video%20block%20before%20quantity.js
-[15]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
-[16]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
-[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
-[18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append#store%20page%20detail%20footer%20section%20append
-[19]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[20]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[12]: options%20data%20structure%20templates/footer%20page%20sections%20after%20page%20sections.js
+[13]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20n%20blocks%20to%20end%20of%20product%20meta.js
+[14]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20video%20block%20before%20quantity.js
+[15]: options%20data%20structure%20templates/product%20detail%20page%20specific%20video%20block%20before%20quantity.js
+[16]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Blog/Post/Blog%20Page%20Post%20Excerpt%20Element#blog-page-post-excerpt-element
+[17]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Footer%20Sections%20Append%20to%20Page#footer-sections-append-to-page
+[18]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Page%20Sections%20Append%20Footer%20Section#store-page-detail-page-sections-append-footer-section
+[19]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Footer%20Section%20Append#store%20page%20detail%20footer%20section%20append
+[20]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
+[21]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
