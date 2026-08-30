@@ -275,6 +275,8 @@ not necessarily designed to work together.
     
   * [URL Reroute Code Generator for Brad Good's Multi-language Technique](Bookmarklet/URL%20Reroute%20Code%20Generator%20for%20Brad%20Good's%20Multi-language%20Technique)
     
+    * [URL Reroute Code Generator for Brad Good's Multi-language Technique.bbprojectd](Bookmarklet/URL%20Reroute%20Code%20Generator%20for%20Brad%20Good's%20Multi-language%20Technique/URL%20Reroute%20Code%20Generator%20for%20Brad%20Good's%20Multi-language%20Technique.bbprojectd)
+      
   * [Asset Library Selected Image URLs](Bookmarklet/Asset%20Library%20Selected%20Image%20URLs)
     
     * [Asset Library Selected Image URLs.bbprojectd](Bookmarklet/Asset%20Library%20Selected%20Image%20URLs/Asset%20Library%20Selected%20Image%20URLs.bbprojectd)
@@ -589,8 +591,6 @@ not necessarily designed to work together.
           
           * [Store Page Detail Title Text to Link.bbprojectd](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Title%20Text%20to%20Link/Store%20Page%20Detail%20Title%20Text%20to%20Link.bbprojectd)
             
-        * [Store Page Detail Move Footer Section Nth Content to Additional Info](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Move%20Footer%20Section%20Nth%20Content%20to%20Additional%20Info)
-          
         * [Store Page Detail Add To Cart Text Change On Quantity Change](v7.1/Page/Store/Detail/Store%20Page%20Detail%20Add%20To%20Cart%20Text%20Change%20On%20Quantity%20Change)
           
         * [Store Product Detail Variant Color Swatch Add](v7.1/Page/Store/Detail/Store%20Product%20Detail%20Variant%20Color%20Swatch%20Add)
