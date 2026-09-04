@@ -1,14 +1,12 @@
 ( ( ) => {
 
-  // debugger;
-  
   /*!
   
     store page list categories mega
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.7.0
+    Version           : 0.7.1
     
     SS Version        : 7.1
     
@@ -17,8 +15,8 @@
     Notes             : the code is comprised of a style and script tag. both
                         are needed for the full effect to work
                         
-                        this code is not active when Categories Style is set to
-                        DROPDOWN
+                        this code is only active when Categories Style is set to
+                        Subnav
                         
                         Store Settings > General > Filter Visibility must be
                         toggled on for this code to work correctly
@@ -37,11 +35,13 @@
     
     */
     
+  // debugger;
+  
   const
   
     title = 'Store Page List Categories Mega',
     
-    version = '0.7.0',
+    version = '0.7.1',
   
     s = `
     
@@ -75,7 +75,9 @@
     
     13;
     
-  if ( ! isStorePage ) return; // bail if not store page
+  // bail if not store page
+  
+  if ( ! isStorePage ) return;
   
   const isList
   
@@ -89,7 +91,9 @@
       
       ?.id;
       
-  if ( ! isList ) return; // bail if not list
+  // bail if not list
+  
+  if ( ! isList ) return;
   
   // initialize twc module
   
@@ -127,7 +131,7 @@
             
             +
             
-            '"subnav" ]'
+            'subnav ]'
             
             );
             
@@ -209,13 +213,21 @@
         
           ( element, wrapper, wrappers ) => {
           
+            const isString =
+            
+              typeof wrapper
+              
+              ===
+              
+              'string';
+              
             let
             
               deepestElement,
         
               outerWrapperElement;
               
-            if ( typeof wrapper === 'string' ) {
+            if ( isString ) {
             
               // parse html string into dom
               
@@ -257,8 +269,14 @@
                 
                   outerWrapperElement;
                   
-                while ( deepestElement.firstElementChild )
+                while (
                 
+                  deepestElement
+                  
+                    .firstElementChild
+                    
+                  )
+                  
                   deepestElement =
                   
                     deepestElement
@@ -347,9 +365,13 @@
             
             ),
             
-        wrap =
+        wrap = (
         
-          ( target, wrapper = '<div>' ) => {
+          target,
+          
+          wrapper = '<div>'
+          
+          ) => {
           
             const
             
@@ -431,16 +453,8 @@
             
               <li class="children nested-category-breadcrumb-list-item">
               
-                <a class="nested-category-breadcrumb-link" href="${
+                <a class="nested-category-breadcrumb-link" href="${ url }${ category.fullSlug }">
                 
-                  url
-                  
-                  }${
-                  
-                    category.fullSlug
-                    
-                    }">
-                    
                   ${ category.displayName }
                   
                   </a>
@@ -483,8 +497,8 @@
                     
                       </summary>
                       
-                    </details>
-                    
+                      </details>
+                      
                   `
                   
                 );

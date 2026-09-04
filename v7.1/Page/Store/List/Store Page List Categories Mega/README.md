@@ -8,7 +8,7 @@ Store page list categories mega menu.
 
 ### Version
 
-  * 0.7.0
+  * 0.7.1
 
 #### SS Version
 
@@ -135,6 +135,11 @@ Please consider [making a donation][13].
 
 ## Changes
 
+* **2026-09-04**
+
+  * fixed dual categories display after more Squarespace changes to the DOM
+  * bumped version to 0.7.1 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
+  
 * **2026-06-10**
 
   * updated to use work with page categories cache

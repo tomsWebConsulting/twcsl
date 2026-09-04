@@ -2,26 +2,32 @@
 
   store page list categories mega
   
-  License         : < https://tinyurl.com/s872fb68 >
+  License           : < https://tinyurl.com/s872fb68 >
   
-  Version         : 0.7.0
+  Version           : 0.7.1
   
-  SS Version      : 7.1
+  SS Version        : 7.1
   
-  Notes           : this code is not active when Categories Style is set to
-                    DROPDOWN
-                    
-                    Store Settings > General > Filter Visibility must be
-                    toggled on for this code to work correctly
-                    
-                    in the editor when you change the Menu Placement (SIDE/TOP)
-                    you will see Squarespace's default style of categories until
-                    you save the Store Page. if for some reason the categories
-                    don't update after saving the Store Page, refresh the Store Page
+  Dependencies      : page categories cache < https://tinyurl.com/yrcxfwnr >
   
-  Copyright       : 2023-2026 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  Notes             : the code is comprised of a style and script tag. both
+                      are needed for the full effect to work
+                      
+                      this code is only active when Categories Style is set to
+                      Subnav
+                      
+                      Store Settings > General > Filter Visibility must be
+                      toggled on for this code to work correctly
+                      
+                      in the editor when you change the Menu Placement
+                      (Side/Top) you will see Squarespace's default style of
+                      categories until you save the Store Page. if for some
+                      reason the categories don't update after saving the
+                      Store Page, refresh the Store Page
+  
+  Copyright         : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
   
   no user serviceable parts below
   
@@ -37,20 +43,24 @@
 
   /* begin category */
   
-    body:not( .sqs-is-page-editing ) .product-list .product-list-nav-and-filters .product-list-nav .nested-category-children, /* top */
-    body:not( .sqs-is-page-editing ) .nested-category-tree-wrapper /* side */
+    body:not( .sqs-is-page-editing ) {
     
-    /* end category */
-    
-  {
-  
-    display : none /* !important */;
-    
-    }
-    
+      .product-list .product-list-category-subnav-container .product-list-nav .nested-category-children, /* top */
+      .nested-category-tree-wrapper /* side */
+      
+      /* end category */
+      
+        {
+        
+          display : none /* !important */;
+          
+          }
+          
+      }
+      
   /* end hide */
 
-.product-list[ data-nav-and-filters-position = "top" ] .twc-splcm {
+.product-list[ data-nav-and-filters-position = top ] .twc-splcm {
 
   margin : 10px 0;
   
@@ -111,7 +121,7 @@
   
   }
   
-.product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
+.product-list[ data-nav-and-filters-position = top ] .twc-splcm ul ul {
 
   gap : unset;
   
@@ -119,7 +129,7 @@
 
 /* begin top */
 
-  .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm ul ul {
+  .product-list[ data-nav-and-filters-position = top ] .twc-splcm ul ul {
   
     flex-direction : column;
     
@@ -127,7 +137,7 @@
 
   /* begin seperator */
   
-    .product-list[ data-nav-and-filters-position = "top" ] .twc-splcm > li > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
+    .product-list[ data-nav-and-filters-position = top ] .twc-splcm > li > details > ul > .nested-category-breadcrumb-list-item:not( :last-child ) > .breadcrumb-separator {
 
       display : unset;
       margin-left : 0.6em;
@@ -140,13 +150,13 @@
 
 /* begin sidebar */
 
-  .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul {
+  .product-list[ data-nav-and-filters-position = sidebar ] .twc-splcm ul {
   
     flex-direction : column;
     
     }
 
-  .product-list[ data-nav-and-filters-position = "sidebar" ] .twc-splcm ul ul li:first-child {
+  .product-list[ data-nav-and-filters-position = sidebar ] .twc-splcm ul ul li:first-child {
   
     margin-top : 0.75em;
     
