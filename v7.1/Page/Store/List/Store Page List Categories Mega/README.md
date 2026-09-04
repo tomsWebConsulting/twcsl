@@ -53,9 +53,9 @@ Store page list categories mega menu.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9183392fc43ca2d1074933329f892dae7dbe27a3/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fafaff557c69e243d123d4a5e20ec6195def43b6/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9183392fc43ca2d1074933329f892dae7dbe27a3/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fafaff557c69e243d123d4a5e20ec6195def43b6/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Categories Mega -->
             
@@ -79,9 +79,9 @@ Store page list categories mega menu.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9183392fc43ca2d1074933329f892dae7dbe27a3/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fafaff557c69e243d123d4a5e20ec6195def43b6/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@9183392fc43ca2d1074933329f892dae7dbe27a3/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@fafaff557c69e243d123d4a5e20ec6195def43b6/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Mega/store%20page%20list%20categories%20mega.min.js" type="module"></script>
             
             <!-- end TWC Store Page List Categories Mega -->
             
@@ -138,7 +138,7 @@ Please consider [making a donation][13].
 * **2026-09-04**
 
   * fixed dual categories display after more Squarespace changes to the DOM
-  * bumped version to 0.7.1 (commit 4e39832b89f6c72da4a540693395a2a7a83c5fc5)
+  * bumped version to 0.7.1 (commit fafaff557c69e243d123d4a5e20ec6195def43b6)
   
 * **2026-06-10**
 
