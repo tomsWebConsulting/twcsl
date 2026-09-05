@@ -193,7 +193,7 @@ Please consider [making a donation][10].
 * **2026-05-26**
 
   * added support for button style variant options
-  * bumped version to 0.5.0
+  * bumped version to 0.5.0 (commit 6d5c928deba7d293fadfa956b520ef0c739126f3)
   
 * **2026-05-24**
 
