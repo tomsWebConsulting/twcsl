@@ -16,7 +16,8 @@
                       destructive it can make massive additions of categories to
                       your products
                       
-                      this code does not work on products without images
+                      this code does not work on products without featured
+                      images you set
     
     Copyright       : 2026 Thomas Creedon
                       

@@ -43,7 +43,7 @@ Store Page Products Panel Selected Categories Paste**.
 You must be careful using this effect as while it is not destructive it can make
 massive additions of categories to your products.
 
-This effect does not work on products without images.
+This effect does not work on products without Featured Images you set.
 
 ## What is a bookmarklet?
 
