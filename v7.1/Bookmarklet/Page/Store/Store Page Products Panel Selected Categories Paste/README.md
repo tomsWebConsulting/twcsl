@@ -16,7 +16,7 @@ Paste categories to selected Products in a Store Page Products Panel.
 
 #### Dependencies
 
-  * [Store Page Detail Categories Copy][2].
+  * [Store Page Detail Categories Copy][2]
 
 ---
 
