@@ -66,6 +66,6 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy#store-page-detail-categories-copy
-[3]: store%20page%20list%20categories%20paste.bookmarklet#L1
+[3]: store%20page%20products%20panel%20selected%20categories%20paste.bookmarklet#L1
 [4]: https://en.wikipedia.org/wiki/Bookmarklet
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
