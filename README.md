@@ -14,16 +14,20 @@ Your donations help me to continue to help you realize your website goals! The
 donation amounts are suggested amounts. Any donation amount is greatly
 appreciated!
 
-Did my code help you build a site for your client and make you some dough? How
-about a slice of the bread for Tom?
+Consultants, did my code help you build a site for your client and make you some
+dough? How about a slice of the bread for Tom?
 
-## Need Help Installing or Customizing the Code?
+## Need Help Installing, Configuring, or Customizing an Effect?
 
-I'm [available for consulting](http://www.tomsWeb.consulting/).
+I'm [available for consulting](http://www.tomsWeb.consulting/). An install, for
+a single effect, generally takes from 15 to 30 minutes. Be aware that
+configuration of a single effect, which is different from an install, is not
+included in an install. Configuring or customizing an effect would be estimated
+separately.
 
 ## Layout Overview
 
-twcsl contains 603 effects. Each effect has it's own version number, code,
+twcsl contains 608 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -253,6 +257,10 @@ not necessarily designed to work together.
         
         * [Analytics Traffic Geography Visits By Country Remove.bbprojectd](Bookmarklet/Page/Analytics/Analytics%20Traffic%20Geography%20Visits%20By%20Country%20Remove/Analytics%20Traffic%20Geography%20Visits%20By%20Country%20Remove.bbprojectd)
           
+    * [Store](Bookmarklet/Page/Store)
+      
+      * [Detail](Bookmarklet/Page/Store/Detail)
+        
   * [Code Block Warning Toggle](Bookmarklet/Code%20Block%20Warning%20Toggle)
     
   * [Row Column Finder](Bookmarklet/Row%20Column%20Finder)
@@ -829,6 +837,12 @@ not necessarily designed to work together.
           
           * [Store Page Categories Add.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Add/Store%20Page%20Categories%20Add.bbprojectd)
             
+        * [Detail](v7.1/Bookmarklet/Page/Store/Detail)
+          
+          * [Store Page Detail Categories Copy](v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy)
+            
+            * [Store Page Detail Categories Copy.bbprojectd](v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy/Store%20Page%20Detail%20Categories%20Copy.bbprojectd)
+              
         * [Store Page Category Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder)
           
           * [Store Page Category Reorder.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder/Store%20Page%20Category%20Reorder.bbprojectd)
