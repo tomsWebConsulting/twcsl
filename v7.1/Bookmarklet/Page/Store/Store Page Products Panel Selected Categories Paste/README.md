@@ -62,7 +62,7 @@ Please consider [making a donation][5].
   -->
 * **2026-09-09**
 
-  * initial version
+  * initial version (commit d6f2a3e8a40b24c4f778643c440f0c932946f068)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy#store-page-detail-categories-copy
