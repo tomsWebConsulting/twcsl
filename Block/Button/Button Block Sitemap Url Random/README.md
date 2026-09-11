@@ -49,7 +49,7 @@ Assign random Sitemap URLs to Button Blocks.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ffe4bf870eef08fdd532379ee55a82e64bf956e2/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20blog%20sitemap%20random.min.js" type="module"></script>
           
           <!-- end TWC Button Block Sitemap Url Random -->
           
@@ -71,7 +71,7 @@ Assign random Sitemap URLs to Button Blocks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ffe4bf870eef08fdd532379ee55a82e64bf956e2/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20blog%20sitemap%20random.min.js" type="module"></script>
             
             <!-- end TWC Button Block Sitemap Url Random -->
             
@@ -87,7 +87,7 @@ Assign random Sitemap URLs to Button Blocks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20Observe%20Changes/calendar%20block%20observe%20changes.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@ffe4bf870eef08fdd532379ee55a82e64bf956e2/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20blog%20sitemap%20random.min.js" type="module"></script>
             
             <!-- end TWC Button Block Sitemap Url Random -->
             
@@ -157,7 +157,7 @@ Please consider [making a donation][5].
   -->
 * **2026-09-11**
 
-  * initial version (commit a16f766c16ae63a1e477681b9d6f010baadc7c16)
+  * initial version (commit ffe4bf870eef08fdd532379ee55a82e64bf956e2)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
