@@ -1,0 +1,441 @@
+<!-- begin TWC Button Block Sitemap Url Random -->
+
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      /*
+      
+        button block sitemap url random
+        
+        License           : < https://tinyurl.com/s872fb68 >
+        
+        Version           : 0.1.0
+        
+        SS Versions       : 7.1, 7.0
+        
+        Note              : this code fetches the sitemap
+        
+        Copyright         : 2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
+      
+        title = 'Button Block Sitemap Url Random',
+        
+        version = '0.1.0',
+      
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      let
+      
+        dcmnt,
+        
+        urlSlugs = [ ];
+        
+      const
+      
+        baseUrl = Static
+        
+          .SQUARESPACE_CONTEXT
+          
+          .website
+          
+          .baseUrl,
+          
+        codeKey = 'twc-bbsur',
+        
+        trigger = `#${ codeKey }-`,
+        
+        url = '/sitemap.xml',
+        
+        xPathEvaluate = (
+        
+          xPathExpression,
+          
+          dcmnt
+          
+          ) => {
+          
+            const
+            
+              nsResolver = prefix => {
+              
+                if ( prefix !== 'sm' )
+                
+                  return null;
+                  
+                return 'http://www.sitemaps.org/schemas/sitemap/0.9';
+                
+                },
+                
+              xPathResults = dcmnt
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  dcmnt,
+                  
+                  nsResolver,
+                  
+                  XPathResult
+                  
+                    .ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                  null
+                  
+                  );
+                  
+            return xPathResults;
+            
+            },
+            
+        selector =
+        
+          '.sqs-block-button-element[ '
+            
+            +
+            
+            `href ^= "${
+            
+              trigger
+              
+              }" ]`,
+              
+        domContentLoadedCallback =
+        
+          async ( ) => {
+          
+            try {
+            
+              const response =
+              
+                await fetch ( url );
+                
+              if ( ! response.ok ) {
+              
+                const s = `
+                
+                  ${
+                  
+                    codeKey
+                    
+                    } network response was not ok ${
+                    
+                      response.statusText
+                      
+                      }
+                      
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                throw new Error ( s );
+                
+                }
+                
+              dcmnt = await response.text ( );
+              
+              dcmnt = new DOMParser ( )
+              
+                .parseFromString (
+                
+                  dcmnt,
+                  
+                  'application/xml'
+                  
+                  );
+                  
+              } catch ( error ) {
+              
+                const s = `
+                
+                  ${
+                  
+                    codeKey
+                    
+                    }
+                    
+                  there has been a problem with your
+                  
+                  fetch get operation, ${
+                  
+                    error
+                    
+                    }.
+                    
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                console.error ( s );
+                
+                }
+                
+            const
+            
+              elements = [
+              
+                ...
+                
+                document.querySelectorAll (
+                
+                  selector
+                  
+                  )
+                  
+                ];
+                
+            elements.forEach ( e => {
+            
+              const url =
+              
+                '/'
+                
+                +
+                
+                e
+              
+                .getAttribute (
+                
+                  'href'
+                  
+                  )
+                  
+                .replace (
+                
+                  `${ trigger }`,
+                  
+                  ''
+                  
+                  )
+                  
+                +
+                
+                '/';
+                
+              e.setAttribute (
+              
+                'href',
+                
+                url
+                
+                );
+                
+              urlSlugs.push ( url );
+              
+              } );
+              
+            const
+            
+              xPathExpression = `
+              
+                .//sm:loc[
+                
+                  ${
+                  
+                    urlSlugs.map ( u => {
+                    
+                      u = baseUrl + u;
+                      
+                      const expression = `
+                      
+                        substring (
+                        
+                          text ( ),
+                          
+                          1,
+                          
+                          string-length (
+                          
+                            '${ u }'
+                            
+                            )
+                            
+                          )
+                          
+                        =
+                        
+                        '${ u }'
+                        
+                        `;
+                        
+                      return expression;
+                      
+                      } )
+                      
+                      .join ( 'or' )
+                      
+                    }
+                    
+                  ]
+                           
+                `,
+                
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                dcmnt
+                
+                );
+                
+            // bail if no results
+            
+            if (
+            
+              !
+              
+              xPathResults.snapshotLength
+              
+              )
+              
+              return;
+              
+            urlSlugs = Object.fromEntries (
+            
+              urlSlugs
+              
+                .map ( u => [ u, [ ] ] )
+                
+              );
+              
+            for (
+            
+              let i = 0;
+              
+              i
+              
+              <
+              
+              xPathResults.snapshotLength;
+              
+              i++
+              
+              ) {
+              
+                const url = xPathResults
+                
+                  .snapshotItem ( i )
+                  
+                  .textContent
+                  
+                  .replace (
+                  
+                    baseUrl,
+                    
+                    ''
+                    
+                    );
+                    
+                let matched = false;
+              
+                for (
+                
+                  const u
+                  
+                  of
+                  
+                  Object.keys ( urlSlugs )
+                  
+                  ) {
+                
+                    if (
+                    
+                      url.startsWith ( u )
+                      
+                      ) {
+                      
+                        urlSlugs
+                        
+                        [ u ]
+                        
+                        .push ( url );
+                        
+                        matched = true;
+                        
+                        break;
+                        
+                        }
+                        
+                    }
+                    
+                }
+                
+            elements.forEach ( e => {
+            
+              const key =
+              
+                e.getAttribute ( 'href' );
+                
+              e.setAttribute (
+              
+                'href',
+                
+                urlSlugs
+                
+                  [ key ]
+                  
+                  [
+                  
+                    Math.floor (
+                    
+                      Math.random ( )
+                      
+                      *
+                      
+                      urlSlugs [ key ].length
+                      
+                      )
+                      
+                    ]
+                    
+                )
+                
+               } );
+            
+            };
+            
+      // domContentLoadedCallback ( );
+      
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Button Block Sitemap Url Random -->
