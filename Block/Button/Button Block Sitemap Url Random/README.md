@@ -71,7 +71,7 @@ Assign random Sitemap URLs to Button Blocks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20sitemap%20random.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20sitemap%20url%20random.min.js" type="module"></script>
             
             <!-- end TWC Button Block Sitemap Url Random -->
             
@@ -87,7 +87,7 @@ Assign random Sitemap URLs to Button Blocks.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20sitemap%20random.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Block/Button/Button%20Block%20Sitemap%20Url%20Random/button%20block%20sitemap%20url%20random.min.js" type="module"></script>
             
             <!-- end TWC Button Block Sitemap Url Random -->
             
