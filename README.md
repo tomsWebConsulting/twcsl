@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 610 effects. Each effect has it's own version number, code,
+twcsl contains 612 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1240,6 +1240,10 @@ not necessarily designed to work together.
     * [Button Templates](Block/Button/Button%20Templates)
       
       * [Button Templates.bbprojectd](Block/Button/Button%20Templates/Button%20Templates.bbprojectd)
+        
+    * [Button Block Sitemap Url Random](Block/Button/Button%20Block%20Sitemap%20Url%20Random)
+      
+      * [Button Block Sitemap Url Random.bbprojectd](Block/Button/Button%20Block%20Sitemap%20Url%20Random/Button%20Block%20Sitemap%20Url%20Random.bbprojectd)
         
   * [Scrolling](Block/Scrolling)
     
