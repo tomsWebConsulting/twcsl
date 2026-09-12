@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Copy categories from a Store Page Categories Panel.
+Copy categories from a selected Store Page Categories Panel Product.
 
 ### Version
 
