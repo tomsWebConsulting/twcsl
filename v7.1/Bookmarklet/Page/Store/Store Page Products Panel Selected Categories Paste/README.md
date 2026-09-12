@@ -16,7 +16,7 @@ Paste categories to selected Products in a Store Page Products Panel.
 
 #### Dependencies
 
-  * [Store Page Detail Categories Copy][2]
+  * [Store Page Categories Panel Product Categories Copy][2]
 
 ---
 
@@ -63,7 +63,7 @@ Please consider [making a donation][5].
   * initial version (commit 0fd9353049c5b590bf62cf54044b4600ca6f096a)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy#store-page-detail-categories-copy
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Panel%20Product%20Categories%20Copy#store-page-categories-panel-product-categories-copy
 [3]: store%20page%20products%20panel%20selected%20categories%20paste.bookmarklet#L1
 [4]: https://en.wikipedia.org/wiki/Bookmarklet
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
