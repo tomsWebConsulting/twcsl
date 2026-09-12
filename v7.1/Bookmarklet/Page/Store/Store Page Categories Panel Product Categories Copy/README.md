@@ -49,7 +49,7 @@ Please consider [making a donation][4].
 * **2026-09-12**
 
   * reworked code to use categories panel
-  * bumped version to 0.2.0 (commit dac907a01518c8b8f949851be82aafa6101e8968)
+  * bumped version to 0.2.0 (commit a493d14b47b2aab5c041b662220d09ce4a568151)
   
 * **2026-09-09**
 
