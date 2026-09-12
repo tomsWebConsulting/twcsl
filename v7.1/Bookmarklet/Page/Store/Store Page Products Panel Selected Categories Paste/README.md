@@ -54,7 +54,7 @@ Please consider [making a donation][5].
 * **2026-09-12**
 
   * updated code key
-  * bumped version to 0.1.1 (commit 0064d061865892bdf1ce72ddca23459a6ee5c0b4)
+  * bumped version to 0.1.1 (commit a5a00fbf37e26db51e77a7e716681f0312c35176)
   
 * **2026-09-09**
 
