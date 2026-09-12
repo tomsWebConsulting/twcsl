@@ -1,4 +1,4 @@
-# Store Page Detail Categories Copy
+# Store Page Categories Panel Product Categories Copy
 
 ### [License][1]
 
