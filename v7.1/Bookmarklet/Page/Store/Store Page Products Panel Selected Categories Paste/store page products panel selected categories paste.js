@@ -54,15 +54,15 @@
     
   let categories = localStorage
   
-    .getItem ( 'twc-spcppcc' );
+    .getItem ( 'twc-sppppcc' );
     
   if ( ! categories ) {
   
-    const s = 'Please use the TWC Store Page Categories Panel Product '
+    const s = 'Please use the TWC Store Page Products Panel Product '
     
       +
       
-      'Categories Copy bookmarklet < https://tinyurl.com/2tkxe5sw > before '
+      'Categories Copy bookmarklet < https://tinyurl.com/mu7hjxdm > before '
       
       +
       
