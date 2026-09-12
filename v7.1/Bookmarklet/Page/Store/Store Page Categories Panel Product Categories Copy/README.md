@@ -4,11 +4,11 @@
 
 ### Synopsis
 
-Copy categories from a Store Page Detail.
+Copy categories from a Store Page Categories Panel.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -24,14 +24,17 @@ Copy**.
 
 ## How to Use
 
-* Go to a Store Page Detail Page.
+* Go to a Store Page Categories Panel.
+
+* Select a Product.
 
 * Use the bookmarklet.
 
-## Note
+## Notes
 
-This effect makes a call to the JSON version of the Store Page Detail Product
-for information that is not normally available.
+This effect makes a call to a JSON version of a Product's data.
+
+This effect only copies Categories from the first selected Product.
 
 ## What is a bookmarklet?
 
@@ -43,11 +46,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2025-04-01**
+* **2026-09-12**
 
-  * move querySelectorAll input outside of for loop
-  * bumped version to 0.1.2
-  -->
+  * reworked code to use categories panel
+  * bumped version to 0.2.0 (commit 00e987eaf4d53dd8dac703c3d34d3b7b6b1fdeb9)
+  
 * **2026-09-09**
 
   * initial version (commit 00e987eaf4d53dd8dac703c3d34d3b7b6b1fdeb9)

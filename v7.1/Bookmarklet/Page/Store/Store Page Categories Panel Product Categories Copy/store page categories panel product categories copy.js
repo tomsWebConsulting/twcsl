@@ -4,16 +4,16 @@
   
   /*
   
-    store page detail categories copy
+    store page categories panel product categories copy
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.0
+    Version           : 0.2.0
     
     SS Versions       : 7.1
     
-    Note              : this code makes a call to the json version of the
-                        product for information that is not normally available
+    Note              : this code makes a call to a JSON version of a product's
+                        data
     
     Copyright         : 2026 Thomas Creedon
                         
@@ -25,9 +25,9 @@
     
   const
   
-    title = 'Store Page Detail Categories Copy',
+    title = 'Store Page Categories Panel Product Categories Copy',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `${ title } v${ version }
     
@@ -41,136 +41,226 @@
       
   console.log ( s );
   
-  let dcmnt = window.top.document;
+  const
   
-  const isEditor = dcmnt
-  
-    .documentElement
+    alertTitleMessage = ( message ) => {
     
-    .classList
+      alert (
+      
+        `TWC ${ title }\n\n${ message }`
+        
+        );
+        
+      },
+      
+    dcmnt = window.top.document,
     
-    .contains ( 'squarespace-damask' );
+    isEditor = dcmnt
     
+      .documentElement
+      
+      .classList
+      
+      .contains ( 'squarespace-damask' );
+      
   if ( ! isEditor ) {
   
-    const s = `TWC ${ title }
+    const s = 'Please log in to your Squarespace site.';
     
-      Please log in to your Squarespace site.
-      
-      `
-      
-      .trim ( )
-      
-      .replace ( /^ +/gm, '' );
-      
-    alert ( s );
+    alertTitleMessage ( s );
     
     return; // bail if not logged in
     
     }
     
-  const siteFrameElement = dcmnt
+  const isStorePage = dcmnt
   
     .querySelector (
     
-      'iframe[ data-testid = "sqs-site-frame" ]'
+      'iframe[ data-testid = '
       
-      );
+      +
       
-  dcmnt = siteFrameElement
-  
-    ?.contentDocument;
+      '"sqs-site-frame" ]'
+      
+      )
+      
+    ?.contentWindow
     
-  if ( ! dcmnt ) {
-  
-    const s = `TWC ${ title }
+    .Static
     
-      Error : can not find the site frame.
-      
-      `
-      
-      .trim ( )
-      
-      .replace ( /^ +/gm, '' );
-      
-    alert ( s );
+    .SQUARESPACE_CONTEXT
     
-    return; // bail if no site frame
+    .collection
     
-    }
+    ?.type
     
-  const
-  
-    context = siteFrameElement
+    ===
     
-      .contentWindow
-      
-      .Static
-      
-      .SQUARESPACE_CONTEXT,
-      
-    isStorePage = context
+    13;
     
-      .collection
-      
-      ?.type
-      
-      ===
-      
-      13;
-      
   if ( ! isStorePage ) {
   
-    const s = `TWC ${ title }
+    const s = 'Please run this bookmarklet on a Store Page.';
     
-      Please run this bookmarklet on a Store Page.
-      
-      `
-      
-      .trim ( )
-      
-      .replace ( /^ +/gm, '' );
-      
-    alert ( s );
+    alertTitleMessage ( s );
     
     return; // bail if not store page
     
     }
     
-  const isDetail = !! context.item;
+  const xPathEvaluate = (
   
-  if ( ! isDetail ) {
+    xPathExpression,
+    
+    contextNode
+    
+    ) => {
+    
+      const xPathResults = document
+      
+        .evaluate (
+        
+          xPathExpression,
+          
+          contextNode,
+          
+          null,
+          
+          XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+          
+          null
+          
+          );
+          
+      return xPathResults;
+      
+      };
+      
+  let
   
-    const s = `TWC ${ title }
+    xPathExpression = `
     
-      Please run this bookmarklet on a Store Page Detail Page.
+      .//button [
       
-      `
+        contains (
+        
+          @data-test,
+          
+          "menuHeader-back"
+          
+          )
+          
+        and
+        
+        contains (
+        
+          .,
+          
+          "Categories"
+          
+          )
+          
+        ]
+                  
+      `,
       
-      .trim ( )
-      
-      .replace ( /^ +/gm, '' );
-      
-    alert ( s );
+    xPathResults = xPathEvaluate (
     
-    return; // bail if not detail page
+      xPathExpression,
+      
+      dcmnt
+      
+      );
+      
+  if ( ! xPathResults.snapshotLength ) {
+  
+    const s = 'Please navigate to a Products Panel in a Store Page.';
+    
+    alertTitleMessage ( s );
+    
+    return; // bail if no categories panel
+    
+    }
+    
+  xPathExpression = `
+  
+    (
+    
+      .//div [
+      
+        @data-test = 'product-item'
+        
+        ]
+        
+      )
+      
+      [ 1 ]
+      
+    `,
+    
+  xPathResults = xPathEvaluate (
+  
+    xPathExpression,
+    
+    dcmnt
+    
+    );
+    
+  const
+  
+    element = xPathResults
+    
+      .snapshotItem ( 0 )
+      
+      .parentElement,
+      
+    getFiberKey = ( node ) => {
+    
+      const fiberKey = Object
+      
+        .keys ( node )
+        
+        .find (
+        
+          k =>
+          
+            k.startsWith ( '__reactFiber$' )
+            
+          );
+          
+      return fiberKey;
+      
+      },
+      
+    fiberKey = getFiberKey ( element );
+    
+  if ( ! fiberKey ) {
+  
+    const s = 'No React fiber key found.';
+    
+    alertTitleMessage ( s );
+    
+    return; // bail if no react
     
     }
     
   const
   
-    codeKey = 'twc-spdcc',
+    codeKey = 'twc-spcppcc',
     
-    url = context
+    id = element
     
-      .item
+      [ fiberKey ]
       
-      .fullUrl
+      .memoizedProps
       
-      +
+      .children
       
-      '?format=json';
+      .key,
       
+    url = `/api/commerce/products/${ id }`;
+    
   let categories;
   
   try {
@@ -203,7 +293,7 @@
       
     categories = await response.json ( );
     
-    categories = categories.item.categoryIds;
+    categories = categories.categoryIds;
     
     } catch ( error ) {
     
@@ -233,12 +323,12 @@
       
       }
       
-    localStorage.setItem (
+  localStorage.setItem (
+  
+    codeKey,
     
-      codeKey,
-      
-      JSON.stringify ( categories )
-      
-      );
-      
+    JSON.stringify ( categories )
+    
+    );
+    
   } ) ( );
