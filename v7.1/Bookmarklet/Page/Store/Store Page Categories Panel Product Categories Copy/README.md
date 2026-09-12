@@ -18,9 +18,9 @@ Copy categories from a Store Page Categories Panel.
 
 ## Quick Install
 
-Add code from file **[store page detail categories copy.bookmarklet][2]** as the
-URL for a bookmark in your browser named **TWC Store Page Detail Categories
-Copy**.
+Add code from file **[store page categories panel product categories
+copy.bookmarklet][2]** as the URL for a bookmark in your browser named **TWC
+Store Page Categories Panel Product Categories Copy**.
 
 ## How to Use
 
@@ -56,6 +56,6 @@ Please consider [making a donation][4].
   * initial version (commit 00e987eaf4d53dd8dac703c3d34d3b7b6b1fdeb9)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: store%20page%20detail%20categories%20copy.bookmarklet#L1
+[2]: store%20page%20categories%20panel%20product%20categories%20copy.bookmarklet#L1
 [3]: https://en.wikipedia.org/wiki/Bookmarklet
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
