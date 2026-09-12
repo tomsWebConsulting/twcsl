@@ -843,13 +843,13 @@ not necessarily designed to work together.
             
         * [Detail](v7.1/Bookmarklet/Page/Store/Detail)
           
-          * [Store Page Detail Categories Copy](v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy)
-            
-            * [Store Page Detail Categories Copy.bbprojectd](v7.1/Bookmarklet/Page/Store/Detail/Store%20Page%20Detail%20Categories%20Copy/Store%20Page%20Detail%20Categories%20Copy.bbprojectd)
-              
         * [Store Page Category Reorder](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder)
           
           * [Store Page Category Reorder.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Category%20Reorder/Store%20Page%20Category%20Reorder.bbprojectd)
+            
+        * [Store Page Categories Panel Product Categories Copy](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Panel%20Product%20Categories%20Copy)
+          
+          * [Store Page Categories Panel Product Categories Copy.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Panel%20Product%20Categories%20Copy/Store%20Page%20Categories%20Panel%20Product%20Categories%20Copy.bbprojectd)
             
         * [Store Page Categories File to Categories](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20File%20to%20Categories)
           
