@@ -8,7 +8,7 @@ Paste categories to selected Products in a Store Page Products Panel.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -38,12 +38,10 @@ Store Page Products Panel Selected Categories Paste**.
 
 * Wait for the bookmarklet to notify you it is complete.
 
-## Notes
+## Note
 
 You must be careful using this effect as while it is not destructive it can make
 massive additions of categories to your products.
-
-This effect does not work on products without Featured Images you set.
 
 ## What is a bookmarklet?
 
@@ -55,11 +53,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
-<!-- * **2025-04-01**
+* **2026-09-12**
 
-  * move querySelectorAll input outside of for loop
-  * bumped version to 0.1.2
-  -->
+  * updated code key
+  * bumped version to 0.1.1 (commit 0fd9353049c5b590bf62cf54044b4600ca6f096a)
+  
 * **2026-09-09**
 
   * initial version (commit 0fd9353049c5b590bf62cf54044b4600ca6f096a)

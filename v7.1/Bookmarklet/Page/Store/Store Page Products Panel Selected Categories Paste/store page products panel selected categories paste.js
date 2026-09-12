@@ -8,16 +8,13 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Version      : 7.1
     
-    Notes           : you must be careful using this code as while it is not
+    Note            : you must be careful using this code as while it is not
                       destructive it can make massive additions of categories to
                       your products
-                      
-                      this code does not work on products without featured
-                      images you set
     
     Copyright       : 2026 Thomas Creedon
                       
@@ -31,7 +28,7 @@
   
     title = 'Store Page Products Panel Selected Categories Paste',
     
-    version = '0.1.0',
+    version = '0.1.1',
   
     s = `${ title } v${ version }
     
@@ -57,15 +54,19 @@
     
   let categories = localStorage
   
-    .getItem ( 'twc-spdcc' );
+    .getItem ( 'twc-spcppcc' );
     
   if ( ! categories ) {
   
-    const s = 'Please use the TWC Store Page Detail Categories Copy '
+    const s = 'Please use the TWC Store Page Categories Panel Product '
     
       +
       
-      'bookmarklet < https://tinyurl.com/s872fb68 > before this bookmarklet.';
+      'Categories Copy bookmarklet < https://tinyurl.com/2tkxe5sw > before '
+      
+      +
+      
+      'this bookmarklet.';
       
     alertTitleMessage ( s );
     
@@ -215,7 +216,7 @@
       
   if ( ! xPathResults.snapshotLength ) {
   
-    const s = 'Please navigate a Products Panel in the Store Page.';
+    const s = 'Please navigate to a Products Panel in the Store Page.';
     
     alertTitleMessage ( s );
     
