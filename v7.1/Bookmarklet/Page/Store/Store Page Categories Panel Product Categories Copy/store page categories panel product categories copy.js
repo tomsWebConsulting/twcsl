@@ -175,7 +175,7 @@
       
   if ( ! xPathResults.snapshotLength ) {
   
-    const s = 'Please navigate to a Products Panel in a Store Page.';
+    const s = 'Please navigate to a Products Panel in the Store Page.';
     
     alertTitleMessage ( s );
     
