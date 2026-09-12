@@ -4,7 +4,7 @@
   
   /*
   
-    store page categories panel product categories copy
+    store page products panel product categories copy
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -25,7 +25,7 @@
     
   const
   
-    title = 'Store Page Categories Panel Product Categories Copy',
+    title = 'Store Page Products Panel Product Categories Copy',
     
     version = '0.2.0',
   
@@ -247,7 +247,7 @@
     
   const
   
-    codeKey = 'twc-spcppcc',
+    codeKey = 'twc-sppppcc',
     
     id = element
     
