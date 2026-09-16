@@ -1,19 +1,20 @@
-( async ( ) => {
+<!-- begin TWC Store Page Products Panel Product Categories Copy -->
 
-  // debugger;
-  
-  /*
+  <!--
   
     store page products panel product categories copy
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.3.0
     
     SS Versions       : 7.1
     
-    Note              : this code makes a call to a JSON version of a product's
-                        data
+    Notes             : the code is comprised of a template and script tag.
+                        both are needed for the full effect to work
+                        
+                        this code makes a call to a JSON version of a
+                        product's data
     
     Copyright         : 2026 Thomas Creedon
                         
@@ -21,314 +22,798 @@
     
     no user serviceable parts below
     
-    */
+    -->
     
-  const
+  <template id="twc-sppppcc-template">
   
-    title = 'Store Page Products Panel Product Categories Copy',
+    <!--
     
-    version = '0.2.0',
-  
-    s = `${ title } v${ version }
+      store page products panel product categories copy
+      
+      License           : < https://tinyurl.com/s872fb68 >
+      
+      Version           : 0.3.0
+      
+      SS Versions       : 7.1
+      
+      Notes             : the code is comprised of a custom, templage, style and
+                          script tag. all are needed for the full effect to
+                          work
+                          
+                          this code makes a call to a JSON version of a
+                          product's data
+      
+      Copyright         : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+      
+      no user serviceable parts below
+      
+      -->
+      
+    <x-twc-sppppcc>
     
-      License < https://tinyurl.com/s872fb68 >
+      </x-twc-sppppcc>
       
-      © 2026 Thomas Creedon
-      
-      Tom's Web Consulting < http://www.tomsWeb.consulting >`
-      
-      .replace ( /^\s+/gm, '' );
-      
-  console.log ( s );
-  
-  const
-  
-    alertTitleMessage = ( message ) => {
+    <template id="twc-sppppcc-template-menuitem">
     
-      alert (
+      <div aria-hidden="true" aria-orientation="horizontal" class="[ codeKey ]-separator" role="separator">
       
-        `TWC ${ title }\n\n${ message }`
+        <div class="[ codeKey ]-separator__bar">
         
-        );
+          </div>
+          
+        </div>
         
-      },
+      <div class="[ codeKey ]-menu-item">
       
-    dcmnt = window.top.document,
-    
-    isEditor = dcmnt
-    
-      .documentElement
-      
-      .classList
-      
-      .contains ( 'squarespace-damask' );
-      
-  if ( ! isEditor ) {
-  
-    const s = 'Please log in to your Squarespace site.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if not logged in
-    
-    }
-    
-  const isStorePage = dcmnt
-  
-    .querySelector (
-    
-      'iframe[ data-testid = '
-      
-      +
-      
-      '"sqs-site-frame" ]'
-      
-      )
-      
-    ?.contentWindow
-    
-    .Static
-    
-    .SQUARESPACE_CONTEXT
-    
-    .collection
-    
-    ?.type
-    
-    ===
-    
-    13;
-    
-  if ( ! isStorePage ) {
-  
-    const s = 'Please run this bookmarklet on a Store Page.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if not store page
-    
-    }
-    
-  const xPathEvaluate = (
-  
-    xPathExpression,
-    
-    contextNode
-    
-    ) => {
-    
-      const xPathResults = document
-      
-        .evaluate (
+        <li aria-disabled="false" role="menuitem" tabindex="-1" data-rosetta-component="text" class="[ codeKey ]-menu-item__content">
         
-          xPathExpression,
+          Copy Categories
           
-          contextNode,
+          <sup>
           
-          null,
-          
-          XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-          
-          null
-          
-          );
-          
-      return xPathResults;
-      
-      };
-      
-  let
-  
-    xPathExpression = `
-    
-      .//button [
-      
-        contains (
-        
-          @data-test,
-          
-          "menuHeader-back"
-          
-          )
-          
-        and
-        
-        contains (
-        
-          .,
-          
-          "Categories"
-          
-          )
-          
-        ]
-                  
-      `,
-      
-    xPathResults = xPathEvaluate (
-    
-      xPathExpression,
-      
-      dcmnt
-      
-      );
-      
-  if ( ! xPathResults.snapshotLength ) {
-  
-    const s = 'Please navigate to a Products Panel in the Store Page.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if no categories panel
-    
-    }
-    
-  xPathExpression = `
-  
-    (
-    
-      .//div [
-      
-        @data-test = 'product-item'
-        
-        ]
-        
-      )
-      
-      [ 1 ]
-      
-    `,
-    
-  xPathResults = xPathEvaluate (
-  
-    xPathExpression,
-    
-    dcmnt
-    
-    );
-    
-  const
-  
-    element = xPathResults
-    
-      .snapshotItem ( 0 )
-      
-      .parentElement,
-      
-    getFiberKey = ( node ) => {
-    
-      const fiberKey = Object
-      
-        .keys ( node )
-        
-        .find (
-        
-          k =>
-          
-            k.startsWith ( '__reactFiber$' )
+            <a href="#">
             
-          );
+              TWC
+              
+              </a>
+              
+            </sup>
+            
+          </li>
           
-      return fiberKey;
-      
-      },
-      
-    fiberKey = getFiberKey ( element );
-    
-  if ( ! fiberKey ) {
-  
-    const s = 'No React fiber key found.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if no react
-    
-    }
-    
-  const
-  
-    codeKey = 'twc-sppppcc',
-    
-    id = element
-    
-      [ fiberKey ]
-      
-      .memoizedProps
-      
-      .children
-      
-      .key,
-      
-    url = `/api/commerce/products/${ id }`;
-    
-  let categories;
-  
-  try {
-  
-    const response = await fetch ( url );
-    
-    if ( ! response.ok ) {
-    
-      const s = `
-      
-        ${
+        </div>
         
-          codeKey
+      </template>
+      
+    <style>
+    
+      .twc-sppppcc-menu-item {
+      
+        box-sizing : border-box;
+        display : flex;
+        
+        }
+        
+      .twc-sppppcc-menu-item__content {
+      
+        -webkit-font-smoothing : antialiased;
+        box-sizing : border-box;
+        color : rgb( 14, 14, 14 );
+        cursor : pointer;
+        flex : 1 1 0%;
+        font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size : 14px;
+        font-weight : 500;
+        letter-spacing : -0.01em;
+        line-height : 22px;
+        list-style : none;
+        margin-bottom : 0px;
+        margin-top : 0px;
+        padding : 11px 22px;
+        position : relative;
+        text-rendering : optimizelegibility;
+        
+        & sup {
+        
+          color : #888888;
           
-          } network response was not ok ${
+          & a {
           
-            response.statusText
+            border-bottom : unset;
             
             }
             
-        `
+          }
+          
+        &:hover {
         
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' );
-        
-      throw new Error ( s );
-      
-      }
-      
-    categories = await response.json ( );
-    
-    categories = categories.categoryIds;
-    
-    } catch ( error ) {
-    
-      const s = `
-      
-        ${
-        
-          codeKey
+          background-color : rgb( 242, 242, 242 );
           
           }
           
-        there has been a problem with your
+        }
         
-        fetch get operation, ${
-        
-          error
-          
-          }.
-          
-        `
-        
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' );
-        
-      console.error ( s );
+      .twc-sppppcc-separator {
       
-      }
+        background-color : rgb( 231, 231, 231 );
+        box-sizing : border-box;
+        height : 1px;
+        width : 100%;
+        
+        }
+        
+      .twc-sppppcc-separator__bar {
       
-  localStorage.setItem (
+        background-color : rgb( 14, 14, 14 );
+        box-sizing : border-box;
+        height : 1px;
+        transition : 0.3s cubic-bezier( 0.32, 0.94, 0.6, 1 );
+        width : 0%;
+        
+        }
+        
+      </style>
+      
+    <script>
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        const isEditor = document
+        
+          .documentElement
+          
+          .classList
+          
+          .contains ( 'squarespace-damask' );
+          
+        // bail if not logged in
+        
+        if ( ! isEditor ) return;
+        
+        const isStorePage = document
+        
+          .querySelector (
+          
+            'iframe[ data-testid = '
+            
+            +
+            
+            '"sqs-site-frame" ]'
+            
+            )
+            
+          ?.contentWindow
+          
+          .Static
+          
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          ?.type
+          
+          ===
+          
+          13;
+          
+        // bail if not store page
+        
+        if ( ! isStorePage ) return;
+        
+        const xPathEvaluate = (
+        
+          xPathExpression,
+          
+          contextNode
+          
+          ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult
+                
+                  .ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            };
+            
+        let
+        
+          xPathExpression = `
+          
+            .//button [
+            
+              contains (
+              
+                @data-test,
+                
+                "menuHeader-back"
+                
+                )
+                
+              and
+              
+              contains (
+              
+                .,
+                
+                "Categories"
+                
+                )
+                
+              ]
+                        
+            `,
+            
+          xPathResults = xPathEvaluate (
+          
+            xPathExpression,
+            
+            document
+            
+            );
+            
+        // bail if no categories panel
+        
+        if ( ! xPathResults.snapshotLength )
+        
+          return;
+          
+        const
+        
+          codeKey = 'twc-sppppcc',
+          
+          getAncestor =
+          
+            ( element, levels ) => {
+            
+              // bail if no element
+              
+              if ( ! element ) return null;
+              
+              while (
+              
+                element && levels > 0
+                
+                ) {
+                
+                  element = element
+                  
+                    .parentElement;
+                    
+                  levels--;
+                  
+                  }
+                  
+              return element;
+              
+              },
+              
+          getFiberKey = ( node ) => {
+          
+            const fiberKey = Object
+            
+              .keys ( node )
+              
+              .find (
+              
+                k =>
+                
+                  k.startsWith (
+                  
+                    '__reactFiber$'
+                    
+                    )
+                    
+                );
+                
+            return fiberKey;
+            
+            },
+            
+          popoverClickHandler =
+          
+            ( event ) => {
+            
+              const
+              
+                element = event
+                
+                  .currentTarget
+                  
+                  .closest (
+                  
+                    '[ data-test = '
+                    
+                    +
+                    
+                    '"product-item" ]'
+                    
+                    )
+                    
+                  .parentElement,
+                  
+                fiberKey =
+                
+                  getFiberKey ( element );
+                  
+              // bail if no react
+              
+              if ( ! fiberKey ) return;
+              
+              sessionStorage.setItem (
+              
+                codeKey,
+                
+                element
+                
+                  [ fiberKey ]
+                  
+                  .memoizedProps
+                  
+                  .children
+                  
+                  .key
+                  
+                );
+                
+              },
+              
+          popoverSelector = '[ data-test = "'
+          
+            +
+            
+            'list-item-popover" ]',
+            
+          popoverTriggerSelector =
+          
+            '[ data-test = "list-item-'
+            
+            +
+            
+            'popover-trigger" ]',
+            
+          menuitemClickHandler =
+          
+            async ( event ) => {
+            
+              const id =
+              
+                sessionStorage.getItem (
+                
+                  codeKey
+                  
+                  );
+                  
+              // bail if no id
+              
+              if ( ! id ) return;
+              
+              const url =
+              
+                `/api/commerce/products/${
+                
+                  id
+                  
+                  }`;
+                  
+              let categories;
+              
+              try {
+              
+                const response =
+                
+                  await fetch ( url );
+                  
+                if ( ! response.ok ) {
+                
+                  const s = `
+                  
+                    ${
+                    
+                      codeKey
+                      
+                      } network response was not ok ${
+                      
+                        response.statusText
+                        
+                        }
+                        
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  throw new Error ( s );
+                  
+                  }
+                  
+                categories =
+                
+                  await response.json ( );
+                  
+                categories = categories
+                
+                  .categoryIds
+                  
+                  .slice ( 1 );
+                  
+                } catch ( error ) {
+                
+                  const s = `
+                  
+                    ${
+                    
+                      codeKey
+                      
+                      }
+                      
+                    there has been a problem with your
+                    
+                    fetch get operation, ${
+                    
+                      error
+                      
+                      }.
+                      
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  console.error ( s );
+                  
+                  }
+                  
+              localStorage.setItem (
+              
+                codeKey,
+                
+                JSON.stringify ( categories )
+                
+                );
+                
+              getAncestor (
+              
+                event
+                
+                  .target
+                  
+                  .closest (
+                  
+                    popoverSelector
+                    
+                    ),
+                    
+                5
+                
+                )
+                
+                .remove ( );
+                
+              },
+              
+          bodyMutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element =
+              
+                element.querySelector (
+                
+                  '[ data-test = "'
+                  
+                  +
+                  
+                  'list-item-popover" ]'
+                  
+                  );
+                  
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element.appendChild (
+              
+                document.getElementById (
+                
+                  `${
+                  
+                    codeKey
+                    
+                    }-template-menuitem`
+                    
+                  )
+                  
+                  .content
+                  
+                  .cloneNode ( true )
+                  
+                );
+                
+              element
+              
+                .querySelector (
+                
+                  `.${ codeKey }-menu-item`
+                  
+                  )
+                  
+                .addEventListener (
+                
+                  'click',
+                  
+                  menuitemClickHandler
+                  
+                  );
+                  
+              },
+              
+          scrollMutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              const isElement = element
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              // bail if not element
+              
+              if ( ! isElement ) return;
+              
+              element = element
+              
+                .querySelector (
+                
+                  popoverTriggerSelector
+                  
+                  );
+                  
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element.addEventListener (
+              
+                'click',
+                
+                popoverClickHandler
+                
+                );
+                
+              },
+              
+          templateMenuitemElement =
+          
+            document.getElementById (
+            
+              `${
+              
+                codeKey
+                
+                }-template-menuitem`
+                
+              );
+              
+        templateMenuitemElement.innerHTML =
+        
+          templateMenuitemElement
+          
+            .innerHTML
+            
+            .replaceAll (
+            
+              `[ codeKey ]`,
+              
+              codeKey
+              
+              );
+              
+        xPathExpression = `
+        
+          .//button [
+          
+            @data-test
+            
+            =
+            
+            "list-item-popover-trigger"
+            
+            ]
+            
+          `,
+          
+        xPathResults = xPathEvaluate (
+        
+          xPathExpression,
+          
+          document
+          
+          );
+          
+        for (
+        
+          let i = 0;
+          
+          i < xPathResults.snapshotLength;
+          
+          i++
+          
+          )
+          
+            xPathResults
+            
+              .snapshotItem ( i )
+              
+              .addEventListener (
+              
+                'click',
+                
+                popoverClickHandler
+                
+                );
+                
+        new MutationObserver (
+        
+          ms => ms.forEach (
+          
+            m => bodyMutationCallback ( m )
+            
+            )
+            
+          )
+          
+          // start listening for changes in element
+          
+          .observe (
+          
+            document.body,
+            
+            { childList : true }
+            
+            );
+            
+        new MutationObserver (
+        
+          ms => ms.forEach (
+          
+            m => scrollMutationCallback ( m )
+            
+            )
+            
+          )
+          
+          // start listening for changes in element
+          
+          .observe (
+          
+            document
+            
+              .querySelector (
+              
+                '.ReactVirtualized__'
+                
+                +
+                
+                'Grid__innerScrollContainer'
+                
+                ),
+                
+            {
+            
+              childList : true,
+              
+              subtree : true
+              
+              }
+              
+            );
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
   
-    codeKey,
+    ( ( ) => {
     
-    JSON.stringify ( categories )
+      // debugger;
+      
+      const
+      
+        title = 'Store Page Products Panel Product Categories Copy',
+        
+        version = '0.3.0',
+      
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-sppppcc',
+        
+        dcmnt = window.top.document,
+        
+        element = dcmnt.querySelector (
+        
+          `x-${ codeKey }`
+          
+          );
+          
+      // bail if element
+      
+      if ( element ) return;
+      
+      dcmnt
+      
+        .head
+        
+        .appendChild (
+        
+          document.getElementById (
+          
+            `${ codeKey }-template`
+            
+            )
+            
+            .content
+            
+            .cloneNode ( true )
+            
+          );
+          
+      } ) ( );
+      
+    </script>
     
-    );
-    
-  } ) ( );
+  <!-- end TWC Store Page Products Panel Product Categories Copy -->
