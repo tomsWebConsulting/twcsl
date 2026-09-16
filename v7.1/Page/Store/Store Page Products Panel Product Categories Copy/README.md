@@ -48,7 +48,7 @@ item.
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -73,4 +73,4 @@ Please consider [making a donation][4].
 [4]: store%20page%20products%20panel%20product%20categories%20copy.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
