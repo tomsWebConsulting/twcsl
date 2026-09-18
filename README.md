@@ -563,6 +563,10 @@ not necessarily designed to work together.
         
         * [Store Page Product Dimensions.bbprojectd](v7.1/Page/Store/Store%20Page%20Product%20Dimensions/Store%20Page%20Product%20Dimensions.bbprojectd)
           
+      * [Store Page Products Panel Selected Categories Paste](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste)
+        
+        * [Store Page Products Panel Selected Categories Paste.bbprojectd](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste.bbprojectd)
+          
       * [Store Page Tag URL Redirect](v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect)
         
         * [Store Page Tag URL Redirect.bbprojectd](v7.1/Page/Store/Store%20Page%20Tag%20URL%20Redirect/Store%20Page%20Tag%20URL%20Redirect.bbprojectd)
@@ -836,10 +840,6 @@ not necessarily designed to work together.
         * [Store Page Categories To Categories File](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20To%20Categories%20File)
           
           * [Store Page Categories To Categories File.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20To%20Categories%20File/Store%20Page%20Categories%20To%20Categories%20File.bbprojectd)
-            
-        * [Store Page Products Panel Selected Categories Paste](v7.1/Bookmarklet/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste)
-          
-          * [Store Page Products Panel Selected Categories Paste.bbprojectd](v7.1/Bookmarklet/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste.bbprojectd)
             
         * [Store Page Categories Add](v7.1/Bookmarklet/Page/Store/Store%20Page%20Categories%20Add)
           
