@@ -1,481 +1,759 @@
-( ( ) => {
+<!-- begin TWC Store Page Products Panel Selected Categories Paste -->
 
-  // debugger;
-  
-  /*
+  <!--
   
     store page products panel selected categories paste
     
-    License         : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.1
+    Version           : 0.2.0
     
-    SS Version      : 7.1
+    SS Version        : 7.1
     
-    Note            : you must be careful using this code as while it is not
-                      destructive it can make massive additions of categories to
-                      your products
+    Notes             : the code is comprised of a template and script tag.
+                        both are needed for the full effect to work
+                        
+                        this code makes a call to a JSON version of a
+                        product's data
     
-    Copyright       : 2026 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
-    */
+    -->
     
-  const
+  <template id="twc-spppscp-template">
   
-    title = 'Store Page Products Panel Selected Categories Paste',
+    <!--
     
-    version = '0.1.1',
-  
-    s = `${ title } v${ version }
-    
-      License < https://tinyurl.com/s872fb68 >
+      store page products panel selected categories paste
       
-      © 2026 Thomas Creedon
+      License           : < https://tinyurl.com/s872fb68 >
       
-      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      Version           : 0.2.0
       
-      .replace ( /^\s+/gm, '' );
+      SS Version        : 7.1
       
-  console.log ( s );
-  
-  const alertTitleMessage = ( message ) => {
-  
-    alert (
-    
-      `TWC ${ title }\n\n${ message }`
+      Notes             : the code is comprised of a custom, style and
+                          script tag. all are needed for the full effect to
+                          work
+                          
+                          this code makes a call to a JSON version of a
+                          product's data
       
-      );
+      Copyright         : 2026 Thomas Creedon
+                          
+                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
       
-    };
-    
-  let categories = localStorage
-  
-    .getItem ( 'twc-sppppcc' );
-    
-  if ( ! categories ) {
-  
-    const s = 'Please use the TWC Store Page Products Panel Product '
-    
-      +
+      no user serviceable parts below
       
-      'Categories Copy bookmarklet < https://tinyurl.com/mu7hjxdm > before '
+      -->
       
-      +
+    <x-twc-spppscp>
+    
+      </x-twc-spppscp>
       
-      'this bookmarklet.';
+    <template id="twc-spppscp-menu-item">
+    
+      <div class="[ codeKey ]-menu-item">
       
-    alertTitleMessage ( s );
-    
-    return; // bail no categories
-    
-    }
-    
-  const
-  
-    documentTop = window.top.document,
-    
-    documentElementTop = documentTop
-    
-      .documentElement,
-      
-    isEditor = documentElementTop
-    
-      .classList
-      
-      .contains ( 'squarespace-damask' );
-      
-  if ( ! isEditor ) {
-  
-    const s = 'Please log in to your Squarespace site.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if not logged in
-    
-    }
-    
-  const siteFrameElement = documentTop
-  
-    .querySelector (
-    
-      'iframe[ data-testid = '
-      
-      +
-      
-      '"sqs-site-frame" ]'
-      
-      );
-      
-  let dcmnt = siteFrameElement
-  
-    ?.contentDocument;
-    
-  if ( ! dcmnt ) {
-  
-    const s = 'Error : can not find the site frame.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if no site frame
-    
-    }
-    
-  const
-  
-    context = siteFrameElement
-    
-      .contentWindow
-      
-      .Static
-      
-      .SQUARESPACE_CONTEXT,
-      
-    isStorePage = context
-    
-      .collection
-      
-      ?.type
-      
-      ===
-      
-      13;
-      
-  if ( ! isStorePage ) {
-  
-    const s = 'Please run this bookmarklet on a Store Page.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if not store page
-    
-    }
-    
-  const xPathEvaluate =
-  
-    ( xPathExpression, contextNode ) => {
-    
-      const xPathResults = document
-      
-        .evaluate (
+        <button size="2" class="[ codeKey ]-menu-item__content">
         
-          xPathExpression,
+          Paste Categories
           
-          contextNode,
+          <sup>
           
-          null,
-          
-          XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-          
-          null
-          
-          );
-          
-      return xPathResults;
-      
-      };
-      
-  let
-  
-    xPathExpression = `
-    
-      .//button [
-      
-        contains (
-        
-          @data-test,
-          
-          "menuHeader-back"
-          
-          )
-          
-        and
-        
-        contains (
-        
-          .,
-          
-          "Categories"
-          
-          )
-          
-        ]
-                  
-      `,
-      
-    xPathResults = xPathEvaluate (
-    
-      xPathExpression,
-      
-      documentElementTop
-      
-      );
-      
-  if ( ! xPathResults.snapshotLength ) {
-  
-    const s = 'Please navigate to a Products Panel in the Store Page.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if no categories panel
-    
-    }
-    
-  const elements = [ ];
-  
-  xPathExpression = `
-  
-    .//div [
-    
-      @data-test = 'product-item'
-      
-      ]
-      
-    `;
-    
-  xPathResults = xPathEvaluate (
-  
-    xPathExpression,
-    
-    documentElementTop
-    
-    );
-    
-  for (
-  
-    let i = 0;
-    
-    i < xPathResults.snapshotLength;
-    
-    i++
-    
-    )
-    
-    {
-    
-      const
-      
-        element = xPathResults
-        
-          .snapshotItem ( i ),
-          
-        inputElement = element.querySelector (
-        
-          'input[ type = checkbox ]'
-          
-          ),
-          
-        isChecked = inputElement.checked;
-        
-      // continue if not checked
-      
-      if ( ! isChecked ) continue;
-      
-      const hasImage = element
-      
-        .querySelector ( 'img' );
-        
-      // continue if no image
-      
-      if ( ! hasImage ) continue;
-      
-      elements.push ( element );
-      
-      }
-      
-  if ( ! elements.length ) {
-  
-    const s = 'Please select the Products to which you want to paste the '
-    
-      +
-      
-      'copied Categories.';
-      
-    alertTitleMessage ( s );
-    
-    return; // bail if no products
-    
-    }
-    
-  // categories
-  
-  {
-  
-    const prefix = 'categoryIds=';
-    
-    categories = prefix
-    
-      +
-      
-      JSON
-      
-        .parse ( categories )
-        
-        .join ( `&${ prefix }` );
-        
-    }
-    
-  const
-  
-    codeKey = 'twc-splcp',
-    
-    getCookieValue = ( key ) => {
-    
-      let v = '';
-      
-      try {
-      
-        v = dcmnt
-        
-          .cookie
-          
-          .split ( '; ' )
-          
-          .find (
-          
-            row =>
+            <a href="#">
             
-              row.startsWith ( `${ key }=` )
+              TWC
               
-            )
+              </a>
+              
+            </sup>
             
-          .split ( '=' ) [ 1 ];
+          </button>
           
-        } catch ( error ) { }
+        </div>
         
-      return v;
+      </template>
       
-      },
-      
-    crumb = getCookieValue ( 'crumb' );
+    <style>
     
-    processProduct = async ( element ) => {
-    
-      const
+      .sqs-damask-panel-content > div > div:last-child > div:last-child > div:last-child > div:has( .twc-spppscp-menu-item ) {
       
-        productId = element
+        flex-wrap : wrap;
         
-          .querySelector ( 'img' )
-          
-          .getAttribute ( 'src' )
-          
-          .split ( '/' )
-          
-          [ 6 ],
-          
-        url = `/api/commerce/products/${
+        }
         
-          productId
-          
-          }/categories/assign?${
-          
-            categories
-            
-            }`;
-            
-      try {
+      .twc-spppscp-menu-item {
       
-        const response = await fetch (
+        box-sizing : border-box;
+        display : flex;
         
-          url,
-          
-          {
-          
-            body : JSON.stringify (
-            
-              categories
-              
-              ),
-              
-            headers : {
-            
-              'Accept' :
-              
-                'application/json, text/plain, */*',
-                
-              'X-Csrf-Token' : crumb
-              
-              },
-              
-            method : 'POST'
-            
-            }
-            
-          );
-          
-        if ( ! response.ok ) {
+        button {
         
-          const s = `
+          -webkit-box-align : center;
+          -webkit-box-pack : center;
+          -webkit-font-smoothing : antialiased;
+          align-items : center;
+          background-color : transparent;
+          border-color : rgb( 231, 231, 231 );
+          border-style : none;
+          border-width : 1px;
+          box-sizing : border-box;
+          color : rgb( 14, 14, 14 );
+          cursor : pointer;
+          display : inline-flex;
+          font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size : 12px;
+          font-weight : 500;
+          height : auto;
+          justify-content : center;
+          letter-spacing : 0.5px;
+          line-height : 22px;
+          min-height : 55px;
+          outline : none;
+          overflow : hidden;
+          padding : 0px 22px;
+          text-align : center;
+          text-decoration : none;
+          text-rendering : optimizelegibility;
+          text-transform : uppercase;
+          transform : translate3d( 0px, 0px, 0px ) scale( 1, 1 );
+          transition : transform 50ms;
+          width : auto;
+          word-break : keep-all;
           
-            ${
-            
-              codeKey
-              
-              } network response was not ok ${
-              
-                response.statusText
-                
-                }
-                
-            `
-            
-            .trim ( )
-            
-            .replace ( /\s+/gm, ' ' );
-            
-          throw new Error ( s );
+          sup {
           
-          }
-          
-        } catch ( error ) {
-        
-          const s = `
-          
-            ${
+            color : #888888;
             
-              codeKey
+            & a {
+            
+              border-bottom : unset;
               
               }
               
-            there has been a problem with your
+            }
             
-            fetch post operation, ${
-            
-              error
-              
-              }.
-              
-            `
-            
-            .trim ( )
-            
-            .replace ( /\s+/gm, ' ' );
-            
-          console.error ( s );
+          &::before {
           
+            background-color: rgb( 231, 231, 231 );
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0px;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0px;
+            transform: translate3d( -130%, 0px, 0px ) skew( -30deg );
+            transition: transform 500ms cubic-bezier( 0.66, 0, 0.34, 1 ), opacity 500ms linear 500ms;
+            width: 100%;
+            z-index: -1;
+            
+            }
+            
+          &:hover::before {
+          
+            background-color : rgb( 231, 231, 231 );
+            opacity : 1;
+            transform: translate3d( 0px, 0px, 0px ) skew( 0deg );
+            transition : transform 500ms cubic-bezier( 0.66, 0, 0.34, 1 ), opacity 500ms linear;
+            z-index : -1;
+            
+            }
+            
           }
           
-      };
+      </style>
       
-  elements.forEach (
+    <script>
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        const isEditor = document
+        
+          .documentElement
+          
+          .classList
+          
+          .contains ( 'squarespace-damask' );
+          
+        // bail if not logged in
+        
+        if ( ! isEditor ) return;
+        
+        const isStorePage = document
+        
+          .querySelector (
+          
+            'iframe[ data-testid = '
+            
+            +
+            
+            '"sqs-site-frame" ]'
+            
+            )
+            
+          ?.contentWindow
+          
+          .Static
+          
+          .SQUARESPACE_CONTEXT
+          
+          .collection
+          
+          ?.type
+          
+          ===
+          
+          13;
+          
+        // bail if not store page
+        
+        if ( ! isStorePage ) return;
+        
+        const xPathEvaluate = (
+        
+          xPathExpression,
+          
+          contextNode
+          
+          ) => {
+          
+            const xPathResults = document
+            
+              .evaluate (
+              
+                xPathExpression,
+                
+                contextNode,
+                
+                null,
+                
+                XPathResult
+                
+                  .ORDERED_NODE_SNAPSHOT_TYPE,
+                  
+                null
+                
+                );
+                
+            return xPathResults;
+            
+            };
+            
+        let
+        
+          xPathExpression = `
+          
+            .//button [
+            
+              contains (
+              
+                @data-test,
+                
+                "menuHeader-back"
+                
+                )
+                
+              and
+              
+              contains (
+              
+                .,
+                
+                "Categories"
+                
+                )
+                
+              ]
+                        
+            `,
+            
+          xPathResults = xPathEvaluate (
+          
+            xPathExpression,
+            
+            document
+            
+            );
+            
+        // bail if no categories panel
+        
+        if ( ! xPathResults.snapshotLength )
+        
+          return;
+          
+        let categories;
+        
+        const
+        
+          codeKey = 'twc-spppscp',
+          
+          getFiberKey = ( node ) => {
+          
+            const fiberKey = Object
+            
+              .keys ( node )
+              
+              .find (
+              
+                k =>
+                
+                  k.startsWith (
+                  
+                    '__reactFiber$'
+                    
+                    )
+                    
+                );
+                
+            return fiberKey;
+            
+            },
+            
+          getCookieValue = ( key ) => {
+          
+            let v = '';
+            
+            try {
+            
+              v = document
+              
+                .cookie
+                
+                .split ( '; ' )
+                
+                .find (
+                
+                  row =>
+                  
+                    row.startsWith ( `${ key }=` )
+                    
+                  )
+                  
+                .split ( '=' ) [ 1 ];
+                
+              } catch ( error ) { }
+              
+            return v;
+            
+            },
+            
+          menuitemClickHandler =
+          
+            async ( event ) => {
+            
+              categories = JSON.parse (
+              
+                localStorage
+                
+                  .getItem ( 'twc-sppppcc' )
+                  
+                  );
+                  
+              const isCategories =
+              
+                Array.isArray ( categories )
+                
+                &&
+                
+                categories?.length !== 0;
+                
+              // bail if no categories
+              
+              if ( ! isCategories ) return;
+              
+              // categories
+              
+              {
+              
+                const prefix =
+                
+                  'categoryIds=';
+                  
+                categories = prefix
+                
+                  +
+                  
+                  categories.join (
+                  
+                    `&${ prefix }`
+                    
+                    );
+                    
+                }
+                
+              xPathExpression = `
+              
+                .//div [
+                
+                  @data-test = 'product-item'
+                  
+                  ]
+                  
+                `;
+                
+              xPathResults = xPathEvaluate (
+              
+                xPathExpression,
+                
+                document
+                
+                );
+                
+              for (
+              
+                let i = 0;
+                
+                i < xPathResults
+                
+                  .snapshotLength;
+                  
+                i++
+                
+                )
+                
+                {
+                
+                  let element = xPathResults
+                  
+                    .snapshotItem ( i );
+                    
+                  const
+                  
+                    inputElement =
+                    
+                      element.querySelector (
+                      
+                        'input[ type = checkbox ]'
+                        
+                        ),
+                        
+                    isChecked =
+                    
+                      inputElement.checked;
+                      
+                  // continue if not checked
+                  
+                  if ( ! isChecked ) continue;
+                  
+                  element = element
+                  
+                    .parentElement;
+                    
+                  processProduct ( element );
+                  
+                  }
+                  
+              },
+              
+          mutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element = element
+              
+                .firstElementChild;
+                
+              element.appendChild (
+              
+                document.getElementById (
+                
+                  `${
+                  
+                    codeKey
+                    
+                    }-menu-item`
+                    
+                  )
+                  
+                  .content
+                  
+                  .cloneNode ( true )
+                  
+                );
+                
+              element.querySelector (
+              
+                `.${ codeKey }-menu-item`
+                
+                )
+                
+                .addEventListener (
+                
+                  'click',
+                  
+                  menuitemClickHandler
+                  
+                  );
+                  
+              },
+              
+          templateMenuitemElement =
+          
+            document.getElementById (
+            
+              `${
+              
+                codeKey
+                
+                }-menu-item`
+                
+              ),
+              
+          crumb = getCookieValue ( 'crumb' ),
+          
+          processProduct =
+          
+            async ( element ) => {
+            
+              const fiberKey = getFiberKey (
+              
+                element
+                
+                );
+                
+              // bail if no react
+              
+              if ( ! fiberKey ) return;
+              
+              const
+              
+                productId = element
+                
+                  [ fiberKey ]
+                  
+                  .memoizedProps
+                  
+                  .children
+                  
+                  .key,
+                  
+                url =
+                
+                  `/api/commerce/products/${
+                  
+                    productId
+                    
+                    }/categories/assign?${
+                    
+                      categories
+                      
+                      }`;
+                      
+              try {
+              
+                const response = await fetch (
+                
+                  url,
+                  
+                  {
+                  
+                    body : JSON.stringify (
+                    
+                      categories
+                      
+                      ),
+                      
+                    headers : {
+                    
+                      'Accept' :
+                      
+                        'application/json, text/plain, */*',
+                        
+                      'X-Csrf-Token' : crumb
+                      
+                      },
+                      
+                    method : 'POST'
+                    
+                    }
+                    
+                  );
+                  
+                if ( ! response.ok ) {
+                
+                  const s = `
+                  
+                    ${
+                    
+                      codeKey
+                      
+                      } network response was not ok ${
+                      
+                        response.statusText
+                        
+                        }
+                        
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  throw new Error ( s );
+                  
+                  }
+                  
+                } catch ( error ) {
+                
+                  const s = `
+                  
+                    ${
+                    
+                      codeKey
+                      
+                      }
+                      
+                    there has been a problem with your
+                    
+                    fetch post operation, ${
+                    
+                      error
+                      
+                      }.
+                      
+                    `
+                    
+                    .trim ( )
+                    
+                    .replace ( /\s+/gm, ' ' );
+                    
+                  console.error ( s );
+                  
+                  }
+                  
+              };
+              
+        templateMenuitemElement.innerHTML =
+        
+          templateMenuitemElement
+          
+            .innerHTML
+            
+            .replaceAll (
+            
+              `[ codeKey ]`,
+              
+              codeKey
+              
+              );
+              
+        new MutationObserver (
+        
+          ms => ms.forEach (
+          
+            m => mutationCallback ( m )
+            
+            )
+            
+          )
+          
+          // start listening for changes in element
+          
+          .observe (
+          
+            document
+            
+              .querySelector (
+              
+                '.sqs-damask-panel-content '
+                
+                +
+                
+                '> div > div:last-child > '
+                
+                +
+                
+                'div:last-child'
+                
+                ),
+                
+            { childList : true }
+            
+            );
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
   
-    e => processProduct ( e )
+    ( ( ) => {
     
-    );
+      // debugger;
+      
+      const
+      
+        title = 'Store Page Products Panel Selected Categories Paste',
+        
+        version = '0.2.0',
+      
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-spppscp',
+        
+        dcmnt = window.top.document,
+        
+        element = dcmnt.querySelector (
+        
+          `x-${ codeKey }`
+          
+          );
+          
+      // bail if element
+      
+      if ( element ) return;
+      
+      dcmnt
+      
+        .head
+        
+        .appendChild (
+        
+          document.getElementById (
+          
+            `${ codeKey }-template`
+            
+            )
+            
+            .content
+            
+            .cloneNode ( true )
+            
+          );
+          
+      } ) ( );
+      
+    </script>
     
-  // code complete
-  
-  {
-  
-    const s = 'Categories have been pasted.';
-    
-    alertTitleMessage ( s );
-    
-    return; // bail if no site frame
-    
-    }
-    
-  } ) ( );
+  <!-- end TWC Store Page Products Panel Selected Categories Paste -->
