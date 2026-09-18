@@ -56,7 +56,7 @@ Please consider [making a donation][7].
 
   * reworked code from a bookmarklet to add a menu item to product panel
     multiple product pop up menu
-  * bumped version to 0.2.0 (commit a5a00fbf37e26db51e77a7e716681f0312c35176)
+  * bumped version to 0.2.0 (commit d686ace5f67785a7c2549df8a2ddfc9589f05b2b)
   
 * **2026-09-12**
 
