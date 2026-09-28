@@ -89,10 +89,10 @@ Please consider [making a donation][10].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add
 [6]: store%20page%20products%20panel%20selected%20categories%20paste.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste#store-page-products-panel-selected-categories-paste
+[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
