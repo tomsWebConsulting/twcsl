@@ -63,7 +63,7 @@ Please consider [making a donation][9].
   
 * **2026-09-28**
 
-  * initial version (commit 0fd9353049c5b590bf62cf54044b4600ca6f096a)
+  * initial version (commit 2dd95ce463f6693f25f5ee0732670c9aceb5138b)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
