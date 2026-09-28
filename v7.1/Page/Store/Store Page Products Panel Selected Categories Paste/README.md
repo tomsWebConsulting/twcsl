@@ -69,7 +69,7 @@ Please consider [making a donation][10].
 
   * reworked code to use Store Page Products Panel Multiple Products Menu Item
     Add
-  * bumped version to 0.3.0 (commit d686ace5f67785a7c2549df8a2ddfc9589f05b2b)
+  * bumped version to 0.3.0 (commit 83b2cfef2ea6fafb68254e5d367c77675e6cf5a8)
   
 * **2026-09-18**
 
