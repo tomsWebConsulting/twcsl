@@ -1,752 +1,255 @@
-<!-- begin TWC Store Page Products Panel Product Categories Copy -->
+<!--
 
+  begin TWC Store Page Products Panel Product Menu Item Add Register
+  
+  -->
+  
   <!--
   
-    store page products panel product categories copy
+    store page products panel product menu item add register
     
-    License           : < https://tinyurl.com/s872fb68 >
+    License         : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.3.0
+    Version         : 0.1.0
     
-    SS Version        : 7.1
+    SS Version      : 7.1
     
-    Notes             : the code is comprised of a template and script tag.
-                        both are needed for the full effect to work
-                        
-                        this code makes a call to a JSON version of a
-                        product's data
-    
-    Copyright         : 2026 Thomas Creedon
-                        
-                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-    
-    no user serviceable parts below
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
     
     -->
     
-  <template id="twc-sppppcc-template">
+  <template id="twc-sppppcc" data-version="0.4.0">
   
-    <!--
-    
-      store page products panel product categories copy
-      
-      License           : < https://tinyurl.com/s872fb68 >
-      
-      Version           : 0.3.0
-      
-      SS Version        : 7.1
-      
-      Notes             : the code is comprised of a custom, templage, style and
-                          script tag. all are needed for the full effect to
-                          work
-                          
-                          this code makes a call to a JSON version of a
-                          product's data
-      
-      Copyright         : 2026 Thomas Creedon
-                          
-                          Tom's Web Consulting < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      -->
-      
-    <x-twc-sppppcc>
-    
-      </x-twc-sppppcc>
-      
-    <template id="twc-sppppcc-template-menuitem">
-    
-      <div aria-hidden="true" aria-orientation="horizontal" class="[ codeKey ]-separator" role="separator">
-      
-        <div class="[ codeKey ]-separator__bar">
-        
-          </div>
-          
-        </div>
-        
-      <div class="[ codeKey ]-menu-item">
-      
-        <li aria-disabled="false" role="menuitem" tabindex="-1" data-rosetta-component="text" class="[ codeKey ]-menu-item__content">
-        
-          Copy Categories
-          
-          <sup>
-          
-            <a href="https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy">
-            
-              TWC
-              
-              </a>
-              
-            </sup>
-            
-          </li>
-          
-        </div>
-        
-      </template>
-      
-    <style>
-    
-      .twc-sppppcc-menu-item {
-      
-        box-sizing : border-box;
-        display : flex;
-        
-        }
-        
-      .twc-sppppcc-menu-item__content {
-      
-        -webkit-font-smoothing : antialiased;
-        box-sizing : border-box;
-        color : rgb( 14, 14, 14 );
-        cursor : pointer;
-        flex : 1 1 0%;
-        font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size : 14px;
-        font-weight : 500;
-        letter-spacing : -0.01em;
-        line-height : 22px;
-        list-style : none;
-        margin-bottom : 0px;
-        margin-top : 0px;
-        padding : 11px 22px;
-        position : relative;
-        text-rendering : optimizelegibility;
-        
-        & sup {
-        
-          color : #888888;
-          
-          & a {
-          
-            border-bottom : unset;
-            
-            }
-            
-          }
-          
-        &:hover {
-        
-          background-color : rgb( 242, 242, 242 );
-          
-          }
-          
-        }
-        
-      .twc-sppppcc-separator {
-      
-        background-color : rgb( 231, 231, 231 );
-        box-sizing : border-box;
-        height : 1px;
-        width : 100%;
-        
-        }
-        
-      .twc-sppppcc-separator__bar {
-      
-        background-color : rgb( 14, 14, 14 );
-        box-sizing : border-box;
-        height : 1px;
-        transition : 0.3s cubic-bezier( 0.32, 0.94, 0.6, 1 );
-        width : 0%;
-        
-        }
-        
-      </style>
-      
     <script>
     
       ( ( ) => {
       
-        // debugger;
-        
-        const isEditor = document
-        
-          .documentElement
-          
-          .classList
-          
-          .contains ( 'squarespace-damask' );
-          
-        // bail if not logged in
-        
-        if ( ! isEditor ) return;
-        
-        const isStorePage = document
-        
-          .querySelector (
-          
-            'iframe[ data-testid = '
-            
-            +
-            
-            '"sqs-site-frame" ]'
-            
-            )
-            
-          ?.contentWindow
-          
-          .Static
-          
-          .SQUARESPACE_CONTEXT
-          
-          .collection
-          
-          ?.type
-          
-          ===
-          
-          13;
-          
-        // bail if not store page
-        
-        if ( ! isStorePage ) return;
-        
-        const xPathEvaluate = (
-        
-          xPathExpression,
-          
-          contextNode
-          
-          ) => {
-          
-            const xPathResults = document
-            
-              .evaluate (
-              
-                xPathExpression,
-                
-                contextNode,
-                
-                null,
-                
-                XPathResult
-                
-                  .ORDERED_NODE_SNAPSHOT_TYPE,
-                  
-                null
-                
-                );
-                
-            return xPathResults;
-            
-            };
-            
-        let
-        
-          xPathExpression = `
-          
-            .//button [
-            
-              contains (
-              
-                @data-test,
-                
-                "menuHeader-back"
-                
-                )
-                
-              and
-              
-              contains (
-              
-                .,
-                
-                "Categories"
-                
-                )
-                
-              ]
-                        
-            `,
-            
-          xPathResults = xPathEvaluate (
-          
-            xPathExpression,
-            
-            document
-            
-            );
-            
-        // bail if no categories panel
-        
-        if ( ! xPathResults.snapshotLength )
-        
-          return;
-          
         const
         
-          codeKey = 'twc-sppppcc',
+          vendor = {
           
-          getAncestor =
-          
-            ( element, levels ) => {
+            text : 'TWC',
             
-              // bail if no element
-              
-              if ( ! element ) return null;
-              
-              while (
-              
-                element && levels > 0
-                
-                ) {
-                
-                  element = element
-                  
-                    .parentElement;
-                    
-                  levels--;
-                  
-                  }
-                  
-              return element;
-              
-              },
-              
-          getFiberKey = ( node ) => {
-          
-            const fiberKey = Object
-            
-              .keys ( node )
-              
-              .find (
-              
-                k =>
-                
-                  k.startsWith (
-                  
-                    '__reactFiber$'
-                    
-                    )
-                    
-                );
-                
-            return fiberKey;
+            url : 'https://github.com/tomsWebConsulting/twcsl#:~:text=Tom\'s Web Consulting Squarespace Library'
             
             },
             
-          popoverClickHandler =
+          menuItem = {
           
-            ( event ) => {
+            text : 'Copy Categories',
             
-              const
+            productCallback : async (
+            
+              productId,
               
-                element = event
+              crumb
+              
+              ) => {
+              
+                // debugger;
                 
-                  .currentTarget
+                /*
+                
+                  store page products panel product categories copy
                   
-                  .closest (
+                  License         : < https://tinyurl.com/s872fb68 >
                   
-                    '[ data-test = '
+                  Version         : 0.4.0
+                  
+                  SS Version      : 7.1
+                  
+                  Note            : this code makes a call to a JSON version of
+                                    a product's data
+                  
+                  Copyright       : 2026 Thomas Creedon
+                                    
+                                    Tom's Web Consulting
+                                    
+                                    < http://www.tomsWeb.consulting/ >
+                  
+                  */
+                  
+                const
+                
+                  codeKey = 'twc-sppppcc',
+                  
+                  url =
+                  
+                    `/api/commerce/products/${
                     
-                    +
-                    
-                    '"product-item" ]'
-                    
-                    )
-                    
-                  .parentElement,
-                  
-                fiberKey =
-                
-                  getFiberKey ( element );
-                  
-              // bail if no react
-              
-              if ( ! fiberKey ) return;
-              
-              sessionStorage.setItem (
-              
-                codeKey,
-                
-                element
-                
-                  [ fiberKey ]
-                  
-                  .memoizedProps
-                  
-                  .children
-                  
-                  .key
-                  
-                );
-                
-              },
-              
-          popoverSelector = '[ data-test = "'
-          
-            +
-            
-            'list-item-popover" ]',
-            
-          popoverTriggerSelector =
-          
-            '[ data-test = "list-item-'
-            
-            +
-            
-            'popover-trigger" ]',
-            
-          menuitemClickHandler =
-          
-            async ( event ) => {
-            
-              const id =
-              
-                sessionStorage.getItem (
-                
-                  codeKey
-                  
-                  );
-                  
-              // bail if no id
-              
-              if ( ! id ) return;
-              
-              const url =
-              
-                `/api/commerce/products/${
-                
-                  id
-                  
-                  }`;
-                  
-              let categories;
-              
-              try {
-              
-                const response =
-                
-                  await fetch ( url );
-                  
-                if ( ! response.ok ) {
-                
-                  const s = `
-                  
-                    ${
-                    
-                      codeKey
+                      productId
                       
-                      } network response was not ok ${
+                      }`;
                       
-                        response.statusText
+                let categories;
+                
+                try {
+                
+                  const response =
+                  
+                    await fetch ( url );
+                    
+                  if ( ! response.ok ) {
+                  
+                    const s = `
+                    
+                      ${
+                      
+                        codeKey
+                        
+                        } network response was not ok ${
+                        
+                          response.statusText
+                          
+                          }
+                          
+                      `
+                      
+                      .trim ( )
+                      
+                      .replace ( /\s+/gm, ' ' );
+                      
+                    throw new Error ( s );
+                    
+                    }
+                    
+                  categories =
+                  
+                    await response.json ( );
+                    
+                  categories = categories
+                  
+                    .categoryIds;
+                    
+                  } catch ( error ) {
+                  
+                    const s = `
+                    
+                      ${
+                      
+                        codeKey
                         
                         }
                         
-                    `
-                    
-                    .trim ( )
-                    
-                    .replace ( /\s+/gm, ' ' );
-                    
-                  throw new Error ( s );
-                  
-                  }
-                  
-                categories =
-                
-                  await response.json ( );
-                  
-                categories = categories
-                
-                  .categoryIds
-                  
-                  .slice ( 1 );
-                  
-                } catch ( error ) {
-                
-                  const s = `
-                  
-                    ${
-                    
-                      codeKey
+                      there has been a problem with your
                       
-                      }
+                      fetch get operation, ${
                       
-                    there has been a problem with your
-                    
-                    fetch get operation, ${
-                    
-                      error
+                        error
+                        
+                        }.
+                        
+                      `
                       
-                      }.
+                      .trim ( )
                       
-                    `
+                      .replace ( /\s+/gm, ' ' );
+                      
+                    console.error ( s );
                     
-                    .trim ( )
+                    }
                     
-                    .replace ( /\s+/gm, ' ' );
-                    
-                  console.error ( s );
+                localStorage.setItem (
+                
+                  codeKey,
                   
-                  }
-                  
-              localStorage.setItem (
-              
-                codeKey,
-                
-                JSON.stringify ( categories )
-                
-                );
-                
-              getAncestor (
-              
-                event
-                
-                  .target
-                  
-                  .closest (
-                  
-                    popoverSelector
-                    
-                    ),
-                    
-                5
-                
-                )
-                
-                .remove ( );
-                
-              },
-              
-          bodyMutationCallback =
-          
-            ( mutation ) => {
-            
-              let element =
-              
-                mutation.addedNodes [ 0 ];
-                
-              // bail if no element
-              
-              if ( ! element ) return;
-              
-              element =
-              
-                element.querySelector (
-                
-                  '[ data-test = "'
-                  
-                  +
-                  
-                  'list-item-popover" ]'
+                  JSON.stringify ( categories )
                   
                   );
                   
-              // bail if no element
-              
-              if ( ! element ) return;
-              
-              element.appendChild (
-              
-                document.getElementById (
+                },
                 
-                  `${
-                  
-                    codeKey
-                    
-                    }-template-menuitem`
-                    
-                  )
-                  
-                  .content
-                  
-                  .cloneNode ( true )
-                  
-                );
-                
-              element
-              
-                .querySelector (
-                
-                  `.${ codeKey }-menu-item`
-                  
-                  )
-                  
-                .addEventListener (
-                
-                  'click',
-                  
-                  menuitemClickHandler
-                  
-                  );
-                  
-              },
-              
-          scrollMutationCallback =
-          
-            ( mutation ) => {
+            url : 'https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy'
             
-              let element =
+            };
+            
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc sppppmia sub-module
+        
+        window.twc.sppppmia =
+        
+          window.twc.sppppmia || { };
+          
+        // initialize twc sppppmia vendor sub-module
+        
+        window
+        
+          .twc
+          
+          .sppppmia
+          
+          [ vendor.text ]
+          
+          =
+        
+          ( ( self ) => {
+          
+            const options = {
+            
+              url : vendor.url
               
-                mutation.addedNodes [ 0 ];
+              };
+              
+            Object
+            
+              .assign (
+              
+                self,
                 
-              // bail if no element
-              
-              if ( ! element ) return;
-              
-              const isElement = element
-              
-                .nodeType
-                
-                ===
-                
-                1;
-                
-              // bail if not element
-              
-              if ( ! isElement ) return;
-              
-              element = element
-              
-                .querySelector (
-                
-                  popoverTriggerSelector
-                  
-                  );
-                  
-              // bail if no element
-              
-              if ( ! element ) return;
-              
-              element.addEventListener (
-              
-                'click',
-                
-                popoverClickHandler
+                options
                 
                 );
                 
-              },
+            return self;
+            
+            } )
+            
+          (
+          
+            window
+            
+              .twc
               
-          templateMenuitemElement =
-          
-            document.getElementById (
-            
-              `${
+              .sppppmia
               
-                codeKey
-                
-                }-template-menuitem`
-                
-              );
+              [ vendor.text ]
               
-        templateMenuitemElement.innerHTML =
-        
-          templateMenuitemElement
-          
-            .innerHTML
+            ||
             
-            .replaceAll (
-            
-              `[ codeKey ]`,
-              
-              codeKey
-              
-              );
-              
-        xPathExpression = `
-        
-          .//button [
-          
-            @data-test
-            
-            =
-            
-            "list-item-popover-trigger"
-            
-            ]
-            
-          `,
-          
-        xPathResults = xPathEvaluate (
-        
-          xPathExpression,
-          
-          document
-          
-          );
-          
-        for (
-        
-          let i = 0;
-          
-          i < xPathResults.snapshotLength;
-          
-          i++
-          
-          )
-          
-            xPathResults
-            
-              .snapshotItem ( i )
-              
-              .addEventListener (
-              
-                'click',
-                
-                popoverClickHandler
-                
-                );
-                
-        new MutationObserver (
-        
-          ms => ms.forEach (
-          
-            m => bodyMutationCallback ( m )
-            
-            )
-            
-          )
-          
-          // start listening for changes in element
-          
-          .observe (
-          
-            document.body,
-            
-            { childList : true }
+            { }
             
             );
             
-        new MutationObserver (
+        // initialize twc sppppmia vendor menu item
         
-          ms => ms.forEach (
+        window
+        
+          .twc
           
-            m => scrollMutationCallback ( m )
-            
-            )
-            
-          )
+          .sppppmia
           
-          // start listening for changes in element
+          [ vendor.text ]
           
-          .observe (
+          [ menuItem.text ]
           
-            document
+          =
+          
+          {
+          
+            productCallback :
             
-              .querySelector (
+              menuItem.productCallback,
               
-                '.ReactVirtualized__'
-                
-                +
-                
-                'Grid__innerScrollContainer'
-                
-                ),
-                
-            {
+            url : menuItem.url
             
-              childList : true,
-              
-              subtree : true
-              
-              }
-              
-            );
+            };
             
         } ) ( );
         
@@ -762,58 +265,98 @@
       
       const
       
-        title = 'Store Page Products Panel Product Categories Copy',
-        
-        version = '0.3.0',
-      
-        s = `${ title } v${ version }
-        
-          License < https://tinyurl.com/s872fb68 >
-          
-          © 2026 Thomas Creedon
-          
-          Tom's Web Consulting < http://www.tomsWeb.consulting >`
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
-      
-      const
-      
         codeKey = 'twc-sppppcc',
         
         dcmnt = window.top.document,
         
-        element = dcmnt.querySelector (
+        destinationElement =
         
-          `x-${ codeKey }`
+          dcmnt.getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
           
           );
           
-      // bail if element
+      const
       
-      if ( element ) return;
-      
-      dcmnt
-      
-        .head
+        sourceVersion =
         
-        .appendChild (
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
         
-          document.getElementById (
+          ! destinationElement
           
-            `${ codeKey }-template`
-            
-            )
-            
-            .content
-            
-            .cloneNode ( true )
-            
-          );
+          ||
           
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
       } ) ( );
       
     </script>
     
-  <!-- end TWC Store Page Products Panel Product Categories Copy -->
+  <!-- end TWC Store Page Products Panel Product Menu Item Add Register -->

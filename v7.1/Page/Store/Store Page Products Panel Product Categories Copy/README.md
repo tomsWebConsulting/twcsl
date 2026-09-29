@@ -8,7 +8,7 @@ Copy categories from a selected Store Page Products Panel Product.
 
 ### Version
 
-  * 0.3.0
+  * 0.4.0
 
 #### SS Version
 
@@ -17,6 +17,8 @@ Copy categories from a selected Store Page Products Panel Product.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
+  
+  * [Store Page Products Panel Product Menu Item Add][5]
 
 ---
 
@@ -27,31 +29,45 @@ Copy categories from a selected Store Page Products Panel Product.
   Use this option if you want to have this effect on only one Store Page.
   
   * Add code from file **[store page products panel product categories
-    copy.html][4]** to Store Settings > Advanced > Page Header Code Injection
+    copy.html][6]** to Store Settings > Advanced > Page Header Code Injection
     for the Store Page.
     
-  * Refer to [per-page code injection][5] for details.
+  * Refer to [per-page code injection][7] for details.
   
 * Site-wide
 
   Use this option if you want to have this effect on all Store Pages.
   
   * Add code from file **[store page products panel product categories
-    copy.html][4]** to Website > Pages > Custom Code > Code Injection > HEADER.
+    copy.html][6]** to Website > Pages > Custom Code > Code Injection > HEADER.
     
-  * Refer to [Add code to code injection][6] for details.
+  * Refer to [Add code to code injection][8] for details.
 
 ## How To Use
 
-* In the Product Panel Product pop up menu select the **Copy Categories** menu
-item.
+* Use [Store Page Products Panel Product Categories Copy][9] to copy
+  Categories.
+
+* In the Product Panel select Products.
+
+* Click the **Paste Categories** menu item.
+
+## Note
+
+You must be careful using this effect as while it is not destructive it can make
+massive additions of categories to your products.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-09-29**
+
+  * reworked code to use Store Page Products Panel Product Menu Item Add
+  * bumped version to 0.4.0 (commit 83b2cfef2ea6fafb68254e5d367c77675e6cf5a8)
+  
 * **2026-09-16**
 
   * reworked code from a bookmarklet to add a menu item to product panel product
@@ -70,7 +86,9 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: store%20page%20products%20panel%20product%20categories%20copy.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Menu%20Item%20Add
+[6]: store%20page%20products%20panel%20product%20categories%20copy.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
