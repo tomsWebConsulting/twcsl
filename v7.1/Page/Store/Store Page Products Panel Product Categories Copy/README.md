@@ -45,12 +45,9 @@ Copy categories from a selected Store Page Products Panel Product.
 
 ## How To Use
 
-* Use [Store Page Products Panel Product Categories Copy][9] to copy
-  Categories.
+* In the Product Panel click the pop-up menu for a Product.
 
-* In the Product Panel select Products.
-
-* Click the **Paste Categories** menu item.
+* Select the **Copy Categories** menu item.
 
 ## Note
 
