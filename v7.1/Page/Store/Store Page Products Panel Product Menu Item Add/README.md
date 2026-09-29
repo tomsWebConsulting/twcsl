@@ -50,12 +50,12 @@ Add menu items to selected Product pop up menu in a Store Page Products Panel.
 
 ## Registration Example
 
-Please see [store page products panel product menu item add register log][18]
+Please see [store page products panel product menu item add register log][8]
 for a minimal example of how to register your menu item.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -77,5 +77,5 @@ Please consider [making a donation][8].
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [7]: store%20page%20products%20panel%20product%20menu%20item%20add%20register.html#L1
-[18]: store%20page%20products%20panel%20product%20menu%20item%20add%20register%20log.html#L1
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: store%20page%20products%20panel%20product%20menu%20item%20add%20register%20log.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
