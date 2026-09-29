@@ -66,7 +66,7 @@ Please consider [making a donation][10].
 * **2026-09-29**
 
   * reworked code to use Store Page Products Panel Product Menu Item Add
-  * bumped version to 0.4.0 (commit 83b2cfef2ea6fafb68254e5d367c77675e6cf5a8)
+  * bumped version to 0.4.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
   
 * **2026-09-16**
 
