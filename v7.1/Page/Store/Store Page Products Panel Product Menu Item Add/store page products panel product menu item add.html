@@ -1,0 +1,973 @@
+<!-- begin TWC Store Page Products Panel Product Menu Item Add -->
+
+  <!--
+  
+    store page products panel product menu item add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0
+    
+    SS Version        : 7.1
+    
+    Notes             : the code is comprised of a template and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <template id="twc-sppppmia">
+  
+    <!-- begin TWC Store Page Products Panel Product Menu Item Add -->
+    
+      <!--
+      
+        store page products panel product menu item add
+        
+        License           : < https://tinyurl.com/s872fb68 >
+        
+        Version           : 0.1.0
+        
+        SS Version        : 7.1
+        
+        Notes             : the code is comprised of a template, style and
+                            script tags. all are needed for the full effect to
+                            work
+        
+        Copyright         : 2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        -->
+        
+      <template id="twc-sppppmia-template">
+      
+        <div id="twc-sppppmia">
+        
+          </div>
+        
+        </template>
+        
+      <template id="twc-sppppmia-template-vendor">
+      
+        <div data-vendor>
+        
+            <a target="_blank">
+            
+              [ vendor ]
+              
+              </a>
+              
+          </div>
+          
+        </template>
+        
+      <template id="twc-sppppmia-template-menu-item">
+      
+        <div class="menu-item">
+        
+          <li aria-disabled="false" role="menuitem" tabindex="-1" data-rosetta-component="text">
+          
+            <span>
+            
+              [ text ]
+              
+              </span>
+              
+            <a target="_blank">
+            
+              *
+              
+              </a>
+              
+            </li>
+            
+          </div>
+          
+        </template>
+        
+      <style id="twc-sppppmia-style">
+      
+        #twc-sppppmia {
+        
+          [ data-vendor ] {
+          
+            border-top : 1px solid rgba( 0, 0, 0, 0.25 );
+            display : flex;
+            flex-direction : column;
+            
+            a:first-child {
+            
+              border-bottom : none;
+              flex-basis : 100%;
+              font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+              font-size : smaller;
+              padding : 0 11px;
+              text-align : right;
+              
+              }
+              
+            }
+            
+          .menu-item {
+          
+            box-sizing : border-box;
+            display : flex;
+            flex-basis : 100%;
+            
+            }
+            
+          li {
+          
+            -webkit-font-smoothing : antialiased;
+            color: rgb( 14, 14, 14 );
+            cursor : pointer;
+            display : flex;
+            flex-basis : 100%;
+            font-family : Clarkson, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size : 14px;
+            font-weight : 500;
+            gap : 11px;
+            letter-spacing : -0.01em;
+            line-height : 22px;
+            list-style : none;
+            padding : 11px 22px;
+            position : relative;
+            text-rendering : optimizelegibility;
+            
+            span {
+            
+              flex-basis : 100%;
+              
+              }
+              
+            a {
+            
+              border-bottom : unset;
+              font-size : small;
+              font-weight : normal;
+              
+              }
+              
+            }
+            
+          }
+          
+        </style>
+        
+      <script id="twc-sppppmia-script">
+      
+        ( ( ) => {
+        
+          // debugger;
+          
+          const isEditor = document
+          
+            .documentElement
+            
+            .classList
+            
+            .contains ( 'squarespace-damask' );
+            
+          // bail if not logged in
+          
+          if ( ! isEditor ) return;
+          
+          const isStorePage = document
+          
+            .querySelector (
+            
+              'iframe[ data-testid = '
+              
+              +
+              
+              '"sqs-site-frame" ]'
+              
+              )
+              
+            ?.contentWindow
+            
+            .Static
+              
+              .SQUARESPACE_CONTEXT
+              
+              .collection
+              
+              ?.type
+              
+              ===
+              
+              13;
+              
+          // bail if not store page
+          
+          if ( ! isStorePage ) return;
+          
+          const xPathEvaluate = (
+          
+            xPathExpression,
+            
+            contextNode
+            
+            ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult
+                  
+                    .ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              };
+              
+          let
+          
+            xPathExpression = `
+            
+              .//button [
+              
+                contains (
+                
+                  @data-test,
+                  
+                  "menuHeader-back"
+                  
+                  )
+                  
+                and
+                
+                contains (
+                
+                  .,
+                  
+                  "Categories"
+                  
+                  )
+                  
+                ]
+                          
+              `,
+              
+            xPathResults = xPathEvaluate (
+            
+              xPathExpression,
+              
+              document
+              
+              );
+              
+          // bail if no categories panel
+          
+          if ( ! xPathResults.snapshotLength )
+          
+            return;
+            
+          let productId;
+          
+          const
+          
+            codeKey = 'twc-sppppmia',
+            
+            fiberKeyGet = ( node ) => {
+            
+              const fiberKey = Object
+              
+                .keys ( node )
+                
+                .find (
+                
+                  k =>
+                  
+                    k.startsWith (
+                    
+                      '__reactFiber$'
+                      
+                      )
+                      
+                  );
+                  
+              return fiberKey;
+              
+              },
+              
+            getAncestor =
+            
+              ( element, levels ) => {
+              
+                // bail if no element
+                
+                if ( ! element ) return null;
+                
+                while (
+                
+                  element && levels > 0
+                  
+                  ) {
+                  
+                    element = element
+                    
+                      .parentElement;
+                      
+                    levels--;
+                    
+                    }
+                    
+                return element;
+                
+                },
+                
+            getCookieValue = ( key ) => {
+            
+              let v = '';
+              
+              try {
+              
+                v = document
+                
+                  .cookie
+                  
+                  .split ( '; ' )
+                  
+                  .find (
+                  
+                    row =>
+                    
+                      row.startsWith ( `${ key }=` )
+                      
+                    )
+                    
+                  .split ( '=' ) [ 1 ];
+                  
+                } catch ( error ) { }
+                
+              return v;
+              
+              },
+              
+            popoverClickHandler =
+            
+              ( event ) => {
+              
+                const
+                
+                  element = event
+                  
+                    .currentTarget
+                    
+                    .closest (
+                    
+                      '[ data-test = "product-item" ]'
+                      
+                      )
+                      
+                    .parentElement,
+                    
+                  fiberKey =
+                  
+                    fiberKeyGet ( element );
+                    
+                // bail if no react
+                
+                if ( ! fiberKey ) return;
+                
+                productId = element
+                
+                  [ fiberKey ]
+                  
+                  .memoizedProps
+                  
+                  .children
+                  
+                  .key;
+                  
+                // if ( ! productId ) return;
+                
+                },
+                
+            popoverTriggerSelector =
+            
+              '[ data-test = "list-item-popover-trigger" ]',
+              
+            crumb = getCookieValue ( 'crumb' ),
+            
+            gridInnerElement = document
+            
+              .querySelector (
+              
+                '.ReactVirtualized__Grid__innerScrollContainer'
+                
+                ),
+                
+            gridInnerMutationCallback =
+            
+              ( mutation ) => {
+              
+                let element = mutation
+                
+                  .addedNodes [ 0 ];
+                  
+                // bail if no element
+                
+                if ( ! element ) return;
+                
+                const productItemElement =
+                
+                  element.closest (
+                  
+                    '[ data-test = "product-item" ]'
+                    
+                    );
+                    
+                if ( productItemElement )
+                
+                  element =
+                  
+                    productItemElement
+                    
+                      .parentElement;
+                      
+                element
+                
+                  .querySelector (
+                  
+                    popoverTriggerSelector
+                    
+                    )
+                    
+                  ?.addEventListener (
+                  
+                    'click',
+                    
+                    popoverClickHandler
+                    
+                    );
+                    
+                },
+                
+            menuItemClickHandler = async (
+            
+              userCallback,
+              
+              event
+              
+              ) => {
+              
+                // bail if no productId
+                
+                if ( ! productId ) return;
+                
+                await userCallback (
+                
+                  productId,
+                  
+                  crumb
+                  
+                  );
+                  
+                getAncestor (
+                
+                  event
+                  
+                    .target
+                    
+                    .closest (
+                    
+                      '[ data-test = "list-item-popover" ]'
+                      
+                      ),
+                      
+                  5
+                  
+                  )
+                  
+                  .remove ( );
+                  
+                },
+                
+            menuItemsAdd =
+            
+              ( items, element ) => {
+              
+                for (
+                
+                  const [
+                  
+                    key,
+                    
+                    value
+                    
+                    ]
+                    
+                  of
+                  
+                  Object.entries ( items )
+                  
+                  ) {
+                  
+                    if ( key === 'url' )
+                    
+                      continue;
+                      
+                    const menuItemElement =
+                    
+                      document
+                      
+                        .getElementById (
+                        
+                          `${
+                          
+                            codeKey
+                            
+                            }-template-menu-item`
+                            
+                          )
+                          
+                        .content
+                        
+                        .cloneNode ( true );
+                        
+                    menuItemElement
+                    
+                      .querySelector (
+                      
+                        'li span'
+                        
+                        )
+                        
+                      .textContent
+                      
+                      =
+                      
+                      key;
+                      
+                    menuItemElement
+                    
+                      .querySelector (
+                      
+                        'li'
+                        
+                        )
+                        
+                      .addEventListener (
+                      
+                        'click',
+                        
+                        e => {
+                        
+                          menuItemClickHandler (
+                          
+                            value
+                            
+                              .productCallback,
+                              
+                            e
+                            
+                            )
+                            
+                          }
+                          
+                        );
+                        
+                    // anchor element
+                    
+                    {
+                    
+                      const
+                      
+                        anchorElement =
+                        
+                          menuItemElement
+                          
+                            .querySelector (
+                            
+                              'a'
+                              
+                              ),
+                              
+                        hasUrl =
+                        
+                          value.url [ 0 ]
+                          
+                          !==
+                          
+                          '[';
+                           
+                      if ( hasUrl )
+                      
+                        menuItemElement
+                        
+                          .querySelector (
+                          
+                            'a'
+                            
+                            )
+                            
+                          .setAttribute (
+                          
+                            'href',
+                            
+                            value.url
+                            
+                            );
+                            
+                        else
+                        
+                          anchorElement
+                          
+                            .remove ( );
+                            
+                      }
+                      
+                    element.appendChild (
+                    
+                      menuItemElement
+                      
+                      );
+                      
+                    }
+                    
+                },
+                
+            vendorAdd = (
+            
+              vendor,
+              
+              menuItems,
+              
+              element
+              
+              ) => {
+              
+                const vendorElement =
+                
+                  document
+                  
+                    .getElementById (
+                    
+                      `${
+                      
+                        codeKey
+                        
+                        }-template-vendor`
+                        
+                      )
+                      
+                    .content
+                    
+                    .cloneNode ( true );
+                    
+                vendorElement
+                
+                  .querySelector (
+                  
+                    '[ data-vendor ]'
+                    
+                    )
+                    
+                  .setAttribute (
+                  
+                    'data-vendor',
+                    
+                    vendor
+                    
+                    );
+                    
+                vendorElement
+                
+                  .querySelector (
+                  
+                    'a'
+                    
+                    )
+                    
+                  .setAttribute (
+                  
+                    'href',
+                    
+                    menuItems.url
+                    
+                    );
+                    
+                vendorElement
+                
+                  .querySelector ( 'a' )
+                  
+                  .textContent
+                  
+                  =
+                  
+                  vendor;
+                  
+                element.appendChild (
+                
+                  vendorElement
+                  
+                  );
+                  
+                menuItemsAdd (
+                
+                  menuItems,
+                  
+                  element.querySelector (
+                  
+                    `[ data-vendor = "${
+                    
+                      vendor
+                      
+                      }" ]`
+                      
+                    )
+                    
+                  );
+                  
+                },
+                
+            bodyMutationCallback =
+            
+              ( mutation ) => {
+              
+                let element =
+                
+                  mutation.addedNodes [ 0 ];
+                  
+                // bail if no element
+                
+                if ( ! element ) return;
+                
+                element = element
+                
+                  .querySelector (
+                  
+                    '[ data-test = "list-item-popover" ]'
+                    
+                    );
+                    
+                // bail if no element
+                
+                if ( ! element ) return;
+                
+                const options = codeKey
+                
+                  .split ( '-' )
+                  
+                  .reduce (
+                  
+                    ( obj, key ) => obj?.[ key ],
+                    
+                    window
+                    
+                    );
+                    
+                element
+                
+                  .appendChild (
+                  
+                    document
+                    
+                      .getElementById (
+                      
+                        `${
+                        
+                          codeKey
+                          
+                          }-template`
+                          
+                        )
+                        
+                      .content
+                      
+                      .cloneNode ( true )
+                      
+                    );
+                    
+                element =
+                
+                  document.getElementById (
+                  
+                    codeKey
+                    
+                    );
+                    
+                for (
+                
+                  const [ vendor, menuItems ]
+                  
+                  of
+                  
+                  Object.entries ( options )
+                  
+                  )
+                  
+                  vendorAdd (
+                  
+                    vendor,
+                    
+                    menuItems,
+                    
+                    element
+                    
+                    );
+                    
+                };
+                
+          gridInnerElement
+          
+            .querySelectorAll (
+            
+              popoverTriggerSelector
+              
+              )
+              
+            .forEach (
+            
+              e => e.addEventListener (
+              
+                'click',
+                
+                popoverClickHandler
+                
+                )
+                
+              );
+              
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              bodyMutationCallback
+              
+              )
+              
+            )
+            
+            // start listening for changes in element
+            
+            .observe (
+            
+              document.body,
+              
+              { childList : true }
+              
+              );
+              
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              gridInnerMutationCallback
+              
+              )
+              
+            )
+            
+            // start listening for changes in element
+            
+            .observe (
+            
+              gridInnerElement,
+              
+              {
+              
+                childList : true,
+                
+                subtree : true
+                
+                }
+              
+              );
+              
+          } ) ( );
+          
+        </script>
+        
+      <!-- end TWC Store Page Products Panel Product Menu Item Add -->
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Store Page Products Panel Product Menu Item Add',
+        
+        version = '0.1.0',
+      
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-sppppmia',
+        
+        dcmnt = window.top.document,
+        
+        element = dcmnt.getElementById (
+        
+          `${ codeKey }-template`
+          
+          );
+          
+      // bail if element
+      
+      if ( element ) return;
+      
+      dcmnt
+      
+        .head
+        
+        .appendChild (
+        
+          document
+          
+            .getElementById (
+            
+              `${ codeKey }`
+              
+              )
+              
+            .content
+            
+            .cloneNode ( true )
+            
+          );
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Products Panel Product Menu Item Add -->

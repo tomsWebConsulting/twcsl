@@ -1,0 +1,281 @@
+<!--
+
+  begin TWC Store Page Products Panel Product Menu Item Add Register
+  
+  -->
+  
+  <!--
+  
+    store page products panel product menu item add register
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-sppppmiarl" data-version="0.1.0">
+  
+    <script>
+    
+      ( ( ) => {
+      
+        const
+        
+          vendor = {
+          
+            text : 'TWC',
+            
+            url : 'https://github.com/tomsWebConsulting/twcsl#:~:text=Tom\'s Web Consulting Squarespace Library'
+            
+            },
+            
+          menuItem = {
+          
+            text : 'SPPPPMIAR Log',
+            
+            productCallback : (
+            
+              productId,
+              
+              crumb
+              
+              ) => {
+              
+                /*
+                
+                  sppppmiar log
+                  
+                  License         : < https://tinyurl.com/s872fb68 >
+                  
+                  Version         : 0.1.0
+                  
+                  SS Version      : 7.1
+                  
+                  Copyright       : 2026 Thomas Creedon
+                                    
+                                    Tom's Web Consulting
+                                    
+                                    < http://www.tomsWeb.consulting/ >
+                  
+                  */
+                  
+                console.log (
+                
+                  'twc-sppppmiarl product id :',
+                  
+                  productId
+                  
+                  );
+                  
+                },
+                
+            url : '[ optional, enter menu item url here between single quotes replacing square brackets ]'
+            
+            };
+            
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc sppppmia sub-module
+        
+        window.twc.sppppmia =
+        
+          window.twc.sppppmia || { };
+          
+        // initialize twc sppppmia vendor sub-module
+        
+        window
+        
+          .twc
+          
+          .sppppmia
+          
+          [ vendor.text ]
+          
+          =
+        
+          ( ( self ) => {
+          
+            const options = {
+            
+              url : vendor.url
+              
+              };
+              
+            Object
+            
+              .assign (
+              
+                self,
+                
+                options
+                
+                );
+                
+            return self;
+            
+            } )
+            
+          (
+          
+            window
+            
+              .twc
+              
+              .sppppmia
+              
+              [ vendor.text ]
+              
+            ||
+            
+            { }
+            
+            );
+            
+        // initialize twc sppppmia vendor menu item
+        
+        window
+        
+          .twc
+          
+          .sppppmia
+          
+          [ vendor.text ]
+          
+          [ menuItem.text ]
+          
+          =
+          
+          {
+          
+            productCallback :
+            
+              menuItem.productCallback,
+              
+            dialogTitle :
+            
+              menuItem.dialogTitle,
+              
+            url : menuItem.url
+            
+            };
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-sppppmiarl',
+        
+        dcmnt = window.top.document,
+        
+        destinationElement =
+        
+          dcmnt.getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
+          
+          );
+          
+      const
+      
+        sourceVersion =
+        
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
+        
+          ! destinationElement
+          
+          ||
+          
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Store Page Products Panel Product Menu Item Add Register -->
