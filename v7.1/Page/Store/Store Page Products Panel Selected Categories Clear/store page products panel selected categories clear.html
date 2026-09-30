@@ -1,0 +1,672 @@
+<!--
+
+  begin TWC Store Page Products Panel Multiple Products Menu Item Add Register
+  
+  -->
+  
+  <!--
+  
+    store page products panel multiple products menu item add register
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.2
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-spppscc" data-version="0.1.0">
+  
+    <script>
+    
+      ( ( ) => {
+      
+        const
+        
+          vendor = {
+          
+            text : 'TWC',
+            
+            url : 'https://github.com/tomsWebConsulting/twcsl#:~:text=Tom\'s Web Consulting Squarespace Library'
+            
+            },
+            
+          menuItem = {
+          
+            text : 'Clear Categories',
+            
+            productCallback : async (
+            
+              productId,
+              
+              crumb
+              
+              ) => {
+              
+                debugger;
+                
+                /*
+                
+                  store page products panel selected categories clear
+                  
+                  License         : < https://tinyurl.com/s872fb68 >
+                  
+                  Version         : 0.1.0
+                  
+                  SS Version      : 7.1
+                  
+                  Note            : this code makes calls to unofficial
+                                    Squarespace APIs
+                  
+                  Copyright       : 2026 Thomas Creedon
+                                    
+                                    Tom's Web Consulting
+                                    
+                                    < http://www.tomsWeb.consulting/ >
+                  
+                  */
+                  
+                const codeKey =
+                
+                  'twc-spppscc';
+                  
+                let
+                
+                  categories,
+                  
+                  categoryIdAll,
+                  
+                  url;
+                  
+                // category id all
+                
+                {
+                
+                  const collectionId =
+                  
+                    document
+                    
+                      .querySelector (
+                      
+                        'iframe[ data-testid = "sqs-site-frame" ]'
+                        
+                        )
+                        
+                      ?.contentWindow
+                      
+                      .Static
+                      
+                      .SQUARESPACE_CONTEXT
+                      
+                      .collectionId;
+                      
+                  // bail if no collection id
+                  
+                  if ( ! collectionId )
+                  
+                    return;
+                    
+                  url =
+                  
+                    `/api/product-content-service/products/${
+                    
+                      collectionId
+                      
+                      }/categories/tree`;
+                      
+                  try {
+                  
+                    const response =
+                    
+                      await fetch ( url );
+                      
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    categoryIdAll =
+                    
+                      await
+                      
+                      response.json ( );
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          }
+                          
+                        there has been a problem with your
+                        
+                        fetch get operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
+                      
+                      }
+                      
+                    categoryIdAll =
+                    
+                      categoryIdAll
+                      
+                        .categoryTree
+                        
+                        .filter ( c =>
+                        
+                          c.displayName
+                          
+                          ===
+                          
+                          'All'
+                          
+                          )
+                          
+                        [ 0 ]
+                        
+                        .id;
+                        
+                  }
+                  
+                // categories
+                
+                {
+                
+                  url =
+                  
+                    `/api/commerce/products/${
+                    
+                      productId
+                      
+                      }`;
+                      
+                  try {
+                  
+                    const response =
+                    
+                      await fetch ( url );
+                      
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    categories =
+                    
+                      await
+                      
+                      response.json ( );
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          }
+                          
+                        there has been a problem with your
+                        
+                        fetch get operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
+                      
+                      }
+                      
+                  categories = categories
+                  
+                    .categoryIds;
+                    
+                  }
+                  
+                // clear categories
+                
+                {
+                
+                  categories = categories
+                  
+                    .filter ( e =>
+                    
+                      e
+                      
+                      !==
+                      
+                      categoryIdAll
+                      
+                      );
+                      
+                  // bail if no categories
+                  
+                  if ( ! categories.length )
+                  
+                    return true;
+                    
+                  const prefix =
+                  
+                    'categoryIds=';
+                    
+                  categories = prefix
+                  
+                    +
+                    
+                    categories.join (
+                    
+                      `&${ prefix }`
+                      
+                      );
+                      
+                  url =
+                  
+                    `/api/commerce/products/${
+                    
+                      productId
+                      
+                      }/categories/unassign?${
+                      
+                        categories
+                        
+                        }`;
+                        
+                  try {
+                  
+                    const response =
+                    
+                      await fetch (
+                      
+                        url,
+                        
+                        {
+                        
+                          body : categories,
+                          
+                          headers : {
+                          
+                            'Accept' :
+                            
+                              'application/json, text/plain, */*',
+                              
+                            'X-Csrf-Token' :
+                            
+                              crumb
+                              
+                            },
+                            
+                          method : 'POST'
+                          
+                          }
+                          
+                        );
+                        
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          }
+                          
+                        there has been a problem with your
+                        
+                        fetch post operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
+                      
+                      }
+                      
+                  }
+                  
+                return true;
+                
+                },
+                
+            dialogTitle : 'Store Page Products Panel Selected Categories Clear',
+            
+            url : 'https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear#store-page-products-panel-selected-categories-clear'
+            
+            };
+            
+        /* do not change anything below, there be the borg here */
+        
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc spppmpmia sub-module
+        
+        window.twc.spppmpmia =
+        
+          window.twc.spppmpmia || { };
+          
+        // initialize twc spppmpmia vendor sub-module
+        
+        window
+        
+          .twc
+          
+          .spppmpmia
+          
+          [ vendor.text ]
+          
+          =
+        
+          ( ( self ) => {
+          
+            const options = {
+            
+              url : vendor.url
+              
+              };
+              
+            Object
+            
+              .assign (
+              
+                self,
+                
+                options
+                
+                );
+                
+            return self;
+            
+            } )
+            
+          (
+          
+            window
+            
+              .twc
+              
+              .spppmpmia
+              
+              [ vendor.text ]
+              
+            ||
+            
+            { }
+            
+            );
+            
+        // initialize twc spppmpmia vendor menu item
+        
+        window
+        
+          .twc
+          
+          .spppmpmia
+          
+          [ vendor.text ]
+          
+          [ menuItem.text ]
+          
+          =
+          
+          {
+          
+            productCallback :
+            
+              menuItem.productCallback,
+              
+            dialogTitle :
+            
+              menuItem.dialogTitle,
+              
+            url : menuItem.url
+            
+            };
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-spppscc',
+        
+        dcmnt = window.top.document,
+        
+        destinationElement =
+        
+          dcmnt.getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
+          
+          );
+          
+      const
+      
+        sourceVersion =
+        
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
+        
+          ! destinationElement
+          
+          ||
+          
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!--
+  
+    end TWC Store Page Products Panel Multiple Products Menu Item Add Register
+    
+    -->
