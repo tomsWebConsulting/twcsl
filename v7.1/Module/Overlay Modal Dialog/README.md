@@ -8,7 +8,7 @@ Simple overlay modal dialog module.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -139,6 +139,11 @@ Please consider [making a donation][3].
 
 ## Changes
 
+* **2026-09-29**
+
+  * fixed hide dialog instead of removing it
+  * bumped version to 0.2.1
+  
 * **2026-08-15**
 
   * fixed dialog layout

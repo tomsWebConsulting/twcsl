@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.2.0
+    Version         : 0.2.1
     
     SS Version      : 7.1
     
@@ -22,7 +22,7 @@
   
     title = 'Overlay Modal Dialog',
     
-    version = '0.2.0',
+    version = '0.2.1',
   
     s = `
     
@@ -214,7 +214,15 @@
     
       close ( ) {
       
-        overlayElement.remove ( );
+        overlayElement
+        
+          .style
+          
+          .display
+          
+          =
+          
+          '';
         
         },
         
