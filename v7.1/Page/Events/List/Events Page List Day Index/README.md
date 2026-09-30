@@ -8,7 +8,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
 ### Version
 
- * 0.2.2
+ * 0.2.3
 
 #### SS Version
 
@@ -19,10 +19,6 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
   * [Squarespace plan][3] that supports [JavaScript][4].
   
   * [Events Page List Day Wrapper][5].
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -58,10 +54,12 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
   desired. This button will be used as a template for all other buttons. Remove
   the Text block.
 
-## Note
+## Notes
 
-If the effect is not showing up as expected, when editing your site, reload the
+If this effect is not showing up as expected, when editing your site, reload the
 page.
+
+Testing this effect in the editor the may trigger the page editor.
 
 ## Demo
 
@@ -73,6 +71,11 @@ Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-09-30**
+
+  * updated to work with recent Squarespace changes
+  * bumped version to 0.2.3
+  
 * **2025-05-29**
 
   * added CSS to try and keep oval buttons from overlapping

@@ -4,21 +4,21 @@
   
     events page list day index
     
-    License       : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version       : 0.2.2
+    Version           : 0.2.3
     
-    SS Version    : 7.1
+    SS Version        : 7.1
     
     Fluid
     Engine
-    Compatible    : Not Applicable
+    Compatible        : Not Applicable
     
-    Dependencies  : events page list day wrapper
+    Dependencies      : events page list day wrapper
     
-    Copyright     : 2025 Thomas Creedon
-                    
-                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2025-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -26,31 +26,41 @@
     
   <style>
   
-    body:not( .sqs-is-page-editing ).primary-button-shape-oval #siteWrapper.site-wrapper .twc-epldi .sqs-button-element--primary {
+    body:not( .sqs-is-page-editing ) {
     
-      --primary-button-padding-x : 0;
+      &.primary-button-shape-oval #siteWrapper.site-wrapper .twc-epldi .sqs-button-element--primary {
       
+        --primary-button-padding-left : 0;
+        --primary-button-padding-right : 0;
+        --primary-button-padding-x : 0;
+        
+        }
+        
+      .twc-epldi a {
+      
+        display : flex;
+        gap : 0.25em;
+        justify-content : center;
+        width : 100%;
+        
+        }
+        
       }
       
-    body:not( .sqs-is-page-editing ) .twc-epldi a {
+    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row {
     
-      display : flex;
-      gap : 0.25em;
-      justify-content : center;
-      width : 100%;
+      & + .sqs-row .sqs-block:not( .float ):first-child {
       
-      }
+        padding-top : 0;
+        
+        }
+        
+      .sqs-block:not( .float ):not( .sqs-feature-gated-wrapper ):first-child:last-child {
       
-    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row + .sqs-row .sqs-block:not( .float ):first-child {
-    
-      padding-top : 0;
-      
-      }
-      
-    .twc-epldi .sqs-layout:not( .sqs-editing ) .sqs-row .sqs-block:not( .float ):not( .sqs-feature-gated-wrapper ):first-child:last-child {
-    
-      padding-bottom : 17px;
-      
+        padding-bottom : 17px;
+        
+        }
+        
       }
       
     @media screen and ( min-width : 496px ) and ( max-width : 767px ) {
@@ -80,15 +90,19 @@
   
     ( ( ) => {
     
+      // debugger;
+      
       const
       
-        version = '0.2.2',
+        title = 'Events Page List Day Index',
         
-        s = `Events Page List Day Index v${ version }
+        version = '0.2.3',
+        
+        s = `${ title } v${ version }
         
           License < https://tinyurl.com/s872fb68 >
           
-          © 2025 Thomas Creedon
+          © 2025-2026 Thomas Creedon
           
           Tom's Web Consulting < http://www.tomsWeb.consulting >`
           
@@ -96,347 +110,397 @@
           
       console.log ( s );
       
-      const callback = ( ) => {
+      let html = '';
       
-        const isEventsPage = ( ( ) => {
+      const
+      
+        codeKey = 'twc-epldi',
         
-          const
+        context = Static.SQUARESPACE_CONTEXT,
+        
+        selector =
+        
+          `[ data-sqsp-block = "button" ] a[ href ^= "#${
           
-            selector = [
-          
-              'body[ class~="collection-type-events" ]',
-              
-              'body[ class*="collection-type-events-" ]'
-              
-              ]
-              
-              .join ( ', ' ),
-              
-            is = Boolean (
+            codeKey
             
+            }" ] `,
+            
+        domContentLoadedCallback =
+        
+          ( ) => {
+          
+            const isEventsPage =
+            
+              !!
+              
               document
               
-                .querySelectorAll ( selector )
+                .querySelectorAll (
                 
-                .length
-                
-              );
+                  [
+                  
+                    'body[ class *= "collection-type-events-" ]',
+                    
+                    'body[ class ~= "collection-type-events" ]'
+                    
+                    ]
+                    
+                    .join ( ', ' )
+                    
+                  )
+                  
+                  .length;
+                  
+            // bail if not events page
+            
+            if ( ! isEventsPage ) return;
+            
+            const isList =
+            
+              ! context.item?.id;
               
-          return is;
-          
-          } ) ( );
-          
-        if ( ! isEventsPage ) return; // bail if not events page
-        
-        const isList
-        
-          =
-          
-          !
-          
-          Static
-          
-            .SQUARESPACE_CONTEXT
+            // bail if not list page
             
-            .item
+            if ( ! isList ) return;
             
-            ?.id;
+            let element = document
             
-        if ( ! isList ) return; // bail if not list page
-        
-        const codeKey = 'twc-epldi';
-        
-        let
-        
-          selector = `.sqs-block-button a[ href^="#${ codeKey } "] `,
-          
-          element = document
-          
-            .querySelector ( selector );
-            
-        const hasTrigger = element !== null;
-        
-        if ( ! hasTrigger ) return; // bail if no trigger element
-        
-        const
-        
-          elements = document
-          
-            .querySelectorAll ( '.twc-epldw' ),
-            
-          days = elements.length;
-            
-        if ( ! days ) return; // bail if no day wrappers
-        
-        const
-        
-          dateOptions = JSON
-          
-            .parse (
-            
-              element
-            
-              .getAttribute ( 'href' )
+              .querySelector ( selector );
               
-              .split ( `#${ codeKey } ` )
-              
-              [ 1 ]
-              
-              .replace ( /\s*,\s*}$/, '}' )
-              
-              .replace ( /\s*([\w]+)\s*:\s*([\w]+)\s*/g, '"$1":"$2"' )
-              
-              );
+            // const hasTrigger = element !== null;
             
-        let html = '';
-        
-        element = element
-        
-          .closest ( '.sqs-block-button' );
-          
-        const
-        
-          buttonColumns = Number (
-          
-            element
+            // bail if no element
             
-              .parentElement
-              
-              .getAttribute ( 'class' )
-              
-              .match ( /sqs-col-(\d+)/ )
-              
-              [ 1 ]
-              
-            ),
+            if ( ! element ) return;
             
-          buttonElement = element
-          
-            .cloneNode ( true ),
-            
-          buttonsPerRow = 12 / buttonColumns,
-          
-          callback = ( element, index ) => {
-          
-            let d = element
-            
-              .querySelector (
-              
-                '.eventlist-meta-date .event-date[ datetime ]'
-                
-                )
-                
-                .getAttribute ( 'datetime' )
-                
-                +
-                
-                'T00:00:00';
-                
             const
             
-              anchorElement
+              elements = document
               
-                =
+                .querySelectorAll (
                 
-                buttonElement
-                
-                  .querySelector ( 'a' ),
-                  
-              language = Static
-              
-                .SQUARESPACE_CONTEXT
-                
-                .website
-                
-                .language,
-                
-              timeZone = Static
-              
-                .SQUARESPACE_CONTEXT
-                
-                .website
-                
-                .timeZone,
-                
-              dateTimeFormatOptions = {
-              
-                timeZone : timeZone
-                
-                },
-                
-              longOffsetFormatter = new Intl
-              
-                .DateTimeFormat (
-                
-                  language,
-                  
-                  {
-                  
-                    timeZone : timeZone, 
-                    
-                    timeZoneName : 'longOffset'
-                    
-                    }
-                    
-                  ),
-                  
-              longOffsetString = longOffsetFormatter
-              
-                .format (
-                
-                  new Date ( d )
+                  '.twc-epldw'
                   
                   ),
                   
-              gmtOffset = longOffsetString
+              days = elements.length;
               
-                .split ( 'GMT' )
-                
-                [ 1 ];
-                
-            Object.assign (
+            // bail if no day wrappers
             
-              dateTimeFormatOptions,
-              
-              dateOptions
-              
-              );
-              
-            // date html
+            if ( ! days ) return;
             
-            {
+            const
             
-              d = new Date (
+              dateOptions = JSON
               
-                `${ d }${ gmtOffset }`
+                .parse (
                 
-                );
+                  element
                 
-              d
-              
-                = 
-                
-                '<span>'
-                
-                +
-                
-                d
-                
-                  .toLocaleDateString (
+                  .getAttribute ( 'href' )
                   
-                    language,
+                  .split ( `#${ codeKey } ` )
+                  
+                  [ 1 ]
+                  
+                  .replace ( /\s*,\s*}$/, '}' )
+                  
+                  .replace (
+                  
+                    /\s*([\w]+)\s*:\s*([\w]+)\s*/g,
                     
-                    dateTimeFormatOptions
+                    '"$1":"$2"'
                     
                     )
                     
-                    .split ( ' ' )
-                    
-                    .join ( '</span><span>')
-                    
-                +
+                  );
                 
-                '</span>';
-                
-              }
-              
-            anchorElement
+            element = element.closest (
             
-              .setAttribute (
+              '.sqs-block-button'
               
-                'href',
+              );
+              
+            const
+            
+              buttonColumns = Number (
+              
+                element
                 
-                `#${
-                
-                  element
+                  .parentElement
                   
-                    .getAttribute ( 'id' )
+                  .getAttribute ( 'class' )
+                  
+                  .match ( /sqs-col-(\d+)/ )
+                  
+                  [ 1 ]
+                  
+                ),
+                
+              buttonElement = element
+              
+                .cloneNode ( true ),
+                
+              buttonsPerRow =
+              
+                12 / buttonColumns,
+                
+              sectionCallback =
+              
+                ( element, index ) => {
+                
+                  let d = element
+                  
+                    .querySelector (
                     
-                  }`
+                      '.eventlist-meta-date .event-date[ datetime ]'
+                      
+                      )
+                      
+                      .getAttribute ( 'datetime' )
+                      
+                      +
+                      
+                      'T00:00:00';
+                      
+                  const
                   
+                    anchorElement =
+                    
+                      buttonElement
+                      
+                        .querySelector ( 'a' ),
+                        
+                    language = context
+                    
+                      .website
+                      
+                      .language,
+                      
+                    timeZone = context
+                    
+                      .website
+                      
+                      .timeZone,
+                      
+                    dateTimeFormatOptions = {
+                    
+                      timeZone : timeZone
+                      
+                      },
+                      
+                    longOffsetFormatter =
+                    
+                      new Intl.DateTimeFormat (
+                      
+                        language,
+                        
+                        {
+                        
+                          timeZone : timeZone,
+                          
+                          timeZoneName :
+                          
+                            'longOffset'
+                            
+                          }
+                          
+                        ),
+                        
+                    longOffsetString =
+                    
+                      longOffsetFormatter
+                      
+                        .format (
+                        
+                          new Date ( d )
+                          
+                          ),
+                          
+                    gmtOffset = longOffsetString
+                    
+                      .split ( 'GMT' )
+                      
+                      [ 1 ];
+                      
+                  Object.assign (
+                  
+                    dateTimeFormatOptions,
+                    
+                    dateOptions
+                    
+                    );
+                    
+                  // date html
+                  
+                  {
+                  
+                    d = new Date (
+                    
+                      `${ d }${ gmtOffset }`
+                      
+                      );
+                      
+                    d
+                    
+                      = 
+                      
+                      '<span>'
+                      
+                      +
+                      
+                      d
+                      
+                        .toLocaleDateString (
+                        
+                          language,
+                          
+                          dateTimeFormatOptions
+                          
+                          )
+                          
+                        .split ( ' ' )
+                        
+                        .join ( '</span><span>')
+                        
+                      +
+                      
+                      '</span>';
+                      
+                    }
+                    
+                  anchorElement.setAttribute (
+                  
+                    'href',
+                    
+                    `#${
+                    
+                      element
+                      
+                        .getAttribute ( 'id' )
+                        
+                      }`
+                      
+                    );
+                    
+                  anchorElement.innerHTML = d;
+                  
+                  if (
+                  
+                    index % buttonsPerRow === 0
+                    
+                    ) {
+                    
+                      // row close
+                      
+                      if ( index !== 0 )
+                      
+                        html += '</div>';
+                        
+                      // row open
+                      
+                      html +=
+                      
+                        '<div class = "row sqs-row">';
+                        
+                      }
+                      
+                  html += `
+                  
+                    <div class = "col sqs-col-${
+                    
+                      buttonColumns
+                      
+                      } span-${
+                      
+                        buttonColumns
+                        
+                        }">
+                        
+                      ${
+                      
+                        buttonElement
+                      
+                        .outerHTML
+                        
+                        }
+                        
+                      </div>
+                      
+                    `;
+                    
+                  };
+                  
+            element = element.closest (
+            
+              '.sqs-col-12'
+              
+              );
+              
+            element
+            
+              .closest ( '.page-section' )
+              
+              .classList
+              
+              .add ( codeKey );
+              
+            // set up button element for use as template
+            
+            {
+            
+              const attribute = 'id';
+              
+              buttonElement.removeAttribute (
+              
+                `${ attribute }`
+                
                 );
                 
-            anchorElement
+              buttonElement
+              
+                .querySelectorAll (
+                
+                  `[ ${ attribute } ]`
+                  
+                  )
+                  
+                .forEach ( e =>
+                
+                  e.removeAttribute (
+                  
+                    `${ attribute }`
+                    
+                    )
+                    
+                  );
+                  
+              }
+              
+            elements.forEach (
+            
+              sectionCallback
+              
+              );
+              
+            element
             
               .innerHTML
               
               =
               
-              d;
-              
-            if ( index % buttonsPerRow === 0 ) {
-            
-              if ( index !== 0 ) html += '</div>'; // row close
-              
-              html += '<div class="row sqs-row">'; // row open
-              
-              }
-              
-            html += `
-            
-              <div class="col sqs-col-${ buttonColumns } span-${ buttonColumns }">
-              
-                ${
-                
-                  buttonElement
-                
-                  .outerHTML
-                  
-                  }
-                  
-                </div>
-                
-              `;
+              `${ html }</div>`;
               
             };
             
-        element = element
-        
-          .closest ( '.sqs-col-12' );
-          
-        element
-        
-          .closest ( '.page-section' )
-          
-          .classList
-          
-          .add ( codeKey );
-          
-        // set up button element for use as template
-        
-        {
-        
-          const attribute = 'id';
-          
-          buttonElement
-          
-            .removeAttribute ( `${ attribute }` );
-            
-          buttonElement
-          
-            .querySelectorAll ( `[ ${ attribute } ]` )
-            
-            .forEach ( e => e.removeAttribute ( `${ attribute }` ) );
-            
-          }
-          
-        elements
-        
-          .forEach ( callback );
-          
-        element
-        
-          .innerHTML
-          
-          =
-          
-          `${ html }</div>`;
-          
-        };
-        
-      document
+      document.addEventListener (
       
-        .addEventListener ( 'DOMContentLoaded', callback );
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
         
       } ) ( );
       
