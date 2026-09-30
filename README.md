@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 618 effects. Each effect has it's own version number, code,
+twcsl contains 620 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -143,6 +143,8 @@ not necessarily designed to work together.
         
       * [Events Page List Day Wrapper](Page/Events/List/Events%20Page%20List%20Day%20Wrapper)
         
+        * [Events Page List Day Wrapper.bbprojectd](Page/Events/List/Events%20Page%20List%20Day%20Wrapper/Events%20Page%20List%20Day%20Wrapper.bbprojectd)
+          
       * [Events Page List Event Row](Page/Events/List/Events%20Page%20List%20Event%20Row)
         
         * [Events Page List Event Row.bbprojectd](Page/Events/List/Events%20Page%20List%20Event%20Row/Events%20Page%20List%20Event%20Row.bbprojectd)
@@ -549,6 +551,8 @@ not necessarily designed to work together.
             
         * [Events Page List Day Index](v7.1/Page/Events/List/Events%20Page%20List%20Day%20Index)
           
+          * [Events Page List Day Index.bbprojectd](v7.1/Page/Events/List/Events%20Page%20List%20Day%20Index/Events%20Page%20List%20Day%20Index.bbprojectd)
+            
         * [Events Page List Grid](v7.1/Page/Events/List/Events%20Page%20List%20Grid)
           
           * [Events Page List Grid.bbprojectd](v7.1/Page/Events/List/Events%20Page%20List%20Grid/Events%20Page%20List%20Grid.bbprojectd)
@@ -569,7 +573,7 @@ not necessarily designed to work together.
           
       * [Store Page Products Panel Selected Categories Clear](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear)
         
-        * [Store Page Products Panel Selected Categories Clear.bbprojectd](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear.bbprojectd)
+        * [Store Page Products Panel Product Categories Clear.bbprojectd](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear/Store%20Page%20Products%20Panel%20Product%20Categories%20Clear.bbprojectd)
           
       * [Store Page Products Panel Selected Categories Paste](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste)
         
