@@ -24,30 +24,37 @@ Paste categories to selected Products in a Store Page Products Panel.
 
 ---
 
-## Install Options
+## Install
 
-* Page Specific
-
-  Use this option if you want to have this effect on only one Store Page.
+* Install code from **[Store Page Products Panel Multiple Products Menu Item
+  Add][6]**. After you install the code be sure to continue on with the rest of
+  the steps.
   
-  * Add code from file **[store page products panel selected categories
-    paste.html][6]** to Store Settings > Advanced > Page Header Code Injection
-    for the Store Page.
+* Options
+
+  * Page Specific
+  
+    Use this option if you want to have this effect on only one Store Page.
     
-  * Refer to [per-page code injection][7] for details.
-  
-* Site-wide
-
-  Use this option if you want to have this effect on all Store Pages.
-  
-  * Add code from file **[store page products panel selected categories
-    paste.html][6]** to Website > Pages > Custom Code > Code Injection > HEADER.
+    * Add code from file **[store page products panel selected categories
+      paste.html][7]** to Store Settings > Advanced > Page Header Code Injection
+      for the Store Page.
+      
+    * Refer to [per-page code injection][8] for details.
     
-  * Refer to [Add code to code injection][8] for details.
+  * Site-wide
+  
+    Use this option if you want to have this effect on all Store Pages.
+    
+    * Add code from file **[store page products panel selected categories
+      paste.html][7]** to Website > Pages > Custom Code > Code Injection >
+      HEADER.
+      
+    * Refer to [Add code to code injection][9] for details.
 
 ## How To Use
 
-* Use [Store Page Products Panel Product Categories Copy][9] to copy
+* Use [Store Page Products Panel Product Categories Copy][10] to copy
   Categories.
 
 * In the Product Panel select Products.
@@ -61,7 +68,7 @@ massive additions of categories to your products.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -91,8 +98,9 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add
-[6]: store%20page%20products%20panel%20selected%20categories%20paste.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add#store%20page%20products%20panel%20multiple%20products%20menu%20item%20add
+[7]: store%20page%20products%20panel%20selected%20categories%20paste.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
