@@ -62,7 +62,7 @@ Please consider [making a donation][9].
 * **2026-09-30**
 
   * added border to vendor element
-  * bumped version to 0.2.1 (commit be3c7df406f2d570294a358df65b17fd88ad0428)
+  * bumped version to 0.2.1 (commit bcacddbea1541a28c0c93872324662d044f90f30)
   
 * **2026-09-29**
 
