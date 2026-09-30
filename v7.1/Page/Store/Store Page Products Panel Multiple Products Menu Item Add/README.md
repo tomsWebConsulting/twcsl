@@ -63,7 +63,7 @@ Please consider [making a donation][9].
 
   * added register example
   * made menu item url optional
-  * bumped version to 0.2.0 (commit d686ace5f67785a7c2549df8a2ddfc9589f05b2b)
+  * bumped version to 0.2.0 (commit be3c7df406f2d570294a358df65b17fd88ad0428)
   
 * **2026-09-28**
 
