@@ -8,7 +8,7 @@ Add menu items to selected Products pop up menu in a Store Page Products Panel.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -48,18 +48,22 @@ Add menu items to selected Products pop up menu in a Store Page Products Panel.
   
 * This effect passes a product id and a crumb to your callback function.
 
+## Registration Example
+
+Please see [store page products panel multiple products menu item add register
+log][8] for a minimal example of how to register your menu item.
+
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
-<!-- * **2026-09-DD**
+* **2026-09-29**
 
-  * reworked code to use Store Page Products Panel Multiple Products Menu Item
-    Add Register
-  * bumped version to 0.3.0 (commit d686ace5f67785a7c2549df8a2ddfc9589f05b2b)
-  -->
+  * added register example
+  * made menu item url optional
+  * bumped version to 0.2.0 (commit d686ace5f67785a7c2549df8a2ddfc9589f05b2b)
   
 * **2026-09-28**
 
@@ -72,4 +76,5 @@ Please consider [making a donation][8].
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [7]: store%20page%20products%20panel%20multiple%20products%20menu%20item%20add%20register.html#L1
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: store%20page%20products%20panel%20multiple%20products%20menu%20item%20add%20register%20log.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
