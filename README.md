@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 620 effects. Each effect has it's own version number, code,
+twcsl contains 622 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -570,6 +570,10 @@ not necessarily designed to work together.
       * [Store Page Products Panel Multiple Products Menu Item Add](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add)
         
         * [Store Page Products Panel Multiple Products Menu Item Add.bbprojectd](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add.bbprojectd)
+          
+      * [Store Page Products Panel Selected Categories Clear](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear)
+        
+        * [Store Page Products Panel Selected Categories Clear.bbprojectd](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear/Store%20Page%20Products%20Panel%20Selected%20Categories%20Clear.bbprojectd)
           
       * [Store Page Products Panel Selected Categories Paste](v7.1/Page/Store/Store%20Page%20Products%20Panel%20Selected%20Categories%20Paste)
         
