@@ -1,4 +1,4 @@
-# Store Page Products Panel Selected Categories Clear
+# Store Page Products Panel Product Categories Clear
 
 ### [License][1]
 
