@@ -81,7 +81,7 @@ Please consider [making a donation][9].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add
-[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add#store%20page%20products%20panel%20multiple%20products%20menu%20item%20add
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add#store-page-products-panel-multiple-products-menu-item-add
 [6]: store%20page%20products%20panel%20selected%20categories%20clear.html#L1
 [7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
