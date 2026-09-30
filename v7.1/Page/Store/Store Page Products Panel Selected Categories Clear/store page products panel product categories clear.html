@@ -22,7 +22,7 @@
     
     -->
     
-  <template id="twc-sppppcc" data-version="0.1.0">
+  <template id="twc-sppppc-clr" data-version="0.1.0">
   
     <script>
     
@@ -50,7 +50,7 @@
               
               ) => {
               
-                debugger;
+                // debugger;
                 
                 /*
                 
@@ -73,32 +73,46 @@
                   
                   */
                   
-                const collectionId =
+                const codeKey =
                 
-                  document
+                  'twc-sppppc-clr';
                   
-                    .querySelector (
-                    
-                      'iframe[ data-testid = "sqs-site-frame" ]'
-                      
-                      )
-                      
-                    ?.contentWindow
-                    
-                    .Static
-                    
-                    .SQUARESPACE_CONTEXT
-                    
-                    .collectionId;
-                    
-                // bail if no collection id
+                let
                 
-                if ( ! collectionId ) return;
-                
-                const
-                
-                  codeKey = 'twc-sppppc-clr',
+                  categories,
                   
+                  categoryIdAll,
+                  
+                  url;
+                  
+                // category id all
+                
+                {
+                
+                  const collectionId =
+                  
+                    document
+                    
+                      .querySelector (
+                      
+                        'iframe[ data-testid = "sqs-site-frame" ]'
+                        
+                        )
+                        
+                      ?.contentWindow
+                      
+                      .Static
+                      
+                      .SQUARESPACE_CONTEXT
+                      
+                      .collectionId;
+                      
+                  // bail if no collection id
+                  
+                  if ( ! collectionId )
+                  
+                    return;
+                    
                   url =
                   
                     `/api/product-content-service/products/${
@@ -107,85 +121,107 @@
                       
                       }/categories/tree`;
                       
-                let categoryIdAll;
-                
-                try {
-                
-                  const response =
+                  try {
                   
-                    await fetch ( url );
+                    const response =
                     
-                  if ( ! response.ok ) {
-                  
-                    const s = `
-                    
-                      ${
+                      await fetch ( url );
                       
-                        codeKey
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
                         
-                        } network response was not ok ${
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
                         
-                          response.statusText
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    categoryIdAll =
+                    
+                      await
+                      
+                      response.json ( );
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
                           
                           }
                           
-                      `
+                        there has been a problem with your
+                        
+                        fetch get operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
                       
-                      .trim ( )
+                      }
                       
-                      .replace ( /\s+/gm, ' ' );
-                      
-                    throw new Error ( s );
+                    categoryIdAll =
                     
-                    }
-                    
-                  categoryIdAll =
+                      categoryIdAll
+                      
+                        .categoryTree
+                        
+                        .filter ( c =>
+                        
+                          c.displayName
+                          
+                          ===
+                          
+                          'All'
+                          
+                          )
+                          
+                        [ 0 ]
+                        
+                        .id;
+                        
+                  }
                   
-                    await response.json ( );
-                    
-                  } catch ( error ) {
-                  
-                    const s = `
-                    
-                      ${
-                      
-                        codeKey
-                        
-                        }
-                        
-                      there has been a problem with your
-                      
-                      fetch get operation, ${
-                      
-                        error
-                        
-                        }.
-                        
-                      `
-                      
-                      .trim ( )
-                      
-                      .replace ( /\s+/gm, ' ' );
-                      
-                    console.error ( s );
-                    
-                    }
-                    
-                  categoryIdAll = categoryIdAll
-                  
-                    .categoryTree
-                    
-                    .filter ( c =>
-                    
-                      c.displayName === 'All'
-                      
-                      )
-                      
-                    [ 0 ]
-                    
-                    .id;
-                    
-                ///
+                // categories
+                
+                {
                 
                   url =
                   
@@ -195,85 +231,229 @@
                       
                       }`;
                       
-                let categories;
-                
-                try {
-                
-                  const response =
+                  try {
                   
-                    await fetch ( url );
+                    const response =
                     
-                  if ( ! response.ok ) {
-                  
-                    const s = `
-                    
-                      ${
+                      await fetch ( url );
                       
-                        codeKey
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
                         
-                        } network response was not ok ${
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
                         
-                          response.statusText
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    categories =
+                    
+                      await
+                      
+                      response.json ( );
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
                           
                           }
                           
-                      `
+                        there has been a problem with your
+                        
+                        fetch get operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
                       
-                      .trim ( )
+                      }
                       
-                      .replace ( /\s+/gm, ' ' );
-                      
-                    throw new Error ( s );
-                    
-                    }
-                    
-                  categories =
-                  
-                    await response.json ( );
-                    
                   categories = categories
                   
                     .categoryIds;
                     
-                  } catch ( error ) {
+                  }
                   
-                    const s = `
-                    
-                      ${
-                      
-                        codeKey
-                        
-                        }
-                        
-                      there has been a problem with your
-                      
-                      fetch get operation, ${
-                      
-                        error
-                        
-                        }.
-                        
-                      `
-                      
-                      .trim ( )
-                      
-                      .replace ( /\s+/gm, ' ' );
-                      
-                    console.error ( s );
-                    
-                    }
-                    
-                localStorage.setItem (
+                // clear categories
                 
-                  codeKey,
+                {
+                
+                  const prefix =
                   
-                  JSON.stringify ( categories )
+                    'categoryIds=';
+                    
+                  categories = categories
                   
-                  );
+                    .filter ( e =>
+                    
+                      e
+                      
+                      !==
+                      
+                      categoryIdAll
+                      
+                      );
+                      
+                  categories = prefix
+                  
+                    +
+                    
+                    categories.join (
+                    
+                      `&${ prefix }`
+                      
+                      );
+                      
+                  url =
+                  
+                    `/api/commerce/products/${
+                    
+                      productId
+                      
+                      }/categories/unassign?${
+                      
+                        categories
+                        
+                        }`;
+                        
+                  try {
+                  
+                    const response =
+                    
+                      await fetch (
+                      
+                        url,
+                        
+                        {
+                        
+                          body : categories,
+                          
+                          headers : {
+                          
+                            'Accept' :
+                            
+                              'application/json, text/plain, */*',
+                              
+                            'X-Csrf-Token' :
+                            
+                              crumb
+                              
+                            },
+                            
+                          method : 'POST'
+                          
+                          }
+                          
+                        );
+                        
+                    if ( ! response.ok ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          } network response was not ok ${
+                          
+                            response.statusText
+                            
+                            }
+                            
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      throw new Error ( s );
+                      
+                      }
+                      
+                    } catch ( error ) {
+                    
+                      const s = `
+                      
+                        ${
+                        
+                          codeKey
+                          
+                          }
+                          
+                        there has been a problem with your
+                        
+                        fetch post operation, ${
+                        
+                          error
+                          
+                          }.
+                          
+                        `
+                        
+                        .trim ( )
+                        
+                        .replace (
+                        
+                          /\s+/gm,
+                          
+                          ' '
+                          
+                          );
+                          
+                      console.error ( s );
+                      
+                      }
+                      
+                  }
                   
                 },
                 
-            url : 'https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy'
+            url : 'https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Clear#store-page-products-panel-product-categories-clear'
             
             };
             
