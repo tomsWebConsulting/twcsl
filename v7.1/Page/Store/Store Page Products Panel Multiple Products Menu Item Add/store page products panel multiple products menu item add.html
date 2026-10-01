@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.1
+    Version           : 0.2.2
     
     SS Version        : 7.1
     
@@ -31,7 +31,7 @@
         
         License           : < https://tinyurl.com/s872fb68 >
         
-        Version           : 0.2.1
+        Version           : 0.2.2
         
         SS Version        : 7.1
         
@@ -708,26 +708,22 @@
                 
                 if ( ! element ) return;
                 
-                const isProduct = element
+                const productItemElement =
                 
-                  .querySelector (
+                  element.closest (
                   
                     '[ data-test = "product-item" ]'
                     
                     );
                     
-                if ( ! isProduct )
+                if ( productItemElement )
                 
-                  element = element
+                  element =
                   
-                    .closest (
+                    productItemElement
                     
-                      '[ data-test = "product-item" ]'
+                      .parentElement;
                       
-                      )
-                      
-                    ?.parentElement;
-                    
                 const isChecked = element
                   
                   .querySelector (
@@ -736,7 +732,17 @@
                     
                     )
                     
-                  .checked;
+                  ?.checked;
+                  
+                // bail if no checked
+                
+                if (
+                
+                  isChecked === undefined
+                  
+                  )
+                  
+                  return;
                   
                 const fiberKey =
                 
@@ -1238,7 +1244,7 @@
       
         title = 'Store Page Products Panel Multiple Products Menu Item Add',
         
-        version = '0.2.1',
+        version = '0.2.2',
       
         s = `${ title } v${ version }
         

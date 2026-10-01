@@ -8,7 +8,7 @@ Add menu items to selected Products pop up menu in a Store Page Products Panel.
 
 ### Version
 
-  * 0.2.1
+  * 0.2.2
 
 #### SS Version
 
@@ -59,6 +59,11 @@ Please consider [making a donation][9].
 
 ## Changes
 
+* **2026-09-30**
+
+  * fixed issue with isChecked check
+  * bumped version to 0.2.2 (commit bcacddbea1541a28c0c93872324662d044f90f30)
+  
 * **2026-09-30**
 
   * added border to vendor element
