@@ -62,7 +62,7 @@ Please consider [making a donation][9].
 * **2026-09-30**
 
   * fixed issue with isChecked check
-  * bumped version to 0.2.2 (commit bcacddbea1541a28c0c93872324662d044f90f30)
+  * bumped version to 0.2.2 (commit 0f10c905eed05281ef6b17775cbeda9f743bfbdc)
   
 * **2026-09-30**
 
