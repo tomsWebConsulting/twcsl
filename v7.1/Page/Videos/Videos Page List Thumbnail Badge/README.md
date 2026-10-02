@@ -44,7 +44,7 @@ Videos page list thumbnail badge.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/v7.1/Page/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
             
             <!-- end TWC Videos Page List Thumbnail Badge -->
             
@@ -64,7 +64,7 @@ Videos page list thumbnail badge.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/v7.1/Page/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
             
             <!-- end TWC Videos Page List Thumbnail Badge -->
             
