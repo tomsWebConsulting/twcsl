@@ -8,15 +8,11 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.0
+  * 0.3.1
 
 #### SS Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -35,6 +31,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2026-10-02**
+
+  * updated to work with recent Squarespace changes
+  * bumped version to 0.3.1 (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  
 * **2024-10-24**
 
   * reworked the structure of the code
