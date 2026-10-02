@@ -54,7 +54,7 @@ Please consider [making a donation][4].
 * **2026-10-02**
 
   * updated to work with recent Squarespace portfolios new architecture
-  * bumped version to 0.9.1 (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  * bumped version to 0.9.1 (commit 2d033c170c529ba90e0345eabaea5bbbeae77b9b)
   
 * **2026-07-24**
 
