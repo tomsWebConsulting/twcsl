@@ -185,7 +185,7 @@ Please consider [making a donation][26].
   -->
 * **2023-03-24**
 
-  * initial version (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  * initial version (commit d20bbc2d16453d7895a7089f0b0d41be764823f8)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20list%20out%20of%20stock%20badge.less#L1
