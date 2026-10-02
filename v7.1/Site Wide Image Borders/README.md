@@ -8,7 +8,7 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.9.0
+  * 0.9.1
 
 #### SS Version
 
@@ -51,6 +51,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-10-02**
+
+  * updated to work with recent Squarespace portfolios new architecture
+  * bumped version to 0.9.1 (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  
 * **2026-07-24**
 
   * added .custom-rule-sets rule set
