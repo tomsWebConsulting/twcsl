@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 622 effects. Each effect has it's own version number, code,
+twcsl contains 625 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -520,6 +520,12 @@ not necessarily designed to work together.
       * [Blog Page Post Date Go To Add](v7.1/Page/Blog/Blog%20Page%20Post%20Date%20Go%20To%20Add)
         
         * [Blog Page Post Date Go To Add.bbprojectd](v7.1/Page/Blog/Blog%20Page%20Post%20Date%20Go%20To%20Add/Blog%20Page%20Post%20Date%20Go%20To%20Add.bbprojectd)
+          
+    * [Videos](v7.1/Page/Videos)
+      
+      * [Videos Page List Thumbnail Badge](v7.1/Page/Videos/Videos%20Page%20List%20Thumbnail%20Badge)
+        
+        * [Videos Page List Thumbnail Badge.bbprojectd](v7.1/Page/Videos/Videos%20Page%20List%20Thumbnail%20Badge/Videos%20Page%20List%20Thumbnail%20Badge.bbprojectd)
           
     * [Cart](v7.1/Page/Cart)
       
