@@ -44,7 +44,7 @@ Videos page list thumbnail badge.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
             
             <!-- end TWC Videos Page List Thumbnail Badge -->
             
@@ -64,7 +64,7 @@ Videos page list thumbnail badge.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d20bbc2d16453d7895a7089f0b0d41be764823f8/Videos/Videos%20Page%20List%20Thumbnail%20Badge/videos%20page%20list%20thumbnail%20badge.min.js" type="module"></script>
             
             <!-- end TWC Videos Page List Thumbnail Badge -->
             
@@ -101,9 +101,9 @@ Videos page list thumbnail badge.
 
 * In the **EXCERPT** field on a line by itself add the following.
 
-```text
-twc-vpltb : [ enter your badge text here replacing square brackets ]
-```
+  ```text
+  twc-vpltb : [ enter your badge text here replacing square brackets ]
+  ```
 
 ## Badge Options
 
@@ -181,14 +181,14 @@ Please consider [making a donation][26].
 <!-- * **2025-07-03**
 
   * updated to work with Products V2
-  * bumped version to 0.5.1 (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  * bumped version to 0.5.1 (commit d20bbc2d16453d7895a7089f0b0d41be764823f8)
   -->
 * **2023-03-24**
 
   * initial version (commit d20bbc2d16453d7895a7089f0b0d41be764823f8)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: store%20page%20list%20out%20of%20stock%20badge.less#L1
+[2]: videos%20page%20list%20thumbnail%20badge.less#L1
 [3]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
