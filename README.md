@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 625 effects. Each effect has it's own version number, code,
+twcsl contains 629 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -749,6 +749,8 @@ not necessarily designed to work together.
     
   * [Portfolio Page Project Collection Type Class Add](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add)
     
+    * [Portfolio Page Project Collection Type Class Add.bbprojectd](v7.1/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add/Portfolio%20Page%20Project%20Collection%20Type%20Class%20Add.bbprojectd)
+      
   * [Page Site Title Change](v7.1/Page%20Site%20Title%20Change)
     
   * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
@@ -759,6 +761,8 @@ not necessarily designed to work together.
     
   * [Portfolio Page Grid Image Aspect Ratio Change](v7.1/Portfolio%20Page%20Grid%20Image%20Aspect%20Ratio%20Change)
     
+    * [Portfolio Page Grid Image Aspect Ratio Change.bbprojectd](v7.1/Portfolio%20Page%20Grid%20Image%20Aspect%20Ratio%20Change/Portfolio%20Page%20Grid%20Image%20Aspect%20Ratio%20Change.bbprojectd)
+      
   * [Site Wide Image Borders](v7.1/Site%20Wide%20Image%20Borders)
     
     * [Site Wide Image Borders.bbprojectd](v7.1/Site%20Wide%20Image%20Borders/Site%20Wide%20Image%20Borders.bbprojectd)
@@ -817,6 +821,8 @@ not necessarily designed to work together.
         
     * [Section Info](v7.1/Section/Section%20Info)
       
+      * [Section Info.bbprojectd](v7.1/Section/Section%20Info/Section%20Info.bbprojectd)
+        
     * [Auto Layout](v7.1/Section/Auto%20Layout)
       
       * [Section Auto Layout Right Arrow Auto Click](v7.1/Section/Auto%20Layout/Section%20Auto%20Layout%20Right%20Arrow%20Auto%20Click)
@@ -921,6 +927,8 @@ not necessarily designed to work together.
     
   * [Portfolio Page Hover Background Autoplay](v7.1/Portfolio%20Page%20Hover%20Background%20Autoplay)
     
+    * [Portfolio Page Hover Background Autoplay.bbprojectd](v7.1/Portfolio%20Page%20Hover%20Background%20Autoplay/Portfolio%20Page%20Hover%20Background%20Autoplay.bbprojectd)
+      
   * [Element](v7.1/Element)
     
     * [Element Animate](v7.1/Element/Element%20Animate)
