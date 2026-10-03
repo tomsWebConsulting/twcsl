@@ -34,7 +34,7 @@ Please consider [making a donation][5].
 * **2026-10-02**
 
   * updated to work with upcoming Squarespace changes
-  * bumped version to 0.3.2 (commit 6f05492668ef8fb8931ad6856bd62eaa17ac7c0c)
+  * bumped version to 0.3.2 (commit 16160f9dddfa21697efd9b168624c7a804ff25e5)
   
 * **2026-10-02**
 
