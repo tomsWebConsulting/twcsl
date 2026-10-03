@@ -106,7 +106,7 @@ Please consider [making a donation][9].
 
   * fixed issue with incorrect selector
   * removed jQuery dependency
-  * bumped version to 0.2.0
+  * bumped version to 0.2.0 (commit d507c77f09a8992d25113b1b9f64ef5968edb7bf)
   
 * **2023-06-10**
 
