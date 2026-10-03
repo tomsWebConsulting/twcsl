@@ -41,9 +41,9 @@ Copy Blog Page List meta after title.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy/blog%20page%20list%20meta%20copy.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy/blog%20page%20list%20meta%20copy.min.js" type="module"></script>
           
           <!-- end TWC Blog Page List Meta Copy -->
           
@@ -63,9 +63,9 @@ Copy Blog Page List meta after title.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy/blog%20page%20list%20meta%20copy.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d507c77f09a8992d25113b1b9f64ef5968edb7bf/v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy/blog%20page%20list%20meta%20copy.min.js" type="module"></script>
           
           <!-- end TWC Blog Page List Meta Copy -->
           
