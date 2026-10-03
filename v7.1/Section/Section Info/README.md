@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.1
+  * 0.3.2
 
 #### SS Version
 
@@ -31,6 +31,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2026-10-02**
+
+  * updated to work with upcoming Squarespace changes
+  * bumped version to 0.3.2 (commit 6f05492668ef8fb8931ad6856bd62eaa17ac7c0c)
+  
 * **2026-10-02**
 
   * updated to work with recent Squarespace changes
