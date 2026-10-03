@@ -1,29 +1,33 @@
-<!--
+<!-- begin TWC Blog Page List Meta Copy -->
 
-  begin blog page list meta copy
+  <!--
   
-  License       : < https://tinyurl.com/s872fb68 >
-  
-  Version       : 0.1.0
-  
-  SS Version    : 7.1
-  
-  Dependencies  : jQuery
-  
-  Notes         : the code is comprised of a style and script tags. both are
-                  needed for the full effect to work
-  
-  By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  no user serviceable parts below
-  
-  -->
-  
+    blog page list meta copy
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Version      : 7.1
+    
+    Notes           : the code is comprised of a style and script tags. both are
+                      needed for the full effect to work
+    
+    Copyright       : 2023-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
     .blog-masonry .blog-meta-section:nth-of-type( 2 ) {
     
-      margin-top: 20px;
+      margin-top : 20px;
       order : 1;
       
       }
@@ -32,30 +36,108 @@
     
   <script>
   
-    $( ( ) => {
+    ( ( ) => {
     
-      const selector = 'collection-type-blog-masonry.view-list .blog-masonry .entry';
+      // debugger;
       
-      $( selector ).each ( function ( ) {
+      const isList =
       
-        const $this = $( this );
+        !
         
-        let selector = '.blog-meta-section';
+        Static
         
-        const $metaClone = $( selector, $this )
-        
-          .clone ( );
+          .SQUARESPACE_CONTEXT
           
-        selector = '.blog-title';
-        
-        $( selector, $this )
-        
-          .after ( $metaClone );
+          .item
           
-        } );
+          ?.id;
+          
+      // bail if not list page
+      
+      if ( ! isList ) return;
+      
+      const
+      
+        forEachCallback = ( element ) => {
         
-      } );
+          const cloneElement = element
+          
+            .querySelector (
+            
+              '.blog-meta-section'
+              
+              )
+              
+            .cloneNode ( true );
+            
+          element
+          
+            .querySelector ( '.blog-title' )
+            
+            .after ( cloneElement );
+            
+          },
+          
+        selector = '.blog-masonry .entry';
+        
+        domContentLoadedCallback =
+        
+          ( ) => {
+          
+            const isBlogPage =
+            
+              !!
+              
+              document
+              
+                .querySelectorAll (
+                
+                  [
+                  
+                    'body[ class *= "collection-type-blog-" ]',
+                    
+                    'body[ class ~= "collection-type-blog" ]'
+                    
+                    ]
+                    
+                    .join ( ', ' )
+                    
+                  )
+                  
+                  .length;
+                  
+            // bail if not blog page
+            
+            if ( ! isBlogPage ) return;
+            
+            document
+            
+              .querySelectorAll (
+              
+                selector
+                
+                )
+                
+              .forEach ( forEachCallback );
+              
+            };
+            
+      // domContentLoadedCallback ( );
+      
+      //
+      
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
       
     </script>
     
-  <!-- end blog page list meta copy -->
+  <!-- end TWC Blog Page List Meta Copy -->

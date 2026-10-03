@@ -1,0 +1,23 @@
+/*!
+
+  blog page list meta copy
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.2.0
+  
+  SS Version      : 7.1
+  
+  Notes           : the code is comprised of a style and script tags. both are
+                    needed for the full effect to work
+  
+  Copyright       : 2023-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting
+                    
+                    < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+.blog-masonry .blog-meta-section:nth-of-type(2){margin-top:20px;order:1}
