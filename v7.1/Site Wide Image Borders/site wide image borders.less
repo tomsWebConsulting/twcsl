@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.9.1
+    Version           : 0.9.2
     
     SS Version        : 7.1
     
@@ -154,7 +154,7 @@
     
       body[class*="collection-type-blog-"].view-list {
       
-        .page-section[class*="collection-type-blog-"] {
+        [data-sqsp-section="blog-list"] {
         
           .image-wrapper {
           
@@ -197,7 +197,7 @@
       
     .event-list( @boolean ) when ( @boolean = true ) {
     
-      body[class*="collection-type-events-"].view-list .page-section[class*="collection-type-events-"] {
+      body[class*="collection-type-events-"].view-list [data-sqsp-section="events-list"] {
       
         .eventlist-column-thumbnail {
         
