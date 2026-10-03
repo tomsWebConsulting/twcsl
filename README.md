@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 629 effects. Each effect has it's own version number, code,
+twcsl contains 630 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -513,6 +513,10 @@ not necessarily designed to work together.
         
       * [List](v7.1/Page/Blog/List)
         
+        * [Blog Page List Meta Copy](v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy)
+          
+          * [Blog Page List Meta Copy.bbprojectd](v7.1/Page/Blog/List/Blog%20Page%20List%20Meta%20Copy/Blog%20Page%20List%20Meta%20Copy.bbprojectd)
+            
         * [Blog Page List Post Image URL to Source URL](v7.1/Page/Blog/List/Blog%20Page%20List%20Post%20Image%20URL%20to%20Source%20URL)
           
       * [Blog Page Post Title Each Word Style](v7.1/Page/Blog/Blog%20Page%20Post%20Title%20Each%20Word%20Style)
@@ -844,8 +848,6 @@ not necessarily designed to work together.
   * [Header Navigation Link Text Replace With Image](v7.1/Header%20Navigation%20Link%20Text%20Replace%20With%20Image)
     
   * [PSISA Viewport Middle](v7.1/PSISA%20Viewport%20Middle)
-    
-  * [Blog Page List Meta Copy](v7.1/Blog%20Page%20List%20Meta%20Copy)
     
   * [Bookmarklet](v7.1/Bookmarklet)
     
