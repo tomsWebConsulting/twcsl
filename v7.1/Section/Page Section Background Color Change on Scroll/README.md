@@ -46,9 +46,9 @@ Change background color of Sections on scroll.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@451e9b78f907bfc7281963466bc27a906a0891c7/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d677e2a871384b79abc0f7bc79cd8b8c1ddc5535/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@451e9b78f907bfc7281963466bc27a906a0891c7/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d677e2a871384b79abc0f7bc79cd8b8c1ddc5535/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
           
           <!-- end TWC Page Section Background Color Change on Scroll -->
           
@@ -72,7 +72,7 @@ Change background color of Sections on scroll.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@451e9b78f907bfc7281963466bc27a906a0891c7/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@d677e2a871384b79abc0f7bc79cd8b8c1ddc5535/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
           
           <!-- end TWC Page Section Background Color Change on Scroll -->
           
@@ -125,7 +125,7 @@ Please consider [making a donation][11].
 
   * updated to work with upcoming Squarespace changes
   * removed dependency on jQuery
-  * bumped version to 0.2.0 (commit 451e9b78f907bfc7281963466bc27a906a0891c7)
+  * bumped version to 0.2.0 (commit d677e2a871384b79abc0f7bc79cd8b8c1ddc5535)
   
 * **2024-11-29**
   
