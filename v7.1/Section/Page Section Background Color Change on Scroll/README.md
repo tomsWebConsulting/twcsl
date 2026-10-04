@@ -2,17 +2,17 @@
 
 ### [License][1]
 
+### Synopsis
+
+Change background color of Sections on scroll.
+
 ### Version
 
-  * 0.1.3
+  * 0.2.0
 
 #### SS Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -20,31 +20,113 @@
 
 ---
 
-## Quick Install
+## Install Options
 
-* Add the following to Website > Pages > Custom Code > Code Injection >
-  HEADER.
+* CDN Hosted
+
+  Use this option for the quickest way to install this effect (files hosted
+  externally on the [jsDelivr][4], a [CDN][5])
   
-```html
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-```
+  * Options
   
-* Add code from file **[page section background color change on
-  scroll.html][4]** to Page Settings > Advanced > Page Header Code Injection for
-  the Page. Refer to [Per-page code injection][5] for details.
+    * Page Specific
+    
+      Use this option if you want to have this effect on only one Page.
+      
+      * Add code from file **[page section background color change on scroll
+        options.html][6]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for instructions
+        within.
+        
+      * Add the following code to Page Settings > Advanced >
+        Page Header Code Injection for the Page.
+        
+        ```html
+        <!-- begin TWC Page Section Background Color Change on Scroll -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
+          
+          <!-- end TWC Page Section Background Color Change on Scroll -->
+          
+        ```
+        
+      * Refer to [per-page code injection][7] for details.
+      
+    * Site-wide
+    
+      Use this option if you want to have this effect on all Store pages.
+      
+      * Add code from file **[page section background color change on scroll
+        options.html][6]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Read the code for any instructions within.
+        
+      * Add the following code to Website > Pages > Custom Code >
+        Code Injection > FOOTER.
+        
+        ```html
+        <!-- begin TWC Page Section Background Color Change on Scroll -->
+        
+          <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/v7.1/Section/Page%20Section%20Background%20Color%20Change%20on%20Scroll/page%20section%20background%20color%20change%20on%20scroll.min.js" type="module"></script>
+          
+          <!-- end TWC Page Section Background Color Change on Scroll -->
+          
+        ```
+        
+      * Refer to [Add code to code injection][8] for details.
+      
+* On-site
+
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
-* Read the code for any instructions within.
+  * Page Specific
+  
+    Use this option if you want to have this effect on only one Page.
+    
+    * Add code from file **[page section background color change on scroll options.html][6]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page. Read
+      the code for any instructions within.
+      
+    * Add code from file **[page section background color change on scroll.html][9]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page.
+      
+    * Refer to [per-page code injection][7] for details.
+    
+  * Site-wide
+  
+    Use this option if you want to have this effect on all Pages.
+    
+    * Add code from file **[page section background color change on scroll options.html][6]**
+      to Page Settings > Advanced > Page Header Code Injection for the Page.
+      Read the code for any instructions within.
+      
+    * Add code from file **[page section background color change on scroll.html][9]** to
+      Website > Pages > Custom Code > Code Injection > FOOTER.
+      
+    * Refer to [Add code to code injection][8] for details.
 
 ## Demo
 
-You can see a [demo of this effect here][6].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][11].
 
 ## Changes
 
+* **2026-10-04**
+
+  * updated to work with upcoming Squarespace changes
+  * removed dependency on jQuery
+  * bumped version to 0.2.0 (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
+  
 * **2024-11-29**
   
   * fix for SS changing from color theme classes to data-section-theme data
@@ -63,7 +145,11 @@ Please consider [making a donation][7].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: page%20section%20background%20color%20change%20on%20scroll.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://toms-web-consulting-demos.squarespace.com/page-section-background-color-change-on-scroll?password=twcdemos
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: page%20section%20background%20color%20change%20on%20scroll%20options.html#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: page%20section%20background%20color%20change%20on%20scroll.html#L1
+[10]: https://toms-web-consulting-demos.squarespace.com/page-section-background-color-change-on-scroll?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

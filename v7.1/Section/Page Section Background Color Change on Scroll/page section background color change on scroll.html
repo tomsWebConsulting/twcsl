@@ -1,199 +1,216 @@
-<!--
+<!-- begin TWC Page Section Background Color Change on Scroll -->
 
-  begin page section background color change on scroll
+  <!--
   
-  License      : < https://tinyurl.com/s872fb68 >
-  
-  Version      : 0.1.3
-  
-  SS Version   : 7.1
-  
-  Fluid
-  Engine
-  Compatible   : Yes
-  
-  Dependencies : jQuery
-  
-  Notes        : the code is comprised of several tags. all are needed for the
-                 effect to work
-                 
-                 effect does not change the footer
-  
-  By           : Thomas Creedon < http://www.tomsWeb.consulting/ >
-  
-  -->
-  
+    begin page section background color change on scroll
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Version      : 7.1
+    
+    Note            : the code is comprised of several tags. all are needed for
+                      the effect to work
+                      
+                      effect does not change the footer
+    
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
   <style>
   
-    body {
-    
-      --timing-function : linear;
-      --delay : 0.5s;
+      body:not( .sqs-is-page-editing ) {
       
-       /* background color should match first page section color from
-          sectionColors below */
+        -webkit-transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+        -o-transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+        transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+        
+        /* begin unset all background colors making them transparent */
+        
+          [data-header-style="dynamic"].header {
           
-      background-color : [ enter first page section color here between single quotes replacing square brackets ];
-      
-      }
-      
+            --siteBackgroundColor : transparent;
+            
+            }
+            
+          [data-header-style="solid"] {
+          
+            --solidHeaderBackgroundColor : transparent;
+            
+            }
+            
+          #page [data-test="page-section"]:not( .has-background ) .section-border {
+          
+            --siteBackgroundColor : transparent;
+            
+            }
+            
+          /* end unset all background colors making them transparent */
+          
+        }
+        
     </style>
     
   <script>
   
-    // initialize twc module
+    // debugger;
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    const
     
-    twc.psbccos = ( ( self ) => { // initialize twc psbccos sub-module
+      title = 'Page Section Background Color Change on Scroll';
     
-      self
+      version = '0.2.0',
+    
+      s = `
       
-        .sectionColors = [
+        ${ title } v${ version }
+      
+        License < https://tinyurl.com/s872fb68 >
         
-          /*
-          
-            the format of each line is a color. add a color for each page section,
-            except for the sections in the footer
-            
-            following is an example line. copy the example line below and paste
-            after the example line. remove '// ' at beginning of pasted line.
-            repeat for as many sections there are on the page, except the footer.
-            this has been done once initially
-            
-            */
-            
-          // '[ enter page section color here between single quotes replacing square brackets ]',
-          
-          '[ enter page section color here between single quotes replacing square brackets ]',
-          
-          ];
-          
-      return self;
-      
-      } ) ( twc.psbccos || { } );
-      
-    </script>
+        © 2021-2026 Thomas Creedon
+        
+        Tom's Web Consulting < http://www.tomsWeb.consulting >
+        
+        `
+        
+        .replace ( /^\s+/gm, '' );
+        
+    console.log ( s );
     
-  <!-- do not change anything below, there be the borg here -->
-  
-  <style>
-  
-    body {
+    // globals
     
-      -webkit-transition : background-color var( --delay ) var( --timing-function );
-      -o-transition : background-color var( --delay ) var( --timing-function );
-      transition : background-color var( --delay ) var( --timing-function );
+    {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc psbccos sub-module
+      
+      twc.psbccos = twc.psbccos || { };
       
       }
       
-    /* begin unset all background colors making them transparent */
+    const
     
-      #page .page-section .section-border {
+      codeKey = 'twc-psbccos',
       
-        --siteBackgroundColor : transparent;
-        
-        }
-        
-      [data-header-style="dynamic"].header,
-      [data-header-style="theme"].header,
-      #page :not( .has-background ) .section-background,
-      #page .page-section,
-      #page [ data-section-theme="black-bold" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="black" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="bright-inverse" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="bright" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="dark-bold" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="dark" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="light-bold" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="light" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="white-bold" ]:not( .has-background ) .section-background,
-      #page [ data-section-theme="white" ]:not( .has-background ) .section-background
+      options = codeKey
       
-        {
+        .split ( '-' )
         
-          background-color : unset;
+        .reduce (
+        
+          ( obj, key ) => obj?.[ key ],
+          
+          window
+          
+          ),
+          
+      positionGet = ( element ) => {
+      
+        const position = {
+        
+          left : element.offsetLeft,
+          
+          top : element.offsetTop
+          
+          };
+          
+        return position;
+        
+        },
+        
+      forEachCallback =
+      
+        ( element, index ) => {
+        
+          const b = ! (
+          
+            positionGet ( element ).top
+            
+            <=
+            
+            window.scrollY
+            
+            );
+            
+          if ( b ) return;
+          
+          document
+          
+            .body
+          
+            .style
+            
+            .backgroundColor
+            
+          =
+          
+          options.sectionColors [ index ];
+          
+          },
+          
+      scrollHandler = ( event ) => {
+      
+        const isEditing = document
+        
+          .body
+          
+          .classList
+          
+          .contains (
+          
+            'sqs-is-page-editing'
+            
+            );
+            
+        // bail if editing
+        
+        if ( isEditing ) {
+        
+          window
+          
+            .removeEventListener (
+            
+              'scroll',
+              
+              scrollHandler
+              
+              );
+              
+          return;
           
           }
           
-      /* end unset all background colors making them transparent */
-      
-    </style>
+        document
+        
+          .body
+          
+          .querySelectorAll (
+          
+            '#page [data-test="page-section"]'
+            
+            )
+            
+          .forEach ( forEachCallback );
+          
+        };
+        
+    window.addEventListener (
     
-  <script>
-  
-    $( ( ) => {
+      'scroll',
+      
+      scrollHandler
+      
+      );
     
-      const
-      
-        title = 'Page Section Background Color Change on Scroll';
-      
-        version = '0.1.3',
-      
-        s = `
-        
-          ${ title } v${ version }
-        
-          License < https://tinyurl.com/s872fb68 >
-          
-          © 2021-2024 Thomas Creedon
-          
-          Tom's Web Consulting < http://www.tomsWeb.consulting >
-          
-          `
-          
-          .replace ( /^\s+/gm, '' );
-          
-      console.log ( s );
-      
-      const callback = function ( ) {
-      
-        const callback = function ( i ) {
-        
-          const
-          
-            b = ! (
-            
-              $( this )
-              
-                .position ( )
-                
-                .top
-                
-              <=
-              
-              $( window )
-              
-                .scrollTop ( )
-                
-              ),
-              
-            sectionColors = twc
-            
-              .psbccos
-              
-              .sectionColors;
-              
-          if ( b )
-          
-            return true;
-            
-          $( 'body' )
-          
-            .css ( 'background-color', sectionColors [ i ] );
-            
-          };
-          
-        const selector = '#page .page-section';
-        
-        $( selector ).each ( callback );
-        
-        }
-        
-      $( window ).scroll ( callback );
-      
-      } );
-      
     </script>
     
-  <!-- end page section background color change on scroll -->
+  <!-- end TWC Page Section Background Color Change on Scroll -->

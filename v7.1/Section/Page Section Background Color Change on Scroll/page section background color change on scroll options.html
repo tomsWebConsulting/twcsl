@@ -1,0 +1,99 @@
+<!-- begin TWC Page Section Background Color Change on Scroll Options -->
+
+  <!--
+  
+    page section background color change on scroll
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
+    
+    Copyright       : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <style>
+  
+    body {
+    
+      --twc-psbccos-timing-function : linear;
+      --twc-psbccos-delay : 0.5s;
+      
+      /* background color should match first page section color from
+         sectionColors below */
+         
+      background-color : [ enter first page section color here between single quotes replacing square brackets ];
+      
+      &:not( .header--menu-open ) .header .header-announcement-bar-wrapper [data-header-style="gradient"][data-gradient-type="faded"].header-background-gradient {
+      
+        /* optional, override the Squarespace color by replacing inherit with
+           your own color */
+           
+        --gradientHeaderBackgroundColor : inherit;
+        
+        }
+        
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // initialize twc module
+      
+      window.twc = window.twc || { };
+      
+      // initialize twc psbccos sub-module
+      
+      twc.psbccos = ( ( self ) => {
+      
+        const options = {
+        
+          sectionColors : [
+          
+            /*
+            
+              the format of each line is a color. add a color for each page
+              section, except for the sections in the footer
+              
+              following is an example line. copy the example line below and
+              paste after the example line. remove '// ' at beginning of pasted
+              line. repeat for as many sections there are on the page, except
+              the footer. this has been done once initially
+              
+              */
+              
+            // '[ enter page section color here between single quotes replacing square brackets ]',
+            
+            '[ enter page section color here between single quotes replacing square brackets ]',
+            
+            ]
+            
+          };
+          
+        Object
+        
+          .assign (
+          
+            self,
+            
+            options
+            
+            );
+            
+        return self;
+        
+        } ) ( twc.psbccos || { } );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Page Section Background Color Change on Scroll Options -->
