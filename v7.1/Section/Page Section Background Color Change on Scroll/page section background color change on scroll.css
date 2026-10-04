@@ -1,0 +1,49 @@
+/*!
+
+  begin page section background color change on scroll
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.2.0
+  
+  SS Version      : 7.1
+  
+  Note            : effect does not change the footer
+  
+  Copyright       : 2021-2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+body:not( .sqs-is-page-editing ) {
+
+  -webkit-transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+  -o-transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+  transition : background-color var( --twc-psbccos-delay ) var( --twc-psbccos-timing-function );
+  
+  /* begin unset all background colors making them transparent */
+  
+    [data-header-style="dynamic"].header {
+    
+      --siteBackgroundColor : transparent;
+      
+      }
+      
+    [data-header-style="solid"] {
+    
+      --solidHeaderBackgroundColor : transparent;
+      
+      }
+      
+    #page [data-test="page-section"]:not( .has-background ) .section-border {
+    
+      --siteBackgroundColor : transparent;
+      
+      }
+      
+    /* end unset all background colors making them transparent */
+    
+  }

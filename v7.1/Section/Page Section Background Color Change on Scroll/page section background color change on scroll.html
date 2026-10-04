@@ -10,8 +10,8 @@
     
     SS Version      : 7.1
     
-    Note            : the code is comprised of several tags. all are needed for
-                      the effect to work
+    Note            : the code is comprised of a style and script tag. both are
+                      needed for the full effect to work
                       
                       effect does not change the footer
     
@@ -59,158 +59,162 @@
     
   <script>
   
-    // debugger;
+    ( ( ) => {
     
-    const
-    
-      title = 'Page Section Background Color Change on Scroll';
-    
-      version = '0.2.0',
-    
-      s = `
+      // debugger;
       
-        ${ title } v${ version }
+      const
       
-        License < https://tinyurl.com/s872fb68 >
+        title = 'Page Section Background Color Change on Scroll';
+      
+        version = '0.2.0',
+      
+        s = `
         
-        © 2021-2026 Thomas Creedon
+          ${ title } v${ version }
         
-        Tom's Web Consulting < http://www.tomsWeb.consulting >
-        
-        `
-        
-        .replace ( /^\s+/gm, '' );
-        
-    console.log ( s );
-    
-    // globals
-    
-    {
-    
-      // initialize twc module
-      
-      window.twc = window.twc || { };
-      
-      // initialize twc psbccos sub-module
-      
-      twc.psbccos = twc.psbccos || { };
-      
-      }
-      
-    const
-    
-      codeKey = 'twc-psbccos',
-      
-      options = codeKey
-      
-        .split ( '-' )
-        
-        .reduce (
-        
-          ( obj, key ) => obj?.[ key ],
+          License < https://tinyurl.com/s872fb68 >
           
-          window
+          © 2021-2026 Thomas Creedon
           
-          ),
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
           
-      positionGet = ( element ) => {
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-        const position = {
-        
-          left : element.offsetLeft,
-          
-          top : element.offsetTop
-          
-          };
-          
-        return position;
-        
-        },
-        
-      forEachCallback =
+      // globals
       
-        ( element, index ) => {
+      {
+      
+        // initialize twc module
         
-          const b = ! (
+        window.twc = window.twc || { };
+        
+        // initialize twc psbccos sub-module
+        
+        twc.psbccos = twc.psbccos || { };
+        
+        }
+        
+      const
+      
+        codeKey = 'twc-psbccos',
+        
+        options = codeKey
+        
+          .split ( '-' )
           
-            positionGet ( element ).top
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
             
-            <=
+            window
             
-            window.scrollY
+            ),
             
-            );
-            
-          if ( b ) return;
+        positionGet = ( element ) => {
+        
+          const position = {
           
-          document
-          
-            .body
-          
-            .style
+            left : element.offsetLeft,
             
-            .backgroundColor
+            top : element.offsetTop
             
-          =
-          
-          options.sectionColors [ index ];
+            };
+            
+          return position;
           
           },
           
-      scrollHandler = ( event ) => {
-      
-        const isEditing = document
+        forEachCallback =
         
-          .body
+          ( element, index ) => {
           
-          .classList
-          
-          .contains (
-          
-            'sqs-is-page-editing'
+            const b = ! (
             
-            );
-            
-        // bail if editing
-        
-        if ( isEditing ) {
-        
-          window
-          
-            .removeEventListener (
-            
-              'scroll',
+              positionGet ( element ).top
               
-              scrollHandler
+              <=
+              
+              window.scrollY
               
               );
               
-          return;
-          
-          }
-          
-        document
-        
-          .body
-          
-          .querySelectorAll (
-          
-            '#page [data-test="page-section"]'
+            if ( b ) return;
             
-            )
+            document
             
-          .forEach ( forEachCallback );
-          
-        };
+              .body
+            
+              .style
+              
+              .backgroundColor
+              
+            =
+            
+            options.sectionColors [ index ];
+            
+            },
+            
+        scrollHandler = ( event ) => {
         
-    window.addEventListener (
-    
-      'scroll',
+          const isEditing = document
+          
+            .body
+            
+            .classList
+            
+            .contains (
+            
+              'sqs-is-page-editing'
+              
+              );
+              
+          // bail if editing
+          
+          if ( isEditing ) {
+          
+            window
+            
+              .removeEventListener (
+              
+                'scroll',
+                
+                scrollHandler
+                
+                );
+                
+            return;
+            
+            }
+            
+          document
+          
+            .body
+            
+            .querySelectorAll (
+            
+              '#page [data-test="page-section"]'
+              
+              )
+              
+            .forEach ( forEachCallback );
+            
+          };
+          
+      window.addEventListener (
       
-      scrollHandler
+        'scroll',
+        
+        scrollHandler
+        
+        );
       
-      );
-    
+      } ) ( );
+      
     </script>
     
   <!-- end TWC Page Section Background Color Change on Scroll -->
