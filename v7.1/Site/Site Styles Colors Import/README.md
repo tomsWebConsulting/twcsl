@@ -40,7 +40,7 @@ Please consider [making a donation][4].
 * **2026-10-08**
 
   * added missing codeKey
-  * bumped version to 0.1.1 (commit c83972008a5cb7dfc897794c3dc5ea0a9dbaa7fc)
+  * bumped version to 0.1.1 (commit bee407b2e62ddffda984ab56dc7876e2490fb412)
   
 * **2026-10-07**
 
