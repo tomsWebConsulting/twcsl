@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.1.1
     
     SS Version      : 7.1
     
@@ -27,7 +27,7 @@
   
     title = 'Site Styles Colors Import',
     
-    version = '0.1.0',
+    version = '0.1.1',
   
     s = `
     
@@ -81,6 +81,8 @@
     
   const
   
+    codeKey = 'ssci',
+    
     dcmnt = wndw.document,
     
     getCookieValue = ( key ) => {

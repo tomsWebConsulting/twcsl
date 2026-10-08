@@ -8,7 +8,7 @@ Import Site Styles Colors.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### SS Version
 
@@ -37,14 +37,14 @@ Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2026-08-01**
+* **2026-10-08**
 
-  * fixed syntax error
-  * bumped version to 0.1.1
-  -->
+  * added missing codeKey
+  * bumped version to 0.1.1 (commit c83972008a5cb7dfc897794c3dc5ea0a9dbaa7fc)
+  
 * **2026-10-07**
 
-  * initial version  (commit c83972008a5cb7dfc897794c3dc5ea0a9dbaa7fc)
+  * initial version (commit c83972008a5cb7dfc897794c3dc5ea0a9dbaa7fc)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20colors%20import.bookmarklet#L1
