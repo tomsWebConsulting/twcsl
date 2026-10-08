@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Import Site Styles Colors.
+Import Site Styles Colors from a file.
 
 ### Version
 
