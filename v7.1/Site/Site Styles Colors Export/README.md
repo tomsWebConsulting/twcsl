@@ -38,7 +38,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-08**
 
-  * initial version (commit 7d01d8d505a76623e6ea221a1b2de81a0319a6b8)
+  * initial version (commit 58b9d59b337a6fd43a22049e7365a336e9dc1761)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20colors%20export.bookmarklet#L1
