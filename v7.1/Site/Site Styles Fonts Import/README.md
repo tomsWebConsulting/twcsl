@@ -18,7 +18,7 @@ Import Site Styles Fonts from a file.
 
 ## Quick Install
 
-* Add code from file **[site styles colors import.bookmarklet][2]** as the URL
+* Add code from file **[site styles fonts import.bookmarklet][2]** as the URL
   for a bookmark in your browser named **TWC Site Styles Fonts Import**.
 
 ## How to Use
@@ -56,6 +56,6 @@ Please consider [making a donation][4].
   * initial version (commit 2bd95f2019ffa5ac95b0e6e05539f87bfac88f66)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: site%20styles%20colors%20import.bookmarklet#L1
+[2]: site%20styles%20fonts%20import.bookmarklet#L1
 [3]: https://en.wikipedia.org/wiki/Bookmarklet
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
