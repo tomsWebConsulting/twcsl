@@ -154,7 +154,7 @@
         
           suggestedName :
           
-            'Site Styles Colors Export.json',
+            'Site Styles Colors.json',
             
           types : [ {
             
