@@ -38,7 +38,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-08**
 
-  * initial version (commit 58b9d59b337a6fd43a22049e7365a336e9dc1761)
+  * initial version (commit 351fe15caee0cefe5394381b8049b02ea949a8f7)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20fonts%20export.bookmarklet#L1
