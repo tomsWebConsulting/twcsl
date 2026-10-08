@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 632 effects. Each effect has it's own version number, code,
+twcsl contains 635 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1037,6 +1037,12 @@ not necessarily designed to work together.
     
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
     
+  * [Site](v7.1/Site)
+    
+    * [Site Styles Colors Import](v7.1/Site/Site%20Styles%20Colors%20Import)
+      
+      * [Site Styles Colors Import.bbprojectd](v7.1/Site/Site%20Styles%20Colors%20Import/Site%20Styles%20Colors%20Import.bbprojectd)
+        
   * [Page Section Auto Layout Simple List Format Class Add](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add)
     
     * [Page Section Auto Layout Simple List Format Class Add.bbprojectd](v7.1/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add/Page%20Section%20Auto%20Layout%20Simple%20List%20Format%20Class%20Add.bbprojectd)
