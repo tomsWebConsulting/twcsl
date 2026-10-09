@@ -81,7 +81,7 @@
     
   const
   
-    codeKey = 'ssci',
+    codeKey = 'ssfi',
     
     dcmnt = wndw.document,
     
