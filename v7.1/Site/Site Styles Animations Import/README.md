@@ -45,7 +45,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-08**
 
-  * initial version (commit 2bd95f2019ffa5ac95b0e6e05539f87bfac88f66)
+  * initial version (commit 08c1e244dad002a4a547c6c1363fbb4c46c4b6d6)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20animations%20import.bookmarklet#L1
