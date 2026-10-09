@@ -38,7 +38,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-08**
 
-  * initial version (commit 731d7f0cb2e951b7911bc9084fe43d751bcc4165)
+  * initial version (commit 751dd72c86fa5b66c755fe67d33b5ecd1d7ecab0)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20spacing%20export.bookmarklet#L1
