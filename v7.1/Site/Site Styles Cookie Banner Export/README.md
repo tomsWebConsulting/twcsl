@@ -39,7 +39,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-09**
 
-  * initial version (commit 79f4864684704b0986bd67fc2eb41be7a904758b)
+  * initial version (commit e090d5e2cc595daa3928b6596c082eecc66e3559)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20cookie%20banner%20export.bookmarklet#L1
