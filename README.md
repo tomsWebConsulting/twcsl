@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 649 effects. Each effect has it's own version number, code,
+twcsl contains 653 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1058,6 +1058,14 @@ not necessarily designed to work together.
     * [Site Styles Animations Import](v7.1/Site/Site%20Styles%20Animations%20Import)
       
       * [Site Styles Animations Import.bbprojectd](v7.1/Site/Site%20Styles%20Animations%20Import/Site%20Styles%20Animations%20Import.bbprojectd)
+        
+    * [Site Styles Image Blocks Import](v7.1/Site/Site%20Styles%20Image%20Blocks%20Import)
+      
+      * [Site Styles Image Blocks Import.bbprojectd](v7.1/Site/Site%20Styles%20Image%20Blocks%20Import/Site%20Styles%20Image%20Blocks%20Import.bbprojectd)
+        
+    * [Site Styles Image Blocks Export](v7.1/Site/Site%20Styles%20Image%20Blocks%20Export)
+      
+      * [Site Styles Image Blocks Export.bbprojectd](v7.1/Site/Site%20Styles%20Image%20Blocks%20Export/Site%20Styles%20Image%20Blocks%20Export.bbprojectd)
         
     * [Site Styles Animations Export](v7.1/Site/Site%20Styles%20Animations%20Export)
       
