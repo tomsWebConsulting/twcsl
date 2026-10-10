@@ -44,7 +44,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-09**
 
-  * initial version (commit 08c1e244dad002a4a547c6c1363fbb4c46c4b6d6)
+  * initial version (commit ab0c3340cc1178d1d4fc3640cf3226251532b1e2)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20buttons%20import.bookmarklet#L1
