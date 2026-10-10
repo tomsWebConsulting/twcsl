@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -26,7 +26,7 @@
   
     title = 'Site Styles Fonts Export',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -78,10 +78,76 @@
     
     }
     
-  const codeKey = 'twc-ssfe';
+  const
   
-  let json;
-  
+    codeKey = 'twc-ssfe',
+    
+    json = {
+    
+      '_meta' : {
+      
+        'codeKey' : codeKey,
+        
+        exportDate :
+        
+          new Date ( ).toISOString ( )
+          
+        },
+        
+      'data' : undefined
+      
+      },
+      
+    objectSort = ( obj ) => {
+    
+      const isArray = Array.isArray ( obj );
+      
+      let o;
+      
+      if ( isArray ) {
+      
+        o = obj.map ( objectSort );
+        
+        return o;
+        
+        }
+        
+      const isObject =
+      
+        obj && typeof obj === 'object';
+        
+      if ( isObject ) {
+      
+        o = Object.fromEntries (
+        
+          Object
+          
+            .keys ( obj )
+            
+            .sort ( )
+            
+            .map ( key =>
+            
+              [
+              
+                key,
+                
+                objectSort ( obj [ key ] )
+                
+                ]
+                
+              )
+              
+          );
+          
+        return o;
+        
+        }
+        
+    return obj;
+    
+    };
+    
   try {
   
     const response = await fetch (
@@ -114,7 +180,7 @@
       
       }
       
-    json = await response.text ( );
+    json.data = await response.json ( );
     
     } catch ( error ) {
     
@@ -154,7 +220,7 @@
         
           suggestedName :
           
-            'Site Styles Fonts.json',
+            'TWC Site Styles Fonts.json',
             
           types : [ {
             
@@ -176,8 +242,20 @@
       
         await handle.createWritable ( );
         
-    await writable.write ( json );
+    await writable.write (
     
+      JSON.stringify (
+      
+        objectSort ( json ),
+        
+        null,
+        
+        2
+        
+        )
+        
+      );
+      
     await writable.close ( );
     
     }
