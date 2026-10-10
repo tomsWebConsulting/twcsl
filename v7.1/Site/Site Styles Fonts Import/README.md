@@ -63,7 +63,7 @@ Please consider [making a donation][4].
 * **2026-10-10**
 
   * updated to work with Site Styles Fonts Export v0.2.0
-  * bumped version to 0.2.0 (commit 64ac06f9c504cc2bc495886fa82104235e0870f2)
+  * bumped version to 0.2.0 (commit 716f4887af8e5c3565263e96faac4124c5403689)
   
 * **2026-10-08**
 
