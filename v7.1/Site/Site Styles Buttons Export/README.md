@@ -36,9 +36,9 @@ Please consider [making a donation][4].
   * fixed syntax error
   * bumped version to 0.1.1
   -->
-* **2026-10-08**
+* **2026-10-09**
 
-  * initial version (commit 751dd72c86fa5b66c755fe67d33b5ecd1d7ecab0)
+  * initial version (commit c97a6ae6374b26ba241c0f2a259066be6c4d04ad)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20buttons%20export.bookmarklet#L1
