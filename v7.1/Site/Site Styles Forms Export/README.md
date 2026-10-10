@@ -38,7 +38,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-09**
 
-  * initial version (commit c97a6ae6374b26ba241c0f2a259066be6c4d04ad)
+  * initial version (commit eb3b51829fef922d786aaf60f1079d57d095b5f9)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20forms%20export.bookmarklet#L1
