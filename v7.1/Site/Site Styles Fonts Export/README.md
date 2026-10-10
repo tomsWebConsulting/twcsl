@@ -36,7 +36,7 @@ could make older JSON files incompatible with future versions of this
 bookmarklet or Squarespace itself.
 
 For long-term preservation of a site's styles, retain access to a Squarespace
-site and create a fresh JSON files when needed. Existing Squarespace sites are a
+site and create fresh JSON files when needed. Existing Squarespace sites are a
 more reliable source of style information than previously exported JSON files.
 
 JSON files should ideally be used very soon after they are created.
