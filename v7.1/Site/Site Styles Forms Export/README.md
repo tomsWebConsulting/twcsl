@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Export Site Styles Buttons to a file.
+Export Site Styles Forms to a file.
 
 ### Version
 
@@ -38,7 +38,7 @@ Please consider [making a donation][4].
   -->
 * **2026-10-09**
 
-  * initial version (commit eb3b51829fef922d786aaf60f1079d57d095b5f9)
+  * initial version (commit a6106be2a244153c29efe8010f12336b1fe42798)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: site%20styles%20forms%20export.bookmarklet#L1
