@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -27,7 +27,7 @@
   
     title = 'Site Styles Fonts Import',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -59,6 +59,8 @@
       
       .authenticatedAccount;
       
+  // bail if not logged in
+  
   if ( ! isAuthenticatedAccount ) {
   
     const s = `
@@ -75,52 +77,14 @@
       
     alert ( s );
     
-    return; // bail if not logged in
+    return;
     
     }
     
-  const
+  const codeKey = 'ssfi';
   
-    codeKey = 'ssfi',
-    
-    dcmnt = wndw.document,
-    
-    getCookieValue = ( key ) => {
-    
-      let v = '';
-      
-      try {
-      
-        v = dcmnt
-        
-          .cookie
-          
-          .split ( '; ' )
-          
-          .find (
-          
-            row =>
-            
-              row.startsWith ( `${ key }=` )
-              
-            )
-            
-          .split ( '=' ) [ 1 ];
-          
-        } catch ( error ) { }
-        
-      return v;
-      
-      },
-      
-    crumb = getCookieValue ( 'crumb' );
-    
-  let
+  let json;
   
-    json,
-    
-    webFonts;
-    
   try {
   
     const
@@ -165,6 +129,74 @@
       
       }
       
+  json = JSON.parse ( json );
+  
+  const isType =
+  
+    json?._meta?.codeKey
+    
+    ===
+    
+    'twc-ssfe';
+    
+  // bail if not type
+  
+  if ( ! isType ) {
+  
+    const s = `
+    
+      TWC ${ title }
+      
+      The import file is not recognized.
+      
+      `
+      
+      .trim ( )
+      
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
+    
+    return;
+    
+    }
+    
+  const
+  
+    dcmnt = wndw.document,
+    
+    getCookieValue = ( key ) => {
+    
+      let v = '';
+      
+      try {
+      
+        v = dcmnt
+        
+          .cookie
+          
+          .split ( '; ' )
+          
+          .find (
+          
+            row =>
+            
+              row.startsWith ( `${ key }=` )
+              
+            )
+            
+          .split ( '=' ) [ 1 ];
+          
+        } catch ( error ) { }
+        
+      return v;
+      
+      },
+      
+    crumb = getCookieValue ( 'crumb' );
+    
+  let webFonts;
+  
   try {
   
     const response = await fetch (
@@ -233,30 +265,52 @@
     
       forEachCallback = ( font ) => {
       
-        const
+        const prefix = font
         
-          prefix = font
+          .cssString
           
-            .cssString
-            
-            .split ( '-' )
-            
-            .slice ( 0, -1 )
-            
-            .join ( '-' ),
-            
-          re =
+          .split ( '-' )
           
-            RegExp ( `${ prefix }-[^"]+` );
-            
-        json = json.replace (
+          .slice ( 0, -1 )
+          
+          .join ( '-' )
+          
+          +
+          
+          '-';
+          
+        json
         
-          re,
+          .data
           
-          font.cssString
+          .masterFonts
           
-          );
+          .filter ( f =>
           
+            f
+            
+            .fontValue
+            
+            .fontFamily
+            
+            .startsWith ( prefix )
+            
+            )
+            
+          .forEach ( f =>
+          
+            f
+            
+            .fontValue
+            
+            .fontFamily
+            
+            =
+            
+            font.cssString
+            
+            );
+            
         };
         
     webFonts
@@ -271,6 +325,8 @@
       
     }
     
+  json = JSON.stringify ( json.data );
+  
   try {
   
     const response = await fetch (
