@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -26,7 +26,7 @@
   
     title = 'Site Styles Colors Export',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -77,11 +77,27 @@
     return; // bail if not logged in
     
     }
+  
+  const
+  
+    codeKey = 'twc-ssce',
     
-  const codeKey = 'twc-ssce';
-  
-  let json;
-  
+    json = {
+    
+      '_meta' : {
+      
+        'codeKey' : codeKey,
+        
+        exportDate :
+        
+          new Date ( ).toISOString ( )
+          
+        },
+        
+      'data' : undefined
+      
+      };
+      
   try {
   
     const response = await fetch (
@@ -114,7 +130,7 @@
       
       }
       
-    json = await response.text ( );
+    json.data = await response.json ( );
     
     } catch ( error ) {
     
@@ -154,7 +170,7 @@
         
           suggestedName :
           
-            'Site Styles Colors.json',
+            'TWC Site Styles Colors.json',
             
           types : [ {
             
@@ -172,11 +188,75 @@
             
           } );
           
+      objectSort = ( obj ) => {
+      
+        const isArray =
+        
+          Array.isArray ( obj );
+          
+        let o;
+        
+        if ( isArray ) {
+        
+          o = obj.map ( objectSort );
+          
+          return o;
+          
+          }
+          
+        const isObject =
+        
+          obj && typeof obj === 'object';
+          
+        if ( isObject ) {
+        
+          o = Object.fromEntries (
+          
+            Object
+            
+            .keys ( obj )
+            
+            .sort ( )
+            
+            .map ( key =>
+            
+              [
+              
+                key,
+                
+                objectSort ( obj [ key ] )
+                
+                ]
+                
+              )
+              
+            );
+            
+          return o;
+          
+          }
+          
+        return obj;
+        
+        },
+        
       writable =
       
         await handle.createWritable ( );
         
-    await writable.write ( json );
+    await writable.write (
+    
+      JSON.stringify (
+      
+        objectSort ( json ),
+        
+        null,
+        
+        2
+        
+        )
+        
+      );
     
     await writable.close ( );
     
