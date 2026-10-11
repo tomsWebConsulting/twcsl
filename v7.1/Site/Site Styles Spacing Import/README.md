@@ -56,7 +56,7 @@ Please consider [making a donation][4].
 * **2026-10-11**
 
   * updated to work with Site Styles Spacing Export v0.2.0
-  * bumped version to 0.2.0 (commit 049746d2da343ead949942c057b1a7b2fd5c4af1)
+  * bumped version to 0.2.0 (commit afe891d55aadb204b84e28c7468269574481f171)
   
 * **2026-10-09**
 
