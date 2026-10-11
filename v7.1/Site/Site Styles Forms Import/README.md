@@ -56,7 +56,7 @@ Please consider [making a donation][4].
 * **2026-10-11**
 
   * updated to work with Site Styles Forms Export v0.2.0
-  * bumped version to 0.2.0 (commit eb91887db7a1b2389085a9494cc08027a88812fc)
+  * bumped version to 0.2.0 (commit 7f9912064733cbf23d569fa2377d6a5641eff842)
   
 * **2026-10-09**
 
