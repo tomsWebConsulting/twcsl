@@ -57,7 +57,7 @@ Please consider [making a donation][4].
 * **2026-10-11**
 
   * updated to work with Site Styles Animations Export v0.2.0
-  * bumped version to 0.2.0 (commit 7f9912064733cbf23d569fa2377d6a5641eff842)
+  * bumped version to 0.2.0 (commit 049746d2da343ead949942c057b1a7b2fd5c4af1)
   
 * **2026-10-08**
 
