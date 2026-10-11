@@ -8,7 +8,7 @@ Export Site Styles Image Blocks to a file.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -26,17 +26,35 @@ Export Site Styles Image Blocks to a file.
 
 Wikipedia has a nice entry on [bookmarklet][3].
 
+## Note
+
+**Important**: Site Styles Buttons JSON files (referred to as JSON files hence
+forth) are intended for short-term transfer of Squarespace styles between sites.
+They should not be considered long-term backups.
+
+Squarespace may change its internal APIs or data structures at any time, which
+could make older JSON files incompatible with future versions of this
+bookmarklet or Squarespace itself.
+
+For long-term preservation of a site's styles, retain access to a Squarespace
+site and create fresh JSON files when needed. Existing Squarespace sites are a
+more reliable source of style information than previously exported JSON files.
+
+JSON files should ideally be used very soon after they are created.
+
 ## Make a Donation
 
 Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2026-08-01**
+* **2026-10-11**
 
-  * fixed syntax error
-  * bumped version to 0.1.1
-  -->
+  * added save file picker user cancel check
+  * restructured the export file to contain a code key, export date, and be
+    pretty
+  * bumped version to 0.2.0 (commit ebbd1113a246d098f0d26a85d046075d5284bae8)
+  
 * **2026-10-09**
 
   * initial version (commit ddd38f791fa1770873463ffa8f4017dca556b05c)
