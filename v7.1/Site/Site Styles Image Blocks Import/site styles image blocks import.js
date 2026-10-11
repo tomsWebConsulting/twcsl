@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -27,7 +27,7 @@
   
     title = 'Site Styles Image Blocks Import',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -79,47 +79,9 @@
     
     }
     
-  const
+  const codeKey = 'twc-ssibi';
   
-    codeKey = 'ssibi',
-    
-    dcmnt = wndw.document,
-    
-    getCookieValue = ( key ) => {
-    
-      let v = '';
-      
-      try {
-      
-        v = dcmnt
-        
-          .cookie
-          
-          .split ( '; ' )
-          
-          .find (
-          
-            row =>
-            
-              row.startsWith ( `${ key }=` )
-              
-            )
-            
-          .split ( '=' ) [ 1 ];
-          
-        } catch ( error ) { }
-        
-      return v;
-      
-      },
-      
-    crumb = getCookieValue ( 'crumb' );
-    
-  let
-  
-    body,
-    
-    tweakValues;
+  let obj;
   
   try {
   
@@ -131,7 +93,7 @@
         
       file = await handle.getFile ( );
       
-    body = await file.text ( );
+    obj = await file.text ( );
     
     } catch ( error ) {
     
@@ -165,6 +127,40 @@
       
       }
       
+  obj = JSON.parse ( obj );
+  
+  const isType =
+  
+    obj?._meta?.codeKey
+    
+    ===
+    
+    'twc-ssibe';
+    
+  // bail if not type
+  
+  if ( ! isType ) {
+  
+    const s = `
+    
+      TWC ${ title }
+      
+      The import file is not recognized.
+      
+      `
+      
+      .trim ( )
+      
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
+    
+    return;
+    
+    }
+    
+  let body;
+    
   try {
   
     const response = await fetch (
@@ -197,7 +193,7 @@
       
       }
       
-    tweakValues = await response.json ( );
+    body = await response.json ( );
     
     } catch ( error ) {
     
@@ -225,17 +221,53 @@
       
       }
       
+  ///
+  
+  const
+  
+    dcmnt = wndw.document,
+    
+    getCookieValue = ( key ) => {
+    
+      let v = '';
+      
+      try {
+      
+        v = dcmnt
+        
+          .cookie
+          
+          .split ( '; ' )
+          
+          .find (
+          
+            row =>
+            
+              row.startsWith ( `${ key }=` )
+              
+            )
+            
+          .split ( '=' ) [ 1 ];
+          
+        } catch ( error ) { }
+        
+      return v;
+      
+      },
+      
+    crumb = getCookieValue ( 'crumb' );
+    
   // merge
   
   {
   
-    tweakValues = tweakValues.tweakValues;
+    body = body.tweakValues;
     
     Object.assign (
     
-      tweakValues,
+      body,
       
-      JSON.parse ( body )
+      obj.data
       
       );
       
@@ -243,10 +275,8 @@
     
       {
       
-        tweakJson :
+        tweakJson : JSON.stringify ( body )
         
-          JSON.stringify ( tweakValues )
-          
         }
         
       )
