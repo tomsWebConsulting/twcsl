@@ -56,7 +56,7 @@ Please consider [making a donation][4].
 * **2026-10-10**
 
   * updated to work with Site Styles Buttons Export v0.2.0
-  * bumped version to 0.2.0 (commit 3fae359852762ff3fd98eccda1759cf2ae97cba7)
+  * bumped version to 0.2.0 (commit eb91887db7a1b2389085a9494cc08027a88812fc)
   
 * **2026-10-09**
 
