@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.2.0
+    Version         : 0.2.1
     
     SS Version      : 7.1
     
@@ -26,7 +26,7 @@
   
     title = 'Site Styles Fonts Export',
     
-    version = '0.2.0',
+    version = '0.2.1',
   
     s = `
     
@@ -96,58 +96,8 @@
         
       'data' : undefined
       
-      },
+      };
       
-    objectSort = ( obj ) => {
-    
-      const isArray = Array.isArray ( obj );
-      
-      let o;
-      
-      if ( isArray ) {
-      
-        o = obj.map ( objectSort );
-        
-        return o;
-        
-        }
-        
-      const isObject =
-      
-        obj && typeof obj === 'object';
-        
-      if ( isObject ) {
-      
-        o = Object.fromEntries (
-        
-          Object
-          
-            .keys ( obj )
-            
-            .sort ( )
-            
-            .map ( key =>
-            
-              [
-              
-                key,
-                
-                objectSort ( obj [ key ] )
-                
-                ]
-                
-              )
-              
-          );
-          
-        return o;
-        
-        }
-        
-    return obj;
-    
-    };
-    
   try {
   
     const response = await fetch (
@@ -212,7 +162,9 @@
   
   {
   
-    const
+    let handle;
+    
+    try {
     
       handle = await wndw
       
@@ -238,6 +190,90 @@
             
           } );
           
+      } catch ( error ) {
+      
+        const isAbort =
+        
+          error.name === 'AbortError';
+          
+        if ( isAbort ) return;
+        
+        const s = `
+        
+          ${
+          
+            codeKey
+            
+            } there was an error saving the file, ${
+            
+              error
+              
+              }.
+              
+          `
+          
+          .trim ( )
+          
+          .replace ( /\s+/gm, ' ' );
+          
+        console.error ( s );
+        
+        throw error;
+        
+        }
+        
+    const
+    
+      objectSort = ( obj ) => {
+      
+        const isArray = Array.isArray ( obj );
+        
+        let o;
+        
+        if ( isArray ) {
+        
+          o = obj.map ( objectSort );
+          
+          return o;
+          
+          }
+          
+        const isObject =
+        
+          obj && typeof obj === 'object';
+          
+        if ( isObject ) {
+        
+          o = Object.fromEntries (
+          
+            Object
+            
+              .keys ( obj )
+              
+              .sort ( )
+              
+              .map ( key =>
+              
+                [
+                
+                  key,
+                  
+                  objectSort ( obj [ key ] )
+                  
+                  ]
+                  
+                )
+                
+            );
+            
+          return o;
+          
+          }
+          
+      return obj;
+      
+      };
+      
       writable =
       
         await handle.createWritable ( );

@@ -8,7 +8,7 @@ Export Site Styles Fonts to a file.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -47,6 +47,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-10-10**
+
+  * added save file picker user cancel check
+  * bumped version to 0.2.1 (commit 8ce3139f83f7ca648d36695a67ae0acdb62b953e)
+  
 * **2026-10-10**
 
   * restructured the export file to contain a code key, export date, and be
