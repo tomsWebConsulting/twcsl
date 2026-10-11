@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.2.0
+    Version         : 0.2.1
     
     SS Version      : 7.1
     
@@ -26,7 +26,7 @@
   
     title = 'Site Styles Colors Export',
     
-    version = '0.2.0',
+    version = '0.2.1',
   
     s = `
     
@@ -162,7 +162,9 @@
   
   {
   
-    const
+    let handle;
+    
+    try {
     
       handle = await wndw
       
@@ -188,6 +190,40 @@
             
           } );
           
+      } catch ( error ) {
+      
+        const isAbort =
+        
+          error.name === 'AbortError';
+          
+        if ( isAbort ) return;
+        
+        const s = `
+        
+          ${
+          
+            codeKey
+            
+            } there was an error saving the file, ${
+            
+              error
+              
+              }.
+              
+          `
+          
+          .trim ( )
+          
+          .replace ( /\s+/gm, ' ' );
+          
+        console.error ( s );
+        
+        throw error;
+        
+        }
+        
+    const
+    
       objectSort = ( obj ) => {
       
         const isArray =

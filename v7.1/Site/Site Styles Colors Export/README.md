@@ -8,7 +8,7 @@ Export Site Styles Colors to a file.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Version
 
@@ -47,6 +47,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-10-10**
+
+  * added save file picker user cancel check
+  * bumped version to 0.2.1 (commit 36f3e9b769520682fff9649f955f1563c3ed36e7)
+  
 * **2026-10-10**
 
   * restructured the export file to contain a code key, export date, and be
