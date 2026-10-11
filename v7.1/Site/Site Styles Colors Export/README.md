@@ -50,7 +50,7 @@ Please consider [making a donation][4].
 * **2026-10-10**
 
   * added save file picker user cancel check
-  * bumped version to 0.2.1 (commit 36f3e9b769520682fff9649f955f1563c3ed36e7)
+  * bumped version to 0.2.1 (commit 8ce3139f83f7ca648d36695a67ae0acdb62b953e)
   
 * **2026-10-10**
 
