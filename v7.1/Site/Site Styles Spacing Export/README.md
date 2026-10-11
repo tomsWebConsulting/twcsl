@@ -52,7 +52,7 @@ Please consider [making a donation][4].
   * added save file picker user cancel check
   * restructured the export file to contain a code key, export date, and be
     pretty
-  * bumped version to 0.2.0 (commit de0fa2b7560f1b7fb0ab7a0efc5543d964f7a7a4)
+  * bumped version to 0.2.0 (commit ebbd1113a246d098f0d26a85d046075d5284bae8)
   
 * **2026-10-08**
 
