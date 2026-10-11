@@ -56,7 +56,7 @@ Please consider [making a donation][4].
 * **2026-10-10**
 
   * updated to work with Site Styles Colors Export v0.2.0
-  * bumped version to 0.2.0 (commit 716f4887af8e5c3565263e96faac4124c5403689)
+  * bumped version to 0.2.0 (commit 0686e30b9453acfffca19616085df0382b23f1b6)
   
 * **2026-10-08**
 
