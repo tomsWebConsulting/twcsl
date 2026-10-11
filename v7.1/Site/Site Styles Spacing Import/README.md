@@ -8,7 +8,7 @@ Import Site Styles Spacing from a file.
 
 ### Version
 
-  * 0.1.0
+  * 0.2.0
 
 #### SS Version
 
@@ -31,17 +31,33 @@ Import Site Styles Spacing from a file.
 
 Wikipedia has a nice entry on [bookmarklet][3].
 
+## Note
+
+**Important**: Site Styles Colors JSON files (referred to as JSON files hence
+forth) are intended for short-term transfer of Squarespace styles between sites.
+They should not be considered long-term backups.
+
+Squarespace may change its internal APIs or data structures at any time, which
+could make older JSON files incompatible with future versions of this
+bookmarklet or Squarespace itself.
+
+For long-term preservation of a site's styles, retain access to a Squarespace
+site and create fresh JSON files when needed. Existing Squarespace sites are a
+more reliable source of style information than previously exported JSON files.
+
+JSON files should ideally be used very soon after they are created.
+
 ## Make a Donation
 
 Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2026-10-08**
+* **2026-10-11**
 
-  * added missing codeKey
-  * bumped version to 0.1.1 (commit bee407b2e62ddffda984ab56dc7876e2490fb412)
-  -->
+  * updated to work with Site Styles Spacing Export v0.2.0
+  * bumped version to 0.2.0 (commit 049746d2da343ead949942c057b1a7b2fd5c4af1)
+  
 * **2026-10-09**
 
   * initial version (commit f302b2dc02b685460050e391efde5f867ff1c8b5)
