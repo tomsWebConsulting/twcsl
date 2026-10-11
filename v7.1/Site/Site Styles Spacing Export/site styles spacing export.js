@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -26,7 +26,7 @@
   
     title = 'Site Styles Spacing Export',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -78,10 +78,26 @@
     
     }
     
-  const codeKey = 'twc-ssse';
+  const
   
-  let json;
-  
+    codeKey = 'twc-ssse',
+    
+    json = {
+    
+      '_meta' : {
+      
+        'codeKey' : codeKey,
+        
+        exportDate :
+        
+          new Date ( ).toISOString ( )
+          
+        },
+        
+      'data' : undefined
+      
+      };
+      
   try {
   
     const response = await fetch (
@@ -114,7 +130,7 @@
       
       }
       
-    json = await response.json ( );
+    json.data = await response.json ( );
     
     } catch ( error ) {
     
@@ -146,13 +162,13 @@
   
   {
   
-    json = json.tweakValues;
+    json.data = json.data.tweakValues;
     
-    json = Object.fromEntries (
+    json.data = Object.fromEntries (
     
       Object
     
-      .entries ( json )
+      .entries ( json.data )
       
       .filter (
       
@@ -170,15 +186,15 @@
         
       );
       
-    json = JSON.stringify ( json );
-    
     }
     
   // write file
   
   {
   
-    const
+    let handle;
+    
+    try {
     
       handle = await wndw
       
@@ -186,7 +202,7 @@
         
           suggestedName :
           
-            'Site Styles Spacing.json',
+            'TWC Site Styles Spacing.json',
             
           types : [ {
             
@@ -204,11 +220,109 @@
             
           } );
           
+      } catch ( error ) {
+      
+        const isAbort =
+        
+          error.name === 'AbortError';
+          
+        if ( isAbort ) return;
+        
+        const s = `
+        
+          ${
+          
+            codeKey
+            
+            } there was an error saving the file, ${
+            
+              error
+              
+              }.
+              
+          `
+          
+          .trim ( )
+          
+          .replace ( /\s+/gm, ' ' );
+          
+        console.error ( s );
+        
+        throw error;
+        
+        }
+        
+    const
+    
+      objectSort = ( obj ) => {
+      
+        const isArray =
+        
+          Array.isArray ( obj );
+          
+        let o;
+        
+        if ( isArray ) {
+        
+          o = obj.map ( objectSort );
+          
+          return o;
+          
+          }
+          
+        const isObject =
+        
+          obj && typeof obj === 'object';
+          
+        if ( isObject ) {
+        
+          o = Object.fromEntries (
+          
+            Object
+            
+            .keys ( obj )
+            
+            .sort ( )
+            
+            .map ( key =>
+            
+              [
+              
+                key,
+                
+                objectSort ( obj [ key ] )
+                
+                ]
+                
+              )
+              
+            );
+            
+          return o;
+          
+          }
+          
+        return obj;
+        
+        },
+        
       writable =
       
         await handle.createWritable ( );
         
-    await writable.write ( json );
+    await writable.write (
+    
+      JSON.stringify (
+      
+        objectSort ( json ),
+        
+        null,
+        
+        2
+        
+        )
+        
+      );
     
     await writable.close ( );
     
