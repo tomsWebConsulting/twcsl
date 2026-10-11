@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.1
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -27,7 +27,7 @@
   
     title = 'Site Styles Colors Import',
     
-    version = '0.1.1',
+    version = '0.2.0',
   
     s = `
     
@@ -79,42 +79,8 @@
     
     }
     
-  const
+  const codeKey = 'ssci';
   
-    codeKey = 'ssci',
-    
-    dcmnt = wndw.document,
-    
-    getCookieValue = ( key ) => {
-    
-      let v = '';
-      
-      try {
-      
-        v = dcmnt
-        
-          .cookie
-          
-          .split ( '; ' )
-          
-          .find (
-          
-            row =>
-            
-              row.startsWith ( `${ key }=` )
-              
-            )
-            
-          .split ( '=' ) [ 1 ];
-          
-        } catch ( error ) { }
-        
-      return v;
-      
-      },
-      
-    crumb = getCookieValue ( 'crumb' );
-    
   let json;
   
   try {
@@ -161,6 +127,74 @@
       
       }
       
+  json = JSON.parse ( json );
+  
+  const isType =
+  
+    json?._meta?.codeKey
+    
+    ===
+    
+    'twc-ssce';
+    
+  // bail if not type
+  
+  if ( ! isType ) {
+  
+    const s = `
+    
+      TWC ${ title }
+      
+      The import file is not recognized.
+      
+      `
+      
+      .trim ( )
+      
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
+    
+    return;
+    
+    }
+    
+  const
+  
+    dcmnt = wndw.document,
+    
+    getCookieValue = ( key ) => {
+    
+      let v = '';
+      
+      try {
+      
+        v = dcmnt
+        
+          .cookie
+          
+          .split ( '; ' )
+          
+          .find (
+          
+            row =>
+            
+              row.startsWith ( `${ key }=` )
+              
+            )
+            
+          .split ( '=' ) [ 1 ];
+          
+        } catch ( error ) { }
+        
+      return v;
+      
+      },
+      
+    crumb = getCookieValue ( 'crumb' );
+    
+  json = JSON.stringify ( json.data );
+  
   try {
   
     const response = await fetch (
