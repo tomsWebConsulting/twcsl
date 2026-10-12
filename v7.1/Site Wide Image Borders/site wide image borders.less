@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.9.2
+    Version           : 0.9.3
     
     SS Version        : 7.1
     
@@ -40,137 +40,186 @@
     
     */
     
-    @border-color : none;
-    @border-radius : 0px;
-    @border-style : none;
-    @border-width : 0px;
+  @border-color : none;
+  @border-radius : 0px;
+  @border-style : none;
+  @border-width : 0px;
+  
+  // use false or true for each area where you want the effect to be active
+  
+  .auto-layout( true );
+  
+  .blog-list( true );
+  
+  .blog-post( true );
+  
+  .event-list( true );
+  
+  .event( true );
+  
+  .gallery-block( true );
+  
+  .gallery-section( true );
+  
+  .image-block( true );
+  
+  .portfolio-list( true );
+  
+  .product-block( true );
+  
+  .section-background( false );
+  
+  .store-page-list( true );
+  
+  .store-page-detail( true );
+  
+  .store-page-detail-add-on( true );
+  
+  .summary-block( true );
+  
+  .custom-declarations {
+  
+    // for your own declarations ( property/value pairs ). these will be placed
+    // after the built-in properties ( border-color, border-radius,
+    // border-style, border-width, and z-index )
+       
+    // enter your property/value pairs here
     
-    // use false or true for each area where you want the effect to be active
+    }
     
-    .auto-layout( true );
+  .custom-rule-sets {
+  
+    // for your own rule sets. these will be nested in the main rule set for
+    // this effect
+       
+    // enter your rule sets here
     
-    .blog-list( true );
+    }
     
-    .blog-post( true );
+  // do not change anything below, there be the borg here
+  
+  // @border-color : red;
+  // @border-radius : 10px;
+  // @border-style : solid;
+  // @border-width : 1px;
+  
+  .swib-properties {
+  
+    border-color : @border-color;
+    border-radius : @border-radius;
+    border-style : @border-style;
+    border-width : @border-width;
+    z-index : 1;
     
-    .event-list( true );
+    .custom-declarations( );
     
-    .event( true );
+    .custom-rule-sets( );
     
-    .gallery-block( true );
+    }
     
-    .gallery-section( true );
+  .swib-image-block {
+  
+    [data-sqsp-block="image"] [data-sqsp-image-block-image-container], // fluid engine
+    [data-sqsp-block="image-classic"] [data-sqsp-image-classic-block-image-container] // classic editor
     
-    .image-block( true );
-    
-    .portfolio-list( true );
-    
-    .product-block( true );
-    
-    .section-background( false );
-    
-    .store-page-list( true );
-    
-    .store-page-detail( true );
-    
-    .store-page-detail-add-on( true );
-    
-    .summary-block( true );
-    
-    .custom-declarations {
-    
-      // for your own declarations ( property/value pairs ). these will be
-      // placed after the built-in properties ( border-color, border-radius,
-      // border-style, border-width, and z-index )
-         
-      // enter your property/value pairs here
+      {
       
-      }
-      
-    .custom-rule-sets {
+        .swib-properties( );
+        
+        box-sizing : border-box;
+        
+        }
+        
+    }
     
-      // for your own rule sets. these will be nested in the main rule set for
-      // this effect
-         
-      // enter your rule sets here
-      
-      }
-      
-    // do not change anything below, there be the borg here
+  .auto-layout( @boolean ) when ( @boolean = true ) {
+  
+    .user-items-list-banner-slideshow .slide-media-container,
+    .user-items-list-carousel__media-inner,
+    .user-items-list-simple .list-item-media-inner,
     
-    // @border-color : red;
-    // @border-radius : 10px;
-    // @border-style : solid;
-    // @border-width : 1px;
+      {
+      
+        .swib-properties( );
+        
+        height : ~"calc( 100% - ( 2 *"@border-width~") )";
+        width : ~"calc( 100% - ( 2 *"@border-width~") )";
+        z-index : unset;
+        
+        }
+        
+    }
     
-    .swib-properties {
+  .blog-list( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-blog-"].view-list {
     
-      border-color : @border-color;
-      border-radius : @border-radius;
-      border-style : @border-style;
-      border-width : @border-width;
-      z-index : 1;
+      [data-sqsp-section="blog-list"] {
       
-      .custom-declarations( );
-      
-      .custom-rule-sets( );
-      
-      }
-      
-    .swib-image-block {
-    
-      [data-sqsp-block="image"] [data-sqsp-image-block-image-container], // fluid engine
-      [data-sqsp-block="image-classic"] [data-sqsp-image-classic-block-image-container] // classic editor
-      
-        {
+        .image-wrapper {
         
           .swib-properties( );
           
-          box-sizing : border-box;
-          
-          }
-          
-      }
-      
-    .auto-layout( @boolean ) when ( @boolean = true ) {
-    
-      .user-items-list-banner-slideshow .slide-media-container,
-      .user-items-list-carousel__media-inner,
-      .user-items-list-simple .list-item-media-inner,
-      
-        {
-        
-          .swib-properties( );
-          
-          height : ~"calc( 100% - ( 2 *"@border-width~") )";
-          width : ~"calc( 100% - ( 2 *"@border-width~") )";
-          z-index : unset;
-          
-          }
-          
-      }
-      
-    .blog-list( @boolean ) when ( @boolean = true ) {
-    
-      body[class*="collection-type-blog-"].view-list {
-      
-        [data-sqsp-section="blog-list"] {
-        
-          .image-wrapper {
-          
-            .swib-properties( );
-            
-            }
-            
           }
           
         }
         
       }
       
-    .blog-post( @boolean ) when ( @boolean = true ) {
+    }
     
-      body[class*="collection-type-blog-"].view-item {
+  .blog-post( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-blog-"].view-item {
+    
+      .sqs-block-image .intrinsic {
+      
+        .image-block-wrapper, // inline
+        .image-inset // card, collage, overlap, poster, stack
+        
+          {
+          
+            .swib-properties( );
+            
+            }
+            
+        .image-overlay {
+        
+            .swib-properties( );
+            
+          }
+          
+        } // end sqs-block-image
+        
+      }
+      
+    }
+    
+  .event-list( @boolean ) when ( @boolean = true ) {
+  
+    body[class*="collection-type-events-"].view-list [data-sqsp-section="events-list"] {
+    
+      .eventlist-column-thumbnail {
+      
+        .swib-properties( );
+        
+        overflow : hidden;
+        
+        }
+        
+      .eventlist-column-date {
+      
+        z-index : 1;
+        
+        }
+        
+      }
+      
+    }
+    
+  .event( @boolean ) when ( @boolean = true ) {
+  
+      body[class*="collection-type-events-"].view-item {
       
         .sqs-block-image .intrinsic {
         
@@ -193,208 +242,16 @@
           
         }
         
-      }
-      
-    .event-list( @boolean ) when ( @boolean = true ) {
+    }
     
-      body[class*="collection-type-events-"].view-list [data-sqsp-section="events-list"] {
-      
-        .eventlist-column-thumbnail {
-        
-          .swib-properties( );
-          
-          overflow : hidden;
-          
-          }
-          
-        .eventlist-column-date {
-        
-          z-index : 1;
-          
-          }
-          
-        }
-        
-      }
-      
-    .event( @boolean ) when ( @boolean = true ) {
-    
-        body[class*="collection-type-events-"].view-item {
-        
-          .sqs-block-image .intrinsic {
-          
-            .image-block-wrapper, // inline
-            .image-inset // card, collage, overlap, poster, stack
-            
-              {
-              
-                .swib-properties( );
-                
-                }
-                
-            .image-overlay {
-            
-                .swib-properties( );
-                
-              }
-              
-            } // end sqs-block-image
-            
-          }
-          
-      }
-      
-    .gallery-block( @boolean ) when ( @boolean = true ) {
-    
-      .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
-      .sqs-gallery-block-slideshow,
-      .sqs-gallery-block-stacked .image-wrapper,
-      .sqs-gallery-design-stacked-slide,
-      .sqs-gallery-design-strip-slide
-      
-        {
-        
-          .swib-properties( );
-          
-          box-sizing : border-box;
-          
-          }
-          
-      .sqs-gallery-block-stacked .image-wrapper {
-      
-        z-index : unset;
-        
-        img {
-        
-          border-radius : @border-radius;
-          
-          }
-          
-        }
-        
-      .sqs-gallery-design-strip .sqs-wrapper {
+  .gallery-block( @boolean ) when ( @boolean = true ) {
   
-        height : 99%;
+    .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
+    .sqs-gallery-block-stacked .image-wrapper,
+    .sqs-gallery-design-stacked-slide,
+    .sqs-gallery-design-strip-slide
     
-        }
-        
-      }
-      
-    .gallery-section( @boolean ) when ( @boolean = true ) {
-    
-      .gallery-section {
-      
-        .gallery-fullscreen-slideshow-item-img,
-        .gallery-grid-item-wrapper,
-        .gallery-reel-item-src,
-        .gallery-slideshow-item-img,
-        .gallery-strips-item-wrapper
-        
-          {
-          
-           img {
-            
-            .swib-properties( );
-            
-            box-sizing : border-box;
-            
-            }
-            
-          }
-          
-        .gallery-masonry-item-wrapper {
-        
-          .swib-properties( );
-          
-          box-sizing : border-box;
-          
-          }
-          
-        .gallery-slideshow-item-img img {
-          
-          object-fit : unset !important;
-          
-          }
-          
-        }
-        
-      }
-      
-    .image-block( @boolean ) when ( @boolean = true ) {
-    
-      .swib-image-block( );
-      
-      }
-      
-    .portfolio-list( @boolean ) when ( @boolean = true ) {
-    
-      [data-sqsp-section="portfolio-list"]
-      
-        {
-        
-          .portfolio-grid-basic,
-          .portfolio-grid-overlay
-          
-            {
-            
-              .grid-item {
-              
-                .grid-image,
-                .portfolio-overlay
-                
-                  {
-                  
-                    .swib-properties( );
-                    
-                    }
-                    
-                }
-                
-              }
-              
-          .portfolio-hover-backgrounds-wrapper {
-            
-            .swib-properties( );
-            
-            }
-            
-          }
-          
-      }
-      
-    .product-block( @boolean ) when ( @boolean = true ) {
-    
-      .sqs-block-product .image-container img {
-      
-        .swib-properties( );
-        
-        }
-        
-      }
-      
-    .section-background ( @boolean ) when ( @boolean = true ) {
-    
-      .has-background .section-background {
-      
-        .swib-properties( );
-        
-        }
-        
-      }
-      
-    .store-page-list( @boolean ) when ( @boolean = true ) {
-    
-      .product-list .product-list-item .product-list-item-image .grid-image-wrapper {
-      
-        .swib-properties( );
-        
-        }
-      
-      }
-      
-    .store-page-detail( @boolean ) when ( @boolean = true ) {
-    
-      [data-product-gallery="slides-item"] {
+      {
       
         .swib-properties( );
         
@@ -402,28 +259,176 @@
         
         }
         
-      }
-      
-    // store page detail add on
+    .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor {
     
-    .store-page-detail-add-on( @boolean ) when ( @boolean = true ) {
-    
-      .product-detail .product-meta .product-add-ons .add-on-thumbnail {
-      
-        .swib-properties( );
-        
-        }
+      border-bottom : @border-width @border-style @border-color !important;
       
       }
       
-    .summary-block( @boolean ) when ( @boolean = true ) {
+    .sqs-gallery-block-stacked .image-wrapper {
     
-      [data-sqsp-block="summary"] .img-wrapper {
+      z-index : unset;
       
-        .swib-properties( );
+      img {
+      
+        border-radius : @border-radius;
         
         }
         
       }
       
+    .sqs-gallery-design-strip .sqs-wrapper {
+    
+      height : 99%;
+      
+      }
+      
+    }
+    
+  .gallery-section( @boolean ) when ( @boolean = true ) {
+  
+    .gallery-section {
+    
+      .gallery-fullscreen-slideshow-item-img,
+      .gallery-grid-item-wrapper,
+      .gallery-reel-item-src,
+      .gallery-slideshow-item-img,
+      .gallery-strips-item-wrapper
+      
+        {
+        
+          img {
+          
+            .swib-properties( );
+            
+            box-sizing : border-box;
+            
+            }
+            
+        }
+        
+      .gallery-masonry-item-wrapper {
+      
+        .swib-properties( );
+        
+        box-sizing : border-box;
+        
+        }
+        
+      .gallery-slideshow-item-img img {
+        
+        object-fit : unset !important;
+        
+        }
+        
+      }
+      
+    }
+    
+  .image-block( @boolean ) when ( @boolean = true ) {
+  
+    .swib-image-block( );
+    
+    }
+    
+  .portfolio-list( @boolean ) when ( @boolean = true ) {
+  
+    [data-sqsp-section="portfolio-list"]
+    
+      {
+      
+        .portfolio-grid-basic,
+        .portfolio-grid-overlay
+        
+          {
+          
+            .grid-item {
+            
+              .grid-image,
+              .portfolio-overlay
+              
+                {
+                
+                  .swib-properties( );
+                  
+                  }
+                  
+              }
+              
+            }
+            
+        .portfolio-hover-backgrounds-wrapper {
+          
+          .swib-properties( );
+          
+          }
+          
+        }
+        
+    }
+    
+  .product-block( @boolean ) when ( @boolean = true ) {
+  
+    .sqs-block-product .image-container img {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
+  .section-background ( @boolean ) when ( @boolean = true ) {
+  
+    .has-background .section-background {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
+  .store-page-list( @boolean ) when ( @boolean = true ) {
+  
+    .product-list .product-list-item .product-list-item-image .grid-image-wrapper {
+    
+      .swib-properties( );
+      
+      }
+    
+    }
+    
+  .store-page-detail( @boolean ) when ( @boolean = true ) {
+  
+    [data-product-gallery="slides-item"] {
+    
+      .swib-properties( );
+      
+      box-sizing : border-box;
+      
+      }
+      
+    }
+    
+  // store page detail add on
+  
+  .store-page-detail-add-on( @boolean ) when ( @boolean = true ) {
+  
+    .product-detail .product-meta .product-add-ons .add-on-thumbnail {
+    
+      .swib-properties( );
+      
+      }
+    
+    }
+    
+  .summary-block( @boolean ) when ( @boolean = true ) {
+  
+    [data-sqsp-block="summary"] .img-wrapper {
+    
+      .swib-properties( );
+      
+      }
+      
+    }
+    
   /* end TWC Site Wide Image Borders */

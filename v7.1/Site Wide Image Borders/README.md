@@ -8,7 +8,7 @@ Add border images around image elements of a site.
 
 ### Version
 
-  * 0.9.2
+  * 0.9.3
 
 #### SS Version
 
@@ -51,6 +51,11 @@ Please consider [making a donation][4].
 
 ## Changes
 
+* **2026-10-03**
+
+  * fixed issue with gallery block grid border
+  * bumped version to 0.9.3 (commit f30997931a97d29e3baeb030728c5e909c9191f6)
+  
 * **2026-10-03**
 
   * updated to work with upcoming Squarespace changes
