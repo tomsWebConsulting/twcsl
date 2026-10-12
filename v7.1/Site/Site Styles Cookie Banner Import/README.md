@@ -57,7 +57,7 @@ Please consider [making a donation][4].
 * **2026-10-11**
 
   * updated to work with Site Styles Image Cookie Banner Export v0.2.0
-  * bumped version to 0.2.0 (commit 71f6c0462bb3d7b65af1a49ecaec91ba71fd4c20)
+  * bumped version to 0.2.0 (commit 400a62d30d737d546e63672901999060c9bc75d8)
   
 * **2026-10-09**
 
