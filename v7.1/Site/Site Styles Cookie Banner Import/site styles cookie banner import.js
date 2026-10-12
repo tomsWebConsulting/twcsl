@@ -8,7 +8,7 @@
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -27,7 +27,7 @@
   
     title = 'Site Styles Cookie Banner Import',
     
-    version = '0.1.0',
+    version = '0.2.0',
   
     s = `
     
@@ -79,10 +79,88 @@
     
     }
     
+  const codeKey = 'twc-sscbi';
+  
+  let obj;
+  
+  try {
+  
+    const
+    
+      [ handle ] =
+      
+        await wndw.showOpenFilePicker ( ),
+        
+      file = await handle.getFile ( );
+      
+    obj = await file.text ( );
+    
+    } catch ( error ) {
+    
+      const isAbort =
+      
+        error.name === 'AbortError';
+        
+      if ( isAbort ) return;
+      
+      const s = `
+      
+        ${
+        
+          codeKey
+          
+          } there was an error opening the file, ${
+          
+            error
+            
+            }.
+            
+        `
+        
+        .trim ( )
+        
+        .replace ( /\s+/gm, ' ' );
+        
+      console.error ( s );
+      
+      throw error;
+      
+      }
+      
+  obj = JSON.parse ( obj );
+  
+  const isType =
+  
+    obj?._meta?.codeKey
+    
+    ===
+    
+    'twc-sscbe';
+    
+  // bail if not type
+  
+  if ( ! isType ) {
+  
+    const s = `
+    
+      TWC ${ title }
+      
+      The import file is not recognized.
+      
+      `
+      
+      .trim ( )
+      
+      .replace ( /^ +/gm, '' );
+      
+    alert ( s );
+    
+    return;
+    
+    }
+    
   const
   
-    codeKey = 'sscbi',
-    
     dcmnt = wndw.document,
     
     getCookieValue = ( key ) => {
@@ -117,69 +195,9 @@
     
   let
   
-    font,
-    
-    json,
-    
-    style,
+    body,
     
     url;
-    
-  try {
-  
-    const
-    
-      [ handle ] =
-      
-        await wndw.showOpenFilePicker ( ),
-        
-      file = await handle.getFile ( );
-      
-    json = await file.text ( );
-    
-    } catch ( error ) {
-    
-      const isAbort =
-      
-        error.name === 'AbortError';
-        
-      if ( isAbort ) return;
-      
-      const s = `
-      
-        ${
-        
-          codeKey
-          
-          } there was an error opening the file, ${
-          
-            error
-            
-            }.
-            
-        `
-        
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' );
-        
-      console.error ( s );
-      
-      throw error;
-      
-      }
-      
-  // extract
-  
-  {
-  
-    json = JSON.parse ( json );
-    
-    font = json.font;
-    
-    style = JSON.stringify ( json.style );
-    
-    }
     
   // font
   
@@ -215,7 +233,7 @@
         
         }
         
-      json = await response.json ( );
+      body = await response.json ( );
       
       } catch ( error ) {
       
@@ -243,41 +261,45 @@
         
         }
         
-    const index = json
+    const index = body
     
       .fontMappings
       
       .findIndex (
-    
-      e =>
       
-        e.name
+        e =>
         
-        ===
+          e.name
+          
+          ===
+          
+          'cookie-banner-disclaimer-font'
+          
+        );
         
-        'cookie-banner-disclaimer-font'
-        
-      );
-      
     if ( index !== -1 )
     
-      json
+      body
       
         .fontMappings
         
         .splice ( index, 1 );
         
-    json
+    body
     
       .fontMappings
       
       .push (
       
-        font
+        obj
+        
+        .data
+        
+        .font
         
         );
         
-    json = JSON.stringify ( json );
+    body = JSON.stringify ( body );
     
     try {
     
@@ -287,7 +309,7 @@
         
         {
         
-          body : json,
+          body : body,
           
           headers : {
           
@@ -363,86 +385,100 @@
     
   // style
   
-  try {
+  {
   
-    const response = await fetch (
+    body = JSON.stringify (
     
-      '/api/eu-cookie-settings-v2/styles',
+      obj
       
-      {
+      .data
       
-        body : style,
-        
-        headers : {
-        
-          Accept :
-          
-            'application/json, text/plain, */*',
-            
-          'Content-Type' :
-          
-            'application/json',
-            
-          'X-Csrf-Token' : crumb
-          
-          },
-          
-        method : 'PUT'
-        
-        }
-        
+      .style
+      
       );
       
-    if ( ! response.ok ) {
+    try {
     
-      const s = `
+      const response = await fetch (
       
-        ${
+        '/api/eu-cookie-settings-v2/styles',
         
-          codeKey
+        {
+        
+          body : body,
           
-          } network response was not ok ${
+          headers : {
           
-            response.statusText
+            Accept :
             
-            }
+              'application/json, text/plain, */*',
+              
+            'Content-Type' :
             
-        `
-        
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' );
-        
-      throw new Error ( s );
-      
-      }
-      
-    } catch ( error ) {
-    
-      const s = `
-      
-        ${
-        
-          codeKey
+              'application/json',
+              
+            'X-Csrf-Token' : crumb
+            
+            },
+            
+          method : 'PUT'
           
           }
           
-        there has been a problem with your fetch post operation, ${
+        );
         
-          error
-          
-          }.
-          
-        `
-        
-        .trim ( )
-        
-        .replace ( /\s+/gm, ' ' );
-        
-      console.error ( s );
+      if ( ! response.ok ) {
       
-      }
+        const s = `
+        
+          ${
+          
+            codeKey
+            
+            } network response was not ok ${
+            
+              response.statusText
+              
+              }
+              
+          `
+          
+          .trim ( )
+          
+          .replace ( /\s+/gm, ' ' );
+          
+        throw new Error ( s );
+        
+        }
+        
+      } catch ( error ) {
       
+        const s = `
+        
+          ${
+          
+            codeKey
+            
+            }
+            
+          there has been a problem with your fetch post operation, ${
+          
+            error
+            
+            }.
+            
+          `
+          
+          .trim ( )
+          
+          .replace ( /\s+/gm, ' ' );
+          
+        console.error ( s );
+        
+        }
+        
+    }
+    
   wndw.location.reload ( );
   
   } ) ( );
