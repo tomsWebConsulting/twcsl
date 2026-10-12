@@ -51,10 +51,10 @@ Please consider [making a donation][4].
 
 ## Changes
 
-* **2026-10-03**
+* **2026-10-12**
 
   * fixed issue with gallery block grid border
-  * bumped version to 0.9.3 (commit f30997931a97d29e3baeb030728c5e909c9191f6)
+  * bumped version to 0.9.3 (commit 88ba5dab5fc73c0560578f4899c71b9d7db67836)
   
 * **2026-10-03**
 
