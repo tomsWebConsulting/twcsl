@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 665 effects. Each effect has it's own version number, code,
+twcsl contains 667 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -757,8 +757,6 @@ not necessarily designed to work together.
       
   * [Page Site Title Change](v7.1/Page%20Site%20Title%20Change)
     
-  * [Gallery Block Carousel Arrows Top Center](v7.1/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
-    
   * [Change Variant Unavailable Alert for Product Blocks](v7.1/Change%20Variant%20Unavailable%20Alert%20for%20Product%20Blocks)
     
   * [Text Block Text Class Add](v7.1/Text%20Block%20Text%20Class%20Add)
@@ -1149,6 +1147,12 @@ not necessarily designed to work together.
       
       * [Form Block Post-Submit Message Collapse Space](v7.1/Block/Form/Form%20Block%20Post-Submit%20Message%20Collapse%20Space)
         
+    * [Gallery](v7.1/Block/Gallery)
+      
+      * [Gallery Block Carousel Arrows Top Center](v7.1/Block/Gallery/Gallery%20Block%20Carousel%20Arrows%20Top%20Center)
+        
+        * [Gallery Block Carousel Arrows Top Center.bbprojectd](v7.1/Block/Gallery/Gallery%20Block%20Carousel%20Arrows%20Top%20Center/Gallery%20Block%20Carousel%20Arrows%20Top%20Center.bbprojectd)
+          
     * [Image](v7.1/Block/Image)
       
       * [Image Blocks Random](v7.1/Block/Image/Image%20Blocks%20Random)
