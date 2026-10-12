@@ -1,43 +1,40 @@
 # Gallery Block Carousel Arrows Top Center
 
-### [License][99]
+### [License][1]
 
 ### Version
 
-  * 0.1d0
+  * 0.1.1
 
 #### SS Version
 
   * 7.1
 
-#### Fluid Engine Compatible
-
-  * Unknown
-
 ---
 
 ## Quick Install
 
-* Add code from file
-  **[gallery block carousel arrows top center.less](gallery%20block%20carousel%20arrows%20top%20center.less#L1)**
+* Add code from file **[gallery block carousel arrows top center.less][2]**
   to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-  Editor][199] for details.
+  Editor][3] for details.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
-<!-- * **2021-11-15**
+* **2026-10-12**
 
-  * fix for description layout issue when categories are set to side for Brine
-  * bumped version to 0.3d0
-  -->
+  * updated to work with upcoming changes to gallery blocks
+  * fixed issue with button not being visible for some section color themes
+  * bumped version to 0.1.1
+  
 * **2022-04-02**
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: gallery%20block%20carousel%20arrows%20top%20center.less#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
