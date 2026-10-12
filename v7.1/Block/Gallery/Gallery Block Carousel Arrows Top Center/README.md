@@ -28,7 +28,7 @@ Please consider [making a donation][4].
 
   * updated to work with upcoming changes to gallery blocks
   * fixed issue with button not being visible for some section color themes
-  * bumped version to 0.1.1
+  * bumped version to 0.1.1 (commit 2a42e0921fa1487b0ebb2d170b8ed948173261da)
   
 * **2022-04-02**
 
