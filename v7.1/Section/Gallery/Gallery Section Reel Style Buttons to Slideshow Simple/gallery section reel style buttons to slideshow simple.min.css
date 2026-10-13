@@ -1,0 +1,20 @@
+/*!
+
+  gallery section reel style buttons to slideshow simple
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.2.0
+  
+  SS Version        : 7.1
+  
+  Note              : the code is comprised of a style and script tag. both
+                      are needed for the full effect to work
+  
+  Copyright         : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */.gallery-reel[data-show-captions=true]{&[data-controls-location=overflow-side],&[data-controls-location=side]{.gallery-slideshow-control-btn{bottom:70px}}}

@@ -1,97 +1,253 @@
-<script>
+<!-- begin TWC Gallery Section Reel Style Buttons to Slideshow Simple -->
 
-  $( ( ) => {
+  <!--
   
-    /*
+    gallery section reel style buttons to slideshow simple
     
-      begin gallery section reel style buttons to slideshow simple
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Version        : 7.1
+    
+    Note              : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    .gallery-reel[data-show-captions="true"] {
+    
+      &[data-controls-location="side"],
+      &[data-controls-location="overflow-side"]
       
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.1d3
-      
-      SS Version    : 7.1
-      
-      Dependencies  : jQuery
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-      const svg = ( direction ) => {
-      
-        const points = {
+        {
         
-          left : '7.3,14.7 2.5,8 7.3,1.2',
+          .gallery-slideshow-control-btn {
           
-          right : '1.6,1.2 6.5,7.9 1.6,14.7'
+            bottom : 70px;
+            
+            }
+            
+          }
+          
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Store Page Products Panel Product Categories Copy',
+        
+        version = '0.2.0',
+      
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2021-2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        svgBuild = ( direction ) => {
+        
+          const
+          
+            points = {
+            
+              left :
+              
+                '7.3,14.7 2.5,8 7.3,1.2',
+                
+              right :
+              
+                '1.6,1.2 6.5,7.9 1.6,14.7'
+                
+              },
+              
+            svg = `<svg class="caret-${ direction }-icon--small" viewBox="0 0 9 16">
+            
+              <polyline fill="none" stroke-miterlimit="10" points="${ points [ direction ] }">
+              
+                </polyline>
+                
+              </svg>`;
+              
+          return svg;
           
           };
           
-        const svg = `<svg class="caret-${ direction }-icon--small" viewBox="0 0 9 16">
+        domContentLoadedCallback = ( ) => {
         
-          <polyline fill="none" stroke-miterlimit="10" points="${ points [ direction ] }">
+          // previous button
           
-            </polyline>
+          document
+          
+            .querySelectorAll (
             
-          </svg>`;
+              '.gallery-reel-control:nth-of-type( odd )'
+              
+              )
+              
+            .forEach ( e => {
+            
+              const classList = e.classList;
+              
+              classList.remove (
+              
+                'gallery-reel-control'
+                
+                );
+                
+              classList.add (
+              
+                'gallery-slideshow-control',
+                
+                'gallery-slideshow-control-prev'
+                
+                );
+                
+              e
+              
+                .querySelector ( 'svg' )
+                
+                .outerHTML
+                
+                =
+                
+                svgBuild ( 'left' );
+                
+              } );
+              
+          // next button
           
-        return svg;
-        
-        };
-        
-      $( '.gallery-reel-controls' )
-      
-        .removeClass ( 'gallery-reel-controls' )
-        
-        .addClass ( 'gallery-slideshow-controls' );
-        
-      // previous button
-      
-      $( '.gallery-reel-control:nth-of-type( odd )' )
-      
-        .removeClass ( 'gallery-reel-control' )
-        
-        .addClass ( 'gallery-slideshow-control gallery-slideshow-control-prev' )
-        
-        .each ( function ( ) {
-        
-          const s = svg ( 'left' );
+          document
           
-          $( 'svg', $( this ) ).replaceWith ( s );
+            .querySelectorAll (
+            
+              '.gallery-reel-control:nth-of-type( even )'
+              
+              )
+              
+            .forEach ( e => {
+            
+              const classList = e.classList;
+              
+              classList.remove (
+              
+                'gallery-reel-control'
+                
+                );
+                
+              classList.add (
+              
+                'gallery-slideshow-control',
+                
+                'gallery-slideshow-control-prev'
+                
+                );
+                
+              e
+              
+                .querySelector ( 'svg' )
+                
+                .outerHTML
+                
+                =
+                
+                svgBuild ( 'right' );
+                
+              } );
+              
+          document
           
-          } );
+            .querySelectorAll (
+            
+              '.gallery-reel-control-btn'
+              
+              )
+              
+            .forEach ( e => {
+            
+              const classList = e.classList;
+              
+              classList.remove (
+              
+                'gallery-reel-control-btn'
+                
+                );
+                
+              classList.add (
+              
+                'gallery-slideshow-control-btn'
+                
+                );
+                
+              } );
+              
+          document
           
-      // next button
-      
-      $( '.gallery-reel-control:nth-of-type( even )' )
-      
-        .removeClass ( 'gallery-reel-control' )
-        
-        .addClass ( 'gallery-slideshow-control gallery-slideshow-control-next' )
-        
-        .each ( function ( ) {
-        
-          const s = svg ( 'right' );
+            .querySelectorAll (
+            
+              '.gallery-reel-control-btn-icon'
+              
+              )
+              
+            .forEach ( e => {
+            
+              const classList = e.classList;
+              
+              classList.remove (
+              
+                'gallery-reel-control-btn-icon'
+                
+                );
+                
+              classList.add (
+              
+                'gallery-slideshow-control-btn-icon'
+                
+                );
+                
+              } );
+              
+          };
           
-          $( 'svg', $( this ) ).replaceWith ( s );
-          
-          } );
-          
-      $( '.gallery-reel-control-btn' )
+      // domContentLoadedCallback ( );
       
-        .removeClass ( 'gallery-reel-control-btn' )
-        
-        .addClass ( 'gallery-slideshow-control-btn' );
-        
-      $( '.gallery-reel-control-btn-icon' )
+      //
       
-        .removeClass ( 'gallery-reel-control-btn-icon' )
-        
-        .addClass ( 'gallery-slideshow-control-btn-icon' );
-        
-      // end gallery section reel style buttons to slideshow simple
+      document.addEventListener (
       
-    } );
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      //
+      
+      } ) ( );
+      
+    </script>
     
-  </script>
+  <!-- end TWC Gallery Section Reel Style Buttons to Slideshow Simple -->

@@ -1,0 +1,224 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    gallery section reel style buttons to slideshow simple
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Version        : 7.1
+    
+    Note              : the code is comprised of a style and script tag. both
+                        are needed for the full effect to work
+    
+    Copyright         : 2021-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    title = 'Store Page Products Panel Product Categories Copy',
+    
+    version = '0.2.0',
+  
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2021-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  const
+  
+    svgBuild = ( direction ) => {
+    
+      const
+      
+        points = {
+        
+          left :
+          
+            '7.3,14.7 2.5,8 7.3,1.2',
+            
+          right :
+          
+            '1.6,1.2 6.5,7.9 1.6,14.7'
+            
+          },
+          
+        svg = `<svg class="caret-${ direction }-icon--small" viewBox="0 0 9 16">
+        
+          <polyline fill="none" stroke-miterlimit="10" points="${ points [ direction ] }">
+          
+            </polyline>
+            
+          </svg>`;
+          
+      return svg;
+      
+      };
+      
+    domContentLoadedCallback = ( ) => {
+    
+      // previous button
+      
+      document
+      
+        .querySelectorAll (
+        
+          '.gallery-reel-control:nth-of-type( odd )'
+          
+          )
+          
+        .forEach ( e => {
+        
+          const classList = e.classList;
+          
+          classList.remove (
+          
+            'gallery-reel-control'
+            
+            );
+            
+          classList.add (
+          
+            'gallery-slideshow-control',
+            
+            'gallery-slideshow-control-prev'
+            
+            );
+            
+          e
+          
+            .querySelector ( 'svg' )
+            
+            .outerHTML
+            
+            =
+            
+            svgBuild ( 'left' );
+            
+          } );
+          
+      // next button
+      
+      document
+      
+        .querySelectorAll (
+        
+          '.gallery-reel-control:nth-of-type( even )'
+          
+          )
+          
+        .forEach ( e => {
+        
+          const classList = e.classList;
+          
+          classList.remove (
+          
+            'gallery-reel-control'
+            
+            );
+            
+          classList.add (
+          
+            'gallery-slideshow-control',
+            
+            'gallery-slideshow-control-prev'
+            
+            );
+            
+          e
+          
+            .querySelector ( 'svg' )
+            
+            .outerHTML
+            
+            =
+            
+            svgBuild ( 'right' );
+            
+          } );
+          
+      document
+      
+        .querySelectorAll (
+        
+          '.gallery-reel-control-btn'
+          
+          )
+          
+        .forEach ( e => {
+        
+          const classList = e.classList;
+          
+          classList.remove (
+          
+            'gallery-reel-control-btn'
+            
+            );
+            
+          classList.add (
+          
+            'gallery-slideshow-control-btn'
+            
+            );
+            
+          } );
+          
+      document
+      
+        .querySelectorAll (
+        
+          '.gallery-reel-control-btn-icon'
+          
+          )
+          
+        .forEach ( e => {
+        
+          const classList = e.classList;
+          
+          classList.remove (
+          
+            'gallery-reel-control-btn-icon'
+            
+            );
+            
+          classList.add (
+          
+            'gallery-slideshow-control-btn-icon'
+            
+            );
+            
+          } );
+          
+      };
+      
+  // domContentLoadedCallback ( );
+  
+  //
+  
+  document.addEventListener (
+  
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
+    
+  //
+  
+  } ) ( );
