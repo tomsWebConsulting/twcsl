@@ -41,9 +41,9 @@ Apply Slideshow Simple style buttons to Reel.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@977a4f3e104fc6e2269b47455492ebc7b3415ad8/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5e284cf58ebc7e8f377bfbda10de7a4c9d48d045/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5e284cf58ebc7e8f377bfbda10de7a4c9d48d045/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Reel Style Buttons to Slideshow Simple -->
           
@@ -63,7 +63,9 @@ Apply Slideshow Simple style buttons to Reel.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5fc32ec44199dbd7f527dca95b9c97f4e44575d7/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.js" type="module"></script>
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5e284cf58ebc7e8f377bfbda10de7a4c9d48d045/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.css" rel="stylesheet" type="text/css">
+          
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5e284cf58ebc7e8f377bfbda10de7a4c9d48d045/v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/gallery%20section%20reel%20style%20buttons%20to%20slideshow%20simple.min.js" type="module"></script>
           
           <!-- end TWC Gallery Section Reel Style Buttons to Slideshow Simple -->
           
@@ -104,7 +106,7 @@ Please consider [making a donation][9].
 
 * **2026-10-12**
 
-  * removed jQuery dependency
+  * removed jQuery dependency (commit 5e284cf58ebc7e8f377bfbda10de7a4c9d48d045)
   * bumped version to 0.2.0
   
 * **2021-12-01**
