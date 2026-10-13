@@ -2,6 +2,10 @@
 
 ### [License][1]
 
+### Synopsis
+
+Move navigation arrows to above the images top center.
+
 ### Version
 
   * 0.1.1
