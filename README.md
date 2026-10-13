@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 667 effects. Each effect has it's own version number, code,
+twcsl contains 668 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -799,6 +799,10 @@ not necessarily designed to work together.
         
         * [Gallery Section Lighbox Control Icons Change.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Lightbox%20Control%20Icons%20Change/Gallery%20Section%20Lighbox%20Control%20Icons%20Change.bbprojectd)
           
+      * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
+        
+        * [Gallery Section Reel Style Buttons to Slideshow Simple.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple.bbprojectd)
+          
       * [Gallery Section Text Block Overlay](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay)
         
         * [Gallery Section Text Block Overlay.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/Gallery%20Section%20Text%20Block%20Overlay.bbprojectd)
@@ -998,8 +1002,6 @@ not necessarily designed to work together.
   * [Header Social Icon Whatsapp Generic Icon to Whatsapp Change](v7.1/Header%20Social%20Icon%20Whatsapp%20Generic%20Icon%20to%20Whatsapp%20Change)
     
   * [Calendar Block Event Multiday Class Add](v7.1/Calendar%20Block%20Event%20Multiday%20Class%20Add)
-    
-  * [Gallery Section Reel Style Buttons to Slideshow Simple](v7.1/Gallery%20Section%20Reel%20Style%20Buttons%20to%20Slideshow%20Simple)
     
   * [Set Store Product Details to Display Flex](v7.1/Set%20Store%20Product%20Details%20to%20Display%20Flex)
     
