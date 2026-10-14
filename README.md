@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 668 effects. Each effect has it's own version number, code,
+twcsl contains 669 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -807,6 +807,10 @@ not necessarily designed to work together.
         
         * [Gallery Section Text Block Overlay.bbprojectd](v7.1/Section/Gallery/Gallery%20Section%20Text%20Block%20Overlay/Gallery%20Section%20Text%20Block%20Overlay.bbprojectd)
           
+    * [Section Fluid Engine Upgrade Button Hide](v7.1/Section/Section%20Fluid%20Engine%20Upgrade%20Button%20Hide)
+      
+      * [Section Fluid Engine Upgrade Button Hide.bbprojectd](v7.1/Section/Section%20Fluid%20Engine%20Upgrade%20Button%20Hide/Section%20Fluid%20Engine%20Upgrade%20Button%20Hide.bbprojectd)
+        
     * [Section Date Hide](v7.1/Section/Section%20Date%20Hide)
       
       * [Section Date Hide.bbprojectd](v7.1/Section/Section%20Date%20Hide/Section%20Date%20Hide.bbprojectd)
@@ -1128,8 +1132,6 @@ not necessarily designed to work together.
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
   * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
-    
-  * [Fluid Engine Page Section Upgrade Button Hide](v7.1/Fluid%20Engine%20Page%20Section%20Upgrade%20Button%20Hide)
     
   * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
     
