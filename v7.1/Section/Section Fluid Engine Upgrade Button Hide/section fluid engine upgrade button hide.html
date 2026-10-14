@@ -1,0 +1,146 @@
+<!-- begin TWC Section Fluid Engine Upgrade Button Hide -->
+
+  <!--
+  
+    section fluid engine upgrade button hide
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.2.0
+    
+    SS Version      : 7.1
+    
+    Note            : the code is comprised of a template and script tag. both
+                      are needed for the full effect to work
+     
+    Copyright       : 2022-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <template id="twc-sfeubh" data-version="0.2.0">
+  
+    <style type="text/css">
+    
+      .control-button-wrapper:has( [ data-test = "toolbar-button-convert" ] ) {
+      
+        display : none;
+        
+        }
+           
+      </style>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const isEditMode = window.frameElement;
+        
+      // bail if not edit mode
+      
+      if ( ! isEditMode ) return;
+      
+      const
+      
+        codeKey = 'twc-sfeubh',
+        
+        dcmnt = window.top.document,
+        
+        destinationElement =
+        
+          dcmnt.getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
+          
+          );
+          
+      const
+      
+        sourceVersion =
+        
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
+        
+          ! destinationElement
+          
+          ||
+          
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Section Fluid Engine Upgrade Button Hide -->
