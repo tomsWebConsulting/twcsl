@@ -32,7 +32,7 @@ Please consider [making a donation][4].
 * **2026-10-14**
 
   * fixed issue with a white dot showing on sections with a non-white background
-  * bumped version to 0.2.0 (commit )
+  * bumped version to 0.2.0 (commit d8608308b74ee39050677928b6ba53b98df165dd)
   
 * **2022-09-08**
 
