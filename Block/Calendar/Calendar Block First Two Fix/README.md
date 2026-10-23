@@ -105,7 +105,7 @@ Fix Calendar Block months that have two firsts of the month.
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[calendar block observe changes.html][10]** to
+      * Add code from file **[calendar block first two fix.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
@@ -116,12 +116,12 @@ Fix Calendar Block months that have two firsts of the month.
       
       * v7.1
       
-        * Add code from file **[calendar block observe changes.html][10]** to
+        * Add code from file **[calendar block first two fix.html][10]** to
           Website > Pages > Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add code from file **[calendar block observe changes.html][10]** to
+        * Add code from file **[calendar block first two fix.html][10]** to
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
