@@ -50,7 +50,7 @@ Fix Calendar Block months that have two firsts of the month.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block First Two Fix -->
             
@@ -72,7 +72,7 @@ Fix Calendar Block months that have two firsts of the month.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block First Two Fix -->
               
@@ -88,7 +88,7 @@ Fix Calendar Block months that have two firsts of the month.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a16f766c16ae63a1e477681b9d6f010baadc7c16/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20First%20Two%20Fix/calendar%20block%20first%20two%20fix.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block First Two Fix -->
               
@@ -142,7 +142,7 @@ Please consider [making a donation][7].
   -->
 * **2026-10-23**
 
-  * initial version
+  * initial version (commit 5b108c9d929f5a815d2f64e7b2b3efa2d8465246)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
