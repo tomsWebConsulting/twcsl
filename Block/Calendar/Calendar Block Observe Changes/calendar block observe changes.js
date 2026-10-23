@@ -1,26 +1,25 @@
 ( ( ) => {
 
+  // debugger;
+  
   /*!
   
     calendar block observe changes
     
-    License         : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.4.0
+    Version           : 0.5.0
     
-    SS Versions     : 7.1, 7.0
+    SS Versions       : 7.1, 7.0
     
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Yes
+    Note              : this code is a base for other effects. this code
+                        alone should not produce any visible change
     
-    Note            : this code is a base for other effects. this code alone
-                      should not produce any visible change
-    
-    Copyright       : 2022-2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2022-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -28,15 +27,17 @@
     
   const
   
-    version = '0.4.0',
+    title = 'Calendar Block Observe Changes',
+    
+    version = '0.5.0',
     
     s = `
     
-      Calendar Block Observe Changes v${ version }
+      ${ title } v${ version }
       
       License < https://tinyurl.com/s872fb68 >
       
-      © 2022-2025 Thomas Creedon
+      © 2022-2026 Thomas Creedon
       
       Tom's Web Consulting < http://www.tomsWeb.consulting >
       
@@ -46,37 +47,23 @@
       
   console.log ( s );
   
-  // bail if no mutation observer available
-  
-  if ( ! ( 'MutationObserver' in window ) ) return;
-  
   // global
   
   {
 
     // initialize twc module
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
+    window.twc = window.twc || { };
     
     // initialize twc cboc sub-module
     
-    twc.cboc = ( ( self ) => self ) ( twc.cboc || { } );
+    twc.cboc = twc.cboc || { };
     
     // initialize twc cboc callbacks sub-module
     
-    twc.cboc.callbacks = ( ( self ) => self ) ( twc.cboc.callbacks || { } );
-      
-    // initialize twc cboc callbacks item sub-module
+    twc.cboc.callbacks =
     
-    twc.cboc.callbacks.item =
-    
-      ( ( self ) => self ) ( twc.cboc.callbacks.item || [ ] );
-      
-    // initialize twc cboc callbacks item sub-module
-    
-    twc.cboc.callbacks.flyOutItem =
-    
-      ( ( self ) => self ) ( twc.cboc.callbacks.flyOutItem || [ ] );
+      twc.cboc.callbacks || [ ];
       
     }
     
@@ -88,175 +75,281 @@
     
       .split ( '-' )
       
-      .reduce ( ( obj, key ) => obj?.[ key ], window ),
+      .reduce (
       
-    flyOutItemCallbacks = options
+        ( obj, key ) => obj?.[ key ],
+        
+        window
+        
+        ),
+      
+    callbacks = options.callbacks;
     
-      .callbacks
-      
-      .flyOutItem,
-      
-    itemCallbacks = options
-    
-      .callbacks
-      
-      .item,
-      
-    hasCallbacks =
-    
-      itemCallbacks.length
-      
-      ||
-      
-      flyOutItemCallbacks.length;
-      
-  if ( ! hasCallbacks ) return; // bail if no callbacks
+  // bail if no callbacks
   
-  const callback = ( ) => {
+  if ( ! callbacks.length ) return;
   
-    const
+  let debugFlag = false;
+  
+  const
+  
+    callbackRun =
     
-      callback = ( ) => {
+      ( callback, element, type ) => {
       
-        const
+        try {
         
-          selector = [
+          callback ( element, type );
           
-            '.sqs-block-calendar', // 7.1, 7.0
-            
-            // 7.0, Events page view calendar
-            
-            '.sqs-events-collection-calendar',
-            
-            ]
-            
-            .join ( ', ' ),
-            
-          calendarElements = document
+          } catch ( error ) {
           
-            .body
+            const s = `${
             
-            .querySelectorAll ( selector ),
+              codeKey
+              
+              } callback error`;
+              
+            console.error ( s, error );
             
-          debugFlag = options.debugFlag,
-          
-          hasCalendars = calendarElements.length;
-          
-        if ( debugFlag )
+            }
+            
+        },
         
-          console.log (
+    ssVersion = Static
+    
+      .SQUARESPACE_CONTEXT
+      
+      .templateVersion,
+      
+    addedNodeCallback = ( element ) => {
+    
+      const isElement = element
+      
+        .nodeType
+        
+        ===
+        
+        1;
+        
+      // bail if not element
+      
+      if ( ! isElement ) return;
+      
+      const
+      
+        classList = element.classList,
+        
+        isEvent = classList.contains (
+        
+          'has-event'
           
-            `${ codeKey } calendar elements : `,
-            
-            calendarElements
-            
-            );
-            
-        if ( ! hasCalendars ) return; // bail if no calendars
+          ),
+          
+        isNonEventSkip =
         
-        const
+          options.nonEventElementSkip
+          
+          &&
+          
+          ! isEvent;
+          
+      // bail if element not event
+      
+      if ( isNonEventSkip ) return;
+      
+      const
+      
+        isDay = classList.contains (
         
-          callback = ( mutations ) => {
+          'yui3-calendar-day'
+          
+          ),
+          
+        isFlyout = classList.contains (
+        
+          'flyoutitemlist'
+          
+          ),
+          
+        isItem = classList.contains (
+        
+          'itemlist'
+          
+          );
+          
+        isMarker = classList.contains (
+        
+          'marker'
+          
+          );
+          
+      let type;
+      
+      switch ( true ) {
+      
+        case isEvent :
+        
+          type = 'event';
+          
+          break;
+          
+        case isFlyout :
+        
+          type = 'flyout';
+          
+          break;
+          
+        case isItem :
+        
+          type = 'item';
+          
+          break;
+          
+        case isMarker :
+        
+          type = 'marker';
+          
+          break;
+          
+        case isDay :
+        
+          type = 'day';
+          
+          break;
+          
+        }
+        
+      options
+      
+        .callbacks
+        
+        .forEach (
+        
+          c => callbackRun (
+          
+            c,
+            
+            element,
+            
+            type
+            
+            )
+            
+          );
+          
+      };
+      
+    mutationCallback = ( mutation ) => {
+    
+      if ( debugFlag )
+      
+        console.log (
+        
+          `${ codeKey } mutation : `,
+          
+          mutation
+          
+          );
+          
+      const addedNodes =
+      
+        mutation.addedNodes;
+        
+      // bail if no added nodes
+      
+      if ( ! addedNodes.length ) return;
+      
+      addedNodes.forEach (
+      
+        addedNodeCallback
+        
+        );
+        
+      },
+      
+    initialize = ( ) => {
+    
+      const
+      
+        calendarElements = document
+        
+          .body
+          
+          .querySelectorAll (
+          
+            [
+            
+              // 7.1, 7.0
+              
+              '.sqs-block-calendar',
+              
+              // 7.0, Events page view calendar
+              
+              '.sqs-events-collection-calendar',
+              
+              ]
+              
+              .join ( ', ' )
+              
+            ),
+            
+        hasCalendars =
+        
+          calendarElements.length;
+          
+      debugFlag = options.debugFlag;
+      
+      if ( debugFlag )
+      
+        console.log (
+        
+          `${
+          
+            codeKey
+            
+            } calendar elements : `,
+            
+          calendarElements
+          
+          );
+          
+      // bail if no calendars
+      
+      if ( ! hasCalendars ) return;
+      
+      // start listening for changes in specified elements
+      
+      calendarElements.forEach (
+      
+        e => new MutationObserver (
+        
+          ms => {
           
             if ( debugFlag )
             
-              console.log ( `${ codeKey } mutations : `, mutations );
+              console.log (
               
-            const callback = ( mutation ) => {
+                `${
+                
+                  codeKey
+                  
+                  } mutations : `,
+                  
+                ms
+                
+                );
+                
+            ms.forEach (
             
-              if ( debugFlag )
+              mutationCallback
               
-                console.log ( `${ codeKey } mutation : `, mutation );
-                
-              const addedNodes = mutation.addedNodes;
+              );
               
-              // bail if no added nodes
-              
-              if ( ! addedNodes.length ) return;
-              
-              const callback = ( element ) => {
-              
-                const isElement = element
-                
-                  .nodeType
-                  
-                  ===
-                  
-                  1;
-                  
-                if ( ! isElement ) return; // bail if not element
-                
-                const
-                
-                  classList = element.classList,
-                  
-                  hasEvent = classList
-                  
-                    .contains ( 'has-event' );
-                    
-                if ( ! hasEvent ) return; // bail if not event
-                
-                const callback = ( callback, element ) => {
-                
-                  try {
-                  
-                    callback ( element );
-                    
-                    } catch ( error ) {
-                    
-                      const s = `${ codeKey } callback error`;
-                      
-                      console.error ( s, error );
-                      
-                      }
-                      
-                  };
-                  
-                itemCallbacks.forEach (
-                
-                  c => callback (
-                  
-                    c,
-                    
-                    element
-                    
-                      .querySelector ( '.itemlist' )
-                      
-                    )
-                    
-                  );
-                  
-                flyOutItemCallbacks.forEach (
-                
-                  c => callback (
-                  
-                    c,
-                    
-                    element
-                    
-                      .querySelector ( '.itemlist' )
-                      
-                    )
-                    
-                  );
-                  
-                };
-                
-              addedNodes.forEach ( callback );
-              
-              };
-              
-            mutations.forEach ( callback );
+            }
             
-            },
-            
-          observer = new MutationObserver ( callback );
+          )
           
-        // start listening for changes in specified elements
-        
-        calendarElements.forEach (
-        
-          e => observer.observe (
+          .observe (
           
             e,
             
@@ -270,36 +363,42 @@
               
             )
             
-          );
+        );
+        
+      },
+      
+    domContentLoadedCallback = ( ) => {
+    
+      switch ( ssVersion ) {
+      
+        case '7.1' :
+        
+          initialize ( );
           
-        },
+          break;
+          
+        case '7' :
         
-      ssVersion = Static
+          Squarespace.onInitialize (
+          
+            Y,
+            
+            initialize
+            
+            );
+            
+          break;
+          
+        }
+        
+      };
       
-        .SQUARESPACE_CONTEXT
-        
-        .templateVersion;
-        
-    switch ( ssVersion ) {
-    
-      case '7.1' :
-      
-        callback ( );
-        
-        break;
-        
-      case '7' :
-      
-        Squarespace.onInitialize ( Y, callback );
-        
-        break;
-        
-      }
-      
-    };
-    
-  document
+  document.addEventListener (
   
-    .addEventListener ( 'DOMContentLoaded', callback );
+    'DOMContentLoaded',
+    
+    domContentLoadedCallback
+    
+    );
     
   } ) ( );

@@ -8,17 +8,13 @@ Observe changes to calendar block and call custom callbacks.
 
 ### Version
 
-  * 0.4.0
+  * 0.5.0
 
 #### SS Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -37,8 +33,8 @@ Observe changes to calendar block and call custom callbacks.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[calendar block observe changes options.html][6]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
         Read the code for any instructions within.
@@ -61,8 +57,8 @@ Observe changes to calendar block and call custom callbacks.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option if you want to have this effect on all Store pages.
+      
       * v7.1
       
         * Add code from file **[calendar block observe changes
@@ -112,8 +108,8 @@ Observe changes to calendar block and call custom callbacks.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[calendar block observe changes options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
@@ -125,8 +121,8 @@ Observe changes to calendar block and call custom callbacks.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * v7.1
     
       * Add code from file **[calendar block observe changes options.html][6]**
@@ -149,84 +145,84 @@ Observe changes to calendar block and call custom callbacks.
 
 ## Callback Examples
 
-You can create [callback][6] functions to customize calendar block events.
+You can create [callback][6] functions to customize Calendar Block Events.
 
-Your callbacks must accept an element.
-
-```html
-<script>
-
-  ( ( ) => {
-  
-    // initialize twc module
-    
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc cboc sub-module
-    
-    twc.cboc = ( ( self ) => self ) ( twc.cboc || { } );
-    
-    // initialize twc cboc callbacks sub-module
-    
-    twc.cboc.callbacks = ( ( self ) => self ) ( twc.cboc.callbacks || { } );
-      
-    // initialize twc cboc callbacks item sub-module
-    
-    twc.cboc.callbacks.item = ( ( self ) => {
-    
-      const callback = ( element ) => {
-      
-        console.log ( 'cboc item log element : ', element );
-        
-        };
-        
-      self.push ( callback );
-      
-      return self;
-      
-      } ) ( twc.cboc.callbacks.item || [ ] );
-      
-    } ) ( );
-    
-  </script>
-```
+Your callbacks must accept an element and a type. Type value is a string of day,
+event, flyout, item, marker, or undefined type. Type values day and event
+represent the same element in two different states.
 
 ```html
-<script>
+<!-- begin TWC CBOC Log -->
 
-  ( ( ) => {
+  <script>
   
-    // initialize twc module
+    ( ( ) => {
     
-    window.twc = ( ( self ) => self ) ( window.twc || { } );
-    
-    // initialize twc cboc sub-module
-    
-    twc.cboc = ( ( self ) => self ) ( twc.cboc || { } );
-    
-    // initialize twc cboc callbacks sub-module
-    
-    twc.cboc.callbacks = ( ( self ) => self ) ( twc.cboc.callbacks || { } );
+      /*
       
-    // initialize twc cboc callbacks flyOutItem sub-module
-    
-    twc.cboc.callbacks.flyOutItem = ( ( self ) => {
-    
-      const callback = ( element ) => {
-      
-        console.log ( 'cboc flyOutItem log element : ', element );
+        twc cboc log
         
-        };
+        License           : < https://tinyurl.com/s872fb68 >
         
-      self.push ( callback );
+        Version           : 0.5.0
+        
+        SS Versions       : 7.1, 7.0
+        
+        Copyright         : 2022-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      // initialize twc module
       
-      return self;
+      window.twc = window.twc || { };
       
-      } ) ( twc.cboc.callbacks.flyOutItem || [ ] );
+      // initialize twc cboc sub-module
       
-    } ) ( );
+      twc.cboc = twc.cboc || { };
+      
+      // initialize twc cboc callbacks sub-module
+      
+      twc.cboc.callbacks = ( ( self ) => {
+      
+        const callback = ( element, type ) => {
+        
+          // debugger;
+          
+          console.log (
+          
+            'twc cboc log element :',
+            
+            element
+            
+            );
+            
+          console.log (
+          
+            'twc cboc log type :',
+            
+            type
+            
+            );
+            
+          };
+          
+        self.push ( callback );
+        
+        return self;
+        
+        } ) ( twc.cboc.callbacks || [ ] );
+        
+      } ) ( );
+      
+    </script>
     
-  </script>
+  <!-- end TWC CBOC Log -->
 ```
 
 ## Note
@@ -239,6 +235,11 @@ Please consider [making a donation][5].
 
 ## Changes
 
+* **2026-10-23**
+
+  * reworked so that all elements of each Calendar Block are observed
+  * bumped version to 0.5.0
+  
 * **2025-12-30**
 
   * moved options out of main code
