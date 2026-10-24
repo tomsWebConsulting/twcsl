@@ -1113,10 +1113,6 @@ not necessarily designed to work together.
     
   * [Page Section Background Waves Overlay](v7.1/Page%20Section%20Background%20Waves%20Overlay)
     
-  * [Calendar Block Multi Day Event First Day Class Add](v7.1/Calendar%20Block%20Multi%20Day%20Event%20First%20Day%20Class%20Add)
-    
-    * [Calendar Block Multi Day Event First Day Class Add.bbprojectd](v7.1/Calendar%20Block%20Multi%20Day%20Event%20First%20Day%20Class%20Add/Calendar%20Block%20Multi%20Day%20Event%20First%20Day%20Class%20Add.bbprojectd)
-      
   * [Move Page Last Footer Section to First](v7.1/Move%20Page%20Last%20Footer%20Section%20to%20First)
     
   * [Auto Change Product Grid Image Opacity on Touch Screen Device](v7.1/Auto%20Change%20Product%20Grid%20Image%20Opacity%20on%20Touch%20Screen%20Device)
@@ -1324,6 +1320,10 @@ not necessarily designed to work together.
     * [Calendar Block First Two Fix](Block/Calendar/Calendar%20Block%20First%20Two%20Fix)
       
       * [Calendar Block First Two Fix.bbprojectd](Block/Calendar/Calendar%20Block%20First%20Two%20Fix/Calendar%20Block%20First%20Two%20Fix.bbprojectd)
+        
+    * [Calendar Block Multiday Event First Class Add](Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add)
+      
+      * [Calendar Block Multiday Event First Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add.bbprojectd)
         
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
