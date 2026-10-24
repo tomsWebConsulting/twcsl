@@ -129,7 +129,7 @@ Fix Calendar Block months that have two firsts of the month.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][11].
 
 ## Changes
 
