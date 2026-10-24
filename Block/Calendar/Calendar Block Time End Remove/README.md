@@ -156,5 +156,5 @@ Please consider [making a donation][12].
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: calendar%20block%20time%20end%20remove.html#L1
-[11]: https://toms-web-consulting-demos.squarespace.com/calendar-block-end-time-remove?password=twcdemos
+[11]: https://toms-web-consulting-demos.squarespace.com/calendar-block-time-end-remove?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
