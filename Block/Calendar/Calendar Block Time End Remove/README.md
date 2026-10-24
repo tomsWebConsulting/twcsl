@@ -50,7 +50,7 @@ Remove Calendar Block end times from Events.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@79f075b053e485bf74ec0087e55649b590369264/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Time End Remove -->
             
@@ -72,7 +72,7 @@ Remove Calendar Block end times from Events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@79f075b053e485bf74ec0087e55649b590369264/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Time End Remove -->
               
@@ -88,7 +88,7 @@ Remove Calendar Block end times from Events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@79f075b053e485bf74ec0087e55649b590369264/Block/Calendar/Calendar%20Block%20Time%20End%20Remove/calendar%20block%20time%20end%20remove.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Time End Remove -->
               
@@ -140,7 +140,7 @@ Please consider [making a donation][12].
 * **2026-10-23**
 
   * updated to work with Calendar Block Observe Changes v0.5.0
-  * bumped version to 0.2.0 (commit 117757fe832051f8218212e0c69518971c7c9cf0)
+  * bumped version to 0.2.0 (commit 79f075b053e485bf74ec0087e55649b590369264)
   
 * **2022-02-19**
 
