@@ -1,77 +1,83 @@
-<script>
+( ( ) => {
 
-  $( ( ) => {
+  // debugger;
   
-    /*
+  /*!
+  
+    calendar block time end remove
     
-      calendar block end time remove
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.1d0
-      
-      SS Version    : 7.1
-      
-      Dependencies  : jQuery
-      
-      Note          : this effect is not active in SS Preview to test it use
-                      private browsing < https://bit.ly/3f6lhq2 >
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    if ( window.frameElement !== null ) return; // bail if in Preview
+    License           : < https://tinyurl.com/s872fb68 >
     
-    // bail if no mutation observer available
+    Version           : 0.2.0
     
-    if ( ! ( 'MutationObserver' in window ) ) return;
+    SS Versions       : 7.1, 7.0
     
-    const $calendars = $( '.sqs-block-calendar' );
+    Dependencies      : calendar block observe changes
+                        < https://tinyurl.com/23rjk6zw >
     
-    if ( ! $calendars.length ) return; // bail if no calendars
+    Copyright         : 2022-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
-    const observer = new MutationObserver ( function ( mutations ) {
+    no user serviceable parts below
     
-      $.each ( mutations, function ( ) {
+    */
+    
+  const
+  
+    title = 'Calendar Block Time End Removee',
+    
+    version = '0.2.0',
+    
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
       
-        const $target = $( this.target );
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc = window.twc || { };
+  
+  // initialize twc cboc sub-module
+  
+  twc.cboc = twc.cboc || { };
+  
+  // initialize twc cboc callbacks sub-module
+  
+  twc.cboc.callbacks = ( ( self ) => {
+  
+    const
+    
+      codeKey = 'twc-cbter';
+      
+      callback = ( element, type ) => {
+      
+        switch ( type ) {
         
-        if ( ! this.addedNodes.length ) return;
-        
-        if ( ! $target.hasClass ( 'has-event' ) ) return;
-        
-        $.each ( this.addedNodes, function ( ) {
-        
-          const $this = $( this );
+          case 'flyout' :
           
-          const isItemList = $this.hasClass ( 'itemlist' );
-          
-          const isItemListFlyOut = $this.hasClass ( 'flyoutitemlist' );
-          
-          // bail if no item list
-          
-          if ( ! isItemList && ! isItemListFlyOut ) return;
-          
-          switch ( true ) {
-          
-            case isItemList :
+            element
             
-            $( '.item-enddate', $this ).remove ( );
-            
-              break;
+              .querySelectorAll (
               
-            case isItemListFlyOut :
+                '.flyoutitem-datetime'
+                
+                )
+                
+              .forEach ( e => {
             
-              $( '.flyoutitem-datetime', $this ).each ( function ( ) {
-              
-                const $this = $( this );
+                const text = e
                 
-                const text = $this
-                
-                  .text ( )
+                  .textContent
                   
                   .split ( '–' )
                   
@@ -79,33 +85,38 @@
                   
                   .trim ( );
                   
-                $this.text ( text );
+                e.textContent = text;
                 
                 } );
                 
-              break;
-              
-            }
+            break;
             
-          } );
+          case 'item' :
           
-        } );
+            element
+            
+              .querySelectorAll (
+              
+                '.item-enddate'
+                
+                )
+                
+              .forEach (
+              
+                e => e.remove ( )
+                
+                );
+                
+            break;
+            
+          }
+          
+        };
         
-      } );
-      
-    // start listening for changes in specified elements
+    self.push ( callback );
     
-    $calendars.each ( function ( ) {
+    return self;
     
-      observer.observe ( this, {
-      
-        childList : true,
-        subtree : true
-        
-        } );
-        
-      } );
-      
-    } );
+    } ) ( twc.cboc.callbacks || [ ] );
     
-  </script>
+  } ) ( );
