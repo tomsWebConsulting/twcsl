@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 671 effects. Each effect has it's own version number, code,
+twcsl contains 673 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1131,8 +1131,6 @@ not necessarily designed to work together.
     
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
-  * [Calendar Block End Time Remove](v7.1/Calendar%20Block%20End%20Time%20Remove)
-    
   * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
     
   * [Header](v7.1/Header)
@@ -1143,6 +1141,8 @@ not necessarily designed to work together.
       
   * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
     
+    * [Calendar Block Week at a Time.bbprojectd](v7.1/Calendar%20Block%20Week%20at%20a%20Time/Calendar%20Block%20Week%20at%20a%20Time.bbprojectd)
+      
   * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
     
   * [Block](v7.1/Block)
@@ -1328,6 +1328,10 @@ not necessarily designed to work together.
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
       * [Calendar Block Observe Changes.bbprojectd](Block/Calendar/Calendar%20Block%20Observe%20Changes/Calendar%20Block%20Observe%20Changes.bbprojectd)
+        
+    * [Calendar Block Time End Remove](Block/Calendar/Calendar%20Block%20Time%20End%20Remove)
+      
+      * [Calendar Block End Time Remove.bbprojectd](Block/Calendar/Calendar%20Block%20Time%20End%20Remove/Calendar%20Block%20End%20Time%20Remove.bbprojectd)
         
     * [Calendar Block All Day Time Hide](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide)
       
