@@ -8,7 +8,7 @@ Hide all day calendar times.
 
 ### Version
 
-  * 0.1.1
+  * 0.2.0
 
 #### SS Versions
 
@@ -124,6 +124,11 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-10-23**
+
+  * updated to work with Calendar Block Observe Changes v0.5.0
+  * bumped version to 0.2.0
+  
 * **2025-12-30**
 
   * added hiding item start time

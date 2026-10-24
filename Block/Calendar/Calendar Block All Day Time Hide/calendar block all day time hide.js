@@ -1,29 +1,25 @@
 ( ( ) => {
 
+  // debugger;
+  
   /*!
   
     calendar block all day time hide
     
-    License         : < https://tinyurl.com/s872fb68 >
+    License           : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.1
+    Version           : 0.2.0
     
-    SS Versions     : 7.1, 7.0
+    SS Versions       : 7.1, 7.0
     
-    v7.1
-    Fluid
-    Engine
-    Compatible      : Yes
+    Dependencies      : calendar block observe changes
+                        < https://tinyurl.com/23rjk6zw >
     
-    Note            : the code is comprised of a style and script tag. both are
-                      needed for the full effect to work
-    
-    Dependencies    : calendar block observe changes
-                      < https://tinyurl.com/23rjk6zw >
-    
-    Copyright       : 2025 Thomas Creedon
-                      
-                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    Copyright         : 2025-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
     no user serviceable parts below
     
@@ -31,19 +27,17 @@
     
   const
   
-    version = '0.1.1',
+    title = 'Calendar Block All Day Time Hide',
     
-    s = `
+    version = '0.2.0',
     
-      Calendar Block All Day Time Hide v${ version }
-      
+    s = `${ title } v${ version }
+    
       License < https://tinyurl.com/s872fb68 >
       
-      © 2025 Thomas Creedon
+      © 2025-2026 Thomas Creedon
       
-      Tom's Web Consulting < http://www.tomsWeb.consulting >
-      
-      `
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
       
       .replace ( /^\s+/gm, '' );
       
@@ -51,27 +45,23 @@
   
   // initialize twc module
   
-  window.twc = ( ( self ) => self ) ( window.twc || { } );
+  window.twc = window.twc || { };
   
   // initialize twc cboc sub-module
   
-  twc.cboc = ( ( self ) => self ) ( twc.cboc || { } );
+  twc.cboc = twc.cboc || { };
   
   // initialize twc cboc callbacks sub-module
   
-  twc.cboc.callbacks = ( ( self ) => self ) ( twc.cboc.callbacks || { } );
-    
-  // initialize twc cboc callbacks flyOutItem sub-module
+  twc.cboc.callbacks = ( ( self ) => {
   
-  twc.cboc.callbacks.flyOutItem = ( ( self ) => {
-  
-    const callback = ( element ) => {
+    const
     
-      const
+      codeKey = 'twc-cbadth';
       
-        codeKey = 'twc-cbadth',
-        
-        xPathEvaluate = ( xPathExpression, contextNode ) => {
+      xPathEvaluate =
+      
+        ( xPathExpression, contextNode ) => {
         
           const xPathResults = document
           
@@ -93,58 +83,86 @@
           
           },
           
-        xPathExpression = `
-        
-          //div[
-          
-            contains (
-            
-              @class,
-              
-              'flyoutitem-datetime--24hr'
-              
-              )
-              
-            and 
-            
-            normalize-space ( text ( ) ) = '00:00 – 23:59'
-            
-            ]
-            
-          `,
-          
-        xPathResults = xPathEvaluate (
-        
-          xPathExpression,
-          
-          document
-          
-            .body
-            
-            .querySelector ( '#siteWrapper' )
-            
-          );
-          
-      for ( let i = 0; i < xPathResults.snapshotLength; i++ ) {
+      xPathExpression = `
       
-        xPathResults
+        .//div[
         
-          .snapshotItem ( i )
+          contains (
           
-          .closest ( 'td' )
+            concat (
+            
+              ' ',
+              
+              normalize-space ( @class ),
+              
+              ' '
+              
+              ),
+              
+            ' flyoutitem-datetime--24hr '
+            
+            )
+            
+          and 
           
-          .classList
+          normalize-space ( text ( ) )
           
-          .add ( codeKey );
+          =
           
-        }
+          '00:00 – 23:59'
+          
+          ]
+          
+        `;
         
-      };
+      callback = ( element, type ) => {
       
+        const isFlyout = type === 'flyout';
+        
+        // bail if not flyout
+        
+        if ( ! isFlyout ) return;
+        
+        const xPathResults =
+        
+          xPathEvaluate (
+            
+            xPathExpression,
+            
+            element
+            
+            );
+            
+        for (
+        
+          let i = 0;
+          
+          i
+          
+          <
+          
+          xPathResults.snapshotLength;
+          
+          i++
+          
+          )
+          
+          xPathResults
+          
+            .snapshotItem ( i )
+            
+            .closest ( 'td' )
+            
+            .classList
+            
+            .add ( codeKey );
+            
+        };
+        
     self.push ( callback );
     
     return self;
     
-    } ) ( twc.cboc.callbacks.flyOutItem || [ ] );
+    } ) ( twc.cboc.callbacks || [ ] );
     
   } ) ( );
