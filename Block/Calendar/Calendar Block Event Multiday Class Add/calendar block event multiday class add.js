@@ -1,0 +1,237 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    calendar block event multiday class add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Dependencies      : calendar block observe changes
+                        
+                        < https://tinyurl.com/23rjk6zw >
+    
+    Copyright         : 2022-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    title = 'Calendar Block Event Multiday Class Add',
+    
+    version = '0.2.0',
+    
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc = window.twc || { };
+  
+  // initialize twc cboc sub-module
+  
+  twc.cboc = twc.cboc || { };
+  
+  // initialize twc cboc callbacks sub-module
+  
+  twc.cboc.callbacks = ( ( self ) => {
+  
+    const
+    
+      codeKey = 'twc-cbemca',
+      
+      hrefClassNames = new Set ( ),
+      
+      multidayClassName =
+      
+        `${ codeKey }-multiday`,
+        
+      flyoutCallback = ( element ) => {
+      
+        const hasClass = element
+        
+          .closest ( 'td' )
+          
+          .classList
+          
+          .contains (
+          
+            multidayClassName
+            
+            );
+            
+        // bail if element has class
+        
+        if ( hasClass ) return;
+        
+        const multidayElement = element
+        
+          .querySelector (
+          
+            '.flyoutitem--multiday'
+            
+            );
+            
+        // bail if not multi day
+        
+        if ( ! multidayElement ) return;
+        
+        const
+        
+          href = multidayElement
+          
+            .querySelector (
+            
+              '.flyoutitem-link'
+              
+              )
+              
+            .getAttribute ( 'href' ),
+            
+          hrefClassName = href
+          
+            .split ( '/' )
+            
+            .slice ( -1 )
+            
+            [ 0 ]
+            
+            .replace (
+            
+              /^([\d-_]{1})/,
+              
+              'x-$1'
+              
+              );
+              
+        hrefClassNames.add (
+        
+          hrefClassName
+          
+          );
+          
+        element
+        
+          .closest ( 'td' )
+          
+          .classList
+          
+          .add (
+          
+            multidayClassName,
+            
+            hrefClassName
+            
+            );
+            
+        },
+        
+      markerCallback = ( element ) => {
+      
+        const isLastDay = element
+        
+          .closest ( 'td' )
+          
+          .nextElementSibling
+          
+          ?.classList
+          
+          .contains (
+          
+            'yui3-calendar-nextmonth-day'
+            
+            );
+            
+        // bail if not last day
+        
+        if ( ! isLastDay ) return;
+        
+        hrefClassNames.forEach ( c => {
+        
+          element
+          
+            .closest ( 'tbody' )
+            
+            .querySelectorAll (
+            
+              `.${ c }`
+              
+              )
+              
+            .forEach ( ( e, i ) => {
+            
+              e
+              
+                .classList
+                
+                .add ( `${
+                
+                  multidayClassName
+                  
+                  }-${
+                  
+                    i + 1
+                    
+                    }` );
+                    
+              } )
+              
+            } );
+            
+        },
+        
+      callback = ( element, type ) => {
+      
+        switch ( type ) {
+        
+          case 'flyout' :
+          
+            flyoutCallback (
+            
+              element
+              
+              );
+              
+            break;
+            
+          case 'marker' :
+          
+            markerCallback (
+            
+              element
+              
+              );
+              
+            break;
+            
+          }
+          
+        };
+        
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.cboc.callbacks || [ ] );
+    
+  } ) ( );

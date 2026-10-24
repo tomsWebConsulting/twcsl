@@ -1,91 +1,237 @@
-<script>
+( ( ) => {
 
-  var cbemca = ( $element ) => {
+  // debugger;
   
-    /*
+  /*!
+  
+    calendar block event multiday class add
     
-      calendar block event multiday class add
-      
-      License       : < https://tinyurl.com/s872fb68 >
-      
-      Version       : 0.1.0
-      
-      SS Version    : 7.1
-      
-      Fluid
-      Engine
-      Compatible    : Yes
-      
-      Dependencies  : calendar block event change
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      no user serviceable parts below
-      
-      */
-      
-    const daySelector = '.yui3-calendar-day';
+    License           : < https://tinyurl.com/s872fb68 >
     
-    const multidayClassName = 'twc-cbemca-multiday';
+    Version           : 0.2.0
     
-    const isCcbemca = $element
+    SS Versions       : 7.1, 7.0
     
-      .parents ( daySelector )
-      
-      .hasClass ( multidayClassName );
-      
-    if ( isCcbemca ) return; // bail if day processed
+    Dependencies      : calendar block observe changes
+                        
+                        < https://tinyurl.com/23rjk6zw >
     
-    let selector = '.flyoutitem--multiday';
+    Copyright         : 2022-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
     
-    const $multiday = $( selector, $element );
+    no user serviceable parts below
     
-    if ( ! $multiday.length ) return; // bail if not multi day
+    */
     
-    const blockId = $element
+  const
+  
+    title = 'Calendar Block Event Multiday Class Add',
     
-      .parents ( '.sqs-block-calendar' )
-      
-      .attr ( 'id' );
-      
-    const href = $( '.flyoutitem-link', $multiday )
+    version = '0.2.0',
     
-      .attr ( 'href' );
-      
-    const hrefClassName = href
+    s = `${ title } v${ version }
     
-      .split ( '/' )
+      License < https://tinyurl.com/s872fb68 >
       
-      .slice ( -1 )
+      © 2022-2026 Thomas Creedon
       
-      [ 0 ]
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
       
-      .replace ( /^([\d-_]{1})/, 'x-$1' );
+      .replace ( /^\s+/gm, '' );
       
-    const classes = `${ multidayClassName } ${ hrefClassName }`;
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc = window.twc || { };
+  
+  // initialize twc cboc sub-module
+  
+  twc.cboc = twc.cboc || { };
+  
+  // initialize twc cboc callbacks sub-module
+  
+  twc.cboc.callbacks = ( ( self ) => {
+  
+    const
     
-    selector = '.flyoutitem-datetime--24hr';
-    
-    $element
-    
-      .parents ( 'tbody' )
+      codeKey = 'twc-cbemca',
       
-      .find ( `.item-link[href="${ href }"]` )
+      hrefClassNames = new Set ( ),
       
-      .parents ( daySelector )
+      multidayClassName =
       
-      .addClass ( classes );
-      
-    selector = `#${ blockId } .${ multidayClassName }.${ hrefClassName }`;
-    
-    $( selector ).each ( function ( i ) {
-    
-      $( this )
-      
-        .addClass ( `${ multidayClassName }-${ i + 1 }` );
+        `${ codeKey }-multiday`,
         
-      } );
+      flyoutCallback = ( element ) => {
       
-    };
+        const hasClass = element
+        
+          .closest ( 'td' )
+          
+          .classList
+          
+          .contains (
+          
+            multidayClassName
+            
+            );
+            
+        // bail if element has class
+        
+        if ( hasClass ) return;
+        
+        const multidayElement = element
+        
+          .querySelector (
+          
+            '.flyoutitem--multiday'
+            
+            );
+            
+        // bail if not multi day
+        
+        if ( ! multidayElement ) return;
+        
+        const
+        
+          href = multidayElement
+          
+            .querySelector (
+            
+              '.flyoutitem-link'
+              
+              )
+              
+            .getAttribute ( 'href' ),
+            
+          hrefClassName = href
+          
+            .split ( '/' )
+            
+            .slice ( -1 )
+            
+            [ 0 ]
+            
+            .replace (
+            
+              /^([\d-_]{1})/,
+              
+              'x-$1'
+              
+              );
+              
+        hrefClassNames.add (
+        
+          hrefClassName
+          
+          );
+          
+        element
+        
+          .closest ( 'td' )
+          
+          .classList
+          
+          .add (
+          
+            multidayClassName,
+            
+            hrefClassName
+            
+            );
+            
+        },
+        
+      markerCallback = ( element ) => {
+      
+        const isLastDay = element
+        
+          .closest ( 'td' )
+          
+          .nextElementSibling
+          
+          ?.classList
+          
+          .contains (
+          
+            'yui3-calendar-nextmonth-day'
+            
+            );
+            
+        // bail if not last day
+        
+        if ( ! isLastDay ) return;
+        
+        hrefClassNames.forEach ( c => {
+        
+          element
+          
+            .closest ( 'tbody' )
+            
+            .querySelectorAll (
+            
+              `.${ c }`
+              
+              )
+              
+            .forEach ( ( e, i ) => {
+            
+              e
+              
+                .classList
+                
+                .add ( `${
+                
+                  multidayClassName
+                  
+                  }-${
+                  
+                    i + 1
+                    
+                    }` );
+                    
+              } )
+              
+            } );
+            
+        },
+        
+      callback = ( element, type ) => {
+      
+        switch ( type ) {
+        
+          case 'flyout' :
+          
+            flyoutCallback (
+            
+              element
+              
+              );
+              
+            break;
+            
+          case 'marker' :
+          
+            markerCallback (
+            
+              element
+              
+              );
+              
+            break;
+            
+          }
+          
+        };
+        
+    self.push ( callback );
     
-  </script>
+    return self;
+    
+    } ) ( twc.cboc.callbacks || [ ] );
+    
+  } ) ( );
