@@ -50,7 +50,7 @@ Add classes to multiday events.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8f01d250d6f3751266cd111870050f2ed6feb689/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a3da7834df3de2b41c89f38612089328d74b1e71/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Event Multiday Class Add -->
             
@@ -72,7 +72,7 @@ Add classes to multiday events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8f01d250d6f3751266cd111870050f2ed6feb689/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a3da7834df3de2b41c89f38612089328d74b1e71/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Event Multiday Class Add -->
               
@@ -88,7 +88,7 @@ Add classes to multiday events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@8f01d250d6f3751266cd111870050f2ed6feb689/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@a3da7834df3de2b41c89f38612089328d74b1e71/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Event Multiday Class Add -->
               
@@ -139,7 +139,7 @@ Please consider [making a donation][11].
 
   * updated to work with Calendar Block Observe Changes v0.5.0
   * removed jQuery dependency
-  * bumped version to 0.2.0 (commit 8f01d250d6f3751266cd111870050f2ed6feb689)
+  * bumped version to 0.2.0 (commit a3da7834df3de2b41c89f38612089328d74b1e71)
   
 * **2022-08-28**
 
