@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 676 effects. Each effect has it's own version number, code,
+twcsl contains 677 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1125,8 +1125,6 @@ not necessarily designed to work together.
     
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
-  * [Calendar Block Single Day Event Class Add](v7.1/Calendar%20Block%20Single%20Day%20Event%20Class%20Add)
-    
   * [Header](v7.1/Header)
     
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
@@ -1322,6 +1320,10 @@ not necessarily designed to work together.
     * [Calendar Block Multiday Event First Class Add](Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add)
       
       * [Calendar Block Multiday Event First Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add.bbprojectd)
+        
+    * [Calendar Block Event Single Day Class Add](Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add)
+      
+      * [Calendar Block Event Single Day Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/Calendar%20Block%20Event%20Single%20Day%20Class%20Add.bbprojectd)
         
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
