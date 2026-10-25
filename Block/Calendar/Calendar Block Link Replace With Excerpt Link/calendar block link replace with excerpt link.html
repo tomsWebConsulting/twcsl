@@ -1,61 +1,235 @@
-<script>
+<!-- begin TWC Calendar Block Link Replace With Excerpt Link -->
 
-  const cblrwel = ( $element ) => {
+  <script>
   
-    /*
+    ( ( ) => {
     
-      calendar block link replace with excerpt link
+      // debugger;
       
-      License       : < https://tinyurl.com/s872fb68 >
+      /*
       
-      Version       : 0.1.0
+        calendar block link replace with excerpt link
+        
+        License           : < https://tinyurl.com/s872fb68 >
+        
+        Version           : 0.2.0
+        
+        SS Versions       : 7.1, 7.0
+        
+        Copyright         : 2022-2026 Thomas Creedon
+                            
+                            Tom's Web Consulting
+                            
+                            < http://www.tomsWeb.consulting/ >
+        
+        no user serviceable parts below
+        
+        */
+        
+      const
       
-      SS Version    : 7.1
+        title = 'Calendar Block Link Replace With Excerpt Link',
+        
+        version = '0.2.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2022-2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
       
-      Fluid
-      Engine
-      Compatible    : Yes
+      // initialize twc module
       
-      Dependencies  : jQuery
+      window.twc = window.twc || { };
+      
+      // initialize twc cboc sub-module
+      
+      twc.cboc = twc.cboc || { };
+      
+      // initialize twc cboc callbacks sub-module
+      
+      twc.cboc.callbacks = ( ( self ) => {
+      
+        const
+        
+          codeKey = 'twc-cblrwel';
+          
+          xPathEvaluate = (
+          
+            xPathExpression,
+            
+            contextNode
+            
+            ) => {
+            
+              const xPathResults = document
+              
+                .evaluate (
+                
+                  xPathExpression,
+                  
+                  contextNode,
+                  
+                  null,
+                  
+                  XPathResult
+                  
+                    .ORDERED_NODE_SNAPSHOT_TYPE,
+                    
+                  null
+                  
+                  );
+                  
+              return xPathResults;
+              
+              },
+              
+          xPathExpression = `
+          
+            .// p [
+            
+              contains (
+              
+                .,
+                
+                '${ codeKey }'
+                
+                )
+                
+              ]
+              
+            `,
+            
+          callback = ( element, type ) => {
+          
+            const isType = type === 'flyout';
+            
+            // bail if not type
+            
+            if ( ! isType ) return;
+            
+            const
+            
+              xPathResults =
+              
+                xPathEvaluate (
+                
+                  xPathExpression,
+                  
+                  element
+                  
+                  );
+                  
+                for (
+                
+                  let i = 0;
+                  
+                  i
+                  
+                  <
+                  
+                  xPathResults.snapshotLength;
+                  
+                  i++
+                  
+                  ) {
+                  
+                    const
+                    
+                      element = xPathResults
                       
-                      calendar block event change
-      
-      By            : Thomas Creedon < http://www.tomsWeb.consulting/ >
-      
-      */
-      
-      const linkText = '[enter link text here between single quotes]';
-      
-      // do not change anything below, there be the borg here
-      
-      const selector = `.flyoutitem-excerpt a:contains(${ linkText })`;
-      
-      const $anchor = $( selector, $element );
-      
-      if ( ! $anchor.length ) return; // bail if no anchor
-      
-      const href = $anchor.attr ( 'href' );
-      
-      $anchor
-      
-        .parents ( 'p' )
+                        .snapshotItem ( i ),
+                        
+                      liElement = element
+                      
+                        .parentElement
+                        
+                        .parentElement,
+                        
+                      index = [
+                      
+                        ...
+                        
+                        liElement
+                        
+                        .parentElement
+                        
+                        .children
+                        
+                        ]
+                        
+                        .indexOf (
+                        
+                          liElement
+                          
+                          )
+                          
+                        +
+                        
+                        1,
+                        
+                      url = element
+                      
+                        .querySelector ( 'a' )
+                        
+                        .getAttribute ( 'href' );
+                        
+                    element
+                    
+                      .closest ( 'li' )
+                      
+                      .querySelector ( 'a' )
+                      
+                      .setAttribute (
+                      
+                        'href',
+                        
+                        url
+                        
+                        );
+                        
+                    element
+                    
+                      .closest ( 'td' )
+                      
+                      .querySelector (
+                      
+                        `.item--multiday:nth-child( ${
+                        
+                          index
+                          
+                          } ) a`
+                          
+                        )
+                        
+                      .setAttribute (
+                      
+                        'href',
+                        
+                        url
+                        
+                        );
+                        
+                    element.remove ( );
+                    
+                    }
+                    
+            };
+            
+        self.push ( callback );
         
-        .remove ( );
+        return self;
         
-      const $elements = $( '.flyoutitem-link', $element );
-      
-      $element = $element
-      
-        .prev ( '.itemlist' )
+        } ) ( twc.cboc.callbacks || [ ] );
         
-        .find ( '.item-link' );
-        
-      $elements
-      
-        .add ( $element )
-        
-        .attr ( 'href', href );
-        
-    };
+      } ) ( );
+  
+    </script>
     
-  </script>
+  <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
