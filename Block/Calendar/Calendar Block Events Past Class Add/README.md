@@ -50,7 +50,7 @@ Add past class to Events.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Events Past Class Add -->
             
@@ -72,7 +72,7 @@ Add past class to Events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Events Past Class Add -->
               
@@ -88,7 +88,7 @@ Add past class to Events.
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@5b108c9d929f5a815d2f64e7b2b3efa2d8465246/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
               
               <!-- end TWC Calendar Block Events Past Class Add -->
               
@@ -145,7 +145,7 @@ Please consider [making a donation][11].
 
   * updated to work with Calendar Block Observe Changes v0.5.0
   * removed jQuery dependency
-  * bumped version to 0.2.0 (commit 96be5134ca69f3c140d9ca3c86aad0c122b9edfd)
+  * bumped version to 0.2.0 (commit 4a225ac2c6ff4570e92bec2d2acef6742701093e)
   
 * **2022-04-29**
 
