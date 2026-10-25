@@ -50,7 +50,7 @@ Add single day class to Event.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Event Single Day Class Add -->
             
@@ -70,7 +70,7 @@ Add single day class to Event.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Event Single Day Class Add -->
             
@@ -113,7 +113,7 @@ Please consider [making a donation][11].
 
   * updated to work with Calendar Block Observe Changes v0.5.0
   * removed jQuery dependency
-  * bumped version to 0.2.0 (commit de957609d243ee88dd221204d26080bc7f494fe2)
+  * bumped version to 0.2.0 (commit 96be5134ca69f3c140d9ca3c86aad0c122b9edfd)
   
 * **2022-08-09**
 
