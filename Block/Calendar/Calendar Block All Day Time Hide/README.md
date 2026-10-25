@@ -16,10 +16,6 @@ Hide all day calendar times.
   
   * 7.0
 
-#### Fluid Engine Compatible
-
-  * Yes
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
