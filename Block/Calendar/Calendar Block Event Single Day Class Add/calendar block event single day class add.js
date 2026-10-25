@@ -1,0 +1,169 @@
+( ( ) => {
+
+  // debugger;
+  
+  /*!
+  
+    calendar block event single day class add
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.2.0
+    
+    SS Versions       : 7.1, 7.0
+    
+    Copyright         : 2022-2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    */
+    
+  const
+  
+    title = 'Calendar Block Event Single Day Class Add',
+    
+    version = '0.2.0',
+    
+    s = `${ title } v${ version }
+    
+      License < https://tinyurl.com/s872fb68 >
+      
+      © 2022-2026 Thomas Creedon
+      
+      Tom's Web Consulting < http://www.tomsWeb.consulting >`
+      
+      .replace ( /^\s+/gm, '' );
+      
+  console.log ( s );
+  
+  // initialize twc module
+  
+  window.twc = window.twc || { };
+  
+  // initialize twc cboc sub-module
+  
+  twc.cboc = twc.cboc || { };
+  
+  // initialize twc cboc callbacks sub-module
+  
+  twc.cboc.callbacks = ( ( self ) => {
+  
+    const
+    
+      codeKey = 'twc-cbesdca',
+      
+      hrefs = new Set ( ),
+      
+      markerCallback = ( element ) => {
+      
+        const isLastDay = element
+        
+          .closest ( 'td' )
+          
+          .nextElementSibling
+          
+          ?.classList
+          
+          .contains (
+          
+            'yui3-calendar-nextmonth-day'
+            
+            );
+            
+        // bail if not last day
+        
+        if ( ! isLastDay ) return;
+        
+        hrefs.forEach ( h =>
+        
+          element
+          
+            .closest ( 'tbody' )
+            
+            .querySelectorAll (
+            
+              `.item-link[ href = "${ h }" ]`
+              
+              )
+              
+            .forEach ( e =>
+            
+              e
+              
+                .closest ( 'td' )
+                
+                .classList
+                
+                .add ( `${
+                
+                  codeKey
+                  
+                  }-single-day` )
+                
+              )
+              
+          );
+          
+        },
+        
+      callback = ( element, type ) => {
+      
+        switch ( type ) {
+        
+          case 'item' : {
+          
+            const isMultiday = element
+            
+              .querySelector (
+              
+                '.item--multiday'
+                
+                );
+                
+            // bail if multiday
+            
+            if ( isMultiday ) return;
+            
+            hrefs.add (
+            
+              element
+              
+                .querySelector (
+                
+                  '.item-link'
+                  
+                  )
+                  
+                .getAttribute ( 'href' )
+                
+              );
+              
+            break;
+            
+            }
+            
+          case 'marker' :
+          
+            markerCallback (
+            
+              element
+              
+              );
+              
+            break;
+            
+          }
+          
+        };
+        
+    self.push ( callback );
+    
+    return self;
+    
+    } ) ( twc.cboc.callbacks || [ ] );
+    
+  } ) ( );
