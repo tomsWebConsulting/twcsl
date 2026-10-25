@@ -113,7 +113,7 @@
           
           ]
           
-        `;
+        `,
         
       callback = ( element, type ) => {
       
