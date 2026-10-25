@@ -50,9 +50,7 @@ Replace link with Excerpt link.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.css" rel="stylesheet" type="text/css">
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
             
@@ -72,9 +70,7 @@ Replace link with Excerpt link.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.css" rel="stylesheet" type="text/css">
-            
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
             
@@ -114,7 +110,7 @@ In your Excerpt field on a line by itself create a Link with the text
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -122,7 +118,7 @@ Please consider [making a donation][12].
 
   * updated to work with Calendar Block Observe Changes v0.5.0
   * removed jQuery dependency
-  * bumped version to 0.2.0 (commit 117757fe832051f8218212e0c69518971c7c9cf0)
+  * bumped version to 0.2.0 (commit de957609d243ee88dd221204d26080bc7f494fe2)
   
 * **2022-04-14**
 
@@ -138,5 +134,4 @@ Please consider [making a donation][12].
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
 [10]: calendar%20block%20link%20replace%20with%20excerpt%20link.html#L1
-[11]: https://toms-web-consulting-demos.squarespace.com/calendar-block-all-day-time-hide?password=twcdemos
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
