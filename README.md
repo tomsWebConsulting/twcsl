@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 677 effects. Each effect has it's own version number, code,
+twcsl contains 678 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -1031,8 +1031,6 @@ not necessarily designed to work together.
     
   * [Page Section Background Transparent](v7.1/Page%20Section%20Background%20Transparent)
     
-  * [Calendar Event Block Event Past Class Add](v7.1/Calendar%20Event%20Block%20Event%20Past%20Class%20Add)
-    
   * [Blog Post Title Each Word Span Tag Add](v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add)
     
   * [Header Height Add as CSS Variable](v7.1/Header%20Height%20Add%20as%20CSS%20Variable)
@@ -1328,6 +1326,10 @@ not necessarily designed to work together.
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
       * [Calendar Block Observe Changes.bbprojectd](Block/Calendar/Calendar%20Block%20Observe%20Changes/Calendar%20Block%20Observe%20Changes.bbprojectd)
+        
+    * [Calendar Block Events Past Class Add](Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add)
+      
+      * [Calendar Block Events Past Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/Calendar%20Block%20Events%20Past%20Class%20Add.bbprojectd)
         
     * [Calendar Block Event Multiday Class Add](Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add)
       
