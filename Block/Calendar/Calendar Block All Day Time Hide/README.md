@@ -50,9 +50,9 @@ Hide all day calendar times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block All Day Time Hide -->
             
@@ -72,9 +72,9 @@ Hide all day calendar times.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@117757fe832051f8218212e0c69518971c7c9cf0/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/calendar%20block%20all%20day%20time%20hide.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block All Day Time Hide -->
             
@@ -123,7 +123,7 @@ Please consider [making a donation][12].
 * **2026-10-23**
 
   * updated to work with Calendar Block Observe Changes v0.5.0
-  * bumped version to 0.2.0 (commit 117757fe832051f8218212e0c69518971c7c9cf0)
+  * bumped version to 0.2.0 (commit df0422dd5629c558aab4b73ab9aa3b3ea62dd826)
   
 * **2025-12-30**
 
