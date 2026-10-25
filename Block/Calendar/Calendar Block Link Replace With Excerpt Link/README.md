@@ -106,7 +106,7 @@ Replace link with Excerpt link.
 ## How to Use
 
 In your Excerpt field on a line by itself create a Link with the text
-**cblrwel**.
+**twc-cblrwel**.
 
 ## Make a Donation
 
