@@ -1129,10 +1129,6 @@ not necessarily designed to work together.
       
     * [Header Navigation Mindbody Login or Register Links Add](v7.1/Header/Header%20Navigation%20Mindbody%20Login%20or%20Register%20Links%20Add)
       
-  * [Calendar Block Week at a Time](v7.1/Calendar%20Block%20Week%20at%20a%20Time)
-    
-    * [Calendar Block Week at a Time.bbprojectd](v7.1/Calendar%20Block%20Week%20at%20a%20Time/Calendar%20Block%20Week%20at%20a%20Time.bbprojectd)
-      
   * [Portfolio Project Link Remove](v7.1/Portfolio%20Project%20Link%20Remove)
     
   * [Block](v7.1/Block)
@@ -1346,6 +1342,10 @@ not necessarily designed to work together.
     * [Calendar Block All Day Time Hide](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide)
       
       * [Calendar Block All Day Time Hide.bbprojectd](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide/Calendar%20Block%20All%20Day%20Time%20Hide.bbprojectd)
+        
+    * [Calendar Block Week at a Time](Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time)
+      
+      * [Calendar Block Week at a Time.bbprojectd](Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/Calendar%20Block%20Week%20at%20a%20Time.bbprojectd)
         
   * [Accordion](Block/Accordion)
     
