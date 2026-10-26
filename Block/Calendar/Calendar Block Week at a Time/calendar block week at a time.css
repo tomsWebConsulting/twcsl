@@ -1,0 +1,36 @@
+/*!
+
+  calendar block week at a time
+  
+  License           : < https://tinyurl.com/s872fb68 >
+  
+  Version           : 0.2.0
+  
+  SS Versions       : 7.1, 7.0
+  
+  Dependencies      : calendar block observe changes
+                      < https://tinyurl.com/23rjk6zw >
+  
+  Copyright         : 2021-2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+html:not( .squarespace-damask ) {
+
+  .yui3-calendarnav-nextmonth:nth-last-of-type( 1 ),
+  .yui3-calendarnav-prevmonth:nth-of-type( 1 ),
+  .yui3-calendar-row
+  
+    {
+    
+      display : none;
+      
+      }
+      
+  }
