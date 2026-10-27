@@ -50,9 +50,9 @@ Display Calendar Block a week at a time.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f4a3c62d0bd4a4f91358fa69434caa274736c388/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f4a3c62d0bd4a4f91358fa69434caa274736c388/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Week at a Time -->
             
@@ -72,9 +72,9 @@ Display Calendar Block a week at a time.
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f4a3c62d0bd4a4f91358fa69434caa274736c388/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
+            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@f4a3c62d0bd4a4f91358fa69434caa274736c388/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
             
             <!-- end TWC Calendar Block Week at a Time -->
             
@@ -121,7 +121,7 @@ Please consider [making a donation][12].
   * fixed issue with some weeks not showing
   * fixed issue with today week and two weeks showing
   * fixed issue with navigation not controlling the correct calendar
-  * bumped version to 0.2.1 (commit f4a3c62d0bd4a4f91358fa69434caa274736c388)
+  * bumped version to 0.2.1 (commit 7c61046242a79ef5020fe4a617849702742a6fba)
   
 * **2026-10-25**
 
