@@ -1,4 +1,4 @@
-# Calendar Block Multiday Event First Class Add
+# Calendar Block Multiday First Class Add
 
 ### [License][1]
 
@@ -46,13 +46,13 @@ Add classes to first day of multiday events.
           Page Header Code Injection for the Page.
           
           ```html
-          <!-- begin TWC Calendar Block Multiday Event First Class Add -->
+          <!-- begin TWC Calendar Block Multiday First Class Add -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add/calendar%20block%20multiday%20event%20first%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add/calendar%20block%20multiday%20first%20class%20add.min.js" type="module"></script>
             
-            <!-- end TWC Calendar Block Multiday Event First Class Add -->
+            <!-- end TWC Calendar Block Multiday First Class Add -->
             
           ```
           
@@ -68,13 +68,13 @@ Add classes to first day of multiday events.
             Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Multiday Event First Class Add -->
+            <!-- begin TWC Calendar Block Multiday First Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add/calendar%20block%20multiday%20event%20first%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add/calendar%20block%20multiday%20first%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Multiday Event First Class Add -->
+              <!-- end TWC Calendar Block Multiday First Class Add -->
               
             ```
             
@@ -84,13 +84,13 @@ Add classes to first day of multiday events.
             Custom Code > Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Multiday Event First Class Add -->
+            <!-- begin TWC Calendar Block Multiday First Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20Event%20First%20Class%20Add/calendar%20block%20multiday%20event%20first%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@84845ac190f1e7635e6715478e29ad24073f4d0c/Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add/calendar%20block%20multiday%20first%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Multiday Event First Class Add -->
+              <!-- end TWC Calendar Block Multiday First Class Add -->
               
             ```
             
@@ -105,7 +105,7 @@ Add classes to first day of multiday events.
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[calendar block multiday event first class
+      * Add code from file **[calendar block multiday first class
         add.html][10]** to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -160,5 +160,5 @@ Please consider [making a donation][11].
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: calendar%20block%20multiday%20event%20first%20class%20add.html#L1
+[10]: calendar%20block%20multiday%20first%20class%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
