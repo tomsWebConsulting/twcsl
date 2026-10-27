@@ -8,7 +8,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.2.0
+    Version           : 0.2.1
     
     SS Versions       : 7.1, 7.0
     
@@ -29,7 +29,7 @@
   
     title = 'Calendar Block Week at a Time',
     
-    version = '0.2.0',
+    version = '0.2.1',
     
     s = `${ title } v${ version }
     
@@ -61,12 +61,6 @@
   
   twc.cboc.callbacks = ( ( self ) => {
   
-    let
-    
-      calendarElement,
-      
-      headerElement;
-      
     const
     
       codeKey = 'twc-cbwaat';
@@ -85,123 +79,77 @@
           
         };
         
-      monthChange = ( direction ) => {
+      pseudos = {
       
-        const pseudos = {
+        next : {
         
-          next : {
+          calendarRow : 'first-child',
           
-            calendarRow : 'first-child',
-            
-            navigation : 'last-child'
-            
-            },
-            
-          prev : {
+          navigation : 'last-child'
           
-            calendarRow : 'last-child',
-            
-            navigation : 'first-child'
-            
-            },
-            
-          };
+          },
           
-        let pseudo = pseudos
+        prev : {
         
-          [ direction ]
+          calendarRow : 'last-child',
           
-          .navigation;
-          
-        Y
-        
-          .one (
-          
-            headerElement.querySelector (
-            
-              `.yui3-calendarnav-${
-              
-                direction
-                
-                }month:${
-                
-                  pseudo
-                  
-                  }`
-                  
-              )
-              
-            )
-            
-          .simulate ( 'click' );
-          
-        pseudo = pseudos
-        
-          [ direction ]
-          
-          .calendarRow;
-          
-        const element = calendarElement
-        
-          .querySelector (
-          
-            `.yui3-calendar-row:${
-            
-              pseudo
-              
-              }`
-              
-            );
-            
-        element
-        
-          .style
-          
-          .display
-          
-          =
-          
-          'table-row';
-          
-        // forceImageDisplay ( $element );
-        
-        if ( direction === 'next' )
-        
-          return;
-          
-        if ( ! element.clientHeight ) {
-        
-          element
-          
-            .style
-            
-            .display
-            
-            =
-            
-            '';
-            
-          element
-          
-            .previousElementSibling
-            
-            .style
-            
-            .display
-            
-            =
-            
-            'table-row';
-            
-          // imageDisplayForce ( element );
+          navigation : 'first-child'
           
           }
           
         },
         
-      weekChange =
+      monthChange = (
       
-        ( event, direction ) => {
+        direction,
+        
+        blockCalendarElement,
+        
+        headerElement
+        
+        ) => {
+        
+          Y
+          
+            .one (
+            
+              headerElement
+              
+                .querySelector (
+                
+                  `.yui3-calendarnav-${
+                  
+                    direction
+                    
+                    }month:${
+                    
+                      pseudos
+                      
+                        [ direction ]
+                        
+                        .navigation
+                        
+                      }`
+                      
+                  )
+                  
+              )
+              
+            .simulate ( 'click' );
+            
+          },
+          
+      weekChange = (
+      
+        event,
+        
+        direction,
+        
+        blockCalendarElement,
+        
+        headerElement
+        
+        ) => {
           
           let weekElement =
           
@@ -209,14 +157,14 @@
             
               ...
               
-              calendarElement
+              blockCalendarElement
               
-              .querySelectorAll (
-              
-                '.yui3-calendar-row'
+                .querySelectorAll (
                 
-                )
-                
+                  '.yui3-calendar-row'
+                  
+                  )
+                  
               ]
               
             .filter ( e => {
@@ -267,75 +215,149 @@
               
             }
             
-          if ( weekElement ) {
+          let isMonthChange = false;
           
-            weekElement
-            
-              .style
-              
-              .display
-              
-              =
-              
-              'table-row';
-              
-            imageDisplayForce (
-            
-              weekElement
-              
-              );
-              
-            } else {
-            
-              monthChange (
-              
-                direction,
-                
-                calendarElement
-                
-                );
-                
-              return;
-              
-              }
-              
-          if (
+          if ( ! weekElement )
           
-            ! weekElement.clientHeight
+            isMonthChange = true;
             
-            ) {
-          
-              if ( direction === 'next' )
+            else {
+            
+              const hasMarker =
               
                 weekElement
                 
-                  .style
+                  .querySelector (
                   
-                  .display
-                  
-                  =
-                  
-                  '';
-                  
-              monthChange (
+                    '.marker'
+                    
+                    );
+                    
+              if ( ! hasMarker )
               
-                direction,
-                
-                calendarElement
-                
-                );
+                isMonthChange = true;
                 
               }
               
+          if ( isMonthChange ) {
+          
+            monthChange (
+            
+              direction,
+              
+              blockCalendarElement,
+              
+              headerElement
+              
+              );
+              
+            weekElement = [
+            
+              ...
+              
+              blockCalendarElement
+              
+                .querySelectorAll (
+                
+                  '.yui3-calendar-row'
+                  
+                  )
+                  
+              ]
+              
+              .filter ( e =>
+              
+                e.querySelector (
+                
+                  '.marker'
+                  
+                  )
+                  
+                );
+                
+            switch ( direction ) {
+            
+              case 'next' :
+              
+                weekElement = weekElement
+                
+                  [ 0 ];
+                  
+                break;
+                
+              case 'prev' :
+              
+                weekElement = weekElement
+                
+                  .slice ( -1 )
+                  
+                  [ 0 ];
+                  
+                break;
+                
+              }
+              
+            }
+            
+          weekElement
+          
+            .style
+            
+            .display
+            
+            =
+            
+            'table-row';
+            
+          imageDisplayForce (
+          
+            weekElement
+            
+            );
+            
           },
           
       callback = ( element, type ) => {
       
+        const isConnected = element
+        
+          .isConnected;
+          
+        // bail if not connected
+        
+        if ( ! isConnected ) return;
+        
         const isType = type === 'marker';
         
         // bail if not type
         
         if ( ! isType ) return;
+        
+        const
+        
+          blockCalendarElement =
+          
+            element.closest (
+            
+              '.sqs-block-calendar'
+              
+              ),
+              
+          property =
+          
+            `${ codeKey }-today-seen`,
+            
+          isTodaySeen = Object.hasOwn (
+          
+            blockCalendarElement,
+            
+            property
+            
+            );
+              
+        // bail if today seen
+        
+        if ( isTodaySeen ) return;
         
         const isToday = element
         
@@ -357,6 +379,16 @@
         
         if ( ! element ) return;
         
+        const headerElement =
+        
+          blockCalendarElement
+          
+            .querySelector (
+            
+              '.yui3-calendar-header'
+                 
+              );
+              
         element
         
           .style
@@ -368,36 +400,6 @@
           'table-row';
           
         imageDisplayForce ( element );
-        
-        calendarElement =
-        
-          element.closest (
-          
-            '.sqs-block-calendar'
-            
-            );
-            
-        headerElement = calendarElement
-        
-          .querySelector (
-          
-            '.yui3-calendar-header'
-                
-            );
-            
-        const hasNavigation =
-        
-          headerElement
-          
-            .hasAttribute (
-            
-              `data-${ codeKey }`
-              
-              );
-              
-        // bail if navigation
-        
-        if ( hasNavigation ) return;
         
         // week navigation
         
@@ -415,7 +417,7 @@
             
               element =
               
-                calendarElement
+                blockCalendarElement
                 
                   .querySelector (
                   
@@ -479,7 +481,9 @@
                   
                   d,
                   
-                  calendarElement
+                  blockCalendarElement,
+                  
+                  headerElement
                   
                   )
                 
@@ -515,13 +519,9 @@
             
             } );
             
-        headerElement.setAttribute (
+        blockCalendarElement [ property ] =
         
-          `data-${ codeKey }`,
-          
-          ''
-          
-          );
+          undefined;
           
         };
         

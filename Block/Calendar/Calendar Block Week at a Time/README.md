@@ -8,7 +8,7 @@ Display Calendar Block a week at a time.
 
 ### Version
 
-  * 0.2.0
+  * 0.2.1
 
 #### SS Versions
 
@@ -116,6 +116,13 @@ Please consider [making a donation][12].
 
 ## Changes
 
+* **2026-10-27**
+
+  * fixed issue with some weeks not showing
+  * fixed issue with today week and two weeks showing
+  * fixed issue with navigation not controlling the correct calendar
+  * bumped version to 0.2.1 (commit f4a3c62d0bd4a4f91358fa69434caa274736c388)
+  
 * **2026-10-25**
 
   * updated to work with Calendar Block Observe Changes v0.5.0
