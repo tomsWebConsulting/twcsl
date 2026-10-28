@@ -1307,6 +1307,10 @@ not necessarily designed to work together.
         
   * [Calendar](Block/Calendar)
     
+    * [Calendar Block Multiday Class Add](Block/Calendar/Calendar%20Block%20Multiday%20Class%20Add)
+      
+      * [Calendar Block Multiday Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Multiday%20Class%20Add/Calendar%20Block%20Multiday%20Class%20Add.bbprojectd)
+        
     * [Calendar Block First Two Fix](Block/Calendar/Calendar%20Block%20First%20Two%20Fix)
       
       * [Calendar Block First Two Fix.bbprojectd](Block/Calendar/Calendar%20Block%20First%20Two%20Fix/Calendar%20Block%20First%20Two%20Fix.bbprojectd)
@@ -1326,10 +1330,6 @@ not necessarily designed to work together.
     * [Calendar Block Multiday First Class Add](Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add)
       
       * [Calendar Block Multiday First Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add/Calendar%20Block%20Multiday%20First%20Class%20Add.bbprojectd)
-        
-    * [Calendar Block Event Multiday Class Add](Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add)
-      
-      * [Calendar Block Event Multiday Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/Calendar%20Block%20Event%20Multiday%20Class%20Add.bbprojectd)
         
     * [Calendar Block Time End Remove](Block/Calendar/Calendar%20Block%20Time%20End%20Remove)
       
