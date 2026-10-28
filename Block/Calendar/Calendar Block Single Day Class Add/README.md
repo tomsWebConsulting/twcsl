@@ -1,4 +1,4 @@
-# Calendar Block Event Single Day Class Add
+# Calendar Block Single Day Class Add
 
 ### [License][1]
 
@@ -40,19 +40,19 @@ Add single day class to Event.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           
           ```html
-          <!-- begin TWC Calendar Block Event Single Day Class Add -->
+          <!-- begin TWC Calendar Block Single Day Class Add -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Single%20Day%20Class%20Add/calendar%20block%20single%20day%20class%20add.min.js" type="module"></script>
             
-            <!-- end TWC Calendar Block Event Single Day Class Add -->
+            <!-- end TWC Calendar Block Single Day Class Add -->
             
           ```
           
@@ -60,22 +60,40 @@ Add single day class to Event.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Calendar Block Event Single Day Class Add -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+        Use this option if you want to have this effect on all Pages.
+        
+        * v7.1
+        
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/calendar%20block%20event%20single%20day%20class%20add.min.js" type="module"></script>
+            ```html
+            <!-- begin TWC Calendar Block Single Day Class Add -->
             
-            <!-- end TWC Calendar Block Event Single Day Class Add -->
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Single%20Day%20Class%20Add/calendar%20block%20single%20day%20class%20add.min.js" type="module"></script>
+                
+              <!-- end TWC Calendar Block Single Day Class Add -->
+              
+            ```
             
-          ```
-          
+        * v7.0
+        
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Calendar Block Single Day Class Add -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@96be5134ca69f3c140d9ca3c86aad0c122b9edfd/Block/Calendar/Calendar%20Block%20Single%20Day%20Class%20Add/calendar%20block%20single%20day%20class%20add.min.js" type="module"></script>
+              
+              <!-- end TWC Calendar Block Single Day Class Add -->
+              
+            ```
+            
         * Refer to [Add code to code injection][9] for details.
         
   * On-site
@@ -85,22 +103,26 @@ Add single day class to Event.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
-      * Add code from file **[calendar block event single day class
-        add.html][10]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page.
+      Use this option if you want to have this effect on only one Page.
+      
+      * Add code from file **[calendar block single day class add.html][10]** to
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
-      * Add code from file **[calendar block event single day class
-        add.html][10]** to Website > Pages > Custom Code > Code Injection >
-        FOOTER.
-        
+      * v7.1
+      
+        * Add code from file **[calendar block single day class add.html][10]**
+          to Website > Pages > Custom Code > Code Injection > FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[calendar block single day class add.html][10]**
+          to Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER.
+          
       * Refer to [Add code to code injection][9] for details.
 
 ## Make a Donation
@@ -128,5 +150,5 @@ Please consider [making a donation][11].
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: calendar%20block%20event%20single%20day%20class%20add.html#L1
+[10]: calendar%20block%20single%20day%20class%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

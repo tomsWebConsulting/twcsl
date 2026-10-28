@@ -4,7 +4,7 @@
   
   /*!
   
-    calendar block event single day class add
+    calendar block single day class add
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -54,7 +54,7 @@
   
     const
     
-      codeKey = 'twc-cbesdca',
+      codeKey = 'twc-cbsdca',
       
       hrefs = new Set ( ),
       
