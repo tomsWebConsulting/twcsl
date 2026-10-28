@@ -4,7 +4,7 @@
   
   /*!
   
-    calendar block event multiday class add
+    calendar block multiday class add
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -28,7 +28,7 @@
     
   const
   
-    title = 'Calendar Block Event Multiday Class Add',
+    title = 'Calendar Block Multiday Class Add',
     
     version = '0.2.0',
     
@@ -58,7 +58,7 @@
   
     const
     
-      codeKey = 'twc-cbemca',
+      codeKey = 'twc-cbmca',
       
       hrefClassNames = new Set ( ),
       

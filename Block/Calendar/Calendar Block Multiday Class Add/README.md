@@ -1,4 +1,4 @@
-# Calendar Block Event Multiday Class Add
+# Calendar Block Multiday Class Add
 
 ### [License][1]
 
@@ -46,13 +46,13 @@ Add classes to multiday events.
           Page Header Code Injection for the Page.
           
           ```html
-          <!-- begin TWC Calendar Block Event Multiday Class Add -->
+          <!-- begin TWC Calendar Block Multiday Class Add -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
             
-            <!-- end TWC Calendar Block Event Multiday Class Add -->
+            <!-- end TWC Calendar Block Multiday Class Add -->
             
           ```
           
@@ -68,13 +68,13 @@ Add classes to multiday events.
             Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Event Multiday Class Add -->
+            <!-- begin TWC Calendar Block Multiday Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Event Multiday Class Add -->
+              <!-- end TWC Calendar Block Multiday Class Add -->
               
             ```
             
@@ -84,13 +84,13 @@ Add classes to multiday events.
             Custom Code > Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Event Multiday Class Add -->
+            <!-- begin TWC Calendar Block Multiday Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Event%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@cc2435c6c0357498dafdad3517adb100c6d6bdb5/Block/Calendar/Calendar%20Block%20Multiday%20Class%20Add/calendar%20block%20event%20multiday%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Event Multiday Class Add -->
+              <!-- end TWC Calendar Block Multiday Class Add -->
               
             ```
             
@@ -105,9 +105,8 @@ Add classes to multiday events.
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[calendar block event multiday class
-        add.html][10]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page.
+      * Add code from file **[calendar block multiday class add.html][10]** to
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
       
@@ -117,15 +116,14 @@ Add classes to multiday events.
       
       * v7.1
       
-        * Add code from file **[calendar block event multiday class
-          add.html][10]** to Website > Pages > Custom Code > Code Injection >
-          FOOTER.
+        * Add code from file **[calendar block multiday class add.html][10]** to
+          Website > Pages > Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add code from file **[calendar block event multiday class
-          add.html][10]** to Website > Pages > Website Tools > Custom Code >
-          Code Injection > FOOTER.
+        * Add code from file **[calendar block multiday class add.html][10]** to
+          Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER.
           
       * Refer to [Add code to code injection][9] for details.
 
@@ -154,5 +152,5 @@ Please consider [making a donation][11].
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: calendar%20block%20event%20multiday%20class%20add.html#L1
+[10]: calendar%20block%20multiday%20class%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
