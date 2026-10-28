@@ -1,4 +1,4 @@
-# Calendar Block Events Past Class Add
+# Calendar Block Past Class Add
 
 ### [License][1]
 
@@ -46,13 +46,13 @@ Add past class to Events.
           Page Header Code Injection for the Page.
           
           ```html
-          <!-- begin TWC Calendar Block Events Past Class Add -->
+          <!-- begin TWC Calendar Block Past Class Add -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Past%20Class%20Add/calendar%20block%20past%20class%20add.min.js" type="module"></script>
             
-            <!-- end TWC Calendar Block Events Past Class Add -->
+            <!-- end TWC Calendar Block Past Class Add -->
             
           ```
           
@@ -68,13 +68,13 @@ Add past class to Events.
             Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Events Past Class Add -->
+            <!-- begin TWC Calendar Block Past Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Past%20Class%20Add/calendar%20block%20past%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Events Past Class Add -->
+              <!-- end TWC Calendar Block Past Class Add -->
               
             ```
             
@@ -84,13 +84,13 @@ Add past class to Events.
             Custom Code > Code Injection > FOOTER.
             
             ```html
-            <!-- begin TWC Calendar Block Events Past Class Add -->
+            <!-- begin TWC Calendar Block Past Class Add -->
             
               <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
               
-              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/calendar%20block%20events%20past%20class%20add.min.js" type="module"></script>
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@4a225ac2c6ff4570e92bec2d2acef6742701093e/Block/Calendar/Calendar%20Block%20Past%20Class%20Add/calendar%20block%20past%20class%20add.min.js" type="module"></script>
               
-              <!-- end TWC Calendar Block Events Past Class Add -->
+              <!-- end TWC Calendar Block Past Class Add -->
               
             ```
             
@@ -105,9 +105,8 @@ Add past class to Events.
     
       Use this option if you want to have this effect on only one Page.
       
-      * Add code from file **[calendar block events past class
-        add.html][10]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page.
+      * Add code from file **[calendar block past class add.html][10]** to
+        Page Settings > Advanced > Page Header Code Injection for the Page.
         
       * Refer to [per-page code injection][8] for details.
       
@@ -117,21 +116,20 @@ Add past class to Events.
       
       * v7.1
       
-        * Add code from file **[calendar block events past class
-          add.html][10]** to Website > Pages > Custom Code > Code Injection >
-          FOOTER.
+        * Add code from file **[calendar block past class add.html][10]** to
+          Website > Pages > Custom Code > Code Injection > FOOTER.
           
       * v7.0
       
-        * Add code from file **[calendar block events past class
-          add.html][10]** to Website > Pages > Website Tools > Custom Code >
-          Code Injection > FOOTER.
+        * Add code from file **[calendar block past class add.html][10]** to
+          Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER.
           
       * Refer to [Add code to code injection][9] for details.
 
 ## Note
 
-This is meant as a base for other effects. It adds an **twc-cbepca-past** class
+This is meant as a base for other effects. It adds an **twc-cbpca-past** class
 to each past event which you can then use for your own CSS to manipulate past
 events.
 
@@ -160,5 +158,5 @@ Please consider [making a donation][11].
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
 [9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: calendar%20block%20events%20past%20class%20add.html#L1
+[10]: calendar%20block%20past%20class%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

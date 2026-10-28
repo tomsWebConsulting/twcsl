@@ -4,7 +4,7 @@
   
   /*!
   
-    calendar block events past class add
+    calendar block past class add
     
     License           : < https://tinyurl.com/s872fb68 >
     
@@ -24,7 +24,7 @@
     
   const
   
-    title = 'Calendar Block Events Past Class Add',
+    title = 'Calendar Block Past Class Add',
     
     version = '0.2.0',
     
@@ -54,7 +54,7 @@
   
     const
     
-      codeKey = 'twc-cbepca';
+      codeKey = 'twc-cbpca';
       
       callback = ( element, type ) => {
       
