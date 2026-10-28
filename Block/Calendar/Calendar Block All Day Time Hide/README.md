@@ -40,8 +40,8 @@ Hide all day calendar times.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           
@@ -62,8 +62,8 @@ Hide all day calendar times.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
+        Use this option if you want to have this effect on all Pages.
+        
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
           
@@ -89,8 +89,8 @@ Hide all day calendar times.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[calendar block all day time hide.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
@@ -98,11 +98,19 @@ Hide all day calendar times.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
-      * Add code from file **[calendar block all day time hide.html][10]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
-        
+      Use this option if you want to have this effect on all Pages.
+      
+      * v7.1
+      
+        * Add code from file **[calendar block all day time hide.html][10]** to
+          Website > Pages > Custom Code > Code Injection > FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[calendar block all day time hide.html][10]** to
+          Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER.
+          
       * Refer to [Add code to code injection][9] for details.
 
 ## How to Use
