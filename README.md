@@ -1315,13 +1315,13 @@ not necessarily designed to work together.
       
       * [Calendar Block First Two Fix.bbprojectd](Block/Calendar/Calendar%20Block%20First%20Two%20Fix/Calendar%20Block%20First%20Two%20Fix.bbprojectd)
         
+    * [Calendar Block Past Class Add](Block/Calendar/Calendar%20Block%20Past%20Class%20Add)
+      
+      * [Calendar Block Past Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Past%20Class%20Add/Calendar%20Block%20Past%20Class%20Add.bbprojectd)
+        
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
       * [Calendar Block Observe Changes.bbprojectd](Block/Calendar/Calendar%20Block%20Observe%20Changes/Calendar%20Block%20Observe%20Changes.bbprojectd)
-        
-    * [Calendar Block Events Past Class Add](Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add)
-      
-      * [Calendar Block Events Past Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Events%20Past%20Class%20Add/Calendar%20Block%20Events%20Past%20Class%20Add.bbprojectd)
         
     * [Calendar Block Multiday First Class Add](Block/Calendar/Calendar%20Block%20Multiday%20First%20Class%20Add)
       
