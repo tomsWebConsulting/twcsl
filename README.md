@@ -1315,10 +1315,6 @@ not necessarily designed to work together.
       
       * [Calendar Block First Two Fix.bbprojectd](Block/Calendar/Calendar%20Block%20First%20Two%20Fix/Calendar%20Block%20First%20Two%20Fix.bbprojectd)
         
-    * [Calendar Block Event Single Day Class Add](Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add)
-      
-      * [Calendar Block Event Single Day Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Event%20Single%20Day%20Class%20Add/Calendar%20Block%20Event%20Single%20Day%20Class%20Add.bbprojectd)
-        
     * [Calendar Block Observe Changes](Block/Calendar/Calendar%20Block%20Observe%20Changes)
       
       * [Calendar Block Observe Changes.bbprojectd](Block/Calendar/Calendar%20Block%20Observe%20Changes/Calendar%20Block%20Observe%20Changes.bbprojectd)
@@ -1338,6 +1334,10 @@ not necessarily designed to work together.
     * [Calendar Block Link Replace With Excerpt Link](Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link)
       
       * [Calendar Block Link Replace With Excerpt Link.bbprojectd](Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link.bbprojectd)
+        
+    * [Calendar Block Single Day Class Add](Block/Calendar/Calendar%20Block%20Single%20Day%20Class%20Add)
+      
+      * [Calendar Block Single Day Class Add.bbprojectd](Block/Calendar/Calendar%20Block%20Single%20Day%20Class%20Add/Calendar%20Block%20Single%20Day%20Class%20Add.bbprojectd)
         
     * [Calendar Block All Day Time Hide](Block/Calendar/Calendar%20Block%20All%20Day%20Time%20Hide)
       
