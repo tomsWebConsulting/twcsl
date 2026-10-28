@@ -40,8 +40,8 @@ Replace link with Excerpt link.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           
@@ -60,22 +60,40 @@ Replace link with Excerpt link.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Calendar Block Link Replace With Excerpt Link -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+        Use this option if you want to have this effect on all Pages.
+        
+        * v7.1
+        
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
+            ```html
+            <!-- begin TWC Calendar Block Link Replace With Excerpt Link -->
             
-            <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
+              
+              <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
+              
+            ```
             
-          ```
-          
+        * v7.0
+        
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
+            
+            ```html
+            <!-- begin TWC Calendar Block Link Replace With Excerpt Link -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@de957609d243ee88dd221204d26080bc7f494fe2/Block/Calendar/Calendar%20Block%20Link%20Replace%20With%20Excerpt%20Link/calendar%20block%20link%20replace%20with%20excerpt%20link.min.js" type="module"></script>
+              
+              <!-- end TWC Calendar Block Link Replace With Excerpt Link -->
+              
+            ```
+            
         * Refer to [Add code to code injection][9] for details.
         
   * On-site
@@ -85,8 +103,8 @@ Replace link with Excerpt link.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[calendar block link replace with excerpt
         link.html][10]** to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -95,12 +113,20 @@ Replace link with Excerpt link.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
-      * Add code from file **[calendar block link replace with excerpt
-        link.html][10]** to Website > Pages > Custom Code > Code Injection >
-        FOOTER.
-        
+      Use this option if you want to have this effect on all Pages.
+      
+      * v7.1
+      
+        * Add code from file **[calendar block link replace with excerpt
+          link.html][10]** to Website > Pages > Custom Code > Code Injection >
+          FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[calendar block link replace with excerpt
+          link.html][10]** to Website > Pages > Website Tools > Custom Code >
+          Code Injection > FOOTER.
+          
       * Refer to [Add code to code injection][9] for details.
 
 ## How to Use

@@ -60,7 +60,7 @@ Fix Calendar Block months that have two firsts of the month.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Pages.
         
         * v7.1
         

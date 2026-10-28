@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Remove Calendar Block end times from Events.
+Remove Calendar Block end times.
 
 ### Version
 
@@ -60,7 +60,7 @@ Remove Calendar Block end times from Events.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Pages.
         
         * v7.1
         

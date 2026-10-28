@@ -60,7 +60,7 @@ Add past class to Events.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Pages.
         
         * v7.1
         

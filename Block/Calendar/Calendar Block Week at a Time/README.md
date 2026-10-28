@@ -1,4 +1,4 @@
-# Calendar Block Week at a Time
+# Calendar Block Multiday Class Add
 
 ### [License][1]
 
@@ -40,13 +40,13 @@ Display Calendar Block a week at a time.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           
           ```html
-          <!-- begin TWC Calendar Block Week at a Time -->
+          <!-- begin TWC Calendar Block Multiday Class Add -->
           
             <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
             
@@ -54,7 +54,7 @@ Display Calendar Block a week at a time.
             
             <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
             
-            <!-- end TWC Calendar Block Week at a Time -->
+            <!-- end TWC Calendar Block Multiday Class Add -->
             
           ```
           
@@ -62,24 +62,44 @@ Display Calendar Block a week at a time.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
-        * Add the following code to Website > Pages > Custom Code >
-          Code Injection > FOOTER.
-          
-          ```html
-          <!-- begin TWC Calendar Block Week at a Time -->
-          
-            <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+        Use this option if you want to have this effect on all Pages.
+        
+        * v7.1
+        
+          * Add the following code to Website > Pages > Custom Code >
+            Code Injection > FOOTER.
             
-            <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
+            ```html
+            <!-- begin TWC Calendar Block Multiday Class Add -->
             
-            <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
+              
+              <!-- end TWC Calendar Block Multiday Class Add -->
+              
+            ```
             
-            <!-- end TWC Calendar Block Week at a Time -->
+        * v7.0
+        
+          * Add the following code to Website > Pages > Website Tools >
+            Custom Code > Code Injection > FOOTER.
             
-          ```
-          
+            ```html
+            <!-- begin TWC Calendar Block Multiday Class Add -->
+            
+              <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
+              
+              <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.css" rel="stylesheet" type="text/css">
+              
+              <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@7c61046242a79ef5020fe4a617849702742a6fba/Block/Calendar/Calendar%20Block%20Week%20at%20a%20Time/calendar%20block%20week%20at%20a%20time.min.js" type="module"></script>
+              
+              <!-- end TWC Calendar Block Multiday Class Add -->
+              
+            ```
+            
         * Refer to [Add code to code injection][9] for details.
         
   * On-site
@@ -98,11 +118,19 @@ Display Calendar Block a week at a time.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
-      * Add code from file **[calendar block week at a time.html][10]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
-        
+      Use this option if you want to have this effect on all Pages.
+      
+      * v7.1
+      
+        * Add code from file **[calendar block week at a time.html][10]** to
+          Website > Pages > Custom Code > Code Injection > FOOTER.
+          
+      * v7.0
+      
+        * Add code from file **[calendar block week at a time.html][10]** to
+          Website > Pages > Website Tools > Custom Code > Code Injection >
+          FOOTER.
+          
       * Refer to [Add code to code injection][9] for details.
 
 ## Note
