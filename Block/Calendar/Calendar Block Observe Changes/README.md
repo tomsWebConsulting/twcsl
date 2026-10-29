@@ -57,7 +57,7 @@ Observe changes to calendar block and call custom callbacks.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option if you want to have this effect on all Pages.
       
       * v7.1
       
