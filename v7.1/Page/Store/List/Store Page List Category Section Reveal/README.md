@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Reveal Store page list sections based on category.
+Reveal Store Page list sections based on category.
 
 ### Version
 

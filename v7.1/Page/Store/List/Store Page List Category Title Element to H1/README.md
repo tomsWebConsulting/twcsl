@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Change Store page list Category Title to a H1 element.
+Change Store Page list Category Title to a H1 element.
 
 ### Version
 

@@ -50,9 +50,9 @@ Add descriptions to product category pages.
 
   ![dropdown settings](read%20me%20assets/dropdown%20settings.png)
   
-* Add a Blank page to the TWC SPLCDA dropdown page for each Store page category
+* Add a Blank page to the TWC SPLCDA dropdown page for each Store Page category
   you want to have a description. Set the PAGE TITLE and NAVIGATION TITLE fields
-  to a Store page Category title. Set the URL SLUG field to the specific
+  to a Store Page Category title. Set the URL SLUG field to the specific
   following format.
   
   ```text
@@ -60,7 +60,7 @@ Add descriptions to product category pages.
   ```
   
   Page URL Slug fields accept a very limited set of characters, lower case only,
-  characters a - z, 0 - 9, and - (dash). Store page category titles accept a
+  characters a - z, 0 - 9, and - (dash). Store Page category titles accept a
   larger set of characters and so we need to encode category titles so that we
   can add them as part of Page URL Slug. Any character outside the previously
   mentioned set are converted to - characters.

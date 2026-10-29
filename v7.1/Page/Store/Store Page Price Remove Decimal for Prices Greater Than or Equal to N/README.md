@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Remove decimal for prices greater than equal to n on Store page.
+Remove decimal for prices greater than equal to n on Store Page.
 
 ### Version
 

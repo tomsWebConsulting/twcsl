@@ -53,7 +53,7 @@ Apply Slideshow Simple style buttons to Reel.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.

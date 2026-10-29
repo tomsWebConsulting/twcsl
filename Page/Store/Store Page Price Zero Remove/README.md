@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Remove zero prices from Store page.
+Remove zero prices from Store Page.
 
 ### Version
 
@@ -66,7 +66,7 @@ Remove zero prices from Store page.
 
 ## Note
 
-This effect isn't designed to work with Store pages that have products with
+This effect isn't designed to work with Store Pages that have products with
 variants or price and sale price.
 
 ## Make a Donation

@@ -59,7 +59,7 @@ Change products section theme per category.
   you set up a section with color theme. There is Squarespace documentation that
   covers that topic, so we won't go into it here.
   
-  Edit the Store page. Create a new section. I suggest adding it below the store
+  Edit the Store Page. Create a new section. I suggest adding it below the store
   section. Select a color theme. Add a code block. In the code block add the
   following.
   

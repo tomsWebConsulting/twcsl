@@ -77,7 +77,7 @@ Add product dimensions to some products of list pages.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list product dimensions
           options.html][7]** to Website > Pages > Custom Code > Code Injection >
@@ -108,7 +108,7 @@ Add product dimensions to some products of list pages.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >

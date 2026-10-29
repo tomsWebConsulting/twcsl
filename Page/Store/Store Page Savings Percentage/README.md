@@ -40,7 +40,7 @@ Add savings percent to products on sale.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store page.
+        Use this option if you want to have this effect on only one Store Page.
         
         * Add code from file **[store page savings percentage options.html][8]**
           to Page Settings > Advanced > Page Header Code Injection for the Store
@@ -110,7 +110,7 @@ Add savings percent to products on sale.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from file **[store page savings percentage options.html][8]**
         to Website > Pages > Custom Code > Code Injection > FOOTER. Read the

@@ -72,7 +72,7 @@ Add a button link to a URL.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list quick view button link add
           options.html][8]** to Website > Pages > Custom Code > Code Injection >
@@ -101,7 +101,7 @@ Add a button link to a URL.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from files **[store page list quick view button link add
         options.html][8]** and **[store page list quick view button link
@@ -112,7 +112,7 @@ Add a button link to a URL.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from files **[store page list quick view button link add
         options.html][8]** and **[store page detail title text to

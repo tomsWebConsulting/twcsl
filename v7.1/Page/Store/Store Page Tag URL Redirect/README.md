@@ -91,7 +91,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page tag url redirect options.html][8]** to
         Page Settings > Advanced > Page Header Code Injection for the Page. Read

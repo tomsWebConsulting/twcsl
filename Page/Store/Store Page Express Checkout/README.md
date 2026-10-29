@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Trigger Express Checkout feature for a Store page.
+Trigger Express Checkout feature for a Store Page.
 
 ### Version
 
@@ -35,8 +35,8 @@ Trigger Express Checkout feature for a Store page.
 ## Note
 
 Unlike the Express Checkout setting provided by Squarespace, which enables the
-feature site-wide for all Store pages, this code triggers the Express Checkout
-on a per-Store page basis.
+feature site-wide for all Store Pages, this code triggers the Express Checkout
+on a per-Store Page basis.
 
 ## Make a Donation
 

@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Hide all commerce elements on a Store page.
+Hide all commerce elements on a Store Page.
 
 ### Version
 

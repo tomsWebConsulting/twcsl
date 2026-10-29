@@ -41,7 +41,7 @@ When there are no list products add html to the Page.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list empty html add options.html][7]**
         to Store Page Settings > Advanced > Page Header Code Injection for the
@@ -67,7 +67,7 @@ When there are no list products add html to the Page.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -122,7 +122,7 @@ When there are no list products add html to the Page.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from files **[store page list empty html add options.html][7]**
       and **[store page list empty html add.html][10]** to
@@ -132,7 +132,7 @@ When there are no list products add html to the Page.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * v7.1
     

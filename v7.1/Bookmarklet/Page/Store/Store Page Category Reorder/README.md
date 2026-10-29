@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Reorder products of a Store page category.
+Reorder products of a Store Page category.
 
 ### Version
 
@@ -31,7 +31,7 @@ Reorder products of a Store page category.
 
 ## How to Use
 
-* In your Store page navigate to a category page. It can be All or any other
+* In your Store Page navigate to a category page. It can be All or any other
   category you have added.
 
 * Use the bookmarklet.
@@ -42,7 +42,7 @@ Reorder products of a Store page category.
 
 ## Notes
 
-The code does not deal with variants as they are not part of the Store page
+The code does not deal with variants as they are not part of the Store Page
 product reordering UI.
 
 Scheduled products are not available for reordering.

@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Store page list categories mega menu.
+Store Page list categories mega menu.
 
 ### Version
 

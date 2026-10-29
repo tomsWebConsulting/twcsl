@@ -58,7 +58,7 @@ Change background color of Sections on scroll.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from file **[page section background color change on scroll
         options.html][6]** to Website > Pages > Custom Code > Code Injection >

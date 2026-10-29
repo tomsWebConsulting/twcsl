@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Swap sale and original price on Store page.
+Swap sale and original price on Store Page.
 
 ### Version
 

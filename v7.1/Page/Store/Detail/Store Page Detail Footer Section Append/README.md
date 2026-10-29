@@ -39,7 +39,7 @@ Append footer boilerplate sections after product detail section.
 
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from file **[store page detail footer section append.html][6]**
       to Store Page Settings > Advanced > Page Header Code Injection for the
@@ -50,7 +50,7 @@ Append footer boilerplate sections after product detail section.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * Add code from file **[store page detail footer section append.less][9]**
       to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS

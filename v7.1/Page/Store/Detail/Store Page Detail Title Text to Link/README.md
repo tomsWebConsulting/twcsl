@@ -39,7 +39,7 @@ Link text in the title.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page detail title text to link
         options.html][6]** to Store Page Settings > Advanced >
@@ -64,7 +64,7 @@ Link text in the title.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -115,7 +115,7 @@ Link text in the title.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from files **[store page detail title text to link
       options.html][6]** and **[store page detail title text to
@@ -126,7 +126,7 @@ Link text in the title.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * v7.1
     

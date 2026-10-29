@@ -82,7 +82,7 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store pages.
+        Use this option if you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list product marks to badges
           options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read
@@ -114,22 +114,22 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list product marks to badges
         options.html][9]** to Store Page Settings > Advanced >
-        Page Header Code Injection for the Store page. Read the code for any
+        Page Header Code Injection for the Store Page. Read the code for any
         instructions within.
         
       * Add code from file **[store page list product marks to badges.html][12]**
         to Store Page Settings > Advanced > Page Header Code Injection for the
-        Store page.
+        Store Page.
         
       * Refer to [per-page code injection][10] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from file **[store page list product marks to badges
         options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read

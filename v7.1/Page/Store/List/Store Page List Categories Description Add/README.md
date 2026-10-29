@@ -39,7 +39,7 @@ Add simple category descriptions to store category pages.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list categories description add
         options.html][6]** to Store Page Settings > Advanced >
@@ -66,7 +66,7 @@ Add simple category descriptions to store category pages.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from file **[store page list categories description add
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
@@ -97,7 +97,7 @@ Add simple category descriptions to store category pages.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from files **[store page list categories description add
       options.html][6]** and **[store page detail title text to link.html][9]**
@@ -106,7 +106,7 @@ Add simple category descriptions to store category pages.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * Add code from files **[store page list categories description add
       options.html][6]** and **[store page detail title text to link.html][9]**
@@ -139,12 +139,12 @@ Please consider [making a donation][11].
   
 * **2025-12-03**
 
-  * fixed code not working with some Store page settings
+  * fixed code not working with some Store Page settings
   * bumped version to 0.12.5
   
 * **2025-12-02**
 
-  * fixed default destinationSelector after more Squarespace Store page header
+  * fixed default destinationSelector after more Squarespace Store Page header
     changes
   * bumped version to 0.12.4
   

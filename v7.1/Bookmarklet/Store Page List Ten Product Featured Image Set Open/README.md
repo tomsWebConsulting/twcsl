@@ -47,7 +47,7 @@ Page Detail Featured Image Set][3]** bookmarklet.
   
 * Repeat the previous steps until you have processed all the products you want.
 
-* Optional, remove the tag **twc-spdfis** from the Store page.
+* Optional, remove the tag **twc-spdfis** from the Store Page.
 
 ## Notes
 

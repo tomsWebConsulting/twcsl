@@ -59,7 +59,7 @@ Add additional meta information to Blog Page list.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * v7.1
       

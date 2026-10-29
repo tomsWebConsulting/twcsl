@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add descriptions to Store page tag pages.
+Add descriptions to Store Page tag pages.
 
 ### Version
 
@@ -124,7 +124,7 @@ Add descriptions to Store page tag pages.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list tag description add
         options.html][8]** to Page Settings > Advanced >

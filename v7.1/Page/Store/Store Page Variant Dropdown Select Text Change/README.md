@@ -39,7 +39,7 @@ Change Select text of variant dropdown.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page variant dropdown select text change
         options.html][6]** to Page Settings > Advanced >
@@ -64,7 +64,7 @@ Change Select text of variant dropdown.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * Add code from file **[store page variant dropdown select text change
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
@@ -93,7 +93,7 @@ Change Select text of variant dropdown.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from file **[store page variant dropdown select text change
       options.html][6]** to Page Settings > Advanced >

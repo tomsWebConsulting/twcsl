@@ -48,7 +48,7 @@ Reveal blocks based on category.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store page.
+        Use this option if you want to have this effect on only one Store Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -117,7 +117,7 @@ Reveal blocks based on category.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list category blocks reveal.html][11]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -146,7 +146,7 @@ Reveal blocks based on category.
 
 * v7.1
 
-  * In the Store page add a Page section before the Store Page section. Add a
+  * In the Store Page add a Page section before the Store Page section. Add a
     code block with the following code.
     
     ```html
@@ -155,7 +155,7 @@ Reveal blocks based on category.
   
 * v7.0
 
-  * In the Store page Intro area add a code block with the following code.
+  * In the Store Page Intro area add a code block with the following code.
   
     ```html
     <x-twc-splcbr category="[ enter category here between double quotes replacing square brackets ]"></x-twc-splcbr>

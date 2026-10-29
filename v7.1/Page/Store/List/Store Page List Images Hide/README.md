@@ -39,7 +39,7 @@ Hide images on the list page.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add the following code to Store Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -61,7 +61,7 @@ Hide images on the list page.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store pages.
+      Use this option if you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -108,7 +108,7 @@ Hide images on the list page.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store page.
+    Use this option if you want to have this effect on only one Store Page.
     
     * Add code from file **[store page list images hide.html][8]** to
       Store Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -117,7 +117,7 @@ Hide images on the list page.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * v7.1
     

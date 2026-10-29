@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add prices to Store page detail variant.
+Add prices to Store Page detail variant.
 
 ### Version
 

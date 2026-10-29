@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Show three Store page detail related products.
+Show three Store Page detail related products.
 
 ### Version
 
@@ -30,7 +30,7 @@ Show three Store page detail related products.
 
   * Page Specific
   
-    Use this option if you have only a single Store page you want to have this
+    Use this option if you have only a single Store Page you want to have this
     effect.
     
     * Add code from file **[store page detail related products three.html][2]**
@@ -39,7 +39,7 @@ Show three Store page detail related products.
       
   * Site-wide
   
-    Use this option if you have multiple Store pages where you want to have
+    Use this option if you have multiple Store Pages where you want to have
     this effect.
     
     * Add code from file **[store page detail related products three.less][4]**

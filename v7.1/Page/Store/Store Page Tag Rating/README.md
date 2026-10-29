@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add ratings to Store page products.
+Add ratings to Store Page products.
 
 ### Version
 

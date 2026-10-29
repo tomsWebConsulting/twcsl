@@ -118,7 +118,7 @@ Limit custom form text and text area field lengths.
         
       * Refer to [Add code to code injection][12] for details.
 
-* Edit a Store page product and add a Custom Form.
+* Edit a Store Page product and add a Custom Form.
   
 * For each form field you want to limit the number of characters do the
   following.

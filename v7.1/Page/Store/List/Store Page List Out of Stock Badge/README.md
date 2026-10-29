@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Store page list out of stock badge.
+Store Page list out of stock badge.
 
 ### Version
 

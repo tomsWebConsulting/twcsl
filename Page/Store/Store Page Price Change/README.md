@@ -41,7 +41,7 @@ Change store page prices.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store page.
+      Use this option if you want to have this effect on only one Store Page.
       
       * Add code from file **[store page price change options.html][9]** to
         Page Settings > Advanced > Page Header Code Injection for the Store
@@ -111,7 +111,7 @@ Change store page prices.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Store pages.
+    Use this option if you want to have this effect on all Store Pages.
     
     * Add code from file **[store page price change options.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for

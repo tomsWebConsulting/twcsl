@@ -4,7 +4,7 @@
 
 ### Synopsis
 
-Add a comma separated string as categories in the Store page Categories panel.
+Add a comma separated string as categories in the Store Page Categories panel.
 
 ### Version
 
