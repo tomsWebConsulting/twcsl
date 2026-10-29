@@ -45,9 +45,9 @@ Add a link out icon to links that open a new tab or window.
         
     * Site-wide
     
-      * Use this option if you have multiple pages where you want to have this
-        effect.
-        
+      Use this option if you have multiple pages where you want to have this
+      effect.
+      
       * Add code from file **[link new window icon add.less][5]** to Website >
         Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         
@@ -70,9 +70,9 @@ Add a link out icon to links that open a new tab or window.
         
     * Site-wide
     
-      * Use this option if you have multiple pages where you want to have this
-        effect.
-        
+      Use this option if you have multiple pages where you want to have this
+      effect.
+      
       * Add code from file **[link new window icon add.less][5]** to Website >
         Pages > Custom Code > Code Injection > Custom CSS for the Store Page.
         

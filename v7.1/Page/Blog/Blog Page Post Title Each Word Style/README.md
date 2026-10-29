@@ -35,9 +35,9 @@ Style each word of a blog post title wrapped in a span tag.
 
   * Page Specific
   
-    * Use this option if you have only a single blog page you want to have this
-      effect.
-      
+    Use this option if you have only a single blog page you want to have this
+    effect.
+    
     * Add code from file **[blog page post title each word style.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page, after
       the **blog post title each word span tag add** code. Refer to [per-page
@@ -45,9 +45,9 @@ Style each word of a blog post title wrapped in a span tag.
       
   * Site-wide
   
-    * Use this option if you have multiple blog pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple blog pages where you want to have
+    this effect.
+    
     * Add code from file **[blog page post title each word style.html][6]** to
       Website > Pages > Custom Code > Code Injection > FOOTER, after the
       **blog post title each word span tag add** code. Refer to [Add code to

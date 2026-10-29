@@ -32,18 +32,18 @@ Format list events in into a row like structure.
 
   * Page Specific
   
-    * Use this option if you have only a single Events page you want to have
-      this effect.
-      
+    Use this option if you have only a single Events page you want to have
+    this effect.
+    
     * Add code from file **[events page list event row.html][4]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][5] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple Events pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple Events pages where you want to have
+    this effect.
+    
     * Add code from file **[events page list event row.html][4]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
       code injection][6].

@@ -50,9 +50,9 @@ pages.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Store
-          page.
-          
+        Use this option if you want to have this effect on only one Store
+        page.
+        
         * Add code from file **[store page detail product dimensions
           options.html][6]** to Page Settings > Advanced >
           Page Header Code Injection for the Page. Read the code for any
@@ -78,8 +78,8 @@ pages.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Store pages.
-          
+        Use this option if you want to have this effect on all Store pages.
+        
         * Add code from file **[store page detail product dimensions
           options.html][6]** to Website > Pages > Custom Code > Code Injection >
           FOOTER. Read the code for any instructions within.
@@ -109,8 +109,8 @@ pages.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store page.
-        
+      Use this option if you want to have this effect on only one Store page.
+      
       * Add code from file **[store page detail product dimensions
         options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
@@ -123,8 +123,8 @@ pages.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * Add code from file **[store page detail product dimensions
         options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any

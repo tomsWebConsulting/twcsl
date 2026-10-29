@@ -90,8 +90,8 @@ Enable add to cart buttons during active hours.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[add to cart button active hours options.html][6]**
       to Page Settings > Advanced > Page Header Code Injection for the Page.
       Read the code for any instructions within.

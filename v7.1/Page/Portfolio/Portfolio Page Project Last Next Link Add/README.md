@@ -35,9 +35,9 @@ Add a next link to the last Project of a Portfolio page.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Portfolio
-        page.
-        
+      Use this option if you want to have this effect on only one Portfolio
+      page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -56,8 +56,8 @@ Add a next link to the last Project of a Portfolio page.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
         
@@ -81,8 +81,8 @@ Add a next link to the last Project of a Portfolio page.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[portfolio page project last next link
       add.html][8]** to Page Settings > Advanced > Page Header Code Injection
       for the Page.
@@ -91,8 +91,8 @@ Add a next link to the last Project of a Portfolio page.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * Add code from file **[portfolio page project last next link
       add.html][8]** to Website > Pages > Custom Code > Code Injection > FOOTER.
       

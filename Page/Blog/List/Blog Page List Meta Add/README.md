@@ -33,8 +33,8 @@ Add additional meta information to Blog Page list.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[blog page list meta add options.html][6]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
         Read the code for any instructions within.
@@ -59,8 +59,8 @@ Add additional meta information to Blog Page list.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option if you want to have this effect on all Store pages.
+      
       * v7.1
       
         * Add code from file **[blog page list meta add options.html][6]** to
@@ -114,8 +114,8 @@ Add additional meta information to Blog Page list.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[blog page list meta add options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
@@ -127,8 +127,8 @@ Add additional meta information to Blog Page list.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * v7.1
     
       * Add code from file **[blog page list meta add options.html][6]** to

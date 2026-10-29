@@ -101,9 +101,9 @@ Create rudimentary tabbed effect with button and other blocks.
         
     * Site-wide
     
-      * Use this option if you have multiple pages where you want to have this
-        effect.
-        
+      Use this option if you have multiple pages where you want to have this
+      effect.
+      
       * Add the following to Website > Pages > Custom Code > Custom CSS. Refer
         to [Using the CSS Editor][199] for details.
       

@@ -32,8 +32,8 @@ Override shipping dimensions.
     
 * Store Page Specific
 
-  * Use this option if you want to have this effect on only one Store page.
-    
+  Use this option if you want to have this effect on only one Store page.
+  
   * Add code from file **[store page product dimensions.html][4]** to
     Store Settings > Advanced > Page Header Code Injection for the Page.
     
@@ -45,8 +45,8 @@ Override shipping dimensions.
   
 * Site-wide
 
-  * Use this option if you want to have this effect on all Store pages.
-    
+  Use this option if you want to have this effect on all Store pages.
+  
   * Add code from file **[store page product dimensions.html][4]** to Website >
     Pages > Custom Code > Code Injection > HEADER.
     

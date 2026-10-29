@@ -39,8 +39,8 @@ Link text in the title.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store page.
-        
+      Use this option if you want to have this effect on only one Store page.
+      
       * Add code from file **[store page detail title text to link
         options.html][6]** to Store Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
@@ -64,8 +64,8 @@ Link text in the title.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option if you want to have this effect on all Store pages.
+      
       * v7.1
       
         * Add code from file **[store page detail title text to link
@@ -115,8 +115,8 @@ Link text in the title.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Store page.
-      
+    Use this option if you want to have this effect on only one Store page.
+    
     * Add code from files **[store page detail title text to link
       options.html][6]** and **[store page detail title text to
       link.html][9]** to Store Page Settings > Advanced >
@@ -126,8 +126,8 @@ Link text in the title.
       
   * Site-wide
   
-    * Use this option if you want to have this effect on all Store pages.
-      
+    Use this option if you want to have this effect on all Store pages.
+    
     * v7.1
     
       * Add code from files **[store page detail title text to link

@@ -41,8 +41,8 @@ Remove variants with **(Sold Out)** text.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store page.
-        
+      Use this option if you want to have this effect on only one Store page.
+      
       * Add the following code to Store Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -63,8 +63,8 @@ Remove variants with **(Sold Out)** text.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option if you want to have this effect on all Store pages.
+      
       * v7.1
       
         * Add the following code to Website > Pages > Custom Code >
@@ -110,8 +110,8 @@ Remove variants with **(Sold Out)** text.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Store page.
-      
+    Use this option if you want to have this effect on only one Store page.
+    
     * Add code from file **[store page detail variant sold out
       remove.html][8]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Page.
@@ -120,8 +120,8 @@ Remove variants with **(Sold Out)** text.
       
   * Site-wide
   
-    * Use this option if you want to have this effect on all Store pages.
-      
+    Use this option if you want to have this effect on all Store pages.
+    
     * v7.1
     
       * Add code from file **[store page detail variant sold out

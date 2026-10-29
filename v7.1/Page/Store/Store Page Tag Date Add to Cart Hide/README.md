@@ -34,18 +34,18 @@ Hide product add to cart using tags with date/time.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page tag date add to cart hide.html][4]** to
       Store Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [Per-page code injection][5] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * Add code from file **[store page tag date add to cart hide.html][4]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][6] for details.

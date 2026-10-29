@@ -36,9 +36,9 @@ Add badges to product detail slideshow badges.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail slideshow item badge
       add.html][14]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Page.
@@ -47,9 +47,9 @@ Add badges to product detail slideshow badges.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * v7.1
     
       * Add code from file **[store page detail slideshow item badge

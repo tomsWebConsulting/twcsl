@@ -109,8 +109,8 @@ Display Calendar Block a week at a time.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[calendar block week at a time.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         

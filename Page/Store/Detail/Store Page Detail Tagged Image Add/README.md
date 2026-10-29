@@ -36,9 +36,9 @@ Add images after product description based on tags.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail tagged image add
       options.html][5]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Page. Read the code for any
@@ -51,9 +51,9 @@ Add images after product description based on tags.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * v7.1
     
       * Add code from file **[store page detail tagged image add

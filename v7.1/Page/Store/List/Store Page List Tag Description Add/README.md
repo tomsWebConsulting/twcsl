@@ -46,9 +46,9 @@ Add descriptions to Store page tag pages.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Store
-          page.
-          
+        Use this option if you want to have this effect on only one Store
+        page.
+        
         * Add code from file **[store page list tag description add
           options.html][8]** to Store Page Settings > Advanced >
           Page Header Code Injection for the Page. Read the code for any
@@ -72,8 +72,8 @@ Add descriptions to Store page tag pages.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
+        Use this option if you want to have this effect on all Pages.
+        
         * v7.1
         
           * Add code from file **[store page list tag description add
@@ -124,8 +124,8 @@ Add descriptions to Store page tag pages.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store page.
-        
+      Use this option if you want to have this effect on only one Store page.
+      
       * Add code from file **[store page list tag description add
         options.html][8]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
@@ -138,8 +138,8 @@ Add descriptions to Store page tag pages.
         
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * v7.1
       
         * Add code from file **[store page list tag description add

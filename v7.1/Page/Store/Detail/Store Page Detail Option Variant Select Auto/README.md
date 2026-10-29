@@ -31,8 +31,8 @@ Auto select variants.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[store page detail option variant select auto
         options.html][6]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
@@ -83,8 +83,8 @@ Auto select variants.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[store page detail option variant select auto
       options.html][6]** to Page Settings > Advanced >
       Page Header Code Injection for the Page. Read the code for any

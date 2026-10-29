@@ -48,9 +48,9 @@ Add images to product detail based on tags before Additional Info.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Store
-          page.
-          
+        Use this option if you want to have this effect on only one Store
+        page.
+        
         * Add code from file **[store page detail tag based image add before
           additional info options.html][9]** to Page Settings > Advanced >
           Page Header Code Injection for the Page. Read the code for any
@@ -76,8 +76,8 @@ Add images to product detail based on tags before Additional Info.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
+        Use this option if you want to have this effect on all Pages.
+        
         * v7.1
         
           * Add code from file **[store page detail tag based image add before
@@ -131,8 +131,8 @@ Add images to product detail based on tags before Additional Info.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store page.
-        
+      Use this option if you want to have this effect on only one Store page.
+      
       * Add code from file **[store page detail tag based image add before
         additional info options.html][9]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
@@ -145,8 +145,8 @@ Add images to product detail based on tags before Additional Info.
         
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * v7.1
       
         * Add code from file **[store page detail tag based image add before

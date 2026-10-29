@@ -37,8 +37,8 @@ Make all Text block links open in a new window or tab.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -57,8 +57,8 @@ Make all Text block links open in a new window or tab.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
         
@@ -82,8 +82,8 @@ Make all Text block links open in a new window or tab.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[text block links open new window or tab.html][8]**
       to Page Settings > Advanced > Page Header Code Injection for the Page.
       
@@ -91,8 +91,8 @@ Make all Text block links open in a new window or tab.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * Add code from file **[text block links open new window or tab.html][8]**
       to Website > Pages > Custom Code > Code Injection > FOOTER.
       

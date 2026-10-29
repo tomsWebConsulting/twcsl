@@ -33,8 +33,8 @@ Cache Page tags in sessionStorage.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[page tags cache options.html][6]** to
         Page Settings > Advanced > Page Header Code Injection for the Page. Read
         the code for any instructions within.
@@ -57,8 +57,8 @@ Cache Page tags in sessionStorage.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * v7.1
       
         * Add code from file **[page tags cache options.html][6]** to Website >
@@ -108,8 +108,8 @@ Cache Page tags in sessionStorage.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[page tags cache options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
@@ -121,8 +121,8 @@ Cache Page tags in sessionStorage.
       
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * v7.1
     
       * Add code from file **[page tags cache options.html][6]** to Website >

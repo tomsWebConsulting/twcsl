@@ -33,8 +33,8 @@ Superscript text.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[scrolling block text superscript
         options.html][6]** to Page Settings > Advanced > Page Header Code
         Injection for the Page. Read the code for any instructions within.
@@ -59,6 +59,8 @@ Superscript text.
       
     * Site-wide
     
+      Use this option if you want to have this effect on all Pages.
+      
       * Add code from file **[scrolling block text superscript
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
         FOOTER. Read the code for any instructions within.
@@ -88,8 +90,8 @@ Superscript text.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[scrolling block text superscript options.html][6]**
       to Page Settings > Advanced > Page Header Code Injection for the Page.
       Read the code for any instructions within.
@@ -101,6 +103,8 @@ Superscript text.
       
   * Site-wide
   
+    Use this option if you want to have this effect on all Pages.
+    
     * Add code from file **[scrolling block text superscript options.html][6]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
       for any instructions within.

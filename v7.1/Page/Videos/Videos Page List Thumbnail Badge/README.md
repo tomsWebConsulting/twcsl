@@ -33,9 +33,9 @@ Videos page list thumbnail badge.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Videos
-          Page.
-          
+        Use this option if you want to have this effect on only one Videos
+        Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           

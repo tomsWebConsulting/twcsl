@@ -122,9 +122,9 @@ Create a blog page post excerpt element.
         
     * Site-wide
     
-      * Use this option if you have multiple pages where you want to have this
-        effect.
-        
+      Use this option if you have multiple pages where you want to have this
+      effect.
+      
       * Add code from file **[blog page post excerpt element.html][10]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
         code to code injection][9] for details.
@@ -141,9 +141,9 @@ Create a blog page post excerpt element.
         
     * Site-wide
     
-      * Use this option if you have multiple pages where you want to have this
-        effect.
-        
+      Use this option if you have multiple pages where you want to have this
+      effect.
+      
       * Add code from file **[blog page post excerpt element.html][10]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         Refer to [Add code to code injection][9] for details.

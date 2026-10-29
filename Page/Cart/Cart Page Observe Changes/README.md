@@ -38,8 +38,8 @@ added or removed from the [DOM][2].
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -58,8 +58,8 @@ added or removed from the [DOM][2].
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > FOOTER.
         
@@ -83,8 +83,8 @@ added or removed from the [DOM][2].
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[cart page observe changes.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
@@ -92,8 +92,8 @@ added or removed from the [DOM][2].
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * Add code from file **[cart page observe changes.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
       

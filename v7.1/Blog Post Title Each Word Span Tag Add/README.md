@@ -34,18 +34,18 @@ Wrap each word of a blog post title in span tags.
 
   * Page Specific
   
-    * Use this option if you have only a single blog page you want to have this
-      effect.
-      
+    Use this option if you have only a single blog page you want to have this
+    effect.
+    
     * Add code from file **[blog post title each word span tag add.html][5]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
       to [per-page code injection][6] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple blog pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple blog pages where you want to have
+    this effect.
+    
     * Add code from file **[blog post title each word span tag add.html][5]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
       code to code injection][7].

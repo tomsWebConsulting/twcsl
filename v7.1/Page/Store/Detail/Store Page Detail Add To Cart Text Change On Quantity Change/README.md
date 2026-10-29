@@ -34,9 +34,9 @@ Add quantity based text to Add to Cart button.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail add to cart text change on
       quantity change options.html][4]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Page. Read the code for any
@@ -50,9 +50,9 @@ Add quantity based text to Add to Cart button.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * Add code from file **[store page detail add to cart text change on
       quantity change options.html][4]** to Website > Pages > Custom Code >
       Code Injection > FOOTER.

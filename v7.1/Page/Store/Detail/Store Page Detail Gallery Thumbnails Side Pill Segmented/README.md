@@ -30,9 +30,9 @@ Style thumbnails side as segmented pill.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented options.html][2]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Store Page. Refer to [Per-page code
@@ -44,9 +44,9 @@ Style thumbnails side as segmented pill.
       
   * Site-wide
   
-    * Use this option if you have multiple elements such as a store page and
-      product blocks where you want to have this effect.
-      
+    Use this option if you have multiple elements such as a store page and
+    product blocks where you want to have this effect.
+    
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented options.less][5]** to Website > Pages > Custom Code >
       Code Injection > Custom CSS. Refer to [Add code to code injection][6] for

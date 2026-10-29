@@ -37,9 +37,9 @@ the product has been added to the cart.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail add to cart button added
       callbacks.html][4]** to Store Page Settings > Advanced >
       Page Header Code Injection for the Page.
@@ -48,9 +48,9 @@ the product has been added to the cart.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * v7.1
     
       * Add code from file **[store page detail add to cart button added

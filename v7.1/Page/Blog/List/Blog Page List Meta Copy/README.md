@@ -31,8 +31,8 @@ Copy Blog Page List meta after title.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Blog Page.
-        
+      Use this option if you want to have this effect on only one Blog Page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         

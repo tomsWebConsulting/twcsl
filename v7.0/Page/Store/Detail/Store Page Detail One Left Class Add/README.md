@@ -26,9 +26,9 @@ Add one left class when there is no quantity field.
 
   * Page Specific
   
-    * Use this option if you have only a single store page you want to have this
-      effect.
-      
+    Use this option if you have only a single store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail one left class add.html][4]** to
       Store Page Settings > Advanced > Page Header Code Injection for the Page.
       
@@ -36,9 +36,9 @@ Add one left class when there is no quantity field.
       
   * Site-wide
   
-    * Use this option if you have multiple store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple store pages where you want to have
+    this effect.
+    
     * Add code from file **[store page detail one left class add.html][4]** to
       Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
       

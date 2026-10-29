@@ -39,9 +39,9 @@ Hide elements of store products that are tagged.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Store
-        page.
-        
+      Use this option if you want to have this effect on only one Store
+      page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -60,8 +60,8 @@ Hide elements of store products that are tagged.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option if you want to have this effect on all Store pages.
+      
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > HEADER.
         
@@ -85,8 +85,8 @@ Hide elements of store products that are tagged.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Store page.
-      
+    Use this option if you want to have this effect on only one Store page.
+    
     * Add code from file **[store page elements tagged hide.html][7]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
@@ -94,8 +94,8 @@ Hide elements of store products that are tagged.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Store pages.
-      
+    Use this option if you want to have this effect on all Store pages.
+    
     * Add code from file **[store page elements tagged hide.html][7]** to
       Website > Pages > Custom Code > Code Injection > HEADER.
       

@@ -53,8 +53,8 @@ Limit custom form text and text area field lengths.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
           
@@ -75,8 +75,8 @@ Limit custom form text and text area field lengths.
         
       * Site-wide
       
-        * Use this option if you want to have this effect on all Pages.
-          
+        Use this option if you want to have this effect on all Pages.
+        
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
           
@@ -102,8 +102,8 @@ Limit custom form text and text area field lengths.
     
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option if you want to have this effect on only one Page.
+      
       * Add code from file **[product custom form text field max length.html][13]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
@@ -111,8 +111,8 @@ Limit custom form text and text area field lengths.
       
     * Site-wide
     
-      * Use this option if you want to have this effect on all Pages.
-        
+      Use this option if you want to have this effect on all Pages.
+      
       * Add code from file **[product custom form text field max length.html][13]** to
         Website > Pages > Custom Code > Code Injection > FOOTER.
         

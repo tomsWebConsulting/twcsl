@@ -40,8 +40,8 @@ Changes prices on the Cart page.
     
       * Page Specific
       
-        * Use this option if you want to have this effect on only one Page.
-          
+        Use this option if you want to have this effect on only one Page.
+        
         * Add code from file **[cart page prices change options.html][8]** to
           Page Settings > Advanced > Page Header Code Injection for the Page.
           Read the code for any instructions within.
@@ -113,8 +113,8 @@ Changes prices on the Cart page.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option if you want to have this effect on only one Page.
+    
     * Add code from file **[cart page prices change options.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
       the code for any instructions within.
@@ -126,8 +126,8 @@ Changes prices on the Cart page.
     
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option if you want to have this effect on all Pages.
+    
     * v7.1
     
       * Add code from file **[cart page prices change options.html][8]** to

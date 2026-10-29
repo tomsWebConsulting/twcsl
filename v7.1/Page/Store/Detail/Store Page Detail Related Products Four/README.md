@@ -30,18 +30,18 @@ Show four Store page detail related products.
 
   * Page Specific
   
-    * Use this option if you have only a single Store page you want to have this
-      effect.
-      
+    Use this option if you have only a single Store page you want to have this
+    effect.
+    
     * Add code from file **[store page detail related products four.html][2]**
       to Store Page Settings > Advanced > Page Header Code Injection for the
       page. Refer to [Per-page code injection][3] for details.
       
   * Site-wide
   
-    * Use this option if you have multiple Store pages where you want to have
-      this effect.
-      
+    Use this option if you have multiple Store pages where you want to have
+    this effect.
+    
     * Add code from file **[store page detail related products four.less][4]**
       to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
       Editor][199] for details.
