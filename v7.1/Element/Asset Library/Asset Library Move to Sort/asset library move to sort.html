@@ -1,0 +1,282 @@
+<!-- begin TWC Asset Library Move to Sort -->
+
+  <!--
+  
+    asset library move to sort
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Note            : the code is comprised of a template and script tag. both
+                      are needed for the full effect to work
+     
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-almts" data-version="0.1.0">
+  
+    <script>
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        // globals
+        
+        {
+        
+          // initialize twc module
+          
+          window.twc = window.twc || { };
+          
+          // initialize twc almts sub-module
+          
+          twc.almts = twc.almts || { };
+          
+          }
+          
+        const
+        
+          sortCallback = ( a, b ) => {
+          
+            const
+            
+              nameA = a.textContent,
+              
+              nameB = b.textContent;
+              
+            if ( nameA < nameB )
+            
+              return -1;
+              
+            if ( nameA > nameB )
+            
+              return 1;
+              
+            // names must be equal
+            
+            return 0;
+            
+            },
+            
+          mutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element = element
+              
+                .querySelector (
+                
+                  '#move-to-modal-title'
+                  
+                  );
+                  
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element = element
+              
+                .parentElement
+                
+                .querySelector ( 'ul' );
+                
+              [
+              
+                ...
+                
+                element
+                
+                  .querySelectorAll ( 'li' )
+                  
+                ]
+                
+                .sort ( sortCallback )
+                
+                .forEach ( e =>
+                
+                  element.appendChild ( e )
+                  
+                  );
+                  
+              };
+              
+        twc
+        
+          .almts
+          
+          .observer
+          
+          =
+          
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              mutationCallback
+              
+              )
+              
+            );
+            
+        // start listening for changes in element
+        
+        twc
+        
+          .almts
+          
+          .observer
+          
+          .observe (
+          
+            document.body,
+            
+            { childList : true }
+            
+            );
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-almts',
+        
+        wndw = window.top,
+        
+        dcmnt = wndw.document,
+        
+        destinationElement = dcmnt
+        
+          .getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
+          
+          );
+          
+      const
+      
+        sourceVersion =
+        
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
+        
+          ! destinationElement
+          
+          ||
+          
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        wndw
+        
+          ?.twc
+          
+          ?.almts
+          
+          ?.observer
+          
+          ?.disconnect ( );
+          
+        delete wndw
+        
+          ?.twc
+          
+          ?.almts
+          
+          ?.observer;
+          
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Asset Library Move to Sort -->
