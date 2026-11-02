@@ -27,7 +27,7 @@
     
   const
   
-    title = 'Calendar Block Time End Removee',
+    title = 'Calendar Block Time End Remove',
     
     version = '0.2.0',
     

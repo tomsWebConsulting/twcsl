@@ -10,7 +10,7 @@ Remove Calendar Block end times.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -40,7 +40,7 @@ Remove Calendar Block end times.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -56,11 +56,11 @@ Remove Calendar Block end times.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -94,7 +94,7 @@ Remove Calendar Block end times.
               
             ```
             
-        * Refer to [Add code to code injection][9] for details.
+        * Refer to [Add code to the header and footer][9] for details.
         
   * On-site
   
@@ -103,16 +103,15 @@ Remove Calendar Block end times.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[calendar block time end remove.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
+        Refer to [Inject code to a specific page][8] for details.
         
-      * Refer to [per-page code injection][8] for details.
-      
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -125,7 +124,7 @@ Remove Calendar Block end times.
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
-      * Refer to [Add code to code injection][9] for details.
+      * Refer to [Add code to the header and footer][9] for details.
 
 ## Demo
 
@@ -153,8 +152,8 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Calendar/Calendar%20Block%20Observe%20Changes#calendar-block-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: calendar%20block%20time%20end%20remove.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/calendar-block-time-end-remove?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
