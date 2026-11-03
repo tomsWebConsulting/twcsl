@@ -1,6 +1,6 @@
 # Replace Blog "Header" Text with Category and or Tag
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -17,11 +17,11 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 ```
 
 Add code from file **replace blog "header" text with category and or tag.html**
-to Blog Settings > Advanced > Page Header Code Injection for the blog page.
+to Blog Settings > Advanced > Page Header Code Injection for the Blog Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
@@ -39,4 +39,5 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
