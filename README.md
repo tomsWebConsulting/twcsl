@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 678 effects. Each effect has it's own version number, code,
+twcsl contains 681 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -958,6 +958,12 @@ not necessarily designed to work together.
       * [Button Element No Link Inactive](v7.1/Element/Button/Button%20Element%20No%20Link%20Inactive)
         
         * [Button Element No Link Inactive.bbprojectd](v7.1/Element/Button/Button%20Element%20No%20Link%20Inactive/Button%20Element%20No%20Link%20Inactive.bbprojectd)
+          
+    * [Asset Library](v7.1/Element/Asset%20Library)
+      
+      * [Asset Library Move to Sort](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Sort)
+        
+        * [Asset Library Move to Sort.bbprojectd](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Sort/Asset%20Library%20Move%20to%20Sort.bbprojectd)
           
     * [Main Menu Home Link Hide](v7.1/Element/Main%20Menu%20Home%20Link%20Hide)
       
