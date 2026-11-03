@@ -1,0 +1,452 @@
+<!-- begin TWC Asset Library Move to Move -->
+
+  <!--
+  
+    asset library move to move
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Note            : the code is comprised of a template and script tag. both
+                      are needed for the full effect to work
+     
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-almtm" data-version="0.1.0">
+  
+    <script>
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        // globals
+        
+        {
+        
+          // initialize twc module
+          
+          window.twc = window.twc || { };
+          
+          // initialize twc almtm sub-module
+          
+          twc.almtm = twc.almtm || { };
+          
+          }
+          
+        const
+        
+          codeKey = 'twc-almtm',
+          
+          mutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element = element
+              
+                .querySelector (
+                
+                  '#move-to-modal-title'
+                  
+                  )
+                  
+                ?.parentElement;
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element.insertAdjacentHTML (
+              
+                'afterbegin',
+                
+                `
+                
+                  <div id="${ codeKey }">
+                  
+                    </div>
+                    
+                  `
+                  
+                );
+                
+              const wrapperElement = element
+              
+                .querySelector (
+                
+                  `#${ codeKey }`
+                  
+                  );
+                  
+              [
+              
+                ...
+                
+                element.children
+                
+                ]
+                
+                .forEach ( e => {
+                
+                  const isMatch =
+                  
+                    e === wrapperElement;
+                    
+                  // bail if is match
+                  
+                  if ( isMatch ) return;
+                  
+                  wrapperElement
+                  
+                    .appendChild ( e );
+                    
+                  } );
+                  
+              element =
+              
+                element.parentElement;
+                
+              let
+              
+                startX,
+                
+                startY,
+                
+                tx = 0,
+                
+                ty = 0;
+                  
+              const
+              
+                move = ( event ) => {
+                
+                  tx +=
+                  
+                    event.clientX - startX;
+                    
+                  ty +=
+                  
+                    event.clientY - startY;
+                    
+                  startX = event.clientX;
+                  
+                  startY = event.clientY;
+                  
+                  element
+                  
+                    .style
+                    
+                    .transform
+                    
+                    =
+                    
+                    `translate( ${
+                    
+                      tx
+                      
+                      }px, ${
+                      
+                        ty
+                        
+                        }px )`;
+                        
+                  const rect = element
+                  
+                    .getBoundingClientRect ( );
+                    
+                  if ( rect.left < 0 )
+                  
+                    tx -= rect.left;
+                    
+                  if (
+                  
+                    rect.right
+                    
+                    >
+                    
+                    window.innerWidth
+                    
+                    )
+                    
+                    tx -=
+                    
+                      rect.right
+                      
+                      -
+                      
+                      window.innerWidth;
+                      
+                  if ( rect.top < 0 )
+                  
+                    ty -= rect.top;
+                    
+                  if (
+                  
+                    rect.bottom
+                    
+                    >
+                    
+                    window.innerHeight
+                    
+                    )
+                    
+                    ty -=
+                    
+                      rect.bottom
+                      
+                      -
+                      
+                      window.innerHeight;
+                      
+                  },
+                  
+                stop = ( ) => {
+                
+                  window
+                  
+                    .removeEventListener (
+                    
+                      'pointermove',
+                      
+                      move
+                      
+                      ),
+                      
+                  window
+                  
+                    .removeEventListener (
+                    
+                      'pointerup',
+                      
+                      stop
+                      
+                      );
+                      
+                  };
+                  
+              element.addEventListener (
+              
+                'pointerdown',
+                
+                e => {
+                
+                  const isWrapper = e
+                  
+                    .target
+                    
+                    .closest (
+                    
+                      `#${ codeKey }`
+                      
+                      );
+                      
+                  if ( isWrapper )
+                  
+                    return;
+                    
+                  startX = e.clientX;
+                  
+                  startY = e.clientY;
+                  
+                  window.addEventListener (
+                  
+                    'pointermove',
+                    
+                    move
+                    
+                    );
+                    
+                  window.addEventListener (
+                  
+                    'pointerup',
+                    
+                    stop
+                    
+                    );
+                    
+                  }
+                  
+                );
+              
+              };
+              
+        twc
+        
+          .almtm
+          
+          .observer
+          
+          =
+          
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              mutationCallback
+              
+              )
+              
+            );
+            
+        // start listening for changes in element
+        
+        twc
+        
+          .almtm
+          
+          .observer
+          
+          .observe (
+          
+            document.body,
+            
+            { childList : true }
+            
+            );
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-almtm',
+        
+        wndw = window.top,
+        
+        dcmnt = wndw.document,
+        
+        destinationElement = dcmnt
+        
+          .getElementById (
+          
+            `${ codeKey }`
+            
+            ),
+            
+        destinationVersion =
+        
+          destinationElement
+          
+            ?.dataset
+          
+            .version;
+            
+      let sourceElement = document
+      
+        .getElementById (
+        
+          `${ codeKey }`
+          
+          );
+          
+      const
+      
+        sourceVersion =
+        
+          sourceElement
+          
+            ?.dataset
+            
+            .version,
+            
+        isInstall =
+        
+          ! destinationElement
+          
+          ||
+          
+          destinationVersion
+          
+          !==
+          
+          sourceVersion;
+          
+      if ( isInstall ) {
+      
+        wndw
+        
+          ?.twc
+          
+          ?.almtm
+          
+          ?.observer
+          
+          ?.disconnect ( );
+          
+        delete wndw
+        
+          ?.twc
+          
+          ?.almtm
+          
+          ?.observer;
+          
+        destinationElement?.remove ( );
+        
+        sourceElement = sourceElement
+        
+          .content
+          
+          .cloneNode ( true );
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .id
+          
+          =
+          
+          codeKey;
+          
+        sourceElement
+        
+          .firstElementChild
+          
+          .dataset
+          
+          .version
+          
+          =
+          
+          sourceVersion;
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild ( sourceElement );
+          
+        }
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Asset Library Move to Move -->
