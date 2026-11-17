@@ -1,0 +1,244 @@
+<!-- begin TWC Asset Library Move to Dialog Sort -->
+
+  <!--
+  
+    asset library move to dialog sort
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0-development.0
+    
+    SS Version      : 7.1
+    
+    Note            : the code is comprised of a template and script tag. both
+                      are needed for the full effect to work
+     
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting
+                      
+                      < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-almtds-template">
+  
+    <script id="twc-almtds">
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        // globals
+        
+        {
+        
+          // initialize twc module
+          
+          window.twc = window.twc || { };
+          
+          // initialize twc almtds sub-module
+          
+          twc.almtds = twc.almtds || { };
+          
+          }
+          
+        const
+        
+          sortCallback = ( a, b ) => {
+          
+            const
+            
+              nameA = a.textContent,
+              
+              nameB = b.textContent;
+              
+            if ( nameA < nameB )
+            
+              return -1;
+              
+            if ( nameA > nameB )
+            
+              return 1;
+              
+            // names must be equal
+            
+            return 0;
+            
+            },
+            
+          mutationCallback =
+          
+            ( mutation ) => {
+            
+              let element =
+              
+                mutation.addedNodes [ 0 ];
+                
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              const isElement = element
+              
+                .nodeType
+                
+                ===
+                
+                1;
+                
+              // bail if not element
+              
+              if ( ! isElement ) return;
+              
+              element = element
+              
+                .querySelector (
+                
+                  '#move-to-modal-title'
+                  
+                  );
+                  
+              // bail if no element
+              
+              if ( ! element ) return;
+              
+              element = element
+              
+                .parentElement
+                
+                .querySelector ( 'ul' );
+                
+              [
+              
+                ...
+                
+                element
+                
+                  .querySelectorAll ( 'li' )
+                  
+                ]
+                
+                .sort ( sortCallback )
+                
+                .forEach ( e =>
+                
+                  element.appendChild ( e )
+                  
+                  );
+                  
+              };
+              
+        twc
+        
+          .almtds
+          
+          .observer
+          
+          =
+          
+          new MutationObserver (
+          
+            ms => ms.forEach (
+            
+              mutationCallback
+              
+              )
+              
+            );
+            
+        // start listening for changes in element
+        
+        twc
+        
+          .almtds
+          
+          .observer
+          
+          .observe (
+          
+            document.body,
+            
+            { childList : true }
+            
+            );
+            
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        codeKey = 'twc-almtds',
+        
+        wndw = window.top,
+        
+        dcmnt = wndw.document;
+        
+      // delete
+      
+      {
+      
+        wndw
+        
+          ?.twc
+          
+          ?.almtds
+          
+          ?.observer
+          
+          ?.disconnect ( );
+          
+        delete wndw
+        
+          ?.twc
+          
+          ?.almtds
+          
+          ?.observer;
+          
+        dcmnt
+        
+          .getElementById (
+          
+            `${ codeKey }`
+            
+            )
+            
+          ?.remove ( );
+          
+        }
+        
+      dcmnt
+      
+        .head
+        
+        .appendChild (
+        
+          document
+          
+            .getElementById (
+            
+              `${ codeKey }-template`
+              
+              )
+              
+            .content
+            
+            .cloneNode ( true )
+            
+          );
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Asset Library Move to Dialog Sort -->
