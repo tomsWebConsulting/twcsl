@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 687 effects. Each effect has it's own version number, code,
+twcsl contains 689 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -558,6 +558,10 @@ not necessarily designed to work together.
         * [Events Page List Horizontal Scroll](v7.1/Page/Events/List/Events%20Page%20List%20Horizontal%20Scroll)
           
           * [Events Page List Horizontal Scroll.bbprojectd](v7.1/Page/Events/List/Events%20Page%20List%20Horizontal%20Scroll/Events%20Page%20List%20Horizontal%20Scroll.bbprojectd)
+            
+        * [Events Page List Event Link](v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link)
+          
+          * [Events Page List Event Link.bbprojectd](v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/Events%20Page%20List%20Event%20Link.bbprojectd)
             
         * [Events Page List Day Index](v7.1/Page/Events/List/Events%20Page%20List%20Day%20Index)
           
