@@ -16,7 +16,7 @@ Make the whole Event a clickable link.
 
 #### Dependencies
 
-  * [Squarespace plan][3] that supports [JavaScript][4].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
@@ -25,7 +25,7 @@ Make the whole Event a clickable link.
 * CDN Hosted
 
   Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][6], a [CDN][7])
+  externally on the [jsDelivr][4], a [CDN][5])
   
   * Options
   
@@ -49,7 +49,7 @@ Make the whole Event a clickable link.
           
         ```
         
-        Refer to [Inject code to a specific page][8] for details.
+        Refer to [Inject code to a specific page][6] for details.
         
     * Site-wide
     
@@ -71,7 +71,7 @@ Make the whole Event a clickable link.
           
         ```
         
-        Refer to [Add code to the header and footer][9] for details.
+        Refer to [Add code to the header and footer][7] for details.
         
 * On-site
 
@@ -82,21 +82,21 @@ Make the whole Event a clickable link.
   
     Use this option when you want to have this effect on only one Events Page.
     
-    * Add code from file **[events page list event link.html][10]** to
+    * Add code from file **[events page list event link.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the Events Page.
-      Refer to [Inject code to a specific page][8] for details.
+      Refer to [Inject code to a specific page][6] for details.
       
   * Site-wide
   
     Use this option when you want to have this effect on all Events Pages.
     
-    * Add code from file **[events page list event link.html][10]** to Website >
+    * Add code from file **[events page list event link.html][8]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
-      header and footer][9] for details.
+      header and footer][7] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -107,14 +107,14 @@ Please consider [making a donation][12].
   -->
 * **2026-11-17**
 
-  * initial version (commit df0422dd5629c558aab4b73ab9aa3b3ea62dd826)
+  * initial version (commit 22c9588e9d4315e77d39dfe0fcede2bb95647fa6)
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[3]: https://www.squarespace.com/pricing
-[4]: https://en.wikipedia.org/wiki/JavaScript
-[6]: https://www.jsdelivr.com/
-[7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
-[10]: events%20page%20list%20event%20link.html#L1
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://www.jsdelivr.com/
+[5]: https://en.wikipedia.org/wiki/Content_delivery_network
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[8]: events%20page%20list%20event%20link.html#L1
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
