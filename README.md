@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 683 effects. Each effect has it's own version number, code,
+twcsl contains 685 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -465,6 +465,10 @@ not necessarily designed to work together.
   
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
+* [Effects](Effects)
+  
+  * [Effects.bbprojectd](Effects/Effects.bbprojectd)
+    
 * [code bits](code%20bits)
   
   * [Page](code%20bits/Page)
