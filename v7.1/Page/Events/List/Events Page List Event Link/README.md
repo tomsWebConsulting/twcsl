@@ -41,9 +41,9 @@ Make the whole Event a clickable link.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@22c9588e9d4315e77d39dfe0fcede2bb95647fa6/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@22c9588e9d4315e77d39dfe0fcede2bb95647fa6/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.js" type="module"></script>
           
           <!-- end TWC Events Page List Event Link -->
           
@@ -63,9 +63,9 @@ Make the whole Event a clickable link.
         
           <!-- License < https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1 > -->
           
-          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.css" rel="stylesheet" type="text/css">
+          <link href="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@22c9588e9d4315e77d39dfe0fcede2bb95647fa6/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.css" rel="stylesheet" type="text/css">
           
-          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@df0422dd5629c558aab4b73ab9aa3b3ea62dd826/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.js" type="module"></script>
+          <script src="https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@22c9588e9d4315e77d39dfe0fcede2bb95647fa6/v7.1/Page/Events/List/Events%20Page%20List%20Event%20Link/events%20page%20list%20event%20link.min.js" type="module"></script>
           
           <!-- end TWC Events Page List Event Link -->
           
@@ -103,7 +103,7 @@ Please consider [making a donation][9].
 <!-- * **2026-10-23**
 
   * updated to work with Calendar Block Observe Changes v0.5.0
-  * bumped version to 0.2.0 (commit df0422dd5629c558aab4b73ab9aa3b3ea62dd826)
+  * bumped version to 0.2.0 (commit 22c9588e9d4315e77d39dfe0fcede2bb95647fa6)
   -->
 * **2026-11-17**
 
