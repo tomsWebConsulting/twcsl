@@ -1,0 +1,187 @@
+<!-- begin TWC Events Page List Event Link -->
+
+  <!--
+  
+    events page list event link
+    
+    License         : < https://tinyurl.com/s872fb68 >
+    
+    Version         : 0.1.0
+    
+    SS Version      : 7.1
+    
+    Copyright       : 2026 Thomas Creedon
+                      
+                      Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+    
+    no user serviceable parts below
+    
+    -->
+    
+  <style>
+  
+    body:not( .sqs-is-page-editing ) {
+    
+      .cdk-section[ data-definition-name = "website.components.eventsList" ] .eventlist-event:hover {
+      
+        cursor : pointer;
+        
+        }
+        
+      }
+      
+    </style>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Events Page List Event Link',
+        
+        version = '0.1.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      const domContentLoadedCallback =
+      
+        ( ) => {
+        
+          const isEventsPage =
+          
+            !!
+            
+            document
+            
+              .querySelectorAll (
+              
+                [
+                
+                  'body[ class *= "collection-type-events-" ]',
+                  
+                  'body[ class ~= "collection-type-events" ]'
+                  
+                  ]
+                  
+                  .join ( ', ' )
+                  
+                )
+                
+                .length;
+                
+          // bail if not events page
+          
+          if ( ! isEventsPage ) return;
+          
+          const isList =
+          
+            !
+            
+            Static
+            
+              .SQUARESPACE_CONTEXT
+              
+              .item
+              
+              ?.id;
+              
+          // bail if not list page
+          
+          if ( ! isList ) return;
+          
+          document
+          
+            .body
+            
+            .querySelectorAll (
+            
+              '.eventlist-event'
+              
+              )
+              
+            .forEach (
+            
+              e => {
+              
+                e.dataset.url = e
+                
+                  .querySelector (
+                  
+                    '.eventlist-title-link'
+                    
+                    )
+                    
+                  .getAttribute ( 'href' );
+                  
+                e.addEventListener (
+                
+                  'click',
+                  
+                  event => {
+                  
+                    const
+                    
+                      target = event.target,
+                      
+                      isAnchor = target
+                      
+                        .nodeName
+                        
+                        ===
+                        
+                        'A'
+                        
+                        ||
+                        
+                        target
+                        
+                          .classList
+                          
+                          .contains (
+                          
+                            'eventlist-thumbnail'
+                            
+                            );
+                            
+                    // bail if is anchor
+                    
+                    if ( isAnchor ) return;
+                    
+                    window.location =
+                    
+                      e.dataset.url;
+                      
+                    }
+                    
+                  );
+                  
+                }
+                
+              );
+              
+          };
+          
+      document.addEventListener (
+      
+        'DOMContentLoaded',
+        
+        domContentLoadedCallback
+        
+        );
+        
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Events Page List Event Link -->

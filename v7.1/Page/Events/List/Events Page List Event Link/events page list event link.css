@@ -1,0 +1,27 @@
+/*!
+
+  events page list event link
+  
+  License         : < https://tinyurl.com/s872fb68 >
+  
+  Version         : 0.1.0
+  
+  SS Version      : 7.1
+  
+  Copyright       : 2026 Thomas Creedon
+                    
+                    Tom's Web Consulting < http://www.tomsWeb.consulting/ >
+  
+  no user serviceable parts below
+  
+  */
+  
+body:not( .sqs-is-page-editing ) {
+
+  .cdk-section[ data-definition-name = "website.components.eventsList" ] .eventlist-event:hover {
+  
+    cursor : pointer;
+    
+    }
+    
+  }
