@@ -1,0 +1,1533 @@
+<!-- begin TWC Effects Initialize -->
+
+  <!--
+  
+    effects
+    
+    License           : < https://tinyurl.com/s872fb68 >
+    
+    Version           : 0.1.0-development.0
+    
+    Squarespace
+    Version           : 7.1
+    
+    Note              : the code is comprised of several tags. all are needed
+                        for the full effect to work
+    
+    Copyright         : 2026 Thomas Creedon
+                        
+                        Tom's Web Consulting
+                        
+                        < http://www.tomsWeb.consulting/ >
+    
+    -->
+    
+  <template id="twc-e-template">
+  
+    <template id="twc-e-svg-template">
+    
+      <svg height="22" version="1.1" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+      
+        <text style="font-family : Helvetica; font-size : 9.66667px; font-stretch : normal; font-style : normal; font-variant : normal; font-weight : bold; line-height : 1.25; -inkscape-font-specification : 'Helvetica Bold';">
+        
+          <tspan style="font-size : 9.66667px;" y="15">
+          
+            TWC
+            
+            </tspan>
+            
+          </text>
+          
+        </svg>
+        
+      </template>
+      
+    <template id="twc-e-settings-template">
+    
+      <dialog id="twc-e-settings">
+      
+        <div>
+        
+          </div>
+          
+        <div class="twc-e-settings-buttons">
+        
+          <button command="close" commandfor="twc-e-settings">
+          
+            Close
+            
+            </button>
+            
+          <button aria-disabled="true" cursor="not-allowed" disabled>
+          
+            Reload Site
+            
+            </button>
+            
+          </div>
+          
+        </dialog>
+        
+      </template>
+      
+    <template id="twc-e-settings-effect-template">
+    
+      <div class="twc-e-settings-effect">
+      
+        <input id name="enabled" type="checkbox" value>
+        
+        <label for>
+        
+          </label>
+  
+        <div aria-hidden="true" aria-orientation="horizontal" role="separator">
+        
+          </div>
+          
+        </div>
+        
+      </template>
+      
+    <template id="twc-e-tooltip-template">
+    
+      <div role="tooltip" class="twc-e-tooltip" style="inset : 0px auto auto 0px; position : absolute; transform : translate3d( 0px, 0px, 0px );">
+      
+        <div class="twc-e-tooltip-wrapper">
+        
+          <p data-rosetta-component="text" class="twc-e-tooltip-text">
+          
+            TWC Effects
+            
+            </p>
+            
+          </div>
+          
+        </div>
+        
+      </template>
+      
+    <style id="twc-e-style">
+    
+      .App-sidebar:has( .config-right-panel-header ) ~ [ data-test = "App-site-frame" ],
+      html.editing-page
+      
+        {
+        
+          #twc-e-button-wrapper {
+          
+            display : none;
+            
+            }
+            
+          }
+          
+      /* button */
+      
+      &:has( #twc-e-settings[ open ] ) #twc-e-button-wrapper button > span {
+      
+        background-color : rgb( 242, 242, 242 );
+        
+        }
+        
+      .twc-e-tooltip {
+      
+        background-color : rgb( 14, 14, 14 );
+        border-radius : 3px;
+        height : 44px;
+        padding : 0px 16px;
+        z-index : 30023;
+        
+        }
+        
+      .twc-e-tooltip-text {
+      
+        color : white ;
+        
+        }
+        
+      /* begin settings dialog */
+      
+        #twc-e-settings {
+        
+          border : unset;
+          box-shadow : rgba( 0, 0, 0, 0.12 ) 0px 16px 64px 0px, rgba( 0, 0, 0, 0.08 ) 0px 0px 1px 0px;
+          font-family : Clarkson, "Proxima Nova", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size : 14px;
+          margin : unset;
+          padding : 27px 33px 16px;
+          
+          input {
+          
+            height : 16px;
+            margin-right : 16px;
+            width : 16px;
+            
+            }
+            
+          label {
+          
+            display : inline-block;
+            padding-bottom : 11px;
+            padding-top : 11px;
+            
+            }
+            
+          [ role = "separator" ] {
+          
+            background-color : rgb( 231, 231, 231 );
+            box-sizing : border-box;
+            height : 1px;
+            width : 100%;
+            
+            }
+            
+          button {
+          
+            background-color : transparent;
+            margin-left : 22px;
+            padding : 11px;
+            
+            }
+            
+          button[ disabled ]:last-child {
+          
+            color : rgb( 183, 183, 183 );
+            cursor : not-allowed;
+            
+            }
+            
+          }
+          
+        .twc-e-settings-effect {
+        
+          align-items : center;
+          display : flex;
+          flex-wrap : wrap;
+          
+          }
+          
+        .twc-e-settings-buttons {
+        
+          box-sizing : border-box;
+          display : flex;
+          font-weight : 500;
+          justify-content : flex-end;
+          margin-top : 11px;
+          
+          }
+          
+        /* end settings dialog */
+        
+      </style>
+      
+    <script id="twc-e-script">
+    
+      ( ( ) => {
+      
+        // debugger;
+        
+        let effectsButtonWrapperElement =
+        
+           document
+          
+            .body
+            
+            .querySelector (
+            
+              '[ data-test = "frameToolbarSiteStyles" ]'
+              
+              )
+              
+            .closest ( 'li' );
+            
+        const
+        
+          codeKey = 'twc-e',
+          
+          cookieValueGet = ( key ) => {
+          
+            let v = '';
+            
+            try {
+            
+              v = document
+              
+                .cookie
+                
+                .split ( '; ' )
+                
+                .find (
+                
+                  row =>
+                  
+                    row.startsWith (
+                    
+                      `${ key }=`
+                      
+                      )
+                      
+                  )
+                  
+                .split ( '=' ) [ 1 ];
+                
+              } catch ( error ) { }
+              
+            return v;
+            
+            },
+            
+          crumb = cookieValueGet ( 'crumb' ),
+          
+          dialogEffectElement = document
+          
+            .getElementById (
+            
+              `${ codeKey }-settings-effect-template`
+              
+              )
+              
+            .content
+            
+            .firstElementChild,
+            
+          dialogElement = document
+          
+            .getElementById (
+            
+              `${ codeKey }-settings-template`
+              
+              )
+              
+            .content
+            
+            .firstElementChild,
+            
+          dialogPosition = ( ) => {
+          
+            const
+            
+              dialogRect = dialogElement
+              
+                .getBoundingClientRect ( ),
+        
+              effectsButtonRect =
+              
+                effectsButtonWrapperElement
+                
+                  .getBoundingClientRect ( ),
+                  
+              elementRect =
+              
+                effectsButtonWrapperElement
+                
+                  .closest ( 'ul' )
+                  
+                  .parentElement
+                  
+                  .getBoundingClientRect ( ),
+                  
+              tx =
+              
+                effectsButtonRect.left
+                
+                +
+                
+                window.scrollX
+                
+                +
+                
+                (
+                
+                  effectsButtonRect.width
+                  
+                  /
+                  
+                  2
+                  
+                  )
+                  
+                -
+                
+                ( dialogRect.width / 2 ),
+                
+              ty =
+              
+                elementRect.bottom
+                
+                +
+                
+                window.scrollY
+                
+                +
+                
+                2;
+                
+            dialogElement
+            
+              .style
+              
+              .transform
+              
+              =
+              
+              `translate3d( ${
+              
+                  tx
+                  
+                  }px, ${
+                  
+                    ty
+                    
+                    }px, 0px )`;
+                    
+            },
+            
+          fragmentToHtml = ( fragment ) => {
+        
+            let html = document
+            
+              .createElement ( 'div' );
+              
+            html.append (
+            
+              fragment
+              
+              );
+              
+            html = html.innerHTML;
+            
+            return html;
+            
+            },
+            
+          insertElement =
+          
+            effectsButtonWrapperElement
+            
+              .parentElement
+              
+              .firstElementChild,
+              
+          siteReloadButtonElement =
+          
+            dialogElement.querySelector (
+            
+              'button:last-child'
+              
+              ),
+              
+          tooltipPosition = (
+          
+            tooltipElement
+            
+            ) => {
+            
+              const
+              
+                effectsButtonWrapperElementRect =
+                
+                  effectsButtonWrapperElement
+                  
+                    .getBoundingClientRect ( ),
+                    
+                elementRect =
+                
+                  effectsButtonWrapperElement
+                  
+                    .closest ( 'ul' )
+                    
+                    .parentElement
+                    
+                    .getBoundingClientRect ( ),
+                    
+                tooltipRect = tooltipElement
+                
+                  .getBoundingClientRect ( ),
+          
+                tx =
+                
+                  effectsButtonWrapperElementRect
+                  
+                    .left
+                    
+                  +
+                  
+                  window.scrollX
+                  
+                  +
+                  
+                  (
+                  
+                    effectsButtonWrapperElementRect
+                    
+                      .width
+                      
+                    /
+                    
+                    2
+                    
+                    )
+                    
+                  -
+                  
+                  ( tooltipRect.width / 2 ),
+                  
+                ty =
+                
+                  elementRect.bottom
+                  
+                  +
+                  
+                  window.scrollY
+                  
+                  +
+                  
+                  2;
+                  
+              tooltipElement
+              
+                .style
+                
+                .transform
+                
+                =
+                
+                `translate3d( ${
+                
+                    tx
+                    
+                    }px, ${
+                    
+                      ty
+                      
+                      }px, 0px )`;
+                      
+              },
+              
+          tooltipShow = ( event ) => {
+          
+            const element = document
+            
+              .getElementById (
+              
+                `${ codeKey }-tooltip-template`
+                
+                )
+                
+              .content
+              
+              .cloneNode ( true );
+              
+            document
+            
+              .body
+              
+              .appendChild ( element );
+              
+            tooltipPosition (
+          
+              document
+              
+                .body
+                
+                .querySelector (
+                
+                  `.${ codeKey }-tooltip`
+                  
+                  )
+                  
+              );
+              
+            },
+            
+          wndw = document
+          
+            .querySelector (
+            
+              'iframe[ data-testid = "sqs-site-frame" ]'
+              
+              )
+              
+            .contentWindow,
+            
+          siteReloadButtonDisable = ( ) => {
+          
+            for (
+            
+              const [ p, v ]
+              
+              of
+              
+              [
+              
+                [
+                
+                  'aria-disabled',
+                  
+                  'true'
+                  
+                  ],
+                  
+                [
+                
+                  'cursor',
+                  
+                  'not-allowed'
+                  
+                  ],
+                  
+                [
+                
+                  'disabled',
+                  
+                  ''
+                  
+                  ]
+                  
+                ]
+                
+              ) {
+              
+                siteReloadButtonElement
+                
+                  .setAttribute (
+                  
+                    p,
+                    
+                    v
+                    
+                    );
+                    
+                }
+                
+            },
+            
+          dialogChangeHandler = ( event ) => {
+          
+            const
+            
+              dirty = dialogElement
+              
+                [ codeKey ]
+                
+                .dirty,
+                
+              element = event.target,
+              
+              initialState = dialogElement
+              
+                [ codeKey ]
+                
+                .initialState,
+                
+              isAdd =
+              
+                element.checked
+                
+                !==
+                
+                initialState.get (
+                
+                  element.value
+                  
+                  );
+                  
+            if ( isAdd ) 
+            
+              dirty.add (
+              
+                element.value
+                
+                );
+                
+              else
+              
+                dirty.delete (
+                
+                  element.value
+                  
+                  );
+                  
+            const isDirty = dirty.size !== 0;
+            
+            if ( isDirty ) {
+            
+              [
+              
+                'aria-disabled',
+                
+                'disabled'
+                
+                ]
+                
+                .forEach (
+                
+                  i =>
+                  
+                    siteReloadButtonElement
+                    
+                      .removeAttribute (
+                      
+                        i
+                        
+                        )
+                        
+                  );
+                  
+              siteReloadButtonElement
+              
+                .setAttribute (
+                
+                  'cursor',
+                  
+                  'pointer'
+                  
+                  );
+                  
+              } else
+              
+                siteReloadButtonDisable ( );
+                
+            },
+            
+          globalMethods = wndw
+                
+            .twc
+            
+            .e
+            
+            .methods,
+            
+          globalSettings = wndw
+                
+            .twc
+            
+            .e
+            
+            .settings,
+            
+          globalEffects = globalSettings
+          
+            .effects,
+            
+          dialogShow = ( event ) => {
+          
+            const initialState = new Map ( );
+            
+            siteReloadButtonDisable ( );
+            
+            dialogElement
+            
+              .querySelectorAll (
+              
+                `.${ codeKey }-settings-effect`
+                
+                )
+                
+              .forEach (
+              
+                e => e.remove ( )
+                
+                );
+                
+            for (
+            
+              const [ key, obj ]
+              
+              of
+              
+              Object.entries (
+              
+                globalEffects
+                
+                )
+                
+              ) {
+              
+                const
+                
+                  element =
+                  
+                    dialogEffectElement
+                    
+                      .cloneNode ( true ),
+                      
+                  id = key
+                  
+                    .toLowerCase ( )
+                    
+                    .replaceAll ( ' ', '-' ),
+                    
+                  inputElement = element
+                  
+                    .querySelector (
+                    
+                      'input'
+                      
+                    ),
+                    
+                  labelElement = element
+                  
+                    .querySelector (
+                    
+                      'label'
+                      
+                      );
+                      
+                initialState.set (
+                
+                  id,
+                  
+                  obj.enabled
+                  
+                  );
+                  
+                // input
+                
+                {
+                
+                  inputElement.checked =
+                  
+                    obj.enabled;
+                    
+                  inputElement.id = id;
+                  
+                  inputElement
+                  
+                    .setAttribute (
+                    
+                      'value',
+                      
+                      id
+                      
+                      );
+                      
+                  }
+                  
+                // label
+                
+                {
+                
+                  labelElement.setAttribute (
+                  
+                    'for',
+                    
+                    id
+                    
+                    );
+                    
+                  labelElement.textContent =
+                  
+                    key;
+                    
+                  }
+                  
+                dialogElement
+                
+                  .prepend ( element );
+                  
+                }
+                
+            dialogElement [ codeKey ] = {
+            
+              dirty : new Set( ),
+              
+              initialState : initialState
+              
+              };
+              
+            dialogElement.showModal ( );
+            
+            dialogPosition ( );
+            
+            },
+            
+          siteReloadHandler = async ( ) => {
+          
+            let body =
+            
+              await globalMethods.fetch (
+              
+                '/api/config/GetInjectionSettings',
+                
+                'json'
+                
+                );
+                
+            const
+            
+              fragment = globalMethods
+              
+                .htmlToFragment (
+                
+                  body.header
+                  
+                  ),
+                  
+              isPageCodeInjection =
+              
+                window
+                
+                  .location
+                  
+                  .pathname
+                  
+                  ===
+                  
+                  '/config/pages/code-injection',
+                  
+              settingsElement = fragment
+              
+                .getElementById (
+              
+                `${ codeKey }-settings`
+                
+                ),
+                
+              url =
+              
+                '/api/config/SaveInjectionSettings';
+                
+            dialogElement
+            
+              .querySelectorAll (
+              
+                `.${ codeKey }-settings-effect`
+                
+                )
+                
+              .forEach (
+              
+                e => {
+                
+                  globalEffects
+                  
+                    [
+                    
+                      e.textContent.trim ( )
+                      
+                      ]
+                      
+                    .enabled
+                    
+                    =
+                    
+                    e
+                    
+                      .querySelector (
+                      
+                        'input'
+                        
+                        )
+                        
+                      .checked;
+                      
+                  }
+                  
+                );
+                
+            settingsElement
+            
+              .textContent
+              
+              =
+              
+              JSON.stringify (
+              
+                globalSettings
+                
+                );
+                
+            body.header = fragmentToHtml (
+            
+              fragment
+              
+              );
+              
+            body = new URLSearchParams (
+            
+              body
+              
+              )
+              
+              .toString ( );
+              
+            try {
+            
+              const response = await fetch (
+              
+                url,
+                
+                {
+                
+                  body : body,
+                  
+                  headers : {
+                  
+                    Accept :
+                    
+                      'application/json, text/plain, */*',
+                      
+                    'Content-Type' :
+                    
+                      'application/x-www-form-urlencoded',
+                      
+                    'X-Csrf-Token' : crumb
+                    
+                    },
+                    
+                  method : 'POST'
+                  
+                  }
+                  
+                );
+                
+              if ( ! response.ok ) {
+              
+                const s = `
+                
+                  ${
+                  
+                    codeKey
+                    
+                    } network response was not ok ${
+                    
+                      response.statusText
+                      
+                      }
+                      
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                throw new Error ( s );
+                
+                }
+                
+              } catch ( error ) {
+              
+                const s = `
+                
+                  ${
+                  
+                    codeKey
+                    
+                    } there has been a problem with your fetch post operation,
+                    
+                    ${
+                    
+                      error
+                      
+                      }.
+                      
+                  `
+                  
+                  .trim ( )
+                  
+                  .replace ( /\s+/gm, ' ' );
+                  
+                console.error ( s );
+                
+                }
+                
+            if ( ! isPageCodeInjection )
+            
+              wndw
+              
+                .location
+                
+                .reload ( );
+                
+              else
+              
+                window
+                
+                  .location
+                  
+                  .reload ( );
+                  
+            };
+            
+        // effects button
+        
+        {
+        
+          // wrapper
+          
+          {
+          
+            effectsButtonWrapperElement =
+            
+              effectsButtonWrapperElement
+              
+              .cloneNode ( true ),
+              
+            effectsButtonWrapperElement.id =
+            
+              `${
+              
+                codeKey
+                
+                }-button-wrapper`;
+                
+            effectsButtonWrapperElement
+            
+              .querySelector ( 'svg' )
+              
+              .replaceWith (
+              
+                document
+                
+                  .getElementById (
+                  
+                    `${ codeKey }-svg-template`
+                    
+                    )
+                    
+                  .content
+                  
+                  .cloneNode ( true )
+                  
+                );
+                
+            effectsButtonWrapperElement
+            
+              .addEventListener (
+              
+                'pointerenter',
+                
+                tooltipShow
+                
+                );
+                  
+            effectsButtonWrapperElement
+            
+              .addEventListener (
+              
+                'pointerleave',
+                
+                e => document
+                
+                  .body
+                  
+                  .querySelector (
+                  
+                    `.${
+                    
+                      codeKey
+                      
+                      }-tooltip`
+                      
+                    )
+                    
+                  .remove ( )
+                  
+                );
+                
+            }
+            
+          // button
+          
+          {
+          
+            const effectsButtonElement =
+            
+              effectsButtonWrapperElement
+              
+                .querySelector ( 'button' );
+                
+            effectsButtonElement
+            
+              .ariaLabel
+              
+              =
+              
+              'TWC Effects';
+              
+            [
+            
+              'test',
+              
+              'guidanceEngine'
+              
+              ]
+              
+              .forEach (
+              
+                p =>
+                
+                  delete
+                  
+                  effectsButtonElement
+                  
+                    .dataset
+                    
+                    [ p ]
+                    
+                );
+                
+            effectsButtonElement
+            
+              .addEventListener (
+              
+                'click',
+                
+                dialogShow
+                
+                );
+                
+            }
+            
+          insertElement.after (
+          
+            effectsButtonWrapperElement
+            
+            );
+            
+          }
+          
+        // settings dialog
+        
+        {
+        
+          dialogElement
+          
+            .addEventListener (
+            
+              'change',
+              
+              dialogChangeHandler
+              
+              );
+              
+          dialogElement
+          
+            .querySelector (
+            
+              'button:last-child'
+              
+              )
+              
+            .addEventListener (
+            
+              'click',
+              
+              e => {
+              
+                e.preventDefault ( );
+                
+                siteReloadHandler ( );
+                
+                dialogElement.close ( );
+                
+                }
+                
+              );
+              
+          document
+          
+            .body
+            
+            .appendChild (
+            
+              dialogElement
+              
+              );
+              
+          }
+          
+        } ) ( );
+        
+      </script>
+      
+    </template>
+    
+  <script>
+  
+    ( ( ) => {
+    
+      // debugger;
+      
+      const
+      
+        title = 'Effects Initialize',
+        
+        version = '0.1.0-development.0',
+        
+        s = `${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >`
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      // globals
+      
+      {
+      
+        // initialize twc module
+        
+        window.twc = window.twc || { };
+        
+        // initialize twc e sub-module
+        
+        twc.e = twc.e || { };
+        
+        // initialize twc e settings sub-module
+        
+        twc.e.settings =
+        
+          twc.e.settings || { };
+          
+        // initialize twc e settings effects sub-module
+        
+        twc.e.settings.effects =
+        
+          twc.e.settings.effects || { };
+          
+        }
+        
+      const
+      
+        codeKey = 'twc-e',
+        
+        dcmnt = window
+        
+          .top
+          
+          .document,
+          
+        effects = {
+        
+          'Asset Library Move to Dialog Sort' :
+          
+            'https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@latest/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort/asset%20library%20move%20to%20dialog%20sort.html'
+            
+          },
+          
+        global = codeKey
+        
+          .split ( '-' )
+          
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
+            
+            window
+            
+            ),
+            
+        objectsMerge = ( obj1, obj2 ) => {
+        
+          const result = { ...obj1 };
+      
+          for ( const key in obj2 ) {
+          
+            const
+            
+              isPlainObject = ( value ) => {
+              
+                const isPlain =
+                
+                  value !== null
+                  
+                  &&
+                  
+                  typeof value === 'object'
+                  
+                  &&
+                  
+                  ! Array.isArray ( value );
+                  
+                return isPlain;
+                
+                },
+                
+              isRecurse =
+              
+                Object
+                
+                  .prototype
+                  
+                  .hasOwnProperty
+                  
+                  .call ( obj2, key )
+                  
+                  &&
+                  
+                  isPlainObject ( result [ key ] )
+                  
+                  &&
+                  
+                  isPlainObject ( obj2 [ key ] );
+                  
+            if ( isRecurse )
+            
+              result [ key ] =
+              
+                objectsMerge (
+                
+                  result [ key ],
+                  
+                  obj2 [ key ]
+                  
+                  );
+                  
+              else
+              
+                result [ key ] =
+                
+                  obj2 [ key ];
+                  
+            }
+        
+          return result;
+          
+          },
+          
+        settingsElement = document
+        
+          .getElementById (
+          
+            `${ codeKey }-settings`
+            
+            ),
+            
+        settingsUser = JSON.parse (
+        
+          settingsElement.textContent
+          
+          );
+          
+      // settings
+      
+      {
+      
+        Object
+        
+          .keys ( effects )
+          
+          .forEach (
+          
+            k => global
+            
+              .settings
+              
+              .effects
+              
+              [ k ]
+              
+              =
+              
+              {
+              
+                enabled : false
+                
+                }
+                
+            );
+            
+        if ( settingsUser.effects )
+        
+          global
+          
+            .settings
+            
+            .effects
+            
+            =
+            
+            objectsMerge (
+            
+              global
+              
+                .settings
+                
+                .effects,
+                
+              settingsUser.effects
+              
+              );
+              
+        }
+        
+      // install latest version
+      
+      {
+      
+        // delete
+        
+        dcmnt
+        
+          .querySelectorAll (
+          
+            `[ id ^= "${ codeKey }-" ]`
+            
+            )
+            
+          .forEach ( e => e.remove ( ) );
+          
+        dcmnt
+        
+          .head
+          
+          .appendChild (
+          
+            document
+            
+              .getElementById (
+              
+                `${ codeKey }-template`
+                
+                )
+                
+              .content
+              
+              .cloneNode ( true )
+              
+            );
+            
+        }
+        
+      // load user selected effects
+      
+      for (
+      
+        const [ key, url ]
+        
+        of
+        
+        Object.entries ( effects )
+        
+        ) {
+        
+          const isLoad = global
+          
+            .settings
+            
+            .effects
+            
+            [ key ]
+            
+            .enabled;
+            
+          // continue of not load
+          
+          if ( ! isLoad ) continue;
+          
+          twc.e.methods.load ( url );
+          
+          }
+          
+      } ) ( );
+      
+    </script>
+    
+  <!-- end TWC Effects Initialize -->
