@@ -10,15 +10,11 @@ Create a simple product configurator.
 
   * 0.2.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Bedford template family][2], [Brine template family][3])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 

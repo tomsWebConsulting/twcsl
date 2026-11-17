@@ -10,13 +10,9 @@ Move Project navigation to the top of the Page.
 
   * 0.2.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -35,8 +31,8 @@ Move Project navigation to the top of the Page.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Portfolio
-      page.
+      Use this option when you want to have this effect on only one Portfolio
+      Page.
       
       * Add code from file **[portfolio page project navigation top
         options.html][6]** to Page Settings > Advanced >
@@ -59,11 +55,11 @@ Move Project navigation to the top of the Page.
           
         ```
         
-      * Refer to [per-page code injection][7] for details.
+      * Refer to [Inject code to a specific page][7] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Portfolio Pages.
       
       * Add code from file **[portfolio page project navigation top
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
@@ -85,16 +81,16 @@ Move Project navigation to the top of the Page.
           
         ```
         
-      * Refer to [Add code to code injection][8] for details.
+      * Refer to [Add code to the header and footer][8] for details.
       
 * On-site
 
-  Use this option to install the full code of this effect (files hosted on
-  your site).
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Portfolio Page.
+    Use this option when you want to have this effect on only one Portfolio Page.
     
     * Add code from file **[portfolio page project navigation top
       options.html][6]** to Page Settings > Advanced >
@@ -104,11 +100,11 @@ Move Project navigation to the top of the Page.
     * Add code from file **[portfolio page project navigation top.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][7] for details.
+    * Refer to [Inject code to a specific page][7] for details.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Portfolio pages.
+    Use this option when you want to have this effect on all Portfolio Pages.
     
     * Add code from file **[portfolio page project navigation top
       options.html][6]** to Website > Pages > Custom Code > Code Injection >
@@ -117,7 +113,7 @@ Move Project navigation to the top of the Page.
     * Add code from file **[portfolio page project navigation top.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][8] for details.
+    * Refer to [Add code to the header and footer][8] for details.
 
 ## How To Use
 
@@ -153,7 +149,7 @@ Please consider [making a donation][10].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: portfolio%20page%20project%20navigation%20top%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: portfolio%20page%20project%20navigation%20top.html#L1
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Import Site Styles Colors from a file.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

@@ -10,7 +10,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
 
   * 0.8.2
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -33,7 +33,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store product detail add to cart button url
         redirect options.html][10]** to Page Settings > Advanced >
@@ -54,11 +54,11 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
           
         ```
         
-      * Refer to [per-page code injection][11] for details.
-      
+        Refer to [Inject code to a specific page][11] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -101,7 +101,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
             
           ```
           
-      * Refer to [Add code to code injection][12] for details.
+      * Refer to [Add code to the header and footer][12] for details.
       
 * On-site
 
@@ -110,7 +110,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store product detail add to cart button url redirect
       options.html][10]** to Page Settings > Advanced >
@@ -121,11 +121,11 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
       redirect.html][13]** to Page Settings > Advanced >
       Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][11] for details.
+    * Refer to [Inject code to a specific page][11] for details.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * v7.1
     
@@ -149,7 +149,7 @@ Redirect store product detail Add to Cart buttons to URLs of your choice.
         redirect.html][13]** to Website > Pages > Website Tools > Custom Code >
         Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][12] for details.
+    * Refer to [Add code to the header and footer][12] for details.
     
 * Redirect Options
 
@@ -310,8 +310,8 @@ Please consider [making a donation][15].
 [8]: https://www.jsdelivr.com/
 [9]: https://en.wikipedia.org/wiki/Content_delivery_network
 [10]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect%20options.html#L1
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [13]: store%20product%20detail%20add%20to%20cart%20button%20url%20redirect.html#L1
 [14]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [15]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

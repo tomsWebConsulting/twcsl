@@ -1,38 +1,31 @@
 # Page CSS Variable Scroll Ratio Add
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
 
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
-
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[page css variable scroll ratio add.html](page%20css%20variable%20scroll%20ratio%20add.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the Page.
+* Add code from file **[page css variable scroll ratio add.html][3]** to
+  Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -45,4 +38,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: page%20css%20variable%20scroll%20ratio%20add.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

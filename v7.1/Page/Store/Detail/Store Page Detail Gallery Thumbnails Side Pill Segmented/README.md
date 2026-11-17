@@ -10,18 +10,10 @@ Style thumbnails side as segmented pill.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
@@ -30,17 +22,19 @@ Style thumbnails side as segmented pill.
 
   * Page Specific
   
-    Use this option if you have only a single store page you want to have this
-    effect.
+    Use this option when you want to have this effect on only one Store
+    Page.
     
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented options.html][2]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the Store Page. Refer to [Per-page code
-      injection][3] for details. Read the code for any instructions within.
+      Page Header Code Injection for the Store Page. Read the code for any
+      instructions within.
       
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented.html][4]** to Store Page Settings > Advanced > Page Header Code
       Injection for the Store Page.
+      
+    * Refer to [Inject code to a specific page][3] for details.
       
   * Site-wide
   
@@ -49,12 +43,13 @@ Style thumbnails side as segmented pill.
     
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented options.less][5]** to Website > Pages > Custom Code >
-      Code Injection > Custom CSS. Refer to [Add code to code injection][6] for
-      details.
+      Code Injection > Custom CSS.
       
     * Add code from file **[store page detail gallery thumbnails side pill
       segmented.less][7]** to Website > Pages > Custom Code > Code Injection >
       Custom CSS.
+      
+    * Refer to [Add CSS code][6] for details.
 
 ## Make a Donation
 
@@ -75,9 +70,9 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20gallery%20thumbnails%20side%20pill%20segmented%20options.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: store%20page%20detail%20gallery%20thumbnails%20side%20pill%20segmented.html#L1
 [5]: store%20page%20detail%20gallery%20thumbnails%20side%20pill%20segmented%20options.less#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [7]: store%20page%20detail%20gallery%20thumbnails%20side%20pill%20segmented.less#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Fix Squarespace's incorrect CSS for lightboxes.
 
   * 1.0.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -29,7 +29,7 @@ Fix Squarespace's incorrect CSS for lightboxes.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -45,11 +45,11 @@ Fix Squarespace's incorrect CSS for lightboxes.
           
         ```
         
-      * Refer to [per-page code injection][4] for details.
-      
+        Refer to [Inject code to a specific page][4] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > HEADER.
@@ -64,8 +64,8 @@ Fix Squarespace's incorrect CSS for lightboxes.
           <!-- end TWC Modal Lightbox Fix -->
           
         ```
-            
-        * Refer to [Add code to code injection][5] for details.
+        
+        Refer to [Add code to the header and footer][5] for details.
         
 * On-site
 
@@ -74,16 +74,15 @@ Fix Squarespace's incorrect CSS for lightboxes.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[modal lightbox fix.html][6]** to Page Settings >
-      Advanced > Page Header Code Injection for the Page.
+      Advanced > Page Header Code Injection for the Page. Refer to [Inject code
+      to a specific page][4] for details.
       
-    * Refer to [per-page code injection][4] for details.
-    
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * v7.1
     
@@ -95,8 +94,8 @@ Fix Squarespace's incorrect CSS for lightboxes.
       * Add code from file **[modal lightbox fix.css][7]** to Website > Pages >
         Website Tools > Custom CSS..
         
-    * Refer to [Using the CSS Editor][8] for details.
-    
+    * Refer to [Add CSS code][8] for details.
+
 ## Make a Donation
 
 Please consider [making a donation][9].
@@ -115,9 +114,9 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.jsdelivr.com/
 [3]: https://en.wikipedia.org/wiki/Content_delivery_network
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: modal%20lightbox%20fix.html#L1
 [7]: modal%20lightbox%20fix.css#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

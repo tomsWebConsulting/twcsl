@@ -1,18 +1,14 @@
 # Event Content End Buttons Move to Meta
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -27,9 +23,9 @@
   add the button block and a spacer block in a row. Following are some layout
   examples.
   
-  ![two buttons layout example](read%20me%20assets/two%20button%20layout.png)
+  ![two buttons layout example][2]
   
-  ![one buttons layout example](read%20me%20assets/one%20button%20layout.png)
+  ![one buttons layout example][3]
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -38,14 +34,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[event content end buttons move to meta.html](event%20content%20end%20buttons%20move%20to%20meta.html#L1)**
-  to Event List Settings > Advanced > Page Header Code Injection for the Event
-  page.
+* Add code from file **[event content end buttons move to meta.html][4]** to
+  Event List Settings > Advanced > Page Header Code Injection for the Event Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -58,4 +52,8 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: read%20me%20assets/two%20button%20layout.png
+[3]: read%20me%20assets/one%20button%20layout.png
+[4]: event%20content%20end%20buttons%20move%20to%20meta.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

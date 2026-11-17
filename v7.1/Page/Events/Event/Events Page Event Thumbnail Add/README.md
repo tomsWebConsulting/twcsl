@@ -10,7 +10,7 @@ Use settings thumbnail as thumbnail for Event.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -20,10 +20,6 @@ Use settings thumbnail as thumbnail for Event.
   
   * [Tom's Web Consulting Squarespace Library][4]
 
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
@@ -32,14 +28,14 @@ Use settings thumbnail as thumbnail for Event.
   rest of the steps.
   
 * Add code from file **[events page event thumbnail add.html][6]** to Events
-  Settings > Advanced > Page Header Code Injection for the events page. Refer to
-  [Per-page code injection][7] for details.
+  Settings > Advanced > Page Header Code Injection for the Events Page. Refer to
+  [Inject code to a specific page][7] for details.
   
 * Read the code for any instructions within.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][9].
+Wikipedia has a nice entry on [bookmarklet][8].
 
 By default the code adds the thumbnail to the meta information area of an event.
 If you want the thumbnail to be added at the top of the content of the event
@@ -57,7 +53,7 @@ image. Keep the formatting really simple or things may break. This post is only
 a template.
 
 * Add code from file **[events page event first image html
-  get.bookmarklet][8]** as the URL for a bookmark in your browser named
+  get.bookmarklet][9]** as the URL for a bookmark in your browser named
   **Events Page Event First Image Html Get**.
 
 * In the event template you created select the **Events Page Event First Image
@@ -74,7 +70,8 @@ pop-up from opening.
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][10].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][10].
 
 ## Make a Donation
 
@@ -94,11 +91,11 @@ Please consider [making a donation][11].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [4]: https://github.com/tomsWebConsulting/twcsl
+[5]: https://github.com/tomsWebConsulting/twcsl#install-options
 [6]: events%20page%20event%20thumbnail%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: events%20page%20event%20first%20image%20html%20get.bookmarklet#L1
-[9]: https://en.wikipedia.org/wiki/Bookmarklet
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://en.wikipedia.org/wiki/Bookmarklet
+[9]: events%20page%20event%20first%20image%20html%20get.bookmarklet#L1
 [10]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

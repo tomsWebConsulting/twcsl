@@ -10,29 +10,22 @@ Reorder store page product detail elements.
 
   * 0.5.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
 
 * Add code from file **[store page detail meta reorder options.html][2]** to
   Store Settings > Advanced > Page Header Code Injection for the Store Page.
-  Refer to [Per-page code injection][3] for details. Read the code for any
-  instructions within.
+  Read the code for any instructions within.
   
 * Add code from file **[store page detail meta reorder.html][4]** to
   Store Settings > Advanced > Page Header Code Injection for the Store Page.
+  
+* Refer to [Inject code to a specific page][3] for details.
 
 ## Example Reorderings
 
@@ -102,6 +95,6 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20meta%20reorder%20options.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: store%20page%20detail%20meta%20reorder.html#L1
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

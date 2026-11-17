@@ -10,7 +10,7 @@ Add border around elements of a site.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -18,21 +18,17 @@ Add border around elements of a site.
 
   * LESS v1.3.3
 
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Quick Install
 
 * Add code from file **[element border.less][2]** to Website > Pages >
-  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
-  Read the code for any instructions within.
+  Custom Code > Custom CSS. Read the code for any instructions within. Refer to
+  [Add CSS code][3] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -48,5 +44,5 @@ Please consider [making a donation][3].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: element%20border.less#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

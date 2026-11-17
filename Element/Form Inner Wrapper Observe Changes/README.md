@@ -11,15 +11,11 @@ nodes are added to the [DOM][2].
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][3])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -45,7 +41,7 @@ nodes are added to the [DOM][2].
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -61,11 +57,11 @@ nodes are added to the [DOM][2].
             
           ```
           
-        * Refer to [per-page code injection][10] for details.
-        
+          Refer to [Inject code to a specific page][10] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -81,8 +77,8 @@ nodes are added to the [DOM][2].
             
           ```
           
-        * Refer to [Add code to code injection][11] for details.
-        
+          Refer to [Add code to the header and footer][11] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -90,21 +86,19 @@ nodes are added to the [DOM][2].
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[form inner wrapper observe changes.html][12]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
+        Refer to [Inject code to a specific page][10] for details.
         
-      * Refer to [per-page code injection][10] for details.
-      
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * Add code from file **[form inner wrapper observe changes.html][12]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
-        
-      * Refer to [Add code to code injection][11] for details.
+        Website > Pages > Custom Code > Code Injection > FOOTER.  Refer to [Add
+        code to the header and footer][11] for details.
 
 ## Callback Example
 
@@ -171,8 +165,8 @@ Please consider [making a donation][14].
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [8]: https://www.jsdelivr.com/
 [9]: https://en.wikipedia.org/wiki/Content_delivery_network
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [12]: form%20inner%20wrapper%20observe%20changes.html#L1
 [13]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

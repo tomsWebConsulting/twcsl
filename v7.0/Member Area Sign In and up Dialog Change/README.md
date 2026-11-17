@@ -6,7 +6,7 @@
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.0
 
@@ -22,14 +22,14 @@
   ```
   
 * Add code from file **[member area sign in and up dialog change.html][2]** to
-  Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
-  to code injection][4] for details.
+  Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for any
+  instructions within.
   
-* Read the code for any instructions within.
+* Refer to [Add code to the header and footer][3] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -44,5 +44,5 @@ Please consider [making a donation][3].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: member%20area%20sign%20in%20and%20up%20dialog%20change.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

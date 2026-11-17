@@ -19,7 +19,7 @@ Copy the raw URLs of images shown on a Dropbox shared folder page.
   
 * In a [private browsing][3] window view a publicly shared folder then use the
   bookmarklet to copy the raw image URLs. If the folder you are viewing has more
-  than one page then you wll need to run the bookmarklet for each page which you
+  than one Page then you wll need to run the bookmarklet for each page which you
   want to grab the URLs.
 
 ## Make a Donation

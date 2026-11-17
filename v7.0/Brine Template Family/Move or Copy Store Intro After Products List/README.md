@@ -1,14 +1,14 @@
 # Move or Copy Store Intro After Products List
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2d0
 
-#### SS Version
+#### Squarespace Version
 
-  * 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
+  * 7.0 ([Brine template family][2])
 
 ---
 
@@ -20,13 +20,12 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 ```
 
-Add code from file
-**[move or copy store intro after products list.html](move%20or%20copy%20store%20intro%20after%20products%20list.html#L1)**
+Add code from file **[move or copy store intro after products list.html][3]**
 to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -39,4 +38,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: move%20or%20copy%20store%20intro%20after%20products%20list.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

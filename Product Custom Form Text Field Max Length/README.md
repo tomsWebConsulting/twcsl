@@ -10,15 +10,11 @@ Limit product custom form text and text area field lengths.
 
   * Not Applicable
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -78,7 +74,7 @@ Limit product custom form text and text area field lengths.
     To use SIF go to your product detail page and use SIF. You will see
     something like the following.
     
-    ![squarespace id finder example](read%20me%20assets/product%20id.png)
+    ![squarespace id finder example][7]
     
     You only need the number after **#item-**.
     
@@ -100,7 +96,7 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][7].
+Please consider [making a donation][8].
 
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
@@ -109,4 +105,5 @@ Please consider [making a donation][7].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: product%20custom%20form%20text%20field%20max%20length.html#L1
 [6]: https://www.heathertovey.com/squarespace-id-finder/
-[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[7]: read%20me%20assets/product%20id.png
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

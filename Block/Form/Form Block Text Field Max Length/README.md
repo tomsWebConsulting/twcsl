@@ -10,15 +10,11 @@ Limit the number of characters allowed in some form block fields.
 
   * 0.5.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -30,8 +26,8 @@ Limit the number of characters allowed in some form block fields.
 
 ## Install
 
-* Install **[Form Block Form Element Add Watch][5]**. After you install the
-  code be sure to continue on with the rest of the steps.
+* Install **[Form Block Form Element Add Watch][5]**. After you install the code
+  be sure to continue on with the rest of the steps.
   
 * Options
 
@@ -44,7 +40,7 @@ Limit the number of characters allowed in some form block fields.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -60,11 +56,11 @@ Limit the number of characters allowed in some form block fields.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+         Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -98,8 +94,8 @@ Limit the number of characters allowed in some form block fields.
               
             ```
             
-        * Refer to [Add code to code injection][9] for details.
-        
+        * Refer to [Add code to the header and footer][9] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -107,16 +103,16 @@ Limit the number of characters allowed in some form block fields.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[form block text field max length.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][8] for details.
-      
+        Refer to [Inject code to a specific page][8] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -129,7 +125,7 @@ Limit the number of characters allowed in some form block fields.
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
-      * Refer to [Add code to code injection][9].
+      * Refer to [Add code to the header and footer][9].
 
 ## How To Use
 
@@ -216,8 +212,8 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Form%20Element%20Add%20Watch#form-block-form-element-add-watch
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: form%20block%20text%20field%20max%20length.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/form-block-text-field-max-length?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

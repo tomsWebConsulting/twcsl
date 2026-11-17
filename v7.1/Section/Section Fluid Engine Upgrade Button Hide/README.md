@@ -10,7 +10,7 @@ Hide Fluid Engine Upgrade button for Classic Editor sections.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,9 +19,8 @@ Hide Fluid Engine Upgrade button for Classic Editor sections.
 ## Quick Install
 
 * Add code from file **[section fluid engine upgrade button hide.html][2]** to
-  Website > Pages > Custom Code > Code Injection > HEADER.
-  
-* Refer to [Add code to code injection][3] for details.
+  Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to
+  the header and footer][3] for details.
 
 ## Make a Donation
 
@@ -50,5 +49,5 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: fluid%20engine%20page%20section%20upgrade%20button%20hide.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

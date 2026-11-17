@@ -5,26 +5,22 @@
 ### Synopsis
 
 Open ten product detail pages from a store page list for use with the **[Store
-Page Detail Featured Image Set][3]** bookmarklet.
+Page Detail Featured Image Set][2]** bookmarklet.
 
 ### Version
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
 ## Quick Install
 
 * Add code from file **[store page list ten product featured image set
-  open.bookmarklet][2]** as the URL for a bookmark in your browser named
+  open.bookmarklet][3]** as the URL for a bookmark in your browser named
   **Store Page List Ten Product Featured Image Set Open**.
 
 ## How to Use
@@ -87,8 +83,8 @@ Please consider [making a donation][8].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: store%20page%20list%20ten%20product%20featured%20image%20set%20open.bookmarklet#L1
-[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Store%20Page%20Detail%20Featured%20Image%20Set#store-page-detail-featured-image-set#L1
+[2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/Store%20Page%20Detail%20Featured%20Image%20Set#store-page-detail-featured-image-set#L1
+[3]: store%20page%20list%20ten%20product%20featured%20image%20set%20open.bookmarklet#L1
 [4]: https://support.google.com/chrome/answer/95472
 [5]: https://support.apple.com/guide/safari/block-pop-ups-sfri40696/mac
 [6]: https://support.microsoft.com/en-us/microsoft-edge/block-pop-ups-in-microsoft-edge-1d8ba4f8-f385-9a0b-e944-aa47339b6bb5

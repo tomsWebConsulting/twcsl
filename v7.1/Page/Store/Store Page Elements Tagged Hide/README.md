@@ -10,17 +10,9 @@ Hide elements of store products that are tagged.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -39,8 +31,7 @@ Hide elements of store products that are tagged.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store
-      page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -56,11 +47,11 @@ Hide elements of store products that are tagged.
           
         ```
         
-      * Refer to [per-page code injection][5] for details.
-      
+        Refer to [Inject code to a specific page][5] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > HEADER.
@@ -76,30 +67,28 @@ Hide elements of store products that are tagged.
           
         ```
         
-      * Refer to [Add code to code injection][6] for details.
-      
+        Refer to [Add code to the header and footer][6] for details.
+        
 * On-site
 
-  Use this option to install the full code of this effect (files hosted on
-  your site).
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page elements tagged hide.html][7]** to
-      Page Settings > Advanced > Page Header Code Injection for the Page.
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
+      to [Inject code to a specific page][5] for details.
       
-    * Refer to [per-page code injection][5] for details.
-    
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page elements tagged hide.html][7]** to
-      Website > Pages > Custom Code > Code Injection > HEADER.
-      
-    * Refer to [Add code to code injection][6] for details.
+      Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add
+      code to the header and footer][6] for details.
 
 ## Tags
 
@@ -188,7 +177,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://www.jsdelivr.com/
 [4]: https://en.wikipedia.org/wiki/Content_delivery_network
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: store%20page%20elements%20tagged%20hide.html#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

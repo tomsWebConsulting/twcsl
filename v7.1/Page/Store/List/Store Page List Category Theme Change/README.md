@@ -10,17 +10,9 @@ Change products section theme per category.
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -39,19 +31,19 @@ Change products section theme per category.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page list category theme change.html][5]**
       to Store Settings > Advanced > Page Header Code Injection for the store
-      page. Refer to [Per-page code injection][6] for details.
+      page. Refer to [Inject code to a specific page][6] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page list category theme change.html][5]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7] for details.
+      code to the header and footer][7] for details.
       
 * For each theme that you want to apply to a category page you need to add a
   section to the store with a code block and particular text. For example lets
@@ -112,6 +104,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/List/Store%20Page%20List%20Categories%20Cache#store-page-list-categories-cache
 [5]: store%20page%20list%20category%20theme%20change.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

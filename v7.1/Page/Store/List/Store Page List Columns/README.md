@@ -11,17 +11,9 @@ more for mobile.
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -31,19 +23,19 @@ more for mobile.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from **[store page list columns.html][2]** to Store Settings >
       Advanced > Page Header Code Injection for the Store Page. Refer to
-      [Per-page code injection][3] for details.
+      [Inject code to a specific page][3] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from **[store page list columns.less][4]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][5] for details.
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to the header
+      and footer][5] for details.
       
 * Read the code for any instructions within.
 
@@ -74,8 +66,8 @@ Please consider [making a donation][7].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20list%20columns.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: store%20page%20list%20columns.less#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://toms-web-consulting-demos.squarespace.com/store-page-list-columns-desktop?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

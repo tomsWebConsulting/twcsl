@@ -10,18 +10,10 @@ Append footer boilerplate sections after product detail section.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Yes
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -39,22 +31,22 @@ Append footer boilerplate sections after product detail section.
 
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page detail footer section append.html][6]**
       to Store Page Settings > Advanced > Page Header Code Injection for the
-      page. Refer to [per-page code injection][7] for details.
+      page. Refer to [Inject code to a specific page][7] for details.
       
     * Add code from file **[store page detail footer section append.js][8]** to
       the **elements manipulate options** code.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page detail footer section append.less][9]**
-      to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-      Editor][10] for details.
+      to Website > Pages > Custom Code > Custom CSS. Refer to [Add CSS code][10]
+      for details.
       
     * Add code from file **[store page detail footer section append.js][8]** to
       the **elements manipulate options** code.
@@ -94,8 +86,8 @@ Please consider [making a donation][11].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate#elements-manipulate
 [6]: store%20page%20detail%20footer%20section%20append.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: store%20page%20detail%20footer%20section%20append.js#L1
 [9]: store%20page%20detail%20footer%20section%20append.less#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[10]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Store white listed search query strings in [sessionStorage][2].
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -33,7 +33,7 @@ Store white listed search query strings in [sessionStorage][2].
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[query string keys to sessionStorage
         options.html][7]** to Page Settings > Advanced >
@@ -54,11 +54,11 @@ Store white listed search query strings in [sessionStorage][2].
           
         ```
         
-      * Refer to [per-page code injection][8] for details.
-      
+        Refer to [Inject code to a specific page][8] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -100,7 +100,7 @@ Store white listed search query strings in [sessionStorage][2].
             
           ```
           
-      * Refer to [Add code to code injection][9] for details.
+      * Refer to [Add code to the header and footer][9] for details.
       
 * On-site
 
@@ -109,21 +109,21 @@ Store white listed search query strings in [sessionStorage][2].
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
-      * Add code from file **[query string keys to sessionStorage
-        options.html][7]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page. Read the code for instructions
-        within.
-        
+    * Add code from file **[query string keys to sessionStorage
+      options.html][7]** to Page Settings > Advanced >
+      Page Header Code Injection for the Page. Read the code for instructions
+      within.
+      
     * Add code from file **[query string keys to sessionStorage.html][10]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][8] for details.
+    * Refer to [Inject code to a specific page][8] for details.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * v7.1
     
@@ -144,7 +144,7 @@ Store white listed search query strings in [sessionStorage][2].
       * Add code from file **[query string keys to sessionStorage.html][10]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][9].
+    * Refer to [Add code to the header and footer][9].
 
 ## Notes
 
@@ -181,7 +181,7 @@ Please consider [making a donation][11].
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
 [7]: query%20string%20keys%20to%20sessionStorage%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: query%20string%20keys%20to%20sessionStorage.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -1,34 +1,27 @@
 # Add Image Tags Between Event List Items
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[add image tags between event list items.html](add%20image%20tags%20between%20event%20list%20items.html#L1)**
-  to Event Settings > Advanced > Page Header Code Injection for the event page.
+* Add code from file **[add image tags between event list items.html][3]** to
+  Event Settings > Advanced > Page Header Code Injection for the event page.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -41,4 +34,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: add%20image%20tags%20between%20event%20list%20items.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

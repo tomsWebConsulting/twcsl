@@ -15,15 +15,11 @@ that existed in the prevoius version of the form block before the update.*
 
   * 0.2.2
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -38,9 +34,8 @@ that existed in the prevoius version of the form block before the update.*
   
 * Add code from file **[form block select field post-submit redirect
   change.html][3]** to Page Settings > Advanced > Page Header Code Injection for
-  the Page. Refer to [Per-page code injection][4] for details.
-  
-* Read the code for any instructions within.
+  the Page. Read the code for any instructions within. Refer to [Inject code to
+  a specific page][4] for details.
   
 * Add a form block to your Page and set up as desired.
   
@@ -117,7 +112,7 @@ Please consider [making a donation][7].
 [1]: https://support.squarespace.com/hc/en-us/requests/new
 [2]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [3]: form%20block%20select%20field%20post-submit%20redirect%20change.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [5]: https://support.squarespace.com/hc/en-us/articles/206566737-Form-Blocks#toc-add-a-post-submit-message-or-redirect
 [6]: https://toms-web-consulting-demos.squarespace.com/form-block-select-field-postsubmit-redirect-change/form?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

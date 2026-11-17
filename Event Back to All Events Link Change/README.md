@@ -6,15 +6,11 @@
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
 
   * 7.0 ([Brine template family][2])
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -24,7 +20,7 @@
   rest of the steps.
   
 * Add code from file **[event back to all events link change.html][4]** to
-  Events Settings > Advanced > Page Header Code Injection for the events page.
+  Events Settings > Advanced > Page Header Code Injection for the Events Page.
   
 * Read the code for any instructions within.
   

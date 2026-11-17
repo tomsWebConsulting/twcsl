@@ -1,18 +1,14 @@
 # Page Section Second Blocks Full Bleed
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -27,16 +23,14 @@
   
 * Save the Page.
   
-* Add code from file
-  **[page section second blocks full bleed.html](page%20section%20second%20blocks%20full%20bleed.html#L1)**
-  to Page Settings > Advanced > Page Header Code Injection for the Page.
+* Add code from file **[page section second blocks full bleed.html][2]** to
+  Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -51,4 +45,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: page%20section%20second%20blocks%20full%20bleed.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

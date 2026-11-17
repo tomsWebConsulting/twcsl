@@ -6,13 +6,9 @@
 
   * 0.6.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -28,13 +24,11 @@
   rest of the steps.
   
 * Add code from file **[blog page section text replace with author, category,
-  tag, or any.html][5]** to Blog Settings > Advanced > Page Header Code
-  Injection for the blog page. Refer to [Per-page code injection][6] for
-  details.
+  tag, or any.html][5]** to Blog Settings > Advanced >
+  Page Header Code Injection for the Blog Page. Read the code for any
+  instructions within. Refer to [Inject code to a specific page][6] for details.
   
-* Read the code for any instructions within.
-  
-* Add a section above or below the blog section of your blog page, if you don't
+* Add a section above or below the blog section of your Blog Page, if you don't
   already have one. Add a text block if there isn't one. In the text block
   enter the text **[ twc-bpstrwactoa ]**. This text will be replaced with an
   author, category, tag or any combination you select.
@@ -76,5 +70,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl
 [5]: blog%20page%20section%20text%20replace%20with%20author,%20category,%20tag,%20or%20any.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

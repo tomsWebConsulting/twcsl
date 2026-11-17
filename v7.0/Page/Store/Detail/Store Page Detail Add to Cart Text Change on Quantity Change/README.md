@@ -10,7 +10,7 @@ Add quantity based text to Add to Cart button.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
   
   * 7.0
 

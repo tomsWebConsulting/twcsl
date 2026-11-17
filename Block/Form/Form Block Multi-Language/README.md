@@ -11,15 +11,11 @@ manually maintained multi-language site.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -30,8 +26,8 @@ manually maintained multi-language site.
 ## Install
 
 * Add code from file **[form block multi-language.html][2]** to Page Settings >
-  Advanced > Page Header Code Injection for the Page. Refer to [Per-page code
-  injection][3] for details.
+  Advanced > Page Header Code Injection for the Page. Refer to [Inject code to a
+  specific page][3] for details.
 
 * Add code from one of the following language files **before** the **form block
   multi-language** code.
@@ -85,7 +81,7 @@ Please consider [making a donation][9].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: form%20block%20multi-language.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: form%20block%20multi-language%20en.html#L1
 [5]: form%20block%20multi-language%20fi.html#L1
 [6]: form%20block%20multi-language%20sv.html#L1

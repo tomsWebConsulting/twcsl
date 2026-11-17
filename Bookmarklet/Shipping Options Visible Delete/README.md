@@ -11,7 +11,7 @@ Options.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   

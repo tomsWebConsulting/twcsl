@@ -10,7 +10,7 @@ Add Mindbody login or register links to header navigation.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

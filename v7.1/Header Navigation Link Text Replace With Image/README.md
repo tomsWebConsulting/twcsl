@@ -1,18 +1,14 @@
 # Header Navigation Link Text Replace With Image
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -25,16 +21,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[header navigation link text replace with image.html](header%20navigation%20link%20text%20replace%20with%20image.html#L1)**
-  to Website > Pages > Custom Code > Code Injection > FOOTER.
+* Add code from file **[header navigation link text replace with
+  image.html][2]** to Website > Pages > Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -48,4 +42,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: header%20navigation%20link%20text%20replace%20with%20image.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

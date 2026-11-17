@@ -10,7 +10,7 @@ Add page section toggle effect to pages.
 
   * 0.10.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,10 +19,6 @@ Add page section toggle effect to pages.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [jQuery][4]
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -38,7 +34,7 @@ Add page section toggle effect to pages.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[page sections slide toggle options.html][5]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
@@ -47,21 +43,21 @@ Add page section toggle effect to pages.
     * Add code from files **[page sections slide toggle.html][6]** to Page
       Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [Per-page code injection][7] for details.
+    * Refer to [Inject code to a specific page][7] for details.
     
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[page sections slide toggle options.html][5]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
-      the code for any instructions within.
+      the code for any instructions within. Refer to [Inject code to a specific
+      page][7] for details.
       
     * Add code from file **[page sections slide toggle.html][6]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER.
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+      header and footer][8] for details.
       
-    * Refer to [Add code to code injection][8] for details.
-    
 * Read the code for any instructions within.
 
 * Add a section and set it's height to small. This whole section will become a
@@ -285,8 +281,7 @@ Please consider [making a donation][10].
 [4]: https://jquery.com/
 [5]: page%20sections%20slide%20toggle%20options.html#L1
 [6]: page%20sections%20slide%20toggle.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://toms-web-consulting-demos.squarespace.com/page-sections-slide-toggle?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

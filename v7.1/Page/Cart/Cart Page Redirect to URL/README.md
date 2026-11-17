@@ -10,13 +10,9 @@ Redirect cart page to a URL.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -27,8 +23,8 @@ Redirect cart page to a URL.
 ## Quick Install
 
 * Add code from file **[cart page redirect to url.html][4]** to Website >
-  Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to code
-  injection][5]. Read the code for any instructions within.
+  Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to the
+  header and footer][5] for details. Read the code for any instructions within.
       
 ## Note
 
@@ -53,5 +49,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: cart%20page%20redirect%20to%20url.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

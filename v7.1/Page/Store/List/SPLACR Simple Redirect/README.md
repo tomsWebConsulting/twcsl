@@ -10,17 +10,13 @@ Redirect store page all to a URL.
 
  * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
 #### Products V2 Compatible 
 
   * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 

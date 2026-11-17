@@ -10,15 +10,11 @@ Search and replace text in elements.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  Yes
 
 #### Dependencies
 
@@ -29,11 +25,9 @@ Search and replace text in elements.
 ## Install
 
 * Add code from file **[element text change.html][4]** to Website > Pages >
-  Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][5] for details.
+  Custom Code > Code Injection > FOOTER. Read the code for any instructions
+  within. Refer to [Inject code to a specific page][5] for details.
   
-* Read the code for any instructions within.
-
 ## selectorTextSearchReplaceMap Example Data Structures
 
 * Replace [year] with result of a callback
@@ -97,5 +91,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: element%20text%20change.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

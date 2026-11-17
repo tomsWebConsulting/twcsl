@@ -10,7 +10,7 @@ Make Button elements with no link inactive.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,15 +19,15 @@ Make Button elements with no link inactive.
 ## Install Options
 
 * CDN Hosted
-
+  
   Use this option for the quickest way to install this effect (files hosted
   externally on the [jsDelivr][2], a [CDN][3])
   
   * Options
-  
-    * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+    * Page Specific
+      
+      Use this option when you want to have this effect on only one Page.
       
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -43,11 +43,11 @@ Make Button elements with no link inactive.
           
         ```
         
-      * Refer to [per-page code injection][4] for details.
-      
+        Refer to [Inject code to a specific page][4] for details.
+        
     * Site-wide
-    
-      Use this option if you want to have this effect on all Pages.
+      
+      Use this option when you want to have this effect on all Pages.
       
       * Add the following code to Website > Pages > Custom Code >
         Code Injection > HEADER.
@@ -62,31 +62,29 @@ Make Button elements with no link inactive.
           <!-- end TWC Button Element No Link Inactive -->
           
         ```
-            
-        * Refer to [Add code to code injection][5] for details.
+        
+        Refer to [Add code to the header and footer][5] for details.
         
 * On-site
-
+  
   Use this option to install the full code of this effect (files hosted on your
   site).
   
   * Page Specific
-  
-    Use this option if you want to have this effect on only one Page.
+    
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[button element no link inactive.html][6]** to
-      Page Settings > Advanced > Page Header Code Injection for the Page.
+      Page Settings > Advanced > Page Header Code Injection for the Page. Refer
+      to [Inject code to a specific page][4] for details.
       
-    * Refer to [per-page code injection][4] for details.
-    
   * Site-wide
-  
-    Use this option if you want to have this effect on all Pages.
+    
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[button element no link inactive.css][7]** to
-      Website > Pages > Custom Code > Custom CSS.
-      
-    * Refer to [Using the CSS Editor][8] for details.
+      Website > Pages > Custom Code > Custom CSS. Refer to [Add CSS code][8] for
+      details.
     
 ## Make a Donation
 
@@ -106,9 +104,9 @@ Please consider [making a donation][9].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.jsdelivr.com/
 [3]: https://en.wikipedia.org/wiki/Content_delivery_network
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: button%20element%20no%20link%20inactive.html#L1
 [7]: button%20element%20no%20link%20inactive.css#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

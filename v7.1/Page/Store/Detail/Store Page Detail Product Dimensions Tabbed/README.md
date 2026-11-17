@@ -11,18 +11,10 @@ detail pages to use tabs.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Store Page Detail Product Dimensions][2]
@@ -79,8 +71,8 @@ detail pages to use tabs.
   
 * Add code from file **[store page detail product dimensions tabbed.html][4]**
   to Store Settings > Advanced > Page Header Code Injection for the Store Page
-  below the Store Page Detail Product Dimensions code. Refer to [Per-page code
-  injection][5] for details.
+  below the Store Page Detail Product Dimensions code. Refer to [Inject code to
+  a specific page][5] for details.
 
 ## Tabs Style Variations
 
@@ -184,7 +176,7 @@ Please consider [making a donation][9].
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions
 [3]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Detail/Store%20Page%20Detail%20Product%20Dimensions#store-page-detail-product-dimensions
 [4]: store%20page%20detail%20product%20dimensions%20tabbed.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/golden-mist-cup?password=twcdemos
 [7]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/harvest-moon-cup?password=twcdemos
 [8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-product-dimensions-tabbed/p/milk-dip-cup?password=twcdemos

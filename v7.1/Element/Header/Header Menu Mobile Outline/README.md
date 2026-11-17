@@ -10,7 +10,7 @@ Format mobile menu as an outline.
 
   * 0.6.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -27,11 +27,10 @@ Format mobile menu as an outline.
   Use this option for the quickest way to install this effect (files hosted
   externally on the [jsDelivr][4], a [CDN][5])
   
-  * Add code from file **[header menu mobile outline.less][7]** to Website >
-    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][8] for
-    details.
+  * Add code from file **[header menu mobile outline.less][6]** to Website >
+    Pages > Custom Code > Custom CSS. Refer to [Add CSS code][7] for details.
     
-  * Add code from file **[header menu mobile outline options.html][6]** to
+  * Add code from file **[header menu mobile outline options.html][8]** to
     Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
     instructions within.
     
@@ -49,25 +48,25 @@ Format mobile menu as an outline.
       
     ```
     
-    Refer to [Add code to code injection][9] for details.
+   Refer to [Add code to the header and footer][9] for details.
     
 * On-site
 
   Use this option to install the full code of this effect (files hosted on your
   site).
   
-  * Add code from file **[header menu mobile outline.less][7]** to Website >
-    Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][8] for
+  * Add code from file **[header menu mobile outline.less][6]** to Website >
+    Pages > Custom Code > Custom CSS. Refer to [Add CSS code][7] for
     details.
     
-  * Add code from file **[header menu mobile outline options.html][6]** to
+  * Add code from file **[header menu mobile outline options.html][8]** to
     Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
     instructions within.
     
   * Add code from file **[header menu mobile outline.html][10]** to Website >
     Pages > Custom Code > Code Injection > FOOTER.
     
-  * Refer to [Add code to code injection][9] for details.
+  * Refer to [Add code to the header and footer][9] for details.
 
 ## Callbacks
 
@@ -183,10 +182,10 @@ Please consider [making a donation][13].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: header%20menu%20mobile%20outline%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[7]: header%20menu%20mobile%20outline.less#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: header%20menu%20mobile%20outline.less#L1
+[7]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[8]: header%20menu%20mobile%20outline%20options.html#L1
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [10]: header%20menu%20mobile%20outline.html#L1
 [12]: https://toms-web-consulting-demos.squarespace.com/header-menu-mobile-outline/header-menu-mobile-outline?password=twcdemos

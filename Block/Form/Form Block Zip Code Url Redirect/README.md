@@ -10,7 +10,7 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -21,10 +21,6 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Form Block Wrapper Observe Changes][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -37,20 +33,21 @@ Redirect a form block with a single Text field labeled Zip Code to a URL.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[form block zip code url redirect.html][6]** to Page
-      Settings > Advanced > Page Header Code Injection for the Page. Refer to
-      [per-page code injection][7] for details. Read the code for any
-      instructions within.
+      Settings > Advanced > Page Header Code Injection for the Page. Read the
+      code for any instructions within. Refer to [Inject code to a specific
+      page][7] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[form block zip code url redirect.html][6]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][8]. Read the code for any instructions within.
+      Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
+      any instructions within. Refer to [Add code to the header and footer][8]
+      for details.
       
 * Add or edit a form block.
 
@@ -81,6 +78,6 @@ Please consider [making a donation][9].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [6]: form%20block%20zip%20code%20url%20redirect.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

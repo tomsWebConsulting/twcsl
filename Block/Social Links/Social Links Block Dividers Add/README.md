@@ -10,15 +10,11 @@ Add dividers between links.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -29,10 +25,8 @@ Add dividers between links.
 ## Quick Install
 
 * Add code from file **[social links block dividers add.html][4]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][5] for details.
-  
-* Read the code for any instructions within.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Inject code to a
+  specific page][5] for details. Read the code for any instructions within.
 
 ## Demo
 
@@ -57,6 +51,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: social%20links%20block%20dividers%20add.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://toms-web-consulting-demos.squarespace.com/social-links-block-dividers-add?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

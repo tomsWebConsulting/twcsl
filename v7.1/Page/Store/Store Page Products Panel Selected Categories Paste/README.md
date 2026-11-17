@@ -10,7 +10,7 @@ Paste categories to selected Products in a Store Page Products Panel.
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -34,23 +34,20 @@ Paste categories to selected Products in a Store Page Products Panel.
 
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page products panel selected categories
       paste.html][7]** to Store Settings > Advanced > Page Header Code Injection
-      for the Store Page.
+      for the Store Page. Refer to [Inject code to a specific page][8] for
+      details.
       
-    * Refer to [per-page code injection][8] for details.
-    
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page products panel selected categories
       paste.html][7]** to Website > Pages > Custom Code > Code Injection >
-      HEADER.
-      
-    * Refer to [Add code to code injection][9] for details.
+      HEADER. Refer to [Add code to the header and footer][9] for details.
 
 ## How To Use
 
@@ -100,7 +97,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Multiple%20Products%20Menu%20Item%20Add#store%20page%20products%20panel%20multiple%20products%20menu%20item%20add
 [7]: store%20page%20products%20panel%20selected%20categories%20paste.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Page/Store/Store%20Page%20Products%20Panel%20Product%20Categories%20Copy#store-page-products-panel-product-categories-copy
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

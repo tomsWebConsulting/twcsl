@@ -4,19 +4,15 @@
 
 ### Synopsis
 
-Display blog page list masonry design dates as a badge.
+Display Blog Page list masonry design dates as a badge.
 
 ### Version
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -36,10 +32,9 @@ Display blog page list masonry design dates as a badge.
   ```
   
 * Add code from file **[blog page list masonry design date badge.html][5]** to
-  Block Settings > Advanced > Page Header Code Injection for the blog page.
-  Refer to [Per-page code injection][6] for details.
-  
-* Read the code for any instructions within.
+  Block Settings > Advanced > Page Header Code Injection for the Blog Page. Read
+  the code for any instructions within. Refer to [Inject code to a specific
+  page][6] for details.
   
 * Set the blog section Primary Meta Content setting to Date.
 
@@ -64,5 +59,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: blog%20page%20list%20masonry%20design%20date%20badge.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

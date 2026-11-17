@@ -6,13 +6,9 @@
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -20,7 +16,7 @@
 
 * Add code from file **[page section first blank hide.html][2]** to Page
   Settings > Advanced > Page Header Code Injection for the Page. Please see
-  [per-page code injection][3].
+  [Inject code to a specific page][3].
   
 * Add a new blank section at the top of the Page. Do not alter any of its
   settings. Save the Page.
@@ -61,5 +57,5 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: page%20section%20first%20blank%20hide.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

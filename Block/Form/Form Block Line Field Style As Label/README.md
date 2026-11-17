@@ -10,15 +10,11 @@ Style Form block Label field as section labels.
 
   * 1.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -27,13 +23,13 @@ Style Form block Label field as section labels.
 * CDN Hosted
 
   Use this option for the quickest way to install this effect (files hosted
-  externally on the [jsDelivr][4], a [CDN][5])
+  externally on the [jsDelivr][2], a [CDN][3])
   
   * Options
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -49,11 +45,11 @@ Style Form block Label field as section labels.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
-      
+        Refer to [Inject code to a specific page][4] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -87,7 +83,7 @@ Style Form block Label field as section labels.
             
           ```
           
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to the header and footer][5] for details.
       
 * On-site
 
@@ -96,28 +92,28 @@ Style Form block Label field as section labels.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[form block line field style as label.html][8]** to
+    * Add code from file **[form block line field style as label.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][6] for details.
-    
+      Refer to [Inject code to a specific page][4] for details.
+      
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * v7.1
     
-      * Add code from file **[form block line field style as label.css][9]** to
+      * Add code from file **[form block line field style as label.css][7]** to
         Website > Pages > Custom Code > Custom CSS.
         
     * v7.0
     
-      * Add code from file **[form block line field style as label.css][9]** to
+      * Add code from file **[form block line field style as label.css][7]** to
         Website > Pages > Website Tools > Custom Code > Custom CSS.
         
-    * Refer to [Using the CSS Editor][10] for details.
+    * Refer to [Add CSS code][8] for details.
 
 ## How To Use
 
@@ -128,13 +124,13 @@ Add your desired fields to the form block.
 Where you want to have a "section label" add a line field. Set the field label
 to the title of your form section. Set Underline to off.
 
-![label field example settings][11]
+![label field example settings][9]
 
 Save the Page.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -148,12 +144,12 @@ Please consider [making a donation][12].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[4]: https://www.jsdelivr.com/
-[5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: form%20block%20line%20field%20style%20as%20label.html#L1
-[9]: form%20block%20line%20field%20style%20as%20label.css#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
-[11]: read%20me%20assets/line%20field.png
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.jsdelivr.com/
+[3]: https://en.wikipedia.org/wiki/Content_delivery_network
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[6]: form%20block%20line%20field%20style%20as%20label.html#L1
+[7]: form%20block%20line%20field%20style%20as%20label.css#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[9]: read%20me%20assets/line%20field.png
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

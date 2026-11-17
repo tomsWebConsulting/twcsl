@@ -10,7 +10,7 @@ Turn off links Open in New Tab setting.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

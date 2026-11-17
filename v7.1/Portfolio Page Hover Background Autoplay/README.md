@@ -4,13 +4,13 @@
 
 ### Synopsis
 
-Add an autoplay effect to a portfolio page using layout hover background.
+Add an autoplay effect to a Portfolio Page using layout hover background.
 
 ### Version
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.0
 
@@ -19,10 +19,6 @@ Add an autoplay effect to a portfolio page using layout hover background.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [jQuery][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -37,32 +33,33 @@ Add an autoplay effect to a portfolio page using layout hover background.
   
 * Options
 
+  * Page Specific
+  
+    Use this option when you want to have this effect on only one Portfolio
+    Page.
+    
+    * Add code from file **[portfolio page hover background autoplay.html][5]**
+      to Portfolio Settings > Advanced > Page Header Code Injection for the
+      portfolio page. Refer to [Inject code to a specific page][6] for details.
+      
   * Site-wide
   
     Use this option if you have multiple pages where you want to have this
     effect.
     
     * Add code from file **[portfolio page hover background autoplay.html][5]**
-      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
-      [Add code to code injection][17] for details.
+      to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+      code to the header and footer][7] for details.
       
-  * Page Specific
-  
-    Use this option when you want only one Page to have this effect.
-    
-    * Add code from file **[portfolio page hover background autoplay.html][5]**
-      to Portfolio Settings > Advanced > Page Header Code Injection for the
-      portfolio page. Refer to [Per-page code injection][6] for details.
-
-* Read the code for any instructions within.
+  * Read the code for any instructions within.
 
 ## Demo
 
-You can see a [demo of this effect here][7].
+You can see a [demo of this effect here][8].
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -81,7 +78,7 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: portfolio%20page%20hover%20background%20autoplay.html#L1
-[18]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://toms-web-consulting-demos.squarespace.com/portfolio-page-hover-background-autoplay?password=twcdemos
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[8]: https://toms-web-consulting-demos.squarespace.com/portfolio-page-hover-background-autoplay?password=twcdemos
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

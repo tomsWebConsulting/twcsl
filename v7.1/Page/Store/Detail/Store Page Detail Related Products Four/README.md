@@ -10,18 +10,10 @@ Show four Store Page detail related products.
 
   * 1.0.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
@@ -30,25 +22,24 @@ Show four Store Page detail related products.
 
   * Page Specific
   
-    Use this option if you have only a single Store Page you want to have this
-    effect.
+    Use this option when you want to have this effect on only one Store
+    Page.
     
     * Add code from file **[store page detail related products four.html][2]**
       to Store Page Settings > Advanced > Page Header Code Injection for the
-      page. Refer to [Per-page code injection][3] for details.
+      page. Refer to [Inject code to a specific page][3] for details.
       
   * Site-wide
   
-    Use this option if you have multiple Store Pages where you want to have
-    this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page detail related products four.less][4]**
-      to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-      Editor][199] for details.
+      to Website > Pages > Custom Code > Custom CSS. Refer to [Add CSS code][5]
+      for details.
   
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -69,7 +60,7 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20related%20products%20four.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: store%20page%20detail%20related%20products%20four.less#L1
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[5]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C

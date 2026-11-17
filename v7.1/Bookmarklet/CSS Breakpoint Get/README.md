@@ -10,7 +10,7 @@ Get the CSS breakpoint value from the site.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

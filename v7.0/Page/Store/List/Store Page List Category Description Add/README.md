@@ -10,7 +10,7 @@ Add a category description to Store category pages.
 
   * 0.7.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.0 ([Avenue template][2], [Bedford template family][3], [Brine template family][4], [Skye template family][5], [Wells][6])
 
@@ -24,8 +24,8 @@ Add a category description to Store category pages.
 
 ## Install
 
-* Install **[Page Categories to Module][10]**. After you install and use the code
-  be sure to continue on with the rest of the steps.
+* Install **[Page Categories to Module][10]**. After you install and use the
+  code be sure to continue on with the rest of the steps.
   
 * Options
  
@@ -38,7 +38,8 @@ Add a category description to Store category pages.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store Page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page list category description add
           options.html][13]** to Page Settings > Advanced >
@@ -46,8 +47,7 @@ Add a category description to Store category pages.
           instructions within.
           
         * Add the following code to Page Settings > Advanced >
-          Page Header Code Injection for the Store Page. Refer to [per-page code
-          injection][14] for details.
+          Page Header Code Injection for the Store Page.
           
           ```html
           <!-- begin TWC Store Page List Category Description Add -->
@@ -59,10 +59,12 @@ Add a category description to Store category pages.
             <!-- end TWC Store Page List Category Description Add -->
             
           ```
-      
+          
+          Refer to [Inject code to a specific page][14] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list category description add
           options.html][13]** to Website > Pages > Website Tools > Custom Code >
@@ -84,8 +86,8 @@ Add a category description to Store category pages.
             
           ```
           
-          Refer to [Add code to code injection][15] for details.
-          
+        * Refer to [Add code to the header and footer][15] for details.
+        
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -93,7 +95,7 @@ Add a category description to Store category pages.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list category description add
         options.html][13]** to Page Settings > Advanced >
@@ -102,11 +104,13 @@ Add a category description to Store category pages.
         
       * Add code from file **[store page list category description
         add.html][16]** to Page Settings > Advanced > Page Header Code Injection
-        for the Page. Refer to [per-page code injection][14] for details.
+        for the Page.
         
+      * Refer to [Inject code to a specific page][14] for details.
+      
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page list category description add
         options.html][13]** to Website > Pages > Website Tools > Custom Code >
@@ -114,8 +118,9 @@ Add a category description to Store category pages.
         
       * Add code from file **[store page list category description
         add.html][16]** to Website > Pages > Website Tools > Custom Code >
-        Code Injection > FOOTER. Refer to [Add code to code injection][16] for
-        details.
+        Code Injection > FOOTER.
+        
+      * Refer to [Add code to the header and footer][16] for details.
 
 ## How to Use
 
@@ -207,7 +212,7 @@ Please consider [making a donation][17].
 [11]: https://www.jsdelivr.com/
 [12]: https://en.wikipedia.org/wiki/Content_delivery_network
 [13]: store%20page%20list%20category%20description%20add%20options.html#L1
-[14]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[15]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[14]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[15]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [16]: store%20page%20list%20category%20description%20add.html#L1
 [17]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Change the header button text based on language.
 
  * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
   
@@ -33,8 +33,8 @@ Change the header button text based on language.
   ```
   
 * Just above the lines in the previous step add code from file **[cta button
-  text language change.js][5]**. Refer to [Add code to code injection][6] for
-  details. Read the code for any instructions within.
+  text language change.js][5]**. Refer to [Add code to the header and footer][6]
+  for details. Read the code for any instructions within.
   
   Be very careful inserting the code. You don't want to change any of the lines
   in the existing code, just add in this code.
@@ -59,5 +59,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template
 [5]: cta%20button%20text%20language%20change.js#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

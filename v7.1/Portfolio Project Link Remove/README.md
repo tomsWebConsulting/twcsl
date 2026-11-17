@@ -1,18 +1,14 @@
 # Portfolio Project Link Remove
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -25,14 +21,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[portfolio project link remove.html](portfolio%20project%20link%20remove.html#L1)**
-  to Project Settings > Advanced > Page Header Code Injection for the Store Page.
+* Add code from file **[portfolio project link remove.html][2]** to
+  Project Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -45,4 +39,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: portfolio%20project%20link%20remove.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

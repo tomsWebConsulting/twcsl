@@ -10,25 +10,21 @@ Add a background image for the body element.
 
   * 1.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
 ## Quick Install
 
 * Add code from file **[body background image.css][2]** to Website > Pages >
-  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
-  Read the code for any instructions within.
+  Custom Code > Custom CSS. Refer to [Add CSS code][3] for details. Read the
+  code for any instructions within.
   
-* Add code from file **[body background image.html][3]** to Website > Pages >
-  Custom Code > Code Injection > HEADER. Refer to [Per-page code injection][4]
-  for details.
+* Add code from file **[body background image.html][4]** to Website > Pages >
+  Custom Code > Code Injection > HEADER. Refer to [Inject code to a specific
+  page][5] for details.
   
 * Create custom CSS to allow the image to be seen. It is beyond the scope of
   these steps to cover CSS and where in your site to install it. However
@@ -63,7 +59,7 @@ doesn't support.
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -79,7 +75,7 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: body%20background%20image.css#L1
-[3]: body%20background%20image.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[4]: body%20background%20image.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

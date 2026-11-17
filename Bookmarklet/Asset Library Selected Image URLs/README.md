@@ -10,15 +10,11 @@ List selected image URLs in the Asset Library.
 
   * 0.3.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 

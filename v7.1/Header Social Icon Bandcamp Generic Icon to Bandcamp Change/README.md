@@ -1,18 +1,14 @@
 # Header Social Icon Bandcamp Generic Icon to Bandcamp Change
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -25,14 +21,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[header social icon bandcamp generic icon to bandcamp change.html](header%20social%20icon%20bandcamp%20generic%20icon%20to%20bandcamp%20change.html#L1)**
-  to Website > Pages > Custom Code > Code Injection > FOOTER.
+* Add code from file **[header social icon bandcamp generic icon to bandcamp
+  change.html][2]** to Website > Pages > Custom Code > Code Injection > FOOTER.
   
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -48,4 +42,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: header%20social%20icon%20bandcamp%20generic%20icon%20to%20bandcamp%20change.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Add a years past threshold to Form block Date fields.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -21,10 +21,6 @@ Add a years past threshold to Form block Date fields.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Form Block Wrapper Observe Changes][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -37,19 +33,20 @@ Add a years past threshold to Form block Date fields.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[form block date field years past
-      threshold.html][6]** to Page Settings > Advanced > Page Header Code
-      Injection for the Page. Refer to [Per-page code injection][7] for details.
+      threshold.html][6]** to Page Settings > Advanced >
+      Page Header Code Injection for the Page. Refer to [Inject code to a
+      specific page][7] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[form block date field years past
       threshold.html][6]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Refer to [Add code to code injection][8]
+      FOOTER. Refer to [Add code to the header and footer][8]
       
 * Add or edit a form block on your Page and set up as desired.
   
@@ -109,7 +106,7 @@ Please consider [making a donation][10].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [6]: form%20block%20date%20field%20years%20past%20threshold.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://toms-web-consulting-demos.squarespace.com/form-block-date-field-years-past-threshold?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Change the Customer Account Panel Account Settings link URL.
 
   * 0.1.3
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -22,10 +22,6 @@ Change the Customer Account Panel Account Settings link URL.
   
   * [Customer Account Panel Change][4]
 
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
@@ -35,8 +31,8 @@ Change the Customer Account Panel Account Settings link URL.
   
 * Add the code from file **[capc account settings link.html][6]** to Website >
   Pages > Custom Code > Code Injection > FOOTER **before** the **customer
-  account panel change** code. Refer to [Add code to code injection][7] for
-  details.
+  account panel change** code. Refer to [Add code to the header and footer][7]
+  for details.
   
 * Read the code for any instructions within.
 
@@ -71,5 +67,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change#customer-account-panel-change
 [6]: capc%20account%20settings%20link.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

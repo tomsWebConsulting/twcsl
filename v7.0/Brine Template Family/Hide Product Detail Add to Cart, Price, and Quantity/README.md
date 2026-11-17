@@ -1,6 +1,6 @@
 # Hide Product Detail Add to Cart, Price, and Quantity
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -10,16 +10,15 @@
 
 ## Quick Install
 
-* Add code from file
-  **[hide product detail add to cart, price, and quantity.html](hide%20product%20detail%20add%20to%20cart,%20price,%20and%20quantity.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
+* Add code from file **[hide product detail add to cart, price, and
+  quantity.html][2]** to Store Settings > Advanced > Page Header Code Injection
+  for the Store Page.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -34,4 +33,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: hide%20product%20detail%20add%20to%20cart,%20price,%20and%20quantity.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

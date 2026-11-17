@@ -10,7 +10,7 @@ Append Footer Section to Store Page detail Page Sections.
 
   * 0.4.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -38,7 +38,8 @@ Append Footer Section to Store Page detail Page Sections.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store Page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Store Page.
@@ -54,14 +55,14 @@ Append Footer Section to Store Page detail Page Sections.
             
           ```
           
-          Refer to [per-page code injection][8] for details.
+          Refer to [Inject code to a specific page][8] for details.
           
         * Add code from file **[store page detail page sections append footer
           section.js][9]** to the **elements manipulate options** code.
           
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > HEADER.
@@ -77,7 +78,7 @@ Append Footer Section to Store Page detail Page Sections.
             
           ```
           
-          Refer to [Add code to code injection][10] for details.
+          Refer to [Add code to the header and footer][10] for details.
           
         * Add code from file **[store page detail page sections append footer
           section.js][9]** to the **elements manipulate options** code.
@@ -89,23 +90,23 @@ Append Footer Section to Store Page detail Page Sections.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page detail page sections append footer
         section.html][11]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page. Refer to [per-page code
-        injection][8] for details.
+        Page Header Code Injection for the Page. Refer to [Inject code to a
+        specific page][8] for details.
         
       * Add code from file **[store page detail page sections append footer
         section.js][9]** to the **elements manipulate options** code.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page detail page sections append footer
         section.css][12]** to Website > Pages > Custom Code > Custom CSS. Refer
-        to [Using the CSS Editor][13] for details.
+        to [Add CSS code][13] for details.
         
       * Add code from file **[store page detail page sections append footer
         section.js][9]** to the **elements manipulate options** code.
@@ -147,10 +148,10 @@ Please consider [making a donation][14].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate#elements-manipulate
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [9]: store%20page%20detail%20page%20sections%20append%20footer%20section.js#L1
 [11]: store%20page%20detail%20page%20sections%20append%20footer%20section.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [12]: store%20page%20detail%20page%20sections%20append%20footer%20section.css#L1
-[13]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[13]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

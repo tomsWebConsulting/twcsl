@@ -10,13 +10,9 @@ Add a comma separated string as tags in the product editor.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 

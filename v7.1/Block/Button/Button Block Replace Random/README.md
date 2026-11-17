@@ -10,13 +10,9 @@ Display random buttons in a section.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -36,8 +32,8 @@ Display random buttons in a section.
   ```
   
 * Add code from file **[button block replace random.html][5]** to
-  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
-  [Per-page code injection][6].
+  Page Settings > Advanced > Page Header Code Injection for the Page. Refer to
+  [Inject code to a specific page][6] for details.
   
 * Buttons
 
@@ -72,7 +68,8 @@ Display random buttons in a section.
 
 ## Note
 
-This effect is not active in SS Preview to test it use [private browsing][7].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][7].
 
 ## Make a Donation
 
@@ -95,6 +92,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: button%20block%20replace%20random.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

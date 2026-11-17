@@ -11,42 +11,39 @@ at larger browser window widths.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
 #### Dependencies
 
-  * [Squarespace plan][2] that supports [Page Header Code Injection][5].
+  * [Squarespace plan][2] that supports [JavaScript][3].
 
 ---
 
 ## Install
 
-* Install and use **[CSS Breakpoint Get][3]**. After you install and use the
+* Install and use **[CSS Breakpoint Get][4]**. After you install and use the
   code be sure to continue on with the rest of the steps.
   
 * Options
 
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[text block text style linear growth.html][4]** to
+    * Add code from file **[text block text style linear growth.html][5]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
-      the code for instructions within.
-      
-    * Refer to [per-page code injection][5] for details.
+      the code for instructions within. Refer to [Inject code to a specific
+      page][3] for details.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[text block text style linear growth.less][6]** to
       Website > Pages > Custom Code > Custom CSS. Read the code for instructions
-      within.
-      
-    * Refer to [Using the CSS Editor][7] for details.
+      within. Refer to [Add CSS code][7] for details.
 
 ## Make a Donation
 
@@ -66,9 +63,9 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
-[3]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/CSS%20Breakpoint%20Get#css-breakpoint-get
-[4]: text%20block%20text%20style%20linear%20growth.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Bookmarklet/CSS%20Breakpoint%20Get#css-breakpoint-get
+[5]: text%20block%20text%20style%20linear%20growth.html#L1
 [6]: text%20block%20text%20style%20linear%20growth.less#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[7]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

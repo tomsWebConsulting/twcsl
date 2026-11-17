@@ -10,15 +10,11 @@ Add class names to each event on an events list page.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -34,19 +30,20 @@ Add class names to each event on an events list page.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Events Page.
     
     * Add code from file **[events page list event tag class name
       add.html][5]** to Store Settings > Advanced > Page Header Code Injection
-      for the Store Page. Refer to [Per-page code injection][6] for details.
+      for the Store Page. Refer to [Inject code to a specific page][6] for
+      details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Events Pages.
     
     * Add code from file **[events page list event tag class name add.html][5]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][7] for details.
+      code to the header and footer][7] for details.
 
 ## Make a Donation
 
@@ -68,6 +65,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Events/List/Events%20Page%20List%20Tags%20Cache#events-page-list-tags-cache
 [5]: events%20page%20list%20event%20tag%20class%20name%20add.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

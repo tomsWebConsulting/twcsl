@@ -11,7 +11,7 @@ append, before, prepend, or replace and other settings.
 
   * 0.14.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -37,8 +37,8 @@ append, before, prepend, or replace and other settings.
     * Add code from file **[elements manipulate.less][4]** to Website > Pages >
       Website Tools > Custom Code > Custom CSS.
       
-  * Refer to [Using the CSS Editor][5] for details.
-    
+  * Refer to [Add CSS code][5] for details.
+  
 * Options
 
   * CDN Hosted
@@ -50,7 +50,7 @@ append, before, prepend, or replace and other settings.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add code from file **[elements manipulate options.html][8]** to Page
           Settings > Advanced > Page Header Code Injection for the Page. Read
@@ -70,11 +70,11 @@ append, before, prepend, or replace and other settings.
             
           ```
           
-        * Refer to [per-page code injection][9] for details.
-        
+          Refer to [Inject code to a specific page][9] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -116,16 +116,16 @@ append, before, prepend, or replace and other settings.
               
             ```
             
-        * Refer to [Add code to code injection][10] for details.
+        * Refer to [Add code to the header and footer][10] for details.
         
   * On-site
   
-    Use this option to install the full code of this effect (files hosted on your
-    site).
+    Use this option to install the full code of this effect (files hosted on
+    your site).
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[elements manipulate options.html][8]** to Page
         Settings > Advanced > Page Header Code Injection for the Page. Read
@@ -134,11 +134,11 @@ append, before, prepend, or replace and other settings.
       * Add code from file **[elements manipulate.html][11]** to Page Settings >
         Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][9] for details.
+      * Refer to [Inject code to a specific page][9] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -158,7 +158,7 @@ append, before, prepend, or replace and other settings.
         * Add code from file **[elements manipulate.html][11]** to Website >
           Pages > Website Tools > Custom Code > Code Injection > FOOTER.
           
-      * Refer to [Add code to code injection][10] for details.
+      * Refer to [Add code to the header and footer][10] for details.
       
 ## Options Data Structure Templates
 
@@ -166,9 +166,11 @@ append, before, prepend, or replace and other settings.
 
   * [Footer Page Sections After Page Sections][12]
   
-  * [Product Detail Page Last Page Section First N Blocks to End of Product Meta][13]
+  * [Product Detail Page Last Page Section First N Blocks to End of Product
+    Meta][13]
   
-  * [Product Detail Page Last Page Section First Video Block Before Quantity][14]
+  * [Product Detail Page Last Page Section First Video Block Before
+    Quantity][14]
   
   * [Product Detail Page Specific Video Block Before Quantity][15]
 
@@ -189,7 +191,7 @@ append, before, prepend, or replace and other settings.
 You can optionally add [callback][20] functions to further customize the
 processing of the source element. Your callbacks must accept and return a node.
 Add your callbacks to Website > Pages > Custom Code > Code Injection > FOOTER.
-Refer to [Add code to code injection][10]. Order is not important.
+Refer to [Add code to the header and footer][10]. Order is not important.
 
 * Log the source element.
 
@@ -419,12 +421,12 @@ Please consider [making a donation][21].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: elements%20manipulate.less#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[5]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: elements%20manipulate%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: elements%20manipulate.html#L1
 [12]: options%20data%20structure%20templates/footer%20page%20sections%20after%20page%20sections.js
 [13]: options%20data%20structure%20templates/product%20detail%20page%20last%20page%20section%20first%20n%20blocks%20to%20end%20of%20product%20meta.js

@@ -10,7 +10,7 @@ Add images to product detail based on tags before Additional Info.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -20,10 +20,6 @@ Add images to product detail based on tags before Additional Info.
 
   * Not Applicable
   
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][3] that supports [JavaScript][4].
@@ -48,8 +44,8 @@ Add images to product detail based on tags before Additional Info.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store
-        page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page detail tag based image add before
           additional info options.html][9]** to Page Settings > Advanced >
@@ -72,11 +68,11 @@ Add images to product detail based on tags before Additional Info.
             
           ```
           
-        * Refer to [per-page code injection][10] for details.
+        * Refer to [Inject code to a specific page][10] for details.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * v7.1
         
@@ -122,8 +118,8 @@ Add images to product detail based on tags before Additional Info.
               
             ```
             
-        * Refer to [Add code to code injection][11] for details.
-  
+        * Refer to [Add code to the header and footer][11] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -131,7 +127,7 @@ Add images to product detail based on tags before Additional Info.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page detail tag based image add before
         additional info options.html][9]** to Page Settings > Advanced >
@@ -141,11 +137,11 @@ Add images to product detail based on tags before Additional Info.
       * Add code from file **[page tags cache.html][12]** to Page Settings >
         Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][10] for details.
+      * Refer to [Inject code to a specific page][10] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -166,7 +162,7 @@ Add images to product detail based on tags before Additional Info.
         * Add code from file **[page tags cache.html][12]** to Website > Pages >
           Website Tools > Custom Code > Code Injection > FOOTER.
           
-      * Refer to [Add code to code injection][11] for details.
+      * Refer to [Add code to the header and footer][11] for details.
 
 ## Make a Donation
 
@@ -193,7 +189,7 @@ Please consider [making a donation][13].
 [7]: https://www.jsdelivr.com/
 [8]: https://en.wikipedia.org/wiki/Content_delivery_network
 [9]: store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info%20options.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [12]: store%20page%20detail%20tag%20based%20image%20add%20before%20additional%20info.html#L1
 [13]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

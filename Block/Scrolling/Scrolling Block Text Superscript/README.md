@@ -10,7 +10,7 @@ Superscript text.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -33,7 +33,7 @@ Superscript text.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[scrolling block text superscript
         options.html][6]** to Page Settings > Advanced > Page Header Code
@@ -55,11 +55,11 @@ Superscript text.
           
         ```
         
-      * Refer to [per-page code injection][7] for details.
+      * Refer to [Inject code to a specific page][7] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * Add code from file **[scrolling block text superscript
         options.html][6]** to Website > Pages > Custom Code > Code Injection >
@@ -81,7 +81,7 @@ Superscript text.
           
         ```
         
-      * Refer to [Add code to code injection][8] for details.
+      * Refer to [Add code to the header and footer][8] for details.
       
 * On-site
 
@@ -90,7 +90,7 @@ Superscript text.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[scrolling block text superscript options.html][6]**
       to Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -99,11 +99,11 @@ Superscript text.
     * Add code from file **[scrolling block text superscript.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][7] for details.
-      
+    * Refer to [Inject code to a specific page][7] for details.
+    
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[scrolling block text superscript options.html][6]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
@@ -112,7 +112,7 @@ Superscript text.
     * Add code from file **[scrolling block text superscript.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][8] for details.
+    * Refer to [Add code to the header and footer][8] for details.
 
 ## Make a Donation
 
@@ -136,7 +136,7 @@ Please consider [making a donation][10].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: scrolling%20block%20text%20superscript%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: scrolling%20block%20text%20superscript.html#L1
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

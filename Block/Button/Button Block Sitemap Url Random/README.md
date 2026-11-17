@@ -16,7 +16,7 @@ Assign random Sitemap URLs to Button Blocks.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -39,8 +39,8 @@ Assign random Sitemap URLs to Button Blocks.
   
     * Page Specific
     
-      * Use this option if you want to have this effect on only one Page.
-        
+      Use this option when you want to have this effect on only one Page.
+      
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
@@ -55,12 +55,12 @@ Assign random Sitemap URLs to Button Blocks.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
-      
+        Refer to [Inject code to a specific page][6] for details.
+        
     * Site-wide
     
-      * Use this option if you want to have this effect on all Store pages.
-        
+      Use this option when you want to have this effect on all Store Pages.
+      
       * v7.1
       
         * Add the following code to Website > Pages > Custom Code >
@@ -93,7 +93,7 @@ Assign random Sitemap URLs to Button Blocks.
             
           ```
           
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to the header and footer][7] for details.
       
 * On-site
 
@@ -102,17 +102,16 @@ Assign random Sitemap URLs to Button Blocks.
   
   * Page Specific
   
-    * Use this option if you want to have this effect on only one Page.
-      
+    Use this option when you want to have this effect on only one Page.
+    
     * Add code from file **[button block sitemap url random.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
+      Refer to [Inject code to a specific page][6] for details.
       
-    * Refer to [per-page code injection][6] for details.
-    
   * Site-wide
   
-    * Use this option if you want to have this effect on all Pages.
-      
+    Use this option when you want to have this effect on all Pages.
+    
     * v7.1
     
       * Add code from file **[button block sitemap url random.html][8]** to
@@ -123,7 +122,7 @@ Assign random Sitemap URLs to Button Blocks.
       * Add code from file **[button block sitemap url random.html][8]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][7] for details.
+    * Refer to [Add code to the header and footer][7] for details.
 
 ## How to Use
 
@@ -154,7 +153,7 @@ Please consider [making a donation][9].
   * removed jQuery dependency
   * removed twcsl dependency
   * bumped version to 0.4.0
-  -->
+    -->
 * **2026-09-11**
 
   * initial version (commit 5fc32ec44199dbd7f527dca95b9c97f4e44575d7)
@@ -164,7 +163,7 @@ Please consider [making a donation][9].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: button%20block%20sitemap%20url%20random.html#L1
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

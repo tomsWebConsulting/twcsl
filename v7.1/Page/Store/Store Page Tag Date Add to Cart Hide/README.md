@@ -10,17 +10,9 @@ Hide product add to cart using tags with date/time.
 
   * 0.2.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -34,28 +26,27 @@ Hide product add to cart using tags with date/time.
 
   * Page Specific
   
-    Use this option if you have only a single store page you want to have this
-    effect.
+    Use this option when you want to have this effect on only one Store
+    Page.
     
     * Add code from file **[store page tag date add to cart hide.html][4]** to
       Store Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [Per-page code injection][5] for details.
+      to [Inject code to a specific page][5] for details.
       
   * Site-wide
   
-    Use this option if you have multiple store pages where you want to have
-    this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page tag date add to cart hide.html][4]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][6] for details.
+      code to the header and footer][6] for details.
 
 ## How To Use
 
-Edit a product and add a tag of **twc-sptdatch 2025-11-03 00:00:00 AM 2025-11-05 00:00:00 AM**.
-The twc-sptdatch indicates to the code that this is a product to be hidden based
-on the date/time entered. The first date/time is when to begin hiding the
-product, the optional second date/time when hiding ends.
+Edit a product and add a tag of **twc-sptdatch 2025-11-03 00:00:00 AM 2025-11-05
+00:00:00 AM**. The twc-sptdatch indicates to the code that this is a product to
+be hidden based on the date/time entered. The first date/time is when to begin
+hiding the product, the optional second date/time when hiding ends.
 
   * Tag Syntax
   
@@ -130,7 +121,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20page%20tag%20date%20add%20to%20cart%20hide.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: https://tinyurl.com/ynessvsf
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

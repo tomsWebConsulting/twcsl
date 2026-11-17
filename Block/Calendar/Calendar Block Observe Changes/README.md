@@ -10,7 +10,7 @@ Observe changes to calendar block and call custom callbacks.
 
   * 0.5.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -33,7 +33,7 @@ Observe changes to calendar block and call custom callbacks.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[calendar block observe changes options.html][6]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -53,11 +53,11 @@ Observe changes to calendar block and call custom callbacks.
           
         ```
         
-      * Refer to [per-page code injection][7] for details.
-      
+        Refer to [Inject code to a specific page][7] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -99,7 +99,7 @@ Observe changes to calendar block and call custom callbacks.
             
           ```
           
-      * Refer to [Add code to code injection][8] for details.
+      * Refer to [Add code to the header and footer][8] for details.
       
 * On-site
 
@@ -108,7 +108,7 @@ Observe changes to calendar block and call custom callbacks.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[calendar block observe changes options.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Read
@@ -117,11 +117,11 @@ Observe changes to calendar block and call custom callbacks.
     * Add code from file **[calendar block observe changes.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
       
-    * Refer to [per-page code injection][7] for details.
-    
+      Refer to [Inject code to a specific page][7] for details.
+      
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * v7.1
     
@@ -141,7 +141,7 @@ Observe changes to calendar block and call custom callbacks.
       * Add code from file **[calendar block observe changes.html][9]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][8] for details.
+    * Refer to [Add code to the header and footer][8] for details.
 
 ## Callback Examples
 
@@ -249,7 +249,7 @@ Please consider [making a donation][5].
   
 * **2023-02-09**
 
-  * added v7.0 Brine template family Event page view calendar
+  * added v7.0 Brine template family Event Page view calendar
   * added v7.0 Brine template family calendar block support
   * bumped version to 0.3.0
   
@@ -268,8 +268,8 @@ Please consider [making a donation][5].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: calendar%20block%20observe%20changes%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: calendar%20block%20observe%20changes.html#L1
 [10]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,18 +10,10 @@ Reveal Store Page list sections based on category.
 
  * 0.4.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Yes
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -37,7 +29,7 @@ Reveal Store Page list sections based on category.
   
 * Add code from file **[store page list category section reveal.html][6]** to
   Store Settings > Advanced > Page Header Code Injection for the Store Page.
-  Refer to [Per-page code injection][7] for details.
+  Refer to [Inject code to a specific page][7] for details.
   
 * In the Store Page add a section. Set the section up as desired. To reveal a
   section for a category, set the **ANCHOR LINK name** using the following
@@ -107,5 +99,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Page%20Section%20First%20Blank%20Hide#page-section-first-blank-hide
 [6]: store%20page%20list%20category%20section%20reveal.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

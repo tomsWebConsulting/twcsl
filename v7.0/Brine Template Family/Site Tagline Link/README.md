@@ -1,14 +1,14 @@
 # Site Tagline Link
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
-  * 7.0 ([Brine template family][1])
+  * 7.0 ([Brine template family][2])
 
 ---
 
@@ -21,14 +21,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[site header tagline link.html][2]** to Website >
+* Add code from file **[site header tagline link.html][3]** to Website >
   Pages > Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -41,7 +41,7 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[2]: site%20tagline%20link.html#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: site%20tagline%20link.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

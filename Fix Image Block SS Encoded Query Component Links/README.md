@@ -1,6 +1,6 @@
 # Fix Image Block SS Encoded Query Component Links
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -21,7 +21,7 @@ Page Settings > Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
@@ -33,9 +33,10 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
     Add to Cart Button' to 'Move Product Detail Additional Info First N Blocks
     to End of Product Details'
   * bumped version to 0.2d0
-  <br><br -->
+  -->
 * **2021-07-20**
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

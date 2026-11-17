@@ -10,13 +10,9 @@ Set page section backgrounds to transparent.
 
   * 1.0.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 

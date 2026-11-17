@@ -6,7 +6,7 @@
 
   * 0.3.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -15,10 +15,6 @@
 #### Dependencies
 
   * [Form Block Wrapper Observe Changes][2]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -31,21 +27,21 @@
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[form block multi-column.html][3]** to Page
-      Settings > Advanced > Page Header Code Injection for the Page **before**
-      the **Form Block Wrapper Observe Changes code**. Refer to [Per-page code
-      injection][4] for details.
+    * Add code from file **[form block multi-column.html][3]** to
+      Page Settings > Advanced > Page Header Code Injection for the Page
+      **before** the **Form Block Wrapper Observe Changes code**. Refer to
+      [Inject code to a specific page][4] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[form block multi-column.html][3]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER **before** the **Form
-      Block Wrapper Observe Changes code**. Refer to [Add code to code
-      injection][5] for details.
+      Pages > Custom Code > Code Injection > FOOTER **before** the **Form Block
+      Wrapper Observe Changes code**. Refer to [Add code to the header and
+      footer][5] for details.
       
 * Add or edit a form block.
 
@@ -105,8 +101,8 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [3]: form%20block%20multi-column.html#L1
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [7]: https://toms-web-consulting-demos.squarespace.com/form-block-multi-column?password=twcdemos
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

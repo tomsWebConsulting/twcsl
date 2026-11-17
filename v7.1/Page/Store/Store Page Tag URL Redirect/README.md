@@ -10,7 +10,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -38,7 +38,8 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store Page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page tag url redirect options.html][8]**
           to Page Settings > Advanced > Page Header Code Injection for the Store
@@ -58,11 +59,11 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
             
           ```
           
-        * Refer to [per-page code injection][9] for details.
+        * Refer to [Inject code to a specific page][9] for details.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add code from file **[store page tag url redirect options.html][8]**
           to Website > Pages > Custom Code > Code Injection > FOOTER. Read the
@@ -82,8 +83,8 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
             
           ```
           
-        * Refer to [Add code to code injection][10] for details.
-  
+        * Refer to [Add code to the header and footer][10] for details.
+        
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -91,7 +92,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page tag url redirect options.html][8]** to
         Page Settings > Advanced > Page Header Code Injection for the Page. Read
@@ -101,11 +102,11 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
         Page Settings > Advanced > Page Header Code Injection for the Store
         Page.
         
-      * Refer to [per-page code injection][9] for details.
+      * Refer to [Inject code to a specific page][9] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page tag url redirect options.html][8]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
@@ -114,7 +115,7 @@ Use **Tags** to redirect Squarespace PLP and PDP links to a URL.
       * Add code from file **[store page tag url redirect.html][11]** to
         Website > Pages > Custom Code > Code Injection > FOOTER.
         
-      * Refer to [Add code to code injection][10] for details.
+      * Refer to [Add code to the header and footer][10] for details.
 
 ## How To Use
 
@@ -175,7 +176,7 @@ Please consider [making a donation][12].
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: store%20page%20tag%20url%20redirect%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: store%20page%20tag%20url%20redirect.html#L1
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

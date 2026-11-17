@@ -10,7 +10,7 @@ Export Site Styles Fonts to a file.
 
   * 0.2.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

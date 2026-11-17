@@ -1,6 +1,6 @@
 # Add Content of a Page to Products Page
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -14,12 +14,12 @@ Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
 
 `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`
 
-Add code from file **[add content of a Page to products page.html][1]** to
+Add code from file **[add content of a Page to products page.html][2]** to
 Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -33,5 +33,6 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[1]: add%20content%20of%20a%20page%20to%20products%20page.html#L1
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: add%20content%20of%20a%20page%20to%20products%20page.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

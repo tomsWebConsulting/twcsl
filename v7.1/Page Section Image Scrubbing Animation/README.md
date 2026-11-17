@@ -10,13 +10,9 @@ Add image scrubbing effect to a Page Section.
 
   * 0.5.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -31,7 +27,7 @@ Add image scrubbing effect to a Page Section.
   
 * Add code from file **[page section image scrubbing animation.html][2]** to
   Page Settings > Advanced > Page Header Code Injection for the Page. Please see
-  [Per-page code injection][3].
+  [Inject code to a specific page][3].
   
 * Add an empty section.
 
@@ -256,7 +252,8 @@ this effect works.
   
 ## Note
 
-This effect is not active in SS Preview to test it use [private browsing][6].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][6].
 
 ## Demos
 
@@ -302,7 +299,7 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: page%20section%20image%20scrubbing%20animation.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: read%20me%20assets/add%20gallery%20section.png
 [5]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
 [6]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode

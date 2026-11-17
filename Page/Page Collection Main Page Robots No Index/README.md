@@ -10,15 +10,11 @@ Add a robots no index tag to the main page of a collection.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -29,8 +25,8 @@ Add a robots no index tag to the main page of a collection.
 ## Quick Install
 
 * Add code from file **[page collection main page robots no index.html][4]** to
-  Page Settings > Advanced > Page Header Code Injection for the Page. Please see
-  [Per-page code injection][5].
+  Page Settings > Advanced > Page Header Code Injection for the Page. Refer to
+  [Inject code to a specific page][5] for details.
 
 ## Note
 
@@ -55,5 +51,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: page%20collection%20main%20page%20robots%20no%20index.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

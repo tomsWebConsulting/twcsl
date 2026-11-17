@@ -1,14 +1,14 @@
 # Cover Page Action Navigation Link Add
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
-  * 7.0 ([Bedford template family][1], [Brine template family][2])
+  * 7.0 ([Bedford template family][2], [Brine template family][3])
 
 ---
 
@@ -21,16 +21,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[cover page action navigation link add.html](cover%20page%20action%20navigation%20link%20add.html#L1)**
-  to Cover Page Settings > Advanced > Page Header Code Injection for the Page.
+* Add code from file **[cover page action navigation link add.html][4]** to
+  Cover Page Settings > Advanced > Page Header Code Injection for the Page.
   
 * Read the code for any instructions within.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -44,6 +42,8 @@ Please consider
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[3]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[4]: cover%20page%20action%20navigation%20link%20add.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

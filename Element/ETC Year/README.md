@@ -10,15 +10,11 @@ Return current year.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -48,8 +44,8 @@ Return current year.
   ```
   
 * Add code from **[etc year.html][6]** to Website > Pages > Custom Code >
-  Code Injection > FOOTER **before** the **ELEMENT TEXT CHANGE** code. Please
-  see [Add code to code injection][7].
+  Code Injection > FOOTER **before** the **ELEMENT TEXT CHANGE** code. Refer to
+  [Add code to the header and footer][7] for details.
 
 ## Make a Donation
 
@@ -72,5 +68,5 @@ Please consider [making a donation][8].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Element%20Text%20Change#element-text-change
 [6]: etc%20year.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

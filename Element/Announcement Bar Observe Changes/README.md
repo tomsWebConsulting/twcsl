@@ -10,15 +10,11 @@ Observe announcement bar changes.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -29,8 +25,8 @@ Observe announcement bar changes.
 ## Quick Install
 
 * Add code from file **[announcement bar observe changes.html][4]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][5] for details.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Inject code to a
+  specific page][5] for details.
   
 * Read the code for any instructions within.
   
@@ -87,5 +83,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: announcement%20bar%20observe%20changes.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

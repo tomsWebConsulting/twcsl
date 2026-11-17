@@ -10,7 +10,7 @@ Style each word of a blog post title wrapped in a span tag.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,10 +19,6 @@ Style each word of a blog post title wrapped in a span tag.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Blog Post Title Each Word Span Tag Add][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -35,23 +31,21 @@ Style each word of a blog post title wrapped in a span tag.
 
   * Page Specific
   
-    Use this option if you have only a single blog page you want to have this
-    effect.
+    Use this option when you want to have this effect on only one Blog Page.
     
     * Add code from file **[blog page post title each word style.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page, after
-      the **blog post title each word span tag add** code. Refer to [per-page
-      code injection][7] for details.
+      the **blog post title each word span tag add** code. Refer to [Inject code
+      to a specific page][7] for details.
       
   * Site-wide
   
-    Use this option if you have multiple blog pages where you want to have
-    this effect.
+    Use this option when you want to have this effect on all Blog Pages.
     
     * Add code from file **[blog page post title each word style.html][6]** to
       Website > Pages > Custom Code > Code Injection > FOOTER, after the
-      **blog post title each word span tag add** code. Refer to [Add code to
-      code injection][8].
+      **blog post title each word span tag add** code. Refer to [Add code to the
+      header and footer][8].
       
 ## How To Use
 
@@ -66,7 +60,7 @@ Style each word of a blog post title wrapped in a span tag.
     * Add the tag **twc-bpptews words 2-3 italic** to the post.
     
     * Add the following to Website > Pages > Custom Code > Custom CSS. Refer to
-      [Using the CSS Editor][199] for details.
+      [Add CSS code][9] for details.
     
       ```css
       /* blog post title words 2-3 italicize */
@@ -92,7 +86,7 @@ Style each word of a blog post title wrapped in a span tag.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -112,7 +106,7 @@ Please consider [making a donation][9].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Blog%20Post%20Title%20Each%20Word%20Span%20Tag%20Add#blog-post-title-each-word-span-tag-add
 [6]: blog%20page%20post%20title%20each%20word%20style.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [8]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[9]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

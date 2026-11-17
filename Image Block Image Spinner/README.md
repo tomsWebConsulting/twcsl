@@ -1,20 +1,16 @@
 # Image Block Image Spinner
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -27,13 +23,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-**[image block image spinner.html](image%20block%20image%20spinner.html#L1)**
-to Page Settings > Advanced > Page Header Code Injection for the Page.
+* Add code from file **[image block image spinner.html][2]** to Page Settings >
+  Advanced > Page Header Code Injection for the Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -42,9 +37,11 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
-  <br><br -->
+  -->
 * **2021-09-16**
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: image%20block%20image%20spinner.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

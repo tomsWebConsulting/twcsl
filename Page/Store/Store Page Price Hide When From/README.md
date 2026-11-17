@@ -10,15 +10,11 @@ Hide price when it contains from on Store Page.
 
   * 0.5.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Avenue][2], [Bedford template family][3], [Brine template family][4], [Pacific template family][5])
-
-#### 7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -35,7 +31,7 @@ Hide price when it contains from on Store Page.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page price hide when from options.html][8]**
       to Store Settings > Advanced > Page Header Code Injection for the store
@@ -44,11 +40,11 @@ Hide price when it contains from on Store Page.
     * Add code from file **[store page price hide when from.html][9]** to
       Store Settings > Advanced > Page Header Code Injection for the Store Page.
       
-    * Refer to [Per-page code injection][10] for details.
+    * Refer to [Inject code to a specific page][10] for details.
     
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page price hide when from options.html][8]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
@@ -57,7 +53,7 @@ Hide price when it contains from on Store Page.
     * Add code from file **[store page price hide when from.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][11] for details.
+    * Refer to [Add code to the header and footer][11] for details.
     
 * Add the following to searchReplaceText in the Store Page price change code per
   that codes instructions.
@@ -109,6 +105,6 @@ Please consider [making a donation][12].
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store-page-price-change
 [8]: store%20page%20price%20hide%20when%20from%20options.html#L1
 [9]: store%20page%20price%20hide%20when%20from.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -11,7 +11,7 @@ to move through sections.
 
  * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -24,10 +24,6 @@ to move through sections.
   * [Form Block Wrapper Observe Changes][4]
   
   * [jQuery][5]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -47,19 +43,19 @@ to move through sections.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[form block fields previous next.html][7]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [per-page code injection][8] for details.
+      to [Inject code to a specific page][8] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[form block fields previous next.html][7]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][9].
+      code to the header and footer][6].
       
 * Read the code for any instructions within.
 
@@ -130,7 +126,7 @@ Please consider [making a donation][11].
 [5]: https://jquery.com/
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Form/Form%20Block%20Wrapper%20Observe%20Changes#form-block-wrapper-observe-changes
 [7]: form%20block%20fields%20previous%20next.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: https://toms-web-consulting-demos.squarespace.com/form-block-fields-previous-next?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

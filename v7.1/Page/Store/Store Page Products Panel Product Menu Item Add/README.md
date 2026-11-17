@@ -10,7 +10,7 @@ Add menu items to selected Product pop up menu in a Store Page Products Panel.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -24,22 +24,20 @@ Add menu items to selected Product pop up menu in a Store Page Products Panel.
 
 * Page Specific
 
-  Use this option if you want to have this effect on only one Store Page.
+  Use this option when you want to have this effect on only one Store Page.
   
   * Add code from file **[store page products panel product menu item
     add.html][4]** to Store Settings > Advanced > Page Header Code Injection
-    for the Store Page.
-    
-  * Refer to [per-page code injection][5] for details.
+    for the Store Page. Refer to [Inject code to a specific page][5] for
+    details.
   
 * Site-wide
 
-  Use this option if you want to have this effect on all Store Pages.
+  Use this option when you want to have this effect on all Store Pages.
   
   * Add code from file **[store page products panel product menu item
     add.html][4]** to Website > Pages > Custom Code > Code Injection > HEADER.
-    
-  * Refer to [Add code to code injection][6] for details.
+    Refer to [Add code to the header and footer][6] for details.
 
 ## How To Use
 
@@ -74,8 +72,8 @@ Please consider [making a donation][9].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20page%20products%20panel%20product%20menu%20item%20add.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: store%20page%20products%20panel%20product%20menu%20item%20add%20register.html#L1
 [8]: store%20page%20products%20panel%20product%20menu%20item%20add%20register%20log.html#L1
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

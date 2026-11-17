@@ -1,20 +1,16 @@
 # Text Block Formats Phrase Filter
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -28,14 +24,15 @@
   
 * Page Specific
 
-  * Add code from file **[text block formats phrase filter.html][1]** to Page
+  * Add code from file **[text block formats phrase filter.html][2]** to Page
     Settings > Advanced > Page Header Code Injection for the Page. Please see
-    [per-page code injection][2].
+    [Inject code to a specific page][3].
     
 * Site-wide
 
-  * Add code from file **[text block formats phrase filter.html][1]** to
-    Website > Pages > Custom Code > Code Injection > FOOTER.
+  * Add code from file **[text block formats phrase filter.html][2]** to
+    Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
+    to the header and footer][8] for details.
     
 * Add a Classic Editor Blank Page section.
 
@@ -98,11 +95,11 @@
   
 ## Demo
 
-You can see a [demo of this effect here][3].
+You can see a [demo of this effect here][4].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -115,8 +112,9 @@ Please consider [making a donation][4].
 
   * initial version
 
-[1]: text%20block%20formats%20phrase%20filter.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[3]: https://toms-web-consulting-demos.squarespace.com/text-block-formats-phrase-filter?password=twcdemos
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: text%20block%20formats%20phrase%20filter.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[4]: https://toms-web-consulting-demos.squarespace.com/text-block-formats-phrase-filter?password=twcdemos
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

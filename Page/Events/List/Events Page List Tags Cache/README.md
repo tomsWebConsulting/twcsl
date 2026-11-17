@@ -10,15 +10,11 @@ Cache Events list page tags in sessionStorage.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -32,19 +28,19 @@ Cache Events list page tags in sessionStorage.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Events Page.
     
     * Add code from file **[events page list tags cache.html][4]** to
       Store Settings > Advanced > Page Header Code Injection for the store
-      page. Refer to [Per-page code injection][5] for details.
+      page. Refer to [Inject code to a specific page][5] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Events Pages.
     
     * Add code from file **[events page list tags cache.html][4]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][6] for details.
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+      header and footer][6] for details.
       
 * Read the code for any instructions within.
 
@@ -105,7 +101,7 @@ Please consider [making a donation][8].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: events%20page%20list%20tags%20cache.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

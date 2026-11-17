@@ -10,18 +10,10 @@ Add color swatch to variants.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -31,12 +23,14 @@ Add color swatch to variants.
 ## Install
 
 * Add code from file **[store product detail variant color swatch
-  add options.html][4]** to Store Settings > Advanced > Page Header Code Injection for
-  the Store Page. Refer to [Per-page code injection][5] for details.Read the
-  code for any instructions within.
+  add options.html][4]** to Store Settings > Advanced >
+  Page Header Code Injection for the Store Page. Read the code for any
+  instructions within.
   
 * Add code from file **[store product detail variant color swatch add.html][6]**
   to Store Settings > Advanced > Page Header Code Injection for the Store Page.
+  
+* Refer to [Inject code to a specific page][5] for details.
 
 ## Make a Donation
 
@@ -62,6 +56,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20product%20detail%20variant%20color%20swatch%20add%20options.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: store%20product%20detail%20variant%20color%20swatch%20add.html#L1
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

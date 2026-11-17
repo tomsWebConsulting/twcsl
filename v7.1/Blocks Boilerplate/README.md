@@ -1,27 +1,23 @@
 # Blocks Boilerplate
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
 ## Install
 
-* Add code from file **[blocks boilerplate.css][1]** to Website > Pages >
-  Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for details.
+* Add code from file **[blocks boilerplate.css][2]** to Website > Pages >
+  Custom Code > Custom CSS. Refer to [Add CSS code][3] for details.
   
-* Add code from file **[blocks boilerplate.html][2]** to Website > Pages >
+* Add code from file **[blocks boilerplate.html][4]** to Website > Pages >
   Custom Code > Code Injection > FOOTER.
   
 * Read the code for any instructions within.
@@ -35,11 +31,11 @@
   <x-twc-bb data-block-id="[enter source block id here between single quotes replacing square brackets]">
   ```
   
-  You can find block ids by using Heather Tovey's [Squarespace ID Finder][3].
+  You can find block ids by using Heather Tovey's [Squarespace ID Finder][5].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -52,9 +48,9 @@ Please consider [making a donation][4].
 
   * initial version
 
-[1]: blocks%20boilerplate.css#L1
-[2]: blocks%20boilerplate.html#L1
-[3]: https://www.heathertovey.com/squarespace-id-finder/
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: blocks%20boilerplate.css#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[4]: blocks%20boilerplate.html#L1
+[5]: https://www.heathertovey.com/squarespace-id-finder/
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,15 +10,11 @@ Auto select a variant of a product option.
 
   * 0.5.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -32,25 +28,25 @@ Auto select a variant of a product option.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from files **[product option variant select auto
       script.html][5]** and **[product option variant select auto.html][6]** to
       Store Settings > Advanced > Page Header Code Injection for the Store Page.
-      Refer to [Per-page code injection][7] for details.
+      Refer to [Inject code to a specific page][7] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
-    * Add code from file **[product option variant select auto
-      script.html][5]** to Website > Pages > Custom Code > Code Injection >
-      HEADER. Refer to [Add code to code injection][8] for details.
+    * Add code from file **[product option variant select auto script.html][5]**
+      to Website > Pages > Custom Code > Code Injection > HEADER.
       
     * Add code from file **[product option variant select auto.html][6]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][8] for details.
+      Website > Pages > Custom Code > Code Injection > FOOTER.
       
+    * Refer to [Add code to the header and footer][8] for details.
+    
 * Read the code for any instructions within.
 
 ## Notes
@@ -101,6 +97,6 @@ Please consider [making a donation][9].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: product%20option%20variant%20select%20auto%20script.html#L1
 [6]: product%20option%20variant%20select%20auto.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,18 +10,10 @@ Add text to products.
 
   * 0.3.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
   
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -46,7 +38,7 @@ Add text to products.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store
+        Use this option when you want to have this effect on only one Store
         Page.
         
         * Add the following code to Page Settings > Advanced >
@@ -65,11 +57,11 @@ Add text to products.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -87,8 +79,8 @@ Add text to products.
             
           ```
           
-        * Refer to [Add code to code injection][9] for details.
-  
+          Refer to [Add code to the header and footer][9] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -96,22 +88,19 @@ Add text to products.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page tags text add.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Store
-        Page.
-        
-      * Refer to [per-page code injection][8] for details.
+        Page. Refer to [Inject code to a specific page][8] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page tags text add.html][10]** to Website >
-        Pages > Custom Code > Code Injection > FOOTER.
-        
-      * Refer to [Add code to code injection][9] for details.
+        Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+        header and footer][9] for details.
 
 ## How To Use
 
@@ -196,8 +185,8 @@ Please consider [making a donation][12].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Page%20Tags%20Cache#page-tags-cache
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: store%20page%20tags%20text%20add.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/store-page-tags-text-add?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

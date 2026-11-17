@@ -10,7 +10,7 @@ Videos page list thumbnail badge.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,7 +19,7 @@ Videos page list thumbnail badge.
 ## Install
 
 * Add code from file **[videos page list thumbnail badge.less][2]** to Website >
-  Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][3] for
+  Pages > Custom Code > Custom CSS. Refer to [Add CSS code][3] for
   details. Read the code for instructions within.
 
 * Options
@@ -33,7 +33,7 @@ Videos page list thumbnail badge.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Videos
+        Use this option when you want to have this effect on only one Videos
         Page.
         
         * Add the following code to Page Settings > Advanced >
@@ -50,11 +50,11 @@ Videos page list thumbnail badge.
             
           ```
           
-        * Refer to [per-page code injection][6] for details.
-        
+          Refer to [Inject code to a specific page][6] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Videos pages.
+        Use this option when you want to have this effect on all Videos Pages.
         
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -70,8 +70,8 @@ Videos page list thumbnail badge.
             
           ```
           
-        * Refer to [Add code to code injection][7] for details.
-        
+          Refer to [Add code to the header and footer][7] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -79,21 +79,19 @@ Videos page list thumbnail badge.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Video Page.
+      Use this option when you want to have this effect on only one Videos Page.
       
       * Add code from file **[videos page list thumbnail badge.html][8]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
+        Refer to [Inject code to a specific page][6] for details.
         
-      * Refer to [per-page code injection][6] for details.
-      
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Videos Pages.
       
       * Add code from file **[videos page list thumbnail badge.html][8]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
-        
-      * Refer to [Add code to code injection][7] for details.
+        Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+        code to the header and footer][7] for details.
 
 ## How to Use
 
@@ -189,11 +187,11 @@ Please consider [making a donation][26].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: videos%20page%20list%20thumbnail%20badge.less#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: videos%20page%20list%20thumbnail%20badge.html#L1
 [9]: read%20me%20assets/style%20rectangle.png
 [10]: read%20me%20assets/style%20square.png

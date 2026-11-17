@@ -11,7 +11,7 @@ supported by Squarespace.
 
   * 0.4.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -22,10 +22,6 @@ supported by Squarespace.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Customer Account Panel Change][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -38,8 +34,8 @@ supported by Squarespace.
   Time Zone to your actual location.
   
 * Add the code from file **[capc language translate.html][6]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-  injection][7] for details.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+  header and footer][7] for details.
   
 * Add code from one of the following language files **before** the **capc
   language translate** code.
@@ -104,7 +100,7 @@ Please consider [making a donation][12].
 [4]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Panel/Customer%20Account%20Panel%20Change#customer-account-panel-change
 [6]: capc%20language%20translate.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: capc%20language%20translate%20english.html#L1
 [9]: capc%20language%20translate%20slovak.html#L1
 [10]: capc%20language%20translate%20template.html#L1

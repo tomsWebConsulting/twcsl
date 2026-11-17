@@ -10,17 +10,9 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -54,8 +46,8 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store
-        page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page list product marks to badges
           options.html][9]** to Store Page Settings > Advanced >
@@ -78,16 +70,16 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
             
           ```
           
-        * Refer to [per-page code injection][10] for details.
+        * Refer to [Inject code to a specific page][10] for details.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list product marks to badges
-          options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read
+          options.css][11]** to Website > Pages > Custom Code > Custom CSS. Read
           the code for any instructions within. Refer to [Using the CSS
-          Editor][14] for details.
+          Editor][12] for details.
           
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -105,8 +97,8 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
             
           ```
           
-          Refer to [Add code to code injection][11] for details.
-          
+        * Refer to [Add code to the header and footer][13] for details.
+        
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -114,32 +106,33 @@ Convert product marks to old style badges similar to some of the v7.0 templates.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list product marks to badges
         options.html][9]** to Store Page Settings > Advanced >
         Page Header Code Injection for the Store Page. Read the code for any
         instructions within.
         
-      * Add code from file **[store page list product marks to badges.html][12]**
-        to Store Page Settings > Advanced > Page Header Code Injection for the
-        Store Page.
+      * Add code from file **[store page list product marks to
+        badges.html][14]** to Store Page Settings > Advanced >
+        Page Header Code Injection for the Store Page.
         
-      * Refer to [per-page code injection][10] for details.
+      * Refer to [Inject code to a specific page][10] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page list product marks to badges
-        options.css][13]** to Website > Pages > Custom Code > Custom CSS. Read
+        options.css][11]** to Website > Pages > Custom Code > Custom CSS. Read
         the code for any instructions within. Refer to [Using the CSS
-        Editor][14] for details.
+        Editor][12] for details.
         
-      * Add code from file **[store page list product marks to badges.html][12]**
-        to Website > Pages > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[store page list product marks to
+        badges.html][14]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.
         
-      * Refer to [Add code to code injection][11] for details.
+      * Refer to [Add code to the header and footer][13] for details.
 
 ## Badge Options
 
@@ -172,7 +165,7 @@ These images are examples.
 
   |            | Left                        | Center                        | Right                        |            |
   | ----------:|:---------------------------:|:-----------------------------:|:----------------------------:|:---------- |
-  | **Top**    | ![position top left][19]     | ![position top center][20]     | ![position top right][21]     | **Top**    |
+  | **Top**    | ![position top left][19]    | ![position top center][20]    | ![position top right][21]     | **Top**    |
   | **Center** | ![position center left][22] | ![position center][23]        | ![position center right][24] | **Center** |
   | **Bottom** | ![position bottom left][25] | ![position bottom center][26] | ![position bottom right][27] | **Bottom** |
   |            | **Left**                    | **Center**                    | **Right**                    |            |
@@ -241,11 +234,11 @@ Please consider [making a donation][32].
 [7]: https://www.jsdelivr.com/
 [8]: https://en.wikipedia.org/wiki/Content_delivery_network
 [9]: store%20page%20list%20product%20marks%20to%20badges%20options.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[12]: store%20page%20list%20product%20marks%20to%20badges.html#L1
-[13]: store%20page%20list%20product%20marks%20to%20badges%20options.css#L1
-[14]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[11]: store%20page%20list%20product%20marks%20to%20badges%20options.css#L1
+[12]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[13]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[14]: store%20page%20list%20product%20marks%20to%20badges.html#L1
 [15]: read%20me%20assets/style%20rectangle.png
 [16]: read%20me%20assets/style%20square.png
 [17]: read%20me%20assets/style%20circle.png
@@ -260,7 +253,7 @@ Please consider [making a donation][32].
 [26]: read%20me%20assets/position%20bottom%20center.png
 [27]: read%20me%20assets/position%20bottom%20right.png
 [28]: read%20me%20assets/inset%20flush.png
-[29]: read%20me%20assets/inset%20dock%20horizontally.png
-[30]: read%20me%20assets/inset%20dock%20vertically.png
+[29]: read%20me%20assets/inset%20dock%20vertically.png
+[30]: read%20me%20assets/inset%20dock%20horizontally.png
 [31]: https://toms-web-consulting-demos.squarespace.com/store-page-list-badges?password=twcdemos
 [32]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

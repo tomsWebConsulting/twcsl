@@ -10,7 +10,7 @@ Only one Accordion Block will be active on a Page at a time.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -43,17 +43,16 @@ Only one Accordion Block will be active on a Page at a time.
       
     ```
     
-    Refer to [Add code to code injection][6] for details.
+    Refer to [Add code to the header and footer][6] for details.
     
 * On-site
 
-  Use this option to install the full code of this effect (files hosted on
-  your site).
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
   * Add code from file **[accordion block one active.html][7]** to Website >
-    Pages > Custom Code > Code Injection > FOOTER.
-    
-  * Refer to [Add code to code injection][6] for details.
+    Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+    header and footer][6] for details.
 
 ## How To Use
 
@@ -86,6 +85,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: accordion%20block%20one%20active.html#L1
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

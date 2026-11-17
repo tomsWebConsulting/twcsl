@@ -10,20 +10,12 @@ Limit custom form text and text area field lengths.
 
   * 0.3.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
   
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][3] that supports [JavaScript][4].
@@ -53,7 +45,7 @@ Limit custom form text and text area field lengths.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -71,11 +63,11 @@ Limit custom form text and text area field lengths.
             
           ```
           
-        * Refer to [per-page code injection][11] for details.
-        
+          Refer to [Inject code to a specific page][11] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * Add the following code to Website > Pages > Custom Code >
           Code Injection > FOOTER.
@@ -93,8 +85,8 @@ Limit custom form text and text area field lengths.
             
           ```
           
-        * Refer to [Add code to code injection][12] for details.
-        
+          Refer to [Add code to the header and footer][12] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -102,22 +94,21 @@ Limit custom form text and text area field lengths.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
-      * Add code from file **[product custom form text field max length.html][13]** to
-        Page Settings > Advanced > Page Header Code Injection for the Page.
+      * Add code from file **[product custom form text field max
+        length.html][13]** to Page Settings > Advanced >
+        Page Header Code Injection for the Page. Refer to [Inject code to a
+        specific page][11] for details.
         
-      * Refer to [per-page code injection][11] for details.
-      
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
-      * Add code from file **[product custom form text field max length.html][13]** to
-        Website > Pages > Custom Code > Code Injection > FOOTER.
+      * Add code from file **[product custom form text field max
+        length.html][13]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.  Refer to [Add code to the header and footer][12] for details.
         
-      * Refer to [Add code to code injection][12] for details.
-
 * Edit a Store Page product and add a Custom Form.
   
 * For each form field you want to limit the number of characters do the
@@ -165,12 +156,12 @@ Limit custom form text and text area field lengths.
     To use SIF go to your product detail page and use SIF. You will see
     something like the following.
     
-    ![squarespace id finder example](read%20me%20assets/product%20id.png)
+    ![squarespace id finder example][15]
     
     You only need the number after **#item-**.
     
 * If you need installation help or customization please [contact me for paid
-  consulting][15].
+  consulting][16].
 
 ## Notes
 
@@ -185,7 +176,7 @@ code more of an aid to help users not exceed your field max length limits.
 
 ## Make a Donation
 
-Please consider [making a donation][16].
+Please consider [making a donation][17].
 
 ## Changes
 
@@ -219,9 +210,10 @@ Please consider [making a donation][16].
 [8]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Modal%20Lightbox%20Observe%20Changes#modal-lightbox-observe-changes
 [9]: https://www.jsdelivr.com/
 [10]: https://en.wikipedia.org/wiki/Content_delivery_network
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[12]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [13]: product%20custom%20form%20text%20field%20max%20length.html#L1
 [14]: https://www.heathertovey.com/squarespace-id-finder/
-[15]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
-[16]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[15]: read%20me%20assets/product%20id.png
+[16]: https://github.com/tomsWebConsulting/twcsl#need-help-installing-or-customizing-the-code
+[17]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

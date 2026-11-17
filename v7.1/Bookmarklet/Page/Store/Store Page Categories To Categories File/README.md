@@ -10,7 +10,7 @@ Save Store Page categories to a categories file.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

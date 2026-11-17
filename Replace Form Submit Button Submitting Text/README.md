@@ -1,36 +1,29 @@
 # Replace Form Submit Button Submitting Text
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
 
-  * 7.0 ([Brine template family][1])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
+  * 7.0 ([Brine template family][2])
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][3].
   
-* Add code from file
-  **[replace form submit button submitting text.html](replace%20form%20submit%20button%20submitting%20text.html#L1)**
+* Add code from file **[replace form submit button submitting text.html][4]**
   to Website > Pages > Custom Code > Code Injection > FOOTER.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -43,5 +36,8 @@ Please consider
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: replace%20form%20submit%20button%20submitting%20text.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

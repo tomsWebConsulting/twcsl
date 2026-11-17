@@ -11,7 +11,7 @@ use it in the Page code.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.0 ([York template family][2])
 
@@ -34,7 +34,7 @@ use it in the Page code.
   
 * Add code from file **[project page image clickthrough add.html][6]** to
   Project Settings > Advanced > Page Header Code Injection for the project page.
-  Refer to [Per-page code injection][7] for details.
+  Refer to [Inject code to a specific page][7] for details.
 
 ## Make a Donation
 
@@ -57,5 +57,5 @@ Please consider [making a donation][8].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://jquery.com/
 [6]: project%20page%20image%20clickthrough%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

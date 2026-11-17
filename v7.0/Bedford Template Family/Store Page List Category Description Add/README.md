@@ -10,7 +10,7 @@ Add descriptions to product category pages.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.0 ([Bedford template family][2])
 
@@ -31,11 +31,11 @@ Add descriptions to product category pages.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page list category description add.html][7]**
       to Store Settings > Advanced > Page Header Code Injection for the store
-      page. Refer to [Per-page code injection][8] for details.
+      page. Refer to [Inject code to a specific page][8] for details.
       
   * Site-wide
   
@@ -44,11 +44,11 @@ Add descriptions to product category pages.
     
     * Add code from file **[store page list category description add.html][7]**
       to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
-      [Add code to code injection][9] for details.
+      [Add code to the header and footer][9] for details.
       
 * Create a Dropdown page in Pages with the following settings.
 
-  ![dropdown settings](read%20me%20assets/dropdown%20settings.png)
+  ![dropdown settings][10]
   
 * Add a Blank page to the TWC SPLCDA dropdown page for each Store Page category
   you want to have a description. Set the PAGE TITLE and NAVIGATION TITLE fields
@@ -68,7 +68,7 @@ Add descriptions to product category pages.
   
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -88,6 +88,7 @@ Please consider [making a donation][10].
 [5]: https://github.com/tomsWebConsulting/twcsl
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
 [7]: store%20page%20list%20category%20description%20add.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[10]: read%20me%20assets/dropdown%20settings.png
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

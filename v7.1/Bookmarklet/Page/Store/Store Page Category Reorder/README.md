@@ -10,7 +10,7 @@ Reorder products of a Store Page category.
 
   * 0.4.2
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -18,10 +18,6 @@ Reorder products of a Store Page category.
 
   * Not Applicable
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Quick Install
@@ -67,7 +63,7 @@ Please consider [making a donation][5].
 
   * fixed some syntax issues
   * bumped version to 0.4.2
-
+  
 * **2025-11-27**
 
   * added missing comma

@@ -1,29 +1,27 @@
 # Blog Post Tag Url Change
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
-  * 7.0 ([Bedford template family][1])
+  * 7.0 ([Bedford template family][2])
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][3].
   
-* Add code from file
-  **[blog post tag url change.html](blog%20post%20tag%20url%20change.html#L1)**
-  to Blog Settings > Advanced > Page Header Code Injection for the blog page.
+* Add code from file **[blog post tag url change.html][4]** to Blog Settings >
+  Advanced > Page Header Code Injection for the Blog Page.
   
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][5].
 
 ## Changes
 
@@ -36,5 +34,8 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[1]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/205825968-Bedford-template-family
+[3]: https://github.com/tomsWebConsulting/twcsl#install-options
+[4]: blog%20post%20tag%20url%20change.html#L1
+[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

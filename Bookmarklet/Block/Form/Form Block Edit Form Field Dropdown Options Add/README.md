@@ -10,15 +10,11 @@ More easily add options to a Form block Dropdown field.
 
   * 0.1.2
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 

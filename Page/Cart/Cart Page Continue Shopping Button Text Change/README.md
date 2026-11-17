@@ -10,7 +10,7 @@ Change the Continue Shopping button text on the Cart page.
 
   * 2.0.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -76,7 +76,7 @@ Change the Continue Shopping button text on the Cart page.
           
         ```
         
-    * Refer to [Add code to code injection][10] for details.
+    * Refer to [Add code to the header and footer][9] for details.
     
   * On-site
   
@@ -90,7 +90,7 @@ Change the Continue Shopping button text on the Cart page.
         FOOTER. Read the code for any instructions within.
         
       * Add code from file **[cart page continue shopping button text
-        change.html][11]** to Website > Pages > Custom Code > Code Injection >
+        change.html][10]** to Website > Pages > Custom Code > Code Injection >
         FOOTER.
         
     * v7.0
@@ -100,14 +100,14 @@ Change the Continue Shopping button text on the Cart page.
         Code Injection > FOOTER. Read the code for any instructions within.
         
       * Add code from file **[cart page continue shopping button text
-        change.html][11]** to Website > Pages > Website Tools > Custom Code >
+        change.html][10]** to Website > Pages > Website Tools > Custom Code >
         Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][10] for details.
+    * Refer to [Add code to the header and footer][9] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -133,7 +133,6 @@ Please consider [making a donation][12].
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: cart%20page%20continue%20shopping%20button%20text%20change%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[11]: cart%20page%20continue%20shopping%20button%20text%20change.html#L1
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[10]: cart%20page%20continue%20shopping%20button%20text%20change.html#L1
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

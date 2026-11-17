@@ -10,13 +10,9 @@ Collapse form block post-submit message empty space.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -24,11 +20,11 @@ Collapse form block post-submit message empty space.
 
 Add code from file **[form block post-submit message collapse space.less][2]**
 to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-Editor][199] for details.
+Editor][3] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -43,5 +39,5 @@ Please consider [making a donation][3].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: form%20block%20post-submit%20message%20collapse%20space.less#L1
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

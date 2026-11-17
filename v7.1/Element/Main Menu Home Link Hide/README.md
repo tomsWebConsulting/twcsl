@@ -10,7 +10,7 @@ Hide main menu HOME link.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -18,21 +18,17 @@ Hide main menu HOME link.
 
   * [Squarespace plan][2] that supports [JavaScript][3].
 
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Install
 
-* Add the code from file **[main menu home link hide.html][6]** to Website >
-  Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to code
-  injection][7] for details.
+* Add the code from file **[main menu home link hide.html][4]** to Website >
+  Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to the
+  header and footer][5] for details.
 
 ## Make a Donation
 
-Please consider [making a donation][12].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -48,6 +44,6 @@ Please consider [making a donation][12].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[6]: main%20menu%20home%20link%20hide.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: main%20menu%20home%20link%20hide.html#L1
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

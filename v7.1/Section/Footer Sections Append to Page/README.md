@@ -10,13 +10,9 @@ Append Footer Sections to the Page site wide.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -110,7 +106,8 @@ Append Footer Sections to the Page site wide.
   Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
   
 * Add code from file **[footer sections append to page.less][7]** to
-  Website > Pages > Website Tools > Custom Code > Custom CSS.
+  Website > Pages > Website Tools > Custom Code > Custom CSS. Refer to [Add CSS
+  code][17] for details.
 
 * Create a section in your footer and design it as desired.
 
@@ -151,4 +148,5 @@ Please consider [making a donation][8].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Elements%20Manipulate#elements-manipulate
 [6]: footer%20sections%20append%20to%20page%20observe.html#L1
 [7]: footer%20sections%20append%20to%20page.less#L1
+[17]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

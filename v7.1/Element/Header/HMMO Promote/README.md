@@ -10,7 +10,7 @@ Promote a descendant of a Dropdown Page for a Header Menu Mobile Outline.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -52,8 +52,8 @@ Promote a descendant of a Dropdown Page for a Header Menu Mobile Outline.
         
       ```
       
-      Refer to [Add code to code injection][9] for details.
-      
+    * Refer to [Add code to the header and footer][9] for details.
+    
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -66,7 +66,7 @@ Promote a descendant of a Dropdown Page for a Header Menu Mobile Outline.
     * Add code from file **[hmmo promote.html][10]** to Website > Pages >
       Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][9] for details.
+    * Refer to [Add code to the header and footer][9] for details.
 
 ## Make a Donation
 
@@ -93,6 +93,6 @@ Please consider [making a donation][11].
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: hmmo%20promote%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: hmmo%20promote.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

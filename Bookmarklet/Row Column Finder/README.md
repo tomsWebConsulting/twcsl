@@ -1,6 +1,6 @@
 # Row Column Finder
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -10,7 +10,7 @@
 
 ## Quick Install
 
-* Add code from file **[row column finder.bookmarklet][1]** as the URL for a
+* Add code from file **[row column finder.bookmarklet][2]** as the URL for a
   bookmark in your browser named **Row Column Finder**.
   
 * Go to a Page in a site and use the bookmarklet to tag the row and column
@@ -29,13 +29,13 @@ The following image shows two similar looking page sections. The target layout
 is a row with three evenly spaced columns of text. Although they appear to be
 similar visually. They are not structurally.
 
-![sections appear similar](read%20me%20assets/sections%20appear%20similar.png)
+![sections appear similar][3]
 
 With the Row Column Finder bookmarklet you begin to have a chance at detecting
 layout issues that may be making your blocks behave in unexpected ways or are
 difficult to work with using CSS or JavaScript.
 
-![sections are dissimilar](read%20me%20assets/sections%20are%20dissimilar.png)
+![sections are dissimilar][4]
 
 In the first page section we see the target layout as desired. The second page
 section does not meet our target layout. We have a row with two columns. The
@@ -43,11 +43,11 @@ first row first column contains a row with two columns. Undesirable nesting!
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][2].
+Wikipedia has a nice entry on [bookmarklet][5].
 
 ## Make a Donation
 
-Please consider [making a donation][3].
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -65,7 +65,9 @@ Please consider [making a donation][3].
 
   * initial version
 
-[1]: row%20column%20finder.bookmarklet#L1
-[2]: https://en.wikipedia.org/wiki/Bookmarklet
-[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: row%20column%20finder.bookmarklet#L1
+[3]: read%20me%20assets/sections%20appear%20similar.png
+[4]: read%20me%20assets/sections%20are%20dissimilar.png
+[5]: https://en.wikipedia.org/wiki/Bookmarklet
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

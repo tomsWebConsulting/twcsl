@@ -10,13 +10,9 @@ Set the featured image for a product to the first image.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 

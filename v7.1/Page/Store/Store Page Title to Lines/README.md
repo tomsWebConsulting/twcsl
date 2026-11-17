@@ -10,18 +10,10 @@ Split title into lines.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -34,21 +26,23 @@ Split title into lines.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page title to lines options.html][4]** and
       **[summary block title to lines.html][5]** to Store Settings > Advanced >
-      Page Header Code Injection for the Page. Refer to [Per-page code
-      injection][6] for details. Read the code for any instructions within.
+      Page Header Code Injection for the Page. Refer to [Inject code to a
+      specific page][6] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from files **[store page title to lines options.html][4]** and
       **[summary block title to lines.html][5]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][7] for details.
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to the header
+      and footer][7] for details.
+      
+* Read the code for any instructions within. 
 
 ## Notes
 
@@ -82,6 +76,6 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20page%20title%20to%20lines%20options.html#L1
 [5]: store%20page%20title%20to%20lines.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -1,20 +1,16 @@
 # Scrolling Block Text Gradient
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -31,34 +27,34 @@
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[scrolling block text gradient.html][1]** to
+    * Add code from file **[scrolling block text gradient.html][2]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [Per-page code injection][2] for details.
+      to [Inject code to a specific page][3] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
-    * Add code from file **[scrolling block text gradient.html][1]** to
+    * Add code from file **[scrolling block text gradient.html][2]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][8] for details.
+      code to the header and footer][4] for details.
       
 * Read the code for any instructions within.
 
 ## Notes
 
-You can find block ids by using Heather Tovey's [Squarespace ID Finder][3].
-Learn more about the SVG [linearGradient][4]  element.
+You can find block ids by using Heather Tovey's [Squarespace ID Finder][5].
+Learn more about the SVG [linearGradient][6]  element.
 
 ## Demo
 
-You can see a [demo of this effect here][5].
+You can see a [demo of this effect here][7].
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][8].
 
 ## Changes
 
@@ -71,11 +67,11 @@ Please consider [making a donation][6].
 
   * initial version
 
-[1]: scrolling%20block%20text%20gradient.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[3]: https://www.heathertovey.com/squarespace-id-finder/
-[4]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
-[5]: https://toms-web-consulting-demos.squarespace.com/scrolling-block-text-gradient?password=twcdemos
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: scrolling%20block%20text%20gradient.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[5]: https://www.heathertovey.com/squarespace-id-finder/
+[6]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/linearGradient
+[7]: https://toms-web-consulting-demos.squarespace.com/scrolling-block-text-gradient?password=twcdemos
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

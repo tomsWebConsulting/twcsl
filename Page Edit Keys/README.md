@@ -10,15 +10,11 @@ Activate Squarespace editor using a key sequence.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -29,8 +25,8 @@ Activate Squarespace editor using a key sequence.
 ## Quick Install
 
 Add code from file **[page edit keys.html][4]** to Website > Pages >
-Custom Code > Code Injection > FOOTER. Please see [Add code to code
-injection][5]. Read the code for any instructions within.
+Custom Code > Code Injection > FOOTER. Read the code for any instructions
+within. Please see [Add code to the header and footer][5].
 
 ## Make a Donation
 
@@ -47,11 +43,9 @@ Please consider [making a donation][6].
 
   * initial version
 
-**All trademarks are the property of their respective owners.**
-
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: page%20edit%20keys.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

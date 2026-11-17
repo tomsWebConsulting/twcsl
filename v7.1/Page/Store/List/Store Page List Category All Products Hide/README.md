@@ -10,17 +10,9 @@ Hide products on the all category store page list.
 
   * 0.3.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -37,15 +29,16 @@ Hide products on the all category store page list.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page list category all products
       hide.html][4]** to Store Settings > Advanced > Page Header Code Injection
-      for the Store Page. Refer to [Per-page code injection][5] for details.
+      for the Store Page. Refer to [Inject code to a specific page][5] for
+      details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page list category all products
       hide.less][6]** to Website > Pages > Custom Code > Code Injection >
@@ -80,7 +73,7 @@ Please consider [making a donation][7].
 [2]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add
 [3]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/List/Store%20Page%20List%20Category%20Attribute%20Add#store-page-list-category-attribute-add
 [4]: store%20page%20list%20category%20all%20products%20hide.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: store%20page%20list%20category%20all%20products%20hide.less#L1
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP

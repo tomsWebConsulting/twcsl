@@ -10,7 +10,7 @@ Add single day class to Event.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -40,7 +40,7 @@ Add single day class to Event.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -56,11 +56,11 @@ Add single day class to Event.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -94,7 +94,7 @@ Add single day class to Event.
               
             ```
             
-        * Refer to [Add code to code injection][9] for details.
+        * Refer to [Add code to the header and footer][9] for details.
         
   * On-site
   
@@ -103,13 +103,13 @@ Add single day class to Event.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[calendar block single day class add.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][8] for details.
-      
+      * Refer to [Inject code to a specific page][8] for details.
+        
     * Site-wide
     
       * v7.1
@@ -123,7 +123,7 @@ Add single day class to Event.
           to Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
-      * Refer to [Add code to code injection][9] for details.
+      * Refer to [Add code to the header and footer][9] for details.
 
 ## Make a Donation
 
@@ -148,7 +148,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Calendar/Calendar%20Block%20Observe%20Changes#calendar-block-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: calendar%20block%20single%20day%20class%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

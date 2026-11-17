@@ -10,20 +10,12 @@ When there are no list products add html to the Page.
 
   * 0.3.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
 
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
   
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][3] that supports [JavaScript][4].
@@ -41,7 +33,7 @@ When there are no list products add html to the Page.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list empty html add options.html][7]**
         to Store Page Settings > Advanced > Page Header Code Injection for the
@@ -63,11 +55,11 @@ When there are no list products add html to the Page.
           
         ```
         
-      * Refer to [per-page code injection][8] for details.
-      
+        Refer to [Inject code to a specific page][8] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -113,8 +105,8 @@ When there are no list products add html to the Page.
             
           ```
           
-      * Refer to [Add code to code injection][9] for details.
-
+      * Refer to [Add code to the header and footer][9] for details.
+      
 * On-site
 
   Use this option to install the full code of this effect (files hosted on your
@@ -122,17 +114,16 @@ When there are no list products add html to the Page.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from files **[store page list empty html add options.html][7]**
       and **[store page list empty html add.html][10]** to
       Store Page Settings > Advanced > Page Header Code Injection for the Page.
-      
-    * Refer to [per-page code injection][8] for details.
+      Refer to [Inject code to a specific page][8] for details.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * v7.1
     
@@ -146,7 +137,7 @@ When there are no list products add html to the Page.
         and **[store page list empty html add.html][10]** to Website > Pages >
         Website Tools > Custom Code > Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][9] for details.
+    * Refer to [Add code to the header and footer][9] for details.
 
 ## Make a Donation
 
@@ -195,7 +186,7 @@ Please consider [making a donation][11].
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
 [7]: store%20page%20list%20empty%20html%20add%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: store%20page%20list%20empty%20html%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

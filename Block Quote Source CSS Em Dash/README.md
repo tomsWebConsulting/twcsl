@@ -1,29 +1,23 @@
 # Block Quote Source CSS Em Dash
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
 
-  * 7.0 ([Brine template family](https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family))
-
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
+  * 7.0 ([Brine template family][2])
 
 ---
 
 ## Quick Install
 
-* Add code from file
-  **[block quote source CSS em dash.css](block%20quote%20source%20CSS%20em%20dash.css#L1)**
-  to Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-  Editor][199] for details.
+* Add code from file **[block quote source CSS em dash.css][3]** to Website >
+  Pages > Custom Code > Custom CSS. Refer to [Add CSS code][4] for details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -32,9 +26,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file
-  **[block quote source CSS em dash.html](block%20quote%20source%20CSS%20em%20dash.html#L1)**
-  to Website > Pages > Custom Code > Code Injection > FOOTER.
+* Add code from file **[block quote source CSS em dash.html][5]** to Website >
+  Pages > Custom Code > Code Injection > FOOTER.
 
 ## Notes
 
@@ -46,8 +39,7 @@ else.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][6].
 
 ## Changes
 
@@ -60,5 +52,9 @@ Please consider
   
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/212512738-Brine-template-family
+[3]: block%20quote%20source%20CSS%20em%20dash.css#L1
+[4]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[5]: block%20quote%20source%20CSS%20em%20dash.html#L1
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

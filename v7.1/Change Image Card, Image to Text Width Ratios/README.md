@@ -1,6 +1,6 @@
 # Change Image Card, Image to Text Width Ratios
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -11,12 +11,12 @@
 ## Quick Install
 
 * Add code from file **change image card, image to text width ratios.less** to
-  Website > Pages > Custom Code > Custom CSS. Refer to [Using the CSS
-  Editor][199] for details.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Add CSS code][2] for
+  details.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -29,5 +29,6 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

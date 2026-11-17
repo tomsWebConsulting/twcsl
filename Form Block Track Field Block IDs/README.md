@@ -10,7 +10,7 @@ Track tagged form block field block ids for later use in other code.
 
   * 0.1.2
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -21,10 +21,6 @@ Track tagged form block field block ids for later use in other code.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [jQuery][4]
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -43,12 +39,13 @@ Track tagged form block field block ids for later use in other code.
   
     * Add code from file **[form block track field block ids.html][5]** to Page
       Settings > Advanced > Page Header Code Injection for the Page. Refer to
-      [Per-page code injection][6] for details.
+      [Inject code to a specific page][6] for details.
       
   * Site-wide
   
     * Add code from file **[form block track field block ids.html][5]** to
-      Website > Pages > Custom Code > Code Injection > FOOTER.
+      Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
+      code to the header and footer][16].
       
 * Read the code for any instructions within.
 
@@ -63,8 +60,8 @@ Track tagged form block field block ids for later use in other code.
 ## Note
 
 This code is a base for other effects. On its own it doesn't produce visible
-results. This effect is not active in SS Preview to test it use [private
-browsing][7].
+results. This effect is not active in Squarespace Preview to test it use
+[private browsing][7].
 
 ## Make a Donation
 
@@ -91,6 +88,7 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: form%20block%20track%20field%20block%20ids.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[16]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: https://support.squarespace.com/hc/en-us/articles/207099587-Using-private-browsing-or-incognito-mode
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

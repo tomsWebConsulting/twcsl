@@ -10,7 +10,7 @@ Simple overlay modal dialog module.
 
   * 0.2.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

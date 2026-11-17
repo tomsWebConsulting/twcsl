@@ -1,34 +1,27 @@
 # Move Blog Post First Image to Top Area
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[move blog post first image to top area.html](move%20blog%20post%20first%20image%20to%20top%20area.html#L1)**
-  to Blog Settings > Advanced > Page Header Code Injection for the blog page.
+* Add code from file **[move blog post first image to top area.html][3]** to
+  Blog Settings > Advanced > Page Header Code Injection for the Blog Page.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -41,4 +34,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: move%20blog%20post%20first%20image%20to%20top%20area.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

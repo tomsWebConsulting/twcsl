@@ -10,7 +10,7 @@ Create Page Categores Modules.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -35,15 +35,15 @@ a bookmark in your browser named **TWC Page Categories to Module**.
 
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Page.
     
     * Paste clipboard content to Page Settings > Advanced >
-      Page Header Code Injection for the Page. Refer to [per-page code
-      injection][3] for details.
+      Page Header Code Injection for the Page. Refer to [Inject code to
+      a specific page][3] for details.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Pages.
     
     * v7.1
     
@@ -55,7 +55,7 @@ a bookmark in your browser named **TWC Page Categories to Module**.
       * Paste clipboard content to Website > Pages > Website Tools >
         Custom Code > Code Injection > HEADER.
         
-    * Refer to [Add code to code injection][4] for details.
+    * Refer to [Add code to the header and footer][4] for details.
 
 ## Notes
 
@@ -88,7 +88,7 @@ Please consider [making a donation][6].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: page%20categories%20to%20module.bookmarklet#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [5]: https://en.wikipedia.org/wiki/Bookmarklet
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

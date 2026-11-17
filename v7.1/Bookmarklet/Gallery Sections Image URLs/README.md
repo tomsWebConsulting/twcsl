@@ -10,13 +10,9 @@ Get a list of image URLs of gallery sections.
 
   * 0.1.2
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible :
-
-  * Unknown
 
 ---
 
@@ -52,7 +48,7 @@ Please consider [making a donation][4].
 
   * initial version
 
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: gallery%20sections%20image%20urls.bookmarklet#L1
 [3]: https://en.wikipedia.org/wiki/Bookmarklet
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1

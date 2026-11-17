@@ -10,7 +10,7 @@ Remove the last dash text from end of post URL Slugs.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -55,11 +55,11 @@ it will do. Remove the last dash and text at the end of a URL Slug.
 
 ## What is a bookmarklet?
 
-Wikipedia has a nice entry on [bookmarklet][5].
+Wikipedia has a nice entry on [bookmarklet][3].
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -74,7 +74,5 @@ Please consider [making a donation][6].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: blog%20page%20list%20url%20slug%20last%20dash%20text%20remove.bookmarklet#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[5]: https://en.wikipedia.org/wiki/Bookmarklet
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[3]: https://en.wikipedia.org/wiki/Bookmarklet
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

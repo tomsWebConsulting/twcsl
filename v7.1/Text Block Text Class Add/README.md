@@ -1,18 +1,14 @@
 # Text Block Text Class Add
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -29,21 +25,21 @@
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[text block text class add.html][1]** to
+    * Add code from file **[text block text class add.html][2]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [Per-page code injection][2] for details.
+      to [Inject code to a specific page][3] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
-    * Add code from file **[text block text class add.html][1]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][7] for details.
+    * Add code from file **[text block text class add.html][2]** to Website >
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+      header and footer][4] for details.
       
-* Read the code for any instructions within.
+  * Read the code for any instructions within.
 
 ## How To Use
 
@@ -53,7 +49,7 @@ your code by way of a vertical tab example.
 
 First you need to layout a Page section similar to the following.
 
-![tabs layout](read%20me%20assets/tabs%20layout.png)
+![tabs layout][5]
 
 The above is a basic two column layout. Left containing your tab labels. Right
 containing the detail of each tab. Notice the code block in the left column. Add
@@ -147,11 +143,11 @@ any visible change.
 
 ## Demo
 
-You can see a [demo of this effect here][3].
+You can see a [demo of this effect here][6].
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -165,9 +161,10 @@ Please consider [making a donation][4].
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[1]: text%20block%20text%20class%20add.html#L1
-[2]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[3]: https://toms-web-consulting-demos.squarespace.com/text-block-text-class-add?password=twcdemos
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: text%20block%20text%20class%20add.html#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[5]: read%20me%20assets/tabs%20layout.png
+[6]: https://toms-web-consulting-demos.squarespace.com/text-block-text-class-add?password=twcdemos
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

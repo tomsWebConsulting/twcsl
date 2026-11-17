@@ -10,13 +10,9 @@ Add or change the section id attribute.
 
   * 0.2.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -37,7 +33,7 @@ Add or change the section id attribute.
   
 * Add code from file **[section blank attribute id add or change.html][5]** to
   Page Settings > Advanced > Page Header Code Injection for the Page. Please see
-  [Per-page code injection][6]. 
+  [Inject code to a specific page][6]. 
   
 * For each section you want to add an id add a code block to the section. In the
   code add the following.
@@ -72,5 +68,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: section%20blank%20attribute%20id%20add%20or%20change.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

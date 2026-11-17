@@ -10,7 +10,7 @@ Replace link with Excerpt link.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -40,7 +40,7 @@ Replace link with Excerpt link.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add the following code to Page Settings > Advanced >
           Page Header Code Injection for the Page.
@@ -56,11 +56,11 @@ Replace link with Excerpt link.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -94,7 +94,7 @@ Replace link with Excerpt link.
               
             ```
             
-        * Refer to [Add code to code injection][9] for details.
+        * Refer to [Add code to the header and footer][9] for details.
         
   * On-site
   
@@ -103,17 +103,16 @@ Replace link with Excerpt link.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[calendar block link replace with excerpt
         link.html][10]** to Page Settings > Advanced >
-        Page Header Code Injection for the Page.
+        Page Header Code Injection for the Page. Refer to [Inject code to a
+        specific page][8] for details.
         
-      * Refer to [per-page code injection][8] for details.
-      
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -127,7 +126,7 @@ Replace link with Excerpt link.
           link.html][10]** to Website > Pages > Website Tools > Custom Code >
           Code Injection > FOOTER.
           
-      * Refer to [Add code to code injection][9] for details.
+      * Refer to [Add code to the header and footer][9] for details.
 
 ## How to Use
 
@@ -157,7 +156,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Block/Calendar/Calendar%20Block%20Observe%20Changes#calendar-block-observe-changes
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: calendar%20block%20link%20replace%20with%20excerpt%20link.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

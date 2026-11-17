@@ -10,7 +10,7 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
  * 0.2.3
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -31,21 +31,19 @@ Create a button index section for the [Events Page List Day Wrapper][2] effect.
 
   * Page Specific
   
-    Use this option if you have only a single Events page you want to have
-    this effect.
+    Use this option when you want to have this effect on only one Events Page.
     
     * Add code from file **[events page list day index.html][6]** to
       Page Settings > Advanced > Page Header Code Injection for the Page. Refer
-      to [per-page code injection][7] for details.
+      to [Inject code to a specific page][7] for details.
       
   * Site-wide
   
-    Use this option if you have multiple Events pages where you want to have
-    this effect.
+    Use this option when you want to have this effect on all Events Pages.
     
     * Add code from file **[events page list day index.html][6]** to Website >
-      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][8].
+      Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+      header and footer][8].
       
 * Add a Classic Editor section before the events section. Add a Button
   block and set the link to **#twc-epldi { day : numeric, month : short }**. You
@@ -106,8 +104,8 @@ Please consider [making a donation][11].
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Events/List/Events%20Page%20List%20Day%20Wrapper
 [6]: events%20page%20list%20day%20index.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#date-time_component_options
 [10]: https://toms-web-consulting-demos.squarespace.com/events-page-list-day-index?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -1,6 +1,6 @@
 # Prepend Breadcrumb to Store Page Breadcrumbs
 
-### [License][99]
+### [License][1]
 
 ### Version
 
@@ -21,7 +21,7 @@ Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
@@ -35,4 +35,5 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

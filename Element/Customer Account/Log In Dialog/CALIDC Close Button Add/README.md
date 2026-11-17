@@ -10,7 +10,7 @@ Add a close button to the customer account sign up and in dialogs.
 
   * 0.1.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -21,10 +21,6 @@ Add a close button to the customer account sign up and in dialogs.
   * [Squarespace plan][2] that supports [JavaScript][3].
   
   * [Customer Account Log In Dialog Change][4]
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 ---
 
@@ -42,8 +38,8 @@ Add a close button to the customer account sign up and in dialogs.
   ...and replace it with the code from file [calidc close button add.css][6].
   
 * Add the code from file **[calidc close button add.html][7]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][8] for details.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Inject code to a
+  specific page][8] for details.
 
 ## Make a Donation
 
@@ -72,5 +68,5 @@ Please consider [making a donation][9].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Element/Customer%20Account/Log%20In%20Dialog/Customer%20Account%20Log%20In%20Dialog%20Change#customer-account-log-in-dialog-change
 [6]: calidc%20close%20button%20add.css#L1
 [7]: calidc%20close%20button%20add.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

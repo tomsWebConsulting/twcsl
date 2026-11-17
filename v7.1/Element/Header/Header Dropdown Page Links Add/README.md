@@ -10,13 +10,9 @@ Make header dropdown titles links.
 
   * 0.6.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -35,7 +31,7 @@ Make header dropdown titles links.
 * Add code from file **[header dropdown page links add.html][5]** to Website >
   Pages > Custom Code > Code Injection > FOOTER.
   
-* Refer to [Add code to code injection][6] for details.
+* Refer to [Add code to the header and footer][6] for details.
 
 ## Note
 
@@ -53,18 +49,18 @@ Please consider [making a donation][7].
   * updated to work with recent changes Squarespace made to the header
   * removed jQuery dependency
   * bumped version to 0.6.0
-
+  
 * **2021-06-20**
 
   * fix minor syntax issue
   * bumped version to 0.5d2
-
+  
 * **2021-04-26**
 
   * fix for folders not being clickable after recent SS changes to underlying
     folder menu code
   * bumped version to 0.5d0
-
+  
 * **2021-04-14**
 
   * fix disappearing folder title in some circumstances
@@ -75,5 +71,5 @@ Please consider [making a donation][7].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: header%20dropdown%20page%20links%20add%20options.html#L1
 [5]: header%20dropdown%20page%20links%20add.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

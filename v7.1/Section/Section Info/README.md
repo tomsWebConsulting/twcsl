@@ -10,7 +10,7 @@ Add section editor info.
 
   * 0.3.2
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

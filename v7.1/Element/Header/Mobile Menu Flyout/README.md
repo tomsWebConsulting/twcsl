@@ -10,7 +10,7 @@ Add a flyout effect to the mobile menu.
 
   * 0.4.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -19,7 +19,7 @@ Add a flyout effect to the mobile menu.
 ## Quick Install
 
 * Add code from file **[mobile menu flyout.less][2]** to Website > Pages >
-  Custom Code > Custom CSS. Refer to [Using the CSS Editor][3] for details.
+  Custom Code > Custom CSS. Refer to [Add CSS code][3] for details.
 
 * Read the code for any instructions within.
 
@@ -58,5 +58,5 @@ Please consider [making a donation][4].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: mobile%20menu%20flyout.less#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

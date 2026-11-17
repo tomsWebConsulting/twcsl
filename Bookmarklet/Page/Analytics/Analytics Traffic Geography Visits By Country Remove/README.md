@@ -10,7 +10,7 @@ Remove countries from Analytics > Traffic Geography > Visits By Country data.
 
   * 0.3.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   

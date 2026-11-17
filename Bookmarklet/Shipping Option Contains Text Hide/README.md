@@ -10,7 +10,7 @@ Hide Shipping Option containing text.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   

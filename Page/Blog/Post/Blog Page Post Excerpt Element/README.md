@@ -4,21 +4,17 @@
 
 ### Synopsis
 
-Create a blog page post excerpt element.
+Create a Blog Page post excerpt element.
 
 ### Version
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2], [Bedford template family][3])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -114,39 +110,37 @@ Create a blog page post excerpt element.
   
     * Page Specific
     
-      Use this option when you want only one Page to have this effect.
+      Use this option when you want to have this effect on only one Blog Page.
       
       * Add code from file **[blog page post excerpt element.html][8]** to Blog
-        Settings > Advanced > Page Header Code Injection for the blog page.
-        Refer to [Per-page code injection][9] for details.
+        Settings > Advanced > Page Header Code Injection for the Blog Page.
+        Refer to [Inject code to a specific page][9] for details.
         
     * Site-wide
     
-      Use this option if you have multiple pages where you want to have this
-      effect.
+      Use this option when you want to have this effect on all Blog Pages.
       
       * Add code from file **[blog page post excerpt element.html][10]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-        code to code injection][9] for details.
+        code to the header and footer][9] for details.
         
   * 7.0
   
     * Page Specific
     
-      Use this option when you want only one Page to have this effect.
+      Use this option when you want to have this effect on only one Blog Page.
       
       * Add code from file **[blog page post excerpt element.html][8]** to Blog
-        Settings > Advanced > Page Header Code Injection for the blog page.
-        Refer to [Per-page code injection][9] for details.
+        Settings > Advanced > Page Header Code Injection for the Blog Page.
+        Refer to [Inject code to a specific page][9] for details.
         
     * Site-wide
     
-      Use this option if you have multiple pages where you want to have this
-      effect.
+      Use this option when you want to have this effect on all Blog Pages.
       
       * Add code from file **[blog page post excerpt element.html][10]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-        Refer to [Add code to code injection][9] for details.
+        Refer to [Add code to the header and footer][9] for details.
 
 ## Make a Donation
 
@@ -173,6 +167,6 @@ Please consider [making a donation][11].
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/Elements%20Manipulate#elements-manipulate
 [8]: blog%20page%20post%20excerpt%20element.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -11,15 +11,11 @@ Squarespace editor.
 
   * 0.9.4
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -54,7 +50,7 @@ Squarespace editor.
 
 * Find the Language / Region setting of the site below. Add code from one of the
   language files to Website > Pages > Custom Code > Code Injection > FOOTER.
-  Refer to [Add code to code injection][5] for details.
+  Refer to [Add code to the header and footer][5] for details.
   
   For example if the Language / Region setting is set to **English (United
   States)** you would install the code from the **customer account panel change
@@ -88,17 +84,17 @@ Squarespace editor.
     
 * Optional. If you want to style elements of the customer account panel add code
   from file **[customer account panel change style.html][9]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-  injection][5] for details. Read the code for any instructions within.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+  header and footer][5] for details. Read the code for any instructions within.
   
 * Optional. If you want to change options of the code add code from file
   **[customer account panel change options.html][10]** to Website > Pages >
-  Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-  injection][5] for details. Read the code for any instructions within.
+  Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+  header and footer][5] for details. Read the code for any instructions within.
   
 * Add code from file **[customer account panel change.html][11]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-  injection][5] for details. Read the code for any instructions within.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+  header and footer][5] for details. Read the code for any instructions within.
 
 ## Class Names
 
@@ -414,7 +410,7 @@ the Dependencies section.[*][13]
 You can add a language that Squarespace supports but the code doesn't. Add code
 from file **[customer account panel change language template.html][14]** to
 Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-code injection][5] for details.
+the header and footer][5] for details.
 
 You need to go through the data structure replacing the English language values
 with the values Squarespace shows for those elements in the User Interface.
@@ -551,7 +547,7 @@ Please consider [making a donation][16].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: #user-content-create-your-own-language-configuration-json
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: customer%20account%20panel%20change%20language%20english.html#L1
 [7]: customer%20account%20panel%20change%20language%20japanese.html#L1
 [8]: customer%20account%20panel%20change%20language%20spanish.html#L1

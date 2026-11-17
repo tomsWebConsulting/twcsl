@@ -15,15 +15,11 @@ that existed in the prevoius version of the form block before the update.*
 
   * 0.1d1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Unknown
 
 ---
 

@@ -11,15 +11,11 @@ button.
 
   * 0.6.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -33,19 +29,20 @@ button.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page detail add to cart button text
       change.html][5]** to Page Settings > Advanced > Page Header Code Injection
-      for the Store Page. Refer to [Per-page code injection][6] for details.
+      for the Store Page. Refer to [Inject code to a specific page][6] for
+      details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page detail add to cart button text
       change.html][5]** to Website > Pages > Custom Code > Code Injection >
-      FOOTER. Refer to [Add code to code injection][7] for details.
+      FOOTER. Refer to [Add code to the header and footer][7] for details.
       
 * Read the code for any instructions within.
 
@@ -152,7 +149,7 @@ Please consider [making a donation][9].
 [3]: https://www.squarespace.com/pricing
 [4]: https://en.wikipedia.org/wiki/JavaScript
 [5]: store%20page%20detail%20add%20to%20cart%20button%20text%20change.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-add-to-cart-button-text-change/p/earth-sky-planter?password=twcdemos
 [9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

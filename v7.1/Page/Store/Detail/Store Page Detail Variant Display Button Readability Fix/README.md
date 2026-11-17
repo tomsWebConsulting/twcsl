@@ -10,7 +10,7 @@ Display store detail variant buttons in a more readable manner.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -22,17 +22,13 @@ Display store detail variant buttons in a more readable manner.
      address for Products V1. If you notice readability issues let me know and I
      may resurrect this effect for Products V2.*
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Quick Install
 
 * Add code from file **[store page detail variant display button readability
   fix.html][2]** to Store Settings > Advanced > Page Header Code Injection
-  for the Store Page. Refer to [Per-page code injection][3] for details.
+  for the Store Page. Refer to [Inject code to a specific page][3] for details.
 
 ## Note
 
@@ -64,6 +60,6 @@ Please consider [making a donation][5].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: store%20page%20detail%20variant%20display%20button%20readability%20fix.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [4]: https://toms-web-consulting-demos.squarespace.com/store-page-detail-variant-display-button-readability-fix/p/spring-pickle-mix?password=twcdemos
 [5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,19 +10,11 @@ Change store page prices.
 
   * 0.10.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
   
   * 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -41,7 +33,7 @@ Change store page prices.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page price change options.html][9]** to
         Page Settings > Advanced > Page Header Code Injection for the Store
@@ -63,11 +55,11 @@ Change store page prices.
           
         ```
         
-      * Refer to [per-page code injection][10] for details.
-      
+        Refer to [Inject code to a specific page][10] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page price change options.html][9]** to
         Website > Pages > Custom Code > Code Injection > FOOTER for the Store
@@ -89,16 +81,16 @@ Change store page prices.
           
         ```
         
-      * Refer to [Add code to code injection][11] for details.
-      
+        Refer to [Add code to the header and footer][11] for details.
+        
 * On-site
 
-  Use this option to install the full code of this effect (files hosted on
-  your site).
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page price change options.html][9]** to
       Page Settings > Advanced > Page Header Code Injection for the Store Page.
@@ -107,11 +99,11 @@ Change store page prices.
     * Add code from file **[store page price change.html][12]** to
       Page Settings > Advanced > Page Header Code Injection for the Store Page.
       
-    * Refer to [per-page code injection][10] for details.
+    * Refer to [Inject code to a specific page][10] for details.
     
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page price change options.html][9]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Read the code for
@@ -120,7 +112,7 @@ Change store page prices.
     * Add code from file **[store page price change.html][12]** to Website >
       Pages > Custom Code > Code Injection > FOOTER.
       
-    * Refer to [Add code to code injection][11] for details.
+    * Refer to [Add code to the header and footer][11] for details.
 
 ## searchReplaceText Example Lines
 
@@ -353,8 +345,8 @@ Please consider [making a donation][14].
 [7]: https://www.jsdelivr.com/
 [8]: https://en.wikipedia.org/wiki/Content_delivery_network
 [9]: store%20page%20price%20change%20options.html#L1
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[11]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [12]: store%20page%20price%20change.html#L1
 [13]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change%20Log#store-page-price-change-log
 [14]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

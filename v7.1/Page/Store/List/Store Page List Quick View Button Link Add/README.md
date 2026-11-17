@@ -10,15 +10,11 @@ Add a button link to a URL.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
 #### Products V2 Compatible
-
-  * Not Applicable
-
-#### Fluid Engine Compatible
 
   * Not Applicable
 
@@ -46,8 +42,8 @@ Add a button link to a URL.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store
-        page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page list quick view button link add
           options.html][8]** to Store Page Settings > Advanced >
@@ -68,11 +64,11 @@ Add a button link to a URL.
             
           ```
           
-        * Refer to [per-page code injection][9] for details.
+        * Refer to [Inject code to a specific page][9] for details.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list quick view button link add
           options.html][8]** to Website > Pages > Custom Code > Code Injection >
@@ -92,8 +88,8 @@ Add a button link to a URL.
             
           ```
           
-        * Refer to [Add code to code injection][10] for details.
-  
+        * Refer to [Add code to the header and footer][10] for details.
+        
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -101,23 +97,32 @@ Add a button link to a URL.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
-      * Add code from files **[store page list quick view button link add
-        options.html][8]** and **[store page list quick view button link
+      * Add code from file **[store page list quick view button link add
+        options.html][8]** to Store Page Settings > Advanced >
+        Page Header Code Injection for the Page. Read the code for any
+        instructions within.
+        
+      * Add code from file **[store page list quick view button link
         add.html][11]** to Store Page Settings > Advanced >
         Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][9] for details.
+      * Refer to [Inject code to a specific page][9] for details.
         
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
-      * Add code from files **[store page list quick view button link add
-        options.html][8]** and **[store page detail title text to
-        link.html][11]** to Website > Pages > Custom Code > Code Injection >
-        FOOTER. Refer to [Add code to code injection][10] for details.
+      * Add code from file **[store page list quick view button link add
+        options.html][8]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER. Read the code for any instructions within.
+        
+      * Add code from file **[store page list quick view button link
+        add.html][11]** to Website > Pages > Custom Code > Code Injection >
+        FOOTER.
+        
+      * Refer to [Add code to the header and footer][10] for details.
 
 ## Make a Donation
 
@@ -145,7 +150,7 @@ Please consider [making a donation][12].
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: store%20page%20list%20quick%20view%20button%20link%20add%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: store%20page%20list%20quick%20view%20button%20link%20add.html#L1
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,19 +10,11 @@ Remove zero prices from Store Page.
 
   * 0.3.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2], [Five][3], [Montauk template family][4])
-
-#### v7.1 Products V2 Compatible
-
-  * Yes
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -39,19 +31,19 @@ Remove zero prices from Store Page.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from file **[store page price zero remove.html][7]** to
       Store Settings > Advanced > Page Header Code Injection for the Store Page.
-      Refer to [Per-page code injection][8] for details.
+      Refer to [Inject code to a specific page][8] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Store Pages.
     
     * Add code from file **[store page price zero remove.html][7]** to
       Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add
-      code to code injection][9] for details.
+      code to the header and footer][9] for details.
       
 * Add the following to searchReplaceText in the Store Page price change code per
   that codes instructions.
@@ -103,6 +95,6 @@ Please consider [making a donation][10].
 [5]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/Page/Store/Store%20Page%20Price%20Change#store-price-change
 [7]: store%20page%20price%20zero%20remove.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

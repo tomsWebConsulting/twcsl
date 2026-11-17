@@ -1,34 +1,27 @@
 # Add Store Description
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[add store description.html](add%20store%20description.html#L1)**
-  to Store Settings > Advanced > Page Header Code Injection for the Store Page.
+* Add code from file **[add store description.html][3]** to Store Settings >
+  Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -42,4 +35,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: add%20store%20description.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

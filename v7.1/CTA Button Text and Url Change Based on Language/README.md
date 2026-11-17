@@ -1,24 +1,20 @@
 # CTA Button Text and Url Change Based on Language
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.2d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Quick Install
 
-* Install Brad Good's [multi-language code](https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template).
+* Install Brad Good's [multi-language code][2].
   
 * In the multi-laguage code near the end find the following text.
 
@@ -27,8 +23,8 @@
   </script>
   ```
   
-* Just above the lines in the previous step add code from file
-  **[cta button text and url change based on language.js](cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1)**.
+* Just above the lines in the previous step add code from file **[cta button
+  text and url change based on language.js][3]**.
   
 * Read the code for any instructions within.
   
@@ -37,7 +33,7 @@ in the existing code, just add in this new code.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -55,4 +51,7 @@ Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#m
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://www.bradgood.net/articles/multi-language-content-on-any-squarespace-template
+[3]: cta%20button%20text%20and%20url%20change%20based%20on%20language.js#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

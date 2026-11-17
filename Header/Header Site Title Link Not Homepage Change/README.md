@@ -10,15 +10,11 @@ Change the header site title link on pages except for the homepage.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2], [Tremont template family][3])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -30,7 +26,7 @@ Change the header site title link on pages except for the homepage.
 
 * Add code from file **[header site title link not homepage change.html][6]** to
   Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
-  to code injection][7] for details.
+  to the header and footer][7] for details.
   
 * Read the code for any instructions within.
 
@@ -55,5 +51,5 @@ Please consider [making a donation][8].
 [4]: https://www.squarespace.com/pricing
 [5]: https://en.wikipedia.org/wiki/JavaScript
 [6]: header%20site%20title%20link%20not%20homepage%20change.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

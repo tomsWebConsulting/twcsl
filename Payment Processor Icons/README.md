@@ -10,26 +10,23 @@ Add some payment processor icons to site footer.
 
   * 0.6.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
 ## Quick Install
 
 * Add code from file **[payment processor icons.less][2]** to Website > Pages >
-  Custom Code > Custom CSS. Read the code for any instructions within.
+  Custom Code > Custom CSS. Read the code for any instructions within. Refer to
+  [Add CSS code][12] for details.
   
 * Add code from file **[payment processor icons svg symbol.html][3]** to
   Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
-  to code injection][4] for details.
+  to the header and footer][4] for details.
   
 * Add code from file **[payment processor icons.html][5]** to a code block in
   the footer of your site.
@@ -172,6 +169,7 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: payment%20processor%20icons.less#L1
+[12]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
 [3]: payment%20processor%20icons%20svg%20symbol.html#L1
 [4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#toc-add-code-to-code-injection
 [5]: payment%20processor%20icons.html#L1

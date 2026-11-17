@@ -10,13 +10,9 @@ Randomize the images of image blocks.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -41,19 +37,19 @@ Randomize the images of image blocks.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[image blocks random.html][6]** to Store Settings >
       Advanced > Page Header Code Injection for the Store Page. Refer to
-      [Per-page code injection][7] for details.
+      [Inject code to a specific page][7] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[image blocks random.html][6]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][8] for details.
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to the header
+      and footer][8] for details.
 
 * Create a Fluid Engine page section.
 
@@ -87,7 +83,7 @@ Please consider [making a donation][10].
 [4]: https://jquery.com/
 [5]: https://support.squarespace.com/hc/en-us/articles/6421525446541-Editing-your-site-with-Fluid-Engine
 [6]: image%20blocks%20random.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://toms-web-consulting-demos.squarespace.com/image-blocks-random?password=twcdemos
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

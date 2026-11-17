@@ -4,13 +4,13 @@
 
 ### Synopsis
 
-Collapse all pages in the Pages panel.
+Collapse all Pages in the Pages panel.
 
 ### Version
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

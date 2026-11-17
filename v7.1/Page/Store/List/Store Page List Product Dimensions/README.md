@@ -10,18 +10,10 @@ Add product dimensions to some products of list pages.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -49,8 +41,8 @@ Add product dimensions to some products of list pages.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store
-        page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page list product dimensions
           options.html][7]** to Page Settings > Advanced >
@@ -73,11 +65,11 @@ Add product dimensions to some products of list pages.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Store Pages.
         
         * Add code from file **[store page list product dimensions
           options.html][7]** to Website > Pages > Custom Code > Code Injection >
@@ -99,8 +91,8 @@ Add product dimensions to some products of list pages.
             
           ```
           
-        * Refer to [Add code to code injection][9] for details.
-        
+          Refer to [Add code to the header and footer][9] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on your
@@ -108,7 +100,7 @@ Add product dimensions to some products of list pages.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >
@@ -118,21 +110,21 @@ Add product dimensions to some products of list pages.
       * Add code from file **[store page list product dimensions.html][10]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][8] for details.
+      * Refer to [Inject code to a specific page][8] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from file **[store page list product dimensions
         options.html][7]** to Page Settings > Advanced >
         Page Header Code Injection for the Page. Read the code for any
-        instructions within.
+        instructions within. Refer to [Inject code to a specific page][8] for
+        details.
         
       * Add code from file **[store page list product dimensions.html][10]**
-        to Website > Pages > Custom Code > Code Injection > FOOTER.
-        
-      * Refer to [Add code to code injection][9] for details.
+        to Website > Pages > Custom Code > Code Injection > FOOTER. Refer to
+        [Add code to the header and footer][9] for details.
 
 ## Note
 
@@ -172,8 +164,8 @@ Please consider [making a donation][12].
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
 [7]: store%20page%20list%20product%20dimensions%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: store%20page%20list%20product%20dimensions.html#L1
 [11]: https://toms-web-consulting-demos.squarespace.com/store-page-list-product-dimensions?password=twcdemos
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

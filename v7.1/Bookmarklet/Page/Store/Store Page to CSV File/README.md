@@ -10,7 +10,7 @@ Save Store Page products to a CSV file.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

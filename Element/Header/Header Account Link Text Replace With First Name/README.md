@@ -10,15 +10,11 @@ Replace the header account link with the members' first name.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -30,9 +26,8 @@ Replace the header account link with the members' first name.
 
 * Add code from file **[header account link text replace with first
   name.html][4]** to Website > Pages > Custom Code > Code Injection > FOOTER.
-  Refer to [Add code to code injection][5] for details.
-  
-* Read the code for any instructions within.
+  Read the code for any instructions within. Refer to [Add code to the header
+  and footer][5] for details.
 
 ##  Notes
 
@@ -66,6 +61,6 @@ Please consider [making a donation][7].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: header%20account%20link%20text%20replace%20with%20first%20name.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://toms-web-consulting-demos.squarespace.com/header-account-link-text-replace-with-first-name?password=twcdemos
 [7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,7 +10,7 @@ Alter customer account sign up and in dialogs.
 
   * 0.10.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -31,8 +31,7 @@ Alter customer account sign up and in dialogs.
   
   * Add code from file **[customer account log in dialog change
     options.html][6]** to Website > Pages > Custom Code > Code Injection >
-    FOOTER. Read the code for any instructions within. Refer to [Add code to
-    code injection][7] for details.
+    FOOTER. Read the code for any instructions within.
     
   * Add the following code to Website > Pages > Custom Code >
     Code Injection > FOOTER.
@@ -47,19 +46,22 @@ Alter customer account sign up and in dialogs.
       <!-- end TWC Customer Account Log In Dialog Change -->
       
     ```
+    
+  * Refer to [Add code to the header and footer][7] for details.
   
 * On-site
 
-  Use this option to install the full code of this effect (files hosted on
-  your site).
+  Use this option to install the full code of this effect (files hosted on your
+  site).
   
   * Add code from file **[customer account log in dialog change
     options.html][6]** to Website > Pages > Custom Code > Code Injection >
-    FOOTER. Read the code for any instructions within. Refer to [Add code to
-    code injection][7] for details.
+    FOOTER. Read the code for any instructions within.
     
   * Add code from file **[customer account log in dialog change.html][8]** to
     Website > Pages > Custom Code > Code Injection > FOOTER.
+    
+  * Refer to [Add code to the header and footer][7] for details.
 
 ## Classes
 
@@ -255,7 +257,7 @@ Please consider [making a donation][10].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: customer%20account%20log%20in%20dialog%20change%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
 [8]: customer%20account%20log%20in%20dialog%20change.html#L1
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

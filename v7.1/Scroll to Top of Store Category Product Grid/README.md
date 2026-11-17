@@ -1,34 +1,27 @@
 # Scroll to Top of Store Category Product Grid
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Install
 
-* Install
-  [twcsl](https://github.com/tomsWebConsulting/twcsl#install-options).
+* Install [twcsl][2].
   
-* Add code from file
-  **[scroll to top of store category product grid.html](scroll%20to%20top%20of%20store%20category%20product%20grid.html#L1)**
+* Add code from file **[scroll to top of store category product grid.html][3]**
   to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][4].
 
 ## Changes
 
@@ -42,4 +35,7 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#install-options
+[3]: scroll%20to%20top%20of%20store%20category%20product%20grid.html#L1
+[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

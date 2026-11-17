@@ -10,7 +10,7 @@ Create rudimentary tabbed effect with button and other blocks.
 
  * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
   
@@ -35,19 +35,19 @@ Create rudimentary tabbed effect with button and other blocks.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
     * Add code from file **[blocks tabbed.html][5]** to Page Settings >
-      Advanced > Page Header Code Injection for the Page. Refer to [Per-page
-      code injection][6] for details.
+      Advanced > Page Header Code Injection for the Page. Refer to [Inject
+      code to a specific page][6] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[blocks tabbed.html][5]** to Website > Pages >
-      Custom Code > Code Injection > FOOTER. Refer to [Add code to code
-      injection][7] for details.
+      Custom Code > Code Injection > FOOTER. Refer to [Add code to the
+      header and footer][7] for details.
       
 * In a section add at least two button blocks. I suggest a horizontal
   orientation for the buttons as that is the easiest layout. You can do other
@@ -75,11 +75,11 @@ Create rudimentary tabbed effect with button and other blocks.
   
     * Page Specific
     
-      Use this option when you want only one Page to have this effect.
+      Use this option when you want to have this effect on only one Page.
       
       * Add the following to Page Settings > Advanced >
-        Page Header Code Injection for the Page. Refer to [Per-page code
-        injection][6] for details.
+        Page Header Code Injection for the Page. Refer to [Inject code to a
+        specific page][6] for details.
         
         ```html
         <style>
@@ -101,11 +101,10 @@ Create rudimentary tabbed effect with button and other blocks.
         
     * Site-wide
     
-      Use this option if you have multiple pages where you want to have this
-      effect.
+      Use this option when you want to have this effect on all Pages.
       
       * Add the following to Website > Pages > Custom Code > Custom CSS. Refer
-        to [Using the CSS Editor][199] for details.
+        to [Add CSS code][9] for details.
       
         ```css
         /* twc-bt line block hide */
@@ -148,11 +147,11 @@ Create rudimentary tabbed effect with button and other blocks.
 
 ## Demo
 
-You can see a [demo of this effect here][9].
+You can see a [demo of this effect here][10].
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][11].
 
 ## Changes
 
@@ -181,9 +180,9 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: blocks%20tabbed.html#L1
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[9]: https://toms-web-consulting-demos.squarespace.com/blocks-tabbed?password=twcdemos
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: https://www.heathertovey.com/squarespace-id-finder/
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[9]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[10]: https://toms-web-consulting-demos.squarespace.com/blocks-tabbed?password=twcdemos
+[11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

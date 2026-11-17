@@ -10,13 +10,9 @@ Add span tags around the words of CTA buttons in the header.
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -29,19 +25,18 @@ Add span tags around the words of CTA buttons in the header.
 ## Quick Install
 
 * Add code from file **[header cta buttons each word span tag add.css][5]** to
-  Website > Pages > Custom Code > Custom CSS.  Refer to [Using the CSS
-  Editor][199] for details.
+  Website > Pages > Custom Code > Custom CSS. Refer to [Add CSS code][6] fo
+  details.
   
-* Add the following to Website > Pages > Custom Code > Code Injection >
-  HEADER.
+* Add the following to Website > Pages > Custom Code > Code Injection > HEADER.
   
   ```html
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[header cta buttons each word span tag add.html][6]** to
-  Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code
-  to code injection][7] for details.
+* Add code from file **[header cta buttons each word span tag add.html][7]** to
+  Website > Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
+  the header and footer][8] for details.
 
 ## How to Use
 
@@ -83,14 +78,15 @@ Some examples...
 
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][8].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][9].
 
 This code is a base effect for other effects. To take advantage of it you need
 to write CSS.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
@@ -109,8 +105,8 @@ Please consider [making a donation][9].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://jquery.com/
 [5]: header%20cta%20buttons%20each%20word%20span%20tag%20add.css#L1
-[6]: header%20cta%20buttons%20each%20word%20span%20tag%20add.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
-[8]: https://tinyurl.com/ynessvsf
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[6]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[7]: header%20cta%20buttons%20each%20word%20span%20tag%20add.html#L1
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
+[9]: https://tinyurl.com/ynessvsf
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

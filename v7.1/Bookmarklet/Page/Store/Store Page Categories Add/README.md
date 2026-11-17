@@ -10,7 +10,7 @@ Add a comma separated string as categories in the Store Page Categories panel.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -18,10 +18,6 @@ Add a comma separated string as categories in the Store Page Categories panel.
 
   * Not Applicable
   
-#### Fluid Engine Compatible
-
-  * Not Applicable
-
 ---
 
 ## Quick Install

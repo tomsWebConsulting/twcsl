@@ -10,7 +10,7 @@ Add sku to the description of store detail pages.
 
   * 0.3.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 
@@ -36,7 +36,8 @@ Add sku to the description of store detail pages.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Store Page.
+        Use this option when you want to have this effect on only one Store
+        Page.
         
         * Add code from file **[store page detail sku add options.html][7]** to
           Page Settings > Advanced > Page Header Code Injection for the Store
@@ -58,10 +59,12 @@ Add sku to the description of store detail pages.
             
           ```
           
-        * Refer to [per-page code injection][8] for details.
-        
+          Refer to [Inject code to a specific page][8] for details.
+          
       * Site-wide
       
+        Use this option when you want to have this effect on all Store Pages.
+        
         * Add code from file **[store page detail sku add options.html][7]** to
           Website > Pages > Custom Code > Code Injection > FOOTER. Read the
           code for any instructions within.
@@ -82,8 +85,8 @@ Add sku to the description of store detail pages.
             
           ```
           
-        * Refer to [Add code to code injection][9] for details.
-        
+          Refer to [Add code to the header and footer][9] for details.
+          
   * On-site
   
     Use this option to install the full code of this effect (files hosted on
@@ -91,7 +94,7 @@ Add sku to the description of store detail pages.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from files **[store page detail sku add options.html][7]** to
         Page Settings > Advanced > Page Header Code Injection for the Store
@@ -101,11 +104,11 @@ Add sku to the description of store detail pages.
         Page Settings > Advanced > Page Header Code Injection for the Store
         Page.
         
-      * Refer to [per-page code injection][8] for details.
+      * Refer to [Inject code to a specific page][8] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * Add code from files **[store page detail sku add options.html][7]** to
         Website > Pages > Custom Code > Code Injection > FOOTER. Read the code
@@ -114,8 +117,8 @@ Add sku to the description of store detail pages.
       * Add code from file **[store page detail sku add.html][10]** to Website >
         Pages > Custom Code > Code Injection > FOOTER.
         
-      * Refer to [Add code to code injection][9] for details.
-      
+      * Refer to [Add code to the header and footer][9] for details.
+        
 ## How to Use
 
 In each of your product descriptions add the following text where you want the
@@ -152,7 +155,7 @@ Please consider [making a donation][11].
 [5]: https://www.jsdelivr.com/
 [6]: https://en.wikipedia.org/wiki/Content_delivery_network
 [7]: store%20page%20detail%20sku%20add%20options.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: store%20page%20detail%20sku%20add.html#L1
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

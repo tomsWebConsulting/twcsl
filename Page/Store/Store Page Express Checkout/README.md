@@ -10,16 +10,12 @@ Trigger Express Checkout feature for a Store Page.
 
  * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
   
-#### v7.1 Products V2 Compatible
-
-  * Yes
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -29,8 +25,8 @@ Trigger Express Checkout feature for a Store Page.
 ## Quick Install
 
 * Add code from **[store page express checkout.html][4]** to Store Settings >
-  Advanced > Page Header Code Injection for the Store Page. Refer to [Per-page
-  code injection][5] for details.
+  Advanced > Page Header Code Injection for the Store Page. Refer to [Inject
+  code to a specific page][5] for details.
 
 ## Note
 
@@ -57,5 +53,5 @@ Please consider [making a donation][6].
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: store%20page%20express%20checkout.html#L1
-[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
+[5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
 [6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

@@ -10,15 +10,11 @@ Hide all day event times.
 
   * 0.1.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -37,7 +33,7 @@ Hide all day event times.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Events Page.
       
       * Add the following code to Page Settings > Advanced >
         Page Header Code Injection for the Page.
@@ -55,11 +51,11 @@ Hide all day event times.
           
         ```
         
-      * Refer to [per-page code injection][6] for details.
-      
+        Refer to [Inject code to a specific page][6] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Events Pages.
       
       * v7.1
       
@@ -97,7 +93,7 @@ Hide all day event times.
             
           ```
           
-      * Refer to [Add code to code injection][7] for details.
+      * Refer to [Add code to the header and footer][7] for details.
       
 * On-site
 
@@ -106,16 +102,15 @@ Hide all day event times.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Page.
+    Use this option when you want to have this effect on only one Events Page.
     
     * Add code from file **[events page detail all day time hide.html][8]** to
       Page Settings > Advanced > Page Header Code Injection for the Page.
+      Refer to [Inject code to a specific page][6] for details.
       
-    * Refer to [per-page code injection][6] for details.
-    
   * Site-wide
   
-    Use this option if you want to have this effect on all Pages.
+    Use this option when you want to have this effect on all Events Pages.
     
     * v7.1
     
@@ -126,8 +121,7 @@ Hide all day event times.
     
       * Add code from file **[events page detail all day time hide.html][8]** to
         Website > Pages > Website Tools > Custom Code > Code Injection > FOOTER.
-        
-    * Refer to [Add code to code injection][7] for details.
+        Refer to [Add code to the header and footer][7] for details.
 
 ## How to Use
 
@@ -136,7 +130,7 @@ to 11:59pm.
 
 ## Make a Donation
 
-Please consider [making a donation][10].
+Please consider [making a donation][9].
 
 ## Changes
 
@@ -156,8 +150,7 @@ Please consider [making a donation][10].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
-[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[6]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [8]: events%20page%20detail%20all%20day%20time%20hide.html#L1
-[9]: https://en.wikipedia.org/wiki/Callback_(computer_programming)
-[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

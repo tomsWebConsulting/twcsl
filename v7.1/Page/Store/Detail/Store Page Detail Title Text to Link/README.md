@@ -10,17 +10,9 @@ Link text in the title.
 
   * 0.2.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Products V2 Compatible
-
-  * Yes
-
-#### Fluid Engine Compatible
-
-  * Not Applicable
 
 #### Dependencies
 
@@ -39,7 +31,7 @@ Link text in the title.
   
     * Page Specific
     
-      Use this option if you want to have this effect on only one Store Page.
+      Use this option when you want to have this effect on only one Store Page.
       
       * Add code from file **[store page detail title text to link
         options.html][6]** to Store Page Settings > Advanced >
@@ -60,11 +52,11 @@ Link text in the title.
           
         ```
         
-      * Refer to [per-page code injection][7] for details.
-      
+        Refer to [Inject code to a specific page][7] for details.
+        
     * Site-wide
     
-      Use this option if you want to have this effect on all Store Pages.
+      Use this option when you want to have this effect on all Store Pages.
       
       * v7.1
       
@@ -106,7 +98,7 @@ Link text in the title.
             
           ```
           
-      * Refer to [Add code to code injection][8] for details.
+      * Refer to [Add code to the header and footer][8] for details.
 
 * On-site
 
@@ -115,18 +107,17 @@ Link text in the title.
   
   * Page Specific
   
-    Use this option if you want to have this effect on only one Store Page.
+    Use this option when you want to have this effect on only one Store Page.
     
     * Add code from files **[store page detail title text to link
       options.html][6]** and **[store page detail title text to
       link.html][9]** to Store Page Settings > Advanced >
-      Page Header Code Injection for the Page.
-      
-    * Refer to [per-page code injection][7] for details.
+      Page Header Code Injection for the Page. Refer to [Inject code to a
+      specific page][7] for details.
       
   * Site-wide
   
-    Use this option if you want to have this effect on all Store Pages.
+    Use this option when you want to have this effect on all Store Pages.
     
     * v7.1
     
@@ -142,7 +133,7 @@ Link text in the title.
         link.html][9]** to Website > Pages > Website Tools > Custom Code >
         Code Injection > FOOTER.
         
-    * Refer to [Add code to code injection][8] for details.
+    * Refer to [Add code to the header and footer][8] for details.
 
 ## Make a Donation
 
@@ -168,7 +159,7 @@ Please consider [making a donation][10].
 [4]: https://www.jsdelivr.com/
 [5]: https://en.wikipedia.org/wiki/Content_delivery_network
 [6]: store%20page%20detail%20title%20text%20to%20link%20options.html#L1
-[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[7]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [9]: store%20page%20detail%20title%20text%20to%20link.html#L1
 [10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

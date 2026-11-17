@@ -10,15 +10,11 @@ Open link in a popup window.
 
   * 0.2.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0
-
-#### 7.1 Fluid Engine Compatible
-
-  * Yes
 
 ---
 
@@ -28,19 +24,19 @@ Open link in a popup window.
 
   * Page Specific
   
-    Use this option when you want only one Page to have this effect.
+    Use this option when you want to have this effect on only one Page.
     
-    * Add code from file **[link popup window open.html][2]** to
-      Page Settings > Advanced > Page Header Code Injection for the Store Page.
-      Refer to [Per-page code injection][3] for details.
+    * Add code from file **[link popup window open.html][2]** to Page Settings >
+      Advanced > Page Header Code Injection for the Store Page. Refer to
+      [Inject code to a specific page][3] for details.
       
   * Site-wide
   
-    Use this option when you want multiple Pages to have this effect.
+    Use this option when you want to have this effect on all Pages.
     
     * Add code from file **[link popup window open.html][2]** to Website >
       Pages > Custom Code > Code Injection > FOOTER. Refer to [Add code to
-      code injection][4] for details.
+      the header and footer][4] for details.
 
 * Edit a link and add the following to the end of your URL.
 
@@ -92,8 +88,8 @@ Please consider [making a donation][8].
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: link%20popup%20window%20open.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[4]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [5]: https://developer.mozilla.org/en-US/docs/Web/API/Window/open#windowfeatures
 [6]: https://www.urlencoder.org/
 [7]: https://toms-web-consulting-demos.squarespace.com/link-popup-window-open?password=twcdemos

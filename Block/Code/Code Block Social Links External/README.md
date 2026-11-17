@@ -10,15 +10,11 @@ Create Social Links for entities outside your site.
 
   * 0.3.0
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
   * 7.0 ([Brine template family][2])
-
-#### v7.1 Fluid Engine Compatible
-
-  * Yes
 
 #### Dependencies
 
@@ -34,13 +30,13 @@ Create Social Links for entities outside your site.
   rest of the steps.
   
 * Add code from file **[code block social links external.html][7]** to Website >
-  Pages > Custom Code > Code Injection > FOOTER. Refer to [Per-page code
-  injection][9] for details.
+  Pages > Custom Code > Code Injection > FOOTER. Refer to [Inject code to a
+  specific page][8] for details.
   
 * Create a Blank Page in the Not Linked area and set the PAGE TITLE, NAVIGATION
   TITLE, AND URL SLUG to **twc-cbsle** and add the following to Page Settings >
-  Advanced > Page Header Code Injection for the Page. Refer to [Per-page code
-  injection][8] for details.
+  Advanced > Page Header Code Injection for the Page. Refer to [Inject code to a
+  specific page][9] for details.
   
   ```html
   <meta name="robots" content="noindex" />
@@ -229,7 +225,7 @@ Please consider [making a donation][11].
 [5]: https://github.com/tomsWebConsulting/twcsl
 [6]: https://github.com/tomsWebConsulting/twcsl#install-options
 [7]: code%20block%20social%20links%20external.html#L1
-[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[8]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [10]: https://toms-web-consulting-demos.squarespace.com/code-block-social-links-external?password=twcdemos
 [11]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

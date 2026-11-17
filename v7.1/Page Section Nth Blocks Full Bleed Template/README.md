@@ -1,18 +1,14 @@
 # Page Section Nth Blocks Full Bleed Template
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -27,8 +23,7 @@
   
 * Save the Page.
   
-* Add code from file
-  **[page section nth blocks full bleed template.html](page%20section%20nth%20blocks%20full%20bleed%20template.html#L1)**
+* Add code from file **[page section nth blocks full bleed template.html][2]**
   to Page Settings > Advanced > Page Header Code Injection for the Page. Read
   the code for any instructions within.
   
@@ -38,8 +33,7 @@
 
 ## Make a Donation
 
-Please consider
-[making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][3].
 
 ## Changes
 
@@ -54,4 +48,6 @@ Please consider
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: page%20section%20nth%20blocks%20full%20bleed%20template.html#L1
+[3]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

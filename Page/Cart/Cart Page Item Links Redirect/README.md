@@ -10,7 +10,7 @@ Redirect cart page product item links.
 
   * 0.3.1
 
-#### SS Versions
+#### Squarespace Versions
 
   * 7.1
   
@@ -20,10 +20,6 @@ Redirect cart page product item links.
 
   * Not Applicable
   
-#### v7.1 Fluid Engine Compatible
-
-  * Not Applicable
-
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
@@ -48,7 +44,7 @@ Redirect cart page product item links.
     
       * Page Specific
       
-        Use this option if you want to have this effect on only one Page.
+        Use this option when you want to have this effect on only one Page.
         
         * Add code from file **[cart page item links redirect options.html][8]**
           to Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -68,11 +64,11 @@ Redirect cart page product item links.
             
           ```
           
-        * Refer to [per-page code injection][9] for details.
+        * Refer to [Inject code to a specific page][9] for details.
         
       * Site-wide
       
-        Use this option if you want to have this effect on all Store Pages.
+        Use this option when you want to have this effect on all Pages.
         
         * v7.1
         
@@ -115,7 +111,7 @@ Redirect cart page product item links.
               
             ```
             
-        * Refer to [Add code to code injection][10] for details.
+        * Refer to [Add code to the header and footer][10] for details.
         
   * On-site
   
@@ -124,7 +120,7 @@ Redirect cart page product item links.
     
     * Page Specific
     
-      Use this option if you want to have this effect on only one Page.
+      Use this option when you want to have this effect on only one Page.
       
       * Add code from file **[cart page item links redirect options.html][8]**
         to Page Settings > Advanced > Page Header Code Injection for the Page.
@@ -133,11 +129,11 @@ Redirect cart page product item links.
       * Add code from file **[cart page item links redirect.html][11]** to
         Page Settings > Advanced > Page Header Code Injection for the Page.
         
-      * Refer to [per-page code injection][9] for details.
+      * Refer to [Inject code to a specific page][9] for details.
       
     * Site-wide
     
-      Use this option if you want to have this effect on all Pages.
+      Use this option when you want to have this effect on all Pages.
       
       * v7.1
       
@@ -158,7 +154,7 @@ Redirect cart page product item links.
           Website > Pages > Website Tools > Custom Code > Code Injection >
           FOOTER.
           
-      * Refer to [Add code to code injection][10] for details.
+      * Refer to [Add code to the header and footer][10] for details.
 
 ## Make a Donation
 
@@ -193,7 +189,7 @@ Please consider [making a donation][7].
 [6]: https://www.jsdelivr.com/
 [7]: https://en.wikipedia.org/wiki/Content_delivery_network
 [8]: cart%20page%20item%20links%20redirect%20options.html#L1
-[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K6435FJV3FQSBAE7X
-[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Using-code-injection#h_01JGPDM34K9B0J2SNGJE936M7K
+[9]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRV1T972AWVEYDK081M9
+[10]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [11]: cart%20page%20item%20links%20redirect.html#L1
 [12]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

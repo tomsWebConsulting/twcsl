@@ -10,7 +10,7 @@ Add categories file to a Store Page with no categories.
 
   * 0.1.1
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
 

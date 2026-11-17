@@ -1,26 +1,21 @@
 # Site Title Each Word Span Tag Add
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1.0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
 ## Quick Install
 
-* Add code from file **[site title each word span tag add.css][1]** to Website >
-  Pages > Custom Code > Custom CSS. Refer to [Using the CSS Editor][199] for
-  details.
+* Add code from file **[site title each word span tag add.css][2]** to Website >
+  Pages > Custom Code > Custom CSS. Refer to [Add CSS code][3] for details.
   
 * Add the following to Website > Pages > Custom Code > Code Injection >
   HEADER.
@@ -29,23 +24,25 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   ```
   
-* Add code from file **[site title each word span tag add.html][2]** to
+* Add code from file **[site title each word span tag add.html][4]** to
   Website > Pages > Custom Code > Code Injection > FOOTER.
   
 ## Notes
 
-This effect is not active in SS Preview to test it use [private browsing][3].
+This effect is not active in Squarespace Preview to test it use [private
+browsing][5].
+
 
 This code is a base effect for other effects. To take advantage of it you need
 to write CSS.
 
 ## Demo
 
-You can see a [demo of this effect here][4].
+You can see a [demo of this effect here][6].
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][7].
 
 ## Changes
 
@@ -59,10 +56,10 @@ Please consider [making a donation][5].
 
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[1]: site%20title%20each%20word%20span%20tag%20add.css#L1
-[2]: site%20title%20each%20word%20span%20tag%20add.html#L1
-[3]: https://bit.ly/3f6lhq2
-[4]: https://toms-web-consulting-demos.squarespace.com/site-title-each-word-span-tag-add?password=twcdemos
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
-[199]: https://support.squarespace.com/hc/en-us/articles/206545567-Using-the-CSS-Editor
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: site%20title%20each%20word%20span%20tag%20add.css#L1
+[3]: https://support.squarespace.com/hc/en-us/articles/206545567-Add-custom-CSS-to-your-site#h_01JNK62X86KV65WDJ9D9HY1J8C
+[4]: site%20title%20each%20word%20span%20tag%20add.html#L1
+[5]: https://tinyurl.com/mr28yvrc
+[6]: https://toms-web-consulting-demos.squarespace.com/site-title-each-word-span-tag-add?password=twcdemos
+[7]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

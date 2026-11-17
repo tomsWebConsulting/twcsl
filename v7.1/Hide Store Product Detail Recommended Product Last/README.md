@@ -1,18 +1,14 @@
 # Hide Store Product Detail Recommended Product Last
 
-### [License][99]
+### [License][1]
 
 ### Version
 
   * 0.1d0
 
-#### SS Version
+#### Squarespace Version
 
   * 7.1
-
-#### Fluid Engine Compatible
-
-  * Unknown
 
 ---
 
@@ -23,18 +19,19 @@ to Store Settings > Advanced > Page Header Code Injection for the Store Page.
 
 ## Make a Donation
 
-Please consider [making a donation](https://github.com/tomsWebConsulting/twcsl#make-a-donation).
+Please consider [making a donation][2].
 
 ## Changes
 
 <!-- * **2021-07-01**
-<br><br>
+
   * added code to change read more link
   * use twcsl
   * bumped version to 0.1d2
-  <br><br -->
+  -->
 * **2021-08-04**
-<br><br>
+
   * initial version
 
-[99]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
+[2]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
