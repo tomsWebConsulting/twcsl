@@ -465,10 +465,6 @@ not necessarily designed to work together.
   
 * [Page CSS Variable Scroll Ratio Add](Page%20CSS%20Variable%20Scroll%20Ratio%20Add)
   
-* [Effects](Effects)
-  
-  * [Effects.bbprojectd](Effects/Effects.bbprojectd)
-    
 * [code bits](code%20bits)
   
   * [Page](code%20bits/Page)
@@ -1137,6 +1133,10 @@ not necessarily designed to work together.
     
   * [Auto Layout Simple List Image Link Add](v7.1/Auto%20Layout%20Simple%20List%20Image%20Link%20Add)
     
+  * [Effects](v7.1/Effects)
+    
+    * [Effects.bbprojectd](v7.1/Effects/Effects.bbprojectd)
+      
   * [Header](v7.1/Header)
     
     * [Header CTA Buttons Each Word Span Tag Add](v7.1/Header/Header%20CTA%20Buttons%20Each%20Word%20Span%20Tag%20Add)
