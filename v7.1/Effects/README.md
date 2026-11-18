@@ -66,7 +66,7 @@ Please consider [making a donation][6].
   * added check to disable effects button and not show dialog if code injection
     is dirty
   * fixed issue with effects button being disabled when this code first loads
-  * bumped version to 0.1.0-development.1 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
+  * bumped version to 0.1.0-development.1 (commit b35cef02987e201d28d0b71df7fd8eda9a681f74)
   
 * **2026-11-16**
 
