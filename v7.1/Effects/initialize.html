@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.0-development.0
+    Version           : 0.1.0-development.1
     
     Squarespace
     Version           : 7.1
@@ -121,6 +121,18 @@
             
           }
           
+      .App-sidebar:has( button[ data-test = "menuHeader-save" ] ) ~ .App-siteFrame #twc-e-button-wrapper button {
+      
+        cursor : not-allowed;
+        
+        span {
+        
+          cursor : not-allowed;
+          
+          }
+          
+        }
+        
       /* button */
       
       &:has( #twc-e-settings[ open ] ) #twc-e-button-wrapper button > span {
@@ -238,10 +250,16 @@
               
               )
               
-            .closest ( 'li' );
+            .closest ( 'li' )
+            
+            .nextElementSibling;
             
         const
         
+          codeInjectionUrl =
+          
+            '/config/pages/code-injection',
+            
           codeKey = 'twc-e',
           
           cookieValueGet = ( key ) => {
@@ -712,6 +730,32 @@
             
           dialogShow = ( event ) => {
           
+            const isCodeInjectionDirty =
+            
+              window.location.pathname
+              
+              ===
+              
+              codeInjectionUrl
+              
+              &&
+              
+              document
+              
+                .body
+                
+                .querySelector (
+                
+                  '.App-sidebar button[ data-test = "menuHeader-save" ]'
+                  
+                  );
+                  
+            // bail of code injection dirty
+            
+            if ( isCodeInjectionDirty )
+            
+              return;
+              
             const initialState = new Map ( );
             
             siteReloadButtonDisable ( );
@@ -863,18 +907,6 @@
                   body.header
                   
                   ),
-                  
-              isPageCodeInjection =
-              
-                window
-                
-                  .location
-                  
-                  .pathname
-                  
-                  ===
-                  
-                  '/config/pages/code-injection',
                   
               settingsElement = fragment
               
@@ -1032,22 +1064,12 @@
                 
                 }
                 
-            if ( ! isPageCodeInjection )
+            window
             
-              wndw
+              .location
               
-                .location
-                
-                .reload ( );
-                
-              else
+              .reload ( );
               
-                window
-                
-                  .location
-                  
-                  .reload ( );
-                  
             };
             
         // effects button
@@ -1062,7 +1084,7 @@
             
               effectsButtonWrapperElement
               
-              .cloneNode ( true ),
+              .cloneNode ( true );
               
             effectsButtonWrapperElement.id =
             
@@ -1146,28 +1168,6 @@
               
               'TWC Effects';
               
-            [
-            
-              'test',
-              
-              'guidanceEngine'
-              
-              ]
-              
-              .forEach (
-              
-                p =>
-                
-                  delete
-                  
-                  effectsButtonElement
-                  
-                    .dataset
-                    
-                    [ p ]
-                    
-                );
-                
             effectsButtonElement
             
               .addEventListener (

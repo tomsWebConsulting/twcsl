@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0-development.0
+  * 0.1.0-development.1
 
 #### Squarespace Version
 
@@ -28,7 +28,7 @@ Add various effect to your site.
 
 ## How to Use
 
-* Click the **TWC** icon in the top-right corner.
+* When editing your site click the **TWC** icon in the top-right corner.
 
 * Select the effects you want to load.
 
@@ -60,6 +60,14 @@ Please consider [making a donation][6].
   * reworked code to use Store Page Products Panel Product Menu Item Add
   * bumped version to 0.4.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
   -->
+* **2026-11-17**
+
+  * restructured site reload to reload the editor and site frame
+  * added check to disable effects button and not show dialog if code injection
+    is dirty
+  * fixed issue with effects button being disabled when this code first loads
+  * bumped version to 0.1.0-development.1 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
+  
 * **2026-11-16**
 
   * initial version (commit 0e147e5c4cd3f93543248c5134957ec31a302747)
