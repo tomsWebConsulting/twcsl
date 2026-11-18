@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0-development.1
+  * 0.1.0-development.2
 
 #### Squarespace Version
 
