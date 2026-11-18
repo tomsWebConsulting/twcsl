@@ -63,7 +63,7 @@ Please consider [making a donation][6].
 * **2026-11-17**
 
   * changed @latest to @main for jsDelivr URLs
-  * bumped version to 0.1.0-development.2 (commit b35cef02987e201d28d0b71df7fd8eda9a681f74)
+  * bumped version to 0.1.0-development.2 (commit c68088925e293f4f1a2196da37ee8ed168204671)
   
 * **2026-11-17**
 
