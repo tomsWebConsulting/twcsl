@@ -61,7 +61,7 @@ Please consider [making a donation][8].
 
   * removed @main
   * added Section Info effect
-  * bumped version to 0.1.0-development.3 (commit 1683e172f3beb70c12303d4bb7405f9411230558)
+  * bumped version to 0.1.0-development.3 (commit e24c46c8597b83b59b383850ea830a6f9423e148)
   
 * **2026-11-17**
 
