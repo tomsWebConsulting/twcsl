@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0-development.3
+  * 0.1.0-development.4
 
 #### Squarespace Version
 
@@ -22,19 +22,19 @@ Add various effect to your site.
 
 ## Quick Install
 
-* Add code from file **[effects.min.html][4]** to Website > Pages >
-  Custom Code > Code Injection > HEADER. Refer to [Add code to the
-  header and footer][5] for details.
+* Add code from file **[effects.html][4]** to Website > Pages > Custom Code >
+  Code Injection > HEADER. Refer to [Add code to the header and footer][5] for
+  details.
 
 ## How to Use
 
 * When editing your site click the **TWC** icon in the top-right corner.
 
-* Select the effects you want to load.
+* In the TWC Effects dialog select the effects you want to use.
 
 * Click the Site Reload button.
 
-The site will reload and your chosen effects will load.
+The site will reload and your selected effects will load.
 
 ## Effects
 
@@ -47,9 +47,14 @@ The site will reload and your chosen effects will load.
 **DO NOT INSTALL this code at this time**. I'm in process of bootstrapping this
 code.
 
-This code only loads the code for the effects you chose.
-
 **DO NOT** edit the installed code.
+
+This code only loads the code for each effect you chose.
+
+If a site is open in multiple windows or tabs, your changes to this codes
+settings in the current window or tab will not automatically appear in the
+others. Reload the other windows or tabs when you want to use your updated
+settings.
 
 ## Make a Donation
 
@@ -57,6 +62,11 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2026-11-19**
+
+  * reworked initial load code to be CDN based
+  * bumped version to 0.1.0-development.4 (commit 96ff958184cfcb92ccaeda4706938786a0676eba)
+  
 * **2026-11-19**
 
   * removed @main
