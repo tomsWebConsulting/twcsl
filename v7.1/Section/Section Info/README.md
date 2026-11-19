@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.3-development.0
+  * 0.3.3-development.1
 
 #### Squarespace Version
 
@@ -32,6 +32,12 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-19**
+
+  * added detection of course elements
+  * fixed detection of various elements
+  * bumped version to 0.3.3-development.1 (commit ec454d7f888f6251b55d961c637c4d4699cd121e)
+  
 * **2026-11-18**
 
   * updated to work with Effects

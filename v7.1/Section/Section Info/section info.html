@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.3.3-development.0
+    Version           : 0.3.3-development.1
     
     Squarespace       
     Version           : 7.1
@@ -155,7 +155,7 @@
     
       ( ( ) => {
       
-        debugger;
+        // debugger;
         
         // globals
         
@@ -305,11 +305,15 @@
               
                 isClassicEditor =
                 
-                  sectionClasses.contains (
+                  pageSectionElement
                   
-                    'layout-engine-section'
+                    .dataset
                     
-                    )
+                    .sqspSection
+                    
+                    ===
+                    
+                    'classic-editor'
                     
                   ||
                   
@@ -325,57 +329,39 @@
                         
                     &&
                     
-                    pageSectionElement
+                    [
                     
-                      .dataset
+                      'blog-item',
                       
-                      .sqspSection
+                      'events-item'
                       
-                    ===
-                    
-                    'blog-item'
-                    
-                    )
-                    
-                  ||
-                  
-                  (
-                  
-                    dcmntBodyElementClasses
-                    
-                      .contains (
+                      ]
                       
-                        'view-item'
+                      .includes (
+                      
+                        pageSectionElement
                         
+                          .dataset
+                          
+                          .sqspSection
+                          
                         )
                         
-                    &&
-                    
-                    pageSectionElement
-                    
-                      .dataset
-                      
-                      .sqspSection
-                      
-                    ===
-                    
-                    'events-item'
-                      
                     ),
                     
                 isFluidEngine =
                 
                   pageSectionElement
                   
-                    .hasAttribute (
+                    .dataset
                     
-                      'data-fluid-engine-section'
-                      
-                      );
-                      
-              // need to check if this is true
-              
-              const isBlankSection =
+                    .sqspSection
+                    
+                    ===
+                    
+                    'fluid-engine';
+                    
+              const isUserLayoutSection =
               
                 isFluidEngine
                 
@@ -383,7 +369,7 @@
                 
                 isClassicEditor;
               
-              if ( isBlankSection ) {
+              if ( isUserLayoutSection ) {
               
                 element
                 
@@ -437,6 +423,34 @@
             
               const
               
+                element = infoElement
+                
+                  .querySelector (
+                  
+                    `.${ codeKey }-data-type`
+                    
+                    ),
+                    
+                isItem =
+                
+                  dcmntBodyElementClasses
+                  
+                    .contains (
+                    
+                      'view-item'
+                      
+                      ),
+                      
+                isList =
+                
+                  dcmntBodyElementClasses
+                  
+                    .contains (
+                    
+                      'view-list'
+                      
+                      ),
+                      
                 isAutoLayout = sectionClasses
                 
                   .contains (
@@ -453,12 +467,10 @@
                     
                     ),
                     
-                isBlog =
+                isBlogList =
                 
-                  dcmntBodyElementClasses
+                  isList
                   
-                    .contains ( 'view-list' )
-                    
                   &&
                   
                   pageSectionElement
@@ -467,16 +479,14 @@
                     
                     .sqspSection
                     
-                  ===
-                  
-                  'blog-list',
-                  
+                    ===
+                    
+                    'blog-list',
+                    
                 isBlogPost =
                 
-                  dcmntBodyElementClasses
+                  isItem
                   
-                    .contains ( 'view-item' )
-                    
                   &&
                   
                   pageSectionElement
@@ -485,16 +495,46 @@
                     
                     .sqspSection
                     
-                  ===
+                    ===
+                    
+                    'blog-item',
+                    
+                isCourse =
+                
+                  isItem
                   
-                  'blog-item',
+                  &&
                   
+                  pageSectionElement
+                  
+                    .dataset
+                    
+                    .sqspSection
+                    
+                    ===
+                    
+                    'course-item',
+                    
+                isCourseList =
+                
+                  isList
+                  
+                  &&
+                  
+                  pageSectionElement
+                  
+                    .dataset
+                    
+                    .sqspSection
+                    
+                    ===
+                    
+                    'course-list',
+                    
                 isEvent =
                 
-                  dcmntBodyElementClasses
+                  isItem
                   
-                    .contains ( 'view-item' )
-                    
                   &&
                   
                   pageSectionElement
@@ -503,16 +543,14 @@
                     
                     .sqspSection
                     
-                  ===
-                  
-                  'events-item',
-                  
+                    ===
+                    
+                    'events-item',
+                    
                 isEvents =
                 
-                  dcmntBodyElementClasses
+                  isList
                   
-                    .contains ( 'view-list' )
-                    
                   &&
                   
                   pageSectionElement
@@ -521,10 +559,10 @@
                     
                     .sqspSection
                     
-                  ===
-                  
-                  'events-list',
-                  
+                    ===
+                    
+                    'events-list',
+                    
                 isGallery = sectionClasses
                 
                   .contains (
@@ -541,10 +579,10 @@
                     
                     .sqspSection
                     
-                  ===
-                  
-                  'portfolio-list',
-                  
+                    ===
+                    
+                    'portfolio-list',
+                    
                 isStore =
                 
                   pageSectionElement
@@ -553,10 +591,10 @@
                     
                     .sqspSection
                     
-                  ===
-                  
-                  'product-list',
-                  
+                    ===
+                    
+                    'product-list',
+                    
                 isVideo = sectionClasses
                 
                   .contains (
@@ -575,15 +613,7 @@
                     
                       '#video-gallery-main-content'
                       
-                      ),
-                    
-                element = infoElement
-                
-                  .querySelector (
-                  
-                    `.${ codeKey }-data-type`
-                    
-                    );
+                      );
                     
               let type;
               
@@ -601,7 +631,7 @@
                   
                   break;
                   
-                case isBlog :
+                case isBlogList :
                 
                   type = 'Blog';
                   
@@ -610,6 +640,18 @@
                 case isBlogPost :
                 
                   type = 'Blog Post';
+                  
+                  break;
+                  
+                case isCourse :
+                
+                  type = 'Course';
+                  
+                  break;
+                  
+                case isCourseList :
+                
+                  type = 'Course Overview';
                   
                   break;
                   
@@ -927,7 +969,7 @@
       
         title = 'Section Info',
         
-        version = '0.3.3-development.0',
+        version = '0.3.3-development.1',
       
         s = `
         
