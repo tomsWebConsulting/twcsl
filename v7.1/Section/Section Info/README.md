@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.2
+  * 0.3.3-development.0
 
 #### Squarespace Version
 
@@ -17,20 +17,26 @@ Add section editor info.
 #### Dependencies
 
   * [Squarespace plan][2] that supports [JavaScript][3].
+  
+  * [Effects][4]
 
 ---
 
-## Quick Install
+## Install
 
-* Add code from file **[section info.html][4]** to Website > Pages > Website
-  Tools > Code Injection > HEADER.
+* Activate this code using the **[Effects][5]** dialog.
 
 ## Make a Donation
 
-Please consider [making a donation][5].
+Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-18**
+
+  * updated to work with Effects
+  * bumped version to 0.3.3-development.0 (commit 16160f9dddfa21697efd9b168624c7a804ff25e5)
+  
 * **2026-10-02**
 
   * updated to work with upcoming Squarespace changes
@@ -91,5 +97,6 @@ Please consider [making a donation][5].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: section%20info.html#L1
-[5]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Effects
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Effects#effects
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
