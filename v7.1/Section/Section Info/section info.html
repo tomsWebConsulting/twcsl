@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.3.3-development.1
+    Version           : 0.3.3-development.2
     
     Squarespace       
     Version           : 7.1
@@ -583,7 +583,19 @@
                     
                     'portfolio-list',
                     
-                isStore =
+                isStoreDetail =
+                
+                  pageSectionElement
+                  
+                    .dataset
+                    
+                    .sqspSection
+                    
+                    ===
+                    
+                    'product-detail',
+                    
+                isStoreList =
                 
                   pageSectionElement
                   
@@ -679,7 +691,13 @@
                   
                   break;
                   
-                case isStore :
+                case isStoreDetail :
+                
+                  type = 'Store Product Detail';
+                  
+                  break;
+                  
+                case isStoreList :
                 
                   type = 'Store';
                   

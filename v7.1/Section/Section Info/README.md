@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.3-development.1
+  * 0.3.3-development.2
 
 #### Squarespace Version
 
@@ -32,6 +32,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-19**
+
+  * added detection of store product detail elements
+  * bumped version to 0.3.3-development.2 (commit 0fce9684370242bf8d7110c06441c0b2340e28f1)
+  
 * **2026-11-19**
 
   * added detection of course elements
