@@ -93,7 +93,7 @@ Please consider [making a donation][8].
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
 [2]: https://www.squarespace.com/pricing
 [3]: https://en.wikipedia.org/wiki/JavaScript
-[4]: effects.min.html#L1
+[4]: effects.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
