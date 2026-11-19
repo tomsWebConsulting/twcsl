@@ -65,7 +65,7 @@ Please consider [making a donation][8].
 * **2026-11-19**
 
   * reworked initial load code to be CDN based
-  * bumped version to 0.1.0-development.4 (commit 96ff958184cfcb92ccaeda4706938786a0676eba)
+  * bumped version to 0.1.0-development.4 (commit 236bf48973a20358e783f681abc53474a73614b6)
   
 * **2026-11-19**
 
