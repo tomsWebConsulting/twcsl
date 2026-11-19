@@ -36,7 +36,7 @@ Please consider [making a donation][6].
 
   * added detection of course elements
   * fixed detection of various elements
-  * bumped version to 0.3.3-development.1 (commit ec454d7f888f6251b55d961c637c4d4699cd121e)
+  * bumped version to 0.3.3-development.1 (commit 0fce9684370242bf8d7110c06441c0b2340e28f1)
   
 * **2026-11-18**
 
