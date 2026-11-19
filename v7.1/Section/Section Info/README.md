@@ -35,7 +35,7 @@ Please consider [making a donation][6].
 * **2026-11-19**
 
   * added detection of store product detail elements
-  * bumped version to 0.3.3-development.2 (commit 0fce9684370242bf8d7110c06441c0b2340e28f1)
+  * bumped version to 0.3.3-development.2 (commit 911e253e1d16b9ee3703c85d3b7474732c2b1ea7)
   
 * **2026-11-19**
 
