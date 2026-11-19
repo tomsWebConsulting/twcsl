@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0-development.2
+  * 0.1.0-development.3
 
 #### Squarespace Version
 
@@ -38,7 +38,9 @@ The site will reload and your chosen effects will load.
 
 ## Effects
 
-* [Asset Library Move to Dialog Sort][7]
+* [Asset Library Move to Dialog Sort][6]
+
+* [Section Info][7]
 
 ## Notes
 
@@ -51,15 +53,16 @@ This code only loads the code for the effects you chose.
 
 ## Make a Donation
 
-Please consider [making a donation][6].
+Please consider [making a donation][8].
 
 ## Changes
 
-<!-- * **2026-09-29**
+* **2026-11-19**
 
-  * reworked code to use Store Page Products Panel Product Menu Item Add
-  * bumped version to 0.4.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
-  -->
+  * removed @main
+  * added Section Info effect
+  * bumped version to 0.1.0-development.3 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
+  
 * **2026-11-17**
 
   * changed @latest to @main for jsDelivr URLs
@@ -82,5 +85,6 @@ Please consider [making a donation][6].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: effects.min.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
-[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
-[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
+[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
+[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation

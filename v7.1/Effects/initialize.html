@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.1.0-development.2
+    Version           : 0.1.0-development.3
     
     Squarespace
     Version           : 7.1
@@ -236,7 +236,7 @@
     
       ( ( ) => {
       
-        // debugger;
+        debugger;
         
         let effectsButtonWrapperElement =
         
@@ -300,8 +300,12 @@
           
             .getElementById (
             
-              `${ codeKey }-settings-effect-template`
+              `${
               
+                codeKey
+                
+                }-settings-effect-template`
+                
               )
               
             .content
@@ -312,8 +316,12 @@
           
             .getElementById (
             
-              `${ codeKey }-settings-template`
+              `${
               
+                codeKey
+                
+                }-settings-template`
+                
               )
               
             .content
@@ -528,8 +536,12 @@
             
               .getElementById (
               
-                `${ codeKey }-tooltip-template`
+                `${
                 
+                  codeKey
+                  
+                  }-tooltip-template`
+                  
                 )
                 
               .content
@@ -750,7 +762,7 @@
                   
                   );
                   
-            // bail of code injection dirty
+            // bail if code injection dirty
             
             if ( isCodeInjectionDirty )
             
@@ -764,8 +776,12 @@
             
               .querySelectorAll (
               
-                `.${ codeKey }-settings-effect`
+                `.${
                 
+                  codeKey
+                  
+                  }-settings-effect`
+                  
                 )
                 
               .forEach (
@@ -780,11 +796,15 @@
               
               of
               
-              Object.entries (
+              Object
               
-                globalEffects
+                .entries (
                 
-                )
+                  globalEffects
+                  
+                  )
+                  
+                .reverse ( )
                 
               ) {
               
@@ -808,8 +828,8 @@
                     
                       'input'
                       
-                    ),
-                    
+                      ),
+                      
                   labelElement = element
                   
                     .querySelector (
@@ -924,8 +944,12 @@
             
               .querySelectorAll (
               
-                `.${ codeKey }-settings-effect`
+                `.${
                 
+                  codeKey
+                  
+                  }-settings-effect`
+                  
                 )
                 
               .forEach (
@@ -1088,12 +1112,8 @@
               
             effectsButtonWrapperElement.id =
             
-              `${
+              `${ codeKey }-button-wrapper`;
               
-                codeKey
-                
-                }-button-wrapper`;
-                
             effectsButtonWrapperElement
             
               .querySelector ( 'svg' )
@@ -1104,8 +1124,12 @@
                 
                   .getElementById (
                   
-                    `${ codeKey }-svg-template`
+                    `${
                     
+                      codeKey
+                      
+                      }-svg-template`
+                      
                     )
                     
                   .content
@@ -1136,12 +1160,8 @@
                   
                   .querySelector (
                   
-                    `.${
+                    `.${ codeKey }-tooltip`
                     
-                      codeKey
-                      
-                      }-tooltip`
-                      
                     )
                     
                   .remove ( )
@@ -1308,7 +1328,11 @@
         
           'Asset Library Move to Dialog Sort' :
           
-            'https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl@main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort/asset%20library%20move%20to%20dialog%20sort.html'
+            'https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort/asset%20library%20move%20to%20dialog%20sort.html',
+            
+          'Section Info' :
+          
+            'https://cdn.jsdelivr.net/gh/tomsWebConsulting/twcsl/v7.1/Section/Section%20Info/section%20info.html'
             
           },
           
