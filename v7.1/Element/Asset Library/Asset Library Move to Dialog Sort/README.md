@@ -8,7 +8,7 @@ Alphabetically sort the folders listed in the Asset Library Move to... dialog.
 
 ### Version
 
-  * 0.1.0-development.0
+  * 0.1.0
 
 #### Squarespace Version
 
@@ -32,11 +32,10 @@ Please consider [making a donation][6].
 
 ## Changes
 
-<!-- * **2026-09-29**
+* **2026-11-20**
 
-  * reworked code to use Store Page Products Panel Product Menu Item Add
-  * bumped version to 0.4.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
-  -->
+  * bumped version to 0.1.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
+  
 * **2026-11-16**
 
   * initial version (commit b4bc9f6be60bb58242cf4803625822d738eae6d8)
