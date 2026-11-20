@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0-development.4
+  * 0.1.0
 
 #### Squarespace Version
 
@@ -44,9 +44,6 @@ The site will reload and your selected effects will load.
 
 ## Notes
 
-**DO NOT INSTALL this code at this time**. I'm in process of bootstrapping this
-code.
-
 **DO NOT** edit the installed code.
 
 This code only loads the code for each effect you chose.
@@ -62,6 +59,10 @@ Please consider [making a donation][8].
 
 ## Changes
 
+* **2026-11-20**
+
+  * bumped version to 0.1.0 (commit 236bf48973a20358e783f681abc53474a73614b6)
+  
 * **2026-11-19**
 
   * reworked initial load code to be CDN based

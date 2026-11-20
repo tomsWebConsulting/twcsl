@@ -4,7 +4,7 @@
   
   License           : < https://tinyurl.com/s872fb68 >
   
-  Version           : 0.1.0-development.4
+  Version           : 0.1.0
   
   Squarespace
   Version           : 7.1
@@ -24,7 +24,7 @@
   
     title = 'Effects',
     
-    version = '0.1.0-development.4',
+    version = '0.1.0',
     
     s = `${ title } v${ version }
     
