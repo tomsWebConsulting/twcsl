@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.3-development.2
+  * 0.3.3-development.3
 
 #### Squarespace Version
 
@@ -32,6 +32,11 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-19**
+
+  * fixed layout/style issue with the info data HTML
+  * bumped version to 0.3.3-development.3 (commit 911e253e1d16b9ee3703c85d3b7474732c2b1ea7)
+  
 * **2026-11-19**
 
   * added detection of store product detail elements

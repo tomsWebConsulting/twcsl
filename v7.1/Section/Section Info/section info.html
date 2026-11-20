@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.3.3-development.2
+    Version           : 0.3.3-development.3
     
     Squarespace       
     Version           : 7.1
@@ -38,7 +38,7 @@
         
           <tbody>
           
-            <tr class="item twc-si-data-editor">
+            <tr class="twc-si-item twc-si-data-editor">
             
               <td class="twc-si-data-title">
               
@@ -46,13 +46,19 @@
                 
                 </td>
                 
+              <td class="twc-si-separator">
+              
+                :
+                
+                </td>
+                
               <td class="twc-si-data-data">
               
                 </td>
                 
               </tr>
               
-            <tr class="item twc-si-data-type">
+            <tr class="twc-si-item twc-si-data-type">
             
               <td class="twc-si-data-title">
               
@@ -60,17 +66,29 @@
                 
                 </td>
                 
+              <td class="twc-si-separator">
+              
+                :
+                
+                </td>
+                
               <td class="twc-si-data-data">
               
                 </td>
                 
               </tr>
               
-            <tr class="item twc-si-data-blocks-number">
+            <tr class="twc-si-item twc-si-data-blocks-number">
             
               <td class="twc-si-data-title">
               
                 Blocks
+                
+                </td>
+                
+              <td class="twc-si-separator">
+              
+                :
                 
                 </td>
                 
@@ -112,7 +130,7 @@
         
         }
         
-      .twc-si-info .twc-si-title {
+      .twc-si-title {
       
         font-size : smaller;
         font-weight : bold;
@@ -122,16 +140,16 @@
         
         }
         
-      .twc-si-info .twc-si-data {
+      .twc-si-data {
       
-        padding: 10px 8px;
+        padding : 10px 8px;
         
-        }
+        td {
         
-      .twc-si-data .item.hide {
-      
-        display : none;
-        
+          vertical-align : top;
+          
+          }
+          
         }
         
       .twc-si-data-title {
@@ -141,11 +159,15 @@
         
         }
         
-      td.twc-si-data-data::before {
+      .twc-si-separator {
       
-        content : ':';
-        margin-left : 0.5em;
-        margin-right : 0.5em;
+        padding : 0 0.5em;
+        
+        }
+        
+      .twc-si-hide {
+      
+        display : none;
         
         }
         
@@ -239,8 +261,12 @@
                 
                   .classList
                   
-                  .remove ( 'hide' );
+                  .remove (
                   
+                    `${ codeKey }-hide`
+                    
+                    );
+                    
                 element
                 
                   .querySelector (
@@ -265,7 +291,7 @@
                   
                     .classList
                     
-                    .add ( 'hide' );
+                    .add ( `${ codeKey }-hide` );
                     
             },
             
@@ -281,6 +307,8 @@
               
             .contentDocument,
             
+          hideClassName = `${ codeKey }-hide`,
+          
           editorInfoAdd = (
           
             infoElement,
@@ -375,7 +403,7 @@
                 
                   .classList
                   
-                  .remove ( 'hide' );
+                  .remove ( hideClassName );
                   
                 element
                 
@@ -405,7 +433,7 @@
                   
                     .classList
                     
-                    .add ( 'hide' );
+                    .add ( hideClassName );
                     
             },
             
@@ -723,7 +751,7 @@
                 
                   .classList
                   
-                  .remove ( 'hide' );
+                  .remove ( hideClassName );
                   
                 element
                 
@@ -745,7 +773,7 @@
                   
                     .classList
                     
-                    .add ( 'hide' );
+                    .add ( hideClassName );
                     
               },
               
@@ -987,7 +1015,7 @@
       
         title = 'Section Info',
         
-        version = '0.3.3-development.1',
+        version = '0.3.3-development.3',
       
         s = `
         
