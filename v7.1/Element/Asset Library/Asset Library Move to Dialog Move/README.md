@@ -35,7 +35,7 @@ Please consider [making a donation][6].
 * **2026-11-20**
 
   * updated to work with Effects
-  * bumped version to 0.2.0 (commit 7780b2a5e66b3d36288568c0b7b597706b457c09)
+  * bumped version to 0.2.0 (commit e94ee70283d3b631ba2d43430377fa4375ddb06a)
   
 * **2026-11-02**
 
