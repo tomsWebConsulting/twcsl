@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.0
+  * 0.1.1
 
 #### Squarespace Version
 
@@ -38,9 +38,11 @@ The site will reload and your selected effects will load.
 
 ## Effects
 
-* [Asset Library Move to Dialog Sort][6]
+* [Asset Library Move to Dialog Move][6]
 
-* [Section Info][7]
+* [Asset Library Move to Dialog Sort][7]
+
+* [Section Info][8]
 
 ## Notes
 
@@ -55,10 +57,15 @@ settings.
 
 ## Make a Donation
 
-Please consider [making a donation][8].
+Please consider [making a donation][9].
 
 ## Changes
 
+* **2026-11-20**
+
+  * added Asset Library Move to Dialog Move effect
+  * bumped version to 0.1.1 (commit ae6c123fa4a316ef1e7b417f8d585ea7fef48c4e)
+  
 * **2026-11-20**
 
   * bumped version to 0.1.0 (commit ae6c123fa4a316ef1e7b417f8d585ea7fef48c4e)
@@ -96,6 +103,7 @@ Please consider [making a donation][8].
 [3]: https://en.wikipedia.org/wiki/JavaScript
 [4]: effects.html#L1
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
-[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
-[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
-[8]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Move#asset-library-move-to-dialog-move
+[7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
+[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
+[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
