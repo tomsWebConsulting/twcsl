@@ -36,7 +36,7 @@ Please consider [making a donation][6].
 
   * added info data fluid engine stacks count
   * fixed issue with info data not showing occasionally
-  * bumped version to 0.3.3-development.4 (commit 10afc7f94517b099666c9c7267cf03c912af6ba1)
+  * bumped version to 0.3.3-development.4 (commit b1559ae62e834e92b043fa971874ce9f3ef68411)
   
 * **2026-11-19**
 
