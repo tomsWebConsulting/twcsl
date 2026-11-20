@@ -8,7 +8,7 @@ Add section editor info.
 
 ### Version
 
-  * 0.3.3-development.3
+  * 0.3.3-development.4
 
 #### Squarespace Version
 
@@ -32,9 +32,15 @@ Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-20**
+
+  * added info data fluid engine stacks count
+  * fixed issue with info data not showing occasionally
+  * bumped version to 0.3.3-development.4 (commit 10afc7f94517b099666c9c7267cf03c912af6ba1)
+  
 * **2026-11-19**
 
-  * fixed layout/style issue with the info data HTML
+  * fixed layout/style issue with the info data html
   * bumped version to 0.3.3-development.3 (commit 10afc7f94517b099666c9c7267cf03c912af6ba1)
   
 * **2026-11-19**

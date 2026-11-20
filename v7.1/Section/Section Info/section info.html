@@ -6,7 +6,7 @@
     
     License           : < https://tinyurl.com/s872fb68 >
     
-    Version           : 0.3.3-development.3
+    Version           : 0.3.3-development.4
     
     Squarespace       
     Version           : 7.1
@@ -83,6 +83,26 @@
               <td class="twc-si-data-title">
               
                 Blocks
+                
+                </td>
+                
+              <td class="twc-si-separator">
+              
+                :
+                
+                </td>
+                
+              <td class="twc-si-data-data">
+              
+                </td>
+                
+              </tr>
+              
+            <tr class="twc-si-item twc-si-data-stacks-number">
+            
+              <td class="twc-si-data-title">
+              
+                Stacks
                 
                 </td>
                 
@@ -201,15 +221,13 @@
           
             infoElement,
             
-            pageSectionElement,
-            
-            sectionClasses
+            pageSectionElement
             
             ) => {
             
               const
               
-                blockCount = [
+                count = [
                 
                   ...
                   
@@ -255,7 +273,7 @@
                       
                     );
                     
-              if ( blockCount ) {
+              if ( count ) {
               
                 element
                 
@@ -283,7 +301,7 @@
                   
                   =
                   
-                  blockCount;
+                  count;
                   
                 } else
                 
@@ -434,6 +452,78 @@
                     .classList
                     
                     .add ( hideClassName );
+                    
+            },
+            
+          stackCountInfoAdd = (
+          
+            infoElement,
+            
+            pageSectionElement
+            
+            ) => {
+            
+              const
+              
+                count = pageSectionElement
+                
+                  .querySelectorAll (
+                  
+                    '[ data-definition-name = "website.components.stack" ]'
+                    
+                    )
+                    
+                  .length,
+                  
+                element = infoElement
+                
+                  .querySelector (
+                  
+                    `.${
+                    
+                      codeKey
+                      
+                      }-data-stacks-number`
+                      
+                    );
+                    
+              if ( count ) {
+              
+                element
+                
+                  .classList
+                  
+                  .remove (
+                  
+                    `${ codeKey }-hide`
+                    
+                    );
+                    
+                element
+                
+                  .querySelector (
+                  
+                    `.${
+                    
+                      codeKey
+                      
+                      }-data-data`
+                      
+                    )
+                  
+                  .textContent
+                  
+                  =
+                  
+                  count;
+                  
+                } else
+                
+                  element
+                  
+                    .classList
+                    
+                    .add ( `${ codeKey }-hide` );
                     
             },
             
@@ -917,6 +1007,14 @@
                     
                 }
                 
+              blockCountInfoAdd (
+              
+                infoElement,
+                
+                pageSectionElement
+                
+                );
+                
               editorInfoAdd (
               
                 infoElement,
@@ -929,6 +1027,14 @@
                 
                 );
                 
+              stackCountInfoAdd (
+              
+                infoElement,
+                
+                pageSectionElement
+                
+                );
+                
               typeInfoAdd (
               
                 infoElement,
@@ -938,14 +1044,6 @@
                 dcmntBodyElementClasses,
                 
                 sectionClasses
-                
-                );
-                
-              blockCountInfoAdd (
-              
-                infoElement,
-                
-                pageSectionElement
                 
                 );
                 
@@ -1015,7 +1113,7 @@
       
         title = 'Section Info',
         
-        version = '0.3.3-development.3',
+        version = '0.3.3-development.4',
       
         s = `
         
