@@ -34,7 +34,7 @@ Please consider [making a donation][6].
 
 * **2026-11-20**
 
-  * bumped version to 0.3.3 (commit b1559ae62e834e92b043fa971874ce9f3ef68411)
+  * bumped version to 0.3.3 (commit d5973cc329799f6a215c46d20ac7a20b8f173402)
   
 * **2026-11-20**
 
