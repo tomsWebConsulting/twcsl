@@ -1,12 +1,12 @@
-<!-- begin TWC Asset Library Move to Move -->
+<!-- begin TWC Asset Library Move to Dialog Move -->
 
   <!--
   
-    asset library move to move
+    asset library move to dialog move
     
     License         : < https://tinyurl.com/s872fb68 >
     
-    Version         : 0.1.0
+    Version         : 0.2.0
     
     SS Version      : 7.1
     
@@ -21,9 +21,9 @@
     
     -->
     
-  <template id="twc-almtm" data-version="0.1.0">
+  <template id="twc-almtdm-template">
   
-    <script>
+    <script id="twc-almtdm">
     
       ( ( ) => {
       
@@ -37,16 +37,28 @@
           
           window.twc = window.twc || { };
           
-          // initialize twc almtm sub-module
+          // initialize twc almtdm sub-module
           
-          twc.almtm = twc.almtm || { };
+          twc.almtdm = twc.almtdm || { };
           
           }
           
         const
         
-          codeKey = 'twc-almtm',
+          codeKey = 'twc-almtdm',
           
+          global = codeKey
+          
+            .split ( '-' )
+            
+            .reduce (
+            
+              ( obj, key ) => obj?.[ key ],
+              
+              window
+              
+              ),
+              
           mutationCallback =
           
             ( mutation ) => {
@@ -287,14 +299,8 @@
               
               };
               
-        twc
+        global.observer =
         
-          .almtm
-          
-          .observer
-          
-          =
-          
           new MutationObserver (
           
             ms => ms.forEach (
@@ -307,10 +313,8 @@
             
         // start listening for changes in element
         
-        twc
+        global
         
-          .almtm
-          
           .observer
           
           .observe (
@@ -335,118 +339,92 @@
       
       const
       
-        codeKey = 'twc-almtm',
+        title = 'Asset Library Move to Dialog Move',
+        
+        version = '0.2.0',
+      
+        s = `
+        
+          ${ title } v${ version }
+        
+          License < https://tinyurl.com/s872fb68 >
+          
+          © 2026 Thomas Creedon
+          
+          Tom's Web Consulting < http://www.tomsWeb.consulting >
+          
+          `
+          
+          .replace ( /^\s+/gm, '' );
+          
+      console.log ( s );
+      
+      const
+      
+        codeKey = 'twc-almtdm',
         
         wndw = window.top,
         
         dcmnt = wndw.document,
         
-        destinationElement = dcmnt
+        global = codeKey
+        
+          .split ( '-' )
+          
+          .reduce (
+          
+            ( obj, key ) => obj?.[ key ],
+            
+            wndw
+            
+            );
+            
+      // delete
+      
+      {
+      
+        global
+        
+          ?.observer
+          
+          ?.disconnect ( );
+          
+        delete global?.observer;
+        
+        dcmnt
         
           .getElementById (
           
             `${ codeKey }`
             
-            ),
+            )
             
-        destinationVersion =
-        
-          destinationElement
-          
-            ?.dataset
-          
-            .version;
-            
-      let sourceElement = document
-      
-        .getElementById (
-        
-          `${ codeKey }`
-          
-          );
-          
-      const
-      
-        sourceVersion =
-        
-          sourceElement
-          
-            ?.dataset
-            
-            .version,
-            
-        isInstall =
-        
-          ! destinationElement
-          
-          ||
-          
-          destinationVersion
-          
-          !==
-          
-          sourceVersion;
-          
-      if ( isInstall ) {
-      
-        wndw
-        
-          ?.twc
-          
-          ?.almtm
-          
-          ?.observer
-          
-          ?.disconnect ( );
-          
-        delete wndw
-        
-          ?.twc
-          
-          ?.almtm
-          
-          ?.observer;
-          
-        destinationElement?.remove ( );
-        
-        sourceElement = sourceElement
-        
-          .content
-          
-          .cloneNode ( true );
-          
-        sourceElement
-        
-          .firstElementChild
-          
-          .id
-          
-          =
-          
-          codeKey;
-          
-        sourceElement
-        
-          .firstElementChild
-          
-          .dataset
-          
-          .version
-          
-          =
-          
-          sourceVersion;
-          
-        dcmnt
-        
-          .head
-          
-          .appendChild ( sourceElement );
+          ?.remove ( );
           
         }
         
+      dcmnt
+      
+        .head
+        
+        .appendChild (
+        
+          document
+          
+            .getElementById (
+            
+              `${ codeKey }-template`
+              
+              )
+              
+            .content
+            
+            .cloneNode ( true )
+            
+          );
+          
       } ) ( );
       
     </script>
     
-  <!-- end TWC Asset Library Move to Move -->
+  <!-- end TWC Asset Library Move to Dialog Move -->
