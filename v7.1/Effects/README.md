@@ -64,7 +64,7 @@ Please consider [making a donation][9].
 * **2026-11-20**
 
   * added Asset Library Move to Dialog Move effect
-  * bumped version to 0.1.1 (commit ae6c123fa4a316ef1e7b417f8d585ea7fef48c4e)
+  * bumped version to 0.1.1 (commit 32cf790f1b1d217c93f4f593de45906d758d7273)
   
 * **2026-11-20**
 
