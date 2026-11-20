@@ -61,7 +61,7 @@ Please consider [making a donation][8].
 
 * **2026-11-20**
 
-  * bumped version to 0.1.0 (commit 236bf48973a20358e783f681abc53474a73614b6)
+  * bumped version to 0.1.0 (commit ae6c123fa4a316ef1e7b417f8d585ea7fef48c4e)
   
 * **2026-11-19**
 
