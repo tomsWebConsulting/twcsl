@@ -27,7 +27,7 @@ separately.
 
 ## Layout Overview
 
-twcsl contains 689 effects. Each effect has it's own version number, code,
+twcsl contains 687 effects. Each effect has it's own version number, code,
 read me, and etc. Each effect is independant. In other words all the effects are
 not necessarily designed to work together.
 
@@ -965,13 +965,9 @@ not necessarily designed to work together.
           
     * [Asset Library](v7.1/Element/Asset%20Library)
       
-      * [Asset Library Move to Sort](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Sort)
+      * [Asset Library Move to Dialog Move](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Move)
         
-        * [Asset Library Move to Sort.bbprojectd](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Sort/Asset%20Library%20Move%20to%20Sort.bbprojectd)
-          
-      * [Asset Library Move to Move](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Move)
-        
-        * [Asset Library Move to Move.bbprojectd](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Move/Asset%20Library%20Move%20to%20Move.bbprojectd)
+        * [Asset Library Move to Dialog Move.bbprojectd](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Move/Asset%20Library%20Move%20to%20Dialog%20Move.bbprojectd)
           
       * [Asset Library Move to Dialog Sort](v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort)
         
