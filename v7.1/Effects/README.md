@@ -66,7 +66,7 @@ Please consider [making a donation][10].
 * **2026-11-20**
 
   * added Section Fluid Engine Upgrade Button Hide effect
-  * bumped version to 0.1.2 (commit 32cf790f1b1d217c93f4f593de45906d758d7273)
+  * bumped version to 0.1.2 (commit 16583928e966233dc582d66bd399068a81779717)
   
 * **2026-11-20**
 
