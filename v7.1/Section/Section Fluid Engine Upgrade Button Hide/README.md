@@ -8,26 +8,35 @@ Hide Fluid Engine Upgrade button for Classic Editor sections.
 
 ### Version
 
-  * 0.2.0
+  * 0.3.0
 
 #### Squarespace Version
 
   * 7.1
 
+#### Dependencies
+
+  * [Squarespace plan][2] that supports [JavaScript][3].
+  
+  * [Effects][4]
+
 ---
 
-## Quick Install
+## Install
 
-* Add code from file **[section fluid engine upgrade button hide.html][2]** to
-  Website > Pages > Custom Code > Code Injection > HEADER. Refer to [Add code to
-  the header and footer][3] for details.
+* Activate this code using the **[Effects][5]** dialog.
 
 ## Make a Donation
 
-Please consider [making a donation][4].
+Please consider [making a donation][6].
 
 ## Changes
 
+* **2026-11-20**
+
+  * updated to work with Effects
+  * bumped version to 0.3.0 (commit d8608308b74ee39050677928b6ba53b98df165dd)
+  
 * **2026-10-14**
 
   * fixed issue with a white dot showing on sections with a non-white background
@@ -48,6 +57,8 @@ Please consider [making a donation][4].
   * initial version
 
 [1]: https://github.com/tomsWebConsulting/twcsl/blob/main/LICENSE.txt#L1
-[2]: fluid%20engine%20page%20section%20upgrade%20button%20hide.html#L1
-[3]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
-[4]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[2]: https://www.squarespace.com/pricing
+[3]: https://en.wikipedia.org/wiki/JavaScript
+[4]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Effects
+[5]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Effects#effects
+[6]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
