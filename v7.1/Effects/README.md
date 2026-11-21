@@ -8,7 +8,7 @@ Add various effect to your site.
 
 ### Version
 
-  * 0.1.1
+  * 0.1.2
 
 #### Squarespace Version
 
@@ -42,7 +42,9 @@ The site will reload and your selected effects will load.
 
 * [Asset Library Move to Dialog Sort][7]
 
-* [Section Info][8]
+* [Section Fluid Engine Upgrade Button Hide][8]
+
+* [Section Info][9]
 
 ## Notes
 
@@ -57,10 +59,15 @@ settings.
 
 ## Make a Donation
 
-Please consider [making a donation][9].
+Please consider [making a donation][10].
 
 ## Changes
 
+* **2026-11-20**
+
+  * added Section Fluid Engine Upgrade Button Hide effect
+  * bumped version to 0.1.2 (commit 32cf790f1b1d217c93f4f593de45906d758d7273)
+  
 * **2026-11-20**
 
   * added Asset Library Move to Dialog Move effect
@@ -105,5 +112,6 @@ Please consider [making a donation][9].
 [5]: https://support.squarespace.com/hc/en-us/articles/205815908-Customize-parts-of-your-site-with-code-injection#h_01M2NCWRTZYTHPBF2AK5BDSRVP
 [6]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Move#asset-library-move-to-dialog-move
 [7]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Element/Asset%20Library/Asset%20Library%20Move%20to%20Dialog%20Sort#asset-library-move-to-dialog-sort
-[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
-[9]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
+[8]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Fluid%20Engine%20Upgrade%20Button%20Hide#section-fluid-engine-upgrade-button-hide
+[9]: https://github.com/tomsWebConsulting/twcsl/tree/main/v7.1/Section/Section%20Info#section-info
+[10]: https://github.com/tomsWebConsulting/twcsl#make-a-donation
